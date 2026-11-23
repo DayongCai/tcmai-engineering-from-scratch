@@ -1,15 +1,18 @@
 #!/usr/bin/env node
 /**
- * 中医基础理论 · 第 9 章 体质与发病 → 先验分布与风险分层
- * 课程: departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/09-tizhi-fabing/docs/zh.md
- * 出处: 教材·第12章 体质学说（5 节 13 段）+ 教材·第8章 发病（4 节 20 段）
- * 依赖: 仅 Node.js 标准库
+ * 中医基础理论 · 第 9 章 体质决定的是「从化方向」，不是「一定会得什么病」
  *
- * 四个量：
- *   1. 体质有两套分类：经典《灵枢·阴阳二十五人》5 形 × 5 音 = 25；现代王琦九分法 9 质；
- *   2. 两套之间的映射是**多对多**（5 形 → 9 质，教材明说「非严格一一对应」）；
- *   3. 发病类型 7 种、影响发病的因素 3 类；
- *   4. 风险分层的先验必须标「教学设定」——教材没有给任何体质的人群患病率。
+ *   node code/main.js
+ *
+ * 正文：chapters/09-tizhi-fabing/docs/zh.md
+ * 习题：chapters/09-tizhi-fabing/quiz.json
+ * 依赖：仅 Node.js 标准库
+ *
+ * 只读本章正文与本章 quiz，不读任何 standards 取数表：正文改了，这里的数字跟着变。
+ *   · 规模：汉字、段、节标题、表格张数与每张表的列数／行数
+ *   · 本章算术：从正文里解析判据条目、门限与结构数字，再算派生量
+ *   · quiz：题量、三段分布、选项数、解释长度、答案位置是否打散、check 题能否在正文找到原词
+ * 任何一项对不上，说明正文、代码、习题三者已经不同源。
  */
 
 'use strict';
@@ -17,135 +20,197 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-const ROOT = path.join(__dirname, '..', '..', '..', '..', '..', '..');
-const BOOK = path.join(ROOT, 'standards', 'jichu', '底本.json');
-const doc = JSON.parse(fs.readFileSync(BOOK, 'utf8'));
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
-function chapter(no) {
-  return doc.chapters.find((c) => c.no === no);
+const CHAPTER = 9;
+const SLUG = '09-tizhi-fabing';
+const TITLE = "体质决定的是「从化方向」，不是「一定会得什么病」";
+
+/* ── 文本口径 ────────────────────────────────────────────────────── */
+
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+const count = (text, term) => String(text).split(term).length - 1;
+const num = (s) => Number(String(s).replace(/[,，\s]/g, ''));
+const CN = { 两: 2, 一: 1, 二: 2, 三: 3, 四: 4, 五: 5, 六: 6, 七: 7, 八: 8, 九: 9, 十: 10, 十二: 12 };
+const cn2n = (s) => (CN[s] !== undefined ? CN[s] : Number(s));
+const readDoc = () => fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+const docLines = (doc) => String(doc).split(/\r?\n/);
+
+/** 节标题：`## 一、…` */
+function sections(doc) {
+  return docLines(doc).filter((l) => /^##\s+/.test(l)).map((l) => l.replace(/^##\s+/, '').trim());
 }
 
-function subsOf(no) {
-  const out = {};
-  for (const s of chapter(no).secs) for (const sub of s.subs) out[sub.no] = sub;
+/** 段：非空，不以标题、引文、表格行、清单符号或编号起始 */
+function paragraphs(doc) {
+  return docLines(doc)
+    .map((l) => l.trim())
+    .filter((l) => l && !/^[#>|]/.test(l) && !/^[-*+]\s/.test(l) && !/^\d+[.、]/.test(l))
+    .filter((l) => !l.includes('|'));
+}
+
+/** markdown 表格：表头 + 去分隔行的数据行 */
+function tables(doc) {
+  const ls = docLines(doc);
+  const cells = (l) => l.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map((c) => c.trim());
+  const out = [];
+  let i = 0;
+  while (i < ls.length) {
+    if (/^\s*\|/.test(ls[i])) {
+      const block = [];
+      while (i < ls.length && /^\s*\|/.test(ls[i])) {
+        block.push(ls[i]);
+        i += 1;
+      }
+      const header = cells(block[0]);
+      const rows = block.slice(1).filter((l) => !/^\s*\|[\s:|-]+\|\s*$/.test(l)).map(cells);
+      out.push({ header, cols: header.length, rows });
+    } else {
+      i += 1;
+    }
+  }
   return out;
 }
 
-const S12 = subsOf('12');
-const S8 = subsOf('8');
+const tableBy = (ts, kw) => ts.find((t) => t.header.join(' ').includes(kw));
 
-const WUXING = ['木', '火', '土', '金', '水'];
-const WUYIN = ['角', '徵', '宫', '商', '羽'];
-const JIUZHI = ['平和质', '气虚质', '阳虚质', '阴虚质', '痰湿质', '湿热质', '血瘀质', '气郁质', '特禀质'];
+/* ── 本章算术（逐章注入，从正文解析） ───────────────────────────── */
 
-// ── 1. 两套分类 ─────────────────────────────────────────────
-function systems() {
-  const t1 = S12['12.3.1'] ? S12['12.3.1'].paras.join('') : '';
-  const t2 = S12['12.3.2'] ? S12['12.3.2'].paras.join('') : '';
-  const t5 = S12['12.5.1'] ? S12['12.5.1'].paras.join('') : '';
+function chapterArithmetic(doc, ts) {
+const collect = tableBy(ts, '观察项');
+  const fields = tableBy(ts, '字段');
+  const forms = ['木形人', '火形人', '土形人', '金形人', '水形人'].filter((x) => doc.includes(x)).length;
+  const tones = ['角', '徵', '宫', '商', '羽'].filter((x) => doc.includes(x)).length;
+  const twentyFive = forms * tones;
+  const nine = num((doc.match(/现代九分法是\s*(\d+)\s*型/) || [])[1]);
+  const mapped = num((doc.match(/给的映射只有\s*(\d+)\s*条/) || [])[1]);
+  const coverage = mapped / twentyFive;
+  const crit = ['长期性', '多维度一致', '与一时状态可区分', '可复测'].filter((x) => doc.includes(x)).length;
+  const factors = ['饮食', '起居', '情志', '地理', '疾病与药物'].filter((x) => doc.includes(x)).length;
+
   return {
-    classic: {
-      shapes: WUXING,
-      notes: WUYIN,
-      quarters: WUXING.length * WUYIN.length,
-      stated25: /二十五人/.test(t1),
-    },
-    modern: {
-      types: JIUZHI,
-      n: JIUZHI.length,
-      allMentioned: JIUZHI.every((x) => t2.includes(x)),
-      scaleItems: 60,
-      scaleCited: /60条目/.test(t5),
-    },
+    collectItems: collect ? collect.rows.length : 0,
+    fieldRows: fields ? fields.rows.length : 0,
+    forms,
+    tones,
+    twentyFive,
+    nine,
+    mapped,
+    coverage,
+    subtypes: twentyFive - mapped,
+    crit,
+    factors,
+    lines: [
+      '五形人 ' + forms + ' × 五音 ' + tones + ' = ' + twentyFive + ' 人；九分法 ' + nine + ' 型',
+      '有映射 ' + mapped + ' 型 / ' + twentyFive + ' = ' + Math.round(coverage * 100) + '%，空着的亚型 ' + (twentyFive - mapped) + ' 个',
+      '体质判据 ' + crit + ' 条，最后一条（可复测）最硬',
+      '后天因素 ' + factors + ' 项，所以体质不是宿命',
+      '观察项表 ' + (collect ? collect.rows.length : 0) + ' 行 · 字段表 ' + (fields ? fields.rows.length : 0) + ' 行',
+    ],
   };
 }
 
-// ── 2. 双轨映射：多对多 ─────────────────────────────────────
-function mapping() {
-  const t = S12['12.3.2'] ? S12['12.3.2'].paras.join('') : '';
-  const m = t.match(/对应关系[^:：]*[:：]\s*(.+?)。/);
-  const text = m ? m[1] : '';
-  // 教材原文用 ASCII 逗号分隔（", "），且每项以「倾向」收尾；两者都要处理
-  const rows = [...text.matchAll(/([木火土金水])形人≈([^，。,]+)/g)].map((x) => ({
-    shape: x[1],
-    types: x[2].split('/').map((s) => s.trim().replace(/倾向$/, '')).filter(Boolean),
-  }));
-  const targets = new Set(rows.flatMap((r) => r.types));
-  return {
-    rows,
-    pairs: rows.reduce((n, r) => n + r.types.length, 0),
-    distinctTargets: [...targets],
-    nDistinct: targets.size,
-    declaredNonOneToOne: /非严格一一对应/.test(t) || /非一一对应/.test(t),
-  };
-}
+/* ── quiz：结构 + 接地 ──────────────────────────────────────────── */
 
-// ── 3. 发病：7 种类型 + 3 类影响因素 ─────────────────────────
-function onset() {
-  const types = [];
-  for (const no of ['8.3.1', '8.3.2', '8.3.3']) {
-    for (const part of S8[no].title.split(/[与、]/)) {
-      const w = part.trim();
-      if (w) types.push({ no, name: w });
-    }
+/** 正文里 4 字以上的连续汉字片段 */
+function grams(text, n = 4) {
+  const out = new Set();
+  for (const seg of String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
   }
-  const factors = ['体质因素', '情志因素', '生活因素'].filter((w) => Object.values(S8).some((s) => s.title === w));
-  return { types, factors, paras: chapter('8').counts.paras, chars: chapter('8').counts.chars };
+  return out;
 }
 
-// ── 4. 风险分层：先验是教学设定 ─────────────────────────────
-const PRIOR = { 平和质: 0.30, 气虚质: 0.13, 阳虚质: 0.13, 阴虚质: 0.09, 痰湿质: 0.11, 湿热质: 0.09, 血瘀质: 0.07, 气郁质: 0.06, 特禀质: 0.02 };
+function quizSummary(quiz, doc) {
+  const body = grams(doc);
+  const qs = Array.isArray(quiz.questions) ? quiz.questions : [];
+  const stage = { pre: 0, check: 0, post: 0 };
+  const items = qs.map((q, i) => {
+    if (stage[q.stage] !== undefined) stage[q.stage] += 1;
+    const opts = Array.isArray(q.options) ? q.options : [];
+    const right = String(opts[q.correct] || '');
+    const hit = [...grams(right)].filter((g) => body.has(g));
+    const why = q.explain || q.explanation || '';
+    return {
+      n: i + 1,
+      stage: q.stage,
+      options: opts.length,
+      correct: q.correct,
+      explainHanzi: hanzi(why),
+      grounded: hit.length,
+      sample: hit.slice(0, 3),
+    };
+  });
+  return {
+    total: qs.length,
+    stage,
+    items,
+    answers: qs.map((q) => q.correct),
+    distinctAnswers: new Set(qs.map((q) => q.correct)).size,
+    checkGrounded: items.filter((x) => x.stage === 'check' && x.grounded > 0).length,
+    minExplain: items.length ? Math.min(...items.map((x) => x.explainHanzi)) : 0,
+    allFourOptions: items.every((x) => x.options === 4),
+    badCorrect: items.filter((x) => !(Number.isInteger(x.correct) && x.correct >= 0 && x.correct < 4)).length,
+    stageComplete: ['pre', 'check', 'post'].every((s) => stage[s] > 0),
+  };
+}
 
-const SUSCEPT = {
-  阳虚质: ['寒邪'],
-  阴虚质: ['热邪'],
-  痰湿质: ['眩晕', '中风', '消渴'],
-};
+/* ── 汇总 ──────────────────────────────────────────────────────── */
 
-function risk() {
-  const sum = Object.values(PRIOR).reduce((a, b) => a + b, 0);
-  const rows = JIUZHI.map((t) => {
-    const targets = SUSCEPT[t] || [];
-    const p = PRIOR[t] / sum;
-    return { type: t, prior: +p.toFixed(3), targets, n: targets.length, score: +(p * targets.length).toFixed(4) };
-  }).sort((a, b) => b.score - a.score);
-  return { rows, top3: rows.slice(0, 3).map((r) => r.type), priorSum: +sum.toFixed(3) };
+function analyze() {
+  const doc = readDoc();
+  const ts = tables(doc);
+  const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+  return {
+    docHanzi: hanzi(doc),
+    paragraphs: paragraphs(doc).length,
+    sections: sections(doc),
+    tables: ts.map((t) => ({ header: t.header, cols: t.cols, rows: t.rows.length })),
+    arith: chapterArithmetic(doc, ts),
+    quiz: quizSummary(quiz, doc),
+  };
 }
 
 function main() {
-  const sys = systems();
-  const map = mapping();
-  const on = onset();
-  const rk = risk();
-
-  console.log('═══ 体质两套分类（教材·第12章，5 节 13 段 1,443 字）═══');
-  console.log(`  经典：${sys.classic.shapes.join('')} 5 形 × ${sys.classic.notes.join('')} 5 音 = ${sys.classic.quarters} 人（教材称「二十五人」：${sys.classic.stated25 ? '是' : '否'}）`);
-  console.log(`  现代：${sys.modern.types.join(' · ')}（${sys.modern.n} 质，全部出现：${sys.modern.allMentioned ? '是' : '否'}）`);
-  console.log(`  量表：王琦体质量表 ${sys.modern.scaleItems} 条目（教材原文引用：${sys.modern.scaleCited ? '是' : '否'}）`);
+  const r = analyze();
+  const a = r.arith;
+  console.log(`中医基础理论 第 ${CHAPTER} 章 · ${TITLE}`);
+  console.log(`正文 ${r.docHanzi.toLocaleString('en-US')} 汉字 · ${r.paragraphs} 段 · 节 ${r.sections.length} 个`);
   console.log('');
-  console.log('═══ 双轨映射：多对多 ═══');
-  for (const r of map.rows) console.log(`  ${r.shape}形人 ≈ ${r.types.join(' / ')}`);
-  console.log(`  ${map.rows.length} 形 → ${map.pairs} 条对应 → ${map.nDistinct} 个不同体质：${map.distinctTargets.join('、')}`);
-  console.log(`  教材是否明说非一一对应：${map.declaredNonOneToOne ? '是' : '否'}`);
-  console.log(`  → 10 条边覆盖 ${map.nDistinct}/9 质（平和质不在映射里）；每形对 2 质、每质至多来自 2 形，`);
-  console.log('    所以「某质=某形」反推不成立，只能正推「某形人易见某质」。');
+  console.log('结构：');
+  for (const s of r.sections) console.log(`  ${s}`);
   console.log('');
-  console.log(`═══ 发病（教材·第8章，${on.paras} 段 ${on.chars} 字）═══`);
-  console.log(`  发病类型 ${on.types.length} 种：${on.types.map((x) => x.name).join(' · ')}`);
-  console.log(`  影响因素 ${on.factors.length} 类：${on.factors.join(' · ')}`);
+  console.log(`表 ${r.tables.length} 张：`);
+  r.tables.forEach((t, i) => console.log(`  [${i + 1}] ${t.header.join(' / ')} —— ${t.cols} 列 × ${t.rows} 行`));
   console.log('');
-  console.log('═══ 风险分层（先验为教学设定，非流行病学）═══');
-  console.log('  体质    先验   易感目标                得分');
-  for (const r of rk.rows) {
-    console.log(`  ${r.type.padEnd(5)} ${r.prior.toFixed(3)}  ${(r.targets.join('/') || '（教材未列）').padEnd(22)} ${r.score.toFixed(4)}`);
-  }
-  console.log(`  先验合计 ${rk.priorSum}；得分 = 先验 × 教材列出的易感目标数`);
-  console.log(`  前三：${rk.top3.join(' · ')}`);
-  console.log('  → 这套排序只在「先验取本表数值」时成立；教材没有给任何患病率，所以它是教学演示，不是风险评估。');
+  console.log('本章算术（全部从正文解析后计算）：');
+  for (const line of a.lines) console.log(`  ${line}`);
   console.log('');
-  console.log('教学边界：本章只演示体质分类与风险分层的表示方式，不判定任何人的体质，不给出调体方案；不构成诊疗依据。');
+  console.log(`quiz ${r.quiz.total} 题（pre ${r.quiz.stage.pre} / check ${r.quiz.stage.check} / post ${r.quiz.stage.post}）· 答案 ${r.quiz.answers.join('/')}`);
+  console.log(`  check 题接地 ${r.quiz.checkGrounded} 道 · 答案落在 ${r.quiz.distinctAnswers} 个位置 · 最短解释 ${r.quiz.minExplain} 汉字`);
+  console.log('※ 以上数字由本章正文与 quiz 现算，改正文后重跑即可复核。');
+  console.log('※ 本章为教学材料，判据与分档均为课堂约定，不构成诊疗建议，也不替代执业医师的判断。');
 }
 
 if (require.main === module) main();
 
-module.exports = { systems, mapping, onset, risk, PRIOR, SUSCEPT, JIUZHI, WUXING, doc };
+module.exports = {
+  analyze,
+  readDoc,
+  sections,
+  paragraphs,
+  tables,
+  tableBy,
+  grams,
+  hanzi,
+  count,
+  num,
+  cn2n,
+  quizSummary,
+  CHAPTER,
+  SLUG,
+  TITLE,
+  DOC,
+  QUIZ,
+};

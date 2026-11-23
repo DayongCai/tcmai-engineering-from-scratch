@@ -1,14 +1,18 @@
 #!/usr/bin/env node
 /**
- * 中医基础理论 · 第 5 章 气血津液 → 状态向量与守恒约束
- * 课程: departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/05-qi-xue-jin-ye/docs/zh.md
- * 出处: 教材·第4章 精气血津液神（4.1–4.6，standards/jichu/底本.json）
- * 依赖: 仅 Node.js 标准库
+ * 中医基础理论 · 第 5 章 气血津液给的是方向，不是配额，所以它不能当化验单读
  *
- * 这章做三件事：
- *   1. 把「精、气、血、津液、神」五个概念的节/段规模量出来；
- *   2. 把 4.6 节讲的关系抽成**有方向的边**（气→血、血→气、气→津、津→气）；
- *   3. 用一张模拟状态表试写「守恒」——并诚实报出：教材没给守恒量，只给了方向。
+ *   node code/main.js
+ *
+ * 正文：chapters/05-qi-xue-jin-ye/docs/zh.md
+ * 习题：chapters/05-qi-xue-jin-ye/quiz.json
+ * 依赖：仅 Node.js 标准库
+ *
+ * 只读本章正文与本章 quiz，不读任何 standards 取数表：正文改了，这里的数字跟着变。
+ *   · 规模：汉字、段、节标题、表格张数与每张表的列数／行数
+ *   · 本章算术：从正文里解析判据条目、门限与结构数字，再算派生量
+ *   · quiz：题量、三段分布、选项数、解释长度、答案位置是否打散、check 题能否在正文找到原词
+ * 任何一项对不上，说明正文、代码、习题三者已经不同源。
  */
 
 'use strict';
@@ -16,147 +20,198 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-const ROOT = path.join(__dirname, '..', '..', '..', '..', '..', '..');
-const BOOK = path.join(ROOT, 'standards', 'jichu', '底本.json');
-const doc = JSON.parse(fs.readFileSync(BOOK, 'utf8'));
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
-const CONCEPTS = [
-  { key: 'jing', name: '精', sec: '4.1' },
-  { key: 'qi', name: '气', sec: '4.2' },
-  { key: 'xue', name: '血', sec: '4.3' },
-  { key: 'jinye', name: '津液', sec: '4.4' },
-  { key: 'shen', name: '神', sec: '4.5' },
-];
+const CHAPTER = 5;
+const SLUG = '05-qi-xue-jin-ye';
+const TITLE = "气血津液给的是方向，不是配额，所以它不能当化验单读";
 
-function chapter(no) {
-  return doc.chapters.find((c) => c.no === no);
+/* ── 文本口径 ────────────────────────────────────────────────────── */
+
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+const count = (text, term) => String(text).split(term).length - 1;
+const num = (s) => Number(String(s).replace(/[,，\s]/g, ''));
+const CN = { 两: 2, 一: 1, 二: 2, 三: 3, 四: 4, 五: 5, 六: 6, 七: 7, 八: 8, 九: 9, 十: 10, 十二: 12 };
+const cn2n = (s) => (CN[s] !== undefined ? CN[s] : Number(s));
+const readDoc = () => fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+const docLines = (doc) => String(doc).split(/\r?\n/);
+
+/** 节标题：`## 一、…` */
+function sections(doc) {
+  return docLines(doc).filter((l) => /^##\s+/.test(l)).map((l) => l.replace(/^##\s+/, '').trim());
 }
 
-function sec(no) {
-  const c = chapter(no.split('.')[0]);
-  return c.secs.find((s) => s.no === no);
+/** 段：非空，不以标题、引文、表格行、清单符号或编号起始 */
+function paragraphs(doc) {
+  return docLines(doc)
+    .map((l) => l.trim())
+    .filter((l) => l && !/^[#>|]/.test(l) && !/^[-*+]\s/.test(l) && !/^\d+[.、]/.test(l))
+    .filter((l) => !l.includes('|'));
 }
 
-function secParas(s) {
-  const out = [...s.paras];
-  for (const sub of s.subs) out.push(...sub.paras);
-  return out;
-}
-
-// ── 1. 概念规模 ─────────────────────────────────────────────
-function concepts() {
-  return CONCEPTS.map((c) => {
-    const s = sec(c.sec);
-    const ps = secParas(s);
-    return {
-      key: c.key,
-      name: c.name,
-      sec: c.sec,
-      title: s.title,
-      subs: s.subs.length,
-      paras: ps.length,
-      chars: ps.reduce((n, p) => n + p.length, 0),
-    };
-  });
-}
-
-// ── 2. 关系抽边：只认教材写出来的「A能X B」句式 ───────────────
-// 句式：「气能生血」「气能行血」「气能摄血」「血为气之母」「精血同源」…
-// 不自己补教材没有的关系，宁可少边。
-const RE_QI_TO_BLOOD = /气能(生血|行血|摄血)/g;
-const RE_QI_TO_JIN = /气能(促进津液生成|推动津液输布|固摄津液排泄)/g;
-
-function relations() {
-  const a = secParas(sec('4.6')).join('');
-  const edges = [];
-  for (const m of a.matchAll(RE_QI_TO_BLOOD)) edges.push({ from: '气', to: '血', label: m[0], sec: '4.6.1' });
-  for (const m of a.matchAll(RE_QI_TO_JIN)) edges.push({ from: '气', to: '津液', label: m[0], sec: '4.6.2' });
-  // 反向：血/津液 → 气（教材原句「血是气的载体」「津液是气的重要来源之一」）
-  if (/血是气的载体/.test(a)) edges.push({ from: '血', to: '气', label: '血为气之母', sec: '4.6.1' });
-  if (/津液是气的重要来源之一/.test(a)) edges.push({ from: '津液', to: '气', label: '津液载气', sec: '4.6.2' });
-  // 精血同源在 4.3 节
-  if (/精血同源/.test(secParas(sec('4.3')).join(''))) edges.push({ from: '精', to: '血', label: '精血同源', sec: '4.3.1' });
-  return edges;
-}
-
-function graph() {
-  const e = relations();
-  const nodes = [...new Set(e.flatMap((x) => [x.from, x.to]))];
-  const adj = {};
-  for (const n of nodes) adj[n] = [];
-  for (const x of e) adj[x.from].push(x.to);
-  return { edges: e, nodes, adj };
-}
-
-// ── 3. 守恒：教材给了方向，没给量 ─────────────────────────────
-// 用最简单的代理量做一次 12 步推演：气推动生血、血载气、津液载气。
-// 目的不是算准，而是暴露「没有守恒量」这件事：
-//   任何系数都是我们编的，教材只保证「气不足 → 血不足」这个单调方向。
-function simulate({ qi = 1, xue = 1, jinye = 1, steps = 12 } = {}) {
-  const rows = [];
-  let q = qi;
-  let x = xue;
-  let j = jinye;
-  for (let t = 0; t <= steps; t += 1) {
-    rows.push({ t, qi: +q.toFixed(4), xue: +x.toFixed(4), jinye: +j.toFixed(4), total: +(q + x + j).toFixed(4) });
-    // 生血依赖气；血载气；津液载气；每步自然消耗
-    const born = 0.12 * q;
-    const carried = 0.05 * x + 0.03 * j;
-    q = q - 0.10 + carried * 0.5;
-    x = x - 0.08 + born;
-    j = j - 0.06 + 0.02;
-  }
-  const first = rows[0].total;
-  const last = rows[rows.length - 1].total;
-  return { rows, drift: last - first };
-}
-
-// ── 4. 截断检测：教材原文在哪些段落断掉 ───────────────────────
-// 4.6.1 首条以「…气虚」结尾，没有下文——这是工作簿单元格被截断的痕迹。
-function truncated() {
+/** markdown 表格：表头 + 去分隔行的数据行 */
+function tables(doc) {
+  const ls = docLines(doc);
+  const cells = (l) => l.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map((c) => c.trim());
   const out = [];
-  for (const c of doc.chapters) {
-    for (const s of c.secs) {
-      for (const sub of s.subs) {
-        for (const p of sub.paras) {
-          if (!/[。！？；」』）]$/.test(p.trim())) {
-            out.push({ ch: c.no, sec: sub.no, tail: p.slice(-28), len: p.length });
-          }
-        }
+  let i = 0;
+  while (i < ls.length) {
+    if (/^\s*\|/.test(ls[i])) {
+      const block = [];
+      while (i < ls.length && /^\s*\|/.test(ls[i])) {
+        block.push(ls[i]);
+        i += 1;
       }
+      const header = cells(block[0]);
+      const rows = block.slice(1).filter((l) => !/^\s*\|[\s:|-]+\|\s*$/.test(l)).map(cells);
+      out.push({ header, cols: header.length, rows });
+    } else {
+      i += 1;
     }
   }
   return out;
 }
 
-function main() {
-  const cs = concepts();
-  const g = graph();
-  const sim = simulate();
-  const tr = truncated();
+const tableBy = (ts, kw) => ts.find((t) => t.header.join(' ').includes(kw));
 
-  console.log('═══ 五个概念的规模（教材·第4章）═══');
-  for (const c of cs) {
-    console.log(`  ${c.name}（${c.sec} ${c.title}）：${c.subs} 小节 · ${c.paras} 段 · ${c.chars} 字`);
+/* ── 本章算术（逐章注入，从正文解析） ───────────────────────────── */
+
+function chapterArithmetic(doc, ts) {
+const collect = tableBy(ts, '物质');
+  const fields = tableBy(ts, '字段');
+  const qi = ['元气', '宗气', '营气', '卫气'].filter((x) => doc.includes(x)).length;
+  const pairs = num((doc.match(/共\s*(\d+)\s*对关系/) || [])[1]);
+  const documented = num((doc.match(/只给了\s*(\d+)\s*对正文/) || [])[1]);
+  const watch = cn2n((doc.match(/([一二三四五六七八九十]+)项足够支撑一张表/) || [])[1] || '0');
+  const states = ['有征象', '未显现', '冲突'].filter((x) => doc.includes(x)).length;
+  const block = (doc.match(/把这些写成箭头[^\n]*\n\n((?:- [^\n]*\n)+)/) || [])[1] || '';
+  const arrows = count(block, '→');
+  const bidir = count(block, '↔');
+  const statements = block.split('\n').filter((l) => l.trim().startsWith('- ')).length;
+
+  return {
+    collectItems: collect ? collect.rows.length : 0,
+    fieldRows: fields ? fields.rows.length : 0,
+    qi,
+    pairs,
+    documented,
+    missing: pairs - documented,
+    watch,
+    states,
+    arrows,
+    bidir,
+    statements,
+    lines: [
+      '五个物质取 2 = ' + pairs + ' 对，正文写了 ' + documented + ' 对，缺 ' + (pairs - documented) + ' 对',
+      '四类气 ' + qi + ' 条（元气／宗气／营气／卫气），合写会丢掉「哪一处不足」',
+      '箭头段 ' + statements + ' 行：有向 ' + arrows + ' 个 · 双向 ' + bidir + ' 个 · 指向合计 ' + (arrows + bidir * 2) + ' 个',
+      '可观察项 ' + watch + ' 项足够支撑一张表 · 证据状态 ' + states + ' 态（有征象／未显现／冲突）',
+      '采集表 ' + (collect ? collect.rows.length : 0) + ' 行 · 字段表 ' + (fields ? fields.rows.length : 0) + ' 行',
+    ],
+  };
+}
+
+/* ── quiz：结构 + 接地 ──────────────────────────────────────────── */
+
+/** 正文里 4 字以上的连续汉字片段 */
+function grams(text, n = 4) {
+  const out = new Set();
+  for (const seg of String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
   }
-  console.log(`  合计 ${cs.reduce((n, c) => n + c.paras, 0)} 段 · ${cs.reduce((n, c) => n + c.chars, 0)} 字`);
+  return out;
+}
+
+function quizSummary(quiz, doc) {
+  const body = grams(doc);
+  const qs = Array.isArray(quiz.questions) ? quiz.questions : [];
+  const stage = { pre: 0, check: 0, post: 0 };
+  const items = qs.map((q, i) => {
+    if (stage[q.stage] !== undefined) stage[q.stage] += 1;
+    const opts = Array.isArray(q.options) ? q.options : [];
+    const right = String(opts[q.correct] || '');
+    const hit = [...grams(right)].filter((g) => body.has(g));
+    const why = q.explain || q.explanation || '';
+    return {
+      n: i + 1,
+      stage: q.stage,
+      options: opts.length,
+      correct: q.correct,
+      explainHanzi: hanzi(why),
+      grounded: hit.length,
+      sample: hit.slice(0, 3),
+    };
+  });
+  return {
+    total: qs.length,
+    stage,
+    items,
+    answers: qs.map((q) => q.correct),
+    distinctAnswers: new Set(qs.map((q) => q.correct)).size,
+    checkGrounded: items.filter((x) => x.stage === 'check' && x.grounded > 0).length,
+    minExplain: items.length ? Math.min(...items.map((x) => x.explainHanzi)) : 0,
+    allFourOptions: items.every((x) => x.options === 4),
+    badCorrect: items.filter((x) => !(Number.isInteger(x.correct) && x.correct >= 0 && x.correct < 4)).length,
+    stageComplete: ['pre', 'check', 'post'].every((s) => stage[s] > 0),
+  };
+}
+
+/* ── 汇总 ──────────────────────────────────────────────────────── */
+
+function analyze() {
+  const doc = readDoc();
+  const ts = tables(doc);
+  const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+  return {
+    docHanzi: hanzi(doc),
+    paragraphs: paragraphs(doc).length,
+    sections: sections(doc),
+    tables: ts.map((t) => ({ header: t.header, cols: t.cols, rows: t.rows.length })),
+    arith: chapterArithmetic(doc, ts),
+    quiz: quizSummary(quiz, doc),
+  };
+}
+
+function main() {
+  const r = analyze();
+  const a = r.arith;
+  console.log(`中医基础理论 第 ${CHAPTER} 章 · ${TITLE}`);
+  console.log(`正文 ${r.docHanzi.toLocaleString('en-US')} 汉字 · ${r.paragraphs} 段 · 节 ${r.sections.length} 个`);
   console.log('');
-  console.log('═══ 关系图（只收教材写出来的句子）═══');
-  for (const e of g.edges) console.log(`  ${e.from} → ${e.to}  「${e.label}」（${e.sec}）`);
-  console.log(`  节点 ${g.nodes.length} · 边 ${g.edges.length} · 双向边 ${g.edges.filter((e) => g.edges.some((f) => f.from === e.to && f.to === e.from)).length}`);
+  console.log('结构：');
+  for (const s of r.sections) console.log(`  ${s}`);
   console.log('');
-  console.log('═══ 守恒试写（12 步，代理量）═══');
-  console.log('  t   气     血     津液   合计');
-  for (const r of sim.rows) console.log(`  ${String(r.t).padEnd(3)} ${r.qi.toFixed(3)}  ${r.xue.toFixed(3)}  ${r.jinye.toFixed(3)}  ${r.total.toFixed(3)}`);
-  console.log(`  总量漂移 ${sim.drift.toFixed(3)} → 系数是本章自设的，教材没有守恒量。`);
-  console.log('  教材能保证的只有方向：气不足则血不足（气能生血）、血不足则气衰（血为气之母）。');
+  console.log(`表 ${r.tables.length} 张：`);
+  r.tables.forEach((t, i) => console.log(`  [${i + 1}] ${t.header.join(' / ')} —— ${t.cols} 列 × ${t.rows} 行`));
   console.log('');
-  console.log(`═══ 原文截断 ${tr.length} 处（工作簿单元格断句）═══`);
-  for (const x of tr) console.log(`  第${x.ch}章 ${x.sec}（${x.len} 字）… ${x.tail}`);
+  console.log('本章算术（全部从正文解析后计算）：');
+  for (const line of a.lines) console.log(`  ${line}`);
   console.log('');
-  console.log('教学边界：本章只演示概念关系的表示方式，不评估任何人的气血状态，不构成诊疗依据。');
+  console.log(`quiz ${r.quiz.total} 题（pre ${r.quiz.stage.pre} / check ${r.quiz.stage.check} / post ${r.quiz.stage.post}）· 答案 ${r.quiz.answers.join('/')}`);
+  console.log(`  check 题接地 ${r.quiz.checkGrounded} 道 · 答案落在 ${r.quiz.distinctAnswers} 个位置 · 最短解释 ${r.quiz.minExplain} 汉字`);
+  console.log('※ 以上数字由本章正文与 quiz 现算，改正文后重跑即可复核。');
+  console.log('※ 本章为教学材料，判据与分档均为课堂约定，不构成诊疗建议，也不替代执业医师的判断。');
 }
 
 if (require.main === module) main();
 
-module.exports = { concepts, relations, graph, simulate, truncated, doc, CONCEPTS };
+module.exports = {
+  analyze,
+  readDoc,
+  sections,
+  paragraphs,
+  tables,
+  tableBy,
+  grams,
+  hanzi,
+  count,
+  num,
+  cn2n,
+  quizSummary,
+  CHAPTER,
+  SLUG,
+  TITLE,
+  DOC,
+  QUIZ,
+};

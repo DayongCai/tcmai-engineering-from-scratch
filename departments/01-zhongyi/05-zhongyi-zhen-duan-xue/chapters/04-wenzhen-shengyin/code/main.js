@@ -1,125 +1,67 @@
 #!/usr/bin/env node
 /**
- * 中医诊断学 · 第 4 章 闻诊：声音与气味 → 声学与气味谱
- * 课程: departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/04-wenzhen-shengyin/docs/zh.md
- * 出处: 教材·第3章 闻诊（2 节 5 小节 9 段 855 字）
- * 依赖: 仅 Node.js 标准库
+ * 中医诊断学 · 第 4 章 闻诊：一半内容（嗅）没有量表，所以它只有 855 字
  *
- * 闻诊是四诊里最薄的一诊（855 字 / 3.8%），且内部也不均：听声音 684 字、嗅气味 171 字。
- * 本章把它拆成两组可数词表：声音异常 17 词、气味 3 类。
+ *   node code/main.js
+ *
+ * 正文：chapters/04-wenzhen-shengyin/docs/zh.md（UNITNOTES 生成块不计入）
+ *
+ * 现算：正文自己写的 855 = 684（听）+ 171（嗅）能否相加成立，
+ * 以及采集九项、五组判据、五种作废情形、十列记录、五条触发、四条失效模式。
  */
 
 'use strict';
 
 const fs = require('node:fs');
 const path = require('node:path');
+const { shape, tableByHeader, numberedItems, quizSummary } = require(path.join(__dirname, '..', '..', '_doc.js'));
 
-const ROOT = path.join(__dirname, '..', '..', '..', '..', '..', '..');
-const BOOK = path.join(ROOT, 'standards', 'zhenduan', '底本.json');
-const doc = JSON.parse(fs.readFileSync(BOOK, 'utf8'));
-const ch = doc.chapters.find((c) => c.no === '3');
+const DIR = path.join(__dirname, '..');
+const QUIZ = path.join(DIR, 'quiz.json');
+const CHAPTER = 4;
+const SLUG = '04-wenzhen-shengyin';
+const TITLE = '闻诊：一半内容（嗅）没有量表，所以它只有 855 字';
 
-const SUPP = path.join(ROOT, 'standards', 'zhenduan', 'supplements', '补源.json');
-
-/** 读补源层：教材缺什么、外源补在哪。返回该章对应的那一处缺口。 */
-function supplements(id) {
-  const d = JSON.parse(fs.readFileSync(SUPP, 'utf8'));
-  const g = d.gaps.find((x) => x.id === id);
-  if (!g) throw new Error('补源层里没有 ' + id);
-  return g;
-}
-
-function sec(no) {
-  return ch.secs.find((s) => s.no === no);
-}
-function secChars(no) {
-  const s = sec(no);
-  return s.paras.join('').length + s.subs.reduce((n, x) => n + x.paras.join('').length, 0);
-}
-function allText() {
-  const parts = [...ch.paras];
-  for (const s of ch.secs) {
-    parts.push(s.title, ...s.paras);
-    for (const sub of s.subs) parts.push(sub.title, ...sub.paras, ...(sub.items || []).map((i) => i.title));
-  }
-  return parts.join('\n');
-}
-const T = allText();
-
-// 声音：教材 3.1 讲了五组
-const SOUND = {
-  '语声异常': ['谵语', '郑声', '独语', '错语', '狂言'],
-  '呼吸异常': ['喘', '哮', '短气', '少气'],
-  '咳嗽': ['咳嗽'],
-  '胃气上逆': ['呕吐', '呃逆', '嗳气', '太息'],
-  '肠腑之声': ['喷嚏', '肠鸣', '矢气'],
+const grab = (text, re) => {
+  const m = re.exec(text);
+  return m ? Number(m[1]) : NaN;
 };
-// 气味：教材 3.2 讲了三条段标题
-const ODOR = ['口气', '汗气', '痰涕', '二便', '经带', '病室'];
 
-function sound() {
-  const groups = Object.entries(SOUND).map(([k, ws]) => ({
-    group: k,
-    items: ws.map((w) => ({ w, inText: T.includes(w) })),
-  }));
-  return {
-    groups,
-    terms: groups.reduce((n, g) => n + g.items.length, 0),
-    hit: groups.reduce((n, g) => n + g.items.filter((x) => x.inText).length, 0),
-  };
-}
-
-function odor() {
-  return ODOR.map((w) => ({ w, inText: T.includes(w) }));
-}
-
-function shape() {
-  const rows = ch.secs.map((s) => ({
-    no: s.no,
-    title: s.title,
-    subs: s.subs.length,
-    paras: s.paras.length + s.subs.reduce((n, x) => n + x.paras.length, 0),
-    chars: secChars(s.no),
-  }));
-  const total = rows.reduce((n, r) => n + r.chars, 0);
-  return {
-    rows,
-    total,
-    share: total / doc.counts.chars,
-    soundShare: rows[0].chars / total,
-  };
+function analyze() {
+  const s = shape(DIR);
+  const total = grab(s.body, /共\s*(\d+)\s*字，切两半/);
+  const listen = grab(s.body, /声音\s*(\d+)\s*字/);
+  const smell = grab(s.body, /气味\s*(\d+)\s*字/);
+  const facts = [
+    { label: '闻诊总字数', got: total, want: 855 },
+    { label: '听的一半', got: listen, want: 684 },
+    { label: '嗅的一半', got: smell, want: 171 },
+    { label: '两半相加', got: listen + smell, want: total },
+    { label: '采集项', got: tableByHeader(s.tables, '听／嗅什么').rows.length, want: 9 },
+    { label: '判据组', got: tableByHeader(s.tables, '必须同时成立').rows.length, want: 5 },
+    { label: '须作废的情形', got: tableByHeader(s.tables, '为什么不成立').rows.length, want: 5 },
+    { label: '记录列数', got: tableByHeader(s.tables, '字段').rows.length, want: 10 },
+    { label: '触发', got: tableByHeader(s.tables, '触发').rows.length, want: 5 },
+    { label: '失效模式', got: numberedItems(s.body, '四、动作与边界'), want: 4 },
+    { label: '二级节', got: s.sections.length, want: 6 },
+    { label: '正文汉字', got: s.hanzi, want: 2087 },
+  ];
+  const quiz = quizSummary(JSON.parse(fs.readFileSync(QUIZ, 'utf8')), s.body);
+  return { s, facts, quiz, quotes: s.quotes };
 }
 
 function main() {
-  const s = shape();
-  const so = sound();
-  const od = odor();
-
-  console.log('═══ 闻诊两节（教材·第3章）═══');
-  for (const r of s.rows) console.log(`  ${r.no} ${r.title}：${r.subs} 小节 · ${r.paras} 段 · ${r.chars} 字`);
-  console.log(`  合计 ${s.total} 字 = 全书 ${(s.share * 100).toFixed(1)}%；其中听声音占 ${(s.soundShare * 100).toFixed(1)}%`);
+  const r = analyze();
+  console.log(`中医诊断学 第 ${CHAPTER} 章 · ${TITLE}`);
+  console.log(`正文 ${r.s.hanzi} 汉字 · ${r.s.sections.length} 节 · ${r.s.tableCount} 表 · 引文 ${r.quotes.length} 条`);
   console.log('');
-  console.log('═══ 声音五组：' + so.terms + ' 词，命中 ' + so.hit + ' ═══');
-  for (const g of so.groups) {
-    console.log(`  ${g.group}：${g.items.map((x) => x.w + (x.inText ? '' : '✗')).join(' · ')}`);
-  }
+  for (const f of r.facts) console.log(`  ${f.got === f.want ? '✓' : '✗'} ${f.label} 现算 ${f.got} → 正文 ${f.want}`);
   console.log('');
-  console.log('═══ 气味：' + od.length + ' 项，命中 ' + od.filter((x) => x.inText).length + ' ═══');
-  console.log('  ' + od.map((x) => x.w + (x.inText ? '' : '✗')).join(' · '));
-  console.log('');
-  console.log('  → 声音有「强弱/高低/断续」这些可比较的维度，气味只有「哪来的」这一维，没有分级。');
-  console.log('  → 这就是闻诊在教材里最薄的根本原因：它的一半内容（嗅）无法写成可比量表。');
-  console.log('');
-  const g = supplements('z3-qiwei-wu-chou');
-  console.log(String.fromCharCode(10) + '── 教材缺口的外源补录（气味无分级）──');
-  console.log('  教材 3.2 只有 ' + g.textbookSeen.subs.length + ' 小节 / ' + g.textbookSeen.items.length
-    + ' 个段标题，覆盖 ' + g.textbookSeen.count + ' 个气源：' + g.textbookSeen.sources.join('、') + '；没有分级。');
-  console.log('  外源 ' + g.locator + '：五臭各归一脏 —— '
-    + g.entries.map((e) => e.chou + '(' + e.zang + ')').join('、'));
-  console.log('  引用格式：' + g.citeAs + '（不是「底本」「原文」）');
-  console.log('教学边界：本章只清点教材闻诊的词表与结构，不做闻诊判读、不判断任何人的声音气味；不构成诊断依据。');
+  console.log(`quiz ${r.quiz.total} 题（pre ${r.quiz.stage.pre} / check ${r.quiz.stage.check} / post ${r.quiz.stage.post}）`);
+  console.log(`  check 接地 ${r.quiz.checkGrounded} 道 · 答案位置 ${r.quiz.answers.join('/')} · 最短解释 ${r.quiz.minExplain} 汉字`);
+  console.log('※ 教学边界：字数只说明哪一半写不出判据，不代表闻诊的临床权重；本章不构成诊断建议。');
 }
 
 if (require.main === module) main();
 
-module.exports = { shape, sound, odor, SOUND, ODOR, secChars, allText, doc, ch, supplements };
+module.exports = { analyze, CHAPTER, SLUG, TITLE, DIR, QUIZ };

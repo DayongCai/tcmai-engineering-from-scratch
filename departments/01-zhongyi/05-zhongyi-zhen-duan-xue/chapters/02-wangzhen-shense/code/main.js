@@ -1,126 +1,59 @@
 #!/usr/bin/env node
 /**
- * 中医诊断学 · 第 2 章 望诊：神色形态 → 图像特征
- * 课程: departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/02-wangzhen-shense/docs/zh.md
- * 出处: 教材·第2章 望诊（4 节 11 小节 24 段 2,812 字）
- * 依赖: 仅 Node.js 标准库
+ * 中医诊断学 · 第 2 章 望诊：2,812 字里 1,249 字在舌上
  *
- * 望诊是全书最厚的一章（2,812 字 / 12.7%）。本章把它拆成可数的维度：
- *   望神 5 态、五色 5 色、小儿指纹 4 观察项、排出物 2 类。
+ *   node code/main.js
+ *
+ * 正文：chapters/02-wangzhen-shense/docs/zh.md（UNITNOTES 生成块不计入）
+ *
+ * 现算：五段采集路线的部位数、得神的四项判据、四组判据、四条作废情形、
+ * 十二列记录、七条转诊触发、五条失效模式。正文一改这里就报 ✗。
  */
 
 'use strict';
 
 const fs = require('node:fs');
 const path = require('node:path');
+const { shape, tableByHeader, numberedItems, quizSummary } = require(path.join(__dirname, '..', '..', '_doc.js'));
 
-const ROOT = path.join(__dirname, '..', '..', '..', '..', '..', '..');
-const BOOK = path.join(ROOT, 'standards', 'zhenduan', '底本.json');
-const doc = JSON.parse(fs.readFileSync(BOOK, 'utf8'));
+const DIR = path.join(__dirname, '..');
+const QUIZ = path.join(DIR, 'quiz.json');
+const CHAPTER = 2;
+const SLUG = '02-wangzhen-shense';
+const TITLE = '望诊：2,812 字里 1,249 字在舌上';
 
-const ch = doc.chapters.find((c) => c.no === '2');
-
-function textOf(no) {
-  for (const s of ch.secs) {
-    if (s.no === no) return [s.title, ...s.paras].join('');
-    for (const sub of s.subs) if (sub.no === no) return [sub.title, ...sub.paras].join('');
-  }
-  return '';
-}
-
-function allText() {
-  const parts = [...ch.paras];
-  for (const s of ch.secs) {
-    parts.push(s.title, ...s.paras);
-    for (const sub of s.subs) parts.push(sub.title, ...sub.paras);
-  }
-  return parts.join('\n');
-}
-
-function shape() {
-  return {
-    secs: ch.counts.secs,
-    subs: ch.counts.subs,
-    paras: ch.counts.paras,
-    chars: ch.counts.chars,
-    share: ch.counts.chars / doc.counts.chars,
-    sections: ch.secs.map((s) => ({
-      no: s.no,
-      title: s.title,
-      subs: s.subs.length,
-      paras: s.paras.length + s.subs.reduce((n, x) => n + x.paras.length, 0),
-      chars: (s.paras.join('') + s.subs.map((x) => x.paras.join('')).join('')).length,
-    })),
-  };
-}
-
-// 望神 5 态：教材把「得神/少神」「失神/假神/神乱」分成两条小节标题
-const SHEN = ['得神', '少神', '失神', '假神', '神乱'];
-
-function shenTypes() {
-  const t = allText();
-  return SHEN.map((w) => ({ word: w, inText: t.includes(w) }));
-}
-
-// 五色主病：小节标题即「五色主病（青赤黄白黑）」
-const COLORS = ['青', '赤', '黄', '白', '黑'];
-
-function fiveColors() {
-  const t = allText();
-  // 标题写法可能是全角或半角括号，只核「五色主病」与其后五色是否齐
-  const titled = /五色主病/.test(t) && COLORS.every((c) => t.includes(c));
-  return { titled, colors: COLORS.map((c) => ({ color: c, inText: t.includes(c) })) };
-}
-
-// 小儿指纹：三关（风/气/命）+ 四项观察（浮沉、色泽、淡滞、长短）
-const FINGER_GATES = ['风关', '气关', '命关'];
-const FINGER_OBS = ['浮沉', '色泽', '淡滞', '长短'];
-
-function fingerprint() {
-  const t = textOf('2.4.2.1') + textOf('2.4.2.2') + textOf('2.4.2');
-  return {
-    gates: FINGER_GATES.map((g) => ({ gate: g, inText: t.includes(g) })),
-    obs: FINGER_OBS.map((o) => ({ item: o, inText: t.includes(o) })),
-  };
-}
-
-// 排出物：痰涎·呕吐物 / 大便·小便（两条小节标题）
-function excretions() {
-  // 「望痰涎、呕吐物」「望大便、小便」是**段标题**（items），不是小节标题——扫错一层就会得到 0 条
-  const items = ch.secs.flatMap((s) => s.subs.flatMap((x) => (x.items || []).map((i) => i.title)));
-  return items.filter((t) => /痰涎|呕吐|大便|小便/.test(t));
+function analyze() {
+  const s = shape(DIR);
+  const route = tableByHeader(s.tables, '看什么');
+  const groups = tableByHeader(s.tables, '判据组');
+  const deShen = groups.rows.find((r) => r[0].startsWith('得神')) || [];
+  const facts = [
+    { label: '路线部位数', got: route.rows.length, want: 14 },
+    { label: '得神判据项', got: String(deShen[1] || '').split('·').filter((x) => x.trim()).length, want: 4 },
+    { label: '判据组', got: groups.rows.length, want: 5 },
+    { label: '须作废的情形', got: tableByHeader(s.tables, '为什么不成立').rows.length, want: 5 },
+    { label: '记录列数', got: tableByHeader(s.tables, '字段').rows.length, want: 12 },
+    { label: '转诊触发', got: tableByHeader(s.tables, '触发').rows.length, want: 7 },
+    { label: '失效模式', got: numberedItems(s.body, '四、动作与边界'), want: 5 },
+    { label: '二级节', got: s.sections.length, want: 6 },
+    { label: '正文汉字', got: s.hanzi, want: 2060 },
+  ];
+  const quiz = quizSummary(JSON.parse(fs.readFileSync(QUIZ, 'utf8')), s.body);
+  return { s, facts, quiz, quotes: s.quotes };
 }
 
 function main() {
-  const s = shape();
-  const shen = shenTypes();
-  const colors = fiveColors();
-  const fp = fingerprint();
-  const ex = excretions();
-
-  console.log('═══ 望诊规模（教材·第2章）═══');
-  console.log(`  ${s.secs} 节 · ${s.subs} 小节 · ${s.paras} 段 · ${s.chars} 字（全书 ${(s.share * 100).toFixed(1)}%）`);
-  console.log('  各节：');
-  for (const x of s.sections) console.log(`    ${x.no} ${x.title}：${x.subs} 小节 · ${x.paras} 段 · ${x.chars} 字`);
+  const r = analyze();
+  console.log(`中医诊断学 第 ${CHAPTER} 章 · ${TITLE}`);
+  console.log(`正文 ${r.s.hanzi} 汉字 · ${r.s.sections.length} 节 · ${r.s.tableCount} 表 · 引文 ${r.quotes.length} 条`);
   console.log('');
-  console.log('═══ 望神：5 态 ═══');
-  console.log('  ' + shen.map((x) => `${x.word}${x.inText ? '✓' : '✗'}`).join(' · '));
-  console.log(`  命中 ${shen.filter((x) => x.inText).length}/5`);
+  for (const f of r.facts) console.log(`  ${f.got === f.want ? '✓' : '✗'} ${f.label} 现算 ${f.got} → 正文 ${f.want}`);
   console.log('');
-  console.log('═══ 五色主病 ═══');
-  console.log(`  小节标题写全五色：${colors.titled ? '是' : '否'}`);
-  console.log('  ' + colors.colors.map((x) => `${x.color}${x.inText ? '✓' : '✗'}`).join(' · '));
-  console.log('');
-  console.log('═══ 小儿指纹：三关 + 四项观察 ═══');
-  console.log('  关：' + fp.gates.map((x) => `${x.gate}${x.inText ? '✓' : '✗'}`).join(' · '));
-  console.log('  观察：' + fp.obs.map((x) => `${x.item}${x.inText ? '✓' : '✗'}`).join(' · '));
-  console.log('');
-  console.log('═══ 望排出物：' + ex.length + ' 条小节 ═══');
-  for (const t of ex) console.log('  · ' + t);
-  console.log('');
-  console.log('教学边界：本章只整理教材望诊的维度与术语，不做望诊判读，不构成诊断依据。');
+  console.log(`quiz ${r.quiz.total} 题（pre ${r.quiz.stage.pre} / check ${r.quiz.stage.check} / post ${r.quiz.stage.post}）`);
+  console.log(`  check 接地 ${r.quiz.checkGrounded} 道 · 答案位置 ${r.quiz.answers.join('/')} · 最短解释 ${r.quiz.minExplain} 汉字`);
+  console.log('※ 教学边界：数字由正文现算；本章为望诊采集路线的教学整理，不构成诊断依据。');
 }
 
 if (require.main === module) main();
 
-module.exports = { shape, shenTypes, fiveColors, fingerprint, excretions, allText, textOf, SHEN, COLORS, doc, ch };
+module.exports = { analyze, CHAPTER, SLUG, TITLE, DIR, QUIZ };

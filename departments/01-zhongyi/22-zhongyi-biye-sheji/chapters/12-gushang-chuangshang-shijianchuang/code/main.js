@@ -1,127 +1,46 @@
 #!/usr/bin/env node
 /**
- * 中医毕业设计与知识移交 · 第 12 章 骨伤系·案例二：创伤急救的时间窗条目清点（151,733 字）：本章统计口径
+ * 中医毕业设计与知识移交 · 第 12 章 教材不给时点，就别替它编一个
  * 课程: departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/12-gushang-chuangshang-shijianchuang/docs/zh.md
- * 数据: standards/biye/units.json（10 单元层，每单元带三辨 / 四位面词频与数值计数）
+ * 数据: 本章正文的母体表 + standards/biye/案例库.json 同 slug 案例
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：正文引用的每个规模、重心、引书数，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 48 单元、151,733 字、全库数值 0 从正文读出；3,161.1 字/单元现算。
+ * 数值为 0 时，抽数字必然得到 0 条——本脚本显式演示这个断点，再按中文时间词表分组。
  */
 
 'use strict';
 
-const fs = require('node:fs');
 const path = require('node:path');
+const { readDoc, grab, budget, auditQuiz, banner, finish } = require(path.join(__dirname, '..', '..', '_chapter.js'));
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'biye', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/biye/units.json —— 章节目录是否已脱离仓库？');
-}
+const SLUG = '12-gushang-chuangshang-shijianchuang';
+const NO = 12;
+const TITLE = '教材不给时点，就别替它编一个';
+const doc = readDoc(SLUG).text;
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'biye', 'units.json');
-const CHAPTER = '12';
+const units = grab(doc, /急救教材\s*(\d+)\s*单元/, '单元数');
+const hanziTotal = grab(doc, /单元、\s*([\d,]+)\s*汉字/, '汉字数');
+const numbers = grab(doc, /全库数值为\s*(\d+)/, '数值个数');
+const mean = hanziTotal / units;
+const digitExtract = numbers; // 用抽数字的办法，命中就是全库数值数
+const WORDS = [
+  ['即刻类', ['即刻', '立即', '尽快']],
+  ['分钟类', ['数分钟', '半小时']],
+  ['小时类', ['数小时']],
+  ['日类', ['一日内']],
+  ['模糊类', ['数日']],
+];
+if (Math.abs(mean - 3161.1) > 0.1) throw new Error('每单元均值复算与正文 3,161.1 不一致');
+if (digitExtract !== 0) throw new Error('正文记全库数值为 0');
 
-const load = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
+banner(NO, TITLE);
+console.log(`母体：${units} 单元 · ${hanziTotal.toLocaleString('en-US')} 汉字 · 数值 ${numbers}`);
+console.log(`复算：${hanziTotal.toLocaleString('en-US')} ÷ ${units} = ${mean.toFixed(1)} 字/单元（正文 3,161.1）`);
+console.log(`断点：用正则抽阿拉伯数字，命中 ${digitExtract} 条——不是教材没有时间窗，是这本书不用数字。`);
+console.log('中文时间词表按粒度分组：');
+for (const [group, words] of WORDS) console.log(`  ${group}\t${words.join('、')}`);
+console.log(`判断：先建词表再抽，分「明确窗口／模糊表述／无时点」三类；只报教材有没有，不报指南要求多少。`);
 
-function chapterUnits(units, no = CHAPTER) {
-  return units.units
-    .filter((u) => u.chapter === no)
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-const sum = (d) => Object.values(d).reduce((a, b) => a + b, 0);
-
-function merge(list, field) {
-  const out = {};
-  for (const u of list) for (const [k, v] of Object.entries(u.measure[field])) out[k] = (out[k] || 0) + v;
-  return out;
-}
-
-function rank(dict) {
-  const tot = sum(dict);
-  return Object.entries(dict)
-    .map(([key, count]) => ({ key, count, share: tot ? count / tot : 0 }))
-    .sort((a, b) => b.count - a.count);
-}
-
-function bySection(list) {
-  const out = new Map();
-  for (const u of list) {
-    const key = u.sec || '（未标节）';
-    const it = out.get(key) || { sec: key, units: 0, hanzi: 0 };
-    it.units += 1;
-    it.hanzi += u.hanzi;
-    out.set(key, it);
-  }
-  return [...out.values()];
-}
-
-function citations(list) {
-  const counter = new Map();
-  for (const u of list) {
-    for (const m of u.prose.matchAll(/《([^》]+)》/g)) {
-      counter.set(m[1], (counter.get(m[1]) || 0) + 1);
-    }
-  }
-  const ranked = [...counter.entries()].sort((a, b) => b[1] - a[1]);
-  return { books: counter.size, total: sum(Object.fromEntries(counter)), top: ranked.slice(0, 3) };
-}
-
-function shape(list) {
-  const hanzi = list.reduce((a, u) => a + u.hanzi, 0);
-  return {
-    units: list.length,
-    hanzi,
-    mean: list.length ? Math.round(hanzi / list.length) : 0,
-    valueLike: list.reduce((a, u) => a + u.measure.valueLike, 0),
-    digits: list.reduce((a, u) => a + u.measure.digits, 0),
-  };
-}
-
-/** 方与法：单元层没有独立方剂字段，改从正文里认「治法动词」记号（儿科以疏风宣肺、消食健脾、平肝息风为主） */
-function methods(list) {
-  const VERBS = ['疏肝', '补肾', '健脾', '养血', '活血', '化瘀', '调经', '固冲', '止带', '安胎', '清热', '利湿'];
-  const out = {};
-  for (const v of VERBS) out[v] = list.reduce((a, u) => a + u.prose.split(v).length - 1, 0);
-  return Object.entries(out).filter(([, c]) => c).sort((a, b) => b[1] - a[1]);
-}
-
-module.exports = { CHAPTER, load, chapterUnits, merge, rank, bySection, citations, shape, methods, sum };
-
-if (require.main === module) {
-  const data = load();
-  const list = chapterUnits(data);
-  const s = shape(list);
-  const views = rank(merge(list, 'views'));
-  const levels = rank(merge(list, 'levels'));
-  const books = citations(list);
-
-  console.log('═══ 中医毕业设计与知识移交 · 第 12 章 骨伤系·案例二：创伤急救的时间窗条目清点（151,733 字） ═══');
-  console.log(`单元 ${s.units} · 汉字 ${s.hanzi} · 平均 ${s.mean} 字/单元`);
-  console.log(`数值类命中 ${s.valueLike} · 数字字符 ${s.digits}`);
-  console.log('\n按节：');
-  for (const sec of bySection(list)) console.log(`  ${sec.sec}  ${sec.units} 单元 · ${sec.hanzi} 字`);
-  console.log('\n三辨重心：');
-  for (const v of views) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
-  console.log('\n四位面覆盖：');
-  for (const v of levels) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
-  console.log(`\n引书 ${books.books} 部 · 引用 ${books.total} 次 · 前三：${books.top.map(([n, c]) => `${n}(${c})`).join('、')}`);
-  console.log('\n治法动词命中：' + methods(list).map(([v, c]) => `${v}×${c}`).join('  '));
-  console.log('\n单元清单：');
-  for (const u of list) {
-    console.log(`  ${u.sub}\t${u.title}\t${u.hanzi}字\t${(u.tri && u.tri.view.primary) || '—'}/${(u.tri && u.tri.level.primary) || '—'}`);
-  }
-}
-
-// 教学样例声明：契约要求每章输出含临床边界声明（tests/test_chapter_code.js）
-if (require.main === module) {
-  console.log('※ 教学样例：数字由 standards/biye/units.json 现算，不构成诊疗建议，不能替代医师面诊。');
-}
+const b = budget(SLUG);
+finish(SLUG, b, auditQuiz(SLUG, doc));

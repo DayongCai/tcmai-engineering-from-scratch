@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 /**
- * 中国医学史 · 第 4 章 魏晋南北朝至隋唐五代：分科与集成：本章统计口径
- * 课程: departments/01-zhongyi/03-zhongguo-yixue-shi/chapters/04-weijin-suitang/docs/zh.md
- * 数据: standards/zhongguo-yixue-shi/units.json（51 单元层，每单元带三辨与四位面词频）
- * 取数: standards/zhongguo-yixue-shi/chapter-map.json（课程章 → 教材单元号）
+ * 中国医学史 · 第 4 章 魏晋南北朝至隋唐五代：分科与集成
+ * 正文: departments/01-zhongyi/03-zhongguo-yixue-shi/chapters/04-weijin-suitang/docs/zh.md
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本脚本不存数字。四种集成方式、分科三条线（及第四条「按机构」）、条目卡六栏、三种失效，
+ * 全部当场从正文读出；集成方式的数目还与正文自述的「四类就够」对账。
  */
 
 'use strict';
@@ -15,87 +13,98 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'zhongguo-yixue-shi', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/zhongguo-yixue-shi/units.json —— 章节目录是否已脱离仓库？');
-}
-
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'zhongguo-yixue-shi', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'zhongguo-yixue-shi', 'chapter-map.json');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '4';
 const SLUG = '04-weijin-suitang';
+const REL = 'departments/01-zhongyi/03-zhongguo-yixue-shi/chapters/04-weijin-suitang';
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
-}
-
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+function sections(md) {
+  const out = [{ title: '(前言)', text: [] }];
+  for (const line of String(md).split(/\r?\n/)) {
+    const m = /^##\s+(.+?)\s*$/.exec(line);
+    if (m) out.push({ title: m[1], text: [] });
+    else out[out.length - 1].text.push(line);
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return out.map((s) => ({ title: s.title, text: s.text.join('\n') }));
+}
+
+function block(md, kw) {
+  const lines = String(md).split(/\r?\n/);
+  const start = lines.findIndex((l) => /^#{2,4}\s/.test(l) && l.includes(kw));
+  if (start < 0) throw new Error('正文缺小节: ' + kw);
+  const rest = lines.slice(start + 1);
+  const end = rest.findIndex((l) => /^#{2,4}\s/.test(l));
+  return (end < 0 ? rest : rest.slice(0, end)).join('\n');
+}
+
+function numbered(text) {
+  return String(text).split(/\r?\n/)
+    .map((l) => /^\s*\d+\.\s+(.+)$/.exec(l))
+    .filter(Boolean)
+    .map((m) => m[1].trim());
+}
+
+function chapterTitle(md) {
+  const m = /^#\s+(.+)$/m.exec(String(md));
+  if (!m) throw new Error('正文缺 H1 章题');
+  return m[1].trim();
+}
+
+function cardFields(md) {
+  const m = /```[\s\S]*?```/.exec(String(md));
+  if (!m) throw new Error('正文缺隋唐医史条目卡代码块');
+  return [...m[0].matchAll(/^([①-⑩])\s*([^：\n]+)：/gm)].map((x) => ({ no: x[1], name: x[2].trim() }));
+}
+
+function failureModes(text) {
+  return [...String(text).matchAll(/^\*\*([^*\n]+?)。\*\*/gm)].map((m) => m[1].trim());
+}
+
+/** 四种集成方式：第一类是**按术集成**。 */
+function integrationKinds(md) {
+  return [...block(md, '四种「集成」的方式').matchAll(/第([一二三四])类是\*\*按(.+?)集成\*\*/g)]
+    .map((m) => ({ n: m[1], kind: `按${m[2]}集成` }));
+}
+
+/** 分科三条线（段首加粗）：按病分／按人分／按术分 */
+function divisionLines(md) {
+  return [...block(md, '分科的三条线').matchAll(/^\*\*按(.+?)分。\*\*/gm)].map((m) => `按${m[1]}分`);
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const md = readDoc();
+  const kinds = integrationKinds(md);
+  const lines = divisionLines(md);
+  const hasAgency = /按机构分/.test(block(md, '分科的三条线'));
+  const fields = cardFields(md);
+  const modes = failureModes(block(md, '失效'));
+  const items = numbered(block(md, '考核项'));
 
-  console.log(`中国医学史 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`中国医学史 · 第 ${CHAPTER} 章 ${chapterTitle(md).replace(/^第\s*\d+\s*章\s*·\s*/, '')}`);
+  console.log(`${REL} · 正文 ${hanzi(md).toLocaleString('en-US')} 汉字`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`集成方式 ${kinds.length} 类：${kinds.map((k) => k.kind).join(' / ')}`);
+  console.log('  看一部书按什么集成，就知道它打算解决谁的问题。');
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`分科 ${lines.length} 条线：${lines.join(' / ')}${hasAgency ? '；第四条是按机构分' : ''}`);
+  console.log('  前三条线的动力都可自发产生；真正需要国家介入的是按机构分，太医署属这一条。');
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log(`隋唐条目卡 ${fields.length} 栏：`);
+  for (const f of fields) console.log(`  ${f.no} ${f.name}`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/zhongguo-yixue-shi/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log(`三种失效模式：${modes.join(' / ')}`);
+  console.log(`考核项 ${items.length} 条。评分只看：②③是否配套，⑤⑥是否只取一面。`);
+  console.log('※ 类数与线数均由正文现算，不手打；正文改动后重跑即可复现。');
+  console.log('※ 本输出仅用于教学演示，不构成诊疗建议。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  DOC, CHAPTER, SLUG, REL,
+  readDoc, sections, block, numbered, chapterTitle, cardFields,
+  failureModes, integrationKinds, divisionLines,
+};

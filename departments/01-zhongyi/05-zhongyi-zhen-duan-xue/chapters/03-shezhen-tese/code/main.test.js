@@ -1,46 +1,69 @@
 'use strict';
-
+/**
+ * 第 3 章：27 个特征词的逐组分解与合计、表格条数、quiz 结构，全部钉死。
+ */
 const assert = require('node:assert');
 const test = require('node:test');
-const { shape, features, FEATURES, parasOf } = require('./main.js');
+const { analyze } = require('./main.js');
 
-test('舌诊四小节合计 1,249 字 = 望诊 44.4%', () => {
-  const s = shape();
-  assert.strictEqual(s.chars, 1249);
-  assert.ok(Math.abs(s.share - 1249 / 2812) < 1e-9);
-  assert.deepStrictEqual(s.rows.map((r) => r.no), ['2.3.1', '2.3.2', '2.3.3', '2.3.4']);
+const r = analyze();
+
+test('正文骨架：2,212 汉字 / 6 节 / 6 表 / 1 条篇名级引文', () => {
+  assert.strictEqual(r.s.hanzi, 2212);
+  assert.strictEqual(r.s.sections.length, 6);
+  assert.strictEqual(r.s.tableCount, 6);
+  assert.deepStrictEqual(r.s.quotes, ['灵枢·五阅五使']);
 });
 
-test('各小节字数：237 / 467 / 365 / 180', () => {
-  const s = shape();
-  assert.deepStrictEqual(s.rows.map((r) => r.chars), [237, 467, 365, 180]);
-  assert.strictEqual(s.rows.reduce((n, r) => n + r.chars, 0), 1249);
+test('五组取值逐组相加为 27，与表内合计行一致', () => {
+  assert.deepStrictEqual(r.words.map((w) => [w.group, w.n]), [
+    ['舌色', 5],
+    ['舌形', 6],
+    ['舌态', 5],
+    ['苔质', 7],
+    ['苔色', 4],
+  ]);
+  const by = Object.fromEntries(r.facts.map((f) => [f.label, f.got]));
+  assert.strictEqual(by['特征词合计'], 27);
+  assert.strictEqual(by['表内合计行'], 27);
 });
 
-test('特征词 27 个：5 舌色 + 6 舌形 + 5 舌态 + 7 苔质 + 4 苔色', () => {
-  const s = shape();
-  assert.strictEqual(s.terms, 27);
-  const by = Object.fromEntries(features().map((f) => [f.name, f.items.length]));
-  assert.deepStrictEqual(by, { 舌色: 5, 舌形: 6, 舌态: 5, 苔质: 7, 苔色: 4 });
+test('两组单选（舌色、苔色）、三组多选；苔质是 7 项不是 6 项', () => {
+  assert.deepStrictEqual(r.words.filter((w) => w.mode.includes('单选')).map((w) => w.group), ['舌色', '苔色']);
+  assert.strictEqual(r.words.filter((w) => w.mode.includes('多选')).length, 3);
+  assert.strictEqual(r.words.find((w) => w.group === '苔质').n, 7);
 });
 
-test('27 个特征词全部在教材原文出现（不凭记忆补）', () => {
-  const miss = features().flatMap((f) => f.items.filter((x) => !x.inText).map((x) => `${f.name}:${x.w}`));
-  assert.deepStrictEqual(miss, []);
+test('采集五步、作废四种、记录十一列、触发五条、失效三条', () => {
+  const by = Object.fromEntries(r.facts.map((f) => [f.label, f.got]));
+  assert.strictEqual(by['采集步数'], 5);
+  assert.strictEqual(by['须作废的情形'], 4);
+  assert.strictEqual(by['记录列数'], 11);
+  assert.strictEqual(by['触发'], 5);
+  assert.strictEqual(by['失效模式'], 3);
 });
 
-test('苔质是 7 个而不是 6 个（剥落单列）', () => {
-  const tz = features().find((f) => f.name === '苔质');
-  assert.strictEqual(tz.items.length, 7);
-  assert.ok(tz.items.some((x) => x.w === '剥落'));
+test('本章写下的数与现算逐条相等', () => {
+  for (const f of r.facts) assert.strictEqual(f.got, f.want, `${f.label}: 现算 ${f.got} ≠ 正文 ${f.want}`);
 });
 
-test('字数口径：只算正文段（与第 2 章 1,249 一致，不把段标题算进去）', () => {
-  const withTitles = ['2.3.1', '2.3.2', '2.3.3', '2.3.4'].map((n) => parasOf(n).length);
-  assert.strictEqual(withTitles.reduce((a, b) => a + b, 0), 1249);
+test('quiz 结构：6 题，pre 1 / check 3 / post 2，四选项，解释不少于 30 汉字', () => {
+  const q = r.quiz;
+  assert.strictEqual(q.total, 6);
+  assert.deepStrictEqual(q.stage, { pre: 1, check: 3, post: 2 });
+  assert.strictEqual(q.allFourOptions, true);
+  assert.ok(q.minExplain >= 30, `最短解释 ${q.minExplain} 汉字`);
 });
 
-test('五组特征词与教材小节对应：舌色/舌形/舌态 → 2.3.2，苔质/苔色 → 2.3.3', () => {
-  const by = Object.fromEntries(features().map((f) => [f.name, f.from]));
-  assert.deepStrictEqual(by, { 舌色: '2.3.2', 舌形: '2.3.2', 舌态: '2.3.2', 苔质: '2.3.3', 苔色: '2.3.3' });
+test('quiz 接地与打散：check 题三道全部接地，答案用满 4 个位置', () => {
+  assert.strictEqual(r.quiz.checkGrounded, 3);
+  assert.deepStrictEqual(r.quiz.answers, [0, 3, 0, 2, 1, 3]);
+  assert.strictEqual(r.quiz.distinctAnswers, 4);
+});
+
+test('quiz 不出现旧脚手架名目与「见输出」式解释', () => {
+  const raw = require('node:fs').readFileSync(require('node:path').join(__dirname, '..', 'quiz.json'), 'utf8');
+  for (const bad of ['三辨', '四位面', '单元规模', '本章实测', '见 code/main.js 输出']) {
+    assert.ok(!raw.includes(bad), `quiz 仍含「${bad}」`);
+  }
 });

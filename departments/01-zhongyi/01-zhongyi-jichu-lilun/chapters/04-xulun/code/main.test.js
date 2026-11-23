@@ -1,63 +1,119 @@
+#!/usr/bin/env node
+/**
+ * 中医基础理论 · 第 4 章 中基的「基础」不是简单，是替所有临床科目背下了同一套定义
+ * 确定性单元测试 —— 运行: node --test code/main.test.js
+ *
+ * 断言钉的是本机实测值：正文、算术解析或 quiz 任一处改动，这里就应当变红。
+ * 数字不从 main.js 回读再自比（那样什么都测不出），而是写在断言里。
+ */
+
 'use strict';
 
-const assert = require('node:assert');
 const test = require('node:test');
-const { bookShape, allParas, mappingShare, mixing, doc } = require('./main.js');
+const assert = require('node:assert');
+const fs = require('node:fs');
+const path = require('node:path');
+const { spawnSync } = require('node:child_process');
 
-test('教材本体：13 章 / 70 节 / 164 小节 / 327 段 / 45,199 字（全部现算）', () => {
-  const s = bookShape();
-  assert.strictEqual(s.chapters, 13);
-  assert.strictEqual(s.secs, 70);
-  assert.strictEqual(s.subs, 164);
-  assert.strictEqual(s.paras, 327);
-  assert.strictEqual(s.chars, 45199);
+const MAIN = path.join(__dirname, 'main.js');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
+const m = require('./main.js');
+
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
+const readQuiz = () => JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+const grams = (t, n = 4) => {
+  const out = new Set();
+  for (const seg of String(t || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+};
+
+test('正文规模：汉字 2915 / 段 22 / 节 6', () => {
+  const r = m.analyze();
+  assert.strictEqual(r.docHanzi, 2915);
+  assert.strictEqual(r.paragraphs, 22);
+  assert.strictEqual(r.sections.length, 6);
+  assert.strictEqual(hanzi(readDoc()), 2915, '汉字口径必须与正文一致');
 });
 
-test('各章段数之和等于总段数（层级不重不漏）', () => {
-  const s = bookShape();
-  assert.strictEqual(s.perChapter.reduce((n, c) => n + c.paras, 0), s.paras);
-  assert.strictEqual(s.perChapter.reduce((n, c) => n + c.chars, 0), s.chars);
+test('表格：3 张，行数 [4,6,8]', () => {
+  const r = m.analyze();
+  assert.deepStrictEqual(r.tables.map((t) => t.rows), [4,6,8]);
+  assert.deepStrictEqual(r.tables.map((t) => t.cols), [4,3,3]);
 });
 
-test('病因章最大（42 段 / 5,761 字），体质章最小（13 段 / 1,443 字）', () => {
-  const s = bookShape();
-  const max = s.perChapter.slice().sort((a, b) => b.chars - a.chars)[0];
-  const min = s.perChapter.slice().sort((a, b) => a.chars - b.chars)[0];
-  assert.strictEqual(max.no, '7');
-  assert.strictEqual(max.chars, 5761);
-  assert.strictEqual(min.no, '12');
-  assert.strictEqual(min.chars, 1443);
+test('本章算术：解析出的数与派生量', () => {
+  const a = m.analyze().arith;
+  assert.strictEqual(a.zhang, 13, 'zhang');
+  assert.strictEqual(a.jie, 70, 'jie');
+  assert.strictEqual(a.xiaojie, 164, 'xiaojie');
+  assert.strictEqual(a.duan, 327, 'duan');
+  assert.strictEqual(a.zi, 45199, 'zi');
+  assert.strictEqual(a.dy, 165, 'dy');
+  assert.strictEqual(a.unitsHanzi, 37430, 'unitsHanzi');
+  assert.strictEqual(a.diff, 7769, 'diff');
+  assert.strictEqual(a.courseCh, 10, 'courseCh');
+  assert.strictEqual(a.modules, 4, 'modules');
+  assert.strictEqual(a.layers, 3, 'layers');
+  assert.ok(Math.abs(a.perUnit - 226.8) < 1e-9, 'perUnit = ' + a.perUnit);
 });
 
-test('映射层：281/327 段带 AI/平台标记（85.9%）', () => {
-  const m = mappingShare();
-  assert.strictEqual(m.paras, 327);
-  assert.strictEqual(m.hit, 281);
-  assert.ok(Math.abs(m.share - 0.859) < 0.001);
-  assert.strictEqual(m.byChapter.length, 13);
+test('本章算术：结构与清单', () => {
+  const a = m.analyze().arith;
+  assert.ok(Array.isArray(a.lines) && a.lines.length >= 4, '算术清单至少 4 行');
 });
 
-test('形体官窍 100% 带映射；体质 38% 最稀', () => {
-  const m = mappingShare();
-  const by = Object.fromEntries(m.byChapter.map((x) => [x.no, x]));
-  assert.strictEqual(by['6'].share, 1);
-  assert.strictEqual(by['12'].hit, 5);
-  assert.strictEqual(by['12'].paras, 13);
-  assert.ok(Math.abs(by['12'].share - 5 / 13) < 1e-9);
+test('quiz 结构：6 题、三段齐、4 选项、下标合法、答案打散', () => {
+  const q = readQuiz();
+  assert.strictEqual(q.questions.length, 6);
+  assert.deepStrictEqual(q.questions.map((x) => x.correct), [1,0,2,1,1,1]);
+  const distinct = [...new Set(q.questions.map((x) => x.correct))].sort((a, b) => a - b);
+  assert.ok(distinct.length >= 3, '答案位置只有 ' + distinct.length + ' 种');
+  assert.deepStrictEqual(distinct, [0,1,2]);
+  const stages = new Set(q.questions.map((x) => x.stage));
+  for (const s of ['pre', 'check', 'post']) assert.ok(stages.has(s), '缺 ' + s + ' 段');
+  for (const x of q.questions) {
+    assert.ok(['pre', 'check', 'post'].includes(x.stage), 'stage: ' + x.stage);
+    assert.strictEqual(x.options.length, 4, x.question);
+    assert.ok(Number.isInteger(x.correct) && x.correct >= 0 && x.correct < 4, 'correct 越界: ' + x.question);
+    assert.ok(typeof x.explain === 'string' && x.explain.length > 0, '缺 explain: ' + x.question);
+  }
 });
 
-test('理论句与映射句同段：62/327 = 19.0%（所以不能按段切分原文层）', () => {
-  const x = mixing();
-  assert.strictEqual(x.mixed, 62);
-  assert.strictEqual(x.total, 327);
-  assert.ok(Math.abs(x.share - 0.19) < 0.001);
+test('quiz 接地：至少 2 道 check 题的正确选项含正文原词', () => {
+  const body = grams(readDoc());
+  const q = readQuiz();
+  const grounded = q.questions.filter((x) => {
+    if (x.stage !== 'check') return false;
+    const right = String(x.options[x.correct] || '');
+    return [...grams(right)].some((g) => body.has(g));
+  });
+  assert.ok(grounded.length >= 2, '只接地 ' + grounded.length + ' 道');
+  assert.strictEqual(m.analyze().quiz.checkGrounded, grounded.length, 'main.js 与测试口径必须一致');
 });
 
-test('allParas 拉平后不重复：段数与 bookShape().paras 一致', () => {
-  assert.strictEqual(allParas().length, bookShape().paras);
+test('quiz 解释：每题 ≥30 汉字，最短 67 汉字', () => {
+  const q = readQuiz();
+  const lens = q.questions.map((x) => hanzi(x.explain));
+  assert.deepStrictEqual(lens.filter((n) => n < 30), [], '有解释不足 30 汉字');
+  assert.strictEqual(Math.min(...lens), 67);
+  assert.strictEqual(m.analyze().quiz.minExplain, 67);
 });
 
-test('底本 sha256 与教材母本指纹一致（工作簿一改就红）', () => {
-  assert.strictEqual(doc.source.sha256.slice(0, 8), '870b004e');
-  assert.strictEqual(doc.chapters.length, 13);
+test('脚本可运行：退出码 0，输出带教学样例与边界声明', () => {
+  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
+  assert.strictEqual(r.status, 0, String(r.stderr));
+  const out = String(r.stdout || '');
+  assert.ok(out.length > 200, '输出过短');
+  assert.match(out, /现算/);
+  assert.match(out, /不构成诊疗建议/);
+  assert.match(out, /第 4 章/);
+});
+
+test('代码头部指向本章目录', () => {
+  const body = fs.readFileSync(MAIN, 'utf8');
+  assert.ok(body.includes('chapters/04-xulun/docs/zh.md'), '头部注释未指向本章');
 });

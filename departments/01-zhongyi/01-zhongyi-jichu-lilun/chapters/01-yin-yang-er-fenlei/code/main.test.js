@@ -1,127 +1,116 @@
 #!/usr/bin/env node
 /**
- * 第 1 章 阴阳 → 二分类 —— 确定性单元测试
- * 运行: node --test code/
+ * 中医基础理论 · 第 1 章 阴阳不是两个筐，而是一条能反向追问的偏向轴
+ * 确定性单元测试 —— 运行: node --test code/main.test.js
+ *
+ * 断言钉的是本机实测值：正文、算术解析或 quiz 任一处改动，这里就应当变红。
+ * 数字不从 main.js 回读再自比（那样什么都测不出），而是写在断言里。
  */
 
 'use strict';
 
-const assert = require('node:assert');
 const test = require('node:test');
+const assert = require('node:assert');
+const fs = require('node:fs');
+const path = require('node:path');
+const { spawnSync } = require('node:child_process');
 
-const {
-  FEATURES,
-  SAMPLES,
-  sigmoid,
-  dot,
-  predict,
-  lossAndGrad,
-  train,
-  trainMiniBatch,
-  accuracy,
-  mulberry32,
-} = require('./main');
+const MAIN = path.join(__dirname, 'main.js');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
+const m = require('./main.js');
 
-const X = SAMPLES.map((s) => s.x);
-const y = SAMPLES.map((s) => s.y);
-
-test('sigmoid 在 0 处等于 0.5，值域落在 (0,1]', () => {
-  assert.strictEqual(sigmoid(0), 0.5);
-  // 中等量级的 z 必须严格落在开区间内
-  for (const z of [-3, -0.5, 0, 1.5, 4]) {
-    const p = sigmoid(z);
-    assert.ok(p > 0 && p < 1, `sigmoid(${z}) = ${p} 越界`);
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
+const readQuiz = () => JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+const grams = (t, n = 4) => {
+  const out = new Set();
+  for (const seg of String(t || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
   }
-  // 极端量级在 float64 下会被舍入到端点，这是精度边界而非 bug
-  for (const z of [-50, -3, -0.5, 0, 0.5, 3, 50]) {
-    const p = sigmoid(z);
-    assert.ok(p >= 0 && p <= 1, `sigmoid(${z}) = ${p} 越界`);
+  return out;
+};
+
+test('正文规模：汉字 3111 / 段 22 / 节 6', () => {
+  const r = m.analyze();
+  assert.strictEqual(r.docHanzi, 3111);
+  assert.strictEqual(r.paragraphs, 22);
+  assert.strictEqual(r.sections.length, 6);
+  assert.strictEqual(hanzi(readDoc()), 3111, '汉字口径必须与正文一致');
+});
+
+test('表格：2 张，行数 [6,10]', () => {
+  const r = m.analyze();
+  assert.deepStrictEqual(r.tables.map((t) => t.rows), [6,10]);
+  assert.deepStrictEqual(r.tables.map((t) => t.cols), [4,3]);
+});
+
+test('本章算术：解析出的数与派生量', () => {
+  const a = m.analyze().arith;
+  assert.strictEqual(a.collectItems, 6, 'collectItems');
+  assert.strictEqual(a.fieldRows, 10, 'fieldRows');
+  assert.strictEqual(a.weightSum, 21, 'weightSum');
+  assert.strictEqual(a.threshold, 3, 'threshold');
+  assert.strictEqual(a.verdicts, 3, 'verdicts');
+  assert.strictEqual(a.hardRules, 3, 'hardRules');
+  assert.strictEqual(a.cells, 18, 'cells');
+
+});
+
+test('本章算术：结构与清单', () => {
+  const a = m.analyze().arith;
+  assert.deepStrictEqual(a.weights, ["寒热喜恶","渴饮","二便","脉","舌","精神体力"], 'weights');
+  assert.deepStrictEqual(a.judged, ["一致型→可判","并见型→并见","缺项型→不判","单项型→不判"], 'judged');
+});
+
+test('quiz 结构：6 题、三段齐、4 选项、下标合法、答案打散', () => {
+  const q = readQuiz();
+  assert.strictEqual(q.questions.length, 6);
+  assert.deepStrictEqual(q.questions.map((x) => x.correct), [1,0,2,1,3,2]);
+  const distinct = [...new Set(q.questions.map((x) => x.correct))].sort((a, b) => a - b);
+  assert.ok(distinct.length >= 3, '答案位置只有 ' + distinct.length + ' 种');
+  assert.deepStrictEqual(distinct, [0,1,2,3]);
+  const stages = new Set(q.questions.map((x) => x.stage));
+  for (const s of ['pre', 'check', 'post']) assert.ok(stages.has(s), '缺 ' + s + ' 段');
+  for (const x of q.questions) {
+    assert.ok(['pre', 'check', 'post'].includes(x.stage), 'stage: ' + x.stage);
+    assert.strictEqual(x.options.length, 4, x.question);
+    assert.ok(Number.isInteger(x.correct) && x.correct >= 0 && x.correct < 4, 'correct 越界: ' + x.question);
+    assert.ok(typeof x.explain === 'string' && x.explain.length > 0, '缺 explain: ' + x.question);
   }
-  assert.strictEqual(sigmoid(50), 1);   // e^-50 ≈ 1.9e-22，小于 1 的相对精度，舍入为 1
-  assert.ok(sigmoid(-50) > 0 && sigmoid(-50) < 1e-20); // 负侧仍保留有效数字，不塌成 0
 });
 
-test('sigmoid 对极大负值不溢出 NaN（数值稳定性）', () => {
-  assert.ok(Number.isFinite(sigmoid(-800)));
-  assert.strictEqual(sigmoid(-800), 0);
-  assert.strictEqual(sigmoid(800), 1);
-});
-
-test('sigmoid 关于原点对称: σ(z) + σ(-z) = 1', () => {
-  for (const z of [0.1, 1.7, 4.2, 12]) {
-    assert.ok(Math.abs(sigmoid(z) + sigmoid(-z) - 1) < 1e-12);
-  }
-});
-
-test('数据集形状与教材表一致：8 例、3 特征、阴阳各 4 例', () => {
-  assert.strictEqual(FEATURES.length, 3);
-  assert.strictEqual(SAMPLES.length, 8);
-  assert.strictEqual(y.filter((v) => v === 0).length, 4);
-  assert.strictEqual(y.filter((v) => v === 1).length, 4);
-  for (const s of SAMPLES) {
-    assert.strictEqual(s.x.length, 3);
-    assert.ok(s.x.every((v) => v >= 0 && v <= 1), `${s.name} 的特征未归一化`);
-  }
-});
-
-test('初始权重为 0 时，交叉熵损失等于 ln2（先验 0.5 的基线）', () => {
-  const { loss } = lossAndGrad([0, 0, 0], 0, X, y);
-  // 容差 1e-9：lossAndGrad 在 log 内加 eps=1e-12 防止 log(0)，会给结果带来该量级的偏差
-  assert.ok(Math.abs(loss - Math.LN2) < 1e-9, `初始损失 ${loss} 应约等于 ${Math.LN2}`);
-});
-
-test('训练后权重符号稳定：畏寒为负，口渴与脉数为正', () => {
-  const { w } = train(X, y, { lr: 0.5, steps: 4000 });
-  assert.ok(w[0] < 0, `畏寒项应为负，实得 ${w[0]}`);
-  assert.ok(w[1] > 0, `口渴项应为正，实得 ${w[1]}`);
-  assert.ok(w[2] > 0, `脉数项应为正，实得 ${w[2]}`);
-});
-
-test('训练后损失单调下降到远低于 ln2 的水平', () => {
-  const { loss: first } = lossAndGrad([0, 0, 0], 0, X, y);
-  const { w, b } = train(X, y, { lr: 0.5, steps: 4000 });
-  const { loss: last } = lossAndGrad(w, b, X, y);
-  assert.ok(last < first / 100, `损失未充分下降: ${first} → ${last}`);
-});
-
-test('训练后训练集准确率为 100%（8/8）', () => {
-  const { w, b } = train(X, y, { lr: 0.5, steps: 4000 });
-  assert.strictEqual(accuracy(w, b, X, y), 1);
-});
-
-test('小批量与全批量的解符号一致（解法稳定性）', () => {
-  const full = train(X, y, { lr: 0.5, steps: 4000 });
-  const mini = trainMiniBatch(X, y, { lr: 0.5, steps: 2000, batch: 4 });
-  mini.w.forEach((v, j) => {
-    assert.strictEqual(
-      Math.sign(v), Math.sign(full.w[j]),
-      `第 ${j} 个特征符号不一致: 全批量 ${full.w[j]} vs 小批量 ${v}`
-    );
+test('quiz 接地：至少 2 道 check 题的正确选项含正文原词', () => {
+  const body = grams(readDoc());
+  const q = readQuiz();
+  const grounded = q.questions.filter((x) => {
+    if (x.stage !== 'check') return false;
+    const right = String(x.options[x.correct] || '');
+    return [...grams(right)].some((g) => body.has(g));
   });
+  assert.ok(grounded.length >= 2, '只接地 ' + grounded.length + ' 道');
+  assert.strictEqual(m.analyze().quiz.checkGrounded, grounded.length, 'main.js 与测试口径必须一致');
 });
 
-test('小批量训练可复现：同一 seed 两次结果完全一致', () => {
-  const a = trainMiniBatch(X, y, { seed: 42, steps: 200 });
-  const b = trainMiniBatch(X, y, { seed: 42, steps: 200 });
-  assert.deepStrictEqual(a.w, b.w);
-  assert.strictEqual(a.b, b.b);
+test('quiz 解释：每题 ≥30 汉字，最短 83 汉字', () => {
+  const q = readQuiz();
+  const lens = q.questions.map((x) => hanzi(x.explain));
+  assert.deepStrictEqual(lens.filter((n) => n < 30), [], '有解释不足 30 汉字');
+  assert.strictEqual(Math.min(...lens), 83);
+  assert.strictEqual(m.analyze().quiz.minExplain, 83);
 });
 
-test('mulberry32 是确定性伪随机源', () => {
-  const r1 = mulberry32(7);
-  const r2 = mulberry32(7);
-  for (let i = 0; i < 5; i += 1) assert.strictEqual(r1(), r2());
+test('脚本可运行：退出码 0，输出带教学样例与边界声明', () => {
+  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
+  assert.strictEqual(r.status, 0, String(r.stderr));
+  const out = String(r.stdout || '');
+  assert.ok(out.length > 200, '输出过短');
+  assert.match(out, /现算/);
+  assert.match(out, /不构成诊疗建议/);
+  assert.match(out, /第 1 章/);
 });
 
-test('predict 输出的即 sigmoid(wᵀx + b)，两者必须恒等', () => {
-  const w = [-7.6, 5.19, 5.85];
-  const b = -2.1;
-  for (const s of SAMPLES) {
-    assert.strictEqual(predict(w, b, s.x), sigmoid(dot(w, s.x) + b));
-  }
-});
-
-test('dot 与手算一致，且对零向量返回 0', () => {
-  assert.strictEqual(dot([1, 2, 3], [4, 5, 6]), 32);
-  assert.strictEqual(dot([0, 0, 0], [9, 9, 9]), 0);
+test('代码头部指向本章目录', () => {
+  const body = fs.readFileSync(MAIN, 'utf8');
+  assert.ok(body.includes('chapters/01-yin-yang-er-fenlei/docs/zh.md'), '头部注释未指向本章');
 });

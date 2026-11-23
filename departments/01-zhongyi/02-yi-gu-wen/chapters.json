@@ -4,7 +4,7 @@
   {
    "n": 1,
    "slug": "01-gaishu-gongjushu",
-   "title": "医古文概论与工具书",
+   "title": "查得到不等于引得对：工具书是取证链的第一环",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -12,7 +12,7 @@
   {
    "n": 2,
    "slug": "02-hanzi-cihui",
-   "title": "汉字与词汇",
+   "title": "用字关系分不清，训释就只是猜：通假、古今、异体、讹字各是一条证据",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -20,7 +20,7 @@
   {
    "n": 3,
    "slug": "03-yufa",
-   "title": "语法",
+   "title": "语法不是贴标签：它是给歧义句定出唯一读法的手续",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -28,7 +28,7 @@
   {
    "n": 4,
    "slug": "04-duanju-jinyi",
-   "title": "断句、标点与今译",
+   "title": "断句不是加标点：一处断错，病位与治法一起改写",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -36,7 +36,7 @@
   {
    "n": 5,
    "slug": "05-zhuanji",
-   "title": "医家传记文选",
+   "title": "读传不是读故事：姓、字、籍贯、师承、著作各是一条待核的证据",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -44,7 +44,7 @@
   {
    "n": 6,
    "slug": "06-yijing-yilun",
-   "title": "医经医论文选",
+   "title": "医论读的是论证，不是警句：一句名言脱离上下文就不能引用",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -52,7 +52,7 @@
   {
    "n": 7,
    "slug": "07-xuwen-yian",
-   "title": "方书本草序文与医话医案",
+   "title": "序文讲书怎么来的，医案讲人怎么决断：两种文体各有一份必答清单",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -60,7 +60,7 @@
   {
    "n": 8,
    "slug": "08-shuzi-renwen",
-   "title": "医古文与数字人文",
+   "title": "检索不是回答：词频给出的是候选，不是结论",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

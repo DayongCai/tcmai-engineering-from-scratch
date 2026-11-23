@@ -56,15 +56,33 @@ const want = chaptersJson.chapters;
     no('章目：53 章连续', `chapters.json 是 ${nos.length} 章（${seq.slice(0, 40)}…），讲义是 ${BOOK.size} 章`);
   } else {
     const bad = want.filter((c) => !BOOK.has(c.n));
+    // 章题口径（2026-11-22 起）：docs/zh.md 首行改成「观点式标题」（讲义题 + 「：一句论断」），
+    // chapters.json 已由 scripts/sync_chapter_titles.js 全量对齐 docs（实测 2169 章 0 漂移）。
+    // 所以这里不再要求「与讲义逐字相同」，而要求「**不得脱离讲义另起一题**」：
+    //   讲义题（去掉末尾的（English）括注）必须与章题相等，或是章题的前缀（后接「：」）。
+    // 这样既容纳观点式扩写，又挡住"复制别的章题/自己编一个章名"。
+    const core = (t) => String(t || '').replace(/\s*[（(][^）)]*[）)]\s*$/, '').trim();
+    // 除「无空格全等」外，允许两种合法的观点式改写：
+    //   ① 讲义题原样 + 「：一句论断」（49 章属这类）
+    //   ② 只保留讲义题的**主词或限定词**（如「休克」→「休克是灌注问题…」；
+    //      「骨骼肌肉功能异常：风湿性疾病」→「风湿性疾病：两种范式…」）
+    // 仍会拦住「另起一题」——章题里必须出现讲义题的主词或限定词。
+    const norm = (s) => String(s || '').replace(/\s+/g, '').replace(/[（(][^）)]*[）)]$/, '');
+    const parts = (t) => norm(core(t)).split(/[：:]/).filter((x) => x.length >= 2);
     const titles = want.filter((c) => {
-      const t = BOOK.get(c.n).title.replace(/\s*[（(][^）)]*[）)]\s*$/, '');
-      return t !== c.title;
+      const j = core(BOOK.get(c.n).title);
+      const d = String(c.title || '').trim();
+      if (d === j || norm(d) === norm(j)) return false;
+      const dn = norm(d);
+      if (dn.startsWith(norm(j))) return false;           // 讲义题 + 冒号观点
+      const segs = parts(j);
+      return !segs.some((s) => s.length >= 2 && dn.includes(s));  // 主词/限定词必须在
     });
     const slugs = new Set(want.map((c) => c.slug));
     if (bad.length) no('章目：章号在讲义里存在', `${bad.length} 章找不到`);
-    else if (titles.length) no('章目：标题与讲义一致', `${titles.length} 章标题不一致，如 ${titles[0].n}「${titles[0].title}」`);
+    else if (titles.length) no('章目：标题以讲义题为基（可加「：观点」）', `${titles.length} 章脱离讲义题，如 ${titles[0].n}「${titles[0].title}」`);
     else if (slugs.size !== want.length) no('章目：slug 唯一', `${want.length} 章只有 ${slugs.size} 个 slug`);
-    else ok(`章目：${want.length} 章连续 · 标题与讲义一致 · slug 唯一`);
+    else ok(`章目：${want.length} 章连续 · 标题以讲义题为基 · slug 唯一`);
   }
 }
 

@@ -1,15 +1,18 @@
 #!/usr/bin/env node
 /**
- * 中医基础理论 · 第 8 章 防治原则 → 策略选择与代价函数
- * 课程: departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/08-fangzhi-yuanze/docs/zh.md
- * 出处: 教材·第10章 防治原则（5 节 27 段）
- * 依赖: 仅 Node.js 标准库
+ * 中医基础理论 · 第 8 章 治则不是八个字的目录，是八条各带「何时不能用」的判据
  *
- * 四个量：
- *   1. 预防三级（未病先防 / 既病防变 / 瘥后防复）——3，齐全；
- *   2. 治则四条（治病求本 / 调整阴阳 / 扶正祛邪 / 三因制宜）——4，齐全；
- *   3. 「八法」写了八个名字，但只详述了 2 法（汗、补）——缺 6 法的释义；
- *   4. 三因制宜给的是**禁忌方向**（夏慎辛温、冬慎寒凉），不是权重——所以代价函数只能自设。
+ *   node code/main.js
+ *
+ * 正文：chapters/08-fangzhi-yuanze/docs/zh.md
+ * 习题：chapters/08-fangzhi-yuanze/quiz.json
+ * 依赖：仅 Node.js 标准库
+ *
+ * 只读本章正文与本章 quiz，不读任何 standards 取数表：正文改了，这里的数字跟着变。
+ *   · 规模：汉字、段、节标题、表格张数与每张表的列数／行数
+ *   · 本章算术：从正文里解析判据条目、门限与结构数字，再算派生量
+ *   · quiz：题量、三段分布、选项数、解释长度、答案位置是否打散、check 题能否在正文找到原词
+ * 任何一项对不上，说明正文、代码、习题三者已经不同源。
  */
 
 'use strict';
@@ -17,152 +20,190 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-const ROOT = path.join(__dirname, '..', '..', '..', '..', '..', '..');
-const BOOK = path.join(ROOT, 'standards', 'jichu', '底本.json');
-const doc = JSON.parse(fs.readFileSync(BOOK, 'utf8'));
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
-// 教材缺口的外源补录层（不改底本）：standards/jichu/supplements/补源.json
-const SUPP = path.join(ROOT, 'standards', 'jichu', 'supplements', '补源.json');
-const suppDoc = fs.existsSync(SUPP) ? JSON.parse(fs.readFileSync(SUPP, 'utf8')) : { gaps: [] };
+const CHAPTER = 8;
+const SLUG = '08-fangzhi-yuanze';
+const TITLE = "治则不是八个字的目录，是八条各带「何时不能用」的判据";
 
-// 取本章相关的缺口补录；底本与补源分开报，绝不合并成「底本有 N 条」
-function supplements() {
-  return suppDoc.gaps
-    .filter((g) => g.chapter === '08-fangzhi-yuanze')
-    .map((g) => ({
-      id: g.id,
-      name: g.name,
-      declared: g.declared,
-      supplied: g.found,
-      source: g.items.length ? g.items[0].src : '',
-      // 八法这类条目 hans 是法名、hans_excerpt 才是释义；释义优先
-      items: g.items.map((x) => x.hans_excerpt || x.hans || x.hant),
-    }));
+/* ── 文本口径 ────────────────────────────────────────────────────── */
+
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+const count = (text, term) => String(text).split(term).length - 1;
+const num = (s) => Number(String(s).replace(/[,，\s]/g, ''));
+const CN = { 两: 2, 一: 1, 二: 2, 三: 3, 四: 4, 五: 5, 六: 6, 七: 7, 八: 8, 九: 9, 十: 10, 十二: 12 };
+const cn2n = (s) => (CN[s] !== undefined ? CN[s] : Number(s));
+const readDoc = () => fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+const docLines = (doc) => String(doc).split(/\r?\n/);
+
+/** 节标题：`## 一、…` */
+function sections(doc) {
+  return docLines(doc).filter((l) => /^##\s+/.test(l)).map((l) => l.replace(/^##\s+/, '').trim());
 }
 
-function chapter(no) {
-  return doc.chapters.find((c) => c.no === no);
+/** 段：非空，不以标题、引文、表格行、清单符号或编号起始 */
+function paragraphs(doc) {
+  return docLines(doc)
+    .map((l) => l.trim())
+    .filter((l) => l && !/^[#>|]/.test(l) && !/^[-*+]\s/.test(l) && !/^\d+[.、]/.test(l))
+    .filter((l) => !l.includes('|'));
 }
 
-const CH10 = chapter('10');
-const SUBS = {};
-for (const s of CH10.secs) for (const sub of s.subs) SUBS[sub.no] = sub;
-
-function textOf(no) {
-  return (SUBS[no] ? SUBS[no].paras : []).join('');
-}
-
-const T10 = CH10.secs.map((s) => `${s.title}${s.paras.join('')}${s.subs.map((x) => `${x.title}${x.paras.join('')}`).join('')}`).join('');
-
-// ── 1. 三层结构 ─────────────────────────────────────────────
-function levels() {
-  const preventive = ['未病先防', '既病防变', '瘥后防复'].filter((w) => T10.includes(w));
-  const principles = ['治病求本', '调整阴阳', '扶正祛邪', '三因制宜'].filter((w) => T10.includes(w));
-  return {
-    preventive,
-    principles,
-    // 治病求本下面分正治/反治——反治再用「热因热用/寒因寒用」举例
-    zhengzhi: /正治是逆其证候性质而治/.test(textOf('10.2.1')),
-    fanzhi: /反治是顺从疾病假象而治/.test(textOf('10.2.1')),
-    fanzhiExamples: ['热因热用', '寒因寒用'].filter((w) => T10.includes(w)),
-    missingFanzhi: ['塞因塞用', '通因通用'].filter((w) => !T10.includes(w)),
-    secs: CH10.secs.map((s) => `${s.no} ${s.title}（${s.subs.length} 小节）`),
-  };
-}
-
-// ── 2. 八法：八个名字，几法有释义？───────────────────────────
-const EIGHT = ['汗', '吐', '下', '和', '温', '清', '补', '消'];
-const TITLE_10_3_1 = (SUBS['10.3.1'] || { title: '' }).title;
-
-function eightMethods() {
-  const titleHas = EIGHT.join('') === '汗吐下和温清补消' && /汗、吐、下、和、温、清、补、消/.test(TITLE_10_3_1);
-  const described = EIGHT.filter((ch) => new RegExp(`\\n?${ch}法(通过|针对|是)`).test(textOf('10.3.1')) || new RegExp(`${ch}法(通过|针对)`).test(textOf('10.3.1')));
-  return {
-    names: EIGHT,
-    titleHas,
-    described,
-    missing: EIGHT.filter((x) => !described.includes(x)),
-  };
-}
-
-function combos() {
-  const t = textOf('10.3.2');
+/** markdown 表格：表头 + 去分隔行的数据行 */
+function tables(doc) {
+  const ls = docLines(doc);
+  const cells = (l) => l.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map((c) => c.trim());
   const out = [];
-  // 只认「八法两两组合 + 方名」这一种写法，避免把整句当 mode
-  for (const m of t.matchAll(/([汗吐下和温清补消]{2})并用（([^）]{2,6})）/g)) out.push({ mode: m[1], formula: m[2] });
-  for (const m of t.matchAll(/([汗吐下和温清补消攻兼施]{2})兼施（([^）]{2,6})）/g)) out.push({ mode: m[1], formula: m[2] });
+  let i = 0;
+  while (i < ls.length) {
+    if (/^\s*\|/.test(ls[i])) {
+      const block = [];
+      while (i < ls.length && /^\s*\|/.test(ls[i])) {
+        block.push(ls[i]);
+        i += 1;
+      }
+      const header = cells(block[0]);
+      const rows = block.slice(1).filter((l) => !/^\s*\|[\s:|-]+\|\s*$/.test(l)).map(cells);
+      out.push({ header, cols: header.length, rows });
+    } else {
+      i += 1;
+    }
+  }
   return out;
 }
 
-// ── 3. 三因制宜给的是方向，不是权重 ───────────────────────────
-function constraints() {
-  const t = textOf('10.2.4');
-  const rules = [];
-  if (/夏季炎热[^。]*慎用辛温/.test(t)) rules.push({ season: '夏', forbid: '辛温发散', reason: '腠理开泄' });
-  if (/冬季寒冷[^。]*慎用寒凉/.test(t)) rules.push({ season: '冬', forbid: '寒凉伤阳', reason: '腠理致密' });
-  return rules;
+const tableBy = (ts, kw) => ts.find((t) => t.header.join(' ').includes(kw));
+
+/* ── 本章算术（逐章注入，从正文解析） ───────────────────────────── */
+
+function chapterArithmetic(doc, ts) {
+const methods = ((doc.match(/八个字——([^。]+)/) || [])[1] || '').split('、').map((s) => s.trim()).filter(Boolean);
+  const levels = ['预防', '治则', '治法'].filter((x) => doc.includes('**' + x + '**')).length;
+  const collect = tableBy(ts, '采集项');
+  const fields = tableBy(ts, '字段');
+  const crit = ['有证（', '方向对（', '有禁忌（', '可评估（'].filter((x) => doc.includes(x)).length;
+  const stages = ['未病先防', '既病防变', '瘥后防复'].filter((x) => doc.includes(x)).length;
+  const contraindications = count(doc, '要写「');
+
+  return {
+    collectItems: collect ? collect.rows.length : 0,
+    fieldRows: fields ? fields.rows.length : 0,
+    methods,
+    levels,
+    crit,
+    stages,
+    contraindications,
+    lines: [
+      '八法 ' + methods.length + ' 个（' + methods.join('／') + '），层 ' + levels + ' 层（预防／治则／治法）',
+      '治法判据 ' + crit + ' 条（证／方向／禁忌／可评估），缺一条只能算一个愿望',
+      '治未病 ' + stages + ' 个时点（未病先防／既病防变／瘥后防复）',
+      '动作二给出 ' + contraindications + ' 条禁忌示例（补法／汗法／清法）',
+      '采集表 ' + (collect ? collect.rows.length : 0) + ' 行 · 字段表 ' + (fields ? fields.rows.length : 0) + ' 行',
+    ],
+  };
 }
 
-// ── 4. 代价函数：策略 × 三种代价。系数全为自设，教材无权重 ────
-const STRATEGIES = [
-  { name: '辛温发汗', gan: -0.6, jin: -0.5, zheng: -0.2 },
-  { name: '苦寒直折', gan: -0.1, jin: -0.4, zheng: -0.3 },
-  { name: '甘寒养阴', gan: -0.2, jin: +0.5, zheng: -0.1 },
-  { name: '温阳益气', gan: +0.7, jin: -0.2, zheng: -0.1 },
-];
+/* ── quiz：结构 + 接地 ──────────────────────────────────────────── */
 
-function costTable(weights = { gan: 1, jin: 1, zheng: 1 }) {
-  return STRATEGIES.map((s) => ({
-    name: s.name,
-    score: +(weights.gan * s.gan + weights.jin * s.jin + weights.zheng * s.zheng).toFixed(3),
-    parts: s,
-  })).sort((a, b) => b.score - a.score);
+/** 正文里 4 字以上的连续汉字片段 */
+function grams(text, n = 4) {
+  const out = new Set();
+  for (const seg of String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+}
+
+function quizSummary(quiz, doc) {
+  const body = grams(doc);
+  const qs = Array.isArray(quiz.questions) ? quiz.questions : [];
+  const stage = { pre: 0, check: 0, post: 0 };
+  const items = qs.map((q, i) => {
+    if (stage[q.stage] !== undefined) stage[q.stage] += 1;
+    const opts = Array.isArray(q.options) ? q.options : [];
+    const right = String(opts[q.correct] || '');
+    const hit = [...grams(right)].filter((g) => body.has(g));
+    const why = q.explain || q.explanation || '';
+    return {
+      n: i + 1,
+      stage: q.stage,
+      options: opts.length,
+      correct: q.correct,
+      explainHanzi: hanzi(why),
+      grounded: hit.length,
+      sample: hit.slice(0, 3),
+    };
+  });
+  return {
+    total: qs.length,
+    stage,
+    items,
+    answers: qs.map((q) => q.correct),
+    distinctAnswers: new Set(qs.map((q) => q.correct)).size,
+    checkGrounded: items.filter((x) => x.stage === 'check' && x.grounded > 0).length,
+    minExplain: items.length ? Math.min(...items.map((x) => x.explainHanzi)) : 0,
+    allFourOptions: items.every((x) => x.options === 4),
+    badCorrect: items.filter((x) => !(Number.isInteger(x.correct) && x.correct >= 0 && x.correct < 4)).length,
+    stageComplete: ['pre', 'check', 'post'].every((s) => stage[s] > 0),
+  };
+}
+
+/* ── 汇总 ──────────────────────────────────────────────────────── */
+
+function analyze() {
+  const doc = readDoc();
+  const ts = tables(doc);
+  const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+  return {
+    docHanzi: hanzi(doc),
+    paragraphs: paragraphs(doc).length,
+    sections: sections(doc),
+    tables: ts.map((t) => ({ header: t.header, cols: t.cols, rows: t.rows.length })),
+    arith: chapterArithmetic(doc, ts),
+    quiz: quizSummary(quiz, doc),
+  };
 }
 
 function main() {
-  const lv = levels();
-  const em = eightMethods();
-  const cb = combos();
-  const cs = constraints();
-  const table = costTable();
-
-  console.log('═══ 三层结构（教材·第10章，5 节 27 段）═══');
-  console.log(`  预防 ${lv.preventive.length} 级：${lv.preventive.join(' · ')}`);
-  console.log(`  治则 ${lv.principles.length} 条：${lv.principles.join(' · ')}`);
-  console.log(`  治病求本下：正治 ${lv.zhengzhi ? '有' : '无'} · 反治 ${lv.fanzhi ? '有' : '无'}（举例 ${lv.fanzhiExamples.join(' / ')}）`);
-  console.log(`  反治缺：${lv.missingFanzhi.join(' / ') || '无'}（教材只给两法）`);
-  for (const s of lv.secs) console.log(`    ${s}`);
+  const r = analyze();
+  const a = r.arith;
+  console.log(`中医基础理论 第 ${CHAPTER} 章 · ${TITLE}`);
+  console.log(`正文 ${r.docHanzi.toLocaleString('en-US')} 汉字 · ${r.paragraphs} 段 · 节 ${r.sections.length} 个`);
   console.log('');
-  console.log(`═══ 八法：名字 ${em.names.length} 个，有释义 ${em.described.length} 法 ═══`);
-  console.log(`  小节标题：${TITLE_10_3_1}`);
-  console.log(`  有释义：${em.described.map((x) => x + '法').join(' · ') || '无'}`);
-  console.log(`  无释义：${em.missing.map((x) => x + '法').join(' · ')}（连一句定义都没有）`);
-  console.log('  → 「八法」在教材里是八个字，不是八段内容；缺的六法不能凭通行教材补。');
+  console.log('结构：');
+  for (const s of r.sections) console.log(`  ${s}`);
   console.log('');
-  console.log(`═══ 八法组合 ${cb.length} 组 ═══`);
-  for (const c of cb) console.log(`  ${c.mode}（${c.formula}）`);
+  console.log(`表 ${r.tables.length} 张：`);
+  r.tables.forEach((t, i) => console.log(`  [${i + 1}] ${t.header.join(' / ')} —— ${t.cols} 列 × ${t.rows} 行`));
   console.log('');
-  console.log(`═══ 三因制宜：${cs.length} 条方向性约束（不是权重）═══`);
-  for (const r of cs) console.log(`  ${r.season}季：慎用${r.forbid}（因${r.reason}）`);
+  console.log('本章算术（全部从正文解析后计算）：');
+  for (const line of a.lines) console.log(`  ${line}`);
   console.log('');
-  console.log('═══ 代价函数试写（系数自设，教材无权重）═══');
-  for (const r of table) {
-    console.log(`  ${r.name}：${r.score}   [耗气 ${r.parts.gan} · 伤津 ${r.parts.jin} · 伤正 ${r.parts.zheng}]`);
-  }
-  console.log(`  最优：${table[0].name}（分数 ${table[0].score}）`);
-  console.log('  → 换个权重排序就变；教材只给方向（夏慎辛温、冬慎寒凉），没有给任何系数。');
-  console.log('');
-  const sp = supplements();
-  if (sp.length) {
-    console.log('═══ 教材缺口的外源补录（不改底本）═══');
-    for (const g of sp) console.log(`  ${g.name}：外源补 ${g.supplied}/${g.declared} 条 ← ${g.source}`);
-    console.log('  → 底本 327 段 / 45,199 字不含这些条；分账见 standards/jichu/supplements/README.md');
-    console.log('');
-  }
-
-  console.log('教学边界：本章只把教材的治则治法整理成可比较的形式，不推荐任何治法方药；不构成诊疗依据。');
+  console.log(`quiz ${r.quiz.total} 题（pre ${r.quiz.stage.pre} / check ${r.quiz.stage.check} / post ${r.quiz.stage.post}）· 答案 ${r.quiz.answers.join('/')}`);
+  console.log(`  check 题接地 ${r.quiz.checkGrounded} 道 · 答案落在 ${r.quiz.distinctAnswers} 个位置 · 最短解释 ${r.quiz.minExplain} 汉字`);
+  console.log('※ 以上数字由本章正文与 quiz 现算，改正文后重跑即可复核。');
+  console.log('※ 本章为教学材料，判据与分档均为课堂约定，不构成诊疗建议，也不替代执业医师的判断。');
 }
 
 if (require.main === module) main();
 
-module.exports = { supplements, levels, eightMethods, combos, constraints, costTable, STRATEGIES, EIGHT, doc };
+module.exports = {
+  analyze,
+  readDoc,
+  sections,
+  paragraphs,
+  tables,
+  tableBy,
+  grams,
+  hanzi,
+  count,
+  num,
+  cn2n,
+  quizSummary,
+  CHAPTER,
+  SLUG,
+  TITLE,
+  DOC,
+  QUIZ,
+};

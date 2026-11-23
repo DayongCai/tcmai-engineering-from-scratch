@@ -1,127 +1,38 @@
 #!/usr/bin/env node
 /**
- * 中医毕业设计与知识移交 · 第 10 章 针灸系·案例三：针灸条文到知识树的挂点覆盖：本章统计口径
+ * 中医毕业设计与知识移交 · 第 10 章 挂点覆盖率的分母没建起来之前，分子毫无意义
  * 课程: departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/10-zhenjiu-zhishishu-guadian/docs/zh.md
- * 数据: standards/biye/units.json（10 单元层，每单元带三辨 / 四位面词频与数值计数）
+ * 数据: 本章正文的现状表 + standards/biye/案例库.json 同 slug 案例
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：正文引用的每个规模、重心、引书数，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 骨架五级已入库、条文 0 条：覆盖率 = 0 ÷ 0 由本脚本显式返回 null，
+ * 并打印「不可算」，绝不输出 0% 或 100%。抽样方案 20 条 ÷ 5 级 = 每级 4 条。
  */
 
 'use strict';
 
-const fs = require('node:fs');
 const path = require('node:path');
+const { readDoc, grab, budget, auditQuiz, banner, finish } = require(path.join(__dirname, '..', '..', '_chapter.js'));
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'biye', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/biye/units.json —— 章节目录是否已脱离仓库？');
-}
+const SLUG = '10-zhenjiu-zhishishu-guadian';
+const NO = 10;
+const TITLE = '挂点覆盖率的分母没建起来之前，分子毫无意义';
+const doc = readDoc(SLUG).text;
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'biye', 'units.json');
-const CHAPTER = '10';
+const clauses = grab(doc, /条文层\s*\|\s*未建\s*\|\s*(\d+)\s*条/, '条文条数');
+const CN = { 一: 1, 二: 2, 三: 3, 四: 4, 五: 5, 六: 6, 七: 7, 八: 8, 九: 9, 十: 10, 二十: 20 };
+const levels = CN[(doc.match(/([一二三四五六七八九十]+)级骨架/) || [])[1]];
+const sample = CN[(doc.match(/先切([一二三四五六七八九十]+)条/) || [])[1]];
+if (!levels || !sample) throw new Error('正文缺少五级骨架或抽样条数');
+const coverage = clauses === 0 ? null : 0 / clauses;
+const perLevel = sample / levels;
 
-const load = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
+banner(NO, TITLE);
+console.log(`现状：五级骨架已入库 · 条文层 ${clauses} 条 · 挂点表 0 行`);
+console.log(`覆盖率 = 已挂条数 ÷ 条文总数 = 0 ÷ ${clauses} → ${coverage === null ? '不可算（分母为 0）' : (coverage * 100).toFixed(1) + '%'}`);
+console.log(`抽样方案：${sample} 条 ÷ ${levels} 级 = 每级 ${perLevel} 条，覆盖五个层级，不能全挂在最下层`);
+console.log(`纪律：先建分母再谈覆盖率；错挂率必须与覆盖率同时报，挂错了会让覆盖率虚高。`);
+console.log(`判断：自动挂点的典型错误是「同义不同级」，抽五条回查层级比看总数更有用。`);
 
-function chapterUnits(units, no = CHAPTER) {
-  return units.units
-    .filter((u) => u.chapter === no)
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-const sum = (d) => Object.values(d).reduce((a, b) => a + b, 0);
-
-function merge(list, field) {
-  const out = {};
-  for (const u of list) for (const [k, v] of Object.entries(u.measure[field])) out[k] = (out[k] || 0) + v;
-  return out;
-}
-
-function rank(dict) {
-  const tot = sum(dict);
-  return Object.entries(dict)
-    .map(([key, count]) => ({ key, count, share: tot ? count / tot : 0 }))
-    .sort((a, b) => b.count - a.count);
-}
-
-function bySection(list) {
-  const out = new Map();
-  for (const u of list) {
-    const key = u.sec || '（未标节）';
-    const it = out.get(key) || { sec: key, units: 0, hanzi: 0 };
-    it.units += 1;
-    it.hanzi += u.hanzi;
-    out.set(key, it);
-  }
-  return [...out.values()];
-}
-
-function citations(list) {
-  const counter = new Map();
-  for (const u of list) {
-    for (const m of u.prose.matchAll(/《([^》]+)》/g)) {
-      counter.set(m[1], (counter.get(m[1]) || 0) + 1);
-    }
-  }
-  const ranked = [...counter.entries()].sort((a, b) => b[1] - a[1]);
-  return { books: counter.size, total: sum(Object.fromEntries(counter)), top: ranked.slice(0, 3) };
-}
-
-function shape(list) {
-  const hanzi = list.reduce((a, u) => a + u.hanzi, 0);
-  return {
-    units: list.length,
-    hanzi,
-    mean: list.length ? Math.round(hanzi / list.length) : 0,
-    valueLike: list.reduce((a, u) => a + u.measure.valueLike, 0),
-    digits: list.reduce((a, u) => a + u.measure.digits, 0),
-  };
-}
-
-/** 方与法：单元层没有独立方剂字段，改从正文里认「治法动词」记号（儿科以疏风宣肺、消食健脾、平肝息风为主） */
-function methods(list) {
-  const VERBS = ['疏肝', '补肾', '健脾', '养血', '活血', '化瘀', '调经', '固冲', '止带', '安胎', '清热', '利湿'];
-  const out = {};
-  for (const v of VERBS) out[v] = list.reduce((a, u) => a + u.prose.split(v).length - 1, 0);
-  return Object.entries(out).filter(([, c]) => c).sort((a, b) => b[1] - a[1]);
-}
-
-module.exports = { CHAPTER, load, chapterUnits, merge, rank, bySection, citations, shape, methods, sum };
-
-if (require.main === module) {
-  const data = load();
-  const list = chapterUnits(data);
-  const s = shape(list);
-  const views = rank(merge(list, 'views'));
-  const levels = rank(merge(list, 'levels'));
-  const books = citations(list);
-
-  console.log('═══ 中医毕业设计与知识移交 · 第 10 章 针灸系·案例三：针灸条文到知识树的挂点覆盖 ═══');
-  console.log(`单元 ${s.units} · 汉字 ${s.hanzi} · 平均 ${s.mean} 字/单元`);
-  console.log(`数值类命中 ${s.valueLike} · 数字字符 ${s.digits}`);
-  console.log('\n按节：');
-  for (const sec of bySection(list)) console.log(`  ${sec.sec}  ${sec.units} 单元 · ${sec.hanzi} 字`);
-  console.log('\n三辨重心：');
-  for (const v of views) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
-  console.log('\n四位面覆盖：');
-  for (const v of levels) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
-  console.log(`\n引书 ${books.books} 部 · 引用 ${books.total} 次 · 前三：${books.top.map(([n, c]) => `${n}(${c})`).join('、')}`);
-  console.log('\n治法动词命中：' + methods(list).map(([v, c]) => `${v}×${c}`).join('  '));
-  console.log('\n单元清单：');
-  for (const u of list) {
-    console.log(`  ${u.sub}\t${u.title}\t${u.hanzi}字\t${(u.tri && u.tri.view.primary) || '—'}/${(u.tri && u.tri.level.primary) || '—'}`);
-  }
-}
-
-// 教学样例声明：契约要求每章输出含临床边界声明（tests/test_chapter_code.js）
-if (require.main === module) {
-  console.log('※ 教学样例：数字由 standards/biye/units.json 现算，不构成诊疗建议，不能替代医师面诊。');
-}
+const b = budget(SLUG);
+finish(SLUG, b, auditQuiz(SLUG, doc));

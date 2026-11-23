@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 /**
- * 中国医学史 · 第 6 章 明清：温病与考据：本章统计口径
- * 课程: departments/01-zhongyi/03-zhongguo-yixue-shi/chapters/06-mingqing/docs/zh.md
- * 数据: standards/zhongguo-yixue-shi/units.json（51 单元层，每单元带三辨与四位面词频）
- * 取数: standards/zhongguo-yixue-shi/chapter-map.json（课程章 → 教材单元号）
+ * 中国医学史 · 第 6 章 明清：温病与考据
+ * 正文: departments/01-zhongyi/03-zhongguo-yixue-shi/chapters/06-mingqing/docs/zh.md
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本脚本不存数字。温病学说的层数与每层加了什么、两种集成的动力差别、条目卡六栏、
+ * 三种失效，全部当场从正文读出；层数还与正文自述的「五层」对账。
  */
 
 'use strict';
@@ -15,87 +13,101 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'zhongguo-yixue-shi', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/zhongguo-yixue-shi/units.json —— 章节目录是否已脱离仓库？');
-}
-
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'zhongguo-yixue-shi', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'zhongguo-yixue-shi', 'chapter-map.json');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '6';
 const SLUG = '06-mingqing';
+const REL = 'departments/01-zhongyi/03-zhongguo-yixue-shi/chapters/06-mingqing';
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
-}
-
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+function sections(md) {
+  const out = [{ title: '(前言)', text: [] }];
+  for (const line of String(md).split(/\r?\n/)) {
+    const m = /^##\s+(.+?)\s*$/.exec(line);
+    if (m) out.push({ title: m[1], text: [] });
+    else out[out.length - 1].text.push(line);
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return out.map((s) => ({ title: s.title, text: s.text.join('\n') }));
+}
+
+function block(md, kw) {
+  const lines = String(md).split(/\r?\n/);
+  const start = lines.findIndex((l) => /^#{2,4}\s/.test(l) && l.includes(kw));
+  if (start < 0) throw new Error('正文缺小节: ' + kw);
+  const rest = lines.slice(start + 1);
+  const end = rest.findIndex((l) => /^#{2,4}\s/.test(l));
+  return (end < 0 ? rest : rest.slice(0, end)).join('\n');
+}
+
+function numbered(text) {
+  return String(text).split(/\r?\n/)
+    .map((l) => /^\s*\d+\.\s+(.+)$/.exec(l))
+    .filter(Boolean)
+    .map((m) => m[1].trim());
+}
+
+function chapterTitle(md) {
+  const m = /^#\s+(.+)$/m.exec(String(md));
+  if (!m) throw new Error('正文缺 H1 章题');
+  return m[1].trim();
+}
+
+function cardFields(md) {
+  const m = /```[\s\S]*?```/.exec(String(md));
+  if (!m) throw new Error('正文缺明清医史条目卡代码块');
+  return [...m[0].matchAll(/^([①-⑩])\s*([^：\n]+)：/gm)].map((x) => ({ no: x[1], name: x[2].trim() }));
+}
+
+function failureModes(text) {
+  return [...String(text).matchAll(/^\*\*([^*\n]+?)。\*\*/gm)].map((m) => m[1].trim());
+}
+
+/** 温病学说的层：第一层是《黄帝内经》的伏气温病之说：… */
+function layers(md) {
+  return [...block(md, '温病：一条层层保留的推进线').matchAll(/第([一二三四五])层是(.+?)[：，]/g)]
+    .map((m) => ({ n: m[1], name: m[2].trim() }));
+}
+
+/** 两部集成之书的差别：纲目以物为纲、普济方以方为目；一个靠人、一个靠机构 */
+function integrationPair(md) {
+  const t = block(md, '集成之书');
+  return {
+    objectVsFormula: /前者以物为纲，后者以方为目/.test(t),
+    personVsInstitution: /一个靠人，一个靠机构/.test(t),
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const md = readDoc();
+  const ls = layers(md);
+  const pair = integrationPair(md);
+  const fields = cardFields(md);
+  const modes = failureModes(block(md, '失效'));
+  const items = numbered(block(md, '考核项'));
 
-  console.log(`中国医学史 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`中国医学史 · 第 ${CHAPTER} 章 ${chapterTitle(md).replace(/^第\s*\d+\s*章\s*·\s*/, '')}`);
+  console.log(`${REL} · 正文 ${hanzi(md).toLocaleString('en-US')} 汉字`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`温病学说 ${ls.length} 层（每层保留上一层）：`);
+  for (const l of ls) console.log(`  第${l.n}层 ${l.name}`);
+  console.log('  写「某人创立温病学说」是把末层当全部；分层写法要写明这一层是「提出」还是「完成」。');
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`两种集成的差别：以物为纲／以方为目 ${pair.objectVsFormula ? '已写明' : '缺'}；一个靠人／一个靠机构 ${pair.personVsInstitution ? '已写明' : '缺'}。`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log(`明清条目卡 ${fields.length} 栏：`);
+  for (const f of fields) console.log(`  ${f.no} ${f.name}`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/zhongguo-yixue-shi/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log(`三种失效模式：${modes.join(' / ')}`);
+  console.log(`考核项 ${items.length} 条。评分只看：②③是否成对，⑥是否避免单点年份。`);
+  console.log('※ 层数与对举项均由正文现算，不手打；正文改动后重跑即可复现。');
+  console.log('※ 本输出仅用于教学演示，不构成诊疗建议。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  DOC, CHAPTER, SLUG, REL,
+  readDoc, sections, block, numbered, chapterTitle, cardFields,
+  failureModes, layers, integrationPair,
+};

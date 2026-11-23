@@ -1,67 +1,59 @@
 'use strict';
-
+/**
+ * 第 1 章：正文结构量、表格条数与 quiz 结构全部钉死。
+ * 正文或 quiz 一改，这里逐条报出是哪一项对不上。
+ */
 const assert = require('node:assert');
 const test = require('node:test');
-const { bookShape, fourDiagnosis, bianzheng, threeStages, principles, chapter } = require('./main.js');
+const { analyze } = require('./main.js');
 
-test('教材本体：14 章 / 46 节 / 105 小节 / 196 段 / 22,215 字', () => {
-  const s = bookShape();
-  assert.strictEqual(s.chapters, 14);
-  assert.strictEqual(s.secs, 46);
-  assert.strictEqual(s.subs, 105);
-  assert.strictEqual(s.paras, 196);
-  assert.strictEqual(s.chars, 22215);
-  assert.strictEqual(s.perChapter.length, 14);
+const r = analyze();
+
+test('正文骨架：2,008 汉字 / 6 节 / 4 表 / 1 条篇名级引文', () => {
+  assert.strictEqual(r.s.hanzi, 2008);
+  assert.strictEqual(r.s.sections.length, 6);
+  assert.strictEqual(r.s.tableCount, 4);
+  assert.strictEqual(r.s.quotes.length, 1);
+  assert.ok(r.s.quotes.includes('难经·六十一难'));
 });
 
-test('各章字数之和等于全书（不重不漏）', () => {
-  const s = bookShape();
-  assert.strictEqual(s.perChapter.reduce((n, c) => n + c.chars, 0), 22215);
+test('生成块不计入：UNITNOTES 之后的内容一个字都不算', () => {
+  assert.ok(!r.s.body.includes('UNITNOTES'));
+  assert.ok(!r.s.body.includes('教材小节：逐条落位'));
+  assert.ok(r.s.body.includes('## 五、代价与边界'));
 });
 
-test('四诊：望 2,812 / 问 2,281 / 切 2,030 / 闻 855，合计 7,978（35.9%）', () => {
-  const f = fourDiagnosis();
-  const by = Object.fromEntries(f.rows.map((r) => [r.name, r.chars]));
-  assert.deepStrictEqual(by, { 望诊: 2812, 闻诊: 855, 问诊: 2281, 切诊: 2030 });
-  assert.strictEqual(f.total, 7978);
-  assert.ok(Math.abs(f.share - 7978 / 22215) < 1e-9);
+test('表格条数与正文所写一致：四步 / 六种作废情形 / 十二列 / 六条触发', () => {
+  const by = Object.fromEntries(r.facts.map((f) => [f.label, f.got]));
+  assert.strictEqual(by['采集步数'], 4);
+  assert.strictEqual(by['须作废的情形'], 6);
+  assert.strictEqual(by['记录列数'], 12);
+  assert.strictEqual(by['转诊触发'], 6);
+  assert.strictEqual(by['成组三条'], 3);
+  assert.strictEqual(by['考核项'], 6);
 });
 
-test('望/闻 = 3.29 倍：四诊在教材里是倾斜分配', () => {
-  const f = fourDiagnosis();
-  assert.strictEqual(f.max.name, '望诊');
-  assert.strictEqual(f.min.name, '闻诊');
-  assert.strictEqual(f.ratio, 3.29);
+test('本章写下的数与现算逐条相等', () => {
+  for (const f of r.facts) assert.strictEqual(f.got, f.want, `${f.label}: 现算 ${f.got} ≠ 正文 ${f.want}`);
 });
 
-test('辨证七章：8,869 字 = 39.9%，其中三焦最薄（356 字 / 1.6%）', () => {
-  const b = bianzheng();
-  assert.strictEqual(b.total, 8869);
-  assert.ok(Math.abs(b.share - 8869 / 22215) < 1e-9);
-  const min = b.rows.slice().sort((x, y) => x.chars - y.chars)[0];
-  assert.strictEqual(min.no, '12');
-  assert.strictEqual(min.chars, 356);
+test('quiz 结构：6 题，pre 1 / check 3 / post 2，四选项，解释不少于 30 汉字', () => {
+  const q = r.quiz;
+  assert.strictEqual(q.total, 6);
+  assert.deepStrictEqual(q.stage, { pre: 1, check: 3, post: 2 });
+  assert.strictEqual(q.allFourOptions, true);
+  assert.ok(q.minExplain >= 30, `最短解释 ${q.minExplain} 汉字`);
 });
 
-test('三段：采集 7,978 · 判断 8,869 · 输出 1,307（5.9% 最薄）', () => {
-  const s = threeStages();
-  const by = Object.fromEntries(s.rows.map((r) => [r.name, r.chars]));
-  assert.strictEqual(by['采集（四诊）'], 7978);
-  assert.strictEqual(by['判断（辨证）'], 8869);
-  assert.strictEqual(by['输出（病案）'], 1307);
-  assert.ok(Math.abs(by['输出（病案）'] / 22215 - 0.0588) < 1e-3);
+test('quiz 接地与打散：check 题三道都能在正文找到原词，答案落在 4 个不同位置', () => {
+  assert.strictEqual(r.quiz.checkGrounded, 3);
+  assert.deepStrictEqual(r.quiz.answers, [1, 3, 2, 0, 2, 3]);
+  assert.strictEqual(r.quiz.distinctAnswers, 4);
 });
 
-test('三原理与三原则：六条全部在原文出现（不凭记忆）', () => {
-  const p = principles();
-  assert.strictEqual(p.principles.length, 3);
-  assert.strictEqual(p.rules.length, 3);
-  assert.ok(p.principles.every((x) => x.inText), '三原理应全部命中');
-  assert.ok(p.rules.every((x) => x.inText), '三原则应全部命中');
-});
-
-test('教材章序与课程 12 章不是一一对应（教材 14 章含经络/三焦/平台）', () => {
-  assert.ok(chapter('9').title.includes('经络'));
-  assert.ok(chapter('12').title.includes('三焦'));
-  assert.ok(chapter('14').title.includes('平台') || chapter('14').title.includes('AI'));
+test('quiz 不出现旧脚手架名目与「见输出」式解释', () => {
+  const raw = require('node:fs').readFileSync(require('node:path').join(__dirname, '..', 'quiz.json'), 'utf8');
+  for (const bad of ['三辨', '四位面', '单元规模', '本章实测', '见 code/main.js 输出']) {
+    assert.ok(!raw.includes(bad), `quiz 仍含「${bad}」`);
+  }
 });

@@ -6,7 +6,7 @@
   {
    "n": 1,
    "slug": "01-xulun",
-   "title": "绪论：医学史的问题与方法",
+   "title": "医学史不是年表：分期方案一换，同一批材料就讲出不同的故事",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-qiyuan-yu-zaoqi",
-   "title": "医药的起源与早期医药",
+   "title": "起源不是某个人的发明：四类证据各只答得上一半",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -22,7 +22,7 @@
   {
    "n": 3,
    "slug": "03-chunqiu-qinhan",
-   "title": "春秋战国至秦汉：体系的奠基",
+   "title": "奠基不是几位圣人写成的：出土文献把「作者」换成了「层积」",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -30,7 +30,7 @@
   {
    "n": 4,
    "slug": "04-weijin-suitang",
-   "title": "魏晋南北朝至隋唐五代：分科与集成",
+   "title": "分科不是把病人切开：切的是可以独立传授的那部分知识",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -38,7 +38,7 @@
   {
    "n": 5,
    "slug": "05-songjinyuan",
-   "title": "宋金元：争鸣与建制",
+   "title": "争鸣不是意见多：一个新说要能被反驳，还得交出一条转化规则",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -46,7 +46,7 @@
   {
    "n": 6,
    "slug": "06-mingqing",
-   "title": "明清：温病与考据",
+   "title": "温病不是一个人创立的：它的每一层推进都把上一层留着",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -54,7 +54,7 @@
   {
    "n": 7,
    "slug": "07-jindai-dangdai",
-   "title": "近代与当代：转型与重建",
+   "title": "近代史最难的不是材料少，是材料都带着立场",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -62,7 +62,7 @@
   {
    "n": 8,
    "slug": "08-shaoshu-jiaoliu-shuzi",
-   "title": "少数民族医学、中外交流与数字化",
+   "title": "少数民族医学史最缺的不是材料，是自我记录",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

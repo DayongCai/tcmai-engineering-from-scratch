@@ -1,57 +1,58 @@
 'use strict';
-
+/**
+ * 第 2 章：正文结构量、表格条数与 quiz 结构全部钉死。
+ */
 const assert = require('node:assert');
 const test = require('node:test');
-const { shape, shenTypes, fiveColors, fingerprint, excretions, SHEN, COLORS } = require('./main.js');
+const { analyze } = require('./main.js');
 
-test('望诊规模：4 节 / 11 小节 / 24 段 / 2,812 字（全书 12.7%）', () => {
-  const s = shape();
-  assert.strictEqual(s.secs, 4);
-  assert.strictEqual(s.subs, 11);
-  assert.strictEqual(s.paras, 24);
-  assert.strictEqual(s.chars, 2812);
-  assert.ok(Math.abs(s.share - 2812 / 22215) < 1e-9);
+const r = analyze();
+
+test('正文骨架：2,060 汉字 / 6 节 / 5 表 / 1 条篇名级引文', () => {
+  assert.strictEqual(r.s.hanzi, 2060);
+  assert.strictEqual(r.s.sections.length, 6);
+  assert.strictEqual(r.s.tableCount, 5);
+  assert.deepStrictEqual(r.s.quotes, ['灵枢·本脏']);
 });
 
-test('舌诊一节 1,249 字 = 望诊 44.4%（比全身+局部之和还多）', () => {
-  const s = shape();
-  const by = Object.fromEntries(s.sections.map((x) => [x.no, x]));
-  assert.strictEqual(by['2.3'].chars, 1249);
-  assert.strictEqual(by['2.1'].chars + by['2.2'].chars, 1168);
-  assert.ok(by['2.3'].chars > by['2.1'].chars + by['2.2'].chars);
-  assert.ok(Math.abs(by['2.3'].chars / 2812 - 0.444) < 0.001);
+test('生成块不计入：教材小节落位与 UNITNOTES 都不进统计', () => {
+  assert.ok(!r.s.body.includes('UNITNOTES'));
+  assert.ok(!r.s.body.includes('教材小节：逐条落位'));
+  assert.ok(r.s.body.includes('## 四、动作与边界'));
 });
 
-test('四节字数之和 = 2,812（不重不漏）', () => {
-  const s = shape();
-  assert.strictEqual(s.sections.reduce((n, x) => n + x.chars, 0), 2812);
+test('采集路线 14 个部位、得神 4 项、判据组 5 组、作废 5 种、记录 12 列', () => {
+  const by = Object.fromEntries(r.facts.map((f) => [f.label, f.got]));
+  assert.strictEqual(by['路线部位数'], 14);
+  assert.strictEqual(by['得神判据项'], 4);
+  assert.strictEqual(by['判据组'], 5);
+  assert.strictEqual(by['须作废的情形'], 5);
+  assert.strictEqual(by['记录列数'], 12);
+  assert.strictEqual(by['转诊触发'], 7);
+  assert.strictEqual(by['失效模式'], 5);
 });
 
-test('望神 5 态全部命中原文', () => {
-  const s = shenTypes();
-  assert.strictEqual(SHEN.length, 5);
-  assert.ok(s.every((x) => x.inText), '5 态应全部命中');
-  assert.deepStrictEqual(s.map((x) => x.word), ['得神', '少神', '失神', '假神', '神乱']);
+test('本章写下的数与现算逐条相等', () => {
+  for (const f of r.facts) assert.strictEqual(f.got, f.want, `${f.label}: 现算 ${f.got} ≠ 正文 ${f.want}`);
 });
 
-test('五色主病：标题写全五色，5 色齐', () => {
-  const c = fiveColors();
-  assert.strictEqual(c.titled, true);
-  assert.ok(c.colors.every((x) => x.inText));
-  assert.deepStrictEqual(COLORS, ['青', '赤', '黄', '白', '黑']);
+test('quiz 结构：6 题，pre 1 / check 3 / post 2，四选项，解释不少于 30 汉字', () => {
+  const q = r.quiz;
+  assert.strictEqual(q.total, 6);
+  assert.deepStrictEqual(q.stage, { pre: 1, check: 3, post: 2 });
+  assert.strictEqual(q.allFourOptions, true);
+  assert.ok(q.minExplain >= 30, `最短解释 ${q.minExplain} 汉字`);
 });
 
-test('小儿指纹：三关 3/3 + 四项观察 4/4', () => {
-  const f = fingerprint();
-  assert.strictEqual(f.gates.length, 3);
-  assert.strictEqual(f.obs.length, 4);
-  assert.ok(f.gates.every((x) => x.inText));
-  assert.ok(f.obs.every((x) => x.inText));
+test('quiz 接地与打散：check 题三道全部接地，答案用满 4 个位置', () => {
+  assert.strictEqual(r.quiz.checkGrounded, 3);
+  assert.deepStrictEqual(r.quiz.answers, [2, 3, 1, 0, 2, 0]);
+  assert.strictEqual(r.quiz.distinctAnswers, 4);
 });
 
-test('望排出物是段标题层（2 条），扫小节层会得到 0', () => {
-  const ex = excretions();
-  assert.strictEqual(ex.length, 2);
-  assert.ok(ex.some((t) => t.includes('痰涎')));
-  assert.ok(ex.some((t) => t.includes('大便')));
+test('quiz 不出现旧脚手架名目与「见输出」式解释', () => {
+  const raw = require('node:fs').readFileSync(require('node:path').join(__dirname, '..', 'quiz.json'), 'utf8');
+  for (const bad of ['三辨', '四位面', '单元规模', '本章实测', '见 code/main.js 输出']) {
+    assert.ok(!raw.includes(bad), `quiz 仍含「${bad}」`);
+  }
 });

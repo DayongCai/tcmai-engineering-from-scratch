@@ -1,57 +1,96 @@
 #!/usr/bin/env node
 /**
- * 第 9 章 肾系疾病 —— 确定性单元测试
+ * 第 9 章 肾系疾病 —— 正文与习题的确定性测试
  * 运行: node --test code/main.test.js
- *
- * 断言只落在可对账的结构上：单元数与小节号、规模、三辨与四位面重心、引书数、数值计数。
- * 数字由 standards/erke/units.json 现算后写死在此，教材改版时测试会先响。
  */
 
 'use strict';
 
 const assert = require('node:assert');
 const test = require('node:test');
+const fs = require('node:fs');
+const path = require('node:path');
 
-const { CHAPTER, load, chapterUnits, merge, rank, shape, citations, bySection } = require('./main.js');
+const m = require('./main.js');
 
-const data = load();
-const list = chapterUnits(data);
+const text = m.read();
+const TITLE = m.headings(text);
 
-test('本章单元数与小节号与教材一致', () => {
-  assert.strictEqual(list.length, 30);
-  assert.deepStrictEqual(list.map((u) => u.sub), ['9.1.1', '9.1.2', '9.1.3', '9.1.4', '9.1.5', '9.2.1', '9.2.2', '9.2.3', '9.2.4', '9.2.5', '9.3.1', '9.3.2', '9.3.3', '9.3.4', '9.3.5', '9.4.1', '9.4.2', '9.4.3', '9.4.4', '9.4.5', '9.5.1', '9.5.2', '9.5.3', '9.5.4', '9.5.5', '9.6.1', '9.6.2', '9.6.3', '9.6.4', '9.6.5']);
+test('正文规模：2873 汉字 · 17 段 · 6 个二级标题', () => {
+  assert.strictEqual(m.hanzi(text), 2873);
+  assert.strictEqual(m.paragraphs(text).length, 17);
+  assert.strictEqual(TITLE.length, 6);
 });
 
-test('规模：22538 字 · 平均 751 字/单元', () => {
-  const s = shape(list);
-  assert.strictEqual(s.hanzi, 22538);
-  assert.strictEqual(s.mean, 751);
+test('二级标题与正文一致', () => {
+  assert.deepStrictEqual(TITLE, [
+    '一、六个病排成两组：水与生长',
+    '二、两个年龄界值，决定了「是不是病」',
+    '三、成组判据与三条必转红线',
+    '四、动作、记录与失效模式',
+    '代价与边界',
+    '检查清单',
+  ]);
 });
 
-test('三辨重心是「病因」', () => {
-  const views = rank(merge(list, 'views'));
-  assert.strictEqual(views[0].key, '病因');
-  assert.strictEqual(views[0].count, 145);
+test('表格共 7 个数据行（六病分组表）', () => {
+  assert.strictEqual(m.tableRows(text).length, 7);
 });
 
-test('四位面重心是「肾系」，且四层都有落点', () => {
-  const levels = Object.fromEntries(rank(merge(list, 'levels')).map((v) => [v.key, v.count]));
-  assert.strictEqual(levels['肾系'], 701);
-  const touched = Object.values(levels).filter((n) => n > 0).length;
-  assert.ok(touched >= 3, `仅 ${touched} 层有落点`);
+test('正文内书名 3 部 · 4 次，《素问·水热穴论》两见', () => {
+  const c = m.citations(text);
+  assert.strictEqual(c.books, 3);
+  assert.strictEqual(c.total, 4);
+  assert.strictEqual(c.top[0][0], '素问·水热穴论');
+  assert.strictEqual(c.top[0][1], 2);
 });
 
-test('引书成规模：≥32 部、≥79 次引用', () => {
-  const c = citations(list);
-  assert.ok(c.books >= 32, `引书 ${c.books}`);
-  assert.ok(c.total >= 79, `引用 ${c.total}`);
+test('术语频次：水肿 22 · 遗尿 16 · 血压 12 · 尿频 11', () => {
+  const t = Object.fromEntries(m.termStats(text).map((x) => [x.term, x.count]));
+  assert.strictEqual(t['水肿'], 22);
+  assert.strictEqual(t['遗尿'], 16);
+  assert.strictEqual(t['血压'], 12);
+  assert.strictEqual(t['尿频'], 11);
+  assert.strictEqual(t['性早熟'], 10);
 });
 
-test('数值计数与单元层一致（本章 39 处数值类命中）', () => {
-  assert.strictEqual(shape(list).valueLike, 39);
+test('检查清单 8 条，两条护栏均为 0', () => {
+  assert.strictEqual(m.checklistCount(text), 8);
+  assert.strictEqual(m.doseGuard(text), 0, '正文不得出现具体给药量');
+  assert.strictEqual(m.pageRefs(text), 0, '正文不得引页码');
 });
 
-test('每节都有单元，且每单元都带 locator', () => {
-  for (const s of bySection(list)) assert.ok(s.units > 0, s.sec);
-  for (const u of list) assert.ok(u.locator.startsWith(`教材·第${CHAPTER}章·`), u.locator);
+const quiz = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8'));
+
+test('quiz：≥5 题，pre / check / post 三段齐', () => {
+  assert.ok(quiz.questions.length >= 5, `只有 ${quiz.questions.length} 题`);
+  const stages = new Set(quiz.questions.map((q) => q.stage));
+  for (const s of ['pre', 'check', 'post']) assert.ok(stages.has(s), `缺 ${s} 段`);
+});
+
+test('quiz：每题 4 选项、correct 合法、explain ≥30 汉字', () => {
+  for (const q of quiz.questions) {
+    assert.strictEqual(q.options.length, 4, q.question);
+    assert.ok(Number.isInteger(q.correct) && q.correct >= 0 && q.correct < 4, q.question);
+    const n = (String(q.explanation).match(/[\u4e00-\u9fff]/g) || []).length;
+    assert.ok(n >= 30, `${q.question} 解释仅 ${n} 汉字`);
+  }
+});
+
+test('quiz：check 题正确选项与正文同词（≥2 道），答案不集中于一项', () => {
+  const clean = text.replace(/[^\u4e00-\u9fff]/g, ' ');
+  const grams = new Set();
+  for (const seg of clean.split(/\s+/)) {
+    for (let i = 0; i + 4 <= seg.length; i += 1) grams.add(seg.slice(i, i + 4));
+  }
+  let grounded = 0;
+  for (const q of quiz.questions.filter((x) => x.stage === 'check')) {
+    const right = q.options[q.correct];
+    const hit = [...right.replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)]
+      .some((seg) => seg.length >= 4 && [...Array(seg.length - 3)].some((_, i) => grams.has(seg.slice(i, i + 4))));
+    if (hit) grounded += 1;
+  }
+  assert.ok(grounded >= 2, `只有 ${grounded} 道 check 题能接地`);
+  const answers = new Set(quiz.questions.map((q) => q.correct));
+  assert.ok(answers.size >= 3, '答案过度集中');
 });

@@ -1,14 +1,18 @@
 #!/usr/bin/env node
 /**
- * 中医基础理论 · 第 6 章 经络学说 → 图上的路径与可及性
- * 课程: departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/06-jingluo-tuxing/docs/zh.md
- * 出处: 教材·第5章 经络系统（5.2.3 流注次序为骨，5.3 奇经为附）
- * 依赖: 仅 Node.js 标准库
+ * 中医基础理论 · 第 6 章 十二经是一条闭合的环，环上的接点比穴名更值得先记住
  *
- * 三个量：
- *   1. 十二经流注是一条**环**（12 节点、12 边），于是任意两经有「顺行距离」与「最短距离」两个值；
- *   2. 十二时辰与十二经是**一一对应**（寅→肺 起、丑→肝 止），中间十个由地支顺序推得；
- *   3. 奇经「八脉」在教材里只写出了四脉——这是缺口，不是本章漏抽。
+ *   node code/main.js
+ *
+ * 正文：chapters/06-jingluo-tuxing/docs/zh.md
+ * 习题：chapters/06-jingluo-tuxing/quiz.json
+ * 依赖：仅 Node.js 标准库
+ *
+ * 只读本章正文与本章 quiz，不读任何 standards 取数表：正文改了，这里的数字跟着变。
+ *   · 规模：汉字、段、节标题、表格张数与每张表的列数／行数
+ *   · 本章算术：从正文里解析判据条目、门限与结构数字，再算派生量
+ *   · quiz：题量、三段分布、选项数、解释长度、答案位置是否打散、check 题能否在正文找到原词
+ * 任何一项对不上，说明正文、代码、习题三者已经不同源。
  */
 
 'use strict';
@@ -16,172 +20,199 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-const ROOT = path.join(__dirname, '..', '..', '..', '..', '..', '..');
-const BOOK = path.join(ROOT, 'standards', 'jichu', '底本.json');
-const doc = JSON.parse(fs.readFileSync(BOOK, 'utf8'));
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
-// 教材缺口的外源补录层（不改底本）：standards/jichu/supplements/补源.json
-const SUPP = path.join(ROOT, 'standards', 'jichu', 'supplements', '补源.json');
-const suppDoc = fs.existsSync(SUPP) ? JSON.parse(fs.readFileSync(SUPP, 'utf8')) : { gaps: [] };
+const CHAPTER = 6;
+const SLUG = '06-jingluo-tuxing';
+const TITLE = "十二经是一条闭合的环，环上的接点比穴名更值得先记住";
 
-// 取本章相关的缺口补录；底本与补源分开报，绝不合并成「底本有 N 条」
-function supplements() {
-  return suppDoc.gaps
-    .filter((g) => g.chapter === '06-jingluo-tuxing')
-    .map((g) => ({
-      id: g.id,
-      name: g.name,
-      declared: g.declared,
-      supplied: g.found,
-      source: g.items.length ? g.items[0].src : '',
-      // 八法这类条目 hans 是法名、hans_excerpt 才是释义；释义优先
-      items: g.items.map((x) => x.hans_excerpt || x.hans || x.hant),
-    }));
+/* ── 文本口径 ────────────────────────────────────────────────────── */
+
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+const count = (text, term) => String(text).split(term).length - 1;
+const num = (s) => Number(String(s).replace(/[,，\s]/g, ''));
+const CN = { 两: 2, 一: 1, 二: 2, 三: 3, 四: 4, 五: 5, 六: 6, 七: 7, 八: 8, 九: 9, 十: 10, 十二: 12 };
+const cn2n = (s) => (CN[s] !== undefined ? CN[s] : Number(s));
+const readDoc = () => fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+const docLines = (doc) => String(doc).split(/\r?\n/);
+
+/** 节标题：`## 一、…` */
+function sections(doc) {
+  return docLines(doc).filter((l) => /^##\s+/.test(l)).map((l) => l.replace(/^##\s+/, '').trim());
 }
 
-function chapter(no) {
-  return doc.chapters.find((c) => c.no === no);
+/** 段：非空，不以标题、引文、表格行、清单符号或编号起始 */
+function paragraphs(doc) {
+  return docLines(doc)
+    .map((l) => l.trim())
+    .filter((l) => l && !/^[#>|]/.test(l) && !/^[-*+]\s/.test(l) && !/^\d+[.、]/.test(l))
+    .filter((l) => !l.includes('|'));
 }
 
-function chapterText(no) {
-  const c = chapter(no);
-  const parts = [...(c.paras || [])];
-  for (const s of c.secs) {
-    parts.push(s.title, ...s.paras);
-    for (const sub of s.subs) parts.push(sub.title, ...sub.paras);
+/** markdown 表格：表头 + 去分隔行的数据行 */
+function tables(doc) {
+  const ls = docLines(doc);
+  const cells = (l) => l.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map((c) => c.trim());
+  const out = [];
+  let i = 0;
+  while (i < ls.length) {
+    if (/^\s*\|/.test(ls[i])) {
+      const block = [];
+      while (i < ls.length && /^\s*\|/.test(ls[i])) {
+        block.push(ls[i]);
+        i += 1;
+      }
+      const header = cells(block[0]);
+      const rows = block.slice(1).filter((l) => !/^\s*\|[\s:|-]+\|\s*$/.test(l)).map(cells);
+      out.push({ header, cols: header.length, rows });
+    } else {
+      i += 1;
+    }
   }
-  return parts.join('\n');
+  return out;
 }
 
-const CH5 = chapterText('5');
+const tableBy = (ts, kw) => ts.find((t) => t.header.join(' ').includes(kw));
 
-// ── 1. 流注环：从 5.2.3 原文的「→」链解析，不手抄 ─────────────
-function cycle() {
-  const m = CH5.match(/依次相传：([^，。]+)/);
-  if (!m) throw new Error('教材 5.2.3 找不到「依次相传：」链');
-  const names = m[1].split('→').map((s) => s.trim()).filter(Boolean);
+/* ── 本章算术（逐章注入，从正文解析） ───────────────────────────── */
+
+function chapterArithmetic(doc, ts) {
+const collect = tableBy(ts, '要素');
+  const fields = tableBy(ts, '字段');
+  const nodes = num((doc.match(/(\d+)\s*个交接点/) || [])[1]);
+  const gm = doc.match(/([一二三四五六七八九十]+)组各([一二三四五六七八九十]+)处/);
+  const groups = gm ? cn2n(gm[1]) : 0;
+  const per = gm ? cn2n(gm[2]) : 0;
+  const dirs = cn2n((doc.match(/走向有([一二三四五六七八九十]+)条总规律/) || [])[1] || '0');
+  const pairs = cn2n((doc.match(/表里配对[^是]{0,4}是([一二三四五六七八九十]+)对/) || [])[1] || '0');
+  const steps = cn2n((doc.match(/([一二三四五六七八九十]+)步、([一二三四五六七八九十]+)个时辰/) || [])[1] || '0');
+  const documented = num((doc.match(/只有手三阴\s*(\d+)\s*条/) || [])[1]);
+  const extra = ['督', '任', '冲', '带', '阴跷', '阳跷', '阴维', '阳维'].filter((x) => doc.includes(x)).length;
+
   return {
-    names,
-    n: names.length,
-    start: '肺经',
-    end: '肝经',
-    edges: names.map((v, i) => [v, names[(i + 1) % names.length]]),
-    verbatim: m[1],
+    collectItems: collect ? collect.rows.length : 0,
+    fieldRows: fields ? fields.rows.length : 0,
+    nodes,
+    groups,
+    per,
+    dirs,
+    pairs,
+    steps,
+    documented,
+    missing: steps - documented,
+    extra,
+    lines: [
+      '接点 ' + nodes + ' 个 = ' + groups + ' 组 × ' + per + ' 处，核对：' + (groups * per === nodes ? '闭合' : '不闭合'),
+      '走向规律 ' + dirs + ' 条，四条合起来正好成环',
+      '表里配对 ' + pairs + ' 对 × 2 = ' + pairs * 2 + ' 经（与十二经数目对上）',
+      '流注 ' + steps + ' 步 / ' + steps + ' 个时辰；正文写到接点的只有 ' + documented + ' 条，缺 ' + (steps - documented) + ' 条',
+      '奇经八脉 ' + extra + ' 条，不参与十二经计数',
+      '四要素表 ' + (collect ? collect.rows.length : 0) + ' 行 · 字段表 ' + (fields ? fields.rows.length : 0) + ' 行',
+    ],
   };
 }
 
-// ── 2. 全称与属性：手足 × 阴阳 × 脏腑，全部从名称解析 ─────────
-const FULL_RE = /(手|足)(太阴|少阴|厥阴|太阳|阳明|少阳)([肺心包心大肠小肠胃脾膀胱肾三焦胆肝]+)经/g;
+/* ── quiz：结构 + 接地 ──────────────────────────────────────────── */
 
-function fullNames() {
-  const all = [...CH5.matchAll(FULL_RE)].map((m) => m[0]);
-  return [...new Set(all)];
-}
-
-function attributes() {
-  const rows = fullNames().map((name) => {
-    const m = name.match(/(手|足)(太阴|少阴|厥阴|太阳|阳明|少阳)(.+)经/);
-    const limb = m[1];
-    const yy = m[2];
-    const organ = m[3];
-    return { name, limb, yy, organ, yin: /阴/.test(yy) ? '阴' : '阳' };
-  });
-  const tally = {};
-  for (const r of rows) {
-    const k = `${r.limb}三${r.yin}`;
-    tally[k] = (tally[k] || 0) + 1;
+/** 正文里 4 字以上的连续汉字片段 */
+function grams(text, n = 4) {
+  const out = new Set();
+  for (const seg of String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
   }
-  return { rows, tally };
+  return out;
 }
 
-// ── 3. 时辰：教材只给起点（寅）与终点（丑），中间按地支顺序推得 ──
-const ZHI = ['子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥'];
-const HOURS = {
-  子: '23-1', 丑: '1-3', 寅: '3-5', 卯: '5-7', 辰: '7-9', 巳: '9-11',
-  午: '11-13', 未: '13-15', 申: '15-17', 酉: '17-19', 戌: '19-21', 亥: '21-23',
-};
-
-function shichen() {
-  const c = cycle();
-  const startIdx = ZHI.indexOf('寅'); // 教材原文：始于寅时…手太阴肺经
-  return c.names.map((name, i) => {
-    const zhi = ZHI[(startIdx + i) % 12];
-    return { i, zhi, hours: HOURS[zhi], meridian: name };
+function quizSummary(quiz, doc) {
+  const body = grams(doc);
+  const qs = Array.isArray(quiz.questions) ? quiz.questions : [];
+  const stage = { pre: 0, check: 0, post: 0 };
+  const items = qs.map((q, i) => {
+    if (stage[q.stage] !== undefined) stage[q.stage] += 1;
+    const opts = Array.isArray(q.options) ? q.options : [];
+    const right = String(opts[q.correct] || '');
+    const hit = [...grams(right)].filter((g) => body.has(g));
+    const why = q.explain || q.explanation || '';
+    return {
+      n: i + 1,
+      stage: q.stage,
+      options: opts.length,
+      correct: q.correct,
+      explainHanzi: hanzi(why),
+      grounded: hit.length,
+      sample: hit.slice(0, 3),
+    };
   });
+  return {
+    total: qs.length,
+    stage,
+    items,
+    answers: qs.map((q) => q.correct),
+    distinctAnswers: new Set(qs.map((q) => q.correct)).size,
+    checkGrounded: items.filter((x) => x.stage === 'check' && x.grounded > 0).length,
+    minExplain: items.length ? Math.min(...items.map((x) => x.explainHanzi)) : 0,
+    allFourOptions: items.every((x) => x.options === 4),
+    badCorrect: items.filter((x) => !(Number.isInteger(x.correct) && x.correct >= 0 && x.correct < 4)).length,
+    stageComplete: ['pre', 'check', 'post'].every((s) => stage[s] > 0),
+  };
 }
 
-// ── 4. 环上的两个距离 ───────────────────────────────────────
-function distances(from = '肺经') {
-  const c = cycle();
-  const a = c.names.indexOf(from);
-  if (a < 0) throw new Error(`无此经：${from}`);
-  return c.names.map((to, b) => {
-    const fwd = (b - a + c.n + c.n) % c.n;
-    return { to, forward: fwd, shortest: Math.min(fwd, c.n - fwd) };
-  });
-}
+/* ── 汇总 ──────────────────────────────────────────────────────── */
 
-function diameter() {
-  const c = cycle();
-  let max = 0;
-  for (const a of c.names) for (const b of c.names) {
-    const ia = c.names.indexOf(a);
-    const ib = c.names.indexOf(b);
-    const d = (ib - ia + c.n) % c.n;
-    max = Math.max(max, Math.min(d, c.n - d));
-  }
-  return max;
-}
-
-// ── 5. 奇经：教材说「八脉」，实际只写出四脉 ────────────────────
-const QIJING_NAMED = ['督脉', '任脉', '冲脉', '带脉'];
-
-function qijing() {
-  const found = QIJING_NAMED.filter((m) => CH5.includes(m));
-  const missing = ['阴维脉', '阳维脉', '阴跷脉', '阳跷脉'].filter((m) => !CH5.includes(m));
-  return { declared: 8, named: found, missing, gap: 8 - found.length };
+function analyze() {
+  const doc = readDoc();
+  const ts = tables(doc);
+  const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+  return {
+    docHanzi: hanzi(doc),
+    paragraphs: paragraphs(doc).length,
+    sections: sections(doc),
+    tables: ts.map((t) => ({ header: t.header, cols: t.cols, rows: t.rows.length })),
+    arith: chapterArithmetic(doc, ts),
+    quiz: quizSummary(quiz, doc),
+  };
 }
 
 function main() {
-  const c = cycle();
-  const at = attributes();
-  const sc = shichen();
-  const d = distances('肺经');
-  const q = qijing();
-
-  console.log('═══ 十二经流注：一条环 ═══');
-  console.log(`  ${c.names.join(' → ')} → （复始）`);
-  console.log(`  节点 ${c.n} · 边 ${c.edges.length} · 起点「${c.start}」终点「${c.end}」· 原文照录 ${c.verbatim.length} 字`);
+  const r = analyze();
+  const a = r.arith;
+  console.log(`中医基础理论 第 ${CHAPTER} 章 · ${TITLE}`);
+  console.log(`正文 ${r.docHanzi.toLocaleString('en-US')} 汉字 · ${r.paragraphs} 段 · 节 ${r.sections.length} 个`);
   console.log('');
-  console.log('═══ 属性解析（从全称里读，不查表）═══');
-  console.log(`  出现的全称 ${at.rows.length} 个：${at.rows.map((r) => r.name).join(' ')}`);
-  for (const [k, v] of Object.entries(at.tally)) console.log(`  ${k}：${v}`);
+  console.log('结构：');
+  for (const s of r.sections) console.log(`  ${s}`);
   console.log('');
-  console.log('═══ 十二时辰（寅起、丑止，中间按地支顺序推得）═══');
-  console.log('  ' + sc.map((x) => `${x.zhi}(${x.hours})${x.meridian}`).join('  '));
+  console.log(`表 ${r.tables.length} 张：`);
+  r.tables.forEach((t, i) => console.log(`  [${i + 1}] ${t.header.join(' / ')} —— ${t.cols} 列 × ${t.rows} 行`));
   console.log('');
-  console.log('═══ 从「肺经」出发的距离 ═══');
-  console.log('  顺行距离 / 最短距离：');
-  console.log('  ' + d.map((x) => `${x.to} ${x.forward}/${x.shortest}`).join('  '));
-  console.log(`  环的直径 = ${diameter()}（12 节点环：最远要跨 6 步）`);
-  console.log('  → 「顺行」是气血流注方向（教材 5.2.3），「最短」是图上可及性；两个数不是一回事。');
+  console.log('本章算术（全部从正文解析后计算）：');
+  for (const line of a.lines) console.log(`  ${line}`);
   console.log('');
-  console.log(`═══ 奇经八脉：声称 ${q.declared} 脉，写出 ${q.named.length} 脉 ═══`);
-  console.log(`  写出：${q.named.join(' · ')}`);
-  console.log(`  未写：${q.missing.join(' · ')}（缺 ${q.gap} 脉）`);
-  console.log('  → 教材标题写「奇经八脉」，正文只详说督任冲带；剩下四脉连名字都没出现，不能替它补。');
-  console.log('');
-  const sp = supplements();
-  if (sp.length) {
-    console.log('═══ 教材缺口的外源补录（不改底本）═══');
-    for (const g of sp) console.log(`  ${g.name}：外源补 ${g.supplied}/${g.declared} 条 ← ${g.source}`);
-    console.log('  → 底本 327 段 / 45,199 字不含这些条；分账见 standards/jichu/supplements/README.md');
-    console.log('');
-  }
-
-  console.log('教学边界：本章只对教材的经络结构做图论描述，不用于取穴、针刺或任何治疗决策；不构成诊疗依据。');
+  console.log(`quiz ${r.quiz.total} 题（pre ${r.quiz.stage.pre} / check ${r.quiz.stage.check} / post ${r.quiz.stage.post}）· 答案 ${r.quiz.answers.join('/')}`);
+  console.log(`  check 题接地 ${r.quiz.checkGrounded} 道 · 答案落在 ${r.quiz.distinctAnswers} 个位置 · 最短解释 ${r.quiz.minExplain} 汉字`);
+  console.log('※ 以上数字由本章正文与 quiz 现算，改正文后重跑即可复核。');
+  console.log('※ 本章为教学材料，判据与分档均为课堂约定，不构成诊疗建议，也不替代执业医师的判断。');
 }
 
 if (require.main === module) main();
 
-module.exports = { supplements, cycle, fullNames, attributes, shichen, distances, diameter, qijing, chapterText, doc, ZHI };
+module.exports = {
+  analyze,
+  readDoc,
+  sections,
+  paragraphs,
+  tables,
+  tableBy,
+  grams,
+  hanzi,
+  count,
+  num,
+  cn2n,
+  quizSummary,
+  CHAPTER,
+  SLUG,
+  TITLE,
+  DOC,
+  QUIZ,
+};

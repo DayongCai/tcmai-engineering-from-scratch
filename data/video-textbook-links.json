@@ -35,7 +35,7 @@
      "source": "platform",
      "teaching": {
       "no": 1,
-      "title": "阴阳学说 → 二分类：从零实现逻辑回归"
+      "title": "阴阳不是两个筐，而是一条能反向追问的偏向轴"
      },
      "textbook": [
       {
@@ -56,7 +56,7 @@
      "source": "platform",
      "teaching": {
       "no": 2,
-      "title": "五行学说 → 多分类：从零实现 Softmax（并检验生克约束是否真的有用）"
+      "title": "五行是一张十根边的约束网，不是一个分成五份的筐"
      },
      "textbook": [
       {
@@ -77,7 +77,7 @@
      "source": "platform",
      "teaching": {
       "no": 3,
-      "title": "藏象学说 → 知识图谱：脏腑关系的图表示"
+      "title": "藏象是一张「黑箱—输出」对照表，解剖实体只解释了它的一半"
      },
      "textbook": [
       {
@@ -98,7 +98,7 @@
      "source": "platform",
      "teaching": {
       "no": 4,
-      "title": "绪论：这门教材 86% 的段落里都跟着一句「平台怎么做」"
+      "title": "中基的「基础」不是简单，是替所有临床科目背下了同一套定义"
      },
      "textbook": [
       {
@@ -119,7 +119,7 @@
      "source": "platform",
      "teaching": {
       "no": 5,
-      "title": "气血津液：方向全有，系数全无——教材在这里其实没写完"
+      "title": "气血津液给的是方向，不是配额，所以它不能当化验单读"
      },
      "textbook": [
       {
@@ -140,7 +140,7 @@
      "source": "platform",
      "teaching": {
       "no": 6,
-      "title": "经络学说：一条 12 节点的环，直径 6——但教材只写全了 7 个经名"
+      "title": "十二经是一条闭合的环，环上的接点比穴名更值得先记住"
      },
      "textbook": [
       {
@@ -161,7 +161,7 @@
      "source": "platform",
      "teaching": {
       "no": 7,
-      "title": "病因病机：13 个病因节点，1 条真演化链，病机十九条只来了 2 条"
+      "title": "病因不是一份清单，而是一台从症状倒推的反向机器"
      },
      "textbook": [
       {
@@ -192,7 +192,7 @@
      "source": "platform",
      "teaching": {
       "no": 8,
-      "title": "防治原则：「八法」在教材里是八个字，只有两法有释义"
+      "title": "治则不是八个字的目录，是八条各带「何时不能用」的判据"
      },
      "textbook": [
       {
@@ -213,7 +213,7 @@
      "source": "platform",
      "teaching": {
       "no": 9,
-      "title": "体质与发病：两套分类、10 条映射边，先验全靠自设"
+      "title": "体质决定的是「从化方向」，不是「一定会得什么病」"
      },
      "textbook": [
       {
@@ -239,7 +239,7 @@
      "source": "platform",
      "teaching": {
       "no": 10,
-      "title": "中医思维方法：图能画，表画不出"
+      "title": "象思维的第一步不是联想，是说清这个象排除了哪些解释"
      },
      "textbook": [
       {

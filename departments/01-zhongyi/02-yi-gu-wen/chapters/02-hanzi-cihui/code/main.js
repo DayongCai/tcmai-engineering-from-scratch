@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 /**
- * 医古文 · 第 2 章 汉字与词汇：本章统计口径
- * 课程: departments/01-zhongyi/02-yi-gu-wen/chapters/02-hanzi-cihui/docs/zh.md
- * 数据: standards/yiguwen/units.json（47 单元层，每单元带三辨与四位面词频）
- * 取数: standards/yiguwen/chapter-map.json（课程章 → 教材单元号）
+ * 医古文 · 第 2 章 汉字与词汇
+ * 正文: departments/01-zhongyi/02-yi-gu-wen/chapters/02-hanzi-cihui/docs/zh.md
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本脚本不存数字。四类用字关系那张表、通假三门槛、校勘四法的可靠性次序，
+ * 全部当场从正文读出；次序不是抄来的，是按正文句子里出现的先后排出来的。
  */
 
 'use strict';
@@ -15,87 +13,126 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'yiguwen', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/yiguwen/units.json —— 章节目录是否已脱离仓库？');
-}
-
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'yiguwen', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'yiguwen', 'chapter-map.json');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '2';
 const SLUG = '02-hanzi-cihui';
+const REL = 'departments/01-zhongyi/02-yi-gu-wen/chapters/02-hanzi-cihui';
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
-}
-
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+function sections(md) {
+  const out = [{ title: '(前言)', text: [] }];
+  for (const line of String(md).split(/\r?\n/)) {
+    const m = /^##\s+(.+?)\s*$/.exec(line);
+    if (m) out.push({ title: m[1], text: [] });
+    else out[out.length - 1].text.push(line);
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return out.map((s) => ({ title: s.title, text: s.text.join('\n') }));
+}
+
+function block(md, kw) {
+  const lines = String(md).split(/\r?\n/);
+  const start = lines.findIndex((l) => /^#{2,4}\s/.test(l) && l.includes(kw));
+  if (start < 0) throw new Error('正文缺小节: ' + kw);
+  const rest = lines.slice(start + 1);
+  const end = rest.findIndex((l) => /^#{2,4}\s/.test(l));
+  return (end < 0 ? rest : rest.slice(0, end)).join('\n');
+}
+
+function numbered(text) {
+  return String(text).split(/\r?\n/)
+    .map((l) => /^\s*\d+\.\s+(.+)$/.exec(l))
+    .filter(Boolean)
+    .map((m) => m[1].trim());
+}
+
+function chapterTitle(md) {
+  const m = /^#\s+(.+)$/m.exec(String(md));
+  if (!m) throw new Error('正文缺 H1 章题');
+  return m[1].trim();
+}
+
+function cardFields(md) {
+  const m = /```[\s\S]*?```/.exec(String(md));
+  if (!m) throw new Error('正文缺记录卡代码块');
+  return [...m[0].matchAll(/^([①-⑩])\s*([^：\n]+)：/gm)].map((x) => ({ no: x[1], name: x[2].trim() }));
+}
+
+/** 小节里的第一张表（去表头分隔行） */
+function tables(text) {
+  const groups = [];
+  let cur = null;
+  for (const line of String(text).split(/\r?\n/)) {
+    if (/^\s*\|/.test(line)) {
+      if (!cur) { cur = []; groups.push(cur); }
+      cur.push(line.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map((c) => c.trim()));
+    } else cur = null;
+  }
+  return groups.map((g) => g.filter((cells) => !cells.every((c) => /^:?-{2,}:?$/.test(c) || c === '')));
+}
+
+/** 四类用字关系：关系 / 性质 / 有无意义关联 / 证明要求 */
+function relationRows(md) {
+  const t = tables(block(md, '四类关系'))[0];
+  if (!t) throw new Error('四类关系小节里没有表');
+  return t.slice(1).map((r) => ({ name: r[0], nature: r[1], linked: r[2], proof: r[3] }));
+}
+
+/** 通假三门槛：正文写在一句话里，以顿号分隔 */
+function proofGates(md) {
+  const line = block(md, '四类关系').split(/\r?\n/).find((l) => l.includes('本字可考'));
+  if (!line) throw new Error('正文缺通假三门槛');
+  const m = /本字可考、声音可通、文义可安/.exec(line);
+  if (!m) throw new Error('三门槛表述变了');
+  return m[0].split('、');
+}
+
+/** 校勘四法按正文自述的可靠性排序（对校最实 … 理校最险） */
+function collationOrder(md) {
+  const text = block(md, '校勘四法');
+  const line = text.split(/\r?\n/).find((l) => l.includes('最实'));
+  if (!line) throw new Error('正文缺校勘四法的可靠性排序');
+  const names = ['对校', '本校', '他校', '理校'];
+  const got = names.filter((n) => line.includes(n));
+  if (got.length !== 4) throw new Error('四法不全: ' + got.join('/'));
+  return got.sort((a, b) => line.indexOf(a) - line.indexOf(b));
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const md = readDoc();
+  const rows = relationRows(md);
+  const gates = proofGates(md);
+  const order = collationOrder(md);
+  const fields = cardFields(md);
+  const items = numbered(block(md, '考核项'));
 
-  console.log(`医古文 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`医古文 · 第 ${CHAPTER} 章 ${chapterTitle(md).replace(/^第\s*\d+\s*章\s*·\s*/, '')}`);
+  console.log(`${REL} · 正文 ${hanzi(md).toLocaleString('en-US')} 汉字`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`四类用字关系（${rows.length} 类，表由正文读出）：`);
+  for (const r of rows) console.log(`  ${r.name}：${r.nature}；证明看「${r.proof}」`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`通假三门槛：${gates.join(' / ')}（缺一不可）`);
+  console.log(`校勘四法可靠性（按正文叙述先后）：${order.join(' > ')}`);
+  console.log(`  最险的是${order[order.length - 1]}：它只依赖读者的判断。`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log('辨字记录字段：');
+  for (const f of fields) console.log(`  ${f.no} ${f.name}`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  console.log(`考核项 ${items.length} 条。评分只看能不能回查：报不出篇名、韵部或版本的，作未辨处理。`);
+
+  const byName = Object.fromEntries(rows.map((r) => [r.name, r]));
   console.log('');
-  console.log('※ 教学样例：数字由 standards/yiguwen/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log(`对照：通假「${byName['通假'] ? byName['通假'].linked : '—'}」；古今字「${byName['古今字'] ? byName['古今字'].linked : '—'}」。`);
+  console.log('※ 以上结构与次序全部由正文现算，不手打；正文改动后重跑即可复现。');
+  console.log('※ 本输出仅用于教学演示，不构成诊疗建议。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  DOC, CHAPTER, SLUG, REL,
+  readDoc, sections, block, numbered, chapterTitle, cardFields,
+  tables, relationRows, proofGates, collationOrder,
+};

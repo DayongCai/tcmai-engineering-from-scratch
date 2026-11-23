@@ -9141,61 +9141,61 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-yin-yang-er-fenlei",
-        "title": "阴阳学说 → 二分类：从零实现逻辑回归",
+        "title": "阴阳不是两个筐，而是一条能反向追问的偏向轴",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-wu-xing-duo-fenlei",
-        "title": "五行学说 → 多分类：从零实现 Softmax（并检验生克约束是否真的有用）",
+        "title": "五行是一张十根边的约束网，不是一个分成五份的筐",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-zang-xiang-tupu",
-        "title": "藏象学说 → 知识图谱：脏腑关系的图表示",
+        "title": "藏象是一张「黑箱—输出」对照表，解剖实体只解释了它的一半",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-xulun",
-        "title": "绪论：这门教材 86% 的段落里都跟着一句「平台怎么做」",
+        "title": "中基的「基础」不是简单，是替所有临床科目背下了同一套定义",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-qi-xue-jin-ye",
-        "title": "气血津液：方向全有，系数全无——教材在这里其实没写完",
+        "title": "气血津液给的是方向，不是配额，所以它不能当化验单读",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-jingluo-tuxing",
-        "title": "经络学说：一条 12 节点的环，直径 6——但教材只写全了 7 个经名",
+        "title": "十二经是一条闭合的环，环上的接点比穴名更值得先记住",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-bingyin-bingji",
-        "title": "病因病机：13 个病因节点，1 条真演化链，病机十九条只来了 2 条",
+        "title": "病因不是一份清单，而是一台从症状倒推的反向机器",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-fangzhi-yuanze",
-        "title": "防治原则：「八法」在教材里是八个字，只有两法有释义",
+        "title": "治则不是八个字的目录，是八条各带「何时不能用」的判据",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-tizhi-fabing",
-        "title": "体质与发病：两套分类、10 条映射边，先验全靠自设",
+        "title": "体质决定的是「从化方向」，不是「一定会得什么病」",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-siwei-fangfa",
-        "title": "中医思维方法：图能画，表画不出",
+        "title": "象思维的第一步不是联想，是说清这个象排除了哪些解释",
         "status": "🚧"
       }
     ],
@@ -9203,49 +9203,49 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-gaishu-gongjushu",
-        "title": "医古文概论与工具书",
+        "title": "查得到不等于引得对：工具书是取证链的第一环",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-hanzi-cihui",
-        "title": "汉字与词汇",
+        "title": "用字关系分不清，训释就只是猜：通假、古今、异体、讹字各是一条证据",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-yufa",
-        "title": "语法",
+        "title": "语法不是贴标签：它是给歧义句定出唯一读法的手续",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-duanju-jinyi",
-        "title": "断句、标点与今译",
+        "title": "断句不是加标点：一处断错，病位与治法一起改写",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-zhuanji",
-        "title": "医家传记文选",
+        "title": "读传不是读故事：姓、字、籍贯、师承、著作各是一条待核的证据",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-yijing-yilun",
-        "title": "医经医论文选",
+        "title": "医论读的是论证，不是警句：一句名言脱离上下文就不能引用",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-xuwen-yian",
-        "title": "方书本草序文与医话医案",
+        "title": "序文讲书怎么来的，医案讲人怎么决断：两种文体各有一份必答清单",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-shuzi-renwen",
-        "title": "医古文与数字人文",
+        "title": "检索不是回答：词频给出的是候选，不是结论",
         "status": "🚧"
       }
     ],
@@ -9253,49 +9253,49 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-xulun",
-        "title": "绪论：医学史的问题与方法",
+        "title": "医学史不是年表：分期方案一换，同一批材料就讲出不同的故事",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-qiyuan-yu-zaoqi",
-        "title": "医药的起源与早期医药",
+        "title": "起源不是某个人的发明：四类证据各只答得上一半",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-chunqiu-qinhan",
-        "title": "春秋战国至秦汉：体系的奠基",
+        "title": "奠基不是几位圣人写成的：出土文献把「作者」换成了「层积」",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-weijin-suitang",
-        "title": "魏晋南北朝至隋唐五代：分科与集成",
+        "title": "分科不是把病人切开：切的是可以独立传授的那部分知识",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-songjinyuan",
-        "title": "宋金元：争鸣与建制",
+        "title": "争鸣不是意见多：一个新说要能被反驳，还得交出一条转化规则",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-mingqing",
-        "title": "明清：温病与考据",
+        "title": "温病不是一个人创立的：它的每一层推进都把上一层留着",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-jindai-dangdai",
-        "title": "近代与当代：转型与重建",
+        "title": "近代史最难的不是材料少，是材料都带着立场",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-shaoshu-jiaoliu-shuzi",
-        "title": "少数民族医学、中外交流与数字化",
+        "title": "少数民族医学史最缺的不是材料，是自我记录",
         "status": "🚧"
       }
     ],
@@ -9923,7 +9923,7 @@ window.TCMAI_DATA = {
       {
         "n": 12,
         "slug": "12-qita-waike",
-        "title": "其他外科疾病：六证，四类「先救命再治病」",
+        "title": "其他外科疾病：六证，五类「先救命再治病」",
         "status": "🚧"
       },
       {
@@ -9937,79 +9937,79 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-xulun",
-        "title": "绪论：把「经带胎产」写成四类可查的事",
+        "title": "妇科的门槛不是病名多，而是把「经带胎产」压成一条链、四类事",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-shengzhi-shengli",
-        "title": "生殖脏器与生理：一台四段的发动机",
+        "title": "月经不是每月一次出血，而是一台四段换挡的发动机",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-bingyin-bingji",
-        "title": "病因病机：四个入口，三条通路",
+        "title": "妇科病因不是一张清单，是四个入口接三条通路",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-zhenduan-bianzheng",
-        "title": "诊断与辨证：把「期量色质」变成四栏",
+        "title": "四诊不是四个动作，是把「期量色质」填进四栏",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-zhiliao",
-        "title": "治疗：六法一位，加一个「按周期换挡」",
+        "title": "治法不是九个方子，是六组动作加一个「按段换挡」",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-yufang-baojian",
-        "title": "预防与保健：五个阶段，一套「别做什么」",
+        "title": "保健的核心不是「做什么」，是每个阶段「不许做什么」",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-yuejing-qiliang-sezhi",
-        "title": "月经病（一）：期、量、时间的三种异常",
+        "title": "八个病名，其实只动了四栏里的两个",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-bijing-benglou",
-        "title": "月经病（二）：闭经、崩漏与十二个「经行」病",
+        "title": "两个大病在「血」，十二个小病在「周期与全身」",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-daixia-bing",
-        "title": "带下病：多与少，两种方向",
+        "title": "带下病只有一个病名，却有两个相反的方向",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-renshen-bing",
-        "title": "妊娠病：一条「胎」的安全线，与一个必须破的例外",
+        "title": "妊娠病有一条「胎」的安全线，和一个必须破的例外",
         "status": "🚧"
       },
       {
         "n": 11,
         "slug": "11-chanhou-bing",
-        "title": "产后病：多虚多瘀，一条轴十个出口",
+        "title": "产后的所有病，都从「多虚多瘀」这一条轴上分出去",
         "status": "🚧"
       },
       {
         "n": 12,
         "slug": "12-fuke-zabing",
-        "title": "妇科杂病：六个「不属于经带胎产」的病",
+        "title": "六个「不属于经带胎产」的病，各有一条自己的判据线",
         "status": "🚧"
       },
       {
         "n": 13,
         "slug": "13-jizhen-shuzihua",
-        "title": "妇科急症与数字化：四类急症，一条可算的链",
+        "title": "四类急症，一条可算的链",
         "status": "🚧"
       }
     ],
@@ -10017,85 +10017,85 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-fazhan-gaishu",
-        "title": "中医儿科学发展概要：一门「说不出话的病人」的学科",
+        "title": "哑科的第一课：把病人的话换成可观察的证据",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-shengli-bingli-tedian",
-        "title": "小儿生理病理特点：四句话，一条传变链",
+        "title": "四句话不是口号：每一句都对应一个能测出来的偏差",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-shengzhang-yangyu-baojian",
-        "title": "生长发育与喂养保健：把「养得对不对」变成可量的事",
+        "title": "「养得对不对」只有三个证据：曲线、餐次、接种本",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-erke-sizhen",
-        "title": "儿科四诊概要：脉靠不住的时候，看什么",
+        "title": "脉既难凭：儿科的证据从皮肤、孔窍和一条食指上取",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-bianzheng-zhifa",
-        "title": "儿科辨证与治法概要：三套辨证怎么分工，一条用药律怎么守",
+        "title": "三套辨证不是三个答案：一套定位、一套分期、一条用药律",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-feixi-jibing",
-        "title": "肺系疾病：一条由表入里的纵线，五个停靠点",
+        "title": "肺系的五个停靠点：从「流鼻涕」到「闭气」只隔两天",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-pixi-jibing",
-        "title": "脾系疾病：九证沿一条管道排开",
+        "title": "脾系的九个病，是同一条管道上的九种堵法",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-xingan-jibing",
-        "title": "心肝系疾病：一条「神—风」轴，两种时间尺度",
+        "title": "心肝系的六个病分属两把时钟：一把按月走，一把按分钟走",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-shenxi-jibing",
-        "title": "肾系疾病：一条水液通道，两个年龄界值",
+        "title": "肾系只有一个总闸：水出不去，或者关不住",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-chuanranbing",
-        "title": "传染病：一张「发热—出疹」时间表",
+        "title": "八个传染病，一张表就排得开：先看热与疹谁先谁后",
         "status": "🚧"
       },
       {
         "n": 11,
         "slug": "11-chongzheng",
-        "title": "虫证：看得见的虫，与看不见的堵",
+        "title": "虫证只有一个判据：虫现在在哪里",
         "status": "🚧"
       },
       {
         "n": 12,
         "slug": "12-xinshenger-jibing",
-        "title": "新生儿疾病：出生头 28 天的三件事",
+        "title": "出生头 28 天只有三件事：黄、硬、脐",
         "status": "🚧"
       },
       {
         "n": 13,
         "slug": "13-qita-bingzheng",
-        "title": "其他病证：三个「查不出器质病」的病",
+        "title": "三个「看着不重」的病：一个随气温走，一个藏在感冒之后，一个绕不开皮肤",
         "status": "🚧"
       },
       {
         "n": 14,
         "slug": "14-jizhen-shuzihua",
-        "title": "儿科急症与数字化 AI 时代：先救命，再谈可计算",
+        "title": "先救命，再谈可计算：三分钟定生死，一套术语定教学",
         "status": "🚧"
       }
     ],
@@ -10763,169 +10763,169 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-tongyong-liucheng",
-        "title": "通用流程与基本要求",
+        "title": "毕业设计的硬标准是别人能重跑，不是结论漂亮",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-zhongyi-zhenghou-paisheng",
-        "title": "中医系·案例一：证候词典即服务——900 单元派生的 132 证基层辨证底座",
+        "title": "证候词表的价值在可归并，不在证名多",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-zhongyi-xuepai-cibiao",
-        "title": "中医系·案例二：给「张从正＝攻邪」祛魅——学派词表消融的检索产品",
+        "title": "一词命中一千四百次，证的是字频不是学派",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-zhongyi-zhexue-fanchou",
-        "title": "中医系·案例三：内经范畴检索——49 万字里的 12 个范畴与 Top 篇",
+        "title": "四十九万字里，先分清是哪一个范畴的密度",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-zhongyao-xingzhuang-jiexi",
-        "title": "中药系·案例一：287 味药性味归经 API——给四诊仪与 HIS 补一张结构化药表",
+        "title": "药表的价值在缺项说得清，不在味数多",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-zhongyao-fangji-yaowei",
-        "title": "中药系·案例二：方剂-药味对账——饮片集采时代的配伍可核账本",
+        "title": "方剂对账先认药位，再谈配伍",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-zhongyao-yaoli-nandu",
-        "title": "中药系·案例三：药理 97 万字难度图谱——教培与继续教育的选题引擎",
+        "title": "难度图谱是代理指标，不能替老师判难",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-zhenjiu-jingluo-diben",
-        "title": "针灸系·案例一：经络学底本从零建——4.2 万中医馆的培训基建",
+        "title": "底本从零建，先算「还没有的东西」值多少",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-zhenjiu-shuxue-guishu",
-        "title": "针灸系·案例二：腧穴多经归属冲突表——ISO 针灸标准的落地校验",
+        "title": "补源之前，冲突率只能是零比零",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-zhenjiu-zhishishu-guadian",
-        "title": "针灸系·案例三：条文挂知识树——中医知识图谱的挂点服务",
+        "title": "挂点覆盖率的分母没建起来之前，分子毫无意义",
         "status": "🚧"
       },
       {
         "n": 11,
         "slug": "11-gushang-gubing-qianyi",
-        "title": "骨伤系·案例一：骨病底本迁移——骨伤专科的路径化底座",
+        "title": "底本可以迁移，章轴必须重算",
         "status": "🚧"
       },
       {
         "n": 12,
         "slug": "12-gushang-chuangshang-shijianchuang",
-        "title": "骨伤系·案例二：创伤时间窗清点——急诊骨伤的时点提醒器",
+        "title": "教材不给时点，就别替它编一个",
         "status": "🚧"
       },
       {
         "n": 13,
         "slug": "13-gushang-kangfu-pingding",
-        "title": "骨伤系·案例三：康复评定可复现包——社区康复的量表合规盒",
+        "title": "缺项填零，量表就成了假分数",
         "status": "🚧"
       },
       {
         "n": 14,
         "slug": "14-huli-pinggu-diben",
-        "title": "护理系·案例一：132 证→护理问题——中医护理的评估翻译器",
+        "title": "一证多护不是缺陷，是护理评估的常态",
         "status": "🚧"
       },
       {
         "n": 15,
         "slug": "15-huli-jiaoban-sbar",
-        "title": "护理系·案例二：交接班五栏——护理交接的缺项显性化",
+        "title": "交接班留空不是省事，是把风险留给下一班",
         "status": "🚧"
       },
       {
         "n": 16,
         "slug": "16-huli-yangsheng-fangan",
-        "title": "护理系·案例三：养生方案检查单——治未病的「忌」清单产品",
+        "title": "忌比宜难写，因为「忌」必须能勾选",
         "status": "🚧"
       },
       {
         "n": 17,
         "slug": "17-guanli-tongji-diben",
-        "title": "管理系·案例一：统计口径对齐——中医机构报表的守门员",
+        "title": "对不上的数不是笔误，是没有人负责计数",
         "status": "🚧"
       },
       {
         "n": 18,
         "slug": "18-guanli-fugaidu-baobiao",
-        "title": "管理系·案例二：覆盖度双维报表——院校学科建设的诊断仪",
+        "title": "一个覆盖率会把「章节多」读成「底本齐」",
         "status": "🚧"
       },
       {
         "n": 19,
         "slug": "19-guanli-zhengce-guadian",
-        "title": "管理系·案例三：政策条文挂点——中医药政策的可检索合规库",
+        "title": "条文没登记来源，挂上去也是无出处",
         "status": "🚧"
       },
       {
         "n": 20,
         "slug": "20-zhineng-icd-jiansuo",
-        "title": "智能系·案例一：ICD-11 TM1 检索栈——中医病证的编码翻译层",
+        "title": "检索栈能重建，才算编码翻译层",
         "status": "🚧"
       },
       {
         "n": 21,
         "slug": "21-zhineng-yuyi-zhangliang",
-        "title": "智能系·案例二：三维极坐标张量——中医语义表示的邻域稳定性",
+        "title": "换一种坐标表示，近邻集合先要稳住",
         "status": "🚧"
       },
       {
         "n": 22,
         "slug": "22-zhineng-zhibiao-shibai",
-        "title": "智能系·案例三：指标与失效移交包——医疗 AI 的可审计交付",
+        "title": "只报均值，等于把失败藏进平均里",
         "status": "🚧"
       },
       {
         "n": 23,
         "slug": "23-wuguan-mianbu-wangzhen",
-        "title": "五官口腔系·案例一：望诊字段化——中医面诊的可观察化接口",
+        "title": "「神疲」写不进字段，就别硬塞进形态",
         "status": "🚧"
       },
       {
         "n": 24,
         "slug": "24-wuguan-fangji-shai",
-        "title": "五官口腔系·案例二：114 方五官筛——专科中成药的选品依据",
+        "title": "两条筛方路径的差别，用交集与差集说话",
         "status": "🚧"
       },
       {
         "n": 25,
         "slug": "25-wuguan-guangxue-canliang",
-        "title": "五官口腔系·案例三：光学参数缺项写法——眼科数据报表的合规底线",
+        "title": "留空与写「无」，在报表里是两件事",
         "status": "🚧"
       },
       {
         "n": 26,
         "slug": "26-jichu-bingli-diben",
-        "title": "基础医学院·案例一：病理 252 单元底本——基础医学的课程数字化底座",
+        "title": "最大的底本层，先证明它可被别人复用",
         "status": "🚧"
       },
       {
         "n": 27,
         "slug": "27-jichu-bingsheng-jiuzhou",
-        "title": "基础医学院·案例二：病理生理九轴——机制教学的覆盖度仪表",
+        "title": "一条单元打三个轴，覆盖率就会虚高",
         "status": "🚧"
       },
       {
         "n": 28,
         "slug": "28-jichu-shengli-zhengchangzhi",
-        "title": "基础医学院·案例三：生理正常值表——可复现的参考区间交付",
+        "title": "正常值没有单位，等于没有参考区间",
         "status": "🚧"
       }
     ],

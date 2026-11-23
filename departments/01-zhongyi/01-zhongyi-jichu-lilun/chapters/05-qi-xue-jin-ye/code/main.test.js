@@ -1,59 +1,119 @@
+#!/usr/bin/env node
+/**
+ * 中医基础理论 · 第 5 章 气血津液给的是方向，不是配额，所以它不能当化验单读
+ * 确定性单元测试 —— 运行: node --test code/main.test.js
+ *
+ * 断言钉的是本机实测值：正文、算术解析或 quiz 任一处改动，这里就应当变红。
+ * 数字不从 main.js 回读再自比（那样什么都测不出），而是写在断言里。
+ */
+
 'use strict';
 
-const assert = require('node:assert');
 const test = require('node:test');
-const { concepts, relations, graph, simulate, truncated } = require('./main.js');
+const assert = require('node:assert');
+const fs = require('node:fs');
+const path = require('node:path');
+const { spawnSync } = require('node:child_process');
 
-test('五概念各 2 小节 4 段；合计 20 段 2,807 字', () => {
-  const cs = concepts();
-  assert.strictEqual(cs.length, 5);
-  for (const c of cs) {
-    assert.strictEqual(c.subs, 2, `${c.name} 小节数`);
-    assert.strictEqual(c.paras, 4, `${c.name} 段数`);
+const MAIN = path.join(__dirname, 'main.js');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
+const m = require('./main.js');
+
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
+const readQuiz = () => JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+const grams = (t, n = 4) => {
+  const out = new Set();
+  for (const seg of String(t || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
   }
-  assert.strictEqual(cs.reduce((n, c) => n + c.paras, 0), 20);
-  assert.strictEqual(cs.reduce((n, c) => n + c.chars, 0), 2807);
-  assert.deepStrictEqual(cs.map((c) => c.name), ['精', '气', '血', '津液', '神']);
+  return out;
+};
+
+test('正文规模：汉字 2836 / 段 21 / 节 6', () => {
+  const r = m.analyze();
+  assert.strictEqual(r.docHanzi, 2836);
+  assert.strictEqual(r.paragraphs, 21);
+  assert.strictEqual(r.sections.length, 6);
+  assert.strictEqual(hanzi(readDoc()), 2836, '汉字口径必须与正文一致');
 });
 
-test('关系 7 条边、4 个节点，全部带出处节号', () => {
-  const e = relations();
-  assert.strictEqual(e.length, 7);
-  assert.deepStrictEqual([...new Set(e.flatMap((x) => [x.from, x.to]))].sort(), ['气', '津液', '精', '血'].sort());
-  for (const x of e) assert.match(x.sec, /^4\.[1-6]/);
+test('表格：2 张，行数 [5,6]', () => {
+  const r = m.analyze();
+  assert.deepStrictEqual(r.tables.map((t) => t.rows), [5,6]);
+  assert.deepStrictEqual(r.tables.map((t) => t.cols), [4,3]);
 });
 
-test('气→血 三条（生血/行血/摄血），来自 4.6.1 原句', () => {
-  const e = relations().filter((x) => x.from === '气' && x.to === '血');
-  assert.deepStrictEqual(e.map((x) => x.label).sort(), ['气能行血', '气能生血', '气能摄血'].sort());
-  assert.ok(e.every((x) => x.sec === '4.6.1'));
+test('本章算术：解析出的数与派生量', () => {
+  const a = m.analyze().arith;
+  assert.strictEqual(a.collectItems, 5, 'collectItems');
+  assert.strictEqual(a.fieldRows, 6, 'fieldRows');
+  assert.strictEqual(a.qi, 4, 'qi');
+  assert.strictEqual(a.pairs, 10, 'pairs');
+  assert.strictEqual(a.documented, 2, 'documented');
+  assert.strictEqual(a.missing, 8, 'missing');
+  assert.strictEqual(a.watch, 7, 'watch');
+  assert.strictEqual(a.states, 3, 'states');
+  assert.strictEqual(a.arrows, 6, 'arrows');
+  assert.strictEqual(a.bidir, 1, 'bidir');
+  assert.strictEqual(a.statements, 3, 'statements');
+
 });
 
-test('精→血 是单向边：教材只说「精血同源」，没说血能生精', () => {
-  const e = relations();
-  const jing = e.filter((x) => x.from === '精' && x.to === '血');
-  assert.strictEqual(jing.length, 1);
-  assert.strictEqual(e.filter((x) => x.from === '血' && x.to === '精').length, 0);
+test('本章算术：结构与清单', () => {
+  const a = m.analyze().arith;
+  assert.ok(Array.isArray(a.lines) && a.lines.length >= 4, '算术清单至少 4 行');
 });
 
-test('有反向对应的边 6 条（7 条里只有精→血 没有反向）', () => {
-  const g = graph();
-  const paired = g.edges.filter((e) => g.edges.some((f) => f.from === e.to && f.to === e.from));
-  assert.strictEqual(paired.length, 6);
+test('quiz 结构：6 题、三段齐、4 选项、下标合法、答案打散', () => {
+  const q = readQuiz();
+  assert.strictEqual(q.questions.length, 6);
+  assert.deepStrictEqual(q.questions.map((x) => x.correct), [0,0,2,1,1,1]);
+  const distinct = [...new Set(q.questions.map((x) => x.correct))].sort((a, b) => a - b);
+  assert.ok(distinct.length >= 3, '答案位置只有 ' + distinct.length + ' 种');
+  assert.deepStrictEqual(distinct, [0,1,2]);
+  const stages = new Set(q.questions.map((x) => x.stage));
+  for (const s of ['pre', 'check', 'post']) assert.ok(stages.has(s), '缺 ' + s + ' 段');
+  for (const x of q.questions) {
+    assert.ok(['pre', 'check', 'post'].includes(x.stage), 'stage: ' + x.stage);
+    assert.strictEqual(x.options.length, 4, x.question);
+    assert.ok(Number.isInteger(x.correct) && x.correct >= 0 && x.correct < 4, 'correct 越界: ' + x.question);
+    assert.ok(typeof x.explain === 'string' && x.explain.length > 0, '缺 explain: ' + x.question);
+  }
 });
 
-test('守恒试写：总量从 3.000 掉到 1.792（漂移 −1.208），证明教材无守恒量', () => {
-  const s = simulate();
-  assert.strictEqual(s.rows.length, 13);
-  assert.strictEqual(s.rows[0].total, 3);
-  assert.strictEqual(s.rows[12].total, 1.7917);
-  assert.ok(Math.abs(s.drift + 1.2083) < 1e-3);
+test('quiz 接地：至少 2 道 check 题的正确选项含正文原词', () => {
+  const body = grams(readDoc());
+  const q = readQuiz();
+  const grounded = q.questions.filter((x) => {
+    if (x.stage !== 'check') return false;
+    const right = String(x.options[x.correct] || '');
+    return [...grams(right)].some((g) => body.has(g));
+  });
+  assert.ok(grounded.length >= 2, '只接地 ' + grounded.length + ' 道');
+  assert.strictEqual(m.analyze().quiz.checkGrounded, grounded.length, 'main.js 与测试口径必须一致');
 });
 
-test('原文截断：19 段以非句末标点收尾（工作簿单元格被切）', () => {
-  const tr = truncated();
-  assert.strictEqual(tr.length, 19);
-  const hit = tr.find((x) => x.sec === '4.6.1');
-  assert.ok(hit, '4.6.1 应被识别为截断');
-  assert.strictEqual(hit.len, 48);
+test('quiz 解释：每题 ≥30 汉字，最短 71 汉字', () => {
+  const q = readQuiz();
+  const lens = q.questions.map((x) => hanzi(x.explain));
+  assert.deepStrictEqual(lens.filter((n) => n < 30), [], '有解释不足 30 汉字');
+  assert.strictEqual(Math.min(...lens), 71);
+  assert.strictEqual(m.analyze().quiz.minExplain, 71);
+});
+
+test('脚本可运行：退出码 0，输出带教学样例与边界声明', () => {
+  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
+  assert.strictEqual(r.status, 0, String(r.stderr));
+  const out = String(r.stdout || '');
+  assert.ok(out.length > 200, '输出过短');
+  assert.match(out, /现算/);
+  assert.match(out, /不构成诊疗建议/);
+  assert.match(out, /第 5 章/);
+});
+
+test('代码头部指向本章目录', () => {
+  const body = fs.readFileSync(MAIN, 'utf8');
+  assert.ok(body.includes('chapters/05-qi-xue-jin-ye/docs/zh.md'), '头部注释未指向本章');
 });

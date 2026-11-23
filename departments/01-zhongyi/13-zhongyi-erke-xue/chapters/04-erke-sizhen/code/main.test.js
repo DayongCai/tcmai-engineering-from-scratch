@@ -1,57 +1,94 @@
 #!/usr/bin/env node
 /**
- * 第 4 章 儿科四诊概要 —— 确定性单元测试
+ * 第 4 章 儿科四诊概要 —— 正文与习题的确定性测试
  * 运行: node --test code/main.test.js
- *
- * 断言只落在可对账的结构上：单元数与小节号、规模、三辨与四位面重心、引书数、数值计数。
- * 数字由 standards/erke/units.json 现算后写死在此，教材改版时测试会先响。
  */
 
 'use strict';
 
 const assert = require('node:assert');
 const test = require('node:test');
+const fs = require('node:fs');
+const path = require('node:path');
 
-const { CHAPTER, load, chapterUnits, merge, rank, shape, citations, bySection } = require('./main.js');
+const m = require('./main.js');
 
-const data = load();
-const list = chapterUnits(data);
+const text = m.read();
+const TITLE = m.headings(text);
 
-test('本章单元数与小节号与教材一致', () => {
-  assert.strictEqual(list.length, 5);
-  assert.deepStrictEqual(list.map((u) => u.sub), ['4.1.1', '4.1.2', '4.1.3', '4.2.1', '4.2.2']);
+test('正文规模：3007 汉字 · 18 段 · 6 个二级标题', () => {
+  assert.strictEqual(m.hanzi(text), 3007);
+  assert.strictEqual(m.paragraphs(text).length, 18);
+  assert.strictEqual(TITLE.length, 6);
 });
 
-test('规模：8365 字 · 平均 1673 字/单元', () => {
-  const s = shape(list);
-  assert.strictEqual(s.hanzi, 8365);
-  assert.strictEqual(s.mean, 1673);
+test('二级标题与正文一致', () => {
+  assert.deepStrictEqual(TITLE, [
+    '一、望诊的顺序：五项固定动作，一步不能省',
+    '二、分龄观察项：同一个部位，不同年龄看不同的病',
+    '三、辨斑疹：先分斑与疹，再排时间表',
+    '四、闻、问、切：三诊各自只剩一件事可做',
+    '代价与边界',
+    '检查清单',
+  ]);
 });
 
-test('三辨重心是「证候表现」', () => {
-  const views = rank(merge(list, 'views'));
-  assert.strictEqual(views[0].key, '证候表现');
-  assert.strictEqual(views[0].count, 151);
+test('表格共 14 个数据行', () => {
+  assert.strictEqual(m.tableRows(text).length, 14);
 });
 
-test('四位面重心是「脾胃系」，且四层都有落点', () => {
-  const levels = Object.fromEntries(rank(merge(list, 'levels')).map((v) => [v.key, v.count]));
-  assert.strictEqual(levels['脾胃系'], 73);
-  const touched = Object.values(levels).filter((n) => n > 0).length;
-  assert.ok(touched >= 3, `仅 ${touched} 层有落点`);
+test('正文内书名 3 部 · 3 次', () => {
+  const c = m.citations(text);
+  assert.strictEqual(c.books, 3);
+  assert.strictEqual(c.total, 3);
 });
 
-test('引书成规模：≥12 部、≥18 次引用', () => {
-  const c = citations(list);
-  assert.ok(c.books >= 12, `引书 ${c.books}`);
-  assert.ok(c.total >= 18, `引用 ${c.total}`);
+test('术语频次：望诊 12 · 指纹 7 · 麻疹 7 · 斑疹 4', () => {
+  const t = Object.fromEntries(m.termStats(text).map((x) => [x.term, x.count]));
+  assert.strictEqual(t['望诊'], 12);
+  assert.strictEqual(t['指纹'], 7);
+  assert.strictEqual(t['麻疹'], 7);
+  assert.strictEqual(t['斑疹'], 4);
+  assert.strictEqual(t['未查'], 3);
 });
 
-test('数值计数与单元层一致（本章 17 处数值类命中）', () => {
-  assert.strictEqual(shape(list).valueLike, 17);
+test('检查清单 8 条，两条护栏均为 0', () => {
+  assert.strictEqual(m.checklistCount(text), 8);
+  assert.strictEqual(m.doseGuard(text), 0, '正文不得出现具体给药量');
+  assert.strictEqual(m.pageRefs(text), 0, '正文不得引页码');
 });
 
-test('每节都有单元，且每单元都带 locator', () => {
-  for (const s of bySection(list)) assert.ok(s.units > 0, s.sec);
-  for (const u of list) assert.ok(u.locator.startsWith(`教材·第${CHAPTER}章·`), u.locator);
+const quiz = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8'));
+
+test('quiz：≥5 题，pre / check / post 三段齐', () => {
+  assert.ok(quiz.questions.length >= 5, `只有 ${quiz.questions.length} 题`);
+  const stages = new Set(quiz.questions.map((q) => q.stage));
+  for (const s of ['pre', 'check', 'post']) assert.ok(stages.has(s), `缺 ${s} 段`);
+});
+
+test('quiz：每题 4 选项、correct 合法、explain ≥30 汉字', () => {
+  for (const q of quiz.questions) {
+    assert.strictEqual(q.options.length, 4, q.question);
+    assert.ok(Number.isInteger(q.correct) && q.correct >= 0 && q.correct < 4, q.question);
+    const n = (String(q.explanation).match(/[\u4e00-\u9fff]/g) || []).length;
+    assert.ok(n >= 30, `${q.question} 解释仅 ${n} 汉字`);
+  }
+});
+
+test('quiz：check 题正确选项与正文同词（≥2 道），答案不集中于一项', () => {
+  const clean = text.replace(/[^\u4e00-\u9fff]/g, ' ');
+  const grams = new Set();
+  for (const seg of clean.split(/\s+/)) {
+    for (let i = 0; i + 4 <= seg.length; i += 1) grams.add(seg.slice(i, i + 4));
+  }
+  let grounded = 0;
+  for (const q of quiz.questions.filter((x) => x.stage === 'check')) {
+    const right = q.options[q.correct];
+    const hit = [...right.replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)]
+      .some((seg) => seg.length >= 4 && [...Array(seg.length - 3)].some((_, i) => grams.has(seg.slice(i, i + 4))));
+    if (hit) grounded += 1;
+  }
+  assert.ok(grounded >= 2, `只有 ${grounded} 道 check 题能接地`);
+  const answers = new Set(quiz.questions.map((q) => q.correct));
+  assert.ok(answers.size >= 3, '答案过度集中');
 });

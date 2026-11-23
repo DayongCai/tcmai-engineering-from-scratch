@@ -78,3 +78,23 @@ test('正文与 quiz 用同一套术语：篇名都在全书里查得到', () =>
   for (const row of r.rows) assert.ok(r.corpus.byTitle.get(row.title) || r.corpus.byTitle.get(require('./main.js').ALIAS[row.title] || row.title), `${row.title} 不在全文语料里`);
   assert.ok(hanzi(r.corpus.longest.text) === r.corpus.longest.hanzi);
 });
+
+test('实测值钉死：全书口径与本章覆盖率不随代码改动漂移', () => {
+  // 全书语料（155,206 字 / 162 篇 / 3,147 段）与本章合计按实测定值写死。
+  // 语料或正文一改这里先红，再决定是改数还是改文，不许让 want 跟着 got 走。
+  assert.deepStrictEqual(
+    {
+      pians: r.corpus.total.pians,
+      hanzi: r.corpus.total.hanzi,
+      blocks: r.corpus.total.blocks,
+      suwen: r.corpus.byBook.素问.hanzi,
+      lingshu: r.corpus.byBook.灵枢.hanzi,
+      median: r.corpus.median,
+    },
+    { pians: 162, hanzi: 155206, blocks: 3147, suwen: 88940, lingshu: 66266, median: 696.5 },
+  );
+  assert.deepStrictEqual(
+    { pians: r.totals.pians, xuandu: r.totals.xuanduHanzi, full: r.totals.fullHanzi, coverage: r.totals.coverage, excerpt: r.totals.excerpt },
+    { pians: 5, xuandu: 4473, full: 4635, coverage: 96.5, excerpt: 0 },
+  );
+});

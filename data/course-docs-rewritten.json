@@ -985,6 +985,70 @@
       "words": 34226,
       "at": "2026-11-23",
       "note": "伤寒论：条文/版本/据条立据的读法正文，六项密度 + 12 章 quiz/code"
+    },
+    {
+      "dept": "01-zhongyi",
+      "subject": "01-zhongyi-jichu-lilun",
+      "chapters": 10,
+      "words": 29022,
+      "at": "2026-11-23",
+      "note": "中医基础理论：阴阳五行的偏向轴与约束网，落到临床判断"
+    },
+    {
+      "dept": "01-zhongyi",
+      "subject": "02-yi-gu-wen",
+      "chapters": 8,
+      "words": 24471,
+      "at": "2026-11-23",
+      "note": "医古文：训释判据、版本异文核对与读法动作"
+    },
+    {
+      "dept": "01-zhongyi",
+      "subject": "03-zhongguo-yixue-shi",
+      "chapters": 8,
+      "words": 24031,
+      "at": "2026-11-23",
+      "note": "中国医学史：分期判据与史料四级（一手/出土/转述/传说）"
+    },
+    {
+      "dept": "01-zhongyi",
+      "subject": "05-zhongyi-zhen-duan-xue",
+      "chapters": 12,
+      "words": 37448,
+      "at": "2026-11-23",
+      "note": "中医诊断学：四诊采集项、成组判据与记录字段"
+    },
+    {
+      "dept": "01-zhongyi",
+      "subject": "11-zhongyi-waike-xue",
+      "chapters": 13,
+      "words": 39103,
+      "at": "2026-11-23",
+      "note": "中医外科学：局部四诊、转手术红线与外治停手条件"
+    },
+    {
+      "dept": "01-zhongyi",
+      "subject": "12-zhongyi-fuke-xue",
+      "chapters": 13,
+      "words": 42261,
+      "at": "2026-11-23",
+      "note": "中医妇科学：周期分期、成组判据与必转红线"
+    },
+    {
+      "dept": "01-zhongyi",
+      "subject": "13-zhongyi-erke-xue",
+      "chapters": 14,
+      "words": 41976,
+      "at": "2026-11-23",
+      "note": "中医儿科学：分龄观察、必转红线与家长回述"
+    },
+    {
+      "dept": "01-zhongyi",
+      "subject": "22-zhongyi-biye-sheji",
+      "chapters": 28,
+      "words": 80972,
+      "at": "2026-11-23",
+      "note": "中医毕设：四节点交付、评分维度与失效拦截"
     }
   ]
 }

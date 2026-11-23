@@ -1,127 +1,39 @@
 #!/usr/bin/env node
 /**
- * 中医毕业设计与知识移交 · 第 23 章 五官口腔系·案例一：面部望诊字段的可观察化：本章统计口径
+ * 中医毕业设计与知识移交 · 第 23 章 「神疲」写不进字段，就别硬塞进形态
  * 课程: departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/23-wuguan-mianbu-wangzhen/docs/zh.md
- * 数据: standards/biye/units.json（10 单元层，每单元带三辨 / 四位面词频与数值计数）
+ * 数据: 本章正文的资产与字段表 + standards/biye/案例库.json 同 slug 案例
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：正文引用的每个规模、重心、引书数，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 18 件资产、132 证、4 类字段从正文读出；四类各写 3–5 个子字段 →
+ * 子字段总数落在 12–20 之间，这是现算的结构区间，不是填出来的数。
  */
 
 'use strict';
 
-const fs = require('node:fs');
 const path = require('node:path');
+const { readDoc, tableMap, budget, auditQuiz, banner, finish } = require(path.join(__dirname, '..', '..', '_chapter.js'));
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'biye', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/biye/units.json —— 章节目录是否已脱离仓库？');
-}
+const SLUG = '23-wuguan-mianbu-wangzhen';
+const NO = 23;
+const TITLE = '「神疲」写不进字段，就别硬塞进形态';
+const doc = readDoc(SLUG).text;
+const rows = tableMap(doc);
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'biye', 'units.json');
-const CHAPTER = '23';
+const assets = rows.get('对接资产');
+const syndromes = rows.get('对象池');
+const classes = rows.get('字段类');
+const subMin = classes * 3;
+const subMax = classes * 5;
+if (assets !== 18 || syndromes !== 132 || classes !== 4) throw new Error('资产／对象池／字段类读取失败');
+if (subMin !== 12 || subMax !== 20) throw new Error('子字段区间应为 12–20');
 
-const load = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
+banner(NO, TITLE);
+console.log(`资产 ${assets} 件 · 对象池 ${syndromes} 证 · 字段 ${classes} 类（部位／颜色／形态／光泽）`);
+console.log(`复算：每类 3–5 个子字段 → 子字段总数 ${classes}×3 至 ${classes}×5 = ${subMin}–${subMax} 个`);
+console.log(`可观察判定：双人同值；分歧条目保留两种判断，不强行归一。`);
+console.log(`可字段化率 = 可字段化条数 ÷ 总条目；分歧率 = 分歧条数 ÷ 已归类条数，分母要写清。`);
+console.log(`判断：「神疲」不进四类字段；本章只用文本、无图像，字段化是图像分析的前置，不替代图像识别。`);
 
-function chapterUnits(units, no = CHAPTER) {
-  return units.units
-    .filter((u) => u.chapter === no)
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-const sum = (d) => Object.values(d).reduce((a, b) => a + b, 0);
-
-function merge(list, field) {
-  const out = {};
-  for (const u of list) for (const [k, v] of Object.entries(u.measure[field])) out[k] = (out[k] || 0) + v;
-  return out;
-}
-
-function rank(dict) {
-  const tot = sum(dict);
-  return Object.entries(dict)
-    .map(([key, count]) => ({ key, count, share: tot ? count / tot : 0 }))
-    .sort((a, b) => b.count - a.count);
-}
-
-function bySection(list) {
-  const out = new Map();
-  for (const u of list) {
-    const key = u.sec || '（未标节）';
-    const it = out.get(key) || { sec: key, units: 0, hanzi: 0 };
-    it.units += 1;
-    it.hanzi += u.hanzi;
-    out.set(key, it);
-  }
-  return [...out.values()];
-}
-
-function citations(list) {
-  const counter = new Map();
-  for (const u of list) {
-    for (const m of u.prose.matchAll(/《([^》]+)》/g)) {
-      counter.set(m[1], (counter.get(m[1]) || 0) + 1);
-    }
-  }
-  const ranked = [...counter.entries()].sort((a, b) => b[1] - a[1]);
-  return { books: counter.size, total: sum(Object.fromEntries(counter)), top: ranked.slice(0, 3) };
-}
-
-function shape(list) {
-  const hanzi = list.reduce((a, u) => a + u.hanzi, 0);
-  return {
-    units: list.length,
-    hanzi,
-    mean: list.length ? Math.round(hanzi / list.length) : 0,
-    valueLike: list.reduce((a, u) => a + u.measure.valueLike, 0),
-    digits: list.reduce((a, u) => a + u.measure.digits, 0),
-  };
-}
-
-/** 方与法：单元层没有独立方剂字段，改从正文里认「治法动词」记号（儿科以疏风宣肺、消食健脾、平肝息风为主） */
-function methods(list) {
-  const VERBS = ['疏肝', '补肾', '健脾', '养血', '活血', '化瘀', '调经', '固冲', '止带', '安胎', '清热', '利湿'];
-  const out = {};
-  for (const v of VERBS) out[v] = list.reduce((a, u) => a + u.prose.split(v).length - 1, 0);
-  return Object.entries(out).filter(([, c]) => c).sort((a, b) => b[1] - a[1]);
-}
-
-module.exports = { CHAPTER, load, chapterUnits, merge, rank, bySection, citations, shape, methods, sum };
-
-if (require.main === module) {
-  const data = load();
-  const list = chapterUnits(data);
-  const s = shape(list);
-  const views = rank(merge(list, 'views'));
-  const levels = rank(merge(list, 'levels'));
-  const books = citations(list);
-
-  console.log('═══ 中医毕业设计与知识移交 · 第 23 章 五官口腔系·案例一：面部望诊字段的可观察化 ═══');
-  console.log(`单元 ${s.units} · 汉字 ${s.hanzi} · 平均 ${s.mean} 字/单元`);
-  console.log(`数值类命中 ${s.valueLike} · 数字字符 ${s.digits}`);
-  console.log('\n按节：');
-  for (const sec of bySection(list)) console.log(`  ${sec.sec}  ${sec.units} 单元 · ${sec.hanzi} 字`);
-  console.log('\n三辨重心：');
-  for (const v of views) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
-  console.log('\n四位面覆盖：');
-  for (const v of levels) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
-  console.log(`\n引书 ${books.books} 部 · 引用 ${books.total} 次 · 前三：${books.top.map(([n, c]) => `${n}(${c})`).join('、')}`);
-  console.log('\n治法动词命中：' + methods(list).map(([v, c]) => `${v}×${c}`).join('  '));
-  console.log('\n单元清单：');
-  for (const u of list) {
-    console.log(`  ${u.sub}\t${u.title}\t${u.hanzi}字\t${(u.tri && u.tri.view.primary) || '—'}/${(u.tri && u.tri.level.primary) || '—'}`);
-  }
-}
-
-// 教学样例声明：契约要求每章输出含临床边界声明（tests/test_chapter_code.js）
-if (require.main === module) {
-  console.log('※ 教学样例：数字由 standards/biye/units.json 现算，不构成诊疗建议，不能替代医师面诊。');
-}
+const b = budget(SLUG);
+finish(SLUG, b, auditQuiz(SLUG, doc));

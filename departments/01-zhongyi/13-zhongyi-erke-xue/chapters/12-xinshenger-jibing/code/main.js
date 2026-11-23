@@ -1,12 +1,9 @@
 #!/usr/bin/env node
 /**
- * 中医儿科学 · 第 12 章 新生儿疾病：本章统计口径
+ * 中医儿科学 · 第 12 章 新生儿疾病：本章文本口径
  * 课程: departments/01-zhongyi/13-zhongyi-erke-xue/chapters/12-xinshenger-jibing/docs/zh.md
- * 数据: standards/erke/units.json（250 单元层，每单元带三辨 / 四位面词频与数值计数）
+ * 数据: 本章正文 docs/zh.md（现读现算；不引外部表，不写死任何计数）
  * 依赖: 仅 Node.js 标准库
- *
- * 数字全部现算：正文引用的每个规模、重心、引书数，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
  */
 
 'use strict';
@@ -14,114 +11,102 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'erke', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/erke/units.json —— 章节目录是否已脱离仓库？');
+const CHAPTER = 12;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+
+/** 本章要盯的术语：三条分界线与一个复温节奏 */
+const TERMS = ['胎黄', '硬肿', '脐湿', '脐疮', '脐突', '复温', '胆红素', '转诊'];
+
+const read = () => fs.readFileSync(DOC, 'utf8');
+const hanzi = (s) => (s.match(/[\u4e00-\u9fff]/g) || []).length;
+const count = (s, t) => s.split(t).length - 1;
+const lines = (s) => s.split(/\r?\n/);
+
+function headings(text = read()) {
+  return lines(text)
+    .filter((l) => /^##\s/.test(l))
+    .map((l) => l.replace(/^##\s+/, '').trim());
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'erke', 'units.json');
-const CHAPTER = '12';
-
-const load = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-
-function chapterUnits(units, no = CHAPTER) {
-  return units.units
-    .filter((u) => u.chapter === no)
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+function tableRows(text = read()) {
+  return lines(text)
+    .map((l) => l.trim())
+    .filter((l) => /^\|/.test(l) && !/^\|[\s:|-]+\|?$/.test(l));
 }
 
-const sum = (d) => Object.values(d).reduce((a, b) => a + b, 0);
-
-function merge(list, field) {
-  const out = {};
-  for (const u of list) for (const [k, v] of Object.entries(u.measure[field])) out[k] = (out[k] || 0) + v;
-  return out;
+function paragraphs(text = read()) {
+  return text
+    .split(/\r?\n\s*\r?\n/)
+    .map((p) => p.trim())
+    .filter((p) => p && !/^[#>|]|^[-*]\s|^\d+\.\s/.test(p));
 }
 
-function rank(dict) {
-  const tot = sum(dict);
-  return Object.entries(dict)
-    .map(([key, count]) => ({ key, count, share: tot ? count / tot : 0 }))
-    .sort((a, b) => b.count - a.count);
+function citations(text = read()) {
+  const books = new Map();
+  for (const m of text.matchAll(/《([^》]+)》/g)) books.set(m[1], (books.get(m[1]) || 0) + 1);
+  const ranked = [...books.entries()].sort((a, b) => b[1] - a[1]);
+  return { books: books.size, total: ranked.reduce((a, [, c]) => a + c, 0), top: ranked.slice(0, 3) };
 }
 
-function bySection(list) {
-  const out = new Map();
-  for (const u of list) {
-    const key = u.sec || '（未标节）';
-    const it = out.get(key) || { sec: key, units: 0, hanzi: 0 };
-    it.units += 1;
-    it.hanzi += u.hanzi;
-    out.set(key, it);
-  }
-  return [...out.values()];
+function termStats(text = read()) {
+  return TERMS.map((term) => ({ term, count: count(text, term) })).filter((x) => x.count);
 }
 
-function citations(list) {
-  const counter = new Map();
-  for (const u of list) {
-    for (const m of u.prose.matchAll(/《([^》]+)》/g)) {
-      counter.set(m[1], (counter.get(m[1]) || 0) + 1);
-    }
-  }
-  const ranked = [...counter.entries()].sort((a, b) => b[1] - a[1]);
-  return { books: counter.size, total: sum(Object.fromEntries(counter)), top: ranked.slice(0, 3) };
+function checklistCount(text = read()) {
+  return lines(text).filter((l) => /^\s*-\s*\[[ x]\]/.test(l)).length;
 }
 
-function shape(list) {
-  const hanzi = list.reduce((a, u) => a + u.hanzi, 0);
+function doseGuard(text = read()) {
+  return (text.match(/\d+(?:\.\d+)?\s*(?:mg|毫克|毫升|ml|mL|μg|微克)/gi) || []).length;
+}
+
+function pageRefs(text = read()) {
+  return (text.match(/第\s*\d+\s*页/g) || []).length;
+}
+
+function stats(text = read()) {
   return {
-    units: list.length,
-    hanzi,
-    mean: list.length ? Math.round(hanzi / list.length) : 0,
-    valueLike: list.reduce((a, u) => a + u.measure.valueLike, 0),
-    digits: list.reduce((a, u) => a + u.measure.digits, 0),
+    chapter: CHAPTER,
+    hanzi: hanzi(text),
+    headings: headings(text),
+    tables: tableRows(text).length,
+    paragraphs: paragraphs(text).length,
+    citations: citations(text),
+    terms: termStats(text),
+    checklist: checklistCount(text),
+    doses: doseGuard(text),
+    pages: pageRefs(text),
   };
 }
 
-/** 方与法：单元层没有独立方剂字段，改从正文里认「治法动词」记号（儿科以疏风宣肺、消食健脾、平肝息风为主） */
-function methods(list) {
-  const VERBS = ['疏风', '清热', '解毒', '消食', '健脾', '运化', '补肾', '平肝', '息风', '透疹', '止泻', '宣肺'];
-  const out = {};
-  for (const v of VERBS) out[v] = list.reduce((a, u) => a + u.prose.split(v).length - 1, 0);
-  return Object.entries(out).filter(([, c]) => c).sort((a, b) => b[1] - a[1]);
-}
-
-module.exports = { CHAPTER, load, chapterUnits, merge, rank, bySection, citations, shape, methods, sum };
+module.exports = {
+  CHAPTER,
+  DOC,
+  TERMS,
+  read,
+  hanzi,
+  headings,
+  tableRows,
+  paragraphs,
+  citations,
+  termStats,
+  checklistCount,
+  doseGuard,
+  pageRefs,
+  stats,
+};
 
 if (require.main === module) {
-  const data = load();
-  const list = chapterUnits(data);
-  const s = shape(list);
-  const views = rank(merge(list, 'views'));
-  const levels = rank(merge(list, 'levels'));
-  const books = citations(list);
-
+  const s = stats();
   console.log('═══ 中医儿科学 · 第 12 章 新生儿疾病 ═══');
-  console.log(`单元 ${s.units} · 汉字 ${s.hanzi} · 平均 ${s.mean} 字/单元`);
-  console.log(`数值类命中 ${s.valueLike} · 数字字符 ${s.digits}`);
-  console.log('\n按节：');
-  for (const sec of bySection(list)) console.log(`  ${sec.sec}  ${sec.units} 单元 · ${sec.hanzi} 字`);
-  console.log('\n三辨重心：');
-  for (const v of views) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
-  console.log('\n四位面覆盖：');
-  for (const v of levels) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
-  console.log(`\n引书 ${books.books} 部 · 引用 ${books.total} 次 · 前三：${books.top.map(([n, c]) => `${n}(${c})`).join('、')}`);
-  console.log('\n治法动词命中：' + methods(list).map(([v, c]) => `${v}×${c}`).join('  '));
-  console.log('\n单元清单：');
-  for (const u of list) {
-    console.log(`  ${u.sub}\t${u.title}\t${u.hanzi}字\t${u.tri.view.primary || '—'}/${u.tri.level.primary || '—'}`);
-  }
-}
-
-// 教学样例声明：契约要求每章输出含临床边界声明（tests/test_chapter_code.js）
-if (require.main === module) {
-  console.log('※ 教学样例：数字由 standards/erke/units.json 现算，不构成诊疗建议，不能替代医师面诊。');
+  console.log(`正文 ${s.hanzi} 汉字 · ${s.paragraphs} 段 · ${s.headings.length} 个二级标题 · 表格 ${s.tables} 行`);
+  console.log('\n标题：');
+  for (const h of s.headings) console.log(`  · ${h}`);
+  console.log(`\n正文内书名 ${s.citations.books} 部 · ${s.citations.total} 次 · 前三：` +
+    s.citations.top.map(([n, c]) => `${n}(${c})`).join('、'));
+  console.log('\n术语命中：' + s.terms.map((x) => `${x.term}×${x.count}`).join('  '));
+  console.log(`\n检查清单 ${s.checklist} 条 · 剂量单位 ${s.doses} 处 · 页码 ${s.pages} 处`);
+  console.log('读法：黄看时间表、硬看范围与肛温、脐看红肿热痛；三条线都不看「黄不黄」这种说法。');
+  console.log('复温须循序渐进，切忌加温过速——家长的第一反应「赶紧捂热」是错的。');
+  console.log('\n※ 教学样例：数字由本章正文现算，不构成诊疗建议，不能替代医师面诊。');
 }

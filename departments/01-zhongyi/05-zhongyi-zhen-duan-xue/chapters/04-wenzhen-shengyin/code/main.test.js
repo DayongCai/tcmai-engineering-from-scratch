@@ -1,52 +1,59 @@
 'use strict';
-
+/**
+ * 第 4 章：855 = 684 + 171 的加总、采集九项、判据组与 quiz 结构全部钉死。
+ */
 const assert = require('node:assert');
 const test = require('node:test');
-const { shape, sound, odor, SOUND, ODOR, supplements } = require('./main.js');
+const { analyze } = require('./main.js');
 
-test('闻诊两节：684 + 171 = 855 字（全书 3.8%）', () => {
-  const s = shape();
-  assert.deepStrictEqual(s.rows.map((r) => r.chars), [684, 171]);
-  assert.strictEqual(s.total, 855);
-  assert.ok(Math.abs(s.share - 855 / 22215) < 1e-9);
+const r = analyze();
+
+test('正文骨架：2,087 汉字 / 6 节 / 5 表 / 1 条篇名级引文', () => {
+  assert.strictEqual(r.s.hanzi, 2087);
+  assert.strictEqual(r.s.sections.length, 6);
+  assert.strictEqual(r.s.tableCount, 5);
+  assert.deepStrictEqual(r.s.quotes, ['素问·阴阳应象大论']);
 });
 
-test('听声音占闻诊 80.0%，嗅气味只占 20.0%', () => {
-  const s = shape();
-  assert.ok(Math.abs(s.soundShare - 0.8) < 1e-9);
+test('听 684 + 嗅 171 = 855，与正文所写的总字数自洽', () => {
+  const by = Object.fromEntries(r.facts.map((f) => [f.label, f.got]));
+  assert.strictEqual(by['闻诊总字数'], 855);
+  assert.strictEqual(by['听的一半'], 684);
+  assert.strictEqual(by['嗅的一半'], 171);
+  assert.strictEqual(by['两半相加'], 855);
 });
 
-test('声音五组共 17 词，全部命中教材原文', () => {
-  const so = sound();
-  assert.strictEqual(so.terms, 17);
-  assert.strictEqual(so.hit, 17);
-  assert.deepStrictEqual(Object.keys(SOUND).length, 5);
-  assert.deepStrictEqual(so.groups.map((g) => g.group), ['语声异常', '呼吸异常', '咳嗽', '胃气上逆', '肠腑之声']);
+test('采集九项、判据组五组、作废五种、记录十列、触发五条、失效四条', () => {
+  const by = Object.fromEntries(r.facts.map((f) => [f.label, f.got]));
+  assert.strictEqual(by['采集项'], 9);
+  assert.strictEqual(by['判据组'], 5);
+  assert.strictEqual(by['须作废的情形'], 5);
+  assert.strictEqual(by['记录列数'], 10);
+  assert.strictEqual(by['触发'], 5);
+  assert.strictEqual(by['失效模式'], 4);
 });
 
-test('语声异常 5 词：谵语/郑声/独语/错语/狂言（与第 12 章真假识别相关）', () => {
-  const g = sound().groups.find((x) => x.group === '语声异常');
-  assert.deepStrictEqual(g.items.map((x) => x.w), ['谵语', '郑声', '独语', '错语', '狂言']);
-  assert.ok(g.items.every((x) => x.inText));
+test('本章写下的数与现算逐条相等', () => {
+  for (const f of r.facts) assert.strictEqual(f.got, f.want, `${f.label}: 现算 ${f.got} ≠ 正文 ${f.want}`);
 });
 
-test('气味 6 项全部命中（口气/汗气/痰涕/二便/经带/病室）', () => {
-  const od = odor();
-  assert.strictEqual(ODOR.length, 6);
-  assert.ok(od.every((x) => x.inText));
+test('quiz 结构：6 题，pre 1 / check 3 / post 2，四选项，解释不少于 30 汉字', () => {
+  const q = r.quiz;
+  assert.strictEqual(q.total, 6);
+  assert.deepStrictEqual(q.stage, { pre: 1, check: 3, post: 2 });
+  assert.strictEqual(q.allFourOptions, true);
+  assert.ok(q.minExplain >= 30, `最短解释 ${q.minExplain} 汉字`);
 });
 
-test('闻诊是四诊里最薄的一诊：855 字 < 望 2,812 / 问 2,281 / 切 2,030', () => {
-  const s = shape();
-  assert.ok(s.total < 2030);
-  assert.ok(s.total < 2281);
-  assert.ok(s.total < 2812);
+test('quiz 接地与打散：check 题三道全部接地，答案用满 4 个位置', () => {
+  assert.strictEqual(r.quiz.checkGrounded, 3);
+  assert.deepStrictEqual(r.quiz.answers, [1, 2, 0, 3, 1, 2]);
+  assert.strictEqual(r.quiz.distinctAnswers, 4);
 });
 
-test('补录：气味缺分级，外源五臭可查', () => {
-  const g = supplements('z3-qiwei-wu-chou');
-  assert.strictEqual(g.textbookSeen.count, 6, '教材气味六源');
-  assert.strictEqual(g.textbookSeen.hasGrading, false, '教材没有分级');
-  assert.deepStrictEqual(g.entries.map((e) => e.chou).sort(), ['臊', '焦', '香', '腥', '腐'].sort());
-  assert.ok(g.citeAs.includes('外源·笈成·'), '引用格式');
+test('quiz 不出现旧脚手架名目与「见输出」式解释', () => {
+  const raw = require('node:fs').readFileSync(require('node:path').join(__dirname, '..', 'quiz.json'), 'utf8');
+  for (const bad of ['三辨', '四位面', '单元规模', '本章实测', '见 code/main.js 输出']) {
+    assert.ok(!raw.includes(bad), `quiz 仍含「${bad}」`);
+  }
 });

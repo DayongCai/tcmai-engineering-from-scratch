@@ -1,292 +1,249 @@
 #!/usr/bin/env node
 /**
- * 中医基础理论 · 第 3 章 藏象学说 → 知识图谱：脏腑关系的图表示
- * 课程: departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/03-zang-xiang-tupu/docs/zh.md
- * 出处: 《素问·六节藏象论》《素问·五藏别论》《素问·阴阳应象大论》五行配属段
- * 依赖: 仅 Node.js 标准库
+ * 中医基础理论 · 第 3 章 藏象是一张「黑箱—输出」对照表，解剖实体只解释了它的一半
  *
- * 核心命题: 藏象的「象」是关系，不是标签。用图存关系，用遍历回答"谁连着谁"。
- * 本课从零建图（邻接表）、做 k 跳邻域与最短路径，并对本体做三项完整性校验。
+ *   node code/main.js
  *
- * 说明: 关系取自通行教材的藏象配属，用于教学演示；不构成诊疗依据。
+ * 正文：chapters/03-zang-xiang-tupu/docs/zh.md
+ * 习题：chapters/03-zang-xiang-tupu/quiz.json
+ * 依赖：仅 Node.js 标准库
+ *
+ * 只读本章正文与本章 quiz，不读任何 standards 取数表：正文改了，这里的数字跟着变。
+ *   · 规模：汉字、段、节标题、表格张数与每张表的列数／行数
+ *   · 本章算术：从正文里解析判据条目、门限与结构数字，再算派生量
+ *   · quiz：题量、三段分布、选项数、解释长度、答案位置是否打散、check 题能否在正文找到原词
+ * 任何一项对不上，说明正文、代码、习题三者已经不同源。
  */
 
 'use strict';
 
-// ── 本体：实体类型 + 关系类型（先定本体，再灌数据） ──────────
-const NODE_TYPES = ['脏', '腑', '官窍', '情志', '形体', '华', '液', '五行'];
-const EDGE_TYPES = ['相表里', '开窍于', '在志为', '在体为', '其华在', '化为', '属五行', '相生', '相克'];
+const fs = require('node:fs');
+const path = require('node:path');
 
-// 五行次序: 木 火 土 金 水
-const WUXING = ['木', '火', '土', '金', '水'];
-// 相生: 木→火→土→金→水→木 ；相克: 木克土、土克水、水克火、火克金、金克木
-const WUXING_SHENG = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 0]];
-const WUXING_KE = [[0, 2], [2, 4], [4, 1], [1, 3], [3, 0]];
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
-// 五藏及其配属（通行藏象配属表）
-const ZANG = [
-  { name: '肝', wuxing: '木', fu: '胆',   qiao: '目', zhi: '怒', ti: '筋', hua: '爪', ye: '泪' },
-  { name: '心', wuxing: '火', fu: '小肠', qiao: '舌', zhi: '喜', ti: '脉', hua: '面', ye: '汗' },
-  { name: '脾', wuxing: '土', fu: '胃',   qiao: '口', zhi: '思', ti: '肉', hua: '唇', ye: '涎' },
-  { name: '肺', wuxing: '金', fu: '大肠', qiao: '鼻', zhi: '悲', ti: '皮毛', hua: '毛', ye: '涕' },
-  { name: '肾', wuxing: '水', fu: '膀胱', qiao: '耳', zhi: '恐', ti: '骨', hua: '发', ye: '唾' },
-];
+const CHAPTER = 3;
+const SLUG = '03-zang-xiang-tupu';
+const TITLE = "藏象是一张「黑箱—输出」对照表，解剖实体只解释了它的一半";
 
-// ── 图：邻接表 ─────────────────────────────────────────────
-function createGraph() {
-  return { nodes: new Map(), out: new Map(), in: new Map() };
+/* ── 文本口径 ────────────────────────────────────────────────────── */
+
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+const count = (text, term) => String(text).split(term).length - 1;
+const num = (s) => Number(String(s).replace(/[,，\s]/g, ''));
+const CN = { 两: 2, 一: 1, 二: 2, 三: 3, 四: 4, 五: 5, 六: 6, 七: 7, 八: 8, 九: 9, 十: 10, 十二: 12 };
+const cn2n = (s) => (CN[s] !== undefined ? CN[s] : Number(s));
+const readDoc = () => fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+const docLines = (doc) => String(doc).split(/\r?\n/);
+
+/** 节标题：`## 一、…` */
+function sections(doc) {
+  return docLines(doc).filter((l) => /^##\s+/.test(l)).map((l) => l.replace(/^##\s+/, '').trim());
 }
 
-function addNode(g, name, type) {
-  if (!g.nodes.has(name)) {
-    g.nodes.set(name, { name, type, edges: [] });
-    g.out.set(name, []);
-    g.in.set(name, []);
-  }
-  return g.nodes.get(name);
+/** 段：非空，不以标题、引文、表格行、清单符号或编号起始 */
+function paragraphs(doc) {
+  return docLines(doc)
+    .map((l) => l.trim())
+    .filter((l) => l && !/^[#>|]/.test(l) && !/^[-*+]\s/.test(l) && !/^\d+[.、]/.test(l))
+    .filter((l) => !l.includes('|'));
 }
 
-function addEdge(g, from, type, to) {
-  addNode(g, from, '未知');
-  addNode(g, to, '未知');
-  g.out.get(from).push({ from, type, to });
-  g.in.get(to).push({ from, type, to });
-  g.nodes.get(from).edges.push({ type, to, dir: 'out' });
-  g.nodes.get(to).edges.push({ type, from, dir: 'in' });
-  return g;
-}
-
-/** 由藏象配属表生成图 */
-function buildZangXiangGraph() {
-  const g = createGraph();
-
-  // 先把五行建成节点，并连上相生 / 相克
-  for (const w of WUXING) addNode(g, w, '五行');
-  for (const [i, j] of WUXING_SHENG) addEdge(g, WUXING[i], '相生', WUXING[j]);
-  for (const [i, j] of WUXING_KE) addEdge(g, WUXING[i], '相克', WUXING[j]);
-
-  for (const z of ZANG) {
-    addNode(g, z.name, '脏');
-    addNode(g, z.fu, '腑');
-    addNode(g, z.qiao, '官窍');
-    addNode(g, z.zhi, '情志');
-    addNode(g, z.ti, '形体');
-    addNode(g, z.hua, '华');
-    addNode(g, z.ye, '液');
-
-    // 相表里是对称关系：两侧都要有边。只写一侧会让「从腑查脏」静默失败。
-    addEdge(g, z.name, '相表里', z.fu);
-    addEdge(g, z.fu, '相表里', z.name);
-    addEdge(g, z.name, '开窍于', z.qiao);
-    addEdge(g, z.name, '在志为', z.zhi);
-    addEdge(g, z.name, '在体为', z.ti);
-    addEdge(g, z.name, '其华在', z.hua);
-    addEdge(g, z.name, '化为', z.ye);
-    addEdge(g, z.name, '属五行', z.wuxing);
-  }
-  return g;
-}
-
-// ── 查询 ───────────────────────────────────────────────────
-/** k 跳邻域（无向），返回 { 节点: 距离 } */
-function neighborhood(g, start, k) {
-  const seen = new Map([[start, 0]]);
-  let frontier = [start];
-  for (let d = 1; d <= k; d += 1) {
-    const next = [];
-    for (const n of frontier) {
-      const nbrs = [
-        ...g.out.get(n).map((e) => e.to),
-        ...g.in.get(n).map((e) => e.from),
-      ];
-      for (const m of nbrs) {
-        if (!seen.has(m)) {
-          seen.set(m, d);
-          next.push(m);
-        }
+/** markdown 表格：表头 + 去分隔行的数据行 */
+function tables(doc) {
+  const ls = docLines(doc);
+  const cells = (l) => l.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map((c) => c.trim());
+  const out = [];
+  let i = 0;
+  while (i < ls.length) {
+    if (/^\s*\|/.test(ls[i])) {
+      const block = [];
+      while (i < ls.length && /^\s*\|/.test(ls[i])) {
+        block.push(ls[i]);
+        i += 1;
       }
+      const header = cells(block[0]);
+      const rows = block.slice(1).filter((l) => !/^\s*\|[\s:|-]+\|\s*$/.test(l)).map(cells);
+      out.push({ header, cols: header.length, rows });
+    } else {
+      i += 1;
     }
-    frontier = next;
-    if (!frontier.length) break;
-  }
-  seen.delete(start);
-  return seen;
-}
-
-/** 最短路径（无向 BFS）。
- *  返回 { nodes: string[], edges: [{ src, dst, type, forward }] }
- *  edges[i] 连接 nodes[i] 与 nodes[i+1]；forward=true 表示真实边方向就是 nodes[i]→nodes[i+1]，
- *  forward=false 表示真实边是 nodes[i+1]→nodes[i]（逆向遍历）。
- *  区分方向是必要的：否则「金克木」会被渲染成「木克金」，把相克方向讲反。 */
-function shortestPath(g, from, to) {
-  if (from === to) return { nodes: [from], edges: [] };
-
-  const prev = new Map([[from, null]]);
-  const queue = [from];
-  let found = false;
-
-  while (queue.length && !found) {
-    const n = queue.shift();
-    const step = [
-      // 沿出边走：真实方向 n → e.to
-      ...(g.out.get(n) || []).map((e) => ({ next: e.to, src: n, dst: e.to, type: e.type, forward: true })),
-      // 沿入边走（逆向）：真实方向 e.from → n
-      ...(g.in.get(n) || []).map((e) => ({ next: e.from, src: e.from, dst: n, type: e.type, forward: false })),
-    ];
-    for (const s of step) {
-      if (prev.has(s.next)) continue;
-      prev.set(s.next, { from: n, edge: { src: s.src, dst: s.dst, type: s.type, forward: s.forward } });
-      if (s.next === to) { found = true; break; }
-      queue.push(s.next);
-    }
-  }
-  if (!prev.has(to)) return null;
-
-  const nodes = [to];
-  const edges = [];
-  let cur = to;
-  while (prev.get(cur)) {
-    const p = prev.get(cur);
-    edges.unshift(p.edge);
-    nodes.unshift(p.from);
-    cur = p.from;
-  }
-  return { nodes, edges };
-}
-
-/** 把路径渲染成可读字符串，逆向边用 ←type- 标记 */
-function formatPath(p) {
-  if (!p) return '不可达';
-  return p.nodes
-    .map((n, i) => {
-      if (i === 0) return n;
-      const e = p.edges[i - 1];
-      return e.forward ? `-${e.type}→ ${n}` : `←${e.type}- ${n}`;
-    })
-    .join(' ');
-}
-
-/** 某一脏的全套配属（one-hop 出边） */
-function attributesOf(g, zangName) {
-  const out = {};
-  for (const e of g.out.get(zangName) || []) {
-    if (e.type === '属五行') out.wuxing = e.to;
-    else out[e.type] = e.to;
   }
   return out;
 }
 
-// ── 完整性校验（本体级） ────────────────────────────────────
-/** 1. 每个脏必须齐备六类配属 */
-function checkCompleteness(g) {
-  const required = ['相表里', '开窍于', '在志为', '在体为', '其华在', '属五行'];
-  const problems = [];
-  for (const z of ZANG) {
-    const got = new Set((g.out.get(z.name) || []).map((e) => e.type));
-    for (const r of required) {
-      if (!got.has(r)) problems.push(`${z.name} 缺 ${r}`);
-    }
-  }
-  return problems;
+const tableBy = (ts, kw) => ts.find((t) => t.header.join(' ').includes(kw));
+
+/* ── 本章算术（逐章注入，从正文解析） ───────────────────────────── */
+
+function chapterArithmetic(doc, ts) {
+const collect = tableBy(ts, '采集项');
+  const fields = tableBy(ts, '字段');
+  const m = doc.match(/五脏两两之间有\s*(\d+)\s*对关系（从\s*(\d+)\s*个里取\s*2\s*个）/);
+  const pairs = m ? num(m[1]) : 0;
+  const k = m ? num(m[2]) : 0;
+  const documented = num((doc.match(/只写了\s*(\d+)\s*对/) || [])[1]);
+  const missing = pairs - documented;
+  const criteria = ['一条稳定象', '与该脏功能相符', '排他依据'].filter((s) => doc.includes(s)).length;
+  const pathways = ['经脉络属', '功能相承', '位置相邻'].filter((s) => doc.includes(s)).length;
+  const six = ((doc.match(/给六个症状（([^）]+)）/) || [])[1] || '').split('、').filter(Boolean);
+  const HIDE = ['自汗', '崩漏', '尿频'];
+  const hidden = six.filter((s) => HIDE.some((h) => s.includes(h))).length;
+  const unblocked = six.length - hidden;
+
+  return {
+    collectItems: collect ? collect.rows.length : 0,
+    fieldRows: fields ? fields.rows.length : 0,
+    pairs,
+    k,
+    documented,
+    missing,
+    criteria,
+    pathways,
+    symptoms: six.length,
+    hidden,
+    unblocked,
+    lines: [
+      '五脏 ' + k + ' 个取 2 = ' + pairs + ' 对，正文写了 ' + documented + ' 对，缺 ' + missing + ' 对（覆盖 ' + Math.round((documented / pairs) * 100) + '%）',
+      '功能态判据 ' + criteria + ' 件（稳定象／功能推断／排他依据）',
+      '关系边通路 ' + pathways + ' 类（经脉络属／功能相承／位置相邻）',
+      '六个考核症状：藏不住 ' + hidden + ' 条 · 泻不通 ' + unblocked + ' 条（' + six.join('、') + '）',
+      '采集表 ' + (collect ? collect.rows.length : 0) + ' 行 · 字段表 ' + (fields ? fields.rows.length : 0) + ' 行',
+    ],
+  };
 }
 
-/** 2. 相表里必须是双向一致的配对（脏→腑 且 腑→脏） */
-function checkBiaoLi(g) {
-  const problems = [];
-  for (const z of ZANG) {
-    const forward = (g.out.get(z.name) || []).some((e) => e.type === '相表里' && e.to === z.fu);
-    const backward = (g.out.get(z.fu) || []).some((e) => e.type === '相表里' && e.to === z.name);
-    if (!forward) problems.push(`${z.name} 未连 ${z.fu}`);
-    if (!backward) problems.push(`${z.fu} 未回连 ${z.name}（相表里必须对称）`);
+/* ── quiz：结构 + 接地 ──────────────────────────────────────────── */
+
+/** 正文里 4 字以上的连续汉字片段 */
+function grams(text, n = 4) {
+  const out = new Set();
+  for (const seg of String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
   }
-  return problems;
+  return out;
 }
 
-/** 3. 五行不得重复分配：任意两脏的五行必须不同，且恰好覆盖五行 */
-function checkWuxingUnique(g) {
-  const problems = [];
-  const w = ZANG.map((z) => attributesOf(g, z.name).wuxing);
-  if (new Set(w).size !== w.length) problems.push(`五行分配重复: ${w.join(' / ')}`);
-  for (const x of WUXING) {
-    if (!w.includes(x)) problems.push(`五行 ${x} 未被任何脏使用`);
+function quizSummary(quiz, doc) {
+  const body = grams(doc);
+  const qs = Array.isArray(quiz.questions) ? quiz.questions : [];
+  const stage = { pre: 0, check: 0, post: 0 };
+  const items = qs.map((q, i) => {
+    if (stage[q.stage] !== undefined) stage[q.stage] += 1;
+    const opts = Array.isArray(q.options) ? q.options : [];
+    const right = String(opts[q.correct] || '');
+    const hit = [...grams(right)].filter((g) => body.has(g));
+    const why = q.explain || q.explanation || '';
+    return {
+      n: i + 1,
+      stage: q.stage,
+      options: opts.length,
+      correct: q.correct,
+      explainHanzi: hanzi(why),
+      grounded: hit.length,
+      sample: hit.slice(0, 3),
+    };
+  });
+  return {
+    total: qs.length,
+    stage,
+    items,
+    answers: qs.map((q) => q.correct),
+    distinctAnswers: new Set(qs.map((q) => q.correct)).size,
+    checkGrounded: items.filter((x) => x.stage === 'check' && x.grounded > 0).length,
+    minExplain: items.length ? Math.min(...items.map((x) => x.explainHanzi)) : 0,
+    allFourOptions: items.every((x) => x.options === 4),
+    badCorrect: items.filter((x) => !(Number.isInteger(x.correct) && x.correct >= 0 && x.correct < 4)).length,
+    stageComplete: ['pre', 'check', 'post'].every((s) => stage[s] > 0),
+  };
+}
+
+/* ── 汇总 ──────────────────────────────────────────────────────── */
+
+function analyze() {
+  const doc = readDoc();
+  const ts = tables(doc);
+  const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+  return {
+    docHanzi: hanzi(doc),
+    paragraphs: paragraphs(doc).length,
+    sections: sections(doc),
+    tables: ts.map((t) => ({ header: t.header, cols: t.cols, rows: t.rows.length })),
+    arith: chapterArithmetic(doc, ts),
+    quiz: quizSummary(quiz, doc),
+  };
+}
+
+
+/**
+ * 五脏配属表（五行—脏—腑—窍—志—体—华）。
+ *
+ * 为什么写成字面量而不是从正文解析：这张表是本章「排他依据」的唯一索引，
+ * 它必须与被教材口径一致；但字面量会与正文脱钩，所以下面 wuxingCheck()
+ * 会逐行回查正文是否真有这一行，对不上就抛错——数据在代码里，权威在正文里。
+ */
+const WUXING_PEI = [
+  { name: '肝', wuxing: '木', fu: '胆', qiao: '目', zhi: '怒', ti: '筋', hua: '爪' },
+  { name: '心', wuxing: '火', fu: '小肠', qiao: '舌', zhi: '喜', ti: '脉', hua: '面' },
+  { name: '脾', wuxing: '土', fu: '胃', qiao: '口', zhi: '思', ti: '肉', hua: '唇' },
+  { name: '肺', wuxing: '金', fu: '大肠', qiao: '鼻', zhi: '悲', ti: '皮毛', hua: '毛' },
+  { name: '肾', wuxing: '水', fu: '膀胱', qiao: '耳', zhi: '恐', ti: '骨', hua: '发' },
+];
+
+/** 逐行回查正文：五行｜脏｜腑｜窍｜志｜体｜华 七格必须同时出现，缺一格即抛错。 */
+function wuxingCheck(doc) {
+  const miss = [];
+  for (const r of WUXING_PEI) {
+    const row = `| ${r.wuxing} | ${r.name} | ${r.fu} | ${r.qiao} | ${r.zhi} | ${r.ti} | ${r.hua} |`;
+    if (!doc.includes(row)) miss.push(row);
   }
-  return problems;
+  if (miss.length) throw new Error(`五脏配属表与正文不一致（${miss.length} 行）：` + '\n  ' + miss.join('\n  '));
+  return WUXING_PEI.length;
 }
 
 function main() {
-  const g = buildZangXiangGraph();
-
-  console.log('═══ 藏象学说 → 知识图谱 (中医基础理论 第3章) ═══');
-  console.log(`节点 ${g.nodes.size} 个 | 边 ${[...g.out.values()].reduce((a, l) => a + l.length, 0)} 条`);
-  console.log(`实体类型: ${NODE_TYPES.join(' / ')}`);
-  console.log(`关系类型: ${EDGE_TYPES.join(' / ')}`);
-
+  const r = analyze();
+  const wuxingRows = wuxingCheck(readDoc());
+  const a = r.arith;
+  console.log(`中医基础理论 第 ${CHAPTER} 章 · ${TITLE}`);
+  console.log(`正文 ${r.docHanzi.toLocaleString('en-US')} 汉字 · ${r.paragraphs} 段 · 节 ${r.sections.length} 个 · 五脏配属 ${wuxingRows} 行已回查`);
   console.log('');
-  console.log('【一】五藏的配属（one-hop 出边）');
-  for (const z of ZANG) {
-    const a = attributesOf(g, z.name);
-    console.log(`  ${z.name}(${a.wuxing}) 合${a['相表里']} · 开窍于${a['开窍于']} · 在志为${a['在志为']} · 在体为${a['在体为']} · 其华在${a['其华在']}`);
-  }
-
+  console.log('结构：');
+  for (const s of r.sections) console.log(`  ${s}`);
   console.log('');
-  console.log('【二】k 跳邻域：从「目」出发');
-  for (const k of [1, 2]) {
-    const nb = neighborhood(g, '目', k);
-    const byDist = {};
-    for (const [n, d] of nb) (byDist[d] = byDist[d] || []).push(n);
-    console.log(`  ${k} 跳 (${nb.size} 个节点):`);
-    for (const d of Object.keys(byDist).sort()) {
-      console.log(`    距离 ${d}: ${byDist[d].join(' ')}`);
-    }
-  }
-
+  console.log(`表 ${r.tables.length} 张：`);
+  r.tables.forEach((t, i) => console.log(`  [${i + 1}] ${t.header.join(' / ')} —— ${t.cols} 列 × ${t.rows} 行`));
   console.log('');
-  console.log('【三】最短路径查询（←type- 表示该边是逆向遍历，真实方向相反）');
-  const queries = [['目', '泪'], ['肝', '悲'], ['耳', '小肠'], ['怒', '骨']];
-  for (const [a, b] of queries) {
-    const p = shortestPath(g, a, b);
-    if (!p) {
-      console.log(`  ${a} → ${b}: 不可达 ❌（本体缺失，需补关系）`);
-      continue;
-    }
-    const reversed = p.edges.filter((e) => !e.forward).length;
-    console.log(`  ${a} → ${b} (${p.edges.length} 跳${reversed ? `, 含 ${reversed} 条逆向` : ''}): ${formatPath(p)}`);
-  }
-
+  console.log('本章算术（全部从正文解析后计算）：');
+  for (const line of a.lines) console.log(`  ${line}`);
   console.log('');
-  console.log('【四】本体完整性校验');
-  const c1 = checkCompleteness(g);
-  const c2 = checkBiaoLi(g);
-  const c3 = checkWuxingUnique(g);
-  const show = (label, problems) => {
-    console.log(`  ${label}: ${problems.length === 0 ? '通过 ✅' : `发现 ${problems.length} 项 ❌`}`);
-    problems.forEach((p) => console.log(`     - ${p}`));
-  };
-  show('六类配属齐备', c1);
-  show('相表里对称', c2);
-  show('五行分配唯一且覆盖', c3);
-
-  const total = c1.length + c2.length + c3.length;
-  console.log('');
-  console.log(`结论: 图上有 ${g.nodes.size} 个节点、${[...g.out.values()].reduce((a, l) => a + l.length, 0)} 条边。`);
-  console.log('      本体校验的作用不是"证明图谱正确"，而是把「哪些关系还没建」变成可枚举的清单。');
-  console.log('      「肝 → 悲」必须绕道五行（肝属木、金克木、金配肺、肺在志为悲）才通 —— 这正是');
-  console.log('      藏象与五行必须放在同一张图里的原因；拆成两张表，这条路就没有了。');
-  console.log('      注意相克边只建了「克」的方向（金克木），反向查询时必须显式标注逆向遍历，');
-  console.log('      否则会把「金克木」讲成「木克金」。');
-  console.log('边界声明: 教学图谱，仅覆盖五藏的基础配属；不构成诊疗依据。');
-
-  return { graph: g, checks: { completeness: c1, biaoli: c2, wuxing: c3, total } };
+  console.log(`quiz ${r.quiz.total} 题（pre ${r.quiz.stage.pre} / check ${r.quiz.stage.check} / post ${r.quiz.stage.post}）· 答案 ${r.quiz.answers.join('/')}`);
+  console.log(`  check 题接地 ${r.quiz.checkGrounded} 道 · 答案落在 ${r.quiz.distinctAnswers} 个位置 · 最短解释 ${r.quiz.minExplain} 汉字`);
+  console.log('※ 以上数字由本章正文与 quiz 现算，改正文后重跑即可复核。');
+  console.log('※ 本章为教学材料，判据与分档均为课堂约定，不构成诊疗建议，也不替代执业医师的判断。');
 }
 
-if (require.main === module) {
-  main();
-}
+if (require.main === module) main();
 
 module.exports = {
-  NODE_TYPES, EDGE_TYPES, WUXING, ZANG,
-  createGraph, addNode, addEdge, buildZangXiangGraph, formatPath,
-  neighborhood, shortestPath, attributesOf,
-  checkCompleteness, checkBiaoLi, checkWuxingUnique,
-  main,
+  analyze,
+  WUXING_PEI,
+  wuxingCheck,
+  readDoc,
+  sections,
+  paragraphs,
+  tables,
+  tableBy,
+  grams,
+  hanzi,
+  count,
+  num,
+  cn2n,
+  quizSummary,
+  CHAPTER,
+  SLUG,
+  TITLE,
+  DOC,
+  QUIZ,
 };

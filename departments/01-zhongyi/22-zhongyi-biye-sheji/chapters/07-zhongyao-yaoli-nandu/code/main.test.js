@@ -1,57 +1,61 @@
 #!/usr/bin/env node
 /**
- * 第 7 章 中药系·案例三：药理 588 小节的难度预测与失效 —— 确定性单元测试
+ * 第 7 章 难度图谱是代理指标，不能替老师判难 —— 确定性单元测试
  * 运行: node --test code/main.test.js
- *
- * 断言只落在可对账的结构上：单元数与小节号、规模、三辨与四位面重心、引书数、数值计数。
- * 数字由 standards/biye/units.json 现算后写死在此，教材改版时测试会先响。
  */
 
 'use strict';
 
 const assert = require('node:assert');
 const test = require('node:test');
+const path = require('node:path');
 
-const { CHAPTER, load, chapterUnits, merge, rank, shape, citations, bySection } = require('./main.js');
+const { readDoc, tableMap, budget, auditQuiz } = require(path.join(__dirname, '..', '..', '_chapter.js'));
 
-const data = load();
-const list = chapterUnits(data);
+const SLUG = '07-zhongyao-yaoli-nandu';
+const doc = readDoc(SLUG).text;
+const rows = tableMap(doc);
 
-test('本章单元数与小节号与教材一致', () => {
-  assert.strictEqual(list.length, 1);
-  assert.deepStrictEqual(list.map((u) => u.sub), ['07.1']);
+test('层级母体：49 章 / 196 节 / 588 小节 / 7,455 段', () => {
+  assert.strictEqual(rows.get('章'), 49);
+  assert.strictEqual(rows.get('节'), 196);
+  assert.strictEqual(rows.get('小节'), 588);
+  assert.strictEqual(rows.get('段'), 7455);
 });
 
-test('规模：152 字 · 平均 152 字/单元', () => {
-  const s = shape(list);
-  assert.strictEqual(s.hanzi, 152);
-  assert.strictEqual(s.mean, 152);
+test('每章 4.0 节、每节 3.0 小节、每小节 12.7 段', () => {
+  assert.strictEqual(Number((196 / 49).toFixed(1)), 4.0);
+  assert.strictEqual(Number((588 / 196).toFixed(1)), 3.0);
+  assert.strictEqual(Number((7455 / 588).toFixed(1)), 12.7);
 });
 
-test('三辨重心是「移交层」', () => {
-  const views = rank(merge(list, 'views'));
-  assert.strictEqual(views[0].key, '移交层');
-  assert.strictEqual(views[0].count, 1);
+test('每小节 1,651.7 字、0.72 个数值', () => {
+  assert.strictEqual(rows.get('汉字'), 971179);
+  assert.strictEqual(rows.get('数值'), 421);
+  assert.strictEqual(Number((971179 / 588).toFixed(1)), 1651.7);
+  assert.strictEqual(Number((421 / 588).toFixed(2)), 0.72);
 });
 
-test('四位面重心是「选题」，且四层都有落点', () => {
-  const levels = Object.fromEntries(rank(merge(list, 'levels')).map((v) => [v.key, v.count]));
-  assert.strictEqual(levels['选题'], 1);
-  const touched = Object.values(levels).filter((n) => n > 0).length;
-  assert.ok(touched >= 3, `仅 ${touched} 层有落点`);
+test('案例预算：回本 60.3 个月，超出三年窗口', () => {
+  const b = budget(SLUG);
+  assert.deepStrictEqual(b.mismatch, []);
+  assert.strictEqual(b.payback, 60.3);
+  assert.ok(b.payback > 36);
 });
 
-test('本章教材不引古籍（引书 0 部）：属现代急诊／重症内容', () => {
-  const c = citations(list);
-  assert.strictEqual(c.books, 0);
-  assert.strictEqual(c.total, 0);
+test('quiz 结构：≥5 题、三段齐、4 选项、explain ≥30 汉字', () => {
+  const audit = auditQuiz(SLUG, doc);
+  assert.strictEqual(audit.problems.length, 0, audit.problems.join('；'));
+  assert.ok(audit.qs.length >= 5);
+  assert.deepStrictEqual([...audit.stages].sort(), ['check', 'post', 'pre']);
+  for (const q of audit.qs) {
+    assert.strictEqual(q.options.length, 4);
+    assert.ok(Number.isInteger(q.correct) && q.correct >= 0 && q.correct < 4);
+  }
 });
 
-test('数值计数与单元层一致（本章 0 处数值类命中）', () => {
-  assert.strictEqual(shape(list).valueLike, 0);
-});
-
-test('每节都有单元，且每单元都带 locator', () => {
-  for (const s of bySection(list)) assert.ok(s.units > 0, s.sec);
-  for (const u of list) assert.ok(u.locator.startsWith(`派生·第${CHAPTER}章·`), u.locator);
+test('quiz 接地 ≥2 道，答案位分散', () => {
+  const audit = auditQuiz(SLUG, doc);
+  assert.ok(audit.grounded >= 2, `接地仅 ${audit.grounded} 道`);
+  assert.ok(new Set(audit.spread).size >= 3, `答案位过于集中：${audit.spread.join(',')}`);
 });

@@ -1,127 +1,39 @@
 #!/usr/bin/env node
 /**
- * 中医毕业设计与知识移交 · 第 26 章 基础医学院·案例一：病理学底本层（252 单元 / 428,867 字）：本章统计口径
+ * 中医毕业设计与知识移交 · 第 26 章 最大的底本层，先证明它可被别人复用
  * 课程: departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/26-jichu-bingli-diben/docs/zh.md
- * 数据: standards/biye/units.json（10 单元层，每单元带三辨 / 四位面词频与数值计数）
+ * 数据: 本章正文的规模表 + standards/biye/案例库.json 同 slug 案例
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：正文引用的每个规模、重心、引书数，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 252 单元、428,867 字从正文表读出；428,867 ÷ 252 = 1,701.9 字/单元现算；
+ * 复用失败位置与复用率由台账给出，正文未给数，不预填。
  */
 
 'use strict';
 
-const fs = require('node:fs');
 const path = require('node:path');
+const { readDoc, tableMap, budget, auditQuiz, banner, finish } = require(path.join(__dirname, '..', '..', '_chapter.js'));
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'biye', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/biye/units.json —— 章节目录是否已脱离仓库？');
-}
+const SLUG = '26-jichu-bingli-diben';
+const NO = 26;
+const TITLE = '最大的底本层，先证明它可被别人复用';
+const doc = readDoc(SLUG).text;
+const rows = tableMap(doc);
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'biye', 'units.json');
-const CHAPTER = '26';
+const units = rows.get('单元');
+const hanziTotal = rows.get('汉字');
+const built = rows.get('原课已建');
+const mean = hanziTotal / units;
+const perChapter = units / built;
+if (Math.abs(mean - 1701.9) > 0.05) throw new Error('每单元均值复算与正文 1,701.9 不一致');
 
-const load = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
+banner(NO, TITLE);
+console.log(`规模：${units} 单元 · ${hanziTotal.toLocaleString('en-US')} 汉字 · 原课已建 ${built} 章`);
+console.log(`复算：${hanziTotal.toLocaleString('en-US')} ÷ ${units} = ${mean.toFixed(1)} 字/单元（正文 1,701.9）`);
+console.log(`复算：${units} ÷ ${built} = ${perChapter.toFixed(1)} 单元/已建章（切分粒度的侧面）`);
+console.log(`复用验收：目标课跑门禁、抽三章核对字数、未参与者按文档重建，三个动作缺一不可。`);
+console.log(`判据：失败率 = 失败位置数 ÷ 已迁章节数；复用率 = 全复用课数 ÷ 目标课数；失败位置须逐条可定位。`);
+console.log(`判断：252 单元是全库最大，规模不等于质量；只报成功不报失败，等于只交了一半。`);
 
-function chapterUnits(units, no = CHAPTER) {
-  return units.units
-    .filter((u) => u.chapter === no)
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-const sum = (d) => Object.values(d).reduce((a, b) => a + b, 0);
-
-function merge(list, field) {
-  const out = {};
-  for (const u of list) for (const [k, v] of Object.entries(u.measure[field])) out[k] = (out[k] || 0) + v;
-  return out;
-}
-
-function rank(dict) {
-  const tot = sum(dict);
-  return Object.entries(dict)
-    .map(([key, count]) => ({ key, count, share: tot ? count / tot : 0 }))
-    .sort((a, b) => b.count - a.count);
-}
-
-function bySection(list) {
-  const out = new Map();
-  for (const u of list) {
-    const key = u.sec || '（未标节）';
-    const it = out.get(key) || { sec: key, units: 0, hanzi: 0 };
-    it.units += 1;
-    it.hanzi += u.hanzi;
-    out.set(key, it);
-  }
-  return [...out.values()];
-}
-
-function citations(list) {
-  const counter = new Map();
-  for (const u of list) {
-    for (const m of u.prose.matchAll(/《([^》]+)》/g)) {
-      counter.set(m[1], (counter.get(m[1]) || 0) + 1);
-    }
-  }
-  const ranked = [...counter.entries()].sort((a, b) => b[1] - a[1]);
-  return { books: counter.size, total: sum(Object.fromEntries(counter)), top: ranked.slice(0, 3) };
-}
-
-function shape(list) {
-  const hanzi = list.reduce((a, u) => a + u.hanzi, 0);
-  return {
-    units: list.length,
-    hanzi,
-    mean: list.length ? Math.round(hanzi / list.length) : 0,
-    valueLike: list.reduce((a, u) => a + u.measure.valueLike, 0),
-    digits: list.reduce((a, u) => a + u.measure.digits, 0),
-  };
-}
-
-/** 方与法：单元层没有独立方剂字段，改从正文里认「治法动词」记号（儿科以疏风宣肺、消食健脾、平肝息风为主） */
-function methods(list) {
-  const VERBS = ['疏肝', '补肾', '健脾', '养血', '活血', '化瘀', '调经', '固冲', '止带', '安胎', '清热', '利湿'];
-  const out = {};
-  for (const v of VERBS) out[v] = list.reduce((a, u) => a + u.prose.split(v).length - 1, 0);
-  return Object.entries(out).filter(([, c]) => c).sort((a, b) => b[1] - a[1]);
-}
-
-module.exports = { CHAPTER, load, chapterUnits, merge, rank, bySection, citations, shape, methods, sum };
-
-if (require.main === module) {
-  const data = load();
-  const list = chapterUnits(data);
-  const s = shape(list);
-  const views = rank(merge(list, 'views'));
-  const levels = rank(merge(list, 'levels'));
-  const books = citations(list);
-
-  console.log('═══ 中医毕业设计与知识移交 · 第 26 章 基础医学院·案例一：病理学底本层（252 单元 / 428,867 字） ═══');
-  console.log(`单元 ${s.units} · 汉字 ${s.hanzi} · 平均 ${s.mean} 字/单元`);
-  console.log(`数值类命中 ${s.valueLike} · 数字字符 ${s.digits}`);
-  console.log('\n按节：');
-  for (const sec of bySection(list)) console.log(`  ${sec.sec}  ${sec.units} 单元 · ${sec.hanzi} 字`);
-  console.log('\n三辨重心：');
-  for (const v of views) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
-  console.log('\n四位面覆盖：');
-  for (const v of levels) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
-  console.log(`\n引书 ${books.books} 部 · 引用 ${books.total} 次 · 前三：${books.top.map(([n, c]) => `${n}(${c})`).join('、')}`);
-  console.log('\n治法动词命中：' + methods(list).map(([v, c]) => `${v}×${c}`).join('  '));
-  console.log('\n单元清单：');
-  for (const u of list) {
-    console.log(`  ${u.sub}\t${u.title}\t${u.hanzi}字\t${(u.tri && u.tri.view.primary) || '—'}/${(u.tri && u.tri.level.primary) || '—'}`);
-  }
-}
-
-// 教学样例声明：契约要求每章输出含临床边界声明（tests/test_chapter_code.js）
-if (require.main === module) {
-  console.log('※ 教学样例：数字由 standards/biye/units.json 现算，不构成诊疗建议，不能替代医师面诊。');
-}
+const b = budget(SLUG);
+finish(SLUG, b, auditQuiz(SLUG, doc));

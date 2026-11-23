@@ -1,127 +1,37 @@
 #!/usr/bin/env node
 /**
- * 中医毕业设计与知识移交 · 第 25 章 五官口腔系·案例三：光学参数报表与缺项的写法：本章统计口径
+ * 中医毕业设计与知识移交 · 第 25 章 留空与写「无」，在报表里是两件事
  * 课程: departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/25-wuguan-guangxue-canliang/docs/zh.md
- * 数据: standards/biye/units.json（10 单元层，每单元带三辨 / 四位面词频与数值计数）
+ * 数据: 本章正文的缺项口径 + standards/biye/案例库.json 同 slug 案例
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：正文引用的每个规模、重心、引书数，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 真实光学数据本库无，脚本不填实测值。这里只用参数示例演示口径：
+ * 100 行里缺 10 行时，留空当 0 的均值只有显式版的 90%（分母 100 vs 90）。
  */
 
 'use strict';
 
-const fs = require('node:fs');
 const path = require('node:path');
+const { readDoc, budget, auditQuiz, banner, finish } = require(path.join(__dirname, '..', '..', '_chapter.js'));
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'biye', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/biye/units.json —— 章节目录是否已脱离仓库？');
-}
+const SLUG = '25-wuguan-guangxue-canliang';
+const NO = 25;
+const TITLE = '留空与写「无」，在报表里是两件事';
+const doc = readDoc(SLUG).text;
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'biye', 'units.json');
-const CHAPTER = '25';
+const EXAMPLE_ROWS = 100; // 参数示例，非实测
+const EXAMPLE_MISSING = 10; // 参数示例，非实测
+const blankAsZeroMean = (EXAMPLE_ROWS - EXAMPLE_MISSING) / EXAMPLE_ROWS;
+const affected = EXAMPLE_MISSING; // 若下游把留空当 0，受影响的至少是这些行
+const MARKERS = ['未测', '无此项', '不适用'];
+const DOWNSTREAM = ['求均值', '分档', '排序', '同比'];
 
-const load = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
+banner(NO, TITLE);
+console.log(`示例口径：${EXAMPLE_ROWS} 行中缺 ${EXAMPLE_MISSING} 行；留空当 0 时，均值只剩显式版的 ${(blankAsZeroMean * 100).toFixed(0)}%`);
+console.log(`受影响行数 = 两版结果不同的行数；以上示例至少 ${affected} 行受影响，真实行数须由两版脚本跑出。`);
+console.log(`缺项标记 ${MARKERS.length} 种：${MARKERS.join('／')}；混成一种「无」会丢失原因。`);
+console.log(`下游计算 ${DOWNSTREAM.length} 类：${DOWNSTREAM.join('／')}；只验一种会漏掉分档与排序的偏移。`);
+console.log(`判断：填法与算法必须一起改；模板不是实测，本章无真实光学数据。`);
 
-function chapterUnits(units, no = CHAPTER) {
-  return units.units
-    .filter((u) => u.chapter === no)
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-const sum = (d) => Object.values(d).reduce((a, b) => a + b, 0);
-
-function merge(list, field) {
-  const out = {};
-  for (const u of list) for (const [k, v] of Object.entries(u.measure[field])) out[k] = (out[k] || 0) + v;
-  return out;
-}
-
-function rank(dict) {
-  const tot = sum(dict);
-  return Object.entries(dict)
-    .map(([key, count]) => ({ key, count, share: tot ? count / tot : 0 }))
-    .sort((a, b) => b.count - a.count);
-}
-
-function bySection(list) {
-  const out = new Map();
-  for (const u of list) {
-    const key = u.sec || '（未标节）';
-    const it = out.get(key) || { sec: key, units: 0, hanzi: 0 };
-    it.units += 1;
-    it.hanzi += u.hanzi;
-    out.set(key, it);
-  }
-  return [...out.values()];
-}
-
-function citations(list) {
-  const counter = new Map();
-  for (const u of list) {
-    for (const m of u.prose.matchAll(/《([^》]+)》/g)) {
-      counter.set(m[1], (counter.get(m[1]) || 0) + 1);
-    }
-  }
-  const ranked = [...counter.entries()].sort((a, b) => b[1] - a[1]);
-  return { books: counter.size, total: sum(Object.fromEntries(counter)), top: ranked.slice(0, 3) };
-}
-
-function shape(list) {
-  const hanzi = list.reduce((a, u) => a + u.hanzi, 0);
-  return {
-    units: list.length,
-    hanzi,
-    mean: list.length ? Math.round(hanzi / list.length) : 0,
-    valueLike: list.reduce((a, u) => a + u.measure.valueLike, 0),
-    digits: list.reduce((a, u) => a + u.measure.digits, 0),
-  };
-}
-
-/** 方与法：单元层没有独立方剂字段，改从正文里认「治法动词」记号（儿科以疏风宣肺、消食健脾、平肝息风为主） */
-function methods(list) {
-  const VERBS = ['疏肝', '补肾', '健脾', '养血', '活血', '化瘀', '调经', '固冲', '止带', '安胎', '清热', '利湿'];
-  const out = {};
-  for (const v of VERBS) out[v] = list.reduce((a, u) => a + u.prose.split(v).length - 1, 0);
-  return Object.entries(out).filter(([, c]) => c).sort((a, b) => b[1] - a[1]);
-}
-
-module.exports = { CHAPTER, load, chapterUnits, merge, rank, bySection, citations, shape, methods, sum };
-
-if (require.main === module) {
-  const data = load();
-  const list = chapterUnits(data);
-  const s = shape(list);
-  const views = rank(merge(list, 'views'));
-  const levels = rank(merge(list, 'levels'));
-  const books = citations(list);
-
-  console.log('═══ 中医毕业设计与知识移交 · 第 25 章 五官口腔系·案例三：光学参数报表与缺项的写法 ═══');
-  console.log(`单元 ${s.units} · 汉字 ${s.hanzi} · 平均 ${s.mean} 字/单元`);
-  console.log(`数值类命中 ${s.valueLike} · 数字字符 ${s.digits}`);
-  console.log('\n按节：');
-  for (const sec of bySection(list)) console.log(`  ${sec.sec}  ${sec.units} 单元 · ${sec.hanzi} 字`);
-  console.log('\n三辨重心：');
-  for (const v of views) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
-  console.log('\n四位面覆盖：');
-  for (const v of levels) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
-  console.log(`\n引书 ${books.books} 部 · 引用 ${books.total} 次 · 前三：${books.top.map(([n, c]) => `${n}(${c})`).join('、')}`);
-  console.log('\n治法动词命中：' + methods(list).map(([v, c]) => `${v}×${c}`).join('  '));
-  console.log('\n单元清单：');
-  for (const u of list) {
-    console.log(`  ${u.sub}\t${u.title}\t${u.hanzi}字\t${(u.tri && u.tri.view.primary) || '—'}/${(u.tri && u.tri.level.primary) || '—'}`);
-  }
-}
-
-// 教学样例声明：契约要求每章输出含临床边界声明（tests/test_chapter_code.js）
-if (require.main === module) {
-  console.log('※ 教学样例：数字由 standards/biye/units.json 现算，不构成诊疗建议，不能替代医师面诊。');
-}
+const b = budget(SLUG);
+finish(SLUG, b, auditQuiz(SLUG, doc));

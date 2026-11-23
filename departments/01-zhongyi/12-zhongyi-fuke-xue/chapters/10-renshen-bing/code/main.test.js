@@ -1,57 +1,115 @@
 #!/usr/bin/env node
 /**
- * 第 10 章 妊娠病 —— 确定性单元测试
+ * 第 10 章 妊娠病：一条胎的安全线与一个例外 —— 确定性单元测试
  * 运行: node --test code/main.test.js
  *
- * 断言只落在可对账的结构上：单元数与小节号、规模、三辨与四位面重心、引书数、数值计数。
- * 数字由 standards/fuke/units.json 现算后写死在此，教材改版时测试会先响。
+ * 断言只落两处可对账的东西：
+ *   1) code/main.js 从本章 docs/zh.md 现算出的结构指标（写死在此，正文改版测试先响）；
+ *   2) quiz.json 与正文同源（≥5 题、三段齐、4 选项、explain ≥30 汉字、≥2 道 check 题接地、答案打散）。
  */
 
 'use strict';
 
 const assert = require('node:assert');
 const test = require('node:test');
+const fs = require('node:fs');
+const path = require('node:path');
 
-const { CHAPTER, load, chapterUnits, merge, rank, shape, citations, bySection } = require('./main.js');
+const { measure, TERMS, CHAPTER, PITFALLS } = require('./main.js');
 
-const data = load();
-const list = chapterUnits(data);
+const M = measure();
+const QUIZ = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8'));
+const questions = Array.isArray(QUIZ.questions) ? QUIZ.questions : [];
+const DOC = fs.readFileSync(path.join(__dirname, '..', 'docs', 'zh.md'), 'utf8');
+const HAN = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 
-test('本章单元数与小节号与教材一致', () => {
-  assert.strictEqual(list.length, 70);
-  assert.deepStrictEqual(list.map((u) => u.sub), ['10.1.1', '10.1.2', '10.1.3', '10.1.4', '10.1.5', '10.2.1', '10.2.2', '10.2.3', '10.2.4', '10.2.5', '10.3.1', '10.3.2', '10.3.3', '10.3.4', '10.3.5', '10.4.1', '10.4.2', '10.4.3', '10.4.4', '10.4.5', '10.5.1', '10.5.2', '10.5.3', '10.5.4', '10.5.5', '10.6.1', '10.6.2', '10.6.3', '10.6.4', '10.6.5', '10.7.1', '10.7.2', '10.7.3', '10.7.4', '10.7.5', '10.8.1', '10.8.2', '10.8.3', '10.8.4', '10.8.5', '10.9.1', '10.9.2', '10.9.3', '10.9.4', '10.9.5', '10.10.1', '10.10.2', '10.10.3', '10.10.4', '10.10.5', '10.11.1', '10.11.2', '10.11.3', '10.11.4', '10.11.5', '10.12.1', '10.12.2', '10.12.3', '10.12.4', '10.12.5', '10.13.1', '10.13.2', '10.13.3', '10.13.4', '10.13.5', '10.14.1', '10.14.2', '10.14.3', '10.14.4', '10.14.5']);
+function shingles(text, n = 4) {
+  const clean = String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ');
+  const out = new Set();
+  for (const seg of clean.split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+}
+
+const PINNED = {
+  "hanzi": 3377,
+  "h2": 6,
+  "h3": 3,
+  "h4": 0,
+  "tables": 5,
+  "tableRows": 30,
+  "quotes": 44,
+  "redLines": 8,
+  "pitfalls": [
+    "把生理当病理",
+    "周期不分期",
+    "以调经代替查因",
+    "延误转诊"
+  ],
+  "terms": {
+    "胎漏": 12,
+    "胎动不安": 12,
+    "滑胎": 5,
+    "异位妊娠": 10,
+    "安胎": 19,
+    "子痫": 5
+  }
+};
+
+test('正文现算指标与实测一致', () => {
+  assert.strictEqual(CHAPTER, 10);
+  assert.strictEqual(TERMS.length, 6);
+  assert.deepStrictEqual(M, PINNED);
 });
 
-test('规模：35943 字 · 平均 513 字/单元', () => {
-  const s = shape(list);
-  assert.strictEqual(s.hanzi, 35943);
-  assert.strictEqual(s.mean, 513);
+test('正文规模与结构：汉字不低于 2,500、二级小节 4–8 个、表不少于 3 张', () => {
+  assert.ok(M.hanzi >= 2500, `汉字 ${M.hanzi}`);
+  assert.ok(M.h2 >= 4 && M.h2 <= 8, `二级小节 ${M.h2} 个`);
+  assert.ok(M.tables >= 3, `表 ${M.tables} 张`);
 });
 
-test('三辨重心是「病机」', () => {
-  const views = rank(merge(list, 'views'));
-  assert.strictEqual(views[0].key, '病机');
-  assert.strictEqual(views[0].count, 287);
+test('必转红线成表：本章列出 8 条', () => {
+  assert.strictEqual(M.redLines, 8);
 });
 
-test('四位面重心是「肾」，且四层都有落点', () => {
-  const levels = Object.fromEntries(rank(merge(list, 'levels')).map((v) => [v.key, v.count]));
-  assert.strictEqual(levels['肾'], 88);
-  const touched = Object.values(levels).filter((n) => n > 0).length;
-  assert.ok(touched >= 3, `仅 ${touched} 层有落点`);
+test('四种失效模式都在正文里点过名', () => {
+  assert.deepStrictEqual(PITFALLS, ['把生理当病理', '周期不分期', '以调经代替查因', '延误转诊']);
+  assert.deepStrictEqual(M.pitfalls, PITFALLS);
 });
 
-test('引书成规模：≥32 部、≥94 次引用', () => {
-  const c = citations(list);
-  assert.ok(c.books >= 32, `引书 ${c.books}`);
-  assert.ok(c.total >= 94, `引用 ${c.total}`);
+test('六个术语都真的在正文里出现', () => {
+  for (const [k, n] of Object.entries(M.terms)) assert.ok(n > 0, `${k} 出现 0 次`);
 });
 
-test('数值计数与单元层一致（本章 31 处数值类命中）', () => {
-  assert.strictEqual(shape(list).valueLike, 31);
+test('quiz 结构：≥5 题，pre/check/post 三段齐，4 选项、correct 合法、explain ≥30 汉字', () => {
+  assert.ok(questions.length >= 5, `只有 ${questions.length} 题`);
+  const stages = new Set(questions.map((q) => q.stage));
+  for (const s of ['pre', 'check', 'post']) assert.ok(stages.has(s), `缺 ${s} 段`);
+  assert.ok(questions.filter((q) => q.stage === 'check').length >= 2, 'check 段不足 2 题');
+  for (const q of questions) {
+    assert.strictEqual(q.options.length, 4, q.question);
+    assert.ok(Number.isInteger(q.correct) && q.correct >= 0 && q.correct < 4, q.question);
+    assert.ok(HAN(q.explain) >= 30, `${q.question} explain 只有 ${HAN(q.explain)} 汉字`);
+  }
 });
 
-test('每节都有单元，且每单元都带 locator', () => {
-  for (const s of bySection(list)) assert.ok(s.units > 0, s.sec);
-  for (const u of list) assert.ok(u.locator.startsWith(`教材·第${CHAPTER}章·`), u.locator);
+test('quiz 接地：≥2 道 check 题正确项含正文 4 字词组，答案打散', () => {
+  const body = shingles(DOC);
+  const grounded = questions.filter(
+    (q) => q.stage === 'check' && [...shingles(q.options[q.correct])].some((g) => body.has(g)),
+  ).length;
+  assert.ok(grounded >= 2, `只有 ${grounded} 道 check 题接地`);
+  const used = new Set(questions.map((q) => q.correct));
+  assert.ok(used.size >= 3, `correct 只用到 ${used.size} 个位置`);
+});
+
+test('quiz 无脚手架指纹与禁用口径', () => {
+  const raw = JSON.stringify(QUIZ);
+  for (const re of [/三辨/, /四位面/, /单元规模/, /本章实测/, /本课第\s*\d+\s*章/, /见\s*code\/main\.js\s*输出/]) {
+    assert.ok(!re.test(raw), `残留指纹 ${re}`);
+  }
+  for (const re of [/页码/, /疗程/, /发生率/, /显效率/, /剂量/]) {
+    assert.ok(!re.test(raw), `禁用口径 ${re}`);
+  }
 });

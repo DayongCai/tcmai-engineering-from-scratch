@@ -1,89 +1,119 @@
+#!/usr/bin/env node
+/**
+ * 中医基础理论 · 第 6 章 十二经是一条闭合的环，环上的接点比穴名更值得先记住
+ * 确定性单元测试 —— 运行: node --test code/main.test.js
+ *
+ * 断言钉的是本机实测值：正文、算术解析或 quiz 任一处改动，这里就应当变红。
+ * 数字不从 main.js 回读再自比（那样什么都测不出），而是写在断言里。
+ */
+
 'use strict';
 
-const assert = require('node:assert');
 const test = require('node:test');
-const { cycle, fullNames, attributes, shichen, distances, diameter, qijing, ZHI, supplements } = require('./main.js');
+const assert = require('node:assert');
+const fs = require('node:fs');
+const path = require('node:path');
+const { spawnSync } = require('node:child_process');
 
-test('流注链 12 经、12 边、起点肺经、终点肝经，原文 40 字', () => {
-  const c = cycle();
-  assert.strictEqual(c.n, 12);
-  assert.strictEqual(c.edges.length, 12);
-  assert.strictEqual(c.start, '肺经');
-  assert.strictEqual(c.end, '肝经');
-  assert.strictEqual(c.verbatim.length, 40);
-  assert.strictEqual(c.names[0], '肺经');
-  assert.strictEqual(c.names[11], '肝经');
-});
+const MAIN = path.join(__dirname, 'main.js');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
+const m = require('./main.js');
 
-test('最后一条边回到起点（是环，不是链）', () => {
-  const c = cycle();
-  assert.deepStrictEqual(c.edges[11], ['肝经', '肺经']);
-});
-
-test('环直径 = 6（12 节点环的对跖距离）', () => {
-  assert.strictEqual(diameter(), 6);
-});
-
-test('肺经→肝经：顺行 11、最短 1', () => {
-  const d = distances('肺经');
-  const liver = d.find((x) => x.to === '肝经');
-  assert.strictEqual(liver.forward, 11);
-  assert.strictEqual(liver.shortest, 1);
-  const bladder = d.find((x) => x.to === '膀胱经');
-  assert.strictEqual(bladder.forward, 6);
-  assert.strictEqual(bladder.shortest, 6, '膀胱经是环上的对跖点');
-});
-
-test('十二时辰：寅起肺经、丑止肝经，共 12 项且地支不重复', () => {
-  const sc = shichen();
-  assert.strictEqual(sc.length, 12);
-  assert.strictEqual(sc[0].zhi, '寅');
-  assert.strictEqual(sc[0].meridian, '肺经');
-  assert.strictEqual(sc[0].hours, '3-5');
-  assert.strictEqual(sc[11].zhi, '丑');
-  assert.strictEqual(sc[11].meridian, '肝经');
-  assert.strictEqual(new Set(sc.map((x) => x.zhi)).size, 12);
-  assert.deepStrictEqual(ZHI.filter((z) => !sc.some((x) => x.zhi === z)), []);
-});
-
-test('教材只写全 7 个经名；手三阴 3 个齐', () => {
-  const f = fullNames();
-  assert.strictEqual(f.length, 7);
-  assert.ok(f.includes('手太阴肺经'));
-  assert.ok(!f.includes('手太阳小肠经'), '小肠经在教材里只有简称');
-  const at = attributes();
-  assert.strictEqual(at.tally['手三阴'], 3);
-  assert.strictEqual(at.rows.length, 7);
-});
-
-test('奇经：声称 8 脉，只写出 4 脉，缺 4 脉含阴阳跷维', () => {
-  const q = qijing();
-  assert.strictEqual(q.declared, 8);
-  assert.deepStrictEqual(q.named, ['督脉', '任脉', '冲脉', '带脉']);
-  assert.strictEqual(q.gap, 4);
-  assert.ok(q.missing.includes('阴跷脉'));
-  assert.ok(q.missing.includes('阳维脉'));
-});
-
-test('外源补录：十二经全称 12 条、奇经八脉 8 条，均不并入底本', () => {
-  const sp = supplements();
-  assert.strictEqual(sp.length, 2);
-  const mer = sp.find((x) => x.id === 'meridian-12');
-  const qj = sp.find((x) => x.id === 'qijing-8');
-  assert.strictEqual(mer.supplied, 12);
-  assert.strictEqual(qj.supplied, 8);
-  assert.ok(mer.source.includes('靈樞 經脈第十'));
-  assert.ok(qj.source.includes('八十一難經 二十八難'));
-  // 补录里补齐了教材只写简称的 5 个经
-  for (const n of ['小肠手太阳之脉', '三焦手少阳之脉', '脾足太阴之脉', '肾足少阴之脉', '胆足少阳之脉']) {
-    assert.ok(mer.items.includes(n), `缺补录 ${n}`);
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
+const readQuiz = () => JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+const grams = (t, n = 4) => {
+  const out = new Set();
+  for (const seg of String(t || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
   }
-  // 教材原本缺名的四脉必须在补录里
-  // 原文里阳维/阴维不带「脈」字（「陽維、陰維者」），补录照原文
-  for (const n of ['阳跷脉', '阴跷脉', '阳维', '阴维']) assert.ok(qj.items.includes(n), `缺补录 ${n}`);
+  return out;
+};
+
+test('正文规模：汉字 2846 / 段 21 / 节 6', () => {
+  const r = m.analyze();
+  assert.strictEqual(r.docHanzi, 2846);
+  assert.strictEqual(r.paragraphs, 21);
+  assert.strictEqual(r.sections.length, 6);
+  assert.strictEqual(hanzi(readDoc()), 2846, '汉字口径必须与正文一致');
 });
 
-test('底本统计未被补录污染：教材全称仍是 7 个、奇经仍是 4 脉', () => {
-  assert.strictEqual(fullNames().length, 7, '补录不得进底本口径');
-  assert.strictEqual(qijing().named.length, 4);
+test('表格：2 张，行数 [4,7]', () => {
+  const r = m.analyze();
+  assert.deepStrictEqual(r.tables.map((t) => t.rows), [4,7]);
+  assert.deepStrictEqual(r.tables.map((t) => t.cols), [4,3]);
+});
+
+test('本章算术：解析出的数与派生量', () => {
+  const a = m.analyze().arith;
+  assert.strictEqual(a.collectItems, 4, 'collectItems');
+  assert.strictEqual(a.fieldRows, 7, 'fieldRows');
+  assert.strictEqual(a.nodes, 12, 'nodes');
+  assert.strictEqual(a.groups, 4, 'groups');
+  assert.strictEqual(a.per, 3, 'per');
+  assert.strictEqual(a.dirs, 4, 'dirs');
+  assert.strictEqual(a.pairs, 6, 'pairs');
+  assert.strictEqual(a.steps, 12, 'steps');
+  assert.strictEqual(a.documented, 3, 'documented');
+  assert.strictEqual(a.missing, 9, 'missing');
+  assert.strictEqual(a.extra, 8, 'extra');
+
+});
+
+test('本章算术：结构与清单', () => {
+  const a = m.analyze().arith;
+  assert.ok(Array.isArray(a.lines) && a.lines.length >= 4, '算术清单至少 4 行');
+});
+
+test('quiz 结构：6 题、三段齐、4 选项、下标合法、答案打散', () => {
+  const q = readQuiz();
+  assert.strictEqual(q.questions.length, 6);
+  assert.deepStrictEqual(q.questions.map((x) => x.correct), [0,0,1,0,1,2]);
+  const distinct = [...new Set(q.questions.map((x) => x.correct))].sort((a, b) => a - b);
+  assert.ok(distinct.length >= 3, '答案位置只有 ' + distinct.length + ' 种');
+  assert.deepStrictEqual(distinct, [0,1,2]);
+  const stages = new Set(q.questions.map((x) => x.stage));
+  for (const s of ['pre', 'check', 'post']) assert.ok(stages.has(s), '缺 ' + s + ' 段');
+  for (const x of q.questions) {
+    assert.ok(['pre', 'check', 'post'].includes(x.stage), 'stage: ' + x.stage);
+    assert.strictEqual(x.options.length, 4, x.question);
+    assert.ok(Number.isInteger(x.correct) && x.correct >= 0 && x.correct < 4, 'correct 越界: ' + x.question);
+    assert.ok(typeof x.explain === 'string' && x.explain.length > 0, '缺 explain: ' + x.question);
+  }
+});
+
+test('quiz 接地：至少 2 道 check 题的正确选项含正文原词', () => {
+  const body = grams(readDoc());
+  const q = readQuiz();
+  const grounded = q.questions.filter((x) => {
+    if (x.stage !== 'check') return false;
+    const right = String(x.options[x.correct] || '');
+    return [...grams(right)].some((g) => body.has(g));
+  });
+  assert.ok(grounded.length >= 2, '只接地 ' + grounded.length + ' 道');
+  assert.strictEqual(m.analyze().quiz.checkGrounded, grounded.length, 'main.js 与测试口径必须一致');
+});
+
+test('quiz 解释：每题 ≥30 汉字，最短 64 汉字', () => {
+  const q = readQuiz();
+  const lens = q.questions.map((x) => hanzi(x.explain));
+  assert.deepStrictEqual(lens.filter((n) => n < 30), [], '有解释不足 30 汉字');
+  assert.strictEqual(Math.min(...lens), 64);
+  assert.strictEqual(m.analyze().quiz.minExplain, 64);
+});
+
+test('脚本可运行：退出码 0，输出带教学样例与边界声明', () => {
+  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
+  assert.strictEqual(r.status, 0, String(r.stderr));
+  const out = String(r.stdout || '');
+  assert.ok(out.length > 200, '输出过短');
+  assert.match(out, /现算/);
+  assert.match(out, /不构成诊疗建议/);
+  assert.match(out, /第 6 章/);
+});
+
+test('代码头部指向本章目录', () => {
+  const body = fs.readFileSync(MAIN, 'utf8');
+  assert.ok(body.includes('chapters/06-jingluo-tuxing/docs/zh.md'), '头部注释未指向本章');
 });

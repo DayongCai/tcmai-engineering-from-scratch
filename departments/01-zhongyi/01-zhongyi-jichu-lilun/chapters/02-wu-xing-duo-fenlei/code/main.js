@@ -1,241 +1,225 @@
 #!/usr/bin/env node
 /**
- * 中医基础理论 · 第 2 章 五行学说 → 多分类：从零实现 Softmax，并加入生克约束
- * 课程: departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/02-wu-xing-duo-fenlei/docs/zh.md
- * 出处: 《尚书·洪范》五行次序；生克关系见《素问·五运行大论》
- * 依赖: 仅 Node.js 标准库
+ * 中医基础理论 · 第 2 章 五行是一张十根边的约束网，不是一个分成五份的筐
  *
- * 核心命题: 五行是 5 类 —— 但纯 softmax 会丢掉全部关系信息。
- * 本课把「相生 / 相克」写成一对余弦约束加进损失，比较加约束前后的差别。
+ *   node code/main.js
  *
- * 说明: 数据是按五行属性表构造的教学样例，非临床数据集。
+ * 正文：chapters/02-wu-xing-duo-fenlei/docs/zh.md
+ * 习题：chapters/02-wu-xing-duo-fenlei/quiz.json
+ * 依赖：仅 Node.js 标准库
+ *
+ * 只读本章正文与本章 quiz，不读任何 standards 取数表：正文改了，这里的数字跟着变。
+ *   · 规模：汉字、段、节标题、表格张数与每张表的列数／行数
+ *   · 本章算术：从正文里解析判据条目、门限与结构数字，再算派生量
+ *   · quiz：题量、三段分布、选项数、解释长度、答案位置是否打散、check 题能否在正文找到原词
+ * 任何一项对不上，说明正文、代码、习题三者已经不同源。
  */
 
 'use strict';
 
-const CLASSES = ['木', '火', '土', '金', '水'];
-const FEATURES = ['色', '味', '志', '方位'];
+const fs = require('node:fs');
+const path = require('node:path');
 
-// 五行属性表（每行 = 该类在 4 个特征上的取值，归一化到 0..2）
-// 依据通行配属：木-青酸怒东 / 火-赤苦喜南 / 土-黄甘思中 / 金-白辛悲西 / 水-黑咸恐北
-const CLASS_TABLE = [
-  [0, 0, 0, 0], // 木: 青 酸 怒 东
-  [1, 1, 1, 1], // 火: 赤 苦 喜 南
-  [2, 2, 2, 2], // 土: 黄 甘 思 中
-  [3, 3, 3, 3], // 金: 白 辛 悲 西
-  [4, 4, 4, 4], // 水: 黑 咸 恐 北
-];
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
-/** 相生: 木→火→土→金→水→木；相克: 木克土、土克水、水克火、火克金、金克木 */
-const SHENG = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 0]];
-const KE = [[0, 2], [2, 4], [4, 1], [1, 3], [3, 0]];
+const CHAPTER = 2;
+const SLUG = '02-wu-xing-duo-fenlei';
+const TITLE = "五行是一张十根边的约束网，不是一个分成五份的筐";
 
-const DIM = 4;
-const K = 5;
+/* ── 文本口径 ────────────────────────────────────────────────────── */
 
-// ── 构造样本：每类 4 例，带少量扰动 ─────────────────────────
-function mulberry32(seed) {
-  let a = seed >>> 0;
-  return function rnd() {
-    a |= 0;
-    a = (a + 0x6d2b79f5) | 0;
-    let t = Math.imul(a ^ (a >>> 15), 1 | a);
-    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-  };
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+const count = (text, term) => String(text).split(term).length - 1;
+const num = (s) => Number(String(s).replace(/[,，\s]/g, ''));
+const CN = { 两: 2, 一: 1, 二: 2, 三: 3, 四: 4, 五: 5, 六: 6, 七: 7, 八: 8, 九: 9, 十: 10, 十二: 12 };
+const cn2n = (s) => (CN[s] !== undefined ? CN[s] : Number(s));
+const readDoc = () => fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+const docLines = (doc) => String(doc).split(/\r?\n/);
+
+/** 节标题：`## 一、…` */
+function sections(doc) {
+  return docLines(doc).filter((l) => /^##\s+/.test(l)).map((l) => l.replace(/^##\s+/, '').trim());
 }
 
-function makeDataset(seed = 20261012, perClass = 4) {
-  const rnd = mulberry32(seed);
-  const X = [];
-  const y = [];
-  for (let c = 0; c < K; c += 1) {
-    for (let r = 0; r < perClass; r += 1) {
-      X.push(CLASS_TABLE[c].map((v) => (v + (rnd() - 0.5) * 1.2) / 4));
-      y.push(c);
+/** 段：非空，不以标题、引文、表格行、清单符号或编号起始 */
+function paragraphs(doc) {
+  return docLines(doc)
+    .map((l) => l.trim())
+    .filter((l) => l && !/^[#>|]/.test(l) && !/^[-*+]\s/.test(l) && !/^\d+[.、]/.test(l))
+    .filter((l) => !l.includes('|'));
+}
+
+/** markdown 表格：表头 + 去分隔行的数据行 */
+function tables(doc) {
+  const ls = docLines(doc);
+  const cells = (l) => l.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map((c) => c.trim());
+  const out = [];
+  let i = 0;
+  while (i < ls.length) {
+    if (/^\s*\|/.test(ls[i])) {
+      const block = [];
+      while (i < ls.length && /^\s*\|/.test(ls[i])) {
+        block.push(ls[i]);
+        i += 1;
+      }
+      const header = cells(block[0]);
+      const rows = block.slice(1).filter((l) => !/^\s*\|[\s:|-]+\|\s*$/.test(l)).map(cells);
+      out.push({ header, cols: header.length, rows });
+    } else {
+      i += 1;
     }
   }
-  return { X, y };
+  return out;
 }
 
-// ── 基础件 ─────────────────────────────────────────────────
-function softmax(z) {
-  const m = Math.max(...z);
-  const e = z.map((v) => Math.exp(v - m)); // 减 max：数值稳定的必要条件
-  const s = e.reduce((a, b) => a + b, 0);
-  return e.map((v) => v / s);
-}
+const tableBy = (ts, kw) => ts.find((t) => t.header.join(' ').includes(kw));
 
-function forward(W, b, x) {
-  return softmax(W.map((row, k) => row.reduce((a, wj, j) => a + wj * x[j], b[k])));
-}
+/* ── 本章算术（逐章注入，从正文解析） ───────────────────────────── */
 
-function cosine(a, b) {
-  let d = 0; let na = 0; let nb = 0;
-  for (let i = 0; i < a.length; i += 1) { d += a[i] * b[i]; na += a[i] * a[i]; nb += b[i] * b[i]; }
-  const den = Math.sqrt(na) * Math.sqrt(nb);
-  return den === 0 ? 0 : d / den;
-}
+function chapterArithmetic(doc, ts) {
+const collect = tableBy(ts, '采集项');
+  const fields = tableBy(ts, '字段');
+  const shengRaw = (doc.match(/方向固定为([^，。]+)/) || [])[1] || '';
+  const sheng = shengRaw.split('→').map((s) => s.trim()).filter(Boolean);
+  const keRaw = (doc.match(/只有((?:[木火土金水]克[木火土金水]、?)+)/) || [])[1] || '';
+  const ke = keRaw.split('、').map((s) => s.trim()).filter(Boolean);
+  const elems = [...new Set(sheng)];
+  const closes = sheng.length > 1 && sheng[0] === sheng[sheng.length - 1];
+  const shengEdges = sheng.slice(0, -1).map((a, i) => a + '→' + sheng[i + 1]);
+  // 克边应落在生链的隔一位上：我克者，为我生者所生
+  const skipOk = ke.filter((e) => {
+    const [a, b] = e.split('克');
+    const i = sheng.indexOf(a);
+    return i >= 0 && sheng[(i + 2) % (sheng.length - 1)] === b;
+  }).length;
+  const pairs = (elems.length * (elems.length - 1)) / 2;
+  const grid = elems.length * elems.length;
+  const jump = cn2n((doc.match(/这是\*\*([一二三四五六七八九十]+)跳\*\*/) || [])[1] || '0');
+  const states = ['有征象', '仅理论', '有冲突'].filter((k) => doc.includes(k)).length;
 
-/**
- * 交叉熵 + 生克正则
- *   相生对: hinge( cos < mSheng )  → 把相生两类的权重向量拉近
- *   相克对: hinge( cos > mKe    )  → 把相克两类的权重向量推远
- */
-function lossAndGrad(W, b, X, y, { lambda = 0, mSheng = 0.3, mKe = 0.1 } = {}) {
-  const gW = W.map((r) => r.map(() => 0));
-  const gb = b.map(() => 0);
-  let ce = 0;
-
-  for (let i = 0; i < X.length; i += 1) {
-    const p = forward(W, b, X[i]);
-    ce += -Math.log(p[y[i]] + 1e-12);
-    for (let k = 0; k < K; k += 1) {
-      const d = p[k] - (k === y[i] ? 1 : 0);
-      for (let j = 0; j < DIM; j += 1) gW[k][j] += d * X[i][j];
-      gb[k] += d;
-    }
-  }
-  const n = X.length;
-  const dataLoss = ce / n;
-  for (let k = 0; k < K; k += 1) for (let j = 0; j < DIM; j += 1) gW[k][j] /= n;
-  for (let k = 0; k < K; k += 1) gb[k] /= n;
-
-  let regLoss = 0;
-  const applyHinge = (i, j, wantAbove) => {
-    const c = cosine(W[i], W[j]);
-    const violation = wantAbove ? mSheng - c : c - mKe;
-    if (violation <= 0) return;
-    regLoss += violation;
-    // d(cos)/d(W[i]) = W[j]/(|W[i]||W[j]|) − cos·W[i]/|W[i]|²
-    const ni = Math.sqrt(W[i].reduce((a, v) => a + v * v, 0));
-    const nj = Math.sqrt(W[j].reduce((a, v) => a + v * v, 0));
-    // 零向量的余弦未定义，其梯度是 0/0。此处不下梯度（不是"近似"，是这一项本来就不存在）。
-    // 少了这个守卫，lambda=0 时 0*NaN 也会把整个梯度污染成 NaN。
-    if (ni === 0 || nj === 0) return;
-    const sign = wantAbove ? -1 : 1;
-    for (let d = 0; d < DIM; d += 1) {
-      const gi = sign * (W[j][d] / (ni * nj) - (c * W[i][d]) / (ni * ni));
-      const gj = sign * (W[i][d] / (ni * nj) - (c * W[j][d]) / (nj * nj));
-      gW[i][d] += lambda * gi;
-      gW[j][d] += lambda * gj;
-    }
-  };
-  for (const [i, j] of SHENG) applyHinge(i, j, true);
-  for (const [i, j] of KE) applyHinge(i, j, false);
-
-  return { loss: dataLoss + lambda * regLoss, dataLoss, regLoss, gW, gb };
-}
-
-function train(X, y, opts = {}) {
-  const { lr = 0.6, steps = 3000, lambda = 0, mSheng = 0.3, mKe = 0.1, seed = 7 } = opts;
-  const rnd = mulberry32(seed);
-  const W = Array.from({ length: K }, () => Array.from({ length: DIM }, () => (rnd() - 0.5) * 0.2));
-  const b = new Array(K).fill(0);
-  const history = [];
-  for (let s = 0; s < steps; s += 1) {
-    const { loss, gW, gb } = lossAndGrad(W, b, X, y, { lambda, mSheng, mKe });
-    if (s % 500 === 0) history.push(loss);
-    for (let k = 0; k < K; k += 1) {
-      for (let j = 0; j < DIM; j += 1) W[k][j] -= lr * gW[k][j];
-      b[k] -= lr * gb[k];
-    }
-  }
-  return { W, b, history };
-}
-
-function accuracy(W, b, X, y) {
-  let ok = 0;
-  for (let i = 0; i < X.length; i += 1) {
-    const p = forward(W, b, X[i]);
-    let arg = 0;
-    for (let k = 1; k < K; k += 1) if (p[k] > p[arg]) arg = k;
-    if (arg === y[i]) ok += 1;
-  }
-  return ok / X.length;
-}
-
-/** 关系一致性检查：相生对的平均余弦 应高于 相克对的平均余弦 */
-function relationReport(W) {
-  const sheng = SHENG.map(([i, j]) => cosine(W[i], W[j]));
-  const ke = KE.map(([i, j]) => cosine(W[i], W[j]));
-  const avg = (a) => a.reduce((x, y2) => x + y2, 0) / a.length;
   return {
-    shengAvg: avg(sheng),
-    keAvg: avg(ke),
-    gap: avg(sheng) - avg(ke),
-    sheng,
-    ke,
-    consistent: avg(sheng) > avg(ke),
+    collectItems: collect ? collect.rows.length : 0,
+    fieldRows: fields ? fields.rows.length : 0,
+    elems: elems.length,
+    sheng: shengEdges.length,
+    ke: ke.length,
+    pairs,
+    grid,
+    skipOk,
+    jump,
+    states,
+    lines: [
+      '生链 ' + shengEdges.length + ' 条（' + shengEdges.join('、') + '），首尾闭合：' + (closes ? '是' : '否'),
+      '克边 ' + ke.length + ' 条（' + ke.join('、') + '），与生链隔一位一致 ' + skipOk + '/' + ke.length,
+      '共 ' + (shengEdges.length + ke.length) + ' 条边 / 两两 ' + pairs + ' 对 = 全覆盖',
+      grid + ' 格 − ' + elems.length + ' 个自身格 = ' + (grid - elems.length) + ' 格，其中合法边 ' + (shengEdges.length + ke.length) + ' 条（' + Math.round(((shengEdges.length + ke.length) / (grid - elems.length)) * 100) + '%）',
+      '采集表 ' + (collect ? collect.rows.length : 0) + ' 行 · 字段表 ' + (fields ? fields.rows.length : 0) + ' 行 · 边状态 ' + states + ' 种',
+      '推演络绎示例跳数 ' + jump + ' 跳',
+    ],
+  };
+}
+
+/* ── quiz：结构 + 接地 ──────────────────────────────────────────── */
+
+/** 正文里 4 字以上的连续汉字片段 */
+function grams(text, n = 4) {
+  const out = new Set();
+  for (const seg of String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+}
+
+function quizSummary(quiz, doc) {
+  const body = grams(doc);
+  const qs = Array.isArray(quiz.questions) ? quiz.questions : [];
+  const stage = { pre: 0, check: 0, post: 0 };
+  const items = qs.map((q, i) => {
+    if (stage[q.stage] !== undefined) stage[q.stage] += 1;
+    const opts = Array.isArray(q.options) ? q.options : [];
+    const right = String(opts[q.correct] || '');
+    const hit = [...grams(right)].filter((g) => body.has(g));
+    const why = q.explain || q.explanation || '';
+    return {
+      n: i + 1,
+      stage: q.stage,
+      options: opts.length,
+      correct: q.correct,
+      explainHanzi: hanzi(why),
+      grounded: hit.length,
+      sample: hit.slice(0, 3),
+    };
+  });
+  return {
+    total: qs.length,
+    stage,
+    items,
+    answers: qs.map((q) => q.correct),
+    distinctAnswers: new Set(qs.map((q) => q.correct)).size,
+    checkGrounded: items.filter((x) => x.stage === 'check' && x.grounded > 0).length,
+    minExplain: items.length ? Math.min(...items.map((x) => x.explainHanzi)) : 0,
+    allFourOptions: items.every((x) => x.options === 4),
+    badCorrect: items.filter((x) => !(Number.isInteger(x.correct) && x.correct >= 0 && x.correct < 4)).length,
+    stageComplete: ['pre', 'check', 'post'].every((s) => stage[s] > 0),
+  };
+}
+
+/* ── 汇总 ──────────────────────────────────────────────────────── */
+
+function analyze() {
+  const doc = readDoc();
+  const ts = tables(doc);
+  const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+  return {
+    docHanzi: hanzi(doc),
+    paragraphs: paragraphs(doc).length,
+    sections: sections(doc),
+    tables: ts.map((t) => ({ header: t.header, cols: t.cols, rows: t.rows.length })),
+    arith: chapterArithmetic(doc, ts),
+    quiz: quizSummary(quiz, doc),
   };
 }
 
 function main() {
-  const { X, y } = makeDataset();
-  console.log('═══ 五行 → 多分类：从零实现 Softmax + 生克约束 (中医基础理论 第2章) ═══');
-  console.log(`样本: ${X.length} 例 (${K} 类 × 4) | 特征: ${FEATURES.join(' / ')}`);
-
-  // 先看特征矩阵本身：通行配属表里四个维度的次序是否一致？
-  const col = (j) => CLASS_TABLE.map((r) => r[j]);
-  const ordersEqual = [1, 2, 3].every((j) => col(j).join() === col(0).join());
-  console.log(`特征共线检查: 四列次序完全一致 = ${ordersEqual ? '是 ⚠（结构上共线，见下文）' : '否'}`);
-
-  const plain = train(X, y, { lambda: 0 });
-  const rPlain = relationReport(plain.W);
-  const aPlain = accuracy(plain.W, plain.b, X, y);
-
+  const r = analyze();
+  const a = r.arith;
+  console.log(`中医基础理论 第 ${CHAPTER} 章 · ${TITLE}`);
+  console.log(`正文 ${r.docHanzi.toLocaleString('en-US')} 汉字 · ${r.paragraphs} 段 · 节 ${r.sections.length} 个`);
   console.log('');
-  console.log('【A】纯 softmax（λ=0）');
-  console.log(`  训练准确率: ${(aPlain * 100).toFixed(1)}%`);
-  console.log(`  相生对平均余弦: ${rPlain.shengAvg.toFixed(3)} | 相克对平均余弦: ${rPlain.keAvg.toFixed(3)} | 差 ${rPlain.gap.toFixed(3)}`);
-  console.log(`  关系一致性: ${rPlain.consistent ? '满足 ✅' : '被破坏 ❌'}`);
-
+  console.log('结构：');
+  for (const s of r.sections) console.log(`  ${s}`);
   console.log('');
-  console.log('【B】生克正则的 λ 扫描');
-  console.log('  λ      准确率   相生均值   相克均值   差值');
-  const sweep = [0, 0.2, 0.5, 1.0, 2.0, 5.0].map((lambda) => {
-    const m = lambda === 0 ? plain : train(X, y, { lambda, mSheng: 0.3, mKe: 0.1 });
-    const r = relationReport(m.W);
-    const a = accuracy(m.W, m.b, X, y);
-    console.log(
-      `  ${String(lambda).padEnd(6)} ${((a * 100).toFixed(1) + '%').padEnd(8)} ` +
-      `${r.shengAvg.toFixed(3).padEnd(10)} ${r.keAvg.toFixed(3).padEnd(10)} ${r.gap.toFixed(3)}`
-    );
-    return { lambda, acc: a, ...r };
-  });
-
-  const bestGap = sweep.reduce((a, b) => (b.gap > a.gap ? b : a));
-  const bestAcc = sweep.reduce((a, b) => (b.acc > a.acc ? b : a));
-
+  console.log(`表 ${r.tables.length} 张：`);
+  r.tables.forEach((t, i) => console.log(`  [${i + 1}] ${t.header.join(' / ')} —— ${t.cols} 列 × ${t.rows} 行`));
   console.log('');
-  console.log('【C】逐对明细（λ=2.0）');
-  const reg = train(X, y, { lambda: 2.0, mSheng: 0.3, mKe: 0.1 });
-  const rReg = relationReport(reg.W);
-  SHENG.forEach(([i, j], n) => {
-    console.log(`  生 ${CLASSES[i]}→${CLASSES[j]}: cos=${rReg.sheng[n].toFixed(3)}`);
-  });
-  KE.forEach(([i, j], n) => {
-    console.log(`  克 ${CLASSES[i]}→${CLASSES[j]}: cos=${rReg.ke[n].toFixed(3)}`);
-  });
-
+  console.log('本章算术（全部从正文解析后计算）：');
+  for (const line of a.lines) console.log(`  ${line}`);
   console.log('');
-  console.log(`结论 1: 纯 softmax 在本数据上**没有**破坏生克关系（差值 ${rPlain.gap.toFixed(3)} > 0）——`);
-  console.log('        「纯 softmax 一定丢掉关系」这个说法在本数据上是错的。原因是通行配属表里');
-  console.log('        色/味/志/方位四列的次序完全一致，特征矩阵共线，最优解天然把类沿一条轴排开。');
-  console.log(`结论 2: 加上正则后关系差最大出现在 λ=${bestGap.lambda}（差 ${bestGap.gap.toFixed(3)}），`);
-  console.log(`        但准确率最高出现在 λ=${bestAcc.lambda}（${(bestAcc.acc * 100).toFixed(1)}%）。约束不是免费的。`);
-  console.log('        要真正让约束起作用，需要特征表示本身不共线 —— 那是后续「药性嵌入」章的题目。');
-  console.log('边界声明: 教学样例数据，非临床数据集；输出不构成诊疗建议。');
-
-  return { plain, reg, aPlain, rPlain, rReg, sweep, ordersEqual };
+  console.log(`quiz ${r.quiz.total} 题（pre ${r.quiz.stage.pre} / check ${r.quiz.stage.check} / post ${r.quiz.stage.post}）· 答案 ${r.quiz.answers.join('/')}`);
+  console.log(`  check 题接地 ${r.quiz.checkGrounded} 道 · 答案落在 ${r.quiz.distinctAnswers} 个位置 · 最短解释 ${r.quiz.minExplain} 汉字`);
+  console.log('※ 以上数字由本章正文与 quiz 现算，改正文后重跑即可复核。');
+  console.log('※ 本章为教学材料，判据与分档均为课堂约定，不构成诊疗建议，也不替代执业医师的判断。');
 }
 
-if (require.main === module) {
-  main();
-}
+if (require.main === module) main();
 
 module.exports = {
-  CLASSES, FEATURES, CLASS_TABLE, SHENG, KE, DIM, K,
-  softmax, forward, cosine, lossAndGrad, train, accuracy, relationReport,
-  makeDataset, mulberry32, main,
+  analyze,
+  readDoc,
+  sections,
+  paragraphs,
+  tables,
+  tableBy,
+  grams,
+  hanzi,
+  count,
+  num,
+  cn2n,
+  quizSummary,
+  CHAPTER,
+  SLUG,
+  TITLE,
+  DOC,
+  QUIZ,
 };

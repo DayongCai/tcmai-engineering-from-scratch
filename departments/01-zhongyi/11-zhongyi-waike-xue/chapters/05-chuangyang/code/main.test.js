@@ -1,57 +1,101 @@
-#!/usr/bin/env node
-/**
- * 第 5 章 疮疡 —— 确定性单元测试
- * 运行: node --test code/main.test.js
- *
- * 断言只落在可对账的结构上：单元数与小节号、规模、三辨与四位面重心、引书数、数值计数。
- * 数字由 standards/waike/units.json 现算后写死在此，教材改版时测试会先响。
- */
-
 'use strict';
-
+/**
+ * 第 5 章：正文规模、表格结构、判据词频与 quiz 结构全部现算后钉住。
+ * 正文改一个字、表增删一行、quiz 跑题或答案扎堆，这里都会红。
+ */
 const assert = require('node:assert');
 const test = require('node:test');
+const fs = require('node:fs');
+const { analyze, tables, paragraphs, sections, hanzi, DOC, QUIZ, CHAPTER, SLUG, TITLE } = require('./main.js');
 
-const { CHAPTER, load, chapterUnits, merge, rank, shape, citations, bySection } = require('./main.js');
+const r = analyze();
+const doc = fs.readFileSync(DOC, 'utf8');
 
-const data = load();
-const list = chapterUnits(data);
-
-test('本章单元数与小节号与教材一致', () => {
-  assert.strictEqual(list.length, 50);
-  assert.deepStrictEqual(list.map((u) => u.sub), ['5.1.1', '5.1.2', '5.1.3', '5.1.4', '5.1.5', '5.2.1', '5.2.2', '5.2.3', '5.2.4', '5.2.5', '5.3.1', '5.3.2', '5.3.3', '5.3.4', '5.3.5', '5.4.1', '5.4.2', '5.4.3', '5.4.4', '5.4.5', '5.5.1', '5.5.2', '5.5.3', '5.5.4', '5.5.5', '5.6.1', '5.6.2', '5.6.3', '5.6.4', '5.6.5', '5.7.1', '5.7.2', '5.7.3', '5.7.4', '5.7.5', '5.8.1', '5.8.2', '5.8.3', '5.8.4', '5.8.5', '5.9.1', '5.9.2', '5.9.3', '5.9.4', '5.9.5', '5.10.1', '5.10.2', '5.10.3', '5.10.4', '5.10.5']);
+test('章号、章名与正文首行一致', () => {
+  assert.strictEqual(CHAPTER, 5);
+  assert.strictEqual(SLUG, '05-chuangyang');
+  const head = doc.split(/\r?\n/)[0];
+  assert.strictEqual(head, `# 第 ${CHAPTER} 章 · ${TITLE}`, `正文首行是「${head}」，与章名对不上`);
+  assert.ok(TITLE.length >= 4, '章标题过短');
 });
 
-test('规模：31002 字 · 平均 620 字/单元', () => {
-  const s = shape(list);
-  assert.strictEqual(s.hanzi, 31002);
-  assert.strictEqual(s.mean, 620);
+test('正文规模与实测一致（段落、汉字、平均）', () => {
+  assert.strictEqual(r.paras, 28, `段落数 ${r.paras}`);
+  assert.strictEqual(r.docHanzi, 3035, `汉字数 ${r.docHanzi}`);
+  assert.strictEqual(r.avgPara, 108, `平均每段 ${r.avgPara}`);
+  assert.ok(r.paraHanzi.every((x) => x > 0), '有段落不含汉字');
 });
 
-test('三辨重心是「病机」', () => {
-  const views = rank(merge(list, 'views'));
-  assert.strictEqual(views[0].key, '病机');
-  assert.strictEqual(views[0].count, 455);
+test('节齐全，节标题不含脚手架名目', () => {
+  assert.strictEqual(r.sections.length, 6, `节数 ${r.sections.length}`);
+  for (const s of r.sections) assert.ok(!/三辨|四位面|单元规模/.test(s), `节标题含脚手架：${s}`);
+  assert.ok(r.sections[0].startsWith('一、'), `首节标题是「${r.sections[0]}」`);
 });
 
-test('四位面重心是「全身」，且四层都有落点', () => {
-  const levels = Object.fromEntries(rank(merge(list, 'levels')).map((v) => [v.key, v.count]));
-  assert.strictEqual(levels['全身'], 259);
-  const touched = Object.values(levels).filter((n) => n > 0).length;
-  assert.ok(touched >= 3, `仅 ${touched} 层有落点`);
+test('表格结构逐张钉住（列数、行数、首列）', () => {
+  const want = [{"cols":4,"rows":3,"first":["浅层（皮肉）","深层（肌肉、筋骨）","危层（全身）"]},{"cols":6,"rows":4,"first":["疖","疔","痈","有头疽"]},{"cols":5,"rows":4,"first":["瘰疬","流注","附骨疽","流痰"]}];
+  assert.strictEqual(r.tables.length, want.length, `表数 ${r.tables.length}`);
+  want.forEach((w, i) => {
+    assert.strictEqual(r.tables[i].cols, w.cols, `第 ${i + 1} 张表列数`);
+    assert.strictEqual(r.tables[i].rows.length, w.rows, `第 ${i + 1} 张表行数`);
+    assert.deepStrictEqual(r.tables[i].rows.map((x) => x[0]), w.first, `第 ${i + 1} 张表首列`);
+  });
 });
 
-test('引书成规模：≥22 部、≥80 次引用', () => {
-  const c = citations(list);
-  assert.ok(c.books >= 22, `引书 ${c.books}`);
-  assert.ok(c.total >= 80, `引用 ${c.total}`);
+test('每张表都是齐整的：列数与表头一致，没有空单元格', () => {
+  for (const t of r.tables) {
+    for (const row of t.rows) {
+      assert.strictEqual(row.length, t.cols, `「${t.header.join('/')}」有行不是 ${t.cols} 列`);
+      for (const cell of row) assert.ok(cell.length > 0, `「${t.header.join('/')}」有空单元格`);
+    }
+  }
 });
 
-test('数值计数与单元层一致（本章 14 处数值类命中）', () => {
-  assert.strictEqual(shape(list).valueLike, 14);
+test('判据词频与正文一致', () => {
+  const want = {"脓":53,"脓头":10,"根脚":6,"走黄":8,"内陷":11,"窦道":4};
+  assert.strictEqual(r.terms.length, Object.keys(want).length);
+  for (const t of r.terms) assert.strictEqual(t.n, want[t.term], `${t.term}: 现算 ${t.n} ≠ ${want[t.term]}`);
+  assert.ok(r.terms.every((t) => t.n > 0), '有判据词在正文里根本没出现');
 });
 
-test('每节都有单元，且每单元都带 locator', () => {
-  for (const s of bySection(list)) assert.ok(s.units > 0, s.sec);
-  for (const u of list) assert.ok(u.locator.startsWith(`教材·第${CHAPTER}章·`), u.locator);
+test('quiz 结构：题量、三段、四选项、解释长度、答案下标', () => {
+  const q = r.quiz;
+  assert.strictEqual(q.total, 6, `题数 ${q.total}`);
+  assert.deepStrictEqual(q.stage, {"pre":1,"check":4,"post":1});
+  assert.strictEqual(q.allFourOptions, true, '有题不是 4 个选项');
+  assert.strictEqual(q.badCorrect, 0, 'correct 下标非法');
+  assert.ok(q.minExplain >= 30, `最短解释 ${q.minExplain} 汉字`);
+  assert.strictEqual(q.minExplain, 68, '最短解释长度变了（内容被换过）');
+  assert.deepStrictEqual(q.answers, [2,0,1,2,1,3], '答案序列变了');
+  assert.ok(q.distinctAnswers >= 3, `答案只落在 ${q.distinctAnswers} 个位置`);
+});
+
+test('quiz 接地：check 题的正确选项能在正文找到原词', () => {
+  assert.strictEqual(r.quiz.checkGrounded, 4, `接地 ${r.quiz.checkGrounded} 道`);
+  assert.ok(r.quiz.checkGrounded >= 2, '接地不足 2 道');
+  for (const it of r.quiz.items) {
+    if (it.stage === 'check') assert.ok(it.grounded >= 1, `第 ${it.n} 题完全不接地`);
+  }
+});
+
+test('quiz 与正文同术语：无脚手架、无剂量、无结局数字、无页码', () => {
+  const raw = fs.readFileSync(QUIZ, 'utf8');
+  for (const bad of ['三辨', '四位面', '单元规模', '本章实测']) assert.ok(!raw.includes(bad), 'quiz 仍含脚手架名目：' + bad);
+  for (const u of ['毫克', '微克', 'μg', '疗程']) assert.ok(!raw.includes(u), 'quiz 出现剂量或疗程：' + u);
+  assert.ok(!/[0-9]+\s*(mg|ml|mL)/.test(raw), 'quiz 出现剂量数值');
+  for (const s of ['发生率', '成功率', '存活率', '治愈率', '病死率']) assert.ok(!raw.includes(s), 'quiz 出现结局数字：' + s);
+  assert.ok(!/第\s*[0-9]+\s*页/.test(raw), 'quiz 出现页码');
+  assert.ok(!raw.includes('见 code/main.js 输出'), 'quiz 让读者去看代码输出');
+});
+
+test('本章关键判据在正文里', () => {
+  for (const anchor of ["把恶疮当痈","引流不彻底","辨脓误判","延误手术"]) assert.ok(doc.includes(anchor), '正文缺判据：' + anchor);
+});
+
+test('段落切分口径稳定：表格行与清单不混入段落', () => {
+  for (const p of paragraphs(doc)) assert.ok(!p.includes('|'), `段落混入表格：${p.slice(0, 20)}`);
+  assert.strictEqual(sections(doc).length, r.sections.length);
+  assert.strictEqual(tables(doc).length, r.tables.length);
+  assert.strictEqual(hanzi(doc), r.docHanzi);
+  assert.strictEqual(r.docHanzi > 2000, true, `正文只有 ${r.docHanzi} 汉字，疑似占位稿`);
 });

@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 /**
- * 医古文 · 第 3 章 语法：本章统计口径
- * 课程: departments/01-zhongyi/02-yi-gu-wen/chapters/03-yufa/docs/zh.md
- * 数据: standards/yiguwen/units.json（47 单元层，每单元带三辨与四位面词频）
- * 取数: standards/yiguwen/chapter-map.json（课程章 → 教材单元号）
+ * 医古文 · 第 3 章 语法
+ * 正文: departments/01-zhongyi/02-yi-gu-wen/chapters/03-yufa/docs/zh.md
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本脚本不存数字。判断句几式、前置几个条件、被动判据分几步、失效几种，
+ * 全部当场从正文里数出来；数出来的数与正文自述对不上就报错，不往下算。
  */
 
 'use strict';
@@ -15,87 +13,106 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'yiguwen', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/yiguwen/units.json —— 章节目录是否已脱离仓库？');
-}
-
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'yiguwen', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'yiguwen', 'chapter-map.json');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '3';
 const SLUG = '03-yufa';
+const REL = 'departments/01-zhongyi/02-yi-gu-wen/chapters/03-yufa';
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
-}
-
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+function sections(md) {
+  const out = [{ title: '(前言)', text: [] }];
+  for (const line of String(md).split(/\r?\n/)) {
+    const m = /^##\s+(.+?)\s*$/.exec(line);
+    if (m) out.push({ title: m[1], text: [] });
+    else out[out.length - 1].text.push(line);
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return out.map((s) => ({ title: s.title, text: s.text.join('\n') }));
+}
+
+function block(md, kw) {
+  const lines = String(md).split(/\r?\n/);
+  const start = lines.findIndex((l) => /^#{2,4}\s/.test(l) && l.includes(kw));
+  if (start < 0) throw new Error('正文缺小节: ' + kw);
+  const rest = lines.slice(start + 1);
+  const end = rest.findIndex((l) => /^#{2,4}\s/.test(l));
+  return (end < 0 ? rest : rest.slice(0, end)).join('\n');
+}
+
+function numbered(text) {
+  return String(text).split(/\r?\n/)
+    .map((l) => /^\s*\d+\.\s+(.+)$/.exec(l))
+    .filter(Boolean)
+    .map((m) => m[1].trim());
+}
+
+function chapterTitle(md) {
+  const m = /^#\s+(.+)$/m.exec(String(md));
+  if (!m) throw new Error('正文缺 H1 章题');
+  return m[1].trim();
+}
+
+function cardFields(md) {
+  const m = /```[\s\S]*?```/.exec(String(md));
+  if (!m) throw new Error('正文缺析句记录代码块');
+  return [...m[0].matchAll(/^([①-⑩])\s*([^：\n]+)：/gm)].map((x) => ({ no: x[1], name: x[2].trim() }));
+}
+
+function failureModes(text) {
+  return [...String(text).matchAll(/^\*\*([^*\n]+?)。\*\*/gm)].map((m) => m[1].trim());
+}
+
+/** 判断句五式：数「一为…五为」这类序数式 */
+function judgeForms(md) {
+  return [...block(md, '判断句').matchAll(/([一二三四五六七八九十])为/g)].map((m) => m[1]);
+}
+
+/** 被动判据的两步：先看…，再看…。 */
+function passiveSteps(md) {
+  const line = block(md, '被动句').split(/\r?\n/).find((l) => l.includes('先看'));
+  const m = /先看(.+?)，再看(.+?)。/.exec(line || '');
+  if (!m) throw new Error('正文缺被动判据的两步');
+  return [m[1].trim(), m[2].trim()];
+}
+
+/** 宾语前置的三条件（正文把三条写在同一段里） */
+function preposeConditions(md) {
+  return [...block(md, '语序与省略').matchAll(/其[一二三]，(.+?)。/g)].map((m) => m[1].trim());
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const md = readDoc();
+  const forms = judgeForms(md);
+  const steps = passiveSteps(md);
+  const conds = preposeConditions(md);
+  const fields = cardFields(md);
+  const modes = failureModes(block(md, '失效'));
+  const items = numbered(block(md, '考核项'));
 
-  console.log(`医古文 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`医古文 · 第 ${CHAPTER} 章 ${chapterTitle(md).replace(/^第\s*\d+\s*章\s*·\s*/, '')}`);
+  console.log(`${REL} · 正文 ${hanzi(md).toLocaleString('en-US')} 汉字`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`判断句：正文列 ${forms.length} 式（${forms.join('、')}为…），判据只有一条——能否在主语与谓语之间补出「是」而不改原意。`);
+  console.log(`被动句：判据分 ${steps.length} 步——先看${steps[0]}，再看${steps[1]}。`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`宾语前置的 ${conds.length} 个触发条件：`);
+  conds.forEach((c, i) => console.log(`  ${i + 1}. ${c}`));
+  console.log('  条件之外不能前置：读不通就说是「前置」，等于取消了语法。');
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log('析句记录字段：');
+  for (const f of fields) console.log(`  ${f.no} ${f.name}`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/yiguwen/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log(`三种失效模式：${modes.join(' / ')}`);
+  console.log(`考核项 ${items.length} 条。评分只看两件：④栏判据可当场复核，⑥栏敢写「存疑」。`);
+  console.log('※ 式数、步数、条件数均由正文现算，不手打；正文改动后重跑即可复现。');
+  console.log('※ 本输出仅用于教学演示，不构成诊疗建议。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  DOC, CHAPTER, SLUG, REL,
+  readDoc, sections, block, numbered, chapterTitle, cardFields,
+  failureModes, judgeForms, passiveSteps, preposeConditions,
+};

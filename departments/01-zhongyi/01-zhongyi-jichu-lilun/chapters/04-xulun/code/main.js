@@ -1,12 +1,18 @@
 #!/usr/bin/env node
 /**
- * 中医基础理论 · 第 4 章 绪论：中医学的学科属性与工程化边界
- * 课程: departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/04-xulun/docs/zh.md
- * 出处: 教材·第1章 绪论与AI时代学习体系（standards/jichu/底本.json）
- * 依赖: 仅 Node.js 标准库
+ * 中医基础理论 · 第 4 章 中基的「基础」不是简单，是替所有临床科目背下了同一套定义
  *
- * 这章不建模型，只做一件事：把「这门学科能算到什么程度」量出来。
- * 三个量：教材本体规模、AI/平台映射段的占比、映射的层级（注释层 vs 原文层）。
+ *   node code/main.js
+ *
+ * 正文：chapters/04-xulun/docs/zh.md
+ * 习题：chapters/04-xulun/quiz.json
+ * 依赖：仅 Node.js 标准库
+ *
+ * 只读本章正文与本章 quiz，不读任何 standards 取数表：正文改了，这里的数字跟着变。
+ *   · 规模：汉字、段、节标题、表格张数与每张表的列数／行数
+ *   · 本章算术：从正文里解析判据条目、门限与结构数字，再算派生量
+ *   · quiz：题量、三段分布、选项数、解释长度、答案位置是否打散、check 题能否在正文找到原词
+ * 任何一项对不上，说明正文、代码、习题三者已经不同源。
  */
 
 'use strict';
@@ -14,109 +20,199 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-const ROOT = path.join(__dirname, '..', '..', '..', '..', '..', '..');
-const BOOK = path.join(ROOT, 'standards', 'jichu', '底本.json');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
-function load() {
-  return JSON.parse(fs.readFileSync(BOOK, 'utf8'));
+const CHAPTER = 4;
+const SLUG = '04-xulun';
+const TITLE = "中基的「基础」不是简单，是替所有临床科目背下了同一套定义";
+
+/* ── 文本口径 ────────────────────────────────────────────────────── */
+
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+const count = (text, term) => String(text).split(term).length - 1;
+const num = (s) => Number(String(s).replace(/[,，\s]/g, ''));
+const CN = { 两: 2, 一: 1, 二: 2, 三: 3, 四: 4, 五: 5, 六: 6, 七: 7, 八: 8, 九: 9, 十: 10, 十二: 12 };
+const cn2n = (s) => (CN[s] !== undefined ? CN[s] : Number(s));
+const readDoc = () => fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+const docLines = (doc) => String(doc).split(/\r?\n/);
+
+/** 节标题：`## 一、…` */
+function sections(doc) {
+  return docLines(doc).filter((l) => /^##\s+/.test(l)).map((l) => l.replace(/^##\s+/, '').trim());
 }
 
-const doc = load();
-
-// 这里不能写死 13/70/327 之类；全部从底本现算，教材一改数字就跟着变
-function bookShape() {
-  const chs = doc.chapters;
-  return {
-    chapters: chs.length,
-    secs: chs.reduce((n, c) => n + c.counts.secs, 0),
-    subs: chs.reduce((n, c) => n + c.counts.subs, 0),
-    paras: chs.reduce((n, c) => n + c.counts.paras, 0),
-    chars: chs.reduce((n, c) => n + c.counts.chars, 0),
-    perChapter: chs.map((c) => ({
-      no: c.no,
-      title: c.title,
-      secs: c.counts.secs,
-      paras: c.counts.paras,
-      chars: c.counts.chars,
-    })),
-  };
+/** 段：非空，不以标题、引文、表格行、清单符号或编号起始 */
+function paragraphs(doc) {
+  return docLines(doc)
+    .map((l) => l.trim())
+    .filter((l) => l && !/^[#>|]/.test(l) && !/^[-*+]\s/.test(l) && !/^\d+[.、]/.test(l))
+    .filter((l) => !l.includes('|'));
 }
 
-// 把所有正文段拉平（节级 + 小节级 + 章级），供词频统计
-function allParas() {
+/** markdown 表格：表头 + 去分隔行的数据行 */
+function tables(doc) {
+  const ls = docLines(doc);
+  const cells = (l) => l.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map((c) => c.trim());
   const out = [];
-  for (const c of doc.chapters) {
-    for (const p of c.paras || []) out.push({ ch: c.no, text: p });
-    for (const s of c.secs) {
-      for (const p of s.paras) out.push({ ch: c.no, text: p });
-      for (const sub of s.subs) for (const p of sub.paras) out.push({ ch: c.no, text: p });
+  let i = 0;
+  while (i < ls.length) {
+    if (/^\s*\|/.test(ls[i])) {
+      const block = [];
+      while (i < ls.length && /^\s*\|/.test(ls[i])) {
+        block.push(ls[i]);
+        i += 1;
+      }
+      const header = cells(block[0]);
+      const rows = block.slice(1).filter((l) => !/^\s*\|[\s:|-]+\|\s*$/.test(l)).map(cells);
+      out.push({ header, cols: header.length, rows });
+    } else {
+      i += 1;
     }
   }
   return out;
 }
 
-// 教材每一段都带一句「平台/AI 怎么做」。把这层单独数出来：
-// 它就是「工程化边界」的物证——映射存在，但它是**附在原文之后的注释段**。
-const MARKERS = ['AI', '平台', '系统', '仿真', '模型'];
+const tableBy = (ts, kw) => ts.find((t) => t.header.join(' ').includes(kw));
 
-function mappingShare(markers = MARKERS) {
-  const ps = allParas();
-  const hit = ps.filter((p) => markers.some((m) => p.text.includes(m)));
-  const byCh = {};
-  for (const p of ps) {
-    byCh[p.ch] = byCh[p.ch] || { paras: 0, hit: 0 };
-    byCh[p.ch].paras += 1;
-    if (markers.some((m) => p.text.includes(m))) byCh[p.ch].hit += 1;
-  }
+/* ── 本章算术（逐章注入，从正文解析） ───────────────────────────── */
+
+function chapterArithmetic(doc, ts) {
+const scale = tableBy(ts, '项');
+  const pick = (label) => {
+    const row = (scale ? scale.rows : []).find((r) => r[0] === label);
+    return row ? num(row[1]) : 0;
+  };
+  const zhang = pick('章');
+  const jie = pick('节');
+  const xiaojie = pick('小节');
+  const duan = pick('段');
+  const zi = pick('字');
+  const dy = pick('单元');
+  const unitsHanzi = num((doc.match(/另计\s*([\d,]+)\s*字/) || [])[1]);
+  const diff = zi - unitsHanzi;
+  const perUnit = dy ? Math.round((unitsHanzi / dy) * 10) / 10 : 0;
+  const courseCh = num((doc.match(/与课程\s*(\d+)\s*章/) || [])[1]);
+  const modules = ['哲学基础', '生理基础', '病理基础', '防治原则'].filter((x) => doc.includes(x)).length;
+  const layers = ['结构层', '关系层', '语义层'].filter((x) => doc.includes(x)).length;
+  const collect = tableBy(ts, '文本类型');
+  const fields = tableBy(ts, '字段');
+
   return {
-    paras: ps.length,
-    hit: hit.length,
-    share: hit.length / ps.length,
-    byChapter: Object.entries(byCh).map(([no, v]) => ({
-      no,
-      paras: v.paras,
-      hit: v.hit,
-      share: v.hit / v.paras,
-    })),
+    zhang, jie, xiaojie, duan, zi, dy, unitsHanzi, diff, perUnit, courseCh, modules, layers,
+    collectItems: collect ? collect.rows.length : 0,
+    fieldRows: fields ? fields.rows.length : 0,
+    lines: [
+      '底本 ' + zhang + ' 章 / ' + jie + ' 节 / ' + xiaojie + ' 小节 / ' + duan + ' 段 / ' + zi.toLocaleString('en-US') + ' 字',
+      '单元表 ' + dy + ' 条 / ' + unitsHanzi.toLocaleString('en-US') + ' 字，一条平均 ' + perUnit + ' 字',
+      '两套口径差 ' + diff.toLocaleString('en-US') + ' 字（按段计 vs 按语义块并合）',
+      '教材 ' + zhang + ' 章 vs 课程 ' + courseCh + ' 章，两套编号各自成立',
+      '四大模块 ' + modules + ' 层 · 可计算性 ' + layers + ' 层（结构／关系／语义）',
+      '文本类型表 ' + (collect ? collect.rows.length : 0) + ' 行 · 字段表 ' + (fields ? fields.rows.length : 0) + ' 行',
+    ],
   };
 }
 
-// 一份段落里，「AI 映射」是否与理论同段：同段 = 混写，异段 = 分层。
-// 本教材全部混写在同一段内（一句理论 + 一句平台），所以不能靠切段分离——
-// 这条事实决定了后面各章的代码只能引理论句，不能引映射句当事实。
-function mixing() {
-  const ps = allParas();
-  const both = ps.filter((p) => /AI|平台/.test(p.text) && /者|谓|即|是指/.test(p.text));
-  return { total: ps.length, mixed: both.length, share: both.length / ps.length };
+/* ── quiz：结构 + 接地 ──────────────────────────────────────────── */
+
+/** 正文里 4 字以上的连续汉字片段 */
+function grams(text, n = 4) {
+  const out = new Set();
+  for (const seg of String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+}
+
+function quizSummary(quiz, doc) {
+  const body = grams(doc);
+  const qs = Array.isArray(quiz.questions) ? quiz.questions : [];
+  const stage = { pre: 0, check: 0, post: 0 };
+  const items = qs.map((q, i) => {
+    if (stage[q.stage] !== undefined) stage[q.stage] += 1;
+    const opts = Array.isArray(q.options) ? q.options : [];
+    const right = String(opts[q.correct] || '');
+    const hit = [...grams(right)].filter((g) => body.has(g));
+    const why = q.explain || q.explanation || '';
+    return {
+      n: i + 1,
+      stage: q.stage,
+      options: opts.length,
+      correct: q.correct,
+      explainHanzi: hanzi(why),
+      grounded: hit.length,
+      sample: hit.slice(0, 3),
+    };
+  });
+  return {
+    total: qs.length,
+    stage,
+    items,
+    answers: qs.map((q) => q.correct),
+    distinctAnswers: new Set(qs.map((q) => q.correct)).size,
+    checkGrounded: items.filter((x) => x.stage === 'check' && x.grounded > 0).length,
+    minExplain: items.length ? Math.min(...items.map((x) => x.explainHanzi)) : 0,
+    allFourOptions: items.every((x) => x.options === 4),
+    badCorrect: items.filter((x) => !(Number.isInteger(x.correct) && x.correct >= 0 && x.correct < 4)).length,
+    stageComplete: ['pre', 'check', 'post'].every((s) => stage[s] > 0),
+  };
+}
+
+/* ── 汇总 ──────────────────────────────────────────────────────── */
+
+function analyze() {
+  const doc = readDoc();
+  const ts = tables(doc);
+  const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+  return {
+    docHanzi: hanzi(doc),
+    paragraphs: paragraphs(doc).length,
+    sections: sections(doc),
+    tables: ts.map((t) => ({ header: t.header, cols: t.cols, rows: t.rows.length })),
+    arith: chapterArithmetic(doc, ts),
+    quiz: quizSummary(quiz, doc),
+  };
 }
 
 function main() {
-  const shape = bookShape();
-  const map = mappingShare();
-  const mix = mixing();
-
-  console.log('═══ 中医基础理论 · 教材本体 ═══');
-  console.log(`  版本 ${doc.edition}`);
-  console.log(`  sha256 ${doc.source.sha256.slice(0, 16)} · ${shape.chapters} 章 · ${shape.secs} 节 · ${shape.subs} 小节 · ${shape.paras} 段 · ${shape.chars.toLocaleString()} 字`);
+  const r = analyze();
+  const a = r.arith;
+  console.log(`中医基础理论 第 ${CHAPTER} 章 · ${TITLE}`);
+  console.log(`正文 ${r.docHanzi.toLocaleString('en-US')} 汉字 · ${r.paragraphs} 段 · 节 ${r.sections.length} 个`);
   console.log('');
-  console.log('  各章规模（段数 / 字数）：');
-  for (const c of shape.perChapter) {
-    console.log(`    第${c.no}章 ${c.title}: ${c.secs} 节 · ${c.paras} 段 · ${c.chars.toLocaleString()} 字`);
-  }
+  console.log('结构：');
+  for (const s of r.sections) console.log(`  ${s}`);
   console.log('');
-  console.log('═══ 工程化映射层 ═══');
-  console.log(`  带「AI/平台/系统/仿真/模型」的段：${map.hit}/${map.paras}（${(map.share * 100).toFixed(1)}%）`);
-  const hi = map.byChapter.slice().sort((a, b) => b.share - a.share).slice(0, 3);
-  const lo = map.byChapter.slice().sort((a, b) => a.share - b.share).slice(0, 3);
-  console.log(`  映射最密：${hi.map((x) => `第${x.no}章 ${(x.share * 100).toFixed(0)}%`).join(' · ')}`);
-  console.log(`  映射最稀：${lo.map((x) => `第${x.no}章 ${(x.share * 100).toFixed(0)}%`).join(' · ')}`);
+  console.log(`表 ${r.tables.length} 张：`);
+  r.tables.forEach((t, i) => console.log(`  [${i + 1}] ${t.header.join(' / ')} —— ${t.cols} 列 × ${t.rows} 行`));
   console.log('');
-  console.log(`  理论句与映射句同段的比例：${mix.mixed}/${mix.total}（${(mix.share * 100).toFixed(1)}%）`);
-  console.log('  → 同段混写，说明映射不是独立章节，而是理论句之后的注释；引用时必须分开。');
+  console.log('本章算术（全部从正文解析后计算）：');
+  for (const line of a.lines) console.log(`  ${line}`);
   console.log('');
-  console.log('教学边界：本章只度量教材自身的可计算程度，不对任何人的体质、证候或用药作判断；不构成诊疗依据。');
+  console.log(`quiz ${r.quiz.total} 题（pre ${r.quiz.stage.pre} / check ${r.quiz.stage.check} / post ${r.quiz.stage.post}）· 答案 ${r.quiz.answers.join('/')}`);
+  console.log(`  check 题接地 ${r.quiz.checkGrounded} 道 · 答案落在 ${r.quiz.distinctAnswers} 个位置 · 最短解释 ${r.quiz.minExplain} 汉字`);
+  console.log('※ 以上数字由本章正文与 quiz 现算，改正文后重跑即可复核。');
+  console.log('※ 本章为教学材料，判据与分档均为课堂约定，不构成诊疗建议，也不替代执业医师的判断。');
 }
 
 if (require.main === module) main();
 
-module.exports = { bookShape, allParas, mappingShare, mixing, MARKERS, doc };
+module.exports = {
+  analyze,
+  readDoc,
+  sections,
+  paragraphs,
+  tables,
+  tableBy,
+  grams,
+  hanzi,
+  count,
+  num,
+  cn2n,
+  quizSummary,
+  CHAPTER,
+  SLUG,
+  TITLE,
+  DOC,
+  QUIZ,
+};

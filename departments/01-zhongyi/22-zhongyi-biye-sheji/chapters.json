@@ -5,7 +5,7 @@
     {
       "n": 1,
       "slug": "01-tongyong-liucheng",
-      "title": "通用流程与基本要求",
+      "title": "毕业设计的硬标准是别人能重跑，不是结论漂亮",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/01-tongyong-liucheng/docs/zh.md",
@@ -14,7 +14,7 @@
     {
       "n": 2,
       "slug": "02-zhongyi-zhenghou-paisheng",
-      "title": "中医系·案例一：证候词典即服务——900 单元派生的 132 证基层辨证底座",
+      "title": "证候词表的价值在可归并，不在证名多",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/02-zhongyi-zhenghou-paisheng/docs/zh.md",
@@ -23,7 +23,7 @@
     {
       "n": 3,
       "slug": "03-zhongyi-xuepai-cibiao",
-      "title": "中医系·案例二：给「张从正＝攻邪」祛魅——学派词表消融的检索产品",
+      "title": "一词命中一千四百次，证的是字频不是学派",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/03-zhongyi-xuepai-cibiao/docs/zh.md",
@@ -32,7 +32,7 @@
     {
       "n": 4,
       "slug": "04-zhongyi-zhexue-fanchou",
-      "title": "中医系·案例三：内经范畴检索——49 万字里的 12 个范畴与 Top 篇",
+      "title": "四十九万字里，先分清是哪一个范畴的密度",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/04-zhongyi-zhexue-fanchou/docs/zh.md",
@@ -41,7 +41,7 @@
     {
       "n": 5,
       "slug": "05-zhongyao-xingzhuang-jiexi",
-      "title": "中药系·案例一：287 味药性味归经 API——给四诊仪与 HIS 补一张结构化药表",
+      "title": "药表的价值在缺项说得清，不在味数多",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/05-zhongyao-xingzhuang-jiexi/docs/zh.md",
@@ -50,7 +50,7 @@
     {
       "n": 6,
       "slug": "06-zhongyao-fangji-yaowei",
-      "title": "中药系·案例二：方剂-药味对账——饮片集采时代的配伍可核账本",
+      "title": "方剂对账先认药位，再谈配伍",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/06-zhongyao-fangji-yaowei/docs/zh.md",
@@ -59,7 +59,7 @@
     {
       "n": 7,
       "slug": "07-zhongyao-yaoli-nandu",
-      "title": "中药系·案例三：药理 97 万字难度图谱——教培与继续教育的选题引擎",
+      "title": "难度图谱是代理指标，不能替老师判难",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/07-zhongyao-yaoli-nandu/docs/zh.md",
@@ -68,7 +68,7 @@
     {
       "n": 8,
       "slug": "08-zhenjiu-jingluo-diben",
-      "title": "针灸系·案例一：经络学底本从零建——4.2 万中医馆的培训基建",
+      "title": "底本从零建，先算「还没有的东西」值多少",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/08-zhenjiu-jingluo-diben/docs/zh.md",
@@ -77,7 +77,7 @@
     {
       "n": 9,
       "slug": "09-zhenjiu-shuxue-guishu",
-      "title": "针灸系·案例二：腧穴多经归属冲突表——ISO 针灸标准的落地校验",
+      "title": "补源之前，冲突率只能是零比零",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/09-zhenjiu-shuxue-guishu/docs/zh.md",
@@ -86,7 +86,7 @@
     {
       "n": 10,
       "slug": "10-zhenjiu-zhishishu-guadian",
-      "title": "针灸系·案例三：条文挂知识树——中医知识图谱的挂点服务",
+      "title": "挂点覆盖率的分母没建起来之前，分子毫无意义",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/10-zhenjiu-zhishishu-guadian/docs/zh.md",
@@ -95,7 +95,7 @@
     {
       "n": 11,
       "slug": "11-gushang-gubing-qianyi",
-      "title": "骨伤系·案例一：骨病底本迁移——骨伤专科的路径化底座",
+      "title": "底本可以迁移，章轴必须重算",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/11-gushang-gubing-qianyi/docs/zh.md",
@@ -104,7 +104,7 @@
     {
       "n": 12,
       "slug": "12-gushang-chuangshang-shijianchuang",
-      "title": "骨伤系·案例二：创伤时间窗清点——急诊骨伤的时点提醒器",
+      "title": "教材不给时点，就别替它编一个",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/12-gushang-chuangshang-shijianchuang/docs/zh.md",
@@ -113,7 +113,7 @@
     {
       "n": 13,
       "slug": "13-gushang-kangfu-pingding",
-      "title": "骨伤系·案例三：康复评定可复现包——社区康复的量表合规盒",
+      "title": "缺项填零，量表就成了假分数",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/13-gushang-kangfu-pingding/docs/zh.md",
@@ -122,7 +122,7 @@
     {
       "n": 14,
       "slug": "14-huli-pinggu-diben",
-      "title": "护理系·案例一：132 证→护理问题——中医护理的评估翻译器",
+      "title": "一证多护不是缺陷，是护理评估的常态",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/14-huli-pinggu-diben/docs/zh.md",
@@ -131,7 +131,7 @@
     {
       "n": 15,
       "slug": "15-huli-jiaoban-sbar",
-      "title": "护理系·案例二：交接班五栏——护理交接的缺项显性化",
+      "title": "交接班留空不是省事，是把风险留给下一班",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/15-huli-jiaoban-sbar/docs/zh.md",
@@ -140,7 +140,7 @@
     {
       "n": 16,
       "slug": "16-huli-yangsheng-fangan",
-      "title": "护理系·案例三：养生方案检查单——治未病的「忌」清单产品",
+      "title": "忌比宜难写，因为「忌」必须能勾选",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/16-huli-yangsheng-fangan/docs/zh.md",
@@ -149,7 +149,7 @@
     {
       "n": 17,
       "slug": "17-guanli-tongji-diben",
-      "title": "管理系·案例一：统计口径对齐——中医机构报表的守门员",
+      "title": "对不上的数不是笔误，是没有人负责计数",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/17-guanli-tongji-diben/docs/zh.md",
@@ -158,7 +158,7 @@
     {
       "n": 18,
       "slug": "18-guanli-fugaidu-baobiao",
-      "title": "管理系·案例二：覆盖度双维报表——院校学科建设的诊断仪",
+      "title": "一个覆盖率会把「章节多」读成「底本齐」",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/18-guanli-fugaidu-baobiao/docs/zh.md",
@@ -167,7 +167,7 @@
     {
       "n": 19,
       "slug": "19-guanli-zhengce-guadian",
-      "title": "管理系·案例三：政策条文挂点——中医药政策的可检索合规库",
+      "title": "条文没登记来源，挂上去也是无出处",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/19-guanli-zhengce-guadian/docs/zh.md",
@@ -176,7 +176,7 @@
     {
       "n": 20,
       "slug": "20-zhineng-icd-jiansuo",
-      "title": "智能系·案例一：ICD-11 TM1 检索栈——中医病证的编码翻译层",
+      "title": "检索栈能重建，才算编码翻译层",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/20-zhineng-icd-jiansuo/docs/zh.md",
@@ -185,7 +185,7 @@
     {
       "n": 21,
       "slug": "21-zhineng-yuyi-zhangliang",
-      "title": "智能系·案例二：三维极坐标张量——中医语义表示的邻域稳定性",
+      "title": "换一种坐标表示，近邻集合先要稳住",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/21-zhineng-yuyi-zhangliang/docs/zh.md",
@@ -194,7 +194,7 @@
     {
       "n": 22,
       "slug": "22-zhineng-zhibiao-shibai",
-      "title": "智能系·案例三：指标与失效移交包——医疗 AI 的可审计交付",
+      "title": "只报均值，等于把失败藏进平均里",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/22-zhineng-zhibiao-shibai/docs/zh.md",
@@ -203,7 +203,7 @@
     {
       "n": 23,
       "slug": "23-wuguan-mianbu-wangzhen",
-      "title": "五官口腔系·案例一：望诊字段化——中医面诊的可观察化接口",
+      "title": "「神疲」写不进字段，就别硬塞进形态",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/23-wuguan-mianbu-wangzhen/docs/zh.md",
@@ -212,7 +212,7 @@
     {
       "n": 24,
       "slug": "24-wuguan-fangji-shai",
-      "title": "五官口腔系·案例二：114 方五官筛——专科中成药的选品依据",
+      "title": "两条筛方路径的差别，用交集与差集说话",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/24-wuguan-fangji-shai/docs/zh.md",
@@ -221,7 +221,7 @@
     {
       "n": 25,
       "slug": "25-wuguan-guangxue-canliang",
-      "title": "五官口腔系·案例三：光学参数缺项写法——眼科数据报表的合规底线",
+      "title": "留空与写「无」，在报表里是两件事",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/25-wuguan-guangxue-canliang/docs/zh.md",
@@ -230,7 +230,7 @@
     {
       "n": 26,
       "slug": "26-jichu-bingli-diben",
-      "title": "基础医学院·案例一：病理 252 单元底本——基础医学的课程数字化底座",
+      "title": "最大的底本层，先证明它可被别人复用",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/26-jichu-bingli-diben/docs/zh.md",
@@ -239,7 +239,7 @@
     {
       "n": 27,
       "slug": "27-jichu-bingsheng-jiuzhou",
-      "title": "基础医学院·案例二：病理生理九轴——机制教学的覆盖度仪表",
+      "title": "一条单元打三个轴，覆盖率就会虚高",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/27-jichu-bingsheng-jiuzhou/docs/zh.md",
@@ -248,7 +248,7 @@
     {
       "n": 28,
       "slug": "28-jichu-shengli-zhengchangzhi",
-      "title": "基础医学院·案例三：生理正常值表——可复现的参考区间交付",
+      "title": "正常值没有单位，等于没有参考区间",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/28-jichu-shengli-zhengchangzhi/docs/zh.md",

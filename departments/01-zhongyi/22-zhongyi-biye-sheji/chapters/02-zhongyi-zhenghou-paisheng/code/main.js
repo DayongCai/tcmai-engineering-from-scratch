@@ -1,127 +1,48 @@
 #!/usr/bin/env node
 /**
- * 中医毕业设计与知识移交 · 第 2 章 中医系·案例一：证候层的可复现派生（900 单元 → 132 证）：本章统计口径
+ * 中医毕业设计与知识移交 · 第 2 章 证候词表的价值在可归并，不在证名多
  * 课程: departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/02-zhongyi-zhenghou-paisheng/docs/zh.md
- * 数据: standards/biye/units.json（10 单元层，每单元带三辨 / 四位面词频与数值计数）
+ * 数据: 本章正文的锚点表 + standards/biye/案例库.json 同 slug 案例
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：正文引用的每个规模、重心、引书数，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 900／132／14／208 从正文表里读，1.58、9.4、11 由除法现算；
+ * 商业侧的 5.9 个月回本由案例库原始参数重算，不读现成结果列。
  */
 
 'use strict';
 
-const fs = require('node:fs');
 const path = require('node:path');
+const { readDoc, tableMap, grab, budget, auditQuiz, banner, finish } = require(path.join(__dirname, '..', '..', '_chapter.js'));
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'biye', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/biye/units.json —— 章节目录是否已脱离仓库？');
-}
+const SLUG = '02-zhongyi-zhenghou-paisheng';
+const NO = 2;
+const TITLE = '证候词表的价值在可归并，不在证名多';
+const doc = readDoc(SLUG).text;
+const rows = tableMap(doc);
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'biye', 'units.json');
-const CHAPTER = '2';
+const units = rows.get('单元');
+const syndromes = rows.get('证');
+const families = rows.get('族');
+const coverage = rows.get('病证覆盖');
+const otherShare = rows.get('「其他」族') / 100;
+const src = doc.match(/外科\s*(\d+)\s*＋\s*儿科\s*(\d+)\s*＋\s*妇科\s*(\d+)/);
+if (!src) throw new Error('正文缺少三个底本的单元数');
+const srcSum = Number(src[1]) + Number(src[2]) + Number(src[3]);
 
-const load = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
+if (srcSum !== units) throw new Error(`三底本相加 ${srcSum} ≠ 正文单元 ${units}`);
+const perSyndrome = coverage / syndromes;
+const perFamily = syndromes / families;
+const otherCount = syndromes * otherShare;
+if (Math.abs(perSyndrome - 1.58) > 0.01) throw new Error('每证覆盖复算与正文 1.58 不一致');
+if (Math.abs(perFamily - 9.4) > 0.06) throw new Error('每族证数复算与正文 9.4 不一致');
 
-function chapterUnits(units, no = CHAPTER) {
-  return units.units
-    .filter((u) => u.chapter === no)
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
+banner(NO, TITLE);
+console.log(`母体：外科 ${src[1]} ＋ 儿科 ${src[2]} ＋ 妇科 ${src[3]} = ${srcSum} 单元（正文表记 ${units}）`);
+console.log(`派生：${syndromes} 证 / ${families} 族 / ${coverage} 次病证覆盖`);
+console.log(`复算：${coverage} ÷ ${syndromes} = ${perSyndrome.toFixed(2)} 次/证（正文 1.58）`);
+console.log(`复算：${syndromes} ÷ ${families} = ${perFamily.toFixed(1)} 证/族（正文 9.4）`);
+console.log(`「其他」族 ${(otherShare * 100).toFixed(1)}% × ${syndromes} 证 = ${otherCount.toFixed(1)} 证（正文约 11 证），红线 10%`);
+console.log(`判断：共用度低——多数证只在一门课出现一次；词表口径不等于教材全量。`);
 
-const sum = (d) => Object.values(d).reduce((a, b) => a + b, 0);
-
-function merge(list, field) {
-  const out = {};
-  for (const u of list) for (const [k, v] of Object.entries(u.measure[field])) out[k] = (out[k] || 0) + v;
-  return out;
-}
-
-function rank(dict) {
-  const tot = sum(dict);
-  return Object.entries(dict)
-    .map(([key, count]) => ({ key, count, share: tot ? count / tot : 0 }))
-    .sort((a, b) => b.count - a.count);
-}
-
-function bySection(list) {
-  const out = new Map();
-  for (const u of list) {
-    const key = u.sec || '（未标节）';
-    const it = out.get(key) || { sec: key, units: 0, hanzi: 0 };
-    it.units += 1;
-    it.hanzi += u.hanzi;
-    out.set(key, it);
-  }
-  return [...out.values()];
-}
-
-function citations(list) {
-  const counter = new Map();
-  for (const u of list) {
-    for (const m of u.prose.matchAll(/《([^》]+)》/g)) {
-      counter.set(m[1], (counter.get(m[1]) || 0) + 1);
-    }
-  }
-  const ranked = [...counter.entries()].sort((a, b) => b[1] - a[1]);
-  return { books: counter.size, total: sum(Object.fromEntries(counter)), top: ranked.slice(0, 3) };
-}
-
-function shape(list) {
-  const hanzi = list.reduce((a, u) => a + u.hanzi, 0);
-  return {
-    units: list.length,
-    hanzi,
-    mean: list.length ? Math.round(hanzi / list.length) : 0,
-    valueLike: list.reduce((a, u) => a + u.measure.valueLike, 0),
-    digits: list.reduce((a, u) => a + u.measure.digits, 0),
-  };
-}
-
-/** 方与法：单元层没有独立方剂字段，改从正文里认「治法动词」记号（儿科以疏风宣肺、消食健脾、平肝息风为主） */
-function methods(list) {
-  const VERBS = ['疏肝', '补肾', '健脾', '养血', '活血', '化瘀', '调经', '固冲', '止带', '安胎', '清热', '利湿'];
-  const out = {};
-  for (const v of VERBS) out[v] = list.reduce((a, u) => a + u.prose.split(v).length - 1, 0);
-  return Object.entries(out).filter(([, c]) => c).sort((a, b) => b[1] - a[1]);
-}
-
-module.exports = { CHAPTER, load, chapterUnits, merge, rank, bySection, citations, shape, methods, sum };
-
-if (require.main === module) {
-  const data = load();
-  const list = chapterUnits(data);
-  const s = shape(list);
-  const views = rank(merge(list, 'views'));
-  const levels = rank(merge(list, 'levels'));
-  const books = citations(list);
-
-  console.log('═══ 中医毕业设计与知识移交 · 第 2 章 中医系·案例一：证候层的可复现派生（900 单元 → 132 证） ═══');
-  console.log(`单元 ${s.units} · 汉字 ${s.hanzi} · 平均 ${s.mean} 字/单元`);
-  console.log(`数值类命中 ${s.valueLike} · 数字字符 ${s.digits}`);
-  console.log('\n按节：');
-  for (const sec of bySection(list)) console.log(`  ${sec.sec}  ${sec.units} 单元 · ${sec.hanzi} 字`);
-  console.log('\n三辨重心：');
-  for (const v of views) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
-  console.log('\n四位面覆盖：');
-  for (const v of levels) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
-  console.log(`\n引书 ${books.books} 部 · 引用 ${books.total} 次 · 前三：${books.top.map(([n, c]) => `${n}(${c})`).join('、')}`);
-  console.log('\n治法动词命中：' + methods(list).map(([v, c]) => `${v}×${c}`).join('  '));
-  console.log('\n单元清单：');
-  for (const u of list) {
-    console.log(`  ${u.sub}\t${u.title}\t${u.hanzi}字\t${(u.tri && u.tri.view.primary) || '—'}/${(u.tri && u.tri.level.primary) || '—'}`);
-  }
-}
-
-// 教学样例声明：契约要求每章输出含临床边界声明（tests/test_chapter_code.js）
-if (require.main === module) {
-  console.log('※ 教学样例：数字由 standards/biye/units.json 现算，不构成诊疗建议，不能替代医师面诊。');
-}
+const b = budget(SLUG);
+finish(SLUG, b, auditQuiz(SLUG, doc));

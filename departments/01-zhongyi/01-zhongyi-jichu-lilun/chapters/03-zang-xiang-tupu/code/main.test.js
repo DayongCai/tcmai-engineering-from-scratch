@@ -1,138 +1,119 @@
 #!/usr/bin/env node
 /**
- * 第 3 章 藏象 → 知识图谱 —— 确定性单元测试
- * 运行: node --test code/main.test.js
+ * 中医基础理论 · 第 3 章 藏象是一张「黑箱—输出」对照表，解剖实体只解释了它的一半
+ * 确定性单元测试 —— 运行: node --test code/main.test.js
+ *
+ * 断言钉的是本机实测值：正文、算术解析或 quiz 任一处改动，这里就应当变红。
+ * 数字不从 main.js 回读再自比（那样什么都测不出），而是写在断言里。
  */
 
 'use strict';
 
-const assert = require('node:assert');
 const test = require('node:test');
+const assert = require('node:assert');
+const fs = require('node:fs');
+const path = require('node:path');
+const { spawnSync } = require('node:child_process');
 
-const {
-  NODE_TYPES, EDGE_TYPES, WUXING, ZANG,
-  createGraph, addNode, addEdge, buildZangXiangGraph,
-  neighborhood, shortestPath, formatPath, attributesOf,
-  checkCompleteness, checkBiaoLi, checkWuxingUnique,
-} = require('./main');
+const MAIN = path.join(__dirname, 'main.js');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
+const m = require('./main.js');
 
-const g = buildZangXiangGraph();
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
+const readQuiz = () => JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+const grams = (t, n = 4) => {
+  const out = new Set();
+  for (const seg of String(t || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+};
 
-test('本体定义齐备：五行在实体类型中，相生相克在关系类型中', () => {
-  assert.ok(NODE_TYPES.includes('五行'), '五行应为独立的实体类型，而不是脏的一个属性字段');
-  assert.ok(EDGE_TYPES.includes('相生'));
-  assert.ok(EDGE_TYPES.includes('相克'));
-  assert.ok(EDGE_TYPES.includes('相表里'));
+test('正文规模：汉字 3137 / 段 22 / 节 6', () => {
+  const r = m.analyze();
+  assert.strictEqual(r.docHanzi, 3137);
+  assert.strictEqual(r.paragraphs, 22);
+  assert.strictEqual(r.sections.length, 6);
+  assert.strictEqual(hanzi(readDoc()), 3137, '汉字口径必须与正文一致');
 });
 
-test('藏象配属表完整：五藏，且每藏的六类配属与五行齐备', () => {
-  assert.strictEqual(ZANG.length, 5);
-  for (const z of ZANG) {
-    for (const k of ['name', 'wuxing', 'fu', 'qiao', 'zhi', 'ti', 'hua', 'ye']) {
-      assert.ok(z[k], `${z.name} 缺字段 ${k}`);
-    }
-    assert.ok(WUXING.includes(z.wuxing), `${z.name} 的五行 ${z.wuxing} 不在五行之列`);
+test('表格：3 张，行数 [5,5,8]（含五脏配属表）', () => {
+  const r = m.analyze();
+  assert.deepStrictEqual(r.tables.map((t) => t.rows), [5,5,8]);
+  assert.deepStrictEqual(r.tables.map((t) => t.cols), [4,7,3]);
+});
+
+test('本章算术：解析出的数与派生量', () => {
+  const a = m.analyze().arith;
+  assert.strictEqual(a.collectItems, 5, 'collectItems');
+  assert.strictEqual(a.fieldRows, 8, 'fieldRows');
+  assert.strictEqual(a.pairs, 10, 'pairs');
+  assert.strictEqual(a.k, 5, 'k');
+  assert.strictEqual(a.documented, 2, 'documented');
+  assert.strictEqual(a.missing, 8, 'missing');
+  assert.strictEqual(a.criteria, 3, 'criteria');
+  assert.strictEqual(a.pathways, 3, 'pathways');
+  assert.strictEqual(a.symptoms, 6, 'symptoms');
+  assert.strictEqual(a.hidden, 3, 'hidden');
+  assert.strictEqual(a.unblocked, 3, 'unblocked');
+
+});
+
+test('本章算术：结构与清单', () => {
+  const a = m.analyze().arith;
+  assert.ok(Array.isArray(a.lines) && a.lines.length >= 4, '算术清单至少 4 行');
+});
+
+test('quiz 结构：6 题、三段齐、4 选项、下标合法、答案打散', () => {
+  const q = readQuiz();
+  assert.strictEqual(q.questions.length, 6);
+  assert.deepStrictEqual(q.questions.map((x) => x.correct), [1,0,1,1,2,1]);
+  const distinct = [...new Set(q.questions.map((x) => x.correct))].sort((a, b) => a - b);
+  assert.ok(distinct.length >= 3, '答案位置只有 ' + distinct.length + ' 种');
+  assert.deepStrictEqual(distinct, [0,1,2]);
+  const stages = new Set(q.questions.map((x) => x.stage));
+  for (const s of ['pre', 'check', 'post']) assert.ok(stages.has(s), '缺 ' + s + ' 段');
+  for (const x of q.questions) {
+    assert.ok(['pre', 'check', 'post'].includes(x.stage), 'stage: ' + x.stage);
+    assert.strictEqual(x.options.length, 4, x.question);
+    assert.ok(Number.isInteger(x.correct) && x.correct >= 0 && x.correct < 4, 'correct 越界: ' + x.question);
+    assert.ok(typeof x.explain === 'string' && x.explain.length > 0, '缺 explain: ' + x.question);
   }
 });
 
-test('图规模：40 个节点、50 条边', () => {
-  assert.strictEqual(g.nodes.size, 40);
-  const edges = [...g.out.values()].reduce((a, l) => a + l.length, 0);
-  assert.strictEqual(edges, 50);
+test('quiz 接地：至少 2 道 check 题的正确选项含正文原词', () => {
+  const body = grams(readDoc());
+  const q = readQuiz();
+  const grounded = q.questions.filter((x) => {
+    if (x.stage !== 'check') return false;
+    const right = String(x.options[x.correct] || '');
+    return [...grams(right)].some((g) => body.has(g));
+  });
+  assert.ok(grounded.length >= 2, '只接地 ' + grounded.length + ' 道');
+  assert.strictEqual(m.analyze().quiz.checkGrounded, grounded.length, 'main.js 与测试口径必须一致');
 });
 
-test('相表里是对称边：脏→腑 与 腑→脏 都存在', () => {
-  for (const z of ZANG) {
-    assert.ok((g.out.get(z.name) || []).some((e) => e.type === '相表里' && e.to === z.fu), `${z.name}→${z.fu} 缺失`);
-    assert.ok((g.out.get(z.fu) || []).some((e) => e.type === '相表里' && e.to === z.name), `${z.fu}→${z.name} 缺失（对称关系必须双向建边）`);
-  }
+test('quiz 解释：每题 ≥30 汉字，最短 77 汉字', () => {
+  const q = readQuiz();
+  const lens = q.questions.map((x) => hanzi(x.explain));
+  assert.deepStrictEqual(lens.filter((n) => n < 30), [], '有解释不足 30 汉字');
+  assert.strictEqual(Math.min(...lens), 77);
+  assert.strictEqual(m.analyze().quiz.minExplain, 77);
 });
 
-test('本体校验三项全部通过', () => {
-  assert.deepStrictEqual(checkCompleteness(g), []);
-  assert.deepStrictEqual(checkBiaoLi(g), []);
-  assert.deepStrictEqual(checkWuxingUnique(g), []);
+test('脚本可运行：退出码 0，输出带教学样例与边界声明', () => {
+  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
+  assert.strictEqual(r.status, 0, String(r.stderr));
+  const out = String(r.stdout || '');
+  assert.ok(out.length > 200, '输出过短');
+  assert.match(out, /现算/);
+  assert.match(out, /不构成诊疗建议/);
+  assert.match(out, /第 3 章/);
 });
 
-test('校验能捕获人为破坏：删掉一侧相表里边后 checkBiaoLi 必须报错', () => {
-  const broken = createGraph();
-  addNode(broken, '肝', '脏');
-  addNode(broken, '胆', '腑');
-  addEdge(broken, '肝', '相表里', '胆'); // 只建一侧
-
-  const problems = checkBiaoLi(broken);
-  // checkBiaoLi 对 ZANG 全表校验，而这张残缺图里只有 肝→胆 一条边：
-  //   肝：正向有、反向缺 → 1 项
-  //   心/脾/肺/肾：正反向全缺 → 各 2 项
-  // 合计 9 项。数字本身不重要，重要的是残缺被枚举出来而不是静默通过。
-  assert.strictEqual(problems.length, 9, `应枚举出 9 项缺失，实得 ${problems.length}: ${problems.join(' / ')}`);
-  assert.ok(problems.some((p) => p.includes('胆')), `报错信息应指出是胆未回连: ${problems.join(' / ')}`);
-});
-
-test('校验能捕获人为破坏：五行重复分配必须报错', () => {
-  const broken = createGraph();
-  addNode(broken, '甲', '脏');
-  addNode(broken, '乙', '脏');
-  addEdge(broken, '甲', '属五行', '木');
-  addEdge(broken, '乙', '属五行', '木');
-  const problems = checkWuxingUnique(broken);
-  assert.ok(problems.some((p) => p.includes('重复')), `应报五行重复: ${problems.join(' / ')}`);
-});
-
-test('one-hop 邻域：从「目」出发恰好只有「肝」', () => {
-  const nb = neighborhood(g, '目', 1);
-  assert.strictEqual(nb.size, 1);
-  assert.strictEqual(nb.get('肝'), 1);
-});
-
-test('two-hop 邻域：从「目」出发 7 个节点，距离 2 的集合含「木」', () => {
-  const nb = neighborhood(g, '目', 2);
-  assert.strictEqual(nb.size, 7);
-  const dist2 = [...nb.entries()].filter(([, d]) => d === 2).map(([n]) => n).sort();
-  assert.deepStrictEqual(dist2, ['木', '泪', '爪', '筋', '胆', '怒'].sort());
-});
-
-test('最短路径：肝 → 悲 必须绕道五行，且含逆向边（金克木）', () => {
-  const p = shortestPath(g, '肝', '悲');
-  assert.ok(p, '肝 → 悲 应当可达');
-  assert.strictEqual(p.nodes.join('→'), '肝→木→金→肺→悲');
-  assert.strictEqual(p.edges.length, 4);
-  // 木—金 这一跳的真实边是「金克木」，遍历方向与真实方向相反
-  const wuxingHop = p.edges.find((e) => e.type === '相克');
-  assert.ok(wuxingHop, '路径中必须含相克边，否则绕道五行的说法不成立');
-  assert.strictEqual(wuxingHop.src, '金');
-  assert.strictEqual(wuxingHop.dst, '木');
-  assert.strictEqual(wuxingHop.forward, false, '金克木被逆向遍历，必须标记 forward=false');
-});
-
-test('路径渲染保持真实边方向：金克木不能被写成木克金', () => {
-  const s = formatPath(shortestPath(g, '肝', '悲'));
-  assert.ok(s.includes('←相克-'), `逆向相克边应渲染为 ←相克-，实得: ${s}`);
-  assert.ok(!s.includes('木 -相克→'), `不得把金克木写成木克金: ${s}`);
-});
-
-test('最短路径：水克火 是正向边，不应被标记为逆向', () => {
-  const p = shortestPath(g, '水', '火');
-  assert.strictEqual(p.edges.length, 1);
-  assert.strictEqual(p.edges[0].type, '相克');
-  assert.strictEqual(p.edges[0].forward, true);
-  assert.strictEqual(p.edges[0].src, '水');
-  assert.strictEqual(p.edges[0].dst, '火');
-});
-
-test('attributesOf 返回一脏的全套配属，含五行', () => {
-  const a = attributesOf(g, '肾');
-  assert.strictEqual(a.wuxing, '水');
-  assert.strictEqual(a['相表里'], '膀胱');
-  assert.strictEqual(a['开窍于'], '耳');
-  assert.strictEqual(a['在志为'], '恐');
-  assert.strictEqual(a['在体为'], '骨');
-  assert.strictEqual(a['其华在'], '发');
-});
-
-test('孤岛检查：图上不存在无任何边的节点', () => {
-  for (const [name] of g.nodes) {
-    const deg = (g.out.get(name) || []).length + (g.in.get(name) || []).length;
-    assert.ok(deg > 0, `节点 ${name} 是孤岛`);
-  }
+test('代码头部指向本章目录', () => {
+  const body = fs.readFileSync(MAIN, 'utf8');
+  assert.ok(body.includes('chapters/03-zang-xiang-tupu/docs/zh.md'), '头部注释未指向本章');
 });

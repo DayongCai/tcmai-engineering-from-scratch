@@ -1,132 +1,118 @@
 #!/usr/bin/env node
 /**
- * 第 2 章 五行 → 多分类 —— 确定性单元测试
- * 运行: node --test code/main.test.js
+ * 中医基础理论 · 第 2 章 五行是一张十根边的约束网，不是一个分成五份的筐
+ * 确定性单元测试 —— 运行: node --test code/main.test.js
+ *
+ * 断言钉的是本机实测值：正文、算术解析或 quiz 任一处改动，这里就应当变红。
+ * 数字不从 main.js 回读再自比（那样什么都测不出），而是写在断言里。
  */
 
 'use strict';
 
-const assert = require('node:assert');
 const test = require('node:test');
+const assert = require('node:assert');
+const fs = require('node:fs');
+const path = require('node:path');
+const { spawnSync } = require('node:child_process');
 
-const {
-  CLASSES, FEATURES, CLASS_TABLE, SHENG, KE, K, DIM,
-  softmax, forward, cosine, lossAndGrad, train, accuracy, relationReport, makeDataset,
-} = require('./main');
+const MAIN = path.join(__dirname, 'main.js');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
+const m = require('./main.js');
 
-const { X, y } = makeDataset();
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
+const readQuiz = () => JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+const grams = (t, n = 4) => {
+  const out = new Set();
+  for (const seg of String(t || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+};
 
-test('softmax 输出和为 1，且非负', () => {
-  for (const z of [[0, 0, 0, 0, 0], [1, 2, 3, 4, 5], [-3, 0, 7, -1, 2]]) {
-    const p = softmax(z);
-    assert.strictEqual(p.length, K);
-    assert.ok(Math.abs(p.reduce((a, b) => a + b, 0) - 1) < 1e-12);
-    assert.ok(p.every((v) => v >= 0));
+test('正文规模：汉字 3123 / 段 22 / 节 6', () => {
+  const r = m.analyze();
+  assert.strictEqual(r.docHanzi, 3123);
+  assert.strictEqual(r.paragraphs, 22);
+  assert.strictEqual(r.sections.length, 6);
+  assert.strictEqual(hanzi(readDoc()), 3123, '汉字口径必须与正文一致');
+});
+
+test('表格：2 张，行数 [5,10]', () => {
+  const r = m.analyze();
+  assert.deepStrictEqual(r.tables.map((t) => t.rows), [5,10]);
+  assert.deepStrictEqual(r.tables.map((t) => t.cols), [4,3]);
+});
+
+test('本章算术：解析出的数与派生量', () => {
+  const a = m.analyze().arith;
+  assert.strictEqual(a.collectItems, 5, 'collectItems');
+  assert.strictEqual(a.fieldRows, 10, 'fieldRows');
+  assert.strictEqual(a.elems, 5, 'elems');
+  assert.strictEqual(a.sheng, 5, 'sheng');
+  assert.strictEqual(a.ke, 5, 'ke');
+  assert.strictEqual(a.pairs, 10, 'pairs');
+  assert.strictEqual(a.grid, 25, 'grid');
+  assert.strictEqual(a.skipOk, 5, 'skipOk');
+  assert.strictEqual(a.jump, 3, 'jump');
+  assert.strictEqual(a.states, 3, 'states');
+
+});
+
+test('本章算术：结构与清单', () => {
+  const a = m.analyze().arith;
+  assert.ok(Array.isArray(a.lines) && a.lines.length >= 4, '算术清单至少 4 行');
+});
+
+test('quiz 结构：6 题、三段齐、4 选项、下标合法、答案打散', () => {
+  const q = readQuiz();
+  assert.strictEqual(q.questions.length, 6);
+  assert.deepStrictEqual(q.questions.map((x) => x.correct), [0,0,1,2,1,1]);
+  const distinct = [...new Set(q.questions.map((x) => x.correct))].sort((a, b) => a - b);
+  assert.ok(distinct.length >= 3, '答案位置只有 ' + distinct.length + ' 种');
+  assert.deepStrictEqual(distinct, [0,1,2]);
+  const stages = new Set(q.questions.map((x) => x.stage));
+  for (const s of ['pre', 'check', 'post']) assert.ok(stages.has(s), '缺 ' + s + ' 段');
+  for (const x of q.questions) {
+    assert.ok(['pre', 'check', 'post'].includes(x.stage), 'stage: ' + x.stage);
+    assert.strictEqual(x.options.length, 4, x.question);
+    assert.ok(Number.isInteger(x.correct) && x.correct >= 0 && x.correct < 4, 'correct 越界: ' + x.question);
+    assert.ok(typeof x.explain === 'string' && x.explain.length > 0, '缺 explain: ' + x.question);
   }
 });
 
-test('softmax 数值稳定：大输入不溢出为 NaN', () => {
-  const p = softmax([1000, 1000, 1000, 1000, 1000]);
-  assert.ok(p.every(Number.isFinite), 'softmax 溢出');
-  assert.ok(p.every((v) => Math.abs(v - 0.2) < 1e-12), '五项相等时应各为 0.2');
-  assert.ok(softmax([-1000, 0, 1000, 0, 0]).every(Number.isFinite));
+test('quiz 接地：至少 2 道 check 题的正确选项含正文原词', () => {
+  const body = grams(readDoc());
+  const q = readQuiz();
+  const grounded = q.questions.filter((x) => {
+    if (x.stage !== 'check') return false;
+    const right = String(x.options[x.correct] || '');
+    return [...grams(right)].some((g) => body.has(g));
+  });
+  assert.ok(grounded.length >= 2, '只接地 ' + grounded.length + ' 道');
+  assert.strictEqual(m.analyze().quiz.checkGrounded, grounded.length, 'main.js 与测试口径必须一致');
 });
 
-test('softmax 平移不变性：加同一个常数不改变结果', () => {
-  const a = softmax([1, 2, 3, 4, 5]);
-  const b = softmax([101, 102, 103, 104, 105]);
-  a.forEach((v, i) => assert.ok(Math.abs(v - b[i]) < 1e-12));
+test('quiz 解释：每题 ≥30 汉字，最短 67 汉字', () => {
+  const q = readQuiz();
+  const lens = q.questions.map((x) => hanzi(x.explain));
+  assert.deepStrictEqual(lens.filter((n) => n < 30), [], '有解释不足 30 汉字');
+  assert.strictEqual(Math.min(...lens), 67);
+  assert.strictEqual(m.analyze().quiz.minExplain, 67);
 });
 
-test('余弦相似度：自相似为 1，反向为 −1，正交为 0', () => {
-  assert.ok(Math.abs(cosine([1, 2, 3, 4], [1, 2, 3, 4]) - 1) < 1e-12);
-  assert.ok(Math.abs(cosine([1, 0], [-1, 0]) + 1) < 1e-12);
-  assert.ok(Math.abs(cosine([1, 0], [0, 1])) < 1e-12);
-  assert.strictEqual(cosine([0, 0], [1, 1]), 0); // 零向量不做除零
+test('脚本可运行：退出码 0，输出带教学样例与边界声明', () => {
+  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
+  assert.strictEqual(r.status, 0, String(r.stderr));
+  const out = String(r.stdout || '');
+  assert.ok(out.length > 200, '输出过短');
+  assert.match(out, /现算/);
+  assert.match(out, /不构成诊疗建议/);
+  assert.match(out, /第 2 章/);
 });
 
-test('生克关系表正确：各 5 条，且相生对与相克对不重叠', () => {
-  assert.strictEqual(SHENG.length, 5);
-  assert.strictEqual(KE.length, 5);
-  const key = (p) => `${p[0]}-${p[1]}`;
-  const shengSet = new Set(SHENG.map(key));
-  for (const p of KE) assert.ok(!shengSet.has(key(p)), `相生相克重复: ${key(p)}`);
-  // 相生是相邻环，相克是隔一
-  SHENG.forEach(([i, j]) => assert.strictEqual(j, (i + 1) % K));
-  KE.forEach(([i, j]) => assert.strictEqual(j, (i + 2) % K));
-});
-
-test('数据集形状：5 类 × 4 例 = 20 例，每类恰好 4 例', () => {
-  assert.strictEqual(X.length, 20);
-  assert.strictEqual(y.length, 20);
-  for (let c = 0; c < K; c += 1) {
-    assert.strictEqual(y.filter((v) => v === c).length, 4, `类 ${CLASSES[c]} 样本数不是 4`);
-  }
-  assert.ok(X.every((row) => row.length === DIM));
-  assert.strictEqual(FEATURES.length, DIM);
-  assert.strictEqual(CLASS_TABLE.length, K);
-});
-
-test('通行配属表四个维度的次序完全一致（本课的核心发现，需被测试固化）', () => {
-  const col = (j) => CLASS_TABLE.map((r) => r[j]).join();
-  assert.strictEqual(col(1), col(0), '色与味次序不一致');
-  assert.strictEqual(col(2), col(0), '色与志次序不一致');
-  assert.strictEqual(col(3), col(0), '色与方位次序不一致');
-  // 结论：特征矩阵共线，这是 λ=0 时关系一致性已被免费满足的根因
-});
-
-test('λ=0 时损失与梯度不受正则影响（regLoss 只是诊断量）', () => {
-  const W = Array.from({ length: K }, () => new Array(DIM).fill(0));
-  const b = new Array(K).fill(0);
-  const lambdaZero = lossAndGrad(W, b, X, y, { lambda: 0 });
-  const marginZero = lossAndGrad(W, b, X, y, { lambda: 0, mSheng: 0, mKe: 0 });
-
-  // λ=0 ⇒ 正则项的梯度贡献为 0，损失等于纯交叉熵
-  assert.strictEqual(lambdaZero.loss, lambdaZero.dataLoss);
-  assert.deepStrictEqual(lambdaZero.gW, marginZero.gW);
-  assert.deepStrictEqual(lambdaZero.gb, marginZero.gb);
-  assert.strictEqual(marginZero.regLoss, 0);
-
-  // 注意：λ=0 时 regLoss 仍会被计算出来（零向量之间的余弦为 0，违反相生下界），
-  // 但它不进入损失也不进入梯度 —— 这正是"诊断量 ≠ 损失项"的体现
-  assert.strictEqual(lambdaZero.regLoss, 5 * 0.3);
-
-  assert.ok(Math.abs(lambdaZero.dataLoss - Math.log(K)) < 1e-9, '均匀先验下交叉熵应约等于 ln5');
-});
-
-test('λ=0 训练后准确率为 100%（特征共线使问题线性可分）', () => {
-  const { W, b } = train(X, y, { lambda: 0 });
-  assert.strictEqual(accuracy(W, b, X, y), 1);
-});
-
-test('λ=0 时关系一致性已被满足：相生余弦均值 > 相克余弦均值', () => {
-  const { W } = train(X, y, { lambda: 0 });
-  const r = relationReport(W);
-  assert.ok(r.shengAvg > r.keAvg, `相生 ${r.shengAvg} 未高于相克 ${r.keAvg}`);
-  assert.ok(r.gap > 0.2, `关系差仅 ${r.gap}，与教材记录的 0.507 差距过大，检查数据构造`);
-  assert.strictEqual(r.consistent, true);
-});
-
-test('加大 λ 会牺牲准确率（约束不是免费的）', () => {
-  const plain = train(X, y, { lambda: 0 });
-  const strong = train(X, y, { lambda: 5 });
-  const aPlain = accuracy(plain.W, plain.b, X, y);
-  const aStrong = accuracy(strong.W, strong.b, X, y);
-  assert.strictEqual(aPlain, 1);
-  assert.ok(aStrong < aPlain, `λ=5 准确率 ${aStrong} 未低于 λ=0 的 ${aPlain}`);
-});
-
-test('训练确定性：同一 seed 两次结果逐位一致', () => {
-  const a = train(X, y, { lambda: 1, steps: 400 });
-  const b = train(X, y, { lambda: 1, steps: 400 });
-  assert.deepStrictEqual(a.W, b.W);
-  assert.deepStrictEqual(a.b, b.b);
-});
-
-test('forward 输出的长度与概率性质正确', () => {
-  const W = Array.from({ length: K }, () => new Array(DIM).fill(0.1));
-  const b = new Array(K).fill(0);
-  const p = forward(W, b, X[0]);
-  assert.strictEqual(p.length, K);
-  assert.ok(Math.abs(p.reduce((a, v) => a + v, 0) - 1) < 1e-12);
+test('代码头部指向本章目录', () => {
+  const body = fs.readFileSync(MAIN, 'utf8');
+  assert.ok(body.includes('chapters/02-wu-xing-duo-fenlei/docs/zh.md'), '头部注释未指向本章');
 });

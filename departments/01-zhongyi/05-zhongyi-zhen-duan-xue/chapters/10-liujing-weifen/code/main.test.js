@@ -1,100 +1,57 @@
 'use strict';
-
 /**
- * 第 10 章 单测：教材第 10/11/12 章的字数、13 节点、8 条传变
- *   node --test code/main.test.js
+ * 第 10 章：13 = 6 + 4 + 3 的节点分组、表格条数与 quiz 结构全部钉死。
  */
-
 const assert = require('node:assert');
 const test = require('node:test');
-const {
-  bookShape, systems, totals, nodesTable, chains, roles, sections, gaps,
-  chapter, corpus, TOTAL_NODES,
-} = require('./main.js');
+const { analyze } = require('./main.js');
 
-test('教材本体：14 章 / 46 节 / 105 小节 / 196 段 / 22,215 字，sha256 051d830a…', () => {
-  const b = bookShape();
-  assert.strictEqual(b.chapters, 14);
-  assert.strictEqual(b.secs, 46);
-  assert.strictEqual(b.subs, 105);
-  assert.strictEqual(b.paras, 196);
-  assert.strictEqual(b.chars, 22215);
-  assert.ok(b.sha256.startsWith('051d830a'));
+const r = analyze();
+
+test('正文骨架：1,552 汉字 / 6 节 / 3 表 / 1 条篇名级引文', () => {
+  assert.strictEqual(r.s.hanzi, 1552);
+  assert.strictEqual(r.s.sections.length, 6);
+  assert.strictEqual(r.s.tableCount, 3);
+  assert.deepStrictEqual(r.s.quotes, ['伤寒论·辨太阳病脉证并治']);
 });
 
-test('三章字数：799 + 612 + 356 = 1,767，逐段重算与声明一致', () => {
-  const t = totals();
-  assert.deepStrictEqual(t.rows.map((r) => r.ch), ['10', '11', '12']);
-  assert.deepStrictEqual(t.rows.map((r) => r.chars), [799, 612, 356]);
-  assert.deepStrictEqual(t.rows.map((r) => r.declared), [799, 612, 356]);
-  assert.ok(t.rows.every((r) => r.match));
-  assert.strictEqual(t.chars, 1767);
+test('13 个节点 = 六经 6 + 卫气营血 4 + 三焦 3', () => {
+  const by = Object.fromEntries(r.facts.map((f) => [f.label, f.got]));
+  assert.strictEqual(by['节点合计'], 13);
+  assert.strictEqual(by['六经'], 6);
+  assert.strictEqual(by['卫气营血'], 4);
+  assert.strictEqual(by['三焦'], 3);
+  assert.strictEqual(by['三层相加'], 13);
 });
 
-test('三套坐标的节点：6 + 4 + 3 = 13，且每个节点名都能在教材逐字找到', () => {
-  const t = totals();
-  assert.strictEqual(TOTAL_NODES, 13);
-  assert.strictEqual(t.nodes, 13);
-  assert.deepStrictEqual(t.rows.map((r) => r.nodes), [6, 4, 3]);
-  assert.ok(t.rows.every((r) => r.allPresent), '有节点名在教材里找不到');
-  const nt = nodesTable();
-  assert.strictEqual(nt.length, 13);
-  assert.deepStrictEqual(nt.filter((n) => n.system === '六经').map((n) => n.name),
-    ['太阳', '阳明', '少阳', '太阴', '少阴', '厥阴']);
-  assert.deepStrictEqual(nt.filter((n) => n.system === '卫气营血').map((n) => n.name),
-    ['卫分', '气分', '营分', '血分']);
-  assert.deepStrictEqual(nt.filter((n) => n.system === '三焦').map((n) => n.name),
-    ['上焦', '中焦', '下焦']);
+test('记录八列、触发五条、失效三条', () => {
+  const by = Object.fromEntries(r.facts.map((f) => [f.label, f.got]));
+  assert.strictEqual(by['记录列数'], 8);
+  assert.strictEqual(by['触发'], 5);
+  assert.strictEqual(by['失效模式'], 3);
 });
 
-test('每节点平均 135.9 字；三焦最薄（356 字 / 每节点 118.7），卫气营血最厚（153.0）', () => {
-  const t = totals();
-  assert.strictEqual(t.avgPerNode, 135.9);
-  assert.strictEqual(t.thinnest.name, '三焦');
-  assert.strictEqual(t.thinnest.chars, 356);
-  assert.strictEqual(t.thinnest.perNode, 118.7);
-  assert.strictEqual(t.thickestPerNode.name, '卫气营血');
-  assert.strictEqual(t.thickestPerNode.perNode, 153);
-  assert.strictEqual(t.thinRatio, 78);
+test('本章写下的数与现算逐条相等', () => {
+  for (const f of r.facts) assert.strictEqual(f.got, f.want, `${f.label}: 现算 ${f.got} ≠ 正文 ${f.want}`);
 });
 
-test('传变：六经 5 式 / 卫气营血 2 / 三焦 1 条（含顺逆两支）= 8 条 9 支', () => {
-  const t = totals();
-  assert.deepStrictEqual(t.rows.map((r) => r.groups), [5, 2, 1]);
-  assert.strictEqual(t.groupSum, 8);
-  assert.strictEqual(t.branchSum, 9);
-  const text10 = corpus(chapter('10'));
-  for (const w of ['循经传', '越经传', '直中', '合病', '并病']) {
-    assert.ok(text10.includes(w), `第10章缺 ${w}`);
+test('quiz 结构：6 题，pre 1 / check 3 / post 2，四选项，解释不少于 30 汉字', () => {
+  const q = r.quiz;
+  assert.strictEqual(q.total, 6);
+  assert.deepStrictEqual(q.stage, { pre: 1, check: 3, post: 2 });
+  assert.strictEqual(q.allFourOptions, true);
+  assert.ok(q.minExplain >= 30, `最短解释 ${q.minExplain} 汉字`);
+});
+
+test('quiz 接地与打散：check 题三道全部接地，答案用满 4 个位置', () => {
+  assert.strictEqual(r.quiz.checkGrounded, 3);
+  assert.deepStrictEqual(r.quiz.answers, [0, 1, 2, 3, 0, 1]);
+  assert.strictEqual(r.quiz.distinctAnswers, 4);
+});
+
+test('quiz 不出现旧脚手架名目与「见输出」式解释', () => {
+  const raw = require('node:fs').readFileSync(require('node:path').join(__dirname, '..', 'quiz.json'), 'utf8');
+  for (const bad of ['三辨', '四位面', '单元规模', '本章实测', '见 code/main.js 输出']) {
+    assert.ok(!raw.includes(bad), `quiz 仍含「${bad}」`);
   }
-  assert.ok(corpus(chapter('11')).includes('顺传') && corpus(chapter('11')).includes('逆传'));
-  assert.ok(corpus(chapter('12')).includes('顺传') && corpus(chapter('12')).includes('逆传'));
-});
-
-test('顺序来自教材的箭头链，不靠记忆：三条链全部命中', () => {
-  const ch = chains();
-  assert.strictEqual(ch.length, 3);
-  assert.ok(ch.every((c) => c.found), '有箭头链在教材里找不到');
-  assert.deepStrictEqual(ch.map((c) => c.nodes), [6, 4, 3]);
-});
-
-test('三套坐标不是同一件事：三章各自的定位句都在教材里', () => {
-  const ro = roles();
-  assert.ok(ro.every((r) => r.found), '定位句缺失');
-  assert.ok(corpus(chapter('10')).includes('外感热病'));
-  assert.ok(corpus(chapter('11')).includes('温病'));
-  assert.ok(corpus(chapter('12')).includes('三焦辨证与卫气营血辨证相辅相成'));
-  // 三章是连号并列，不是一章内的三节
-  assert.deepStrictEqual(systems().map((s) => s.ch), ['10', '11', '12']);
-});
-
-test('缺口：12.2 传变段只有 77 字；六经分类 607 字 / 传变 192 字', () => {
-  const g = gaps();
-  assert.strictEqual(g.thinSection.no, '12.2');
-  assert.strictEqual(g.thinSection.chars, 77);
-  assert.deepStrictEqual(g.liujingSplit, [['10.1', 607], ['10.2', 192]]);
-  assert.deepStrictEqual(g.subTyped, ['太阳', '少阴']);
-  const secs = sections();
-  assert.strictEqual(secs.length, 6);
-  assert.strictEqual(secs.reduce((n, s) => n + s.chars, 0), 1767);
 });

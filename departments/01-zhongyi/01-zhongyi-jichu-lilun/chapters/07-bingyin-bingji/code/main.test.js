@@ -1,84 +1,118 @@
+#!/usr/bin/env node
+/**
+ * 中医基础理论 · 第 7 章 病因不是一份清单，而是一台从症状倒推的反向机器
+ * 确定性单元测试 —— 运行: node --test code/main.test.js
+ *
+ * 断言钉的是本机实测值：正文、算术解析或 quiz 任一处改动，这里就应当变红。
+ * 数字不从 main.js 回读再自比（那样什么都测不出），而是写在断言里。
+ */
+
 'use strict';
 
-const assert = require('node:assert');
 const test = require('node:test');
-const { taxonomy, bingjiLayers, nineteen, chains, LIUYIN, QIQING, BINGLI, supplements } = require('./main.js');
+const assert = require('node:assert');
+const fs = require('node:fs');
+const path = require('node:path');
+const { spawnSync } = require('node:child_process');
 
-test('六淫 6 邪、七情 7 志、病理产物 3 类（凭小节核对，不凭记忆）', () => {
-  const t = taxonomy();
-  assert.strictEqual(LIUYIN.length, 6);
-  assert.strictEqual(QIQING.length, 7);
-  assert.strictEqual(BINGLI.length, 3);
-  assert.strictEqual(t.liu.length, 6);
-  assert.strictEqual(t.qi.length, 7);
-  assert.strictEqual(t.bingli.length, 3);
-  assert.deepStrictEqual(t.liu, ['风', '寒', '暑', '湿', '燥', '火']);
-  assert.deepStrictEqual(t.qi, ['喜', '怒', '忧', '思', '悲', '恐', '惊']);
+const MAIN = path.join(__dirname, 'main.js');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
+const m = require('./main.js');
+
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
+const readQuiz = () => JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+const grams = (t, n = 4) => {
+  const out = new Set();
+  for (const seg of String(t || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+};
+
+test('正文规模：汉字 2839 / 段 21 / 节 6', () => {
+  const r = m.analyze();
+  assert.strictEqual(r.docHanzi, 2839);
+  assert.strictEqual(r.paragraphs, 21);
+  assert.strictEqual(r.sections.length, 6);
+  assert.strictEqual(hanzi(readDoc()), 2839, '汉字口径必须与正文一致');
 });
 
-test('病因三层合计 13 个节点（7 + 3 + 3）', () => {
-  const t = taxonomy();
-  assert.deepStrictEqual(t.layers.map((l) => l.members.length), [7, 3, 3]);
-  assert.strictEqual(t.layers.reduce((n, l) => n + l.members.length, 0), 13);
-  assert.ok(t.layers[0].members.includes('疠气'));
+test('表格：2 张，行数 [6,8]', () => {
+  const r = m.analyze();
+  assert.deepStrictEqual(r.tables.map((t) => t.rows), [6,8]);
+  assert.deepStrictEqual(r.tables.map((t) => t.cols), [4,3]);
 });
 
-test('基本病机 3 类，对应 9.2/9.3/9.4 三节', () => {
-  const b = bingjiLayers();
-  assert.deepStrictEqual(b.base, ['邪正盛衰', '阴阳失调', '气血津液失常']);
-  assert.deepStrictEqual(b.baseSecs, ['9.2 邪正盛衰', '9.3 阴阳失调', '9.4 气血津液失常']);
+test('本章算术：解析出的数与派生量', () => {
+  const a = m.analyze().arith;
+  assert.strictEqual(a.collectItems, 6, 'collectItems');
+  assert.strictEqual(a.fieldRows, 8, 'fieldRows');
+  assert.strictEqual(a.liu, 6, 'liu');
+  assert.strictEqual(a.qi, 7, 'qi');
+  assert.strictEqual(a.bing, 3, 'bing');
+  assert.strictEqual(a.total, 16, 'total');
+  assert.strictEqual(a.crit, 4, 'crit');
+  assert.strictEqual(a.nature, 6, 'nature');
+  assert.strictEqual(a.timePoints, 3, 'timePoints');
+  assert.strictEqual(a.layers, 3, 'layers');
+
 });
 
-test('具体病机 3 类（教材第9章无独立经络病机节）', () => {
-  const b = bingjiLayers();
-  assert.deepStrictEqual(b.specific, ['脏腑病机', '六经病机', '卫气营血病机']);
-  assert.ok(!b.specific.includes('经络病机'));
+test('本章算术：结构与清单', () => {
+  const a = m.analyze().arith;
+  assert.ok(Array.isArray(a.lines) && a.lines.length >= 4, '算术清单至少 4 行');
 });
 
-test('病机十九条：声称 19、引出 2、缺 17', () => {
-  const n = nineteen();
-  assert.strictEqual(n.declared, 19);
-  assert.strictEqual(n.cited.length, 2);
-  assert.strictEqual(n.gap, 17);
-  assert.deepStrictEqual(n.cited.sort(), ['诸湿肿满，皆属于脾', '诸风掉眩，皆属于肝'].sort());
+test('quiz 结构：6 题、三段齐、4 选项、下标合法、答案打散', () => {
+  const q = readQuiz();
+  assert.strictEqual(q.questions.length, 6);
+  assert.deepStrictEqual(q.questions.map((x) => x.correct), [1,0,1,1,2,1]);
+  const distinct = [...new Set(q.questions.map((x) => x.correct))].sort((a, b) => a - b);
+  assert.ok(distinct.length >= 3, '答案位置只有 ' + distinct.length + ' 种');
+  assert.deepStrictEqual(distinct, [0,1,2]);
+  const stages = new Set(q.questions.map((x) => x.stage));
+  for (const s of ['pre', 'check', 'post']) assert.ok(stages.has(s), '缺 ' + s + ' 段');
+  for (const x of q.questions) {
+    assert.ok(['pre', 'check', 'post'].includes(x.stage), 'stage: ' + x.stage);
+    assert.strictEqual(x.options.length, 4, x.question);
+    assert.ok(Number.isInteger(x.correct) && x.correct >= 0 && x.correct < 4, 'correct 越界: ' + x.question);
+    assert.ok(typeof x.explain === 'string' && x.explain.length > 0, '缺 explain: ' + x.question);
+  }
 });
 
-test('全书 4 条箭头链，只有 1 条是病机演化链（6 节点 5 边）', () => {
-  const cs = chains();
-  assert.strictEqual(cs.length, 4);
-  const med = cs.filter((x) => x.kind === '病机演化');
-  assert.strictEqual(med.length, 1);
-  assert.strictEqual(med[0].ch, '4');
-  assert.strictEqual(med[0].nodes.length, 6);
-  assert.strictEqual(med[0].edges, 5);
-  assert.strictEqual(med[0].nodes[0], '脾气虚');
-  assert.strictEqual(med[0].nodes[5], '心脾两虚');
+test('quiz 接地：至少 2 道 check 题的正确选项含正文原词', () => {
+  const body = grams(readDoc());
+  const q = readQuiz();
+  const grounded = q.questions.filter((x) => {
+    if (x.stage !== 'check') return false;
+    const right = String(x.options[x.correct] || '');
+    return [...grams(right)].some((g) => body.has(g));
+  });
+  assert.ok(grounded.length >= 2, '只接地 ' + grounded.length + ' 道');
+  assert.strictEqual(m.analyze().quiz.checkGrounded, grounded.length, 'main.js 与测试口径必须一致');
 });
 
-test('其余三条链被正确归类（1 条经络流注 + 2 条教学流程）', () => {
-  const cs = chains();
-  assert.strictEqual(cs.filter((x) => x.kind === '经络流注').length, 1);
-  assert.strictEqual(cs.filter((x) => x.kind === '教学流程').length, 2);
+test('quiz 解释：每题 ≥30 汉字，最短 70 汉字', () => {
+  const q = readQuiz();
+  const lens = q.questions.map((x) => hanzi(x.explain));
+  assert.deepStrictEqual(lens.filter((n) => n < 30), [], '有解释不足 30 汉字');
+  assert.strictEqual(Math.min(...lens), 70);
+  assert.strictEqual(m.analyze().quiz.minExplain, 70);
 });
 
-test('外源补录：病机十九条 19 条（底本仍只 2 条）', () => {
-  const sp = supplements();
-  assert.strictEqual(sp.length, 2); // 病机十九条 + 六气胜复（第二轮）
-  const b19 = sp.find((x) => x.id === 'bingji-19');
-  const sf = sp.find((x) => x.id === 'liuqi-shengfu');
-  assert.strictEqual(b19.supplied, 19);
-  assert.strictEqual(b19.items.length, 19);
-  assert.ok(b19.source.includes('至真要大論篇第七十四'));
-  // 补进来的 17 条里必须有这两条（教材没引的）
-  assert.ok(b19.items.includes('诸寒收引，皆属于肾。'));
-  assert.ok(b19.items.includes('诸呕吐酸，暴注下迫，皆属于热。'));
-  // 六气胜复：6 司天之化 + 3 原则 + 亢害承制 2 条
-  assert.strictEqual(sf.supplied, 11);
-  assert.ok(sf.items.some((x) => x.includes('亢则害，承乃制')));
-  assert.ok(sf.items.some((x) => x.includes('有胜则复，无胜则否')));
+test('脚本可运行：退出码 0，输出带教学样例与边界声明', () => {
+  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
+  assert.strictEqual(r.status, 0, String(r.stderr));
+  const out = String(r.stdout || '');
+  assert.ok(out.length > 200, '输出过短');
+  assert.match(out, /现算/);
+  assert.match(out, /不构成诊疗建议/);
+  assert.match(out, /第 7 章/);
 });
 
-test('底本仍是 2 条：nineteen() 的 cited 不因补录而变', () => {
-  assert.strictEqual(nineteen().cited.length, 2);
-  assert.strictEqual(nineteen().gap, 17);
+test('代码头部指向本章目录', () => {
+  const body = fs.readFileSync(MAIN, 'utf8');
+  assert.ok(body.includes('chapters/07-bingyin-bingji/docs/zh.md'), '头部注释未指向本章');
 });

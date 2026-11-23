@@ -1,127 +1,46 @@
 #!/usr/bin/env node
 /**
- * 中医毕业设计与知识移交 · 第 6 章 中药系·案例二：方剂药味与中药词表的缺口（114 方 / 246 味）：本章统计口径
+ * 中医毕业设计与知识移交 · 第 6 章 方剂对账先认药位，再谈配伍
  * 课程: departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/06-zhongyao-fangji-yaowei/docs/zh.md
- * 数据: standards/biye/units.json（10 单元层，每单元带三辨 / 四位面词频与数值计数）
+ * 数据: 本章正文的母体表 + standards/biye/案例库.json 同 slug 案例
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：正文引用的每个规模、重心、引书数，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 114／836／246／86／18 从正文表读出，7.3 个药位/方、3.4 个药位/味、35.0% 缺口语义
+ * 与 15.8% 角色完整占比全部现算；回本 18.8 个月由案例库参数重算。
  */
 
 'use strict';
 
-const fs = require('node:fs');
 const path = require('node:path');
+const { readDoc, tableMap, budget, auditQuiz, banner, finish } = require(path.join(__dirname, '..', '..', '_chapter.js'));
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'biye', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/biye/units.json —— 章节目录是否已脱离仓库？');
-}
+const SLUG = '06-zhongyao-fangji-yaowei';
+const NO = 6;
+const TITLE = '方剂对账先认药位，再谈配伍';
+const doc = readDoc(SLUG).text;
+const rows = tableMap(doc);
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'biye', 'units.json');
-const CHAPTER = '6';
+const formulas = rows.get('方');
+const slots = rows.get('药位');
+const herbs = rows.get('不同药味');
+const missing = rows.get('不在 287 词表');
+const roleComplete = rows.get('角色完整方');
 
-const load = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
+const perFormula = slots / formulas;
+const perHerb = slots / herbs;
+const gapShare = (missing / herbs) * 100;
+const roleShare = (roleComplete / formulas) * 100;
+if (Math.abs(perFormula - 7.3) > 0.05) throw new Error('每方药位复算与正文 7.3 不一致');
+if (Math.abs(gapShare - 35.0) > 0.05) throw new Error('词表缺口占比复算与正文 35.0% 不一致');
+if (Math.abs(roleShare - 15.8) > 0.05) throw new Error('角色完整占比复算与正文 15.8% 不一致');
 
-function chapterUnits(units, no = CHAPTER) {
-  return units.units
-    .filter((u) => u.chapter === no)
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
+banner(NO, TITLE);
+console.log(`母体：${formulas} 方 → ${slots} 个药位 → ${herbs} 味不同药`);
+console.log(`复算：${slots} ÷ ${formulas} = ${perFormula.toFixed(1)} 药位/方（正文 7.3）`);
+console.log(`复算：${slots} ÷ ${herbs} = ${perHerb.toFixed(1)} 药位/味（正文 3.4）`);
+console.log(`缺口：${missing} 味不在 287 词表 ÷ ${herbs} 味 = ${gapShare.toFixed(1)}%（正文 35.0%）`);
+console.log(`角色：${roleComplete} 方角色完整 ÷ ${formulas} 方 = ${roleShare.toFixed(1)}%，不足两成，不能做配伍角色分析`);
+console.log(`判断：三类判别（别名／新药／噪声）先做，覆盖率才拆得清；药名对账不等于药理对账。`);
 
-const sum = (d) => Object.values(d).reduce((a, b) => a + b, 0);
-
-function merge(list, field) {
-  const out = {};
-  for (const u of list) for (const [k, v] of Object.entries(u.measure[field])) out[k] = (out[k] || 0) + v;
-  return out;
-}
-
-function rank(dict) {
-  const tot = sum(dict);
-  return Object.entries(dict)
-    .map(([key, count]) => ({ key, count, share: tot ? count / tot : 0 }))
-    .sort((a, b) => b.count - a.count);
-}
-
-function bySection(list) {
-  const out = new Map();
-  for (const u of list) {
-    const key = u.sec || '（未标节）';
-    const it = out.get(key) || { sec: key, units: 0, hanzi: 0 };
-    it.units += 1;
-    it.hanzi += u.hanzi;
-    out.set(key, it);
-  }
-  return [...out.values()];
-}
-
-function citations(list) {
-  const counter = new Map();
-  for (const u of list) {
-    for (const m of u.prose.matchAll(/《([^》]+)》/g)) {
-      counter.set(m[1], (counter.get(m[1]) || 0) + 1);
-    }
-  }
-  const ranked = [...counter.entries()].sort((a, b) => b[1] - a[1]);
-  return { books: counter.size, total: sum(Object.fromEntries(counter)), top: ranked.slice(0, 3) };
-}
-
-function shape(list) {
-  const hanzi = list.reduce((a, u) => a + u.hanzi, 0);
-  return {
-    units: list.length,
-    hanzi,
-    mean: list.length ? Math.round(hanzi / list.length) : 0,
-    valueLike: list.reduce((a, u) => a + u.measure.valueLike, 0),
-    digits: list.reduce((a, u) => a + u.measure.digits, 0),
-  };
-}
-
-/** 方与法：单元层没有独立方剂字段，改从正文里认「治法动词」记号（儿科以疏风宣肺、消食健脾、平肝息风为主） */
-function methods(list) {
-  const VERBS = ['疏肝', '补肾', '健脾', '养血', '活血', '化瘀', '调经', '固冲', '止带', '安胎', '清热', '利湿'];
-  const out = {};
-  for (const v of VERBS) out[v] = list.reduce((a, u) => a + u.prose.split(v).length - 1, 0);
-  return Object.entries(out).filter(([, c]) => c).sort((a, b) => b[1] - a[1]);
-}
-
-module.exports = { CHAPTER, load, chapterUnits, merge, rank, bySection, citations, shape, methods, sum };
-
-if (require.main === module) {
-  const data = load();
-  const list = chapterUnits(data);
-  const s = shape(list);
-  const views = rank(merge(list, 'views'));
-  const levels = rank(merge(list, 'levels'));
-  const books = citations(list);
-
-  console.log('═══ 中医毕业设计与知识移交 · 第 6 章 中药系·案例二：方剂药味与中药词表的缺口（114 方 / 246 味） ═══');
-  console.log(`单元 ${s.units} · 汉字 ${s.hanzi} · 平均 ${s.mean} 字/单元`);
-  console.log(`数值类命中 ${s.valueLike} · 数字字符 ${s.digits}`);
-  console.log('\n按节：');
-  for (const sec of bySection(list)) console.log(`  ${sec.sec}  ${sec.units} 单元 · ${sec.hanzi} 字`);
-  console.log('\n三辨重心：');
-  for (const v of views) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
-  console.log('\n四位面覆盖：');
-  for (const v of levels) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
-  console.log(`\n引书 ${books.books} 部 · 引用 ${books.total} 次 · 前三：${books.top.map(([n, c]) => `${n}(${c})`).join('、')}`);
-  console.log('\n治法动词命中：' + methods(list).map(([v, c]) => `${v}×${c}`).join('  '));
-  console.log('\n单元清单：');
-  for (const u of list) {
-    console.log(`  ${u.sub}\t${u.title}\t${u.hanzi}字\t${(u.tri && u.tri.view.primary) || '—'}/${(u.tri && u.tri.level.primary) || '—'}`);
-  }
-}
-
-// 教学样例声明：契约要求每章输出含临床边界声明（tests/test_chapter_code.js）
-if (require.main === module) {
-  console.log('※ 教学样例：数字由 standards/biye/units.json 现算，不构成诊疗建议，不能替代医师面诊。');
-}
+const b = budget(SLUG);
+finish(SLUG, b, auditQuiz(SLUG, doc));

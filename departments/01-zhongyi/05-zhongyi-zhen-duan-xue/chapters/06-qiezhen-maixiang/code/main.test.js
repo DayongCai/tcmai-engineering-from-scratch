@@ -1,106 +1,63 @@
 'use strict';
-
+/**
+ * 第 6 章：「28 → 27」的差、五位记录、表格条数与 quiz 结构全部钉死。
+ */
 const assert = require('node:assert');
 const test = require('node:test');
-const fs = require('node:fs');
-const path = require('node:path');
-const { execFileSync } = require('node:child_process');
+const { analyze } = require('./main.js');
 
-const { shape, pulse, citation, resolve, doc, ch, supplements } = require('./main.js');
+const r = analyze();
 
-const DOCS = path.join(__dirname, '..', 'docs', 'zh.md');
-
-test('规模：2,030 字 = 全书 9.1%；5.1 1,545 + 5.2 485', () => {
-  const s = shape();
-  assert.strictEqual(s.total, 2030);
-  assert.deepStrictEqual(s.rows.map((r) => r.chars), [1545, 485]);
-  assert.strictEqual(s.total, s.rows.reduce((n, r) => n + r.chars, 0));
-  assert.ok(Math.abs(s.share - 2030 / doc.counts.chars) < 1e-9);
-  assert.ok(Math.abs(s.maiShare - 1545 / 2030) < 1e-9);
+test('正文骨架：1,939 汉字 / 6 节 / 5 表 / 1 条篇名级引文', () => {
+  assert.strictEqual(r.s.hanzi, 1939);
+  assert.strictEqual(r.s.sections.length, 6);
+  assert.strictEqual(r.s.tableCount, 5);
+  assert.deepStrictEqual(r.s.quotes, ['素问·脉要精微论']);
 });
 
-test('结构：2 节 6 小节 14 段；脉诊 4 小节 10 段、按诊 2 小节 4 段', () => {
-  const s = shape();
-  assert.strictEqual(s.secs, 2);
-  assert.strictEqual(s.subs, 6);
-  assert.strictEqual(s.paras, 14);
-  assert.deepStrictEqual(s.rows.map((r) => [r.subs, r.paras]), [[4, 10], [2, 4]]);
-  assert.strictEqual(ch.counts.items, 14);
+test('诊脉六步、四维加节律共五位', () => {
+  const by = Object.fromEntries(r.facts.map((f) => [f.label, f.got]));
+  assert.strictEqual(by['诊脉步数'], 6);
+  assert.strictEqual(by['四维'], 4);
+  assert.strictEqual(by['加节律共'], 5);
 });
 
-test('教材原文核对：5.1.2.1 段标题逐字为 15 个单字脉名，不是 14 个', () => {
-  const p = pulse();
-  assert.strictEqual(p.compact.raw, '浮沉迟数虚实洪细弦紧滑涩濡弱微');
-  assert.strictEqual(p.compact.n, 15);
-  assert.deepStrictEqual(p.compact.names, [...'浮沉迟数虚实洪细弦紧滑涩濡弱微']);
-  assert.notStrictEqual(p.compact.n, 14);
+test('名号 28 与去重 27 差 1：缓兼平脉', () => {
+  const by = Object.fromEntries(r.facts.map((f) => [f.label, f.got]));
+  assert.strictEqual(by['28 名号'], 28);
+  assert.strictEqual(by['去重脉名'], 27);
+  assert.strictEqual(by['28 名号'] - by['去重脉名'], 1);
 });
 
-test('5.1.2.2 段标题：8 个顿号片段、去重 12 名，「长短短脉」重复「短」', () => {
-  const p = pulse();
-  assert.strictEqual(p.grouped.parts.length, 8);
-  assert.deepStrictEqual(p.grouped.parts, ['结代促', '长短短脉', '革牢', '动脉', '疾脉', '散脉', '芤脉', '伏脉']);
-  assert.strictEqual(p.grouped.n, 12);
-  assert.deepStrictEqual(p.grouped.dups, ['短']);
-  assert.strictEqual(p.grouped.rawCount, 13);
-  assert.ok(p.grouped.names.every((n) => n.length === 1));
+test('作废六种、脉记十列、触发五条、失效四条', () => {
+  const by = Object.fromEntries(r.facts.map((f) => [f.label, f.got]));
+  assert.strictEqual(by['须作废的情形'], 6);
+  assert.strictEqual(by['脉记列数'], 10);
+  assert.strictEqual(by['触发'], 5);
+  assert.strictEqual(by['失效模式'], 4);
 });
 
-test('标题 27 名 vs 正文 28 名：标题漏「缓」，差 1（简报的「差 2」前提不成立）', () => {
-  const p = pulse();
-  assert.strictEqual(p.titleN, 27);
-  assert.strictEqual(p.body.n, 28);
-  assert.deepStrictEqual(p.body.per.map((x) => x.length), [12, 16]);
-  assert.deepStrictEqual(p.missing, ['缓']);
-  assert.deepStrictEqual(p.extra, []);
-  assert.strictEqual(p.gap, 1);
-  assert.strictEqual(p.gapIfBrief, 2); // 只有按「14 + 12」假设才会得到 2
-  assert.notStrictEqual(p.gap, p.gapIfBrief);
+test('本章写下的数与现算逐条相等', () => {
+  for (const f of r.facts) assert.strictEqual(f.got, f.want, `${f.label}: 现算 ${f.got} ≠ 正文 ${f.want}`);
 });
 
-test('按诊只占 23.9%，且 485 字里没有量化判据', () => {
-  const s = shape();
-  assert.ok(Math.abs(s.anShare - 485 / 2030) < 1e-9);
-  assert.ok(s.anShare < 0.25);
-  const an = ch.secs.find((x) => x.no === '5.2');
-  assert.strictEqual(an.subs.length, 2);
-  assert.strictEqual(an.subs.flatMap((x) => x.paras).length, 4);
+test('quiz 结构：6 题，pre 1 / check 3 / post 2，四选项，解释不少于 30 汉字', () => {
+  const q = r.quiz;
+  assert.strictEqual(q.total, 6);
+  assert.deepStrictEqual(q.stage, { pre: 1, check: 3, post: 2 });
+  assert.strictEqual(q.allFourOptions, true);
+  assert.ok(q.minExplain >= 30, `最短解释 ${q.minExplain} 汉字`);
 });
 
-test('本仓库口径说明：引用只写「教材·第5章·M.M」，不加旧称，且每条引用都能落到教材节点', () => {
-  assert.strictEqual(citation('5.1.2.1'), '教材·第5章·5.1.2.1');
-  assert.strictEqual(resolve('5.1'), true);
-  assert.strictEqual(resolve('5.1.2'), true);
-  assert.strictEqual(resolve('5.1.2.1'), true);
-  assert.strictEqual(resolve('5.1.2.9'), false);
+test('quiz 接地与打散：check 题三道全部接地，答案用满 4 个位置', () => {
+  assert.strictEqual(r.quiz.checkGrounded, 3);
+  assert.deepStrictEqual(r.quiz.answers, [1, 2, 3, 0, 1, 2]);
+  assert.strictEqual(r.quiz.distinctAnswers, 4);
+});
 
-  const text = fs.readFileSync(DOCS, 'utf8');
-  // 旧称禁用表：以码点写，避免源码里出现该词本身
-  for (const w of ['\u5e95\u672c', '\u7ecf\u6587']) {
-    assert.ok(!text.includes(w), 'docs 不得用旧称作引用');
+test('quiz 不出现旧脚手架名目与「见输出」式解释', () => {
+  const raw = require('node:fs').readFileSync(require('node:path').join(__dirname, '..', 'quiz.json'), 'utf8');
+  for (const bad of ['三辨', '四位面', '单元规模', '本章实测', '见 code/main.js 输出']) {
+    assert.ok(!raw.includes(bad), `quiz 仍含「${bad}」`);
   }
-  const cites = [...text.matchAll(/《中医诊断学·第(\d+)章·([\d.]+)》/g)];
-  assert.ok(cites.length >= 1);
-  for (const [, no, node] of cites) {
-    assert.strictEqual(no, '5');
-    assert.strictEqual(resolve(node), true, `引用 ${node} 落不到教材节点`);
-  }
-  const han = (text.match(/[\u4e00-\u9fa5]/g) || []).length;
-  assert.ok(han >= 1600, `docs 汉字数 ${han} < 1600`);
-});
-
-test('运行时最后一行是教学边界声明', () => {
-  const out = execFileSync(process.execPath, [path.join(__dirname, 'main.js')], { encoding: 'utf8' });
-  const lines = out.trim().split(/\r?\n/);
-  const last = lines[lines.length - 1];
-  assert.ok(last.startsWith('教学边界：'), last);
-  assert.ok(last.endsWith('不构成诊断依据。'), last);
-});
-
-test('补录：标题 27 / 正文 28 / 漏「缓」，《脈經》二十四種在册', () => {
-  const g = supplements('z1-mai-ming-que-huan');
-  assert.deepStrictEqual(g.textbookSeen.onlyInBody, ['缓']);
-  assert.strictEqual(g.comparison.maijingCount, 24);
-  assert.deepStrictEqual(g.comparison.onlyTextbook.sort(), ['长', '牢', '疾', '短'].sort());
-  assert.ok(g.entries.find((e) => e.name === '緩脈').text.includes('去來亦遲'));
 });

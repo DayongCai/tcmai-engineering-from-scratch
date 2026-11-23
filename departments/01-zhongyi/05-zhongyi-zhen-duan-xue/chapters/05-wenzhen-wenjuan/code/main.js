@@ -1,109 +1,60 @@
 #!/usr/bin/env node
 /**
- * 中医诊断学 · 第 5 章 问诊：十问 → 结构化问卷设计
- * 课程: departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/05-wenzhen-wenjuan/docs/zh.md
- * 出处: 教材·第4章 问诊（2 节 10 小节 20 段 2,281 字）
- * 依赖: 仅 Node.js 标准库
+ * 中医诊断学 · 第 5 章 问诊：标题写「十问歌」，实际只列了八节
  *
- * 本章量两件事：
- *   1. 问诊是四诊里第二厚的一诊（2,281 字），且 80.8% 在「问现在症」；
- *   2. 小节标题写「十问歌」，实际只列 8 个小节——十问变八问，缺的两问去哪了？
+ *   node code/main.js
+ *
+ * 正文：chapters/05-wenzhen-wenjuan/docs/zh.md（UNITNOTES 生成块不计入）
+ *
+ * 现算：4.2 的八节 + 歌诀十问的差集 2 问、三段式六行、六组判据、
+ * 五种作废情形、十列记录、六条触发、四条失效模式。
  */
 
 'use strict';
 
 const fs = require('node:fs');
 const path = require('node:path');
+const { shape, tableByHeader, numberedItems, quizSummary } = require(path.join(__dirname, '..', '..', '_doc.js'));
 
-const ROOT = path.join(__dirname, '..', '..', '..', '..', '..', '..');
-const BOOK = path.join(ROOT, 'standards', 'zhenduan', '底本.json');
-const doc = JSON.parse(fs.readFileSync(BOOK, 'utf8'));
-const ch = doc.chapters.find((c) => c.no === '4');
+const DIR = path.join(__dirname, '..');
+const QUIZ = path.join(DIR, 'quiz.json');
+const CHAPTER = 5;
+const SLUG = '05-wenzhen-wenjuan';
+const TITLE = '问诊：标题写「十问歌」，实际只列了八节';
 
-const SUPP = path.join(ROOT, 'standards', 'zhenduan', 'supplements', '补源.json');
-
-/** 读补源层：教材缺什么、外源补在哪。返回该章对应的那一处缺口。 */
-function supplements(id) {
-  const d = JSON.parse(fs.readFileSync(SUPP, 'utf8'));
-  const g = d.gaps.find((x) => x.id === id);
-  if (!g) throw new Error('补源层里没有 ' + id);
-  return g;
-}
-
-function sec(no) {
-  return ch.secs.find((s) => s.no === no);
-}
-
-function secChars(no) {
-  const s = sec(no);
-  return (s.paras || []).join('').length + s.subs.reduce((n, x) => n + x.paras.join('').length, 0);
-}
-
-function shape() {
-  const rows = ch.secs.map((s) => ({
-    no: s.no,
-    title: s.title,
-    subs: s.subs.length,
-    paras: (s.paras || []).length + s.subs.reduce((n, x) => n + x.paras.length, 0),
-    chars: secChars(s.no),
-  }));
-  const total = rows.reduce((n, r) => n + r.chars, 0);
-  return { rows, total, share: total / doc.counts.chars, nowShare: rows[1].chars / total };
-}
-
-// 「问现在症（十问歌）」下的小节——这是教材自己给的问诊维度
-function tenWen() {
-  const s = sec('4.2');
-  const subs = s.subs.map((x) => ({ no: x.no, title: x.title, paras: x.paras.length }));
-  return {
-    claimed: /十问歌/.test(s.title),
-    subs,
-    n: subs.length,
-    gap: /十问歌/.test(s.title) ? 10 - subs.length : 0,
-  };
-}
-
-// 问诊结构：主诉/现病史在前（4.1.2），现在症在后（4.2）
-function structure() {
-  const s41 = sec('4.1');
-  const items = s41.subs.flatMap((x) => (x.items || []).map((i) => i.title));
-  return {
-    preamble: items.filter((t) => /主诉|现病史|既往史|个人生活史|家族史|一般情况/.test(t)),
-    method: items.filter((t) => /技巧|注意事项|地位/.test(t)),
-    n: items.length,
-  };
+function analyze() {
+  const s = shape(DIR);
+  const sections42 = tableByHeader(s.tables, '问什么').rows.length;
+  const codeTen = 10; // 歌诀「十问」
+  const facts = [
+    { label: '歌诀十问', got: codeTen, want: 10 },
+    { label: '4.2 列出的节', got: sections42, want: 8 },
+    { label: '差集', got: codeTen - sections42, want: 2 },
+    { label: '三段式行数', got: tableByHeader(s.tables, '必填').rows.length, want: 6 },
+    { label: '判据组', got: tableByHeader(s.tables, '缺项后果').rows.length, want: 6 },
+    { label: '须作废的情形', got: tableByHeader(s.tables, '为什么不成立').rows.length, want: 5 },
+    { label: '记录列数', got: tableByHeader(s.tables, '字段').rows.length, want: 10 },
+    { label: '触发', got: tableByHeader(s.tables, '触发').rows.length, want: 6 },
+    { label: '失效模式', got: numberedItems(s.body, '四、动作与边界'), want: 4 },
+    { label: '二级节', got: s.sections.length, want: 6 },
+    { label: '正文汉字', got: s.hanzi, want: 2013 },
+  ];
+  const quiz = quizSummary(JSON.parse(fs.readFileSync(QUIZ, 'utf8')), s.body);
+  return { s, facts, quiz, quotes: s.quotes };
 }
 
 function main() {
-  const s = shape();
-  const tw = tenWen();
-  const st = structure();
-
-  console.log('═══ 问诊两节（教材·第4章）═══');
-  for (const r of s.rows) console.log(`  ${r.no} ${r.title}：${r.subs} 小节 · ${r.paras} 段 · ${r.chars} 字`);
-  console.log(`  合计 ${s.total} 字 = 全书 ${(s.share * 100).toFixed(1)}%；问现在症占 ${(s.nowShare * 100).toFixed(1)}%`);
+  const r = analyze();
+  console.log(`中医诊断学 第 ${CHAPTER} 章 · ${TITLE}`);
+  console.log(`正文 ${r.s.hanzi} 汉字 · ${r.s.sections.length} 节 · ${r.s.tableCount} 表 · 引文 ${r.quotes.length} 条`);
   console.log('');
-  console.log(`═══ 十问歌：标题称十问，实列 ${tw.n} 节（差 ${tw.gap}）═══`);
-  for (const x of tw.subs) console.log(`  ${x.no} ${x.title}（${x.paras} 段）`);
+  for (const f of r.facts) console.log(`  ${f.got === f.want ? '✓' : '✗'} ${f.label} 现算 ${f.got} → 正文 ${f.want}`);
   console.log('');
-  console.log('═══ 前置信息（4.1.2）═══');
-  for (const t of st.preamble) console.log('  · ' + t);
-  console.log(`  4.1 共 ${st.n} 个段标题，其中方法类 ${st.method.length} 个、资料类 ${st.preamble.length} 个`);
-  console.log('');
-  console.log('  → 十问变八问：三问（头身/胸腹/耳目）并成一节，「旧病/病因」两问移到了前置病史（4.1.2.2）。');
-  console.log('  → 所以「十问」在教材里是 8 节 + 2 项前置资料，不是一个 10 项清单。');
-  console.log('');
-  const g = supplements('z2-shiwen-ba-jie');
-  console.log(String.fromCharCode(10) + '── 教材缺口的外源补录（十问只到八节）──');
-  console.log('  教材 4.2 有 ' + g.textbookSeen.count + ' 个小节；《景岳全書》十問篇正文也是 '
-    + g.heads.length + ' 问：' + g.heads.join('/') + '。');
-  console.log('  十問歌：' + g.entries[0].text);
-  const only = (g.songOnly || []).map((x) => x.num + '（' + x.keyword + '）').join('、');
-  console.log('  歌诀点名但两书都没有问答段的：' + (only || '无') + ' —— 教材没漏抄，景岳原书亦只到八问。');
-  console.log('  引用格式：' + g.citeAs + '（不是「底本」「原文」）');
-  console.log('教学边界：本章只做问诊结构的清点与问卷化映射，不做问诊判读、不判断任何人的病情；不构成诊断依据。');
+  console.log(`quiz ${r.quiz.total} 题（pre ${r.quiz.stage.pre} / check ${r.quiz.stage.check} / post ${r.quiz.stage.post}）`);
+  console.log(`  check 接地 ${r.quiz.checkGrounded} 道 · 答案位置 ${r.quiz.answers.join('/')} · 最短解释 ${r.quiz.minExplain} 汉字`);
+  console.log('※ 教学边界：差集是本课程对表的结果，教材并未声明少两问；本章不构成诊断建议。');
 }
 
 if (require.main === module) main();
 
-module.exports = { shape, tenWen, structure, secChars, doc, ch, supplements };
+module.exports = { analyze, CHAPTER, SLUG, TITLE, DIR, QUIZ };
