@@ -1,0 +1,15 @@
+{
+  "sequential": true,
+  "drop": [
+    "课程信息",
+    "教材出处",
+    "运行与验证",
+    "复算入口",
+    "本章判断",
+    "免责"
+  ],
+  "roles": {
+    "代价与边界": "boundary"
+  },
+  "slideSplitChars": 420
+}

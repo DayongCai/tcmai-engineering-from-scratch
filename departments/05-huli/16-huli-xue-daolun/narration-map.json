@@ -1,0 +1,18 @@
+{
+  "_comment": "正文按「一、二、三…」中文序号分节。sequential=true 让未命中的节一律按 body 朗读；运行与验证/复算入口 里是命令与打印样例，朗读无意义，drop。",
+  "_generatedBy": "scripts/make_narration_maps.js",
+  "sequential": true,
+  "drop": [
+    "课程信息",
+    "教材出处",
+    "运行与验证",
+    "复算入口",
+    "本章判断",
+    "免责"
+  ],
+  "roles": {
+    "代价与边界": "boundary"
+  },
+  "slideSplitChars": 420,
+  "_splitNote": "正文段超过 420 字时按空行（段落边界）拆成幻灯片；不切断句子。"
+}
