@@ -29,62 +29,61 @@ platform:
 
 chapters:
   - slug: 01-img1
-    title: 第1章 中医图像从哪来：舌象、面象与图谱
-    segments: 5
+    title: 图像从哪来，决定了你能问什么问题
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1.01
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.01      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-img2
-    title: 第2章 采集与质控：光照、色卡与重复性
-    segments: 5
+    title: 采集没定，模型只是在背光
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1.01
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.01      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-img3
-    title: 第3章 图像特征与降维
-    segments: 5
+    title: 特征不是越多越好，是越稳越好
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.89
+    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.89      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-img4
-    title: 第4章 卷积与表征学习
-    segments: 5
+    title: 卷积不是魔法，是「局部」加「共享」
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.91
+    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-img5
-    title: 第5章 分类任务的写法：样本、标签与代价
-    segments: 5
+    title: 把临床问题写成分类任务，一半的工作在写之前
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1.02
+    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.02      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-img6
-    title: 第6章 类别不平衡与误判的代价
-    segments: 5
+    title: 不平衡不是数据问题，是决策问题
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.95
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-img7
-    title: 第7章 集成与稳健性
-    segments: 5
+    title: 集成降的是方差，不是无知
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.87
+    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.87      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-img8
-    title: 第8章 标注规范与判读一致性
-    segments: 5
+    title: 一致性不是算出来的，是谈出来的
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.91
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-img9
-    title: 第9章 可解释输出：图上看什么
-    segments: 5
+    title: 热力图讲的是模型在看哪，不是它为什么对
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.92
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-img10
-    title: 第10章 边界：影像不外流、结果不下诊断
-    segments: 5
+    title: 影像不出院，结论不下诊断
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

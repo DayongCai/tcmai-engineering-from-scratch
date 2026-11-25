@@ -1,31 +1,76 @@
 {
   "chapter": "12-duo-jiyin-yichuan",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 14,
+  "segmentCount": 12,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 17
+      "chars": 33
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 78
+      "chars": 34
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 15
+      "chars": 298
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 128
+      "chars": 124
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 309
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 376
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 157
+    },
+    {
+      "n": 8,
+      "segment": 7,
+      "chars": 371
+    },
+    {
+      "n": 9,
+      "segment": 8,
+      "chars": 324
+    },
+    {
+      "n": 10,
+      "segment": 9,
+      "chars": 284
+    },
+    {
+      "n": 11,
+      "segment": 9,
+      "chars": 179
+    },
+    {
+      "n": 12,
+      "segment": 10,
+      "chars": 201
+    },
+    {
+      "n": 13,
+      "segment": 11,
+      "chars": 414
+    },
+    {
+      "n": 14,
+      "segment": 12,
       "chars": 52
     }
   ]

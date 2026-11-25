@@ -4,7 +4,7 @@
   {
    "n": 1,
    "slug": "01-xulun-jichu",
-   "title": "绪论与药用植物学基础",
+   "title": "药用植物学不是认药名录，是把形态译成可核对判据的手艺",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -12,7 +12,7 @@
   {
    "n": 2,
    "slug": "02-xibao-zuzhi",
-   "title": "药用植物的细胞与组织",
+   "title": "显微鉴定看的不是细胞，是细胞壁与后含物留下的证据",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -20,7 +20,7 @@
   {
    "n": 3,
    "slug": "03-gen-jing",
-   "title": "营养器官（一）：根与茎",
+   "title": "根与茎的分界只有一条：节、叶与芽长在谁身上",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -28,7 +28,7 @@
   {
    "n": 4,
    "slug": "04-ye",
-   "title": "营养器官（二）：叶",
+   "title": "一片叶能定的只有大类，定到科要靠叶背那层看不见的结构",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -36,7 +36,7 @@
   {
    "n": 5,
    "slug": "05-hua-guoshi-zhongzi",
-   "title": "生殖器官：花、果实与种子",
+   "title": "果实错判的根子都在花部：子房位置定果型，果型定药材名",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -44,7 +44,7 @@
   {
    "n": 6,
    "slug": "06-fenlei-deng",
-   "title": "分类学基础与低等植物",
+   "title": "分类的全部力气花在检索表的岔口上，名字只是终点",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -52,7 +52,7 @@
   {
    "n": 7,
    "slug": "07-taixian-jue-luozi",
-   "title": "苔藓、蕨类与裸子植物",
+   "title": "从孢子到种子，类群每升一级就多一个能写进基原的器官",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -60,7 +60,7 @@
   {
    "n": 8,
    "slug": "08-beizi-zhiwu",
-   "title": "被子植物：离瓣花类与合瓣花类",
+   "title": "认科不背名录，靠花序、雄蕊与果实三处咬合",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -68,7 +68,7 @@
   {
    "n": 9,
    "slug": "09-ziyuan-fenzi",
-   "title": "药用植物资源、保护与分子鉴定",
+   "title": "从野外一株到一份基原结论，缺一环就全链失效",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

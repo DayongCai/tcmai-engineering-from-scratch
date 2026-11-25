@@ -29,62 +29,61 @@ platform:
 
 chapters:
   - slug: 01-gu-jiegou
-    title: 第1章 骨的形态与构造
-    segments: 5
+    title: 骨不是一根柱子：它按受力方向长成
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 0.98
+    estimate_minutes: 14.78      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.55      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-gu-fayu
-    title: 第2章 骨的发生、生长与骨化
-    segments: 5
+    title: 骺板是一条时间线，不是一道缝
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1.02
+    estimate_minutes: 13.58      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.21      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-guanjie
-    title: 第3章 关节结构与运动学
-    segments: 5
+    title: 关节的稳定不在骨头上，在骨头以外的四层
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1.02
+    estimate_minutes: 11.62      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.03      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-ji-jinmo
-    title: 第4章 肌、肌腱与筋膜
-    segments: 5
+    title: 肌不拉骨头，它拉的是自己的附着点
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1
+    estimate_minutes: 12.33      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.29      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-shenjing-xueguan
-    title: 第5章 神经与血管走行
-    segments: 5
+    title: 神经和血管走的是空隙，不是路线
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.98
+    estimate_minutes: 12.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.28      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-jizhu-jiepou
-    title: 第6章 脊柱解剖
-    segments: 5
+    title: 脊柱的稳定是三根柱子的事，不是一块骨头的事
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.94
+    estimate_minutes: 12.12      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.41      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-shangzhi
-    title: 第7章 上肢解剖
-    segments: 5
+    title: 上肢用稳定换灵活，代价写在同一副骨架上
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.95
+    estimate_minutes: 12.65      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.04      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-xiazhi
-    title: 第8章 下肢解剖
-    segments: 5
+    title: 下肢的力线一偏，整副骨架都要还债
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.95
+    estimate_minutes: 12.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.58      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-biaozhi
-    title: 第9章 体表标志与定位
-    segments: 5
+    title: 摸得到的解剖，才是能在病人身上用的解剖
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.97
+    estimate_minutes: 12.03      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.03      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-yingxiang-jiepou
-    title: 第10章 影像解剖对照
-    segments: 5
+    title: 同一个结构，在三种影像上是三个样子
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1
+    estimate_minutes: 12.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 12.43      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

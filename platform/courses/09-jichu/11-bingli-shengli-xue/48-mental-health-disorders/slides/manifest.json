@@ -1,7 +1,7 @@
 {
   "chapter": "48-mental-health-disorders",
-  "slideCount": 45,
-  "segmentCount": 25,
+  "slideCount": 44,
+  "segmentCount": 12,
   "slides": [
     {
       "n": 1,
@@ -11,7 +11,7 @@
     {
       "n": 2,
       "segment": 2,
-      "chars": 91
+      "chars": 47
     },
     {
       "n": 3,
@@ -26,206 +26,201 @@
     {
       "n": 5,
       "segment": 5,
-      "chars": 371
+      "chars": 395
     },
     {
       "n": 6,
       "segment": 5,
-      "chars": 126
+      "chars": 174
     },
     {
       "n": 7,
-      "segment": 6,
-      "chars": 361
+      "segment": 5,
+      "chars": 331
     },
     {
       "n": 8,
-      "segment": 6,
-      "chars": 131
+      "segment": 5,
+      "chars": 148
     },
     {
       "n": 9,
-      "segment": 7,
+      "segment": 5,
       "chars": 390
     },
     {
       "n": 10,
-      "segment": 7,
-      "chars": 125
+      "segment": 5,
+      "chars": 174
     },
     {
       "n": 11,
-      "segment": 8,
-      "chars": 378
+      "segment": 5,
+      "chars": 354
     },
     {
       "n": 12,
-      "segment": 8,
+      "segment": 5,
       "chars": 100
     },
     {
       "n": 13,
-      "segment": 9,
-      "chars": 335
+      "segment": 6,
+      "chars": 354
     },
     {
       "n": 14,
-      "segment": 9,
-      "chars": 90
+      "segment": 6,
+      "chars": 397
     },
     {
       "n": 15,
-      "segment": 10,
-      "chars": 286
+      "segment": 6,
+      "chars": 308
     },
     {
       "n": 16,
-      "segment": 10,
-      "chars": 170
+      "segment": 6,
+      "chars": 394
     },
     {
       "n": 17,
-      "segment": 11,
-      "chars": 400
-    },
-    {
-      "n": 18,
-      "segment": 11,
-      "chars": 98
-    },
-    {
-      "n": 19,
-      "segment": 12,
+      "segment": 6,
       "chars": 332
     },
     {
-      "n": 20,
-      "segment": 12,
+      "n": 18,
+      "segment": 6,
       "chars": 158
     },
     {
+      "n": 19,
+      "segment": 7,
+      "chars": 268
+    },
+    {
+      "n": 20,
+      "segment": 7,
+      "chars": 346
+    },
+    {
       "n": 21,
-      "segment": 13,
-      "chars": 246
+      "segment": 7,
+      "chars": 307
     },
     {
       "n": 22,
-      "segment": 13,
-      "chars": 207
-    },
-    {
-      "n": 23,
-      "segment": 14,
-      "chars": 418
-    },
-    {
-      "n": 24,
-      "segment": 15,
+      "segment": 7,
       "chars": 372
     },
     {
+      "n": 23,
+      "segment": 7,
+      "chars": 394
+    },
+    {
+      "n": 24,
+      "segment": 7,
+      "chars": 354
+    },
+    {
       "n": 25,
-      "segment": 15,
-      "chars": 115
+      "segment": 8,
+      "chars": 382
     },
     {
       "n": 26,
-      "segment": 16,
-      "chars": 402
+      "segment": 8,
+      "chars": 328
     },
     {
       "n": 27,
-      "segment": 16,
-      "chars": 213
+      "segment": 8,
+      "chars": 313
     },
     {
       "n": 28,
-      "segment": 17,
-      "chars": 361
-    },
-    {
-      "n": 29,
-      "segment": 17,
-      "chars": 108
-    },
-    {
-      "n": 30,
-      "segment": 18,
-      "chars": 398
-    },
-    {
-      "n": 31,
-      "segment": 18,
-      "chars": 94
-    },
-    {
-      "n": 32,
-      "segment": 19,
+      "segment": 8,
       "chars": 340
     },
     {
-      "n": 33,
-      "segment": 19,
+      "n": 29,
+      "segment": 8,
       "chars": 173
     },
     {
-      "n": 34,
-      "segment": 20,
-      "chars": 249
+      "n": 30,
+      "segment": 9,
+      "chars": 268
     },
     {
-      "n": 35,
-      "segment": 20,
-      "chars": 213
+      "n": 31,
+      "segment": 9,
+      "chars": 234
     },
     {
-      "n": 36,
-      "segment": 21,
+      "n": 32,
+      "segment": 9,
       "chars": 195
     },
     {
-      "n": 37,
-      "segment": 21,
-      "chars": 388
+      "n": 33,
+      "segment": 9,
+      "chars": 410
     },
     {
-      "n": 38,
-      "segment": 22,
+      "n": 34,
+      "segment": 9,
       "chars": 367
     },
     {
-      "n": 39,
-      "segment": 22,
+      "n": 35,
+      "segment": 9,
       "chars": 272
     },
     {
-      "n": 40,
-      "segment": 23,
+      "n": 36,
+      "segment": 10,
       "chars": 401
     },
     {
-      "n": 41,
-      "segment": 23,
+      "n": 37,
+      "segment": 10,
       "chars": 333
     },
     {
-      "n": 42,
-      "segment": 23,
+      "n": 38,
+      "segment": 10,
       "chars": 145
     },
     {
-      "n": 43,
-      "segment": 24,
+      "n": 39,
+      "segment": 11,
       "chars": 415
     },
     {
-      "n": 44,
-      "segment": 24,
-      "chars": 343
+      "n": 40,
+      "segment": 11,
+      "chars": 416
     },
     {
-      "n": 45,
-      "segment": 25,
+      "n": 41,
+      "segment": 11,
+      "chars": 350
+    },
+    {
+      "n": 42,
+      "segment": 11,
+      "chars": 308
+    },
+    {
+      "n": 43,
+      "segment": 11,
+      "chars": 291
+    },
+    {
+      "n": 44,
+      "segment": 12,
       "chars": 52
     }
   ]

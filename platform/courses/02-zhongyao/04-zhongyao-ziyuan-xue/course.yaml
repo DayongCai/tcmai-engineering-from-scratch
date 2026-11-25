@@ -29,50 +29,49 @@ platform:
 
 chapters:
   - slug: 01-fenbu-quhua
-    title: 第1章 中药资源的分布与区划
-    segments: 5
+    title: 区划不是画在地图上的线，而是一组可复核的判据
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.96
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-daodi-xingcheng
-    title: 第2章 道地药材的形成与评价
-    segments: 5
+    title: 道地是三件事同时对上的结果，不是一句产地评语
     video: rendered
-    estimate_minutes: 1.08
-    measured_minutes: 1.1
+    estimate_minutes: 1.08      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.10      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-yewai-diaocha
-    title: 第3章 野生资源的调查与蕴藏量估算
-    segments: 5
+    title: 蕴藏量不是一个数，而是一条由四步误差叠出来的区间
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1.01
+    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.01      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-zaipei-gap
-    title: 第4章 栽培技术与规范化种植
-    segments: 5
+    title: 栽培不是把野药搬进地里，而是把不可控的风险换成可记账的风险
     video: rendered
-    estimate_minutes: 1.1
-    measured_minutes: 1.1
+    estimate_minutes: 1.10      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.10      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-kaifa-liyong
-    title: 第5章 资源的开发利用与产业化
-    segments: 5
+    title: 开发不是把药材换成产品，而是把年允收量换算成产品线的上限
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.91
+    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-binwei-baohu
-    title: 第6章 濒危物种保护与政策
-    segments: 5
+    title: 保护不是把物种围起来，而是把采挖压力从野生种群上挪走
     video: rendered
-    estimate_minutes: 1.03
-    measured_minutes: 1.04
+    estimate_minutes: 1.03      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.04      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-pucha-shujuku
-    title: 第7章 资源普查数据的建库与制图
-    segments: 5
+    title: 数据库的可信度不取决于记录条数，而取决于三列能否被独立回查
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.95
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-gongxu-moxing
-    title: 第8章 供需模型与价格波动的量化
-    segments: 5
+    title: 药材价格的大起大落，来自供给曲线在短期近乎垂直
     video: rendered
-    estimate_minutes: 1.03
-    measured_minutes: 1.06
+    estimate_minutes: 1.03      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.06      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

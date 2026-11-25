@@ -28,7 +28,7 @@
       "spoken": "「《儿童间隙保持器临床应用专家共识·第4.1条》」——外源课：条文依据为「外源·T/CHSA 010-2022 儿童间隙保持器临床应用专家共识 第4.1条」，非教材原文篇名。本章要回答的是：儿童间隙管理：五类保持器与选择这一环的判据是什么。",
       "estimateSeconds": 25,
       "audio": "002.mp3",
-      "audioSeconds": 24.22
+      "audioSeconds": 24.216
     },
     {
       "n": 3,
@@ -38,7 +38,7 @@
       "spoken": "乳牙早失不是「等换牙」，是「丢空间」。",
       "estimateSeconds": 4,
       "audio": "003.mp3",
-      "audioSeconds": 3.74
+      "audioSeconds": 3.744
     },
     {
       "n": 4,
@@ -48,7 +48,7 @@
       "spoken": "环境逼迫（正畸的失误大多不是「不会排牙」，而是「适应证定级错、资料不足、分步没设计、窗口错过」）+ 知识积累（本章 1 单元 12,249 汉字；三辨主 生物力学与移动 392；四位面（治疗场景）主 儿童间隙管理 470；引书 0 部 0 次；数值类命中 0）",
       "estimateSeconds": 25,
       "audio": "004.mp3",
-      "audioSeconds": 25.9
+      "audioSeconds": 25.896
     },
     {
       "n": 5,
@@ -58,10 +58,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "005.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 69.96,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 1.15,
+    "measuredMinutes": 1.17,
+    "ratio": 1.014
+  }
 }

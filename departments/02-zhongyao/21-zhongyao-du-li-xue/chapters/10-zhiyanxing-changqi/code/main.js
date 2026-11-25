@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 /**
- * 中药化学 · 第 10 章 致癌性与长期暴露：从「中毒」到「肿瘤」的终点：本章统计口径
- * 课程: departments/02-zhongyao/21-zhongyao-du-li-xue/chapters/10-zhiyanxing-changqi/docs/zh.md
- * 数据: standards/zhongyao-du-li/units.json（55 单元层，每单元带三辨=结构特征/理化性质/提分与检识 与 四位面=生源途径 词频）
- * 取数: standards/zhongyao-du-li/chapter-map.json（课程章 → 教材单元号）
- * 依赖: 仅 Node.js 标准库
+ * 中药毒理学 · 第 10 章 致癌的门槛不是剂量，是潜伏期：正文与习题自检
+ * 课程: departments/02-zhongyao/21-zhongyao-du-li-xue/chapters/10-zhiyanxing-changqi
+ * 依赖: 仅 Node.js 标准库；只读 ../docs/zh.md 与 ../quiz.json，不读 standards/。
  *
- * 数字全部现算：正文引用的每个规模、重心、引书数，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 输出的三个数：正文字数、二级节数、习题接地数。接地数指 check 题的正确选项里
+ * 至少有一个 ≥4 字的词组真的出现在当章正文里 —— 习题必须与正文同源。
  */
 
 'use strict';
@@ -15,107 +13,52 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'zhongyao-du-li', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/zhongyao-du-li/units.json —— 章节目录是否已脱离仓库？');
-}
+const DIR = __dirname;
+const DOC = path.join(DIR, '..', 'docs', 'zh.md');
+const QUIZ = path.join(DIR, '..', 'quiz.json');
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'zhongyao-du-li', 'units.json');
-const CHAPTER = '10';
-const KEYS = ['10.1', '10.2', '10.3', '10.4', '10.5', '10.6', '10.7'];
+const doc = fs.readFileSync(DOC, 'utf8');
+const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
 
-const load = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
+const CH = '10';
+const TITLE = '致癌的门槛不是剂量，是潜伏期';
 
-function chapterUnits(units) {
-  return units.units
-    .filter((u) => KEYS.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
+const hz = (s) => (s.match(/[\u4e00-\u9fff]/g) || []).length;
+const secs = (doc.match(/^## /gm) || []).length;
 
-const sum = (d) => Object.values(d).reduce((a, b) => a + b, 0);
-
-function merge(list, field) {
-  const out = {};
-  for (const u of list) {
-    const src = (u.measure && u.measure[field]) || {};
-    for (const [k, v] of Object.entries(src)) out[k] = (out[k] || 0) + v;
+/** 正文里的 4 字连续汉字片段集合 */
+function shingles(text, n = 4) {
+  const clean = String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ');
+  const out = new Set();
+  for (const seg of clean.split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
   }
   return out;
 }
 
-function rank(dict) {
-  const tot = sum(dict);
-  return Object.entries(dict)
-    .map(([key, count]) => ({ key, count, share: tot ? count / tot : 0 }))
-    .sort((a, b) => b.count - a.count);
-}
+const body = shingles(doc);
+const grounded = (s) => {
+  const clean = String(s || '').replace(/[^\u4e00-\u9fff]/g, '');
+  for (let i = 0; i + 4 <= clean.length; i += 1) if (body.has(clean.slice(i, i + 4))) return true;
+  return false;
+};
 
-function byBookSection(list) {
-  const out = new Map();
-  for (const u of list) {
-    const key = `教材第${u.chapter}章`;
-    const it = out.get(key) || { sec: key, units: 0, hanzi: 0 };
-    it.units += 1;
-    it.hanzi += u.hanzi;
-    out.set(key, it);
-  }
-  return [...out.values()];
-}
+const stages = { pre: 0, check: 0, post: 0 };
+for (const q of quiz.questions) stages[q.stage] = (stages[q.stage] || 0) + 1;
 
-function citations(list) {
-  const counter = new Map();
-  for (const u of list) {
-    for (const m of u.prose.matchAll(/《([^》]+)》/g)) counter.set(m[1], (counter.get(m[1]) || 0) + 1);
-  }
-  const ranked = [...counter.entries()].sort((a, b) => b[1] - a[1]);
-  return { books: counter.size, total: sum(Object.fromEntries(counter)), top: ranked.slice(0, 3) };
-}
+const checks = quiz.questions.filter((q) => q.stage === 'check');
+const hit = checks.filter((q) => grounded(q.options[q.correct])).length;
+const minExplain = Math.min(...quiz.questions.map((q) => hz(q.explanation)));
 
-function shape(list) {
-  const hanzi = list.reduce((a, u) => a + u.hanzi, 0);
-  return {
-    units: list.length,
-    hanzi,
-    mean: list.length ? Math.round(hanzi / list.length) : 0,
-    valueLike: list.reduce((a, u) => a + u.measure.valueLike, 0),
-    digits: list.reduce((a, u) => a + u.measure.digits, 0),
-  };
-}
+console.log(`第 ${CH} 章 · ${TITLE}`);
+console.log(`正文 ${hz(doc)} 汉字 · 二级节 ${secs}`);
+console.log(`习题 ${quiz.questions.length} 题 (pre ${stages.pre}/check ${stages.check}/post ${stages.post}) · 最短解释 ${minExplain} 汉字`);
+console.log(`接地 check 题 ${hit}/${checks.length}`);
 
-/** 取穴与刺灸的操作词：本章正文里出现多少处「定位／分寸／直刺／灸」类的可执行指令 */
-function hands(list) {
-  const WORDS = ['定位', '骨度', '分寸', '同身寸', '直刺', '斜刺', '平刺', '艾灸', '温针灸', '留针', '禁针', '禁灸'];
-  const pairs = WORDS.map((w) => [w, list.reduce((a, u) => a + u.prose.split(w).length - 1, 0)]);
-  return Object.fromEntries(pairs).constructor === Object
-    ? pairs.filter(([, c]) => c).sort((a, b) => b[1] - a[1])
-    : pairs;
-}
-
-module.exports = { CHAPTER, KEYS, load, chapterUnits, merge, rank, byBookSection, citations, shape, hands, sum };
-
-if (require.main === module) {
-  const data = load();
-  const list = chapterUnits(data);
-  const s = shape(list);
-  console.log('═══ 中药化学 · 第 10 章 致癌性与长期暴露：从「中毒」到「肿瘤」的终点 ═══');
-  console.log(`单元 ${s.units} · 汉字 ${s.hanzi} · 平均 ${s.mean} 字/单元`);
-  console.log(`数值类命中 ${s.valueLike} · 数字字符 ${s.digits}`);
-  console.log('\n按教材章：');
-  for (const sec of byBookSection(list)) console.log(`  ${sec.sec}  ${sec.units} 单元 · ${sec.hanzi} 字`);
-  console.log('\n三辨重心：');
-  for (const v of rank(merge(list, 'views'))) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
-  console.log('\n四位面（本章不适用，全 0）：');
-  for (const v of rank(merge(list, 'levels'))) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
-  const c = citations(list);
-  console.log(`\n引书 ${c.books} 部 · 引用 ${c.total} 次 · 前三：${c.top.map(([n, k]) => `${n}(${k})`).join('、')}`);
-  console.log('\n操作词命中：' + hands(list).map(([w, k]) => `${w}×${k}`).join('  '));
-  for (const u of list) console.log(`  ${u.sub}\t${u.title}\t${u.hanzi}字`);
-  console.log('※ 教学样例：数字由 standards/zhongyao-du-li/units.json 现算，不构成诊疗建议，不能替代医师面诊。');
+const ok = hz(doc) >= 2500 && secs >= 4 && quiz.questions.length >= 5
+  && stages.pre >= 1 && stages.check >= 2 && stages.post >= 1
+  && hit >= 2 && minExplain >= 30;
+if (!ok) {
+  console.error('自检未通过');
+  process.exit(1);
 }

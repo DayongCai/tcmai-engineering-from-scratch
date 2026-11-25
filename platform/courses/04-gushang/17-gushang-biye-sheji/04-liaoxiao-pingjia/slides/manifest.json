@@ -1,7 +1,7 @@
 {
   "chapter": "04-liaoxiao-pingjia",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 16,
+  "segmentCount": 11,
   "slides": [
     {
       "n": 1,
@@ -26,6 +26,61 @@
     {
       "n": 5,
       "segment": 5,
+      "chars": 369
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 198
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 365
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 259
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 367
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 321
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 419
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 252
+    },
+    {
+      "n": 13,
+      "segment": 9,
+      "chars": 405
+    },
+    {
+      "n": 14,
+      "segment": 10,
+      "chars": 392
+    },
+    {
+      "n": 15,
+      "segment": 10,
+      "chars": 97
+    },
+    {
+      "n": 16,
+      "segment": 11,
       "chars": 52
     }
   ]

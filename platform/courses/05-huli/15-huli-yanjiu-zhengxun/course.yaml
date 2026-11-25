@@ -29,50 +29,49 @@ platform:
 
 chapters:
   - slug: 01-xuanti-wentihua
-    title: 第1章 护理研究的选题与问题化
-    segments: 5
+    title: 好选题不是灵感，是把一句抱怨压成一个能算的缺口
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 0.96
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-liangxing-sheji
-    title: 第2章 量性研究与设计类型
-    segments: 5
+    title: 设计类型不是等级表，是你要替哪种错误付账
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 0.96
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-zhixing-fangtan
-    title: 第3章 质性研究与访谈分析
-    segments: 5
+    title: 质性研究不是聊天，是把重复说的话听成结构
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 0.96
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-liangbiao-xinxiao
-    title: 第4章 量表的选择与信效度
-    segments: 5
+    title: 量表不是尺子，是一份带刻度的说法
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.94
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-xunzheng-fenji
-    title: 第5章 循证护理的证据分级
-    segments: 5
+    title: 证据等级回答的是有多可信，不是该不该做
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.91
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-jiansuo-xitong
-    title: 第6章 文献检索与系统评价
-    segments: 5
+    title: 检索式写不出来的那一块，就是你没想清的那一块
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.96
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-zhuanhua-shijian
-    title: 第7章 证据到实践的转化
-    segments: 5
+    title: 证据不会自己走进病房，它要先被改写成一句能执行的指令
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.94
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-lunli-shencha
-    title: 第8章 护理研究中的伦理审查
-    segments: 5
+    title: 伦理审查不是盖章，是替不能到场的人提问
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 0.95
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

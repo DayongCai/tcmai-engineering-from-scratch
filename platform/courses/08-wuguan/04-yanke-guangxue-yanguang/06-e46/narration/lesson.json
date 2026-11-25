@@ -18,7 +18,7 @@
       "spoken": "第 6 章 · 儿童屈光与弱视",
       "estimateSeconds": 3,
       "audio": "001.mp3",
-      "audioSeconds": 3.1
+      "audioSeconds": 3.096
     },
     {
       "n": 2,
@@ -38,7 +38,7 @@
       "spoken": "儿童屈光与弱视：本课第 6 章。",
       "estimateSeconds": 3,
       "audio": "003.mp3",
-      "audioSeconds": 3.43
+      "audioSeconds": 3.432
     },
     {
       "n": 4,
@@ -48,7 +48,7 @@
       "spoken": "环境逼迫（验光的判据是「测得准、写得清、退得回」）+ 知识积累（本章 4 单元 15,455 汉字；三辨主 病性与证候 496；四位面（章群结构）主 矫正 15455；引书 21 部 50 次；数值类命中 23）",
       "estimateSeconds": 20,
       "audio": "004.mp3",
-      "audioSeconds": 21.91
+      "audioSeconds": 21.912
     },
     {
       "n": 5,
@@ -58,10 +58,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "005.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 51.98,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 0.83,
+    "measuredMinutes": 0.87,
+    "ratio": 1.04
+  }
 }

@@ -5,7 +5,7 @@
     {
       "n": 1,
       "slug": "01-changdi-diaoyan",
-      "title": "药材市场与产地调研：道地性与商品规格",
+      "title": "道地是历史给的信用，规格是当天能核的价",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/01-changdi-diaoyan/docs/zh.md",
@@ -14,7 +14,7 @@
     {
       "n": 2,
       "slug": "02-jianding-shijian",
-      "title": "鉴定实验室实践：性状与显微鉴定",
+      "title": "眼睛先看，显微镜只回答眼睛答不了的那一问",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/02-jianding-shijian/docs/zh.md",
@@ -23,7 +23,7 @@
     {
       "n": 3,
       "slug": "03-paozhi-chejian",
-      "title": "炮制车间实践：工艺与质控点",
+      "title": "车间里没有「炒熟了」，只有炒到哪一步必须停",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/03-paozhi-chejian/docs/zh.md",
@@ -32,7 +32,7 @@
     {
       "n": 4,
       "slug": "04-zhiji-zhongshi",
-      "title": "制剂中试：处方—工艺—质量",
+      "title": "中试不是把小试放大十倍，是证明同一处方在两套设备上做出同一个产品",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/04-zhiji-zhongshi/docs/zh.md",
@@ -41,7 +41,7 @@
     {
       "n": 5,
       "slug": "05-yaofang-suifang",
-      "title": "药房与临床用药随访",
+      "title": "随访问不出\"怎么煎的、怎么吃的\"，疗效与不良反应都无从归因",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/05-yaofang-suifang/docs/zh.md",
@@ -50,7 +50,7 @@
     {
       "n": 6,
       "slug": "06-shijian-baogao",
-      "title": "实践报告与出站考核",
+      "title": "报告不是把做过的事写一遍，是让没去过现场的人能重算一遍",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/06-shijian-baogao/docs/zh.md",

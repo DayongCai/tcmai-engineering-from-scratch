@@ -1,62 +1,138 @@
 'use strict';
+/**
+ * 第 4 章 单测：钉住正文实测值与习题契约
+ * 数据源: ../docs/zh.md（正文）、../quiz.json（习题）
+ * 期望值来自 2026-11-24 对正文与 quiz 的实测，改正文后必须重跑 main.js 并同步本文件。
+ */
 
 const test = require('node:test');
 const assert = require('node:assert');
 const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
+const { analyze, SPEC } = require('./main.js');
 
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
 const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhongyao-xinyao', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhongyao-xinyao', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const EXPECT = {
+  "chapter": 4,
+  "floor": 2800,
+  "hanzi": 3141,
+  "sections": 10,
+  "tables": 2,
+  "keyRows": 3,
+  "keyCols": 4,
+  "landmarks": {
+    "三层标准": 1,
+    "理由路径": 2,
+    "三类失效": 3
+  },
+  "judgments": 19,
+  "settings": 1,
+  "boundaries": 4,
+  "questions": 8,
+  "correct": [
+    3,
+    2,
+    0,
+    1,
+    2,
+    1,
+    0,
+    3
+  ],
+  "keyNames": [
+    "真伪",
+    "优劣",
+    "一致性"
+  ]
+};
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+
+/** 正文里 4 字以上连续汉字片段，用于判断习题正确项是否接地 */
+function shingles(text, n = 4) {
+  const clean = String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ');
+  const out = new Set();
+  for (const seg of clean.split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+}
+
+const md = fs.readFileSync(DOC, 'utf8');
+const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+const a = analyze(md);
+
+test('章号与正文标题一致', () => {
+  assert.strictEqual(a.head.n, EXPECT.chapter);
+  assert.ok(a.head.title.length >= 8, '标题过短');
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('正文汉字数等于实测值，且不超过 3,400 的压顶上界', () => {
+  assert.strictEqual(a.hanzi, EXPECT.hanzi);
+  assert.ok(a.hanzi >= EXPECT.floor && a.hanzi <= 3400, `字数越界：${a.hanzi}（下界 ${EXPECT.floor}）`);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('节数与表格数钉实测值', () => {
+  assert.strictEqual(a.sectionCount, EXPECT.sections);
+  assert.strictEqual(a.tables.length, EXPECT.tables);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('关键表行列与首列条目钉实测值', () => {
+  assert.ok(a.keyTable, '没找到本章关键表');
+  assert.strictEqual(a.keyTable.rows.length, EXPECT.keyRows);
+  assert.strictEqual(a.keyTable.cols, EXPECT.keyCols);
+  const names = a.keyTable.rows.map((r) => r[0].replace(/\*\*/g, ''));
+  assert.deepStrictEqual(names, EXPECT.keyNames);
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('关键条目数钉实测值', () => {
+  const got = Object.fromEntries(a.landmarks.map((l) => [l.label, l.n]));
+  assert.deepStrictEqual(got, EXPECT.landmarks);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
+test('判据句、教学设定与边界条目数钉实测值', () => {
+  assert.strictEqual(a.judgments.length, EXPECT.judgments);
+  assert.strictEqual(a.教学设定, EXPECT.settings);
+  assert.strictEqual(a.boundaries.length, EXPECT.boundaries);
+});
+
+test('习题契约：题量、三段、四选项、解释长度、答案分布', () => {
+  const qs = quiz.questions;
+  assert.strictEqual(qs.length, EXPECT.questions);
+  const stages = new Set(qs.map((q) => q.stage));
+  for (const s of ['pre', 'check', 'post']) assert.ok(stages.has(s), `缺 ${s} 段`);
+  for (const q of qs) {
+    assert.strictEqual(q.options.length, 4, `四选项：${q.question}`);
+    assert.ok(Number.isInteger(q.correct) && q.correct >= 0 && q.correct < 4);
+    assert.ok(hanzi(q.explain) >= 30, `解释过短（${hanzi(q.explain)} 汉字）：${q.question}`);
+  }
+  assert.deepStrictEqual(qs.map((q) => q.correct), EXPECT.correct, '答案分布被改动');
+});
+
+test('接地：check 题正确项在正文里找得到原词，且不少于 2 道', () => {
+  const body = shingles(md);
+  let grounded = 0;
+  for (const q of quiz.questions.filter((x) => x.stage === 'check')) {
+    const right = String(q.options[q.correct] || '');
+    if ([...shingles(right)].some((g) => body.has(g))) grounded += 1;
+  }
+  assert.ok(grounded >= 2, `接地不足：${grounded}`);
+});
+
+test('脚本可运行，输出含教学样例与边界声明', () => {
   const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/zhongyao-xinyao\/units\.json 现算/);
+  assert.ok(out.includes('3,141 汉字'), '输出汉字数与实测不符');
+  assert.match(out, /教学样例：数字由本章 docs\/zh\.md 现算/);
   assert.match(out, /不构成临床判断依据/);
 });
 
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
+test('代码头部指向本章正文目录', () => {
   const body = fs.readFileSync(MAIN, 'utf8');
   assert.ok(body.includes('/chapters/04-zhiliang-biaozhiwu/docs/zh.md'), '头部注释未指向本章');
+  assert.strictEqual(SPEC.chapter, EXPECT.chapter);
 });

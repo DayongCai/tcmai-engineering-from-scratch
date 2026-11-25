@@ -28,7 +28,7 @@
       "spoken": "「《急救护理学·第3章 急救护理评估与预检分诊》」——教材第 3 章章目级引文；教材无篇名级引文，非本章原文篇名。本章要回答的是：急救评估与预检分诊这一章的核心判据是什么。",
       "estimateSeconds": 18,
       "audio": "002.mp3",
-      "audioSeconds": 17.38
+      "audioSeconds": 17.376
     },
     {
       "n": 3,
@@ -38,7 +38,7 @@
       "spoken": "分诊独立成章：急救的第一道判断决定后续资源分配。",
       "estimateSeconds": 5,
       "audio": "003.mp3",
-      "audioSeconds": 5.42
+      "audioSeconds": 5.424
     },
     {
       "n": 4,
@@ -48,7 +48,7 @@
       "spoken": "环境逼迫（急救的时间以分钟计，判断与处置几乎同时发生，记录必须在事后立刻补齐）+ 知识积累（本章 1 单元 16,592 汉字；三辨主 转运与记录 337；四位面（急症类别）主 院前 9；引书 0 部 0 次；数值类命中 0）",
       "estimateSeconds": 22,
       "audio": "004.mp3",
-      "audioSeconds": 22.63
+      "audioSeconds": 22.632
     },
     {
       "n": 5,
@@ -58,10 +58,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "005.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 60.22,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 0.98,
+    "measuredMinutes": 1.0,
+    "ratio": 1.021
+  }
 }

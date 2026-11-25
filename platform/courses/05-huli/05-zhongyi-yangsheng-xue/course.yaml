@@ -29,50 +29,49 @@ platform:
 
 chapters:
   - slug: 01-jiben-yuanze
-    title: 第1章 养生的基本原则：天人相应
-    segments: 5
+    title: 养生的第一判断不是做什么，而是此刻该顺着什么
     video: rendered
-    estimate_minutes: 1.02
-    measured_minutes: 1.04
+    estimate_minutes: 1.02      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.04      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-sishi-yangsheng
-    title: 第2章 四时养生与节气调摄
-    segments: 5
+    title: 节气不是日历装饰，它决定这一周该加还是该减
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.99
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.99      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-yinshi-tizhi
-    title: 第3章 饮食养生与体质配膳
-    segments: 5
+    title: 吃什么由体质和当下状态定，不由食物排行榜定
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-qingzhi-yangsheng
-    title: 第4章 情志养生与疏泄
-    segments: 5
+    title: 情绪不是要消灭的敌人，是要按时疏通的管道
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.97
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.97      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-yundong-gongfa
-    title: 第5章 运动养生与传统功法
-    segments: 5
+    title: 功法的效果不在动作多难，在能不能天天做到不受伤
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.99
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.99      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-qiju-shuimian
-    title: 第6章 起居作息与睡眠
-    segments: 5
+    title: 作息是最便宜的养生手段，也是最难坚持的那一个
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.96
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-zhiweibing-jiankang
-    title: 第7章 治未病与健康管理
-    segments: 5
+    title: 治未病不是多查几项，而是把风险变成可跟踪的条目
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 0.99
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.99      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-xiaoguo-celiang
-    title: 第8章 养生干预的效果测量
-    segments: 5
+    title: 养生有没有效，要看同一把尺子量了两次
     video: rendered
-    estimate_minutes: 1.07
-    measured_minutes: 1.08
+    estimate_minutes: 1.07      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.08      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

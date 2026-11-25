@@ -29,50 +29,49 @@ platform:
 
 chapters:
   - slug: 01-g1
-    title: 第1章 什么是医学人工智能
-    segments: 5
+    title: 医学人工智能的边界，写在「谁签字」上
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.9
+    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-g2
-    title: 第2章 中医信息化的来路
-    segments: 5
+    title: 中医信息化的来路：先有编目，才有编码，最后才有模型
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.9
+    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-g3
-    title: 第3章 从可穿戴到四诊仪
-    segments: 5
+    title: 从可穿戴到四诊仪：换的是传感器，不是理论
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.91
+    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-g4
-    title: 第4章 系统的形状：从 HIS 到智能体
-    segments: 5
+    title: 系统的形状由写权限决定，不由技术栈决定
     video: rendered
-    estimate_minutes: 1.02
-    measured_minutes: 0.99
+    estimate_minutes: 1.02      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.99      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-g5
-    title: 第5章 知识怎么放进机器
-    segments: 5
+    title: 知识进机器有四条路，最像捷径的那条最贵
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.9
+    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-g6
-    title: 第6章 统计、数据与模型的边界
-    segments: 5
+    title: 敏感性是模型的属性，阳性预测值不是
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.98
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.98      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-g7
-    title: 第7章 伦理、隐私与责任
-    segments: 5
+    title: 伦理不进日志，就等于没进系统
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.92
+    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-g8
-    title: 第8章 学科地图与学习方法
-    segments: 5
+    title: 学科地图画的是能力坐标，不是知识目录
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.93
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

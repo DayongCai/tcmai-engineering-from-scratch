@@ -29,68 +29,67 @@ platform:
 
 chapters:
   - slug: 01-yanjiu-fanshi
-    title: 第1章 中药药理的研究范式与特殊性
-    segments: 5
+    title: 中药药理不是化药药理的中文译本
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 0.96
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-yaoxiaoxue
-    title: 第2章 药效学：量效关系与模型选择
-    segments: 5
+    title: 中药的量效曲线不是一条线，是一个开关带
     video: rendered
-    estimate_minutes: 1.05
-    measured_minutes: 1.04
+    estimate_minutes: 1.05      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.04      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-jiebiao-yaoli
-    title: 第3章 解表、清热类药的药理
-    segments: 5
+    title: 解表与清热之间，隔着一个「表」字
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1
+    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-xiexia-qushi-wenli
-    title: 第4章 泻下、祛湿、温里与理气类药的药理
-    segments: 5
+    title: 攻邪之品见效最快，账单也最快到期
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1.01
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.01      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-huoxue-yaoli
-    title: 第5章 活血化瘀与止血类药的药理
-    segments: 5
+    title: 活血化瘀的研究热度来自指标好测，不来自疗效更硬
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.99
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.99      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-buxu-mianyi
-    title: 第6章 补虚类药的免疫调节
-    segments: 5
+    title: 补虚之品能提高免疫，也能把免疫按下去
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 0.99
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.99      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-huatan-anshen
-    title: 第7章 化痰平喘与安神类药的药理
-    segments: 5
+    title: 痰与神都没有化验单，这一章只能靠替代终点说话
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1.02
+    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.02      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-duxing-anquan
-    title: 第8章 中药的毒性与安全评价
-    segments: 5
+    title: 毒性分级写在书上，安全窗写在实验里，两套数不能互相换算
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 0.98
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.98      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-yaodai-peiwu
-    title: 第9章 药代动力学与配伍影响
-    segments: 5
+    title: 配伍改的不是药效的强弱，是有效成分进到血里的量
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1.02
+    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.02      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-zhengxing-moxing
-    title: 第10章 动物模型与证候模型的争议
-    segments: 5
+    title: 药效不是药的性质，是药与模型之间的一个差
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.93
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 11-zhengju-fenji
-    title: 第11章 药理证据的分级与临床转化
-    segments: 5
+    title: 一条药理证据的等级，先由药材能不能复现决定
     video: rendered
-    estimate_minutes: 1.05
-    measured_minutes: 1.07
+    estimate_minutes: 1.05      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.07      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

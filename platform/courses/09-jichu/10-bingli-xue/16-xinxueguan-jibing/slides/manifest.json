@@ -1,7 +1,7 @@
 {
   "chapter": "16-xinxueguan-jibing",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 43,
+  "segmentCount": 13,
   "slides": [
     {
       "n": 1,
@@ -11,7 +11,7 @@
     {
       "n": 2,
       "segment": 2,
-      "chars": 63
+      "chars": 28
     },
     {
       "n": 3,
@@ -26,6 +26,196 @@
     {
       "n": 5,
       "segment": 5,
+      "chars": 344
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 398
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 312
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 113
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 379
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 154
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 406
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 420
+    },
+    {
+      "n": 13,
+      "segment": 8,
+      "chars": 250
+    },
+    {
+      "n": 14,
+      "segment": 9,
+      "chars": 362
+    },
+    {
+      "n": 15,
+      "segment": 9,
+      "chars": 306
+    },
+    {
+      "n": 16,
+      "segment": 9,
+      "chars": 277
+    },
+    {
+      "n": 17,
+      "segment": 9,
+      "chars": 394
+    },
+    {
+      "n": 18,
+      "segment": 9,
+      "chars": 238
+    },
+    {
+      "n": 19,
+      "segment": 9,
+      "chars": 196
+    },
+    {
+      "n": 20,
+      "segment": 10,
+      "chars": 345
+    },
+    {
+      "n": 21,
+      "segment": 10,
+      "chars": 95
+    },
+    {
+      "n": 22,
+      "segment": 11,
+      "chars": 416
+    },
+    {
+      "n": 23,
+      "segment": 11,
+      "chars": 291
+    },
+    {
+      "n": 24,
+      "segment": 11,
+      "chars": 305
+    },
+    {
+      "n": 25,
+      "segment": 11,
+      "chars": 306
+    },
+    {
+      "n": 26,
+      "segment": 11,
+      "chars": 316
+    },
+    {
+      "n": 27,
+      "segment": 11,
+      "chars": 317
+    },
+    {
+      "n": 28,
+      "segment": 11,
+      "chars": 286
+    },
+    {
+      "n": 29,
+      "segment": 11,
+      "chars": 287
+    },
+    {
+      "n": 30,
+      "segment": 11,
+      "chars": 293
+    },
+    {
+      "n": 31,
+      "segment": 11,
+      "chars": 294
+    },
+    {
+      "n": 32,
+      "segment": 11,
+      "chars": 316
+    },
+    {
+      "n": 33,
+      "segment": 11,
+      "chars": 290
+    },
+    {
+      "n": 34,
+      "segment": 12,
+      "chars": 396
+    },
+    {
+      "n": 35,
+      "segment": 12,
+      "chars": 390
+    },
+    {
+      "n": 36,
+      "segment": 12,
+      "chars": 365
+    },
+    {
+      "n": 37,
+      "segment": 12,
+      "chars": 90
+    },
+    {
+      "n": 38,
+      "segment": 12,
+      "chars": 394
+    },
+    {
+      "n": 39,
+      "segment": 12,
+      "chars": 31
+    },
+    {
+      "n": 40,
+      "segment": 12,
+      "chars": 398
+    },
+    {
+      "n": 41,
+      "segment": 12,
+      "chars": 419
+    },
+    {
+      "n": 42,
+      "segment": 12,
+      "chars": 419
+    },
+    {
+      "n": 43,
+      "segment": 13,
       "chars": 52
     }
   ]

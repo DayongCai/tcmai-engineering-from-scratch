@@ -1,31 +1,91 @@
 {
   "chapter": "04-yundong-xitong",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 17,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 8
+      "chars": 30
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 61
+      "chars": 26
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 15
+      "chars": 90
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 138
+      "chars": 103
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 393
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 371
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 303
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 355
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 239
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 203
+    },
+    {
+      "n": 11,
+      "segment": 7,
+      "chars": 284
+    },
+    {
+      "n": 12,
+      "segment": 7,
+      "chars": 224
+    },
+    {
+      "n": 13,
+      "segment": 8,
+      "chars": 340
+    },
+    {
+      "n": 14,
+      "segment": 8,
+      "chars": 405
+    },
+    {
+      "n": 15,
+      "segment": 9,
+      "chars": 397
+    },
+    {
+      "n": 16,
+      "segment": 9,
+      "chars": 119
+    },
+    {
+      "n": 17,
+      "segment": 10,
       "chars": 52
     }
   ]

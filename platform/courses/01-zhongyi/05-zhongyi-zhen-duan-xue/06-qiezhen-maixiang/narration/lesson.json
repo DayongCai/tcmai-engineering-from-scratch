@@ -28,7 +28,7 @@
       "spoken": "「常见病脉（28脉之要）：浮脉（举之有余、按之不足）主表证」——《中医诊断学·第5章·5.1.2》",
       "estimateSeconds": 11,
       "audio": "002.mp3",
-      "audioSeconds": 9.77
+      "audioSeconds": 9.768
     },
     {
       "n": 3,
@@ -38,7 +38,7 @@
       "spoken": "教材在 5.1.2 的正文开头写下「28 脉之要」，随后两段确实把 28 个脉一个不落地讲完了。可当你只读段标题——浮沉迟数虚实洪细弦紧滑涩濡弱微 与 结代促、长短短脉、革牢、动脉、疾脉、散脉、芤脉、伏脉——把它们拼起来，得到的是 27 个脉名，不是 28 个。差的这一个是谁？是解析漏了，还是教材标题漏了？如果不把这件事查清，任何「按标题建 28 脉索引」的做法都会静默少一格，而且少的那一格不会报错。",
       "estimateSeconds": 41,
       "audio": "003.mp3",
-      "audioSeconds": 40.75
+      "audioSeconds": 40.752
     },
     {
       "n": 4,
@@ -58,10 +58,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "005.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 98.66,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 1.7,
+    "measuredMinutes": 1.64,
+    "ratio": 0.967
+  }
 }

@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"/>
-<title>第 10 章 · 推拿处方的结构化记录 · 幻灯片</title>
+<title>第 10 章 · 一份可复现的处方只由可判定字段构成 · 幻灯片</title>
 <style>
 
 :root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
@@ -59,24 +59,90 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <body>
 <div id="deck">
 <section class="slide" data-i="0">
-  <div class="slide-inner"><h1 class="big">第 10 章 · 推拿处方的结构化记录</h1></div>
-  <div class="slide-foot"><span>1 / 5</span><span>title</span></div>
+  <div class="slide-inner"><h1 class="big">第 10 章 · 一份可复现的处方只由可判定字段构成</h1></div>
+  <div class="slide-foot"><span>1 / 15</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「《难经·六十一难》」——教材·第3章·3.1.1。本章要回答的是：一次推拿该怎么记录，才能被别人复现。</blockquote></div>
-  <div class="slide-foot"><span>2 / 5</span><span>motto</span></div>
+  <div class="slide-inner"><blockquote class="motto">「望而知之者，谓之神」——《难经·六十一难》</blockquote></div>
+  <div class="slide-foot"><span>2 / 15</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
-  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">病历里写「推拿治疗一次」，等于没写；没有手法、部位、力度、时程，就没有可复现的处方。</p></div>
-  <div class="slide-foot"><span>3 / 5</span><span>problem</span></div>
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">五节底本 15,152 字，八法八词各出现 5～9 次（温法 9、汗法 9、清法 8、通法 7、泻法 6、和法 6、补法 5、散法 5），说明每一条都被认真展开过，不是列个名字；可真正能当字段用的结构只有「三元关系 6 处」与「三步法 1 处」。底本有完整的推理链，却没有一张字段表。于是出现一个很具体的困境：读完能复述「寒证选温法，用擦法、摩法、按揉法」，坐下来写病历却发现不知道哪一栏该填这句——链条被写成了段落，段落不能被下一班人继承。</p></div>
+  <div class="slide-foot"><span>3 / 15</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
-  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（推拿是在人身上用手完成的，力道与部位一旦错，后果立刻发生）+ 知识积累（本章 5 单元 15,152 汉字；三辨主 <strong>手法操作 680</strong>；四位面（作用）主 <strong>调整脏腑 78</strong>；引书 <strong>13 部</strong>；数值类命中 6）</p></div>
-  <div class="slide-foot"><span>4 / 5</span><span>roots</span></div>
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（推拿不写清就无法交接、无法追责：下一位医生不知道你按了哪里、按了多久、扳到哪个角度，出了事连复核的入口都没有）+ 知识积累（治则—治法—手法三级链条在教材里是叙述体，靠上下文承接，每一段都要读完全段才知道它属于哪一环；叙述体的好处是读得顺，坏处是不能逐项核对）</p></div>
+  <div class="slide-foot"><span>4 / 15</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
+  <div class="slide-inner"><div class="kicker">一、链条有五段，缺一段就不可复现</div>
+                <div class="compact"><p>底本的推理链是：四诊 → 辨证 → 治则 → 治法 → 手法与腧穴。五段各自有内容，也各自有能落成字段的东西。</p>
+<p><strong>四诊，尤重摸法。</strong> 底本说推拿「尤重触诊（摸法）：以手触摸病变部位，感知皮温之寒热、肌肉之松紧，有无压痛、条索、结节及异常活动」，且须与舌脉互参：舌淡胖嫩、脉沉细弱者多属虚寒，宜温宜补；舌红苔黄、脉滑数者多属实热，宜清宜泻；压痛酸胀而喜按者多属虚，刺痛拒按而固定不移者多属瘀。这三组对照本身就是三张两列的判读表。</p>
+<p><strong>辨证要辨三件事。</strong> 病位（经络循行、脏腑归属、五体层次，再加解剖层次：肌肉、韧带、关节还是椎间盘）、病性（寒热虚实，气滞、血瘀、痰湿、风寒）、标本缓急（急则治标，缓则治本）。</p>
+<p><strong>治则是战略。</strong> 底本列了治病求本、调整阴阳、因人因时因地制宜。其中一条对本课最有用，因为它直接给了量：手法之补泻——轻刺激、缓频率、长时间者为补，重刺激、快频率、短时间者为泻。</p></div></div>
+  <div class="slide-foot"><span>5 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">一、链条有五段，缺一段就不可复现</div>
+                <div class="compact"><p><strong>治法是战术，也就是八法。</strong> 温（擦法、摩法）、通（击法、叩法、拿法、弹拨法、搓法、抖法）、补、泻、汗（拿法、按揉法、擦法）、和（摩法、分推法、搓法）、散（揉法、摩法、擦法、搓法）、清。八法不是并列的词条，大体都按「适用什么证—用什么手法—操作注意什么」三段展开，所以八法八词各有 5～9 次命中。底本还给了一句总纲：临证立法，当先辨明病证之寒热虚实，再择相应治法与手法，做到法随证立、术随法施。</p>
+<p><strong>手法与腧穴是载体，选择有三个维度。</strong> 就证型（寒证选温法，用擦、摩、按揉；热证选清法，用轻快的一指禅推、推法；虚证选补法；实证选泻法、通法，用弹拨、点按、拿法）；就部位（头面宜一指禅推、抹、扫散，轻灵柔和；颈肩宜滚、拿、一指禅推；腰背宜滚、按揉、擦、扳；腹部宜摩、揉、按，和缓深透；四肢宜滚、拿、搓、抖）；就病种（内科以一指禅推、摩、揉为主，重在调理脏腑；伤科以滚、按揉、扳、拔伸为主，重在理筋整复）。</p></div></div>
+  <div class="slide-foot"><span>6 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">一、链条有五段，缺一段就不可复现</div>
+                <div class="compact"><p>五段俱全，链条才闭合。缺任何一段，下一位医生都无法从结论倒推回操作。</p></div></div>
+  <div class="slide-foot"><span>7 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">二、把段落改成字段</div>
+                <div class="compact dense"><p>底本没有病历模板，但五段链条本身可以逐段落成字段。下表是本章据底本重排的，不是教材原有格式：</p>
+<div class="table-wrap"><table><thead><tr><th>字段</th><th>取值来源</th><th>底本是否给判据</th></tr></thead><tbody><tr><td>主诉与病程</td><td>问诊</td><td>给（问诊内容）</td></tr><tr><td>诊断与鉴别</td><td>四诊 + 影像化验</td><td>给（各病证的鉴别点）</td></tr><tr><td>证型</td><td>病位 + 病性 + 标本</td><td>给（每病四五个证型）</td></tr><tr><td>治则</td><td>治病求本／调整阴阳／三因</td><td>给</td></tr><tr><td>治法</td><td>八法之一或组合</td><td>给（八法各有代表手法）</td></tr><tr><td>手法序列</td><td>三步：放松准备、治疗主法、整理收功</td><td>给</td></tr><tr><td>部位与腧穴</td><td>经络 + 解剖 + 单双侧</td><td>给（单侧有明示，如推桥弓单侧操作）</td></tr><tr><td>着力面与方向</td><td>指腹／掌根／小鱼际；垂直／平行／旋转</td><td>半给（有方向类目，无部位对照表）</td></tr><tr><td>频率与时间</td><td>次/分；分钟</td><td>半给（有区间，无逐穴值）</td></tr><tr><td>终点判据</td><td>「以…为度」</td><td>给名字，不给量</td></tr><tr><td>禁忌与转诊</td><td>各病证按语</td><td>给</td></tr></tbody></table></div></div></div>
+  <div class="slide-foot"><span>8 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">二、把段落改成字段</div>
+                <div class="compact"><p>前三栏是诊断，中间四栏是决策，后四栏是操作。这样一分，问题就暴露了：<strong>诊断与决策那七栏，底本给得相当厚；操作那四栏，两栏半给、一栏只给名字。</strong> 这也解释了为什么新手写病历总是前详后略——教材最厚的地方，正是最容易抄的地方。</p>
+<p>三步法值得单独说，因为它是底本唯一给出的时间结构：第一步放松准备「约占操作时间的三分之一」，用滚、揉、拿、按放松病变部位及邻近肌肉；第二步治疗主法，点按腧穴、弹拨、扳法、拔伸，须稳、准、巧，其中扳法与拔伸法须严格掌握适应证与禁忌证；第三步整理收功，搓、抖、擦与轻揉收尾，并「配合被动运动检查疗效」。</p>
+<p>最后半句是关键：整理阶段不是收尾礼节，是当场复核——被动运动就是一次即时评价。这一步把处方与疗效接上了，而它同样没有被写成任何字段。三分之一这个比例是底本给出的唯一时间分配，本章不把它外推到别的病种。</p></div></div>
+  <div class="slide-foot"><span>9 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">三、五条组合原则是处方的语法</div>
+                <div class="compact dense"><p>底本给了五条手法组合原则，每条都能变成一句可核的话：</p>
+<ol><li><strong>主次分明</strong>——主法治本、配法辅佐。核法：处方里能否指出哪一个是主法。</li><li><strong>刚柔相济</strong>——先以揉、摩安抚，再施弹拨、扳法，末以轻手法整理。核法：重手法是否被轻手法包住。</li><li><strong>动静结合</strong>——动态手法（滚、推、拿）与静态手法（按、点、扳、拔伸）交替。核法：是否连续三段同属动或同属静。</li><li><strong>循序渐进</strong>——刺激量轻-重-轻波浪式。核法：强度曲线是否单峰。</li><li><strong>整体与局部结合</strong>——局部手法之外兼顾相关经络与全身，并嘱练功。核法：有无带教嘱托一项。</li></ol>
+<p>五条在底本里都是叙述句，转成核法之后就成了处方的语法检查。一份处方若违反其中三条，多半不是辨证问题，是记录不全——比如写了扳法却没有放松准备（违反刚柔相济），写了三次同向重手法（违反循序渐进），写了局部却没有练功嘱托（违反整体与局部）。</p>
+<p>这一步比争论「这个手法对不对」有效，因为对不对要看人，全不全只看纸。</p></div></div>
+  <div class="slide-foot"><span>10 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">四、知识图谱把处方变成可校验的三元组</div>
+                <div class="compact"><p>12.2.2 描述的知识图谱，用的正是「实体—关系—实体」的三元组。它列出五类关系：手法—适应证、手法—禁忌证、穴位—主治、病证—证型、证型—治法。这五类在文中出现 6 处，第 6 处是把它串成一条链路的例子：「颈椎病—证型—治法—手法」。</p>
+<p>这五类关系恰好就是处方的校验规则：</p>
+<ul><li>写了「扳法」，就必须能查到它的禁忌证（脊髓型颈椎病、骨质疏松）；</li><li>写了证型，就必须能查到治法（气滞血瘀 → 活血化瘀、理气通络）；</li><li>写了穴位，就必须能查到主治（风池 → 头痛项强）；</li><li>写了手法，就必须能查到适应证（滚法 → 颈肩腰腿痛、软组织损伤）。</li></ul>
+<p>缺一条，处方在结构上就不完整——不是内容错，是链条断。校验的价值在于它只查「有没有」，不查「对不对」，所以可以自动化，也可以交给下一班人做。</p></div></div>
+  <div class="slide-foot"><span>11 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">四、知识图谱把处方变成可校验的三元组</div>
+                <div class="compact"><p>边界同样清楚：图谱的知识来源是经典著作、规划教材、临床指南、专家共识与病案，经人工整理与自然语言处理抽取，再由专家审核。它能查内部矛盾，不能替代辨证。底本对规范化的态度一贯谨慎——规范化不等于机械化，标准化不等于僵化。一份自洽而错误的处方，三元组拦不住；但它至少能让错误在纸面上显形。</p></div></div>
+  <div class="slide-foot"><span>12 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">五、代价与边界</div>
+                <div class="compact"><p><strong>字段表是重排的，不是原文。</strong> 本章十一项字段据底本链条重排，底本没有给任何一版病历模板，也没有字段顺序的推荐。它可以当记录清单用，不能当教材原文引用。</p>
+<p><strong>两个空仍然空着。</strong> 单穴时长、着力面与压力的逐项数值，底本不给，本课不给。三步法的三分之一是底本唯一的时间比例，不能推到其他病种；八法的代表手法是底本给的，但每个手法用多久、多快，仍回到剂量那一层的老问题。</p>
+<p><strong>图谱的边界。</strong> 三元组校验查内部一致性，不查临床正确性；它能防止「写了扳法却没查禁忌」这类结构性漏项，防不住「证型判错」这类判断性错误。</p>
+<p><strong>方法的边界。</strong> 八法词频、三元关系处数、三步法与三分之一由正则与字符串计数从文本层现算，命令见下节；词频说明教材写了什么、写得多厚，不说明哪种治法更常用。教材改版后数字会变，断言会先失败。</p></div></div>
+  <div class="slide-foot"><span>13 / 15</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">五、代价与边界</div>
+                <div class="compact"><blockquote><p><strong>免责声明：</strong> 本章为教学整理，不构成诊疗建议，也不能替代病历书写规范与执业要求。文中字段表与校验规则用于教学演练；实际病历须遵循所在机构的书写规范与法规要求。任何处方的实施须由受训人员在明确诊断、核对禁忌后进行，扳法、拔伸法等高风险手法尤须谨慎。</p></blockquote></div></div>
+  <div class="slide-foot"><span>14 / 15</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="14">
   <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
-  <div class="slide-foot"><span>5 / 5</span><span>disclaimer</span></div>
+  <div class="slide-foot"><span>15 / 15</span><span>disclaimer</span></div>
 </section>
 </div>
 <div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>

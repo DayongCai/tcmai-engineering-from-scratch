@@ -1,13 +1,15 @@
 #!/usr/bin/env node
 /**
- * 针灸学 · 第 27 章 皮肤外科病证：本章统计口径
- * 课程: departments/03-zhenjiu/16-zhenjiu-xue/chapters/27-piwai-bingzheng/docs/zh.md
- * 数据: standards/zhenjiu-xue/units.json（250 单元层，每单元带三辨与四位面词频）
- * 取数: standards/zhenjiu-xue/chapter-map.json（课程章 → 教材单元号）
- * 依赖: 仅 Node.js 标准库
+ * 针灸学 · 第 27 章 皮肤外科病证：皮损看得见，局部压过循经：正文与习题自检
+ * 课程: departments/03-zhenjiu/16-zhenjiu-xue/chapters/27-piwai-bingzheng
+ * 依赖: 仅 Node.js 标准库；只读 ../docs/zh.md 与 ../quiz.json，不读 standards/。
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 九病的辨证是定位与分期：动、形、位、边、期、度、筋，各自对应一个可指认的量。
+ *
+ * 判据（任一不满足即 exit 1）：
+ *   正文 ≥ 2500 汉字、二级节 ≥ 3；习题 6 题（pre 1 / check 3 / post 2）；
+ *   每题 4 个选项、correct 为合法下标；explain 40～80 汉字；
+ *   3 道 check 题的正确选项里都有一段 ≥6 汉字的话在本章正文中原样出现。
  */
 
 'use strict';
@@ -15,87 +17,75 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'zhenjiu-xue', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DIR = __dirname;
+const DOC = path.join(DIR, '..', 'docs', 'zh.md');
+const QUIZ = path.join(DIR, '..', 'quiz.json');
+
+const CH = '27';
+const TITLE = '皮肤外科病证：皮损看得见，局部压过循经';
+const KEYS = ["阿是穴","按语","扭伤"];
+
+const doc = fs.readFileSync(DOC, 'utf8');
+const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+
+const hz = (s) => (String(s || '').match(/[\u4e00-\u9fff]/g) || []).length;
+const secs = (doc.match(/^## /gm) || []).length;
+
+/** 正文里的 n 字连续汉字片段集合 */
+function shingles(text, n) {
+  const clean = String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ');
+  const out = new Set();
+  for (const seg of clean.split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
   }
-  throw new Error('没找到 standards/zhenjiu-xue/units.json —— 章节目录是否已脱离仓库？');
+  return out;
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'zhenjiu-xue', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'zhenjiu-xue', 'chapter-map.json');
-const CHAPTER = '27';
-const SLUG = '27-piwai-bingzheng';
+const body6 = shingles(doc, 6);
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+/** 正确选项里是否有一段 ≥6 汉字的话真的出现在正文里 */
+function grounded(s) {
+  const clean = String(s || '').replace(/[^\u4e00-\u9fff]/g, '');
+  for (let i = 0; i + 6 <= clean.length; i += 1) if (body6.has(clean.slice(i, i + 6))) return true;
+  return false;
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
+const qs = Array.isArray(quiz.questions) ? quiz.questions : [];
+const stages = { pre: 0, check: 0, post: 0 };
+const problems = [];
+for (const q of qs) stages[q.stage] = (stages[q.stage] || 0) + 1;
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+if (hz(doc) < 2500) problems.push('正文只有 ' + hz(doc) + ' 汉字（需 ≥2500）');
+if (secs < 3) problems.push('二级节只有 ' + secs + ' 节（需 ≥3）');
+if (qs.length !== 6) problems.push('习题 ' + qs.length + ' 题（需 6）');
+if (stages.pre !== 1 || stages.check !== 3 || stages.post !== 2) {
+  problems.push('题段分布 pre ' + stages.pre + ' / check ' + stages.check + ' / post ' + stages.post + '（需 1/3/2）');
+}
+for (const q of qs) {
+  const opts = Array.isArray(q.options) ? q.options : [];
+  if (opts.length !== 4) problems.push('有题不是 4 选项：' + q.question);
+  if (!(Number.isInteger(q.correct) && q.correct >= 0 && q.correct < opts.length)) {
+    problems.push('correct 下标非法：' + q.question);
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  const n = hz(q.explain || q.explanation);
+  if (n < 40 || n > 80) problems.push('explain ' + n + ' 汉字（需 40～80）：' + q.question);
 }
+for (const k of KEYS) if (!doc.includes(k)) problems.push('正文缺少关键词：' + k);
 
-function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+const checks = qs.filter((q) => q.stage === 'check');
+const hit = checks.filter((q) => grounded(q.options[q.correct])).length;
+if (hit !== 3) problems.push('接地的 check 题 ' + hit + ' 道（需 3）');
 
-  console.log(`针灸学 · 第 ${CHAPTER} 章 ${cm.title}`);
-  console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
-  console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
-  console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/zhenjiu-xue/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+const minExplain = qs.length ? Math.min(...qs.map((q) => hz(q.explain || q.explanation))) : 0;
+const maxExplain = qs.length ? Math.max(...qs.map((q) => hz(q.explain || q.explanation))) : 0;
+
+console.log('第 ' + CH + ' 章 · ' + TITLE);
+console.log('正文 ' + hz(doc) + ' 汉字 · 二级节 ' + secs);
+console.log('习题 ' + qs.length + ' 题（pre ' + stages.pre + ' / check ' + stages.check + ' / post ' + stages.post + '）· explain ' + minExplain + '～' + maxExplain + ' 汉字');
+console.log('接地 check 题 ' + hit + '/' + checks.length + ' · 关键词 ' + KEYS.join('、'));
+if (problems.length) {
+  console.error('自检未通过：');
+  for (const p of problems) console.error('  - ' + p);
+  process.exit(1);
 }
-
-if (require.main === module) main();
-
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+console.log('自检通过：习题与正文同源。');

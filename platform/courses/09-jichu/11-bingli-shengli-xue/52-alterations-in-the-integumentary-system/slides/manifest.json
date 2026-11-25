@@ -1,7 +1,7 @@
 {
   "chapter": "52-alterations-in-the-integumentary-system",
-  "slideCount": 37,
-  "segmentCount": 21,
+  "slideCount": 33,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
@@ -11,7 +11,7 @@
     {
       "n": 2,
       "segment": 2,
-      "chars": 76
+      "chars": 29
     },
     {
       "n": 3,
@@ -26,166 +26,146 @@
     {
       "n": 5,
       "segment": 5,
-      "chars": 294
+      "chars": 306
     },
     {
       "n": 6,
       "segment": 5,
-      "chars": 195
+      "chars": 394
     },
     {
       "n": 7,
-      "segment": 6,
-      "chars": 338
+      "segment": 5,
+      "chars": 367
     },
     {
       "n": 8,
-      "segment": 6,
-      "chars": 132
-    },
-    {
-      "n": 9,
-      "segment": 7,
-      "chars": 254
-    },
-    {
-      "n": 10,
-      "segment": 7,
-      "chars": 307
-    },
-    {
-      "n": 11,
-      "segment": 8,
-      "chars": 416
-    },
-    {
-      "n": 12,
-      "segment": 8,
-      "chars": 144
-    },
-    {
-      "n": 13,
-      "segment": 9,
-      "chars": 398
-    },
-    {
-      "n": 14,
-      "segment": 9,
-      "chars": 63
-    },
-    {
-      "n": 15,
-      "segment": 10,
-      "chars": 297
-    },
-    {
-      "n": 16,
-      "segment": 10,
-      "chars": 131
-    },
-    {
-      "n": 17,
-      "segment": 11,
-      "chars": 304
-    },
-    {
-      "n": 18,
-      "segment": 11,
-      "chars": 221
-    },
-    {
-      "n": 19,
-      "segment": 12,
-      "chars": 320
-    },
-    {
-      "n": 20,
-      "segment": 12,
-      "chars": 182
-    },
-    {
-      "n": 21,
-      "segment": 13,
-      "chars": 409
-    },
-    {
-      "n": 22,
-      "segment": 13,
-      "chars": 103
-    },
-    {
-      "n": 23,
-      "segment": 14,
-      "chars": 340
-    },
-    {
-      "n": 24,
-      "segment": 14,
-      "chars": 243
-    },
-    {
-      "n": 25,
-      "segment": 15,
-      "chars": 406
-    },
-    {
-      "n": 26,
-      "segment": 15,
-      "chars": 111
-    },
-    {
-      "n": 27,
-      "segment": 16,
-      "chars": 380
-    },
-    {
-      "n": 28,
-      "segment": 16,
-      "chars": 127
-    },
-    {
-      "n": 29,
-      "segment": 17,
-      "chars": 351
-    },
-    {
-      "n": 30,
-      "segment": 17,
-      "chars": 201
-    },
-    {
-      "n": 31,
-      "segment": 18,
-      "chars": 403
-    },
-    {
-      "n": 32,
-      "segment": 18,
-      "chars": 183
-    },
-    {
-      "n": 33,
-      "segment": 19,
-      "chars": 449
-    },
-    {
-      "n": 34,
-      "segment": 19,
-      "chars": 127
-    },
-    {
-      "n": 35,
-      "segment": 20,
+      "segment": 5,
       "chars": 410
     },
     {
-      "n": 36,
-      "segment": 20,
-      "chars": 223
+      "n": 9,
+      "segment": 5,
+      "chars": 407
     },
     {
-      "n": 37,
-      "segment": 21,
+      "n": 10,
+      "segment": 5,
+      "chars": 251
+    },
+    {
+      "n": 11,
+      "segment": 6,
+      "chars": 410
+    },
+    {
+      "n": 12,
+      "segment": 6,
+      "chars": 377
+    },
+    {
+      "n": 13,
+      "segment": 6,
+      "chars": 380
+    },
+    {
+      "n": 14,
+      "segment": 6,
+      "chars": 309
+    },
+    {
+      "n": 15,
+      "segment": 6,
+      "chars": 320
+    },
+    {
+      "n": 16,
+      "segment": 6,
+      "chars": 398
+    },
+    {
+      "n": 17,
+      "segment": 6,
+      "chars": 308
+    },
+    {
+      "n": 18,
+      "segment": 7,
+      "chars": 354
+    },
+    {
+      "n": 19,
+      "segment": 7,
+      "chars": 331
+    },
+    {
+      "n": 20,
+      "segment": 7,
+      "chars": 382
+    },
+    {
+      "n": 21,
+      "segment": 7,
+      "chars": 406
+    },
+    {
+      "n": 22,
+      "segment": 7,
+      "chars": 382
+    },
+    {
+      "n": 23,
+      "segment": 7,
+      "chars": 373
+    },
+    {
+      "n": 24,
+      "segment": 7,
+      "chars": 403
+    },
+    {
+      "n": 25,
+      "segment": 7,
+      "chars": 183
+    },
+    {
+      "n": 26,
+      "segment": 8,
+      "chars": 449
+    },
+    {
+      "n": 27,
+      "segment": 8,
+      "chars": 127
+    },
+    {
+      "n": 28,
+      "segment": 9,
+      "chars": 410
+    },
+    {
+      "n": 29,
+      "segment": 9,
+      "chars": 371
+    },
+    {
+      "n": 30,
+      "segment": 9,
+      "chars": 402
+    },
+    {
+      "n": 31,
+      "segment": 9,
+      "chars": 365
+    },
+    {
+      "n": 32,
+      "segment": 9,
+      "chars": 121
+    },
+    {
+      "n": 33,
+      "segment": 10,
       "chars": 52
     }
   ]

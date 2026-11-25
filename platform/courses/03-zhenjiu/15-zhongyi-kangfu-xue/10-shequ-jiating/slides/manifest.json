@@ -1,31 +1,86 @@
 {
   "chapter": "10-shequ-jiating",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 16,
+  "segmentCount": 8,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 12
+      "chars": 27
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 79
+      "chars": 136
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 16
+      "chars": 299
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 107
+      "chars": 179
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 131
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 347
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 406
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 409
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 352
+    },
+    {
+      "n": 10,
+      "segment": 6,
+      "chars": 198
+    },
+    {
+      "n": 11,
+      "segment": 6,
+      "chars": 339
+    },
+    {
+      "n": 12,
+      "segment": 6,
+      "chars": 403
+    },
+    {
+      "n": 13,
+      "segment": 6,
+      "chars": 418
+    },
+    {
+      "n": 14,
+      "segment": 7,
+      "chars": 432
+    },
+    {
+      "n": 15,
+      "segment": 7,
+      "chars": 227
+    },
+    {
+      "n": 16,
+      "segment": 8,
       "chars": 52
     }
   ]

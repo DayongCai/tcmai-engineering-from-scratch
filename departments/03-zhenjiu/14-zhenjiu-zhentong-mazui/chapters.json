@@ -4,7 +4,7 @@
   {
    "n": 1,
    "slug": "01-tengtong-shengli",
-   "title": "疼痛生理与评估",
+   "title": "痛的层次决定评估指标，指标决定针能不能进场",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -12,7 +12,7 @@
   {
    "n": 2,
    "slug": "02-zhentong-jizhi",
-   "title": "针刺镇痛机制",
+   "title": "机制的用处不在解释痛，而在规定什么算证据",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -20,7 +20,7 @@
   {
    "n": 3,
    "slug": "03-dianzhen-canshu",
-   "title": "电针参数与量效",
+   "title": "电针真正可调的只有两个把手，其余都是刻度换算",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -28,7 +28,7 @@
   {
    "n": 4,
    "slug": "04-jixing-tong",
-   "title": "急性痛与术后镇痛",
+   "title": "急性痛是唯一能在二十四小时内被证伪的场景",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -36,7 +36,7 @@
   {
    "n": 5,
    "slug": "05-manxing-tong",
-   "title": "慢性痛",
+   "title": "慢性痛的分水岭不在痛了多久，而在性质与失能是否已经改写",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -44,7 +44,7 @@
   {
    "n": 6,
    "slug": "06-zhenci-mazui",
-   "title": "针刺辅助麻醉",
+   "title": "针麻能减的是药量，减不掉的是麻醉医师的判断",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -52,7 +52,7 @@
   {
    "n": 7,
    "slug": "07-weishouqi",
-   "title": "围手术期应用",
+   "title": "围手术期的针刺，价值在三个时间窗而不在一套手法",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -60,7 +60,7 @@
   {
    "n": 8,
    "slug": "08-anquan-zhengju",
-   "title": "安全与证据等级",
+   "title": "「有效」与「证据充分」是两列，并成一列就会说谎",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

@@ -1,31 +1,76 @@
 {
   "chapter": "06-xibao-he",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 14,
+  "segmentCount": 13,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 7
+      "chars": 33
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 78
+      "chars": 28
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 14
+      "chars": 226
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 128
+      "chars": 118
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 284
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 375
+    },
+    {
+      "n": 7,
+      "segment": 7,
+      "chars": 377
+    },
+    {
+      "n": 8,
+      "segment": 8,
+      "chars": 256
+    },
+    {
+      "n": 9,
+      "segment": 9,
+      "chars": 326
+    },
+    {
+      "n": 10,
+      "segment": 10,
+      "chars": 394
+    },
+    {
+      "n": 11,
+      "segment": 10,
+      "chars": 78
+    },
+    {
+      "n": 12,
+      "segment": 11,
+      "chars": 334
+    },
+    {
+      "n": 13,
+      "segment": 12,
+      "chars": 401
+    },
+    {
+      "n": 14,
+      "segment": 13,
       "chars": 52
     }
   ]

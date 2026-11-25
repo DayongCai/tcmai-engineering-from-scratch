@@ -1,6 +1,6 @@
 {
  "$generated": "node scripts/build_content_board.js",
- "generatedAt": "2026-11-23",
+ "generatedAt": "2026-11-25",
  "rules": {
   "structure": "catalog.json（SSOT）",
   "chapters": "catalog.chaptersBuilt + 盘上 departments/*/*/chapters/* 目录核对",
@@ -17,8 +17,8 @@
   "chaptersPct": 100,
   "textbookSubjects": 143,
   "textbookChapters": 2161,
-  "hanzi": 30326883,
-  "nonWs": 36575996,
+  "hanzi": 30981895,
+  "nonWs": 37382957,
   "syndromes": 97,
   "syndromeUnits": 104,
   "shanghanTiao": 398,
@@ -213,7 +213,7 @@
    "chaptersTarget": 235,
    "chaptersBuilt": 235,
    "textbookSubjects": 17,
-   "hanzi": 2856555,
+   "hanzi": 2931643,
    "thin": 4,
    "noBook": 4,
    "videos": 0
@@ -226,7 +226,7 @@
    "chaptersTarget": 228,
    "chaptersBuilt": 228,
    "textbookSubjects": 16,
-   "hanzi": 2504492,
+   "hanzi": 2558531,
    "thin": 2,
    "noBook": 6,
    "videos": 0
@@ -252,7 +252,7 @@
    "chaptersTarget": 348,
    "chaptersBuilt": 348,
    "textbookSubjects": 25,
-   "hanzi": 6919411,
+   "hanzi": 7208893,
    "thin": 2,
    "noBook": 2,
    "videos": 0
@@ -265,7 +265,7 @@
    "chaptersTarget": 292,
    "chaptersBuilt": 292,
    "textbookSubjects": 17,
-   "hanzi": 4674801,
+   "hanzi": 4707187,
    "thin": 1,
    "noBook": 9,
    "videos": 0
@@ -304,7 +304,7 @@
    "chaptersTarget": 315,
    "chaptersBuilt": 315,
    "textbookSubjects": 16,
-   "hanzi": 5303634,
+   "hanzi": 5507651,
    "thin": 3,
    "noBook": 1,
    "videos": 0

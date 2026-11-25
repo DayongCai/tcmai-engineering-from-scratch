@@ -5,7 +5,7 @@
   {
    "n": 1,
    "slug": "01-xulun",
-   "title": "绪论",
+   "title": "临床中药学不是中药学的缩写，而是换了一道题",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/01-xulun/docs/zh.md",
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-jiben-lilun",
-   "title": "中药的基本理论",
+   "title": "药性不是四组形容词，而是一套能把药放到证上的坐标",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/02-jiben-lilun/docs/zh.md",
@@ -23,7 +23,7 @@
   {
    "n": 3,
    "slug": "03-paozhi-zhiji",
-   "title": "中药的炮制与制剂",
+   "title": "炮制不改药名，改的是这味药在方子里干什么",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/03-paozhi-zhiji/docs/zh.md",
@@ -32,7 +32,7 @@
   {
    "n": 4,
    "slug": "04-yongfa-jiliang",
-   "title": "中药的用法与剂量",
+   "title": "煎法与剂量是两处最容易被跳过的疗效变量",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/04-yongfa-jiliang/docs/zh.md",
@@ -41,7 +41,7 @@
   {
    "n": 5,
    "slug": "05-jiebiao",
-   "title": "解表药",
+   "title": "解表药考的是一句话：这个热在表还是在里",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/05-jiebiao/docs/zh.md",
@@ -50,7 +50,7 @@
   {
    "n": 6,
    "slug": "06-qingre",
-   "title": "清热药",
+   "title": "清热药分五类，分的不是五种热而是五个位置",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/06-qingre/docs/zh.md",
@@ -59,7 +59,7 @@
   {
    "n": 7,
    "slug": "07-xiexia-qushi",
-   "title": "泻下药与祛风湿药",
+   "title": "泻下与祛风湿都攻邪，难的不是敢用而是判定邪还在不在",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/07-xiexia-qushi/docs/zh.md",
@@ -68,7 +68,7 @@
   {
    "n": 8,
    "slug": "08-huashi-lijin",
-   "title": "化湿药与利水渗湿药",
+   "title": "湿与水的分界不在病名，而在小便通不通、肿不肿",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/08-huashi-lijin/docs/zh.md",
@@ -77,7 +77,7 @@
   {
    "n": 9,
    "slug": "09-wenli-liqi-xiaoshi",
-   "title": "温里药·理气药·消食药",
+   "title": "温、行、消三法并立，是因为中焦的寒、滞、积常同时到场",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/09-wenli-liqi-xiaoshi/docs/zh.md",
@@ -86,7 +86,7 @@
   {
    "n": 10,
    "slug": "10-zhixue-huoxue",
-   "title": "止血药与活血化瘀药",
+   "title": "止血与活血是同一件事的两端：瘀不去则血不归经",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/10-zhixue-huoxue/docs/zh.md",
@@ -95,7 +95,7 @@
   {
    "n": 11,
    "slug": "11-huatan-anshen",
-   "title": "化痰止咳平喘药与安神药",
+   "title": "痰与神是一件事的两头：化痰即所以安神，安神须先问痰",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/11-huatan-anshen/docs/zh.md",
@@ -104,7 +104,7 @@
   {
    "n": 12,
    "slug": "12-pinggan-kaiqiao",
-   "title": "平肝息风药与开窍药",
+   "title": "平肝息风治的是「动」，开窍治的是「闭」：闭证与脱证只差一步",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/12-pinggan-kaiqiao/docs/zh.md",
@@ -113,7 +113,7 @@
   {
    "n": 13,
    "slug": "13-buxu",
-   "title": "补虚药",
+   "title": "补虚药最容易用错：补有方向，补更有时机",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/13-buxu/docs/zh.md",
@@ -122,7 +122,7 @@
   {
    "n": 14,
    "slug": "14-shoushe-yongtu",
-   "title": "收涩药与涌吐药",
+   "title": "收涩与涌吐是一对反向操作：一个关门，一个开闸",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/14-shoushe-yongtu/docs/zh.md",
@@ -131,7 +131,7 @@
   {
    "n": 15,
    "slug": "15-gongdu-badu",
-   "title": "攻毒杀虫止痒药与拔毒化腐生肌药",
+   "title": "以毒攻毒的药，边界写在剂量与用法上",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/15-gongdu-badu/docs/zh.md",

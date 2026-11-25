@@ -1,31 +1,91 @@
 {
   "chapter": "10-kangfu-shuzihua",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 17,
+  "segmentCount": 12,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 13
+      "chars": 21
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 85
+      "chars": 30
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 13
+      "chars": 135
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 110
+      "chars": 142
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 380
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 319
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 232
+    },
+    {
+      "n": 8,
+      "segment": 7,
+      "chars": 414
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 165
+    },
+    {
+      "n": 10,
+      "segment": 8,
+      "chars": 359
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 102
+    },
+    {
+      "n": 12,
+      "segment": 9,
+      "chars": 317
+    },
+    {
+      "n": 13,
+      "segment": 9,
+      "chars": 256
+    },
+    {
+      "n": 14,
+      "segment": 10,
+      "chars": 388
+    },
+    {
+      "n": 15,
+      "segment": 11,
+      "chars": 341
+    },
+    {
+      "n": 16,
+      "segment": 11,
+      "chars": 94
+    },
+    {
+      "n": 17,
+      "segment": 12,
       "chars": 52
     }
   ]

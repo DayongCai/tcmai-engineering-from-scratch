@@ -28,7 +28,7 @@
       "spoken": "「《药物警戒质量管理规范（2021）·第四十九条》」——外源课：条文依据为「外源·药物警戒质量管理规范（2021） 第四十九条」，非教材原文篇名。本章要回答的是：从个例报告到风险控制：时限、信号与定期报告这一环节的核心判据是什么。",
       "estimateSeconds": 25,
       "audio": "002.mp3",
-      "audioSeconds": 22.94
+      "audioSeconds": 22.944
     },
     {
       "n": 3,
@@ -38,7 +38,7 @@
       "spoken": "这一章是全课唯一有「硬时钟」的一段：15 日、7 日、每年、每 5 年。",
       "estimateSeconds": 7,
       "audio": "003.mp3",
-      "audioSeconds": 6.67
+      "audioSeconds": 6.672
     },
     {
       "n": 4,
@@ -48,7 +48,7 @@
       "spoken": "环境逼迫（药事管理的失误大多不是「不知道该做什么」，而是「做了但没留证据、变了但没报」）+ 知识积累（本章 1 单元 2,014 汉字；三辨主 质量与责任 35；四位面（制度环节）主 上市后 15；引书 1 部 1 次；数值类命中 0）",
       "estimateSeconds": 23,
       "audio": "004.mp3",
-      "audioSeconds": 21.55
+      "audioSeconds": 21.552
     },
     {
       "n": 5,
@@ -58,10 +58,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "005.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 69.31,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 1.2,
+    "measuredMinutes": 1.16,
+    "ratio": 0.963
+  }
 }

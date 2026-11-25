@@ -29,50 +29,49 @@ platform:
 
 chapters:
   - slug: 01-yuanliu-lilun
-    title: 第1章 整脊源流与理论
-    segments: 5
+    title: 整脊的第一道门槛不是手法，是「什么算有效」
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 0.98
+    estimate_minutes: 12.30      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.71      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-jiepou-lixue
-    title: 第2章 脊柱解剖与生物力学
-    segments: 5
+    title: 脊柱的稳定不是骨头撑住的，是三种组织在互相欠账
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 0.99
+    estimate_minutes: 12.35      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.84      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-yingxiang-pinggu
-    title: 第3章 影像评估与适应证
-    segments: 5
+    title: 影像的用法是排除禁忌，不是找病因
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 0.99
+    estimate_minutes: 11.15      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-shoufa-tixi
-    title: 第4章 整脊手法体系
-    segments: 5
+    title: 手法分三层，风险也分三层，两层必须一一对上
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.98
+    estimate_minutes: 10.83      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.49      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-jingzhui
-    title: 第5章 颈椎整脊
-    segments: 5
+    title: 颈椎不是一段，是两段，风险也在两段之间分
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.94
+    estimate_minutes: 12.70      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 12.45      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-xiongyaozhui
-    title: 第6章 胸腰椎整脊
-    segments: 5
+    title: 胸腰段的手法失误，多半不是瘫，是折
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.95
+    estimate_minutes: 11.08      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.83      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-gupen-xiayao
-    title: 第7章 骨盆与下肢力线
-    segments: 5
+    title: 骨盆是地基，但「地基歪了」是最容易被滥用的一句话
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.96
+    estimate_minutes: 10.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.66      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-fengxian-liaoxiao
-    title: 第8章 风险、禁忌与疗效评价
-    segments: 5
+    title: 不良事件不是意外，是可以分类的事件
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1.04
+    estimate_minutes: 10.87      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.67      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

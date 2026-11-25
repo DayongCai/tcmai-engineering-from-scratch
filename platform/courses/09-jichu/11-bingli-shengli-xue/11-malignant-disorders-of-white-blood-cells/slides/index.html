@@ -26,7 +26,12 @@ blockquote.motto{font-family:var(--serif);font-size:clamp(20px,2.6vw,34px);line-
   text-transform:uppercase;margin-bottom:14px}
 .kicker.warn{color:var(--cinnabar)}
 p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var(--serif)}
-.compact{font-size:clamp(19px,1.75vw,27px);line-height:1.85;max-height:70vh;overflow:auto}
+.compact{font-size:clamp(19px,1.75vw,27px);line-height:1.85;max-height:70vh;overflow:hidden}
+.compact.dense{font-size:clamp(16px,1.42vw,22px);line-height:1.6;max-height:80vh}
+.compact.dense table{font-size:14px}
+.compact.denser{font-size:clamp(14px,1.22vw,18px);line-height:1.5;max-height:82vh}
+.compact.denser table{font-size:12px}
+.compact.denser pre{font-size:12px}
 .compact h2,.compact h3{font-family:var(--serif);margin:.6em 0 .3em;font-size:1.15em}
 .compact pre{background:var(--paper-2);border:1px solid var(--line);border-radius:8px;padding:12px;overflow:auto;font-size:15px}
 .compact code{background:var(--paper-2);border:1px solid var(--line);border-radius:4px;padding:1px 4px;font-family:var(--mono)}
@@ -58,7 +63,7 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
   <div class="slide-foot"><span>1 / 28</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「细胞获得无限增殖能力却无法成熟」——补充·hermes-病理生理学讲义·第11章·11.2（《hermes-病理生理学讲义·第11章·11.2》）</blockquote></div>
+  <div class="slide-inner"><blockquote class="motto">「人有精、气、津、液、血、脉，余意以为一气耳，今乃辨为六名。」——《灵枢·决气》</blockquote></div>
   <div class="slide-foot"><span>2 / 28</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
@@ -70,163 +75,165 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
   <div class="slide-foot"><span>4 / 28</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
-  <div class="slide-inner"><div class="kicker">一、造血是分层放大的过程，阻滞就发生在层与层之间（讲义 11.1）</div>
-                <div class="compact"><p>讲义把造血写成一条从干细胞往下的梯子：多能造血干细胞在骨髓，向下分成共同髓系祖细胞与共同淋系祖细胞，再经定向祖细胞、前体细胞逐步成熟，最后释放入血。这条梯子每一级都由转录因子程序把关，讲义把失效的后果写成一句可检验的话：</p>
+  <div class="slide-inner"><div class="kicker">从造血到命名：分层放大、克隆性与三个坐标轴（11.1–11.3）</div>
+                <div class="compact dense"><h3 id="造血是分层放大的过程-阻滞就发生在层与层之间-讲义-11-1">造血是分层放大的过程，阻滞就发生在层与层之间（讲义 11.1）</h3>
+<p>讲义把造血写成一条从干细胞往下的梯子：多能造血干细胞在骨髓，向下分成共同髓系祖细胞与共同淋系祖细胞，再经定向祖细胞、前体细胞逐步成熟，最后释放入血。这条梯子每一级都由转录因子程序把关，讲义把失效的后果写成一句可检验的话：</p>
 <blockquote><p>「某一转录因子缺失或异常，细胞就会停在某个幼稚阶段」——补充·hermes-病理生理学讲义·第11章·11.1</p></blockquote>
 <p>紧接着给出这个现象的名字：</p>
 <blockquote><p>「分化阻滞（maturation arrest）」——补充·hermes-病理生理学讲义·第11章·11.1</p></blockquote>
-<p>把这两句连起来读，会看到一件事：<strong>阻滞不是「长得快」，是「停在那儿」</strong>。细胞确实在增殖，只是不再往下一步走，于是骨髓里堆起来的不是成熟细胞，而是本该继续分化的幼稚细胞。这就是后面 11.4 那条主线的胚胎——骨髓被幼稚细胞占满，不是因为它们生得多，而是因为它们的出口被堵了。</p>
-<p>讲义接着讲寿命差异，这一段决定了骨髓先掉谁：</p></div></div>
+<p>把这两句连起来读，会看到一件事：<strong>阻滞不是「长得快」，是「停在那儿」</strong>。细胞确实在增殖，只是不再往下一步走，于是骨髓里堆起来的不是成熟细胞，而是本该继续分化的幼稚细胞。这就是后面 11.4 那条主线的胚胎——骨髓被幼稚细胞占满，不是因为它们生得多，而是因为它们的出口被堵了。</p></div></div>
   <div class="slide-foot"><span>5 / 28</span><span>body</span></div>
 </section>
 <section class="slide" data-i="5">
-  <div class="slide-inner"><div class="kicker">一、造血是分层放大的过程，阻滞就发生在层与层之间（讲义 11.1）</div>
-                <div class="compact"><blockquote><p>「中性粒细胞数量最多、寿命短（血中数小时至数天），是急性抗感染的主力」——补充·hermes-病理生理学讲义·第11章·11.1</p></blockquote>
-<p>寿命短意味着更新快，更新快意味着对骨髓停产最敏感。淋巴细胞能再循环、在淋巴组织里长期存留，单核细胞进组织后变成巨噬细胞——它们的库存深，掉得慢。这一句解释了一个临床上很常见的次序：骨髓受抑时先出现粒细胞减少与血小板减少，贫血来得相对晚。讲义把这条次序当推论给出，不当口诀，这是它的写法：先给寿命，再让读者自己得出先后。</p></div></div>
+  <div class="slide-inner"><div class="kicker">从造血到命名：分层放大、克隆性与三个坐标轴（11.1–11.3）</div>
+                <div class="compact"><p>讲义接着讲寿命差异，这一段决定了骨髓先掉谁：</p>
+<blockquote><p>「中性粒细胞数量最多、寿命短（血中数小时至数天），是急性抗感染的主力」——补充·hermes-病理生理学讲义·第11章·11.1</p></blockquote>
+<p>寿命短意味着更新快，更新快意味着对骨髓停产最敏感。淋巴细胞能再循环、在淋巴组织里长期存留，单核细胞进组织后变成巨噬细胞——它们的库存深，掉得慢。这一句解释了一个临床上很常见的次序：骨髓受抑时先出现粒细胞减少与血小板减少，贫血来得相对晚。讲义把这条次序当推论给出，不当口诀，这是它的写法：先给寿命，再让读者自己得出先后。</p>
+<h3 id="克隆性-从一个细胞到一群子代-讲义-11-2">克隆性：从一个细胞到一群子代（讲义 11.2）</h3>
+<p>本章的根概念是克隆性。讲义的定义只有一句：</p>
+<blockquote><p>「单个细胞获得增殖与生存优势，其子代占据骨髓或淋巴组织」——补充·hermes-病理生理学讲义·第11章·11.2</p></blockquote></div></div>
   <div class="slide-foot"><span>6 / 28</span><span>body</span></div>
 </section>
 <section class="slide" data-i="6">
-  <div class="slide-inner"><div class="kicker">二、克隆性：从一个细胞到一群子代（讲义 11.2）</div>
-                <div class="compact"><p>本章的根概念是克隆性。讲义的定义只有一句：</p>
-<blockquote><p>「单个细胞获得增殖与生存优势，其子代占据骨髓或淋巴组织」——补充·hermes-病理生理学讲义·第11章·11.2</p></blockquote>
-<p>这句里有两个词要留住：<strong>获得</strong>与<strong>占据</strong>。获得说的是优势从哪来——不是外界给的，是细胞自己改的；占据说的是结果——不是「多了一点」，是占据了别人的位置。后者直接连到第一节的梯子：占据的方式就是把出口堵住。</p>
+  <div class="slide-inner"><div class="kicker">从造血到命名：分层放大、克隆性与三个坐标轴（11.1–11.3）</div>
+                <div class="compact dense"><p>这句里有两个词要留住：<strong>获得</strong>与<strong>占据</strong>。获得说的是优势从哪来——不是外界给的，是细胞自己改的；占据说的是结果——不是「多了一点」，是占据了别人的位置。后者直接连到第一节的梯子：占据的方式就是把出口堵住。</p>
 <p>讲义把多步骤演进拆成四类改变：基因结构改变、原癌基因激活与抑癌基因失活、分化阻滞、微环境与免疫监视逃逸。四类不是并列的四种病，而是一条链上的四个环节——结构改变提供起点，癌基因与抑癌基因决定增殖与存活的偏向，分化阻滞决定细胞停在哪儿，微环境与免疫逃逸决定这群细胞能不能待下去。</p>
 <p>其中第三类与第一节直接接上：</p>
-<blockquote><p>「细胞获得无限增殖能力却无法成熟」——补充·hermes-病理生理学讲义·第11章·11.2</p></blockquote></div></div>
+<blockquote><p>「细胞获得无限增殖能力却无法成熟」——补充·hermes-病理生理学讲义·第11章·11.2</p></blockquote>
+<p>讲义对这句的补充说明是骨髓中充满「有用功能不足」的幼稚细胞——注意它不是「没有功能」，是「功能不足」。这个措辞很紧：幼稚细胞并非完全不干活，它干得不够，而数量上又挤掉了干得够的那些。临床表现的两条主线，从这一个词上分叉。</p></div></div>
   <div class="slide-foot"><span>7 / 28</span><span>body</span></div>
 </section>
 <section class="slide" data-i="7">
-  <div class="slide-inner"><div class="kicker">二、克隆性：从一个细胞到一群子代（讲义 11.2）</div>
-                <div class="compact"><p>讲义对这句的补充说明是骨髓中充满「有用功能不足」的幼稚细胞——注意它不是「没有功能」，是「功能不足」。这个措辞很紧：幼稚细胞并非完全不干活，它干得不够，而数量上又挤掉了干得够的那些。临床表现的两条主线，从这一个词上分叉。</p>
-<p>多步骤这一点讲义讲得很克制，只用一句话交代：</p>
+  <div class="slide-inner"><div class="kicker">从造血到命名：分层放大、克隆性与三个坐标轴（11.1–11.3）</div>
+                <div class="compact dense"><p>多步骤这一点讲义讲得很克制，只用一句话交代：</p>
 <blockquote><p>「单一基因改变通常不足以致病，需多环节协同」——补充·hermes-病理生理学讲义·第11章·11.2</p></blockquote>
-<p>这句话有两个可用的推论：发病随年龄增长而上升（累积需要时间），以及损伤 DNA 的治疗本身会增加继发肿瘤风险（它也在制造改变）。两个推论都是机制推出来的，不是统计出来的——本章不给任何发生率，也不给任何年龄界值。</p></div></div>
+<p>这句话有两个可用的推论：发病随年龄增长而上升（累积需要时间），以及损伤 DNA 的治疗本身会增加继发肿瘤风险（它也在制造改变）。两个推论都是机制推出来的，不是统计出来的——本章不给任何发生率，也不给任何年龄界值。</p>
+<h3 id="三个坐标轴-为什么名字多而类别少-讲义-11-3">三个坐标轴：为什么名字多而类别少（讲义 11.3）</h3>
+<p>讲义面对命名混乱的办法不是列表，而是立轴：谱系（髓系 / 淋系）、成熟度（急性 / 慢性）、主要部位（骨髓为主 / 淋巴组织为主 / 浆细胞）。三轴一定，名字就成了坐标的组合。</p>
+<p>成熟度这一轴的定义写得最实：</p>
+<blockquote><p>「急性以原始细胞为主、进展快；慢性以较成熟细胞增多为主、病程惰性」——补充·hermes-病理生理学讲义·第11章·11.3</p></blockquote></div></div>
   <div class="slide-foot"><span>8 / 28</span><span>body</span></div>
 </section>
 <section class="slide" data-i="8">
-  <div class="slide-inner"><div class="kicker">三、三个坐标轴：为什么名字多而类别少（讲义 11.3）</div>
-                <div class="compact"><p>讲义面对命名混乱的办法不是列表，而是立轴：谱系（髓系 / 淋系）、成熟度（急性 / 慢性）、主要部位（骨髓为主 / 淋巴组织为主 / 浆细胞）。三轴一定，名字就成了坐标的组合。</p>
-<p>成熟度这一轴的定义写得最实：</p>
-<blockquote><p>「急性以原始细胞为主、进展快；慢性以较成熟细胞增多为主、病程惰性」——补充·hermes-病理生理学讲义·第11章·11.3</p></blockquote>
-<p>把这条与第一节的阻滞对起来看：急性是阻滞发生在很早的层级（原始细胞），慢性是阻滞发生在较晚的层级（较成熟细胞仍能生成，只是数量失控）。所以「急性 / 慢性」在病理生理上不是快慢形容词，是<strong>阻滞位置</strong>的标记。这一句一旦读通，11.4 与 11.5 的差别就不用背了。</p>
+  <div class="slide-inner"><div class="kicker">从造血到命名：分层放大、克隆性与三个坐标轴（11.1–11.3）</div>
+                <div class="compact"><p>把这条与第一节的阻滞对起来看：急性是阻滞发生在很早的层级（原始细胞），慢性是阻滞发生在较晚的层级（较成熟细胞仍能生成，只是数量失控）。所以「急性 / 慢性」在病理生理上不是快慢形容词，是<strong>阻滞位置</strong>的标记。这一句一旦读通，11.4 与 11.5 的差别就不用背了。</p>
 <p>由此得到四个基本类别：急性白血病、慢性白血病、淋巴瘤、浆细胞病，另加骨髓增殖性肿瘤。讲义随即把边界写死：</p>
-<blockquote><p>「具体亚型繁多，本章只到类别层面」——补充·hermes-病理生理学讲义·第11章·11.3</p></blockquote></div></div>
+<blockquote><p>「具体亚型繁多，本章只到类别层面」——补充·hermes-病理生理学讲义·第11章·11.3</p></blockquote>
+<p>这句是本课程的分工声明：精确分型依赖形态学、免疫表型、细胞遗传与分子检测的综合，那是诊断学与血液学的地盘。本章只负责类别到机制这一段。</p></div></div>
   <div class="slide-foot"><span>9 / 28</span><span>body</span></div>
 </section>
 <section class="slide" data-i="9">
-  <div class="slide-inner"><div class="kicker">三、三个坐标轴：为什么名字多而类别少（讲义 11.3）</div>
-                <div class="compact"><p>这句是本课程的分工声明：精确分型依赖形态学、免疫表型、细胞遗传与分子检测的综合，那是诊断学与血液学的地盘。本章只负责类别到机制这一段。</p></div></div>
-  <div class="slide-foot"><span>10 / 28</span><span>body</span></div>
-</section>
-<section class="slide" data-i="10">
-  <div class="slide-inner"><div class="kicker">四、急性白血病：两条主线，别的一概是推论（讲义 11.4）</div>
-                <div class="compact"><p>11.4 的写法是全章最经济的：两条主线，其余全是派生。</p>
+  <div class="slide-inner"><div class="kicker">四类疾病：急慢白血病、淋巴瘤与浆细胞病（11.4–11.7）</div>
+                <div class="compact dense"><h3 id="急性白血病-两条主线-别的一概是推论-讲义-11-4">急性白血病：两条主线，别的一概是推论（讲义 11.4）</h3>
+<p>11.4 的写法是全章最经济的：两条主线，其余全是派生。</p>
 <p>第一条主线是：</p>
 <blockquote><p>「骨髓被原始细胞占据 → 正常造血受抑」——补充·hermes-病理生理学讲义·第11章·11.4</p></blockquote>
 <p>三系各自掉，表现各自成组：红细胞生成减少是贫血（乏力、苍白、活动后心悸气短）；中性粒细胞减少且功能异常是感染，且因炎症反应弱而表现不典型；巨核细胞生成减少是血小板减少（瘀点瘀斑、黏膜出血、鼻衄、牙龈出血）。三组表现同源，这就是 11.8 那张表的左半边。</p>
 <p>第二条主线是髓外浸润：淋巴结、肝、脾肿大；牙龈增生与皮肤浸润；骨与关节疼痛（骨髓腔压力升高）；中枢神经系统受累。中枢那一条讲义多给了一句机制：</p>
 <blockquote><p>「因血脑屏障使部分药物难以到达」——补充·hermes-病理生理学讲义·第11章·11.4</p></blockquote>
-<p>这句把「庇护所」这个词从比喻变成了结构说明：不是病灶顽固，是药到不了。凡是遇到某处反复不好的描述，先问屏障，再问耐药。</p>
-<p>起病与实验室特点那一段里，有一句是全章最该划线的：</p></div></div>
+<p>这句把「庇护所」这个词从比喻变成了结构说明：不是病灶顽固，是药到不了。凡是遇到某处反复不好的描述，先问屏障，再问耐药。</p></div></div>
+  <div class="slide-foot"><span>10 / 28</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">四类疾病：急慢白血病、淋巴瘤与浆细胞病（11.4–11.7）</div>
+                <div class="compact dense"><p>起病与实验室特点那一段里，有一句是全章最该划线的：</p>
+<blockquote><p>「白细胞不升高不等于不是白血病」——补充·hermes-病理生理学讲义·第11章·11.4</p></blockquote>
+<p>为什么这句重要？因为直觉把白血病读成「白细胞太多」，而机制说的是骨髓被幼稚细胞占满。占满之后，成熟细胞出不来，总数可以升高、可以正常、可以降低——三种都成立。抓住机制的人不会被计数带着走，抓不住的人会拿一个数字去否掉一个诊断方向。讲义接着把确诊的落点写在骨髓：</p>
+<blockquote><p>「确诊依赖骨髓检查显示原始细胞比例显著增高」——补充·hermes-病理生理学讲义·第11章·11.4</p></blockquote>
+<p>注意它只说「比例显著增高」，不给任何阈值。这是本课程的一贯做法：方向可以写，取值不写；阈值属诊断标准，另立来源。</p>
+<h3 id="慢性白血病与骨髓增殖性肿瘤-惰性不等于良性-讲义-11-5">慢性白血病与骨髓增殖性肿瘤：惰性不等于良性（讲义 11.5）</h3>
+<p>慢性白血病的定义句与第三节那一轴对齐：</p>
+<blockquote><p>「分化相对保留、以较成熟细胞增多为主，病程惰性」——补充·hermes-病理生理学讲义·第11章·11.5</p></blockquote></div></div>
   <div class="slide-foot"><span>11 / 28</span><span>body</span></div>
 </section>
 <section class="slide" data-i="11">
-  <div class="slide-inner"><div class="kicker">四、急性白血病：两条主线，别的一概是推论（讲义 11.4）</div>
-                <div class="compact"><blockquote><p>「白细胞不升高不等于不是白血病」——补充·hermes-病理生理学讲义·第11章·11.4</p></blockquote>
-<p>为什么这句重要？因为直觉把白血病读成「白细胞太多」，而机制说的是骨髓被幼稚细胞占满。占满之后，成熟细胞出不来，总数可以升高、可以正常、可以降低——三种都成立。抓住机制的人不会被计数带着走，抓不住的人会拿一个数字去否掉一个诊断方向。讲义接着把确诊的落点写在骨髓：</p>
-<blockquote><p>「确诊依赖骨髓检查显示原始细胞比例显著增高」——补充·hermes-病理生理学讲义·第11章·11.4</p></blockquote>
-<p>注意它只说「比例显著增高」，不给任何阈值。这是本课程的一贯做法：方向可以写，取值不写；阈值属诊断标准，另立来源。</p></div></div>
+  <div class="slide-inner"><div class="kicker">四类疾病：急慢白血病、淋巴瘤与浆细胞病（11.4–11.7）</div>
+                <div class="compact"><p>但讲义立刻补了一个转折，这个转折是本章第二个反直觉点：</p>
+<blockquote><p>「原始细胞突然增多，临床转为急性白血病的表现」——补充·hermes-病理生理学讲义·第11章·11.5</p></blockquote>
+<p>名字叫「急变」。它的机制读法很清楚：慢性期的阻滞在较晚层级，细胞还留着一部分分化能力；一旦又出现一次改变把阻滞推前，同一群细胞就退回急性期的那种状态。所以「慢性」描述的是当前阻滞位置，不是承诺。把「慢性」听成「不会变急」，是把一个时点的描述读成了对未来的判断——这也是本章最容易被误用的地方。</p>
+<p>两个代表各有一句要点。慢性髓系白血病：粒细胞系显著增生并伴特征性染色体易位，早期线索是乏力、体重下降、脾大与腹胀；讲义把它称作「分子机制转化为治疗」的经典范例，并明确注明不涉及方案参数。慢性淋巴细胞白血病：克隆性成熟小淋巴细胞在血、骨髓、淋巴结与脾中蓄积，多见于老年，早期可无症状；因正常免疫球蛋白减少而反复感染，并可并发自身免疫性血细胞减少。</p></div></div>
   <div class="slide-foot"><span>12 / 28</span><span>body</span></div>
 </section>
 <section class="slide" data-i="12">
-  <div class="slide-inner"><div class="kicker">五、慢性白血病与骨髓增殖性肿瘤：惰性不等于良性（讲义 11.5）</div>
-                <div class="compact"><p>慢性白血病的定义句与第三节那一轴对齐：</p>
-<blockquote><p>「分化相对保留、以较成熟细胞增多为主，病程惰性」——补充·hermes-病理生理学讲义·第11章·11.5</p></blockquote>
-<p>但讲义立刻补了一个转折，这个转折是本章第二个反直觉点：</p>
-<blockquote><p>「原始细胞突然增多，临床转为急性白血病的表现」——补充·hermes-病理生理学讲义·第11章·11.5</p></blockquote>
-<p>名字叫「急变」。它的机制读法很清楚：慢性期的阻滞在较晚层级，细胞还留着一部分分化能力；一旦又出现一次改变把阻滞推前，同一群细胞就退回急性期的那种状态。所以「慢性」描述的是当前阻滞位置，不是承诺。把「慢性」听成「不会变急」，是把一个时点的描述读成了对未来的判断——这也是本章最容易被误用的地方。</p></div></div>
+  <div class="slide-inner"><div class="kicker">四类疾病：急慢白血病、淋巴瘤与浆细胞病（11.4–11.7）</div>
+                <div class="compact dense"><p>骨髓增殖性肿瘤的共同特征讲义写成一句话的三个并列：一系或多系成熟细胞过度产生；脾大；血栓与出血风险并存，以及向急性白血病转化的可能。最后补的一句很关键——症状常源于血容量增加或脾大压迫，而非白细胞高本身。这与第四节那句「白细胞不升高不等于不是白血病」是同一类提醒：<strong>别把计数当病情</strong>。</p>
+<h3 id="淋巴瘤-惰性与侵袭性是行为轴-不是良恶轴-讲义-11-6">淋巴瘤：惰性与侵袭性是行为轴，不是良恶轴（讲义 11.6）</h3>
+<p>淋巴瘤起于淋巴细胞，主要累及淋巴结与结外淋巴组织。分类先按类别分霍奇金与非霍奇金，非霍奇金再按起源细胞分 B、T、NK，按生物学行为分惰性与侵袭性。讲义在这里明确：只列类别，不作分期编号。</p>
+<p>临床线索里，第一条是首发表现：</p>
+<blockquote><p>「无痛性、进行性淋巴结肿大」——补充·hermes-病理生理学讲义·第11章·11.6</p></blockquote>
+<p>「无痛」与「进行性」两个限定各有作用：痛提示炎症，无痛提示不是急性炎症反应；进行性提示不是一时肿大。第二条是 B 症状：</p></div></div>
   <div class="slide-foot"><span>13 / 28</span><span>body</span></div>
 </section>
 <section class="slide" data-i="13">
-  <div class="slide-inner"><div class="kicker">五、慢性白血病与骨髓增殖性肿瘤：惰性不等于良性（讲义 11.5）</div>
-                <div class="compact"><p>两个代表各有一句要点。慢性髓系白血病：粒细胞系显著增生并伴特征性染色体易位，早期线索是乏力、体重下降、脾大与腹胀；讲义把它称作「分子机制转化为治疗」的经典范例，并明确注明不涉及方案参数。慢性淋巴细胞白血病：克隆性成熟小淋巴细胞在血、骨髓、淋巴结与脾中蓄积，多见于老年，早期可无症状；因正常免疫球蛋白减少而反复感染，并可并发自身免疫性血细胞减少。</p>
-<p>骨髓增殖性肿瘤的共同特征讲义写成一句话的三个并列：一系或多系成熟细胞过度产生；脾大；血栓与出血风险并存，以及向急性白血病转化的可能。最后补的一句很关键——症状常源于血容量增加或脾大压迫，而非白细胞高本身。这与第四节那句「白细胞不升高不等于不是白血病」是同一类提醒：<strong>别把计数当病情</strong>。</p></div></div>
+  <div class="slide-inner"><div class="kicker">四类疾病：急慢白血病、淋巴瘤与浆细胞病（11.4–11.7）</div>
+                <div class="compact dense"><blockquote><p>「不明原因发热、夜间盗汗、体重下降」——补充·hermes-病理生理学讲义·第11章·11.6</p></blockquote>
+<p>讲义给的机制是肿瘤细胞与反应性细胞释放细胞因子——这与 11.8 表的第三行（细胞因子释放）是同一个来源。第三、四条是结外受累与压迫症状：纵隔淋巴结肿大可致咳嗽、气促、上腔静脉受压；腹膜后病变可致腹痛与肾积水。第五条是免疫异常：部分惰性淋巴瘤可伴自身免疫性血细胞减少或免疫球蛋白异常。</p>
+<p>这一节真正的落点在这句：</p>
+<blockquote><p>「长得慢」不等于「良性」，「长得快」也不等于「无望」——补充·hermes-病理生理学讲义·第11章·11.6</p></blockquote>
+<p>讲义把它称作向患者解释时常需澄清的误解。从机制上说，惰性与侵袭性描述的是增殖速率与凋亡速率之比，而良性与恶性描述的是有没有侵袭与转移的能力——两个轴，不能互换。一段话里只用一个轴，混用就会得出「慢就是好」这种既不真也不假的结论。</p>
+<h3 id="浆细胞病-一个克隆-两组后果-讲义-11-7">浆细胞病：一个克隆，两组后果（讲义 11.7）</h3>
+<p>多发性骨髓瘤的病理生理，讲义压成一句：</p></div></div>
   <div class="slide-foot"><span>14 / 28</span><span>body</span></div>
 </section>
 <section class="slide" data-i="14">
-  <div class="slide-inner"><div class="kicker">六、淋巴瘤：惰性与侵袭性是行为轴，不是良恶轴（讲义 11.6）</div>
-                <div class="compact"><p>淋巴瘤起于淋巴细胞，主要累及淋巴结与结外淋巴组织。分类先按类别分霍奇金与非霍奇金，非霍奇金再按起源细胞分 B、T、NK，按生物学行为分惰性与侵袭性。讲义在这里明确：只列类别，不作分期编号。</p>
-<p>临床线索里，第一条是首发表现：</p>
-<blockquote><p>「无痛性、进行性淋巴结肿大」——补充·hermes-病理生理学讲义·第11章·11.6</p></blockquote>
-<p>「无痛」与「进行性」两个限定各有作用：痛提示炎症，无痛提示不是急性炎症反应；进行性提示不是一时肿大。第二条是 B 症状：</p>
-<blockquote><p>「不明原因发热、夜间盗汗、体重下降」——补充·hermes-病理生理学讲义·第11章·11.6</p></blockquote>
-<p>讲义给的机制是肿瘤细胞与反应性细胞释放细胞因子——这与 11.8 表的第三行（细胞因子释放）是同一个来源。第三、四条是结外受累与压迫症状：纵隔淋巴结肿大可致咳嗽、气促、上腔静脉受压；腹膜后病变可致腹痛与肾积水。第五条是免疫异常：部分惰性淋巴瘤可伴自身免疫性血细胞减少或免疫球蛋白异常。</p>
-<p>这一节真正的落点在这句：</p></div></div>
+  <div class="slide-inner"><div class="kicker">四类疾病：急慢白血病、淋巴瘤与浆细胞病（11.4–11.7）</div>
+                <div class="compact dense"><blockquote><p>「克隆性浆细胞在骨髓聚集 + 单克隆免疫球蛋白大量产生」——补充·hermes-病理生理学讲义·第11章·11.7</p></blockquote>
+<p>加号左边是「占了位置」，右边是多了一种蛋白。两组后果从这里分出去，五组表现各自归位。</p>
+<p>骨病变那一条机制写得最细：</p>
+<blockquote><p>「浆细胞激活破骨细胞、抑制成骨细胞」——补充·hermes-病理生理学讲义·第11章·11.7</p></blockquote>
+<p>破骨与成骨是一对平衡，浆细胞同时推一侧、压另一侧，于是溶骨性损害成立，连带骨痛、病理性骨折与高钙血症（多尿、便秘、意识改变、心律失常）。贫血来自骨髓被占据与促红细胞生成素相对不足。肾损害来自单克隆轻链经肾小球滤过造成小管损伤，加上高钙、脱水与感染共同作用——注意这是<strong>四个因素叠加</strong>，不是一个原因。反复感染来自正常多克隆免疫球蛋白被单克隆成分取代：总量不低，功能不全，这与第二节那个「功能不足」是同一种结构。高黏滞与淀粉样变来自蛋白太多：黏度升高带来头痛、视物模糊、黏膜出血，异常蛋白沉积带来器官功能障碍。</p></div></div>
   <div class="slide-foot"><span>15 / 28</span><span>body</span></div>
 </section>
 <section class="slide" data-i="15">
-  <div class="slide-inner"><div class="kicker">六、淋巴瘤：惰性与侵袭性是行为轴，不是良恶轴（讲义 11.6）</div>
-                <div class="compact"><blockquote><p>「长得慢」不等于「良性」，「长得快」也不等于「无望」——补充·hermes-病理生理学讲义·第11章·11.6</p></blockquote>
-<p>讲义把它称作向患者解释时常需澄清的误解。从机制上说，惰性与侵袭性描述的是增殖速率与凋亡速率之比，而良性与恶性描述的是有没有侵袭与转移的能力——两个轴，不能互换。一段话里只用一个轴，混用就会得出「慢就是好」这种既不真也不假的结论。</p></div></div>
+  <div class="slide-inner"><div class="kicker">四类疾病：急慢白血病、淋巴瘤与浆细胞病（11.4–11.7）</div>
+                <div class="compact"><p>护理那一段讲义只写了四件事：骨痛与活动安全、水化与肾功能监测、感染预防、高钙相关症状的早期识别。四条都能从上面五组机制里推出来，不需要另记。</p></div></div>
   <div class="slide-foot"><span>16 / 28</span><span>body</span></div>
 </section>
 <section class="slide" data-i="16">
-  <div class="slide-inner"><div class="kicker">七、浆细胞病：一个克隆，两组后果（讲义 11.7）</div>
-                <div class="compact"><p>多发性骨髓瘤的病理生理，讲义压成一句：</p>
-<blockquote><p>「克隆性浆细胞在骨髓聚集 + 单克隆免疫球蛋白大量产生」——补充·hermes-病理生理学讲义·第11章·11.7</p></blockquote>
-<p>加号左边是「占了位置」，右边是多了一种蛋白。两组后果从这里分出去，五组表现各自归位。</p>
-<p>骨病变那一条机制写得最细：</p>
-<blockquote><p>「浆细胞激活破骨细胞、抑制成骨细胞」——补充·hermes-病理生理学讲义·第11章·11.7</p></blockquote></div></div>
+  <div class="slide-inner"><div class="kicker">机制、诊断与治疗代价：一元论的落点（11.8–11.10）</div>
+                <div class="compact dense"><h3 id="四机制表-一元论的落点-讲义-11-8">四机制表：一元论的落点（讲义 11.8）</h3>
+<p>11.8 把 11.4 到 11.7 的现象收进一张四行表：骨髓正常造血受抑 → 贫血、感染、出血；髓外浸润与占位 → 淋巴结与肝脾肿大、骨痛、中枢症状、压迫症状；细胞因子释放 → 发热、盗汗、体重下降、乏力、食欲减退；免疫功能异常 → 反复感染、自身免疫性血细胞减少。</p>
+<p>表的用法讲义写得很直：</p>
+<blockquote><p>「不需要四个诊断，而可能是一个疾病的四种表现」——补充·hermes-病理生理学讲义·第11章·11.8</p></blockquote>
+<p>这就是一元论在病理生理里的具体形状：四条机制共用一个克隆起点。反过来也成立——四条机制可以分别被别的病借用（感染、自身免疫、实体瘤浸润），所以四条同时出现比任何一条单独出现更有指向性。这一句是本课程少数可以直接拿去做推理的地方，但它指向的是「往一处想」，不是「就是那一个」。</p>
+<h3 id="诊断与监测-四类信息拼合-不是四项检查排队-讲义-11-9">诊断与监测：四类信息拼合，不是四项检查排队（讲义 11.9）</h3></div></div>
   <div class="slide-foot"><span>17 / 28</span><span>body</span></div>
 </section>
 <section class="slide" data-i="17">
-  <div class="slide-inner"><div class="kicker">七、浆细胞病：一个克隆，两组后果（讲义 11.7）</div>
-                <div class="compact"><p>破骨与成骨是一对平衡，浆细胞同时推一侧、压另一侧，于是溶骨性损害成立，连带骨痛、病理性骨折与高钙血症（多尿、便秘、意识改变、心律失常）。贫血来自骨髓被占据与促红细胞生成素相对不足。肾损害来自单克隆轻链经肾小球滤过造成小管损伤，加上高钙、脱水与感染共同作用——注意这是<strong>四个因素叠加</strong>，不是一个原因。反复感染来自正常多克隆免疫球蛋白被单克隆成分取代：总量不低，功能不全，这与第二节那个「功能不足」是同一种结构。高黏滞与淀粉样变来自蛋白太多：黏度升高带来头痛、视物模糊、黏膜出血，异常蛋白沉积带来器官功能障碍。</p>
-<p>护理那一段讲义只写了四件事：骨痛与活动安全、水化与肾功能监测、感染预防、高钙相关症状的早期识别。四条都能从上面五组机制里推出来，不需要另记。</p></div></div>
-  <div class="slide-foot"><span>18 / 28</span><span>body</span></div>
-</section>
-<section class="slide" data-i="18">
-  <div class="slide-inner"><div class="kicker">八、四机制表：一元论的落点（讲义 11.8）</div>
-                <div class="compact"><p>11.8 把 11.4 到 11.7 的现象收进一张四行表：骨髓正常造血受抑 → 贫血、感染、出血；髓外浸润与占位 → 淋巴结与肝脾肿大、骨痛、中枢症状、压迫症状；细胞因子释放 → 发热、盗汗、体重下降、乏力、食欲减退；免疫功能异常 → 反复感染、自身免疫性血细胞减少。</p>
-<p>表的用法讲义写得很直：</p>
-<blockquote><p>「不需要四个诊断，而可能是一个疾病的四种表现」——补充·hermes-病理生理学讲义·第11章·11.8</p></blockquote>
-<p>这就是一元论在病理生理里的具体形状：四条机制共用一个克隆起点。反过来也成立——四条机制可以分别被别的病借用（感染、自身免疫、实体瘤浸润），所以四条同时出现比任何一条单独出现更有指向性。这一句是本课程少数可以直接拿去做推理的地方，但它指向的是「往一处想」，不是「就是那一个」。</p></div></div>
-  <div class="slide-foot"><span>19 / 28</span><span>body</span></div>
-</section>
-<section class="slide" data-i="19">
-  <div class="slide-inner"><div class="kicker">九、诊断与监测：四类信息拼合，不是四项检查排队（讲义 11.9）</div>
+  <div class="slide-inner"><div class="kicker">机制、诊断与治疗代价：一元论的落点（11.8–11.10）</div>
                 <div class="compact"><p>讲义把诊断写成四类信息的拼合：血液学（全血细胞计数与涂片）、骨髓（穿刺与活检）、免疫表型（流式）、细胞遗传与分子检测，另加影像与特殊部位检查。</p>
 <p>涂片那一条给了理由：</p>
 <blockquote><p>「观察细胞形态与有无原始细胞，是最快获得线索的检查」——补充·hermes-病理生理学讲义·第11章·11.9</p></blockquote>
 <p>流式那一条也给了理由：</p>
 <blockquote><p>「确定细胞谱系与分化阶段，是分型的核心手段」——补充·hermes-病理生理学讲义·第11章·11.9</p></blockquote>
 <p>两条理由正好对应第三节那三个轴：涂片看成熟度，流式看谱系，影像看部位。三类检查不是替代关系，是各自回答一个坐标。</p></div></div>
+  <div class="slide-foot"><span>18 / 28</span><span>body</span></div>
+</section>
+<section class="slide" data-i="18">
+  <div class="slide-inner"><div class="kicker">机制、诊断与治疗代价：一元论的落点（11.8–11.10）</div>
+                <div class="compact"><p>监测的重点随病而异：急性白血病看缓解与微小残留病，淋巴瘤看影像与代谢活性，骨髓瘤看单克隆免疫球蛋白水平、游离轻链与骨病变。讲义在护理上补了一句很实用的话：理解为什么反复抽血、反复骨穿——这些是判断疗效与调整策略的依据，事先解释可显著减少患者的抵触与恐惧。这句话把「检查」从流程还原成了机制：没有基线就没有变化，没有变化就没有判断。</p>
+<h3 id="治疗相关病理生理-把并发症读成机制的推论-讲义-11-10">治疗相关病理生理：把并发症读成机制的推论（讲义 11.10）</h3>
+<p>治疗手段的类别有化学治疗、靶向治疗、免疫治疗、放射治疗与造血干细胞移植，讲义明确不涉及方案与参数。它要讲的是并发症的机制，因为只有机制能预判。</p>
+<p>骨髓抑制期的次序与第一节的寿命差直接对应：粒细胞与血小板先掉，最低点出现在治疗后的一到两周。讲义在这里下了一句最硬的判断：</p>
+<blockquote><p>「粒细胞缺乏伴发热是急症」——补充·hermes-病理生理学讲义·第11章·11.10</p></blockquote></div></div>
+  <div class="slide-foot"><span>19 / 28</span><span>body</span></div>
+</section>
+<section class="slide" data-i="19">
+  <div class="slide-inner"><div class="kicker">机制、诊断与治疗代价：一元论的落点（11.8–11.10）</div>
+                <div class="compact"><p>「急症」两个字不是修辞，它意味着处置的时限性——不能等待观察。这是全章唯一一处时间敏感的表述，而它仍然不给任何数值。</p>
+<p>肿瘤溶解综合征的机制是细胞死得太快：</p>
+<blockquote><p>「大量肿瘤细胞快速死亡，细胞内钾、磷与核酸代谢产物释放入血」——补充·hermes-病理生理学讲义·第11章·11.10</p></blockquote>
+<p>四个方向的高（钾、磷、尿酸）与一个方向的低（继发低钙）都从这一句推出来，急性肾损伤与心律失常是它们的合并结果。讲义把预防的核心归到两件事：水化与监测；部分患者需用药降低尿酸。这一句的顺序也值得注意——水化在前，因为它处理的是「冲走」，不是「减少生成」。</p></div></div>
   <div class="slide-foot"><span>20 / 28</span><span>body</span></div>
 </section>
 <section class="slide" data-i="20">
-  <div class="slide-inner"><div class="kicker">九、诊断与监测：四类信息拼合，不是四项检查排队（讲义 11.9）</div>
-                <div class="compact"><p>监测的重点随病而异：急性白血病看缓解与微小残留病，淋巴瘤看影像与代谢活性，骨髓瘤看单克隆免疫球蛋白水平、游离轻链与骨病变。讲义在护理上补了一句很实用的话：理解为什么反复抽血、反复骨穿——这些是判断疗效与调整策略的依据，事先解释可显著减少患者的抵触与恐惧。这句话把「检查」从流程还原成了机制：没有基线就没有变化，没有变化就没有判断。</p></div></div>
+  <div class="slide-inner"><div class="kicker">机制、诊断与治疗代价：一元论的落点（11.8–11.10）</div>
+                <div class="compact"><p>黏膜损伤、感染风险、贫血与疲乏、生育功能影响、治疗相关继发肿瘤、心理社会压力与家庭经济负担，讲义列成一张不长的清单。护理要点归为五组：感染预防、出血预防、症状管理、安全、沟通与心理支持。五组里没有一条需要数值，全部是行为与观察。讲义特意点出一处时限：对年轻患者，生育力保存的告知应在治疗开始前完成——这是时机本身是内容的例子。</p></div></div>
   <div class="slide-foot"><span>21 / 28</span><span>body</span></div>
 </section>
 <section class="slide" data-i="21">
-  <div class="slide-inner"><div class="kicker">十、治疗相关病理生理：把并发症读成机制的推论（讲义 11.10）</div>
-                <div class="compact"><p>治疗手段的类别有化学治疗、靶向治疗、免疫治疗、放射治疗与造血干细胞移植，讲义明确不涉及方案与参数。它要讲的是并发症的机制，因为只有机制能预判。</p>
-<p>骨髓抑制期的次序与第一节的寿命差直接对应：粒细胞与血小板先掉，最低点出现在治疗后的一到两周。讲义在这里下了一句最硬的判断：</p>
-<blockquote><p>「粒细胞缺乏伴发热是急症」——补充·hermes-病理生理学讲义·第11章·11.10</p></blockquote>
-<p>「急症」两个字不是修辞，它意味着处置的时限性——不能等待观察。这是全章唯一一处时间敏感的表述，而它仍然不给任何数值。</p>
-<p>肿瘤溶解综合征的机制是细胞死得太快：</p>
-<blockquote><p>「大量肿瘤细胞快速死亡，细胞内钾、磷与核酸代谢产物释放入血」——补充·hermes-病理生理学讲义·第11章·11.10</p></blockquote></div></div>
-  <div class="slide-foot"><span>22 / 28</span><span>body</span></div>
-</section>
-<section class="slide" data-i="22">
-  <div class="slide-inner"><div class="kicker">十、治疗相关病理生理：把并发症读成机制的推论（讲义 11.10）</div>
-                <div class="compact"><p>四个方向的高（钾、磷、尿酸）与一个方向的低（继发低钙）都从这一句推出来，急性肾损伤与心律失常是它们的合并结果。讲义把预防的核心归到两件事：水化与监测；部分患者需用药降低尿酸。这一句的顺序也值得注意——水化在前，因为它处理的是「冲走」，不是「减少生成」。</p>
-<p>黏膜损伤、感染风险、贫血与疲乏、生育功能影响、治疗相关继发肿瘤、心理社会压力与家庭经济负担，讲义列成一张不长的清单。护理要点归为五组：感染预防、出血预防、症状管理、安全、沟通与心理支持。五组里没有一条需要数值，全部是行为与观察。讲义特意点出一处时限：对年轻患者，生育力保存的告知应在治疗开始前完成——这是时机本身是内容的例子。</p></div></div>
-  <div class="slide-foot"><span>23 / 28</span><span>body</span></div>
-</section>
-<section class="slide" data-i="23">
-  <div class="slide-inner"><div class="kicker">十一、把十个节压成一条链</div>
-                <div class="compact"><div class="codeblock"><div class="codeblock-lang">text</div><pre><code class="lang-text">11.1 造血分层 ──► 11.2 克隆性（获得优势 · 占据位置 · 分化阻滞）
+  <div class="slide-inner"><div class="kicker">把十个节压成一条链</div>
+                <div class="compact dense"><div class="codeblock"><div class="codeblock-lang">text</div><pre><code class="lang-text">11.1 造血分层 ──► 11.2 克隆性（获得优势 · 占据位置 · 分化阻滞）
                         │
                         ▼
 11.3 三轴定类别（谱系 · 成熟度 · 部位）──► 四类别 + 骨髓增殖性肿瘤
@@ -243,22 +250,54 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
         ┌───────────────┴───────────────┐
         ▼                               ▼
    11.9 四类信息拼合                11.10 治疗即机制推论</code></pre></div></div></div>
-  <div class="slide-foot"><span>24 / 28</span><span>body</span></div>
+  <div class="slide-foot"><span>22 / 28</span><span>body</span></div>
+</section>
+<section class="slide" data-i="22">
+  <div class="slide-inner"><div class="kicker">把十个节压成一条链</div>
+                <div class="compact"><p>链上任何一环断掉都会出问题：跳过 11.2 直接读 11.4，两条主线就成了两句要背的话；跳过 11.3 直接读 11.6，「惰性」会被读成「良性」；读完 11.4 到 11.7 却不回 11.8，四条机制会散成四份互不相干的清单。</p></div></div>
+  <div class="slide-foot"><span>23 / 28</span><span>body</span></div>
+</section>
+<section class="slide" data-i="23">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><ul><li><strong>只引讲义，不引代用底本。</strong> 本章全部引文格式为 补充·hermes-病理生理学讲义·第11章·N.M，节号与讲义一致。讲义是本仓库原创的教学正文，不是任何外文教材的译本。代用底本《疾病学基础》在白细胞肿瘤一节以形态与分型为主，与本课程按机制分层的口径不同轴，故本章不引，也不做两层折算。</li><li><strong>本章丢掉了什么：分型细节与全部数值。</strong> 讲义明写只到类别层面，精确分型依赖形态学、免疫表型、细胞遗传与分子检测的综合，属诊断学范围。本章同样不写白细胞计数、原始细胞比例阈值、血红蛋白浓度、血小板计数与任何参考区间——凡遇「多少算高」的追问，统一回本书不给值，需另立数据层。需要数值的场景必须另立来源、另立版本与校验，并明确标注不从本书推。</li><li><strong>机制推论不等于个体判断。</strong> 四机制表说明的是一组表现可以共用一个起点，不是见到这组表现就是这种病。同样的四条机制可以被感染、自身免疫病与实体瘤浸润借用；反过来，一个病在不同阶段可以只表现其中一两条。</li></ul></div></div>
+  <div class="slide-foot"><span>24 / 28</span><span>boundary</span></div>
 </section>
 <section class="slide" data-i="24">
-  <div class="slide-inner"><div class="kicker">十一、把十个节压成一条链</div>
-                <div class="compact"><p>链上任何一环断掉都会出问题：跳过 11.2 直接读 11.4，两条主线就成了两句要背的话；跳过 11.3 直接读 11.6，「惰性」会被读成「良性」；读完 11.4 到 11.7 却不回 11.8，四条机制会散成四份互不相干的清单。</p></div></div>
-  <div class="slide-foot"><span>25 / 28</span><span>body</span></div>
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><p>写成判断就越界了。</p>
+<ul><li><strong>「惰性」「急性」「慢性」都是时点描述。</strong> 它们描述当前的阻滞位置与增殖速率之比，不预测走向。把「慢性」读成「不会变急」、把「惰性」读成「良性」，都是把一个轴上的词搬到另一个轴上用。</li><li><strong>不写治疗方案与参数。</strong> 本章提到化学治疗、靶向治疗、免疫治疗、放射治疗与移植，只作类别，不给方案、不给剂量、不给疗程、不给时间窗的具体取值。生育力保存的告知时机属沟通原则，具体执行依机构规范。</li><li><strong>边界声明</strong>：本章只解释讲义第 11 章的类别与环节，<strong>不写数值与单位与正常值，不作正常与异常判定，不构成诊断、治疗或用药依据</strong>；任何个体的状态判断须由具备资质的人员依现行规范作出。</li></ul>
+<h3 id="运行与验证">运行与验证</h3>
+<div class="codeblock"><div class="codeblock-lang">bash</div><pre><code class="lang-bash"># 1) 现算本章规模、节号覆盖、引文与引语逐字核对
+node code/main.js
+
+# 2) 单测：节数与节号 / docs 字数 / 引语逐字 / 裸数值零容忍 / quiz 契约 / 末行边界句
+node --test code/main.test.js</code></pre></div></div></div>
+  <div class="slide-foot"><span>25 / 28</span><span>boundary</span></div>
 </section>
 <section class="slide" data-i="25">
   <div class="slide-inner"><div class="kicker">代价与边界</div>
-                <div class="compact"><ul><li><strong>只引讲义，不引代用底本。</strong> 本章全部引文格式为 补充·hermes-病理生理学讲义·第11章·N.M，节号与讲义一致。讲义是本仓库原创的教学正文，不是任何外文教材的译本。代用底本《疾病学基础》在白细胞肿瘤一节以形态与分型为主，与本课程按机制分层的口径不同轴，故本章不引，也不做两层折算。</li><li><strong>本章丢掉了什么：分型细节与全部数值。</strong> 讲义明写只到类别层面，精确分型依赖形态学、免疫表型、细胞遗传与分子检测的综合，属诊断学范围。本章同样不写白细胞计数、原始细胞比例阈值、血红蛋白浓度、血小板计数与任何参考区间——凡遇「多少算高」的追问，统一回本书不给值，需另立数据层。需要数值的场景必须另立来源、另立版本与校验，并明确标注不从本书推。</li><li><strong>机制推论不等于个体判断。</strong> 四机制表说明的是一组表现可以共用一个起点，不是见到这组表现就是这种病。同样的四条机制可以被感染、自身免疫病与实体瘤浸润借用；反过来，一个病在不同阶段可以只表现其中一两条。</li></ul></div></div>
+                <div class="compact dense"><h1 id="3-章级门-六文件-引文逐字-quiz-契约-教学边界-节覆盖">3) 章级门（六文件 + 引文逐字 + quiz 契约 + 教学边界 + 节覆盖）</h1>
+<p>cd /e/tcmai-engineering-from-scatch &amp;&amp; node tests/test_binglishengli_chapters.js</p>
+<div class="codeblock"><div class="codeblock-lang">text</div><pre><code class="lang-text">
+`node code/main.js` 的真实输出（节选）：
+
+```text
+═══ 白细胞恶性肿瘤（病理生理学 第11章）═══
+讲义规模: 10 节 · 3202 汉字 · 节号 11.1 / … / 11.10
+docs 规模: 8646 非空白字 · 273 行
+引文: 25 条（引到别章 0 条 · 节号不存在 0 条）
+引语: 5 条（未被本章正文逐字命中 0 条）
+节号覆盖: 10 / 10
+非引用行裸数值: 0 行
+quiz: 6 题（pre 1 · check 3 · post 2）· 引证 6 / 6</code></pre></div>
+<p>最后一行固定为：</p>
+<div class="codeblock"><div class="codeblock-lang">text</div><pre><code class="lang-text">教学边界：本章只解释讲义第 11 章的类别与四条机制，不写数值与单位与正常值，不构成诊断、用药依据</code></pre></div></div></div>
   <div class="slide-foot"><span>26 / 28</span><span>boundary</span></div>
 </section>
 <section class="slide" data-i="26">
   <div class="slide-inner"><div class="kicker">代价与边界</div>
-                <div class="compact"><p>写成判断就越界了。</p>
-<ul><li><strong>「惰性」「急性」「慢性」都是时点描述。</strong> 它们描述当前的阻滞位置与增殖速率之比，不预测走向。把「慢性」读成「不会变急」、把「惰性」读成「良性」，都是把一个轴上的词搬到另一个轴上用。</li><li><strong>不写治疗方案与参数。</strong> 本章提到化学治疗、靶向治疗、免疫治疗、放射治疗与移植，只作类别，不给方案、不给剂量、不给疗程、不给时间窗的具体取值。生育力保存的告知时机属沟通原则，具体执行依机构规范。</li><li><strong>边界声明</strong>：本章只解释讲义第 11 章的类别与环节，<strong>不写数值与单位与正常值，不作正常与异常判定，不构成诊断、治疗或用药依据</strong>；任何个体的状态判断须由具备资质的人员依现行规范作出。</li></ul></div></div>
+                <div class="compact"><p><strong>免责声明：</strong>本章为病理生理学教学材料。全部概念、分类与关系取自本仓库原创《hermes-病理生理学讲义》第 11 章（10 节）的表述与 <code>standards/binglishengli/supplements/jiangyi.json</code> 的机器可读层；文中统计由 <code>code/main.js</code> 现算，规则写在脚本里，可复算。本章不引代用底本，故不存在两层引文混用的问题。</p>
+<p>本章不提供任何诊断、治疗或用药建议，不给出正常值、参考区间与任何检验阈值，也不对任何个体的状态作出正常或异常的判断。文中「急性」「慢性」「惰性」「侵袭性」均为类别与时点描述，不能替代临床评估。若出现身体不适或急症，请立即就医。</p></div></div>
   <div class="slide-foot"><span>27 / 28</span><span>boundary</span></div>
 </section>
 <section class="slide" data-i="27">

@@ -1,95 +1,126 @@
-'use strict';
+#!/usr/bin/env node
 /**
- * 第 12 章单测（8 项）
- *   1. 药库 287 味、向量 21 维
- *   2. 四气分布与 drugs.json 复算一致
- *   3. 性味归经覆盖 287 / 285 / 284（缺项只来自教材没写）
- *   4. 四气轴有序：大寒 < 寒 < 微寒=凉 < 平 < 微温 < 温 < 热 < 大热，且覆盖 9 个取值
- *   5. 向量结构：第 0 维是四气轴值，其余 20 维是 0/1
- *   6. 余弦：自反 = 1、对称
- *   7. 邻居：不含自己、按分数降序、返回 5 条
- *   8. 运行时最后一行是教学边界声明
+ * 中药学 · 第 12 章 性味归经编成 21 维：余弦排得出描述邻近，排不出可以替换
+ * 确定性单元测试 —— 运行: node --test code/main.test.js
+ *
+ * 断言钉的是本机实测值：正文、算术解析或 quiz 任一处改动，这里就应当变红。
+ * 数字不从 main.js 回读再自比（那样什么都测不出），而是写在断言里。
  */
+
+'use strict';
 
 const test = require('node:test');
 const assert = require('node:assert');
 const fs = require('node:fs');
 const path = require('node:path');
-const { execFileSync } = require('node:child_process');
-const { vec, cos, neighbors, shape, QI_AXIS, WEI_DIMS, JING_DIMS } = require('./main.js');
+const { spawnSync } = require('node:child_process');
 
-const ROOT = path.join(__dirname, '..', '..', '..', '..', '..', '..');
-const DRUGS = path.join(ROOT, 'standards', 'zhongyao', 'drugs.json');
-const drugs = () => JSON.parse(fs.readFileSync(DRUGS, 'utf8'));
+const MAIN = path.join(__dirname, 'main.js');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
+const m = require('./main.js');
 
-test('1. 药库 287 味、向量 21 维', () => {
-  const s = shape();
-  assert.strictEqual(s.drugs, 287);
-  assert.strictEqual(s.dims, 1 + WEI_DIMS.length + JING_DIMS.length);
-  assert.strictEqual(s.dims, 21);
-});
-
-test('2. 四气分布复算', () => {
-  const s = shape();
-  const t = {};
-  for (const x of drugs().drugs) t[x.nature.qi] = (t[x.nature.qi] || 0) + 1;
-  assert.deepStrictEqual(s.qi, t);
-  assert.strictEqual(t['温'], 77);
-  assert.strictEqual(t['寒'], 72);
-});
-
-test('3. 性味归经覆盖', () => {
-  const s = shape();
-  assert.strictEqual(s.withQi, 287);
-  assert.strictEqual(s.withWei, 285);
-  assert.strictEqual(s.withGui, 284);
-});
-
-test('4. 四气轴有序且覆盖 9 个取值', () => {
-  const keys = Object.keys(QI_AXIS);
-  assert.strictEqual(keys.length, 9);
-  const sorted = keys.slice().sort((a, b) => QI_AXIS[a] - QI_AXIS[b]);
-  for (let i = 1; i < sorted.length; i += 1) {
-    assert.ok(QI_AXIS[sorted[i - 1]] <= QI_AXIS[sorted[i]], `${sorted[i - 1]} 应不高于 ${sorted[i]}`);
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
+const readQuiz = () => JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+const grams = (t, n = 4) => {
+  const out = new Set();
+  for (const seg of String(t || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
   }
-  assert.strictEqual(sorted[0], '大寒');
-  assert.strictEqual(sorted[sorted.length - 1], '大热');
-  assert.ok(QI_AXIS['大寒'] < QI_AXIS['寒'] && QI_AXIS['寒'] < QI_AXIS['平']);
-  assert.ok(QI_AXIS['平'] < QI_AXIS['温'] && QI_AXIS['温'] < QI_AXIS['大热']);
-  assert.strictEqual(QI_AXIS['寒'], -QI_AXIS['温'] * 1);
-  // 全部 287 味的四气都有轴值（没有落在 undefined 上）
-  for (const x of drugs().drugs) assert.strictEqual(typeof QI_AXIS[x.nature.qi], 'number', `${x.name} 的四气无轴值`);
+  return out;
+};
+
+test('正文规模与表格：汉字 3678 / 段 56 / 节 6；表 4 张 [4, 3, 3, 7] × [3, 9, 8, 6]', () => {
+  const r = m.analyze();
+  assert.strictEqual(r.docHanzi, 3678);
+  assert.strictEqual(r.paragraphs, 56);
+  assert.strictEqual(r.sections.length, 6);
+  assert.strictEqual(hanzi(readDoc()), 3678, '汉字口径必须与正文一致');
+  assert.deepStrictEqual(r.tables.map((t) => t.cols), [4, 3, 3, 7]);
+  assert.deepStrictEqual(r.tables.map((t) => t.rows), [3, 9, 8, 6]);
 });
 
-test('5. 向量结构：首维轴值、其余 0/1', () => {
-  for (const x of drugs().drugs.slice(0, 40)) {
-    const v = vec(x);
-    assert.strictEqual(v.length, 21);
-    assert.strictEqual(v[0], QI_AXIS[x.nature.qi]);
-    for (let i = 1; i < v.length; i += 1) assert.ok(v[i] === 0 || v[i] === 1, `${x.name} 第 ${i} 维不是 0/1`);
+test('本章算术：21 维的构成', () => {
+  const a = m.analyze().arith;
+  assert.strictEqual(a.dimTotal, 21, 'dimTotal');
+  assert.strictEqual(a.gasDim, 1, 'gasDim');
+  assert.strictEqual(a.weiDim, 8, 'weiDim');
+  assert.strictEqual(a.merDim, 12, 'merDim');
+  assert.strictEqual(a.gasShare, 4.8, 'gasShare');
+  assert.strictEqual(a.merShare, 57.1, 'merShare');
+});
+
+test('本章算术：九档气与三个方向', () => {
+  const a = m.analyze().arith;
+  assert.strictEqual(a.tierN, 9, 'tierN');
+  assert.strictEqual(a.qiTotal, 287, 'qiTotal');
+  assert.strictEqual(a.coldSide, 127, 'coldSide');
+  assert.strictEqual(a.warmSide, 108, 'warmSide');
+  assert.strictEqual(a.flatN, 52, 'flatN');
+  assert.strictEqual(a.microN, 61, 'microN');
+});
+
+test('本章算术：味与归经的计数', () => {
+  const a = m.analyze().arith;
+  assert.strictEqual(a.weiTotal, 445, 'weiTotal');
+  assert.strictEqual(a.bitter, 126, 'bitter');
+  assert.strictEqual(a.microBitter, 13, 'microBitter');
+  assert.strictEqual(a.bitterMerged, 139, 'bitterMerged');
+  assert.strictEqual(a.xin, 116, 'xin');
+  assert.strictEqual(a.merTotal, 692, 'merTotal');
+  assert.strictEqual(a.liver, 139, 'liver');
+  assert.strictEqual(a.lung, 110, 'lung');
+  assert.strictEqual(a.tiny, 8, 'tiny');
+  assert.strictEqual(a.perHerb, 2.41, 'perHerb');
+});
+
+test('quiz 结构：6 题、三段齐、4 选项、下标合法、答案打散', () => {
+  const q = readQuiz();
+  assert.strictEqual(q.questions.length, 6);
+  assert.deepStrictEqual(q.questions.map((x) => x.correct), [0, 1, 2, 3, 0, 2]);
+  const distinct = [...new Set(q.questions.map((x) => x.correct))].sort((a, b) => a - b);
+  assert.ok(distinct.length >= 3, '答案位置只有 ' + distinct.length + ' 种');
+  assert.deepStrictEqual(distinct, [0, 1, 2, 3]);
+  const stages = new Set(q.questions.map((x) => x.stage));
+  for (const s of ['pre', 'check', 'post']) assert.strictEqual(stages.has(s), true, '缺 ' + s + ' 段');
+  for (const x of q.questions) {
+    assert.strictEqual(['pre', 'check', 'post'].includes(x.stage), true, 'stage: ' + x.stage);
+    assert.strictEqual(x.options.length, 4, x.question);
+    assert.strictEqual(Number.isInteger(x.correct) && x.correct >= 0 && x.correct < 4, true, 'correct 越界: ' + x.question);
+    assert.strictEqual(typeof x.explain === 'string' && x.explain.length > 0, true, '缺 explain: ' + x.question);
   }
 });
 
-test('6. 余弦自反与对称', () => {
-  const a = drugs().drugs[0];
-  const b = drugs().drugs[10];
-  assert.ok(Math.abs(cos(vec(a), vec(a)) - 1) < 1e-12, '余弦自反应约等于 1');
-  assert.strictEqual(cos(vec(a), vec(b)), cos(vec(b), vec(a)));
+test('quiz 接地与解释：check 接地 3 道，最短解释 53 汉字', () => {
+  const body = grams(readDoc());
+  const q = readQuiz();
+  const grounded = q.questions.filter((x) => {
+    if (x.stage !== 'check') return false;
+    const right = String(x.options[x.correct] || '');
+    return [...grams(right)].some((g) => body.has(g));
+  });
+  assert.ok(grounded.length >= 2, '只接地 ' + grounded.length + ' 道');
+  assert.strictEqual(grounded.length, 3);
+  assert.strictEqual(m.analyze().quiz.checkGrounded, grounded.length, 'main.js 与测试口径必须一致');
+  const lens = q.questions.map((x) => hanzi(x.explain));
+  assert.deepStrictEqual(lens.filter((n) => n < 30), [], '有解释不足 30 汉字');
+  assert.strictEqual(Math.min(...lens), 53);
+  assert.strictEqual(m.analyze().quiz.minExplain, 53);
 });
 
-test('7. 邻居：不含自己、降序、5 条', () => {
-  for (const name of ['麻黄', '石膏', '人参']) {
-    const nb = neighbors(name);
-    assert.strictEqual(nb.length, 5);
-    assert.ok(!nb.some((x) => x.name === name), `${name} 的邻居含自己`);
-    for (let i = 1; i < nb.length; i += 1) assert.ok(nb[i - 1].score >= nb[i].score, '邻居未按分数降序');
-  }
-  assert.deepStrictEqual(neighbors('不存在的药'), []);
+test('脚本可运行：退出码 0，输出带现算声明与边界声明', () => {
+  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
+  assert.strictEqual(r.status, 0, String(r.stderr));
+  const out = String(r.stdout || '');
+  assert.ok(out.length > 200, '输出过短');
+  assert.match(out, /现算/);
+  assert.match(out, /不构成诊疗建议/);
+  assert.match(out, /第 12 章/);
+  assert.match(out, /21/);
 });
 
-test('8. 运行最后一行是教学边界', () => {
-  const run = execFileSync('node', ['code/main.js'], { cwd: path.join(__dirname, '..'), encoding: 'utf8' });
-  const last = run.trim().split('\n').filter(Boolean).pop();
-  assert.ok(/教学边界/.test(last), `最后一行不是教学边界：${last}`);
-  assert.ok(/不构成用药依据/.test(last), '缺「不构成用药依据」');
+test('代码头部指向本章目录', () => {
+  const body = fs.readFileSync(MAIN, 'utf8');
+  assert.ok(body.includes('chapters/12-xingneng-bianma/docs/zh.md'), '头部注释未指向本章');
 });

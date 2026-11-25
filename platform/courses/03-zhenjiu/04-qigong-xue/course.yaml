@@ -29,44 +29,43 @@ platform:
 
 chapters:
   - slug: 01-gaishu-yuanyuan
-    title: 第1章 学科概论与发展简史
-    segments: 5
+    title: 名是新的，实是旧的，气功在《内经》里已经排进治法
     video: rendered
-    estimate_minutes: 1.05
-    measured_minutes: 1.07
+    estimate_minutes: 15.42      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 15.12      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-lilun-jichu
-    title: 第2章 理论基础与修炼要素
-    segments: 5
+    title: 调息写得最多，不等于调息最要紧
     video: rendered
-    estimate_minutes: 1.03
-    measured_minutes: 1.07
+    estimate_minutes: 15.47      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 14.1      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-fanying-piancha
-    title: 第3章 练功反应与偏差的预防与纠治
-    segments: 5
+    title: 反应与偏差的分界不在感觉强弱，在能不能自己缓过来
     video: rendered
-    estimate_minutes: 1.03
-    measured_minutes: 1.05
+    estimate_minutes: 15.3      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 15.34      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-jinggong-donggong
-    title: 第4章 静功与动功
-    segments: 5
+    title: 静功与动功的分界不在动不动，在由谁主导
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 0.99
+    estimate_minutes: 14.5      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 13.45      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-taiji-jianshen
-    title: 第5章 太极拳、武术内功与健身气功
-    segments: 5
+    title: 太极拳是调身为主的动功：把动作放慢不叫练气功，把三调参数写出来才算
     video: rendered
-    estimate_minutes: 1.05
-    measured_minutes: 1.08
+    estimate_minutes: 12.08      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 12.02      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-bianzheng-shigong
-    title: 第6章 辨证施功与临床应用
-    segments: 5
+    title: 辨证施功的落点是参数：同一张「放松功」的方子，四个证候要四种练法
     video: rendered
-    estimate_minutes: 1.02
-    measured_minutes: 1.04
+    estimate_minutes: 11.17      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.11      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-yanjiu-zhiweibing
-    title: 第7章 现代研究与治未病
-    segments: 5
+    title: 气功研究只敢说「可能」，治未病的建议却必须具体到今天练什么
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.98
+    estimate_minutes: 13.28      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 13.06      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

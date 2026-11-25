@@ -29,74 +29,73 @@ platform:
 
 chapters:
   - slug: 01-yuanliu-zhengti
-    title: 第1章 中医护理的源流与整体护理观
-    segments: 5
+    title: 中医护理的起点是「先看人、再动手」的顺序
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 0.98
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.98      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-lilun-yingyong
-    title: 第2章 中医基础理论在护理中的应用
-    segments: 5
+    title: 基础理论给的不是证名，是「哪一头偏了」的方向
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 0.99
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.99      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-sizhen-bianzheng
-    title: 第3章 四诊与辨证方法基础
-    segments: 5
+    title: 四诊的分量在互相对得上，不在看得多
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.97
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.97      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-jishu-zonglun
-    title: 第4章 中医护理技术总论与常用技术（一）
-    segments: 5
+    title: 技术的第一道关是禁忌，不是手法
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-jishu-er
-    title: 第5章 常用中医护理技术（二）
-    segments: 5
+    title: 外治的效力与风险同源，差的只是边界清不清
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.96
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-yinshi-qingzhi
-    title: 第6章 饮食起居与情志护理
-    segments: 5
+    title: 日常调护的量在节律，不在「吃点好的」
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.94
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-chengxu
-    title: 第7章 护理程序与中医护理
-    segments: 5
+    title: 护理程序把「我看出来了」变成「别人能接上」
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.95
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-guancha-anquan
-    title: 第8章 病情观察与安全防护
-    segments: 5
+    title: 观察的产出是一条可交接的变化，不是「看了一眼」
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.96
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-zhengzhuang-huli
-    title: 第9章 常见症状的中医护理
-    segments: 5
+    title: 症状护理的第一步是把症状问成可比较的量
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.96
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-teshu-renqun
-    title: 第10章 老年、小儿与孕产妇护理基础
-    segments: 5
+    title: 特殊人群的差别在「同一动作要改哪几处」
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.99
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.99      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 11-wenshu-lunli
-    title: 第11章 护理文书、伦理与依法执业
-    segments: 5
+    title: 记录既是照护的痕迹，也是执业的证据
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.98
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.98      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 12-jiankang-jiaoyu-zhiliang
-    title: 第12章 健康教育、康复与质量管理
-    segments: 5
+    title: 健康教育的成果是患者做对，不是我们讲过
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.99
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.99      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

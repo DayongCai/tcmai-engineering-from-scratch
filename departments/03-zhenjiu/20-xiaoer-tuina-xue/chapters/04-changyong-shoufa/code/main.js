@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 /**
- * 小儿推拿学 · 第 4 章 小儿推拿常用手法：本章统计口径
- * 课程: departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/04-changyong-shoufa/docs/zh.md
- * 数据: standards/xiaoer-tuina/units.json（54 单元层，每单元带三辨=手法操作/特定穴/病证应用 与 四位面=脏腑系统 词频）
- * 取数: standards/xiaoer-tuina/chapter-map.json（课程章 → 教材单元号）
- * 依赖: 仅 Node.js 标准库
+ * 小儿推拿学 · 第 4 章 八法的分界不在动作，而在「吸定点是否带动皮下」：正文与习题自检
+ * 课程: departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/04-changyong-shoufa
+ * 依赖: 仅 Node.js 标准库；只读 ../docs/zh.md 与 ../quiz.json，不读 standards/。
  *
- * 数字全部现算：正文引用的每个规模、重心、引书数，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 输出的数都是当场算的：正文字数、二级节数、习题阶段分布、解释字数区间、接地数。
+ * 接地数指 check 题的正确选项里至少有一句 ≥6 汉字的正文原话 —— 习题必须与正文同源。
+ * 任何一条不成立就 exit 1，不让「题面讲的不是这一章」的东西流到学生手里。
  */
 
 'use strict';
@@ -15,107 +14,123 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'xiaoer-tuina', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/xiaoer-tuina/units.json —— 章节目录是否已脱离仓库？');
-}
-
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'xiaoer-tuina', 'units.json');
 const CHAPTER = '4';
-const KEYS = ['4.1.1', '4.1.2', '4.1.3', '4.1.4', '4.1.5', '4.2.1', '4.2.2'];
+const SLUG = '04-changyong-shoufa';
+const TITLE = '八法的分界不在动作，而在「吸定点是否带动皮下」';
 
-const load = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
-function chapterUnits(units) {
-  return units.units
-    .filter((u) => KEYS.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+const hz = (s) => (String(s || '').match(/[\u4e00-\u9fff]/g) || []).length;
+
+/** 正文切成二级节：key 为标题文本，unit 为该节的段落 */
+function chapterUnits(doc) {
+  const text = String(doc || '').replace(/\r\n/g, '\n');
+  const parts = text.split(/^## /m).slice(1);
+  return parts.map((seg, i) => {
+    const nl = seg.indexOf('\n');
+    const title = (nl === -1 ? seg : seg.slice(0, nl)).trim();
+    const body = nl === -1 ? '' : seg.slice(nl + 1);
+    const paras = body
+      .split(/\n{2,}/)
+      .map((p) => p.trim())
+      .filter((p) => p && !p.startsWith('#') && !p.startsWith('>') && !p.startsWith('|') && !p.startsWith('- ') && p !== '\u0060\u0060\u0060');
+    return { i: i + 1, key: title, title, hanzi: hz(body), paragraphs: paras.length };
+  });
 }
 
-const sum = (d) => Object.values(d).reduce((a, b) => a + b, 0);
+/** 章内各节的 key（二级节标题），按正文顺序 */
+function chapterKeys(doc) {
+  return chapterUnits(doc).map((u) => u.key);
+}
 
-function merge(list, field) {
-  const out = {};
-  for (const u of list) {
-    const src = (u.measure && u.measure[field]) || {};
-    for (const [k, v] of Object.entries(src)) out[k] = (out[k] || 0) + v;
+function summarize(units) {
+  const list = Array.isArray(units) ? units : [];
+  const hanzi = list.reduce((a, u) => a + u.hanzi, 0);
+  const paragraphs = list.reduce((a, u) => a + u.paragraphs, 0);
+  const longest = list.slice().sort((a, b) => b.hanzi - a.hanzi)[0] || { key: '—', hanzi: 0 };
+  return { sections: list.length, hanzi, paragraphs, longest: longest.key, longestHanzi: longest.hanzi };
+}
+
+/** 把文本切成 n 字连续汉字片段（与习题门的判据同一算法） */
+function grams(text, n) {
+  const clean = String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ');
+  const out = new Set();
+  for (const seg of clean.split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
   }
   return out;
 }
 
-function rank(dict) {
-  const tot = sum(dict);
-  return Object.entries(dict)
-    .map(([key, count]) => ({ key, count, share: tot ? count / tot : 0 }))
-    .sort((a, b) => b.count - a.count);
-}
+/**
+ * 习题自检：6 题（pre 1 / check 3 / post 2）· 每题 4 选项 · 解释 40–80 汉字 ·
+ * 每道 check 的正确选项里必须有一句 ≥6 汉字的当章正文原话。
+ */
+function checkExercises() {
+  const doc = fs.readFileSync(DOC, 'utf8');
+  const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+  const qs = Array.isArray(quiz.questions) ? quiz.questions : [];
+  const body = grams(doc, 6);
+  const stage = { pre: 0, check: 0, post: 0 };
+  const bad = [];
+  const lens = [];
+  let hit = 0;
 
-function byBookSection(list) {
-  const out = new Map();
-  for (const u of list) {
-    const key = `教材第${u.chapter}章`;
-    const it = out.get(key) || { sec: key, units: 0, hanzi: 0 };
-    it.units += 1;
-    it.hanzi += u.hanzi;
-    out.set(key, it);
+  for (const q of qs) stage[q.stage] = (stage[q.stage] || 0) + 1;
+  if (qs.length !== 6) bad.push(`题数 ${qs.length}（需 6）`);
+  if (stage.pre !== 1 || stage.check !== 3 || stage.post !== 2) {
+    bad.push(`分段 pre${stage.pre}/check${stage.check}/post${stage.post}（需 1/3/2）`);
   }
-  return [...out.values()];
-}
 
-function citations(list) {
-  const counter = new Map();
-  for (const u of list) {
-    for (const m of u.prose.matchAll(/《([^》]+)》/g)) counter.set(m[1], (counter.get(m[1]) || 0) + 1);
+  for (const q of qs) {
+    const opts = Array.isArray(q.options) ? q.options : [];
+    if (opts.length !== 4) bad.push('有题不是 4 选项');
+    if (new Set(opts.map(String)).size !== opts.length) bad.push('有题选项重复');
+    if (!(Number.isInteger(q.correct) && q.correct >= 0 && q.correct < opts.length)) {
+      bad.push('correct 下标非法');
+    }
+    const n = hz(q.explain || q.explanation);
+    lens.push(n);
+    if (n < 40 || n > 80) bad.push(`解释 ${n} 汉字（需 40–80）`);
+    if (q.stage === 'check') {
+      const right = String(opts[q.correct] || '');
+      if ([...grams(right, 6)].some((g) => body.has(g))) hit += 1;
+      else bad.push(`check 题「${String(q.question).slice(0, 14)}…」引不到 ≥6 汉字正文原句`);
+    }
   }
-  const ranked = [...counter.entries()].sort((a, b) => b[1] - a[1]);
-  return { books: counter.size, total: sum(Object.fromEntries(counter)), top: ranked.slice(0, 3) };
+  if (hit < 3) bad.push(`接地 check ${hit}/3`);
+
+  console.log('');
+  console.log(`习题 ${qs.length} 题 (pre ${stage.pre}/check ${stage.check}/post ${stage.post}) · 解释 ${Math.min(...lens)}–${Math.max(...lens)} 汉字 · 接地 check ${hit}/${stage.check}`);
+  console.log('※ 接地：check 题的正确选项里必须有一句 ≥6 汉字的正文原话 —— 习题与 ../docs/zh.md 同源。');
+
+  for (const b of bad) console.error('  ✗ ' + b);
+  return bad.length === 0;
 }
 
-function shape(list) {
-  const hanzi = list.reduce((a, u) => a + u.hanzi, 0);
-  return {
-    units: list.length,
-    hanzi,
-    mean: list.length ? Math.round(hanzi / list.length) : 0,
-    valueLike: list.reduce((a, u) => a + u.measure.valueLike, 0),
-    digits: list.reduce((a, u) => a + u.measure.digits, 0),
-  };
+function main() {
+  const doc = fs.readFileSync(DOC, 'utf8');
+  const units = chapterUnits(doc);
+  const s = summarize(units);
+
+  console.log(`小儿推拿学 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('');
+  console.log(`正文 ${hz(doc)} 汉字 · 二级节 ${s.sections} · 段落 ${s.paragraphs}`);
+  for (const u of units) console.log(`  ${String(u.i).padStart(2, '0')} ${u.key} — ${u.hanzi} 字 / ${u.paragraphs} 段`);
+  console.log(`最长一节：${s.longest}（${s.longestHanzi} 字）`);
+  console.log('');
+  console.log('※ 教学样例：所有数字由本脚本从 ../docs/zh.md 与 ../quiz.json 现算，不手打；改正文后重跑即可复现。');
+  console.log('※ 本输出仅用于教学演示，不构成诊疗建议，不能替代医师面诊。');
 }
 
-/** 取穴与刺灸的操作词：本章正文里出现多少处「定位／分寸／直刺／灸」类的可执行指令 */
-function hands(list) {
-  const WORDS = ['定位', '骨度', '分寸', '同身寸', '直刺', '斜刺', '平刺', '艾灸', '温针灸', '留针', '禁针', '禁灸'];
-  const pairs = WORDS.map((w) => [w, list.reduce((a, u) => a + u.prose.split(w).length - 1, 0)]);
-  return Object.fromEntries(pairs).constructor === Object
-    ? pairs.filter(([, c]) => c).sort((a, b) => b[1] - a[1])
-    : pairs;
+function run() {
+  main();
+  if (!checkExercises()) {
+    console.error('习题自检未通过');
+    process.exit(1);
+  }
 }
 
-module.exports = { CHAPTER, KEYS, load, chapterUnits, merge, rank, byBookSection, citations, shape, hands, sum };
+if (require.main === module) run();
 
-if (require.main === module) {
-  const data = load();
-  const list = chapterUnits(data);
-  const s = shape(list);
-  console.log('═══ 小儿推拿学 · 第 4 章 小儿推拿常用手法 ═══');
-  console.log(`单元 ${s.units} · 汉字 ${s.hanzi} · 平均 ${s.mean} 字/单元`);
-  console.log(`数值类命中 ${s.valueLike} · 数字字符 ${s.digits}`);
-  console.log('\n按教材章：');
-  for (const sec of byBookSection(list)) console.log(`  ${sec.sec}  ${sec.units} 单元 · ${sec.hanzi} 字`);
-  console.log('\n三辨重心：');
-  for (const v of rank(merge(list, 'views'))) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
-  console.log('\n四位面覆盖：');
-  for (const v of rank(merge(list, 'levels'))) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
-  const c = citations(list);
-  console.log(`\n引书 ${c.books} 部 · 引用 ${c.total} 次 · 前三：${c.top.map(([n, k]) => `${n}(${k})`).join('、')}`);
-  console.log('\n操作词命中：' + hands(list).map(([w, k]) => `${w}×${k}`).join('  '));
-  for (const u of list) console.log(`  ${u.sub}\t${u.title}\t${u.hanzi}字`);
-  console.log('※ 教学样例：数字由 standards/xiaoer-tuina/units.json 现算，不构成诊疗建议，不能替代医师面诊。');
-}
+module.exports = { chapterKeys, chapterUnits, summarize, checkExercises, CHAPTER, SLUG };

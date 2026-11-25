@@ -1,27 +1,27 @@
 {
   "chapter": "13-sedative-hypnotics",
-  "slideCount": 27,
-  "segmentCount": 15,
+  "slideCount": 36,
+  "segmentCount": 12,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 29
+      "chars": 35
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 86
+      "chars": 27
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 217
+      "chars": 50
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 149
+      "chars": 85
     },
     {
       "n": 5,
@@ -91,51 +91,96 @@
     {
       "n": 18,
       "segment": 10,
-      "chars": 362
+      "chars": 382
     },
     {
       "n": 19,
-      "segment": 11,
+      "segment": 10,
       "chars": 276
     },
     {
       "n": 20,
-      "segment": 11,
-      "chars": 360
+      "segment": 10,
+      "chars": 408
     },
     {
       "n": 21,
-      "segment": 12,
-      "chars": 338
+      "segment": 10,
+      "chars": 312
     },
     {
       "n": 22,
-      "segment": 12,
-      "chars": 281
+      "segment": 10,
+      "chars": 400
     },
     {
       "n": 23,
-      "segment": 13,
-      "chars": 415
+      "segment": 10,
+      "chars": 408
     },
     {
       "n": 24,
-      "segment": 13,
-      "chars": 77
+      "segment": 10,
+      "chars": 281
     },
     {
       "n": 25,
-      "segment": 14,
-      "chars": 405
+      "segment": 10,
+      "chars": 389
     },
     {
       "n": 26,
-      "segment": 14,
-      "chars": 130
+      "segment": 10,
+      "chars": 384
     },
     {
       "n": 27,
-      "segment": 15,
+      "segment": 10,
+      "chars": 397
+    },
+    {
+      "n": 28,
+      "segment": 10,
+      "chars": 371
+    },
+    {
+      "n": 29,
+      "segment": 10,
+      "chars": 368
+    },
+    {
+      "n": 30,
+      "segment": 10,
+      "chars": 184
+    },
+    {
+      "n": 31,
+      "segment": 11,
+      "chars": 412
+    },
+    {
+      "n": 32,
+      "segment": 11,
+      "chars": 304
+    },
+    {
+      "n": 33,
+      "segment": 11,
+      "chars": 161
+    },
+    {
+      "n": 34,
+      "segment": 11,
+      "chars": 316
+    },
+    {
+      "n": 35,
+      "segment": 11,
+      "chars": 331
+    },
+    {
+      "n": 36,
+      "segment": 12,
       "chars": 52
     }
   ]

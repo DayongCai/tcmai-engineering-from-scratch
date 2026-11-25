@@ -1,31 +1,86 @@
 {
   "chapter": "07-pingheng-butai",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 16,
+  "segmentCount": 8,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 14
+      "chars": 26
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 89
+      "chars": 73
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 13
+      "chars": 159
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 107
+      "chars": 127
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 218
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 334
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 329
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 260
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 307
+    },
+    {
+      "n": 10,
+      "segment": 6,
+      "chars": 387
+    },
+    {
+      "n": 11,
+      "segment": 6,
+      "chars": 289
+    },
+    {
+      "n": 12,
+      "segment": 6,
+      "chars": 372
+    },
+    {
+      "n": 13,
+      "segment": 6,
+      "chars": 51
+    },
+    {
+      "n": 14,
+      "segment": 7,
+      "chars": 445
+    },
+    {
+      "n": 15,
+      "segment": 7,
+      "chars": 184
+    },
+    {
+      "n": 16,
+      "segment": 8,
       "chars": 52
     }
   ]

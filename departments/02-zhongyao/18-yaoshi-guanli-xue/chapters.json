@@ -4,7 +4,7 @@
   {
    "n": 1,
    "slug": "01-dingyi-fenlei",
-   "title": "药品注册的定义与分类管理",
+   "title": "注册不是递材料等批文，而是拿证据换结论的双向程序",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -12,7 +12,7 @@
   {
    "n": 2,
    "slug": "02-shenqingren",
-   "title": "申请人资格与法律责任",
+   "title": "申请人资格是责任锚点：担不起责的主体不该出现在申报书上",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -20,7 +20,7 @@
   {
    "n": 3,
    "slug": "03-shangshi-qian",
-   "title": "上市前研究：药学、药理毒理与临床",
+   "title": "上市前的四组证据必须同版，否则每份都对、合起来互不支持",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -28,7 +28,7 @@
   {
    "n": 4,
    "slug": "04-linchuang-shiji",
-   "title": "药物临床试验：分期、伦理与备案",
+   "title": "跳期不是加速，是让某一类问题永远没有答案",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -36,7 +36,7 @@
   {
    "n": 5,
    "slug": "05-anquan-biangeng",
-   "title": "试验期间的安全报告与变更控制",
+   "title": "试验期间的变化必须留下同步记录，否则数据一律被当作来路不明",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -44,7 +44,7 @@
   {
    "n": 6,
    "slug": "06-shenping",
-   "title": "审评与审批：结论怎么形成",
+   "title": "审评结论要能被换一组人复核，做不到多半是推理链没写出来",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -52,7 +52,7 @@
   {
    "n": 7,
    "slug": "07-hecha-jianyan",
-   "title": "注册核查与注册检验",
+   "title": "核查与检验的价值不在补充材料，而在让纸面证据可被推翻",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -60,7 +60,7 @@
   {
    "n": 8,
    "slug": "08-jiakuai",
-   "title": "加快通道：突破性治疗、附条件批准、优先审评",
+   "title": "加快通道换的是证据的时间表，不是证据的门槛",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -68,7 +68,7 @@
   {
    "n": 9,
    "slug": "09-shangshi-hou",
-   "title": "上市后变更与再注册",
+   "title": "批准只是起点，变更与再注册才是持有人真正的日常",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -76,7 +76,7 @@
   {
    "n": 10,
    "slug": "10-zhongyao-tese",
-   "title": "中药注册的特殊性",
+   "title": "中药注册的特殊性不在放宽标准，而在证据形态不同",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -84,7 +84,7 @@
   {
    "n": 11,
    "slug": "11-dingyi-shiyong",
-   "title": "药品的定义与适用范围",
+   "title": "管辖判断在合规动作之前，定错管辖则后面全部白做",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -92,7 +92,7 @@
   {
    "n": 12,
    "slug": "12-chiyouren",
-   "title": "上市许可持有人制度：一个人对全生命周期负责",
+   "title": "责任可以外包作业，不能外包给受托人",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -100,7 +100,7 @@
   {
    "n": 13,
    "slug": "13-zhuisu",
-   "title": "药品追溯制度",
+   "title": "追溯的判据不是上了系统，是能从患者倒走回投料批",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -108,7 +108,7 @@
   {
    "n": 14,
    "slug": "14-shengchan",
-   "title": "药品生产：许可与 GMP",
+   "title": "批检验合格只证明这一批，工艺记录才证明下一批",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -116,7 +116,7 @@
   {
    "n": 15,
    "slug": "15-jingying",
-   "title": "药品经营：许可与 GSP",
+   "title": "经营的责任不是把药送到，是送到时它还是原来那批药",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -124,7 +124,7 @@
   {
    "n": 16,
    "slug": "16-fenlei-wangluo-guanggao",
-   "title": "处方药分类、网络销售与广告管制",
+   "title": "线上不创造新的豁免，只把信息不对称搬到了屏幕这一侧",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -132,7 +132,7 @@
   {
    "n": 17,
    "slug": "17-yiliaojigou",
-   "title": "医疗机构药事管理",
+   "title": "审方的价值不在改处方，在给药之前发现不该发生的错误",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -140,7 +140,7 @@
   {
    "n": 18,
    "slug": "18-shangshihou-jiancha",
-   "title": "上市后管理与不良反应监测",
+   "title": "监测的成果不是报表数量，是它改过哪一个用药决定",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -148,7 +148,7 @@
   {
    "n": 19,
    "slug": "19-jialieyao",
-   "title": "假药与劣药的认定",
+   "title": "假药问它是不是那个东西，劣药问它够不够格",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -156,7 +156,7 @@
   {
    "n": 20,
    "slug": "20-falv-zeren-chubei",
-   "title": "法律责任与药品储备供应",
+   "title": "一端罚到人，一端不许缺，两头合起来才叫药事管理",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -164,7 +164,7 @@
   {
    "n": 21,
    "slug": "21-jialie-jianyan-huomian",
-   "title": "假劣药的检验与豁免",
+   "title": "假劣药的认定靠证据链，检验只是链上的一环",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -172,7 +172,7 @@
   {
    "n": 22,
    "slug": "22-shishitiao-zengliang",
-   "title": "实施条例的增量：委托、网络、免责与激励",
+   "title": "条例的增量写在三处：不能做、可以不罚、做了有奖",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -180,7 +180,7 @@
   {
    "n": 23,
    "slug": "23-yaojing-tixi",
-   "title": "药物警戒体系：谁负责、谁执行、靠什么运转",
+   "title": "药物警戒靠体系运转，不靠某个人的责任心",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -188,7 +188,7 @@
   {
    "n": 24,
    "slug": "24-geren-xinhao-fengxian",
-   "title": "从个例报告到风险控制：时限、信号与定期报告",
+   "title": "药物警戒的效率由时钟决定，判断再准也补不回迟到",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -196,7 +196,7 @@
   {
    "n": 25,
    "slug": "25-gmp-tixi-rendyuan",
-   "title": "GMP 的体系要求与关键人员",
+   "title": "GMP 要的是一个能说不的组织，不是一套齐备的文件",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -204,7 +204,7 @@
   {
    "n": 26,
    "slug": "26-gmp-sigen-zhizhu",
-   "title": "GMP 的四根支柱：验证、变更、偏差、回顾",
+   "title": "一次合格证明不了下一次，合格要靠四根支柱咬合",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -212,7 +212,7 @@
   {
    "n": 27,
    "slug": "27-gsp-zuzhi",
-   "title": "GSP 的组织条件：体系、人员与设施",
+   "title": "GSP 的组织条件要随规模同步长，只扩仓库不扩人",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -220,7 +220,7 @@
   {
    "n": 28,
    "slug": "28-gsp-sizhizhu",
-   "title": "GSP 的四个支点：验收、储存、记录、冷链",
+   "title": "经营环节的质量不是造出来的，是四个支点各防一种错",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

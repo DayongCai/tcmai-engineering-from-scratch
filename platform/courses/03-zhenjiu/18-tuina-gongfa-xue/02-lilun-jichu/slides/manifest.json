@@ -1,31 +1,91 @@
 {
   "chapter": "02-lilun-jichu",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 17,
+  "segmentCount": 8,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 13
+      "chars": 22
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 61
+      "chars": 101
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 35
+      "chars": 148
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 103
+      "chars": 124
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 187
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 249
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 276
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 340
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 307
+    },
+    {
+      "n": 10,
+      "segment": 6,
+      "chars": 205
+    },
+    {
+      "n": 11,
+      "segment": 6,
+      "chars": 350
+    },
+    {
+      "n": 12,
+      "segment": 6,
+      "chars": 371
+    },
+    {
+      "n": 13,
+      "segment": 6,
+      "chars": 368
+    },
+    {
+      "n": 14,
+      "segment": 6,
+      "chars": 362
+    },
+    {
+      "n": 15,
+      "segment": 7,
+      "chars": 525
+    },
+    {
+      "n": 16,
+      "segment": 7,
+      "chars": 163
+    },
+    {
+      "n": 17,
+      "segment": 8,
       "chars": 52
     }
   ]

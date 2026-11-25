@@ -28,7 +28,7 @@
       "spoken": "「《护理综合技能·第2章》」——教材第 2 章章目级引文；教材无篇名级引文，非本章原文篇名。本章要回答的是：技能操作的基本规范与准备要求这一章的核心判据是什么。",
       "estimateSeconds": 17,
       "audio": "002.mp3",
-      "audioSeconds": 16.15
+      "audioSeconds": 16.152
     },
     {
       "n": 3,
@@ -38,7 +38,7 @@
       "spoken": "教材第 2 章独立成章：本课按母本章序 1:1 落地，便于与 02-基础护理学 的「规范」编法对照。。",
       "estimateSeconds": 10,
       "audio": "003.mp3",
-      "audioSeconds": 9.26
+      "audioSeconds": 9.264
     },
     {
       "n": 4,
@@ -58,10 +58,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "005.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 63.12,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 1.07,
+    "measuredMinutes": 1.05,
+    "ratio": 0.986
+  }
 }

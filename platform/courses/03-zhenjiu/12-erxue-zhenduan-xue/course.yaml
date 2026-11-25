@@ -29,50 +29,49 @@ platform:
 
 chapters:
   - slug: 01-yuanliu-lilun
-    title: 第1章 耳穴诊治的源流与理论
-    segments: 5
+    title: 「宗脉所聚」把耳变成一张诊图，而不是一个器官
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.96
+    estimate_minutes: 13.47      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-jiepou-fenqu
-    title: 第2章 耳廓解剖与分区
-    segments: 5
+    title: 分区是在十三个结构上另划九张网，网眼比结构粗
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.92
+    estimate_minutes: 11.13      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.26      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-dingwei
-    title: 第3章 耳穴定位
-    segments: 5
+    title: 定位的分歧不在手稳，而在先认地形还是先记穴名
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.91
+    estimate_minutes: 11.58      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.03      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-zhenduan
-    title: 第4章 耳穴诊断
-    segments: 5
+    title: 望、压、电测查的是同一件事的三个通道，没有一条能单独定病名
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.88
+    estimate_minutes: 13.8      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.44      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-zhiliao-fangfa
-    title: 第5章 耳穴治疗方法
-    segments: 5
+    title: 耳穴治疗的差别不在针，而在把刺激送到耳廓的哪一层
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.94
+    estimate_minutes: 10.25      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 6.41      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-neike-yingyong
-    title: 第6章 耳穴在内科的应用
-    segments: 5
+    title: 内科应用的可复现性在辨经那一步，不在穴位表上
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.92
+    estimate_minutes: 13.23      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.66      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-fuer-wuguan
-    title: 第7章 耳穴在妇儿与五官的应用
-    segments: 5
+    title: 换人群先换禁忌，取穴反倒可以照搬
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.94
+    estimate_minutes: 11.0      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.99      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-anquan-guifan
-    title: 第8章 耳穴操作安全与规范
-    segments: 5
+    title: 耳穴的安全规范不在底本里，只能从四门技术的条款里取交集
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.93
+    estimate_minutes: 10.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.57      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

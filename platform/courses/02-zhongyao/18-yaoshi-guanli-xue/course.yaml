@@ -29,170 +29,169 @@ platform:
 
 chapters:
   - slug: 01-dingyi-fenlei
-    title: 第1章 药品注册的定义与分类管理
-    segments: 5
+    title: 注册不是递材料等批文，而是拿证据换结论的双向程序
     video: rendered
-    estimate_minutes: 1.13
-    measured_minutes: 1.11
+    estimate_minutes: 1.13      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.11      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-shenqingren
-    title: 第2章 申请人资格与法律责任
-    segments: 5
+    title: 申请人资格是责任锚点：担不起责的主体不该出现在申报书上
     video: rendered
-    estimate_minutes: 1.08
-    measured_minutes: 1.06
+    estimate_minutes: 1.08      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.06      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-shangshi-qian
-    title: 第3章 上市前研究：药学、药理毒理与临床
-    segments: 5
+    title: 上市前的四组证据必须同版，否则每份都对、合起来互不支持
     video: rendered
-    estimate_minutes: 1.17
-    measured_minutes: 1.16
+    estimate_minutes: 1.17      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.16      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-linchuang-shiji
-    title: 第4章 药物临床试验：分期、伦理与备案
-    segments: 5
+    title: 跳期不是加速，是让某一类问题永远没有答案
     video: rendered
-    estimate_minutes: 1.17
-    measured_minutes: 1.15
+    estimate_minutes: 1.17      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.15      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-anquan-biangeng
-    title: 第5章 试验期间的安全报告与变更控制
-    segments: 5
+    title: 试验期间的变化必须留下同步记录，否则数据一律被当作来路不明
     video: rendered
-    estimate_minutes: 1.17
-    measured_minutes: 1.12
+    estimate_minutes: 1.17      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.12      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-shenping
-    title: 第6章 审评与审批：结论怎么形成
-    segments: 5
+    title: 审评结论要能被换一组人复核，做不到多半是推理链没写出来
     video: rendered
-    estimate_minutes: 1.12
-    measured_minutes: 1.12
+    estimate_minutes: 1.12      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.12      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-hecha-jianyan
-    title: 第7章 注册核查与注册检验
-    segments: 5
+    title: 核查与检验的价值不在补充材料，而在让纸面证据可被推翻
     video: rendered
-    estimate_minutes: 1.1
-    measured_minutes: 1.07
+    estimate_minutes: 1.10      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.07      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-jiakuai
-    title: 第8章 加快通道：突破性治疗、附条件批准、优先审评
-    segments: 5
+    title: 加快通道换的是证据的时间表，不是证据的门槛
     video: rendered
-    estimate_minutes: 1.17
-    measured_minutes: 1.18
+    estimate_minutes: 1.17      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.18      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-shangshi-hou
-    title: 第9章 上市后变更与再注册
-    segments: 5
+    title: 批准只是起点，变更与再注册才是持有人真正的日常
     video: rendered
-    estimate_minutes: 1.12
-    measured_minutes: 1.1
+    estimate_minutes: 1.12      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.10      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-zhongyao-tese
-    title: 第10章 中药注册的特殊性
-    segments: 5
+    title: 中药注册的特殊性不在放宽标准，而在证据形态不同
     video: rendered
-    estimate_minutes: 1.1
-    measured_minutes: 1.08
+    estimate_minutes: 1.10      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.08      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 11-dingyi-shiyong
-    title: 第11章 药品的定义与适用范围
-    segments: 5
+    title: 管辖判断在合规动作之前，定错管辖则后面全部白做
     video: rendered
-    estimate_minutes: 1.05
-    measured_minutes: 1.02
+    estimate_minutes: 1.05      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.02      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 12-chiyouren
-    title: 第12章 上市许可持有人制度：一个人对全生命周期负责
-    segments: 5
+    title: 责任可以外包作业，不能外包给受托人
     video: rendered
-    estimate_minutes: 1.2
-    measured_minutes: 1.13
+    estimate_minutes: 1.20      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.13      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 13-zhuisu
-    title: 第13章 药品追溯制度
-    segments: 5
+    title: 追溯的判据不是上了系统，是能从患者倒走回投料批
     video: rendered
-    estimate_minutes: 1.07
-    measured_minutes: 1.01
+    estimate_minutes: 1.07      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.01      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 14-shengchan
-    title: 第14章 药品生产：许可与 GMP
-    segments: 5
+    title: 批检验合格只证明这一批，工艺记录才证明下一批
     video: rendered
-    estimate_minutes: 1.07
-    measured_minutes: 1.06
+    estimate_minutes: 1.07      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.06      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 15-jingying
-    title: 第15章 药品经营：许可与 GSP
-    segments: 5
+    title: 经营的责任不是把药送到，是送到时它还是原来那批药
     video: rendered
-    estimate_minutes: 1.08
-    measured_minutes: 1.06
+    estimate_minutes: 1.08      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.06      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 16-fenlei-wangluo-guanggao
-    title: 第16章 处方药分类、网络销售与广告管制
-    segments: 5
+    title: 线上不创造新的豁免，只把信息不对称搬到了屏幕这一侧
     video: rendered
-    estimate_minutes: 1.1
-    measured_minutes: 1.08
+    estimate_minutes: 1.10      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.08      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 17-yiliaojigou
-    title: 第17章 医疗机构药事管理
-    segments: 5
+    title: 审方的价值不在改处方，在给药之前发现不该发生的错误
     video: rendered
-    estimate_minutes: 1.08
-    measured_minutes: 1.04
+    estimate_minutes: 1.08      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.04      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 18-shangshihou-jiancha
-    title: 第18章 上市后管理与不良反应监测
-    segments: 5
+    title: 监测的成果不是报表数量，是它改过哪一个用药决定
     video: rendered
-    estimate_minutes: 1.12
-    measured_minutes: 1.06
+    estimate_minutes: 1.12      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.06      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 19-jialieyao
-    title: 第19章 假药与劣药的认定
-    segments: 5
+    title: 假药问它是不是那个东西，劣药问它够不够格
     video: rendered
-    estimate_minutes: 1.1
-    measured_minutes: 1.02
+    estimate_minutes: 1.10      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.02      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 20-falv-zeren-chubei
-    title: 第20章 法律责任与药品储备供应
-    segments: 5
+    title: 一端罚到人，一端不许缺，两头合起来才叫药事管理
     video: rendered
-    estimate_minutes: 1.1
-    measured_minutes: 1.07
+    estimate_minutes: 1.10      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.07      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 21-jialie-jianyan-huomian
-    title: 第21章 假劣药的检验与豁免
-    segments: 5
+    title: 假劣药的认定靠证据链，检验只是链上的一环
     video: rendered
-    estimate_minutes: 1.12
-    measured_minutes: 1.1
+    estimate_minutes: 1.12      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.10      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 22-shishitiao-zengliang
-    title: 第22章 实施条例的增量：委托、网络、免责与激励
-    segments: 5
+    title: 条例的增量写在三处：不能做、可以不罚、做了有奖
     video: rendered
-    estimate_minutes: 1.22
-    measured_minutes: 1.2
+    estimate_minutes: 1.22      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.20      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 23-yaojing-tixi
-    title: 第23章 药物警戒体系：谁负责、谁执行、靠什么运转
-    segments: 5
+    title: 药物警戒靠体系运转，不靠某个人的责任心
     video: rendered
-    estimate_minutes: 1.17
-    measured_minutes: 1.12
+    estimate_minutes: 1.17      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.12      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 24-geren-xinhao-fengxian
-    title: 第24章 从个例报告到风险控制：时限、信号与定期报告
-    segments: 5
+    title: 药物警戒的效率由时钟决定，判断再准也补不回迟到
     video: rendered
-    estimate_minutes: 1.2
-    measured_minutes: 1.16
+    estimate_minutes: 1.20      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.16      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 25-gmp-tixi-rendyuan
-    title: 第25章 GMP 的体系要求与关键人员
-    segments: 5
+    title: GMP 要的是一个能说不的组织，不是一套齐备的文件
     video: rendered
-    estimate_minutes: 1.12
-    measured_minutes: 1.09
+    estimate_minutes: 1.12      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.09      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 26-gmp-sigen-zhizhu
-    title: 第26章 GMP 的四根支柱：验证、变更、偏差、回顾
-    segments: 5
+    title: 一次合格证明不了下一次，合格要靠四根支柱咬合
     video: rendered
-    estimate_minutes: 1.2
-    measured_minutes: 1.17
+    estimate_minutes: 1.20      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.17      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 27-gsp-zuzhi
-    title: 第27章 GSP 的组织条件：体系、人员与设施
-    segments: 5
+    title: GSP 的组织条件要随规模同步长，只扩仓库不扩人
     video: rendered
-    estimate_minutes: 1.17
-    measured_minutes: 1.14
+    estimate_minutes: 1.17      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.14      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 28-gsp-sizhizhu
-    title: 第28章 GSP 的四个支点：验收、储存、记录、冷链
-    segments: 5
+    title: 经营环节的质量不是造出来的，是四个支点各防一种错
     video: rendered
-    estimate_minutes: 1.2
-    measured_minutes: 1.18
+    estimate_minutes: 1.20      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.18      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

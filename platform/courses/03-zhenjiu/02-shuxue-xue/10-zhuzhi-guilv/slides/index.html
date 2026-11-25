@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"/>
-<title>第 10 章 · 腧穴的主治规律与配穴 · 幻灯片</title>
+<title>第 10 章 · 主治规律是「穴在哪一段」与「病在哪一段」之间的一条接线规则 · 幻灯片</title>
 <style>
 
 :root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
@@ -59,24 +59,88 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <body>
 <div id="deck">
 <section class="slide" data-i="0">
-  <div class="slide-inner"><h1 class="big">第 10 章 · 腧穴的主治规律与配穴</h1></div>
-  <div class="slide-foot"><span>1 / 5</span><span>title</span></div>
+  <div class="slide-inner"><h1 class="big">第 10 章 · 主治规律是「穴在哪一段」与「病在哪一段」之间的一条接线规则</h1></div>
+  <div class="slide-foot"><span>1 / 16</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「《灵枢·杂病》」——教材·第2章·2.4.2。本章要回答的是：腧穴的主治规律能不能从穴位数据里数出来。</blockquote></div>
-  <div class="slide-foot"><span>2 / 5</span><span>motto</span></div>
+  <div class="slide-inner"><blockquote class="motto">「故善用针者，从阴引阳，从阳引阴，以右治左，以左治右」——《素问·阴阳应象大论》</blockquote></div>
+  <div class="slide-foot"><span>2 / 16</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
-  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">近治、远治、特殊作用三分是教材给的，能不能在自己的数据里复现，是另一回事。</p></div>
-  <div class="slide-foot"><span>3 / 5</span><span>problem</span></div>
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">库内 270 穴，有主治文字的 165 个，切出 488 条主治，平均每穴 2.96 条。这 2.96 条不是均匀分布的：四肢 86 穴平均 3.38 条，背腰 40 穴 2.70 条，头面颈项 29 穴 2.31 条，胸腹只有 9 穴、平均 2.11 条。越往四肢末端走，一个穴管的事越多；越靠近躯干，管得越少越集中。另一头是配穴：270 穴里只有 26 个穴的配伍字段有字，占 9.6%，而且全是散句，没有一条是可执行的规则。于是问题落在两处——主治的「多与少」能不能用一条规则解释，配穴的「散与整」能不能从这 26 条里读出模式。</p></div>
+  <div class="slide-foot"><span>3 / 16</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
-  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（取穴是在人身上完成的，位置差一线，疗效差一层）+ 知识积累（本章 3 单元 3,781 汉字；三辨主 <strong>主治 222</strong>；四位面（部位）主 <strong>头面颈项 92</strong>；引书 <strong>3 部</strong>；数值类命中 3）</p></div>
-  <div class="slide-foot"><span>4 / 5</span><span>roots</span></div>
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（病人坐在面前只有一次机会，术者必须当场决定针扎在哪一段；主治规律的作用是把「病在哪」与「穴在哪」这两段立刻接上，接不上就得现场试）+ 知识积累（近治、远治、特殊作用三分不是一次提出的：先是《灵枢》一脉相承的「经脉所过」经验，再被《四总穴歌》压成四句韵语，最后由教材写成三条并列的作用，越往后越像分类，越往前越像口诀）</p></div>
+  <div class="slide-foot"><span>4 / 16</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
+  <div class="slide-inner"><div class="kicker">一、488 条主治，平均值掩盖了两件事</div>
+                <div class="compact dense"><p>先把分布摆开。主治字段按 ①②③ 分条切，得到 165 穴、488 条、平均 2.96 条，这是全库的平均。按部位拆开，平均值立刻分层：</p>
+<div class="table-wrap"><table><thead><tr><th>部位</th><th>有主治的穴数</th><th>主治条目</th><th>平均</th></tr></thead><tbody><tr><td>四肢</td><td>86</td><td>291</td><td>3.38</td></tr><tr><td>背腰</td><td>40</td><td>108</td><td>2.70</td></tr><tr><td>头面颈项</td><td>29</td><td>67</td><td>2.31</td></tr><tr><td>胸腹</td><td>9</td><td>19</td><td>2.11</td></tr></tbody></table></div>
+<p>这个排序不是笔误：<strong>离躯干越远，一个穴的主治条目越多。</strong> 四肢穴平均比胸腹穴多 1.27 条，多出六成。而条目最多的是曲池，7 条：①手臂痹痛、上肢不遂；②热病；③眩晕；④腹痛、吐泻等肠胃病证；⑤咽喉肿痛、齿痛、目赤肿痛等五官热性病证；⑥瘾疹、湿疹、疥癣等皮外科病证；⑦癫狂。一个肘部的穴，管到了手臂、全身发热、头目、肠胃、咽喉齿目、皮肤、神志七个方向。</p>
+<p>另一头只有一条主治的穴有 18 个。<strong>平均值 2.96 把这两端抹平了</strong>，而规律恰恰藏在这两端之间。</p></div></div>
+  <div class="slide-foot"><span>5 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">一、488 条主治，平均值掩盖了两件事</div>
+                <div class="compact"><p>第二个被平均值掩盖的是用词。270 穴里有 153 穴的主治含「痛」，占 56.7%——超过一半的穴在治痛。这不是因为痛最重要，是因为底本的写法有定式：「部位＋病证」，而病证栏里最通用的词就是痛。读主治表时要先扣掉这一层格式噪声，才能看见穴与穴的差别：<strong>痛是公共项，不是特征项。</strong></p></div></div>
+  <div class="slide-foot"><span>6 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">二、近治：部位字段已经写下了第一条主治</div>
+                <div class="compact"><p>把 488 条主治对照每个穴的部位字段，第一条几乎总是本部位或邻近部位。内关的 5 条里，第 5 条是「肘、臂、腕挛痛」；列缺的 3 条里，第 3 条是「手腕痛」；中府的 2 条里，「咳嗽、气喘、胸痛」在胸，「肩背痛」在邻。这一层不需要理论，扎在哪就治哪，是针刺的物理起点。</p>
+<p>但近治有一个容易被忽略的推论：<strong>部位字段是主治的第一条索引，所以部位字段错一格，整条推理就歪。</strong> 库内太冲的部位记为「背腰」，而太冲在足背第一、二跖骨间——这是一个明确的字段错误。太冲有 5 条主治，把它从背腰挪回四肢，背腰会从 108 条／40 穴（2.70）变成 103 条／39 穴（2.64），四肢会从 291 条／86 穴（3.38）变成 296 条／87 穴（3.40）。本章的所有平均值都带着这一处偏差，量很小，但方向明确：四肢被低估、背腰被高估。</p></div></div>
+  <div class="slide-foot"><span>7 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">二、近治：部位字段已经写下了第一条主治</div>
+                <div class="compact"><p>近治的边界也要说清。头面颈项 29 穴平均只有 2.31 条，看着比四肢少，但它少得有道理：头面穴的主治高度集中在五官与局部（目、耳、鼻、口、齿、面），彼此重复度高，写成条目反而是浪费。<strong>条目少不等于作用弱，等于作用集中。</strong> 胸腹 9 穴平均 2.11 条、条目最少，同样是因为它们几乎只做一件事：内应脏腑。</p></div></div>
+  <div class="slide-foot"><span>8 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">三、远治：为什么四肢穴的主治最长</div>
+                <div class="compact"><p>远治的一般表述是「经脉所过，主治所及」。这句话在数据上留下了一个可以量化的印记：四肢 86 个有主治的穴里，有 50 个的主治提到了头面五官（头、目、咽、齿、口、鼻、耳、面），占 58.1%；躯干与头面 78 个穴里只有 33 个提到，占 42.3%。</p>
+<p>58.1% 对 42.3%，差距不算悬殊，但这个差距的方向很关键：<strong>一个长在手脚上的穴，一半以上在治别处的病。</strong> 而远治之所以可能，前提是经脉把两端连起来——合谷在大肠经上，大肠经上颈面，所以「面口合谷收」；列缺在肺经上，肺经不上头面，但列缺是络穴又通任脉，底本直接写「头项寻列缺，配风池、太阳」。</p>
+<p>这也解释了第二节那个反直觉的现象：四肢穴主治条目最多，不是因为它们本事最大，是因为它们同时承担近治与远治两套任务，条目自然叠上去。曲池的 7 条里，①是近治，②③⑤⑦是远治，④⑥是特殊作用——<strong>一个穴的条目数，等于它挂了几套接线。</strong></p></div></div>
+  <div class="slide-foot"><span>9 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">三、远治：为什么四肢穴的主治最长</div>
+                <div class="compact"><p>远治还有一层分辨要说清。躯干与头面穴里提到头面五官的也有 42.3%，但机制不同：背俞与募穴本身就是「内应脏腑」的接口，肺俞治咳嗽、皮肤病，走的是「肺主皮毛」；而四肢穴治头面，走的是经脉循行。<strong>同样是「治别处」，一个是脏腑所系，一个是经脉所过。</strong> 两者在主治表里长得一模一样（都写成「某病证」），在推理上却是两条完全不同的路。混着用，就会得出「凡是治头痛的穴都在头上」这类错误归纳。</p></div></div>
+  <div class="slide-foot"><span>10 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">三、远治：为什么四肢穴的主治最长</div>
+                <div class="compact"><p>《四总穴歌》把这套规则压到了最短：「肚腹三里留，腰背委中求，头项寻列缺，面口合谷收」——《针灸聚英·四总穴歌》。四句、四个部位、四个穴，每一句都是一次远治接线：肚腹对足三里（胃经合穴兼下合穴），腰背对委中（膀胱经合穴），头项对列缺（肺经络穴），面口对合谷（大肠经原穴）。四穴里三个在库内（足三里、列缺、合谷），委中不在——库内足太阳膀胱经的 32 穴全部落在背腰段（大杼到秩边），下肢段一个都没收。<strong>一句背了六百年的口诀，有一个字在库里查不到。</strong> 这正是「库内」与「教材」必须分开报的原因。</p></div></div>
+  <div class="slide-foot"><span>11 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">四、特殊作用与配穴：库内只有 26 条配伍</div>
+                <div class="compact dense"><p>特殊作用是不走经脉、也不走部位的第三条：内关治失眠、郁证、癫狂痫，涌泉治昏厥、中暑、小儿惊风，这些都是「某穴对某证有特异性」，无法从位置推出。教材把三条并列写成近治、远治、特殊作用，实际读法是：<strong>前两条可以推，第三条只能记。</strong></p>
+<p>配穴是三条规则的应用端。库内 26 条配伍全是散句，但模式只有三类，可以从底本原句里直接认出来：</p>
+<ul><li><strong>俞募（前后对）</strong>：肺俞条下「常与中府（肺之募穴）配伍，为俞募配穴之代表」。一个在后正中线旁开 1.5 寸，一个在前正中线旁开 6 寸，夹住同一个肺。</li><li><strong>上下对（八脉交会）</strong>：列缺条下「与照海相配为八脉交会穴上下配穴法的经典组对，两穴合于肺系、咽喉、胸膈」；公孙条下「与内关相配则上下呼应、表里同治」。一在手，一在足，走的是奇经。</li><li><strong>远近对</strong>：曲泽条下「急性胃肠炎之呕吐，可取曲泽配足三里、内关」。一个在肘，两个在小腿与前臂，近治加远治拼成一组。</li></ul></div></div>
+  <div class="slide-foot"><span>12 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">四、特殊作用与配穴：库内只有 26 条配伍</div>
+                <div class="compact"><p>三类之外还有一类只在本经内配对（曲池条下「配肩髃、手三里治上肢不遂」），那是近治的叠加，不是配穴法。</p>
+<p>这里必须说清一件事：配穴的完整体系不在本章数据里。26 条散句占 9.6%，剩下 244 个穴的配伍字段是空的——<strong>空不等于没有配伍，等于底本没在这一条上写。</strong> 谁若按字段覆盖率判断「配穴只对 26 个穴有意义」，会把一门临床技术读成一个数据缺口。</p></div></div>
+  <div class="slide-foot"><span>13 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">五、代价与边界</div>
+                <div class="compact dense"><ol><li>488 条是按 ①②③ 分条切出来的，切法本身是一种口径。底本有的条目内含顿号并列（如「胃痛、呕吐、噎膈、腹胀、腹泻、痢疾、便秘」算 1 条），有的穴把操作与主治混写在同一字段（如极泉的主治末尾直接接「操作：避开腋动脉，直刺或斜刺 0.3～0.5 寸」）。<strong>换一种切法，平均值会变，排序未必变。</strong></li><li>部位字段有错记。太冲记为「背腰」，实为足背穴；库内另有 77 个穴的部位的字段为空，未进入本章的任何分部位平均。本章的四肢／背腰／头面／胸腹四组，只覆盖有部位标记的 193 穴。</li><li>主治条目数不是疗效强度，是书写详尽度。底本对重点穴写得细，对次要穴写得略，条目数里混着「教材篇幅」这一层。曲池 7 条与某穴 1 条，差别首先在教材给了多少版面。</li><li>本章不涉及任何具体配伍的剂量、留针时间、电针参数与疗程，也不判断某组配穴是否优于另一组。所有配伍引文只用于说明模式，不构成处方。</li><li>「经脉所过，主治所及」是一句归纳，不是一条定理；本章用它解释统计方向，不用它推导具体穴位的主治。凡本章未引底本原句的主治判断，一律视为本章的推论而非教材结论。</li></ol></div></div>
+  <div class="slide-foot"><span>14 / 16</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="14">
+  <div class="slide-inner"><div class="kicker">五、代价与边界</div>
+                <div class="compact"><blockquote><p><strong>免责声明：</strong> 本章为腧穴学主治规律与配穴部分的教学整理，穴数、条目数与部位统计由课程穴位库现算，主治、配伍引文均转自课程底本；统计口径与教材口径不同，数字不可互引。文中任何配伍组合仅为说明配穴模式，不构成针灸处方或治疗建议，临床取穴与施术须由执业医师依辨证结果决定。</p></blockquote></div></div>
+  <div class="slide-foot"><span>15 / 16</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="15">
   <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
-  <div class="slide-foot"><span>5 / 5</span><span>disclaimer</span></div>
+  <div class="slide-foot"><span>16 / 16</span><span>disclaimer</span></div>
 </section>
 </div>
 <div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>

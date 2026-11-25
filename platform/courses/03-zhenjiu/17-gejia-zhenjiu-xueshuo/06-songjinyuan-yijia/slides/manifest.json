@@ -1,31 +1,96 @@
 {
   "chapter": "06-songjinyuan-yijia",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 18,
+  "segmentCount": 8,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 15
+      "chars": 23
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 63
+      "chars": 110
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 84
+      "chars": 201
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 122
+      "chars": 112
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 136
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 411
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 362
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 272
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 420
+    },
+    {
+      "n": 10,
+      "segment": 6,
+      "chars": 289
+    },
+    {
+      "n": 11,
+      "segment": 6,
+      "chars": 348
+    },
+    {
+      "n": 12,
+      "segment": 6,
+      "chars": 222
+    },
+    {
+      "n": 13,
+      "segment": 6,
+      "chars": 377
+    },
+    {
+      "n": 14,
+      "segment": 6,
+      "chars": 364
+    },
+    {
+      "n": 15,
+      "segment": 6,
+      "chars": 193
+    },
+    {
+      "n": 16,
+      "segment": 7,
+      "chars": 354
+    },
+    {
+      "n": 17,
+      "segment": 7,
+      "chars": 152
+    },
+    {
+      "n": 18,
+      "segment": 8,
       "chars": 52
     }
   ]

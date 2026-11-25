@@ -1,53 +1,97 @@
-#!/usr/bin/env node
+'use strict';
 /**
- * 第 12 章 小儿推拿安全与数字化AI时代 —— 确定性单元测试
+ * 第 12 章 安全章一个次数都不给，它给的是红线与复核 —— 章节契约测试
  * 运行: node --test code/main.test.js
+ *
+ * 与 main.js 的内部实现解耦：跑真实进程核输出，再独立核对正文与习题的数据契约，
+ * 断言全部落在「这一章是否真的自洽」上（题量、选项、解释长度、接地、无脚手架残留）。
  */
 
-'use strict';
-
+const { test } = require('node:test');
 const assert = require('node:assert');
-const test = require('node:test');
+const { spawnSync } = require('node:child_process');
+const fs = require('node:fs');
+const path = require('node:path');
 
-const { CHAPTER, KEYS, load, chapterUnits, merge, rank, shape, citations, byBookSection } = require('./main.js');
+const HAN = /[\u4e00-\u9fff]/g;
+const hz = (s) => (String(s || '').match(HAN) || []).length;
 
-const data = load();
-const list = chapterUnits(data);
+const doc = fs.readFileSync(path.join(__dirname, '..', 'docs', 'zh.md'), 'utf8');
+const quiz = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8'));
+const questions = Array.isArray(quiz) ? quiz : (quiz.questions || []);
+const run = spawnSync(process.execPath, ['main.js'], { cwd: __dirname, encoding: 'utf8' });
 
-test('本章单元数与映射一致', () => {
-  assert.strictEqual(list.length, 3);
-  assert.deepStrictEqual(list.map((u) => u.sub), ['12.1.1', '12.2.1', '12.2.2']);
+test('main.js 退出码为 0', () => {
+  assert.strictEqual(run.status, 0, `main.js 退出码 ${run.status}\n${run.stderr}`);
 });
 
-test('规模：5265 字 · 平均 1755 字/单元', () => {
-  const s = shape(list);
-  assert.strictEqual(s.hanzi, 5265);
-  assert.strictEqual(s.mean, 1755);
+test('main.js 有实质输出（不是空跑）', () => {
+  assert.ok((run.stdout || '').trim().length > 80, 'main.js 输出过短');
 });
 
-test('三辨重心是「手法操作」', () => {
-  const views = rank(merge(list, 'views'));
-  assert.strictEqual(views[0].key, '手法操作');
-  assert.strictEqual(views[0].count, 76);
+test('正文规模达契约（≥2500 汉字、≥4 个二级节）', () => {
+  assert.ok(hz(doc) >= 2500, `正文只有 ${hz(doc)} 汉字`);
+  const secs = (doc.match(/^## /gm) || []).length;
+  assert.ok(secs >= 4, `二级节只有 ${secs} 个`);
 });
 
-test('四位面重心是「心肝系」，且至少 2 层有落点', () => {
-  const levels = Object.fromEntries(rank(merge(list, 'levels')).map((v) => [v.key, v.count]));
-  assert.strictEqual(levels['心肝系'], 16);
-  assert.ok(Object.values(levels).filter((n) => n > 0).length >= 2);
+test('习题题量与阶段齐备（6 题：pre1/check3/post2）', () => {
+  assert.strictEqual(questions.length, 6, `题数 ${questions.length}`);
+  const stage = (n) => questions.filter((q) => (q.stage || q.phase) === n).length;
+  assert.strictEqual(stage('pre'), 1, 'pre 阶段不是 1 题');
+  assert.strictEqual(stage('check'), 3, `check 阶段 ${stage('check')} 题`);
+  assert.strictEqual(stage('post'), 2, `post 阶段 ${stage('post')} 题`);
 });
 
-test('引书成规模：≥6 部、≥7 次引用', () => {
-  const c = citations(list);
-  assert.ok(c.books >= 6, `引书 ${c.books}`);
-  assert.ok(c.total >= 7, `引用 ${c.total}`);
+test('每题 4 个互异选项且答案下标合法', () => {
+  for (const [i, q] of questions.entries()) {
+    const opts = q.options || q.choices || [];
+    assert.strictEqual(opts.length, 4, `第 ${i + 1} 题选项数不是 4`);
+    assert.strictEqual(new Set(opts.map(String)).size, 4, `第 ${i + 1} 题选项重复`);
+    const idx = q.correct ?? q.answer;
+    assert.ok(Number.isInteger(idx) && idx >= 0 && idx < 4, `第 ${i + 1} 题答案下标非法`);
+  }
 });
 
-test('数值计数与单元层一致（0 处数值类命中）', () => {
-  assert.strictEqual(shape(list).valueLike, 0);
+test('每题解释 40–80 汉字', () => {
+  for (const [i, q] of questions.entries()) {
+    const ex = q.explain || q.explanation || '';
+    assert.ok(hz(ex) >= 40 && hz(ex) <= 80, `第 ${i + 1} 题解释 ${hz(ex)} 汉字`);
+  }
 });
 
-test('每个单元都来自教材，且 locator 指到教材章与小节', () => {
-  for (const u of list) assert.match(u.locator, /^教材·第\d+章·\d+\.\d+\.\d+$/);
-  assert.ok(byBookSection(list).every((s) => s.units > 0));
+test('三道 check 题的判据都能在正文里找到（接地 3/3）', () => {
+  const body = doc.replace(/[\s\p{P}]/gu, '');
+  const checks = questions.filter((q) => (q.stage || q.phase) === 'check');
+  const grounded = checks.filter((q) => {
+    const opt = (q.options || q.choices || [])[q.correct ?? q.answer] || '';
+    const key = String(opt).replace(/[\s\p{P}]/gu, '');
+    for (let i = 0; i + 6 <= key.length; i += 1) {
+      if (body.includes(key.slice(i, i + 6))) return true;
+    }
+    return false;
+  });
+  assert.strictEqual(grounded.length, 3, `只有 ${grounded.length} 道 check 题接地`);
+});
+
+test('没有旧脚手架指纹', () => {
+  const raw = doc + '\n' + JSON.stringify(quiz);
+  for (const bad of ['三辨', '四位面', '单元规模', '本章实测', '见 code/main.js 输出']) {
+    assert.ok(!raw.includes(bad), `残留旧脚手架词：${bad}`);
+  }
+});
+
+test('导出契约：chapterKeys / chapterUnits / summarize / CHAPTER / SLUG', () => {
+  const mod = require('./main.js');
+  for (const k of ['chapterKeys', 'chapterUnits', 'summarize']) {
+    assert.strictEqual(typeof mod[k], 'function', `缺少导出 ${k}`);
+  }
+  assert.strictEqual(mod.CHAPTER, '12');
+  assert.strictEqual(mod.SLUG, '12-anquan-shuzihua');
+  const units = mod.chapterUnits(doc);
+  assert.ok(units.length >= 4, `二级节只有 ${units.length}`);
+  assert.deepStrictEqual(mod.chapterKeys(doc), units.map((u) => u.key));
+  const s = mod.summarize(units);
+  assert.strictEqual(s.sections, units.length);
+  assert.ok(s.hanzi > 2000, `汇总字数 ${s.hanzi}`);
 });

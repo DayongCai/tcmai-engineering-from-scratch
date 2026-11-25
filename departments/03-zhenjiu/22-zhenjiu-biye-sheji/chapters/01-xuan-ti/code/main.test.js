@@ -2,61 +2,83 @@
 
 const test = require('node:test');
 const assert = require('node:assert');
-const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 
 const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhenjiu-biye', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhenjiu-biye', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const {
+  chapterKeys,
+  chapterUnits,
+  summarize,
+  chapterArithmetic,
+  quizSummary,
+  analyze,
+  readDoc,
+  tables,
+  hanzi,
+  CHAPTER,
+  SLUG,
+} = require('./main.js');
 
-test('本章映射存在且非空', () => {
+test('正文可读且规模像一章', () => {
+  const doc = readDoc();
+  assert.ok(hanzi(doc) > 1500, '正文汉字过少：' + hanzi(doc));
+  assert.ok(tables(doc).length >= 3, '正文表格少于 3 张');
+});
+
+test('章键来自正文四节且不重复', () => {
   const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+  assert.ok(keys.length >= 4, '正文四节没解析出来：' + keys.join(','));
+  assert.strictEqual(new Set(keys).size, keys.length, '章键重复');
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
-});
-
-test('规模与单元层一致', () => {
+test('章单元是正文四节，字数与汇总一致', () => {
   const units = chapterUnits();
   const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+  assert.strictEqual(units.length, chapterKeys().length);
+  assert.strictEqual(s.hanzi, units.reduce((a, u) => a + u.hanzi, 0));
+  assert.ok(s.hanzi > 1500, '单元汉字过少：' + s.hanzi);
+  for (const u of units) assert.ok(u.title && u.sub.startsWith(String(CHAPTER) + '.'));
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('本章算术每项都与正文对得上', () => {
+  const doc = readDoc();
+  const a = chapterArithmetic(doc, tables(doc));
+  assert.ok(a.checks.length >= 3, '算术断言少于 3 项');
+  for (const c of a.checks) assert.strictEqual(c.got, c.want, c.name + '：' + c.got + ' ≠ ' + c.want);
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('quiz 结构与三段分布合规', () => {
+  const r = analyze();
+  assert.strictEqual(r.quiz.total, 6, '应为 6 题');
+  assert.strictEqual(r.quiz.stage.pre, 1);
+  assert.strictEqual(r.quiz.stage.check, 3);
+  assert.strictEqual(r.quiz.stage.post, 2);
+  assert.ok(r.quiz.allFourOptions, '有题不是 4 选项');
+  assert.strictEqual(r.quiz.badCorrect, 0, 'correct 下标非法');
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
+test('每题 explain 在 40–80 汉字之间', () => {
+  const r = analyze();
+  for (const it of r.quiz.items) {
+    assert.ok(it.explainHanzi >= 40 && it.explainHanzi <= 80, '第 ' + it.n + ' 题 explain ' + it.explainHanzi + ' 汉字');
+  }
+});
+
+test('check 题正确项都能在正文找到 ≥6 汉字原句', () => {
+  const r = analyze();
+  for (const it of r.quiz.items) {
+    if (it.stage === 'check') assert.ok(it.hit && it.hit.length >= 6, '第 ' + it.n + ' 题未接地');
+  }
+  assert.ok(r.quiz.checkGrounded >= 2);
+});
+
+test('脚本可运行、退出码 0 且带边界声明', () => {
   const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/zhenjiu-biye\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/01-xuan-ti/docs/zh.md'), '头部注释未指向本章');
+  assert.ok(out.length > 200, '输出过短');
+  assert.match(out, /自检通过/);
+  assert.match(out, /不构成医学意见/);
+  assert.strictEqual(SLUG, path.basename(path.join(__dirname, '..')));
 });

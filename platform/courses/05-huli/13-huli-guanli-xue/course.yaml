@@ -29,38 +29,37 @@ platform:
 
 chapters:
   - slug: 01-zuzhi-gangwei
-    title: 第1章 护理管理的组织、环境与计划
-    segments: 5
+    title: 计划的可信度写在前提里，不写在目标里
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1
+    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-renli-paiban
-    title: 第2章 人力资源、排班与团队
-    segments: 5
+    title: 排班的公平要写成规则，才经得起追问
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.98
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.98      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-zhiliang-gaijin
-    title: 第3章 护理质量评价与持续改进
-    segments: 5
+    title: 指标没有分母与口径，就只是一个数字
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.96
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-buliang-genyin
-    title: 第4章 不良事件、根因与纠纷处理
-    segments: 5
+    title: 报告的用处不在追责，而在让同一个环节不再出错
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.99
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.99      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-jixiao-chengben
-    title: 第5章 护理绩效与成本核算
-    segments: 5
+    title: 绩效评的是岗位，成本算的是服务，两者都不能拿来排名
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.95
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-xinxihua-zhili
-    title: 第6章 护理信息化与数据治理
-    segments: 5
+    title: 数据治理从字段开始，不从大屏开始
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.97
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.97      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

@@ -26,7 +26,12 @@ blockquote.motto{font-family:var(--serif);font-size:clamp(20px,2.6vw,34px);line-
   text-transform:uppercase;margin-bottom:14px}
 .kicker.warn{color:var(--cinnabar)}
 p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var(--serif)}
-.compact{font-size:clamp(19px,1.75vw,27px);line-height:1.85;max-height:70vh;overflow:auto}
+.compact{font-size:clamp(19px,1.75vw,27px);line-height:1.85;max-height:70vh;overflow:hidden}
+.compact.dense{font-size:clamp(16px,1.42vw,22px);line-height:1.6;max-height:80vh}
+.compact.dense table{font-size:14px}
+.compact.denser{font-size:clamp(14px,1.22vw,18px);line-height:1.5;max-height:82vh}
+.compact.denser table{font-size:12px}
+.compact.denser pre{font-size:12px}
 .compact h2,.compact h3{font-family:var(--serif);margin:.6em 0 .3em;font-size:1.15em}
 .compact pre{background:var(--paper-2);border:1px solid var(--line);border-radius:8px;padding:12px;overflow:auto;font-size:15px}
 .compact code{background:var(--paper-2);border:1px solid var(--line);border-radius:4px;padding:1px 4px;font-family:var(--mono)}
@@ -55,23 +60,24 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <div id="deck">
 <section class="slide" data-i="0">
   <div class="slide-inner"><h1 class="big">第 4 章 · 细胞损伤、衰老与死亡：一条线、两种死法、一个例外</h1></div>
-  <div class="slide-foot"><span>1 / 28</span><span>title</span></div>
+  <div class="slide-foot"><span>1 / 27</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「作用强度或持续时间超过修复能力，则进入不可逆阶段」——补充·hermes-病理生理学讲义·第4章·4.1（《hermes-病理生理学讲义·第4章·4.1》）</blockquote></div>
-  <div class="slide-foot"><span>2 / 28</span><span>motto</span></div>
+  <div class="slide-inner"><blockquote class="motto">「神转不回，回则不转，乃失其机。」——《素问·玉版论要》</blockquote></div>
+  <div class="slide-foot"><span>2 / 27</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
   <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">这一章最容易学成一堆并列的名词：可逆、不可逆、坏死、凋亡、焦亡、铁死亡、衰老、修复。名词都在，秩序没有。可真到了要用的时候，问题从来不是「这叫哪一种死法」，而是三个更硬的追问：这条损伤还救得回来吗？如果救不回来，是带着炎症走还是安静地走？救回来的那一下会不会反而更糟。讲义把答案压在一条线上——可逆与不可逆的分界由两条判据守住；坏死与凋亡的二分不在好坏，而在有没有炎症；再灌注是这条线最反直觉的一处：血回来了，损伤却加重了。</p></div>
-  <div class="slide-foot"><span>3 / 28</span><span>problem</span></div>
+  <div class="slide-foot"><span>3 / 27</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
   <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（面对一份写着「细胞肿胀、酶升高、灌注恢复后功能反而下降」的记录，要知道哪一句是可逆段、哪一句已经越界、哪一句属于再灌注本身的问题——这三个判断不在同一个层次上，混在一句里就没法往下讨论）+ 知识积累（本章 11 节 65 段、2831 汉字的正文里，膜完整性与线粒体两词只在 4.1 与 4.4 同时出现：前者立阈值，后者立判据。这个分布说明全章的骨架是「阈值—判据」这一对，其余各节都是它们的展开或延长——认不清这一点，就会把 4.5 到 4.7 读成三种并列的死法，而读不出它们是同一判据的不同结局）</p></div>
-  <div class="slide-foot"><span>4 / 28</span><span>roots</span></div>
+  <div class="slide-foot"><span>4 / 27</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
-  <div class="slide-inner"><div class="kicker">一、先立一条线：阈值而不是开关（4.1）</div>
-                <div class="compact"><h3 id="4-1-正常细胞的稳态与损伤阈值">4.1 正常细胞的稳态与损伤阈值</h3>
+  <div class="slide-inner"><div class="kicker">一条阈值线：病因、可逆与不可逆（4.1–4.4）</div>
+                <div class="compact dense"><h3 id="先立一条线-阈值而不是开关-4-1">先立一条线：阈值而不是开关（4.1）</h3>
+<h4 id="4-1-正常细胞的稳态与损伤阈值">4.1 正常细胞的稳态与损伤阈值</h4>
 <p>讲义不从损伤开始，从耐受开始。正常细胞靠四样东西撑住：膜完整性、线粒体产能、钙稳态、蛋白质与 DNA 的质量控制。这四样不是并列的四个功能，是一条链上的四个环节——膜守住位置，线粒体供能，钙当信号但要压住浓度，质量控制负责把坏掉的件换掉。</p>
 <p>然后是本节的要害：</p>
 <blockquote><p>「轻度、短暂的作用可被修复或经适应而存活」——补充·hermes-病理生理学讲义·第4章·4.1</p></blockquote>
@@ -79,122 +85,120 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <p>线的位置因人而异，讲义给了两层解释。第一层是细胞类型：</p>
 <blockquote><p>「代谢活跃、耗氧高的细胞（心肌细胞、近端肾小管上皮、中枢神经元）对缺氧最敏感」——补充·hermes-病理生理学讲义·第4章·4.1</p></blockquote>
 <p>第二层是这句话的直接后果：</p></div></div>
-  <div class="slide-foot"><span>5 / 28</span><span>body</span></div>
+  <div class="slide-foot"><span>5 / 27</span><span>body</span></div>
 </section>
 <section class="slide" data-i="5">
-  <div class="slide-inner"><div class="kicker">一、先立一条线：阈值而不是开关（4.1）</div>
+  <div class="slide-inner"><div class="kicker">一条阈值线：病因、可逆与不可逆（4.1–4.4）</div>
                 <div class="compact"><blockquote><p>「这一差异直接决定了不同器官在全身性缺氧时的受累顺序」——补充·hermes-病理生理学讲义·第4章·4.1</p></blockquote>
-<p>受累顺序这四个字很要紧。它说明全身性缺氧不是一个均匀的事件，它有先后；而先后的依据不是器官大小或重要性，是耗氧量。把这条记住，第 4.11 节那串临床例子才不会读成五个孤立的病。</p></div></div>
-  <div class="slide-foot"><span>6 / 28</span><span>body</span></div>
+<p>受累顺序这四个字很要紧。它说明全身性缺氧不是一个均匀的事件，它有先后；而先后的依据不是器官大小或重要性，是耗氧量。把这条记住，第 4.11 节那串临床例子才不会读成五个孤立的病。</p>
+<h3 id="病因-按作用环节排-而不是按来源排-4-2">病因：按作用环节排，而不是按来源排（4.2）</h3>
+<h4 id="4-2-细胞损伤的病因">4.2 细胞损伤的病因</h4>
+<p>讲义用一张表把病因分成七类：缺氧与缺血、物理性、化学性、生物性、免疫性、遗传性、营养性。表的第三列不是举例，是<strong>主要作用环节</strong>——ATP 生成不足、膜与蛋白变性、代谢干扰与自由基、直接破坏或免疫介导、膜与组织抗原攻击、代谢通路或结构蛋白异常、合成原料与辅因子不足。</p></div></div>
+  <div class="slide-foot"><span>6 / 27</span><span>body</span></div>
 </section>
 <section class="slide" data-i="6">
-  <div class="slide-inner"><div class="kicker">二、病因：按作用环节排，而不是按来源排（4.2）</div>
-                <div class="compact"><h3 id="4-2-细胞损伤的病因">4.2 细胞损伤的病因</h3>
-<p>讲义用一张表把病因分成七类：缺氧与缺血、物理性、化学性、生物性、免疫性、遗传性、营养性。表的第三列不是举例，是<strong>主要作用环节</strong>——ATP 生成不足、膜与蛋白变性、代谢干扰与自由基、直接破坏或免疫介导、膜与组织抗原攻击、代谢通路或结构蛋白异常、合成原料与辅因子不足。</p>
-<p>这一列是全表的价值所在。按来源分类只能回答是什么打过来的，按环节分类才能回答「打在哪里」。同一个环节可以被不同来源命中：缺氧与化学毒物都能造成 ATP 不足，免疫与生物性因素都能造成膜的破坏。反过来，同一来源也可以同时打几个环节。</p>
+  <div class="slide-inner"><div class="kicker">一条阈值线：病因、可逆与不可逆（4.1–4.4）</div>
+                <div class="compact dense"><p>这一列是全表的价值所在。按来源分类只能回答是什么打过来的，按环节分类才能回答「打在哪里」。同一个环节可以被不同来源命中：缺氧与化学毒物都能造成 ATP 不足，免疫与生物性因素都能造成膜的破坏。反过来，同一来源也可以同时打几个环节。</p>
 <p>本节最要紧的一句是两类缺氧的分辨：</p>
-<blockquote><p>「缺血不仅断绝氧供，还阻断代谢废物清除与营养输送」——补充·hermes-病理生理学讲义·第4章·4.2</p></blockquote></div></div>
-  <div class="slide-foot"><span>7 / 28</span><span>body</span></div>
+<blockquote><p>「缺血不仅断绝氧供，还阻断代谢废物清除与营养输送」——补充·hermes-病理生理学讲义·第4章·4.2</p></blockquote>
+<p>同样是氧不够，缺血比单纯缺氧多断了两样：废物出不去，原料进不来。所以讲义说同样程度的缺血比贫血性缺氧造成更快、更重的损伤。这句话还有一层用处——它解释了为什么恢复血流是首要的，因为只有恢复血流才能同时补上这三样。</p>
+<h3 id="线的两侧-可逆与不可逆-4-3-4-4">线的两侧：可逆与不可逆（4.3–4.4）</h3>
+<h4 id="4-3-可逆性细胞损伤">4.3 可逆性细胞损伤</h4>
+<p>可逆的共同机制只有一句：</p>
+<blockquote><p>「其共同机制是 ATP 下降与离子泵失活，尚未发生膜完整性的不可逆破坏」——补充·hermes-病理生理学讲义·第4章·4.3</p></blockquote></div></div>
+  <div class="slide-foot"><span>7 / 27</span><span>body</span></div>
 </section>
 <section class="slide" data-i="7">
-  <div class="slide-inner"><div class="kicker">二、病因：按作用环节排，而不是按来源排（4.2）</div>
-                <div class="compact"><p>同样是氧不够，缺血比单纯缺氧多断了两样：废物出不去，原料进不来。所以讲义说同样程度的缺血比贫血性缺氧造成更快、更重的损伤。这句话还有一层用处——它解释了为什么恢复血流是首要的，因为只有恢复血流才能同时补上这三样。</p></div></div>
-  <div class="slide-foot"><span>8 / 28</span><span>body</span></div>
-</section>
-<section class="slide" data-i="8">
-  <div class="slide-inner"><div class="kicker">三、线的两侧：可逆与不可逆（4.3–4.4）</div>
-                <div class="compact"><h3 id="4-3-可逆性细胞损伤">4.3 可逆性细胞损伤</h3>
-<p>可逆的共同机制只有一句：</p>
-<blockquote><p>「其共同机制是 ATP 下降与离子泵失活，尚未发生膜完整性的不可逆破坏」——补充·hermes-病理生理学讲义·第4章·4.3</p></blockquote>
-<p>注意句末那个限定词：尚未。可逆不是一个独立的状态，是「还没越界」的状态。所以本节列的四种改变——细胞肿胀、脂肪变、细胞内蓄积、适应性改变——都不是四种病，是同一个机制在四种组织与四种物质上的表现。</p>
+  <div class="slide-inner"><div class="kicker">一条阈值线：病因、可逆与不可逆（4.1–4.4）</div>
+                <div class="compact dense"><p>注意句末那个限定词：尚未。可逆不是一个独立的状态，是「还没越界」的状态。所以本节列的四种改变——细胞肿胀、脂肪变、细胞内蓄积、适应性改变——都不是四种病，是同一个机制在四种组织与四种物质上的表现。</p>
 <p>细胞肿胀被点为最常见、最早：</p>
 <blockquote><p>「最常见、最早的可逆改变」——补充·hermes-病理生理学讲义·第4章·4.3</p></blockquote>
 <p>它的链条短得可以背下来：ATP 不足、泵失活、钠与水潴留、细胞体积增大。链条短的好处是可核对：看到肿胀，就去找 ATP 与泵；找不到，这条解释就不成立。</p>
-<p>适应性改变那一条要单独说，因为它是全章唯一一处把「适应」与「削弱功能」写在一起的地方：</p></div></div>
-  <div class="slide-foot"><span>9 / 28</span><span>body</span></div>
+<p>适应性改变那一条要单独说，因为它是全章唯一一处把「适应」与「削弱功能」写在一起的地方：</p>
+<blockquote><p>「化生是分化方向的改变，如长期吸烟者支气管柱状上皮变为鳞状上皮，属适应但削弱了原有功能」——补充·hermes-病理生理学讲义·第4章·4.3</p></blockquote>
+<p>适应不总是好事。细胞为了活下去换了一套结构，代价是原来的功能没了。这句话是本章对「代偿」的第一处警告，第 4.10 节还会以纤维化的形式再说一次。</p></div></div>
+  <div class="slide-foot"><span>8 / 27</span><span>body</span></div>
 </section>
-<section class="slide" data-i="9">
-  <div class="slide-inner"><div class="kicker">三、线的两侧：可逆与不可逆（4.3–4.4）</div>
-                <div class="compact"><blockquote><p>「化生是分化方向的改变，如长期吸烟者支气管柱状上皮变为鳞状上皮，属适应但削弱了原有功能」——补充·hermes-病理生理学讲义·第4章·4.3</p></blockquote>
-<p>适应不总是好事。细胞为了活下去换了一套结构，代价是原来的功能没了。这句话是本章对「代偿」的第一处警告，第 4.10 节还会以纤维化的形式再说一次。</p>
-<h3 id="4-4-不可逆性细胞损伤">4.4 不可逆性细胞损伤</h3>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">一条阈值线：病因、可逆与不可逆（4.1–4.4）</div>
+                <div class="compact dense"><h4 id="4-4-不可逆性细胞损伤">4.4 不可逆性细胞损伤</h4>
 <p>不可逆的两个判据，讲义开门见山：膜完整性丧失，线粒体功能不可恢复。两个判据为什么是这两个？因为修复需要两样东西——一个完整的容器，和持续的能量。膜破了，容器没了；线粒体垮了，能量没了。任一样成立，修复的物质基础就不在了。</p>
 <p>形态上的表现是三样：</p>
 <blockquote><p>「形态上表现为细胞膜破裂、酶漏出、核改变」——补充·hermes-病理生理学讲义·第4章·4.4</p></blockquote>
 <p>这三样里，酶漏出最有临床价值，因为它可测：</p>
-<blockquote><p>「膜破损后细胞内酶（如肌酸激酶、转氨酶、乳酸脱氢酶）漏入血液」——补充·hermes-病理生理学讲义·第4章·4.4</p></blockquote></div></div>
-  <div class="slide-foot"><span>10 / 28</span><span>body</span></div>
+<blockquote><p>「膜破损后细胞内酶（如肌酸激酶、转氨酶、乳酸脱氢酶）漏入血液」——补充·hermes-病理生理学讲义·第4章·4.4</p></blockquote>
+<p>这句话把「膜破没破」这个机制问题，转成了一个可以观察的指标问题。但要小心：指标升高说明有酶漏出，酶漏出说明有膜损伤，膜损伤不等于整块组织都不可逆——推断的每一步都要标出来，不能一步跳到结论。</p>
+<p>钙超载是本节里最像「自毁程序」的一段：</p></div></div>
+  <div class="slide-foot"><span>9 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">一条阈值线：病因、可逆与不可逆（4.1–4.4）</div>
+                <div class="compact"><blockquote><p>「正常细胞游离 Ca²⁺ 浓度极低，损伤后钙泵失效、Ca²⁺ 大量内流」——补充·hermes-病理生理学讲义·第4章·4.4</p></blockquote>
+<p>钙在细胞里是信号，不是结构材料，所以它的浓度必须压得极低。一旦压不住，它激活的是蛋白酶、磷脂酶、核酸内切酶与 ATP 酶——四类酶全部指向拆解。这就是为什么钙超载既能单独构成损伤机制，又能加重线粒体损伤：它同时拆结构、拆膜、拆能量。</p></div></div>
+  <div class="slide-foot"><span>10 / 27</span><span>body</span></div>
 </section>
 <section class="slide" data-i="10">
-  <div class="slide-inner"><div class="kicker">三、线的两侧：可逆与不可逆（4.3–4.4）</div>
-                <div class="compact"><p>这句话把「膜破没破」这个机制问题，转成了一个可以观察的指标问题。但要小心：指标升高说明有酶漏出，酶漏出说明有膜损伤，膜损伤不等于整块组织都不可逆——推断的每一步都要标出来，不能一步跳到结论。</p>
-<p>钙超载是本节里最像「自毁程序」的一段：</p>
-<blockquote><p>「正常细胞游离 Ca²⁺ 浓度极低，损伤后钙泵失效、Ca²⁺ 大量内流」——补充·hermes-病理生理学讲义·第4章·4.4</p></blockquote>
-<p>钙在细胞里是信号，不是结构材料，所以它的浓度必须压得极低。一旦压不住，它激活的是蛋白酶、磷脂酶、核酸内切酶与 ATP 酶——四类酶全部指向拆解。这就是为什么钙超载既能单独构成损伤机制，又能加重线粒体损伤：它同时拆结构、拆膜、拆能量。</p></div></div>
-  <div class="slide-foot"><span>11 / 28</span><span>body</span></div>
-</section>
-<section class="slide" data-i="11">
-  <div class="slide-inner"><div class="kicker">四、两种死法：炎症是分岔口（4.5–4.6）</div>
-                <div class="compact"><h3 id="4-5-坏死-necrosis">4.5 坏死（Necrosis）</h3>
+  <div class="slide-inner"><div class="kicker">死的几种方式：凋亡、程序性坏死与再灌注（4.5–4.8）</div>
+                <div class="compact dense"><h3 id="两种死法-炎症是分岔口-4-5-4-6">两种死法：炎症是分岔口（4.5–4.6）</h3>
+<h4 id="4-5-坏死-necrosis">4.5 坏死（Necrosis）</h4>
 <p>讲义给坏死的定义只有两个定语：病理性、被动性。两个定语合起来的意思是——这不是程序，是被打死的。而它的标志性后果写在下一句：</p>
 <blockquote><p>「胞质嗜酸性增强，膜破裂，内容物释放引起周围组织炎症」——补充·hermes-病理生理学讲义·第4章·4.5</p></blockquote>
 <p>膜破裂导致内容物释放，内容物释放引起炎症。这条链是坏死与凋亡的分岔口，也是本章最该记牢的一句：两种死法的差别不在「哪个更严重」，而在死的时候膜破没破。</p>
 <p>五种类型按形态与好发部位排开：凝固性（蛋白变性为主、结构轮廓暂时保留）、液化性（酶性消化为主）、干酪样（结构完全消失）、脂肪坏死（脂肪酸与钙皂）、纤维素样（血管壁蛋白沉积）。这张表的读法是谁的机制占上风：蛋白变性占上风则轮廓暂存，酶性消化占上风则组织变液体。同一个机制轴，五种落点。</p></div></div>
-  <div class="slide-foot"><span>12 / 28</span><span>body</span></div>
+  <div class="slide-foot"><span>11 / 27</span><span>body</span></div>
 </section>
-<section class="slide" data-i="12">
-  <div class="slide-inner"><div class="kicker">四、两种死法：炎症是分岔口（4.5–4.6）</div>
-                <div class="compact"><p>结局那一段把坏死接回整体：溶解吸收、分离排出、机化与包裹、钙化。四条的差别在「谁来收拾」——自己溶掉、排出去、被肉芽组织替换、还是被钙盐封住。范围大或继发感染时，全身可出现发热、白细胞升高甚至感染性休克——这是局部事件升级为整体事件的那一步。</p>
-<h3 id="4-6-凋亡-apoptosis">4.6 凋亡（Apoptosis）</h3>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">死的几种方式：凋亡、程序性坏死与再灌注（4.5–4.8）</div>
+                <div class="compact dense"><p>结局那一段把坏死接回整体：溶解吸收、分离排出、机化与包裹、钙化。四条的差别在「谁来收拾」——自己溶掉、排出去、被肉芽组织替换、还是被钙盐封住。范围大或继发感染时，全身可出现发热、白细胞升高甚至感染性休克——这是局部事件升级为整体事件的那一步。</p>
+<h4 id="4-6-凋亡-apoptosis">4.6 凋亡（Apoptosis）</h4>
 <p>凋亡的两个定语与坏死正好相反：程序性、主动性。它的功能不是「死」，是「清」：</p>
 <blockquote><p>「是发育塑形、组织更新与清除受损细胞的方式」——补充·hermes-病理生理学讲义·第4章·4.6</p></blockquote>
 <p>三个用途排在一起，说明凋亡在正常生理里天天发生。把凋亡当成病理现象，是这一节最常见的误读。</p>
 <p>形态上的关键差别在膜：</p>
 <blockquote><p>「细胞皱缩、染色质边集浓缩、核碎裂成凋亡小体、膜完整并出芽形成」——补充·hermes-病理生理学讲义·第4章·4.6</p></blockquote></div></div>
-  <div class="slide-foot"><span>13 / 28</span><span>body</span></div>
+  <div class="slide-foot"><span>12 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">死的几种方式：凋亡、程序性坏死与再灌注（4.5–4.8）</div>
+                <div class="compact"><p>膜完整，所以内容物不外泄，所以不引起炎症，所以凋亡小体被吞噬清除。整条逻辑链只靠「膜完整」三个字撑着。这也解释了为什么凋亡不足与凋亡过度都能致病——不是死得对不对，是清得干不干净、清得够不够。</p>
+<p>两条主通路的分工值得对照记：内源性走线粒体，Bcl-2 家族决定通透性，细胞色素 c 释放后组装凋亡体、激活 caspase-9；外源性走死亡受体，Fas 配体与 TNF 结合后激活 caspase-8。两条通路最后都汇到执行型 caspase。汇合点只有一个，这是它们能被统一调控的原因。</p>
+<h3 id="二分之外-程序性坏死的几种-4-7">二分之外：程序性坏死的几种（4.7）</h3>
+<h4 id="4-7-其他细胞死亡方式">4.7 其他细胞死亡方式</h4>
+<p>坏与凋亡的二分不够用，是因为出现了程序性但带炎症的一类。讲义列了四种：坏死性凋亡、焦亡、铁死亡、自噬依赖性细胞死亡。</p></div></div>
+  <div class="slide-foot"><span>13 / 27</span><span>body</span></div>
 </section>
 <section class="slide" data-i="13">
-  <div class="slide-inner"><div class="kicker">四、两种死法：炎症是分岔口（4.5–4.6）</div>
-                <div class="compact"><p>膜完整，所以内容物不外泄，所以不引起炎症，所以凋亡小体被吞噬清除。整条逻辑链只靠「膜完整」三个字撑着。这也解释了为什么凋亡不足与凋亡过度都能致病——不是死得对不对，是清得干不干净、清得够不够。</p>
-<p>两条主通路的分工值得对照记：内源性走线粒体，Bcl-2 家族决定通透性，细胞色素 c 释放后组装凋亡体、激活 caspase-9；外源性走死亡受体，Fas 配体与 TNF 结合后激活 caspase-8。两条通路最后都汇到执行型 caspase。汇合点只有一个，这是它们能被统一调控的原因。</p></div></div>
-  <div class="slide-foot"><span>14 / 28</span><span>body</span></div>
-</section>
-<section class="slide" data-i="14">
-  <div class="slide-inner"><div class="kicker">五、二分之外：程序性坏死的几种（4.7）</div>
-                <div class="compact"><h3 id="4-7-其他细胞死亡方式">4.7 其他细胞死亡方式</h3>
-<p>坏与凋亡的二分不够用，是因为出现了程序性但带炎症的一类。讲义列了四种：坏死性凋亡、焦亡、铁死亡、自噬依赖性细胞死亡。</p>
-<p>四种的机制各有一句抓手：坏死性凋亡在 caspase-8 被抑制时由 RIPK1/RIPK3 接手，形态似坏死、有炎症；焦亡由炎症小体激活 caspase-1、切割 gasdermin 成膜孔、释放白介素，是强烈的促炎性死亡；铁死亡是铁依赖的脂质过氧化累积，谷胱甘肽过氧化物酶 4 失效时发生；自噬依赖性细胞死亡发生在自噬过度或关键自噬基因缺失时。</p>
+  <div class="slide-inner"><div class="kicker">死的几种方式：凋亡、程序性坏死与再灌注（4.5–4.8）</div>
+                <div class="compact dense"><p>四种的机制各有一句抓手：坏死性凋亡在 caspase-8 被抑制时由 RIPK1/RIPK3 接手，形态似坏死、有炎症；焦亡由炎症小体激活 caspase-1、切割 gasdermin 成膜孔、释放白介素，是强烈的促炎性死亡；铁死亡是铁依赖的脂质过氧化累积，谷胱甘肽过氧化物酶 4 失效时发生；自噬依赖性细胞死亡发生在自噬过度或关键自噬基因缺失时。</p>
 <p>讲义在自噬那一条后面加了一句限定，这句比四种机制都重要：</p>
 <blockquote><p>「自噬过度或关键自噬基因缺失时发生」——补充·hermes-病理生理学讲义·第4章·4.7</p></blockquote>
 <p>限定之前还有一句更硬的提醒：自噬在多数情况下是促存活的适应机制。也就是说，把自噬直接读成细胞在吃自己所以快死了是错的——它多数时候是在自救，只有在过度或关键基因缺失时才转为致死。</p>
-<p>本节的价值写在最后：</p></div></div>
-  <div class="slide-foot"><span>15 / 28</span><span>body</span></div>
+<p>本节的价值写在最后：</p>
+<blockquote><p>「不同死亡方式释放的分子信号不同，因而对炎症与组织修复的影响不同，这决定了干预思路的差异」——补充·hermes-病理生理学讲义·第4章·4.7</p></blockquote></div></div>
+  <div class="slide-foot"><span>14 / 27</span><span>body</span></div>
 </section>
-<section class="slide" data-i="15">
-  <div class="slide-inner"><div class="kicker">五、二分之外：程序性坏死的几种（4.7）</div>
-                <div class="compact"><blockquote><p>「不同死亡方式释放的分子信号不同，因而对炎症与组织修复的影响不同，这决定了干预思路的差异」——补充·hermes-病理生理学讲义·第4章·4.7</p></blockquote>
-<p>这句话把「分几种死法」这个形态学问题，转成了释放什么信号这个机制问题。分类的意义不在命名，在于它预示了后续的炎症与修复走向。</p></div></div>
-  <div class="slide-foot"><span>16 / 28</span><span>body</span></div>
-</section>
-<section class="slide" data-i="16">
-  <div class="slide-inner"><div class="kicker">六、救回来那一下也会伤人（4.8）</div>
-                <div class="compact"><h3 id="4-8-缺血-再灌注损伤">4.8 缺血-再灌注损伤</h3>
+<section class="slide" data-i="14">
+  <div class="slide-inner"><div class="kicker">死的几种方式：凋亡、程序性坏死与再灌注（4.5–4.8）</div>
+                <div class="compact dense"><p>这句话把「分几种死法」这个形态学问题，转成了释放什么信号这个机制问题。分类的意义不在命名，在于它预示了后续的炎症与修复走向。</p>
+<h3 id="救回来那一下也会伤人-4-8">救回来那一下也会伤人（4.8）</h3>
+<h4 id="4-8-缺血-再灌注损伤">4.8 缺血-再灌注损伤</h4>
 <p>这是全章最反直觉的一节。常识说血流恢复是治疗，讲义说恢复本身可以加重损伤。三大机制：氧自由基爆发、钙超载、炎症与微血管障碍。</p>
 <p>自由基那一条的关键在「超出抗氧化防御」——恢复供氧后，受损的电子传递链与黄嘌呤氧化酶系统产生大量活性氧，正常时这点量能被清掉，此时清不掉，于是脂质过氧化、蛋白氧化、DNA 损伤一起发生。</p>
 <p>钙超载那一条的关键在时间差：再灌注时离子梯度骤变，而钙泵功能尚未恢复。泵还没修好，梯度先变了，钙就进来了。这个时间差是本节最精巧的一处机制。</p>
 <p>第三条最容易被忽略，因为它不在细胞里，在微血管里：</p>
-<blockquote><p>「补体激活、中性粒细胞黏附聚集、内皮细胞肿胀与无复流现象」——补充·hermes-病理生理学讲义·第4章·4.8</p></blockquote>
-<p>无复流的意思是：血流通了，但部分微血管重新闭塞，组织其实没被灌到。于是出现一个矛盾——大血管通了，组织仍然缺血。这一条把「恢复灌注」从一个动作变成了一个需要验证的结果。</p></div></div>
-  <div class="slide-foot"><span>17 / 28</span><span>body</span></div>
+<blockquote><p>「补体激活、中性粒细胞黏附聚集、内皮细胞肿胀与无复流现象」——补充·hermes-病理生理学讲义·第4章·4.8</p></blockquote></div></div>
+  <div class="slide-foot"><span>15 / 27</span><span>body</span></div>
 </section>
-<section class="slide" data-i="17">
-  <div class="slide-inner"><div class="kicker">六、救回来那一下也会伤人（4.8）</div>
-                <div class="compact"><p>临床对应那一段写得克制但具体：溶栓或介入后的再灌注心律失常与心肌顿抑、移植后的原发性移植物无功能、休克复苏后的多器官功能损伤。三处的共同点是——损伤出现在「本该好转」的时刻。识别这一点，才不会把再灌注损伤误读成原发病的恶化。</p></div></div>
-  <div class="slide-foot"><span>18 / 28</span><span>body</span></div>
+<section class="slide" data-i="15">
+  <div class="slide-inner"><div class="kicker">死的几种方式：凋亡、程序性坏死与再灌注（4.5–4.8）</div>
+                <div class="compact"><p>无复流的意思是：血流通了，但部分微血管重新闭塞，组织其实没被灌到。于是出现一个矛盾——大血管通了，组织仍然缺血。这一条把「恢复灌注」从一个动作变成了一个需要验证的结果。</p>
+<p>临床对应那一段写得克制但具体：溶栓或介入后的再灌注心律失常与心肌顿抑、移植后的原发性移植物无功能、休克复苏后的多器官功能损伤。三处的共同点是——损伤出现在「本该好转」的时刻。识别这一点，才不会把再灌注损伤误读成原发病的恶化。</p></div></div>
+  <div class="slide-foot"><span>16 / 27</span><span>body</span></div>
 </section>
-<section class="slide" data-i="18">
-  <div class="slide-inner"><div class="kicker">七、第三种状态：衰老（4.9）</div>
-                <div class="compact"><h3 id="4-9-细胞衰老">4.9 细胞衰老</h3>
+<section class="slide" data-i="16">
+  <div class="slide-inner"><div class="kicker">衰老与修复：第三种状态与三种结局（4.9–4.10）</div>
+                <div class="compact dense"><h3 id="第三种状态-衰老-4-9">第三种状态：衰老（4.9）</h3>
+<h4 id="4-9-细胞衰老">4.9 细胞衰老</h4>
 <p>衰老不是死亡，也不是正常。讲义的定义抓得很准：</p>
 <blockquote><p>「永久退出细胞周期但保持代谢活性的状态」——补充·hermes-病理生理学讲义·第4章·4.9</p></blockquote>
 <p>三个要素：退出周期、不再分裂、但还活着并且还在分泌。第三条是关键——衰老细胞不是安静地待着，它在往外发信号。</p>
@@ -202,44 +206,42 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <p>后果那一段给了一个专门的名称与一句判断：</p>
 <blockquote><p>「可诱导邻近细胞衰老并促进慢性炎症」——补充·hermes-病理生理学讲义·第4章·4.9</p></blockquote>
 <p>衰老相关分泌表型的意思就是：一个衰老细胞能把周围的细胞也拖下水。于是衰老从细胞层面的事变成了组织层面的事，再变成整体层面的事——组织再生能力下降、免疫功能衰退、伤口愈合变慢。</p></div></div>
-  <div class="slide-foot"><span>19 / 28</span><span>body</span></div>
+  <div class="slide-foot"><span>17 / 27</span><span>body</span></div>
 </section>
-<section class="slide" data-i="19">
-  <div class="slide-inner"><div class="kicker">七、第三种状态：衰老（4.9）</div>
-                <div class="compact"><blockquote><p>「这解释了为何衰老是多种慢性病与肿瘤的共同风险背景」——补充·hermes-病理生理学讲义·第4章·4.9</p></blockquote>
-<p>共同风险背景这五个字要留住。它说的是背景，不是原因；是概率上的抬高，不是必然的走向。这句话在写作时极容易被写成所以老年人一定会，那是把背景读成了结论。</p></div></div>
-  <div class="slide-foot"><span>20 / 28</span><span>body</span></div>
-</section>
-<section class="slide" data-i="20">
-  <div class="slide-inner"><div class="kicker">八、修复：三种结局，一种代价（4.10）</div>
-                <div class="compact"><h3 id="4-10-细胞损伤后的修复与适应">4.10 细胞损伤后的修复与适应</h3>
+<section class="slide" data-i="17">
+  <div class="slide-inner"><div class="kicker">衰老与修复：第三种状态与三种结局（4.9–4.10）</div>
+                <div class="compact dense"><blockquote><p>「这解释了为何衰老是多种慢性病与肿瘤的共同风险背景」——补充·hermes-病理生理学讲义·第4章·4.9</p></blockquote>
+<p>共同风险背景这五个字要留住。它说的是背景，不是原因；是概率上的抬高，不是必然的走向。这句话在写作时极容易被写成所以老年人一定会，那是把背景读成了结论。</p>
+<h3 id="修复-三种结局-一种代价-4-10">修复：三种结局，一种代价（4.10）</h3>
+<h4 id="4-10-细胞损伤后的修复与适应">4.10 细胞损伤后的修复与适应</h4>
 <p>讲义把组织对损伤的反应写成一条连续过程：适应、损伤、修复。修复有两条路：再生与纤维性修复。</p>
 <p>再生的能力取决于细胞类型：稳定型细胞（上皮、造血）再生能力强；心肌与神经元几乎不能再生。这条分类在第 5 章会以组织更新策略的形式再讲一次，两处可以对照。</p>
 <p>纤维性修复的写法值得细读：</p>
-<blockquote><p>「以肉芽组织填充缺损，最终形成瘢痕」——补充·hermes-病理生理学讲义·第4章·4.10</p></blockquote>
-<p>瘢痕恢复了连续性，但丧失了原功能。这是本章第二次出现「代偿有代价」：第一次是化生，这一次是纤维化。两次的形状一样——用能立刻做到的方式补上，代价是原来的功能回不来。讲义把这条推到极端：</p>
+<blockquote><p>「以肉芽组织填充缺损，最终形成瘢痕」——补充·hermes-病理生理学讲义·第4章·4.10</p></blockquote></div></div>
+  <div class="slide-foot"><span>18 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="18">
+  <div class="slide-inner"><div class="kicker">衰老与修复：第三种状态与三种结局（4.9–4.10）</div>
+                <div class="compact"><p>瘢痕恢复了连续性，但丧失了原功能。这是本章第二次出现「代偿有代价」：第一次是化生，这一次是纤维化。两次的形状一样——用能立刻做到的方式补上，代价是原来的功能回不来。讲义把这条推到极端：</p>
 <blockquote><p>「过度纤维化导致器官硬化与功能衰竭」——补充·hermes-病理生理学讲义·第4章·4.10</p></blockquote>
-<p>修复本身可以成为病因。这句话是全章最该带走的一句警示：不是所有代偿都在帮忙。</p></div></div>
-  <div class="slide-foot"><span>21 / 28</span><span>body</span></div>
+<p>修复本身可以成为病因。这句话是全章最该带走的一句警示：不是所有代偿都在帮忙。</p>
+<p>影响因素那一句把可干预项点了出来：局部血供、感染、异物、组织类型，以及全身营养状态、血糖控制、免疫抑制与年龄。其中营养与血糖是少数可以被主动改变的两项——讲义把它们单独拎出来，用的词是可干预。</p></div></div>
+  <div class="slide-foot"><span>19 / 27</span><span>body</span></div>
 </section>
-<section class="slide" data-i="21">
-  <div class="slide-inner"><div class="kicker">八、修复：三种结局，一种代价（4.10）</div>
-                <div class="compact"><p>影响因素那一句把可干预项点了出来：局部血供、感染、异物、组织类型，以及全身营养状态、血糖控制、免疫抑制与年龄。其中营养与血糖是少数可以被主动改变的两项——讲义把它们单独拎出来，用的词是可干预。</p></div></div>
-  <div class="slide-foot"><span>22 / 28</span><span>body</span></div>
-</section>
-<section class="slide" data-i="22">
-  <div class="slide-inner"><div class="kicker">九、临床联系：把线放回场景（4.11）</div>
-                <div class="compact"><h3 id="4-11-临床联系">4.11 临床联系</h3>
+<section class="slide" data-i="19">
+  <div class="slide-inner"><div class="kicker">临床联系：把线放回场景（4.11）</div>
+                <div class="compact dense"><h3 id="临床联系-把线放回场景-4-11">临床联系：把线放回场景（4.11）</h3>
+<h4 id="4-11-临床联系">4.11 临床联系</h4>
 <p>五个例子，各挂一个机制：急性心肌梗死（可逆段之后进入凝固性坏死，酶释放成为诊断依据，坏死区由瘢痕替代）、缺血性肝损伤（脂肪变与肿胀先出现，持续缺血则中央区凝固性坏死）、急性胰腺炎（胰酶异常激活导致自身消化，脂肪坏死形成钙皂）、神经退行性疾病（异常蛋白聚集与凋亡自噬失衡，永久型细胞损失不可逆）、护理判断要点。</p>
 <p>五个例子的排法有讲究：前三个是同一条线在不同器官上的走法，第四个是细胞类型决定结局，第五个是「观察什么」。</p>
 <p>护理那一段的落点是识别窗口：</p>
 <blockquote><p>「对再灌注后的患者加强心律、血压与器官功能监测」——补充·hermes-病理生理学讲义·第4章·4.11</p></blockquote>
 <p>监测的对象不是病，是过程：灌注、尿量、意识、实验室指标的动态变化。动态两个字是全章的方法论——静态的一次观察判不了可逆与不可逆，只有变化的方向能。</p></div></div>
-  <div class="slide-foot"><span>23 / 28</span><span>body</span></div>
+  <div class="slide-foot"><span>20 / 27</span><span>body</span></div>
 </section>
-<section class="slide" data-i="23">
-  <div class="slide-inner"><div class="kicker">十、把十一节压成一条链</div>
-                <div class="compact"><div class="codeblock"><div class="codeblock-lang">text</div><pre><code class="lang-text">4.1 阈值（可修复 / 越界）· 4.2 病因（按作用环节排）
+<section class="slide" data-i="20">
+  <div class="slide-inner"><div class="kicker">把十一节压成一条链</div>
+                <div class="compact denser"><div class="codeblock"><div class="codeblock-lang">text</div><pre><code class="lang-text">4.1 阈值（可修复 / 越界）· 4.2 病因（按作用环节排）
         │  线在这里立起来：不是有或没有，是过没过
         ▼
 4.3 可逆（ATP 下降 + 泵失活，膜还完整）
@@ -261,27 +263,51 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
                │
                ▼
 本章的产出：一条线 + 两种死法 + 一个例外（再灌注）+ 一种状态（衰老）</code></pre></div></div></div>
-  <div class="slide-foot"><span>24 / 28</span><span>body</span></div>
+  <div class="slide-foot"><span>21 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="21">
+  <div class="slide-inner"><div class="kicker">把十一节压成一条链</div>
+                <div class="compact"><p>链上最容易断的两处：一是把 4.4 的两条判据当成两个并列的现象背下来，却不知道它们分别对应「容器」与「能量」；二是把 4.8 读成 4.2 的重复——再灌注损伤不是缺血的重复，是恢复供氧这个动作本身带来的新损伤。</p></div></div>
+  <div class="slide-foot"><span>22 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="22">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><ul><li><strong>正文引文是讲义正文，不是经典；本章 MOTTO 另引一句经典原文，出处到书名与篇名。</strong> 本章引用格式统一为<code>补充·hermes-病理生理学讲义·第N章·N.M</code>，章号等于本课程章号（第 4 章），节号取自讲义 4.1 至 4.11。讲义是本仓库原创教学正文，不是任何外文教材的译本；引用它不等于引用外文教材原文。</li><li><strong>本章丢掉的是什么：数值。</strong> 讲义第 4 章 65 段正文里，数字加计量单位的命中为 0 处（<code>node code/main.js</code> 复算，不照抄声明）。讲义把可量化的地方一律写成方向与类别——更快、更重、升高、下降、范围大——本书照录这个取舍：<strong>描述类别可以，给出取值不行。</strong> 需要数值的场景（判读酶学指标、看趋势曲线）必须另立数据层，另立来源、版本与校验，并标注不从本书推。</li><li><strong>本章不写数值，也不做换算。</strong> 不写正常值、参考区间与单位，不把定性描述折算成任何数字；凡遇多少算不可逆、多久算超时的追问，统一回答：本书不给值，需另立数据层。</li></ul></div></div>
+  <div class="slide-foot"><span>23 / 27</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="23">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><ul><li><strong>本章不作诊断，也不作正常与异常的判定。</strong> 可逆与不可逆在本章只是机制判据，不是对任何个体的结论；讲义举的病名只作类别示例。酶升高、细胞肿胀这类观察项，只说明机制上的可能位置，不说明某个人的状态。</li><li><strong>词频只描述写法，不描述难度。</strong> 膜完整性与线粒体两词只在 4.1 与 4.4 并置，说明全章的骨架是阈值与判据这一对，不说明 4.5 到 4.7 可以不学——它们各有整节。同一批词换个词表就会变，本书词表固定在生成脚本里，可复算但不可外推。</li><li><strong>死亡方式的分类不是价值排序。</strong> 坏死与凋亡没有「哪个更好」的意思；把凋亡写成「好的死法」是把机制判断偷换成评价。本书只写形态与信号，不评价结局。</li><li><strong>边界声明</strong>：教学边界：本章只说明细胞损伤、衰老与死亡的类别与关系，不写数值与单位与正常值，不构成诊断/用药依据；任何个体的状态判断须由具备资质的人员依现行规范作出。</li></ul>
+<h3 id="运行与验证">运行与验证</h3></div></div>
+  <div class="slide-foot"><span>24 / 27</span><span>boundary</span></div>
 </section>
 <section class="slide" data-i="24">
-  <div class="slide-inner"><div class="kicker">十、把十一节压成一条链</div>
-                <div class="compact"><p>链上最容易断的两处：一是把 4.4 的两条判据当成两个并列的现象背下来，却不知道它们分别对应「容器」与「能量」；二是把 4.8 读成 4.2 的重复——再灌注损伤不是缺血的重复，是恢复供氧这个动作本身带来的新损伤。</p></div></div>
-  <div class="slide-foot"><span>25 / 28</span><span>body</span></div>
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><div class="codeblock"><div class="codeblock-lang">bash</div><pre><code class="lang-bash"># 1) 现算本章规模、节数、段数、数值命中与两词并置的节
+node code/main.js
+
+# 2) 单测：章号 / 节数 / 字数 / 节号格式 / docs 零裸值 / 引文逐字 / quiz 契约 / 教学边界
+node --test code/main.test.js
+
+# 3) 章级门（全库 53 章）
+cd /e/tcmai-engineering-from-scatch &amp;&amp; node tests/test_binglishengli_chapters.js</code></pre></div>
+<p><code>node code/main.js</code> 的真实输出（节选）：</p>
+<div class="codeblock"><div class="codeblock-lang">text</div><pre><code class="lang-text">讲义规模: 第 4 章 · 11 节 · 65 段 · 2831 汉字 · 4267 非空白字符
+口径核验: 65 段的数值型命中 0 处（讲义 valueLike = 0，这里复算而不是照抄声明）
+小节号格式: 全部合规（4.M）</code></pre></div>
+<p><code>code/main.js</code> 的最后一行固定为下面这句，也是单测与章级门共同依赖的字符串：</p></div></div>
+  <div class="slide-foot"><span>25 / 27</span><span>boundary</span></div>
 </section>
 <section class="slide" data-i="25">
   <div class="slide-inner"><div class="kicker">代价与边界</div>
-                <div class="compact"><ul><li><strong>引文是讲义正文，不是经典。</strong> 本章引用格式统一为<code>补充·hermes-病理生理学讲义·第N章·N.M</code>，章号等于本课程章号（第 4 章），节号取自讲义 4.1 至 4.11。讲义是本仓库原创教学正文，不是任何外文教材的译本；引用它不等于引用外文教材原文。</li><li><strong>本章丢掉的是什么：数值。</strong> 讲义第 4 章 65 段正文里，数字加计量单位的命中为 0 处（<code>node code/main.js</code> 复算，不照抄声明）。讲义把可量化的地方一律写成方向与类别——更快、更重、升高、下降、范围大——本书照录这个取舍：<strong>描述类别可以，给出取值不行。</strong> 需要数值的场景（判读酶学指标、看趋势曲线）必须另立数据层，另立来源、版本与校验，并标注不从本书推。</li><li><strong>本章不写数值，也不做换算。</strong> 不写正常值、参考区间与单位，不把定性描述折算成任何数字；凡遇多少算不可逆、多久算超时的追问，统一回答：本书不给值，需另立数据层。</li><li>**本章不作诊断，也不作正常与异常的判定。</li></ul></div></div>
-  <div class="slide-foot"><span>26 / 28</span><span>boundary</span></div>
+                <div class="compact"><div class="codeblock"><div class="codeblock-lang">text</div><pre><code class="lang-text">教学边界：本章只说明细胞损伤、衰老与死亡的类别与关系，不写数值与单位与正常值，不构成诊断/用药依据</code></pre></div>
+<p><strong>免责声明：</strong>本章为病理生理学教学材料。文中所有机制、分类与关系，取自本仓库原创《hermes-病理生理学讲义》第 4 章的表述与 <code>standards/binglishengli</code> 的机器可读层；规模数字为程序现算，规则已在文中写明。</p>
+<p>本章不提供任何诊断、治疗或用药建议，不给出正常值与参考范围，也不对任何个体的状态作出正常或异常的判断。文中出现的「一条线」「两种死法」「可逆窗口」均为机制层的说明，不能替代临床评估。若出现身体不适或急症，请立即就医。</p></div></div>
+  <div class="slide-foot"><span>26 / 27</span><span>boundary</span></div>
 </section>
 <section class="slide" data-i="26">
-  <div class="slide-inner"><div class="kicker">代价与边界</div>
-                <div class="compact"><p>** 可逆与不可逆在本章只是机制判据，不是对任何个体的结论；讲义举的病名只作类别示例。酶升高、细胞肿胀这类观察项，只说明机制上的可能位置，不说明某个人的状态。</p>
-<ul><li><strong>词频只描述写法，不描述难度。</strong> 膜完整性与线粒体两词只在 4.1 与 4.4 并置，说明全章的骨架是阈值与判据这一对，不说明 4.5 到 4.7 可以不学——它们各有整节。同一批词换个词表就会变，本书词表固定在生成脚本里，可复算但不可外推。</li><li><strong>死亡方式的分类不是价值排序。</strong> 坏死与凋亡没有「哪个更好」的意思；把凋亡写成「好的死法」是把机制判断偷换成评价。本书只写形态与信号，不评价结局。</li><li><strong>边界声明</strong>：教学边界：本章只说明细胞损伤、衰老与死亡的类别与关系，不写数值与单位与正常值，不构成诊断/用药依据；任何个体的状态判断须由具备资质的人员依现行规范作出。</li></ul></div></div>
-  <div class="slide-foot"><span>27 / 28</span><span>boundary</span></div>
-</section>
-<section class="slide" data-i="27">
   <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
-  <div class="slide-foot"><span>28 / 28</span><span>disclaimer</span></div>
+  <div class="slide-foot"><span>27 / 27</span><span>disclaimer</span></div>
 </section>
 </div>
 <div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>

@@ -28,7 +28,7 @@
       "spoken": "「诸呕吐酸，暴注下迫，皆属于热」——教材·第8章·8.1.1（《素问·至真要大论》）",
       "estimateSeconds": 9,
       "audio": "002.mp3",
-      "audioSeconds": 8.26
+      "audioSeconds": 8.256
     },
     {
       "n": 3,
@@ -38,7 +38,7 @@
       "spoken": "暴吐暴泻看着像「肠胃炎」，实际可能是霍乱、可能是急腹症的前驱、也可能是中毒。本章的难点不是辨证，是先排除需要外科与公卫介入的那几种。",
       "estimateSeconds": 14,
       "audio": "003.mp3",
-      "audioSeconds": 13.85
+      "audioSeconds": 13.848
     },
     {
       "n": 4,
@@ -48,7 +48,7 @@
       "spoken": "环境逼迫（吐泻导致脱水与电解质紊乱，进展以小时计）+ 知识积累（本章 4 单元 17,450 汉字（全书第一）、数值 76 处（全书第一）——消化系统急症的量化程度最高）",
       "estimateSeconds": 17,
       "audio": "004.mp3",
-      "audioSeconds": 16.18
+      "audioSeconds": 16.176
     },
     {
       "n": 5,
@@ -59,7 +59,7 @@
       "spoken": "这一段以代码实现为主，请看画面上的代码块。",
       "estimateSeconds": 5,
       "audio": "005.mp3",
-      "audioSeconds": 4.51
+      "audioSeconds": 4.512
     },
     {
       "n": 6,
@@ -69,10 +69,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "006.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 59.38,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 1.0,
+    "measuredMinutes": 0.99,
+    "ratio": 0.99
+  }
 }

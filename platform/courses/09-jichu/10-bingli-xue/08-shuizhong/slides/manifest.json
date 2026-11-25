@@ -1,7 +1,7 @@
 {
   "chapter": "08-shuizhong",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 41,
+  "segmentCount": 13,
   "slides": [
     {
       "n": 1,
@@ -11,7 +11,7 @@
     {
       "n": 2,
       "segment": 2,
-      "chars": 58
+      "chars": 35
     },
     {
       "n": 3,
@@ -26,6 +26,186 @@
     {
       "n": 5,
       "segment": 5,
+      "chars": 393
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 309
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 386
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 280
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 159
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 384
+    },
+    {
+      "n": 11,
+      "segment": 7,
+      "chars": 114
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 369
+    },
+    {
+      "n": 13,
+      "segment": 8,
+      "chars": 163
+    },
+    {
+      "n": 14,
+      "segment": 9,
+      "chars": 341
+    },
+    {
+      "n": 15,
+      "segment": 9,
+      "chars": 160
+    },
+    {
+      "n": 16,
+      "segment": 10,
+      "chars": 403
+    },
+    {
+      "n": 17,
+      "segment": 10,
+      "chars": 407
+    },
+    {
+      "n": 18,
+      "segment": 10,
+      "chars": 375
+    },
+    {
+      "n": 19,
+      "segment": 10,
+      "chars": 360
+    },
+    {
+      "n": 20,
+      "segment": 10,
+      "chars": 95
+    },
+    {
+      "n": 21,
+      "segment": 11,
+      "chars": 412
+    },
+    {
+      "n": 22,
+      "segment": 11,
+      "chars": 329
+    },
+    {
+      "n": 23,
+      "segment": 11,
+      "chars": 323
+    },
+    {
+      "n": 24,
+      "segment": 11,
+      "chars": 310
+    },
+    {
+      "n": 25,
+      "segment": 11,
+      "chars": 306
+    },
+    {
+      "n": 26,
+      "segment": 11,
+      "chars": 316
+    },
+    {
+      "n": 27,
+      "segment": 11,
+      "chars": 311
+    },
+    {
+      "n": 28,
+      "segment": 11,
+      "chars": 319
+    },
+    {
+      "n": 29,
+      "segment": 11,
+      "chars": 315
+    },
+    {
+      "n": 30,
+      "segment": 11,
+      "chars": 294
+    },
+    {
+      "n": 31,
+      "segment": 11,
+      "chars": 310
+    },
+    {
+      "n": 32,
+      "segment": 11,
+      "chars": 315
+    },
+    {
+      "n": 33,
+      "segment": 12,
+      "chars": 394
+    },
+    {
+      "n": 34,
+      "segment": 12,
+      "chars": 324
+    },
+    {
+      "n": 35,
+      "segment": 12,
+      "chars": 366
+    },
+    {
+      "n": 36,
+      "segment": 12,
+      "chars": 203
+    },
+    {
+      "n": 37,
+      "segment": 12,
+      "chars": 393
+    },
+    {
+      "n": 38,
+      "segment": 12,
+      "chars": 391
+    },
+    {
+      "n": 39,
+      "segment": 12,
+      "chars": 409
+    },
+    {
+      "n": 40,
+      "segment": 12,
+      "chars": 407
+    },
+    {
+      "n": 41,
+      "segment": 13,
       "chars": 52
     }
   ]

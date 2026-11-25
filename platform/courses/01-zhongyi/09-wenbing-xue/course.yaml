@@ -29,62 +29,61 @@ platform:
 
 chapters:
   - slug: 01-wenbing-fanwei
-    title: 第1章 温病的范围与伤寒的边界
-    segments: 8
+    title: 温病不是「另一类伤寒」，是一套换了入口的病
     video: rendered
-    estimate_minutes: 9.43
-    measured_minutes: 9.27
+    estimate_minutes: 9.43      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.27      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-weiqi-yingxue
-    title: 第2章 卫气营血辨证：四层状态机
-    segments: 9
+    title: 卫气营血不是四个格子，是一条四级的治法阶梯
     video: rendered
-    estimate_minutes: 11.48
-    measured_minutes: 10.91
+    estimate_minutes: 11.48      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-sanjiao-bianzheng
-    title: 第3章 三焦辨证：病位的纵向坐标
-    segments: 8
+    title: 三焦不是「纵向的卫气营血」：6 组映射里只有 1 组严丝合缝
     video: rendered
-    estimate_minutes: 2.78
-    measured_minutes: 2.69
+    estimate_minutes: 2.78      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 2.69      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-fengwen-chunwen
-    title: 第4章 风温与春温：新感与伏邪
-    segments: 8
+    title: 「新感」与「伏邪」不是吴鞠通贴的标签：93 条里只有 16 条有词证
     video: rendered
-    estimate_minutes: 3.68
-    measured_minutes: 3.65
+    estimate_minutes: 3.68      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 3.65      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-shuwen-shiwen
-    title: 第5章 暑温与湿温：季节与湿热的耦合
-    segments: 8
+    title: 暑温与湿温：不是两种病，是「暑兼湿热」的两端
     video: rendered
-    estimate_minutes: 11.57
-    measured_minutes: 11.32
+    estimate_minutes: 11.57      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.32      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-qiuzzao-fushu
-    title: 第6章 秋燥与伏暑：燥邪的辨证
-    segments: 8
+    title: 凉燥不在「秋燥篇」里：正文 5 条全是温燥，凉燥 6 条全在补论
     video: rendered
-    estimate_minutes: 3.57
-    measured_minutes: 3.56
+    estimate_minutes: 3.57      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 3.56      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-wenbing-shezhen
-    title: 第7章 温病舌诊与斑疹的辨识
-    segments: 8
+    title: 温病最密的证据不是脉，是舌：83 条带舌象，斑疹判据只有 6 个维度
     video: rendered
-    estimate_minutes: 3.3
-    measured_minutes: 3.33
+    estimate_minutes: 3.30      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 3.33      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-qingre-yangyin
-    title: 第8章 清热透邪与养阴的治法次序
-    segments: 8
+    title: 治法不是一条阶梯，是「按焦换味」：7 阶治法 / 27 处禁例
     video: rendered
-    estimate_minutes: 2.8
-    measured_minutes: 2.76
+    estimate_minutes: 2.80      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 2.76      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-tiaobian-fangji
-    title: 第9章 温病条辨的方剂体系
-    segments: 8
+    title: 温病书里用得最多的不是清热药，是人参：34 方 / 19.1%
     video: rendered
-    estimate_minutes: 3.42
-    measured_minutes: 3.47
+    estimate_minutes: 3.42      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 3.47      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-yibing-gongwei
-    title: 第10章 疫病与公共卫生：历史的建模
-    segments: 8
+    title: 《温疫论》没有病原体，却建成了一个「同一因子、不同传变」的模型
     video: rendered
-    estimate_minutes: 9.23
-    measured_minutes: 8.8
+    estimate_minutes: 9.23      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.80      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

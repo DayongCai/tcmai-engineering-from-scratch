@@ -4,7 +4,7 @@
   {
    "n": 1,
    "slug": "01-xulun",
-   "title": "绪论",
+   "title": "绪论不是开场白：它划定针灸学的边界、来路与读法",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -12,7 +12,7 @@
   {
    "n": 2,
    "slug": "02-jingluo-zonglun",
-   "title": "经络总论",
+   "title": "经络不是线路图，是把脏腑与肢节接成闭环的规则",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -20,7 +20,7 @@
   {
    "n": 3,
    "slug": "03-shuxue-zonglun",
-   "title": "腧穴总论",
+   "title": "腧穴的数目是历代校订出来的，不是一次定死的",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -28,7 +28,7 @@
   {
    "n": 4,
    "slug": "04-shoutaiyin-feijing",
-   "title": "手太阴肺经及其腧穴",
+   "title": "肺经十一穴：一条从胸走到拇指的经，先定属络再定穴",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -36,7 +36,7 @@
   {
    "n": 5,
    "slug": "05-shouyangming-dachangjing",
-   "title": "手阳明大肠经及其腧穴",
+   "title": "大肠经二十穴：把面口与肠腑拴在同一条经上的长线",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -44,7 +44,7 @@
   {
    "n": 6,
    "slug": "06-zuyangming-weijing",
-   "title": "足阳明胃经及其腧穴",
+   "title": "胃经的重量不在四十五穴，而在十四组可操作条目",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -52,7 +52,7 @@
   {
    "n": 7,
    "slug": "07-zutaiyin-pijing",
-   "title": "足太阴脾经及其腧穴",
+   "title": "脾经全部关键压在一个八寸的交叉点上",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -60,7 +60,7 @@
   {
    "n": 8,
    "slug": "08-shoushaoyin-xinjing",
-   "title": "手少阴心经及其腧穴",
+   "title": "心经九穴全在手臂上，病候却全在胸咽目",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -68,7 +68,7 @@
   {
    "n": 9,
    "slug": "09-shoutaiyang-xiaochangjing",
-   "title": "手太阳小肠经及其腧穴",
+   "title": "小肠经十九穴有七穴挤在肩胛区，主治的头一条却是耳",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -76,7 +76,7 @@
   {
    "n": 10,
    "slug": "10-zutaiyang-pangguangjing",
-   "title": "足太阳膀胱经及其腧穴",
+   "title": "六十七穴不是清单，是两条平行侧线加一张背俞索引",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -84,7 +84,7 @@
   {
    "n": 11,
    "slug": "11-zushaoyin-shenjing",
-   "title": "足少阴肾经及其腧穴",
+   "title": "二十七穴里只有十穴配得上独立条目",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -92,7 +92,7 @@
   {
    "n": 12,
    "slug": "12-shoujueyin-xinbaojing",
-   "title": "手厥阴心包经及其腧穴",
+   "title": "九穴共用一条肌腱缝，红线却有八条",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -100,7 +100,7 @@
   {
    "n": 13,
    "slug": "13-shoushaoyang-sanjiaojing",
-   "title": "手少阳三焦经及其腧穴",
+   "title": "二十三穴没有一条定位标记，只能顺着一条线读",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -108,7 +108,7 @@
   {
    "n": 14,
    "slug": "14-zushaoyang-danjing",
-   "title": "足少阳胆经及其腧穴",
+   "title": "四十四穴的取舍不在穴数，在五个身份",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -116,7 +116,7 @@
   {
    "n": 15,
    "slug": "15-zujueyin-ganjing",
-   "title": "足厥阴肝经及其腧穴",
+   "title": "十四穴七个有身份，另七个只占一行",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -124,7 +124,7 @@
   {
    "n": 16,
    "slug": "16-dumai",
-   "title": "督脉及其腧穴",
+   "title": "督脉的效力与风险同出一处，都在棘突下那一道凹陷",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -132,7 +132,7 @@
   {
    "n": 17,
    "slug": "17-renmai",
-   "title": "任脉及其腧穴",
+   "title": "任脉二十四穴全靠软组织兜底，没有一块骨头替你挡针",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -140,7 +140,7 @@
   {
    "n": 18,
    "slug": "18-jingwai-qixue",
-   "title": "经外奇穴",
+   "title": "经外奇穴的密度是全课最高，四十二个穴名只摊到五千字",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -148,7 +148,7 @@
   {
    "n": 19,
    "slug": "19-cijiufa-zonglun",
-   "title": "刺灸法总论",
+   "title": "刺灸法总论的产物不是穴位表，而是一张能不能扎的清单",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -156,7 +156,7 @@
   {
    "n": 20,
    "slug": "20-haozhen-cifa",
-   "title": "毫针刺法",
+   "title": "毫针的风险不在扎错穴，在扎对了却扎过头",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -164,7 +164,7 @@
   {
    "n": 21,
    "slug": "21-jiufa",
-   "title": "灸法",
+   "title": "灸法真正要记的不是几壮，而是以何为度",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -172,7 +172,7 @@
   {
    "n": 22,
    "slug": "22-baguan-qita-cifa",
-   "title": "拔罐法及其他刺法",
+   "title": "这一章的主语不是穴位，而是器具的可调参数",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -180,7 +180,7 @@
   {
    "n": 23,
    "slug": "23-zhiliao-zonglun",
-   "title": "针灸治疗总论",
+   "title": "这一章不给穴位，只给把穴位连成方子的规则",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -188,7 +188,7 @@
   {
    "n": 24,
    "slug": "24-tongzheng",
-   "title": "头面躯体痛证",
+   "title": "八个痛证是同一张处方的八次填空",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -196,7 +196,7 @@
   {
    "n": 25,
    "slug": "25-neike-bingzheng",
-   "title": "内科病证",
+   "title": "九十个证型压在二万二千字里，平均二百四十九字一个",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -204,7 +204,7 @@
   {
    "n": 26,
    "slug": "26-fuer-bingzheng",
-   "title": "妇儿科病证",
+   "title": "妇儿科不按「科」分，按周期、胎位、发育三条轴分",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -212,7 +212,7 @@
   {
    "n": 27,
    "slug": "27-piwai-bingzheng",
-   "title": "皮肤外科病证",
+   "title": "皮肤外科九病：皮损看得见，局部取穴就压过了循经",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -220,7 +220,7 @@
   {
    "n": 28,
    "slug": "28-wuguan-bingzheng",
-   "title": "五官科病证",
+   "title": "五官五病共用一条路径：局部开窍、远端引火下行，代价是引文全部悬空",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -228,7 +228,7 @@
   {
    "n": 29,
    "slug": "29-jizheng-qita",
-   "title": "急症及其他病证",
+   "title": "急症八证写得最省：八张方共用内关，最薄的一节给了高热",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -236,7 +236,7 @@
   {
    "n": 30,
    "slug": "30-xiandai-yanjiu",
-   "title": "针灸现代研究与数字化",
+   "title": "现代研究章靠数字立论：75 个数字串，三条古籍只作背书",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

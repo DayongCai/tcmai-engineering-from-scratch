@@ -28,7 +28,7 @@
       "spoken": "「婴儿者，其肉脆、血少、气弱」——教材·第1章·1.2.1（《灵枢·逆顺肥瘦》）",
       "estimateSeconds": 9,
       "audio": "002.mp3",
-      "audioSeconds": 8.33
+      "audioSeconds": 8.328
     },
     {
       "n": 3,
@@ -59,7 +59,7 @@
       "spoken": "这一段以代码实现为主，请看画面上的代码块。",
       "estimateSeconds": 5,
       "audio": "005.mp3",
-      "audioSeconds": 4.51
+      "audioSeconds": 4.512
     },
     {
       "n": 6,
@@ -69,10 +69,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "006.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 84.14,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 1.48,
+    "measuredMinutes": 1.4,
+    "ratio": 0.945
+  }
 }

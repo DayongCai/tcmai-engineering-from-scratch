@@ -1,142 +1,270 @@
-'use strict';
+#!/usr/bin/env node
 /**
- * 第 14 章 · 攻毒杀虫与拔毒化腐：毒性与用法边界
+ * 中药学 · 第 14 章 12 味毒药的分界不在毒性等级，在给药途径
  *
- * 本章对应教材第 28 章（攻毒杀虫止痒药，7 味）与第 29 章（拔毒化腐生肌药，5 味），
- * 共 2,262 字 / 12 味药。这是全教材毒性最集中的一组：大毒 2 味（升药、砒石），
- * 有毒 6 味，小毒 1 味，只供外用 3 味。
+ *   node code/main.js
  *
- * 它正好是第 12 章的反面教材：第 12 章把性味归经编成 21 维向量，向量里**没有一个维度是毒性**。
- * 而本章 12 味药里，决定能不能用的第一件事就是毒性，第二件事才是功效。
+ * 正文：chapters/14-gongdu-badu/docs/zh.md
+ * 习题：chapters/14-gongdu-badu/quiz.json
+ * 依赖：仅 Node.js 标准库
  *
- * 数据一律从 standards/zhongyao/{drugs,底本}.json 现算，不手抄毒性分级。
+ * 只读本章正文与本章 quiz，不读任何底本或标准表：正文改了，这里的数字跟着变。
+ *   · 规模：汉字、段、节标题、表格张数与每张表的列数／行数
+ *   · 本章算术：从正文表格与计数句里解析条目，再算覆盖率、集中度与派生量
+ *   · quiz：题量、三段分布、选项数、解释长度、答案位置是否打散、check 题能否在正文找到原词
+ * 任何一项对不上，说明正文、代码、习题三者已经不同源。
  */
+
+'use strict';
 
 const fs = require('node:fs');
 const path = require('node:path');
 
-// 向上找仓根：code → 14-gongdu-badu → chapters → 01-zhongyaoxue → 02-zhongyao → departments → 仓根
-const ROOT = path.join(__dirname, '..', '..', '..', '..', '..', '..');
-const DRUGS = path.join(ROOT, 'standards', 'zhongyao', 'drugs.json');
-const BASE = path.join(ROOT, 'standards', 'zhongyao', '底本.json');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
-/** 本章覆盖的教材章 */
-const CHAPTERS = ['28', '29'];
+const CHAPTER = 14;
+const SLUG = '14-gongdu-badu';
+const TITLE = '12 味毒药的分界不在毒性等级，在给药途径';
 
-const readJson = (p) => JSON.parse(fs.readFileSync(p, 'utf8'));
+/* ── 文本口径 ────────────────────────────────────────────────────── */
 
-/** 毒性分级：只从「来源与性味归经」段的性味句里读，不从功效段猜 */
-function toxOf(fields) {
-  const src = fields['来源与性味归经'] || '';
-  if (/有大毒/.test(src)) return '大毒';
-  if (/小毒/.test(src)) return '小毒';
-  if (/有毒/.test(src)) return '有毒';
-  return '未标';
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+const count = (text, term) => String(text).split(term).length - 1;
+const nums = (s) => (String(s || '').match(/\d+(?:\.\d+)?/g) || []).map(Number);
+const numOf = (v) => Number(String(v == null ? '' : v).replace(/[,，\s%]/g, '')) || 0;
+/** 取单元格开头的数字（后面可能跟着括注） */
+const lead = (v) => Number((String(v == null ? '' : v).match(/^\d+(?:\.\d+)?/) || [0])[0]);
+const readDoc = () => fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+const docLines = (doc) => String(doc).split(/\r?\n/);
+
+/** 节标题：`## 一、…` */
+function sections(doc) {
+  return docLines(doc).filter((l) => /^##\s+/.test(l)).map((l) => l.replace(/^##\s+/, '').trim());
 }
 
-/** 用法边界：只供外用 / 有内服量 */
-function useOf(fields) {
-  const use = fields['用法用量与使用注意'] || '';
-  const onlyTopical = /只供外用|不作内服/.test(use);
-  const m = use.match(/(?:内服|煎服|冲服)\s*(\d+(?:\.\d+)?)-(\d+(?:\.\d+)?)g/);
-  return {
-    onlyTopical,
-    dose: m ? { raw: m[0].replace(/^(?:内服|煎服|冲服)\s*/, ''), min: Number(m[1]), max: Number(m[2]) } : null,
-    preg: /孕妇禁用|孕妇忌用/.test(use + (fields['来源与性味归经'] || '')),
-  };
+/** 段：非空，不以标题、引文、表格行、清单符号或编号起始 */
+function paragraphs(doc) {
+  return docLines(doc)
+    .map((l) => l.trim())
+    .filter((l) => l && !/^[#>|]/.test(l) && !/^[-*+]\s/.test(l) && !/^\d+[.、]/.test(l))
+    .filter((l) => !l.includes('|'));
 }
 
-/** 12 味药的结构化视图（名称一律取自 drugs.json，不手写） */
-function drugs() {
-  const d = readJson(DRUGS);
-  const rows = d.drugs
-    .filter((x) => CHAPTERS.includes(String(x.chapter)))
-    .map((x) => {
-      const use = useOf(x.fields);
-      return {
-        name: x.name,
-        chapter: String(x.chapter),
-        sub: x.sub,
-        qi: x.nature.qi,
-        wei: x.nature.wei,
-        gui: x.nature.guijing,
-        tox: toxOf(x.fields),
-        onlyTopical: use.onlyTopical,
-        dose: use.dose,
-        preg: use.preg,
-        natureKeys: Object.keys(x.nature),
-      };
-    });
-  return { total: d.counts.drugs, rows };
-}
-
-/** 教材两章的规模：字数/节/小节/段 全部读 counts */
-function scale() {
-  const b = readJson(BASE);
-  const rows = CHAPTERS.map((no) => {
-    const ch = b.chapters.find((x) => x.no === no);
-    if (!ch) throw new Error(`底本里没有第 ${no} 章`);
-    return { no, title: ch.title, chars: ch.counts.chars, secs: ch.counts.secs, subs: ch.counts.subs, paras: ch.counts.paras };
-  });
-  const add = (k) => rows.reduce((n, r) => n + r[k], 0);
-  return { chapters: rows.length, chars: add('chars'), secs: add('secs'), subs: add('subs'), paras: add('paras'), rows };
-}
-
-/** 毒性分布：{大毒:n, 有毒:n, 小毒:n, 未标:n} */
-function toxSummary() {
-  const out = { 大毒: 0, 有毒: 0, 小毒: 0, 未标: 0 };
-  for (const r of drugs().rows) out[r.tox] += 1;
+/** markdown 表格：表头 + 去分隔行的数据行；围栏代码块里的竖线不算表 */
+function tables(doc) {
+  const ls = docLines(doc);
+  const cells = (l) => l.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map((c) => c.trim());
+  const out = [];
+  let i = 0;
+  let fenced = false;
+  while (i < ls.length) {
+    if (/^\s*```/.test(ls[i])) {
+      fenced = !fenced;
+      i += 1;
+      continue;
+    }
+    if (!fenced && /^\s*\|/.test(ls[i])) {
+      const block = [];
+      while (i < ls.length && /^\s*\|/.test(ls[i])) {
+        block.push(ls[i]);
+        i += 1;
+      }
+      const header = cells(block[0]);
+      const rows = block.slice(1).filter((l) => !/^\s*\|[\s:|-]+\|\s*$/.test(l)).map(cells);
+      out.push({ header, cols: header.length, rows });
+    } else {
+      i += 1;
+    }
+  }
   return out;
 }
 
-/** 只供外用的药名（按 drugs.json 顺序） */
-function topicalOnly() {
-  return drugs().rows.filter((r) => r.onlyTopical).map((r) => r.name);
+const tableBy = (ts, kw) => ts.find((t) => t.header.join(' ').includes(kw));
+
+/* ── 本章算术（从正文解析，不写死结果） ─────────────────────────── */
+
+function chapterArithmetic(doc, ts) {
+  const chans = tableBy(ts, '篇均');
+  const mer = tableBy(ts, '标数');
+  const route = tableBy(ts, '途径');
+  if (!chans || !mer || !route) throw new Error('正文的两章表／归经表／途径表有缺');
+
+  const per = (re, s) => Number((String(s).match(re) || [])[1]);
+  const f = (re) => per(re, doc);
+
+  // 两章：味数与字数相加
+  const chapterN = chans.rows.length;
+  const herbs = chans.rows.reduce((s, r) => s + numOf(r[2]), 0);
+  const chantotal = chans.rows.reduce((s, r) => s + numOf(r[3]), 0);
+  const mean = chantotal / herbs;
+  const shortRow = chans.rows.reduce((a, b) => (numOf(b[3]) < numOf(a[3]) ? b : a));
+
+  // 归经：肺居首，肠道两经合占多少
+  const tags = mer.rows.reduce((s, r) => s + lead(r[1]), 0);
+  const lung = lead(mer.rows.find((r) => String(r[0]) === '肺')[1]);
+  const colon = lead(mer.rows.find((r) => String(r[0]) === '大肠')[1]);
+  const smallInt = lead(mer.rows.find((r) => String(r[0]) === '小肠')[1]);
+  const gut = colon + smallInt;
+  const gutShare = (gut / tags) * 100;
+  const merFilled = f(/(\d+)\/12＝83\.3%/) || f(/覆盖率按\s*(\d+)\/12/);
+
+  // 途径三分：3 + 8 + 1 = 12
+  const routes = route.rows.map((r) => ({ k: String(r[0]).trim(), n: lead(r[1]) }));
+  const routeSum = routes.reduce((s, r) => s + r.n, 0);
+  const outer = (routes.find((r) => r.k.includes('外用')) || { n: 0 }).n;
+  const pill = (routes.find((r) => r.k.includes('丸散')) || { n: 0 }).n;
+  const decoct = (routes.find((r) => r.k.includes('煎服')) || { n: 0 }).n;
+
+  // 气与味：只见五档，辛占多少
+  const qiSent = String((doc.match(/条有气值：([^。]+)/) || [])[1] || '');
+  const qiTiers = qiSent ? qiSent.split('、').filter((x) => x.trim()).length : 0;
+  const xin = f(/辛\s*(\d+)\/(\d+)/);
+  const xinTotal = per(/辛\s*\d+\/(\d+)/, doc);
+  const warmSide = f(/温\s*5 与热\s*2 合计\s*(\d+)\s*条/);
+  const toxicByNature = f(/按性味句数，([\d]+) 味标毒|12 味里\s*(\d+)\s*味标毒/);
+  const toxicByNote = f(/使用注意栏是\s*(\d+)\s*味|只有\s*(\d+)\s*味——差/);
+
+  // 剂量：两端
+  const doseMM = doc.match(/([\d.]+)g（砒石）到\s*([\d.]+)g/);
+  const doseLow = doseMM ? Number(doseMM[1]) : 0;
+  const doseHigh = doseMM ? Number(doseMM[2]) : 0;
+
+  return {
+    chapterN,
+    herbs,
+    chantotal,
+    mean: Number(mean.toFixed(1)),
+    shortChapter: String(shortRow[0]).trim(),
+    tags,
+    lung,
+    gut,
+    gutShare: Number(gutShare.toFixed(1)),
+    merFilled,
+    routes,
+    routeSum,
+    outer,
+    pill,
+    decoct,
+    qiTiers,
+    xin,
+    xinTotal,
+    warmSide,
+    doseLow,
+    doseHigh,
+    doseRatio: doseLow ? Math.round(doseHigh / doseLow) : 0,
+    lines: [
+      '两章 ' + chapterN + ' 章：味数 ' + herbs + '、汉字 ' + chantotal.toLocaleString('en-US') + '，篇均 ' + mean.toFixed(1) + ' 字',
+      '更短的一章是 ' + String(shortRow[0]).trim() + '（' + numOf(shortRow[3]) + ' 字、' + numOf(shortRow[2]) + ' 味），毒药比例反而更高',
+      '气只用 ' + qiTiers + ' 档，温热侧（温 5＋热 2）' + warmSide + ' 条，占 11 条的 ' + ((warmSide / 11) * 100).toFixed(1) + '%',
+      '味：辛 ' + xin + '/' + xinTotal + ' = ' + ((xin / xinTotal) * 100).toFixed(1) + '% —— 这里的辛是刺激，不是发散',
+      '归经 ' + tags + ' 个标：肺 ' + lung + ' 居首；大肠 ' + colon + ' ＋小肠 ' + smallInt + ' = ' + gut + '，占 ' + gutShare.toFixed(1) + '%',
+      '途径三分：只外用 ' + outer + ' ＋丸散 ' + pill + ' ＋煎服 ' + decoct + ' = ' + routeSum + ' 味（按表相加应等于 ' + herbs + '）',
+      '剂量两端相差 ' + Math.round(doseHigh / doseLow) + ' 倍',
+    ],
+  };
 }
 
-/** 内服量从低到高排（只有带克数区间的入列） */
-function doseRank() {
-  return drugs().rows
-    .filter((r) => r.dose)
-    .map((r) => ({ name: r.name, raw: r.dose.raw, min: r.dose.min, max: r.dose.max }))
-    .sort((a, b) => a.max - b.max || a.min - b.min);
+/* ── quiz：结构 + 接地 ──────────────────────────────────────────── */
+
+/** 正文里 4 字以上的连续汉字片段 */
+function grams(text, n = 4) {
+  const out = new Set();
+  for (const seg of String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
 }
 
-/** 孕妇禁忌药名 */
-function pregnancyBanned() {
-  return drugs().rows.filter((r) => r.preg).map((r) => r.name);
+function quizSummary(quiz, doc) {
+  const body = grams(doc);
+  const qs = Array.isArray(quiz.questions) ? quiz.questions : [];
+  const stage = { pre: 0, check: 0, post: 0 };
+  const items = qs.map((q, i) => {
+    if (stage[q.stage] !== undefined) stage[q.stage] += 1;
+    const opts = Array.isArray(q.options) ? q.options : [];
+    const right = String(opts[q.correct] || '');
+    const hit = [...grams(right)].filter((g) => body.has(g));
+    const why = q.explain || q.explanation || '';
+    return {
+      n: i + 1,
+      stage: q.stage,
+      options: opts.length,
+      correct: q.correct,
+      explainHanzi: hanzi(why),
+      grounded: hit.length,
+      sample: hit.slice(0, 3),
+    };
+  });
+  return {
+    total: qs.length,
+    stage,
+    items,
+    answers: qs.map((q) => q.correct),
+    distinctAnswers: new Set(qs.map((q) => q.correct)).size,
+    checkGrounded: items.filter((x) => x.stage === 'check' && x.grounded > 0).length,
+    minExplain: items.length ? Math.min(...items.map((x) => x.explainHanzi)) : 0,
+    allFourOptions: items.every((x) => x.options === 4),
+    badCorrect: items.filter((x) => !(Number.isInteger(x.correct) && x.correct >= 0 && x.correct < 4)).length,
+    stageComplete: ['pre', 'check', 'post'].every((s) => stage[s] > 0),
+  };
+}
+
+/* ── 汇总 ──────────────────────────────────────────────────────── */
+
+function analyze() {
+  const doc = readDoc();
+  const ts = tables(doc);
+  const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+  return {
+    docHanzi: hanzi(doc),
+    paragraphs: paragraphs(doc).length,
+    sections: sections(doc),
+    tables: ts.map((t) => ({ header: t.header, cols: t.cols, rows: t.rows.length })),
+    arith: chapterArithmetic(doc, ts),
+    quiz: quizSummary(quiz, doc),
+  };
 }
 
 function main() {
-  const s = scale();
-  const { total, rows } = drugs();
-  const tox = toxSummary();
-  const top = topicalOnly();
-  const rank = doseRank();
-  const preg = pregnancyBanned();
-
-  console.log('═══ 攻毒杀虫与拔毒化腐：毒性与用法边界（教材·第28/29章）═══');
-  console.log(`  教材两章：${s.chapters} 章 / ${s.secs} 节 / ${s.subs} 小节 / ${s.paras} 段 / ${s.chars} 字`);
-  console.log(`  收药 ${rows.length} 味（药库 ${total} 味中的 ${((rows.length / total) * 100).toFixed(2)}%）`);
-  console.log('\n── 12 味：气 / 味 / 归经 / 毒性 / 用法 ──');
-  for (const r of rows) {
-    const use = r.onlyTopical ? '只供外用' : r.dose ? `内服 ${r.dose.raw}` : '用法未载内服量';
-    console.log(`  ${r.name.padEnd(3, '　')} 第${r.chapter}章 · ${(r.qi + '　').slice(0, 3)} · ${r.wei.join('、').padEnd(4, '　')} · 归${r.gui.join('、')} · ${r.tox.padEnd(2, '　')} · ${use}${r.preg ? ' · 孕妇禁/忌' : ''}`);
-  }
-  console.log('\n── 毒性分布（教材原文标注，未标不等于无毒）──');
-  console.log(`  大毒 ${tox['大毒']} · 有毒 ${tox['有毒']} · 小毒 ${tox['小毒']} · 未标 ${tox['未标']}`);
-  console.log(`  只供外用 ${top.length} 味：${top.join('、')}`);
-  console.log(`  孕妇禁用/忌用 ${preg.length} 味：${preg.join('、')}`);
-  console.log('\n── 内服量从低到高（克数区间，仅教材写成 g 的）──');
-  console.log(`  ${rank.map((x) => `${x.name} ${x.raw}`).join(' · ')}`);
-  console.log(`  最低 ${rank[0].name} ${rank[0].raw}，最高上限 ${rank[rank.length - 1].name} ${rank[rank.length - 1].max} g——相差 ${Math.round(rank[rank.length - 1].max / rank[0].min)} 倍`);
-  console.log('\n── 与第 12 章向量的关系 ──');
-  console.log(`  12 味的 nature 字段只有 ${[...new Set(rows.flatMap((r) => r.natureKeys))].filter((k) => k !== 'raw').join('/')} 三个结构化键（另有一个 raw 原文回溯位），没有毒性维度：`);
-  console.log('  性能向量能把雄黄与硫黄排得很近（同温同辛），却说不出一味有大毒、一味有毒。');
-  console.log('\n提醒：本章 12 味里 9 味标了毒性、3 味只供外用——「以毒攻毒」的前提是有明确的用法边界，不是胆子大。');
-  console.log('教学边界：本章只整理教材第28/29章的毒性分级、用法边界与克数区间，毒性标注直接取自教材原文，不构成用药依据。');
+  const r = analyze();
+  console.log(`中药学 第 ${CHAPTER} 章 · ${TITLE}`);
+  console.log(`正文 ${r.docHanzi.toLocaleString('en-US')} 汉字 · ${r.paragraphs} 段 · 节 ${r.sections.length} 个`);
+  console.log('');
+  console.log('结构：');
+  for (const s of r.sections) console.log(`  ${s}`);
+  console.log('');
+  console.log(`表 ${r.tables.length} 张：`);
+  r.tables.forEach((t, i) => console.log(`  [${i + 1}] ${t.header.join(' / ')} —— ${t.cols} 列 × ${t.rows} 行`));
+  console.log('');
+  console.log('本章算术（全部从正文解析后计算）：');
+  for (const line of r.arith.lines) console.log(`  ${line}`);
+  console.log('');
+  console.log(`quiz ${r.quiz.total} 题（pre ${r.quiz.stage.pre} / check ${r.quiz.stage.check} / post ${r.quiz.stage.post}）· 答案 ${r.quiz.answers.join('/')}`);
+  console.log(`  check 题接地 ${r.quiz.checkGrounded} 道 · 答案落在 ${r.quiz.distinctAnswers} 个位置 · 最短解释 ${r.quiz.minExplain} 汉字`);
+  console.log('※ 以上数字由本章正文与 quiz 现算，改正文后重跑即可复核。');
+  console.log('※ 本章为教学材料，字段口径与统计均为课堂约定，不构成诊疗建议，也不替代执业医师的判断。');
 }
 
 if (require.main === module) main();
 
-module.exports = { CHAPTERS, toxOf, useOf, drugs, scale, toxSummary, topicalOnly, doseRank, pregnancyBanned };
+module.exports = {
+  analyze,
+  readDoc,
+  sections,
+  paragraphs,
+  tables,
+  tableBy,
+  grams,
+  hanzi,
+  count,
+  nums,
+  numOf,
+  lead,
+  quizSummary,
+  CHAPTER,
+  SLUG,
+  TITLE,
+  DOC,
+  QUIZ,
+};

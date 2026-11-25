@@ -26,7 +26,12 @@ blockquote.motto{font-family:var(--serif);font-size:clamp(20px,2.6vw,34px);line-
   text-transform:uppercase;margin-bottom:14px}
 .kicker.warn{color:var(--cinnabar)}
 p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var(--serif)}
-.compact{font-size:clamp(19px,1.75vw,27px);line-height:1.85;max-height:70vh;overflow:auto}
+.compact{font-size:clamp(19px,1.75vw,27px);line-height:1.85;max-height:70vh;overflow:hidden}
+.compact.dense{font-size:clamp(16px,1.42vw,22px);line-height:1.6;max-height:80vh}
+.compact.dense table{font-size:14px}
+.compact.denser{font-size:clamp(14px,1.22vw,18px);line-height:1.5;max-height:82vh}
+.compact.denser table{font-size:12px}
+.compact.denser pre{font-size:12px}
 .compact h2,.compact h3{font-family:var(--serif);margin:.6em 0 .3em;font-size:1.15em}
 .compact pre{background:var(--paper-2);border:1px solid var(--line);border-radius:8px;padding:12px;overflow:auto;font-size:15px}
 .compact code{background:var(--paper-2);border:1px solid var(--line);border-radius:4px;padding:1px 4px;font-family:var(--mono)}
@@ -55,212 +60,271 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <div id="deck">
 <section class="slide" data-i="0">
   <div class="slide-inner"><h1 class="big">第 36 章 · 胃肠疾病：三类机制、一个深度对应与四种分型</h1></div>
-  <div class="slide-foot"><span>1 / 32</span><span>title</span></div>
+  <div class="slide-foot"><span>1 / 31</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「病理生理机制可归为三类」——补充·hermes-病理生理学讲义·第36章·36.1（《hermes-病理生理学讲义·第36章·36.1》）</blockquote></div>
-  <div class="slide-foot"><span>2 / 32</span><span>motto</span></div>
+  <div class="slide-inner"><blockquote class="motto">「此饮食不节，故时有病也。」——《素问·腹中论》</blockquote></div>
+  <div class="slide-foot"><span>2 / 31</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
   <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">胃肠疾病的名字多到记不完：反流、贲门失弛缓、胃炎、溃疡、克罗恩病、溃疡性结肠炎、梗阻、肠易激、乳糖不耐受、乳糜泻、四型腹泻、三型便秘、上消化道出血……按病名逐个记，考完就忘，而且一旦遇到名字没听过的情形就无从下手。这一章的价值不在补全清单，而在换一种组织法：把全部病名压进三类机制（屏障、动力、吸收），再用一个<strong>深度对应</strong>（损伤到哪一层就出现哪一类后果）和一个<strong>分型</strong>（同一症状按机制分开）去接住它们。三类是坐标，深度是刻度，分型是出口——三者一齐，病名就退成例子。</p></div>
-  <div class="slide-foot"><span>3 / 32</span><span>problem</span></div>
+  <div class="slide-foot"><span>3 / 31</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
   <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（这一章的内容在临床与护理现场最容易被压成一句话：「胃病」「肠炎」「拉肚子」。三句话各自抹掉了位置与机制，于是同一个词底下可能是黏膜缺损、可能是动力失调、可能是吸收障碍；讨论一旦停在这个词上，用药方向与观察重点就无从谈起）+ 知识积累（本章 12 节、3797 个非空白字符，关键词频现算为「黏膜」20 次、「炎症」18 次、「吸收」18 次、「机制」16 次、「溃疡」14 次、「梗阻」12 次。黏膜与炎症并列第一，吸收与机制紧随——讲义把重心放在损伤发生在哪一层、以什么方式修复上，而不是放在病名罗列上。若把注意力放在 36.3 至 36.8 的病名段，会以为这是一章疾病清单；实际上 36.1、36.2 给框架，36.9、36.10 给分型，36.11 给全身反应，四节合起来才是这一章的骨架）</p></div>
-  <div class="slide-foot"><span>4 / 32</span><span>roots</span></div>
+  <div class="slide-foot"><span>4 / 31</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
-  <div class="slide-inner"><div class="kicker">一、三类机制：先给坐标，再谈病名</div>
-                <div class="compact"><p>36.1 开门见山地把全部胃肠病压成三类：黏膜屏障破坏（炎症、溃疡、出血乃至肿瘤，多起源于黏膜损伤与修复失衡）、动力异常（传输过快或过慢、括约肌协同失调、机械性梗阻）、吸收障碍（消化不全或吸收面积不足）。</p>
+  <div class="slide-inner"><div class="kicker">坐标与深度：三类机制、损伤层次与食管两端（36.1–36.3）</div>
+                <div class="compact"><h3 id="三类机制-先给坐标-再谈病名">三类机制：先给坐标，再谈病名</h3>
+<p>36.1 开门见山地把全部胃肠病压成三类：黏膜屏障破坏（炎症、溃疡、出血乃至肿瘤，多起源于黏膜损伤与修复失衡）、动力异常（传输过快或过慢、括约肌协同失调、机械性梗阻）、吸收障碍（消化不全或吸收面积不足）。</p>
 <p>三类并非互斥，讲义自己就点了三处交叉：炎症性肠病同时有屏障破坏与吸收障碍；肠梗阻既是动力问题，又引起分泌-吸收失衡；慢性胃炎既有屏障损伤，也造成维生素 B12 的吸收障碍。所以三类不是三个抽屉，而是三根坐标轴——一个病可以同时落在两根轴上，落点由机制决定，不由病名决定。</p>
 <p>框架的用处在于同时固定三个维度：部位、机制、时程。讲义把临床推理的次序也写死了：</p>
 <blockquote><p>「先定位（上/下消化道、腔内/黏膜/壁内），再定机制，最后定病因」——补充·hermes-病理生理学讲义·第36章·36.1</p></blockquote></div></div>
-  <div class="slide-foot"><span>5 / 32</span><span>body</span></div>
+  <div class="slide-foot"><span>5 / 31</span><span>body</span></div>
 </section>
 <section class="slide" data-i="5">
-  <div class="slide-inner"><div class="kicker">一、三类机制：先给坐标，再谈病名</div>
-                <div class="compact"><p>次序颠倒的典型症状是：一开口就说病因（吃了什么、感染了什么），位置与机制都没定，于是后面每一条推论都悬在空中。先定位、再定机制、最后定病因，这条次序在本章后面十一节里反复被用到。</p></div></div>
-  <div class="slide-foot"><span>6 / 32</span><span>body</span></div>
+  <div class="slide-inner"><div class="kicker">坐标与深度：三类机制、损伤层次与食管两端（36.1–36.3）</div>
+                <div class="compact dense"><p>次序颠倒的典型症状是：一开口就说病因（吃了什么、感染了什么），位置与机制都没定，于是后面每一条推论都悬在空中。先定位、再定机制、最后定病因，这条次序在本章后面十一节里反复被用到。</p>
+<h3 id="深度对应-损伤到哪一层-就出现哪一类后果">深度对应：损伤到哪一层，就出现哪一类后果</h3>
+<p>36.2 把屏障破坏写成一条共同通路：无论病因是感染、药物、缺血、免疫还是化学刺激，走的都是同一处平衡被打破——</p>
+<blockquote><p>「保护因子（黏液、碳酸氢盐、前列腺素、血流、上皮修复）与攻击因子（酸、胃蛋白酶、胆盐、胰酶、细菌、药物）之间的平衡被打破」——补充·hermes-病理生理学讲义·第36章·36.2</p></blockquote>
+<p>这一句的写法值得注意：两侧各列五项，且都带定语。保护侧的五项正好是上一章 35.8 那四层屏障加血流；攻击侧的五项里，酸与胃蛋白酶来自自身分泌，胆盐与胰酶来自上游，细菌与药物来自腔外。一句话把哪一侧在打、哪一侧在守都点了名，后面判断用哪一侧解释就有了依据。</p></div></div>
+  <div class="slide-foot"><span>6 / 31</span><span>body</span></div>
 </section>
 <section class="slide" data-i="6">
-  <div class="slide-inner"><div class="kicker">二、深度对应：损伤到哪一层，就出现哪一类后果</div>
-                <div class="compact"><p>36.2 把屏障破坏写成一条共同通路：无论病因是感染、药物、缺血、免疫还是化学刺激，走的都是同一处平衡被打破——</p>
-<blockquote><p>「保护因子（黏液、碳酸氢盐、前列腺素、血流、上皮修复）与攻击因子（酸、胃蛋白酶、胆盐、胰酶、细菌、药物）之间的平衡被打破」——补充·hermes-病理生理学讲义·第36章·36.2</p></blockquote>
-<p>这一句的写法值得注意：两侧各列五项，且都带定语。保护侧的五项正好是上一章 35.8 那四层屏障加血流；攻击侧的五项里，酸与胃蛋白酶来自自身分泌，胆盐与胰酶来自上游，细菌与药物来自腔外。一句话把哪一侧在打、哪一侧在守都点了名，后面判断用哪一侧解释就有了依据。</p>
-<p>接着是本节的刻度，也是讲义给的一句判断：深度与后果的对应关系，比记病名更有用。深度分三档：仅累及上皮层是糜烂与渗血；突破黏膜肌层是溃疡，可侵蚀血管导致大出血，或穿透浆膜导致穿孔。三档对应三种后果类别，与病名无关，与深度有关——这就是「深度对应」全部的内容，也是本章最省力的一把尺。</p></div></div>
-  <div class="slide-foot"><span>7 / 32</span><span>body</span></div>
+  <div class="slide-inner"><div class="kicker">坐标与深度：三类机制、损伤层次与食管两端（36.1–36.3）</div>
+                <div class="compact dense"><p>接着是本节的刻度，也是讲义给的一句判断：深度与后果的对应关系，比记病名更有用。深度分三档：仅累及上皮层是糜烂与渗血；突破黏膜肌层是溃疡，可侵蚀血管导致大出血，或穿透浆膜导致穿孔。三档对应三种后果类别，与病名无关，与深度有关——这就是「深度对应」全部的内容，也是本章最省力的一把尺。</p>
+<p>修复分三相：炎症相（血小板与炎症细胞聚集、释放生长因子）、增殖相（上皮细胞迁移与腺体再生）、重塑相（细胞外基质沉积与改建）。讲义对结局的判断只有一句：</p>
+<blockquote><p>「修复质量决定结局：完全再生则功能恢复；纤维化修复则形成瘢痕与狭窄」——补充·hermes-病理生理学讲义·第36章·36.2</p></blockquote>
+<p>慢性炎症反复发作把修复不断推向纤维化，这是肠道狭窄、瘘管与瘢痕性梗阻的机制基础。注意这里的因果关系：狭窄不是炎症的直接产物，而是修复方式的产物——一次炎症可以完全再生，反复炎症才会改道走向纤维化。</p>
+<h3 id="食管两端-一个关不紧-一个打不开">食管两端：一个关不紧，一个打不开</h3></div></div>
+  <div class="slide-foot"><span>7 / 31</span><span>body</span></div>
 </section>
 <section class="slide" data-i="7">
-  <div class="slide-inner"><div class="kicker">二、深度对应：损伤到哪一层，就出现哪一类后果</div>
-                <div class="compact"><p>修复分三相：炎症相（血小板与炎症细胞聚集、释放生长因子）、增殖相（上皮细胞迁移与腺体再生）、重塑相（细胞外基质沉积与改建）。讲义对结局的判断只有一句：</p>
-<blockquote><p>「修复质量决定结局：完全再生则功能恢复；纤维化修复则形成瘢痕与狭窄」——补充·hermes-病理生理学讲义·第36章·36.2</p></blockquote>
-<p>慢性炎症反复发作把修复不断推向纤维化，这是肠道狭窄、瘘管与瘢痕性梗阻的机制基础。注意这里的因果关系：狭窄不是炎症的直接产物，而是修复方式的产物——一次炎症可以完全再生，反复炎症才会改道走向纤维化。</p></div></div>
-  <div class="slide-foot"><span>8 / 32</span><span>body</span></div>
-</section>
-<section class="slide" data-i="8">
-  <div class="slide-inner"><div class="kicker">三、食管两端：一个关不紧，一个打不开</div>
+  <div class="slide-inner"><div class="kicker">坐标与深度：三类机制、损伤层次与食管两端（36.1–36.3）</div>
                 <div class="compact"><p>36.3 讲胃食管反流病，第一句就修正了一个常见说法：</p>
 <blockquote><p>「反流物与食管黏膜接触的时间过长」——补充·hermes-病理生理学讲义·第36章·36.3</p></blockquote>
 <p>反流的机制因此不是「有没有反流」，而是「接触多久」。围绕这个时间，四个环节各出一份力：下食管括约肌张力低下或一过性松弛过频；食管裂孔疝破坏括约肌的解剖锚定；食管清除能力下降（蠕动减弱、唾液减少）；胃排空延迟使可反流的液体量增加。四处里前三处决定清除，第四处决定供给——时间就是这两者的比值。</p>
 <p>反流物的成分决定损伤类型：酸与胃蛋白酶是主要损伤因子，胆汁反流则造成非酸性损伤。这一条解释了一个临床上常见的困惑——部分患者抑酸效果不佳，因为损伤因子不在酸这一侧。食管黏膜的防御靠黏液、上皮紧密连接与血流；反复损伤可引起食管炎与狭窄，长期损伤可致柱状上皮化生，后者是腺癌的危险基础。</p></div></div>
-  <div class="slide-foot"><span>9 / 32</span><span>body</span></div>
+  <div class="slide-foot"><span>8 / 31</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">坐标与深度：三类机制、损伤层次与食管两端（36.1–36.3）</div>
+                <div class="compact"><p>方向相反的另一个病是贲门失弛缓症：下食管括约肌不能松弛、食管体部蠕动消失，表现为吞咽困难、反流与食物潴留，机制是肌间神经丛抑制性神经元退化。两个病放在一起记最有效：一个关不紧，一个打不开——同一处括约肌，两个方向。</p></div></div>
+  <div class="slide-foot"><span>9 / 31</span><span>body</span></div>
 </section>
 <section class="slide" data-i="9">
-  <div class="slide-inner"><div class="kicker">三、食管两端：一个关不紧，一个打不开</div>
-                <div class="compact"><p>方向相反的另一个病是贲门失弛缓症：下食管括约肌不能松弛、食管体部蠕动消失，表现为吞咽困难、反流与食物潴留，机制是肌间神经丛抑制性神经元退化。两个病放在一起记最有效：一个关不紧，一个打不开——同一处括约肌，两个方向。</p></div></div>
-  <div class="slide-foot"><span>10 / 32</span><span>body</span></div>
-</section>
-<section class="slide" data-i="10">
-  <div class="slide-inner"><div class="kicker">四、胃炎与溃疡：抑酸还是护膜</div>
-                <div class="compact"><p>36.4 把胃炎按病程分开。急性胃炎多为自限性，机制是攻击因子短时占优（酒精、药物、缺血、感染）。慢性胃炎以幽门螺杆菌感染与自身免疫为主：前者多累及胃窦，后者针对壁细胞，导致胃体萎缩与壁细胞丢失，出现胃酸缺乏、内因子缺乏与维生素 B12 吸收障碍——上一章 35.4 的内因子在这里兑现成一条后果。</p>
+  <div class="slide-inner"><div class="kicker">四处常见病变：溃疡、幽门螺杆菌、IBD 与梗阻（36.4–36.7）</div>
+                <div class="compact"><h3 id="胃炎与溃疡-抑酸还是护膜">胃炎与溃疡：抑酸还是护膜</h3>
+<p>36.4 把胃炎按病程分开。急性胃炎多为自限性，机制是攻击因子短时占优（酒精、药物、缺血、感染）。慢性胃炎以幽门螺杆菌感染与自身免疫为主：前者多累及胃窦，后者针对壁细胞，导致胃体萎缩与壁细胞丢失，出现胃酸缺乏、内因子缺乏与维生素 B12 吸收障碍——上一章 35.4 的内因子在这里兑现成一条后果。</p>
 <p>溃疡的定义落在深度上：</p>
 <blockquote><p>「黏膜缺损深达黏膜肌层」——补充·hermes-病理生理学讲义·第36章·36.4</p></blockquote>
 <p>一句定义同时把它与糜烂分开，也接上了 36.2 的刻度。十二指肠溃疡与胃溃疡的机制侧重不同，讲义写得对称：</p>
-<blockquote><p>「十二指肠溃疡以酸负荷过高为主」；「胃溃疡以黏膜防御下降为主」——补充·hermes-病理生理学讲义·第36章·36.4</p></blockquote>
-<p>前者胃酸分泌增多、幽门螺杆菌削弱十二指肠的碳酸氢盐分泌；后者黏液与血流不足、胆汁反流、药物。这一区分直接决定治疗重心落在哪一侧——抑酸还是保护与去除损伤因素。机制分两侧，处置才分两侧；机制不分，处置就只能两边都试。</p></div></div>
-  <div class="slide-foot"><span>11 / 32</span><span>body</span></div>
+<blockquote><p>「十二指肠溃疡以酸负荷过高为主」；「胃溃疡以黏膜防御下降为主」——补充·hermes-病理生理学讲义·第36章·36.4</p></blockquote></div></div>
+  <div class="slide-foot"><span>10 / 31</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">四处常见病变：溃疡、幽门螺杆菌、IBD 与梗阻（36.4–36.7）</div>
+                <div class="compact"><p>前者胃酸分泌增多、幽门螺杆菌削弱十二指肠的碳酸氢盐分泌；后者黏液与血流不足、胆汁反流、药物。这一区分直接决定治疗重心落在哪一侧——抑酸还是保护与去除损伤因素。机制分两侧，处置才分两侧；机制不分，处置就只能两边都试。</p>
+<p>并发症按解剖思路记四条：出血（侵蚀血管）、穿孔（穿透浆膜）、梗阻（瘢痕或水肿致幽门狭窄）、癌变（胃溃疡需警惕，十二指肠溃疡几乎不癌变）。四条都能从 36.2 的深度对应推出来，不必单独背。</p>
+<h3 id="幽门螺杆菌-损伤来自免疫-不来自毒素">幽门螺杆菌：损伤来自免疫，不来自毒素</h3>
+<p>36.5 讲的是一个常被讲反的机制。幽门螺杆菌定植于胃黏膜层下，靠尿素酶分解尿素产生氨，中和局部酸度，为自己造出生存微环境——这是它能在酸里活下来的理由。而它造成的损伤不是毒素性的：</p>
+<blockquote><p>「细菌本身并不直接分泌强毒素」——补充·hermes-病理生理学讲义·第36章·36.5</p></blockquote></div></div>
+  <div class="slide-foot"><span>11 / 31</span><span>body</span></div>
 </section>
 <section class="slide" data-i="11">
-  <div class="slide-inner"><div class="kicker">四、胃炎与溃疡：抑酸还是护膜</div>
-                <div class="compact"><p>并发症按解剖思路记四条：出血（侵蚀血管）、穿孔（穿透浆膜）、梗阻（瘢痕或水肿致幽门狭窄）、癌变（胃溃疡需警惕，十二指肠溃疡几乎不癌变）。四条都能从 36.2 的深度对应推出来，不必单独背。</p></div></div>
-  <div class="slide-foot"><span>12 / 32</span><span>body</span></div>
+  <div class="slide-inner"><div class="kicker">四处常见病变：溃疡、幽门螺杆菌、IBD 与梗阻（36.4–36.7）</div>
+                <div class="compact dense"><p>菌体成分激活固有免疫与 Th1/Th17 应答，炎症细胞释放的介质既清除细菌，也损伤上皮——这是一种免疫病理损伤。这句话的分量在于它改变了治疗逻辑：既然损伤来自免疫反应与细菌定植的持续刺激，目标就不是压症状，而是消除病因。</p>
+<p>感染结局取决于三者：菌株毒力、宿主免疫反应强度、胃酸状态。可表现为无症状携带、慢性胃炎、消化性溃疡，也与胃黏膜相关淋巴组织淋巴瘤及胃腺癌相关。三个变量一列，就解释了为什么同一株菌在不同人身上结局不同——不是菌有两种，而是三者配比不同。</p>
+<p>讲义在这一节末尾给了两条教学意义，第一条是本章另一处反常识：</p>
+<blockquote><p>「症状与损伤不平行」——补充·hermes-病理生理学讲义·第36章·36.5</p></blockquote>
+<p>第二条是抑酸会改变腔内菌群与部分药物的吸收，属于治疗带来的新稳态，需在随访中一并考虑。这一条与 36.11 的出血、与 38.9 的氨负荷都接得上——抑酸不是把一件事关掉，而是换了一个稳态。</p>
+<h3 id="炎症性肠病-同一免疫-两种分布">炎症性肠病：同一免疫，两种分布</h3></div></div>
+  <div class="slide-foot"><span>12 / 31</span><span>body</span></div>
 </section>
 <section class="slide" data-i="12">
-  <div class="slide-inner"><div class="kicker">五、幽门螺杆菌：损伤来自免疫，不来自毒素</div>
-                <div class="compact"><p>36.5 讲的是一个常被讲反的机制。幽门螺杆菌定植于胃黏膜层下，靠尿素酶分解尿素产生氨，中和局部酸度，为自己造出生存微环境——这是它能在酸里活下来的理由。而它造成的损伤不是毒素性的：</p>
-<blockquote><p>「细菌本身并不直接分泌强毒素」——补充·hermes-病理生理学讲义·第36章·36.5</p></blockquote>
-<p>菌体成分激活固有免疫与 Th1/Th17 应答，炎症细胞释放的介质既清除细菌，也损伤上皮——这是一种免疫病理损伤。这句话的分量在于它改变了治疗逻辑：既然损伤来自免疫反应与细菌定植的持续刺激，目标就不是压症状，而是消除病因。</p>
-<p>感染结局取决于三者：菌株毒力、宿主免疫反应强度、胃酸状态。可表现为无症状携带、慢性胃炎、消化性溃疡，也与胃黏膜相关淋巴组织淋巴瘤及胃腺癌相关。三个变量一列，就解释了为什么同一株菌在不同人身上结局不同——不是菌有两种，而是三者配比不同。</p>
-<p>讲义在这一节末尾给了两条教学意义，第一条是本章另一处反常识：</p></div></div>
-  <div class="slide-foot"><span>13 / 32</span><span>body</span></div>
-</section>
-<section class="slide" data-i="13">
-  <div class="slide-inner"><div class="kicker">五、幽门螺杆菌：损伤来自免疫，不来自毒素</div>
-                <div class="compact"><blockquote><p>「症状与损伤不平行」——补充·hermes-病理生理学讲义·第36章·36.5</p></blockquote>
-<p>第二条是抑酸会改变腔内菌群与部分药物的吸收，属于治疗带来的新稳态，需在随访中一并考虑。这一条与 36.11 的出血、与 38.9 的氨负荷都接得上——抑酸不是把一件事关掉，而是换了一个稳态。</p></div></div>
-  <div class="slide-foot"><span>14 / 32</span><span>body</span></div>
-</section>
-<section class="slide" data-i="14">
-  <div class="slide-inner"><div class="kicker">六、炎症性肠病：同一免疫，两种分布</div>
-                <div class="compact"><p>36.6 把克罗恩病与溃疡性结肠炎放在一起，先讲差别，再讲共同。差别在分布与深度：</p>
+  <div class="slide-inner"><div class="kicker">四处常见病变：溃疡、幽门螺杆菌、IBD 与梗阻（36.4–36.7）</div>
+                <div class="compact dense"><p>36.6 把克罗恩病与溃疡性结肠炎放在一起，先讲差别，再讲共同。差别在分布与深度：</p>
 <blockquote><p>「克罗恩病呈节段性、全层性」——补充·hermes-病理生理学讲义·第36章·36.6</p></blockquote>
 <blockquote><p>「溃疡性结肠炎自直肠起连续向近端蔓延，局限于黏膜与黏膜下层，典型表现为血性腹泻」——补充·hermes-病理生理学讲义·第36章·36.6</p></blockquote>
 <p>两句一对，后果就能预判：全层性炎症透壁，所以克罗恩病出瘘管、脓肿与狭窄；黏膜与黏膜下层的炎症不出透壁并发症，所以溃疡性结肠炎以血性腹泻为主。深度对应在这里第二次生效——不是两个病脾气不同，而是同一套免疫反应落在不同深度。</p>
 <p>共同机制是四件事的叠加：屏障缺陷、菌群刺激、遗传易感、免疫调节失衡。紧密连接破坏使腔内抗原持续暴露，Th1/Th17 应答（克罗恩病）或 Th2 样应答（溃疡性结肠炎）被放大，炎症介质维持慢性化。四项里没有一项能单独成病，这是「多因素」这个词在机制层的准确含义——不是含糊其辞，而是四个环节都必需。</p></div></div>
-  <div class="slide-foot"><span>15 / 32</span><span>body</span></div>
+  <div class="slide-foot"><span>13 / 31</span><span>body</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">四处常见病变：溃疡、幽门螺杆菌、IBD 与梗阻（36.4–36.7）</div>
+                <div class="compact"><p>全身表现来自炎症介质与吸收障碍：贫血（失血与炎症性铁利用障碍）、低白蛋白（肠道丢失与合成减少）、儿童生长迟缓。三类表现的机制各不相同，但都从肠道出发——这正是 36.1 说的「三类并非互斥」的实例。并发症可按机制预判：狭窄与梗阻、瘘与脓肿、中毒性巨结肠、长期结肠炎相关的癌变风险。护理上，营养状态与炎症活动度是两条必须同时跟踪的线。</p>
+<h3 id="梗阻-一条正反馈与一处第三间隙">梗阻：一条正反馈与一处第三间隙</h3>
+<p>36.7 把梗阻分成两型。机械性梗阻由粘连、疝、肿瘤、炎症狭窄或肠套叠造成：梗阻近端肠管扩张，分泌增加而吸收下降，腔内液体与气体蓄积。麻痹性肠梗阻没有物理阻挡，因动力被抑制（腹部手术后、腹膜炎、电解质紊乱、药物）导致全肠管扩张。两型的机制不同，共同后果相同。</p>
+<p>共同后果的第一条是「第三间隙」丢失：</p>
+<blockquote><p>「液体进入肠腔不再回吸收，有效循环血量下降」——补充·hermes-病理生理学讲义·第36章·36.7</p></blockquote></div></div>
+  <div class="slide-foot"><span>14 / 31</span><span>body</span></div>
+</section>
+<section class="slide" data-i="14">
+  <div class="slide-inner"><div class="kicker">四处常见病变：溃疡、幽门螺杆菌、IBD 与梗阻（36.4–36.7）</div>
+                <div class="compact"><p>第二条是一个正反馈：肠壁扩张使静脉回流受阻、壁内水肿，进一步抑制动力，扩张因此自我加强。肠壁张力持续升高可致血运障碍、坏死与穿孔。正反馈是本章唯一一处「越坏越快」的结构，也是梗阻必须按时间处理的原因。</p>
+<p>临床表现的方向性很有教学价值：</p>
+<blockquote><p>「高位梗阻呕吐出现早而腹胀轻，低位梗阻腹胀显著而呕吐出现晚」——补充·hermes-病理生理学讲义·第36章·36.7</p></blockquote>
+<p>一句话把位置与表现绑在一起。绞窄性梗阻则以剧烈腹痛、发热、血便与休克倾向为特征，是需要立即识别的危险信号——注意这一句的写法：它列的是类别而非阈值，这正是本书能给的最大精度。</p></div></div>
+  <div class="slide-foot"><span>15 / 31</span><span>body</span></div>
 </section>
 <section class="slide" data-i="15">
-  <div class="slide-inner"><div class="kicker">六、炎症性肠病：同一免疫，两种分布</div>
-                <div class="compact"><p>全身表现来自炎症介质与吸收障碍：贫血（失血与炎症性铁利用障碍）、低白蛋白（肠道丢失与合成减少）、儿童生长迟缓。三类表现的机制各不相同，但都从肠道出发——这正是 36.1 说的「三类并非互斥」的实例。并发症可按机制预判：狭窄与梗阻、瘘与脓肿、中毒性巨结肠、长期结肠炎相关的癌变风险。护理上，营养状态与炎症活动度是两条必须同时跟踪的线。</p></div></div>
-  <div class="slide-foot"><span>16 / 32</span><span>body</span></div>
-</section>
-<section class="slide" data-i="16">
-  <div class="slide-inner"><div class="kicker">七、梗阻：一条正反馈与一处第三间隙</div>
-                <div class="compact"><p>36.7 把梗阻分成两型。机械性梗阻由粘连、疝、肿瘤、炎症狭窄或肠套叠造成：梗阻近端肠管扩张，分泌增加而吸收下降，腔内液体与气体蓄积。麻痹性肠梗阻没有物理阻挡，因动力被抑制（腹部手术后、腹膜炎、电解质紊乱、药物）导致全肠管扩张。两型的机制不同，共同后果相同。</p>
-<p>共同后果的第一条是「第三间隙」丢失：</p>
-<blockquote><p>「液体进入肠腔不再回吸收，有效循环血量下降」——补充·hermes-病理生理学讲义·第36章·36.7</p></blockquote>
-<p>第二条是一个正反馈：肠壁扩张使静脉回流受阻、壁内水肿，进一步抑制动力，扩张因此自我加强。肠壁张力持续升高可致血运障碍、坏死与穿孔。正反馈是本章唯一一处「越坏越快」的结构，也是梗阻必须按时间处理的原因。</p>
-<p>临床表现的方向性很有教学价值：</p>
-<blockquote><p>「高位梗阻呕吐出现早而腹胀轻，低位梗阻腹胀显著而呕吐出现晚」——补充·hermes-病理生理学讲义·第36章·36.7</p></blockquote></div></div>
-  <div class="slide-foot"><span>17 / 32</span><span>body</span></div>
-</section>
-<section class="slide" data-i="17">
-  <div class="slide-inner"><div class="kicker">七、梗阻：一条正反馈与一处第三间隙</div>
-                <div class="compact"><p>一句话把位置与表现绑在一起。绞窄性梗阻则以剧烈腹痛、发热、血便与休克倾向为特征，是需要立即识别的危险信号——注意这一句的写法：它列的是类别而非阈值，这正是本书能给的最大精度。</p></div></div>
-  <div class="slide-foot"><span>18 / 32</span><span>body</span></div>
-</section>
-<section class="slide" data-i="18">
-  <div class="slide-inner"><div class="kicker">八、功能性胃肠病：症状与机制对应，而不是与病变对应</div>
-                <div class="compact"><p>36.8 讲肠易激综合征：没有可见的黏膜损伤或生化异常，机制是脑-肠轴调节失衡——内脏高敏感、动力异常（腹泻型与便秘型分别对应传输过快与过慢）、黏膜低度免疫激活、菌群与胆汁酸代谢改变、心理社会因素放大症状体验。五项里没有一项能在常规检查里被看见，这正是「功能性」三个字的来源。</p>
+  <div class="slide-inner"><div class="kicker">症状与结局：功能性、吸收、腹泻便秘与出血（36.8–36.12）</div>
+                <div class="compact dense"><h3 id="功能性胃肠病-症状与机制对应-而不是与病变对应">功能性胃肠病：症状与机制对应，而不是与病变对应</h3>
+<p>36.8 讲肠易激综合征：没有可见的黏膜损伤或生化异常，机制是脑-肠轴调节失衡——内脏高敏感、动力异常（腹泻型与便秘型分别对应传输过快与过慢）、黏膜低度免疫激活、菌群与胆汁酸代谢改变、心理社会因素放大症状体验。五项里没有一项能在常规检查里被看见，这正是「功能性」三个字的来源。</p>
 <p>功能性消化不良机制类似：胃排空延迟、胃容受性舒张障碍（餐后饱胀）与内脏高敏感。讲义把这一类疾病的教学要点写成一句对照：</p>
 <blockquote><p>「诊断建立在症状模式与排除报警征象」——补充·hermes-病理生理学讲义·第36章·36.8</p></blockquote>
 <p>报警征象列了五项：出血、体重明显下降、贫血、夜间症状、新发症状的较大年龄。这句话的意思是：功能性病的诊断不靠找到病变，而靠症状模式成立加上报警征象缺席——两个条件同时满足才算，缺一个就要往下查。</p>
-<p>讲义随后拆掉一个常见的对立：</p>
-<blockquote><p>「功能性病患者也可能新发器质性病变」——补充·hermes-病理生理学讲义·第36章·36.8</p></blockquote></div></div>
-  <div class="slide-foot"><span>19 / 32</span><span>body</span></div>
+<p>讲义随后拆掉一个常见的对立：</p></div></div>
+  <div class="slide-foot"><span>16 / 31</span><span>body</span></div>
 </section>
-<section class="slide" data-i="19">
-  <div class="slide-inner"><div class="kicker">八、功能性胃肠病：症状与机制对应，而不是与病变对应</div>
-                <div class="compact"><p>炎症性肠病缓解期仍有功能性症状，功能性病患者也可能新发器质性病变，所以随访中症状模式的改变本身就是重新评估的指征。把两者当成互斥的两个抽屉，是这一节要防的主要错误。</p></div></div>
-  <div class="slide-foot"><span>20 / 32</span><span>body</span></div>
+<section class="slide" data-i="16">
+  <div class="slide-inner"><div class="kicker">症状与结局：功能性、吸收、腹泻便秘与出血（36.8–36.12）</div>
+                <div class="compact"><blockquote><p>「功能性病患者也可能新发器质性病变」——补充·hermes-病理生理学讲义·第36章·36.8</p></blockquote>
+<p>炎症性肠病缓解期仍有功能性症状，功能性病患者也可能新发器质性病变，所以随访中症状模式的改变本身就是重新评估的指征。把两者当成互斥的两个抽屉，是这一节要防的主要错误。</p>
+<h3 id="吸收障碍三期-把-吸收不好-拆成三个位置">吸收障碍三期：把「吸收不好」拆成三个位置</h3>
+<p>36.9 按环节分三期：腔内期（胰酶不足、胆盐缺乏、胃酸不足致蛋白消化不全）、黏膜期（刷状缘酶缺陷、绒毛萎缩、炎症、切除）、转运期（淋巴梗阻使乳糜微粒不能入血）。三期对应三个位置，位置对应三类检查方向——这是本章分型思想在吸收上的版本。</p></div></div>
+  <div class="slide-foot"><span>17 / 31</span><span>body</span></div>
 </section>
-<section class="slide" data-i="20">
-  <div class="slide-inner"><div class="kicker">九、吸收障碍三期：把「吸收不好」拆成三个位置</div>
-                <div class="compact"><p>36.9 按环节分三期：腔内期（胰酶不足、胆盐缺乏、胃酸不足致蛋白消化不全）、黏膜期（刷状缘酶缺陷、绒毛萎缩、炎症、切除）、转运期（淋巴梗阻使乳糜微粒不能入血）。三期对应三个位置，位置对应三类检查方向——这是本章分型思想在吸收上的版本。</p>
-<p>三个例子各占一期。乳糖不耐受是刷状缘乳糖酶不足：未吸收的乳糖在结肠被菌群发酵，产生气体与渗透性腹泻，症状与摄入量相关——「与摄入量相关」这五个字是它与炎症性腹泻的分水岭。乳糜泻是麸质触发的自身免疫性小肠病，绒毛萎缩与隐窝增生使吸收面积锐减，表现为脂肪泻、体重下降、缺铁与骨质疏松；讲义对它的评价很直接：</p>
+<section class="slide" data-i="17">
+  <div class="slide-inner"><div class="kicker">症状与结局：功能性、吸收、腹泻便秘与出血（36.8–36.12）</div>
+                <div class="compact dense"><p>三个例子各占一期。乳糖不耐受是刷状缘乳糖酶不足：未吸收的乳糖在结肠被菌群发酵，产生气体与渗透性腹泻，症状与摄入量相关——「与摄入量相关」这五个字是它与炎症性腹泻的分水岭。乳糜泻是麸质触发的自身免疫性小肠病，绒毛萎缩与隐窝增生使吸收面积锐减，表现为脂肪泻、体重下降、缺铁与骨质疏松；讲义对它的评价很直接：</p>
 <blockquote><p>「去除麸质后黏膜可修复」——补充·hermes-病理生理学讲义·第36章·36.9</p></blockquote>
-<p>这是病因可去除的典型：黏膜没有坏掉，只是被持续刺激压住了。短肠综合征的后果则取决于切除部位：回肠切除丢失胆盐与维生素 B12；结肠切除丢失水盐回收能力，腹泻与脱水更突出。</p></div></div>
-  <div class="slide-foot"><span>21 / 32</span><span>body</span></div>
+<p>这是病因可去除的典型：黏膜没有坏掉，只是被持续刺激压住了。短肠综合征的后果则取决于切除部位：回肠切除丢失胆盐与维生素 B12；结肠切除丢失水盐回收能力，腹泻与脱水更突出。</p>
+<p>吸收障碍的共性后果是营养不良的选择性进展。讲义给的评估口径是「按营养素逐个核对，而不是只看体重」——理由在上一章 35.7：各营养素依赖的环节不同，受累次序也不同。</p>
+<h3 id="腹泻四型与便秘三层">腹泻四型与便秘三层</h3>
+<p>36.10 是本章的分型总账。腹泻按机制分四型，每型给一条判据：</p></div></div>
+  <div class="slide-foot"><span>18 / 31</span><span>body</span></div>
 </section>
-<section class="slide" data-i="21">
-  <div class="slide-inner"><div class="kicker">九、吸收障碍三期：把「吸收不好」拆成三个位置</div>
-                <div class="compact"><p>吸收障碍的共性后果是营养不良的选择性进展。讲义给的评估口径是「按营养素逐个核对，而不是只看体重」——理由在上一章 35.7：各营养素依赖的环节不同，受累次序也不同。</p></div></div>
-  <div class="slide-foot"><span>22 / 32</span><span>body</span></div>
-</section>
-<section class="slide" data-i="22">
-  <div class="slide-inner"><div class="kicker">十、腹泻四型与便秘三层</div>
-                <div class="compact"><p>36.10 是本章的分型总账。腹泻按机制分四型，每型给一条判据：</p>
-<ul><li><strong>渗透性</strong>：不被吸收的溶质留在腔内形成渗透压梯度，禁食后明显减轻。</li><li><strong>分泌性</strong>：分泌通路被持续激活（细菌毒素、激素、胆汁酸），量大且禁食不缓解。</li></ul>
+<section class="slide" data-i="18">
+  <div class="slide-inner"><div class="kicker">症状与结局：功能性、吸收、腹泻便秘与出血（36.8–36.12）</div>
+                <div class="compact dense"><ul><li><strong>渗透性</strong>：不被吸收的溶质留在腔内形成渗透压梯度，禁食后明显减轻。</li><li><strong>分泌性</strong>：分泌通路被持续激活（细菌毒素、激素、胆汁酸），量大且禁食不缓解。</li></ul>
 <blockquote><p>「禁食后明显减轻」；「量大、禁食不缓解」——补充·hermes-病理生理学讲义·第36章·36.10</p></blockquote>
 <ul><li><strong>炎症性（渗出性）</strong>：黏膜损伤渗出黏液脓血，伴里急后重与腹痛。</li><li><strong>动力性</strong>：传输过快使吸收时间不足，常伴紧迫感。</li></ul>
 <p>四型里前两型的判据只差一件事：禁食后减不减。这一个动作就能把两者分开，比任何化验都先到位——这是本章最实用的一句操作建议。</p>
 <p>便秘同样分层：慢传输型（结肠推进弱）、排出障碍型（盆底肌协同失调）、继发性（药物、甲状腺功能减退、电解质紊乱、神经系统疾病）。讲义强调区分渗透性与分泌性要看禁食反应与粪便渗透间隙的方向，而不是凭排便次数判断严重程度。</p>
-<p>分型的价值全在最后一句：</p></div></div>
-  <div class="slide-foot"><span>23 / 32</span><span>body</span></div>
+<p>分型的价值全在最后一句：</p>
+<blockquote><p>「分错型，处理就会反向」——补充·hermes-病理生理学讲义·第36章·36.10</p></blockquote></div></div>
+  <div class="slide-foot"><span>19 / 31</span><span>body</span></div>
 </section>
-<section class="slide" data-i="23">
-  <div class="slide-inner"><div class="kicker">十、腹泻四型与便秘三层</div>
-                <div class="compact"><blockquote><p>「分错型，处理就会反向」——补充·hermes-病理生理学讲义·第36章·36.10</p></blockquote>
-<p>渗透性要减少底物，分泌性要纠正分泌驱动，炎症性要控制炎症，动力性要调节动力。四个方向彼此不能互换——这就是分型必须先于处置的理由。</p></div></div>
-  <div class="slide-foot"><span>24 / 32</span><span>body</span></div>
-</section>
-<section class="slide" data-i="24">
-  <div class="slide-inner"><div class="kicker">十一、出血：局部表现与全身代偿的顺序</div>
-                <div class="compact"><p>36.11 先按部位分表现：上消化道出血以呕血与黑便为主，下消化道出血以血便为主；缓慢少量出血可仅表现为缺铁性贫血。随后是一个容易被误当诊断阈值的现象：血液在肠道内被分解吸收，使血尿素氮升高——讲义特意注明这是方向性判断，不是诊断阈值。蛋白分解产物在肝功能受损者可诱发肝性脑病，这条「出血—脑病」的桥梁在 38.9 会被再用一次。</p>
+<section class="slide" data-i="19">
+  <div class="slide-inner"><div class="kicker">症状与结局：功能性、吸收、腹泻便秘与出血（36.8–36.12）</div>
+                <div class="compact dense"><p>渗透性要减少底物，分泌性要纠正分泌驱动，炎症性要控制炎症，动力性要调节动力。四个方向彼此不能互换——这就是分型必须先于处置的理由。</p>
+<h3 id="出血-局部表现与全身代偿的顺序">出血：局部表现与全身代偿的顺序</h3>
+<p>36.11 先按部位分表现：上消化道出血以呕血与黑便为主，下消化道出血以血便为主；缓慢少量出血可仅表现为缺铁性贫血。随后是一个容易被误当诊断阈值的现象：血液在肠道内被分解吸收，使血尿素氮升高——讲义特意注明这是方向性判断，不是诊断阈值。蛋白分解产物在肝功能受损者可诱发肝性脑病，这条「出血—脑病」的桥梁在 38.9 会被再用一次。</p>
 <p>失血的全身反应按代偿顺序展开：交感兴奋使心率增快、外周血管收缩，</p>
 <blockquote><p>「血压在早期可维持」——补充·hermes-病理生理学讲义·第36章·36.11</p></blockquote>
 <p>这一句是本章最重要的临床提醒：早期血压正常不代表出血量小，因为代偿正在起作用。继续失血才出现血压下降与组织灌注不足。</p>
-<p>护理评估的核心因此落在趋势上：</p>
-<blockquote><p>「意识、皮肤灌注、尿量、心率与血压的动态变化，比单次测量更有信息量」——补充·hermes-病理生理学讲义·第36章·36.11</p></blockquote></div></div>
-  <div class="slide-foot"><span>25 / 32</span><span>body</span></div>
+<p>护理评估的核心因此落在趋势上：</p></div></div>
+  <div class="slide-foot"><span>20 / 31</span><span>body</span></div>
+</section>
+<section class="slide" data-i="20">
+  <div class="slide-inner"><div class="kicker">症状与结局：功能性、吸收、腹泻便秘与出血（36.8–36.12）</div>
+                <div class="compact dense"><blockquote><p>「意识、皮肤灌注、尿量、心率与血压的动态变化，比单次测量更有信息量」——补充·hermes-病理生理学讲义·第36章·36.11</p></blockquote>
+<p>此外要评估抗凝药与抗血小板药的使用，因为它改变止血能力而不改变出血量——这一句把「用了什么药」与「流了多少血」分成两个变量，避免把两者混成一个判断。</p>
+<h3 id="生命周期-两端各有各的陷阱">生命周期：两端各有各的陷阱</h3>
+<p>36.12 讲儿童与老人。儿童胃肠疾病有独特谱系：先天性畸形（幽门狭窄、肠旋转不良、胆道闭锁）在婴儿期显现；脱水与电解质紊乱进展快，因体液占比高、代偿储备小；</p>
+<blockquote><p>「腹痛定位不准，需依赖行为改变与喂养史判断」——补充·hermes-病理生理学讲义·第36章·36.12</p></blockquote>
+<p>老年人则相反，症状不典型：腹膜炎可以不明显发热，心肌缺血可表现为上腹不适；合并用药多，便秘与粪便嵌塞常见，而粪嵌塞又可表现为溢出性腹泻，容易被误判为腹泻型肠病。两端合起来说明一件事：同一套机制在不同年龄段的<strong>表现形态</strong>不同，机制不变，读数要换。</p></div></div>
+  <div class="slide-foot"><span>21 / 31</span><span>body</span></div>
+</section>
+<section class="slide" data-i="21">
+  <div class="slide-inner"><div class="kicker">症状与结局：功能性、吸收、腹泻便秘与出血（36.8–36.12）</div>
+                <div class="compact"><p>护理要点归为四步：按三类机制整理线索（黏膜、动力、吸收）；建立进食-症状-排便记录；筛查报警征象并推动进一步检查；避免把一切症状归因于功能性而延误诊断。四步的顺序与 36.1 的推理次序一致——先分类，再记录，再筛报警，最后才允许下功能性判断。</p></div></div>
+  <div class="slide-foot"><span>22 / 31</span><span>body</span></div>
+</section>
+<section class="slide" data-i="22">
+  <div class="slide-inner"><div class="kicker">节级落位：讲义 36.1–36.12</div>
+                <div class="compact dense"><div class="table-wrap"><table><thead><tr><th>节号</th><th>一句话落位</th></tr></thead><tbody><tr><td>36.1 三类机制框架</td><td>屏障、动力、吸收三根轴；先定位、再定机制、最后定病因</td></tr><tr><td>36.2 共同通路与修复三相</td><td>保护与攻击的平衡；深度对应后果；修复方式决定结局</td></tr><tr><td>36.3 反流与食管动力障碍</td><td>时间而非有无；一个关不紧、一个打不开</td></tr><tr><td>36.4 胃炎与消化性溃疡</td><td>定义落在深度；两型溃疡机制分两侧，处置才分两侧</td></tr><tr><td>36.5 幽门螺杆菌</td><td>损伤来自免疫不来自毒素；症状与损伤不平行</td></tr><tr><td>36.6 炎症性肠病</td><td>同一免疫，两种分布与深度；四项叠加才算多因素</td></tr><tr><td>36.7 梗阻</td><td>第三间隙丢失与一条正反馈；位置决定先吐还是先胀</td></tr><tr><td>36.8 功能性胃肠病</td><td>症状模式加报警征象缺席；功能性不等于排除器质</td></tr><tr><td>36.9 吸收障碍三期</td><td>腔内、黏膜、转运；与摄入量相关是分水岭</td></tr><tr><td>36.10 腹泻与便秘分型</td><td>四型腹泻与三层便秘；分错型处理会反向</td></tr><tr><td>36.11 消化道出血</td><td>血压早期可维持；趋势比单次测量有信息量</td></tr><tr><td>36.12 生命周期与护理</td><td>儿童定位不准、老人表现不典型；四步护理次序</td></tr></tbody></table></div></div></div>
+  <div class="slide-foot"><span>23 / 31</span><span>body</span></div>
+</section>
+<section class="slide" data-i="23">
+  <div class="slide-inner"><div class="kicker">节级落位：讲义 36.1–36.12</div>
+                <div class="compact"><p>十二节的分布很清楚：36.1 与 36.2 给坐标与刻度，36.3 至 36.8 用六个病把坐标填满，36.9 与 36.10 把吸收与排泄压成分型，36.11 与 36.12 把局部接到全身与年龄。若把 36.3 至 36.8 当主体，本章就退化成疾病清单；若把 36.1、36.2 当主体，六个病只是六个用例。</p></div></div>
+  <div class="slide-foot"><span>24 / 31</span><span>body</span></div>
+</section>
+<section class="slide" data-i="24">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><ul><li><strong>引文只有一层。</strong> 本章引文格式统一为<code>补充·hermes-病理生理学讲义·第36章·N.M</code>，章号等于课程章号，节号逐条真实存在。讲义是本仓库原创的教学正文，不是任何外文教材的译本；引用它不等于引用外文教材原文。</li><li><strong>本章丢掉了什么：数值。</strong> 讲义这一章通篇不用数字加计量单位说话，凡可量化处一律改写成方向与类别——升高、下降、过多、不足、显著、轻微。本书照录这一取舍：<strong>描述类别可以，给出取值不行。</strong> 本页的规模与词频由 <code>node code/main.js</code> 现算，但讲义究竟用了几个数值，不由本页断言。</li><li><strong>不写正常值、参考区间与单位。</strong> 凡遇出血多少算多、血红蛋白多少算贫血的追问，统一回本书不给值，另立数据层、另立来源与校验。</li><li><strong>不作诊断，也不作正常与异常的判定。</strong> 三类机制只作类别；报警征象只作进一步评估的方向，不构成任何人的诊断。凡涉个体，一律中性表述、不贴标签、不作疗效断言。</li><li>**不写治疗方案。</li></ul></div></div>
+  <div class="slide-foot"><span>25 / 31</span><span>boundary</span></div>
 </section>
 <section class="slide" data-i="25">
-  <div class="slide-inner"><div class="kicker">十一、出血：局部表现与全身代偿的顺序</div>
-                <div class="compact"><p>此外要评估抗凝药与抗血小板药的使用，因为它改变止血能力而不改变出血量——这一句把「用了什么药」与「流了多少血」分成两个变量，避免把两者混成一个判断。</p></div></div>
-  <div class="slide-foot"><span>26 / 32</span><span>body</span></div>
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><p>** 讲义在机制层提到抑酸、护膜、根除细菌、去除麸质一类方向；本页不写药物、剂量、疗程，也不写内镜与手术的操作。</p>
+<ul><li><strong>一处表述按讲义原样保留。</strong> 血尿素氮升高只作方向性判断，讲义自己否掉了把它当阈值的用法；本页照此保留，不把它写成判据。</li><li><strong>边界声明</strong>：本章只说明讲义给出的三类机制与临床类别的对应，<strong>不写数值与单位与正常值，不作正常与异常判定，不构成诊断、治疗或用药依据</strong>；任何个体的状态判断须由具备资质的人员依现行规范作出。</li></ul>
+<h3 id="运行与验证">运行与验证</h3>
+<div class="codeblock"><div class="codeblock-lang">bash</div><pre><code class="lang-bash"># 1) 现算讲义规模、节级分布、关键词频，并核本页的引文、引语、节覆盖、裸值与 quiz
+node code/main.js
+
+# 2) 单测：章号与标题 / 节数与节号区间 / 字数 / 引文逐字 / 节覆盖 / 裸值零容忍 / quiz 契约 / 边界句
+node --test code/main.test.js</code></pre></div></div></div>
+  <div class="slide-foot"><span>26 / 31</span><span>boundary</span></div>
 </section>
 <section class="slide" data-i="26">
-  <div class="slide-inner"><div class="kicker">十二、生命周期：两端各有各的陷阱</div>
-                <div class="compact"><p>36.12 讲儿童与老人。儿童胃肠疾病有独特谱系：先天性畸形（幽门狭窄、肠旋转不良、胆道闭锁）在婴儿期显现；脱水与电解质紊乱进展快，因体液占比高、代偿储备小；</p>
-<blockquote><p>「腹痛定位不准，需依赖行为改变与喂养史判断」——补充·hermes-病理生理学讲义·第36章·36.12</p></blockquote>
-<p>老年人则相反，症状不典型：腹膜炎可以不明显发热，心肌缺血可表现为上腹不适；合并用药多，便秘与粪便嵌塞常见，而粪嵌塞又可表现为溢出性腹泻，容易被误判为腹泻型肠病。两端合起来说明一件事：同一套机制在不同年龄段的<strong>表现形态</strong>不同，机制不变，读数要换。</p>
-<p>护理要点归为四步：按三类机制整理线索（黏膜、动力、吸收）；建立进食-症状-排便记录；筛查报警征象并推动进一步检查；避免把一切症状归因于功能性而延误诊断。四步的顺序与 36.1 的推理次序一致——先分类，再记录，再筛报警，最后才允许下功能性判断。</p></div></div>
-  <div class="slide-foot"><span>27 / 32</span><span>body</span></div>
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><h1 id="3-章级门-全-53-章契约-只看自己负责的章是否全绿">3) 章级门（全 53 章契约，只看自己负责的章是否全绿）</h1>
+<p>cd /e/tcmai-engineering-from-scatch &amp;&amp; node tests/test_binglishengli_chapters.js</p>
+<div class="codeblock"><div class="codeblock-lang">text</div><pre><code class="lang-text">
+`node code/main.js` 的真实输出（节选；「本页正文」那一行故意不贴——把它抄进来会改变它自己读到的数）：
+
+```text
+═══ 胃肠疾病（病理生理学 第36章 · 讲义 U10 单元）═══
+讲义章题: 胃肠疾病（Gastrointestinal Disorders）
+讲义规模: 36.1–36.12 · 12 节 · 3797 非空白字符 · 平均每节 316 字
+篇幅两极: 最短 36.12（245 字）／最长 36.6（380 字）</code></pre></div></div></div>
+  <div class="slide-foot"><span>27 / 31</span><span>boundary</span></div>
 </section>
 <section class="slide" data-i="27">
-  <div class="slide-inner"><div class="kicker">十三、节级落位：讲义 36.1–36.12</div>
-                <div class="compact"><div class="table-wrap"><table><thead><tr><th>节号</th><th>一句话落位</th></tr></thead><tbody><tr><td>36.1 三类机制框架</td><td>屏障、动力、吸收三根轴；先定位、再定机制、最后定病因</td></tr><tr><td>36.2 共同通路与修复三相</td><td>保护与攻击的平衡；深度对应后果；修复方式决定结局</td></tr><tr><td>36.3 反流与食管动力障碍</td><td>时间而非有无；一个关不紧、一个打不开</td></tr><tr><td>36.4 胃炎与消化性溃疡</td><td>定义落在深度；两型溃疡机制分两侧，处置才分两侧</td></tr><tr><td>36.5 幽门螺杆菌</td><td>损伤来自免疫不来自毒素；症状与损伤不平行</td></tr><tr><td>36.6 炎症性肠病</td><td>同一免疫，两种分布与深度；四项叠加才算多因素</td></tr><tr><td>36.7 梗阻</td><td>第三间隙丢失与一条正反馈；位置决定先吐还是先胀</td></tr><tr><td>36.8 功能性胃肠病</td><td>症状模式加报警征象缺席；功能性不等于排除器质</td></tr><tr><td>36.9 吸收障碍三期</td><td>腔内、黏膜、转运；与摄入量相关是分水岭</td></tr><tr><td>36.10 腹泻与便秘分型</td><td>四型腹泻与三层便秘；分错型处理会反向</td></tr><tr><td>36.11 消化道出血</td><td>血压早期可维持；趋势比单次测量有信息量</td></tr><tr><td>36.12 生命周期与护理</td><td>儿童定位不准、老人表现不典型；四步护理次序</td></tr></tbody></table></div></div></div>
-  <div class="slide-foot"><span>28 / 32</span><span>body</span></div>
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><p>节级分布:
+  36.1 三类机制框架 · 273 字
+  36.2 屏障破坏的共同通路与修复三相 · 316 字
+  36.3 胃食管反流与食管动力障碍 · 368 字
+  36.4 胃炎与消化性溃疡 · 337 字
+  36.5 幽门螺杆菌与黏膜免疫 · 278 字
+  36.6 炎症性肠病 · 380 字
+  36.7 肠梗阻与麻痹性肠梗阻 · 286 字
+  36.8 功能性胃肠病 · 354 字
+  36.9 吸收障碍的三期分类 · 341 字
+  36.10 腹泻与便秘的机制分型 · 345 字
+  36.11 消化道出血与全身反应 · 274 字
+  36.12 生命周期与护理要点 · 245 字</p>
+<p>关键词频（讲义本章正文，同一批词横向比）:
+  黏膜　　  20 次
+  炎症　　  18 次
+  吸收　　  18 次
+  机制　　  16 次
+  溃疡　　  14 次
+  梗阻　　  12 次
+  → 重心落在「黏膜」：本章给的是机制类别，不是病名清单。</p></div></div>
+  <div class="slide-foot"><span>28 / 31</span><span>boundary</span></div>
 </section>
 <section class="slide" data-i="28">
-  <div class="slide-inner"><div class="kicker">十三、节级落位：讲义 36.1–36.12</div>
-                <div class="compact"><p>十二节的分布很清楚：36.1 与 36.2 给坐标与刻度，36.3 至 36.8 用六个病把坐标填满，36.9 与 36.10 把吸收与排泄压成分型，36.11 与 36.12 把局部接到全身与年龄。若把 36.3 至 36.8 当主体，本章就退化成疾病清单；若把 36.1、36.2 当主体，六个病只是六个用例。</p></div></div>
-  <div class="slide-foot"><span>29 / 32</span><span>body</span></div>
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><p>讲义引文: 21 条 · 指向第36章 12 个不同节
+引文错章: 0 条 · 节号不存在: 0 条
+引语逐字: 26 条，讲义里找不到的 0 条
+节覆盖: 12 / 12 → 每节都有落位
+正文裸值行: 0 行
+quiz: 6 题（pre 1 · check 3 · post 2）· 无题干键 0 题 · 无引证 0 题</p>
+<p>教学边界：本章只说明讲义给出的三类机制与临床类别的对应，不写数值与单位与正常值，不构成诊断、治疗或用药依据</p>
+<div class="codeblock"><div class="codeblock-lang">text</div><pre><code class="lang-text">
+`code/main.js` 的最后一行固定为下面这句，也是单测与章级门共同依赖的字符串：
+
+```text
+教学边界：本章只说明讲义给出的三类机制与临床类别的对应，不写数值与单位与正常值，不构成诊断、治疗或用药依据</code></pre></div></div></div>
+  <div class="slide-foot"><span>29 / 31</span><span>boundary</span></div>
 </section>
 <section class="slide" data-i="29">
   <div class="slide-inner"><div class="kicker">代价与边界</div>
-                <div class="compact"><ul><li><strong>引文只有一层。</strong> 本章引文格式统一为<code>补充·hermes-病理生理学讲义·第36章·N.M</code>，章号等于课程章号，节号逐条真实存在。讲义是本仓库原创的教学正文，不是任何外文教材的译本；引用它不等于引用外文教材原文。</li><li><strong>本章丢掉了什么：数值。</strong> 讲义这一章通篇不用数字加计量单位说话，凡可量化处一律改写成方向与类别——升高、下降、过多、不足、显著、轻微。本书照录这一取舍：<strong>描述类别可以，给出取值不行。</strong> 本页的规模与词频由 <code>node code/main.js</code> 现算，但讲义究竟用了几个数值，不由本页断言。</li><li><strong>不写正常值、参考区间与单位。</strong> 凡遇出血多少算多、血红蛋白多少算贫血的追问，统一回本书不给值，另立数据层、另立来源与校验。</li><li><strong>不作诊断，也不作正常与异常的判定。</strong> 三类机制只作类别；报警征象只作进一步评估的方向，不构成任何人的诊断。凡涉个体，一律中性表述、不贴标签、不作疗效断言。</li><li>**不写治疗方案。</li></ul></div></div>
-  <div class="slide-foot"><span>30 / 32</span><span>boundary</span></div>
+                <div class="compact"><p><strong>免责声明：</strong>本章为病理生理学教学材料。文中所有概念、机制与类别关系，取自本仓库原创讲义第 36 章（36.1–36.12）与本仓库 <code>standards/binglishengli/supplements/jiangyi.json</code> 的机器可读层；数字为程序现算，规则已在文中写明。</p>
+<p>本章不提供任何诊断、治疗或用药建议，不给出正常值与参考范围，也不对任何个体的状态作出正常或异常的判断。文中出现的三类机制、深度对应、四型腹泻等均为概念层与机制层的说明，不能替代临床评估。若出现身体不适或急症，请立即就医。</p></div></div>
+  <div class="slide-foot"><span>30 / 31</span><span>boundary</span></div>
 </section>
 <section class="slide" data-i="30">
-  <div class="slide-inner"><div class="kicker">代价与边界</div>
-                <div class="compact"><p>** 讲义在机制层提到抑酸、护膜、根除细菌、去除麸质一类方向；本页不写药物、剂量、疗程，也不写内镜与手术的操作。</p>
-<ul><li><strong>一处表述按讲义原样保留。</strong> 血尿素氮升高只作方向性判断，讲义自己否掉了把它当阈值的用法；本页照此保留，不把它写成判据。</li><li><strong>边界声明</strong>：本章只说明讲义给出的三类机制与临床类别的对应，<strong>不写数值与单位与正常值，不作正常与异常判定，不构成诊断、治疗或用药依据</strong>；任何个体的状态判断须由具备资质的人员依现行规范作出。</li></ul></div></div>
-  <div class="slide-foot"><span>31 / 32</span><span>boundary</span></div>
-</section>
-<section class="slide" data-i="31">
   <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
-  <div class="slide-foot"><span>32 / 32</span><span>disclaimer</span></div>
+  <div class="slide-foot"><span>31 / 31</span><span>disclaimer</span></div>
 </section>
 </div>
 <div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>

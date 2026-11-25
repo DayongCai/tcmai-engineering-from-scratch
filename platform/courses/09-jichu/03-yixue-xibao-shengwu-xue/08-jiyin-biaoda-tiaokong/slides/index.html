@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"/>
-<title>第 8 章 · 基因表达调控 · 幻灯片</title>
+<title>第 8 章 · 调控的答案不在「开或关」，在「多少、何时、在哪」 · 幻灯片</title>
 <style>
 
 :root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
@@ -59,24 +59,90 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <body>
 <div id="deck">
 <section class="slide" data-i="0">
-  <div class="slide-inner"><h1 class="big">第 8 章 · 基因表达调控</h1></div>
-  <div class="slide-foot"><span>1 / 5</span><span>title</span></div>
+  <div class="slide-inner"><h1 class="big">第 8 章 · 调控的答案不在「开或关」，在「多少、何时、在哪」</h1></div>
+  <div class="slide-foot"><span>1 / 15</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「〔派生〕基因表达调控」——母本：生物化学第20章。本章要回答的是：基因表达调控：这一章的判据是什么，什么算「看懂了」。</blockquote></div>
-  <div class="slide-foot"><span>2 / 5</span><span>motto</span></div>
+  <div class="slide-inner"><blockquote class="motto">「天行有常，不为尧存，不为桀亡。」——《荀子·天论》</blockquote></div>
+  <div class="slide-foot"><span>2 / 15</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
-  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">基因表达调控：本课第 8 章，正文逐字取自生物化学。</p></div>
-  <div class="slide-foot"><span>3 / 5</span><span>problem</span></div>
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">同一个基因，转录本翻了一倍，蛋白量可能一点没变；反过来，转录没动，蛋白却翻了几倍。这类「脱耦」现象在实测里非常常见，它说明表达调控不是一道闸门，而是一条有五六处可调环节的流水线：转录起始、转录本加工、出核、翻译、修饰、降解，每一处都能单独改输出。只盯启动子的教学，会让学生把「表达上调」等于「转录增强」，遇到蛋白与 mRNA 不匹配的实验就无从解释。数目设定：一个基因的转录起始可以由数十种因子共同影响（常引口径），这些因子的组合方式远多于基因本身的数目——调控的组合空间是指数级的，这正是「一套基因组长成两百多种细胞」的算术基础。</p></div>
+  <div class="slide-foot"><span>3 / 15</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
-  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（细胞生物学的判据是「结构—功能—方法」三件套：看得见什么、靠什么实现、用什么看见）+ 知识积累（本章 12 单元 21,106 汉字；三辨主 <strong>功能与过程 343</strong>；四位面（章群结构）主 <strong>核与基因表达与技术 21106</strong>；引书 <strong>0 部 0 次</strong>；数值类命中 0）</p></div>
-  <div class="slide-foot"><span>4 / 5</span><span>roots</span></div>
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（细胞必须在几分钟内对信号作出反应，而重建一套蛋白要几小时；因此必须同时具备「快速开关」与「长期锁定」两套机制，二者时间尺度差三个数量级）+ 知识积累（转录层的组合码 × 染色质层的可及性 × 转录后与翻译层的放大与衰减，四层合起来才能算出「输入一个信号，输出多少蛋白、持续多久」）</p></div>
+  <div class="slide-foot"><span>4 / 15</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
+  <div class="slide-inner"><div class="kicker">一、中心法则的修订版：五个可调点</div>
+                <div class="compact"><p>经典中心法则给的是信息流向，不是调控位置。把它改写成一条流水线，可调点立刻显出来：</p>
+<div class="table-wrap"><table><thead><tr><th>环节</th><th>可调之处</th><th>时间尺度</th><th>典型机制</th></tr></thead><tbody><tr><td>转录起始</td><td>启动子与增强子的组合、因子浓度</td><td>分钟</td><td>转录因子结合、辅因子招募</td></tr><tr><td>染色质</td><td>可及性、修饰、核小体位置</td><td>分钟到小时</td><td>乙酰化、甲基化、重塑</td></tr><tr><td>转录后加工</td><td>剪接、加尾、编辑</td><td>分钟</td><td>剪接因子比例、剪接位点强弱</td></tr><tr><td>出核与稳定</td><td>运输、降解速率</td><td>分钟到小时</td><td>结合蛋白、微小 RNA</td></tr><tr><td>翻译</td><td>起始效率、核糖体密度</td><td>分钟</td><td>上游开放阅读框、RNA 结合蛋白</td></tr><tr><td>修饰与降解</td><td>磷酸化、泛素化、切割</td><td>秒到小时</td><td>激酶、泛素连接酶、蛋白酶体</td></tr></tbody></table></div></div></div>
+  <div class="slide-foot"><span>5 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">一、中心法则的修订版：五个可调点</div>
+                <div class="compact"><p>这张表最重要的读法是<strong>比较时间尺度</strong>：磷酸化在秒级，转录在分钟级，染色质重塑在小时级，DNA 甲基化在细胞分裂的尺度上。<strong>一个反应有多快，取决于它用了哪一层</strong>。这解释了一个常见的困惑：为什么有些激素几秒就起效（膜受体与磷酸化），有些要几小时（核受体与转录），有些要几天（分化程序）。</p>
+<p>中心法则还有两处需要修订：逆转录（RNA → DNA）与 RNA 依赖的 RNA 合成，说明「流向」不是单向的；大量非编码 RNA 不翻译成蛋白却有调控功能，说明「信息」不都通向蛋白。这两点不改变主流程，但取消了「一个基因一个蛋白」的简单对应。</p></div></div>
+  <div class="slide-foot"><span>6 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">二、转录层：组合码，而不是单一开关</div>
+                <div class="compact dense"><p>真核基因的转录起始需要两类因子：<strong>通用因子</strong>（组装在启动子上，所有基因共用）与<strong>特异因子</strong>（识别增强子或启动子上的特定序列，决定「哪个基因、在哪个细胞、什么时候」）。</p>
+<p>三个性质决定了这套系统的行为：</p>
+<ol><li><strong>增强子可以远距离、方向无关地起作用。</strong> 它可能在基因上游或下游几万碱基之外，靠染色质成环与启动子接触。这意味着「调控区」的边界很难用「基因前后多少碱基」划定——这是基因组注释最难的部分之一。</li><li><strong>因子以组合方式工作。</strong> 一个基因的开关状态由若干个因子的<strong>同时存在</strong>决定，而不是由单一「主控基因」决定。组合的好处是经济：几十种因子可以区分出远多于几十种细胞状态。坏处是脆弱：任何一个因子缺失，整个组合失效。</li><li><strong>浓度本身就是信息。</strong> 形态发生素在组织中形成梯度，细胞按「因子浓度跨过某个阈值」来决定命运。同一因子在不同浓度下激活不同靶基因，这是第 11 章「位置信息」的分子基础。</li></ol></div></div>
+  <div class="slide-foot"><span>7 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">三、染色质层：先决定「能不能碰到」</div>
+                <div class="compact dense"><p>转录因子再强，碰不到 DNA 也没用。染色质层管的就是「可及性」。</p>
+<div class="table-wrap"><table><thead><tr><th>修饰</th><th>一般效应</th><th>备注</th></tr></thead><tbody><tr><td>组蛋白乙酰化</td><td>开放、促进转录</td><td>电荷中和，降低与 DNA 的亲和</td></tr><tr><td>H3K4 甲基化</td><td>活跃区标志</td><td>常出现在启动子与增强子</td></tr><tr><td>H3K27 甲基化</td><td>抑制</td><td>多梳复合物介导，发育基因的「关」</td></tr><tr><td>H3K9 甲基化</td><td>抑制、异染色质</td><td>与 HP1 结合，形成稳定关闭</td></tr><tr><td>DNA 甲基化（CpG）</td><td>抑制</td><td>常与组蛋白去乙酰化协同</td></tr></tbody></table></div>
+<p>三个要点：</p>
+<p><strong>其一，修饰是「读—写—擦」的循环。</strong> 写入酶加上标记，读取蛋白识别标记并招募效应复合物，擦除酶移除标记。三者共同决定一个位点是「开」还是「关」，单看某一种修饰常常得不出结论。</p>
+<p><strong>其二，可及性是先决条件，不是结果。</strong> 一段染色质如果被压紧，转录因子进不去；但某些「先锋因子」能先结合压缩状态下的位点，打开局部，再招来其他因子。这类因子是发育重编程的关键，因为它们能<strong>改写可及性图谱</strong>，而不只是使用现成的图谱。</p></div></div>
+  <div class="slide-foot"><span>8 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">三、染色质层：先决定「能不能碰到」</div>
+                <div class="compact"><p><strong>其三，修饰可以被继承。</strong> 细胞分裂时，DNA 甲基化通过维持性甲基转移酶被复制到子链；组蛋白修饰则靠「读旧写新」的机制在半保留的组蛋白上重建。这是「细胞记忆」的分子基础：<strong>一个细胞记得自己是谁，靠的不是 DNA 序列，而是这套可继承的标记</strong>（第 7 章的兼性异染色质）。</p></div></div>
+  <div class="slide-foot"><span>9 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">四、转录后与翻译层：放大与衰减的四个把手</div>
+                <div class="compact dense"><p>一个基因的转录本，在离开核之前就已经被改写过好几次。</p>
+<ul><li><strong>可变剪接。</strong> 同一个前体 mRNA 按不同的外显子组合剪接，可以产生多种成熟转录本。剪接的选择由剪接位点强弱、剪接因子浓度与 RNA 上的调控元件共同决定。免疫系统抗体多样性的产生、神经元中大量微小外显子的并入，都靠这套机制。<strong>「一个基因一个蛋白」在人类基因组里是少数情况。</strong></li><li><strong>3′ 端加工与稳定性。</strong> 加尾长度、3′ 非翻译区的结合蛋白决定转录本的寿命。寿命短的转录本使表达可以快速上升、快速回落，适合应激反应；寿命长的适合维持性蛋白。</li><li><strong>无义介导的降解。</strong> 含提前终止密码子的转录本被识别并降解，这是一道质量控制，也是「敲低某个基因」的实验工具的原理之一。</li><li><strong>微小 RNA。</strong> 一段短的非编码 RNA 以部分互补方式结合靶转录本，抑制翻译或促其降解。一个微小 RNA 可以调控多个靶，一个转录本也可以被多个微小 RNA 调控——形成一张密集的网，而不是一条线。</li></ul></div></div>
+  <div class="slide-foot"><span>10 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">四、转录后与翻译层：放大与衰减的四个把手</div>
+                <div class="compact"><p>转录本离开核之后，还有两个环节能把量放大或压下去。即使转录本量相同，蛋白量仍可差出数倍，差别在翻译与降解。</p>
+<p><strong>翻译层</strong>的关键是起始。真核翻译起始依赖帽子结构与扫描，因此任何影响起始效率的因素都能改变输出：上游开放阅读框可以让核糖体「读了但不产」，RNA 二级结构可以阻碍扫描，特定结合蛋白可以招募或阻断起始因子。铁代谢的调控是经典例子：铁缺乏时，结合蛋白结合到转录本上的铁反应元件，稳定转录本并抑制翻译；铁充足时反之。<strong>同一个转录本，两种铁状态下产出相反</strong>，这已经不是「开关」能描述的了。</p>
+<p><strong>蛋白层</strong>的关键是寿命。一个蛋白的半衰期决定了它的响应速度：短寿命蛋白（几十分钟）让通路能快速关断，长寿命蛋白（几天）让状态能稳定维持。降解主要走泛素—蛋白酶体途径：一串泛素标签把底物送到蛋白酶体，去泛素化酶可以撤销标签。<strong>「加标签」与「撕标签」的拉锯，就是蛋白水平的调控。</strong></p></div></div>
+  <div class="slide-foot"><span>11 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">五、噪声、阈值与一条判据</div>
+                <div class="compact dense"><p>在单细胞层面，同一个基因在基因型相同的细胞里，表达量可以有明显差异。来源有三：转录的随机爆发（启动子随机的开合）、mRNA 的随机降解、细胞周期与体积的差异。这套变异被称为<strong>表达噪声</strong>。</p>
+<p>噪声不是缺陷，它被系统利用了：</p>
+<ul><li><strong>双稳态。</strong> 正反馈环使系统倾向于「全开」或「全关」两个稳定状态，中间态不稳定。细胞因此可以在相同信号下做出「非此即彼」的命运决定，而不是含糊的中间态。</li><li><strong>滞后。</strong> 由于正反馈，开启阈值与关闭阈值不同。系统一旦打开，需要更弱的信号就能维持——这就是「细胞记忆」在电路层面的版本。</li><li><strong>阈值效应。</strong> 药物或信号的作用常常不是「线性降低」，而是「跨过某个阈值后整体翻转」。这解释了为什么剂量—反应曲线常呈陡峭的 S 形，也解释了为什么「平均表达量」常常误导：真正决定命运的是<strong>有多少细胞跨过了阈值</strong>。</li></ul>
+<p>任何「某处理使某基因表达上调」的结论，都应当被追问三层：</p></div></div>
+  <div class="slide-foot"><span>12 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">五、噪声、阈值与一条判据</div>
+                <div class="compact"><ol><li><strong>哪一层变了？</strong> 转录起始、染色质可及性、剪接比例、转录本稳定性、翻译效率、蛋白降解——测的是哪一层的量（mRNA 还是蛋白），结论就只能落在哪一层。</li><li><strong>可逆吗？</strong> 磷酸化与转录可逆（分钟到小时），甲基化与分化程序不可逆或半不可逆（细胞分裂尺度）。把两者混为一谈，会把「暂时反应」当成「命运改变」。</li><li><strong>是平均还是分布？</strong> 群体测序给的是平均值，单细胞测序给的是分布。平均值不变而分布变宽，功能可能已经改变。</li></ol>
+<p>三层问完，一个笼统的「上调」才变成一个可检验的机制判断。</p></div></div>
+  <div class="slide-foot"><span>13 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><ul><li>本章的「数十种因子」「时间尺度」均为<strong>常引口径</strong>，用于比较不同调控层的快慢；本章不给任何转录速率、mRNA 半衰期、蛋白半衰期或拷贝数的具体数值。</li><li>「四层」是教学切分。实际调控是耦联的：转录与剪接共转录发生，翻译与 mRNA 降解竞争同一批转录本；把层与层当成独立模块，会在解释耦联现象时失效。</li><li>组合码与噪声模型多来自定量单细胞研究，结论仍在修正；本章只取已被多体系重复支持的部分。</li><li>本章不涉及任何基因治疗、RNA 药物或表观遗传药物的适应证、剂量与用法。</li><li>「一个基因一个蛋白」的推翻不意味着「序列无用」：序列决定可及性的潜能，调控决定这种潜能在何时被兑现。两者不是替代关系。</li></ul>
+<blockquote><p><strong>免责声明：</strong> 本章为医学细胞生物学的教学材料，用于建立「分层—时序—分布」的分析框架，不构成医学意见、诊断或治疗建议。文中机制说明为教学层面的概括；一切检测判读与处置须由具备资质的执业人员依现行规范与所在机构制度作出。</p></blockquote></div></div>
+  <div class="slide-foot"><span>14 / 15</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="14">
   <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
-  <div class="slide-foot"><span>5 / 5</span><span>disclaimer</span></div>
+  <div class="slide-foot"><span>15 / 15</span><span>disclaimer</span></div>
 </section>
 </div>
 <div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>

@@ -18,7 +18,7 @@
       "spoken": "第 1 章 · 中药学的研究对象与性能：四气五味",
       "estimateSeconds": 4,
       "audio": "001.mp3",
-      "audioSeconds": 4.78
+      "audioSeconds": 4.776
     },
     {
       "n": 2,
@@ -28,7 +28,7 @@
       "spoken": "「四气（四性）指药物寒、热、温、凉四种药性（另有平性，实际仍偏于温凉）」——《中药学·第5章·5.1.1》",
       "estimateSeconds": 12,
       "audio": "002.mp3",
-      "audioSeconds": 10.78
+      "audioSeconds": 10.776
     },
     {
       "n": 3,
@@ -38,7 +38,7 @@
       "spoken": "要建一张「性味归经表」，第一反应是打开总论第 5 章——四气、五味、升降浮沉、归经、毒性，五个词全在这一章被定义。可这一章 2,126 字、20 段里，一味药的性味归经字段也没有：它点了 54 味药的名字、共 94 处，全是举例（「辛能散能行（发散表邪、行气活血——薄荷、川芎）」这种句式），不是数据行。于是「第 5 章能不能当数据源」这个问题只能回答：不能——本章立目 0 条，全书 287 味药目全在第 9–29 章各论里。",
       "estimateSeconds": 43,
       "audio": "003.mp3",
-      "audioSeconds": 40.82
+      "audioSeconds": 40.824
     },
     {
       "n": 4,
@@ -48,7 +48,7 @@
       "spoken": "环境逼迫（第 5 章是全书唯一集中定义五要素的地方，入学第一个月就考它；任何按性能检索的工程都必须先把「四气/五味/升降浮沉/归经/毒性」的口径钉死，否则各论 287 味药的四气字段无法对齐、无法聚合成分布）＋ 知识积累（五节写成同一套模板：每节 2 小节 × 2 段，共 20 段；模板越整齐，越容易误以为五个要素在教材里等重——而字数与词频显示，五味被写得最重、四气只有 399 字）",
       "estimateSeconds": 39,
       "audio": "004.mp3",
-      "audioSeconds": 36.94
+      "audioSeconds": 36.936
     },
     {
       "n": 5,
@@ -58,10 +58,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "005.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 104.62,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 1.82,
+    "measuredMinutes": 1.74,
+    "ratio": 0.96
+  }
 }

@@ -29,74 +29,73 @@ platform:
 
 chapters:
   - slug: 01-gaishu-yanbian
-    title: 第1章 各家针灸学说概述
-    segments: 5
+    title: 各家针灸学说考的是一套判据，不是一张人名表
     video: rendered
-    estimate_minutes: 1.1
-    measured_minutes: 1.11
+    estimate_minutes: 10.57      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.54      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-liupai-xingcheng
-    title: 第2章 针灸学术流派的形成与分类
-    segments: 5
+    title: 流派的判据是三根柱子，不是一张分类表
     video: rendered
-    estimate_minutes: 1.1
-    measured_minutes: 1.11
+    estimate_minutes: 13.57      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 12.32      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-neijing-sixiang
-    title: 第3章 《内经》针灸学术思想
-    segments: 5
+    title: 《内经》的针道是一条次序，不是一堆刺法
     video: rendered
-    estimate_minutes: 1.15
-    measured_minutes: 1.12
+    estimate_minutes: 16.58      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 14.89      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-nanjing-shanghan
-    title: 第4章 《难经》与《伤寒杂病论》针灸学术思想
-    segments: 5
+    title: 《难经》给穴立规矩，《伤寒论》给用针立次序
     video: rendered
-    estimate_minutes: 1.18
-    measured_minutes: 1.15
+    estimate_minutes: 15.18      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 13.77      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-jintang-yijia
-    title: 第5章 晋唐针灸医家学术思想
-    segments: 5
+    title: 晋唐的功劳在编书：体例、尺度与存佚
     video: rendered
-    estimate_minutes: 1.17
-    measured_minutes: 1.14
+    estimate_minutes: 15.35      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 13.9      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-songjinyuan-yijia
-    title: 第6章 宋金元针灸医家学术思想
-    segments: 5
+    title: 宋金元把穴定成标准，把时间算成取穴依据
     video: rendered
-    estimate_minutes: 1.17
-    measured_minutes: 1.17
+    estimate_minutes: 15.65      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 14.47      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-mingdai-yijia
-    title: 第7章 明代针灸医家学术思想
-    segments: 5
+    title: 明代七家编的不是七种学说，是七种全书体例
     video: rendered
-    estimate_minutes: 1.12
-    measured_minutes: 1.12
+    estimate_minutes: 16.27      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 5.58      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-qingdai-yijia
-    title: 第8章 清代针灸医家学术思想
-    segments: 5
+    title: 清代把针灸写成可查的书，也把手法排在认穴之前
     video: rendered
-    estimate_minutes: 1.3
-    measured_minutes: 1.29
+    estimate_minutes: 16.32      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 15.01      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-jindai-yijia
-    title: 第9章 近代针灸医家学术思想
-    segments: 5
+    title: 近代把针灸搬进学校，也把它译成西医的语言
     video: rendered
-    estimate_minutes: 1.15
-    measured_minutes: 1.13
+    estimate_minutes: 15.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 14.44      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-dangdai-liupai
-    title: 第10章 当代针灸学术流派
-    segments: 5
+    title: 当代六家各把手法的某一个参数做成了可教的东西
     video: rendered
-    estimate_minutes: 1.13
-    measured_minutes: 1.12
+    estimate_minutes: 15.8      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 14.08      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 11-linchuang-chuancheng
-    title: 第11章 针灸各家学说的临床应用与传承
-    segments: 5
+    title: 轴心从人换成法，手法一旦离人就丢了适应证
     video: rendered
-    estimate_minutes: 1.13
-    measured_minutes: 1.13
+    estimate_minutes: 15.9      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 14.23      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 12-shuzihua-ai
-    title: 第12章 各家针灸学说与数字化AI时代
-    segments: 5
+    title: 谈数据的一章，引书最少，可计量的数值为零
     video: rendered
-    estimate_minutes: 1.15
-    measured_minutes: 1.16
+    estimate_minutes: 15.7      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 14.2      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

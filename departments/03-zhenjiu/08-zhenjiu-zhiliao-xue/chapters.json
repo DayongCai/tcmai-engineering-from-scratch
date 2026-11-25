@@ -4,7 +4,7 @@
   {
    "n": 1,
    "slug": "01-zhiliao-yuanze",
-   "title": "针灸治疗原则与作用",
+   "title": "五条治疗原则不是五句口号，而是五次「能不能下针」的判定",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -12,7 +12,7 @@
   {
    "n": 2,
    "slug": "02-zhenzhi-tedian-chufang",
-   "title": "临床诊治特点与针灸处方",
+   "title": "处方不是穴名清单，而是「辨经—选穴—刺灸法」三列必须自洽",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -20,7 +20,7 @@
   {
    "n": 3,
    "slug": "03-tedingxue-yingyong",
-   "title": "特定穴的临床应用",
+   "title": "特定穴是按条件检索的索引，不是「更重要的穴位」",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -28,7 +28,7 @@
   {
    "n": 4,
    "slug": "04-toumina-tongzheng",
-   "title": "头面躯体痛证",
+   "title": "痛证处方的骨架是「局部穴 ＋ 一条经的远端 ＋ 一个动作」",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -36,7 +36,7 @@
   {
    "n": 5,
    "slug": "05-neike-yi",
-   "title": "内科病证（一）",
+   "title": "内科前二十一个病证，先问「病在神还是病在形」",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -44,7 +44,7 @@
   {
    "n": 6,
    "slug": "06-neike-er",
-   "title": "内科病证（二）",
+   "title": "内科后二十一个病证，处方的主干是「募穴＋下合穴」",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -52,7 +52,7 @@
   {
    "n": 7,
    "slug": "07-fuerke",
-   "title": "妇儿科病证",
+   "title": "妇儿科二十二证，一半在调周期，一半在调发育",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -60,7 +60,7 @@
   {
    "n": 8,
    "slug": "08-piwaike",
-   "title": "皮外伤科病证",
+   "title": "皮外骨伤二十二证，先分清病在血分、在局部，还是在经筋",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -68,7 +68,7 @@
   {
    "n": 9,
    "slug": "09-wuguan",
-   "title": "五官科病证",
+   "title": "五官十六证，先取最近的那个穴，再用一条远端经把火引下去",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -76,7 +76,7 @@
   {
    "n": 10,
    "slug": "10-jizheng-qita",
-   "title": "急症与其他病证",
+   "title": "急症先保命再取穴，其他病证先问这一针在治什么",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -84,7 +84,7 @@
   {
    "n": 11,
    "slug": "11-zhiwuliu-zhu",
-   "title": "子午流注与灵龟八法",
+   "title": "时间针法算得出坐标，算不出疗效",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -92,7 +92,7 @@
   {
    "n": 12,
    "slug": "12-yanjiu-jinzhan",
-   "title": "针灸临床研究进展",
+   "title": "研究进展给的是地图，不是证据表",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

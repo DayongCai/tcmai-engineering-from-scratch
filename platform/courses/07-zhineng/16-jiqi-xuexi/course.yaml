@@ -29,98 +29,97 @@ platform:
 
 chapters:
   - slug: 01-xulun
-    title: 第1章 绪论
-    segments: 5
+    title: 泛化不是模型的属性，是数据与假设的私下约定
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.92
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-moxing-pinggu-yu-xuanze
-    title: 第2章 模型评估与选择
-    segments: 5
+    title: 你报的那个数字，可能只是抽样噪声的形状
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.95
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-xianxing-moxing
-    title: 第3章 线性模型
-    segments: 5
+    title: 一条直线的全部本事，在于你把什么变量交给它
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.93
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-juece-shu
-    title: 第4章 决策树
-    segments: 5
+    title: 树的好坏不在深度，在你切的那一刀问的是什么问题
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.9
+    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-shenjing-wangluo
-    title: 第5章 神经网络
-    segments: 5
+    title: 深度不是层数，是每层都在换一次坐标
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.92
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-zhichi-xiangliang-ji
-    title: 第6章 支持向量机
-    segments: 5
+    title: 间隔是几何，不是分数
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.92
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-beiyesi-fenleiqiu
-    title: 第7章 贝叶斯分类器
-    segments: 5
+    title: 先验不是偏见，是还没看到数据时你唯一能拿出的东西
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.95
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-jicheng-xuexi
-    title: 第8章 集成学习
-    segments: 5
+    title: 弱学习器不是凑数，是要它们错得不一样
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.91
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-julei
-    title: 第9章 聚类
-    segments: 5
+    title: 没有标签的时候，「相似」是你唯一还能定义的东西
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.89
+    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.89      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-jiangwei-yu-duliang
-    title: 第10章 降维与度量学习
-    segments: 5
+    title: 降维不是丢信息，是换一组能算距离的坐标
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.94
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 11-tezheng-xuanze-yu-xishu
-    title: 第11章 特征选择与稀疏学习
-    segments: 5
+    title: 稀疏不是省参数，是把「不重要」变成可检验的零
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.98
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.98      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 12-jisuan-xuexi-lilun
-    title: 第12章 计算学习理论
-    segments: 5
+    title: 泛化界不是承诺，是最坏情况下你还剩多少
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.94
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 13-banyou-jian-xuexi
-    title: 第13章 半监督学习
-    segments: 5
+    title: 未标注数据不是免费的，它买的是「流形假设」
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.93
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 14-gailv-tu-moxing
-    title: 第14章 概率图模型
-    segments: 5
+    title: 图不是画给人看的，是用来读条件独立的
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.91
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 15-guize-xuexi
-    title: 第15章 规则学习
-    segments: 5
+    title: 规则的代价不是条数，是它覆盖了多少不该覆盖的
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.92
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 16-qianghua-xuexi
-    title: 第16章 强化学习
-    segments: 5
+    title: 回报不是奖励的累加，是折现后的和
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.92
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"/>
-<title>第 4 章 · 检索与排序／关联规则挖掘／聚类与降维／知识发现与智能应用／研究方向与应用 · 幻灯片</title>
+<title>第 4 章 · 挖掘：lift = 103 的规则，多半是语料太小的幻觉 · 幻灯片</title>
 <style>
 
 :root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
@@ -59,19 +59,19 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <body>
 <div id="deck">
 <section class="slide" data-i="0">
-  <div class="slide-inner"><h1 class="big">第 4 章 · 检索与排序／关联规则挖掘／聚类与降维／知识发现与智能应用／研究方向与应用</h1></div>
+  <div class="slide-inner"><h1 class="big">第 4 章 · 挖掘：lift = 103 的规则，多半是语料太小的幻觉</h1></div>
   <div class="slide-foot"><span>1 / 5</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「《中医信息学·检索与排序／关联规则挖掘／聚类与》」——教材第4章。本章要回答的是：检索与排序／关联规则挖掘／聚类与降维／知识发现与智能应用／研究方向与应用：这一章要回答什么。</blockquote></div>
+  <div class="slide-inner"><blockquote class="motto">「引而伸之，触类而长之」——《周易·系辞上》</blockquote></div>
   <div class="slide-foot"><span>2 / 5</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
-  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">检索与排序／关联规则挖掘／聚类与降维／知识发现与智能应用／研究方向与应用：本课第 4 章。</p></div>
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">在 103 条病证单元上跑一遍关联规则，得到 45 条。其中一条的 lift 是 103。这个数字读起来像「关联强度 103 倍」，实际算术是 1 ÷ (1/103)：某个症状在全库只出现一次，于是 confidence 必然等于 1，lift 必然等于样本数。<strong>不设 support 阈值就谈 lift，等于把「稀有」误读成「强」。</strong></p></div>
   <div class="slide-foot"><span>3 / 5</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
-  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（信息学的判据是「标准—表示—检索」三件套）+ 知识积累（本章 31 单元 1,714 汉字；三辨主 <strong>概念与结构 10</strong>；四位面（章群结构）主 <strong>位面2 1714</strong>；引书 <strong>1 部 2 次</strong>；数值类命中 8）</p></div>
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（论文与项目都要「发现规律」，规则条数最好看，阈值一降条数就上去了）+ 知识积累（本章 31 个单元 1,714 汉字里，挖掘算法只占十来节，检索与排序占前面一大段——教材把「能不能找到」放在「能不能发现」之前，这个顺序本身是判据）</p></div>
   <div class="slide-foot"><span>4 / 5</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">

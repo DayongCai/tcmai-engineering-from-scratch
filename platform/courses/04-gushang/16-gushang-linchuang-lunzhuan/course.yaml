@@ -29,38 +29,37 @@ platform:
 
 chapters:
   - slug: 01-zhenggu-lunzhuan
-    title: 第1章 正骨科轮转：骨折复位与固定
-    segments: 5
+    title: 正骨轮转：复位做得好不好，看的是你喊停的那一次
     video: rendered
-    estimate_minutes: 1.1
-    measured_minutes: 1.1
+    estimate_minutes: 8.38      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 7.47      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-jinshang-lunzhuan
-    title: 第2章 筋伤科轮转：软组织损伤
-    segments: 5
+    title: 筋伤轮转：门槛不在手上，在禁忌筛查那三分钟
     video: rendered
-    estimate_minutes: 1.05
-    measured_minutes: 1.08
+    estimate_minutes: 7.07      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 5.30      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-jizhu-lunzhuan
-    title: 第3章 脊柱科轮转
-    segments: 5
+    title: 脊柱轮转：最贵的错误，是把红旗征当成落枕
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 0.99
+    estimate_minutes: 7.47      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 6.19      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-guanjie-lunzhuan
-    title: 第4章 关节科轮转
-    segments: 5
+    title: 关节轮转：先分清「能等」和「不能等」
     video: rendered
-    estimate_minutes: 1.02
-    measured_minutes: 1.03
+    estimate_minutes: 7.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 6.77      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-jizhen-chuangshang
-    title: 第5章 急诊创伤与院前处置
-    segments: 5
+    title: 创伤轮转：第一课是分工，不是技术
     video: rendered
-    estimate_minutes: 1.02
-    measured_minutes: 1.05
+    estimate_minutes: 6.63      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 5.21      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-chuke-kaohe
-    title: 第6章 出科考核与病例复盘
-    segments: 5
+    title: 出科考核：考的不是背，是你能不能把一次接诊从头讲到尾
     video: rendered
-    estimate_minutes: 1.03
-    measured_minutes: 1.03
+    estimate_minutes: 8.35      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 7.53      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

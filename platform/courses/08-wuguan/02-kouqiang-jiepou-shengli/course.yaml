@@ -29,50 +29,49 @@ platform:
 
 chapters:
   - slug: 01-e21
-    title: 第1章 口腔的境界与分区
-    segments: 5
+    title: 口腔不是一个腔，是两间房加一道门
     video: rendered
-    estimate_minutes: 0.85
-    measured_minutes: 0.86
+    estimate_minutes: 0.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.86      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-e22
-    title: 第2章 牙与牙周组织
-    segments: 5
+    title: 牙不是长在骨头里的，是挂在骨头上的
     video: rendered
-    estimate_minutes: 0.85
-    measured_minutes: 0.85
+    estimate_minutes: 0.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.85      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-e23
-    title: 第3章 颌骨与咀嚼肌
-    segments: 5
+    title: 上颌是一层薄壳，下颌是一条管子
     video: rendered
-    estimate_minutes: 0.83
-    measured_minutes: 0.84
+    estimate_minutes: 0.83      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.84      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-e24
-    title: 第4章 颞下颌关节与咬合
-    segments: 5
+    title: 下颌不是挂在关节窝里，是挂在盘上
     video: rendered
-    estimate_minutes: 0.85
-    measured_minutes: 0.87
+    estimate_minutes: 0.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.87      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-e25
-    title: 第5章 唾液腺与神经支配
-    segments: 5
+    title: 腮腺是面神经的床，不是它的邻居
     video: rendered
-    estimate_minutes: 0.85
-    measured_minutes: 0.87
+    estimate_minutes: 0.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.87      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-e26
-    title: 第6章 咀嚼与吞咽
-    segments: 5
+    title: 咀嚼是同一套五相，吞咽是四道闸门
     video: rendered
-    estimate_minutes: 0.85
-    measured_minutes: 0.83
+    estimate_minutes: 0.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.83      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-e27
-    title: 第7章 口腔感觉与味觉
-    segments: 5
+    title: 牙痛说不准位置，不是患者不会说
     video: rendered
-    estimate_minutes: 0.85
-    measured_minutes: 0.87
+    estimate_minutes: 0.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.87      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-e28
-    title: 第8章 口腔检查与记录
-    segments: 5
+    title: 检查不是看一遍，是五个动作各答一问
     video: rendered
-    estimate_minutes: 0.85
-    measured_minutes: 0.89
+    estimate_minutes: 0.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.89      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

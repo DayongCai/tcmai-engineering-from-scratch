@@ -1,7 +1,7 @@
 {
   "chapter": "12-yingji-jibing",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 48,
+  "segmentCount": 13,
   "slides": [
     {
       "n": 1,
@@ -11,7 +11,7 @@
     {
       "n": 2,
       "segment": 2,
-      "chars": 88
+      "chars": 19
     },
     {
       "n": 3,
@@ -26,6 +26,221 @@
     {
       "n": 5,
       "segment": 5,
+      "chars": 382
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 327
+    },
+    {
+      "n": 7,
+      "segment": 5,
+      "chars": 314
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 334
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 380
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 347
+    },
+    {
+      "n": 11,
+      "segment": 7,
+      "chars": 375
+    },
+    {
+      "n": 12,
+      "segment": 7,
+      "chars": 382
+    },
+    {
+      "n": 13,
+      "segment": 8,
+      "chars": 412
+    },
+    {
+      "n": 14,
+      "segment": 8,
+      "chars": 401
+    },
+    {
+      "n": 15,
+      "segment": 8,
+      "chars": 355
+    },
+    {
+      "n": 16,
+      "segment": 8,
+      "chars": 76
+    },
+    {
+      "n": 17,
+      "segment": 9,
+      "chars": 377
+    },
+    {
+      "n": 18,
+      "segment": 9,
+      "chars": 242
+    },
+    {
+      "n": 19,
+      "segment": 10,
+      "chars": 412
+    },
+    {
+      "n": 20,
+      "segment": 10,
+      "chars": 403
+    },
+    {
+      "n": 21,
+      "segment": 10,
+      "chars": 364
+    },
+    {
+      "n": 22,
+      "segment": 10,
+      "chars": 361
+    },
+    {
+      "n": 23,
+      "segment": 10,
+      "chars": 362
+    },
+    {
+      "n": 24,
+      "segment": 10,
+      "chars": 369
+    },
+    {
+      "n": 25,
+      "segment": 10,
+      "chars": 354
+    },
+    {
+      "n": 26,
+      "segment": 10,
+      "chars": 95
+    },
+    {
+      "n": 27,
+      "segment": 11,
+      "chars": 414
+    },
+    {
+      "n": 28,
+      "segment": 11,
+      "chars": 329
+    },
+    {
+      "n": 29,
+      "segment": 11,
+      "chars": 321
+    },
+    {
+      "n": 30,
+      "segment": 11,
+      "chars": 305
+    },
+    {
+      "n": 31,
+      "segment": 11,
+      "chars": 278
+    },
+    {
+      "n": 32,
+      "segment": 11,
+      "chars": 323
+    },
+    {
+      "n": 33,
+      "segment": 11,
+      "chars": 313
+    },
+    {
+      "n": 34,
+      "segment": 11,
+      "chars": 316
+    },
+    {
+      "n": 35,
+      "segment": 11,
+      "chars": 323
+    },
+    {
+      "n": 36,
+      "segment": 11,
+      "chars": 311
+    },
+    {
+      "n": 37,
+      "segment": 11,
+      "chars": 311
+    },
+    {
+      "n": 38,
+      "segment": 11,
+      "chars": 312
+    },
+    {
+      "n": 39,
+      "segment": 12,
+      "chars": 387
+    },
+    {
+      "n": 40,
+      "segment": 12,
+      "chars": 418
+    },
+    {
+      "n": 41,
+      "segment": 12,
+      "chars": 417
+    },
+    {
+      "n": 42,
+      "segment": 12,
+      "chars": 88
+    },
+    {
+      "n": 43,
+      "segment": 12,
+      "chars": 412
+    },
+    {
+      "n": 44,
+      "segment": 12,
+      "chars": 399
+    },
+    {
+      "n": 45,
+      "segment": 12,
+      "chars": 35
+    },
+    {
+      "n": 46,
+      "segment": 12,
+      "chars": 402
+    },
+    {
+      "n": 47,
+      "segment": 12,
+      "chars": 413
+    },
+    {
+      "n": 48,
+      "segment": 13,
       "chars": 52
     }
   ]

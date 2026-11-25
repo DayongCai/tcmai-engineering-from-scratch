@@ -29,50 +29,49 @@ platform:
 
 chapters:
   - slug: 01-tizhi-gainian
-    title: 第1章 体质的概念与九种体质类型
-    segments: 6
+    title: 九种体质是九把尺子，量的是倾向不是病名
     video: rendered
-    estimate_minutes: 1.2
-    measured_minutes: 1.15
+    estimate_minutes: 1.20      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.15      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-tizhi-chengyin
-    title: 第2章 体质的形成：先天禀赋与后天因素
-    segments: 6
+    title: 底板改不了，漂移的方向可以选
     video: rendered
-    estimate_minutes: 1.03
-    measured_minutes: 0.99
+    estimate_minutes: 1.03      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.99      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-tizhi-liangbiao
-    title: 第3章 九种体质的判定与量表设计
-    segments: 6
+    title: 判定要靠两条同向证据，不能靠一条扎眼的特征
     video: rendered
-    estimate_minutes: 1.03
-    measured_minutes: 1.03
+    estimate_minutes: 1.03      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.03      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-tizhi-zhenghou
-    title: 第4章 体质与证候：易感性与转化关系
-    segments: 6
+    title: 同一个证可以长在不同底子上，处理要分两步走
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.94
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-tizhi-tezheng
-    title: 第5章 体质辨识的数据化：问卷 → 特征向量
-    segments: 6
+    title: 量表算出来的不是一分数，是四组分数
     video: rendered
-    estimate_minutes: 1.03
-    measured_minutes: 1.02
+    estimate_minutes: 1.03      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.02      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-tizhi-liuxing
-    title: 第6章 体质与疾病易感性的流行病学
-    segments: 6
+    title: 证候表能算出共现，算不出谁会得病
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.91
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-tizhi-tiaoli
-    title: 第7章 体质调理与治未病的干预设计
-    segments: 6
+    title: 调体质的目标是把偏拉回来，不是把人调成标准件
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 0.94
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-tizhi-wucha
-    title: 第8章 体质研究的可重复性与测量误差
-    segments: 6
+    title: 同一个人测出两个体质，先查尺子再查人
     video: rendered
-    estimate_minutes: 1.07
-    measured_minutes: 1.05
+    estimate_minutes: 1.07      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.05      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

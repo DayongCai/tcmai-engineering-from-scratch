@@ -1,7 +1,7 @@
 {
   "chapter": "19-heart-failure-and-dysrhythmias",
-  "slideCount": 32,
-  "segmentCount": 19,
+  "slideCount": 30,
+  "segmentCount": 11,
   "slides": [
     {
       "n": 1,
@@ -11,7 +11,7 @@
     {
       "n": 2,
       "segment": 2,
-      "chars": 94
+      "chars": 45
     },
     {
       "n": 3,
@@ -26,141 +26,131 @@
     {
       "n": 5,
       "segment": 5,
-      "chars": 339
+      "chars": 358
     },
     {
       "n": 6,
       "segment": 5,
-      "chars": 204
-    },
-    {
-      "n": 7,
-      "segment": 6,
-      "chars": 397
-    },
-    {
-      "n": 8,
-      "segment": 6,
-      "chars": 117
-    },
-    {
-      "n": 9,
-      "segment": 7,
-      "chars": 260
-    },
-    {
-      "n": 10,
-      "segment": 7,
-      "chars": 352
-    },
-    {
-      "n": 11,
-      "segment": 8,
-      "chars": 411
-    },
-    {
-      "n": 12,
-      "segment": 8,
-      "chars": 87
-    },
-    {
-      "n": 13,
-      "segment": 9,
-      "chars": 401
-    },
-    {
-      "n": 14,
-      "segment": 9,
-      "chars": 70
-    },
-    {
-      "n": 15,
-      "segment": 10,
-      "chars": 391
-    },
-    {
-      "n": 16,
-      "segment": 10,
-      "chars": 201
-    },
-    {
-      "n": 17,
-      "segment": 11,
-      "chars": 388
-    },
-    {
-      "n": 18,
-      "segment": 12,
       "chars": 324
     },
     {
+      "n": 7,
+      "segment": 5,
+      "chars": 413
+    },
+    {
+      "n": 8,
+      "segment": 5,
+      "chars": 278
+    },
+    {
+      "n": 9,
+      "segment": 5,
+      "chars": 406
+    },
+    {
+      "n": 10,
+      "segment": 5,
+      "chars": 371
+    },
+    {
+      "n": 11,
+      "segment": 5,
+      "chars": 87
+    },
+    {
+      "n": 12,
+      "segment": 6,
+      "chars": 420
+    },
+    {
+      "n": 13,
+      "segment": 6,
+      "chars": 345
+    },
+    {
+      "n": 14,
+      "segment": 6,
+      "chars": 396
+    },
+    {
+      "n": 15,
+      "segment": 6,
+      "chars": 340
+    },
+    {
+      "n": 16,
+      "segment": 7,
+      "chars": 340
+    },
+    {
+      "n": 17,
+      "segment": 7,
+      "chars": 223
+    },
+    {
+      "n": 18,
+      "segment": 7,
+      "chars": 420
+    },
+    {
       "n": 19,
-      "segment": 12,
-      "chars": 136
+      "segment": 8,
+      "chars": 401
     },
     {
       "n": 20,
-      "segment": 13,
-      "chars": 356
+      "segment": 8,
+      "chars": 339
     },
     {
       "n": 21,
-      "segment": 13,
-      "chars": 136
+      "segment": 8,
+      "chars": 410
     },
     {
       "n": 22,
-      "segment": 14,
-      "chars": 386
+      "segment": 8,
+      "chars": 370
     },
     {
       "n": 23,
-      "segment": 14,
-      "chars": 82
-    },
-    {
-      "n": 24,
-      "segment": 15,
-      "chars": 365
-    },
-    {
-      "n": 25,
-      "segment": 15,
-      "chars": 105
-    },
-    {
-      "n": 26,
-      "segment": 16,
-      "chars": 337
-    },
-    {
-      "n": 27,
-      "segment": 16,
-      "chars": 198
-    },
-    {
-      "n": 28,
-      "segment": 17,
+      "segment": 9,
       "chars": 451
     },
     {
-      "n": 29,
-      "segment": 17,
+      "n": 24,
+      "segment": 9,
       "chars": 129
     },
     {
-      "n": 30,
-      "segment": 18,
+      "n": 25,
+      "segment": 10,
       "chars": 408
     },
     {
-      "n": 31,
-      "segment": 18,
-      "chars": 388
+      "n": 26,
+      "segment": 10,
+      "chars": 396
     },
     {
-      "n": 32,
-      "segment": 19,
+      "n": 27,
+      "segment": 10,
+      "chars": 354
+    },
+    {
+      "n": 28,
+      "segment": 10,
+      "chars": 381
+    },
+    {
+      "n": 29,
+      "segment": 10,
+      "chars": 276
+    },
+    {
+      "n": 30,
+      "segment": 11,
       "chars": 52
     }
   ]

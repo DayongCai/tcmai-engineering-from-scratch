@@ -1,31 +1,81 @@
 {
   "chapter": "08-fangan-fengxian",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 15,
+  "segmentCount": 8,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 15
+      "chars": 21
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 91
+      "chars": 92
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 15
+      "chars": 164
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 107
+      "chars": 121
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 162
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 371
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 415
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 338
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 368
+    },
+    {
+      "n": 10,
+      "segment": 6,
+      "chars": 371
+    },
+    {
+      "n": 11,
+      "segment": 6,
+      "chars": 308
+    },
+    {
+      "n": 12,
+      "segment": 6,
+      "chars": 315
+    },
+    {
+      "n": 13,
+      "segment": 7,
+      "chars": 424
+    },
+    {
+      "n": 14,
+      "segment": 7,
+      "chars": 197
+    },
+    {
+      "n": 15,
+      "segment": 8,
       "chars": 52
     }
   ]

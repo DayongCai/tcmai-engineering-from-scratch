@@ -4,7 +4,7 @@
   {
    "n": 1,
    "slug": "01-gaishu-yuanliu",
-   "title": "针法灸法概论与源流",
+   "title": "针与灸不是两门手艺，而是同一套刺激量学的两种实现",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -12,7 +12,7 @@
   {
    "n": 2,
    "slug": "02-haozhen-cifa",
-   "title": "毫针刺法",
+   "title": "毫针的功夫不在「扎进去」，而在四个能被人复核的动作上",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -20,7 +20,7 @@
   {
    "n": 3,
    "slug": "03-neijing-nanjing",
-   "title": "古代针法经典：内经与难经",
+   "title": "读经典不是背条文，是把一句话还原成一组能做的动作",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -28,7 +28,7 @@
   {
    "n": 4,
    "slug": "04-jinzhenfu-dacheng",
-   "title": "后世针法：金针赋与针灸大成",
+   "title": "复式手法不是玄学，是把四个基本动作按层次与次数叠起来",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -36,7 +36,7 @@
   {
    "n": 5,
    "slug": "05-jiufa",
-   "title": "灸法",
+   "title": "灸的功夫不在点火，而在把「量」变成别人能复核的壮与炷",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -44,7 +44,7 @@
   {
    "n": 6,
    "slug": "06-tezhong-zhenfa",
-   "title": "特种针法：三棱针、皮肤针、火针、挑刺、芒针",
+   "title": "换一种针形，就换一整套适应证和一整套禁忌",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -52,7 +52,7 @@
   {
    "n": 7,
    "slug": "07-weizhen-xitong",
-   "title": "微针系统：耳针、头针、腕踝针",
+   "title": "三套微针各把身体投影一次，投影规则不同，边界也不同",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -60,7 +60,7 @@
   {
    "n": 8,
    "slug": "08-dianzhen-zhushe",
-   "title": "电针与穴位注射",
+   "title": "电与药接上针之后，失手的性质就从「疼一下」变成「不可逆」",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -68,7 +68,7 @@
   {
    "n": 9,
    "slug": "09-mailiao-ciliao",
-   "title": "埋线、磁疗与激光穴位照射",
+   "title": "三种「让刺激留得久」的技术里，只有一种把东西留在了体内",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -76,7 +76,7 @@
   {
    "n": 10,
    "slug": "10-anquan-shuzihua",
-   "title": "安全规范与数字化",
+   "title": "要害是解剖事实，不是风险清单上的最后一行",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

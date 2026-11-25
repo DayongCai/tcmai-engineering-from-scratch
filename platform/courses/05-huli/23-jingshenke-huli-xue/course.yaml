@@ -29,110 +29,109 @@ platform:
 
 chapters:
   - slug: 01-gaishu
-    title: 第1章 精神科护理学概述
-    segments: 5
+    title: 精神科护理的第一产品是安全，第二产品才是症状缓解
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.97
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.97      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-bingyin-zhengzhuang
-    title: 第2章 精神障碍的病因与症状学基础
-    segments: 5
+    title: 症状学的全部工作，是把一句主诉拆成别人也能看见的行为
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-jiben-jineng
-    title: 第3章 基本技能与治疗配合
-    segments: 5
+    title: 治疗配合的核心不是把药送进嘴，是让病人知道自己在吃什么
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 1
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-jixing-weiji
-    title: 第4章 急性期与危机状态的护理
-    segments: 5
+    title: 危机处置的第一分钟，用的不是技术而是距离
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 1
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-jingshen-fenlie
-    title: 第5章 精神分裂症及相关障碍的护理
-    segments: 5
+    title: 和幻觉争辩一次，等于替那个声音做了一次免费宣传
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-yiyu-shuangxiang
-    title: 第6章 抑郁与双相障碍的护理
-    segments: 5
+    title: 抑郁最危险的时刻，常常是"看起来好起来"的那几天
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.98
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.98      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-jiaolv-yingji
-    title: 第7章 焦虑与应激相关障碍的护理
-    segments: 5
+    title: 焦虑病人的"我没事"，多数时候是"我说不出来"而不是"真的没事"
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-qiangpo-tixing
-    title: 第8章 强迫与躯体形式相关障碍的护理
-    segments: 5
+    title: 不要替病人完成仪式，也不要在他做仪式时打断
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1.02
+    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.02      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-qizhi-laonian
-    title: 第9章 器质性与老年精神障碍的护理
-    segments: 5
+    title: 老年精神症状的第一鉴别永远是谵妄，而不是抑郁
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1.01
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.01      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-wuzhi-yila
-    title: 第10章 精神活性物质相关障碍的护理
-    segments: 5
+    title: 戒断期最该被测量的是身体，不是意志
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1.01
+    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.01      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 11-erke-qingshaonian
-    title: 第11章 儿童与青少年精神障碍的护理
-    segments: 5
+    title: 孩子的症状常常写在大人身上，也常常被大人写坏
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1.01
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.01      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 12-jinshi-shuimian
-    title: 第12章 进食与睡眠障碍的护理
-    segments: 5
+    title: 体重不是一个数字，是一条需要被共同盯住的趋势
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.99
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.99      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 13-kangfu-huli
-    title: 第13章 精神障碍病人的康复护理
-    segments: 5
+    title: 康复的指标不是症状消失，是这个人重新有了日程
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 1
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 14-anquan-fengxian
-    title: 第14章 精神科护理安全与风险管理
-    segments: 5
+    title: 风险管理的成品不是一张清单，是一条能被追溯的时间线
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 1.01
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.01      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 15-renji-goutong
-    title: 第15章 精神科的人际关系与沟通
-    segments: 5
+    title: 在精神科，少说一句比多说一句更难，也更有用
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1.01
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.01      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 16-falv-lunli
-    title: 第16章 精神科护理的法律与伦理实践
-    segments: 5
+    title: 知情同意不是一张签过字的纸，是一条随时可以撤回的路
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1.01
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.01      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 17-shequ-jingshen
-    title: 第17章 精神卫生服务与社区精神科护理
-    segments: 5
+    title: 社区精神科护理的成败，常常取决于病人失约之后你打了几个电话
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1.04
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.04      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 18-pingtai
-    title: 第18章 精神科护理学与教学平台
-    segments: 5
+    title: 把临床判断写成可复算的条目，才配得上叫教学材料
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 1.01
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.01      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

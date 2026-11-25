@@ -29,38 +29,37 @@ platform:
 
 chapters:
   - slug: 01-z51
-    title: 第1章 中医文化的源流：从先秦到汉唐
-    segments: 5
+    title: 先秦到汉唐留下来的是三种说话方式，不是一条族谱
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.94
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-z52
-    title: 第2章 典籍与医家：可传播的内容从哪来
-    segments: 5
+    title: 能传走的是判据，不是神医
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.97
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.97      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-z53
-    title: 第3章 近现代转型与制度化
-    segments: 5
+    title: 制度化救下的是编制与课表，不是可传播性
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.9
+    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-z54
-    title: 第4章 信息组织与检索：把典籍变成可查资源
-    segments: 5
+    title: 典籍变不成资源，除非先被切成一格一格
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1.03
+    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.03      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-z55
-    title: 第5章 传播内容的标准与证据
-    segments: 5
+    title: 传播的底线不是说得动人，是说得住回查
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.92
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-z56
-    title: 第6章 当代传播与边界：不神化、不虚构
-    segments: 5
+    title: 把中医讲成奇迹，是最快也最贵的一种传播
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.99
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.99      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

@@ -407,12 +407,12 @@
 | skill | 神志病没有化验单，判据只能从「看和问」里长出来 | 神志病没有化验单，判据只能从「看和问」里长出来——按「这门学科的对象是「神」的失序，不是「脑」的病灶 → 7 项观察，3 项靠自述，4 项不靠 → 三项同现才算神志病，单项一律不算 → 能做什么，以及什么时候必须停手」走一遍本章判据 | 667 | [`skill-01-xulun.md`](../departments/01-zhongyi/20-zhongyi-jingshenbing-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 用本章内容做一件事：绪论 | — | 406 | [`prompt-01-xulun.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 绪论 | 用《临床中药学》第 1 章「绪论」的单元层做可核对的教学材料。 | 502 | [`skill-01-xulun.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/01-xulun/outputs/skill-01-xulun.md) |
-| prompt | 绪论 · 提示词 | — | 444 | [`prompt-01-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 绪论 | 绪论——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 369 | [`skill-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 绪论不是开场白：它划定针灸学的边界、来路与读法 · 提示词 | — | 1115 | [`prompt-01-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
+| skill | 绪论不是开场白：它划定针灸学的边界、来路与读法 | 绪论不是开场白：它划定针灸学的边界、来路与读法——按「篇幅账：一半给历史，三分之一给定义 → 两个起源各有物证：砭石在石，灸火在火 → 三次奠基与四次校订：书目是校出来的，不是列出来的 → 学什么：三块内容与一条练习链」走一遍本章判据 | 1002 | [`skill-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 泛化不是模型的属性，是数据与假设的私下约定 · 提示词 | — | 920 | [`prompt-01-xulun.md`](../departments/07-zhineng/16-jiqi-xuexi/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 泛化不是模型的属性，是数据与假设的私下约定 | 泛化不是模型的属性，是数据与假设的私下约定——按「把一个「学习」问题写成四件东西 → 训练误差与泛化误差：两个不同的量 → 归纳偏好：算法必须偏心，而且偏心要写出来 → NFL 定理：一句被引用得最多、理解得最少的话」走一遍本章判据 | 808 | [`skill-xulun.md`](../departments/07-zhineng/16-jiqi-xuexi/chapters/01-xulun/outputs/skill-xulun.md) |
-| prompt | 绪论 · 提示词 | — | 442 | [`prompt-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
-| skill | 绪论 | 绪论——按「运动 → 内脏 → 脉管与内分泌 → 神经：由支架到内脏，再到支配」走一遍本章判据 | 365 | [`skill-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得 · 提示词 | — | 1049 | [`prompt-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
+| skill | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得 | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得——按「定义的第一句就带了限制：只写「类别与关系」 → 从细胞到系统：九大系统是一条由支架到支配的链 → 分科与材料：同一批结构的几种看法 → 姿势、轴与面：全书共用的坐标系」走一遍本章判据 | 931 | [`skill-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链 · 提示词 | — | 901 | [`prompt-01-xulun.md`](../departments/09-jichu/04-yixue-shengwu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链 | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链——按「这门课真正教的是「分层」，不是「名词」 → 三个判据，构成一条可证伪的链 → 16 章有两次转折，不是十六个抽屉 → 每章只回答四个问题」走一遍本章判据 | 781 | [`skill-xulun.md`](../departments/09-jichu/04-yixue-shengwu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 绪论：把「稳态」写成一条可检查的回路 · 提示词 | — | 856 | [`prompt-xulun.md`](../departments/09-jichu/06-shengli-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
@@ -423,8 +423,8 @@
 | skill | 绪论 | 绪论——按「层次 → 通道 → 间隙 → 毗邻：由浅入深地读一个局部」走一遍本章判据 | 359 | [`skill-xulun.md`](../departments/09-jichu/08-jubu-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 绪论：一门学科先要学会「怎么描述」 · 提示词 | — | 897 | [`prompt-xulun.md`](../departments/09-jichu/10-bingli-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
 | skill | 绪论：一门学科先要学会「怎么描述」 | 绪论：一门学科先要学会「怎么描述」——按「第一句话不是定义，是一份分工 → 四节十二单元的笔墨，与从原因到临床的五类内容 → 发展简史：观察单位一步步下沉 → 三个观察层次：不是三选一，是三段路」走一遍本章判据 | 789 | [`skill-xulun.md`](../departments/09-jichu/10-bingli-xue/chapters/01-xulun/outputs/skill-xulun.md) |
-| prompt | 流行病学绪论 · 提示词 | — | 463 | [`prompt-01-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 流行病学绪论 | 流行病学绪论——按「描述（分布与测量）→ 分析（病例对照与队列）→ 推断（因果与偏倚）→ 应用（监测与循证）」走一遍本章判据 | 382 | [`skill-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 流行病学先问人群里有多少人发病，再问某个病人为什么病 · 提示词 | — | 1038 | [`prompt-01-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
+| skill | 流行病学先问人群里有多少人发病，再问某个病人为什么病 | 流行病学先问人群里有多少人发病，再问某个病人为什么病——按「定义的三层限制：人群、分布、防制 → 四项任务是一条不能跳步的链 → 方法的分类只看两条线：谁施加干预、有没有比较组 → 同一批数字，三种问法：率、比、比例与三个关联指标」走一遍本章判据 | 921 | [`skill-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 
 #### 第 2 章 · 起源不是某个人的发明：四类证据各只答得上一半
 
@@ -1221,12 +1221,12 @@
 | skill | 神志病没有化验单，判据只能从「看和问」里长出来 | 神志病没有化验单，判据只能从「看和问」里长出来——按「这门学科的对象是「神」的失序，不是「脑」的病灶 → 7 项观察，3 项靠自述，4 项不靠 → 三项同现才算神志病，单项一律不算 → 能做什么，以及什么时候必须停手」走一遍本章判据 | 667 | [`skill-01-xulun.md`](../departments/01-zhongyi/20-zhongyi-jingshenbing-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 用本章内容做一件事：绪论 | — | 406 | [`prompt-01-xulun.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 绪论 | 用《临床中药学》第 1 章「绪论」的单元层做可核对的教学材料。 | 502 | [`skill-01-xulun.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/01-xulun/outputs/skill-01-xulun.md) |
-| prompt | 绪论 · 提示词 | — | 444 | [`prompt-01-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 绪论 | 绪论——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 369 | [`skill-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 绪论不是开场白：它划定针灸学的边界、来路与读法 · 提示词 | — | 1115 | [`prompt-01-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
+| skill | 绪论不是开场白：它划定针灸学的边界、来路与读法 | 绪论不是开场白：它划定针灸学的边界、来路与读法——按「篇幅账：一半给历史，三分之一给定义 → 两个起源各有物证：砭石在石，灸火在火 → 三次奠基与四次校订：书目是校出来的，不是列出来的 → 学什么：三块内容与一条练习链」走一遍本章判据 | 1002 | [`skill-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 泛化不是模型的属性，是数据与假设的私下约定 · 提示词 | — | 920 | [`prompt-01-xulun.md`](../departments/07-zhineng/16-jiqi-xuexi/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 泛化不是模型的属性，是数据与假设的私下约定 | 泛化不是模型的属性，是数据与假设的私下约定——按「把一个「学习」问题写成四件东西 → 训练误差与泛化误差：两个不同的量 → 归纳偏好：算法必须偏心，而且偏心要写出来 → NFL 定理：一句被引用得最多、理解得最少的话」走一遍本章判据 | 808 | [`skill-xulun.md`](../departments/07-zhineng/16-jiqi-xuexi/chapters/01-xulun/outputs/skill-xulun.md) |
-| prompt | 绪论 · 提示词 | — | 442 | [`prompt-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
-| skill | 绪论 | 绪论——按「运动 → 内脏 → 脉管与内分泌 → 神经：由支架到内脏，再到支配」走一遍本章判据 | 365 | [`skill-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得 · 提示词 | — | 1049 | [`prompt-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
+| skill | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得 | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得——按「定义的第一句就带了限制：只写「类别与关系」 → 从细胞到系统：九大系统是一条由支架到支配的链 → 分科与材料：同一批结构的几种看法 → 姿势、轴与面：全书共用的坐标系」走一遍本章判据 | 931 | [`skill-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链 · 提示词 | — | 901 | [`prompt-01-xulun.md`](../departments/09-jichu/04-yixue-shengwu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链 | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链——按「这门课真正教的是「分层」，不是「名词」 → 三个判据，构成一条可证伪的链 → 16 章有两次转折，不是十六个抽屉 → 每章只回答四个问题」走一遍本章判据 | 781 | [`skill-xulun.md`](../departments/09-jichu/04-yixue-shengwu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 绪论：把「稳态」写成一条可检查的回路 · 提示词 | — | 856 | [`prompt-xulun.md`](../departments/09-jichu/06-shengli-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
@@ -1237,8 +1237,8 @@
 | skill | 绪论 | 绪论——按「层次 → 通道 → 间隙 → 毗邻：由浅入深地读一个局部」走一遍本章判据 | 359 | [`skill-xulun.md`](../departments/09-jichu/08-jubu-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 绪论：一门学科先要学会「怎么描述」 · 提示词 | — | 897 | [`prompt-xulun.md`](../departments/09-jichu/10-bingli-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
 | skill | 绪论：一门学科先要学会「怎么描述」 | 绪论：一门学科先要学会「怎么描述」——按「第一句话不是定义，是一份分工 → 四节十二单元的笔墨，与从原因到临床的五类内容 → 发展简史：观察单位一步步下沉 → 三个观察层次：不是三选一，是三段路」走一遍本章判据 | 789 | [`skill-xulun.md`](../departments/09-jichu/10-bingli-xue/chapters/01-xulun/outputs/skill-xulun.md) |
-| prompt | 流行病学绪论 · 提示词 | — | 463 | [`prompt-01-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 流行病学绪论 | 流行病学绪论——按「描述（分布与测量）→ 分析（病例对照与队列）→ 推断（因果与偏倚）→ 应用（监测与循证）」走一遍本章判据 | 382 | [`skill-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 流行病学先问人群里有多少人发病，再问某个病人为什么病 · 提示词 | — | 1038 | [`prompt-01-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
+| skill | 流行病学先问人群里有多少人发病，再问某个病人为什么病 | 流行病学先问人群里有多少人发病，再问某个病人为什么病——按「定义的三层限制：人群、分布、防制 → 四项任务是一条不能跳步的链 → 方法的分类只看两条线：谁施加干预、有没有比较组 → 同一批数字，三种问法：率、比、比例与三个关联指标」走一遍本章判据 | 921 | [`skill-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 
 #### 第 2 章 · 辨证论治思路与方法：辨证论治是一条有顺序的流水线，跳过任何一环后面的判断都会悬空
 
@@ -1338,10 +1338,10 @@
 | --- | --- | --- | :-: | --- |
 | prompt | 数字化与 AI 时代：要素可枚举，编码可对齐，裁量不可交出去 · 提示词 | — | 598 | [`prompt-shuzihua-ai.md`](../departments/01-zhongyi/10-zhongyi-neike-xue/chapters/12-shuzihua-ai/outputs/prompt-shuzihua-ai.md) |
 | skill | 数字化与 AI 时代：要素可枚举，编码可对齐，裁量不可交出去 | 数字化与 AI 时代：要素可枚举，编码可对齐，裁量不可交出去——按「正文：可枚举的要素与不可交出的裁量 → 逐条落位 → 运行与验证」走一遍本章判据 | 492 | [`skill-shuzihua-ai.md`](../departments/01-zhongyi/10-zhongyi-neike-xue/chapters/12-shuzihua-ai/outputs/skill-shuzihua-ai.md) |
-| prompt | 用本章内容做一件事：各家针灸学说与数字化AI时代 | — | 408 | [`prompt-12-shuzihua-ai.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/12-shuzihua-ai/outputs/prompt-12-shuzihua-ai.md) |
-| skill | 各家针灸学说与数字化AI时代 | 用《各家针灸学说》第 12 章「各家针灸学说与数字化AI时代」的单元层做可核对的教学材料。 | 567 | [`skill-12-shuzihua-ai.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/12-shuzihua-ai/outputs/skill-12-shuzihua-ai.md) |
-| prompt | 用本章内容做一件事：推拿治疗数字化与AI时代 | — | 407 | [`prompt-12-shuzihua-ai.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/12-shuzihua-ai/outputs/prompt-12-shuzihua-ai.md) |
-| skill | 推拿治疗数字化与AI时代 | 用《推拿治疗学》第 12 章「推拿治疗数字化与AI时代」的单元层做可核对的教学材料。 | 545 | [`skill-12-shuzihua-ai.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/12-shuzihua-ai/outputs/skill-12-shuzihua-ai.md) |
+| prompt | 谈数据的一章，引书最少，可计量的数值为零 · 提示词 | — | 758 | [`prompt-12-shuzihua-ai.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/12-shuzihua-ai/outputs/prompt-12-shuzihua-ai.md) |
+| skill | 谈数据的一章，引书最少，可计量的数值为零 | 谈数据的一章，引书最少，可计量的数值为零——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 650 | [`skill-12-shuzihua-ai.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/12-shuzihua-ai/outputs/skill-12-shuzihua-ai.md) |
+| prompt | 设备能把手法变成数字，不能把数字变成判断 · 提示词 | — | 595 | [`prompt-12-shuzihua-ai.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/12-shuzihua-ai/outputs/prompt-12-shuzihua-ai.md) |
+| skill | 设备能把手法变成数字，不能把数字变成判断 | 设备能把手法变成数字，不能把数字变成判断——按「四条路径，替掉的都是「测量」 → VR 与设备：三原则、三层复核、一个身份 → 标准与编码：对齐的是名字，不是疗效 → 数据与伦理：最硬的那条边界」走一遍本章判据 | 497 | [`skill-12-shuzihua-ai.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/12-shuzihua-ai/outputs/skill-12-shuzihua-ai.md) |
 
 #### 第 13 章 · 证候—方剂—疗效：链条前三段可回查，第四段在教材里根本没有字段
 
@@ -1508,12 +1508,12 @@
 | skill | 神志病没有化验单，判据只能从「看和问」里长出来 | 神志病没有化验单，判据只能从「看和问」里长出来——按「这门学科的对象是「神」的失序，不是「脑」的病灶 → 7 项观察，3 项靠自述，4 项不靠 → 三项同现才算神志病，单项一律不算 → 能做什么，以及什么时候必须停手」走一遍本章判据 | 667 | [`skill-01-xulun.md`](../departments/01-zhongyi/20-zhongyi-jingshenbing-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 用本章内容做一件事：绪论 | — | 406 | [`prompt-01-xulun.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 绪论 | 用《临床中药学》第 1 章「绪论」的单元层做可核对的教学材料。 | 502 | [`skill-01-xulun.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/01-xulun/outputs/skill-01-xulun.md) |
-| prompt | 绪论 · 提示词 | — | 444 | [`prompt-01-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 绪论 | 绪论——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 369 | [`skill-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 绪论不是开场白：它划定针灸学的边界、来路与读法 · 提示词 | — | 1115 | [`prompt-01-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
+| skill | 绪论不是开场白：它划定针灸学的边界、来路与读法 | 绪论不是开场白：它划定针灸学的边界、来路与读法——按「篇幅账：一半给历史，三分之一给定义 → 两个起源各有物证：砭石在石，灸火在火 → 三次奠基与四次校订：书目是校出来的，不是列出来的 → 学什么：三块内容与一条练习链」走一遍本章判据 | 1002 | [`skill-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 泛化不是模型的属性，是数据与假设的私下约定 · 提示词 | — | 920 | [`prompt-01-xulun.md`](../departments/07-zhineng/16-jiqi-xuexi/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 泛化不是模型的属性，是数据与假设的私下约定 | 泛化不是模型的属性，是数据与假设的私下约定——按「把一个「学习」问题写成四件东西 → 训练误差与泛化误差：两个不同的量 → 归纳偏好：算法必须偏心，而且偏心要写出来 → NFL 定理：一句被引用得最多、理解得最少的话」走一遍本章判据 | 808 | [`skill-xulun.md`](../departments/07-zhineng/16-jiqi-xuexi/chapters/01-xulun/outputs/skill-xulun.md) |
-| prompt | 绪论 · 提示词 | — | 442 | [`prompt-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
-| skill | 绪论 | 绪论——按「运动 → 内脏 → 脉管与内分泌 → 神经：由支架到内脏，再到支配」走一遍本章判据 | 365 | [`skill-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得 · 提示词 | — | 1049 | [`prompt-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
+| skill | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得 | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得——按「定义的第一句就带了限制：只写「类别与关系」 → 从细胞到系统：九大系统是一条由支架到支配的链 → 分科与材料：同一批结构的几种看法 → 姿势、轴与面：全书共用的坐标系」走一遍本章判据 | 931 | [`skill-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链 · 提示词 | — | 901 | [`prompt-01-xulun.md`](../departments/09-jichu/04-yixue-shengwu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链 | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链——按「这门课真正教的是「分层」，不是「名词」 → 三个判据，构成一条可证伪的链 → 16 章有两次转折，不是十六个抽屉 → 每章只回答四个问题」走一遍本章判据 | 781 | [`skill-xulun.md`](../departments/09-jichu/04-yixue-shengwu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 绪论：把「稳态」写成一条可检查的回路 · 提示词 | — | 856 | [`prompt-xulun.md`](../departments/09-jichu/06-shengli-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
@@ -1524,8 +1524,8 @@
 | skill | 绪论 | 绪论——按「层次 → 通道 → 间隙 → 毗邻：由浅入深地读一个局部」走一遍本章判据 | 359 | [`skill-xulun.md`](../departments/09-jichu/08-jubu-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 绪论：一门学科先要学会「怎么描述」 · 提示词 | — | 897 | [`prompt-xulun.md`](../departments/09-jichu/10-bingli-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
 | skill | 绪论：一门学科先要学会「怎么描述」 | 绪论：一门学科先要学会「怎么描述」——按「第一句话不是定义，是一份分工 → 四节十二单元的笔墨，与从原因到临床的五类内容 → 发展简史：观察单位一步步下沉 → 三个观察层次：不是三选一，是三段路」走一遍本章判据 | 789 | [`skill-xulun.md`](../departments/09-jichu/10-bingli-xue/chapters/01-xulun/outputs/skill-xulun.md) |
-| prompt | 流行病学绪论 · 提示词 | — | 463 | [`prompt-01-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 流行病学绪论 | 流行病学绪论——按「描述（分布与测量）→ 分析（病例对照与队列）→ 推断（因果与偏倚）→ 应用（监测与循证）」走一遍本章判据 | 382 | [`skill-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 流行病学先问人群里有多少人发病，再问某个病人为什么病 · 提示词 | — | 1038 | [`prompt-01-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
+| skill | 流行病学先问人群里有多少人发病，再问某个病人为什么病 | 流行病学先问人群里有多少人发病，再问某个病人为什么病——按「定义的三层限制：人群、分布、防制 → 四项任务是一条不能跳步的链 → 方法的分类只看两条线：谁施加干预、有没有比较组 → 同一批数字，三种问法：率、比、比例与三个关联指标」走一遍本章判据 | 921 | [`skill-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 
 #### 第 2 章 · 月经不是每月一次出血，而是一台四段换挡的发动机
 
@@ -2192,12 +2192,12 @@
 | skill | 神志病没有化验单，判据只能从「看和问」里长出来 | 神志病没有化验单，判据只能从「看和问」里长出来——按「这门学科的对象是「神」的失序，不是「脑」的病灶 → 7 项观察，3 项靠自述，4 项不靠 → 三项同现才算神志病，单项一律不算 → 能做什么，以及什么时候必须停手」走一遍本章判据 | 667 | [`skill-01-xulun.md`](../departments/01-zhongyi/20-zhongyi-jingshenbing-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 用本章内容做一件事：绪论 | — | 406 | [`prompt-01-xulun.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 绪论 | 用《临床中药学》第 1 章「绪论」的单元层做可核对的教学材料。 | 502 | [`skill-01-xulun.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/01-xulun/outputs/skill-01-xulun.md) |
-| prompt | 绪论 · 提示词 | — | 444 | [`prompt-01-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 绪论 | 绪论——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 369 | [`skill-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 绪论不是开场白：它划定针灸学的边界、来路与读法 · 提示词 | — | 1115 | [`prompt-01-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
+| skill | 绪论不是开场白：它划定针灸学的边界、来路与读法 | 绪论不是开场白：它划定针灸学的边界、来路与读法——按「篇幅账：一半给历史，三分之一给定义 → 两个起源各有物证：砭石在石，灸火在火 → 三次奠基与四次校订：书目是校出来的，不是列出来的 → 学什么：三块内容与一条练习链」走一遍本章判据 | 1002 | [`skill-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 泛化不是模型的属性，是数据与假设的私下约定 · 提示词 | — | 920 | [`prompt-01-xulun.md`](../departments/07-zhineng/16-jiqi-xuexi/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 泛化不是模型的属性，是数据与假设的私下约定 | 泛化不是模型的属性，是数据与假设的私下约定——按「把一个「学习」问题写成四件东西 → 训练误差与泛化误差：两个不同的量 → 归纳偏好：算法必须偏心，而且偏心要写出来 → NFL 定理：一句被引用得最多、理解得最少的话」走一遍本章判据 | 808 | [`skill-xulun.md`](../departments/07-zhineng/16-jiqi-xuexi/chapters/01-xulun/outputs/skill-xulun.md) |
-| prompt | 绪论 · 提示词 | — | 442 | [`prompt-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
-| skill | 绪论 | 绪论——按「运动 → 内脏 → 脉管与内分泌 → 神经：由支架到内脏，再到支配」走一遍本章判据 | 365 | [`skill-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得 · 提示词 | — | 1049 | [`prompt-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
+| skill | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得 | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得——按「定义的第一句就带了限制：只写「类别与关系」 → 从细胞到系统：九大系统是一条由支架到支配的链 → 分科与材料：同一批结构的几种看法 → 姿势、轴与面：全书共用的坐标系」走一遍本章判据 | 931 | [`skill-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链 · 提示词 | — | 901 | [`prompt-01-xulun.md`](../departments/09-jichu/04-yixue-shengwu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链 | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链——按「这门课真正教的是「分层」，不是「名词」 → 三个判据，构成一条可证伪的链 → 16 章有两次转折，不是十六个抽屉 → 每章只回答四个问题」走一遍本章判据 | 781 | [`skill-xulun.md`](../departments/09-jichu/04-yixue-shengwu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 绪论：把「稳态」写成一条可检查的回路 · 提示词 | — | 856 | [`prompt-xulun.md`](../departments/09-jichu/06-shengli-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
@@ -2208,8 +2208,8 @@
 | skill | 绪论 | 绪论——按「层次 → 通道 → 间隙 → 毗邻：由浅入深地读一个局部」走一遍本章判据 | 359 | [`skill-xulun.md`](../departments/09-jichu/08-jubu-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 绪论：一门学科先要学会「怎么描述」 · 提示词 | — | 897 | [`prompt-xulun.md`](../departments/09-jichu/10-bingli-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
 | skill | 绪论：一门学科先要学会「怎么描述」 | 绪论：一门学科先要学会「怎么描述」——按「第一句话不是定义，是一份分工 → 四节十二单元的笔墨，与从原因到临床的五类内容 → 发展简史：观察单位一步步下沉 → 三个观察层次：不是三选一，是三段路」走一遍本章判据 | 789 | [`skill-xulun.md`](../departments/09-jichu/10-bingli-xue/chapters/01-xulun/outputs/skill-xulun.md) |
-| prompt | 流行病学绪论 · 提示词 | — | 463 | [`prompt-01-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 流行病学绪论 | 流行病学绪论——按「描述（分布与测量）→ 分析（病例对照与队列）→ 推断（因果与偏倚）→ 应用（监测与循证）」走一遍本章判据 | 382 | [`skill-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 流行病学先问人群里有多少人发病，再问某个病人为什么病 · 提示词 | — | 1038 | [`prompt-01-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
+| skill | 流行病学先问人群里有多少人发病，再问某个病人为什么病 | 流行病学先问人群里有多少人发病，再问某个病人为什么病——按「定义的三层限制：人群、分布、防制 → 四项任务是一条不能跳步的链 → 方法的分类只看两条线：谁施加干预、有没有比较组 → 同一批数字，三种问法：率、比、比例与三个关联指标」走一遍本章判据 | 921 | [`skill-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 
 #### 第 2 章 · 邪盛正衰不是一句断言，是一条能读出方向的轴
 
@@ -2221,10 +2221,10 @@
 | skill | 邪盛正衰不是一句断言，是一条能读出方向的轴 | 邪盛正衰不是一句断言，是一条能读出方向的轴——按「病因的四条入口：问「从哪里进来的」，不问「叫什么病」 → 病机：三件事同时发生，闭与脱是同一过程的两端 → 辨证：先分层，再分证 → 治则的排序：急则治标不是口号，是排班」走一遍本章判据 | 662 | [`skill-02-lilun-jichu.md`](../departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/02-lilun-jichu/outputs/skill-02-lilun-jichu.md) |
 | prompt | 心与脑争了两千年，争的其实是「谁主事」与「谁供血」 · 提示词 | — | 781 | [`prompt-02-lilun-jichu.md`](../departments/01-zhongyi/20-zhongyi-jingshenbing-xue/chapters/02-lilun-jichu/outputs/prompt-02-lilun-jichu.md) |
 | skill | 心与脑争了两千年，争的其实是「谁主事」与「谁供血」 | 心与脑争了两千年，争的其实是「谁主事」与「谁供血」——按「两说的来历：一条从「君主」出发，一条从「髓海」出发 → 8 项观察：4 项指脑，3 项指心，1 项必须合看 → 成组判据：先定虚实，再定在气、痰、瘀、火哪一层 → 干预动作：三法各有边界，停止条件比适应证更硬」走一遍本章判据 | 669 | [`skill-02-lilun-jichu.md`](../departments/01-zhongyi/20-zhongyi-jingshenbing-xue/chapters/02-lilun-jichu/outputs/skill-02-lilun-jichu.md) |
-| prompt | 理论基础与修炼要素 · 提示词 | — | 484 | [`prompt-02-lilun-jichu.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/02-lilun-jichu/outputs/prompt-02-lilun-jichu.md) |
-| skill | 理论基础与修炼要素 | 理论基础与修炼要素——按「概论史 → 理论与三调 → 偏差防治 → 静功动功 → 太极与健身气功 → 辨证施功 → 研究与治未病」走一遍本章判据 | 397 | [`skill-lilun-jichu.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/02-lilun-jichu/outputs/skill-lilun-jichu.md) |
-| prompt | 用本章内容做一件事：推拿功法的理论基础 | — | 418 | [`prompt-02-lilun-jichu.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/02-lilun-jichu/outputs/prompt-02-lilun-jichu.md) |
-| skill | 推拿功法的理论基础 | 用《推拿功法学》第 2 章「推拿功法的理论基础」的单元层做可核对的教学材料。 | 509 | [`skill-02-lilun-jichu.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/02-lilun-jichu/outputs/skill-02-lilun-jichu.md) |
+| prompt | 调息写得最多，不等于调息最要紧 · 提示词 | — | 847 | [`prompt-02-lilun-jichu.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/02-lilun-jichu/outputs/prompt-02-lilun-jichu.md) |
+| skill | 调息写得最多，不等于调息最要紧 | 调息写得最多，不等于调息最要紧——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 746 | [`skill-lilun-jichu.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/02-lilun-jichu/outputs/skill-lilun-jichu.md) |
+| prompt | 理论给的是练功的说法，不是练功的做法 · 提示词 | — | 1048 | [`prompt-02-lilun-jichu.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/02-lilun-jichu/outputs/prompt-02-lilun-jichu.md) |
+| skill | 理论给的是练功的说法，不是练功的做法 | 理论给的是练功的说法，不是练功的做法——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 944 | [`skill-02-lilun-jichu.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/02-lilun-jichu/outputs/skill-02-lilun-jichu.md) |
 | prompt | 运动调的不是肌肉，是气机的升降出入 · 提示词 | — | 900 | [`prompt-02-lilun-jichu.md`](../departments/04-gushang/01-zhongyi-yundong-xue/chapters/02-lilun-jichu/outputs/prompt-02-lilun-jichu.md) |
 | skill | 运动调的不是肌肉，是气机的升降出入 | 运动调的不是肌肉，是气机的升降出入——按「形、气、神：三个层次，三种失败 → 五脏各主一形：分工表与它的边界 → 气血要动，但不能过用 → 经络与关节：为什么「活动关节」等于「行气血」」走一遍本章判据 | 797 | [`skill-lilun-jichu.md`](../departments/04-gushang/01-zhongyi-yundong-xue/chapters/02-lilun-jichu/outputs/skill-lilun-jichu.md) |
 | prompt | 阴阳五行不是哲学装饰，是护理观察里最省事的两把尺 · 提示词 | — | 693 | [`prompt-02-lilun-jichu.md`](../departments/05-huli/24-zhongyi-huli-xue/chapters/02-lilun-jichu/outputs/prompt-02-lilun-jichu.md) |
@@ -2332,8 +2332,8 @@
 | --- | --- | --- | :-: | --- |
 | prompt | 骨病学的门槛不在辨证，而在先把「病」从「伤」里择出来 · 提示词 | — | 742 | [`prompt-01-gaishu-yuanliu.md`](../departments/01-zhongyi/18-zhongyi-gubing-xue/chapters/01-gaishu-yuanliu/outputs/prompt-01-gaishu-yuanliu.md) |
 | skill | 骨病学的门槛不在辨证，而在先把「病」从「伤」里择出来 | 骨病学的门槛不在辨证，而在先把「病」从「伤」里择出来——按「边界不在分类表上，在因果链上 → 采集项：四栏，缺一栏就不算问完 → 成组判据与三条红线 → 外治与固定：先划禁区，再谈手法」走一遍本章判据 | 633 | [`skill-01-gaishu-yuanliu.md`](../departments/01-zhongyi/18-zhongyi-gubing-xue/chapters/01-gaishu-yuanliu/outputs/skill-01-gaishu-yuanliu.md) |
-| prompt | 针法灸法概论与源流 · 提示词 | — | 488 | [`prompt-01-gaishu-yuanliu.md`](../departments/03-zhenjiu/07-cifa-jiufa-xue/chapters/01-gaishu-yuanliu/outputs/prompt-01-gaishu-yuanliu.md) |
-| skill | 针法灸法概论与源流 | 针法灸法概论与源流——按「概论源流 → 毫针刺法 → 内经难经 → 金针赋针灸大成 → 灸法 → 特种针法 → 微针系统 → 电针穴位注射 → 埋线磁疗激光 → 安全与数字化」走一遍本章判据 | 408 | [`skill-gaishu-yuanliu.md`](../departments/03-zhenjiu/07-cifa-jiufa-xue/chapters/01-gaishu-yuanliu/outputs/skill-gaishu-yuanliu.md) |
+| prompt | 针与灸不是两门手艺，而是同一套刺激量学的两种实现 · 提示词 | — | 916 | [`prompt-01-gaishu-yuanliu.md`](../departments/03-zhenjiu/07-cifa-jiufa-xue/chapters/01-gaishu-yuanliu/outputs/prompt-01-gaishu-yuanliu.md) |
+| skill | 针与灸不是两门手艺，而是同一套刺激量学的两种实现 | 针与灸不是两门手艺，而是同一套刺激量学的两种实现——按「两条技术线共用一个变量：刺激量 → 源流不是年表，是一部刺激方式的替换史 → 九针给的是层次表，不是九件古董 → 术语转译：每个古名都要对上一个今天做得出动作的描述」走一遍本章判据 | 809 | [`skill-gaishu-yuanliu.md`](../departments/03-zhenjiu/07-cifa-jiufa-xue/chapters/01-gaishu-yuanliu/outputs/skill-gaishu-yuanliu.md) |
 
 #### 第 2 章 · 「肾主骨」要落到三条可测的轴上，否则它只是一个结论
 
@@ -2458,12 +2458,12 @@
 | skill | 神志病没有化验单，判据只能从「看和问」里长出来 | 神志病没有化验单，判据只能从「看和问」里长出来——按「这门学科的对象是「神」的失序，不是「脑」的病灶 → 7 项观察，3 项靠自述，4 项不靠 → 三项同现才算神志病，单项一律不算 → 能做什么，以及什么时候必须停手」走一遍本章判据 | 667 | [`skill-01-xulun.md`](../departments/01-zhongyi/20-zhongyi-jingshenbing-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 用本章内容做一件事：绪论 | — | 406 | [`prompt-01-xulun.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 绪论 | 用《临床中药学》第 1 章「绪论」的单元层做可核对的教学材料。 | 502 | [`skill-01-xulun.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/01-xulun/outputs/skill-01-xulun.md) |
-| prompt | 绪论 · 提示词 | — | 444 | [`prompt-01-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 绪论 | 绪论——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 369 | [`skill-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 绪论不是开场白：它划定针灸学的边界、来路与读法 · 提示词 | — | 1115 | [`prompt-01-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
+| skill | 绪论不是开场白：它划定针灸学的边界、来路与读法 | 绪论不是开场白：它划定针灸学的边界、来路与读法——按「篇幅账：一半给历史，三分之一给定义 → 两个起源各有物证：砭石在石，灸火在火 → 三次奠基与四次校订：书目是校出来的，不是列出来的 → 学什么：三块内容与一条练习链」走一遍本章判据 | 1002 | [`skill-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 泛化不是模型的属性，是数据与假设的私下约定 · 提示词 | — | 920 | [`prompt-01-xulun.md`](../departments/07-zhineng/16-jiqi-xuexi/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 泛化不是模型的属性，是数据与假设的私下约定 | 泛化不是模型的属性，是数据与假设的私下约定——按「把一个「学习」问题写成四件东西 → 训练误差与泛化误差：两个不同的量 → 归纳偏好：算法必须偏心，而且偏心要写出来 → NFL 定理：一句被引用得最多、理解得最少的话」走一遍本章判据 | 808 | [`skill-xulun.md`](../departments/07-zhineng/16-jiqi-xuexi/chapters/01-xulun/outputs/skill-xulun.md) |
-| prompt | 绪论 · 提示词 | — | 442 | [`prompt-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
-| skill | 绪论 | 绪论——按「运动 → 内脏 → 脉管与内分泌 → 神经：由支架到内脏，再到支配」走一遍本章判据 | 365 | [`skill-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得 · 提示词 | — | 1049 | [`prompt-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
+| skill | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得 | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得——按「定义的第一句就带了限制：只写「类别与关系」 → 从细胞到系统：九大系统是一条由支架到支配的链 → 分科与材料：同一批结构的几种看法 → 姿势、轴与面：全书共用的坐标系」走一遍本章判据 | 931 | [`skill-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链 · 提示词 | — | 901 | [`prompt-01-xulun.md`](../departments/09-jichu/04-yixue-shengwu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链 | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链——按「这门课真正教的是「分层」，不是「名词」 → 三个判据，构成一条可证伪的链 → 16 章有两次转折，不是十六个抽屉 → 每章只回答四个问题」走一遍本章判据 | 781 | [`skill-xulun.md`](../departments/09-jichu/04-yixue-shengwu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 绪论：把「稳态」写成一条可检查的回路 · 提示词 | — | 856 | [`prompt-xulun.md`](../departments/09-jichu/06-shengli-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
@@ -2474,8 +2474,8 @@
 | skill | 绪论 | 绪论——按「层次 → 通道 → 间隙 → 毗邻：由浅入深地读一个局部」走一遍本章判据 | 359 | [`skill-xulun.md`](../departments/09-jichu/08-jubu-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 绪论：一门学科先要学会「怎么描述」 · 提示词 | — | 897 | [`prompt-xulun.md`](../departments/09-jichu/10-bingli-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
 | skill | 绪论：一门学科先要学会「怎么描述」 | 绪论：一门学科先要学会「怎么描述」——按「第一句话不是定义，是一份分工 → 四节十二单元的笔墨，与从原因到临床的五类内容 → 发展简史：观察单位一步步下沉 → 三个观察层次：不是三选一，是三段路」走一遍本章判据 | 789 | [`skill-xulun.md`](../departments/09-jichu/10-bingli-xue/chapters/01-xulun/outputs/skill-xulun.md) |
-| prompt | 流行病学绪论 · 提示词 | — | 463 | [`prompt-01-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 流行病学绪论 | 流行病学绪论——按「描述（分布与测量）→ 分析（病例对照与队列）→ 推断（因果与偏倚）→ 应用（监测与循证）」走一遍本章判据 | 382 | [`skill-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 流行病学先问人群里有多少人发病，再问某个病人为什么病 · 提示词 | — | 1038 | [`prompt-01-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
+| skill | 流行病学先问人群里有多少人发病，再问某个病人为什么病 | 流行病学先问人群里有多少人发病，再问某个病人为什么病——按「定义的三层限制：人群、分布、防制 → 四项任务是一条不能跳步的链 → 方法的分类只看两条线：谁施加干预、有没有比较组 → 同一批数字，三种问法：率、比、比例与三个关联指标」走一遍本章判据 | 921 | [`skill-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 
 #### 第 2 章 · 发展简史：从「养老」到「老年病学」
 
@@ -2600,12 +2600,12 @@
 | skill | 神志病没有化验单，判据只能从「看和问」里长出来 | 神志病没有化验单，判据只能从「看和问」里长出来——按「这门学科的对象是「神」的失序，不是「脑」的病灶 → 7 项观察，3 项靠自述，4 项不靠 → 三项同现才算神志病，单项一律不算 → 能做什么，以及什么时候必须停手」走一遍本章判据 | 667 | [`skill-01-xulun.md`](../departments/01-zhongyi/20-zhongyi-jingshenbing-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 用本章内容做一件事：绪论 | — | 406 | [`prompt-01-xulun.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 绪论 | 用《临床中药学》第 1 章「绪论」的单元层做可核对的教学材料。 | 502 | [`skill-01-xulun.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/01-xulun/outputs/skill-01-xulun.md) |
-| prompt | 绪论 · 提示词 | — | 444 | [`prompt-01-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 绪论 | 绪论——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 369 | [`skill-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 绪论不是开场白：它划定针灸学的边界、来路与读法 · 提示词 | — | 1115 | [`prompt-01-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
+| skill | 绪论不是开场白：它划定针灸学的边界、来路与读法 | 绪论不是开场白：它划定针灸学的边界、来路与读法——按「篇幅账：一半给历史，三分之一给定义 → 两个起源各有物证：砭石在石，灸火在火 → 三次奠基与四次校订：书目是校出来的，不是列出来的 → 学什么：三块内容与一条练习链」走一遍本章判据 | 1002 | [`skill-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 泛化不是模型的属性，是数据与假设的私下约定 · 提示词 | — | 920 | [`prompt-01-xulun.md`](../departments/07-zhineng/16-jiqi-xuexi/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 泛化不是模型的属性，是数据与假设的私下约定 | 泛化不是模型的属性，是数据与假设的私下约定——按「把一个「学习」问题写成四件东西 → 训练误差与泛化误差：两个不同的量 → 归纳偏好：算法必须偏心，而且偏心要写出来 → NFL 定理：一句被引用得最多、理解得最少的话」走一遍本章判据 | 808 | [`skill-xulun.md`](../departments/07-zhineng/16-jiqi-xuexi/chapters/01-xulun/outputs/skill-xulun.md) |
-| prompt | 绪论 · 提示词 | — | 442 | [`prompt-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
-| skill | 绪论 | 绪论——按「运动 → 内脏 → 脉管与内分泌 → 神经：由支架到内脏，再到支配」走一遍本章判据 | 365 | [`skill-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得 · 提示词 | — | 1049 | [`prompt-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
+| skill | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得 | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得——按「定义的第一句就带了限制：只写「类别与关系」 → 从细胞到系统：九大系统是一条由支架到支配的链 → 分科与材料：同一批结构的几种看法 → 姿势、轴与面：全书共用的坐标系」走一遍本章判据 | 931 | [`skill-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链 · 提示词 | — | 901 | [`prompt-01-xulun.md`](../departments/09-jichu/04-yixue-shengwu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链 | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链——按「这门课真正教的是「分层」，不是「名词」 → 三个判据，构成一条可证伪的链 → 16 章有两次转折，不是十六个抽屉 → 每章只回答四个问题」走一遍本章判据 | 781 | [`skill-xulun.md`](../departments/09-jichu/04-yixue-shengwu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 绪论：把「稳态」写成一条可检查的回路 · 提示词 | — | 856 | [`prompt-xulun.md`](../departments/09-jichu/06-shengli-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
@@ -2616,8 +2616,8 @@
 | skill | 绪论 | 绪论——按「层次 → 通道 → 间隙 → 毗邻：由浅入深地读一个局部」走一遍本章判据 | 359 | [`skill-xulun.md`](../departments/09-jichu/08-jubu-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 绪论：一门学科先要学会「怎么描述」 · 提示词 | — | 897 | [`prompt-xulun.md`](../departments/09-jichu/10-bingli-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
 | skill | 绪论：一门学科先要学会「怎么描述」 | 绪论：一门学科先要学会「怎么描述」——按「第一句话不是定义，是一份分工 → 四节十二单元的笔墨，与从原因到临床的五类内容 → 发展简史：观察单位一步步下沉 → 三个观察层次：不是三选一，是三段路」走一遍本章判据 | 789 | [`skill-xulun.md`](../departments/09-jichu/10-bingli-xue/chapters/01-xulun/outputs/skill-xulun.md) |
-| prompt | 流行病学绪论 · 提示词 | — | 463 | [`prompt-01-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 流行病学绪论 | 流行病学绪论——按「描述（分布与测量）→ 分析（病例对照与队列）→ 推断（因果与偏倚）→ 应用（监测与循证）」走一遍本章判据 | 382 | [`skill-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 流行病学先问人群里有多少人发病，再问某个病人为什么病 · 提示词 | — | 1038 | [`prompt-01-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
+| skill | 流行病学先问人群里有多少人发病，再问某个病人为什么病 | 流行病学先问人群里有多少人发病，再问某个病人为什么病——按「定义的三层限制：人群、分布、防制 → 四项任务是一条不能跳步的链 → 方法的分类只看两条线：谁施加干预、有没有比较组 → 同一批数字，三种问法：率、比、比例与三个关联指标」走一遍本章判据 | 921 | [`skill-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 
 #### 第 2 章 · 邪盛正衰不是一句断言，是一条能读出方向的轴
 
@@ -2629,10 +2629,10 @@
 | skill | 邪盛正衰不是一句断言，是一条能读出方向的轴 | 邪盛正衰不是一句断言，是一条能读出方向的轴——按「病因的四条入口：问「从哪里进来的」，不问「叫什么病」 → 病机：三件事同时发生，闭与脱是同一过程的两端 → 辨证：先分层，再分证 → 治则的排序：急则治标不是口号，是排班」走一遍本章判据 | 662 | [`skill-02-lilun-jichu.md`](../departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/02-lilun-jichu/outputs/skill-02-lilun-jichu.md) |
 | prompt | 心与脑争了两千年，争的其实是「谁主事」与「谁供血」 · 提示词 | — | 781 | [`prompt-02-lilun-jichu.md`](../departments/01-zhongyi/20-zhongyi-jingshenbing-xue/chapters/02-lilun-jichu/outputs/prompt-02-lilun-jichu.md) |
 | skill | 心与脑争了两千年，争的其实是「谁主事」与「谁供血」 | 心与脑争了两千年，争的其实是「谁主事」与「谁供血」——按「两说的来历：一条从「君主」出发，一条从「髓海」出发 → 8 项观察：4 项指脑，3 项指心，1 项必须合看 → 成组判据：先定虚实，再定在气、痰、瘀、火哪一层 → 干预动作：三法各有边界，停止条件比适应证更硬」走一遍本章判据 | 669 | [`skill-02-lilun-jichu.md`](../departments/01-zhongyi/20-zhongyi-jingshenbing-xue/chapters/02-lilun-jichu/outputs/skill-02-lilun-jichu.md) |
-| prompt | 理论基础与修炼要素 · 提示词 | — | 484 | [`prompt-02-lilun-jichu.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/02-lilun-jichu/outputs/prompt-02-lilun-jichu.md) |
-| skill | 理论基础与修炼要素 | 理论基础与修炼要素——按「概论史 → 理论与三调 → 偏差防治 → 静功动功 → 太极与健身气功 → 辨证施功 → 研究与治未病」走一遍本章判据 | 397 | [`skill-lilun-jichu.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/02-lilun-jichu/outputs/skill-lilun-jichu.md) |
-| prompt | 用本章内容做一件事：推拿功法的理论基础 | — | 418 | [`prompt-02-lilun-jichu.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/02-lilun-jichu/outputs/prompt-02-lilun-jichu.md) |
-| skill | 推拿功法的理论基础 | 用《推拿功法学》第 2 章「推拿功法的理论基础」的单元层做可核对的教学材料。 | 509 | [`skill-02-lilun-jichu.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/02-lilun-jichu/outputs/skill-02-lilun-jichu.md) |
+| prompt | 调息写得最多，不等于调息最要紧 · 提示词 | — | 847 | [`prompt-02-lilun-jichu.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/02-lilun-jichu/outputs/prompt-02-lilun-jichu.md) |
+| skill | 调息写得最多，不等于调息最要紧 | 调息写得最多，不等于调息最要紧——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 746 | [`skill-lilun-jichu.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/02-lilun-jichu/outputs/skill-lilun-jichu.md) |
+| prompt | 理论给的是练功的说法，不是练功的做法 · 提示词 | — | 1048 | [`prompt-02-lilun-jichu.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/02-lilun-jichu/outputs/prompt-02-lilun-jichu.md) |
+| skill | 理论给的是练功的说法，不是练功的做法 | 理论给的是练功的说法，不是练功的做法——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 944 | [`skill-02-lilun-jichu.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/02-lilun-jichu/outputs/skill-02-lilun-jichu.md) |
 | prompt | 运动调的不是肌肉，是气机的升降出入 · 提示词 | — | 900 | [`prompt-02-lilun-jichu.md`](../departments/04-gushang/01-zhongyi-yundong-xue/chapters/02-lilun-jichu/outputs/prompt-02-lilun-jichu.md) |
 | skill | 运动调的不是肌肉，是气机的升降出入 | 运动调的不是肌肉，是气机的升降出入——按「形、气、神：三个层次，三种失败 → 五脏各主一形：分工表与它的边界 → 气血要动，但不能过用 → 经络与关节：为什么「活动关节」等于「行气血」」走一遍本章判据 | 797 | [`skill-lilun-jichu.md`](../departments/04-gushang/01-zhongyi-yundong-xue/chapters/02-lilun-jichu/outputs/skill-lilun-jichu.md) |
 | prompt | 阴阳五行不是哲学装饰，是护理观察里最省事的两把尺 · 提示词 | — | 693 | [`prompt-02-lilun-jichu.md`](../departments/05-huli/24-zhongyi-huli-xue/chapters/02-lilun-jichu/outputs/prompt-02-lilun-jichu.md) |
@@ -2657,8 +2657,8 @@
 | --- | --- | --- | :-: | --- |
 | prompt | 精神检查是主证，量表只是刻度，不是尺子本身 · 提示词 | — | 755 | [`prompt-04-zhenduan.md`](../departments/01-zhongyi/20-zhongyi-jingshenbing-xue/chapters/04-zhenduan/outputs/prompt-04-zhenduan.md) |
 | skill | 精神检查是主证，量表只是刻度，不是尺子本身 | 精神检查是主证，量表只是刻度，不是尺子本身——按「三层证据，各有各的权限 → 一张可复核的精神检查记录 → 成组判据：先别阴阳，次定脏腑，再审痰火瘀虚 → 干预动作与停止条件」走一遍本章判据 | 644 | [`skill-04-zhenduan.md`](../departments/01-zhongyi/20-zhongyi-jingshenbing-xue/chapters/04-zhenduan/outputs/skill-04-zhenduan.md) |
-| prompt | 耳穴诊断 · 提示词 | — | 471 | [`prompt-04-zhenduan.md`](../departments/03-zhenjiu/12-erxue-zhenduan-xue/chapters/04-zhenduan/outputs/prompt-04-zhenduan.md) |
-| skill | 耳穴诊断 | 耳穴诊断——按「耳穴诊治的源流与理论 → 耳廓解剖与分区 → 耳穴定位 → 耳穴诊断 → 耳穴治疗方法 → 耳穴在内科的应用 → 耳穴在妇儿与五官的应用 → 耳穴操作安全与规范」走一遍本章判据 | 397 | [`skill-zhenduan.md`](../departments/03-zhenjiu/12-erxue-zhenduan-xue/chapters/04-zhenduan/outputs/skill-zhenduan.md) |
+| prompt | 望、压、电测查的是同一件事的三个通道，没有一条能单独定病名 · 提示词 | — | 932 | [`prompt-04-zhenduan.md`](../departments/03-zhenjiu/12-erxue-zhenduan-xue/chapters/04-zhenduan/outputs/prompt-04-zhenduan.md) |
+| skill | 望、压、电测查的是同一件事的三个通道，没有一条能单独定病名 | 望、压、电测查的是同一件事的三个通道，没有一条能单独定病名——按「"必先诊脉"：诊断发生在刺激之前 → 望诊：看的是形态与颜色，必须在自然光下，只描述不判病 → 压痛法：唯一由患者亲口确认的通道 → 电测：能测出电阻，测不出病名」走一遍本章判据 | 814 | [`skill-zhenduan.md`](../departments/03-zhenjiu/12-erxue-zhenduan-xue/chapters/04-zhenduan/outputs/skill-zhenduan.md) |
 
 #### 第 5 章 · 治神志病的第一味药不是方子，是「先安全，后辨证」
 
@@ -2883,8 +2883,8 @@
 | --- | --- | --- | :-: | --- |
 | prompt | 出科考核考的不是记得多少，是判断留没留下痕迹 · 提示词 | — | 751 | [`prompt-06-chuke-kaohe.md`](../departments/01-zhongyi/21-zhongyi-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/prompt-06-chuke-kaohe.md) |
 | skill | 出科考核考的不是记得多少，是判断留没留下痕迹 | 出科考核考的不是记得多少，是判断留没留下痕迹——按「出科三问 → 结构化病历的十四个字段 → 复盘四问与交接时限 → 判据：达标与不达标两列【教学设定】」走一遍本章判据 | 642 | [`skill-06-chuke-kaohe.md`](../departments/01-zhongyi/21-zhongyi-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/skill-06-chuke-kaohe.md) |
-| prompt | 出科考核与病例复盘 · 提示词 | — | 458 | [`prompt-06-chuke-kaohe.md`](../departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/prompt-06-chuke-kaohe.md) |
-| skill | 出科考核与病例复盘 | 出科考核与病例复盘——按「门诊接诊 → 病种轮转 → 灸罐处置 → 推拿科 → 出科考核」走一遍本章判据 | 368 | [`skill-chuke-kaohe.md`](../departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/skill-chuke-kaohe.md) |
+| prompt | 出科考核要能指到环节，指不到环节的复盘等于没复盘 · 提示词 | — | 889 | [`prompt-06-chuke-kaohe.md`](../departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/prompt-06-chuke-kaohe.md) |
+| skill | 出科考核要能指到环节，指不到环节的复盘等于没复盘 | 出科考核要能指到环节，指不到环节的复盘等于没复盘——按「一节 19,259 字，没有出现一次分数 → 复盘的第一问不是"对不对"，是"哪一步" → 一句合格的复盘长什么样 → 不给分，那给什么」走一遍本章判据 | 778 | [`skill-chuke-kaohe.md`](../departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/skill-chuke-kaohe.md) |
 | prompt | 出科考核：考的不是背，是你能不能把一次接诊从头讲到尾 · 提示词 | — | 701 | [`prompt-chuke-kaohe.md`](../departments/04-gushang/16-gushang-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/prompt-chuke-kaohe.md) |
 | skill | 出科考核：考的不是背，是你能不能把一次接诊从头讲到尾 | 出科考核：考的不是背，是你能不能把一次接诊从头讲到尾——按「考核的五项结构 → 病例汇报的四问 → 病历与知情同意：自查六个字段 → 不良事件复盘：问五句，不追一个人」走一遍本章判据 | 588 | [`skill-chuke-kaohe.md`](../departments/04-gushang/16-gushang-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/skill-chuke-kaohe.md) |
 | prompt | 出科考的是一例能不能讲透，不是做过多少项 · 提示词 | — | 629 | [`prompt-06-chuke-kaohe.md`](../departments/05-huli/26-huli-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/prompt-06-chuke-kaohe.md) |
@@ -3010,8 +3010,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 缺项填零，量表就成了假分数 · 提示词 | — | 644 | [`prompt-13-gushang-kangfu-pingding.md`](../departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/13-gushang-kangfu-pingding/outputs/prompt-13-gushang-kangfu-pingding.md) |
-| skill | 缺项填零，量表就成了假分数 | 缺项填零，量表就成了假分数——按「命题与数据锚点：先交付包，再交付量表 → 分阶段交付物与分工 → 判据与评分维度【教学设定】 → 记录字段与复算口径」走一遍本章判据 | 550 | [`skill-13-gushang-kangfu-pingding.md`](../departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/13-gushang-kangfu-pingding/outputs/skill-13-gushang-kangfu-pingding.md) |
+| prompt | 缺项填零，量表就成了假分数 · 提示词 | — | 787 | [`prompt-13-gushang-kangfu-pingding.md`](../departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/13-gushang-kangfu-pingding/outputs/prompt-13-gushang-kangfu-pingding.md) |
+| skill | 缺项填零，量表就成了假分数 | 缺项填零，量表就成了假分数——按「命题与数据锚点：先交付包，再交付量表 → 分阶段交付物与分工 → 判据与评分维度【教学设定】 → 记录字段与复算口径」走一遍本章判据 | 693 | [`skill-13-gushang-kangfu-pingding.md`](../departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/13-gushang-kangfu-pingding/outputs/skill-13-gushang-kangfu-pingding.md) |
 
 #### 第 14 章 · 一证多护不是缺陷，是护理评估的常态
 
@@ -3019,8 +3019,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 一证多护不是缺陷，是护理评估的常态 · 提示词 | — | 645 | [`prompt-14-huli-pinggu-diben.md`](../departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/14-huli-pinggu-diben/outputs/prompt-14-huli-pinggu-diben.md) |
-| skill | 一证多护不是缺陷，是护理评估的常态 | 一证多护不是缺陷，是护理评估的常态——按「命题与数据锚点：映射的损失必须显性 → 分阶段交付物与分工 → 判据与评分维度【教学设定】 → 记录字段与复算口径」走一遍本章判据 | 541 | [`skill-14-huli-pinggu-diben.md`](../departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/14-huli-pinggu-diben/outputs/skill-14-huli-pinggu-diben.md) |
+| prompt | 一证多护不是缺陷，是护理评估的常态 · 提示词 | — | 797 | [`prompt-14-huli-pinggu-diben.md`](../departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/14-huli-pinggu-diben/outputs/prompt-14-huli-pinggu-diben.md) |
+| skill | 一证多护不是缺陷，是护理评估的常态 | 一证多护不是缺陷，是护理评估的常态——按「命题与数据锚点：映射的损失必须显性 → 分阶段交付物与分工 → 判据与评分维度【教学设定】 → 记录字段与复算口径」走一遍本章判据 | 693 | [`skill-14-huli-pinggu-diben.md`](../departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/14-huli-pinggu-diben/outputs/skill-14-huli-pinggu-diben.md) |
 
 #### 第 15 章 · 交接班留空不是省事，是把风险留给下一班
 
@@ -3073,8 +3073,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 检索栈能重建，才算编码翻译层 · 提示词 | — | 642 | [`prompt-20-zhineng-icd-jiansuo.md`](../departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/20-zhineng-icd-jiansuo/outputs/prompt-20-zhineng-icd-jiansuo.md) |
-| skill | 检索栈能重建，才算编码翻译层 | 检索栈能重建，才算编码翻译层——按「命题与数据锚点：召回与延迟要一起报 → 分阶段交付物与分工 → 判据与评分维度【教学设定】 → 记录字段与复算口径」走一遍本章判据 | 543 | [`skill-20-zhineng-icd-jiansuo.md`](../departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/20-zhineng-icd-jiansuo/outputs/skill-20-zhineng-icd-jiansuo.md) |
+| prompt | 检索栈能重建，才算编码翻译层 · 提示词 | — | 795 | [`prompt-20-zhineng-icd-jiansuo.md`](../departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/20-zhineng-icd-jiansuo/outputs/prompt-20-zhineng-icd-jiansuo.md) |
+| skill | 检索栈能重建，才算编码翻译层 | 检索栈能重建，才算编码翻译层——按「命题与数据锚点：召回与延迟要一起报 → 分阶段交付物与分工 → 判据与评分维度【教学设定】 → 记录字段与复算口径」走一遍本章判据 | 696 | [`skill-20-zhineng-icd-jiansuo.md`](../departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/20-zhineng-icd-jiansuo/outputs/skill-20-zhineng-icd-jiansuo.md) |
 
 #### 第 21 章 · 换一种坐标表示，近邻集合先要稳住
 
@@ -3082,8 +3082,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 换一种坐标表示，近邻集合先要稳住 · 提示词 | — | 641 | [`prompt-21-zhineng-yuyi-zhangliang.md`](../departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/21-zhineng-yuyi-zhangliang/outputs/prompt-21-zhineng-yuyi-zhangliang.md) |
-| skill | 换一种坐标表示，近邻集合先要稳住 | 换一种坐标表示，近邻集合先要稳住——按「命题与数据锚点：表示换了，邻居不能全换 → 分阶段交付物与分工 → 判据与评分维度【教学设定】 → 记录字段与复算口径」走一遍本章判据 | 544 | [`skill-21-zhineng-yuyi-zhangliang.md`](../departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/21-zhineng-yuyi-zhangliang/outputs/skill-21-zhineng-yuyi-zhangliang.md) |
+| prompt | 换一种坐标表示，近邻集合先要稳住 · 提示词 | — | 778 | [`prompt-21-zhineng-yuyi-zhangliang.md`](../departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/21-zhineng-yuyi-zhangliang/outputs/prompt-21-zhineng-yuyi-zhangliang.md) |
+| skill | 换一种坐标表示，近邻集合先要稳住 | 换一种坐标表示，近邻集合先要稳住——按「命题与数据锚点：表示换了，邻居不能全换 → 分阶段交付物与分工 → 判据与评分维度【教学设定】 → 记录字段与复算口径」走一遍本章判据 | 681 | [`skill-21-zhineng-yuyi-zhangliang.md`](../departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/21-zhineng-yuyi-zhangliang/outputs/skill-21-zhineng-yuyi-zhangliang.md) |
 
 #### 第 22 章 · 只报均值，等于把失败藏进平均里
 
@@ -3091,8 +3091,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 只报均值，等于把失败藏进平均里 · 提示词 | — | 629 | [`prompt-22-zhineng-zhibiao-shibai.md`](../departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/22-zhineng-zhibiao-shibai/outputs/prompt-22-zhineng-zhibiao-shibai.md) |
-| skill | 只报均值，等于把失败藏进平均里 | 只报均值，等于把失败藏进平均里——按「命题与数据锚点：均值是最容易被做漂亮的数 → 分阶段交付物与分工 → 判据与评分维度【教学设定】 → 记录字段与复算口径」走一遍本章判据 | 532 | [`skill-22-zhineng-zhibiao-shibai.md`](../departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/22-zhineng-zhibiao-shibai/outputs/skill-22-zhineng-zhibiao-shibai.md) |
+| prompt | 只报均值，等于把失败藏进平均里 · 提示词 | — | 788 | [`prompt-22-zhineng-zhibiao-shibai.md`](../departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/22-zhineng-zhibiao-shibai/outputs/prompt-22-zhineng-zhibiao-shibai.md) |
+| skill | 只报均值，等于把失败藏进平均里 | 只报均值，等于把失败藏进平均里——按「命题与数据锚点：均值是最容易被做漂亮的数 → 分阶段交付物与分工 → 判据与评分维度【教学设定】 → 记录字段与复算口径」走一遍本章判据 | 691 | [`skill-22-zhineng-zhibiao-shibai.md`](../departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/22-zhineng-zhibiao-shibai/outputs/skill-22-zhineng-zhibiao-shibai.md) |
 
 #### 第 23 章 · 「神疲」写不进字段，就别硬塞进形态
 
@@ -3100,8 +3100,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 「神疲」写不进字段，就别硬塞进形态 · 提示词 | — | 637 | [`prompt-23-wuguan-mianbu-wangzhen.md`](../departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/23-wuguan-mianbu-wangzhen/outputs/prompt-23-wuguan-mianbu-wangzhen.md) |
-| skill | 「神疲」写不进字段，就别硬塞进形态 | 「神疲」写不进字段，就别硬塞进形态——按「命题与数据锚点：先分清可观察与可推断 → 分阶段交付物与分工 → 判据与评分维度【教学设定】 → 记录字段与复算口径」走一遍本章判据 | 538 | [`skill-23-wuguan-mianbu-wangzhen.md`](../departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/23-wuguan-mianbu-wangzhen/outputs/skill-23-wuguan-mianbu-wangzhen.md) |
+| prompt | 「神疲」写不进字段，就别硬塞进形态 · 提示词 | — | 775 | [`prompt-23-wuguan-mianbu-wangzhen.md`](../departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/23-wuguan-mianbu-wangzhen/outputs/prompt-23-wuguan-mianbu-wangzhen.md) |
+| skill | 「神疲」写不进字段，就别硬塞进形态 | 「神疲」写不进字段，就别硬塞进形态——按「命题与数据锚点：先分清可观察与可推断 → 分阶段交付物与分工 → 判据与评分维度【教学设定】 → 记录字段与复算口径」走一遍本章判据 | 676 | [`skill-23-wuguan-mianbu-wangzhen.md`](../departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/23-wuguan-mianbu-wangzhen/outputs/skill-23-wuguan-mianbu-wangzhen.md) |
 
 #### 第 24 章 · 两条筛方路径的差别，用交集与差集说话
 
@@ -3118,8 +3118,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 留空与写「无」，在报表里是两件事 · 提示词 | — | 648 | [`prompt-25-wuguan-guangxue-canliang.md`](../departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/25-wuguan-guangxue-canliang/outputs/prompt-25-wuguan-guangxue-canliang.md) |
-| skill | 留空与写「无」，在报表里是两件事 | 留空与写「无」，在报表里是两件事——按「命题与数据锚点：留空不是「没有值」，是「不知道」 → 分阶段交付物与分工 → 判据与评分维度【教学设定】 → 记录字段与复算口径」走一遍本章判据 | 552 | [`skill-25-wuguan-guangxue-canliang.md`](../departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/25-wuguan-guangxue-canliang/outputs/skill-25-wuguan-guangxue-canliang.md) |
+| prompt | 留空与写「无」，在报表里是两件事 · 提示词 | — | 831 | [`prompt-25-wuguan-guangxue-canliang.md`](../departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/25-wuguan-guangxue-canliang/outputs/prompt-25-wuguan-guangxue-canliang.md) |
+| skill | 留空与写「无」，在报表里是两件事 | 留空与写「无」，在报表里是两件事——按「命题与数据锚点：留空不是「没有值」，是「不知道」 → 分阶段交付物与分工 → 判据与评分维度【教学设定】 → 记录字段与复算口径」走一遍本章判据 | 735 | [`skill-25-wuguan-guangxue-canliang.md`](../departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/25-wuguan-guangxue-canliang/outputs/skill-25-wuguan-guangxue-canliang.md) |
 
 #### 第 26 章 · 最大的底本层，先证明它可被别人复用
 
@@ -3127,8 +3127,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 最大的底本层，先证明它可被别人复用 · 提示词 | — | 628 | [`prompt-26-jichu-bingli-diben.md`](../departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/26-jichu-bingli-diben/outputs/prompt-26-jichu-bingli-diben.md) |
-| skill | 最大的底本层，先证明它可被别人复用 | 最大的底本层，先证明它可被别人复用——按「命题与数据锚点：大不等于可复用 → 分阶段交付物与分工 → 判据与评分维度【教学设定】 → 记录字段与复算口径」走一遍本章判据 | 525 | [`skill-26-jichu-bingli-diben.md`](../departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/26-jichu-bingli-diben/outputs/skill-26-jichu-bingli-diben.md) |
+| prompt | 最大的底本层，先证明它可被别人复用 · 提示词 | — | 778 | [`prompt-26-jichu-bingli-diben.md`](../departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/26-jichu-bingli-diben/outputs/prompt-26-jichu-bingli-diben.md) |
+| skill | 最大的底本层，先证明它可被别人复用 | 最大的底本层，先证明它可被别人复用——按「命题与数据锚点：大不等于可复用 → 分阶段交付物与分工 → 判据与评分维度【教学设定】 → 记录字段与复算口径」走一遍本章判据 | 675 | [`skill-26-jichu-bingli-diben.md`](../departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/26-jichu-bingli-diben/outputs/skill-26-jichu-bingli-diben.md) |
 
 #### 第 27 章 · 一条单元打三个轴，覆盖率就会虚高
 
@@ -3136,8 +3136,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 一条单元打三个轴，覆盖率就会虚高 · 提示词 | — | 613 | [`prompt-27-jichu-bingsheng-jiuzhou.md`](../departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/27-jichu-bingsheng-jiuzhou/outputs/prompt-27-jichu-bingsheng-jiuzhou.md) |
-| skill | 一条单元打三个轴，覆盖率就会虚高 | 一条单元打三个轴，覆盖率就会虚高——按「命题与数据锚点：覆盖与拥挤要一起看 → 分阶段交付物与分工 → 判据与评分维度【教学设定】 → 记录字段与复算口径」走一遍本章判据 | 516 | [`skill-27-jichu-bingsheng-jiuzhou.md`](../departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/27-jichu-bingsheng-jiuzhou/outputs/skill-27-jichu-bingsheng-jiuzhou.md) |
+| prompt | 一条单元打三个轴，覆盖率就会虚高 · 提示词 | — | 745 | [`prompt-27-jichu-bingsheng-jiuzhou.md`](../departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/27-jichu-bingsheng-jiuzhou/outputs/prompt-27-jichu-bingsheng-jiuzhou.md) |
+| skill | 一条单元打三个轴，覆盖率就会虚高 | 一条单元打三个轴，覆盖率就会虚高——按「命题与数据锚点：覆盖与拥挤要一起看 → 分阶段交付物与分工 → 判据与评分维度【教学设定】 → 记录字段与复算口径」走一遍本章判据 | 648 | [`skill-27-jichu-bingsheng-jiuzhou.md`](../departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/27-jichu-bingsheng-jiuzhou/outputs/skill-27-jichu-bingsheng-jiuzhou.md) |
 
 #### 第 28 章 · 正常值没有单位，等于没有参考区间
 
@@ -3145,8 +3145,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 正常值没有单位，等于没有参考区间 · 提示词 | — | 637 | [`prompt-28-jichu-shengli-zhengchangzhi.md`](../departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/28-jichu-shengli-zhengchangzhi/outputs/prompt-28-jichu-shengli-zhengchangzhi.md) |
-| skill | 正常值没有单位，等于没有参考区间 | 正常值没有单位，等于没有参考区间——按「命题与数据锚点：三件齐才算一条 → 分阶段交付物与分工 → 判据与评分维度【教学设定】 → 记录字段与复算口径」走一遍本章判据 | 544 | [`skill-28-jichu-shengli-zhengchangzhi.md`](../departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/28-jichu-shengli-zhengchangzhi/outputs/skill-28-jichu-shengli-zhengchangzhi.md) |
+| prompt | 正常值没有单位，等于没有参考区间 · 提示词 | — | 772 | [`prompt-28-jichu-shengli-zhengchangzhi.md`](../departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/28-jichu-shengli-zhengchangzhi/outputs/prompt-28-jichu-shengli-zhengchangzhi.md) |
+| skill | 正常值没有单位，等于没有参考区间 | 正常值没有单位，等于没有参考区间——按「命题与数据锚点：三件齐才算一条 → 分阶段交付物与分工 → 判据与评分维度【教学设定】 → 记录字段与复算口径」走一遍本章判据 | 679 | [`skill-28-jichu-shengli-zhengchangzhi.md`](../departments/01-zhongyi/22-zhongyi-biye-sheji/chapters/28-jichu-shengli-zhengchangzhi/outputs/skill-28-jichu-shengli-zhengchangzhi.md) |
 
 ## 🌾 中药系
 
@@ -3154,216 +3154,216 @@
 
 > Core · 第 2 学期 · 已产出 14 章
 
-#### 第 1 章 · 中药学的研究对象与性能：四气五味
+#### 第 1 章 · 性能五要素是总论的共用语法，不是任何一味药的取值
 
 `01-zhongyaoxue/chapters/01-xingneng-siqi/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 性能总论清点助手（四气五味章） | — | 971 | [`prompt-xingneng-siqi.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/01-xingneng-siqi/outputs/prompt-xingneng-siqi.md) |
-| skill | xingneng-siqi | 清点中药性能总论（四气五味升降浮沉归经毒性）的口径与篇幅，判断「总论能否当数据源」 | 1025 | [`skill-xingneng-siqi.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/01-xingneng-siqi/outputs/skill-xingneng-siqi.md) |
+| prompt | 性能五要素是总论的共用语法，不是任何一味药的取值 · 提示词 | — | 874 | [`prompt-xingneng-siqi.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/01-xingneng-siqi/outputs/prompt-xingneng-siqi.md) |
+| skill | 性能五要素是总论的共用语法，不是任何一味药的取值 | 性能五要素是总论的共用语法，不是任何一味药的取值——按「辨药采集项：先把六栏立起来，再谈填什么值 → 成组判据：三类数据类型不能混成一张表 → 用药动作与边界 → 记录字段与失效模式」走一遍本章判据 | 768 | [`skill-xingneng-siqi.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/01-xingneng-siqi/outputs/skill-xingneng-siqi.md) |
 
-#### 第 2 章 · 解表药：发散风寒与风热
+#### 第 2 章 · 解表药两节的分界是四气，不是「辛能散」
 
 `01-zhongyaoxue/chapters/02-jiebiaoyao-fengh/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 解表药分节判据助手（风寒 / 风热） | — | 994 | [`prompt-jiebiaoyao-fengh.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/02-jiebiaoyao-fengh/outputs/prompt-jiebiaoyao-fengh.md) |
-| skill | jiebiaoyao-fengh | 用逐药分布检验解表药的分节判据（四气分开、五味分不开），并清点用量区间与特殊煎法 | 1188 | [`skill-jiebiaoyao-fengh.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/02-jiebiaoyao-fengh/outputs/skill-jiebiaoyao-fengh.md) |
+| prompt | 解表药两节的分界是四气，不是「辛能散」 · 提示词 | — | 863 | [`prompt-jiebiaoyao-fengh.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/02-jiebiaoyao-fengh/outputs/prompt-jiebiaoyao-fengh.md) |
+| skill | 解表药两节的分界是四气，不是「辛能散」 | 解表药两节的分界是四气，不是「辛能散」——按「21 味的四栏覆盖 → 辛为什么分不开两节 → 四气：干净的一刀，代价是 7 个空格 → 剂量与规格：药名不带后缀就只是个读音」走一遍本章判据 | 765 | [`skill-jiebiaoyao-fengh.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/02-jiebiaoyao-fengh/outputs/skill-jiebiaoyao-fengh.md) |
 
-#### 第 3 章 · 清热药：泻火、解毒与凉血
+#### 第 3 章 · 清热药的分节依据在功效首词，四气在这里只剩一个值
 
 `01-zhongyaoxue/chapters/03-qingreyao-fenlei/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 清热药分节判据助手（泻火 / 燥湿 / 解毒 / 凉血 / 虚热） | — | 1058 | [`prompt-qingreyao-fenlei.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/03-qingreyao-fenlei/outputs/prompt-qingreyao-fenlei.md) |
-| skill | qingreyao-fenlei | 检验清热药 36 味的字段区分力（四气失效、苦是共性、节名=功效才是判据），并清点用量跨度 | 1381 | [`skill-qingreyao-fenlei.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/03-qingreyao-fenlei/outputs/skill-qingreyao-fenlei.md) |
+| prompt | 清热药的分节依据在功效首词，四气在这里只剩一个值 · 提示词 | — | 894 | [`prompt-qingreyao-fenlei.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/03-qingreyao-fenlei/outputs/prompt-qingreyao-fenlei.md) |
+| skill | 清热药的分节依据在功效首词，四气在这里只剩一个值 | 清热药的分节依据在功效首词，四气在这里只剩一个值——按「五节的体量与覆盖 → 四气：26 条记录只有一个值 → 功效首词：33/36 命中节名 → 五味与归经：苦是共性，归经给的是部位」走一遍本章判据 | 791 | [`skill-qingreyao-fenlei.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/03-qingreyao-fenlei/outputs/skill-qingreyao-fenlei.md) |
 
-#### 第 4 章 · 泻下药与祛湿药：湿邪的三条出口
+#### 第 4 章 · 泻下与祛湿共用「出口」二字，剂量却差六百倍
 
 `01-zhongyaoxue/chapters/04-xiexia-qushi/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 水湿通道分诊器（教学用） | — | 1177 | [`prompt-xiexia-qushi.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/04-xiexia-qushi/outputs/prompt-xiexia-qushi.md) |
-| skill | xiexia-qushi | 把中药条目判进水湿的四条出口（攻/燥/渗/祛风湿），并抽剂量区间与原文毒性，产出一张可排序的通道强度表（只作教学与查证线索） | 1054 | [`skill-xiexia-qushi.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/04-xiexia-qushi/outputs/skill-xiexia-qushi.md) |
+| prompt | 泻下与祛湿共用「出口」二字，剂量却差六百倍 · 提示词 | — | 882 | [`prompt-xiexia-qushi.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/04-xiexia-qushi/outputs/prompt-xiexia-qushi.md) |
+| skill | 泻下与祛湿共用「出口」二字，剂量却差六百倍 | 泻下与祛湿共用「出口」二字，剂量却差六百倍——按「四章十节的结构 → 三条出口：大肠、膀胱、脾 → 毒性跟着「峻猛」走，不跟着「湿」走 → 剂量：0.1g 到 60g，六百倍」走一遍本章判据 | 778 | [`skill-xiexia-qushi.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/04-xiexia-qushi/outputs/skill-xiexia-qushi.md) |
 
-#### 第 5 章 · 温里药与理气药：寒与滞，两条互相垂直的轴
+#### 第 5 章 · 温里往下走、理气横着走，十九条记录里有一条自相矛盾
 
 `01-zhongyaoxue/chapters/05-wenli-liqi/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 寒滞鉴别器（教学用） | — | 1205 | [`prompt-wenli-liqi.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/05-wenli-liqi/outputs/prompt-wenli-liqi.md) |
-| skill | wenli-liqi | 区分「寒」与「滞」两组中药，用四气有序分与归经纵/横比对出组间差异，产出可复核的对照表（只作教学与查证线索） | 1011 | [`skill-wenli-liqi.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/05-wenli-liqi/outputs/skill-wenli-liqi.md) |
+| prompt | 温里往下走、理气横着走，十九条记录里有一条自相矛盾 · 提示词 | — | 872 | [`prompt-wenli-liqi.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/05-wenli-liqi/outputs/prompt-wenli-liqi.md) |
+| skill | 温里往下走、理气横着走，十九条记录里有一条自相矛盾 | 温里往下走、理气横着走，十九条记录里有一条自相矛盾——按「两章的结构：8 + 11 → 气：温里在热侧，理气横跨温平寒 → 归经：一条向下，一条横着走 → 一条自相矛盾的记录，和四味空栏」走一遍本章判据 | 762 | [`skill-wenli-liqi.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/05-wenli-liqi/outputs/skill-wenli-liqi.md) |
 
-#### 第 6 章 · 消食药、驱虫药与止血药：有形之积与离经之血
+#### 第 6 章 · 消食、驱虫、止血共用一条判据：东西该不该留
 
 `01-zhongyaoxue/chapters/06-xiaoshi-zhixue/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 炮制双用法抽取器（教学用） | — | 1133 | [`prompt-xiaoshi-zhixue.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/06-xiaoshi-zhixue/outputs/prompt-xiaoshi-zhixue.md) |
-| skill | xiaoshi-zhixue | 把中药条目按炮制版本拆成（药名+炮制）记录，标出方向相反的双用法药，并核对剂量窗口与给药形式（只作教学与查证线索） | 1059 | [`skill-xiaoshi-zhixue.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/06-xiaoshi-zhixue/outputs/skill-xiaoshi-zhixue.md) |
+| prompt | 消食、驱虫、止血共用一条判据：东西该不该留 · 提示词 | — | 995 | [`prompt-xiaoshi-zhixue.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/06-xiaoshi-zhixue/outputs/prompt-xiaoshi-zhixue.md) |
+| skill | 消食、驱虫、止血共用一条判据：东西该不该留 | 消食、驱虫、止血共用一条判据：东西该不该留——按「24 味、6 节、2,956 字：分界线不在药，在「该不该留」 → 气：温 7、平 7，两组药共用「平」这一档 → 味与归经：甘苦并列，肝 15 条压过脾 11 → 四处空栏、9 处重号：底本的两类缺陷」走一遍本章判据 | 893 | [`skill-xiaoshi-zhixue.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/06-xiaoshi-zhixue/outputs/skill-xiaoshi-zhixue.md) |
 
-#### 第 7 章 · 活血化瘀药：节分类、归经轴与禁忌的可计算化
+#### 第 7 章 · 活血化瘀的位置编码在节内，肝经 23 味无一处例外
 
 `01-zhongyaoxue/chapters/07-huoxue-huayu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 活血化瘀药禁忌抽取器 | — | 1126 | [`prompt-huoxue-huayu.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/07-huoxue-huayu/outputs/prompt-huoxue-huayu.md) |
-| skill | huoxue-huayu | 抽取活血化瘀药的节归属、性味归经、毒性与妊娠禁忌三档，并标出抽取口径差异与数据缺口 | 961 | [`skill-huoxue-huayu.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/07-huoxue-huayu/outputs/skill-huoxue-huayu.md) |
+| prompt | 活血化瘀的位置编码在节内，肝经 23 味无一处例外 · 提示词 | — | 926 | [`prompt-huoxue-huayu.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/07-huoxue-huayu/outputs/prompt-huoxue-huayu.md) |
+| skill | 活血化瘀的位置编码在节内，肝经 23 味无一处例外 | 活血化瘀的位置编码在节内，肝经 23 味无一处例外——按「23 味、4 节：编号编在节内，节序就是强度序 → 肝经 23 味无一处例外：全书最集中的一栏 → 气与味：温 10、辛 11，寒只有 2 味 → 剂量与毒：0.03g 到 30g，四味标毒全在后两节」走一遍本章判据 | 820 | [`skill-huoxue-huayu.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/07-huoxue-huayu/outputs/skill-huoxue-huayu.md) |
 
-#### 第 8 章 · 化痰止咳平喘药：两套分类轴与一个词表缺口
+#### 第 8 章 · 化痰与止咳是两套轴：温寒对半，平性只剩两味
 
 `01-zhongyaoxue/chapters/08-huatan-kesou/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 化痰止咳平喘药解析器 · 词表自检版 | — | 1263 | [`prompt-huatan-kesou.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/08-huatan-kesou/outputs/prompt-huatan-kesou.md) |
-| skill | huatan-kesou | 解析化痰止咳平喘药的性味归经并自检四气词表缺口，报出按归经筛选的漏项 | 967 | [`skill-huatan-kesou.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/08-huatan-kesou/outputs/skill-huatan-kesou.md) |
+| prompt | 化痰与止咳是两套轴：温寒对半，平性只剩两味 · 提示词 | — | 935 | [`prompt-huatan-kesou.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/08-huatan-kesou/outputs/prompt-huatan-kesou.md) |
+| skill | 化痰与止咳是两套轴：温寒对半，平性只剩两味 | 化痰与止咳是两套轴：温寒对半，平性只剩两味——按「25 味、3 节：一套按痰分，一套按咳分 → 温 7 寒 7：治痰的轴是对半开的，平性被挤到边上 → 归经：17 条里 13 条落肺，8 条空栏全写「归肺经」 → 词表缺口：9 味无气、8 味无归经」走一遍本章判据 | 831 | [`skill-huatan-kesou.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/08-huatan-kesou/outputs/skill-huatan-kesou.md) |
 
-#### 第 9 章 · 安神、平肝息风与开窍：三个靶脏腑，一条断句
+#### 第 9 章 · 安神、平肝、开窍：26 味药只落在心与肝两条经上
 
 `01-zhongyaoxue/chapters/09-anshen-pinggan/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 安神 / 平肝息风 / 开窍 · 三章合并解析器 | — | 1259 | [`prompt-anshen-pinggan.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/09-anshen-pinggan/outputs/prompt-anshen-pinggan.md) |
-| skill | anshen-pinggan | 合并安神/平肝息风/开窍三章的性味归经与毒性禁忌，强制分章口径并单列数据缺口 | 964 | [`skill-anshen-pinggan.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/09-anshen-pinggan/outputs/skill-anshen-pinggan.md) |
+| prompt | 安神、平肝、开窍：26 味药只落在心与肝两条经上 · 提示词 | — | 919 | [`prompt-anshen-pinggan.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/09-anshen-pinggan/outputs/prompt-anshen-pinggan.md) |
+| skill | 安神、平肝、开窍：26 味药只落在心与肝两条经上 | 安神、平肝、开窍：26 味药只落在心与肝两条经上——按「26 味、5 节：三个靶，两条经 → 气：平 9 条占四成，安神药 8 条有值里 6 条平 → 归经：心 15、肝 13，两脏吃掉 28/50 个经标 → 剂量与剂型：0.03g 到 30g，六味走丸散」走一遍本章判据 | 815 | [`skill-anshen-pinggan.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/09-anshen-pinggan/outputs/skill-anshen-pinggan.md) |
 
-#### 第 10 章 · 补虚药的分类：四节是功效轴，不是寒温轴
+#### 第 10 章 · 补虚药的分类：四节按功效切，寒温表反推不出节名
 
 `01-zhongyaoxue/chapters/10-buxuyao-fenlei/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 补虚药四节分诊表 | — | 1125 | [`prompt-buxuyao-fenlei.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/10-buxuyao-fenlei/outputs/prompt-buxuyao-fenlei.md) |
-| skill | buxuyao-fenlei | 把补虚药按教材四节归位并核出各节药味/四气/归经，用于分类校对与教案编写 | 1264 | [`skill-buxuyao-fenlei.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/10-buxuyao-fenlei/outputs/skill-buxuyao-fenlei.md) |
+| prompt | 补虚药的分类：四节按功效切，寒温表反推不出节名 · 提示词 | — | 1039 | [`prompt-buxuyao-fenlei.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/10-buxuyao-fenlei/outputs/prompt-buxuyao-fenlei.md) |
+| skill | 补虚药的分类：四节按功效切，寒温表反推不出节名 | 补虚药的分类：四节按功效切，寒温表反推不出节名——按「39 味、4 节：分节的轴是功效，不是寒温 → 14 条空栏：气缺了三分之一，缺口压在补阴 → 味与归经：甘 22/25，肾 25/39，补阳 11 味全归肾 → 剂量与剂型：1g 到 120g，四味不走常规煎剂」走一遍本章判据 | 934 | [`skill-buxuyao-fenlei.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/10-buxuyao-fenlei/outputs/skill-buxuyao-fenlei.md) |
 
-#### 第 11 章 · 收涩药与涌吐药：一个闸门的两侧
+#### 第 11 章 · 收涩与涌吐编在一起：同一根气机轴，14 味里只有 8 味带涩
 
 `01-zhongyaoxue/chapters/11-shouse-yongtu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 收涩 / 涌吐 方向分诊器 | — | 1289 | [`prompt-shouse-yongtu.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/11-shouse-yongtu/outputs/prompt-shouse-yongtu.md) |
-| skill | shouse-yongtu | 按病势方向把药归入收涩或涌吐并核出四气/归经/毒性标记，用于分类校对与检索分支设计 | 1337 | [`skill-shouse-yongtu.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/11-shouse-yongtu/outputs/skill-shouse-yongtu.md) |
+| prompt | 收涩与涌吐编在一起：同一根气机轴，14 味里只有 8 味带涩 · 提示词 | — | 967 | [`prompt-shouse-yongtu.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/11-shouse-yongtu/outputs/prompt-shouse-yongtu.md) |
+| skill | 收涩与涌吐编在一起：同一根气机轴，14 味里只有 8 味带涩 | 收涩与涌吐编在一起：同一根气机轴，14 味里只有 8 味带涩——按「17 味、4 节、2,217 字：编在一起的理由不在功效 → 气：收涩几乎全在温平侧，涌吐 3 味全寒 → 味：涩 9 条占全库近半，但 6 味收涩药不带涩 → 归经与三处空栏：肾 9、肺 6、大肠 5」走一遍本章判据 | 857 | [`skill-shouse-yongtu.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/11-shouse-yongtu/outputs/skill-shouse-yongtu.md) |
 
-#### 第 12 章 · 中药性能的编码化：性味归经 → 向量
+#### 第 12 章 · 性味归经编成 21 维：余弦排得出描述邻近，排不出可以替换
 
 `01-zhongyaoxue/chapters/12-xingneng-bianma/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 中药性能编码器 | — | 722 | [`prompt-xingneng-bianma.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/12-xingneng-bianma/outputs/prompt-xingneng-bianma.md) |
-| skill | xingneng-bianma | 把中药材的性味归经整理成可计算向量，并按性能相似度给出近似药候选（只作查证线索） | 663 | [`skill-xingneng-bianma.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/12-xingneng-bianma/outputs/skill-xingneng-bianma.md) |
+| prompt | 性味归经编成 21 维：余弦排得出描述邻近，排不出可以替换 · 提示词 | — | 1010 | [`prompt-xingneng-bianma.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/12-xingneng-bianma/outputs/prompt-xingneng-bianma.md) |
+| skill | 性味归经编成 21 维：余弦排得出描述邻近，排不出可以替换 | 性味归经编成 21 维：余弦排得出描述邻近，排不出可以替换——按「21 维的构造：气 1 维、味 8 维、归经 12 维 → 287 味的真实分布：肝 139 居首，气分九档 → 余弦的四个读法：人参像人参，当归不像白芍 → 21 维里没有的三件事：剂量、炮制、配伍」走一遍本章判据 | 902 | [`skill-xingneng-bianma.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/12-xingneng-bianma/outputs/skill-xingneng-bianma.md) |
 
-#### 第 13 章 · 药材之前：产地、采集、炮制、配伍、禁忌与剂量
+#### 第 13 章 · 五道闸算出 3.341 分：四道是常数，只有炮制在动
 
 `01-zhongyaoxue/chapters/13-caiyao-zhijian/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 药材 5 道闸规格卡生成器 | — | 986 | [`prompt-caiyao-zhijian.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/13-caiyao-zhijian/outputs/prompt-caiyao-zhijian.md) |
-| skill | caiyao-zhijian | 把一味药补成带条件的规格卡（产地·采集贮藏·炮制·配伍·禁忌剂量五道闸），用于教学与处方复核清单 | 935 | [`skill-caiyao-zhijian.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/13-caiyao-zhijian/outputs/skill-caiyao-zhijian.md) |
+| prompt | 五道闸算出 3.341 分：四道是常数，只有炮制在动 · 提示词 | — | 1014 | [`prompt-caiyao-zhijian.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/13-caiyao-zhijian/outputs/prompt-caiyao-zhijian.md) |
+| skill | 五道闸算出 3.341 分：四道是常数，只有炮制在动 | 五道闸算出 3.341 分：四道是常数，只有炮制在动——按「五章 26 节 4,266 字：五道闸都写在「类」上，不写在「味」上 → 五道闸的通过率：0.0%、36.6%、99.3%、99.3%、99.0% → 341 分不是「67% 完成度」：280 味的得分就是「3 加炮制闸」 → 剂量：26 个上界档、0.004g 到 120g，而 76.3% 落在 6–15g」走一遍本章判据 | 908 | [`skill-caiyao-zhijian.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/13-caiyao-zhijian/outputs/skill-caiyao-zhijian.md) |
 
-#### 第 14 章 · 攻毒杀虫与拔毒化腐：毒性与用法边界
+#### 第 14 章 · 12 味毒药的分界不在毒性等级，在给药途径
 
 `01-zhongyaoxue/chapters/14-gongdu-badu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 毒性与用法边界分级卡 | — | 972 | [`prompt-gongdu-badu.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/14-gongdu-badu/outputs/prompt-gongdu-badu.md) |
-| skill | gongdu-badu | 把毒性药材整理成毒性与用法边界分级卡（毒性四档 + 内服开关 + 微量区间 + 禁忌），用于教学与处方前置检查 | 989 | [`skill-gongdu-badu.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/14-gongdu-badu/outputs/skill-gongdu-badu.md) |
+| prompt | 12 味毒药的分界不在毒性等级，在给药途径 · 提示词 | — | 1003 | [`prompt-gongdu-badu.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/14-gongdu-badu/outputs/prompt-gongdu-badu.md) |
+| skill | 12 味毒药的分界不在毒性等级，在给药途径 | 12 味毒药的分界不在毒性等级，在给药途径——按「12 味、2 章、1,683 字：两章各只有一节 → 气：温 5、热 2、寒 2，全库九档这里只用五档 → 味与归经：辛 7/11，大肠与小肠合占 22.7% → 剂型三分：3 味只外用、8 味丸散、1 味煎服」走一遍本章判据 | 898 | [`skill-gongdu-badu.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/14-gongdu-badu/outputs/skill-gongdu-badu.md) |
 
 ### 药用植物学
 
 > Core · 第 2 学期 · 已产出 9 章
 
-#### 第 1 章 · 绪论与药用植物学基础
+#### 第 1 章 · 药用植物学不是认药名录，是把形态译成可核对判据的手艺
 
 `02-yaoyong-zhiwu-xue/chapters/01-xulun-jichu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 绪论与药用植物学基础 · 提示词 | — | 475 | [`prompt-01-xulun-jichu.md`](../departments/02-zhongyao/02-yaoyong-zhiwu-xue/chapters/01-xulun-jichu/outputs/prompt-01-xulun-jichu.md) |
-| skill | 绪论与药用植物学基础 | 绪论与药用植物学基础——按「绪论 → 细胞组织 → 根茎 → 叶 → 花果种子 → 分类与低等植物 → 苔藓蕨类裸子 → 被子植物 → 资源与分子鉴定」走一遍本章判据 | 399 | [`skill-xulun-jichu.md`](../departments/02-zhongyao/02-yaoyong-zhiwu-xue/chapters/01-xulun-jichu/outputs/skill-xulun-jichu.md) |
+| prompt | 药用植物学不是认药名录，是把形态译成可核对判据的手艺 · 提示词 | — | 839 | [`prompt-01-xulun-jichu.md`](../departments/02-zhongyao/02-yaoyong-zhiwu-xue/chapters/01-xulun-jichu/outputs/prompt-01-xulun-jichu.md) |
+| skill | 药用植物学不是认药名录，是把形态译成可核对判据的手艺 | 药用植物学不是认药名录，是把形态译成可核对判据的手艺——按「这一章要立的判据 → 七项观察：哪些必须等到花期 → 科属判据与「不成立」条件 → 采集、制片与标签十二栏」走一遍本章判据 | 736 | [`skill-xulun-jichu.md`](../departments/02-zhongyao/02-yaoyong-zhiwu-xue/chapters/01-xulun-jichu/outputs/skill-xulun-jichu.md) |
 
-#### 第 2 章 · 药用植物的细胞与组织
+#### 第 2 章 · 显微鉴定看的不是细胞，是细胞壁与后含物留下的证据
 
 `02-yaoyong-zhiwu-xue/chapters/02-xibao-zuzhi/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 药用植物的细胞与组织 · 提示词 | — | 475 | [`prompt-02-xibao-zuzhi.md`](../departments/02-zhongyao/02-yaoyong-zhiwu-xue/chapters/02-xibao-zuzhi/outputs/prompt-02-xibao-zuzhi.md) |
-| skill | 药用植物的细胞与组织 | 药用植物的细胞与组织——按「绪论 → 细胞组织 → 根茎 → 叶 → 花果种子 → 分类与低等植物 → 苔藓蕨类裸子 → 被子植物 → 资源与分子鉴定」走一遍本章判据 | 399 | [`skill-xibao-zuzhi.md`](../departments/02-zhongyao/02-yaoyong-zhiwu-xue/chapters/02-xibao-zuzhi/outputs/skill-xibao-zuzhi.md) |
+| prompt | 显微鉴定看的不是细胞，是细胞壁与后含物留下的证据 · 提示词 | — | 771 | [`prompt-02-xibao-zuzhi.md`](../departments/02-zhongyao/02-yaoyong-zhiwu-xue/chapters/02-xibao-zuzhi/outputs/prompt-02-xibao-zuzhi.md) |
+| skill | 显微鉴定看的不是细胞，是细胞壁与后含物留下的证据 | 显微鉴定看的不是细胞，是细胞壁与后含物留下的证据——按「这一章要立的判据 → 八项观察：从外到内 → 判据与「不成立」条件 → 取材、切片与记录」走一遍本章判据 | 670 | [`skill-xibao-zuzhi.md`](../departments/02-zhongyao/02-yaoyong-zhiwu-xue/chapters/02-xibao-zuzhi/outputs/skill-xibao-zuzhi.md) |
 
-#### 第 3 章 · 营养器官（一）：根与茎
+#### 第 3 章 · 根与茎的分界只有一条：节、叶与芽长在谁身上
 
 `02-yaoyong-zhiwu-xue/chapters/03-gen-jing/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 营养器官（一）：根与茎 · 提示词 | — | 478 | [`prompt-03-gen-jing.md`](../departments/02-zhongyao/02-yaoyong-zhiwu-xue/chapters/03-gen-jing/outputs/prompt-03-gen-jing.md) |
-| skill | 营养器官（一）：根与茎 | 营养器官（一）：根与茎——按「绪论 → 细胞组织 → 根茎 → 叶 → 花果种子 → 分类与低等植物 → 苔藓蕨类裸子 → 被子植物 → 资源与分子鉴定」走一遍本章判据 | 398 | [`skill-gen-jing.md`](../departments/02-zhongyao/02-yaoyong-zhiwu-xue/chapters/03-gen-jing/outputs/skill-gen-jing.md) |
+| prompt | 根与茎的分界只有一条：节、叶与芽长在谁身上 · 提示词 | — | 823 | [`prompt-03-gen-jing.md`](../departments/02-zhongyao/02-yaoyong-zhiwu-xue/chapters/03-gen-jing/outputs/prompt-03-gen-jing.md) |
+| skill | 根与茎的分界只有一条：节、叶与芽长在谁身上 | 根与茎的分界只有一条：节、叶与芽长在谁身上——按「这一章要立的判据 → 根与茎各看什么 → 判据与「不成立」条件 → 挖掘、切面与记录」走一遍本章判据 | 722 | [`skill-gen-jing.md`](../departments/02-zhongyao/02-yaoyong-zhiwu-xue/chapters/03-gen-jing/outputs/skill-gen-jing.md) |
 
-#### 第 4 章 · 营养器官（二）：叶
+#### 第 4 章 · 一片叶能定的只有大类，定到科要靠叶背那层看不见的结构
 
 `02-yaoyong-zhiwu-xue/chapters/04-ye/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 营养器官（二）：叶 · 提示词 | — | 472 | [`prompt-04-ye.md`](../departments/02-zhongyao/02-yaoyong-zhiwu-xue/chapters/04-ye/outputs/prompt-04-ye.md) |
-| skill | 营养器官（二）：叶 | 营养器官（二）：叶——按「绪论 → 细胞组织 → 根茎 → 叶 → 花果种子 → 分类与低等植物 → 苔藓蕨类裸子 → 被子植物 → 资源与分子鉴定」走一遍本章判据 | 388 | [`skill-ye.md`](../departments/02-zhongyao/02-yaoyong-zhiwu-xue/chapters/04-ye/outputs/skill-ye.md) |
+| prompt | 一片叶能定的只有大类，定到科要靠叶背那层看不见的结构 · 提示词 | — | 759 | [`prompt-04-ye.md`](../departments/02-zhongyao/02-yaoyong-zhiwu-xue/chapters/04-ye/outputs/prompt-04-ye.md) |
+| skill | 一片叶能定的只有大类，定到科要靠叶背那层看不见的结构 | 一片叶能定的只有大类，定到科要靠叶背那层看不见的结构——按「这一章要立的判据 → 十项观察：从整片叶到叶背 → 判据与「不成立」条件 → 采叶、透明制片与记录」走一遍本章判据 | 647 | [`skill-ye.md`](../departments/02-zhongyao/02-yaoyong-zhiwu-xue/chapters/04-ye/outputs/skill-ye.md) |
 
-#### 第 5 章 · 生殖器官：花、果实与种子
+#### 第 5 章 · 果实错判的根子都在花部：子房位置定果型，果型定药材名
 
 `02-yaoyong-zhiwu-xue/chapters/05-hua-guoshi-zhongzi/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 生殖器官：花、果实与种子 · 提示词 | — | 481 | [`prompt-05-hua-guoshi-zhongzi.md`](../departments/02-zhongyao/02-yaoyong-zhiwu-xue/chapters/05-hua-guoshi-zhongzi/outputs/prompt-05-hua-guoshi-zhongzi.md) |
-| skill | 生殖器官：花、果实与种子 | 生殖器官：花、果实与种子——按「绪论 → 细胞组织 → 根茎 → 叶 → 花果种子 → 分类与低等植物 → 苔藓蕨类裸子 → 被子植物 → 资源与分子鉴定」走一遍本章判据 | 410 | [`skill-hua-guoshi-zhongzi.md`](../departments/02-zhongyao/02-yaoyong-zhiwu-xue/chapters/05-hua-guoshi-zhongzi/outputs/skill-hua-guoshi-zhongzi.md) |
+| prompt | 果实错判的根子都在花部：子房位置定果型，果型定药材名 · 提示词 | — | 900 | [`prompt-05-hua-guoshi-zhongzi.md`](../departments/02-zhongyao/02-yaoyong-zhiwu-xue/chapters/05-hua-guoshi-zhongzi/outputs/prompt-05-hua-guoshi-zhongzi.md) |
+| skill | 果实错判的根子都在花部：子房位置定果型，果型定药材名 | 果实错判的根子都在花部：子房位置定果型，果型定药材名——按「花程式：把一朵花写成一行可复核的字符 → 子房位置与胎座：果型的地址 → 聚合果与聚花果：一花多心皮，还是一序多花 → 运行与验证」走一遍本章判据 | 804 | [`skill-hua-guoshi-zhongzi.md`](../departments/02-zhongyao/02-yaoyong-zhiwu-xue/chapters/05-hua-guoshi-zhongzi/outputs/skill-hua-guoshi-zhongzi.md) |
 
-#### 第 6 章 · 分类学基础与低等植物
+#### 第 6 章 · 分类的全部力气花在检索表的岔口上，名字只是终点
 
 `02-yaoyong-zhiwu-xue/chapters/06-fenlei-deng/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 分类学基础与低等植物 · 提示词 | — | 478 | [`prompt-06-fenlei-deng.md`](../departments/02-zhongyao/02-yaoyong-zhiwu-xue/chapters/06-fenlei-deng/outputs/prompt-06-fenlei-deng.md) |
-| skill | 分类学基础与低等植物 | 分类学基础与低等植物——按「绪论 → 细胞组织 → 根茎 → 叶 → 花果种子 → 分类与低等植物 → 苔藓蕨类裸子 → 被子植物 → 资源与分子鉴定」走一遍本章判据 | 399 | [`skill-fenlei-deng.md`](../departments/02-zhongyao/02-yaoyong-zhiwu-xue/chapters/06-fenlei-deng/outputs/skill-fenlei-deng.md) |
+| prompt | 分类的全部力气花在检索表的岔口上，名字只是终点 · 提示词 | — | 919 | [`prompt-06-fenlei-deng.md`](../departments/02-zhongyao/02-yaoyong-zhiwu-xue/chapters/06-fenlei-deng/outputs/prompt-06-fenlei-deng.md) |
+| skill | 分类的全部力气花在检索表的岔口上，名字只是终点 | 分类的全部力气花在检索表的岔口上，名字只是终点——按「双名法：一个名字要能被第二个人独立复现 → 检索表：每走一步砍掉一半，走错一步全错 → 分门：有胚无胚、有维管无维管，两条标准并不重合 → 藻、菌、地衣：没有器官的植物，部位写得越笼统，抓手越少」走一遍本章判据 | 819 | [`skill-fenlei-deng.md`](../departments/02-zhongyao/02-yaoyong-zhiwu-xue/chapters/06-fenlei-deng/outputs/skill-fenlei-deng.md) |
 
-#### 第 7 章 · 苔藓、蕨类与裸子植物
+#### 第 7 章 · 从孢子到种子，类群每升一级就多一个能写进基原的器官
 
 `02-yaoyong-zhiwu-xue/chapters/07-taixian-jue-luozi/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 苔藓、蕨类与裸子植物 · 提示词 | — | 477 | [`prompt-07-taixian-jue-luozi.md`](../departments/02-zhongyao/02-yaoyong-zhiwu-xue/chapters/07-taixian-jue-luozi/outputs/prompt-07-taixian-jue-luozi.md) |
-| skill | 苔藓、蕨类与裸子植物 | 苔藓、蕨类与裸子植物——按「绪论 → 细胞组织 → 根茎 → 叶 → 花果种子 → 分类与低等植物 → 苔藓蕨类裸子 → 被子植物 → 资源与分子鉴定」走一遍本章判据 | 405 | [`skill-taixian-jue-luozi.md`](../departments/02-zhongyao/02-yaoyong-zhiwu-xue/chapters/07-taixian-jue-luozi/outputs/skill-taixian-jue-luozi.md) |
+| prompt | 从孢子到种子，类群每升一级就多一个能写进基原的器官 · 提示词 | — | 827 | [`prompt-07-taixian-jue-luozi.md`](../departments/02-zhongyao/02-yaoyong-zhiwu-xue/chapters/07-taixian-jue-luozi/outputs/prompt-07-taixian-jue-luozi.md) |
+| skill | 从孢子到种子，类群每升一级就多一个能写进基原的器官 | 从孢子到种子，类群每升一级就多一个能写进基原的器官——按「苔藓植物：有胚而无维管组织，配子体才是我们看见的那一株 → 蕨类植物：孢子体独立生活，根状茎与孢子叶穗是药材的抓手 → 裸子植物：胚珠裸露在孢子叶上，白果是种子不是果实 → 三个类群合看：器官的有无，决定基原里能写什么」走一遍本章判据 | 731 | [`skill-taixian-jue-luozi.md`](../departments/02-zhongyao/02-yaoyong-zhiwu-xue/chapters/07-taixian-jue-luozi/outputs/skill-taixian-jue-luozi.md) |
 
-#### 第 8 章 · 被子植物：离瓣花类与合瓣花类
+#### 第 8 章 · 认科不背名录，靠花序、雄蕊与果实三处咬合
 
 `02-yaoyong-zhiwu-xue/chapters/08-beizi-zhiwu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 被子植物：离瓣花类与合瓣花类 · 提示词 | — | 492 | [`prompt-08-beizi-zhiwu.md`](../departments/02-zhongyao/02-yaoyong-zhiwu-xue/chapters/08-beizi-zhiwu/outputs/prompt-08-beizi-zhiwu.md) |
-| skill | 被子植物：离瓣花类与合瓣花类 | 被子植物：离瓣花类与合瓣花类——按「绪论 → 细胞组织 → 根茎 → 叶 → 花果种子 → 分类与低等植物 → 苔藓蕨类裸子 → 被子植物 → 资源与分子鉴定」走一遍本章判据 | 407 | [`skill-beizi-zhiwu.md`](../departments/02-zhongyao/02-yaoyong-zhiwu-xue/chapters/08-beizi-zhiwu/outputs/skill-beizi-zhiwu.md) |
+| prompt | 认科不背名录，靠花序、雄蕊与果实三处咬合 · 提示词 | — | 911 | [`prompt-08-beizi-zhiwu.md`](../departments/02-zhongyao/02-yaoyong-zhiwu-xue/chapters/08-beizi-zhiwu/outputs/prompt-08-beizi-zhiwu.md) |
+| skill | 认科不背名录，靠花序、雄蕊与果实三处咬合 | 认科不背名录，靠花序、雄蕊与果实三处咬合——按「离瓣与合瓣：一条便于检索的刀口，不是亲缘的分界 → 离瓣花类的抓手：从托叶鞘到双悬果 → 合瓣花类：唇形科的六项、菊科的四项，与茄科的一条红线 → 单子叶植物：三基数、平行脉，与一片必须炮制的块茎」走一遍本章判据 | 814 | [`skill-beizi-zhiwu.md`](../departments/02-zhongyao/02-yaoyong-zhiwu-xue/chapters/08-beizi-zhiwu/outputs/skill-beizi-zhiwu.md) |
 
-#### 第 9 章 · 药用植物资源、保护与分子鉴定
+#### 第 9 章 · 从野外一株到一份基原结论，缺一环就全链失效
 
 `02-yaoyong-zhiwu-xue/chapters/09-ziyuan-fenzi/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 药用植物资源、保护与分子鉴定 · 提示词 | — | 488 | [`prompt-09-ziyuan-fenzi.md`](../departments/02-zhongyao/02-yaoyong-zhiwu-xue/chapters/09-ziyuan-fenzi/outputs/prompt-09-ziyuan-fenzi.md) |
-| skill | 药用植物资源、保护与分子鉴定 | 药用植物资源、保护与分子鉴定——按「绪论 → 细胞组织 → 根茎 → 叶 → 花果种子 → 分类与低等植物 → 苔藓蕨类裸子 → 被子植物 → 资源与分子鉴定」走一遍本章判据 | 408 | [`skill-ziyuan-fenzi.md`](../departments/02-zhongyao/02-yaoyong-zhiwu-xue/chapters/09-ziyuan-fenzi/outputs/skill-ziyuan-fenzi.md) |
+| prompt | 从野外一株到一份基原结论，缺一环就全链失效 · 提示词 | — | 916 | [`prompt-09-ziyuan-fenzi.md`](../departments/02-zhongyao/02-yaoyong-zhiwu-xue/chapters/09-ziyuan-fenzi/outputs/prompt-09-ziyuan-fenzi.md) |
+| skill | 从野外一株到一份基原结论，缺一环就全链失效 | 从野外一株到一份基原结论，缺一环就全链失效——按「调查与道地：一份标本要能被第三个人复核 → 采收、加工与贮藏：把物候翻译成时间表 → 保护与法规：能不能采，先看名录再问地点 → 分子鉴定：DNA 条形码能答什么，不能答什么」走一遍本章判据 | 819 | [`skill-ziyuan-fenzi.md`](../departments/02-zhongyao/02-yaoyong-zhiwu-xue/chapters/09-ziyuan-fenzi/outputs/skill-ziyuan-fenzi.md) |
 
 ### 方剂学
 
@@ -3508,177 +3508,177 @@
 
 > Reference · 第 3 学期 · 已产出 8 章
 
-#### 第 1 章 · 中药资源的分布与区划
+#### 第 1 章 · 区划不是画在地图上的线，而是一组可复核的判据
 
 `04-zhongyao-ziyuan-xue/chapters/01-fenbu-quhua/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：中药资源的分布与区划 | — | 414 | [`prompt-01-fenbu-quhua.md`](../departments/02-zhongyao/04-zhongyao-ziyuan-xue/chapters/01-fenbu-quhua/outputs/prompt-01-fenbu-quhua.md) |
-| skill | 中药资源的分布与区划 | 用《中药资源学》第 1 章「中药资源的分布与区划」的单元层做可核对的教学材料。 | 525 | [`skill-01-fenbu-quhua.md`](../departments/02-zhongyao/04-zhongyao-ziyuan-xue/chapters/01-fenbu-quhua/outputs/skill-01-fenbu-quhua.md) |
+| prompt | 区划不是画在地图上的线，而是一组可复核的判据 · 提示词 | — | 613 | [`prompt-01-fenbu-quhua.md`](../departments/02-zhongyao/04-zhongyao-ziyuan-xue/chapters/01-fenbu-quhua/outputs/prompt-01-fenbu-quhua.md) |
+| skill | 区划不是画在地图上的线，而是一组可复核的判据 | 区划不是画在地图上的线，而是一组可复核的判据——按「三条梯度叠出来的分布，不是一张省界表 → 把「适生」拆成三项可判条件【教学设定】 → 取点与记录：让下一个人能重算 → 四种失效模式」走一遍本章判据 | 514 | [`skill-01-fenbu-quhua.md`](../departments/02-zhongyao/04-zhongyao-ziyuan-xue/chapters/01-fenbu-quhua/outputs/skill-01-fenbu-quhua.md) |
 
-#### 第 2 章 · 道地药材的形成与评价
+#### 第 2 章 · 道地是三件事同时对上的结果，不是一句产地评语
 
 `04-zhongyao-ziyuan-xue/chapters/02-daodi-xingcheng/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：道地药材的形成与评价 | — | 414 | [`prompt-02-daodi-xingcheng.md`](../departments/02-zhongyao/04-zhongyao-ziyuan-xue/chapters/02-daodi-xingcheng/outputs/prompt-02-daodi-xingcheng.md) |
-| skill | 道地药材的形成与评价 | 用《中药资源学》第 2 章「道地药材的形成与评价」的单元层做可核对的教学材料。 | 533 | [`skill-02-daodi-xingcheng.md`](../departments/02-zhongyao/04-zhongyao-ziyuan-xue/chapters/02-daodi-xingcheng/outputs/skill-02-daodi-xingcheng.md) |
+| prompt | 道地是三件事同时对上的结果，不是一句产地评语 · 提示词 | — | 587 | [`prompt-02-daodi-xingcheng.md`](../departments/02-zhongyao/04-zhongyao-ziyuan-xue/chapters/02-daodi-xingcheng/outputs/prompt-02-daodi-xingcheng.md) |
+| skill | 道地是三件事同时对上的结果，不是一句产地评语 | 道地是三件事同时对上的结果，不是一句产地评语——按「三件事，少一件就说不清 → 判据与分档【教学设定】 → 采样与记录：三地对照、同一物候、同工艺 → 四种失效模式」走一遍本章判据 | 492 | [`skill-02-daodi-xingcheng.md`](../departments/02-zhongyao/04-zhongyao-ziyuan-xue/chapters/02-daodi-xingcheng/outputs/skill-02-daodi-xingcheng.md) |
 
-#### 第 3 章 · 野生资源的调查与蕴藏量估算
+#### 第 3 章 · 蕴藏量不是一个数，而是一条由四步误差叠出来的区间
 
 `04-zhongyao-ziyuan-xue/chapters/03-yewai-diaocha/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：野生资源的调查与蕴藏量估算 | — | 417 | [`prompt-03-yewai-diaocha.md`](../departments/02-zhongyao/04-zhongyao-ziyuan-xue/chapters/03-yewai-diaocha/outputs/prompt-03-yewai-diaocha.md) |
-| skill | 野生资源的调查与蕴藏量估算 | 用《中药资源学》第 3 章「野生资源的调查与蕴藏量估算」的单元层做可核对的教学材料。 | 535 | [`skill-03-yewai-diaocha.md`](../departments/02-zhongyao/04-zhongyao-ziyuan-xue/chapters/03-yewai-diaocha/outputs/skill-03-yewai-diaocha.md) |
+| prompt | 蕴藏量不是一个数，而是一条由四步误差叠出来的区间 · 提示词 | — | 645 | [`prompt-03-yewai-diaocha.md`](../departments/02-zhongyao/04-zhongyao-ziyuan-xue/chapters/03-yewai-diaocha/outputs/prompt-03-yewai-diaocha.md) |
+| skill | 蕴藏量不是一个数，而是一条由四步误差叠出来的区间 | 蕴藏量不是一个数，而是一条由四步误差叠出来的区间——按「四步相乘：误差是被乘出来的，不是被加出来的 → 样方怎么设：三原则与四种布设方式 → 记录：让下一个人能复核 → 四种失效模式与考核项」走一遍本章判据 | 546 | [`skill-03-yewai-diaocha.md`](../departments/02-zhongyao/04-zhongyao-ziyuan-xue/chapters/03-yewai-diaocha/outputs/skill-03-yewai-diaocha.md) |
 
-#### 第 4 章 · 栽培技术与规范化种植
+#### 第 4 章 · 栽培不是把野药搬进地里，而是把不可控的风险换成可记账的风险
 
 `04-zhongyao-ziyuan-xue/chapters/04-zaipei-gap/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：栽培技术与规范化种植 | — | 414 | [`prompt-04-zaipei-gap.md`](../departments/02-zhongyao/04-zhongyao-ziyuan-xue/chapters/04-zaipei-gap/outputs/prompt-04-zaipei-gap.md) |
-| skill | 栽培技术与规范化种植 | 用《中药资源学》第 4 章「栽培技术与规范化种植」的单元层做可核对的教学材料。 | 523 | [`skill-04-zaipei-gap.md`](../departments/02-zhongyao/04-zhongyao-ziyuan-xue/chapters/04-zaipei-gap/outputs/skill-04-zaipei-gap.md) |
+| prompt | 栽培不是把野药搬进地里，而是把不可控的风险换成可记账的风险 · 提示词 | — | 666 | [`prompt-04-zaipei-gap.md`](../departments/02-zhongyao/04-zhongyao-ziyuan-xue/chapters/04-zaipei-gap/outputs/prompt-04-zaipei-gap.md) |
+| skill | 栽培不是把野药搬进地里，而是把不可控的风险换成可记账的风险 | 栽培不是把野药搬进地里，而是把不可控的风险换成可记账的风险——按「把「长」拆成可观测的节律 → 五个决策点，五笔账 → GAP 规范的不是标准高低，而是过程可否追溯 → 驯化的三笔账，与考核项」走一遍本章判据 | 559 | [`skill-04-zaipei-gap.md`](../departments/02-zhongyao/04-zhongyao-ziyuan-xue/chapters/04-zaipei-gap/outputs/skill-04-zaipei-gap.md) |
 
-#### 第 5 章 · 资源的开发利用与产业化
+#### 第 5 章 · 开发不是把药材换成产品，而是把年允收量换算成产品线的上限
 
 `04-zhongyao-ziyuan-xue/chapters/05-kaifa-liyong/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：资源的开发利用与产业化 | — | 415 | [`prompt-05-kaifa-liyong.md`](../departments/02-zhongyao/04-zhongyao-ziyuan-xue/chapters/05-kaifa-liyong/outputs/prompt-05-kaifa-liyong.md) |
-| skill | 资源的开发利用与产业化 | 用《中药资源学》第 5 章「资源的开发利用与产业化」的单元层做可核对的教学材料。 | 529 | [`skill-05-kaifa-liyong.md`](../departments/02-zhongyao/04-zhongyao-ziyuan-xue/chapters/05-kaifa-liyong/outputs/skill-05-kaifa-liyong.md) |
+| prompt | 开发不是把药材换成产品，而是把年允收量换算成产品线的上限 · 提示词 | — | 708 | [`prompt-05-kaifa-liyong.md`](../departments/02-zhongyao/04-zhongyao-ziyuan-xue/chapters/05-kaifa-liyong/outputs/prompt-05-kaifa-liyong.md) |
+| skill | 开发不是把药材换成产品，而是把年允收量换算成产品线的上限 | 开发不是把药材换成产品，而是把年允收量换算成产品线的上限——按「可持续利用是一句可算的话，不是一句口号 → 综合利用提高的是效率，不是总量 → 传统产品深度开发的三条路，各有各的证据要求 → 新资源是增量，但增量必须先量资源量」走一遍本章判据 | 604 | [`skill-05-kaifa-liyong.md`](../departments/02-zhongyao/04-zhongyao-ziyuan-xue/chapters/05-kaifa-liyong/outputs/skill-05-kaifa-liyong.md) |
 
-#### 第 6 章 · 濒危物种保护与政策
+#### 第 6 章 · 保护不是把物种围起来，而是把采挖压力从野生种群上挪走
 
 `04-zhongyao-ziyuan-xue/chapters/06-binwei-baohu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：濒危物种保护与政策 | — | 413 | [`prompt-06-binwei-baohu.md`](../departments/02-zhongyao/04-zhongyao-ziyuan-xue/chapters/06-binwei-baohu/outputs/prompt-06-binwei-baohu.md) |
-| skill | 濒危物种保护与政策 | 用《中药资源学》第 6 章「濒危物种保护与政策」的单元层做可核对的教学材料。 | 525 | [`skill-06-binwei-baohu.md`](../departments/02-zhongyao/04-zhongyao-ziyuan-xue/chapters/06-binwei-baohu/outputs/skill-06-binwei-baohu.md) |
+| prompt | 保护不是把物种围起来，而是把采挖压力从野生种群上挪走 · 提示词 | — | 662 | [`prompt-06-binwei-baohu.md`](../departments/02-zhongyao/04-zhongyao-ziyuan-xue/chapters/06-binwei-baohu/outputs/prompt-06-binwei-baohu.md) |
+| skill | 保护不是把物种围起来，而是把采挖压力从野生种群上挪走 | 保护不是把物种围起来，而是把采挖压力从野生种群上挪走——按「三种威胁不是一件事 → 名录管的是流通闸门，不是种群 → 就地守生境，迁地守基因 → 野生抚育把「采」改成了「管」」走一遍本章判据 | 560 | [`skill-06-binwei-baohu.md`](../departments/02-zhongyao/04-zhongyao-ziyuan-xue/chapters/06-binwei-baohu/outputs/skill-06-binwei-baohu.md) |
 
-#### 第 7 章 · 资源普查数据的建库与制图
+#### 第 7 章 · 数据库的可信度不取决于记录条数，而取决于三列能否被独立回查
 
 `04-zhongyao-ziyuan-xue/chapters/07-pucha-shujuku/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：资源普查数据的建库与制图 | — | 416 | [`prompt-07-pucha-shujuku.md`](../departments/02-zhongyao/04-zhongyao-ziyuan-xue/chapters/07-pucha-shujuku/outputs/prompt-07-pucha-shujuku.md) |
-| skill | 资源普查数据的建库与制图 | 用《中药资源学》第 7 章「资源普查数据的建库与制图」的单元层做可核对的教学材料。 | 533 | [`skill-07-pucha-shujuku.md`](../departments/02-zhongyao/04-zhongyao-ziyuan-xue/chapters/07-pucha-shujuku/outputs/skill-07-pucha-shujuku.md) |
+| prompt | 数据库的可信度不取决于记录条数，而取决于三列能否被独立回查 · 提示词 | — | 669 | [`prompt-07-pucha-shujuku.md`](../departments/02-zhongyao/04-zhongyao-ziyuan-xue/chapters/07-pucha-shujuku/outputs/prompt-07-pucha-shujuku.md) |
+| skill | 数据库的可信度不取决于记录条数，而取决于三列能否被独立回查 | 数据库的可信度不取决于记录条数，而取决于三列能否被独立回查——按「先定义「一条记录」 → 基原那一列：形态不够时，序列补位 → 坐标那一列：从点到面，但面必须由点校准 → 性状那一列：把「看」变成「测」，但测出来的不是质量」走一遍本章判据 | 565 | [`skill-07-pucha-shujuku.md`](../departments/02-zhongyao/04-zhongyao-ziyuan-xue/chapters/07-pucha-shujuku/outputs/skill-07-pucha-shujuku.md) |
 
-#### 第 8 章 · 供需模型与价格波动的量化
+#### 第 8 章 · 药材价格的大起大落，来自供给曲线在短期近乎垂直
 
 `04-zhongyao-ziyuan-xue/chapters/08-gongxu-moxing/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：供需模型与价格波动的量化 | — | 416 | [`prompt-08-gongxu-moxing.md`](../departments/02-zhongyao/04-zhongyao-ziyuan-xue/chapters/08-gongxu-moxing/outputs/prompt-08-gongxu-moxing.md) |
-| skill | 供需模型与价格波动的量化 | 用《中药资源学》第 8 章「供需模型与价格波动的量化」的单元层做可核对的教学材料。 | 533 | [`skill-08-gongxu-moxing.md`](../departments/02-zhongyao/04-zhongyao-ziyuan-xue/chapters/08-gongxu-moxing/outputs/skill-08-gongxu-moxing.md) |
+| prompt | 药材价格的大起大落，来自供给曲线在短期近乎垂直 · 提示词 | — | 651 | [`prompt-08-gongxu-moxing.md`](../departments/02-zhongyao/04-zhongyao-ziyuan-xue/chapters/08-gongxu-moxing/outputs/prompt-08-gongxu-moxing.md) |
+| skill | 药材价格的大起大落，来自供给曲线在短期近乎垂直 | 药材价格的大起大落，来自供给曲线在短期近乎垂直——按「稀缺、外部性与公地悲剧：为什么野生药材必然被过度采 → 短期供给近乎垂直：波动的幅度由弹性决定 → 需求侧：刚性增长叠加事件冲击 → 三种放大机制，把缺口变成行情」走一遍本章判据 | 553 | [`skill-08-gongxu-moxing.md`](../departments/02-zhongyao/04-zhongyao-ziyuan-xue/chapters/08-gongxu-moxing/outputs/skill-08-gongxu-moxing.md) |
 
 ### 中药鉴定学
 
 > Build · 第 4 学期 · 已产出 10 章
 
-#### 第 1 章 · 鉴定的依据：药典、标准与性状
+#### 第 1 章 · 药典给的是最低线，经验给的是典型样
 
 `05-zhongyao-jianding-xue/chapters/01-jianding-yiju/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：鉴定的依据：药典、标准与性状 | — | 418 | [`prompt-01-jianding-yiju.md`](../departments/02-zhongyao/05-zhongyao-jianding-xue/chapters/01-jianding-yiju/outputs/prompt-01-jianding-yiju.md) |
-| skill | 鉴定的依据：药典、标准与性状 | 用《中药鉴定学》第 1 章「鉴定的依据：药典、标准与性状」的单元层做可核对的教学材料。 | 541 | [`skill-01-jianding-yiju.md`](../departments/02-zhongyao/05-zhongyao-jianding-xue/chapters/01-jianding-yiju/outputs/skill-01-jianding-yiju.md) |
+| prompt | 药典给的是最低线，经验给的是典型样 · 提示词 | — | 968 | [`prompt-01-jianding-yiju.md`](../departments/02-zhongyao/05-zhongyao-jianding-xue/chapters/01-jianding-yiju/outputs/prompt-01-jianding-yiju.md) |
+| skill | 药典给的是最低线，经验给的是典型样 | 药典给的是最低线，经验给的是典型样——按「依据分三层，位阶不能倒着用 → 取样：代表性是可以算出来的 → 成组判据，与「不成立」的条件【教学设定】 → 报告要写哪几栏，以及四种典型失效」走一遍本章判据 | 867 | [`skill-01-jianding-yiju.md`](../departments/02-zhongyao/05-zhongyao-jianding-xue/chapters/01-jianding-yiju/outputs/skill-01-jianding-yiju.md) |
 
-#### 第 2 章 · 来源鉴定：基原与拉丁名核对
+#### 第 2 章 · 学名错一个属，整批性状描述跟着作废
 
 `05-zhongyao-jianding-xue/chapters/02-laiyuan-jianding/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：来源鉴定：基原与拉丁名核对 | — | 417 | [`prompt-02-laiyuan-jianding.md`](../departments/02-zhongyao/05-zhongyao-jianding-xue/chapters/02-laiyuan-jianding/outputs/prompt-02-laiyuan-jianding.md) |
-| skill | 来源鉴定：基原与拉丁名核对 | 用《中药鉴定学》第 2 章「来源鉴定：基原与拉丁名核对」的单元层做可核对的教学材料。 | 545 | [`skill-02-laiyuan-jianding.md`](../departments/02-zhongyao/05-zhongyao-jianding-xue/chapters/02-laiyuan-jianding/outputs/skill-02-laiyuan-jianding.md) |
+| prompt | 学名错一个属，整批性状描述跟着作废 · 提示词 | — | 929 | [`prompt-02-laiyuan-jianding.md`](../departments/02-zhongyao/05-zhongyao-jianding-xue/chapters/02-laiyuan-jianding/outputs/prompt-02-laiyuan-jianding.md) |
+| skill | 学名错一个属，整批性状描述跟着作废 | 学名错一个属，整批性状描述跟着作废——按「为什么它必须排在第一道 → 野外与标本：把一次观察变成可复查的证据 → 检索与学名：成组判据与「不成立」的条件【教学设定】 → 记录字段、四种失效与考核项」走一遍本章判据 | 831 | [`skill-02-laiyuan-jianding.md`](../departments/02-zhongyao/05-zhongyao-jianding-xue/chapters/02-laiyuan-jianding/outputs/skill-02-laiyuan-jianding.md) |
 
-#### 第 3 章 · 性状鉴定：形色气味的大小与比例
+#### 第 3 章 · 性状鉴定没有仪器，八项描述就是它的仪器
 
 `05-zhongyao-jianding-xue/chapters/03-xingzhuang-jianding/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：性状鉴定：形色气味的大小与比例 | — | 419 | [`prompt-03-xingzhuang-jianding.md`](../departments/02-zhongyao/05-zhongyao-jianding-xue/chapters/03-xingzhuang-jianding/outputs/prompt-03-xingzhuang-jianding.md) |
-| skill | 性状鉴定：形色气味的大小与比例 | 用《中药鉴定学》第 3 章「性状鉴定：形色气味的大小与比例」的单元层做可核对的教学材料。 | 555 | [`skill-03-xingzhuang-jianding.md`](../departments/02-zhongyao/05-zhongyao-jianding-xue/chapters/03-xingzhuang-jianding/outputs/skill-03-xingzhuang-jianding.md) |
+| prompt | 性状鉴定没有仪器，八项描述就是它的仪器 · 提示词 | — | 903 | [`prompt-03-xingzhuang-jianding.md`](../departments/02-zhongyao/05-zhongyao-jianding-xue/chapters/03-xingzhuang-jianding/outputs/prompt-03-xingzhuang-jianding.md) |
+| skill | 性状鉴定没有仪器，八项描述就是它的仪器 | 性状鉴定没有仪器，八项描述就是它的仪器——按「八项不是并列的，观察有固定顺序 → 四种手段，各有各的边界 → 成组判据与水试火试的「不成立」条件【教学设定】 → 记录字段、四种失效与考核项」走一遍本章判据 | 806 | [`skill-03-xingzhuang-jianding.md`](../departments/02-zhongyao/05-zhongyao-jianding-xue/chapters/03-xingzhuang-jianding/outputs/skill-03-xingzhuang-jianding.md) |
 
-#### 第 4 章 · 显微鉴定：组织与粉末特征
+#### 第 4 章 · 显微报告里没有标定值，就等于没有数字
 
 `05-zhongyao-jianding-xue/chapters/04-xianwei-jianding/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：显微鉴定：组织与粉末特征 | — | 416 | [`prompt-04-xianwei-jianding.md`](../departments/02-zhongyao/05-zhongyao-jianding-xue/chapters/04-xianwei-jianding/outputs/prompt-04-xianwei-jianding.md) |
-| skill | 显微鉴定：组织与粉末特征 | 用《中药鉴定学》第 4 章「显微鉴定：组织与粉末特征」的单元层做可核对的教学材料。 | 543 | [`skill-04-xianwei-jianding.md`](../departments/02-zhongyao/05-zhongyao-jianding-xue/chapters/04-xianwei-jianding/outputs/skill-04-xianwei-jianding.md) |
+| prompt | 显微报告里没有标定值，就等于没有数字 · 提示词 | — | 926 | [`prompt-04-xianwei-jianding.md`](../departments/02-zhongyao/05-zhongyao-jianding-xue/chapters/04-xianwei-jianding/outputs/prompt-04-xianwei-jianding.md) |
+| skill | 显微报告里没有标定值，就等于没有数字 | 显微报告里没有标定值，就等于没有数字——按「制片：横切为主，纵切为辅，部位必须写 → 粉末：六大类特征与四种装片 → 化学定位与测量：成组判据与「不成立」条件【教学设定】 → 记录字段、四种失效与考核项」走一遍本章判据 | 827 | [`skill-04-xianwei-jianding.md`](../departments/02-zhongyao/05-zhongyao-jianding-xue/chapters/04-xianwei-jianding/outputs/skill-04-xianwei-jianding.md) |
 
-#### 第 5 章 · 理化鉴定：薄层与色谱指纹
+#### 第 5 章 · 同一块板上的对照，比任何绝对数值都硬
 
 `05-zhongyao-jianding-xue/chapters/05-lihua-jianding/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：理化鉴定：薄层与色谱指纹 | — | 416 | [`prompt-05-lihua-jianding.md`](../departments/02-zhongyao/05-zhongyao-jianding-xue/chapters/05-lihua-jianding/outputs/prompt-05-lihua-jianding.md) |
-| skill | 理化鉴定：薄层与色谱指纹 | 用《中药鉴定学》第 5 章「理化鉴定：薄层与色谱指纹」的单元层做可核对的教学材料。 | 539 | [`skill-05-lihua-jianding.md`](../departments/02-zhongyao/05-zhongyao-jianding-xue/chapters/05-lihua-jianding/outputs/skill-05-lihua-jianding.md) |
+| prompt | 同一块板上的对照，比任何绝对数值都硬 · 提示词 | — | 908 | [`prompt-05-lihua-jianding.md`](../departments/02-zhongyao/05-zhongyao-jianding-xue/chapters/05-lihua-jianding/outputs/prompt-05-lihua-jianding.md) |
+| skill | 同一块板上的对照，比任何绝对数值都硬 | 同一块板上的对照，比任何绝对数值都硬——按「物理常数与化学定性：把「像」变成「数」 → 薄层：同板对照是唯一的锚 → 色谱定量：GC 与 HPLC 各管一段 → 记录字段、四种失效与考核项」走一遍本章判据 | 807 | [`skill-05-lihua-jianding.md`](../departments/02-zhongyao/05-zhongyao-jianding-xue/chapters/05-lihua-jianding/outputs/skill-05-lihua-jianding.md) |
 
-#### 第 6 章 · 常见伪品与混淆品的鉴别
+#### 第 6 章 · 伪品不是长得像，是把正品的判据一条条做掉
 
 `05-zhongyao-jianding-xue/chapters/06-weipin-jianbie/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：常见伪品与混淆品的鉴别 | — | 415 | [`prompt-06-weipin-jianbie.md`](../departments/02-zhongyao/05-zhongyao-jianding-xue/chapters/06-weipin-jianbie/outputs/prompt-06-weipin-jianbie.md) |
-| skill | 常见伪品与混淆品的鉴别 | 用《中药鉴定学》第 6 章「常见伪品与混淆品的鉴别」的单元层做可核对的教学材料。 | 537 | [`skill-06-weipin-jianbie.md`](../departments/02-zhongyao/05-zhongyao-jianding-xue/chapters/06-weipin-jianbie/outputs/skill-06-weipin-jianbie.md) |
+| prompt | 伪品不是长得像，是把正品的判据一条条做掉 · 提示词 | — | 934 | [`prompt-06-weipin-jianbie.md`](../departments/02-zhongyao/05-zhongyao-jianding-xue/chapters/06-weipin-jianbie/outputs/prompt-06-weipin-jianbie.md) |
+| skill | 伪品不是长得像，是把正品的判据一条条做掉 | 伪品不是长得像，是把正品的判据一条条做掉——按「三条路线：伪品是怎么被做出来的 → 成组判据：四味药的正面清单【教学设定】 → 取样与制样：伪品鉴定的一半在取样 → 记录字段、四种失效与考核项」走一遍本章判据 | 831 | [`skill-06-weipin-jianbie.md`](../departments/02-zhongyao/05-zhongyao-jianding-xue/chapters/06-weipin-jianbie/outputs/skill-06-weipin-jianbie.md) |
 
-#### 第 7 章 · 贵重药材的真伪判定
+#### 第 7 章 · 贵重药材的真伪，全押在几条能数出来的特征上
 
 `05-zhongyao-jianding-xue/chapters/07-guizhong-zhenwei/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：贵重药材的真伪判定 | — | 413 | [`prompt-07-guizhong-zhenwei.md`](../departments/02-zhongyao/05-zhongyao-jianding-xue/chapters/07-guizhong-zhenwei/outputs/prompt-07-guizhong-zhenwei.md) |
-| skill | 贵重药材的真伪判定 | 用《中药鉴定学》第 7 章「贵重药材的真伪判定」的单元层做可核对的教学材料。 | 537 | [`skill-07-guizhong-zhenwei.md`](../departments/02-zhongyao/05-zhongyao-jianding-xue/chapters/07-guizhong-zhenwei/outputs/skill-07-guizhong-zhenwei.md) |
+| prompt | 贵重药材的真伪，全押在几条能数出来的特征上 · 提示词 | — | 941 | [`prompt-07-guizhong-zhenwei.md`](../departments/02-zhongyao/05-zhongyao-jianding-xue/chapters/07-guizhong-zhenwei/outputs/prompt-07-guizhong-zhenwei.md) |
+| skill | 贵重药材的真伪，全押在几条能数出来的特征上 | 贵重药材的真伪，全押在几条能数出来的特征上——按「为什么贵重药材要单独立一套判据 → 五味药的成组判据【教学设定】 → 取样与制样：贵重药材逐件取，顺序不可倒 → 记录字段、四种失效与考核项」走一遍本章判据 | 839 | [`skill-07-guizhong-zhenwei.md`](../departments/02-zhongyao/05-zhongyao-jianding-xue/chapters/07-guizhong-zhenwei/outputs/skill-07-guizhong-zhenwei.md) |
 
-#### 第 8 章 · DNA 条形码与分子鉴定
+#### 第 8 章 · 条形码定名、图谱定成分、效价定活性，三样都定不了等级
 
 `05-zhongyao-jianding-xue/chapters/08-dna-tiaoxingma/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：DNA 条形码与分子鉴定 | — | 415 | [`prompt-08-dna-tiaoxingma.md`](../departments/02-zhongyao/05-zhongyao-jianding-xue/chapters/08-dna-tiaoxingma/outputs/prompt-08-dna-tiaoxingma.md) |
-| skill | DNA 条形码与分子鉴定 | 用《中药鉴定学》第 8 章「DNA 条形码与分子鉴定」的单元层做可核对的教学材料。 | 537 | [`skill-08-dna-tiaoxingma.md`](../departments/02-zhongyao/05-zhongyao-jianding-xue/chapters/08-dna-tiaoxingma/outputs/skill-08-dna-tiaoxingma.md) |
+| prompt | 条形码定名、图谱定成分、效价定活性，三样都定不了等级 · 提示词 | — | 989 | [`prompt-08-dna-tiaoxingma.md`](../departments/02-zhongyao/05-zhongyao-jianding-xue/chapters/08-dna-tiaoxingma/outputs/prompt-08-dna-tiaoxingma.md) |
+| skill | 条形码定名、图谱定成分、效价定活性，三样都定不了等级 | 条形码定名、图谱定成分、效价定活性，三样都定不了等级——按「一段序列怎么当身份证 → 流程与三条对照：判据不只是一条相似度 → 分子标记与高通量：从「一个物种」到「一批混合物」 → 指纹图谱与生物效价：另两条证据链，各有各的答不上」走一遍本章判据 | 880 | [`skill-08-dna-tiaoxingma.md`](../departments/02-zhongyao/05-zhongyao-jianding-xue/chapters/08-dna-tiaoxingma/outputs/skill-08-dna-tiaoxingma.md) |
 
-#### 第 9 章 · 鉴定报告的规范与可追溯
+#### 第 9 章 · 报告的效力，藏在取样件数与留样倍数的算术里
 
 `05-zhongyao-jianding-xue/chapters/09-baogao-guifan/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：鉴定报告的规范与可追溯 | — | 415 | [`prompt-09-baogao-guifan.md`](../departments/02-zhongyao/05-zhongyao-jianding-xue/chapters/09-baogao-guifan/outputs/prompt-09-baogao-guifan.md) |
-| skill | 鉴定报告的规范与可追溯 | 用《中药鉴定学》第 9 章「鉴定报告的规范与可追溯」的单元层做可核对的教学材料。 | 535 | [`skill-09-baogao-guifan.md`](../departments/02-zhongyao/05-zhongyao-jianding-xue/chapters/09-baogao-guifan/outputs/skill-09-baogao-guifan.md) |
+| prompt | 报告的效力，藏在取样件数与留样倍数的算术里 · 提示词 | — | 1081 | [`prompt-09-baogao-guifan.md`](../departments/02-zhongyao/05-zhongyao-jianding-xue/chapters/09-baogao-guifan/outputs/prompt-09-baogao-guifan.md) |
+| skill | 报告的效力，藏在取样件数与留样倍数的算术里 | 报告的效力，藏在取样件数与留样倍数的算术里——按「取样：件数是一条函数，不是一个习惯 → 程序六步：顺序本身就是证据 → 常规检查：四个维度画一张像 → 标准与栏目：报告引用的到底是哪一条」走一遍本章判据 | 976 | [`skill-09-baogao-guifan.md`](../departments/02-zhongyao/05-zhongyao-jianding-xue/chapters/09-baogao-guifan/outputs/skill-09-baogao-guifan.md) |
 
-#### 第 10 章 · 图像识别在性状鉴定中的误判分析
+#### 第 10 章 · 图像识别错得最有规律的地方，正是药材最相像的地方
 
 `05-zhongyao-jianding-xue/chapters/10-tuxiang-wupan/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：图像识别在性状鉴定中的误判分析 | — | 420 | [`prompt-10-tuxiang-wupan.md`](../departments/02-zhongyao/05-zhongyao-jianding-xue/chapters/10-tuxiang-wupan/outputs/prompt-10-tuxiang-wupan.md) |
-| skill | 图像识别在性状鉴定中的误判分析 | 用《中药鉴定学》第 10 章「图像识别在性状鉴定中的误判分析」的单元层做可核对的教学材料。 | 544 | [`skill-10-tuxiang-wupan.md`](../departments/02-zhongyao/05-zhongyao-jianding-xue/chapters/10-tuxiang-wupan/outputs/skill-10-tuxiang-wupan.md) |
+| prompt | 图像识别错得最有规律的地方，正是药材最相像的地方 · 提示词 | — | 894 | [`prompt-10-tuxiang-wupan.md`](../departments/02-zhongyao/05-zhongyao-jianding-xue/chapters/10-tuxiang-wupan/outputs/prompt-10-tuxiang-wupan.md) |
+| skill | 图像识别错得最有规律的地方，正是药材最相像的地方 | 图像识别错得最有规律的地方，正是药材最相像的地方——按「四步流水线：误差从哪一步进来 → 三类最容易错的样本 → 数据偏差与黑箱：模型错在哪一层 → 边界四条与人机分工」走一遍本章判据 | 785 | [`skill-10-tuxiang-wupan.md`](../departments/02-zhongyao/05-zhongyao-jianding-xue/chapters/10-tuxiang-wupan/outputs/skill-10-tuxiang-wupan.md) |
 
 ### 中药化学
 
 > Core · 第 4 学期 · 已产出 12 章
 
-#### 第 1 章 · 中药化学成分的类型与分布
+#### 第 1 章 · 中药化学的第一件事不是提纯，是给一团混合物分堆
 
 `06-zhongyao-huaxue/chapters/01-huaxue-leixing/`
 
@@ -3687,7 +3687,7 @@
 | prompt | 用本章内容做一件事：中药化学成分的类型与分布 | — | 415 | [`prompt-01-huaxue-leixing.md`](../departments/02-zhongyao/06-zhongyao-huaxue/chapters/01-huaxue-leixing/outputs/prompt-01-huaxue-leixing.md) |
 | skill | 中药化学成分的类型与分布 | 用《中药化学》第 1 章「中药化学成分的类型与分布」的单元层做可核对的教学材料。 | 530 | [`skill-01-huaxue-leixing.md`](../departments/02-zhongyao/06-zhongyao-huaxue/chapters/01-huaxue-leixing/outputs/skill-01-huaxue-leixing.md) |
 
-#### 第 2 章 · 提取分离：溶剂、色谱与制备
+#### 第 2 章 · 提取不是把成分取出来，是把杂质一层层扔掉
 
 `06-zhongyao-huaxue/chapters/02-tiqu-fenli/`
 
@@ -3696,7 +3696,7 @@
 | prompt | 用本章内容做一件事：提取分离：溶剂、色谱与制备 | — | 416 | [`prompt-02-tiqu-fenli.md`](../departments/02-zhongyao/06-zhongyao-huaxue/chapters/02-tiqu-fenli/outputs/prompt-02-tiqu-fenli.md) |
 | skill | 提取分离：溶剂、色谱与制备 | 用《中药化学》第 2 章「提取分离：溶剂、色谱与制备」的单元层做可核对的教学材料。 | 524 | [`skill-02-tiqu-fenli.md`](../departments/02-zhongyao/06-zhongyao-huaxue/chapters/02-tiqu-fenli/outputs/skill-02-tiqu-fenli.md) |
 
-#### 第 3 章 · 生物碱类：结构与活性
+#### 第 3 章 · 生物碱的全部工艺，都写在 pKa 与溶解度这两张表上
 
 `06-zhongyao-huaxue/chapters/03-shengwujian/`
 
@@ -3705,7 +3705,7 @@
 | prompt | 用本章内容做一件事：生物碱类：结构与活性 | — | 413 | [`prompt-03-shengwujian.md`](../departments/02-zhongyao/06-zhongyao-huaxue/chapters/03-shengwujian/outputs/prompt-03-shengwujian.md) |
 | skill | 生物碱类：结构与活性 | 用《中药化学》第 3 章「生物碱类：结构与活性」的单元层做可核对的教学材料。 | 520 | [`skill-03-shengwujian.md`](../departments/02-zhongyao/06-zhongyao-huaxue/chapters/03-shengwujian/outputs/skill-03-shengwujian.md) |
 
-#### 第 4 章 · 黄酮类：结构与显色
+#### 第 4 章 · 黄酮的颜色、酸性与荧光，都由同一个共轭体系决定
 
 `06-zhongyao-huaxue/chapters/04-huangtong/`
 
@@ -3714,7 +3714,7 @@
 | prompt | 用本章内容做一件事：黄酮类：结构与显色 | — | 412 | [`prompt-04-huangtong.md`](../departments/02-zhongyao/06-zhongyao-huaxue/chapters/04-huangtong/outputs/prompt-04-huangtong.md) |
 | skill | 黄酮类：结构与显色 | 用《中药化学》第 4 章「黄酮类：结构与显色」的单元层做可核对的教学材料。 | 514 | [`skill-04-huangtong.md`](../departments/02-zhongyao/06-zhongyao-huaxue/chapters/04-huangtong/outputs/skill-04-huangtong.md) |
 
-#### 第 5 章 · 萜类与挥发油
+#### 第 5 章 · 萜类与挥发油：能不能蒸馏，由五个碳的个数决定
 
 `06-zhongyao-huaxue/chapters/05-tielei-huiyou/`
 
@@ -3723,7 +3723,7 @@
 | prompt | 用本章内容做一件事：萜类与挥发油 | — | 409 | [`prompt-05-tielei-huiyou.md`](../departments/02-zhongyao/06-zhongyao-huaxue/chapters/05-tielei-huiyou/outputs/prompt-05-tielei-huiyou.md) |
 | skill | 萜类与挥发油 | 用《中药化学》第 5 章「萜类与挥发油」的单元层做可核对的教学材料。 | 516 | [`skill-05-tielei-huiyou.md`](../departments/02-zhongyao/06-zhongyao-huaxue/chapters/05-tielei-huiyou/outputs/skill-05-tielei-huiyou.md) |
 
-#### 第 6 章 · 皂苷类：溶血与表面活性
+#### 第 6 章 · 皂苷的两张面孔：一面起泡溶血，一面是补益药的主体
 
 `06-zhongyao-huaxue/chapters/06-zaogan-lei/`
 
@@ -3732,7 +3732,7 @@
 | prompt | 用本章内容做一件事：皂苷类：溶血与表面活性 | — | 414 | [`prompt-06-zaogan-lei.md`](../departments/02-zhongyao/06-zhongyao-huaxue/chapters/06-zaogan-lei/outputs/prompt-06-zaogan-lei.md) |
 | skill | 皂苷类：溶血与表面活性 | 用《中药化学》第 6 章「皂苷类：溶血与表面活性」的单元层做可核对的教学材料。 | 520 | [`skill-06-zaogan-lei.md`](../departments/02-zhongyao/06-zhongyao-huaxue/chapters/06-zaogan-lei/outputs/skill-06-zaogan-lei.md) |
 
-#### 第 7 章 · 醌类与香豆素
+#### 第 7 章 · 醌与香豆素：一个羰基与一个内酯环，把泻下和荧光分成两路
 
 `06-zhongyao-huaxue/chapters/07-kun-xiangdousu/`
 
@@ -3741,7 +3741,7 @@
 | prompt | 用本章内容做一件事：醌类与香豆素 | — | 409 | [`prompt-07-kun-xiangdousu.md`](../departments/02-zhongyao/06-zhongyao-huaxue/chapters/07-kun-xiangdousu/outputs/prompt-07-kun-xiangdousu.md) |
 | skill | 醌类与香豆素 | 用《中药化学》第 7 章「醌类与香豆素」的单元层做可核对的教学材料。 | 518 | [`skill-07-kun-xiangdousu.md`](../departments/02-zhongyao/06-zhongyao-huaxue/chapters/07-kun-xiangdousu/outputs/skill-07-kun-xiangdousu.md) |
 
-#### 第 8 章 · 多糖与鞣质
+#### 第 8 章 · 多糖与鞣质：分子量一过大，显色反应就换了主人
 
 `06-zhongyao-huaxue/chapters/08-duotang-rouzhi/`
 
@@ -3750,7 +3750,7 @@
 | prompt | 用本章内容做一件事：多糖与鞣质 | — | 408 | [`prompt-08-duotang-rouzhi.md`](../departments/02-zhongyao/06-zhongyao-huaxue/chapters/08-duotang-rouzhi/outputs/prompt-08-duotang-rouzhi.md) |
 | skill | 多糖与鞣质 | 用《中药化学》第 8 章「多糖与鞣质」的单元层做可核对的教学材料。 | 516 | [`skill-08-duotang-rouzhi.md`](../departments/02-zhongyao/06-zhongyao-huaxue/chapters/08-duotang-rouzhi/outputs/skill-08-duotang-rouzhi.md) |
 
-#### 第 9 章 · 结构鉴定：波谱解析入门
+#### 第 9 章 · 四种波谱各管一段，凑不齐就不叫结构
 
 `06-zhongyao-huaxue/chapters/09-jiegou-bopu/`
 
@@ -3759,7 +3759,7 @@
 | prompt | 用本章内容做一件事：结构鉴定：波谱解析入门 | — | 414 | [`prompt-09-jiegou-bopu.md`](../departments/02-zhongyao/06-zhongyao-huaxue/chapters/09-jiegou-bopu/outputs/prompt-09-jiegou-bopu.md) |
 | skill | 结构鉴定：波谱解析入门 | 用《中药化学》第 9 章「结构鉴定：波谱解析入门」的单元层做可核对的教学材料。 | 522 | [`skill-09-jiegou-bopu.md`](../departments/02-zhongyao/06-zhongyao-huaxue/chapters/09-jiegou-bopu/outputs/skill-09-jiegou-bopu.md) |
 
-#### 第 10 章 · 有效成分与药效物质基础
+#### 第 10 章 · 「有效成分」是化学判断，不是疗效结论
 
 `06-zhongyao-huaxue/chapters/10-yaoxiao-wuzhi/`
 
@@ -3768,7 +3768,7 @@
 | prompt | 用本章内容做一件事：有效成分与药效物质基础 | — | 415 | [`prompt-10-yaoxiao-wuzhi.md`](../departments/02-zhongyao/06-zhongyao-huaxue/chapters/10-yaoxiao-wuzhi/outputs/prompt-10-yaoxiao-wuzhi.md) |
 | skill | 有效成分与药效物质基础 | 用《中药化学》第 10 章「有效成分与药效物质基础」的单元层做可核对的教学材料。 | 527 | [`skill-10-yaoxiao-wuzhi.md`](../departments/02-zhongyao/06-zhongyao-huaxue/chapters/10-yaoxiao-wuzhi/outputs/skill-10-yaoxiao-wuzhi.md) |
 
-#### 第 11 章 · 成分含量测定与方法学验证
+#### 第 11 章 · 含量测定的数字，先由方法定义，再由样品证明
 
 `06-zhongyao-huaxue/chapters/11-hanshang-ceding/`
 
@@ -3777,7 +3777,7 @@
 | prompt | 用本章内容做一件事：成分含量测定与方法学验证 | — | 416 | [`prompt-11-hanshang-ceding.md`](../departments/02-zhongyao/06-zhongyao-huaxue/chapters/11-hanshang-ceding/outputs/prompt-11-hanshang-ceding.md) |
 | skill | 成分含量测定与方法学验证 | 用《中药化学》第 11 章「成分含量测定与方法学验证」的单元层做可核对的教学材料。 | 533 | [`skill-11-hanshang-ceding.md`](../departments/02-zhongyao/06-zhongyao-huaxue/chapters/11-hanshang-ceding/outputs/skill-11-hanshang-ceding.md) |
 
-#### 第 12 章 · 成分—靶点网络与活性预测
+#### 第 12 章 · 网络图上的「核心靶点」是算出来的假说
 
 `06-zhongyao-huaxue/chapters/12-chengfen-badian/`
 
@@ -3790,7 +3790,7 @@
 
 > Core · 第 5 学期 · 已产出 11 章
 
-#### 第 1 章 · 中药药理的研究范式与特殊性
+#### 第 1 章 · 中药药理不是化药药理的中文译本
 
 `07-zhongyao-yaoli-xue/chapters/01-yanjiu-fanshi/`
 
@@ -3799,7 +3799,7 @@
 | prompt | 用本章内容做一件事：中药药理的研究范式与特殊性 | — | 417 | [`prompt-01-yanjiu-fanshi.md`](../departments/02-zhongyao/07-zhongyao-yaoli-xue/chapters/01-yanjiu-fanshi/outputs/prompt-01-yanjiu-fanshi.md) |
 | skill | 中药药理的研究范式与特殊性 | 用《中药药理学》第 1 章「中药药理的研究范式与特殊性」的单元层做可核对的教学材料。 | 533 | [`skill-01-yanjiu-fanshi.md`](../departments/02-zhongyao/07-zhongyao-yaoli-xue/chapters/01-yanjiu-fanshi/outputs/skill-01-yanjiu-fanshi.md) |
 
-#### 第 2 章 · 药效学：量效关系与模型选择
+#### 第 2 章 · 中药的量效曲线不是一条线，是一个开关带
 
 `07-zhongyao-yaoli-xue/chapters/02-yaoxiaoxue/`
 
@@ -3808,7 +3808,7 @@
 | prompt | 用本章内容做一件事：药效学：量效关系与模型选择 | — | 417 | [`prompt-02-yaoxiaoxue.md`](../departments/02-zhongyao/07-zhongyao-yaoli-xue/chapters/02-yaoxiaoxue/outputs/prompt-02-yaoxiaoxue.md) |
 | skill | 药效学：量效关系与模型选择 | 用《中药药理学》第 2 章「药效学：量效关系与模型选择」的单元层做可核对的教学材料。 | 527 | [`skill-02-yaoxiaoxue.md`](../departments/02-zhongyao/07-zhongyao-yaoli-xue/chapters/02-yaoxiaoxue/outputs/skill-02-yaoxiaoxue.md) |
 
-#### 第 3 章 · 解表、清热类药的药理
+#### 第 3 章 · 解表与清热之间，隔着一个「表」字
 
 `07-zhongyao-yaoli-xue/chapters/03-jiebiao-yaoli/`
 
@@ -3817,7 +3817,7 @@
 | prompt | 用本章内容做一件事：解表、清热类药的药理 | — | 414 | [`prompt-03-jiebiao-yaoli.md`](../departments/02-zhongyao/07-zhongyao-yaoli-xue/chapters/03-jiebiao-yaoli/outputs/prompt-03-jiebiao-yaoli.md) |
 | skill | 解表、清热类药的药理 | 用《中药药理学》第 3 章「解表、清热类药的药理」的单元层做可核对的教学材料。 | 527 | [`skill-03-jiebiao-yaoli.md`](../departments/02-zhongyao/07-zhongyao-yaoli-xue/chapters/03-jiebiao-yaoli/outputs/skill-03-jiebiao-yaoli.md) |
 
-#### 第 4 章 · 泻下、祛湿、温里与理气类药的药理
+#### 第 4 章 · 攻邪之品见效最快，账单也最快到期
 
 `07-zhongyao-yaoli-xue/chapters/04-xiexia-qushi-wenli/`
 
@@ -3826,7 +3826,7 @@
 | prompt | 用本章内容做一件事：泻下、祛湿、温里与理气类药的药理 | — | 420 | [`prompt-04-xiexia-qushi-wenli.md`](../departments/02-zhongyao/07-zhongyao-yaoli-xue/chapters/04-xiexia-qushi-wenli/outputs/prompt-04-xiexia-qushi-wenli.md) |
 | skill | 泻下、祛湿、温里与理气类药的药理 | 用《中药药理学》第 4 章「泻下、祛湿、温里与理气类药的药理」的单元层做可核对的教学材料。 | 549 | [`skill-04-xiexia-qushi-wenli.md`](../departments/02-zhongyao/07-zhongyao-yaoli-xue/chapters/04-xiexia-qushi-wenli/outputs/skill-04-xiexia-qushi-wenli.md) |
 
-#### 第 5 章 · 活血化瘀与止血类药的药理
+#### 第 5 章 · 活血化瘀的研究热度来自指标好测，不来自疗效更硬
 
 `07-zhongyao-yaoli-xue/chapters/05-huoxue-yaoli/`
 
@@ -3835,7 +3835,7 @@
 | prompt | 用本章内容做一件事：活血化瘀与止血类药的药理 | — | 416 | [`prompt-05-huoxue-yaoli.md`](../departments/02-zhongyao/07-zhongyao-yaoli-xue/chapters/05-huoxue-yaoli/outputs/prompt-05-huoxue-yaoli.md) |
 | skill | 活血化瘀与止血类药的药理 | 用《中药药理学》第 5 章「活血化瘀与止血类药的药理」的单元层做可核对的教学材料。 | 529 | [`skill-05-huoxue-yaoli.md`](../departments/02-zhongyao/07-zhongyao-yaoli-xue/chapters/05-huoxue-yaoli/outputs/skill-05-huoxue-yaoli.md) |
 
-#### 第 6 章 · 补虚类药的免疫调节
+#### 第 6 章 · 补虚之品能提高免疫，也能把免疫按下去
 
 `07-zhongyao-yaoli-xue/chapters/06-buxu-mianyi/`
 
@@ -3844,7 +3844,7 @@
 | prompt | 用本章内容做一件事：补虚类药的免疫调节 | — | 413 | [`prompt-06-buxu-mianyi.md`](../departments/02-zhongyao/07-zhongyao-yaoli-xue/chapters/06-buxu-mianyi/outputs/prompt-06-buxu-mianyi.md) |
 | skill | 补虚类药的免疫调节 | 用《中药药理学》第 6 章「补虚类药的免疫调节」的单元层做可核对的教学材料。 | 521 | [`skill-06-buxu-mianyi.md`](../departments/02-zhongyao/07-zhongyao-yaoli-xue/chapters/06-buxu-mianyi/outputs/skill-06-buxu-mianyi.md) |
 
-#### 第 7 章 · 化痰平喘与安神类药的药理
+#### 第 7 章 · 痰与神都没有化验单，这一章只能靠替代终点说话
 
 `07-zhongyao-yaoli-xue/chapters/07-huatan-anshen/`
 
@@ -3853,7 +3853,7 @@
 | prompt | 用本章内容做一件事：化痰平喘与安神类药的药理 | — | 416 | [`prompt-07-huatan-anshen.md`](../departments/02-zhongyao/07-zhongyao-yaoli-xue/chapters/07-huatan-anshen/outputs/prompt-07-huatan-anshen.md) |
 | skill | 化痰平喘与安神类药的药理 | 用《中药药理学》第 7 章「化痰平喘与安神类药的药理」的单元层做可核对的教学材料。 | 531 | [`skill-07-huatan-anshen.md`](../departments/02-zhongyao/07-zhongyao-yaoli-xue/chapters/07-huatan-anshen/outputs/skill-07-huatan-anshen.md) |
 
-#### 第 8 章 · 中药的毒性与安全评价
+#### 第 8 章 · 毒性分级写在书上，安全窗写在实验里，两套数不能互相换算
 
 `07-zhongyao-yaoli-xue/chapters/08-duxing-anquan/`
 
@@ -3862,7 +3862,7 @@
 | prompt | 用本章内容做一件事：中药的毒性与安全评价 | — | 414 | [`prompt-08-duxing-anquan.md`](../departments/02-zhongyao/07-zhongyao-yaoli-xue/chapters/08-duxing-anquan/outputs/prompt-08-duxing-anquan.md) |
 | skill | 中药的毒性与安全评价 | 用《中药药理学》第 8 章「中药的毒性与安全评价」的单元层做可核对的教学材料。 | 527 | [`skill-08-duxing-anquan.md`](../departments/02-zhongyao/07-zhongyao-yaoli-xue/chapters/08-duxing-anquan/outputs/skill-08-duxing-anquan.md) |
 
-#### 第 9 章 · 药代动力学与配伍影响
+#### 第 9 章 · 配伍改的不是药效的强弱，是有效成分进到血里的量
 
 `07-zhongyao-yaoli-xue/chapters/09-yaodai-peiwu/`
 
@@ -3871,7 +3871,7 @@
 | prompt | 用本章内容做一件事：药代动力学与配伍影响 | — | 414 | [`prompt-09-yaodai-peiwu.md`](../departments/02-zhongyao/07-zhongyao-yaoli-xue/chapters/09-yaodai-peiwu/outputs/prompt-09-yaodai-peiwu.md) |
 | skill | 药代动力学与配伍影响 | 用《中药药理学》第 9 章「药代动力学与配伍影响」的单元层做可核对的教学材料。 | 525 | [`skill-09-yaodai-peiwu.md`](../departments/02-zhongyao/07-zhongyao-yaoli-xue/chapters/09-yaodai-peiwu/outputs/skill-09-yaodai-peiwu.md) |
 
-#### 第 10 章 · 动物模型与证候模型的争议
+#### 第 10 章 · 药效不是药的性质，是药与模型之间的一个差
 
 `07-zhongyao-yaoli-xue/chapters/10-zhengxing-moxing/`
 
@@ -3880,7 +3880,7 @@
 | prompt | 用本章内容做一件事：动物模型与证候模型的争议 | — | 417 | [`prompt-10-zhengxing-moxing.md`](../departments/02-zhongyao/07-zhongyao-yaoli-xue/chapters/10-zhengxing-moxing/outputs/prompt-10-zhengxing-moxing.md) |
 | skill | 动物模型与证候模型的争议 | 用《中药药理学》第 10 章「动物模型与证候模型的争议」的单元层做可核对的教学材料。 | 538 | [`skill-10-zhengxing-moxing.md`](../departments/02-zhongyao/07-zhongyao-yaoli-xue/chapters/10-zhengxing-moxing/outputs/skill-10-zhengxing-moxing.md) |
 
-#### 第 11 章 · 药理证据的分级与临床转化
+#### 第 11 章 · 一条药理证据的等级，先由药材能不能复现决定
 
 `07-zhongyao-yaoli-xue/chapters/11-zhengju-fenji/`
 
@@ -3893,7 +3893,7 @@
 
 > Build · 第 5 学期 · 已产出 9 章
 
-#### 第 1 章 · 炮制的目的与历史源流
+#### 第 1 章 · 炮制不是一道加工工序，而是药材变成药的那一步
 
 `08-zhongyao-paozhi-xue/chapters/01-mudi-yuanliu/`
 
@@ -3902,7 +3902,7 @@
 | prompt | 用本章内容做一件事：炮制的目的与历史源流 | — | 414 | [`prompt-01-mudi-yuanliu.md`](../departments/02-zhongyao/08-zhongyao-paozhi-xue/chapters/01-mudi-yuanliu/outputs/prompt-01-mudi-yuanliu.md) |
 | skill | 炮制的目的与历史源流 | 用《中药炮制学》第 1 章「炮制的目的与历史源流」的单元层做可核对的教学材料。 | 527 | [`skill-01-mudi-yuanliu.md`](../departments/02-zhongyao/08-zhongyao-paozhi-xue/chapters/01-mudi-yuanliu/outputs/skill-01-mudi-yuanliu.md) |
 
-#### 第 2 章 · 净制与切制：炮制的前处理
+#### 第 2 章 · 净制的难点不是去杂，而是判断哪一部分才算药
 
 `08-zhongyao-paozhi-xue/chapters/02-jingzhi-qiezhi/`
 
@@ -3911,7 +3911,7 @@
 | prompt | 用本章内容做一件事：净制与切制：炮制的前处理 | — | 416 | [`prompt-02-jingzhi-qiezhi.md`](../departments/02-zhongyao/08-zhongyao-paozhi-xue/chapters/02-jingzhi-qiezhi/outputs/prompt-02-jingzhi-qiezhi.md) |
 | skill | 净制与切制：炮制的前处理 | 用《中药炮制学》第 2 章「净制与切制：炮制的前处理」的单元层做可核对的教学材料。 | 535 | [`skill-02-jingzhi-qiezhi.md`](../departments/02-zhongyao/08-zhongyao-paozhi-xue/chapters/02-jingzhi-qiezhi/outputs/skill-02-jingzhi-qiezhi.md) |
 
-#### 第 3 章 · 炒法：清炒与加辅料炒
+#### 第 3 章 · 炒法考的是终点，不是火候：火候只是通往终点的一段路
 
 `08-zhongyao-paozhi-xue/chapters/03-chaofa/`
 
@@ -3920,7 +3920,7 @@
 | prompt | 用本章内容做一件事：炒法：清炒与加辅料炒 | — | 414 | [`prompt-03-chaofa.md`](../departments/02-zhongyao/08-zhongyao-paozhi-xue/chapters/03-chaofa/outputs/prompt-03-chaofa.md) |
 | skill | 炒法：清炒与加辅料炒 | 用《中药炮制学》第 3 章「炒法：清炒与加辅料炒」的单元层做可核对的教学材料。 | 515 | [`skill-03-chaofa.md`](../departments/02-zhongyao/08-zhongyao-paozhi-xue/chapters/03-chaofa/outputs/skill-03-chaofa.md) |
 
-#### 第 4 章 · 炙法与酒醋蜜盐的辅料
+#### 第 4 章 · 辅料不是调味，是借另一味药的性去改这一味药
 
 `08-zhongyao-paozhi-xue/chapters/04-zhifa-fuliao/`
 
@@ -3929,7 +3929,7 @@
 | prompt | 用本章内容做一件事：炙法与酒醋蜜盐的辅料 | — | 414 | [`prompt-04-zhifa-fuliao.md`](../departments/02-zhongyao/08-zhongyao-paozhi-xue/chapters/04-zhifa-fuliao/outputs/prompt-04-zhifa-fuliao.md) |
 | skill | 炙法与酒醋蜜盐的辅料 | 用《中药炮制学》第 4 章「炙法与酒醋蜜盐的辅料」的单元层做可核对的教学材料。 | 527 | [`skill-04-zhifa-fuliao.md`](../departments/02-zhongyao/08-zhongyao-paozhi-xue/chapters/04-zhifa-fuliao/outputs/skill-04-zhifa-fuliao.md) |
 
-#### 第 5 章 · 煅法与煅淬
+#### 第 5 章 · 煅法的全部难点，是把看不见的变化写成看得见的终点
 
 `08-zhongyao-paozhi-xue/chapters/05-duanfa/`
 
@@ -3938,7 +3938,7 @@
 | prompt | 用本章内容做一件事：煅法与煅淬 | — | 409 | [`prompt-05-duanfa.md`](../departments/02-zhongyao/08-zhongyao-paozhi-xue/chapters/05-duanfa/outputs/prompt-05-duanfa.md) |
 | skill | 煅法与煅淬 | 用《中药炮制学》第 5 章「煅法与煅淬」的单元层做可核对的教学材料。 | 505 | [`skill-05-duanfa.md`](../departments/02-zhongyao/08-zhongyao-paozhi-xue/chapters/05-duanfa/outputs/skill-05-duanfa.md) |
 
-#### 第 6 章 · 蒸煮燀与发酵
+#### 第 6 章 · 水火共制是两道题：水进不进得去，酶死没死
 
 `08-zhongyao-paozhi-xue/chapters/06-zhengzhu-fajiao/`
 
@@ -3947,7 +3947,7 @@
 | prompt | 用本章内容做一件事：蒸煮燀与发酵 | — | 410 | [`prompt-06-zhengzhu-fajiao.md`](../departments/02-zhongyao/08-zhongyao-paozhi-xue/chapters/06-zhengzhu-fajiao/outputs/prompt-06-zhengzhu-fajiao.md) |
 | skill | 蒸煮燀与发酵 | 用《中药炮制学》第 6 章「蒸煮燀与发酵」的单元层做可核对的教学材料。 | 525 | [`skill-06-zhengzhu-fajiao.md`](../departments/02-zhongyao/08-zhongyao-paozhi-xue/chapters/06-zhengzhu-fajiao/outputs/skill-06-zhengzhu-fajiao.md) |
 
-#### 第 7 章 · 复制法与特殊炮制
+#### 第 7 章 · 复制法不是多洗几遍，是用辅料一步步改写药性
 
 `08-zhongyao-paozhi-xue/chapters/07-fuzhi-fa/`
 
@@ -3956,7 +3956,7 @@
 | prompt | 用本章内容做一件事：复制法与特殊炮制 | — | 412 | [`prompt-07-fuzhi-fa.md`](../departments/02-zhongyao/08-zhongyao-paozhi-xue/chapters/07-fuzhi-fa/outputs/prompt-07-fuzhi-fa.md) |
 | skill | 复制法与特殊炮制 | 用《中药炮制学》第 7 章「复制法与特殊炮制」的单元层做可核对的教学材料。 | 515 | [`skill-07-fuzhi-fa.md`](../departments/02-zhongyao/08-zhongyao-paozhi-xue/chapters/07-fuzhi-fa/outputs/skill-07-fuzhi-fa.md) |
 
-#### 第 8 章 · 炮制对成分与药效的影响
+#### 第 8 章 · 成分变了不等于疗效更好，中间隔着一条证据链
 
 `08-zhongyao-paozhi-xue/chapters/08-chengfen-yingxiang/`
 
@@ -3965,7 +3965,7 @@
 | prompt | 用本章内容做一件事：炮制对成分与药效的影响 | — | 415 | [`prompt-08-chengfen-yingxiang.md`](../departments/02-zhongyao/08-zhongyao-paozhi-xue/chapters/08-chengfen-yingxiang/outputs/prompt-08-chengfen-yingxiang.md) |
 | skill | 炮制对成分与药效的影响 | 用《中药炮制学》第 8 章「炮制对成分与药效的影响」的单元层做可核对的教学材料。 | 541 | [`skill-08-chengfen-yingxiang.md`](../departments/02-zhongyao/08-zhongyao-paozhi-xue/chapters/08-chengfen-yingxiang/outputs/skill-08-chengfen-yingxiang.md) |
 
-#### 第 9 章 · 炮制工艺的标准化与质控
+#### 第 9 章 · 标准化的上限是参数，下限是性状
 
 `08-zhongyao-paozhi-xue/chapters/09-gongyi-biaozhun/`
 
@@ -3978,7 +3978,7 @@
 
 > Core · 第 5 学期 · 已产出 10 章
 
-#### 第 1 章 · 剂型选择与给药途径
+#### 第 1 章 · 剂型不是包装，是处方之前的第一道工艺决定
 
 `09-zhongyao-yaoji-xue/chapters/01-jixing-xuanze/`
 
@@ -3987,7 +3987,7 @@
 | prompt | 用本章内容做一件事：剂型选择与给药途径 | — | 413 | [`prompt-01-jixing-xuanze.md`](../departments/02-zhongyao/09-zhongyao-yaoji-xue/chapters/01-jixing-xuanze/outputs/prompt-01-jixing-xuanze.md) |
 | skill | 剂型选择与给药途径 | 用《中药药剂学》第 1 章「剂型选择与给药途径」的单元层做可核对的教学材料。 | 525 | [`skill-01-jixing-xuanze.md`](../departments/02-zhongyao/09-zhongyao-yaoji-xue/chapters/01-jixing-xuanze/outputs/skill-01-jixing-xuanze.md) |
 
-#### 第 2 章 · 汤剂与煎煮工艺的参数
+#### 第 2 章 · 汤剂的疗效有一半写在加水量与火候里
 
 `09-zhongyao-yaoji-xue/chapters/02-tangji-jianzhu/`
 
@@ -3996,7 +3996,7 @@
 | prompt | 用本章内容做一件事：汤剂与煎煮工艺的参数 | — | 414 | [`prompt-02-tangji-jianzhu.md`](../departments/02-zhongyao/09-zhongyao-yaoji-xue/chapters/02-tangji-jianzhu/outputs/prompt-02-tangji-jianzhu.md) |
 | skill | 汤剂与煎煮工艺的参数 | 用《中药药剂学》第 2 章「汤剂与煎煮工艺的参数」的单元层做可核对的教学材料。 | 529 | [`skill-02-tangji-jianzhu.md`](../departments/02-zhongyao/09-zhongyao-yaoji-xue/chapters/02-tangji-jianzhu/outputs/skill-02-tangji-jianzhu.md) |
 
-#### 第 3 章 · 散剂、丸剂与片剂
+#### 第 3 章 · 散丸片的分野不在形状，而在剂量精度与溶散速度
 
 `09-zhongyao-yaoji-xue/chapters/03-sanji-wanpian/`
 
@@ -4005,7 +4005,7 @@
 | prompt | 用本章内容做一件事：散剂、丸剂与片剂 | — | 412 | [`prompt-03-sanji-wanpian.md`](../departments/02-zhongyao/09-zhongyao-yaoji-xue/chapters/03-sanji-wanpian/outputs/prompt-03-sanji-wanpian.md) |
 | skill | 散剂、丸剂与片剂 | 用《中药药剂学》第 3 章「散剂、丸剂与片剂」的单元层做可核对的教学材料。 | 523 | [`skill-03-sanji-wanpian.md`](../departments/02-zhongyao/09-zhongyao-yaoji-xue/chapters/03-sanji-wanpian/outputs/skill-03-sanji-wanpian.md) |
 
-#### 第 4 章 · 胶囊、颗粒与口服液
+#### 第 4 章 · 颗粒与胶囊是把汤剂改写成可运输的固体
 
 `09-zhongyao-yaoji-xue/chapters/04-jiaonang-keli/`
 
@@ -4014,7 +4014,7 @@
 | prompt | 用本章内容做一件事：胶囊、颗粒与口服液 | — | 413 | [`prompt-04-jiaonang-keli.md`](../departments/02-zhongyao/09-zhongyao-yaoji-xue/chapters/04-jiaonang-keli/outputs/prompt-04-jiaonang-keli.md) |
 | skill | 胶囊、颗粒与口服液 | 用《中药药剂学》第 4 章「胶囊、颗粒与口服液」的单元层做可核对的教学材料。 | 525 | [`skill-04-jiaonang-keli.md`](../departments/02-zhongyao/09-zhongyao-yaoji-xue/chapters/04-jiaonang-keli/outputs/skill-04-jiaonang-keli.md) |
 
-#### 第 5 章 · 注射剂与无菌工艺
+#### 第 5 章 · 注射剂没有屏障替它兜底，所以每一项参数都是安全参数
 
 `09-zhongyao-yaoji-xue/chapters/05-zhusheji-wujun/`
 
@@ -4023,7 +4023,7 @@
 | prompt | 用本章内容做一件事：注射剂与无菌工艺 | — | 412 | [`prompt-05-zhusheji-wujun.md`](../departments/02-zhongyao/09-zhongyao-yaoji-xue/chapters/05-zhusheji-wujun/outputs/prompt-05-zhusheji-wujun.md) |
 | skill | 注射剂与无菌工艺 | 用《中药药剂学》第 5 章「注射剂与无菌工艺」的单元层做可核对的教学材料。 | 525 | [`skill-05-zhusheji-wujun.md`](../departments/02-zhongyao/09-zhongyao-yaoji-xue/chapters/05-zhusheji-wujun/outputs/skill-05-zhusheji-wujun.md) |
 
-#### 第 6 章 · 外用制剂：膏药、软膏与贴剂
+#### 第 6 章 · 外用药没有换方子，换的是它绕过角质层的办法
 
 `09-zhongyao-yaoji-xue/chapters/06-waiyong-gaoyao/`
 
@@ -4032,7 +4032,7 @@
 | prompt | 用本章内容做一件事：外用制剂：膏药、软膏与贴剂 | — | 417 | [`prompt-06-waiyong-gaoyao.md`](../departments/02-zhongyao/09-zhongyao-yaoji-xue/chapters/06-waiyong-gaoyao/outputs/prompt-06-waiyong-gaoyao.md) |
 | skill | 外用制剂：膏药、软膏与贴剂 | 用《中药药剂学》第 6 章「外用制剂：膏药、软膏与贴剂」的单元层做可核对的教学材料。 | 535 | [`skill-06-waiyong-gaoyao.md`](../departments/02-zhongyao/09-zhongyao-yaoji-xue/chapters/06-waiyong-gaoyao/outputs/skill-06-waiyong-gaoyao.md) |
 
-#### 第 7 章 · 缓释与靶向给药系统
+#### 第 7 章 · 缓释改的是释放曲线，靶向改的是分布地图
 
 `09-zhongyao-yaoji-xue/chapters/07-huanshi-baxiang/`
 
@@ -4041,7 +4041,7 @@
 | prompt | 用本章内容做一件事：缓释与靶向给药系统 | — | 413 | [`prompt-07-huanshi-baxiang.md`](../departments/02-zhongyao/09-zhongyao-yaoji-xue/chapters/07-huanshi-baxiang/outputs/prompt-07-huanshi-baxiang.md) |
 | skill | 缓释与靶向给药系统 | 用《中药药剂学》第 7 章「缓释与靶向给药系统」的单元层做可核对的教学材料。 | 529 | [`skill-07-huanshi-baxiang.md`](../departments/02-zhongyao/09-zhongyao-yaoji-xue/chapters/07-huanshi-baxiang/outputs/skill-07-huanshi-baxiang.md) |
 
-#### 第 8 章 · 制剂的稳定性与有效期
+#### 第 8 章 · 有效期不是保质期，是回归线撞上限度的那一天
 
 `09-zhongyao-yaoji-xue/chapters/08-wendingxing/`
 
@@ -4050,7 +4050,7 @@
 | prompt | 用本章内容做一件事：制剂的稳定性与有效期 | — | 414 | [`prompt-08-wendingxing.md`](../departments/02-zhongyao/09-zhongyao-yaoji-xue/chapters/08-wendingxing/outputs/prompt-08-wendingxing.md) |
 | skill | 制剂的稳定性与有效期 | 用《中药药剂学》第 8 章「制剂的稳定性与有效期」的单元层做可核对的教学材料。 | 523 | [`skill-08-wendingxing.md`](../departments/02-zhongyao/09-zhongyao-yaoji-xue/chapters/08-wendingxing/outputs/skill-08-wendingxing.md) |
 
-#### 第 9 章 · 生物利用度与体外释放
+#### 第 9 章 · 生物利用度量的不是药效，是药有没有进体循环
 
 `09-zhongyao-yaoji-xue/chapters/09-shengwu-liyongdu/`
 
@@ -4059,7 +4059,7 @@
 | prompt | 用本章内容做一件事：生物利用度与体外释放 | — | 414 | [`prompt-09-shengwu-liyongdu.md`](../departments/02-zhongyao/09-zhongyao-yaoji-xue/chapters/09-shengwu-liyongdu/outputs/prompt-09-shengwu-liyongdu.md) |
 | skill | 生物利用度与体外释放 | 用《中药药剂学》第 9 章「生物利用度与体外释放」的单元层做可核对的教学材料。 | 533 | [`skill-09-shengwu-liyongdu.md`](../departments/02-zhongyao/09-zhongyao-yaoji-xue/chapters/09-shengwu-liyongdu/outputs/skill-09-shengwu-liyongdu.md) |
 
-#### 第 10 章 · 制剂工艺的放大与验证
+#### 第 10 章 · 放大失败多半不是设备坏了，是参数换了量纲
 
 `09-zhongyao-yaoji-xue/chapters/10-fangda-yanzheng/`
 
@@ -4072,7 +4072,7 @@
 
 > Build · 第 6 学期 · 已产出 12 章
 
-#### 第 1 章 · 分析方法的验证与数据处理
+#### 第 1 章 · 方法验证不是打勾表，是八个各自会失败的边界
 
 `10-zhongyao-fenxi-xue/chapters/01-fangfa-yanzheng/`
 
@@ -4081,7 +4081,7 @@
 | prompt | 用本章内容做一件事：分析方法的验证与数据处理 | — | 416 | [`prompt-01-fangfa-yanzheng.md`](../departments/02-zhongyao/10-zhongyao-fenxi-xue/chapters/01-fangfa-yanzheng/outputs/prompt-01-fangfa-yanzheng.md) |
 | skill | 分析方法的验证与数据处理 | 用《中药分析学》第 1 章「分析方法的验证与数据处理」的单元层做可核对的教学材料。 | 535 | [`skill-01-fangfa-yanzheng.md`](../departments/02-zhongyao/10-zhongyao-fenxi-xue/chapters/01-fangfa-yanzheng/outputs/skill-01-fangfa-yanzheng.md) |
 
-#### 第 2 章 · 取样、制备与前处理
+#### 第 2 章 · 取样定上限，前处理定下限，两者都不能靠事后补
 
 `10-zhongyao-fenxi-xue/chapters/02-yangpin-qianchuli/`
 
@@ -4090,7 +4090,7 @@
 | prompt | 用本章内容做一件事：取样、制备与前处理 | — | 413 | [`prompt-02-yangpin-qianchuli.md`](../departments/02-zhongyao/10-zhongyao-fenxi-xue/chapters/02-yangpin-qianchuli/outputs/prompt-02-yangpin-qianchuli.md) |
 | skill | 取样、制备与前处理 | 用《中药分析学》第 2 章「取样、制备与前处理」的单元层做可核对的教学材料。 | 533 | [`skill-02-yangpin-qianchuli.md`](../departments/02-zhongyao/10-zhongyao-fenxi-xue/chapters/02-yangpin-qianchuli/outputs/skill-02-yangpin-qianchuli.md) |
 
-#### 第 3 章 · 鉴别：性状、显微、理化与分子
+#### 第 3 章 · 四类鉴别不是替代关系，是四种不同的覆盖面
 
 `10-zhongyao-fenxi-xue/chapters/03-jianding/`
 
@@ -4099,7 +4099,7 @@
 | prompt | 用本章内容做一件事：鉴别：性状、显微、理化与分子 | — | 418 | [`prompt-03-jianding.md`](../departments/02-zhongyao/10-zhongyao-fenxi-xue/chapters/03-jianding/outputs/prompt-03-jianding.md) |
 | skill | 鉴别：性状、显微、理化与分子 | 用《中药分析学》第 3 章「鉴别：性状、显微、理化与分子」的单元层做可核对的教学材料。 | 525 | [`skill-03-jianding.md`](../departments/02-zhongyao/10-zhongyao-fenxi-xue/chapters/03-jianding/outputs/skill-03-jianding.md) |
 
-#### 第 4 章 · 检查：水分、灰分、重金属与农残
+#### 第 4 章 · 检查项写的是上限，因为它管的是不该进来的东西
 
 `10-zhongyao-fenxi-xue/chapters/04-jiancha/`
 
@@ -4108,7 +4108,7 @@
 | prompt | 用本章内容做一件事：检查：水分、灰分、重金属与农残 | — | 419 | [`prompt-04-jiancha.md`](../departments/02-zhongyao/10-zhongyao-fenxi-xue/chapters/04-jiancha/outputs/prompt-04-jiancha.md) |
 | skill | 检查：水分、灰分、重金属与农残 | 用《中药分析学》第 4 章「检查：水分、灰分、重金属与农残」的单元层做可核对的教学材料。 | 525 | [`skill-04-jiancha.md`](../departments/02-zhongyao/10-zhongyao-fenxi-xue/chapters/04-jiancha/outputs/skill-04-jiancha.md) |
 
-#### 第 5 章 · 薄层色谱与高效液相
+#### 第 5 章 · 分离度不足 1.5 时，峰面积再整齐也不叫含量
 
 `10-zhongyao-fenxi-xue/chapters/05-tlc-hplc/`
 
@@ -4117,7 +4117,7 @@
 | prompt | 用本章内容做一件事：薄层色谱与高效液相 | — | 413 | [`prompt-05-tlc-hplc.md`](../departments/02-zhongyao/10-zhongyao-fenxi-xue/chapters/05-tlc-hplc/outputs/prompt-05-tlc-hplc.md) |
 | skill | 薄层色谱与高效液相 | 用《中药分析学》第 5 章「薄层色谱与高效液相」的单元层做可核对的教学材料。 | 515 | [`skill-05-tlc-hplc.md`](../departments/02-zhongyao/10-zhongyao-fenxi-xue/chapters/05-tlc-hplc/outputs/skill-05-tlc-hplc.md) |
 
-#### 第 6 章 · 气相色谱、质谱联用与光谱
+#### 第 6 章 · 联用给的是身份，不是含量；把身份当含量是这一章最贵的错
 
 `10-zhongyao-fenxi-xue/chapters/06-gc-ms/`
 
@@ -4126,7 +4126,7 @@
 | prompt | 用本章内容做一件事：气相色谱、质谱联用与光谱 | — | 416 | [`prompt-06-gc-ms.md`](../departments/02-zhongyao/10-zhongyao-fenxi-xue/chapters/06-gc-ms/outputs/prompt-06-gc-ms.md) |
 | skill | 气相色谱、质谱联用与光谱 | 用《中药分析学》第 6 章「气相色谱、质谱联用与光谱」的单元层做可核对的教学材料。 | 515 | [`skill-06-gc-ms.md`](../departments/02-zhongyao/10-zhongyao-fenxi-xue/chapters/06-gc-ms/outputs/skill-06-gc-ms.md) |
 
-#### 第 7 章 · 指纹图谱与相似度评价
+#### 第 7 章 · 相似度 0.90 判的是像不像，不是好不好
 
 `10-zhongyao-fenxi-xue/chapters/07-zhiwen-tupu/`
 
@@ -4135,7 +4135,7 @@
 | prompt | 用本章内容做一件事：指纹图谱与相似度评价 | — | 414 | [`prompt-07-zhiwen-tupu.md`](../departments/02-zhongyao/10-zhongyao-fenxi-xue/chapters/07-zhiwen-tupu/outputs/prompt-07-zhiwen-tupu.md) |
 | skill | 指纹图谱与相似度评价 | 用《中药分析学》第 7 章「指纹图谱与相似度评价」的单元层做可核对的教学材料。 | 523 | [`skill-07-zhiwen-tupu.md`](../departments/02-zhongyao/10-zhongyao-fenxi-xue/chapters/07-zhiwen-tupu/outputs/skill-07-zhiwen-tupu.md) |
 
-#### 第 8 章 · 多成分定量与一测多评
+#### 第 8 章 · 一测多评省的是对照品，赌的是校正因子
 
 `10-zhongyao-fenxi-xue/chapters/08-duochengfen-dingliang/`
 
@@ -4144,7 +4144,7 @@
 | prompt | 用本章内容做一件事：多成分定量与一测多评 | — | 414 | [`prompt-08-duochengfen-dingliang.md`](../departments/02-zhongyao/10-zhongyao-fenxi-xue/chapters/08-duochengfen-dingliang/outputs/prompt-08-duochengfen-dingliang.md) |
 | skill | 多成分定量与一测多评 | 用《中药分析学》第 8 章「多成分定量与一测多评」的单元层做可核对的教学材料。 | 543 | [`skill-08-duochengfen-dingliang.md`](../departments/02-zhongyao/10-zhongyao-fenxi-xue/chapters/08-duochengfen-dingliang/outputs/skill-08-duochengfen-dingliang.md) |
 
-#### 第 9 章 · 中药制剂分析
+#### 第 9 章 · 制剂分析的难点在"把药拿出来"，不在"把数测出来"
 
 `10-zhongyao-fenxi-xue/chapters/09-zhiji-fenxi/`
 
@@ -4153,7 +4153,7 @@
 | prompt | 用本章内容做一件事：中药制剂分析 | — | 410 | [`prompt-09-zhiji-fenxi.md`](../departments/02-zhongyao/10-zhongyao-fenxi-xue/chapters/09-zhiji-fenxi/outputs/prompt-09-zhiji-fenxi.md) |
 | skill | 中药制剂分析 | 用《中药分析学》第 9 章「中药制剂分析」的单元层做可核对的教学材料。 | 515 | [`skill-09-zhiji-fenxi.md`](../departments/02-zhongyao/10-zhongyao-fenxi-xue/chapters/09-zhiji-fenxi/outputs/skill-09-zhiji-fenxi.md) |
 
-#### 第 10 章 · 质量标准与标准物质
+#### 第 10 章 · 标准里写的每一个数，都得有一批样品替它作证
 
 `10-zhongyao-fenxi-xue/chapters/10-biaozhun-wuzhi/`
 
@@ -4162,7 +4162,7 @@
 | prompt | 用本章内容做一件事：质量标准与标准物质 | — | 414 | [`prompt-10-biaozhun-wuzhi.md`](../departments/02-zhongyao/10-zhongyao-fenxi-xue/chapters/10-biaozhun-wuzhi/outputs/prompt-10-biaozhun-wuzhi.md) |
 | skill | 质量标准与标准物质 | 用《中药分析学》第 10 章「质量标准与标准物质」的单元层做可核对的教学材料。 | 528 | [`skill-10-biaozhun-wuzhi.md`](../departments/02-zhongyao/10-zhongyao-fenxi-xue/chapters/10-biaozhun-wuzhi/outputs/skill-10-biaozhun-wuzhi.md) |
 
-#### 第 11 章 · 生物活性测定与安全性评价
+#### 第 11 章 · 限量合格说的是"不超过上限"，不是"吃下去安全"
 
 `10-zhongyao-fenxi-xue/chapters/11-anquan-pingjia/`
 
@@ -4171,7 +4171,7 @@
 | prompt | 用本章内容做一件事：生物活性测定与安全性评价 | — | 417 | [`prompt-11-anquan-pingjia.md`](../departments/02-zhongyao/10-zhongyao-fenxi-xue/chapters/11-anquan-pingjia/outputs/prompt-11-anquan-pingjia.md) |
 | skill | 生物活性测定与安全性评价 | 用《中药分析学》第 11 章「生物活性测定与安全性评价」的单元层做可核对的教学材料。 | 534 | [`skill-11-anquan-pingjia.md`](../departments/02-zhongyao/10-zhongyao-fenxi-xue/chapters/11-anquan-pingjia/outputs/skill-11-anquan-pingjia.md) |
 
-#### 第 12 章 · 数据完整性与分析新技术
+#### 第 12 章 · 模型在训练集上再漂亮，也只是一句未被验证的话
 
 `10-zhongyao-fenxi-xue/chapters/12-shuju-xin-jishu/`
 
@@ -4184,7 +4184,7 @@
 
 > Build · 第 6 学期 · 已产出 8 章
 
-#### 第 1 章 · 中药药代动力学概论
+#### 第 1 章 · 药代动力学先问成分能不能被追到
 
 `11-zhongyao-yaodai-donglixue/chapters/01-adme-gailun/`
 
@@ -4193,7 +4193,7 @@
 | prompt | 中药药代动力学概论 · 提示词 | — | 496 | [`prompt-01-adme-gailun.md`](../departments/02-zhongyao/11-zhongyao-yaodai-donglixue/chapters/01-adme-gailun/outputs/prompt-01-adme-gailun.md) |
 | skill | 中药药代动力学概论 | 中药药代动力学概论——按「中药药代动力学概论 → 体内过程与生物利用度 → 药动学参数与房室模型 → 成分吸收与转运 → 代谢与代谢物 → 药物相互作用与酶 → 中药复方药动学特点 → 方法学与研究规范」走一遍本章判据 | 423 | [`skill-adme-gailun.md`](../departments/02-zhongyao/11-zhongyao-yaodai-donglixue/chapters/01-adme-gailun/outputs/skill-adme-gailun.md) |
 
-#### 第 2 章 · 体内过程与生物利用度
+#### 第 2 章 · 生物利用度是剂型与工艺的最终判决
 
 `11-zhongyao-yaodai-donglixue/chapters/02-tinei-guocheng/`
 
@@ -4202,7 +4202,7 @@
 | prompt | 体内过程与生物利用度 · 提示词 | — | 499 | [`prompt-02-tinei-guocheng.md`](../departments/02-zhongyao/11-zhongyao-yaodai-donglixue/chapters/02-tinei-guocheng/outputs/prompt-02-tinei-guocheng.md) |
 | skill | 体内过程与生物利用度 | 体内过程与生物利用度——按「中药药代动力学概论 → 体内过程与生物利用度 → 药动学参数与房室模型 → 成分吸收与转运 → 代谢与代谢物 → 药物相互作用与酶 → 中药复方药动学特点 → 方法学与研究规范」走一遍本章判据 | 428 | [`skill-tinei-guocheng.md`](../departments/02-zhongyao/11-zhongyao-yaodai-donglixue/chapters/02-tinei-guocheng/outputs/skill-tinei-guocheng.md) |
 
-#### 第 3 章 · 药动学参数与房室模型
+#### 第 3 章 · 参数不是数据，是可比较性的契约
 
 `11-zhongyao-yaodai-donglixue/chapters/03-canshu-moxing/`
 
@@ -4211,7 +4211,7 @@
 | prompt | 药动学参数与房室模型 · 提示词 | — | 499 | [`prompt-03-canshu-moxing.md`](../departments/02-zhongyao/11-zhongyao-yaodai-donglixue/chapters/03-canshu-moxing/outputs/prompt-03-canshu-moxing.md) |
 | skill | 药动学参数与房室模型 | 药动学参数与房室模型——按「中药药代动力学概论 → 体内过程与生物利用度 → 药动学参数与房室模型 → 成分吸收与转运 → 代谢与代谢物 → 药物相互作用与酶 → 中药复方药动学特点 → 方法学与研究规范」走一遍本章判据 | 427 | [`skill-canshu-moxing.md`](../departments/02-zhongyao/11-zhongyao-yaodai-donglixue/chapters/03-canshu-moxing/outputs/skill-canshu-moxing.md) |
 
-#### 第 4 章 · 成分吸收与转运
+#### 第 4 章 · 进了血的成分是被转运体挑过的
 
 `11-zhongyao-yaodai-donglixue/chapters/04-chengfen-zhuanyun/`
 
@@ -4220,7 +4220,7 @@
 | prompt | 成分吸收与转运 · 提示词 | — | 490 | [`prompt-04-chengfen-zhuanyun.md`](../departments/02-zhongyao/11-zhongyao-yaodai-donglixue/chapters/04-chengfen-zhuanyun/outputs/prompt-04-chengfen-zhuanyun.md) |
 | skill | 成分吸收与转运 | 成分吸收与转运——按「中药药代动力学概论 → 体内过程与生物利用度 → 药动学参数与房室模型 → 成分吸收与转运 → 代谢与代谢物 → 药物相互作用与酶 → 中药复方药动学特点 → 方法学与研究规范」走一遍本章判据 | 425 | [`skill-chengfen-zhuanyun.md`](../departments/02-zhongyao/11-zhongyao-yaodai-donglixue/chapters/04-chengfen-zhuanyun/outputs/skill-chengfen-zhuanyun.md) |
 
-#### 第 5 章 · 代谢与代谢物
+#### 第 5 章 · 代谢不是减活，是把外来物改成能排出去的形状
 
 `11-zhongyao-yaodai-donglixue/chapters/05-daixie-daixiewu/`
 
@@ -4229,7 +4229,7 @@
 | prompt | 代谢与代谢物 · 提示词 | — | 487 | [`prompt-05-daixie-daixiewu.md`](../departments/02-zhongyao/11-zhongyao-yaodai-donglixue/chapters/05-daixie-daixiewu/outputs/prompt-05-daixie-daixiewu.md) |
 | skill | 代谢与代谢物 | 代谢与代谢物——按「中药药代动力学概论 → 体内过程与生物利用度 → 药动学参数与房室模型 → 成分吸收与转运 → 代谢与代谢物 → 药物相互作用与酶 → 中药复方药动学特点 → 方法学与研究规范」走一遍本章判据 | 421 | [`skill-daixie-daixiewu.md`](../departments/02-zhongyao/11-zhongyao-yaodai-donglixue/chapters/05-daixie-daixiewu/outputs/skill-daixie-daixiewu.md) |
 
-#### 第 6 章 · 药物相互作用与酶
+#### 第 6 章 · 相互作用的证据差一级，结论就差一个量级
 
 `11-zhongyao-yaodai-donglixue/chapters/06-xianghu-zuoyong/`
 
@@ -4238,7 +4238,7 @@
 | prompt | 药物相互作用与酶 · 提示词 | — | 493 | [`prompt-06-xianghu-zuoyong.md`](../departments/02-zhongyao/11-zhongyao-yaodai-donglixue/chapters/06-xianghu-zuoyong/outputs/prompt-06-xianghu-zuoyong.md) |
 | skill | 药物相互作用与酶 | 药物相互作用与酶——按「中药药代动力学概论 → 体内过程与生物利用度 → 药动学参数与房室模型 → 成分吸收与转运 → 代谢与代谢物 → 药物相互作用与酶 → 中药复方药动学特点 → 方法学与研究规范」走一遍本章判据 | 425 | [`skill-xianghu-zuoyong.md`](../departments/02-zhongyao/11-zhongyao-yaodai-donglixue/chapters/06-xianghu-zuoyong/outputs/skill-xianghu-zuoyong.md) |
 
-#### 第 7 章 · 中药复方药动学特点
+#### 第 7 章 · 复方的暴露是一条谱，不是一个点
 
 `11-zhongyao-yaodai-donglixue/chapters/07-fufang-tedian/`
 
@@ -4247,7 +4247,7 @@
 | prompt | 中药复方药动学特点 · 提示词 | — | 496 | [`prompt-07-fufang-tedian.md`](../departments/02-zhongyao/11-zhongyao-yaodai-donglixue/chapters/07-fufang-tedian/outputs/prompt-07-fufang-tedian.md) |
 | skill | 中药复方药动学特点 | 中药复方药动学特点——按「中药药代动力学概论 → 体内过程与生物利用度 → 药动学参数与房室模型 → 成分吸收与转运 → 代谢与代谢物 → 药物相互作用与酶 → 中药复方药动学特点 → 方法学与研究规范」走一遍本章判据 | 425 | [`skill-fufang-tedian.md`](../departments/02-zhongyao/11-zhongyao-yaodai-donglixue/chapters/07-fufang-tedian/outputs/skill-fufang-tedian.md) |
 
-#### 第 8 章 · 方法学与研究规范
+#### 第 8 章 · 方法学的门槛不在仪器，在于别人能不能重做一遍
 
 `11-zhongyao-yaodai-donglixue/chapters/08-fangfaxue-guifan/`
 
@@ -4260,7 +4260,7 @@
 
 > Reference · 第 6 学期 · 已产出 8 章
 
-#### 第 1 章 · 道地药材的概念与源流
+#### 第 1 章 · 道地不是产地标签，而是「产区—品种—工艺」三证合一
 
 `12-daodi-yaocai/chapters/01-daodi-gainian/`
 
@@ -4269,7 +4269,7 @@
 | prompt | 道地药材的概念与源流 · 提示词 | — | 492 | [`prompt-01-daodi-gainian.md`](../departments/02-zhongyao/12-daodi-yaocai/chapters/01-daodi-gainian/outputs/prompt-01-daodi-gainian.md) |
 | skill | 道地药材的概念与源流 | 道地药材的概念与源流——按「道地药材的概念与源流 → 产区分布与区划 → 生态因子与品质形成 → 基原、品种与种质 → 栽培与采收 → 产地加工 → 规格等级与商品 → 品质评价与追溯」走一遍本章判据 | 404 | [`skill-daodi-gainian.md`](../departments/02-zhongyao/12-daodi-yaocai/chapters/01-daodi-gainian/outputs/skill-daodi-gainian.md) |
 
-#### 第 2 章 · 产区分布与区划
+#### 第 2 章 · 产区不是地图上的一个点，而是三条地带性叠加出来的一条带
 
 `12-daodi-yaocai/chapters/02-quhua-fenbu/`
 
@@ -4278,7 +4278,7 @@
 | prompt | 产区分布与区划 · 提示词 | — | 483 | [`prompt-02-quhua-fenbu.md`](../departments/02-zhongyao/12-daodi-yaocai/chapters/02-quhua-fenbu/outputs/prompt-02-quhua-fenbu.md) |
 | skill | 产区分布与区划 | 产区分布与区划——按「道地药材的概念与源流 → 产区分布与区划 → 生态因子与品质形成 → 基原、品种与种质 → 栽培与采收 → 产地加工 → 规格等级与商品 → 品质评价与追溯」走一遍本章判据 | 396 | [`skill-quhua-fenbu.md`](../departments/02-zhongyao/12-daodi-yaocai/chapters/02-quhua-fenbu/outputs/skill-quhua-fenbu.md) |
 
-#### 第 3 章 · 生态因子与品质形成
+#### 第 3 章 · 品质差异一半写在地里，一半写在采收与加工那几天
 
 `12-daodi-yaocai/chapters/03-shengtai-pinzhi/`
 
@@ -4287,7 +4287,7 @@
 | prompt | 生态因子与品质形成 · 提示词 | — | 489 | [`prompt-03-shengtai-pinzhi.md`](../departments/02-zhongyao/12-daodi-yaocai/chapters/03-shengtai-pinzhi/outputs/prompt-03-shengtai-pinzhi.md) |
 | skill | 生态因子与品质形成 | 生态因子与品质形成——按「道地药材的概念与源流 → 产区分布与区划 → 生态因子与品质形成 → 基原、品种与种质 → 栽培与采收 → 产地加工 → 规格等级与商品 → 品质评价与追溯」走一遍本章判据 | 404 | [`skill-shengtai-pinzhi.md`](../departments/02-zhongyao/12-daodi-yaocai/chapters/03-shengtai-pinzhi/outputs/skill-shengtai-pinzhi.md) |
 
-#### 第 4 章 · 基原、品种与种质
+#### 第 4 章 · 基原错了，后面所有鉴定都只是在给错的东西作证
 
 `12-daodi-yaocai/chapters/04-jiyuan-pinzhong/`
 
@@ -4296,7 +4296,7 @@
 | prompt | 基原、品种与种质 · 提示词 | — | 486 | [`prompt-04-jiyuan-pinzhong.md`](../departments/02-zhongyao/12-daodi-yaocai/chapters/04-jiyuan-pinzhong/outputs/prompt-04-jiyuan-pinzhong.md) |
 | skill | 基原、品种与种质 | 基原、品种与种质——按「道地药材的概念与源流 → 产区分布与区划 → 生态因子与品质形成 → 基原、品种与种质 → 栽培与采收 → 产地加工 → 规格等级与商品 → 品质评价与追溯」走一遍本章判据 | 402 | [`skill-jiyuan-pinzhong.md`](../departments/02-zhongyao/12-daodi-yaocai/chapters/04-jiyuan-pinzhong/outputs/skill-jiyuan-pinzhong.md) |
 
-#### 第 5 章 · 栽培与采收
+#### 第 5 章 · 栽培把「找到好药」换成了「每年都做出好药」
 
 `12-daodi-yaocai/chapters/05-zaipei-caishou/`
 
@@ -4305,7 +4305,7 @@
 | prompt | 栽培与采收 · 提示词 | — | 477 | [`prompt-05-zaipei-caishou.md`](../departments/02-zhongyao/12-daodi-yaocai/chapters/05-zaipei-caishou/outputs/prompt-05-zaipei-caishou.md) |
 | skill | 栽培与采收 | 栽培与采收——按「道地药材的概念与源流 → 产区分布与区划 → 生态因子与品质形成 → 基原、品种与种质 → 栽培与采收 → 产地加工 → 规格等级与商品 → 品质评价与追溯」走一遍本章判据 | 395 | [`skill-zaipei-caishou.md`](../departments/02-zhongyao/12-daodi-yaocai/chapters/05-zaipei-caishou/outputs/skill-zaipei-caishou.md) |
 
-#### 第 6 章 · 产地加工
+#### 第 6 章 · 产地加工是把「植物」定成「药材」的那道工序
 
 `12-daodi-yaocai/chapters/06-chandi-jiagong/`
 
@@ -4314,7 +4314,7 @@
 | prompt | 产地加工 · 提示词 | — | 474 | [`prompt-06-chandi-jiagong.md`](../departments/02-zhongyao/12-daodi-yaocai/chapters/06-chandi-jiagong/outputs/prompt-06-chandi-jiagong.md) |
 | skill | 产地加工 | 产地加工——按「道地药材的概念与源流 → 产区分布与区划 → 生态因子与品质形成 → 基原、品种与种质 → 栽培与采收 → 产地加工 → 规格等级与商品 → 品质评价与追溯」走一遍本章判据 | 393 | [`skill-chandi-jiagong.md`](../departments/02-zhongyao/12-daodi-yaocai/chapters/06-chandi-jiagong/outputs/skill-chandi-jiagong.md) |
 
-#### 第 7 章 · 规格等级与商品
+#### 第 7 章 · 等级是商品的语言，不是药效的刻度
 
 `12-daodi-yaocai/chapters/07-guige-dengji/`
 
@@ -4325,7 +4325,7 @@
 | prompt | 用本章内容做一件事：中药材商品的规格等级 | — | 414 | [`prompt-07-guige-dengji.md`](../departments/02-zhongyao/17-zhongyao-shangpin-xue/chapters/07-guige-dengji/outputs/prompt-07-guige-dengji.md) |
 | skill | 中药材商品的规格等级 | 用《中药商品学》第 7 章「中药材商品的规格等级」的单元层做可核对的教学材料。 | 531 | [`skill-07-guige-dengji.md`](../departments/02-zhongyao/17-zhongyao-shangpin-xue/chapters/07-guige-dengji/outputs/skill-07-guige-dengji.md) |
 
-#### 第 8 章 · 品质评价与追溯
+#### 第 8 章 · 合格是最低线，评价是另一件事
 
 `12-daodi-yaocai/chapters/08-pingjia-zhuisu/`
 
@@ -4338,7 +4338,7 @@
 
 > Clinic · 第 7 学期 · 已产出 10 章
 
-#### 第 1 章 · 中成药概论与分类
+#### 第 1 章 · 剂型是把用法固定在药里的那一步
 
 `13-zhongchengyao-linchuang/chapters/01-gailun-fenlei/`
 
@@ -4347,7 +4347,7 @@
 | prompt | 中成药概论与分类 · 提示词 | — | 509 | [`prompt-01-gailun-fenlei.md`](../departments/02-zhongyao/13-zhongchengyao-linchuang/chapters/01-gailun-fenlei/outputs/prompt-01-gailun-fenlei.md) |
 | skill | 中成药概论与分类 | 中成药概论与分类——按「中成药概论与分类 → 剂型与制备工艺 → 质量标准与检验 → 中药注射剂与特殊剂型 → 内科常用中成药 → 妇科与儿科用药 → 骨伤与皮肤科用药 → 联合用药与相互作用 → 不良反应与监测 → 合理使用与处方审核」走一遍本章判据 | 435 | [`skill-gailun-fenlei.md`](../departments/02-zhongyao/13-zhongchengyao-linchuang/chapters/01-gailun-fenlei/outputs/skill-gailun-fenlei.md) |
 
-#### 第 2 章 · 剂型与制备工艺
+#### 第 2 章 · 剂型决定药怎么出来，工艺决定每一批是不是同一批
 
 `13-zhongchengyao-linchuang/chapters/02-jixing-gongyi/`
 
@@ -4356,7 +4356,7 @@
 | prompt | 剂型与制备工艺 · 提示词 | — | 506 | [`prompt-02-jixing-gongyi.md`](../departments/02-zhongyao/13-zhongchengyao-linchuang/chapters/02-jixing-gongyi/outputs/prompt-02-jixing-gongyi.md) |
 | skill | 剂型与制备工艺 | 剂型与制备工艺——按「中成药概论与分类 → 剂型与制备工艺 → 质量标准与检验 → 中药注射剂与特殊剂型 → 内科常用中成药 → 妇科与儿科用药 → 骨伤与皮肤科用药 → 联合用药与相互作用 → 不良反应与监测 → 合理使用与处方审核」走一遍本章判据 | 433 | [`skill-jixing-gongyi.md`](../departments/02-zhongyao/13-zhongchengyao-linchuang/chapters/02-jixing-gongyi/outputs/skill-jixing-gongyi.md) |
 
-#### 第 3 章 · 质量标准与检验
+#### 第 3 章 · 标准不替好药背书，它只替不合格的药划线
 
 `13-zhongchengyao-linchuang/chapters/03-zhiliang-biaozhun/`
 
@@ -4365,7 +4365,7 @@
 | prompt | 质量标准与检验 · 提示词 | — | 506 | [`prompt-03-zhiliang-biaozhun.md`](../departments/02-zhongyao/13-zhongchengyao-linchuang/chapters/03-zhiliang-biaozhun/outputs/prompt-03-zhiliang-biaozhun.md) |
 | skill | 质量标准与检验 | 质量标准与检验——按「中成药概论与分类 → 剂型与制备工艺 → 质量标准与检验 → 中药注射剂与特殊剂型 → 内科常用中成药 → 妇科与儿科用药 → 骨伤与皮肤科用药 → 联合用药与相互作用 → 不良反应与监测 → 合理使用与处方审核」走一遍本章判据 | 437 | [`skill-zhiliang-biaozhun.md`](../departments/02-zhongyao/13-zhongchengyao-linchuang/chapters/03-zhiliang-biaozhun/outputs/skill-zhiliang-biaozhun.md) |
 
-#### 第 4 章 · 中药注射剂与特殊剂型
+#### 第 4 章 · 注射剂拿掉了胃肠这道屏障，就得把每一项要求补回来
 
 `13-zhongchengyao-linchuang/chapters/04-zhusheji/`
 
@@ -4374,7 +4374,7 @@
 | prompt | 中药注射剂与特殊剂型 · 提示词 | — | 515 | [`prompt-04-zhusheji.md`](../departments/02-zhongyao/13-zhongchengyao-linchuang/chapters/04-zhusheji/outputs/prompt-04-zhusheji.md) |
 | skill | 中药注射剂与特殊剂型 | 中药注射剂与特殊剂型——按「中成药概论与分类 → 剂型与制备工艺 → 质量标准与检验 → 中药注射剂与特殊剂型 → 内科常用中成药 → 妇科与儿科用药 → 骨伤与皮肤科用药 → 联合用药与相互作用 → 不良反应与监测 → 合理使用与处方审核」走一遍本章判据 | 434 | [`skill-zhusheji.md`](../departments/02-zhongyao/13-zhongchengyao-linchuang/chapters/04-zhusheji/outputs/skill-zhusheji.md) |
 
-#### 第 5 章 · 内科常用中成药
+#### 第 5 章 · 选药的入口是证候，不是药名里的那两个字
 
 `13-zhongchengyao-linchuang/chapters/05-neike-yongyao/`
 
@@ -4383,7 +4383,7 @@
 | prompt | 内科常用中成药 · 提示词 | — | 506 | [`prompt-05-neike-yongyao.md`](../departments/02-zhongyao/13-zhongchengyao-linchuang/chapters/05-neike-yongyao/outputs/prompt-05-neike-yongyao.md) |
 | skill | 内科常用中成药 | 内科常用中成药——按「中成药概论与分类 → 剂型与制备工艺 → 质量标准与检验 → 中药注射剂与特殊剂型 → 内科常用中成药 → 妇科与儿科用药 → 骨伤与皮肤科用药 → 联合用药与相互作用 → 不良反应与监测 → 合理使用与处方审核」走一遍本章判据 | 433 | [`skill-neike-yongyao.md`](../departments/02-zhongyao/13-zhongchengyao-linchuang/chapters/05-neike-yongyao/outputs/skill-neike-yongyao.md) |
 
-#### 第 6 章 · 妇科与儿科用药
+#### 第 6 章 · 人群一变，剂量、疗程、禁忌三样一起变
 
 `13-zhongchengyao-linchuang/chapters/06-fuke-erke/`
 
@@ -4392,7 +4392,7 @@
 | prompt | 妇科与儿科用药 · 提示词 | — | 506 | [`prompt-06-fuke-erke.md`](../departments/02-zhongyao/13-zhongchengyao-linchuang/chapters/06-fuke-erke/outputs/prompt-06-fuke-erke.md) |
 | skill | 妇科与儿科用药 | 妇科与儿科用药——按「中成药概论与分类 → 剂型与制备工艺 → 质量标准与检验 → 中药注射剂与特殊剂型 → 内科常用中成药 → 妇科与儿科用药 → 骨伤与皮肤科用药 → 联合用药与相互作用 → 不良反应与监测 → 合理使用与处方审核」走一遍本章判据 | 429 | [`skill-fuke-erke.md`](../departments/02-zhongyao/13-zhongchengyao-linchuang/chapters/06-fuke-erke/outputs/skill-fuke-erke.md) |
 
-#### 第 7 章 · 骨伤与皮肤科用药
+#### 第 7 章 · 外用不是内服的降级版，它换了一条吸收路径
 
 `13-zhongchengyao-linchuang/chapters/07-gushang-pifu/`
 
@@ -4401,7 +4401,7 @@
 | prompt | 骨伤与皮肤科用药 · 提示词 | — | 509 | [`prompt-07-gushang-pifu.md`](../departments/02-zhongyao/13-zhongchengyao-linchuang/chapters/07-gushang-pifu/outputs/prompt-07-gushang-pifu.md) |
 | skill | 骨伤与皮肤科用药 | 骨伤与皮肤科用药——按「中成药概论与分类 → 剂型与制备工艺 → 质量标准与检验 → 中药注射剂与特殊剂型 → 内科常用中成药 → 妇科与儿科用药 → 骨伤与皮肤科用药 → 联合用药与相互作用 → 不良反应与监测 → 合理使用与处方审核」走一遍本章判据 | 434 | [`skill-gushang-pifu.md`](../departments/02-zhongyao/13-zhongchengyao-linchuang/chapters/07-gushang-pifu/outputs/skill-gushang-pifu.md) |
 
-#### 第 8 章 · 联合用药与相互作用
+#### 第 8 章 · 联用不是加法，是把两条作用曲线叠在同一张图上
 
 `13-zhongchengyao-linchuang/chapters/08-lianhe-yongyao/`
 
@@ -4410,7 +4410,7 @@
 | prompt | 联合用药与相互作用 · 提示词 | — | 512 | [`prompt-08-lianhe-yongyao.md`](../departments/02-zhongyao/13-zhongchengyao-linchuang/chapters/08-lianhe-yongyao/outputs/prompt-08-lianhe-yongyao.md) |
 | skill | 联合用药与相互作用 | 联合用药与相互作用——按「中成药概论与分类 → 剂型与制备工艺 → 质量标准与检验 → 中药注射剂与特殊剂型 → 内科常用中成药 → 妇科与儿科用药 → 骨伤与皮肤科用药 → 联合用药与相互作用 → 不良反应与监测 → 合理使用与处方审核」走一遍本章判据 | 438 | [`skill-lianhe-yongyao.md`](../departments/02-zhongyao/13-zhongchengyao-linchuang/chapters/08-lianhe-yongyao/outputs/skill-lianhe-yongyao.md) |
 
-#### 第 9 章 · 不良反应与监测
+#### 第 9 章 · 监测的对象不是药，是药、人和用法组成的三元组
 
 `13-zhongchengyao-linchuang/chapters/09-buliang-fanying/`
 
@@ -4419,7 +4419,7 @@
 | prompt | 不良反应与监测 · 提示词 | — | 505 | [`prompt-09-buliang-fanying.md`](../departments/02-zhongyao/13-zhongchengyao-linchuang/chapters/09-buliang-fanying/outputs/prompt-09-buliang-fanying.md) |
 | skill | 不良反应与监测 | 不良反应与监测——按「中成药概论与分类 → 剂型与制备工艺 → 质量标准与检验 → 中药注射剂与特殊剂型 → 内科常用中成药 → 妇科与儿科用药 → 骨伤与皮肤科用药 → 联合用药与相互作用 → 不良反应与监测 → 合理使用与处方审核」走一遍本章判据 | 435 | [`skill-buliang-fanying.md`](../departments/02-zhongyao/13-zhongchengyao-linchuang/chapters/09-buliang-fanying/outputs/skill-buliang-fanying.md) |
 
-#### 第 10 章 · 合理使用与处方审核
+#### 第 10 章 · 合理用药的最后一公里，是一张能被打勾的核对表
 
 `13-zhongchengyao-linchuang/chapters/10-heli-yongyao/`
 
@@ -4432,153 +4432,153 @@
 
 > Build · 第 7 学期 · 已产出 8 章
 
-#### 第 1 章 · 七情与配伍理论
+#### 第 1 章 · 七情不是七条并列的规则，是五个方向的利害判断
 
 `14-peiwu-yu-jinji/chapters/01-qiqing-lilun/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 七情与配伍理论 · 提示词 | — | 476 | [`prompt-01-qiqing-lilun.md`](../departments/02-zhongyao/14-peiwu-yu-jinji/chapters/01-qiqing-lilun/outputs/prompt-01-qiqing-lilun.md) |
-| skill | 七情与配伍理论 | 七情与配伍理论——按「七情与配伍理论 → 君臣佐使与组方 → 十八反与十九畏 → 妊娠与哺乳期禁忌 → 证候禁忌 → 中西药联用禁忌 → 毒性药的配伍 → 配伍研究的证据方法」走一遍本章判据 | 397 | [`skill-qiqing-lilun.md`](../departments/02-zhongyao/14-peiwu-yu-jinji/chapters/01-qiqing-lilun/outputs/skill-qiqing-lilun.md) |
+| prompt | 七情不是七条并列的规则，是五个方向的利害判断 · 提示词 | — | 917 | [`prompt-01-qiqing-lilun.md`](../departments/02-zhongyao/14-peiwu-yu-jinji/chapters/01-qiqing-lilun/outputs/prompt-01-qiqing-lilun.md) |
+| skill | 七情不是七条并列的规则，是五个方向的利害判断 | 七情不是七条并列的规则，是五个方向的利害判断——按「七情是一张关系表，不是七条禁令 → 配伍前的六项核对 → 判据与分档：每一情何时成立 → 处置、记录与失效模式」走一遍本章判据 | 808 | [`skill-qiqing-lilun.md`](../departments/02-zhongyao/14-peiwu-yu-jinji/chapters/01-qiqing-lilun/outputs/skill-qiqing-lilun.md) |
 
-#### 第 2 章 · 君臣佐使与组方
+#### 第 2 章 · 君臣佐使分的是责任，不是药味的等级
 
 `14-peiwu-yu-jinji/chapters/02-junchenzuoshi/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 君臣佐使与组方 · 提示词 | — | 476 | [`prompt-02-junchenzuoshi.md`](../departments/02-zhongyao/14-peiwu-yu-jinji/chapters/02-junchenzuoshi/outputs/prompt-02-junchenzuoshi.md) |
-| skill | 君臣佐使与组方 | 君臣佐使与组方——按「七情与配伍理论 → 君臣佐使与组方 → 十八反与十九畏 → 妊娠与哺乳期禁忌 → 证候禁忌 → 中西药联用禁忌 → 毒性药的配伍 → 配伍研究的证据方法」走一遍本章判据 | 398 | [`skill-junchenzuoshi.md`](../departments/02-zhongyao/14-peiwu-yu-jinji/chapters/02-junchenzuoshi/outputs/skill-junchenzuoshi.md) |
+| prompt | 君臣佐使分的是责任，不是药味的等级 · 提示词 | — | 878 | [`prompt-02-junchenzuoshi.md`](../departments/02-zhongyao/14-peiwu-yu-jinji/chapters/02-junchenzuoshi/outputs/prompt-02-junchenzuoshi.md) |
+| skill | 君臣佐使分的是责任，不是药味的等级 | 君臣佐使分的是责任，不是药味的等级——按「位次是责任分工，不是等级与价格 → 四问定君：从目标推到药味 → 剂量是位次的证据，也是位次的约束 → 清单是组方的最后一道闸，不是第一道」走一遍本章判据 | 775 | [`skill-junchenzuoshi.md`](../departments/02-zhongyao/14-peiwu-yu-jinji/chapters/02-junchenzuoshi/outputs/skill-junchenzuoshi.md) |
 
-#### 第 3 章 · 十八反与十九畏
+#### 第 3 章 · 十八反十九畏是两张不同性质的清单，不能合并背诵
 
 `14-peiwu-yu-jinji/chapters/03-shihba-fan/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 十八反与十九畏 · 提示词 | — | 476 | [`prompt-03-shihba-fan.md`](../departments/02-zhongyao/14-peiwu-yu-jinji/chapters/03-shihba-fan/outputs/prompt-03-shihba-fan.md) |
-| skill | 十八反与十九畏 | 十八反与十九畏——按「七情与配伍理论 → 君臣佐使与组方 → 十八反与十九畏 → 妊娠与哺乳期禁忌 → 证候禁忌 → 中西药联用禁忌 → 毒性药的配伍 → 配伍研究的证据方法」走一遍本章判据 | 395 | [`skill-shihba-fan.md`](../departments/02-zhongyao/14-peiwu-yu-jinji/chapters/03-shihba-fan/outputs/skill-shihba-fan.md) |
+| prompt | 十八反十九畏是两张不同性质的清单，不能合并背诵 · 提示词 | — | 859 | [`prompt-03-shihba-fan.md`](../departments/02-zhongyao/14-peiwu-yu-jinji/chapters/03-shihba-fan/outputs/prompt-03-shihba-fan.md) |
+| skill | 十八反十九畏是两张不同性质的清单，不能合并背诵 | 十八反十九畏是两张不同性质的清单，不能合并背诵——按「两张清单的分野：反是增毒，畏是不敢同用 → 名数与实计：先数一遍，再背 → 逐组对：处置档位的差异 → 三张单味药卡：以药为锚记账」走一遍本章判据 | 747 | [`skill-shihba-fan.md`](../departments/02-zhongyao/14-peiwu-yu-jinji/chapters/03-shihba-fan/outputs/skill-shihba-fan.md) |
 
-#### 第 4 章 · 妊娠与哺乳期禁忌
+#### 第 4 章 · 妊娠禁忌的判据不是药名，是「有故」与「无损」两条同时成立
 
 `14-peiwu-yu-jinji/chapters/04-renshen-jinji/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 妊娠与哺乳期禁忌 · 提示词 | — | 480 | [`prompt-04-renshen-jinji.md`](../departments/02-zhongyao/14-peiwu-yu-jinji/chapters/04-renshen-jinji/outputs/prompt-04-renshen-jinji.md) |
-| skill | 妊娠与哺乳期禁忌 | 妊娠与哺乳期禁忌——按「七情与配伍理论 → 君臣佐使与组方 → 十八反与十九畏 → 妊娠与哺乳期禁忌 → 证候禁忌 → 中西药联用禁忌 → 毒性药的配伍 → 配伍研究的证据方法」走一遍本章判据 | 400 | [`skill-renshen-jinji.md`](../departments/02-zhongyao/14-peiwu-yu-jinji/chapters/04-renshen-jinji/outputs/skill-renshen-jinji.md) |
+| prompt | 妊娠禁忌的判据不是药名，是「有故」与「无损」两条同时成立 · 提示词 | — | 883 | [`prompt-04-renshen-jinji.md`](../departments/02-zhongyao/14-peiwu-yu-jinji/chapters/04-renshen-jinji/outputs/prompt-04-renshen-jinji.md) |
+| skill | 妊娠禁忌的判据不是药名，是「有故」与「无损」两条同时成立 | 妊娠禁忌的判据不是药名，是「有故」与「无损」两条同时成立——按「「有故无殒」：两条同时成立才算数 → 禁用四类：按伤胎的缘由分，不按药名背 → 慎用五类，与半夏这一处争议 → 哺乳期与忌口：把「暴露」算进判据」走一遍本章判据 | 769 | [`skill-renshen-jinji.md`](../departments/02-zhongyao/14-peiwu-yu-jinji/chapters/04-renshen-jinji/outputs/skill-renshen-jinji.md) |
 
-#### 第 5 章 · 证候禁忌
+#### 第 5 章 · 证候禁忌的错法只有一种：把药性当成了药理作用
 
 `14-peiwu-yu-jinji/chapters/05-zhenghou-jinji/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 证候禁忌 · 提示词 | — | 468 | [`prompt-05-zhenghou-jinji.md`](../departments/02-zhongyao/14-peiwu-yu-jinji/chapters/05-zhenghou-jinji/outputs/prompt-05-zhenghou-jinji.md) |
-| skill | 证候禁忌 | 证候禁忌——按「七情与配伍理论 → 君臣佐使与组方 → 十八反与十九畏 → 妊娠与哺乳期禁忌 → 证候禁忌 → 中西药联用禁忌 → 毒性药的配伍 → 配伍研究的证据方法」走一遍本章判据 | 393 | [`skill-zhenghou-jinji.md`](../departments/02-zhongyao/14-peiwu-yu-jinji/chapters/05-zhenghou-jinji/outputs/skill-zhenghou-jinji.md) |
+| prompt | 证候禁忌的错法只有一种：把药性当成了药理作用 · 提示词 | — | 819 | [`prompt-05-zhenghou-jinji.md`](../departments/02-zhongyao/14-peiwu-yu-jinji/chapters/05-zhenghou-jinji/outputs/prompt-05-zhenghou-jinji.md) |
+| skill | 证候禁忌的错法只有一种：把药性当成了药理作用 | 证候禁忌的错法只有一种：把药性当成了药理作用——按「判据是「药性—证性」对撞，不是「病名—药名」配对 → 四组对撞：看见什么，才算对上了 → 功效越正面，越容易被当成保健品 → 病位、出血与特殊人群：三条交叉项」走一遍本章判据 | 712 | [`skill-zhenghou-jinji.md`](../departments/02-zhongyao/14-peiwu-yu-jinji/chapters/05-zhenghou-jinji/outputs/skill-zhenghou-jinji.md) |
 
-#### 第 6 章 · 中西药联用禁忌
+#### 第 6 章 · 中西药联用的风险多半不在成分，而在同一套代谢通道
 
 `14-peiwu-yu-jinji/chapters/06-zhongxi-lianyong/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 中西药联用禁忌 · 提示词 | — | 477 | [`prompt-06-zhongxi-lianyong.md`](../departments/02-zhongyao/14-peiwu-yu-jinji/chapters/06-zhongxi-lianyong/outputs/prompt-06-zhongxi-lianyong.md) |
-| skill | 中西药联用禁忌 | 中西药联用禁忌——按「七情与配伍理论 → 君臣佐使与组方 → 十八反与十九畏 → 妊娠与哺乳期禁忌 → 证候禁忌 → 中西药联用禁忌 → 毒性药的配伍 → 配伍研究的证据方法」走一遍本章判据 | 401 | [`skill-zhongxi-lianyong.md`](../departments/02-zhongyao/14-peiwu-yu-jinji/chapters/06-zhongxi-lianyong/outputs/skill-zhongxi-lianyong.md) |
+| prompt | 中西药联用的风险多半不在成分，而在同一套代谢通道 · 提示词 | — | 858 | [`prompt-06-zhongxi-lianyong.md`](../departments/02-zhongyao/14-peiwu-yu-jinji/chapters/06-zhongxi-lianyong/outputs/prompt-06-zhongxi-lianyong.md) |
+| skill | 中西药联用的风险多半不在成分，而在同一套代谢通道 | 中西药联用的风险多半不在成分，而在同一套代谢通道——按「换语言：七情只管中药之间 → 四层通道逐层对 → 为什么「成分相克」的传说多半靠不住 → 处置：不选边，只排时序与加监测」走一遍本章判据 | 751 | [`skill-zhongxi-lianyong.md`](../departments/02-zhongyao/14-peiwu-yu-jinji/chapters/06-zhongxi-lianyong/outputs/skill-zhongxi-lianyong.md) |
 
-#### 第 7 章 · 毒性药的配伍
+#### 第 7 章 · 毒性药的配伍先算一笔账：减毒抵不抵得过增毒
 
 `14-peiwu-yu-jinji/chapters/07-duyao-peiwu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 毒性药的配伍 · 提示词 | — | 473 | [`prompt-07-duyao-peiwu.md`](../departments/02-zhongyao/14-peiwu-yu-jinji/chapters/07-duyao-peiwu/outputs/prompt-07-duyao-peiwu.md) |
-| skill | 毒性药的配伍 | 毒性药的配伍——按「七情与配伍理论 → 君臣佐使与组方 → 十八反与十九畏 → 妊娠与哺乳期禁忌 → 证候禁忌 → 中西药联用禁忌 → 毒性药的配伍 → 配伍研究的证据方法」走一遍本章判据 | 394 | [`skill-duyao-peiwu.md`](../departments/02-zhongyao/14-peiwu-yu-jinji/chapters/07-duyao-peiwu/outputs/skill-duyao-peiwu.md) |
+| prompt | 毒性药的配伍先算一笔账：减毒抵不抵得过增毒 · 提示词 | — | 817 | [`prompt-07-duyao-peiwu.md`](../departments/02-zhongyao/14-peiwu-yu-jinji/chapters/07-duyao-peiwu/outputs/prompt-07-duyao-peiwu.md) |
+| skill | 毒性药的配伍先算一笔账：减毒抵不抵得过增毒 | 毒性药的配伍先算一笔账：减毒抵不抵得过增毒——按「先把「毒」分成两个意思 → 减毒三条路径与它们的边界 → 算账：配伍减毒的三种结局 → 清单与红线：反、畏、妊娠、剂量」走一遍本章判据 | 708 | [`skill-duyao-peiwu.md`](../departments/02-zhongyao/14-peiwu-yu-jinji/chapters/07-duyao-peiwu/outputs/skill-duyao-peiwu.md) |
 
-#### 第 8 章 · 配伍研究的证据方法
+#### 第 8 章 · 配伍证据的强弱由设计决定，不由成分数量决定
 
 `14-peiwu-yu-jinji/chapters/08-fangfa-pingjia/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 配伍研究的证据方法 · 提示词 | — | 483 | [`prompt-08-fangfa-pingjia.md`](../departments/02-zhongyao/14-peiwu-yu-jinji/chapters/08-fangfa-pingjia/outputs/prompt-08-fangfa-pingjia.md) |
-| skill | 配伍研究的证据方法 | 配伍研究的证据方法——按「七情与配伍理论 → 君臣佐使与组方 → 十八反与十九畏 → 妊娠与哺乳期禁忌 → 证候禁忌 → 中西药联用禁忌 → 毒性药的配伍 → 配伍研究的证据方法」走一遍本章判据 | 403 | [`skill-fangfa-pingjia.md`](../departments/02-zhongyao/14-peiwu-yu-jinji/chapters/08-fangfa-pingjia/outputs/skill-fangfa-pingjia.md) |
+| prompt | 配伍证据的强弱由设计决定，不由成分数量决定 · 提示词 | — | 826 | [`prompt-08-fangfa-pingjia.md`](../departments/02-zhongyao/14-peiwu-yu-jinji/chapters/08-fangfa-pingjia/outputs/prompt-08-fangfa-pingjia.md) |
+| skill | 配伍证据的强弱由设计决定，不由成分数量决定 | 配伍证据的强弱由设计决定，不由成分数量决定——按「证据链三段：物质、效应、临床 → 含量测定：指标怎么选，局限在哪 → 方法学验证：把「测得出」变成「测得准」 → 生物活性测定：补化学之短，代价是精密度」走一遍本章判据 | 720 | [`skill-fangfa-pingjia.md`](../departments/02-zhongyao/14-peiwu-yu-jinji/chapters/08-fangfa-pingjia/outputs/skill-fangfa-pingjia.md) |
 
 ### 中药新药研发
 
 > Build · 第 8 学期 · 已产出 8 章
 
-#### 第 1 章 · 研发路径与证据链：从药材到上市
+#### 第 1 章 · 研发失败多数不是做不出药，而是证不出可复现
 
 `15-zhongyao-xinyao-yanfa/chapters/01-lujing-zhiku/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 研发路径与证据链：从药材到上市 · 提示词 | — | 484 | [`prompt-01-lujing-zhiku.md`](../departments/02-zhongyao/15-zhongyao-xinyao-yanfa/chapters/01-lujing-zhiku/outputs/prompt-01-lujing-zhiku.md) |
-| skill | 研发路径与证据链：从药材到上市 | 研发路径与证据链：从药材到上市——按「源头 → 生产 → 质量 → 安全 → 上市后监测 → 注册资料 → 产业化移交」走一遍本章判据 | 386 | [`skill-lujing-zhiku.md`](../departments/02-zhongyao/15-zhongyao-xinyao-yanfa/chapters/01-lujing-zhiku/outputs/skill-lujing-zhiku.md) |
+| prompt | 研发失败多数不是做不出药，而是证不出可复现 · 提示词 | — | 777 | [`prompt-01-lujing-zhiku.md`](../departments/02-zhongyao/15-zhongyao-xinyao-yanfa/chapters/01-lujing-zhiku/outputs/prompt-01-lujing-zhiku.md) |
+| skill | 研发失败多数不是做不出药，而是证不出可复现 | 研发失败多数不是做不出药，而是证不出可复现——按「学习目标 → 正文 → 考核与自检」走一遍本章判据 | 670 | [`skill-lujing-zhiku.md`](../departments/02-zhongyao/15-zhongyao-xinyao-yanfa/chapters/01-lujing-zhiku/outputs/skill-lujing-zhiku.md) |
 
-#### 第 2 章 · 药材源头：GACP 与可持续供应
+#### 第 2 章 · 源头记录写不到地块，批间一致性就只是这三批的运气
 
 `15-zhongyao-xinyao-yanfa/chapters/02-gacp-yaocai/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 药材源头：GACP 与可持续供应 · 提示词 | — | 484 | [`prompt-02-gacp-yaocai.md`](../departments/02-zhongyao/15-zhongyao-xinyao-yanfa/chapters/02-gacp-yaocai/outputs/prompt-02-gacp-yaocai.md) |
-| skill | 药材源头：GACP 与可持续供应 | 药材源头：GACP 与可持续供应——按「源头 → 生产 → 质量 → 安全 → 上市后监测 → 注册资料 → 产业化移交」走一遍本章判据 | 385 | [`skill-gacp-yaocai.md`](../departments/02-zhongyao/15-zhongyao-xinyao-yanfa/chapters/02-gacp-yaocai/outputs/skill-gacp-yaocai.md) |
+| prompt | 源头记录写不到地块，批间一致性就只是这三批的运气 · 提示词 | — | 795 | [`prompt-02-gacp-yaocai.md`](../departments/02-zhongyao/15-zhongyao-xinyao-yanfa/chapters/02-gacp-yaocai/outputs/prompt-02-gacp-yaocai.md) |
+| skill | 源头记录写不到地块，批间一致性就只是这三批的运气 | 源头记录写不到地块，批间一致性就只是这三批的运气——按「学习目标 → 正文 → 考核与自检」走一遍本章判据 | 684 | [`skill-gacp-yaocai.md`](../departments/02-zhongyao/15-zhongyao-xinyao-yanfa/chapters/02-gacp-yaocai/outputs/skill-gacp-yaocai.md) |
 
-#### 第 3 章 · 生产：GMP 与关键控制点
+#### 第 3 章 · GMP 的水平不看厂房，看换一个班组能否做出等价的批
 
 `15-zhongyao-xinyao-yanfa/chapters/03-gmp-shengchan/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 生产：GMP 与关键控制点 · 提示词 | — | 471 | [`prompt-03-gmp-shengchan.md`](../departments/02-zhongyao/15-zhongyao-xinyao-yanfa/chapters/03-gmp-shengchan/outputs/prompt-03-gmp-shengchan.md) |
-| skill | 生产：GMP 与关键控制点 | 生产：GMP 与关键控制点——按「源头 → 生产 → 质量 → 安全 → 上市后监测 → 注册资料 → 产业化移交」走一遍本章判据 | 381 | [`skill-gmp-shengchan.md`](../departments/02-zhongyao/15-zhongyao-xinyao-yanfa/chapters/03-gmp-shengchan/outputs/skill-gmp-shengchan.md) |
+| prompt | GMP 的水平不看厂房，看换一个班组能否做出等价的批 · 提示词 | — | 805 | [`prompt-03-gmp-shengchan.md`](../departments/02-zhongyao/15-zhongyao-xinyao-yanfa/chapters/03-gmp-shengchan/outputs/prompt-03-gmp-shengchan.md) |
+| skill | GMP 的水平不看厂房，看换一个班组能否做出等价的批 | GMP 的水平不看厂房，看换一个班组能否做出等价的批——按「学习目标 → 正文 → 考核与自检」走一遍本章判据 | 695 | [`skill-gmp-shengchan.md`](../departments/02-zhongyao/15-zhongyao-xinyao-yanfa/chapters/03-gmp-shengchan/outputs/skill-gmp-shengchan.md) |
 
-#### 第 4 章 · 质量控制：标志物、指纹图谱与质量标准
+#### 第 4 章 · 标准成熟的标志是别人拿它去检别的批次，结论和你一致
 
 `15-zhongyao-xinyao-yanfa/chapters/04-zhiliang-biaozhiwu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 质量控制：标志物、指纹图谱与质量标准 · 提示词 | — | 489 | [`prompt-04-zhiliang-biaozhiwu.md`](../departments/02-zhongyao/15-zhongyao-xinyao-yanfa/chapters/04-zhiliang-biaozhiwu/outputs/prompt-04-zhiliang-biaozhiwu.md) |
-| skill | 质量控制：标志物、指纹图谱与质量标准 | 质量控制：标志物、指纹图谱与质量标准——按「源头 → 生产 → 质量 → 安全 → 上市后监测 → 注册资料 → 产业化移交」走一遍本章判据 | 398 | [`skill-zhiliang-biaozhiwu.md`](../departments/02-zhongyao/15-zhongyao-xinyao-yanfa/chapters/04-zhiliang-biaozhiwu/outputs/skill-zhiliang-biaozhiwu.md) |
+| prompt | 标准成熟的标志是别人拿它去检别的批次，结论和你一致 · 提示词 | — | 798 | [`prompt-04-zhiliang-biaozhiwu.md`](../departments/02-zhongyao/15-zhongyao-xinyao-yanfa/chapters/04-zhiliang-biaozhiwu/outputs/prompt-04-zhiliang-biaozhiwu.md) |
+| skill | 标准成熟的标志是别人拿它去检别的批次，结论和你一致 | 标准成熟的标志是别人拿它去检别的批次，结论和你一致——按「学习目标 → 正文 → 考核与自检」走一遍本章判据 | 693 | [`skill-zhiliang-biaozhiwu.md`](../departments/02-zhongyao/15-zhongyao-xinyao-yanfa/chapters/04-zhiliang-biaozhiwu/outputs/skill-zhiliang-biaozhiwu.md) |
 
-#### 第 5 章 · 污染物与残留：限度、来源与检验
+#### 第 5 章 · 污染物的控制成本是反的：源头拦最便宜，成品检最贵
 
 `15-zhongyao-xinyao-yanfa/chapters/05-wuranwu-canyu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 污染物与残留：限度、来源与检验 · 提示词 | — | 484 | [`prompt-05-wuranwu-canyu.md`](../departments/02-zhongyao/15-zhongyao-xinyao-yanfa/chapters/05-wuranwu-canyu/outputs/prompt-05-wuranwu-canyu.md) |
-| skill | 污染物与残留：限度、来源与检验 | 污染物与残留：限度、来源与检验——按「源头 → 生产 → 质量 → 安全 → 上市后监测 → 注册资料 → 产业化移交」走一遍本章判据 | 387 | [`skill-wuranwu-canyu.md`](../departments/02-zhongyao/15-zhongyao-xinyao-yanfa/chapters/05-wuranwu-canyu/outputs/skill-wuranwu-canyu.md) |
+| prompt | 污染物的控制成本是反的：源头拦最便宜，成品检最贵 · 提示词 | — | 801 | [`prompt-05-wuranwu-canyu.md`](../departments/02-zhongyao/15-zhongyao-xinyao-yanfa/chapters/05-wuranwu-canyu/outputs/prompt-05-wuranwu-canyu.md) |
+| skill | 污染物的控制成本是反的：源头拦最便宜，成品检最贵 | 污染物的控制成本是反的：源头拦最便宜，成品检最贵——按「学习目标 → 正文 → 考核与自检」走一遍本章判据 | 692 | [`skill-wuranwu-canyu.md`](../departments/02-zhongyao/15-zhongyao-xinyao-yanfa/chapters/05-wuranwu-canyu/outputs/skill-wuranwu-canyu.md) |
 
-#### 第 6 章 · 上市后：安全性监测与药物警戒
+#### 第 6 章 · 监测的价值不在发现报告，在把信号闭成环
 
 `15-zhongyao-xinyao-yanfa/chapters/06-shangshi-jiankong/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 上市后：安全性监测与药物警戒 · 提示词 | — | 485 | [`prompt-06-shangshi-jiankong.md`](../departments/02-zhongyao/15-zhongyao-xinyao-yanfa/chapters/06-shangshi-jiankong/outputs/prompt-06-shangshi-jiankong.md) |
-| skill | 上市后：安全性监测与药物警戒 | 上市后：安全性监测与药物警戒——按「源头 → 生产 → 质量 → 安全 → 上市后监测 → 注册资料 → 产业化移交」走一遍本章判据 | 389 | [`skill-shangshi-jiankong.md`](../departments/02-zhongyao/15-zhongyao-xinyao-yanfa/chapters/06-shangshi-jiankong/outputs/skill-shangshi-jiankong.md) |
+| prompt | 监测的价值不在发现报告，在把信号闭成环 · 提示词 | — | 821 | [`prompt-06-shangshi-jiankong.md`](../departments/02-zhongyao/15-zhongyao-xinyao-yanfa/chapters/06-shangshi-jiankong/outputs/prompt-06-shangshi-jiankong.md) |
+| skill | 监测的价值不在发现报告，在把信号闭成环 | 监测的价值不在发现报告，在把信号闭成环——按「学习目标 → 正文 → 考核与自检」走一遍本章判据 | 721 | [`skill-shangshi-jiankong.md`](../departments/02-zhongyao/15-zhongyao-xinyao-yanfa/chapters/06-shangshi-jiankong/outputs/skill-shangshi-jiankong.md) |
 
-#### 第 7 章 · 注册资料：技术要求如何落成可审评的文件
+#### 第 7 章 · 资料不是把证据摞高，是让陌生人半小时内看懂证据到哪一步
 
 `15-zhongyao-xinyao-yanfa/chapters/07-zhuce-ziliao/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 注册资料：技术要求如何落成可审评的文件 · 提示词 | — | 496 | [`prompt-07-zhuce-ziliao.md`](../departments/02-zhongyao/15-zhongyao-xinyao-yanfa/chapters/07-zhuce-ziliao/outputs/prompt-07-zhuce-ziliao.md) |
-| skill | 注册资料：技术要求如何落成可审评的文件 | 注册资料：技术要求如何落成可审评的文件——按「源头 → 生产 → 质量 → 安全 → 上市后监测 → 注册资料 → 产业化移交」走一遍本章判据 | 394 | [`skill-zhuce-ziliao.md`](../departments/02-zhongyao/15-zhongyao-xinyao-yanfa/chapters/07-zhuce-ziliao/outputs/skill-zhuce-ziliao.md) |
+| prompt | 资料不是把证据摞高，是让陌生人半小时内看懂证据到哪一步 · 提示词 | — | 854 | [`prompt-07-zhuce-ziliao.md`](../departments/02-zhongyao/15-zhongyao-xinyao-yanfa/chapters/07-zhuce-ziliao/outputs/prompt-07-zhuce-ziliao.md) |
+| skill | 资料不是把证据摞高，是让陌生人半小时内看懂证据到哪一步 | 资料不是把证据摞高，是让陌生人半小时内看懂证据到哪一步——按「学习目标 → 正文 → 考核与自检」走一遍本章判据 | 741 | [`skill-zhuce-ziliao.md`](../departments/02-zhongyao/15-zhongyao-xinyao-yanfa/chapters/07-zhuce-ziliao/outputs/skill-zhuce-ziliao.md) |
 
-#### 第 8 章 · 产业化与知识移交
+#### 第 8 章 · 移交完成的标志不是签收，是别人独立做出一批合格产品
 
 `15-zhongyao-xinyao-yanfa/chapters/08-chanye-jiaofu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 产业化与知识移交 · 提示词 | — | 459 | [`prompt-08-chanye-jiaofu.md`](../departments/02-zhongyao/15-zhongyao-xinyao-yanfa/chapters/08-chanye-jiaofu/outputs/prompt-08-chanye-jiaofu.md) |
-| skill | 产业化与知识移交 | 产业化与知识移交——按「源头 → 生产 → 质量 → 安全 → 上市后监测 → 注册资料 → 产业化移交」走一遍本章判据 | 373 | [`skill-chanye-jiaofu.md`](../departments/02-zhongyao/15-zhongyao-xinyao-yanfa/chapters/08-chanye-jiaofu/outputs/skill-chanye-jiaofu.md) |
+| prompt | 移交完成的标志不是签收，是别人独立做出一批合格产品 · 提示词 | — | 901 | [`prompt-08-chanye-jiaofu.md`](../departments/02-zhongyao/15-zhongyao-xinyao-yanfa/chapters/08-chanye-jiaofu/outputs/prompt-08-chanye-jiaofu.md) |
+| skill | 移交完成的标志不是签收，是别人独立做出一批合格产品 | 移交完成的标志不是签收，是别人独立做出一批合格产品——按「移交要交出四样东西，少一样就不算交 → 产业化要过三道坎：放大、供应、成本 → 卡点清单：让没参与的人做一次，记下他卡在哪 → 分层披露与单点依赖：能交出去，又不至于失控」走一遍本章判据 | 791 | [`skill-chanye-jiaofu.md`](../departments/02-zhongyao/15-zhongyao-xinyao-yanfa/chapters/08-chanye-jiaofu/outputs/skill-chanye-jiaofu.md) |
 
 ### 临床中药学
 
@@ -4604,12 +4604,12 @@
 | skill | 神志病没有化验单，判据只能从「看和问」里长出来 | 神志病没有化验单，判据只能从「看和问」里长出来——按「这门学科的对象是「神」的失序，不是「脑」的病灶 → 7 项观察，3 项靠自述，4 项不靠 → 三项同现才算神志病，单项一律不算 → 能做什么，以及什么时候必须停手」走一遍本章判据 | 667 | [`skill-01-xulun.md`](../departments/01-zhongyi/20-zhongyi-jingshenbing-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 用本章内容做一件事：绪论 | — | 406 | [`prompt-01-xulun.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 绪论 | 用《临床中药学》第 1 章「绪论」的单元层做可核对的教学材料。 | 502 | [`skill-01-xulun.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/01-xulun/outputs/skill-01-xulun.md) |
-| prompt | 绪论 · 提示词 | — | 444 | [`prompt-01-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 绪论 | 绪论——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 369 | [`skill-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 绪论不是开场白：它划定针灸学的边界、来路与读法 · 提示词 | — | 1115 | [`prompt-01-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
+| skill | 绪论不是开场白：它划定针灸学的边界、来路与读法 | 绪论不是开场白：它划定针灸学的边界、来路与读法——按「篇幅账：一半给历史，三分之一给定义 → 两个起源各有物证：砭石在石，灸火在火 → 三次奠基与四次校订：书目是校出来的，不是列出来的 → 学什么：三块内容与一条练习链」走一遍本章判据 | 1002 | [`skill-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 泛化不是模型的属性，是数据与假设的私下约定 · 提示词 | — | 920 | [`prompt-01-xulun.md`](../departments/07-zhineng/16-jiqi-xuexi/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 泛化不是模型的属性，是数据与假设的私下约定 | 泛化不是模型的属性，是数据与假设的私下约定——按「把一个「学习」问题写成四件东西 → 训练误差与泛化误差：两个不同的量 → 归纳偏好：算法必须偏心，而且偏心要写出来 → NFL 定理：一句被引用得最多、理解得最少的话」走一遍本章判据 | 808 | [`skill-xulun.md`](../departments/07-zhineng/16-jiqi-xuexi/chapters/01-xulun/outputs/skill-xulun.md) |
-| prompt | 绪论 · 提示词 | — | 442 | [`prompt-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
-| skill | 绪论 | 绪论——按「运动 → 内脏 → 脉管与内分泌 → 神经：由支架到内脏，再到支配」走一遍本章判据 | 365 | [`skill-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得 · 提示词 | — | 1049 | [`prompt-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
+| skill | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得 | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得——按「定义的第一句就带了限制：只写「类别与关系」 → 从细胞到系统：九大系统是一条由支架到支配的链 → 分科与材料：同一批结构的几种看法 → 姿势、轴与面：全书共用的坐标系」走一遍本章判据 | 931 | [`skill-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链 · 提示词 | — | 901 | [`prompt-01-xulun.md`](../departments/09-jichu/04-yixue-shengwu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链 | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链——按「这门课真正教的是「分层」，不是「名词」 → 三个判据，构成一条可证伪的链 → 16 章有两次转折，不是十六个抽屉 → 每章只回答四个问题」走一遍本章判据 | 781 | [`skill-xulun.md`](../departments/09-jichu/04-yixue-shengwu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 绪论：把「稳态」写成一条可检查的回路 · 提示词 | — | 856 | [`prompt-xulun.md`](../departments/09-jichu/06-shengli-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
@@ -4620,10 +4620,10 @@
 | skill | 绪论 | 绪论——按「层次 → 通道 → 间隙 → 毗邻：由浅入深地读一个局部」走一遍本章判据 | 359 | [`skill-xulun.md`](../departments/09-jichu/08-jubu-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 绪论：一门学科先要学会「怎么描述」 · 提示词 | — | 897 | [`prompt-xulun.md`](../departments/09-jichu/10-bingli-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
 | skill | 绪论：一门学科先要学会「怎么描述」 | 绪论：一门学科先要学会「怎么描述」——按「第一句话不是定义，是一份分工 → 四节十二单元的笔墨，与从原因到临床的五类内容 → 发展简史：观察单位一步步下沉 → 三个观察层次：不是三选一，是三段路」走一遍本章判据 | 789 | [`skill-xulun.md`](../departments/09-jichu/10-bingli-xue/chapters/01-xulun/outputs/skill-xulun.md) |
-| prompt | 流行病学绪论 · 提示词 | — | 463 | [`prompt-01-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 流行病学绪论 | 流行病学绪论——按「描述（分布与测量）→ 分析（病例对照与队列）→ 推断（因果与偏倚）→ 应用（监测与循证）」走一遍本章判据 | 382 | [`skill-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 流行病学先问人群里有多少人发病，再问某个病人为什么病 · 提示词 | — | 1038 | [`prompt-01-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
+| skill | 流行病学先问人群里有多少人发病，再问某个病人为什么病 | 流行病学先问人群里有多少人发病，再问某个病人为什么病——按「定义的三层限制：人群、分布、防制 → 四项任务是一条不能跳步的链 → 方法的分类只看两条线：谁施加干预、有没有比较组 → 同一批数字，三种问法：率、比、比例与三个关联指标」走一遍本章判据 | 921 | [`skill-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 
-#### 第 2 章 · 中药的基本理论
+#### 第 2 章 · 药性不是四组形容词，而是一套能把药放到证上的坐标
 
 `16-linchuang-zhongyaoxue/chapters/02-jiben-lilun/`
 
@@ -4632,7 +4632,7 @@
 | prompt | 用本章内容做一件事：中药的基本理论 | — | 411 | [`prompt-02-jiben-lilun.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/02-jiben-lilun/outputs/prompt-02-jiben-lilun.md) |
 | skill | 中药的基本理论 | 用《临床中药学》第 2 章「中药的基本理论」的单元层做可核对的教学材料。 | 524 | [`skill-02-jiben-lilun.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/02-jiben-lilun/outputs/skill-02-jiben-lilun.md) |
 
-#### 第 3 章 · 中药的炮制与制剂
+#### 第 3 章 · 炮制不改药名，改的是这味药在方子里干什么
 
 `16-linchuang-zhongyaoxue/chapters/03-paozhi-zhiji/`
 
@@ -4641,7 +4641,7 @@
 | prompt | 用本章内容做一件事：中药的炮制与制剂 | — | 412 | [`prompt-03-paozhi-zhiji.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/03-paozhi-zhiji/outputs/prompt-03-paozhi-zhiji.md) |
 | skill | 中药的炮制与制剂 | 用《临床中药学》第 3 章「中药的炮制与制剂」的单元层做可核对的教学材料。 | 528 | [`skill-03-paozhi-zhiji.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/03-paozhi-zhiji/outputs/skill-03-paozhi-zhiji.md) |
 
-#### 第 4 章 · 中药的用法与剂量
+#### 第 4 章 · 煎法与剂量是两处最容易被跳过的疗效变量
 
 `16-linchuang-zhongyaoxue/chapters/04-yongfa-jiliang/`
 
@@ -4650,7 +4650,7 @@
 | prompt | 用本章内容做一件事：中药的用法与剂量 | — | 412 | [`prompt-04-yongfa-jiliang.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/04-yongfa-jiliang/outputs/prompt-04-yongfa-jiliang.md) |
 | skill | 中药的用法与剂量 | 用《临床中药学》第 4 章「中药的用法与剂量」的单元层做可核对的教学材料。 | 532 | [`skill-04-yongfa-jiliang.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/04-yongfa-jiliang/outputs/skill-04-yongfa-jiliang.md) |
 
-#### 第 5 章 · 解表药
+#### 第 5 章 · 解表药考的是一句话：这个热在表还是在里
 
 `16-linchuang-zhongyaoxue/chapters/05-jiebiao/`
 
@@ -4659,7 +4659,7 @@
 | prompt | 用本章内容做一件事：解表药 | — | 407 | [`prompt-05-jiebiao.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/05-jiebiao/outputs/prompt-05-jiebiao.md) |
 | skill | 解表药 | 用《临床中药学》第 5 章「解表药」的单元层做可核对的教学材料。 | 508 | [`skill-05-jiebiao.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/05-jiebiao/outputs/skill-05-jiebiao.md) |
 
-#### 第 6 章 · 清热药
+#### 第 6 章 · 清热药分五类，分的不是五种热而是五个位置
 
 `16-linchuang-zhongyaoxue/chapters/06-qingre/`
 
@@ -4668,7 +4668,7 @@
 | prompt | 用本章内容做一件事：清热药 | — | 407 | [`prompt-06-qingre.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/06-qingre/outputs/prompt-06-qingre.md) |
 | skill | 清热药 | 用《临床中药学》第 6 章「清热药」的单元层做可核对的教学材料。 | 506 | [`skill-06-qingre.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/06-qingre/outputs/skill-06-qingre.md) |
 
-#### 第 7 章 · 泻下药与祛风湿药
+#### 第 7 章 · 泻下与祛风湿都攻邪，难的不是敢用而是判定邪还在不在
 
 `16-linchuang-zhongyaoxue/chapters/07-xiexia-qushi/`
 
@@ -4677,7 +4677,7 @@
 | prompt | 用本章内容做一件事：泻下药与祛风湿药 | — | 412 | [`prompt-07-xiexia-qushi.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/07-xiexia-qushi/outputs/prompt-07-xiexia-qushi.md) |
 | skill | 泻下药与祛风湿药 | 用《临床中药学》第 7 章「泻下药与祛风湿药」的单元层做可核对的教学材料。 | 528 | [`skill-07-xiexia-qushi.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/07-xiexia-qushi/outputs/skill-07-xiexia-qushi.md) |
 
-#### 第 8 章 · 化湿药与利水渗湿药
+#### 第 8 章 · 湿与水的分界不在病名，而在小便通不通、肿不肿
 
 `16-linchuang-zhongyaoxue/chapters/08-huashi-lijin/`
 
@@ -4686,7 +4686,7 @@
 | prompt | 用本章内容做一件事：化湿药与利水渗湿药 | — | 413 | [`prompt-08-huashi-lijin.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/08-huashi-lijin/outputs/prompt-08-huashi-lijin.md) |
 | skill | 化湿药与利水渗湿药 | 用《临床中药学》第 8 章「化湿药与利水渗湿药」的单元层做可核对的教学材料。 | 530 | [`skill-08-huashi-lijin.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/08-huashi-lijin/outputs/skill-08-huashi-lijin.md) |
 
-#### 第 9 章 · 温里药·理气药·消食药
+#### 第 9 章 · 温、行、消三法并立，是因为中焦的寒、滞、积常同时到场
 
 `16-linchuang-zhongyaoxue/chapters/09-wenli-liqi-xiaoshi/`
 
@@ -4695,7 +4695,7 @@
 | prompt | 用本章内容做一件事：温里药·理气药·消食药 | — | 415 | [`prompt-09-wenli-liqi-xiaoshi.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/09-wenli-liqi-xiaoshi/outputs/prompt-09-wenli-liqi-xiaoshi.md) |
 | skill | 温里药·理气药·消食药 | 用《临床中药学》第 9 章「温里药·理气药·消食药」的单元层做可核对的教学材料。 | 546 | [`skill-09-wenli-liqi-xiaoshi.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/09-wenli-liqi-xiaoshi/outputs/skill-09-wenli-liqi-xiaoshi.md) |
 
-#### 第 10 章 · 止血药与活血化瘀药
+#### 第 10 章 · 止血与活血是同一件事的两端：瘀不去则血不归经
 
 `16-linchuang-zhongyaoxue/chapters/10-zhixue-huoxue/`
 
@@ -4704,7 +4704,7 @@
 | prompt | 用本章内容做一件事：止血药与活血化瘀药 | — | 414 | [`prompt-10-zhixue-huoxue.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/10-zhixue-huoxue/outputs/prompt-10-zhixue-huoxue.md) |
 | skill | 止血药与活血化瘀药 | 用《临床中药学》第 10 章「止血药与活血化瘀药」的单元层做可核对的教学材料。 | 533 | [`skill-10-zhixue-huoxue.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/10-zhixue-huoxue/outputs/skill-10-zhixue-huoxue.md) |
 
-#### 第 11 章 · 化痰止咳平喘药与安神药
+#### 第 11 章 · 痰与神是一件事的两头：化痰即所以安神，安神须先问痰
 
 `16-linchuang-zhongyaoxue/chapters/11-huatan-anshen/`
 
@@ -4713,7 +4713,7 @@
 | prompt | 用本章内容做一件事：化痰止咳平喘药与安神药 | — | 416 | [`prompt-11-huatan-anshen.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/11-huatan-anshen/outputs/prompt-11-huatan-anshen.md) |
 | skill | 化痰止咳平喘药与安神药 | 用《临床中药学》第 11 章「化痰止咳平喘药与安神药」的单元层做可核对的教学材料。 | 537 | [`skill-11-huatan-anshen.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/11-huatan-anshen/outputs/skill-11-huatan-anshen.md) |
 
-#### 第 12 章 · 平肝息风药与开窍药
+#### 第 12 章 · 平肝息风治的是「动」，开窍治的是「闭」：闭证与脱证只差一步
 
 `16-linchuang-zhongyaoxue/chapters/12-pinggan-kaiqiao/`
 
@@ -4722,7 +4722,7 @@
 | prompt | 用本章内容做一件事：平肝息风药与开窍药 | — | 414 | [`prompt-12-pinggan-kaiqiao.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/12-pinggan-kaiqiao/outputs/prompt-12-pinggan-kaiqiao.md) |
 | skill | 平肝息风药与开窍药 | 用《临床中药学》第 12 章「平肝息风药与开窍药」的单元层做可核对的教学材料。 | 537 | [`skill-12-pinggan-kaiqiao.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/12-pinggan-kaiqiao/outputs/skill-12-pinggan-kaiqiao.md) |
 
-#### 第 13 章 · 补虚药
+#### 第 13 章 · 补虚药最容易用错：补有方向，补更有时机
 
 `16-linchuang-zhongyaoxue/chapters/13-buxu/`
 
@@ -4731,7 +4731,7 @@
 | prompt | 用本章内容做一件事：补虚药 | — | 408 | [`prompt-13-buxu.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/13-buxu/outputs/prompt-13-buxu.md) |
 | skill | 补虚药 | 用《临床中药学》第 13 章「补虚药」的单元层做可核对的教学材料。 | 503 | [`skill-13-buxu.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/13-buxu/outputs/skill-13-buxu.md) |
 
-#### 第 14 章 · 收涩药与涌吐药
+#### 第 14 章 · 收涩与涌吐是一对反向操作：一个关门，一个开闸
 
 `16-linchuang-zhongyaoxue/chapters/14-shoushe-yongtu/`
 
@@ -4740,7 +4740,7 @@
 | prompt | 用本章内容做一件事：收涩药与涌吐药 | — | 412 | [`prompt-14-shoushe-yongtu.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/14-shoushe-yongtu/outputs/prompt-14-shoushe-yongtu.md) |
 | skill | 收涩药与涌吐药 | 用《临床中药学》第 14 章「收涩药与涌吐药」的单元层做可核对的教学材料。 | 531 | [`skill-14-shoushe-yongtu.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/14-shoushe-yongtu/outputs/skill-14-shoushe-yongtu.md) |
 
-#### 第 15 章 · 攻毒杀虫止痒药与拔毒化腐生肌药
+#### 第 15 章 · 以毒攻毒的药，边界写在剂量与用法上
 
 `16-linchuang-zhongyaoxue/chapters/15-gongdu-badu/`
 
@@ -4753,7 +4753,7 @@
 
 > Reference · 第 8 学期 · 已产出 18 章
 
-#### 第 1 章 · 中药商品学导论
+#### 第 1 章 · 中药商品学管的是价值怎么形成，不是药能治什么病
 
 `17-zhongyao-shangpin-xue/chapters/01-daolun/`
 
@@ -4762,7 +4762,7 @@
 | prompt | 用本章内容做一件事：中药商品学导论 | — | 411 | [`prompt-01-daolun.md`](../departments/02-zhongyao/17-zhongyao-shangpin-xue/chapters/01-daolun/outputs/prompt-01-daolun.md) |
 | skill | 中药商品学导论 | 用《中药商品学》第 1 章「中药商品学导论」的单元层做可核对的教学材料。 | 513 | [`skill-01-daolun.md`](../departments/02-zhongyao/17-zhongyao-shangpin-xue/chapters/01-daolun/outputs/skill-01-daolun.md) |
 
-#### 第 2 章 · 中药商品的历史与流通演变
+#### 第 2 章 · 药市不是被设计出来的，是被「产地分散、需求广泛、运输慢」逼出来的
 
 `17-zhongyao-shangpin-xue/chapters/02-lishi-liutong/`
 
@@ -4771,7 +4771,7 @@
 | prompt | 用本章内容做一件事：中药商品的历史与流通演变 | — | 416 | [`prompt-02-lishi-liutong.md`](../departments/02-zhongyao/17-zhongyao-shangpin-xue/chapters/02-lishi-liutong/outputs/prompt-02-lishi-liutong.md) |
 | skill | 中药商品的历史与流通演变 | 用《中药商品学》第 2 章「中药商品的历史与流通演变」的单元层做可核对的教学材料。 | 537 | [`skill-02-lishi-liutong.md`](../departments/02-zhongyao/17-zhongyao-shangpin-xue/chapters/02-lishi-liutong/outputs/skill-02-lishi-liutong.md) |
 
-#### 第 3 章 · 中药商品的分类与命名
+#### 第 3 章 · 分类是给管理留位置，命名是给争议留证据
 
 `17-zhongyao-shangpin-xue/chapters/03-fenlei-mingming/`
 
@@ -4780,7 +4780,7 @@
 | prompt | 用本章内容做一件事：中药商品的分类与命名 | — | 414 | [`prompt-03-fenlei-mingming.md`](../departments/02-zhongyao/17-zhongyao-shangpin-xue/chapters/03-fenlei-mingming/outputs/prompt-03-fenlei-mingming.md) |
 | skill | 中药商品的分类与命名 | 用《中药商品学》第 3 章「中药商品的分类与命名」的单元层做可核对的教学材料。 | 537 | [`skill-03-fenlei-mingming.md`](../departments/02-zhongyao/17-zhongyao-shangpin-xue/chapters/03-fenlei-mingming/outputs/skill-03-fenlei-mingming.md) |
 
-#### 第 4 章 · 道地药材与产区
+#### 第 4 章 · 道地是「产区＋种质＋工艺」的共同署名，不是一枚产地印章
 
 `17-zhongyao-shangpin-xue/chapters/04-daodi-chanqu/`
 
@@ -4789,7 +4789,7 @@
 | prompt | 用本章内容做一件事：道地药材与产区 | — | 411 | [`prompt-04-daodi-chanqu.md`](../departments/02-zhongyao/17-zhongyao-shangpin-xue/chapters/04-daodi-chanqu/outputs/prompt-04-daodi-chanqu.md) |
 | skill | 道地药材与产区 | 用《中药商品学》第 4 章「道地药材与产区」的单元层做可核对的教学材料。 | 525 | [`skill-04-daodi-chanqu.md`](../departments/02-zhongyao/17-zhongyao-shangpin-xue/chapters/04-daodi-chanqu/outputs/skill-04-daodi-chanqu.md) |
 
-#### 第 5 章 · 中药商品的质量标准体系
+#### 第 5 章 · 标准不是一张合格证，是一串「谁说了算、说到哪一步」的效力排序
 
 `17-zhongyao-shangpin-xue/chapters/05-zhiliang-biaozhun/`
 
@@ -4798,7 +4798,7 @@
 | prompt | 用本章内容做一件事：中药商品的质量标准体系 | — | 415 | [`prompt-05-zhiliang-biaozhun.md`](../departments/02-zhongyao/17-zhongyao-shangpin-xue/chapters/05-zhiliang-biaozhun/outputs/prompt-05-zhiliang-biaozhun.md) |
 | skill | 中药商品的质量标准体系 | 用《中药商品学》第 5 章「中药商品的质量标准体系」的单元层做可核对的教学材料。 | 543 | [`skill-05-zhiliang-biaozhun.md`](../departments/02-zhongyao/17-zhongyao-shangpin-xue/chapters/05-zhiliang-biaozhun/outputs/skill-05-zhiliang-biaozhun.md) |
 
-#### 第 6 章 · 中药商品的鉴定方法
+#### 第 6 章 · 鉴定的第一步不是看药，是把「一批货」变成「一份能代表它的样」
 
 `17-zhongyao-shangpin-xue/chapters/06-jianding-fangfa/`
 
@@ -4807,7 +4807,7 @@
 | prompt | 用本章内容做一件事：中药商品的鉴定方法 | — | 413 | [`prompt-06-jianding-fangfa.md`](../departments/02-zhongyao/17-zhongyao-shangpin-xue/chapters/06-jianding-fangfa/outputs/prompt-06-jianding-fangfa.md) |
 | skill | 中药商品的鉴定方法 | 用《中药商品学》第 6 章「中药商品的鉴定方法」的单元层做可核对的教学材料。 | 535 | [`skill-06-jianding-fangfa.md`](../departments/02-zhongyao/17-zhongyao-shangpin-xue/chapters/06-jianding-fangfa/outputs/skill-06-jianding-fangfa.md) |
 
-#### 第 7 章 · 规格等级与商品
+#### 第 7 章 · 等级是商品的语言，不是药效的刻度
 
 `17-zhongyao-shangpin-xue/chapters/07-guige-dengji/`
 
@@ -4818,7 +4818,7 @@
 | prompt | 用本章内容做一件事：中药材商品的规格等级 | — | 414 | [`prompt-07-guige-dengji.md`](../departments/02-zhongyao/17-zhongyao-shangpin-xue/chapters/07-guige-dengji/outputs/prompt-07-guige-dengji.md) |
 | skill | 中药材商品的规格等级 | 用《中药商品学》第 7 章「中药材商品的规格等级」的单元层做可核对的教学材料。 | 531 | [`skill-07-guige-dengji.md`](../departments/02-zhongyao/17-zhongyao-shangpin-xue/chapters/07-guige-dengji/outputs/skill-07-guige-dengji.md) |
 
-#### 第 8 章 · 中药饮片商品
+#### 第 8 章 · 饮片的规格是切出来的，药性是炮出来的，责任是批号绑住的
 
 `17-zhongyao-shangpin-xue/chapters/08-yinpian/`
 
@@ -4827,7 +4827,7 @@
 | prompt | 用本章内容做一件事：中药饮片商品 | — | 410 | [`prompt-08-yinpian.md`](../departments/02-zhongyao/17-zhongyao-shangpin-xue/chapters/08-yinpian/outputs/prompt-08-yinpian.md) |
 | skill | 中药饮片商品 | 用《中药商品学》第 8 章「中药饮片商品」的单元层做可核对的教学材料。 | 513 | [`skill-08-yinpian.md`](../departments/02-zhongyao/17-zhongyao-shangpin-xue/chapters/08-yinpian/outputs/skill-08-yinpian.md) |
 
-#### 第 9 章 · 中成药商品
+#### 第 9 章 · 中成药卖的是可复现的处方，不是一堆药材
 
 `17-zhongyao-shangpin-xue/chapters/09-zhongchengyao/`
 
@@ -4836,7 +4836,7 @@
 | prompt | 用本章内容做一件事：中成药商品 | — | 409 | [`prompt-09-zhongchengyao.md`](../departments/02-zhongyao/17-zhongyao-shangpin-xue/chapters/09-zhongchengyao/outputs/prompt-09-zhongchengyao.md) |
 | skill | 中成药商品 | 用《中药商品学》第 9 章「中成药商品」的单元层做可核对的教学材料。 | 523 | [`skill-09-zhongchengyao.md`](../departments/02-zhongyao/17-zhongyao-shangpin-xue/chapters/09-zhongchengyao/outputs/skill-09-zhongchengyao.md) |
 
-#### 第 10 章 · 中药商品的包装与贮藏养护
+#### 第 10 章 · 变质不是意外，是四项环境因素各自找到了入口
 
 `17-zhongyao-shangpin-xue/chapters/10-baozhuang-chucang/`
 
@@ -4845,7 +4845,7 @@
 | prompt | 用本章内容做一件事：中药商品的包装与贮藏养护 | — | 417 | [`prompt-10-baozhuang-chucang.md`](../departments/02-zhongyao/17-zhongyao-shangpin-xue/chapters/10-baozhuang-chucang/outputs/prompt-10-baozhuang-chucang.md) |
 | skill | 中药商品的包装与贮藏养护 | 用《中药商品学》第 10 章「中药商品的包装与贮藏养护」的单元层做可核对的教学材料。 | 546 | [`skill-10-baozhuang-chucang.md`](../departments/02-zhongyao/17-zhongyao-shangpin-xue/chapters/10-baozhuang-chucang/outputs/skill-10-baozhuang-chucang.md) |
 
-#### 第 11 章 · 中药商品的经营与质量管理
+#### 第 11 章 · 经营质量的全部证据，是一条能倒着走的记录链
 
 `17-zhongyao-shangpin-xue/chapters/11-jingying-zhiliang/`
 
@@ -4854,7 +4854,7 @@
 | prompt | 用本章内容做一件事：中药商品的经营与质量管理 | — | 417 | [`prompt-11-jingying-zhiliang.md`](../departments/02-zhongyao/17-zhongyao-shangpin-xue/chapters/11-jingying-zhiliang/outputs/prompt-11-jingying-zhiliang.md) |
 | skill | 中药商品的经营与质量管理 | 用《中药商品学》第 11 章「中药商品的经营与质量管理」的单元层做可核对的教学材料。 | 546 | [`skill-11-jingying-zhiliang.md`](../departments/02-zhongyao/17-zhongyao-shangpin-xue/chapters/11-jingying-zhiliang/outputs/skill-11-jingying-zhiliang.md) |
 
-#### 第 12 章 · 中药商品的价格与市场
+#### 第 12 章 · 药材价格对产量的敏感，远高于对需求的敏感
 
 `17-zhongyao-shangpin-xue/chapters/12-jiage-shichang/`
 
@@ -4863,7 +4863,7 @@
 | prompt | 用本章内容做一件事：中药商品的价格与市场 | — | 415 | [`prompt-12-jiage-shichang.md`](../departments/02-zhongyao/17-zhongyao-shangpin-xue/chapters/12-jiage-shichang/outputs/prompt-12-jiage-shichang.md) |
 | skill | 中药商品的价格与市场 | 用《中药商品学》第 12 章「中药商品的价格与市场」的单元层做可核对的教学材料。 | 536 | [`skill-12-jiage-shichang.md`](../departments/02-zhongyao/17-zhongyao-shangpin-xue/chapters/12-jiage-shichang/outputs/skill-12-jiage-shichang.md) |
 
-#### 第 13 章 · 中药商品的品牌与知识产权
+#### 第 13 章 · 品牌护住的是来源的名声，护不住这一批药的质量
 
 `17-zhongyao-shangpin-xue/chapters/13-pinpai-zhishi/`
 
@@ -4872,7 +4872,7 @@
 | prompt | 用本章内容做一件事：中药商品的品牌与知识产权 | — | 417 | [`prompt-13-pinpai-zhishi.md`](../departments/02-zhongyao/17-zhongyao-shangpin-xue/chapters/13-pinpai-zhishi/outputs/prompt-13-pinpai-zhishi.md) |
 | skill | 中药商品的品牌与知识产权 | 用《中药商品学》第 13 章「中药商品的品牌与知识产权」的单元层做可核对的教学材料。 | 538 | [`skill-13-pinpai-zhishi.md`](../departments/02-zhongyao/17-zhongyao-shangpin-xue/chapters/13-pinpai-zhishi/outputs/skill-13-pinpai-zhishi.md) |
 
-#### 第 14 章 · 特殊管理的中药商品
+#### 第 14 章 · 特殊管理管的不是等级，是每一笔货的来去
 
 `17-zhongyao-shangpin-xue/chapters/14-teshu-guanli/`
 
@@ -4881,7 +4881,7 @@
 | prompt | 用本章内容做一件事：特殊管理的中药商品 | — | 414 | [`prompt-14-teshu-guanli.md`](../departments/02-zhongyao/17-zhongyao-shangpin-xue/chapters/14-teshu-guanli/outputs/prompt-14-teshu-guanli.md) |
 | skill | 特殊管理的中药商品 | 用《中药商品学》第 14 章「特殊管理的中药商品」的单元层做可核对的教学材料。 | 530 | [`skill-14-teshu-guanli.md`](../departments/02-zhongyao/17-zhongyao-shangpin-xue/chapters/14-teshu-guanli/outputs/skill-14-teshu-guanli.md) |
 
-#### 第 15 章 · 中药商品的国际贸易
+#### 第 15 章 · 出口卖的不是好药，是那个市场认得的商品
 
 `17-zhongyao-shangpin-xue/chapters/15-guomao-maoyi/`
 
@@ -4890,7 +4890,7 @@
 | prompt | 用本章内容做一件事：中药商品的国际贸易 | — | 414 | [`prompt-15-guomao-maoyi.md`](../departments/02-zhongyao/17-zhongyao-shangpin-xue/chapters/15-guomao-maoyi/outputs/prompt-15-guomao-maoyi.md) |
 | skill | 中药商品的国际贸易 | 用《中药商品学》第 15 章「中药商品的国际贸易」的单元层做可核对的教学材料。 | 530 | [`skill-15-guomao-maoyi.md`](../departments/02-zhongyao/17-zhongyao-shangpin-xue/chapters/15-guomao-maoyi/outputs/skill-15-guomao-maoyi.md) |
 
-#### 第 16 章 · 中药商品的监管与合规
+#### 第 16 章 · 监管划的是底线，合规做的是把底线变成流程
 
 `17-zhongyao-shangpin-xue/chapters/16-jianguan-hegui/`
 
@@ -4899,7 +4899,7 @@
 | prompt | 用本章内容做一件事：中药商品的监管与合规 | — | 415 | [`prompt-16-jianguan-hegui.md`](../departments/02-zhongyao/17-zhongyao-shangpin-xue/chapters/16-jianguan-hegui/outputs/prompt-16-jianguan-hegui.md) |
 | skill | 中药商品的监管与合规 | 用《中药商品学》第 16 章「中药商品的监管与合规」的单元层做可核对的教学材料。 | 536 | [`skill-16-jianguan-hegui.md`](../departments/02-zhongyao/17-zhongyao-shangpin-xue/chapters/16-jianguan-hegui/outputs/skill-16-jianguan-hegui.md) |
 
-#### 第 17 章 · 中药商品的质量风险与追溯
+#### 第 17 章 · 追溯不解决质量问题，它只解决「出了问题找谁」
 
 `17-zhongyao-shangpin-xue/chapters/17-fengxian-zhuisu/`
 
@@ -4908,7 +4908,7 @@
 | prompt | 用本章内容做一件事：中药商品的质量风险与追溯 | — | 417 | [`prompt-17-fengxian-zhuisu.md`](../departments/02-zhongyao/17-zhongyao-shangpin-xue/chapters/17-fengxian-zhuisu/outputs/prompt-17-fengxian-zhuisu.md) |
 | skill | 中药商品的质量风险与追溯 | 用《中药商品学》第 17 章「中药商品的质量风险与追溯」的单元层做可核对的教学材料。 | 542 | [`skill-17-fengxian-zhuisu.md`](../departments/02-zhongyao/17-zhongyao-shangpin-xue/chapters/17-fengxian-zhuisu/outputs/skill-17-fengxian-zhuisu.md) |
 
-#### 第 18 章 · 中药商品学与 tcmP 智能教学平台
+#### 第 18 章 · 编码不是排版，是把「哪一句」变成「哪一个地址」
 
 `17-zhongyao-shangpin-xue/chapters/18-jiaoxue-pingtai/`
 
@@ -4921,7 +4921,7 @@
 
 > Reference · 第 7 学期 · 已产出 28 章
 
-#### 第 1 章 · 药品注册的定义与分类管理
+#### 第 1 章 · 注册不是递材料等批文，而是拿证据换结论的双向程序
 
 `18-yaoshi-guanli-xue/chapters/01-dingyi-fenlei/`
 
@@ -4930,7 +4930,7 @@
 | prompt | 药品注册的定义与分类管理 · 提示词 | — | 515 | [`prompt-01-dingyi-fenlei.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/01-dingyi-fenlei/outputs/prompt-01-dingyi-fenlei.md) |
 | skill | 药品注册的定义与分类管理 | 药品注册的定义与分类管理——按「注册线 1–10 → 法律线 11–20 → 条例线 21–22 → GVP 23–24 → GMP 25–26 → GSP 27–28」走一遍本章判据 | 421 | [`skill-dingyi-fenlei.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/01-dingyi-fenlei/outputs/skill-dingyi-fenlei.md) |
 
-#### 第 2 章 · 申请人资格与法律责任
+#### 第 2 章 · 申请人资格是责任锚点：担不起责的主体不该出现在申报书上
 
 `18-yaoshi-guanli-xue/chapters/02-shenqingren/`
 
@@ -4939,7 +4939,7 @@
 | prompt | 申请人资格与法律责任 · 提示词 | — | 501 | [`prompt-02-shenqingren.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/02-shenqingren/outputs/prompt-02-shenqingren.md) |
 | skill | 申请人资格与法律责任 | 申请人资格与法律责任——按「注册线 1–10 → 法律线 11–20 → 条例线 21–22 → GVP 23–24 → GMP 25–26 → GSP 27–28」走一遍本章判据 | 415 | [`skill-shenqingren.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/02-shenqingren/outputs/skill-shenqingren.md) |
 
-#### 第 3 章 · 上市前研究：药学、药理毒理与临床
+#### 第 3 章 · 上市前的四组证据必须同版，否则每份都对、合起来互不支持
 
 `18-yaoshi-guanli-xue/chapters/03-shangshi-qian/`
 
@@ -4948,7 +4948,7 @@
 | prompt | 上市前研究：药学、药理毒理与临床 · 提示词 | — | 523 | [`prompt-03-shangshi-qian.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/03-shangshi-qian/outputs/prompt-03-shangshi-qian.md) |
 | skill | 上市前研究：药学、药理毒理与临床 | 上市前研究：药学、药理毒理与临床——按「注册线 1–10 → 法律线 11–20 → 条例线 21–22 → GVP 23–24 → GMP 25–26 → GSP 27–28」走一遍本章判据 | 429 | [`skill-shangshi-qian.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/03-shangshi-qian/outputs/skill-shangshi-qian.md) |
 
-#### 第 4 章 · 药物临床试验：分期、伦理与备案
+#### 第 4 章 · 跳期不是加速，是让某一类问题永远没有答案
 
 `18-yaoshi-guanli-xue/chapters/04-linchuang-shiji/`
 
@@ -4957,7 +4957,7 @@
 | prompt | 药物临床试验：分期、伦理与备案 · 提示词 | — | 524 | [`prompt-04-linchuang-shiji.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/04-linchuang-shiji/outputs/prompt-04-linchuang-shiji.md) |
 | skill | 药物临床试验：分期、伦理与备案 | 药物临床试验：分期、伦理与备案——按「注册线 1–10 → 法律线 11–20 → 条例线 21–22 → GVP 23–24 → GMP 25–26 → GSP 27–28」走一遍本章判据 | 429 | [`skill-linchuang-shiji.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/04-linchuang-shiji/outputs/skill-linchuang-shiji.md) |
 
-#### 第 5 章 · 试验期间的安全报告与变更控制
+#### 第 5 章 · 试验期间的变化必须留下同步记录，否则数据一律被当作来路不明
 
 `18-yaoshi-guanli-xue/chapters/05-anquan-biangeng/`
 
@@ -4966,7 +4966,7 @@
 | prompt | 试验期间的安全报告与变更控制 · 提示词 | — | 525 | [`prompt-05-anquan-biangeng.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/05-anquan-biangeng/outputs/prompt-05-anquan-biangeng.md) |
 | skill | 试验期间的安全报告与变更控制 | 试验期间的安全报告与变更控制——按「注册线 1–10 → 法律线 11–20 → 条例线 21–22 → GVP 23–24 → GMP 25–26 → GSP 27–28」走一遍本章判据 | 427 | [`skill-anquan-biangeng.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/05-anquan-biangeng/outputs/skill-anquan-biangeng.md) |
 
-#### 第 6 章 · 审评与审批：结论怎么形成
+#### 第 6 章 · 审评结论要能被换一组人复核，做不到多半是推理链没写出来
 
 `18-yaoshi-guanli-xue/chapters/06-shenping/`
 
@@ -4975,7 +4975,7 @@
 | prompt | 审评与审批：结论怎么形成 · 提示词 | — | 511 | [`prompt-06-shenping.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/06-shenping/outputs/prompt-06-shenping.md) |
 | skill | 审评与审批：结论怎么形成 | 审评与审批：结论怎么形成——按「注册线 1–10 → 法律线 11–20 → 条例线 21–22 → GVP 23–24 → GMP 25–26 → GSP 27–28」走一遍本章判据 | 416 | [`skill-shenping.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/06-shenping/outputs/skill-shenping.md) |
 
-#### 第 7 章 · 注册核查与注册检验
+#### 第 7 章 · 核查与检验的价值不在补充材料，而在让纸面证据可被推翻
 
 `18-yaoshi-guanli-xue/chapters/07-hecha-jianyan/`
 
@@ -4984,7 +4984,7 @@
 | prompt | 注册核查与注册检验 · 提示词 | — | 502 | [`prompt-07-hecha-jianyan.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/07-hecha-jianyan/outputs/prompt-07-hecha-jianyan.md) |
 | skill | 注册核查与注册检验 | 注册核查与注册检验——按「注册线 1–10 → 法律线 11–20 → 条例线 21–22 → GVP 23–24 → GMP 25–26 → GSP 27–28」走一遍本章判据 | 415 | [`skill-hecha-jianyan.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/07-hecha-jianyan/outputs/skill-hecha-jianyan.md) |
 
-#### 第 8 章 · 加快通道：突破性治疗、附条件批准、优先审评
+#### 第 8 章 · 加快通道换的是证据的时间表，不是证据的门槛
 
 `18-yaoshi-guanli-xue/chapters/08-jiakuai/`
 
@@ -4993,7 +4993,7 @@
 | prompt | 加快通道：突破性治疗、附条件批准、优先审评 · 提示词 | — | 538 | [`prompt-08-jiakuai.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/08-jiakuai/outputs/prompt-08-jiakuai.md) |
 | skill | 加快通道：突破性治疗、附条件批准、优先审评 | 加快通道：突破性治疗、附条件批准、优先审评——按「注册线 1–10 → 法律线 11–20 → 条例线 21–22 → GVP 23–24 → GMP 25–26 → GSP 27–28」走一遍本章判据 | 433 | [`skill-jiakuai.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/08-jiakuai/outputs/skill-jiakuai.md) |
 
-#### 第 9 章 · 上市后变更与再注册
+#### 第 9 章 · 批准只是起点，变更与再注册才是持有人真正的日常
 
 `18-yaoshi-guanli-xue/chapters/09-shangshi-hou/`
 
@@ -5002,7 +5002,7 @@
 | prompt | 上市后变更与再注册 · 提示词 | — | 506 | [`prompt-09-shangshi-hou.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/09-shangshi-hou/outputs/prompt-09-shangshi-hou.md) |
 | skill | 上市后变更与再注册 | 上市后变更与再注册——按「注册线 1–10 → 法律线 11–20 → 条例线 21–22 → GVP 23–24 → GMP 25–26 → GSP 27–28」走一遍本章判据 | 414 | [`skill-shangshi-hou.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/09-shangshi-hou/outputs/skill-shangshi-hou.md) |
 
-#### 第 10 章 · 中药注册的特殊性
+#### 第 10 章 · 中药注册的特殊性不在放宽标准，而在证据形态不同
 
 `18-yaoshi-guanli-xue/chapters/10-zhongyao-tese/`
 
@@ -5011,7 +5011,7 @@
 | prompt | 中药注册的特殊性 · 提示词 | — | 544 | [`prompt-10-zhongyao-tese.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/10-zhongyao-tese/outputs/prompt-10-zhongyao-tese.md) |
 | skill | 中药注册的特殊性 | 中药注册的特殊性——按「注册线 1–10 → 法律线 11–20 → 条例线 21–22 → GVP 23–24 → GMP 25–26 → GSP 27–28」走一遍本章判据 | 413 | [`skill-zhongyao-tese.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/10-zhongyao-tese/outputs/skill-zhongyao-tese.md) |
 
-#### 第 11 章 · 药品的定义与适用范围
+#### 第 11 章 · 管辖判断在合规动作之前，定错管辖则后面全部白做
 
 `18-yaoshi-guanli-xue/chapters/11-dingyi-shiyong/`
 
@@ -5020,7 +5020,7 @@
 | prompt | 药品的定义与适用范围 · 提示词 | — | 506 | [`prompt-11-dingyi-shiyong.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/11-dingyi-shiyong/outputs/prompt-11-dingyi-shiyong.md) |
 | skill | 药品的定义与适用范围 | 药品的定义与适用范围——按「注册线 1–10 → 法律线 11–20 → 条例线 21–22 → GVP 23–24 → GMP 25–26 → GSP 27–28」走一遍本章判据 | 418 | [`skill-dingyi-shiyong.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/11-dingyi-shiyong/outputs/skill-dingyi-shiyong.md) |
 
-#### 第 12 章 · 上市许可持有人制度：一个人对全生命周期负责
+#### 第 12 章 · 责任可以外包作业，不能外包给受托人
 
 `18-yaoshi-guanli-xue/chapters/12-chiyouren/`
 
@@ -5029,7 +5029,7 @@
 | prompt | 上市许可持有人制度：一个人对全生命周期负责 · 提示词 | — | 539 | [`prompt-12-chiyouren.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/12-chiyouren/outputs/prompt-12-chiyouren.md) |
 | skill | 上市许可持有人制度：一个人对全生命周期负责 | 上市许可持有人制度：一个人对全生命周期负责——按「注册线 1–10 → 法律线 11–20 → 条例线 21–22 → GVP 23–24 → GMP 25–26 → GSP 27–28」走一遍本章判据 | 435 | [`skill-chiyouren.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/12-chiyouren/outputs/skill-chiyouren.md) |
 
-#### 第 13 章 · 药品追溯制度
+#### 第 13 章 · 追溯的判据不是上了系统，是能从患者倒走回投料批
 
 `18-yaoshi-guanli-xue/chapters/13-zhuisu/`
 
@@ -5038,7 +5038,7 @@
 | prompt | 药品追溯制度 · 提示词 | — | 490 | [`prompt-13-zhuisu.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/13-zhuisu/outputs/prompt-13-zhuisu.md) |
 | skill | 药品追溯制度 | 药品追溯制度——按「注册线 1–10 → 法律线 11–20 → 条例线 21–22 → GVP 23–24 → GMP 25–26 → GSP 27–28」走一遍本章判据 | 402 | [`skill-zhuisu.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/13-zhuisu/outputs/skill-zhuisu.md) |
 
-#### 第 14 章 · 药品生产：许可与 GMP
+#### 第 14 章 · 批检验合格只证明这一批，工艺记录才证明下一批
 
 `18-yaoshi-guanli-xue/chapters/14-shengchan/`
 
@@ -5047,7 +5047,7 @@
 | prompt | 药品生产：许可与 GMP · 提示词 | — | 505 | [`prompt-14-shengchan.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/14-shengchan/outputs/prompt-14-shengchan.md) |
 | skill | 药品生产：许可与 GMP | 药品生产：许可与 GMP——按「注册线 1–10 → 法律线 11–20 → 条例线 21–22 → GVP 23–24 → GMP 25–26 → GSP 27–28」走一遍本章判据 | 415 | [`skill-shengchan.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/14-shengchan/outputs/skill-shengchan.md) |
 
-#### 第 15 章 · 药品经营：许可与 GSP
+#### 第 15 章 · 经营的责任不是把药送到，是送到时它还是原来那批药
 
 `18-yaoshi-guanli-xue/chapters/15-jingying/`
 
@@ -5056,7 +5056,7 @@
 | prompt | 药品经营：许可与 GSP · 提示词 | — | 505 | [`prompt-15-jingying.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/15-jingying/outputs/prompt-15-jingying.md) |
 | skill | 药品经营：许可与 GSP | 药品经营：许可与 GSP——按「注册线 1–10 → 法律线 11–20 → 条例线 21–22 → GVP 23–24 → GMP 25–26 → GSP 27–28」走一遍本章判据 | 414 | [`skill-jingying.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/15-jingying/outputs/skill-jingying.md) |
 
-#### 第 16 章 · 处方药分类、网络销售与广告管制
+#### 第 16 章 · 线上不创造新的豁免，只把信息不对称搬到了屏幕这一侧
 
 `18-yaoshi-guanli-xue/chapters/16-fenlei-wangluo-guanggao/`
 
@@ -5065,7 +5065,7 @@
 | prompt | 处方药分类、网络销售与广告管制 · 提示词 | — | 525 | [`prompt-16-fenlei-wangluo-guanggao.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/16-fenlei-wangluo-guanggao/outputs/prompt-16-fenlei-wangluo-guanggao.md) |
 | skill | 处方药分类、网络销售与广告管制 | 处方药分类、网络销售与广告管制——按「注册线 1–10 → 法律线 11–20 → 条例线 21–22 → GVP 23–24 → GMP 25–26 → GSP 27–28」走一遍本章判据 | 437 | [`skill-fenlei-wangluo-guanggao.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/16-fenlei-wangluo-guanggao/outputs/skill-fenlei-wangluo-guanggao.md) |
 
-#### 第 17 章 · 医疗机构药事管理
+#### 第 17 章 · 审方的价值不在改处方，在给药之前发现不该发生的错误
 
 `18-yaoshi-guanli-xue/chapters/17-yiliaojigou/`
 
@@ -5074,7 +5074,7 @@
 | prompt | 医疗机构药事管理 · 提示词 | — | 496 | [`prompt-17-yiliaojigou.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/17-yiliaojigou/outputs/prompt-17-yiliaojigou.md) |
 | skill | 医疗机构药事管理 | 医疗机构药事管理——按「注册线 1–10 → 法律线 11–20 → 条例线 21–22 → GVP 23–24 → GMP 25–26 → GSP 27–28」走一遍本章判据 | 411 | [`skill-yiliaojigou.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/17-yiliaojigou/outputs/skill-yiliaojigou.md) |
 
-#### 第 18 章 · 上市后管理与不良反应监测
+#### 第 18 章 · 监测的成果不是报表数量，是它改过哪一个用药决定
 
 `18-yaoshi-guanli-xue/chapters/18-shangshihou-jiancha/`
 
@@ -5083,7 +5083,7 @@
 | prompt | 上市后管理与不良反应监测 · 提示词 | — | 508 | [`prompt-18-shangshihou-jiancha.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/18-shangshihou-jiancha/outputs/prompt-18-shangshihou-jiancha.md) |
 | skill | 上市后管理与不良反应监测 | 上市后管理与不良反应监测——按「注册线 1–10 → 法律线 11–20 → 条例线 21–22 → GVP 23–24 → GMP 25–26 → GSP 27–28」走一遍本章判据 | 427 | [`skill-shangshihou-jiancha.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/18-shangshihou-jiancha/outputs/skill-shangshihou-jiancha.md) |
 
-#### 第 19 章 · 假药与劣药的认定
+#### 第 19 章 · 假药问它是不是那个东西，劣药问它够不够格
 
 `18-yaoshi-guanli-xue/chapters/19-jialieyao/`
 
@@ -5092,7 +5092,7 @@
 | prompt | 假药与劣药的认定 · 提示词 | — | 496 | [`prompt-19-jialieyao.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/19-jialieyao/outputs/prompt-19-jialieyao.md) |
 | skill | 假药与劣药的认定 | 假药与劣药的认定——按「注册线 1–10 → 法律线 11–20 → 条例线 21–22 → GVP 23–24 → GMP 25–26 → GSP 27–28」走一遍本章判据 | 409 | [`skill-jialieyao.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/19-jialieyao/outputs/skill-jialieyao.md) |
 
-#### 第 20 章 · 法律责任与药品储备供应
+#### 第 20 章 · 一端罚到人，一端不许缺，两头合起来才叫药事管理
 
 `18-yaoshi-guanli-xue/chapters/20-falv-zeren-chubei/`
 
@@ -5101,7 +5101,7 @@
 | prompt | 法律责任与药品储备供应 · 提示词 | — | 509 | [`prompt-20-falv-zeren-chubei.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/20-falv-zeren-chubei/outputs/prompt-20-falv-zeren-chubei.md) |
 | skill | 法律责任与药品储备供应 | 法律责任与药品储备供应——按「注册线 1–10 → 法律线 11–20 → 条例线 21–22 → GVP 23–24 → GMP 25–26 → GSP 27–28」走一遍本章判据 | 423 | [`skill-falv-zeren-chubei.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/20-falv-zeren-chubei/outputs/skill-falv-zeren-chubei.md) |
 
-#### 第 21 章 · 假劣药的检验与豁免
+#### 第 21 章 · 假劣药的认定靠证据链，检验只是链上的一环
 
 `18-yaoshi-guanli-xue/chapters/21-jialie-jianyan-huomian/`
 
@@ -5110,7 +5110,7 @@
 | prompt | 假劣药的检验与豁免 · 提示词 | — | 511 | [`prompt-21-jialie-jianyan-huomian.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/21-jialie-jianyan-huomian/outputs/prompt-21-jialie-jianyan-huomian.md) |
 | skill | 假劣药的检验与豁免 | 假劣药的检验与豁免——按「注册线 1–10 → 法律线 11–20 → 条例线 21–22 → GVP 23–24 → GMP 25–26 → GSP 27–28」走一遍本章判据 | 424 | [`skill-jialie-jianyan-huomian.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/21-jialie-jianyan-huomian/outputs/skill-jialie-jianyan-huomian.md) |
 
-#### 第 22 章 · 实施条例的增量：委托、网络、免责与激励
+#### 第 22 章 · 条例的增量写在三处：不能做、可以不罚、做了有奖
 
 `18-yaoshi-guanli-xue/chapters/22-shishitiao-zengliang/`
 
@@ -5119,7 +5119,7 @@
 | prompt | 实施条例的增量：委托、网络、免责与激励 · 提示词 | — | 545 | [`prompt-22-shishitiao-zengliang.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/22-shishitiao-zengliang/outputs/prompt-22-shishitiao-zengliang.md) |
 | skill | 实施条例的增量：委托、网络、免责与激励 | 实施条例的增量：委托、网络、免责与激励——按「注册线 1–10 → 法律线 11–20 → 条例线 21–22 → GVP 23–24 → GMP 25–26 → GSP 27–28」走一遍本章判据 | 442 | [`skill-shishitiao-zengliang.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/22-shishitiao-zengliang/outputs/skill-shishitiao-zengliang.md) |
 
-#### 第 23 章 · 药物警戒体系：谁负责、谁执行、靠什么运转
+#### 第 23 章 · 药物警戒靠体系运转，不靠某个人的责任心
 
 `18-yaoshi-guanli-xue/chapters/23-yaojing-tixi/`
 
@@ -5128,7 +5128,7 @@
 | prompt | 药物警戒体系：谁负责、谁执行、靠什么运转 · 提示词 | — | 544 | [`prompt-23-yaojing-tixi.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/23-yaojing-tixi/outputs/prompt-23-yaojing-tixi.md) |
 | skill | 药物警戒体系：谁负责、谁执行、靠什么运转 | 药物警戒体系：谁负责、谁执行、靠什么运转——按「注册线 1–10 → 法律线 11–20 → 条例线 21–22 → GVP 23–24 → GMP 25–26 → GSP 27–28」走一遍本章判据 | 436 | [`skill-yaojing-tixi.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/23-yaojing-tixi/outputs/skill-yaojing-tixi.md) |
 
-#### 第 24 章 · 从个例报告到风险控制：时限、信号与定期报告
+#### 第 24 章 · 药物警戒的效率由时钟决定，判断再准也补不回迟到
 
 `18-yaoshi-guanli-xue/chapters/24-geren-xinhao-fengxian/`
 
@@ -5137,7 +5137,7 @@
 | prompt | 从个例报告到风险控制：时限、信号与定期报告 · 提示词 | — | 563 | [`prompt-24-geren-xinhao-fengxian.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/24-geren-xinhao-fengxian/outputs/prompt-24-geren-xinhao-fengxian.md) |
 | skill | 从个例报告到风险控制：时限、信号与定期报告 | 从个例报告到风险控制：时限、信号与定期报告——按「注册线 1–10 → 法律线 11–20 → 条例线 21–22 → GVP 23–24 → GMP 25–26 → GSP 27–28」走一遍本章判据 | 447 | [`skill-geren-xinhao-fengxian.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/24-geren-xinhao-fengxian/outputs/skill-geren-xinhao-fengxian.md) |
 
-#### 第 25 章 · GMP 的体系要求与关键人员
+#### 第 25 章 · GMP 要的是一个能说不的组织，不是一套齐备的文件
 
 `18-yaoshi-guanli-xue/chapters/25-gmp-tixi-rendyuan/`
 
@@ -5146,7 +5146,7 @@
 | prompt | GMP 的体系要求与关键人员 · 提示词 | — | 531 | [`prompt-25-gmp-tixi-rendyuan.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/25-gmp-tixi-rendyuan/outputs/prompt-25-gmp-tixi-rendyuan.md) |
 | skill | GMP 的体系要求与关键人员 | GMP 的体系要求与关键人员——按「注册线 1–10 → 法律线 11–20 → 条例线 21–22 → GVP 23–24 → GMP 25–26 → GSP 27–28」走一遍本章判据 | 427 | [`skill-gmp-tixi-rendyuan.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/25-gmp-tixi-rendyuan/outputs/skill-gmp-tixi-rendyuan.md) |
 
-#### 第 26 章 · GMP 的四根支柱：验证、变更、偏差、回顾
+#### 第 26 章 · 一次合格证明不了下一次，合格要靠四根支柱咬合
 
 `18-yaoshi-guanli-xue/chapters/26-gmp-sigen-zhizhu/`
 
@@ -5155,7 +5155,7 @@
 | prompt | GMP 的四根支柱：验证、变更、偏差、回顾 · 提示词 | — | 564 | [`prompt-26-gmp-sigen-zhizhu.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/26-gmp-sigen-zhizhu/outputs/prompt-26-gmp-sigen-zhizhu.md) |
 | skill | GMP 的四根支柱：验证、变更、偏差、回顾 | GMP 的四根支柱：验证、变更、偏差、回顾——按「注册线 1–10 → 法律线 11–20 → 条例线 21–22 → GVP 23–24 → GMP 25–26 → GSP 27–28」走一遍本章判据 | 440 | [`skill-gmp-sigen-zhizhu.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/26-gmp-sigen-zhizhu/outputs/skill-gmp-sigen-zhizhu.md) |
 
-#### 第 27 章 · GSP 的组织条件：体系、人员与设施
+#### 第 27 章 · GSP 的组织条件要随规模同步长，只扩仓库不扩人
 
 `18-yaoshi-guanli-xue/chapters/27-gsp-zuzhi/`
 
@@ -5164,7 +5164,7 @@
 | prompt | GSP 的组织条件：体系、人员与设施 · 提示词 | — | 547 | [`prompt-27-gsp-zuzhi.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/27-gsp-zuzhi/outputs/prompt-27-gsp-zuzhi.md) |
 | skill | GSP 的组织条件：体系、人员与设施 | GSP 的组织条件：体系、人员与设施——按「注册线 1–10 → 法律线 11–20 → 条例线 21–22 → GVP 23–24 → GMP 25–26 → GSP 27–28」走一遍本章判据 | 427 | [`skill-gsp-zuzhi.md`](../departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/27-gsp-zuzhi/outputs/skill-gsp-zuzhi.md) |
 
-#### 第 28 章 · GSP 的四个支点：验收、储存、记录、冷链
+#### 第 28 章 · 经营环节的质量不是造出来的，是四个支点各防一种错
 
 `18-yaoshi-guanli-xue/chapters/28-gsp-sizhizhu/`
 
@@ -5177,157 +5177,157 @@
 
 > Clinic · 第 9 学期 · 已产出 6 章
 
-#### 第 1 章 · 药材市场与产地调研：道地性与商品规格
+#### 第 1 章 · 道地是历史给的信用，规格是当天能核的价
 
 `19-zhongyao-zhuanye-shijian/chapters/01-changdi-diaoyan/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 药材市场与产地调研：道地性与商品规格 · 提示词 | — | 513 | [`prompt-01-changdi-diaoyan.md`](../departments/02-zhongyao/19-zhongyao-zhuanye-shijian/chapters/01-changdi-diaoyan/outputs/prompt-01-changdi-diaoyan.md) |
-| skill | 药材市场与产地调研：道地性与商品规格 | 药材市场与产地调研：道地性与商品规格——按「产地调研 → 鉴定 → 炮制 → 制剂中试 → 药房随访 → 出站考核」走一遍本章判据 | 391 | [`skill-changdi-diaoyan.md`](../departments/02-zhongyao/19-zhongyao-zhuanye-shijian/chapters/01-changdi-diaoyan/outputs/skill-changdi-diaoyan.md) |
+| prompt | 道地是历史给的信用，规格是当天能核的价 · 提示词 | — | 816 | [`prompt-01-changdi-diaoyan.md`](../departments/02-zhongyao/19-zhongyao-zhuanye-shijian/chapters/01-changdi-diaoyan/outputs/prompt-01-changdi-diaoyan.md) |
+| skill | 道地是历史给的信用，规格是当天能核的价 | 道地是历史给的信用，规格是当天能核的价——按「入岗三问：进场之前先答，答不上就不进场 → 操作判据：什么算成立，什么不算【教学设定】 → 交接与复核：把「我看过」变成「你可以查」 → 记录字段：一张能过三手的调研表」走一遍本章判据 | 714 | [`skill-changdi-diaoyan.md`](../departments/02-zhongyao/19-zhongyao-zhuanye-shijian/chapters/01-changdi-diaoyan/outputs/skill-changdi-diaoyan.md) |
 
-#### 第 2 章 · 鉴定实验室实践：性状与显微鉴定
+#### 第 2 章 · 眼睛先看，显微镜只回答眼睛答不了的那一问
 
 `19-zhongyao-zhuanye-shijian/chapters/02-jianding-shijian/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 鉴定实验室实践：性状与显微鉴定 · 提示词 | — | 504 | [`prompt-02-jianding-shijian.md`](../departments/02-zhongyao/19-zhongyao-zhuanye-shijian/chapters/02-jianding-shijian/outputs/prompt-02-jianding-shijian.md) |
-| skill | 鉴定实验室实践：性状与显微鉴定 | 鉴定实验室实践：性状与显微鉴定——按「产地调研 → 鉴定 → 炮制 → 制剂中试 → 药房随访 → 出站考核」走一遍本章判据 | 386 | [`skill-jianding-shijian.md`](../departments/02-zhongyao/19-zhongyao-zhuanye-shijian/chapters/02-jianding-shijian/outputs/skill-jianding-shijian.md) |
+| prompt | 眼睛先看，显微镜只回答眼睛答不了的那一问 · 提示词 | — | 847 | [`prompt-02-jianding-shijian.md`](../departments/02-zhongyao/19-zhongyao-zhuanye-shijian/chapters/02-jianding-shijian/outputs/prompt-02-jianding-shijian.md) |
+| skill | 眼睛先看，显微镜只回答眼睛答不了的那一问 | 眼睛先看，显微镜只回答眼睛答不了的那一问——按「入岗三问：上实验台之前先答 → 操作判据：性状成立与显微成立，各要什么【教学设定】 → 交接与复核：四道关，一道都不能省 → 记录字段：让复核人只凭纸就能重做」走一遍本章判据 | 745 | [`skill-jianding-shijian.md`](../departments/02-zhongyao/19-zhongyao-zhuanye-shijian/chapters/02-jianding-shijian/outputs/skill-jianding-shijian.md) |
 
-#### 第 3 章 · 炮制车间实践：工艺与质控点
+#### 第 3 章 · 车间里没有「炒熟了」，只有炒到哪一步必须停
 
 `19-zhongyao-zhuanye-shijian/chapters/03-paozhi-chejian/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 炮制车间实践：工艺与质控点 · 提示词 | — | 494 | [`prompt-03-paozhi-chejian.md`](../departments/02-zhongyao/19-zhongyao-zhuanye-shijian/chapters/03-paozhi-chejian/outputs/prompt-03-paozhi-chejian.md) |
-| skill | 炮制车间实践：工艺与质控点 | 炮制车间实践：工艺与质控点——按「产地调研 → 鉴定 → 炮制 → 制剂中试 → 药房随访 → 出站考核」走一遍本章判据 | 380 | [`skill-paozhi-chejian.md`](../departments/02-zhongyao/19-zhongyao-zhuanye-shijian/chapters/03-paozhi-chejian/outputs/skill-paozhi-chejian.md) |
+| prompt | 车间里没有「炒熟了」，只有炒到哪一步必须停 · 提示词 | — | 928 | [`prompt-03-paozhi-chejian.md`](../departments/02-zhongyao/19-zhongyao-zhuanye-shijian/chapters/03-paozhi-chejian/outputs/prompt-03-paozhi-chejian.md) |
+| skill | 车间里没有「炒熟了」，只有炒到哪一步必须停 | 车间里没有「炒熟了」，只有炒到哪一步必须停——按「进车间先认三张纸，认不全就不要动手 → 一个工序的质控点只有三类 → 清炒：停点靠断面判，不靠表面 → 加辅料炒：辅料既是传热介质，也是剂量」走一遍本章判据 | 823 | [`skill-paozhi-chejian.md`](../departments/02-zhongyao/19-zhongyao-zhuanye-shijian/chapters/03-paozhi-chejian/outputs/skill-paozhi-chejian.md) |
 
-#### 第 4 章 · 制剂中试：处方—工艺—质量
+#### 第 4 章 · 中试不是把小试放大十倍，是证明同一处方在两套设备上做出同一个产品
 
 `19-zhongyao-zhuanye-shijian/chapters/04-zhiji-zhongshi/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 制剂中试：处方—工艺—质量 · 提示词 | — | 493 | [`prompt-04-zhiji-zhongshi.md`](../departments/02-zhongyao/19-zhongyao-zhuanye-shijian/chapters/04-zhiji-zhongshi/outputs/prompt-04-zhiji-zhongshi.md) |
-| skill | 制剂中试：处方—工艺—质量 | 制剂中试：处方—工艺—质量——按「产地调研 → 鉴定 → 炮制 → 制剂中试 → 药房随访 → 出站考核」走一遍本章判据 | 380 | [`skill-zhiji-zhongshi.md`](../departments/02-zhongyao/19-zhongyao-zhuanye-shijian/chapters/04-zhiji-zhongshi/outputs/skill-zhiji-zhongshi.md) |
+| prompt | 中试不是把小试放大十倍，是证明同一处方在两套设备上做出同一个产品 · 提示词 | — | 876 | [`prompt-04-zhiji-zhongshi.md`](../departments/02-zhongyao/19-zhongyao-zhuanye-shijian/chapters/04-zhiji-zhongshi/outputs/prompt-04-zhiji-zhongshi.md) |
+| skill | 中试不是把小试放大十倍，是证明同一处方在两套设备上做出同一个产品 | 中试不是把小试放大十倍，是证明同一处方在两套设备上做出同一个产品——按「中试要回答三个"一致"，设备不同不是理由 → 浸出这一段：四个阶段，一个关键变量 → 成型这一段：辅料不是填充物，四个关口逐个过 → 放大的算术：三处必重算，一张对照表」走一遍本章判据 | 760 | [`skill-zhiji-zhongshi.md`](../departments/02-zhongyao/19-zhongyao-zhuanye-shijian/chapters/04-zhiji-zhongshi/outputs/skill-zhiji-zhongshi.md) |
 
-#### 第 5 章 · 药房与临床用药随访
+#### 第 5 章 · 随访问不出"怎么煎的、怎么吃的"，疗效与不良反应都无从归因
 
 `19-zhongyao-zhuanye-shijian/chapters/05-yaofang-suifang/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 药房与临床用药随访 · 提示词 | — | 467 | [`prompt-05-yaofang-suifang.md`](../departments/02-zhongyao/19-zhongyao-zhuanye-shijian/chapters/05-yaofang-suifang/outputs/prompt-05-yaofang-suifang.md) |
-| skill | 药房与临床用药随访 | 药房与临床用药随访——按「产地调研 → 鉴定 → 炮制 → 制剂中试 → 药房随访 → 出站考核」走一遍本章判据 | 373 | [`skill-yaofang-suifang.md`](../departments/02-zhongyao/19-zhongyao-zhuanye-shijian/chapters/05-yaofang-suifang/outputs/skill-yaofang-suifang.md) |
+| prompt | 随访问不出"怎么煎的、怎么吃的"，疗效与不良反应都无从归因 · 提示词 | — | 804 | [`prompt-05-yaofang-suifang.md`](../departments/02-zhongyao/19-zhongyao-zhuanye-shijian/chapters/05-yaofang-suifang/outputs/prompt-05-yaofang-suifang.md) |
+| skill | 随访问不出"怎么煎的、怎么吃的"，疗效与不良反应都无从归因 | 随访问不出"怎么煎的、怎么吃的"，疗效与不良反应都无从归因——按「发药窗口的三问：谁吃、怎么吃、吃到哪一天 → 煎服法是疗效的一部分：器具、火候、六类特殊煎法 → 随访记录：五个字段，缺一个就无法归因 → 边界：药师能给什么，不能给什么」走一遍本章判据 | 692 | [`skill-yaofang-suifang.md`](../departments/02-zhongyao/19-zhongyao-zhuanye-shijian/chapters/05-yaofang-suifang/outputs/skill-yaofang-suifang.md) |
 
-#### 第 6 章 · 实践报告与出站考核
+#### 第 6 章 · 报告不是把做过的事写一遍，是让没去过现场的人能重算一遍
 
 `19-zhongyao-zhuanye-shijian/chapters/06-shijian-baogao/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 实践报告与出站考核 · 提示词 | — | 464 | [`prompt-06-shijian-baogao.md`](../departments/02-zhongyao/19-zhongyao-zhuanye-shijian/chapters/06-shijian-baogao/outputs/prompt-06-shijian-baogao.md) |
-| skill | 实践报告与出站考核 | 实践报告与出站考核——按「产地调研 → 鉴定 → 炮制 → 制剂中试 → 药房随访 → 出站考核」走一遍本章判据 | 372 | [`skill-shijian-baogao.md`](../departments/02-zhongyao/19-zhongyao-zhuanye-shijian/chapters/06-shijian-baogao/outputs/skill-shijian-baogao.md) |
-| prompt | 实践报告与答辩 · 提示词 | — | 439 | [`prompt-06-shijian-baogao.md`](../departments/06-guanli/25-guanli-shixi-shijian/chapters/06-shijian-baogao/outputs/prompt-06-shijian-baogao.md) |
-| skill | 实践报告与答辩 | 实践报告与答辩——按「实习 → 数据 → 政策 → 改进 → 答辩」走一遍本章判据 | 371 | [`skill-shijian-baogao.md`](../departments/06-guanli/25-guanli-shixi-shijian/chapters/06-shijian-baogao/outputs/skill-shijian-baogao.md) |
+| prompt | 报告不是把做过的事写一遍，是让没去过现场的人能重算一遍 · 提示词 | — | 811 | [`prompt-06-shijian-baogao.md`](../departments/02-zhongyao/19-zhongyao-zhuanye-shijian/chapters/06-shijian-baogao/outputs/prompt-06-shijian-baogao.md) |
+| skill | 报告不是把做过的事写一遍，是让没去过现场的人能重算一遍 | 报告不是把做过的事写一遍，是让没去过现场的人能重算一遍——按「报告的骨架：四段，每段都有硬栏目 → 数字要能被重算：蕴藏量的四个参数 → 三张底表与一套档案：数据要能追回现场 → 出站考核评什么：四档与三类不予通过」走一遍本章判据 | 700 | [`skill-shijian-baogao.md`](../departments/02-zhongyao/19-zhongyao-zhuanye-shijian/chapters/06-shijian-baogao/outputs/skill-shijian-baogao.md) |
+| prompt | 实践报告的可信度来自能被重跑，不来自写得厚 · 提示词 | — | 953 | [`prompt-06-shijian-baogao.md`](../departments/06-guanli/25-guanli-shixi-shijian/chapters/06-shijian-baogao/outputs/prompt-06-shijian-baogao.md) |
+| skill | 实践报告的可信度来自能被重跑，不来自写得厚 | 实践报告的可信度来自能被重跑，不来自写得厚——按「报告的第一性要求：别人按你写的能重跑一遍 → 数据文件：编码、缺失与版本 → 从软件输出到表格：五条转换规则 → 四类误读，必须在答辩前自查一遍」走一遍本章判据 | 847 | [`skill-shijian-baogao.md`](../departments/06-guanli/25-guanli-shixi-shijian/chapters/06-shijian-baogao/outputs/skill-shijian-baogao.md) |
 
 ### 中药毕业设计与知识移交
 
 > Build · 第 10 学期 · 已产出 6 章
 
-#### 第 1 章 · 选题：从质量标志物到可验证假设
+#### 第 1 章 · 选题的成败取决于假设能否被一批样品证伪
 
 `20-zhongyao-biye-sheji/chapters/01-xuan-ti/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 选题：从质量标志物到可验证假设 · 提示词 | — | 491 | [`prompt-01-xuan-ti.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
-| skill | 选题：从质量标志物到可验证假设 | 选题：从质量标志物到可验证假设——按「选题 → 样品与数据 → 实验与建模 → 方法学验证 → 写作答辩 → 移交」走一遍本章判据 | 378 | [`skill-xuan-ti.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
-| prompt | 选题：从配穴方案到可检验命题 · 提示词 | — | 481 | [`prompt-01-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
-| skill | 选题：从配穴方案到可检验命题 | 选题：从配穴方案到可检验命题——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 373 | [`skill-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
-| prompt | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 · 提示词 | — | 620 | [`prompt-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/prompt-xuan-ti.md) |
-| skill | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题——按「三条判据：骨伤版的可复现、可对照、可接手 → 四步降维：从一个病名到一条命题 → 三份能交出去的骨伤毕设产物 → 里程碑：四件必须交出去的东西」走一遍本章判据 | 503 | [`skill-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题的成败取决于假设能否被一批样品证伪 · 提示词 | — | 641 | [`prompt-01-xuan-ti.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
+| skill | 选题的成败取决于假设能否被一批样品证伪 | 选题的成败取决于假设能否被一批样品证伪——按「选题的真问题不是「做什么」，而是「哪一种不一致」 → 四个槽怎么填：从质量标志物到可检验判据 → 开题节点：交付物、字段与时间表 → 评分维度与五种失效模式」走一遍本章判据 | 535 | [`skill-xuan-ti.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题不是挑一个病，而是把一句经验话逼成能被否证的句子 · 提示词 | — | 923 | [`prompt-01-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
+| skill | 选题不是挑一个病，而是把一句经验话逼成能被否证的句子 | 选题不是挑一个病，而是把一句经验话逼成能被否证的句子——按「底本把"针在哪"写到了寸，把"跟谁比"留成了空格 → 对照只能选一个，选完要能说出它排除了什么 → 把"招几十例"换成四个参数 → 裁剪：写不完的范围等于没范围」走一遍本章判据 | 801 | [`skill-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 · 提示词 | — | 639 | [`prompt-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/prompt-xuan-ti.md) |
+| skill | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题——按「三条判据：骨伤版的可复现、可对照、可接手 → 四步降维：从一个病名到一条命题 → 三份能交出去的骨伤毕设产物 → 里程碑：四件必须交出去的东西」走一遍本章判据 | 522 | [`skill-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题在开题前就定了成败：缺口必须算得出来 · 提示词 | — | 629 | [`prompt-01-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题在开题前就定了成败：缺口必须算得出来 | 选题在开题前就定了成败：缺口必须算得出来——按「好选题的四个判据 → 缺口怎么算：分子、分母、来源 → 选题过大的四种形态 → 开题评什么：评能不能做，不评想不想做」走一遍本章判据 | 522 | [`skill-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
-| prompt | 选题：从管理问题到可测量命题 · 提示词 | — | 468 | [`prompt-01-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
-| skill | 选题：从管理问题到可测量命题 | 选题：从管理问题到可测量命题——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 378 | [`skill-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
-| prompt | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验 · 提示词 | — | 630 | [`prompt-01-xuan-ti.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
-| skill | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验 | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验——按「三条判据：可复现、可对照、可接手 → 四步降维：从中医问题到实验对象 → 三种能交出去的题目形态 → 里程碑与交付物」走一遍本章判据 | 513 | [`skill-xuan-ti.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题的标准不是「有意义」，而是能否在一个学期内被证伪 · 提示词 | — | 937 | [`prompt-01-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
+| skill | 选题的标准不是「有意义」，而是能否在一个学期内被证伪 | 选题的标准不是「有意义」，而是能否在一个学期内被证伪——按「「有意义」是评审语，「可证伪」是设计语 → 四步收缩：从管理问题到可测量命题 → 变量类型先定，方法才有得选 → 设计的四个要素与三种常见缺陷」走一遍本章判据 | 815 | [`skill-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验 · 提示词 | — | 646 | [`prompt-01-xuan-ti.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
+| skill | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验 | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验——按「三条判据：可复现、可对照、可接手 → 四步降维：从中医问题到实验对象 → 三种能交出去的题目形态 → 里程碑与交付物」走一遍本章判据 | 529 | [`skill-xuan-ti.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从专科问题到可验证命题 · 提示词 | — | 467 | [`prompt-01-xuan-ti.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题：从专科问题到可验证命题 | 选题：从专科问题到可验证命题——按「选题 → 数据 → 实现 → 评价 → 答辩 → 移交」走一遍本章判据 | 375 | [`skill-xuan-ti.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从机制假设到可检验实验 · 提示词 | — | 494 | [`prompt-01-xuan-ti.md`](../departments/09-jichu/17-jichu-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题：从机制假设到可检验实验 | 选题：从机制假设到可检验实验——按「选题 → 方案与伦理 → 实施与记录 → 数据分析 → 论文答辩 → 知识移交」走一遍本章判据 | 391 | [`skill-xuan-ti.md`](../departments/09-jichu/17-jichu-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 
-#### 第 2 章 · 样品与数据准备（批次、指纹图谱）
+#### 第 2 章 · 样品不代表性，图谱再精密也只是自证
 
 `20-zhongyao-biye-sheji/chapters/02-yangpin-zhunbei/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 样品与数据准备（批次、指纹图谱） · 提示词 | — | 511 | [`prompt-02-yangpin-zhunbei.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/02-yangpin-zhunbei/outputs/prompt-02-yangpin-zhunbei.md) |
-| skill | 样品与数据准备（批次、指纹图谱） | 样品与数据准备（批次、指纹图谱）——按「选题 → 样品与数据 → 实验与建模 → 方法学验证 → 写作答辩 → 移交」走一遍本章判据 | 388 | [`skill-yangpin-zhunbei.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/02-yangpin-zhunbei/outputs/skill-yangpin-zhunbei.md) |
+| prompt | 样品不代表性，图谱再精密也只是自证 · 提示词 | — | 622 | [`prompt-02-yangpin-zhunbei.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/02-yangpin-zhunbei/outputs/prompt-02-yangpin-zhunbei.md) |
+| skill | 样品不代表性，图谱再精密也只是自证 | 样品不代表性，图谱再精密也只是自证——按「代表性是取样问题，不是统计问题 → 批次矩阵：用哪几个维度切开「批」 → 样品登记与留样：台账十字段 → 中期节点：数据可用性判定」走一遍本章判据 | 526 | [`skill-yangpin-zhunbei.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/02-yangpin-zhunbei/outputs/skill-yangpin-zhunbei.md) |
 
-#### 第 3 章 · 实验与建模实现
+#### 第 3 章 · 实验能否被重跑，取决于参数表而不是图谱
 
 `20-zhongyao-biye-sheji/chapters/03-shiyan-shixian/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 实验与建模实现 · 提示词 | — | 467 | [`prompt-03-shiyan-shixian.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/03-shiyan-shixian/outputs/prompt-03-shiyan-shixian.md) |
-| skill | 实验与建模实现 | 实验与建模实现——按「选题 → 样品与数据 → 实验与建模 → 方法学验证 → 写作答辩 → 移交」走一遍本章判据 | 369 | [`skill-shiyan-shixian.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/03-shiyan-shixian/outputs/skill-shiyan-shixian.md) |
+| prompt | 实验能否被重跑，取决于参数表而不是图谱 · 提示词 | — | 633 | [`prompt-03-shiyan-shixian.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/03-shiyan-shixian/outputs/prompt-03-shiyan-shixian.md) |
+| skill | 实验能否被重跑，取决于参数表而不是图谱 | 实验能否被重跑，取决于参数表而不是图谱——按「链上每一段都要留一个可复现的量 → 参数表：必填项与必留项要分开设计 → 波谱解析：软件能给的与不能给的 → 节点分工、失效模式与评分」走一遍本章判据 | 534 | [`skill-shiyan-shixian.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/03-shiyan-shixian/outputs/skill-shiyan-shixian.md) |
 
-#### 第 4 章 · 质量一致性与方法学验证
+#### 第 4 章 · 方法学验证是结论的准生证，不是附录里的形式
 
 `20-zhongyao-biye-sheji/chapters/04-fangfaxue-yanzheng/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 质量一致性与方法学验证 · 提示词 | — | 479 | [`prompt-04-fangfaxue-yanzheng.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/04-fangfaxue-yanzheng/outputs/prompt-04-fangfaxue-yanzheng.md) |
-| skill | 质量一致性与方法学验证 | 质量一致性与方法学验证——按「选题 → 样品与数据 → 实验与建模 → 方法学验证 → 写作答辩 → 移交」走一遍本章判据 | 381 | [`skill-fangfaxue-yanzheng.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/04-fangfaxue-yanzheng/outputs/skill-fangfaxue-yanzheng.md) |
+| prompt | 方法学验证是结论的准生证，不是附录里的形式 · 提示词 | — | 567 | [`prompt-04-fangfaxue-yanzheng.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/04-fangfaxue-yanzheng/outputs/prompt-04-fangfaxue-yanzheng.md) |
+| skill | 方法学验证是结论的准生证，不是附录里的形式 | 方法学验证是结论的准生证，不是附录里的形式——按「八个参数各自回答一个问题 → 失效模式、评分与考核」走一遍本章判据 | 470 | [`skill-fangfaxue-yanzheng.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/04-fangfaxue-yanzheng/outputs/skill-fangfaxue-yanzheng.md) |
 
-#### 第 5 章 · 论文写作与答辩
+#### 第 5 章 · 论文的说服力在绪论就定了，答辩只是把它念一遍
 
 `20-zhongyao-biye-sheji/chapters/05-lunwen-dabian/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 论文写作与答辩 · 提示词 | — | 465 | [`prompt-05-lunwen-dabian.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
-| skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 样品与数据 → 实验与建模 → 方法学验证 → 写作答辩 → 移交」走一遍本章判据 | 368 | [`skill-lunwen-dabian.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
-| prompt | 论文写作与答辩 · 提示词 | — | 459 | [`prompt-05-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
-| skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 365 | [`skill-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
-| prompt | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 · 提示词 | — | 622 | [`prompt-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-lunwen-dabian.md) |
-| skill | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好——按「六段骨架：每一段都能用一句话检验 → 图表与数字：先让读者能核对，再让读者相信 → 答辩前先自评：七项检查 → 答辩：三类必答题与五分钟陈述」走一遍本章判据 | 507 | [`skill-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 论文的说服力在绪论就定了，答辩只是把它念一遍 · 提示词 | — | 634 | [`prompt-05-lunwen-dabian.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
+| skill | 论文的说服力在绪论就定了，答辩只是把它念一遍 | 论文的说服力在绪论就定了，答辩只是把它念一遍——按「绪论不是学科介绍，是把判据摆到桌面上 → 证据链的四层：每层对应论文的一个部位 → 答辩：四类必被问到的问题与应答结构 → 评分维度与失效模式」走一遍本章判据 | 531 | [`skill-lunwen-dabian.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 论文的说服力来自十个能复算的数字，不来自十页漂亮的讨论 · 提示词 | — | 858 | [`prompt-05-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
+| skill | 论文的说服力来自十个能复算的数字，不来自十页漂亮的讨论 | 论文的说服力来自十个能复算的数字，不来自十页漂亮的讨论——按「一头一尾：引文在底本里，数字在你的表里 → 十个数字：定稿前唯一的硬检查 → 讨论不是复述，是与三篇文献对位置 → 四类质疑与两轮试讲」走一遍本章判据 | 741 | [`skill-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 · 提示词 | — | 630 | [`prompt-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-lunwen-dabian.md) |
+| skill | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好——按「六段骨架：每一段都能用一句话检验 → 图表与数字：先让读者能核对，再让读者相信 → 答辩前先自评：七项检查 → 答辩：三类必答题与五分钟陈述」走一遍本章判据 | 515 | [`skill-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 答辩评的是判断链，不是字数与图表的数量 · 提示词 | — | 611 | [`prompt-05-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 答辩评的是判断链，不是字数与图表的数量 | 答辩评的是判断链，不是字数与图表的数量——按「四段式：每一段只回答一个问题 → 图表的三条规矩 → 陈述：十五分钟怎么分 → 提问：六类问题与应答方式」走一遍本章判据 | 511 | [`skill-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
-| prompt | 论文写作与答辩 · 提示词 | — | 447 | [`prompt-05-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
-| skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 370 | [`skill-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
-| prompt | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来 · 提示词 | — | 637 | [`prompt-05-lunwen-dabian.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
-| skill | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来 | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来——按「六段结构，与评审表一一对应 → 三张表：主表、消融表、误差表 → 写作顺序：先图表，后文字，最后摘要 → 答辩：20 分钟的分配与五个必答题」走一遍本章判据 | 525 | [`skill-lunwen-dabian.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 答辩不是复述结论，而是当场交代结论的适用条件 · 提示词 | — | 943 | [`prompt-05-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
+| skill | 答辩不是复述结论，而是当场交代结论的适用条件 | 答辩不是复述结论，而是当场交代结论的适用条件——按「一段可用的论证，结构上像一条能执行的条文 → 事实判断与价值判断必须分开写 → 枚举与限定：把「等」字写实 → 答辩现场的五个追问与应答」走一遍本章判据 | 831 | [`skill-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来 · 提示词 | — | 640 | [`prompt-05-lunwen-dabian.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
+| skill | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来 | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来——按「六段结构，与评审表一一对应 → 三张表：主表、消融表、误差表 → 写作顺序：先图表，后文字，最后摘要 → 答辩：20 分钟的分配与五个必答题」走一遍本章判据 | 528 | [`skill-lunwen-dabian.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 446 | [`prompt-05-lunwen-dabian.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据 → 实现 → 评价 → 答辩 → 移交」走一遍本章判据 | 367 | [`skill-lunwen-dabian.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 481 | [`prompt-05-lunwen-dabian.md`](../departments/09-jichu/17-jichu-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 方案与伦理 → 实施与记录 → 数据分析 → 论文答辩 → 知识移交」走一遍本章判据 | 383 | [`skill-lunwen-dabian.md`](../departments/09-jichu/17-jichu-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 
-#### 第 6 章 · 知识移交：实验记录与交接
+#### 第 6 章 · 记录不完整的实验等于没做过，交接不清的成果等于没留下
 
 `20-zhongyao-biye-sheji/chapters/06-zhishi-yijiao/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 知识移交：实验记录与交接 · 提示词 | — | 482 | [`prompt-06-zhishi-yijiao.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
-| skill | 知识移交：实验记录与交接 | 知识移交：实验记录与交接——按「选题 → 样品与数据 → 实验与建模 → 方法学验证 → 写作答辩 → 移交」走一遍本章判据 | 378 | [`skill-zhishi-yijiao.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
-| prompt | 知识移交：方案手册与交接 · 提示词 | — | 473 | [`prompt-06-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
-| skill | 知识移交：方案手册与交接 | 知识移交：方案手册与交接——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 375 | [`skill-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
-| prompt | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 · 提示词 | — | 646 | [`prompt-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-zhishi-yijiao.md) |
-| skill | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法——按「交接包四件：缺一件，复算就断在那一件 → SOP：把「做对」写成「照做也对」 → 三条验收动作：从能跑到敢用 → 失效清单与退役条件」走一遍本章判据 | 527 | [`skill-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 记录不完整的实验等于没做过，交接不清的成果等于没留下 · 提示词 | — | 628 | [`prompt-06-zhishi-yijiao.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
+| skill | 记录不完整的实验等于没做过，交接不清的成果等于没留下 | 记录不完整的实验等于没做过，交接不清的成果等于没留下——按「移交的判据是「别人能不能接着做」 → 交接包四件：记录、方法、数据、联系人 → 三个验收动作怎么执行 → 失效模式、评分与考核」走一遍本章判据 | 521 | [`skill-zhishi-yijiao.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 手册写得再全也移不走手感，移交完成的标志是别人照它做出来 · 提示词 | — | 892 | [`prompt-06-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
+| skill | 手册写得再全也移不走手感，移交完成的标志是别人照它做出来 | 手册写得再全也移不走手感，移交完成的标志是别人照它做出来——按「来路：254 处书名号为什么属于移交清单 → 逐穴一节：把能量化的写到极致 → 不可写项：标出来，配带教，别假装写清了 → 复现验证：三个人、两次、两版」走一遍本章判据 | 774 | [`skill-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 · 提示词 | — | 662 | [`prompt-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-zhishi-yijiao.md) |
+| skill | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法——按「交接包四件：缺一件，复算就断在那一件 → SOP：把「做对」写成「照做也对」 → 三条验收动作：从能跑到敢用 → 失效清单与退役条件」走一遍本章判据 | 543 | [`skill-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 毕设的最后一关，是别人能不能接着用 · 提示词 | — | 588 | [`prompt-06-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
 | skill | 毕设的最后一关，是别人能不能接着用 | 毕设的最后一关，是别人能不能接着用——按「移交包四件，各有各的验收动作 → 数据移交：边界比内容更重要 → 交接会：三段，不要开成汇报会 → 被接手方的三个提问」走一遍本章判据 | 490 | [`skill-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
-| prompt | 知识移交：制度文件与交接 · 提示词 | — | 462 | [`prompt-06-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
-| skill | 知识移交：制度文件与交接 | 知识移交：制度文件与交接——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 380 | [`skill-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
-| prompt | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数 · 提示词 | — | 608 | [`prompt-06-zhishi-yijiao.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
-| skill | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数 | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数——按「模型卡：十二个字段，缺一不可 → 交接包四件：代码、数据、环境、口径 → 验收：三个动作，一个都不能省 → 退役与责任边界」走一遍本章判据 | 496 | [`skill-zhishi-yijiao.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 移交的验收标准是「人走了系统还在转」，不是「文档齐了」 · 提示词 | — | 979 | [`prompt-06-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
+| skill | 移交的验收标准是「人走了系统还在转」，不是「文档齐了」 | 移交的验收标准是「人走了系统还在转」，不是「文档齐了」——按「移交的三类资产：制度、数据、人 → 主数据与字典：一物多码会让三年数据接不上 → 权限、脱敏与审批：去标识化不等于匿名化 → 运维与升级：服务级别、回退条件、迁移校验」走一遍本章判据 | 862 | [`skill-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数 · 提示词 | — | 624 | [`prompt-06-zhishi-yijiao.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
+| skill | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数 | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数——按「模型卡：十二个字段，缺一不可 → 交接包四件：代码、数据、环境、口径 → 验收：三个动作，一个都不能省 → 退役与责任边界」走一遍本章判据 | 512 | [`skill-zhishi-yijiao.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：诊疗路径与交接 · 提示词 | — | 462 | [`prompt-06-zhishi-yijiao.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
 | skill | 知识移交：诊疗路径与交接 | 知识移交：诊疗路径与交接——按「选题 → 数据 → 实现 → 评价 → 答辩 → 移交」走一遍本章判据 | 377 | [`skill-zhishi-yijiao.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：实验协议与交接 · 提示词 | — | 497 | [`prompt-06-zhishi-yijiao.md`](../departments/09-jichu/17-jichu-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
@@ -5337,95 +5337,95 @@
 
 > Core · 第 6 学期 · 已产出 10 章
 
-#### 第 1 章 · 毒理学的对象：剂量、分级与安全窗
+#### 第 1 章 · 毒性不是标签，是三个剂量与一条曲线共同决定的区间
 
 `21-zhongyao-du-li-xue/chapters/01-du-xing-gainian/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：毒理学的对象：剂量、分级与安全窗 | — | 420 | [`prompt-01-du-xing-gainian.md`](../departments/02-zhongyao/21-zhongyao-du-li-xue/chapters/01-du-xing-gainian/outputs/prompt-01-du-xing-gainian.md) |
-| skill | 毒理学的对象：剂量、分级与安全窗 | 用《中药毒理学》第 1 章「毒理学的对象：剂量、分级与安全窗」的单元层做可核对的教学材料。 | 544 | [`skill-01-du-xing-gainian.md`](../departments/02-zhongyao/21-zhongyao-du-li-xue/chapters/01-du-xing-gainian/outputs/skill-01-du-xing-gainian.md) |
+| prompt | 毒性不是标签，是三个剂量与一条曲线共同决定的区间 · 提示词 | — | 1021 | [`prompt-01-du-xing-gainian.md`](../departments/02-zhongyao/21-zhongyao-du-li-xue/chapters/01-du-xing-gainian/outputs/prompt-01-du-xing-gainian.md) |
+| skill | 毒性不是标签，是三个剂量与一条曲线共同决定的区间 | 毒性不是标签，是三个剂量与一条曲线共同决定的区间——按「三个「剂量」：你写下的那个数，离靶分子还隔着两道门 → 两条量效曲线：一条读个体，一条读群体 → 两套分级：中药三档与毒理学五级，各管各的事 → 安全窗：古人给的是比例，今人给的是端点」走一遍本章判据 | 915 | [`skill-01-du-xing-gainian.md`](../departments/02-zhongyao/21-zhongyao-du-li-xue/chapters/01-du-xing-gainian/outputs/skill-01-du-xing-gainian.md) |
 
-#### 第 2 章 · 毒性物质基础：成分类型与矿物药
+#### 第 2 章 · 决定毒性的是代谢产物与靶分子的反应，不是药材的名字
 
 `21-zhongyao-du-li-xue/chapters/02-du-xing-wuzhi/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：毒性物质基础：成分类型与矿物药 | — | 419 | [`prompt-02-du-xing-wuzhi.md`](../departments/02-zhongyao/21-zhongyao-du-li-xue/chapters/02-du-xing-wuzhi/outputs/prompt-02-du-xing-wuzhi.md) |
-| skill | 毒性物质基础：成分类型与矿物药 | 用《中药毒理学》第 2 章「毒性物质基础：成分类型与矿物药」的单元层做可核对的教学材料。 | 538 | [`skill-02-du-xing-wuzhi.md`](../departments/02-zhongyao/21-zhongyao-du-li-xue/chapters/02-du-xing-wuzhi/outputs/skill-02-du-xing-wuzhi.md) |
+| prompt | 决定毒性的是代谢产物与靶分子的反应，不是药材的名字 · 提示词 | — | 1028 | [`prompt-02-du-xing-wuzhi.md`](../departments/02-zhongyao/21-zhongyao-du-li-xue/chapters/02-du-xing-wuzhi/outputs/prompt-02-du-xing-wuzhi.md) |
+| skill | 决定毒性的是代谢产物与靶分子的反应，不是药材的名字 | 决定毒性的是代谢产物与靶分子的反应，不是药材的名字——按「终毒物：动手的不是你吞下去的那个分子 → 靶分子凭什么被选中：四条属性与一条电荷/半径比 → 结构决定去向：碳数有折点，取代基有方向 → 矿物药：同一元素，三种价态三种命运」走一遍本章判据 | 919 | [`skill-02-du-xing-wuzhi.md`](../departments/02-zhongyao/21-zhongyao-du-li-xue/chapters/02-du-xing-wuzhi/outputs/skill-02-du-xing-wuzhi.md) |
 
-#### 第 3 章 · 肝毒性：为什么肝最先受损
+#### 第 3 章 · 肝不是被药毒死的，是被自己的代谢酶改造出的产物毒死的
 
 `21-zhongyao-du-li-xue/chapters/03-gan-du-xing/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：肝毒性：为什么肝最先受损 | — | 416 | [`prompt-03-gan-du-xing.md`](../departments/02-zhongyao/21-zhongyao-du-li-xue/chapters/03-gan-du-xing/outputs/prompt-03-gan-du-xing.md) |
-| skill | 肝毒性：为什么肝最先受损 | 用《中药毒理学》第 3 章「肝毒性：为什么肝最先受损」的单元层做可核对的教学材料。 | 528 | [`skill-03-gan-du-xing.md`](../departments/02-zhongyao/21-zhongyao-du-li-xue/chapters/03-gan-du-xing/outputs/skill-03-gan-du-xing.md) |
+| prompt | 肝不是被药毒死的，是被自己的代谢酶改造出的产物毒死的 · 提示词 | — | 927 | [`prompt-03-gan-du-xing.md`](../departments/02-zhongyao/21-zhongyao-du-li-xue/chapters/03-gan-du-xing/outputs/prompt-03-gan-du-xing.md) |
+| skill | 肝不是被药毒死的，是被自己的代谢酶改造出的产物毒死的 | 肝不是被药毒死的，是被自己的代谢酶改造出的产物毒死的——按「首过效应：口服把肝放在第一站 → 两条通路：一条靠氧化，一条靠耗竭 → 判据：ALT 是肝特异的，AST 不是 → 中药案例：生制之别与「有小毒」的位置」走一遍本章判据 | 815 | [`skill-03-gan-du-xing.md`](../departments/02-zhongyao/21-zhongyao-du-li-xue/chapters/03-gan-du-xing/outputs/skill-03-gan-du-xing.md) |
 
-#### 第 4 章 · 肾毒性：马兜铃酸的教训
+#### 第 4 章 · 肾不是被毒物泡坏的，是被浓缩机制放大的
 
 `21-zhongyao-du-li-xue/chapters/04-shen-du-xing/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：肾毒性：马兜铃酸的教训 | — | 415 | [`prompt-04-shen-du-xing.md`](../departments/02-zhongyao/21-zhongyao-du-li-xue/chapters/04-shen-du-xing/outputs/prompt-04-shen-du-xing.md) |
-| skill | 肾毒性：马兜铃酸的教训 | 用《中药毒理学》第 4 章「肾毒性：马兜铃酸的教训」的单元层做可核对的教学材料。 | 528 | [`skill-04-shen-du-xing.md`](../departments/02-zhongyao/21-zhongyao-du-li-xue/chapters/04-shen-du-xing/outputs/skill-04-shen-du-xing.md) |
+| prompt | 肾不是被毒物泡坏的，是被浓缩机制放大的 · 提示词 | — | 857 | [`prompt-04-shen-du-xing.md`](../departments/02-zhongyao/21-zhongyao-du-li-xue/chapters/04-shen-du-xing/outputs/prompt-04-shen-du-xing.md) |
+| skill | 肾不是被毒物泡坏的，是被浓缩机制放大的 | 肾不是被毒物泡坏的，是被浓缩机制放大的——按「三道门：滤过、分泌、重吸收 → 浓缩就是放大：水被收回，毒物留下 → 判据：BUN 先动，肌酐后动 → 马兜铃科的两种身份：木通与细辛」走一遍本章判据 | 753 | [`skill-04-shen-du-xing.md`](../departments/02-zhongyao/21-zhongyao-du-li-xue/chapters/04-shen-du-xing/outputs/skill-04-shen-du-xing.md) |
 
-#### 第 5 章 · 心与神经毒性：乌头碱的半小时
+#### 第 5 章 · 心与神经的毒性，按分钟计，而标签按剂计
 
 `21-zhongyao-du-li-xue/chapters/05-xin-shen-jing-du-xing/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：心与神经毒性：乌头碱的半小时 | — | 418 | [`prompt-05-xin-shen-jing-du-xing.md`](../departments/02-zhongyao/21-zhongyao-du-li-xue/chapters/05-xin-shen-jing-du-xing/outputs/prompt-05-xin-shen-jing-du-xing.md) |
-| skill | 心与神经毒性：乌头碱的半小时 | 用《中药毒理学》第 5 章「心与神经毒性：乌头碱的半小时」的单元层做可核对的教学材料。 | 552 | [`skill-05-xin-shen-jing-du-xing.md`](../departments/02-zhongyao/21-zhongyao-du-li-xue/chapters/05-xin-shen-jing-du-xing/outputs/skill-05-xin-shen-jing-du-xing.md) |
+| prompt | 心与神经的毒性，按分钟计，而标签按剂计 · 提示词 | — | 924 | [`prompt-05-xin-shen-jing-du-xing.md`](../departments/02-zhongyao/21-zhongyao-du-li-xue/chapters/05-xin-shen-jing-du-xing/outputs/prompt-05-xin-shen-jing-du-xing.md) |
+| skill | 心与神经的毒性，按分钟计，而标签按剂计 | 心与神经的毒性，按分钟计，而标签按剂计——按「时效关系：潜伏期、持续期、恢复期 → 血脑屏障只挡一半 → 心：CK 是骨骼肌的，肌红蛋白才是心肌的 → 附子与马钱子：两条「炮制减毒」的路径」走一遍本章判据 | 829 | [`skill-05-xin-shen-jing-du-xing.md`](../departments/02-zhongyao/21-zhongyao-du-li-xue/chapters/05-xin-shen-jing-du-xing/outputs/skill-05-xin-shen-jing-du-xing.md) |
 
-#### 第 6 章 · 生殖与遗传毒性：妊娠禁忌的分级
+#### 第 6 章 · 致畸的窗口不是九个月，是器官形成的那十几天
 
 `21-zhongyao-du-li-xue/chapters/06-shengzhi-du-xing/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：生殖与遗传毒性：妊娠禁忌的分级 | — | 419 | [`prompt-06-shengzhi-du-xing.md`](../departments/02-zhongyao/21-zhongyao-du-li-xue/chapters/06-shengzhi-du-xing/outputs/prompt-06-shengzhi-du-xing.md) |
-| skill | 生殖与遗传毒性：妊娠禁忌的分级 | 用《中药毒理学》第 6 章「生殖与遗传毒性：妊娠禁忌的分级」的单元层做可核对的教学材料。 | 544 | [`skill-06-shengzhi-du-xing.md`](../departments/02-zhongyao/21-zhongyao-du-li-xue/chapters/06-shengzhi-du-xing/outputs/skill-06-shengzhi-du-xing.md) |
+| prompt | 致畸的窗口不是九个月，是器官形成的那十几天 · 提示词 | — | 935 | [`prompt-06-shengzhi-du-xing.md`](../departments/02-zhongyao/21-zhongyao-du-li-xue/chapters/06-shengzhi-du-xing/outputs/prompt-06-shengzhi-du-xing.md) |
+| skill | 致畸的窗口不是九个月，是器官形成的那十几天 | 致畸的窗口不是九个月，是器官形成的那十几天——按「三段试验：每段问的是不同的问题 → 窗口按天算：大鼠 7–11 天，人 35–50 天 → 致畸指数：一个比值，不是一条红线 → 遗传毒性：Ames 与那 60% 的流产」走一遍本章判据 | 833 | [`skill-06-shengzhi-du-xing.md`](../departments/02-zhongyao/21-zhongyao-du-li-xue/chapters/06-shengzhi-du-xing/outputs/skill-06-shengzhi-du-xing.md) |
 
-#### 第 7 章 · 配伍与炮制减毒：十八反十九畏怎么读
+#### 第 7 章 · 减毒不是把毒药变没毒，是把暴露曲线往左推
 
 `21-zhongyao-du-li-xue/chapters/07-peiwu-paozhi-jian-du/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：配伍与炮制减毒：十八反十九畏怎么读 | — | 421 | [`prompt-07-peiwu-paozhi-jian-du.md`](../departments/02-zhongyao/21-zhongyao-du-li-xue/chapters/07-peiwu-paozhi-jian-du/outputs/prompt-07-peiwu-paozhi-jian-du.md) |
-| skill | 配伍与炮制减毒：十八反十九畏怎么读 | 用《中药毒理学》第 7 章「配伍与炮制减毒：十八反十九畏怎么读」的单元层做可核对的教学材料。 | 556 | [`skill-07-peiwu-paozhi-jian-du.md`](../departments/02-zhongyao/21-zhongyao-du-li-xue/chapters/07-peiwu-paozhi-jian-du/outputs/skill-07-peiwu-paozhi-jian-du.md) |
+| prompt | 减毒不是把毒药变没毒，是把暴露曲线往左推 · 提示词 | — | 895 | [`prompt-07-peiwu-paozhi-jian-du.md`](../departments/02-zhongyao/21-zhongyao-du-li-xue/chapters/07-peiwu-paozhi-jian-du/outputs/prompt-07-peiwu-paozhi-jian-du.md) |
+| skill | 减毒不是把毒药变没毒，是把暴露曲线往左推 | 减毒不是把毒药变没毒，是把暴露曲线往左推——按「十八反：母本给禁令，底本给机制 → 相畏相杀：一条被写进炮制的配伍 → 炮制：改的是进入体内之前的系数 → 溶媒与剂型：被忽略的第三方」走一遍本章判据 | 798 | [`skill-07-peiwu-paozhi-jian-du.md`](../departments/02-zhongyao/21-zhongyao-du-li-xue/chapters/07-peiwu-paozhi-jian-du/outputs/skill-07-peiwu-paozhi-jian-du.md) |
 
-#### 第 8 章 · 不良反应监测与安全边界
+#### 第 8 章 · 监测不是等报告，是先定义什么算异常
 
 `21-zhongyao-du-li-xue/chapters/08-jian-ce-anquan-bianjie/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：不良反应监测与安全边界 | — | 415 | [`prompt-08-jian-ce-anquan-bianjie.md`](../departments/02-zhongyao/21-zhongyao-du-li-xue/chapters/08-jian-ce-anquan-bianjie/outputs/prompt-08-jian-ce-anquan-bianjie.md) |
-| skill | 不良反应监测与安全边界 | 用《中药毒理学》第 8 章「不良反应监测与安全边界」的单元层做可核对的教学材料。 | 548 | [`skill-08-jian-ce-anquan-bianjie.md`](../departments/02-zhongyao/21-zhongyao-du-li-xue/chapters/08-jian-ce-anquan-bianjie/outputs/skill-08-jian-ce-anquan-bianjie.md) |
+| prompt | 监测不是等报告，是先定义什么算异常 · 提示词 | — | 934 | [`prompt-08-jian-ce-anquan-bianjie.md`](../departments/02-zhongyao/21-zhongyao-du-li-xue/chapters/08-jian-ce-anquan-bianjie/outputs/prompt-08-jian-ce-anquan-bianjie.md) |
+| skill | 监测不是等报告，是先定义什么算异常 | 监测不是等报告，是先定义什么算异常——按「正常值：为什么是 95%，以及另外三档 → 对照：四类组别与基准转化 → 分级与兜底：当测不出 LD50 时怎么办 → 监测的现实形态：母本的三句话」走一遍本章判据 | 842 | [`skill-08-jian-ce-anquan-bianjie.md`](../departments/02-zhongyao/21-zhongyao-du-li-xue/chapters/08-jian-ce-anquan-bianjie/outputs/skill-08-jian-ce-anquan-bianjie.md) |
 
-#### 第 9 章 · 毒理实验与安全评价：LD50、亚慢性、遗传毒性与 GLP
+#### 第 9 章 · 试验的样本量，决定了结论能说到哪一步
 
 `21-zhongyao-du-li-xue/chapters/09-shiyan-anquan-pingjia/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：毒理实验与安全评价：LD50、亚慢性、遗传毒性与 GLP | — | 431 | [`prompt-09-shiyan-anquan-pingjia.md`](../departments/02-zhongyao/21-zhongyao-du-li-xue/chapters/09-shiyan-anquan-pingjia/outputs/prompt-09-shiyan-anquan-pingjia.md) |
-| skill | 毒理实验与安全评价：LD50、亚慢性、遗传毒性与 GLP | 用《中药毒理学》第 9 章「毒理实验与安全评价：LD50、亚慢性、遗传毒性与 GLP」的单元层做可核对的教学材料。 | 578 | [`skill-09-shiyan-anquan-pingjia.md`](../departments/02-zhongyao/21-zhongyao-du-li-xue/chapters/09-shiyan-anquan-pingjia/outputs/skill-09-shiyan-anquan-pingjia.md) |
+| prompt | 试验的样本量，决定了结论能说到哪一步 · 提示词 | — | 868 | [`prompt-09-shiyan-anquan-pingjia.md`](../departments/02-zhongyao/21-zhongyao-du-li-xue/chapters/09-shiyan-anquan-pingjia/outputs/prompt-09-shiyan-anquan-pingjia.md) |
+| skill | 试验的样本量，决定了结论能说到哪一步 | 试验的样本量，决定了结论能说到哪一步——按「急性：两级预试，一次正式 → 长期：剂量按 LD50 折算，分母按天数分档 → 局部：4 只家兔能说明什么，不能说明什么 → 致突变：八种方法与四个菌株」走一遍本章判据 | 774 | [`skill-09-shiyan-anquan-pingjia.md`](../departments/02-zhongyao/21-zhongyao-du-li-xue/chapters/09-shiyan-anquan-pingjia/outputs/skill-09-shiyan-anquan-pingjia.md) |
 
-#### 第 10 章 · 致癌性与长期暴露：从「中毒」到「肿瘤」的终点
+#### 第 10 章 · 致癌的门槛不是剂量，是潜伏期
 
 `21-zhongyao-du-li-xue/chapters/10-zhiyanxing-changqi/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：致癌性与长期暴露：从「中毒」到「肿瘤」的终点 | — | 427 | [`prompt-10-zhiyanxing-changqi.md`](../departments/02-zhongyao/21-zhongyao-du-li-xue/chapters/10-zhiyanxing-changqi/outputs/prompt-10-zhiyanxing-changqi.md) |
-| skill | 致癌性与长期暴露：从「中毒」到「肿瘤」的终点 | 用《中药毒理学》第 10 章「致癌性与长期暴露：从「中毒」到「肿瘤」的终点」的单元层做可核对的教学材料。 | 563 | [`skill-10-zhiyanxing-changqi.md`](../departments/02-zhongyao/21-zhongyao-du-li-xue/chapters/10-zhiyanxing-changqi/outputs/skill-10-zhiyanxing-changqi.md) |
+| prompt | 致癌的门槛不是剂量，是潜伏期 · 提示词 | — | 884 | [`prompt-10-zhiyanxing-changqi.md`](../departments/02-zhongyao/21-zhongyao-du-li-xue/chapters/10-zhiyanxing-changqi/outputs/prompt-10-zhiyanxing-changqi.md) |
+| skill | 致癌的门槛不是剂量，是潜伏期 | 致癌的门槛不是剂量，是潜伏期——按「三个数字：150、2,400、25–30 → 两阶段：启动、促癌、进展 → 乙烯雌酚：146 与 114 → 依赖：另一种「长期暴露」的终点」走一遍本章判据 | 790 | [`skill-10-zhiyanxing-changqi.md`](../departments/02-zhongyao/21-zhongyao-du-li-xue/chapters/10-zhiyanxing-changqi/outputs/skill-10-zhiyanxing-changqi.md) |
 
 ## 🪡 针灸系
 
@@ -5433,296 +5433,296 @@
 
 > Core · 第 2 学期 · 已产出 10 章
 
-#### 第 1 章 · 经络系统的组成与命名
+#### 第 1 章 · 经络不是血管的别名，而是一套分层的通道系统
 
 `01-jingluo-xue/chapters/01-zucheng-mingming/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：经络系统的组成与命名 | — | 442 | [`prompt-01-zucheng-mingming.md`](../departments/03-zhenjiu/01-jingluo-xue/chapters/01-zucheng-mingming/outputs/prompt-01-zucheng-mingming.md) |
-| skill | 经络系统的组成与命名 | 用《经络学》第 1 章「经络系统的组成与命名」的单元层做可核对的教学材料。 | 569 | [`skill-01-zucheng-mingming.md`](../departments/03-zhenjiu/01-jingluo-xue/chapters/01-zucheng-mingming/outputs/skill-01-zucheng-mingming.md) |
+| prompt | 经络不是血管的别名，而是一套分层的通道系统 · 提示词 | — | 890 | [`prompt-01-zucheng-mingming.md`](../departments/03-zhenjiu/01-jingluo-xue/chapters/01-zucheng-mingming/outputs/prompt-01-zucheng-mingming.md) |
+| skill | 经络不是血管的别名，而是一套分层的通道系统 | 经络不是血管的别名，而是一套分层的通道系统——按「经络的定义里藏着两次切分 → 六套子系统如何拼成一个整体 → 命名是三段式，不是三个词 → 分层在临床上换成了四种手法」走一遍本章判据 | 799 | [`skill-01-zucheng-mingming.md`](../departments/03-zhenjiu/01-jingluo-xue/chapters/01-zucheng-mingming/outputs/skill-01-zucheng-mingming.md) |
 
-#### 第 2 章 · 十二经脉的走向与交接
+#### 第 2 章 · 十二经的走向不是路线图，而是十二处交接点上的传递规则
 
 `01-jingluo-xue/chapters/02-shier-jingmai/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：十二经脉的走向与交接 | — | 443 | [`prompt-02-shier-jingmai.md`](../departments/03-zhenjiu/01-jingluo-xue/chapters/02-shier-jingmai/outputs/prompt-02-shier-jingmai.md) |
-| skill | 十二经脉的走向与交接 | 用《经络学》第 2 章「十二经脉的走向与交接」的单元层做可核对的教学材料。 | 563 | [`skill-02-shier-jingmai.md`](../departments/03-zhenjiu/01-jingluo-xue/chapters/02-shier-jingmai/outputs/skill-02-shier-jingmai.md) |
+| prompt | 十二经的走向不是路线图，而是十二处交接点上的传递规则 · 提示词 | — | 903 | [`prompt-02-shier-jingmai.md`](../departments/03-zhenjiu/01-jingluo-xue/chapters/02-shier-jingmai/outputs/prompt-02-shier-jingmai.md) |
+| skill | 十二经的走向不是路线图，而是十二处交接点上的传递规则 | 十二经的走向不是路线图，而是十二处交接点上的传递规则——按「「从胸走手」说的是体表段 → 十二处交接，只有三种场合 → 流注是时间表，走向是方向 → 走向规律能推出的四件事」走一遍本章判据 | 804 | [`skill-02-shier-jingmai.md`](../departments/03-zhenjiu/01-jingluo-xue/chapters/02-shier-jingmai/outputs/skill-02-shier-jingmai.md) |
 
-#### 第 3 章 · 奇经八脉的循行与功能
+#### 第 3 章 · 奇经八脉不是十二经的备用线，而是气血的蓄水池
 
 `01-jingluo-xue/chapters/03-qijing-bamai/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：奇经八脉的循行与功能 | — | 442 | [`prompt-03-qijing-bamai.md`](../departments/03-zhenjiu/01-jingluo-xue/chapters/03-qijing-bamai/outputs/prompt-03-qijing-bamai.md) |
-| skill | 奇经八脉的循行与功能 | 用《经络学》第 3 章「奇经八脉的循行与功能」的单元层做可核对的教学材料。 | 561 | [`skill-03-qijing-bamai.md`](../departments/03-zhenjiu/01-jingluo-xue/chapters/03-qijing-bamai/outputs/skill-03-qijing-bamai.md) |
+| prompt | 奇经八脉不是十二经的备用线，而是气血的蓄水池 · 提示词 | — | 971 | [`prompt-03-qijing-bamai.md`](../departments/03-zhenjiu/01-jingluo-xue/chapters/03-qijing-bamai/outputs/prompt-03-qijing-bamai.md) |
+| skill | 奇经八脉不是十二经的备用线，而是气血的蓄水池 | 奇经八脉不是十二经的备用线，而是气血的蓄水池——按「「奇」是排除式定义，风险在于只记住否定项 → 八脉各司其职，且同出一源 → 督与任：两条有本经穴的奇经 → 六条无穴之脉，靠八个点接入十二经」走一遍本章判据 | 875 | [`skill-03-qijing-bamai.md`](../departments/03-zhenjiu/01-jingluo-xue/chapters/03-qijing-bamai/outputs/skill-03-qijing-bamai.md) |
 
-#### 第 4 章 · 经别、经筋与皮部
+#### 第 4 章 · 经别经筋皮部只是配件，四街四海才是经气的纵横坐标
 
 `01-jingluo-xue/chapters/04-jingbie-jinjing/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：经别、经筋与皮部 | — | 440 | [`prompt-04-jingbie-jinjing.md`](../departments/03-zhenjiu/01-jingluo-xue/chapters/04-jingbie-jinjing/outputs/prompt-04-jingbie-jinjing.md) |
-| skill | 经别、经筋与皮部 | 用《经络学》第 4 章「经别、经筋与皮部」的单元层做可核对的教学材料。 | 563 | [`skill-04-jingbie-jinjing.md`](../departments/03-zhenjiu/01-jingluo-xue/chapters/04-jingbie-jinjing/outputs/skill-04-jingbie-jinjing.md) |
+| prompt | 经别经筋皮部只是配件，四街四海才是经气的纵横坐标 · 提示词 | — | 836 | [`prompt-04-jingbie-jinjing.md`](../departments/03-zhenjiu/01-jingluo-xue/chapters/04-jingbie-jinjing/outputs/prompt-04-jingbie-jinjing.md) |
+| skill | 经别经筋皮部只是配件，四街四海才是经气的纵横坐标 | 经别经筋皮部只是配件，四街四海才是经气的纵横坐标——按「三类「配件」在组成里的位置 → 根结：两极在四肢末端与头胸腹 → 标本与气街：一纵一横 → 四海：把经气的总量单列出来」走一遍本章判据 | 741 | [`skill-04-jingbie-jinjing.md`](../departments/03-zhenjiu/01-jingluo-xue/chapters/04-jingbie-jinjing/outputs/skill-04-jingbie-jinjing.md) |
 
-#### 第 5 章 · 经络与脏腑的表里配属
+#### 第 5 章 · 表里配属写在属络上，却只能从取穴路径上验出来
 
 `01-jingluo-xue/chapters/05-biaoli-peishu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：经络与脏腑的表里配属 | — | 443 | [`prompt-05-biaoli-peishu.md`](../departments/03-zhenjiu/01-jingluo-xue/chapters/05-biaoli-peishu/outputs/prompt-05-biaoli-peishu.md) |
-| skill | 经络与脏腑的表里配属 | 用《经络学》第 5 章「经络与脏腑的表里配属」的单元层做可核对的教学材料。 | 563 | [`skill-05-biaoli-peishu.md`](../departments/03-zhenjiu/01-jingluo-xue/chapters/05-biaoli-peishu/outputs/skill-05-biaoli-peishu.md) |
+| prompt | 表里配属写在属络上，却只能从取穴路径上验出来 · 提示词 | — | 844 | [`prompt-05-biaoli-peishu.md`](../departments/03-zhenjiu/01-jingluo-xue/chapters/05-biaoli-peishu/outputs/prompt-05-biaoli-peishu.md) |
+| skill | 表里配属写在属络上，却只能从取穴路径上验出来 | 表里配属写在属络上，却只能从取穴路径上验出来——按「属络是镜像，12 条句子只有两种形状 → 主治清单不是镜像，而且差得很不对称 → 表里在治疗上的四个接口 → 三条可核的验证路径」走一遍本章判据 | 749 | [`skill-05-biaoli-peishu.md`](../departments/03-zhenjiu/01-jingluo-xue/chapters/05-biaoli-peishu/outputs/skill-05-biaoli-peishu.md) |
 
-#### 第 6 章 · 经络的病理反应与诊断意义
+#### 第 6 章 · 病候是一张定位表，不是一份症状清单
 
 `01-jingluo-xue/chapters/06-bingli-fanying/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：经络的病理反应与诊断意义 | — | 445 | [`prompt-06-bingli-fanying.md`](../departments/03-zhenjiu/01-jingluo-xue/chapters/06-bingli-fanying/outputs/prompt-06-bingli-fanying.md) |
-| skill | 经络的病理反应与诊断意义 | 用《经络学》第 6 章「经络的病理反应与诊断意义」的单元层做可核对的教学材料。 | 569 | [`skill-06-bingli-fanying.md`](../departments/03-zhenjiu/01-jingluo-xue/chapters/06-bingli-fanying/outputs/skill-06-bingli-fanying.md) |
+| prompt | 病候是一张定位表，不是一份症状清单 · 提示词 | — | 642 | [`prompt-06-bingli-fanying.md`](../departments/03-zhenjiu/01-jingluo-xue/chapters/06-bingli-fanying/outputs/prompt-06-bingli-fanying.md) |
+| skill | 病候是一张定位表，不是一份症状清单 | 病候是一张定位表，不是一份症状清单——按「病候被切成两半：脏腑那一半，经脉那一半 → 「经脉所过，病候所及」是定位规则，不是套话 → 同症异经：三个必须分开的例子 → 循经感传：一条证据，和它的成色」走一遍本章判据 | 553 | [`skill-06-bingli-fanying.md`](../departments/03-zhenjiu/01-jingluo-xue/chapters/06-bingli-fanying/outputs/skill-06-bingli-fanying.md) |
 
-#### 第 7 章 · 经络图的空间结构与坐标
+#### 第 7 章 · 经络图不是一张画，而是一套可折量的坐标系
 
 `01-jingluo-xue/chapters/07-jingluo-kongjian/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：经络图的空间结构与坐标 | — | 443 | [`prompt-07-jingluo-kongjian.md`](../departments/03-zhenjiu/01-jingluo-xue/chapters/07-jingluo-kongjian/outputs/prompt-07-jingluo-kongjian.md) |
-| skill | 经络图的空间结构与坐标 | 用《经络学》第 7 章「经络图的空间结构与坐标」的单元层做可核对的教学材料。 | 571 | [`skill-07-jingluo-kongjian.md`](../departments/03-zhenjiu/01-jingluo-xue/chapters/07-jingluo-kongjian/outputs/skill-07-jingluo-kongjian.md) |
+| prompt | 经络图不是一张画，而是一套可折量的坐标系 · 提示词 | — | 657 | [`prompt-07-jingluo-kongjian.md`](../departments/03-zhenjiu/01-jingluo-xue/chapters/07-jingluo-kongjian/outputs/prompt-07-jingluo-kongjian.md) |
+| skill | 经络图不是一张画，而是一套可折量的坐标系 | 经络图不是一张画，而是一套可折量的坐标系——按「四套方法不是四个选项，是一条流水线 → 骨度分寸：被折量的是比例，不是长度 → 体表标志：固定与活动，两种可触性 → 同身寸与简便法：短距离的补丁，以及它们的越界」走一遍本章判据 | 567 | [`skill-07-jingluo-kongjian.md`](../departments/03-zhenjiu/01-jingluo-xue/chapters/07-jingluo-kongjian/outputs/skill-07-jingluo-kongjian.md) |
 
-#### 第 8 章 · 经脉流注次序与时间节律
+#### 第 8 章 · 流注是一个闭环，时辰表是后人往环上刻的刻度
 
 `01-jingluo-xue/chapters/08-liuzhu-shijian/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：经脉流注次序与时间节律 | — | 443 | [`prompt-08-liuzhu-shijian.md`](../departments/03-zhenjiu/01-jingluo-xue/chapters/08-liuzhu-shijian/outputs/prompt-08-liuzhu-shijian.md) |
-| skill | 经脉流注次序与时间节律 | 用《经络学》第 8 章「经脉流注次序与时间节律」的单元层做可核对的教学材料。 | 567 | [`skill-08-liuzhu-shijian.md`](../departments/03-zhenjiu/01-jingluo-xue/chapters/08-liuzhu-shijian/outputs/skill-08-liuzhu-shijian.md) |
+| prompt | 流注是一个闭环，时辰表是后人往环上刻的刻度 · 提示词 | — | 630 | [`prompt-08-liuzhu-shijian.md`](../departments/03-zhenjiu/01-jingluo-xue/chapters/08-liuzhu-shijian/outputs/prompt-08-liuzhu-shijian.md) |
+| skill | 流注是一个闭环，时辰表是后人往环上刻的刻度 | 流注是一个闭环，时辰表是后人往环上刻的刻度——按「走向四句：方向是一次性给定的 → 三处交接：十二条线扣成一个环 → 流注次序：为什么始于肺、终于肝 → 时辰：教材给到哪一步，剩下的本课不给」走一遍本章判据 | 537 | [`skill-08-liuzhu-shijian.md`](../departments/03-zhenjiu/01-jingluo-xue/chapters/08-liuzhu-shijian/outputs/skill-08-liuzhu-shijian.md) |
 
-#### 第 9 章 · 经络的现代解剖学对应争议
+#### 第 9 章 · 「找不到对应结构」是一个研究状态，不是一句结论
 
 `01-jingluo-xue/chapters/09-jiepou-zhengyi/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：经络的现代解剖学对应争议 | — | 444 | [`prompt-09-jiepou-zhengyi.md`](../departments/03-zhenjiu/01-jingluo-xue/chapters/09-jiepou-zhengyi/outputs/prompt-09-jiepou-zhengyi.md) |
-| skill | 经络的现代解剖学对应争议 | 用《经络学》第 9 章「经络的现代解剖学对应争议」的单元层做可核对的教学材料。 | 569 | [`skill-09-jiepou-zhengyi.md`](../departments/03-zhenjiu/01-jingluo-xue/chapters/09-jiepou-zhengyi/outputs/skill-09-jiepou-zhengyi.md) |
+| prompt | 「找不到对应结构」是一个研究状态，不是一句结论 · 提示词 | — | 651 | [`prompt-09-jiepou-zhengyi.md`](../departments/03-zhenjiu/01-jingluo-xue/chapters/09-jiepou-zhengyi/outputs/prompt-09-jiepou-zhengyi.md) |
+| skill | 「找不到对应结构」是一个研究状态，不是一句结论 | 「找不到对应结构」是一个研究状态，不是一句结论——按「争议的形状：不是有／无，是两说并存 → 功能调节系统说：把经络当成一套调节网络 → 形态结构说：把经络当成一种待找的结构 → 「有进展，无突破」之后，什么算证据」走一遍本章判据 | 556 | [`skill-09-jiepou-zhengyi.md`](../departments/03-zhenjiu/01-jingluo-xue/chapters/09-jiepou-zhengyi/outputs/skill-09-jiepou-zhengyi.md) |
 
-#### 第 10 章 · 经络数据的图谱化建库
+#### 第 10 章 · 建库的最小单元不是一条经脉，而是一个三元组
 
 `01-jingluo-xue/chapters/10-tupu-jianku/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：经络数据的图谱化建库 | — | 443 | [`prompt-10-tupu-jianku.md`](../departments/03-zhenjiu/01-jingluo-xue/chapters/10-tupu-jianku/outputs/prompt-10-tupu-jianku.md) |
-| skill | 经络数据的图谱化建库 | 用《经络学》第 10 章「经络数据的图谱化建库」的单元层做可核对的教学材料。 | 560 | [`skill-10-tupu-jianku.md`](../departments/03-zhenjiu/01-jingluo-xue/chapters/10-tupu-jianku/outputs/skill-10-tupu-jianku.md) |
+| prompt | 建库的最小单元不是一条经脉，而是一个三元组 · 提示词 | — | 652 | [`prompt-10-tupu-jianku.md`](../departments/03-zhenjiu/01-jingluo-xue/chapters/10-tupu-jianku/outputs/prompt-10-tupu-jianku.md) |
+| skill | 建库的最小单元不是一条经脉，而是一个三元组 | 建库的最小单元不是一条经脉，而是一个三元组——按「教材里已经存着三种数据形态 → 从歌赋到三元组：实体、关系、属性 → 建库五步，以及每一步会在哪里出错 → 三维与 AI 的定位：辅助不决策」走一遍本章判据 | 555 | [`skill-10-tupu-jianku.md`](../departments/03-zhenjiu/01-jingluo-xue/chapters/10-tupu-jianku/outputs/skill-10-tupu-jianku.md) |
 
 ### 腧穴学
 
 > Core · 第 3 学期 · 已产出 12 章
 
-#### 第 1 章 · 腧穴的分类、命名与定位方法
+#### 第 1 章 · 穴名、归经与定位是三套索引，没有一套能单独指认一个穴
 
 `02-shuxue-xue/chapters/01-fenlei-dingwei/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：腧穴的分类、命名与定位方法 | — | 392 | [`prompt-01-fenlei-dingwei.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/01-fenlei-dingwei/outputs/prompt-01-fenlei-dingwei.md) |
-| skill | 腧穴的分类、命名与定位方法 | 用《腧穴学》第 1 章「腧穴的分类、命名与定位方法」的穴位库与单元层做可核对的教学材料。 | 569 | [`skill-01-fenlei-dingwei.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/01-fenlei-dingwei/outputs/skill-01-fenlei-dingwei.md) |
+| prompt | 穴名、归经与定位是三套索引，没有一套能单独指认一个穴 · 提示词 | — | 855 | [`prompt-01-fenlei-dingwei.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/01-fenlei-dingwei/outputs/prompt-01-fenlei-dingwei.md) |
+| skill | 穴名、归经与定位是三套索引，没有一套能单独指认一个穴 | 穴名、归经与定位是三套索引，没有一套能单独指认一个穴——按「指认一个穴，需要三条互不推导的记录 → 三类的分界不在「有没有名字」 → 命名的六类取义，是定位信息的压缩包 → 数目的变动说明「穴」是被筛出来的」走一遍本章判据 | 748 | [`skill-01-fenlei-dingwei.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/01-fenlei-dingwei/outputs/skill-01-fenlei-dingwei.md) |
 
-#### 第 2 章 · 骨度分寸与体表标志
+#### 第 2 章 · 骨度分寸量的是比例不是长度，换个人身上的「一寸」就该换
 
 `02-shuxue-xue/chapters/02-gudu-fencun/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：骨度分寸与体表标志 | — | 388 | [`prompt-02-gudu-fencun.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/02-gudu-fencun/outputs/prompt-02-gudu-fencun.md) |
-| skill | 骨度分寸与体表标志 | 用《腧穴学》第 2 章「骨度分寸与体表标志」的穴位库与单元层做可核对的教学材料。 | 555 | [`skill-02-gudu-fencun.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/02-gudu-fencun/outputs/skill-02-gudu-fencun.md) |
+| prompt | 骨度分寸量的是比例不是长度，换个人身上的「一寸」就该换 · 提示词 | — | 893 | [`prompt-02-gudu-fencun.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/02-gudu-fencun/outputs/prompt-02-gudu-fencun.md) |
+| skill | 骨度分寸量的是比例不是长度，换个人身上的「一寸」就该换 | 骨度分寸量的是比例不是长度，换个人身上的「一寸」就该换——按「「一寸」是比值：十二等分不是十二厘米 → 三组加法：数字之间是能对上的 → 四种定位法不是并列的四种，是三级 → 六寸还是九寸：一处底本冲突怎么处理」走一遍本章判据 | 782 | [`skill-02-gudu-fencun.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/02-gudu-fencun/outputs/skill-02-gudu-fencun.md) |
 
-#### 第 3 章 · 手三阴经腧穴
+#### 第 3 章 · 手三阴二十九穴的进针深度由解剖层次决定，从胸到指相差十五倍
 
 `02-shuxue-xue/chapters/03-shou-san-yin/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：手三阴经腧穴 | — | 385 | [`prompt-03-shou-san-yin.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/03-shou-san-yin/outputs/prompt-03-shou-san-yin.md) |
-| skill | 手三阴经腧穴 | 用《腧穴学》第 3 章「手三阴经腧穴」的穴位库与单元层做可核对的教学材料。 | 551 | [`skill-03-shou-san-yin.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/03-shou-san-yin/outputs/skill-03-shou-san-yin.md) |
+| prompt | 手三阴二十九穴的进针深度由解剖层次决定，从胸到指相差十五倍 · 提示词 | — | 890 | [`prompt-03-shou-san-yin.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/03-shou-san-yin/outputs/prompt-03-shou-san-yin.md) |
+| skill | 手三阴二十九穴的进针深度由解剖层次决定，从胸到指相差十五倍 | 手三阴二十九穴的进针深度由解剖层次决定，从胸到指相差十五倍——按「三条同构的路线 → 层次决定深度：0.1 到 1.5 寸 → 三个腕横纹原穴：同深度，不同血管 → 五输、郄、络：同一批穴的第二、第三套编号」走一遍本章判据 | 778 | [`skill-03-shou-san-yin.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/03-shou-san-yin/outputs/skill-03-shou-san-yin.md) |
 
-#### 第 4 章 · 手三阳经腧穴
+#### 第 4 章 · 手三阳六十二穴的深度在肩线封顶，再往上一律改用方向
 
 `02-shuxue-xue/chapters/04-shou-san-yang/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：手三阳经腧穴 | — | 385 | [`prompt-04-shou-san-yang.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/04-shou-san-yang/outputs/prompt-04-shou-san-yang.md) |
-| skill | 手三阳经腧穴 | 用《腧穴学》第 4 章「手三阳经腧穴」的穴位库与单元层做可核对的教学材料。 | 553 | [`skill-04-shou-san-yang.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/04-shou-san-yang/outputs/skill-04-shou-san-yang.md) |
+| prompt | 手三阳六十二穴的深度在肩线封顶，再往上一律改用方向 · 提示词 | — | 788 | [`prompt-04-shou-san-yang.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/04-shou-san-yang/outputs/prompt-04-shou-san-yang.md) |
+| skill | 手三阳六十二穴的深度在肩线封顶，再往上一律改用方向 | 手三阳六十二穴的深度在肩线封顶，再往上一律改用方向——按「三段路线，三个不同的重心 → 深度只有一个平台期，位置在肘 → 深度到不了的地方，用方向补 → 阳经的输与原是两穴，六十二穴多出三个」走一遍本章判据 | 681 | [`skill-04-shou-san-yang.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/04-shou-san-yang/outputs/skill-04-shou-san-yang.md) |
 
-#### 第 5 章 · 足三阳经腧穴
+#### 第 5 章 · 足三阳九十一穴的深度按脊柱节段分档，不按肌肉厚薄
 
 `02-shuxue-xue/chapters/05-zu-san-yang/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：足三阳经腧穴 | — | 385 | [`prompt-05-zu-san-yang.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/05-zu-san-yang/outputs/prompt-05-zu-san-yang.md) |
-| skill | 足三阳经腧穴 | 用《腧穴学》第 5 章「足三阳经腧穴」的穴位库与单元层做可核对的教学材料。 | 549 | [`skill-05-zu-san-yang.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/05-zu-san-yang/outputs/skill-05-zu-san-yang.md) |
+| prompt | 足三阳九十一穴的深度按脊柱节段分档，不按肌肉厚薄 · 提示词 | — | 972 | [`prompt-05-zu-san-yang.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/05-zu-san-yang/outputs/prompt-05-zu-san-yang.md) |
+| skill | 足三阳九十一穴的深度按脊柱节段分档，不按肌肉厚薄 | 足三阳九十一穴的深度按脊柱节段分档，不按肌肉厚薄——按「九十一与一百五十六：底本收的是常用穴 → 两条侧线：旁开 1.5 寸与 3 寸 → 深度按节段分五档 → 胃经与胆经：同一条经，头面浅、下肢深」走一遍本章判据 | 864 | [`skill-05-zu-san-yang.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/05-zu-san-yang/outputs/skill-05-zu-san-yang.md) |
 
-#### 第 6 章 · 足三阴经腧穴
+#### 第 6 章 · 足三阴四十五穴的最深处在小腿，越朝躯干反而越浅
 
 `02-shuxue-xue/chapters/06-zu-san-yin/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：足三阴经腧穴 | — | 385 | [`prompt-06-zu-san-yin.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/06-zu-san-yin/outputs/prompt-06-zu-san-yin.md) |
-| skill | 足三阴经腧穴 | 用《腧穴学》第 6 章「足三阴经腧穴」的穴位库与单元层做可核对的教学材料。 | 547 | [`skill-06-zu-san-yin.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/06-zu-san-yin/outputs/skill-06-zu-san-yin.md) |
+| prompt | 足三阴四十五穴的最深处在小腿，越朝躯干反而越浅 · 提示词 | — | 813 | [`prompt-06-zu-san-yin.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/06-zu-san-yin/outputs/prompt-06-zu-san-yin.md) |
+| skill | 足三阴四十五穴的最深处在小腿，越朝躯干反而越浅 | 足三阴四十五穴的最深处在小腿，越朝躯干反而越浅——按「四十五与六十二：三种收缴方式 → 脾经六穴：一条经的骨架 → 全组最深处在小腿 → 躯干段一律变浅」走一遍本章判据 | 705 | [`skill-06-zu-san-yin.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/06-zu-san-yin/outputs/skill-06-zu-san-yin.md) |
 
-#### 第 7 章 · 任督二脉腧穴
+#### 第 7 章 · 任督二十五穴共用一条正中线，深度让位给针尖的朝向
 
 `02-shuxue-xue/chapters/07-ren-du-xue/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：任督二脉腧穴 | — | 385 | [`prompt-07-ren-du-xue.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/07-ren-du-xue/outputs/prompt-07-ren-du-xue.md) |
-| skill | 任督二脉腧穴 | 用《腧穴学》第 7 章「任督二脉腧穴」的穴位库与单元层做可核对的教学材料。 | 547 | [`skill-07-ren-du-xue.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/07-ren-du-xue/outputs/skill-07-ren-du-xue.md) |
+| prompt | 任督二十五穴共用一条正中线，深度让位给针尖的朝向 · 提示词 | — | 967 | [`prompt-07-ren-du-xue.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/07-ren-du-xue/outputs/prompt-07-ren-du-xue.md) |
+| skill | 任督二十五穴共用一条正中线，深度让位给针尖的朝向 | 任督二十五穴共用一条正中线，深度让位给针尖的朝向——按「两条正中线，两种收法 → 督脉：棘突就是刻度 → 同深度不同命：哑门、风府与长强 → 任脉：脐下一条线，先排尿」走一遍本章判据 | 858 | [`skill-07-ren-du-xue.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/07-ren-du-xue/outputs/skill-07-ren-du-xue.md) |
 
-#### 第 8 章 · 经外奇穴与阿是穴
+#### 第 8 章 · 经外奇穴十八条编号背后是五十多个进针点
 
 `02-shuxue-xue/chapters/08-jingwai-qixue/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：经外奇穴与阿是穴 | — | 387 | [`prompt-08-jingwai-qixue.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/08-jingwai-qixue/outputs/prompt-08-jingwai-qixue.md) |
-| skill | 经外奇穴与阿是穴 | 用《腧穴学》第 8 章「经外奇穴与阿是穴」的穴位库与单元层做可核对的教学材料。 | 557 | [`skill-08-jingwai-qixue.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/08-jingwai-qixue/outputs/skill-08-jingwai-qixue.md) |
+| prompt | 经外奇穴十八条编号背后是五十多个进针点 · 提示词 | — | 872 | [`prompt-08-jingwai-qixue.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/08-jingwai-qixue/outputs/prompt-08-jingwai-qixue.md) |
+| skill | 经外奇穴十八条编号背后是五十多个进针点 | 经外奇穴十八条编号背后是五十多个进针点——按「十八条编号，五十多个点 → 奇穴是流动的类别 → 编号按部位分箱 → 深度不按层次排，按「这个穴治什么」排」走一遍本章判据 | 771 | [`skill-08-jingwai-qixue.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/08-jingwai-qixue/outputs/skill-08-jingwai-qixue.md) |
 
-#### 第 9 章 · 特定穴：五输、原络、俞募
+#### 第 9 章 · 特定穴是同一批穴上越挂越多的牌子，不是六类并列的穴
 
 `02-shuxue-xue/chapters/09-teding-xue/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：特定穴：五输、原络、俞募 | — | 391 | [`prompt-09-teding-xue.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/09-teding-xue/outputs/prompt-09-teding-xue.md) |
-| skill | 特定穴：五输、原络、俞募 | 用《腧穴学》第 9 章「特定穴：五输、原络、俞募」的穴位库与单元层做可核对的教学材料。 | 559 | [`skill-09-teding-xue.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/09-teding-xue/outputs/skill-09-teding-xue.md) |
+| prompt | 特定穴是同一批穴上越挂越多的牌子，不是六类并列的穴 · 提示词 | — | 1005 | [`prompt-09-teding-xue.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/09-teding-xue/outputs/prompt-09-teding-xue.md) |
+| skill | 特定穴是同一批穴上越挂越多的牌子，不是六类并列的穴 | 特定穴是同一批穴上越挂越多的牌子，不是六类并列的穴——按「102 块牌子，13 个类别，只有一处满额 → 五输：一条线上的五个刻度 → 原络：一条经上的两个接口 → 俞募：一前一后夹住同一个脏腑」走一遍本章判据 | 895 | [`skill-09-teding-xue.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/09-teding-xue/outputs/skill-09-teding-xue.md) |
 
-#### 第 10 章 · 腧穴的主治规律与配穴
+#### 第 10 章 · 主治规律是「穴在哪一段」与「病在哪一段」之间的一条接线规则
 
 `02-shuxue-xue/chapters/10-zhuzhi-guilv/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：腧穴的主治规律与配穴 | — | 390 | [`prompt-10-zhuzhi-guilv.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/10-zhuzhi-guilv/outputs/prompt-10-zhuzhi-guilv.md) |
-| skill | 腧穴的主治规律与配穴 | 用《腧穴学》第 10 章「腧穴的主治规律与配穴」的穴位库与单元层做可核对的教学材料。 | 560 | [`skill-10-zhuzhi-guilv.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/10-zhuzhi-guilv/outputs/skill-10-zhuzhi-guilv.md) |
+| prompt | 主治规律是「穴在哪一段」与「病在哪一段」之间的一条接线规则 · 提示词 | — | 986 | [`prompt-10-zhuzhi-guilv.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/10-zhuzhi-guilv/outputs/prompt-10-zhuzhi-guilv.md) |
+| skill | 主治规律是「穴在哪一段」与「病在哪一段」之间的一条接线规则 | 主治规律是「穴在哪一段」与「病在哪一段」之间的一条接线规则——按「488 条主治，平均值掩盖了两件事 → 近治：部位字段已经写下了第一条主治 → 远治：为什么四肢穴的主治最长 → 特殊作用与配穴：库内只有 26 条配伍」走一遍本章判据 | 873 | [`skill-10-zhuzhi-guilv.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/10-zhuzhi-guilv/outputs/skill-10-zhuzhi-guilv.md) |
 
-#### 第 11 章 · 危险穴位与针刺安全深度：把「不可深刺」变成一道可算的闸门
+#### 第 11 章 · 「不可深刺」是三种不同的禁令，混成一个深度上限就会在最危险处失灵
 
 `02-shuxue-xue/chapters/11-weixian-shendu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 进针前安全复核单 | — | 705 | [`prompt-weixian-shendu.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/11-weixian-shendu/outputs/prompt-weixian-shendu.md) |
-| skill | weixian-shendu | 进针前的安全深度与方向复核：给出允许/警告/禁止/需上级决定，并列出模型未知项 | 683 | [`skill-weixian-shendu.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/11-weixian-shendu/outputs/skill-weixian-shendu.md) |
+| prompt | 「不可深刺」是三种不同的禁令，混成一个深度上限就会在最危险处失灵 · 提示词 | — | 1091 | [`prompt-weixian-shendu.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/11-weixian-shendu/outputs/prompt-weixian-shendu.md) |
+| skill | 「不可深刺」是三种不同的禁令，混成一个深度上限就会在最危险处失灵 | 「不可深刺」是三种不同的禁令，混成一个深度上限就会在最危险处失灵——按「44 个红线穴，17 个没有数字 → 方向禁令：这里的寸数没有意义 → 阈值禁令：有数，但数与方向绑在一起 → 状态禁令与操作类别：与深度无关的两类」走一遍本章判据 | 977 | [`skill-weixian-shendu.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/11-weixian-shendu/outputs/skill-weixian-shendu.md) |
 
-#### 第 12 章 · 腧穴定位的数字化与三维模型
+#### 第 12 章 · 三维模型缺的不止深度：尺度、体位、深度三个量里缺了两个半
 
 `02-shuxue-xue/chapters/12-dingwei-sanwei/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：腧穴定位的数字化与三维模型 | — | 393 | [`prompt-12-dingwei-sanwei.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/12-dingwei-sanwei/outputs/prompt-12-dingwei-sanwei.md) |
-| skill | 腧穴定位的数字化与三维模型 | 用《腧穴学》第 12 章「腧穴定位的数字化与三维模型」的穴位库与单元层做可核对的教学材料。 | 570 | [`skill-12-dingwei-sanwei.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/12-dingwei-sanwei/outputs/skill-12-dingwei-sanwei.md) |
+| prompt | 三维模型缺的不止深度：尺度、体位、深度三个量里缺了两个半 · 提示词 | — | 957 | [`prompt-12-dingwei-sanwei.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/12-dingwei-sanwei/outputs/prompt-12-dingwei-sanwei.md) |
+| skill | 三维模型缺的不止深度：尺度、体位、深度三个量里缺了两个半 | 三维模型缺的不止深度：尺度、体位、深度三个量里缺了两个半——按「196 条定位，83 条里没有一个数字 → 定位句是一个三元组：基准、方向、距离 → z 轴：109 个穴没有深度文本 → 三处失真：点没有半径、深度不是标量、体位不是常量」走一遍本章判据 | 847 | [`skill-12-dingwei-sanwei.md`](../departments/03-zhenjiu/02-shuxue-xue/chapters/12-dingwei-sanwei/outputs/skill-12-dingwei-sanwei.md) |
 
 ### 针灸医籍选
 
 > Reference · 第 3 学期 · 已产出 8 章
 
-#### 第 1 章 · 《灵枢》选读
+#### 第 1 章 · 《灵枢》不是针法手册，而是针道的总纲
 
 `03-zhenjiu-yiji-xuan/chapters/01-lingshu-xuandu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 《灵枢》选读 · 提示词 | — | 449 | [`prompt-01-lingshu-xuandu.md`](../departments/03-zhenjiu/03-zhenjiu-yiji-xuan/chapters/01-lingshu-xuandu/outputs/prompt-01-lingshu-xuandu.md) |
-| skill | 《灵枢》选读 | 《灵枢》选读——按「灵枢 → 素问难经 → 甲乙经与隋唐 → 宋金元 → 明清 → 歌赋 → 医案 → 数字化」走一遍本章判据 | 375 | [`skill-lingshu-xuandu.md`](../departments/03-zhenjiu/03-zhenjiu-yiji-xuan/chapters/01-lingshu-xuandu/outputs/skill-lingshu-xuandu.md) |
+| prompt | 《灵枢》不是针法手册，而是针道的总纲 · 提示词 | — | 792 | [`prompt-01-lingshu-xuandu.md`](../departments/03-zhenjiu/03-zhenjiu-yiji-xuan/chapters/01-lingshu-xuandu/outputs/prompt-01-lingshu-xuandu.md) |
+| skill | 《灵枢》不是针法手册，而是针道的总纲 | 《灵枢》不是针法手册，而是针道的总纲——按「「易陈而难入」是全书的方法论声明 → 五输穴：把「经气」编成一条有五个编号的水道 → 十二经循行文字，是一份可以照着找穴的说明书 → 刺法按病位分档，不按穴位分档」走一遍本章判据 | 700 | [`skill-lingshu-xuandu.md`](../departments/03-zhenjiu/03-zhenjiu-yiji-xuan/chapters/01-lingshu-xuandu/outputs/skill-lingshu-xuandu.md) |
 
-#### 第 2 章 · 《素问》与《难经》选读
+#### 第 2 章 · 《素问》立治则，《难经》把治则算成补泻公式
 
 `03-zhenjiu-yiji-xuan/chapters/02-suwen-nanjing/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 《素问》与《难经》选读 · 提示词 | — | 466 | [`prompt-02-suwen-nanjing.md`](../departments/03-zhenjiu/03-zhenjiu-yiji-xuan/chapters/02-suwen-nanjing/outputs/prompt-02-suwen-nanjing.md) |
-| skill | 《素问》与《难经》选读 | 《素问》与《难经》选读——按「灵枢 → 素问难经 → 甲乙经与隋唐 → 宋金元 → 明清 → 歌赋 → 医案 → 数字化」走一遍本章判据 | 384 | [`skill-suwen-nanjing.md`](../departments/03-zhenjiu/03-zhenjiu-yiji-xuan/chapters/02-suwen-nanjing/outputs/skill-suwen-nanjing.md) |
+| prompt | 《素问》立治则，《难经》把治则算成补泻公式 · 提示词 | — | 950 | [`prompt-02-suwen-nanjing.md`](../departments/03-zhenjiu/03-zhenjiu-yiji-xuan/chapters/02-suwen-nanjing/outputs/prompt-02-suwen-nanjing.md) |
+| skill | 《素问》立治则，《难经》把治则算成补泻公式 | 《素问》立治则，《难经》把治则算成补泻公式——按「针刺的五件事里，「治神」排第一 → 百病皆生于五脏，故守经隧 → 缪刺与巨刺：同为「左取右」，差在刺经还是刺络 → 刺有浅深：《刺要》《刺齐》给的是禁令」走一遍本章判据 | 854 | [`skill-suwen-nanjing.md`](../departments/03-zhenjiu/03-zhenjiu-yiji-xuan/chapters/02-suwen-nanjing/outputs/skill-suwen-nanjing.md) |
 
-#### 第 3 章 · 《针灸甲乙经》与隋唐医论
+#### 第 3 章 · 《甲乙经》把穴编成目录，隋唐把针灸写进方书与医德
 
 `03-zhenjiu-yiji-xuan/chapters/03-jia-yi-jing-suitang/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 《针灸甲乙经》与隋唐医论 · 提示词 | — | 469 | [`prompt-03-jia-yi-jing-suitang.md`](../departments/03-zhenjiu/03-zhenjiu-yiji-xuan/chapters/03-jia-yi-jing-suitang/outputs/prompt-03-jia-yi-jing-suitang.md) |
-| skill | 《针灸甲乙经》与隋唐医论 | 《针灸甲乙经》与隋唐医论——按「灵枢 → 素问难经 → 甲乙经与隋唐 → 宋金元 → 明清 → 歌赋 → 医案 → 数字化」走一遍本章判据 | 392 | [`skill-jia-yi-jing-suitang.md`](../departments/03-zhenjiu/03-zhenjiu-yiji-xuan/chapters/03-jia-yi-jing-suitang/outputs/skill-jia-yi-jing-suitang.md) |
+| prompt | 《甲乙经》把穴编成目录，隋唐把针灸写进方书与医德 · 提示词 | — | 951 | [`prompt-03-jia-yi-jing-suitang.md`](../departments/03-zhenjiu/03-zhenjiu-yiji-xuan/chapters/03-jia-yi-jing-suitang/outputs/prompt-03-jia-yi-jing-suitang.md) |
+| skill | 《甲乙经》把穴编成目录，隋唐把针灸写进方书与医德 | 《甲乙经》把穴编成目录，隋唐把针灸写进方书与医德——按「十二卷一百二十八篇：一部按「查得到」设计的书 → 三百四十九穴，两条索引：分部与分经 → 卷五把「不能扎」写成条款 → 孙思邈：针灸被写进方书，也被写进医德」走一遍本章判据 | 858 | [`skill-jia-yi-jing-suitang.md`](../departments/03-zhenjiu/03-zhenjiu-yiji-xuan/chapters/03-jia-yi-jing-suitang/outputs/skill-jia-yi-jing-suitang.md) |
 
-#### 第 4 章 · 宋金元医论
+#### 第 4 章 · 宋金元把针灸变成国家标准、时间表和一家之言
 
 `03-zhenjiu-yiji-xuan/chapters/04-songjinyuan/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 宋金元医论 · 提示词 | — | 446 | [`prompt-04-songjinyuan.md`](../departments/03-zhenjiu/03-zhenjiu-yiji-xuan/chapters/04-songjinyuan/outputs/prompt-04-songjinyuan.md) |
-| skill | 宋金元医论 | 宋金元医论——按「灵枢 → 素问难经 → 甲乙经与隋唐 → 宋金元 → 明清 → 歌赋 → 医案 → 数字化」走一遍本章判据 | 370 | [`skill-songjinyuan.md`](../departments/03-zhenjiu/03-zhenjiu-yiji-xuan/chapters/04-songjinyuan/outputs/skill-songjinyuan.md) |
+| prompt | 宋金元把针灸变成国家标准、时间表和一家之言 · 提示词 | — | 849 | [`prompt-04-songjinyuan.md`](../departments/03-zhenjiu/03-zhenjiu-yiji-xuan/chapters/04-songjinyuan/outputs/prompt-04-songjinyuan.md) |
+| skill | 宋金元把针灸变成国家标准、时间表和一家之言 | 宋金元把针灸变成国家标准、时间表和一家之言——按「铜人：把「一寸」变成全国统一的一寸 → 三百五十四穴与禁刺条款：标准化同时也在划线 → 窦默：补泻不在呼吸，在手指 → 子午流注：给穴位排一张时间表」走一遍本章判据 | 751 | [`skill-songjinyuan.md`](../departments/03-zhenjiu/03-zhenjiu-yiji-xuan/chapters/04-songjinyuan/outputs/skill-songjinyuan.md) |
 
-#### 第 5 章 · 明清医论
+#### 第 5 章 · 明清针灸的份量不在新穴新法，而在把经验编成可教的体例
 
 `03-zhenjiu-yiji-xuan/chapters/05-mingqing/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 明清医论 · 提示词 | — | 443 | [`prompt-05-mingqing.md`](../departments/03-zhenjiu/03-zhenjiu-yiji-xuan/chapters/05-mingqing/outputs/prompt-05-mingqing.md) |
-| skill | 明清医论 | 明清医论——按「灵枢 → 素问难经 → 甲乙经与隋唐 → 宋金元 → 明清 → 歌赋 → 医案 → 数字化」走一遍本章判据 | 365 | [`skill-mingqing.md`](../departments/03-zhenjiu/03-zhenjiu-yiji-xuan/chapters/05-mingqing/outputs/skill-mingqing.md) |
+| prompt | 明清针灸的份量不在新穴新法，而在把经验编成可教的体例 · 提示词 | — | 852 | [`prompt-05-mingqing.md`](../departments/03-zhenjiu/03-zhenjiu-yiji-xuan/chapters/05-mingqing/outputs/prompt-05-mingqing.md) |
+| skill | 明清针灸的份量不在新穴新法，而在把经验编成可教的体例 | 明清针灸的份量不在新穴新法，而在把经验编成可教的体例——按「六家里只有一半留下了原文 → 杨继洲的两篇策论：集成期的「准」在收，不在全 → 汪机的问答体：把补泻之争摆到台面上 → 普及期的三节：没有原文时怎么读」走一遍本章判据 | 746 | [`skill-mingqing.md`](../departments/03-zhenjiu/03-zhenjiu-yiji-xuan/chapters/05-mingqing/outputs/skill-mingqing.md) |
 
-#### 第 6 章 · 针灸歌赋
+#### 第 6 章 · 歌赋用押韵换来了记得住，代价是把异文压成一个说法
 
 `03-zhenjiu-yiji-xuan/chapters/06-gefu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 针灸歌赋 · 提示词 | — | 443 | [`prompt-06-gefu.md`](../departments/03-zhenjiu/03-zhenjiu-yiji-xuan/chapters/06-gefu/outputs/prompt-06-gefu.md) |
-| skill | 针灸歌赋 | 针灸歌赋——按「灵枢 → 素问难经 → 甲乙经与隋唐 → 宋金元 → 明清 → 歌赋 → 医案 → 数字化」走一遍本章判据 | 361 | [`skill-gefu.md`](../departments/03-zhenjiu/03-zhenjiu-yiji-xuan/chapters/06-gefu/outputs/skill-gefu.md) |
+| prompt | 歌赋用押韵换来了记得住，代价是把异文压成一个说法 · 提示词 | — | 931 | [`prompt-06-gefu.md`](../departments/03-zhenjiu/03-zhenjiu-yiji-xuan/chapters/06-gefu/outputs/prompt-06-gefu.md) |
+| skill | 歌赋用押韵换来了记得住，代价是把异文压成一个说法 | 歌赋用押韵换来了记得住，代价是把异文压成一个说法——按「八节四十九条：歌赋章的分布本身就是一个论点 → 赋：理论密度高的那几节，正好是能逐字核的那几节 → 歌与诀：压缩到四句，代价是限定条件被压没了 → 一条口诀的四处异文，以及怎么读才不被它骗」走一遍本章判据 | 823 | [`skill-gefu.md`](../departments/03-zhenjiu/03-zhenjiu-yiji-xuan/chapters/06-gefu/outputs/skill-gefu.md) |
 
-#### 第 7 章 · 针灸医案
+#### 第 7 章 · 医案留下的是一条决策链，不是一个成功率
 
 `03-zhenjiu-yiji-xuan/chapters/07-yian/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 针灸医案 · 提示词 | — | 443 | [`prompt-07-yian.md`](../departments/03-zhenjiu/03-zhenjiu-yiji-xuan/chapters/07-yian/outputs/prompt-07-yian.md) |
-| skill | 针灸医案 | 针灸医案——按「灵枢 → 素问难经 → 甲乙经与隋唐 → 宋金元 → 明清 → 歌赋 → 医案 → 数字化」走一遍本章判据 | 361 | [`skill-yian.md`](../departments/03-zhenjiu/03-zhenjiu-yiji-xuan/chapters/07-yian/outputs/skill-yian.md) |
+| prompt | 医案留下的是一条决策链，不是一个成功率 · 提示词 | — | 854 | [`prompt-07-yian.md`](../departments/03-zhenjiu/03-zhenjiu-yiji-xuan/chapters/07-yian/outputs/prompt-07-yian.md) |
+| skill | 医案留下的是一条决策链，不是一个成功率 | 医案留下的是一条决策链，不是一个成功率——按「一条案子的四端，与读案的四步 → 21 比 6：疗效词的分布暴露了体裁，不是暴露了水平 → 三案连读：手法替代、标本次序、急则治标 → 气至：案文里最薄的一环」走一遍本章判据 | 751 | [`skill-yian.md`](../departments/03-zhenjiu/03-zhenjiu-yiji-xuan/chapters/07-yian/outputs/skill-yian.md) |
 
-#### 第 8 章 · 医籍选读与数字化
+#### 第 8 章 · 检索能把找不到变成找得到太多，判断仍要回到原文
 
 `03-zhenjiu-yiji-xuan/chapters/08-shuzihua-yuedu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 医籍选读与数字化 · 提示词 | — | 455 | [`prompt-08-shuzihua-yuedu.md`](../departments/03-zhenjiu/03-zhenjiu-yiji-xuan/chapters/08-shuzihua-yuedu/outputs/prompt-08-shuzihua-yuedu.md) |
-| skill | 医籍选读与数字化 | 医籍选读与数字化——按「灵枢 → 素问难经 → 甲乙经与隋唐 → 宋金元 → 明清 → 歌赋 → 医案 → 数字化」走一遍本章判据 | 379 | [`skill-shuzihua-yuedu.md`](../departments/03-zhenjiu/03-zhenjiu-yiji-xuan/chapters/08-shuzihua-yuedu/outputs/skill-shuzihua-yuedu.md) |
+| prompt | 检索能把找不到变成找得到太多，判断仍要回到原文 · 提示词 | — | 871 | [`prompt-08-shuzihua-yuedu.md`](../departments/03-zhenjiu/03-zhenjiu-yiji-xuan/chapters/08-shuzihua-yuedu/outputs/prompt-08-shuzihua-yuedu.md) |
+| skill | 检索能把找不到变成找得到太多，判断仍要回到原文 | 检索能把找不到变成找得到太多，判断仍要回到原文——按「六节没有一条原文，这个空缺本身就是内容 → 三层资源，各有一层失真 → 图谱与挖掘：可溯源与样本范围，两条都不能省 → AI 的能与不能：三类风险与四条规矩」走一遍本章判据 | 774 | [`skill-shuzihua-yuedu.md`](../departments/03-zhenjiu/03-zhenjiu-yiji-xuan/chapters/08-shuzihua-yuedu/outputs/skill-shuzihua-yuedu.md) |
 
 ### 中医气功学
 
 > Reference · 第 3 学期 · 已产出 7 章
 
-#### 第 1 章 · 学科概论与发展简史
+#### 第 1 章 · 名是新的，实是旧的，气功在《内经》里已经排进治法
 
 `04-qigong-xue/chapters/01-gaishu-yuanyuan/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 学科概论与发展简史 · 提示词 | — | 484 | [`prompt-01-gaishu-yuanyuan.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/01-gaishu-yuanyuan/outputs/prompt-01-gaishu-yuanyuan.md) |
-| skill | 学科概论与发展简史 | 学科概论与发展简史——按「概论史 → 理论与三调 → 偏差防治 → 静功动功 → 太极与健身气功 → 辨证施功 → 研究与治未病」走一遍本章判据 | 401 | [`skill-gaishu-yuanyuan.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/01-gaishu-yuanyuan/outputs/skill-gaishu-yuanyuan.md) |
+| prompt | 名是新的，实是旧的，气功在《内经》里已经排进治法 · 提示词 | — | 893 | [`prompt-01-gaishu-yuanyuan.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/01-gaishu-yuanyuan/outputs/prompt-01-gaishu-yuanyuan.md) |
+| skill | 名是新的，实是旧的，气功在《内经》里已经排进治法 | 名是新的，实是旧的，气功在《内经》里已经排进治法——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 787 | [`skill-gaishu-yuanyuan.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/01-gaishu-yuanyuan/outputs/skill-gaishu-yuanyuan.md) |
 
 #### 第 2 章 · 邪盛正衰不是一句断言，是一条能读出方向的轴
 
@@ -5734,229 +5734,229 @@
 | skill | 邪盛正衰不是一句断言，是一条能读出方向的轴 | 邪盛正衰不是一句断言，是一条能读出方向的轴——按「病因的四条入口：问「从哪里进来的」，不问「叫什么病」 → 病机：三件事同时发生，闭与脱是同一过程的两端 → 辨证：先分层，再分证 → 治则的排序：急则治标不是口号，是排班」走一遍本章判据 | 662 | [`skill-02-lilun-jichu.md`](../departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/02-lilun-jichu/outputs/skill-02-lilun-jichu.md) |
 | prompt | 心与脑争了两千年，争的其实是「谁主事」与「谁供血」 · 提示词 | — | 781 | [`prompt-02-lilun-jichu.md`](../departments/01-zhongyi/20-zhongyi-jingshenbing-xue/chapters/02-lilun-jichu/outputs/prompt-02-lilun-jichu.md) |
 | skill | 心与脑争了两千年，争的其实是「谁主事」与「谁供血」 | 心与脑争了两千年，争的其实是「谁主事」与「谁供血」——按「两说的来历：一条从「君主」出发，一条从「髓海」出发 → 8 项观察：4 项指脑，3 项指心，1 项必须合看 → 成组判据：先定虚实，再定在气、痰、瘀、火哪一层 → 干预动作：三法各有边界，停止条件比适应证更硬」走一遍本章判据 | 669 | [`skill-02-lilun-jichu.md`](../departments/01-zhongyi/20-zhongyi-jingshenbing-xue/chapters/02-lilun-jichu/outputs/skill-02-lilun-jichu.md) |
-| prompt | 理论基础与修炼要素 · 提示词 | — | 484 | [`prompt-02-lilun-jichu.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/02-lilun-jichu/outputs/prompt-02-lilun-jichu.md) |
-| skill | 理论基础与修炼要素 | 理论基础与修炼要素——按「概论史 → 理论与三调 → 偏差防治 → 静功动功 → 太极与健身气功 → 辨证施功 → 研究与治未病」走一遍本章判据 | 397 | [`skill-lilun-jichu.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/02-lilun-jichu/outputs/skill-lilun-jichu.md) |
-| prompt | 用本章内容做一件事：推拿功法的理论基础 | — | 418 | [`prompt-02-lilun-jichu.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/02-lilun-jichu/outputs/prompt-02-lilun-jichu.md) |
-| skill | 推拿功法的理论基础 | 用《推拿功法学》第 2 章「推拿功法的理论基础」的单元层做可核对的教学材料。 | 509 | [`skill-02-lilun-jichu.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/02-lilun-jichu/outputs/skill-02-lilun-jichu.md) |
+| prompt | 调息写得最多，不等于调息最要紧 · 提示词 | — | 847 | [`prompt-02-lilun-jichu.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/02-lilun-jichu/outputs/prompt-02-lilun-jichu.md) |
+| skill | 调息写得最多，不等于调息最要紧 | 调息写得最多，不等于调息最要紧——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 746 | [`skill-lilun-jichu.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/02-lilun-jichu/outputs/skill-lilun-jichu.md) |
+| prompt | 理论给的是练功的说法，不是练功的做法 · 提示词 | — | 1048 | [`prompt-02-lilun-jichu.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/02-lilun-jichu/outputs/prompt-02-lilun-jichu.md) |
+| skill | 理论给的是练功的说法，不是练功的做法 | 理论给的是练功的说法，不是练功的做法——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 944 | [`skill-02-lilun-jichu.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/02-lilun-jichu/outputs/skill-02-lilun-jichu.md) |
 | prompt | 运动调的不是肌肉，是气机的升降出入 · 提示词 | — | 900 | [`prompt-02-lilun-jichu.md`](../departments/04-gushang/01-zhongyi-yundong-xue/chapters/02-lilun-jichu/outputs/prompt-02-lilun-jichu.md) |
 | skill | 运动调的不是肌肉，是气机的升降出入 | 运动调的不是肌肉，是气机的升降出入——按「形、气、神：三个层次，三种失败 → 五脏各主一形：分工表与它的边界 → 气血要动，但不能过用 → 经络与关节：为什么「活动关节」等于「行气血」」走一遍本章判据 | 797 | [`skill-lilun-jichu.md`](../departments/04-gushang/01-zhongyi-yundong-xue/chapters/02-lilun-jichu/outputs/skill-lilun-jichu.md) |
 | prompt | 阴阳五行不是哲学装饰，是护理观察里最省事的两把尺 · 提示词 | — | 693 | [`prompt-02-lilun-jichu.md`](../departments/05-huli/24-zhongyi-huli-xue/chapters/02-lilun-jichu/outputs/prompt-02-lilun-jichu.md) |
 | skill | 阴阳五行不是哲学装饰，是护理观察里最省事的两把尺 | 阴阳五行不是哲学装饰，是护理观察里最省事的两把尺——按「阴阳：两把尺，四个问题 → 五行：生克是解释工具，不是护理路径 → 藏象与经络：定位到「哪一脏、哪条经」，护理才有落点 → 气血津液与病因病机：把「虚」拆成能观察的四项」走一遍本章判据 | 592 | [`skill-02-lilun-jichu.md`](../departments/05-huli/24-zhongyi-huli-xue/chapters/02-lilun-jichu/outputs/skill-02-lilun-jichu.md) |
 
-#### 第 3 章 · 练功反应与偏差的预防与纠治
+#### 第 3 章 · 反应与偏差的分界不在感觉强弱，在能不能自己缓过来
 
 `04-qigong-xue/chapters/03-fanying-piancha/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 练功反应与偏差的预防与纠治 · 提示词 | — | 493 | [`prompt-03-fanying-piancha.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/03-fanying-piancha/outputs/prompt-03-fanying-piancha.md) |
-| skill | 练功反应与偏差的预防与纠治 | 练功反应与偏差的预防与纠治——按「概论史 → 理论与三调 → 偏差防治 → 静功动功 → 太极与健身气功 → 辨证施功 → 研究与治未病」走一遍本章判据 | 409 | [`skill-fanying-piancha.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/03-fanying-piancha/outputs/skill-fanying-piancha.md) |
+| prompt | 反应与偏差的分界不在感觉强弱，在能不能自己缓过来 · 提示词 | — | 850 | [`prompt-03-fanying-piancha.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/03-fanying-piancha/outputs/prompt-03-fanying-piancha.md) |
+| skill | 反应与偏差的分界不在感觉强弱，在能不能自己缓过来 | 反应与偏差的分界不在感觉强弱，在能不能自己缓过来——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 744 | [`skill-fanying-piancha.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/03-fanying-piancha/outputs/skill-fanying-piancha.md) |
 
-#### 第 4 章 · 静功与动功
+#### 第 4 章 · 静功与动功的分界不在动不动，在由谁主导
 
 `04-qigong-xue/chapters/04-jinggong-donggong/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 静功与动功 · 提示词 | — | 472 | [`prompt-04-jinggong-donggong.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/04-jinggong-donggong/outputs/prompt-04-jinggong-donggong.md) |
-| skill | 静功与动功 | 静功与动功——按「概论史 → 理论与三调 → 偏差防治 → 静功动功 → 太极与健身气功 → 辨证施功 → 研究与治未病」走一遍本章判据 | 395 | [`skill-jinggong-donggong.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/04-jinggong-donggong/outputs/skill-jinggong-donggong.md) |
+| prompt | 静功与动功的分界不在动不动，在由谁主导 · 提示词 | — | 902 | [`prompt-04-jinggong-donggong.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/04-jinggong-donggong/outputs/prompt-04-jinggong-donggong.md) |
+| skill | 静功与动功的分界不在动不动，在由谁主导 | 静功与动功的分界不在动不动，在由谁主导——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 803 | [`skill-jinggong-donggong.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/04-jinggong-donggong/outputs/skill-jinggong-donggong.md) |
 
-#### 第 5 章 · 太极拳、武术内功与健身气功
+#### 第 5 章 · 太极拳是调身为主的动功：把动作放慢不叫练气功，把三调参数写出来才算
 
 `04-qigong-xue/chapters/05-taiji-jianshen/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 太极拳、武术内功与健身气功 · 提示词 | — | 496 | [`prompt-05-taiji-jianshen.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/05-taiji-jianshen/outputs/prompt-05-taiji-jianshen.md) |
-| skill | 太极拳、武术内功与健身气功 | 太极拳、武术内功与健身气功——按「概论史 → 理论与三调 → 偏差防治 → 静功动功 → 太极与健身气功 → 辨证施功 → 研究与治未病」走一遍本章判据 | 408 | [`skill-taiji-jianshen.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/05-taiji-jianshen/outputs/skill-taiji-jianshen.md) |
+| prompt | 太极拳是调身为主的动功：把动作放慢不叫练气功，把三调参数写出来才算 · 提示词 | — | 837 | [`prompt-05-taiji-jianshen.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/05-taiji-jianshen/outputs/prompt-05-taiji-jianshen.md) |
+| skill | 太极拳是调身为主的动功：把动作放慢不叫练气功，把三调参数写出来才算 | 太极拳是调身为主的动功：把动作放慢不叫练气功，把三调参数写出来才算——按「定位：调身在前，调息调心藏在动作里 → 源流：两说并列，不裁断 → 形：三手型、六步型、五身法 → 劲与桩：八法五步，三种桩」走一遍本章判据 | 721 | [`skill-taiji-jianshen.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/05-taiji-jianshen/outputs/skill-taiji-jianshen.md) |
 
-#### 第 6 章 · 辨证施功与临床应用
+#### 第 6 章 · 辨证施功的落点是参数：同一张「放松功」的方子，四个证候要四种练法
 
 `04-qigong-xue/chapters/06-bianzheng-shigong/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 辨证施功与临床应用 · 提示词 | — | 489 | [`prompt-06-bianzheng-shigong.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/06-bianzheng-shigong/outputs/prompt-06-bianzheng-shigong.md) |
-| skill | 辨证施功与临床应用 | 辨证施功与临床应用——按「概论史 → 理论与三调 → 偏差防治 → 静功动功 → 太极与健身气功 → 辨证施功 → 研究与治未病」走一遍本章判据 | 403 | [`skill-bianzheng-shigong.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/06-bianzheng-shigong/outputs/skill-bianzheng-shigong.md) |
+| prompt | 辨证施功的落点是参数：同一张「放松功」的方子，四个证候要四种练法 · 提示词 | — | 809 | [`prompt-06-bianzheng-shigong.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/06-bianzheng-shigong/outputs/prompt-06-bianzheng-shigong.md) |
+| skill | 辨证施功的落点是参数：同一张「放松功」的方子，四个证候要四种练法 | 辨证施功的落点是参数：同一张「放松功」的方子，四个证候要四种练法——按「先辨后练：三层递进，处方四个字段 → 九种体质：先划界限，再定主功 → 八纲与脏腑：两处反向，一条界线 → 禁忌：绝对六组、相对五类、慎用五群」走一遍本章判据 | 697 | [`skill-bianzheng-shigong.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/06-bianzheng-shigong/outputs/skill-bianzheng-shigong.md) |
 
-#### 第 7 章 · 现代研究与治未病
+#### 第 7 章 · 气功研究只敢说「可能」，治未病的建议却必须具体到今天练什么
 
 `04-qigong-xue/chapters/07-yanjiu-zhiweibing/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 现代研究与治未病 · 提示词 | — | 478 | [`prompt-07-yanjiu-zhiweibing.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/07-yanjiu-zhiweibing/outputs/prompt-07-yanjiu-zhiweibing.md) |
-| skill | 现代研究与治未病 | 现代研究与治未病——按「概论史 → 理论与三调 → 偏差防治 → 静功动功 → 太极与健身气功 → 辨证施功 → 研究与治未病」走一遍本章判据 | 401 | [`skill-yanjiu-zhiweibing.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/07-yanjiu-zhiweibing/outputs/skill-yanjiu-zhiweibing.md) |
+| prompt | 气功研究只敢说「可能」，治未病的建议却必须具体到今天练什么 · 提示词 | — | 821 | [`prompt-07-yanjiu-zhiweibing.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/07-yanjiu-zhiweibing/outputs/prompt-07-yanjiu-zhiweibing.md) |
+| skill | 气功研究只敢说「可能」，治未病的建议却必须具体到今天练什么 | 气功研究只敢说「可能」，治未病的建议却必须具体到今天练什么——按「证据分级：六类设计，一句话的强度上限 → 指标：十项检测，与「指标≠结局」 → 规范表述：可以说与不可以说 → 治未病三层：四时怎么练，起居怎么排」走一遍本章判据 | 712 | [`skill-yanjiu-zhiweibing.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/07-yanjiu-zhiweibing/outputs/skill-yanjiu-zhiweibing.md) |
 
 ### 推拿学
 
 > Clinic · 第 4 学期 · 已产出 10 章
 
-#### 第 1 章 · 推拿的源流与治疗原理
+#### 第 1 章 · 推拿的疗效有通路，源流只是它的来路
 
 `05-tuina-xue/chapters/01-yuanliu-yuanli/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：推拿的源流与治疗原理 | — | 391 | [`prompt-01-yuanliu-yuanli.md`](../departments/03-zhenjiu/05-tuina-xue/chapters/01-yuanliu-yuanli/outputs/prompt-01-yuanliu-yuanli.md) |
-| skill | 推拿的源流与治疗原理 | 用《推拿学》第 1 章「推拿的源流与治疗原理」的单元层做可核对的教学材料。 | 530 | [`skill-01-yuanliu-yuanli.md`](../departments/03-zhenjiu/05-tuina-xue/chapters/01-yuanliu-yuanli/outputs/skill-01-yuanliu-yuanli.md) |
+| prompt | 推拿的疗效有通路，源流只是它的来路 · 提示词 | — | 639 | [`prompt-01-yuanliu-yuanli.md`](../departments/03-zhenjiu/05-tuina-xue/chapters/01-yuanliu-yuanli/outputs/prompt-01-yuanliu-yuanli.md) |
+| skill | 推拿的疗效有通路，源流只是它的来路 | 推拿的疗效有通路，源流只是它的来路——按「源流不是年表，是"手先于解释"的三段线 → 流派解决的是"怎么传"，三支各解一个难题 → 原理之一：疏通经络，气行则血行 → 原理之二、之三：调平，与复位」走一遍本章判据 | 550 | [`skill-01-yuanliu-yuanli.md`](../departments/03-zhenjiu/05-tuina-xue/chapters/01-yuanliu-yuanli/outputs/skill-01-yuanliu-yuanli.md) |
 
-#### 第 2 章 · 推拿的适应证、禁忌与风险
+#### 第 2 章 · 推拿能治什么，取决于它的作用落在哪一层
 
 `05-tuina-xue/chapters/02-shiyingzheng-fengxian/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：推拿的适应证、禁忌与风险 | — | 393 | [`prompt-02-shiyingzheng-fengxian.md`](../departments/03-zhenjiu/05-tuina-xue/chapters/02-shiyingzheng-fengxian/outputs/prompt-02-shiyingzheng-fengxian.md) |
-| skill | 推拿的适应证、禁忌与风险 | 用《推拿学》第 2 章「推拿的适应证、禁忌与风险」的单元层做可核对的教学材料。 | 548 | [`skill-02-shiyingzheng-fengxian.md`](../departments/03-zhenjiu/05-tuina-xue/chapters/02-shiyingzheng-fengxian/outputs/skill-02-shiyingzheng-fengxian.md) |
+| prompt | 推拿能治什么，取决于它的作用落在哪一层 · 提示词 | — | 681 | [`prompt-02-shiyingzheng-fengxian.md`](../departments/03-zhenjiu/05-tuina-xue/chapters/02-shiyingzheng-fengxian/outputs/prompt-02-shiyingzheng-fengxian.md) |
+| skill | 推拿能治什么，取决于它的作用落在哪一层 | 推拿能治什么，取决于它的作用落在哪一层——按「作用不是一个词，是三个可分开追问的层次 → 六个作用词，每一个都对应一处可观察的现场 → 现代三层：可测的部分与不可推的部分 → 原理决定适应证，也决定红线」走一遍本章判据 | 597 | [`skill-02-shiyingzheng-fengxian.md`](../departments/03-zhenjiu/05-tuina-xue/chapters/02-shiyingzheng-fengxian/outputs/skill-02-shiyingzheng-fengxian.md) |
 
-#### 第 3 章 · 成人推拿的常用部位与操作
+#### 第 3 章 · 手法的名字记着力面，处方的效力记在顺序上
 
 `05-tuina-xue/chapters/03-chengren-buwei/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：成人推拿的常用部位与操作 | — | 393 | [`prompt-03-chengren-buwei.md`](../departments/03-zhenjiu/05-tuina-xue/chapters/03-chengren-buwei/outputs/prompt-03-chengren-buwei.md) |
-| skill | 成人推拿的常用部位与操作 | 用《推拿学》第 3 章「成人推拿的常用部位与操作」的单元层做可核对的教学材料。 | 534 | [`skill-03-chengren-buwei.md`](../departments/03-zhenjiu/05-tuina-xue/chapters/03-chengren-buwei/outputs/skill-03-chengren-buwei.md) |
+| prompt | 手法的名字记着力面，处方的效力记在顺序上 · 提示词 | — | 624 | [`prompt-03-chengren-buwei.md`](../departments/03-zhenjiu/05-tuina-xue/chapters/03-chengren-buwei/outputs/prompt-03-chengren-buwei.md) |
+| skill | 手法的名字记着力面，处方的效力记在顺序上 | 手法的名字记着力面，处方的效力记在顺序上——按「九个单元是一条从指端排到足底的接触面谱 → 摆动类：精度与覆盖，两个流派各解一半 → 摩擦类：五条路，都走在皮肤上 → 挤压、振动与叩击：力量从面收到点，再散回面」走一遍本章判据 | 532 | [`skill-03-chengren-buwei.md`](../departments/03-zhenjiu/05-tuina-xue/chapters/03-chengren-buwei/outputs/skill-03-chengren-buwei.md) |
 
-#### 第 4 章 · 小儿推拿的特定穴与手法
+#### 第 4 章 · 小儿推拿换掉的不是穴位尺寸，是补泻的计量单位
 
 `05-tuina-xue/chapters/04-xiaoer-tuina/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：小儿推拿的特定穴与手法 | — | 392 | [`prompt-04-xiaoer-tuina.md`](../departments/03-zhenjiu/05-tuina-xue/chapters/04-xiaoer-tuina/outputs/prompt-04-xiaoer-tuina.md) |
-| skill | 小儿推拿的特定穴与手法 | 用《推拿学》第 4 章「小儿推拿的特定穴与手法」的单元层做可核对的教学材料。 | 528 | [`skill-04-xiaoer-tuina.md`](../departments/03-zhenjiu/05-tuina-xue/chapters/04-xiaoer-tuina/outputs/skill-04-xiaoer-tuina.md) |
+| prompt | 小儿推拿换掉的不是穴位尺寸，是补泻的计量单位 · 提示词 | — | 699 | [`prompt-04-xiaoer-tuina.md`](../departments/03-zhenjiu/05-tuina-xue/chapters/04-xiaoer-tuina/outputs/prompt-04-xiaoer-tuina.md) |
+| skill | 小儿推拿换掉的不是穴位尺寸，是补泻的计量单位 | 小儿推拿换掉的不是穴位尺寸，是补泻的计量单位——按「五个单元的重心不在穴位，在病证与红线 → 特定穴：按部位与方向命名，不按骨度分寸定位 → 补泻：这一套手法真正的剂量单位是方向与次数 → 三个病证各考一种能力」走一遍本章判据 | 603 | [`skill-04-xiaoer-tuina.md`](../departments/03-zhenjiu/05-tuina-xue/chapters/04-xiaoer-tuina/outputs/skill-04-xiaoer-tuina.md) |
 
-#### 第 5 章 · 脊柱推拿与手法安全性
+#### 第 5 章 · 脊柱手法的技术含量，一半在决定不做哪一手
 
 `05-tuina-xue/chapters/05-jizhu-tuina/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：脊柱推拿与手法安全性 | — | 391 | [`prompt-05-jizhu-tuina.md`](../departments/03-zhenjiu/05-tuina-xue/chapters/05-jizhu-tuina/outputs/prompt-05-jizhu-tuina.md) |
-| skill | 脊柱推拿与手法安全性 | 用《推拿学》第 5 章「脊柱推拿与手法安全性」的单元层做可核对的教学材料。 | 524 | [`skill-05-jizhu-tuina.md`](../departments/03-zhenjiu/05-tuina-xue/chapters/05-jizhu-tuina/outputs/skill-05-jizhu-tuina.md) |
+| prompt | 脊柱手法的技术含量，一半在决定不做哪一手 · 提示词 | — | 691 | [`prompt-05-jizhu-tuina.md`](../departments/03-zhenjiu/05-tuina-xue/chapters/05-jizhu-tuina/outputs/prompt-05-jizhu-tuina.md) |
+| skill | 脊柱手法的技术含量，一半在决定不做哪一手 | 脊柱手法的技术含量，一半在决定不做哪一手——按「六个单元是一份被拆成三段的流程 → 检查段：先把「痛」定位到一节，再谈手法 → 整复段：摇、扳、拔伸各买一样东西 → 安全段：红线写在流程里，不写在附录里」走一遍本章判据 | 596 | [`skill-05-jizhu-tuina.md`](../departments/03-zhenjiu/05-tuina-xue/chapters/05-jizhu-tuina/outputs/skill-05-jizhu-tuina.md) |
 
-#### 第 6 章 · 推拿治疗颈肩腰腿痛
+#### 第 6 章 · 病名换了九个，处方的骨架只有一套
 
 `05-tuina-xue/chapters/06-jingjian-yaotui/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：推拿治疗颈肩腰腿痛 | — | 390 | [`prompt-06-jingjian-yaotui.md`](../departments/03-zhenjiu/05-tuina-xue/chapters/06-jingjian-yaotui/outputs/prompt-06-jingjian-yaotui.md) |
-| skill | 推拿治疗颈肩腰腿痛 | 用《推拿学》第 6 章「推拿治疗颈肩腰腿痛」的单元层做可核对的教学材料。 | 530 | [`skill-06-jingjian-yaotui.md`](../departments/03-zhenjiu/05-tuina-xue/chapters/06-jingjian-yaotui/outputs/skill-06-jingjian-yaotui.md) |
+| prompt | 病名换了九个，处方的骨架只有一套 · 提示词 | — | 773 | [`prompt-06-jingjian-yaotui.md`](../departments/03-zhenjiu/05-tuina-xue/chapters/06-jingjian-yaotui/outputs/prompt-06-jingjian-yaotui.md) |
+| skill | 病名换了九个，处方的骨架只有一套 | 病名换了九个，处方的骨架只有一套——按「九篇同形，变量只有三个 → 颈椎病与落枕：同一段脊柱，两种病程 → 肩周炎与腰突：一个怕不动，一个怕乱动 → 腰肌劳损、横突与梨状肌：压痛点是定位，不是病因」走一遍本章判据 | 686 | [`skill-06-jingjian-yaotui.md`](../departments/03-zhenjiu/05-tuina-xue/chapters/06-jingjian-yaotui/outputs/skill-06-jingjian-yaotui.md) |
 
-#### 第 7 章 · 推拿在内科与妇科的应用
+#### 第 7 章 · 内科妇科推拿的差别不在手法而在时程
 
 `05-tuina-xue/chapters/07-neike-fuke/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：推拿在内科与妇科的应用 | — | 392 | [`prompt-07-neike-fuke.md`](../departments/03-zhenjiu/05-tuina-xue/chapters/07-neike-fuke/outputs/prompt-07-neike-fuke.md) |
-| skill | 推拿在内科与妇科的应用 | 用《推拿学》第 7 章「推拿在内科与妇科的应用」的单元层做可核对的教学材料。 | 524 | [`skill-07-neike-fuke.md`](../departments/03-zhenjiu/05-tuina-xue/chapters/07-neike-fuke/outputs/skill-07-neike-fuke.md) |
+| prompt | 内科妇科推拿的差别不在手法而在时程 · 提示词 | — | 565 | [`prompt-07-neike-fuke.md`](../departments/03-zhenjiu/05-tuina-xue/chapters/07-neike-fuke/outputs/prompt-07-neike-fuke.md) |
+| skill | 内科妇科推拿的差别不在手法而在时程 | 内科妇科推拿的差别不在手法而在时程——按「39 个证型，一套手法词 → 「度」才是底本的剂量单位 → 体表到脏腑：底本只走到「神经反射」 → 一条处方有六个空，底本只填了四个」走一遍本章判据 | 472 | [`skill-07-neike-fuke.md`](../departments/03-zhenjiu/05-tuina-xue/chapters/07-neike-fuke/outputs/skill-07-neike-fuke.md) |
 
-#### 第 8 章 · 推拿的力学测量与剂量
+#### 第 8 章 · 手法剂量里频率可抄，力度只能自己校准
 
 `05-tuina-xue/chapters/08-lixue-celiang/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：推拿的力学测量与剂量 | — | 391 | [`prompt-08-lixue-celiang.md`](../departments/03-zhenjiu/05-tuina-xue/chapters/08-lixue-celiang/outputs/prompt-08-lixue-celiang.md) |
-| skill | 推拿的力学测量与剂量 | 用《推拿学》第 8 章「推拿的力学测量与剂量」的单元层做可核对的教学材料。 | 528 | [`skill-08-lixue-celiang.md`](../departments/03-zhenjiu/05-tuina-xue/chapters/08-lixue-celiang/outputs/skill-08-lixue-celiang.md) |
+| prompt | 手法剂量里频率可抄，力度只能自己校准 · 提示词 | — | 642 | [`prompt-08-lixue-celiang.md`](../departments/03-zhenjiu/05-tuina-xue/chapters/08-lixue-celiang/outputs/prompt-08-lixue-celiang.md) |
+| skill | 手法剂量里频率可抄，力度只能自己校准 | 手法剂量里频率可抄，力度只能自己校准——按「三个参数，两种可复现程度 → 补泻是剂量方向，不是形容词 → 量化：能测什么，测出来说明什么 → 机器人把剂量变成参数，也把剂量变成责任」走一遍本章判据 | 551 | [`skill-08-lixue-celiang.md`](../departments/03-zhenjiu/05-tuina-xue/chapters/08-lixue-celiang/outputs/skill-08-lixue-celiang.md) |
 
-#### 第 9 章 · 推拿疗效的评价与盲法难题
+#### 第 9 章 · 手法不能设盲，疗效判据只能外置
 
 `05-tuina-xue/chapters/09-liaoxiao-pingjia/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：推拿疗效的评价与盲法难题 | — | 393 | [`prompt-09-liaoxiao-pingjia.md`](../departments/03-zhenjiu/05-tuina-xue/chapters/09-liaoxiao-pingjia/outputs/prompt-09-liaoxiao-pingjia.md) |
-| skill | 推拿疗效的评价与盲法难题 | 用《推拿学》第 9 章「推拿疗效的评价与盲法难题」的单元层做可核对的教学材料。 | 538 | [`skill-09-liaoxiao-pingjia.md`](../departments/03-zhenjiu/05-tuina-xue/chapters/09-liaoxiao-pingjia/outputs/skill-09-liaoxiao-pingjia.md) |
+| prompt | 手法不能设盲，疗效判据只能外置 · 提示词 | — | 586 | [`prompt-09-liaoxiao-pingjia.md`](../departments/03-zhenjiu/05-tuina-xue/chapters/09-liaoxiao-pingjia/outputs/prompt-09-liaoxiao-pingjia.md) |
+| skill | 手法不能设盲，疗效判据只能外置 | 手法不能设盲，疗效判据只能外置——按「盲不了的是手法本身 → 外置判据：底本给了一整套「别人的仪器」 → 把主观评分变成可复核的量 → 三张尺子，别混用」走一遍本章判据 | 501 | [`skill-09-liaoxiao-pingjia.md`](../departments/03-zhenjiu/05-tuina-xue/chapters/09-liaoxiao-pingjia/outputs/skill-09-liaoxiao-pingjia.md) |
 
-#### 第 10 章 · 推拿处方的结构化记录
+#### 第 10 章 · 一份可复现的处方只由可判定字段构成
 
 `05-tuina-xue/chapters/10-chufang-jilu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：推拿处方的结构化记录 | — | 392 | [`prompt-10-chufang-jilu.md`](../departments/03-zhenjiu/05-tuina-xue/chapters/10-chufang-jilu/outputs/prompt-10-chufang-jilu.md) |
-| skill | 推拿处方的结构化记录 | 用《推拿学》第 10 章「推拿处方的结构化记录」的单元层做可核对的教学材料。 | 527 | [`skill-10-chufang-jilu.md`](../departments/03-zhenjiu/05-tuina-xue/chapters/10-chufang-jilu/outputs/skill-10-chufang-jilu.md) |
+| prompt | 一份可复现的处方只由可判定字段构成 · 提示词 | — | 601 | [`prompt-10-chufang-jilu.md`](../departments/03-zhenjiu/05-tuina-xue/chapters/10-chufang-jilu/outputs/prompt-10-chufang-jilu.md) |
+| skill | 一份可复现的处方只由可判定字段构成 | 一份可复现的处方只由可判定字段构成——按「链条有五段，缺一段就不可复现 → 把段落改成字段 → 五条组合原则是处方的语法 → 知识图谱把处方变成可校验的三元组」走一遍本章判据 | 509 | [`skill-10-chufang-jilu.md`](../departments/03-zhenjiu/05-tuina-xue/chapters/10-chufang-jilu/outputs/skill-10-chufang-jilu.md) |
 
 ### 推拿手法学
 
 > Build · 第 4 学期 · 已产出 8 章
 
-#### 第 1 章 · 手法的分类与基本要求
+#### 第 1 章 · 分类给的是坐标，手法给的是动作
 
 `06-tuina-shoufa-xue/chapters/01-fenlei-yaoqiu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：手法的分类与基本要求 | — | 427 | [`prompt-01-fenlei-yaoqiu.md`](../departments/03-zhenjiu/06-tuina-shoufa-xue/chapters/01-fenlei-yaoqiu/outputs/prompt-01-fenlei-yaoqiu.md) |
-| skill | 手法的分类与基本要求 | 用《推拿手法学》第 1 章「手法的分类与基本要求」的单元层做可核对的教学材料。 | 568 | [`skill-01-fenlei-yaoqiu.md`](../departments/03-zhenjiu/06-tuina-shoufa-xue/chapters/01-fenlei-yaoqiu/outputs/skill-01-fenlei-yaoqiu.md) |
+| prompt | 分类给的是坐标，手法给的是动作 · 提示词 | — | 915 | [`prompt-01-fenlei-yaoqiu.md`](../departments/03-zhenjiu/06-tuina-shoufa-xue/chapters/01-fenlei-yaoqiu/outputs/prompt-01-fenlei-yaoqiu.md) |
+| skill | 分类给的是坐标，手法给的是动作 | 分类给的是坐标，手法给的是动作——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 816 | [`skill-01-fenlei-yaoqiu.md`](../departments/03-zhenjiu/06-tuina-shoufa-xue/chapters/01-fenlei-yaoqiu/outputs/skill-01-fenlei-yaoqiu.md) |
 
-#### 第 2 章 · 摆动类手法：一指禅与滚法
+#### 第 2 章 · 同属摆动类，一指禅与㨰法仍不能互替
 
 `06-tuina-shoufa-xue/chapters/02-baidong-yizhichan/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：摆动类手法：一指禅与滚法 | — | 429 | [`prompt-02-baidong-yizhichan.md`](../departments/03-zhenjiu/06-tuina-shoufa-xue/chapters/02-baidong-yizhichan/outputs/prompt-02-baidong-yizhichan.md) |
-| skill | 摆动类手法：一指禅与滚法 | 用《推拿手法学》第 2 章「摆动类手法：一指禅与滚法」的单元层做可核对的教学材料。 | 580 | [`skill-02-baidong-yizhichan.md`](../departments/03-zhenjiu/06-tuina-shoufa-xue/chapters/02-baidong-yizhichan/outputs/skill-02-baidong-yizhichan.md) |
+| prompt | 同属摆动类，一指禅与㨰法仍不能互替 · 提示词 | — | 869 | [`prompt-02-baidong-yizhichan.md`](../departments/03-zhenjiu/06-tuina-shoufa-xue/chapters/02-baidong-yizhichan/outputs/prompt-02-baidong-yizhichan.md) |
+| skill | 同属摆动类，一指禅与㨰法仍不能互替 | 同属摆动类，一指禅与㨰法仍不能互替——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 772 | [`skill-02-baidong-yizhichan.md`](../departments/03-zhenjiu/06-tuina-shoufa-xue/chapters/02-baidong-yizhichan/outputs/skill-02-baidong-yizhichan.md) |
 
-#### 第 3 章 · 摩擦类与挤压类手法
+#### 第 3 章 · 同一个「推」字，在两类手法里是两个动作
 
 `06-tuina-shoufa-xue/chapters/03-moca-jiya/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：摩擦类与挤压类手法 | — | 426 | [`prompt-03-moca-jiya.md`](../departments/03-zhenjiu/06-tuina-shoufa-xue/chapters/03-moca-jiya/outputs/prompt-03-moca-jiya.md) |
-| skill | 摩擦类与挤压类手法 | 用《推拿手法学》第 3 章「摩擦类与挤压类手法」的单元层做可核对的教学材料。 | 558 | [`skill-03-moca-jiya.md`](../departments/03-zhenjiu/06-tuina-shoufa-xue/chapters/03-moca-jiya/outputs/skill-03-moca-jiya.md) |
+| prompt | 同一个「推」字，在两类手法里是两个动作 · 提示词 | — | 866 | [`prompt-03-moca-jiya.md`](../departments/03-zhenjiu/06-tuina-shoufa-xue/chapters/03-moca-jiya/outputs/prompt-03-moca-jiya.md) |
+| skill | 同一个「推」字，在两类手法里是两个动作 | 同一个「推」字，在两类手法里是两个动作——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 759 | [`skill-03-moca-jiya.md`](../departments/03-zhenjiu/06-tuina-shoufa-xue/chapters/03-moca-jiya/outputs/skill-03-moca-jiya.md) |
 
-#### 第 4 章 · 振动类与叩击类手法
+#### 第 4 章 · 振动求透，叩击求响，两套节律两套判据
 
 `06-tuina-shoufa-xue/chapters/04-zhendong-kouji/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：振动类与叩击类手法 | — | 426 | [`prompt-04-zhendong-kouji.md`](../departments/03-zhenjiu/06-tuina-shoufa-xue/chapters/04-zhendong-kouji/outputs/prompt-04-zhendong-kouji.md) |
-| skill | 振动类与叩击类手法 | 用《推拿手法学》第 4 章「振动类与叩击类手法」的单元层做可核对的教学材料。 | 568 | [`skill-04-zhendong-kouji.md`](../departments/03-zhenjiu/06-tuina-shoufa-xue/chapters/04-zhendong-kouji/outputs/skill-04-zhendong-kouji.md) |
+| prompt | 振动求透，叩击求响，两套节律两套判据 · 提示词 | — | 970 | [`prompt-04-zhendong-kouji.md`](../departments/03-zhenjiu/06-tuina-shoufa-xue/chapters/04-zhendong-kouji/outputs/prompt-04-zhendong-kouji.md) |
+| skill | 振动求透，叩击求响，两套节律两套判据 | 振动求透，叩击求响，两套节律两套判据——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 869 | [`skill-04-zhendong-kouji.md`](../departments/03-zhenjiu/06-tuina-shoufa-xue/chapters/04-zhendong-kouji/outputs/skill-04-zhendong-kouji.md) |
 
-#### 第 5 章 · 运动关节类手法
+#### 第 5 章 · 关节的极限写在解剖里，不写在手感里
 
 `06-tuina-shoufa-xue/chapters/05-yundong-guanjie/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：运动关节类手法 | — | 424 | [`prompt-05-yundong-guanjie.md`](../departments/03-zhenjiu/06-tuina-shoufa-xue/chapters/05-yundong-guanjie/outputs/prompt-05-yundong-guanjie.md) |
-| skill | 运动关节类手法 | 用《推拿手法学》第 5 章「运动关节类手法」的单元层做可核对的教学材料。 | 566 | [`skill-05-yundong-guanjie.md`](../departments/03-zhenjiu/06-tuina-shoufa-xue/chapters/05-yundong-guanjie/outputs/skill-05-yundong-guanjie.md) |
+| prompt | 关节的极限写在解剖里，不写在手感里 · 提示词 | — | 1025 | [`prompt-05-yundong-guanjie.md`](../departments/03-zhenjiu/06-tuina-shoufa-xue/chapters/05-yundong-guanjie/outputs/prompt-05-yundong-guanjie.md) |
+| skill | 关节的极限写在解剖里，不写在手感里 | 关节的极限写在解剖里，不写在手感里——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 926 | [`skill-05-yundong-guanjie.md`](../departments/03-zhenjiu/06-tuina-shoufa-xue/chapters/05-yundong-guanjie/outputs/skill-05-yundong-guanjie.md) |
 
-#### 第 6 章 · 手法的力学参数与测量
+#### 第 6 章 · 手法可测的只有力、频、时，剩下的交给手感
 
 `06-tuina-shoufa-xue/chapters/06-lixue-canshu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：手法的力学参数与测量 | — | 427 | [`prompt-06-lixue-canshu.md`](../departments/03-zhenjiu/06-tuina-shoufa-xue/chapters/06-lixue-canshu/outputs/prompt-06-lixue-canshu.md) |
-| skill | 手法的力学参数与测量 | 用《推拿手法学》第 6 章「手法的力学参数与测量」的单元层做可核对的教学材料。 | 566 | [`skill-06-lixue-canshu.md`](../departments/03-zhenjiu/06-tuina-shoufa-xue/chapters/06-lixue-canshu/outputs/skill-06-lixue-canshu.md) |
+| prompt | 手法可测的只有力、频、时，剩下的交给手感 · 提示词 | — | 989 | [`prompt-06-lixue-canshu.md`](../departments/03-zhenjiu/06-tuina-shoufa-xue/chapters/06-lixue-canshu/outputs/prompt-06-lixue-canshu.md) |
+| skill | 手法可测的只有力、频、时，剩下的交给手感 | 手法可测的只有力、频、时，剩下的交给手感——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 884 | [`skill-06-lixue-canshu.md`](../departments/03-zhenjiu/06-tuina-shoufa-xue/chapters/06-lixue-canshu/outputs/skill-06-lixue-canshu.md) |
 
-#### 第 7 章 · 手法训练的评价与反馈
+#### 第 7 章 · 合格线由训练史画出，不由当场表现画出
 
 `06-tuina-shoufa-xue/chapters/07-xunlian-pingjia/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：手法训练的评价与反馈 | — | 427 | [`prompt-07-xunlian-pingjia.md`](../departments/03-zhenjiu/06-tuina-shoufa-xue/chapters/07-xunlian-pingjia/outputs/prompt-07-xunlian-pingjia.md) |
-| skill | 手法训练的评价与反馈 | 用《推拿手法学》第 7 章「手法训练的评价与反馈」的单元层做可核对的教学材料。 | 572 | [`skill-07-xunlian-pingjia.md`](../departments/03-zhenjiu/06-tuina-shoufa-xue/chapters/07-xunlian-pingjia/outputs/skill-07-xunlian-pingjia.md) |
+| prompt | 合格线由训练史画出，不由当场表现画出 · 提示词 | — | 842 | [`prompt-07-xunlian-pingjia.md`](../departments/03-zhenjiu/06-tuina-shoufa-xue/chapters/07-xunlian-pingjia/outputs/prompt-07-xunlian-pingjia.md) |
+| skill | 合格线由训练史画出，不由当场表现画出 | 合格线由训练史画出，不由当场表现画出——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 742 | [`skill-07-xunlian-pingjia.md`](../departments/03-zhenjiu/06-tuina-shoufa-xue/chapters/07-xunlian-pingjia/outputs/skill-07-xunlian-pingjia.md) |
 
-#### 第 8 章 · 手法标准化的操作规范
+#### 第 8 章 · 规范能统一动作，统一不了「这一例该不该动手」
 
 `06-tuina-shoufa-xue/chapters/08-biaozhun-guifan/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：手法标准化的操作规范 | — | 427 | [`prompt-08-biaozhun-guifan.md`](../departments/03-zhenjiu/06-tuina-shoufa-xue/chapters/08-biaozhun-guifan/outputs/prompt-08-biaozhun-guifan.md) |
-| skill | 手法标准化的操作规范 | 用《推拿手法学》第 8 章「手法标准化的操作规范」的单元层做可核对的教学材料。 | 572 | [`skill-08-biaozhun-guifan.md`](../departments/03-zhenjiu/06-tuina-shoufa-xue/chapters/08-biaozhun-guifan/outputs/skill-08-biaozhun-guifan.md) |
+| prompt | 规范能统一动作，统一不了「这一例该不该动手」 · 提示词 | — | 1055 | [`prompt-08-biaozhun-guifan.md`](../departments/03-zhenjiu/06-tuina-shoufa-xue/chapters/08-biaozhun-guifan/outputs/prompt-08-biaozhun-guifan.md) |
+| skill | 规范能统一动作，统一不了「这一例该不该动手」 | 规范能统一动作，统一不了「这一例该不该动手」——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 951 | [`skill-08-biaozhun-guifan.md`](../departments/03-zhenjiu/06-tuina-shoufa-xue/chapters/08-biaozhun-guifan/outputs/skill-08-biaozhun-guifan.md) |
 
 ### 刺法灸法学
 
@@ -5970,489 +5970,489 @@
 | --- | --- | --- | :-: | --- |
 | prompt | 骨病学的门槛不在辨证，而在先把「病」从「伤」里择出来 · 提示词 | — | 742 | [`prompt-01-gaishu-yuanliu.md`](../departments/01-zhongyi/18-zhongyi-gubing-xue/chapters/01-gaishu-yuanliu/outputs/prompt-01-gaishu-yuanliu.md) |
 | skill | 骨病学的门槛不在辨证，而在先把「病」从「伤」里择出来 | 骨病学的门槛不在辨证，而在先把「病」从「伤」里择出来——按「边界不在分类表上，在因果链上 → 采集项：四栏，缺一栏就不算问完 → 成组判据与三条红线 → 外治与固定：先划禁区，再谈手法」走一遍本章判据 | 633 | [`skill-01-gaishu-yuanliu.md`](../departments/01-zhongyi/18-zhongyi-gubing-xue/chapters/01-gaishu-yuanliu/outputs/skill-01-gaishu-yuanliu.md) |
-| prompt | 针法灸法概论与源流 · 提示词 | — | 488 | [`prompt-01-gaishu-yuanliu.md`](../departments/03-zhenjiu/07-cifa-jiufa-xue/chapters/01-gaishu-yuanliu/outputs/prompt-01-gaishu-yuanliu.md) |
-| skill | 针法灸法概论与源流 | 针法灸法概论与源流——按「概论源流 → 毫针刺法 → 内经难经 → 金针赋针灸大成 → 灸法 → 特种针法 → 微针系统 → 电针穴位注射 → 埋线磁疗激光 → 安全与数字化」走一遍本章判据 | 408 | [`skill-gaishu-yuanliu.md`](../departments/03-zhenjiu/07-cifa-jiufa-xue/chapters/01-gaishu-yuanliu/outputs/skill-gaishu-yuanliu.md) |
+| prompt | 针与灸不是两门手艺，而是同一套刺激量学的两种实现 · 提示词 | — | 916 | [`prompt-01-gaishu-yuanliu.md`](../departments/03-zhenjiu/07-cifa-jiufa-xue/chapters/01-gaishu-yuanliu/outputs/prompt-01-gaishu-yuanliu.md) |
+| skill | 针与灸不是两门手艺，而是同一套刺激量学的两种实现 | 针与灸不是两门手艺，而是同一套刺激量学的两种实现——按「两条技术线共用一个变量：刺激量 → 源流不是年表，是一部刺激方式的替换史 → 九针给的是层次表，不是九件古董 → 术语转译：每个古名都要对上一个今天做得出动作的描述」走一遍本章判据 | 809 | [`skill-gaishu-yuanliu.md`](../departments/03-zhenjiu/07-cifa-jiufa-xue/chapters/01-gaishu-yuanliu/outputs/skill-gaishu-yuanliu.md) |
 
-#### 第 2 章 · 毫针刺法
+#### 第 2 章 · 毫针的功夫不在「扎进去」，而在四个能被人复核的动作上
 
 `07-cifa-jiufa-xue/chapters/02-haozhen-cifa/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 毫针刺法 · 提示词 | — | 474 | [`prompt-02-haozhen-cifa.md`](../departments/03-zhenjiu/07-cifa-jiufa-xue/chapters/02-haozhen-cifa/outputs/prompt-02-haozhen-cifa.md) |
-| skill | 毫针刺法 | 毫针刺法——按「概论源流 → 毫针刺法 → 内经难经 → 金针赋针灸大成 → 灸法 → 特种针法 → 微针系统 → 电针穴位注射 → 埋线磁疗激光 → 安全与数字化」走一遍本章判据 | 396 | [`skill-haozhen-cifa.md`](../departments/03-zhenjiu/07-cifa-jiufa-xue/chapters/02-haozhen-cifa/outputs/skill-haozhen-cifa.md) |
+| prompt | 毫针的功夫不在「扎进去」，而在四个能被人复核的动作上 · 提示词 | — | 888 | [`prompt-02-haozhen-cifa.md`](../departments/03-zhenjiu/07-cifa-jiufa-xue/chapters/02-haozhen-cifa/outputs/prompt-02-haozhen-cifa.md) |
+| skill | 毫针的功夫不在「扎进去」，而在四个能被人复核的动作上 | 毫针的功夫不在「扎进去」，而在四个能被人复核的动作上——按「四步链：每一步都有一个别人能替你复核的落点 → 角度与深度：教材给的是上限与修正规则 → 得气要写成四项，不是一句「有感觉」 → 异常情况：五条处置线，各自有先做什么」走一遍本章判据 | 777 | [`skill-haozhen-cifa.md`](../departments/03-zhenjiu/07-cifa-jiufa-xue/chapters/02-haozhen-cifa/outputs/skill-haozhen-cifa.md) |
 
-#### 第 3 章 · 古代针法经典：内经与难经
+#### 第 3 章 · 读经典不是背条文，是把一句话还原成一组能做的动作
 
 `07-cifa-jiufa-xue/chapters/03-neijing-nanjing/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 古代针法经典：内经与难经 · 提示词 | — | 497 | [`prompt-03-neijing-nanjing.md`](../departments/03-zhenjiu/07-cifa-jiufa-xue/chapters/03-neijing-nanjing/outputs/prompt-03-neijing-nanjing.md) |
-| skill | 古代针法经典：内经与难经 | 古代针法经典：内经与难经——按「概论源流 → 毫针刺法 → 内经难经 → 金针赋针灸大成 → 灸法 → 特种针法 → 微针系统 → 电针穴位注射 → 埋线磁疗激光 → 安全与数字化」走一遍本章判据 | 415 | [`skill-neijing-nanjing.md`](../departments/03-zhenjiu/07-cifa-jiufa-xue/chapters/03-neijing-nanjing/outputs/skill-neijing-nanjing.md) |
+| prompt | 读经典不是背条文，是把一句话还原成一组能做的动作 · 提示词 | — | 877 | [`prompt-03-neijing-nanjing.md`](../departments/03-zhenjiu/07-cifa-jiufa-xue/chapters/03-neijing-nanjing/outputs/prompt-03-neijing-nanjing.md) |
+| skill | 读经典不是背条文，是把一句话还原成一组能做的动作 | 读经典不是背条文，是把一句话还原成一组能做的动作——按「同一个「补泻」，两本书给的是两个变量 → 《灵枢》的四类补泻：每一类都能落到一个动作 → 《难经》的贡献：把原则变成设问，再把设问落到穴位 → 三档转译：哪些条文今天能执行，哪些只能读」走一遍本章判据 | 771 | [`skill-neijing-nanjing.md`](../departments/03-zhenjiu/07-cifa-jiufa-xue/chapters/03-neijing-nanjing/outputs/skill-neijing-nanjing.md) |
 
-#### 第 4 章 · 后世针法：金针赋与针灸大成
+#### 第 4 章 · 复式手法不是玄学，是把四个基本动作按层次与次数叠起来
 
 `07-cifa-jiufa-xue/chapters/04-jinzhenfu-dacheng/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 后世针法：金针赋与针灸大成 · 提示词 | — | 500 | [`prompt-04-jinzhenfu-dacheng.md`](../departments/03-zhenjiu/07-cifa-jiufa-xue/chapters/04-jinzhenfu-dacheng/outputs/prompt-04-jinzhenfu-dacheng.md) |
-| skill | 后世针法：金针赋与针灸大成 | 后世针法：金针赋与针灸大成——按「概论源流 → 毫针刺法 → 内经难经 → 金针赋针灸大成 → 灸法 → 特种针法 → 微针系统 → 电针穴位注射 → 埋线磁疗激光 → 安全与数字化」走一遍本章判据 | 419 | [`skill-jinzhenfu-dacheng.md`](../departments/03-zhenjiu/07-cifa-jiufa-xue/chapters/04-jinzhenfu-dacheng/outputs/skill-jinzhenfu-dacheng.md) |
+| prompt | 复式手法不是玄学，是把四个基本动作按层次与次数叠起来 · 提示词 | — | 925 | [`prompt-04-jinzhenfu-dacheng.md`](../departments/03-zhenjiu/07-cifa-jiufa-xue/chapters/04-jinzhenfu-dacheng/outputs/prompt-04-jinzhenfu-dacheng.md) |
+| skill | 复式手法不是玄学，是把四个基本动作按层次与次数叠起来 | 复式手法不是玄学，是把四个基本动作按层次与次数叠起来——按「八法不是八种新动作，是四个变量的组合 → 两书记载不一致时，怎么处理 → 飞经走气四法：把气送到关节那头去 → 杨氏的两套基本功：把顺序固定下来」走一遍本章判据 | 819 | [`skill-jinzhenfu-dacheng.md`](../departments/03-zhenjiu/07-cifa-jiufa-xue/chapters/04-jinzhenfu-dacheng/outputs/skill-jinzhenfu-dacheng.md) |
 
-#### 第 5 章 · 灸法
+#### 第 5 章 · 灸的功夫不在点火，而在把「量」变成别人能复核的壮与炷
 
 `07-cifa-jiufa-xue/chapters/05-jiufa/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 灸法 · 提示词 | — | 468 | [`prompt-05-jiufa.md`](../departments/03-zhenjiu/07-cifa-jiufa-xue/chapters/05-jiufa/outputs/prompt-05-jiufa.md) |
-| skill | 灸法 | 灸法——按「概论源流 → 毫针刺法 → 内经难经 → 金针赋针灸大成 → 灸法 → 特种针法 → 微针系统 → 电针穴位注射 → 埋线磁疗激光 → 安全与数字化」走一遍本章判据 | 385 | [`skill-jiufa.md`](../departments/03-zhenjiu/07-cifa-jiufa-xue/chapters/05-jiufa/outputs/skill-jiufa.md) |
+| prompt | 灸的功夫不在点火，而在把「量」变成别人能复核的壮与炷 · 提示词 | — | 905 | [`prompt-05-jiufa.md`](../departments/03-zhenjiu/07-cifa-jiufa-xue/chapters/05-jiufa/outputs/prompt-05-jiufa.md) |
+| skill | 灸的功夫不在点火，而在把「量」变成别人能复核的壮与炷 | 灸的功夫不在点火，而在把「量」变成别人能复核的壮与炷——按「作用链有三层，能复核的只有灸感这一层 → 材料链只有四步，每一步都有一个手感指标 → 术式是一条谱系：热用什么方式接触皮肤 → 量与界：壮数是通则，禁忌是清单」走一遍本章判据 | 787 | [`skill-jiufa.md`](../departments/03-zhenjiu/07-cifa-jiufa-xue/chapters/05-jiufa/outputs/skill-jiufa.md) |
 
-#### 第 6 章 · 特种针法：三棱针、皮肤针、火针、挑刺、芒针
+#### 第 6 章 · 换一种针形，就换一整套适应证和一整套禁忌
 
 `07-cifa-jiufa-xue/chapters/06-tezhong-zhenfa/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 特种针法：三棱针、皮肤针、火针、挑刺、芒针 · 提示词 | — | 525 | [`prompt-06-tezhong-zhenfa.md`](../departments/03-zhenjiu/07-cifa-jiufa-xue/chapters/06-tezhong-zhenfa/outputs/prompt-06-tezhong-zhenfa.md) |
-| skill | 特种针法：三棱针、皮肤针、火针、挑刺、芒针 | 特种针法：三棱针、皮肤针、火针、挑刺、芒针——按「概论源流 → 毫针刺法 → 内经难经 → 金针赋针灸大成 → 灸法 → 特种针法 → 微针系统 → 电针穴位注射 → 埋线磁疗激光 → 安全与数字化」走一遍本章判据 | 432 | [`skill-tezhong-zhenfa.md`](../departments/03-zhenjiu/07-cifa-jiufa-xue/chapters/06-tezhong-zhenfa/outputs/skill-tezhong-zhenfa.md) |
+| prompt | 换一种针形，就换一整套适应证和一整套禁忌 · 提示词 | — | 906 | [`prompt-06-tezhong-zhenfa.md`](../departments/03-zhenjiu/07-cifa-jiufa-xue/chapters/06-tezhong-zhenfa/outputs/prompt-06-tezhong-zhenfa.md) |
+| skill | 换一种针形，就换一整套适应证和一整套禁忌 | 换一种针形，就换一整套适应证和一整套禁忌——按「形制即适应证：五种针是五条不同的通路 → 三棱针与皮肤针：把「出血」变成一个能报出来的量 → 火针：唯一把温度当变量的针法 → 挑刺与芒针：皮下与深部的两个极端」走一遍本章判据 | 803 | [`skill-tezhong-zhenfa.md`](../departments/03-zhenjiu/07-cifa-jiufa-xue/chapters/06-tezhong-zhenfa/outputs/skill-tezhong-zhenfa.md) |
 
-#### 第 7 章 · 微针系统：耳针、头针、腕踝针
+#### 第 7 章 · 三套微针各把身体投影一次，投影规则不同，边界也不同
 
 `07-cifa-jiufa-xue/chapters/07-weizhen-xitong/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 微针系统：耳针、头针、腕踝针 · 提示词 | — | 503 | [`prompt-07-weizhen-xitong.md`](../departments/03-zhenjiu/07-cifa-jiufa-xue/chapters/07-weizhen-xitong/outputs/prompt-07-weizhen-xitong.md) |
-| skill | 微针系统：耳针、头针、腕踝针 | 微针系统：耳针、头针、腕踝针——按「概论源流 → 毫针刺法 → 内经难经 → 金针赋针灸大成 → 灸法 → 特种针法 → 微针系统 → 电针穴位注射 → 埋线磁疗激光 → 安全与数字化」走一遍本章判据 | 418 | [`skill-weizhen-xitong.md`](../departments/03-zhenjiu/07-cifa-jiufa-xue/chapters/07-weizhen-xitong/outputs/skill-weizhen-xitong.md) |
+| prompt | 三套微针各把身体投影一次，投影规则不同，边界也不同 · 提示词 | — | 908 | [`prompt-07-weizhen-xitong.md`](../departments/03-zhenjiu/07-cifa-jiufa-xue/chapters/07-weizhen-xitong/outputs/prompt-07-weizhen-xitong.md) |
+| skill | 三套微针各把身体投影一次，投影规则不同，边界也不同 | 三套微针各把身体投影一次，投影规则不同，边界也不同——按「三种投影：同一句「以局部代整体」，三个不同的原点 → 耳针：坐标最细的一套，难点在「先分区再选穴」 → 头针：坐标最解剖的一套，标准线是它的骨架 → 腕踝针：坐标最粗的一套，全部技术都在「浅」」走一遍本章判据 | 800 | [`skill-weizhen-xitong.md`](../departments/03-zhenjiu/07-cifa-jiufa-xue/chapters/07-weizhen-xitong/outputs/skill-weizhen-xitong.md) |
 
-#### 第 8 章 · 电针与穴位注射
+#### 第 8 章 · 电与药接上针之后，失手的性质就从「疼一下」变成「不可逆」
 
 `07-cifa-jiufa-xue/chapters/08-dianzhen-zhushe/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 电针与穴位注射 · 提示词 | — | 482 | [`prompt-08-dianzhen-zhushe.md`](../departments/03-zhenjiu/07-cifa-jiufa-xue/chapters/08-dianzhen-zhushe/outputs/prompt-08-dianzhen-zhushe.md) |
-| skill | 电针与穴位注射 | 电针与穴位注射——按「概论源流 → 毫针刺法 → 内经难经 → 金针赋针灸大成 → 灸法 → 特种针法 → 微针系统 → 电针穴位注射 → 埋线磁疗激光 → 安全与数字化」走一遍本章判据 | 405 | [`skill-dianzhen-zhushe.md`](../departments/03-zhenjiu/07-cifa-jiufa-xue/chapters/08-dianzhen-zhushe/outputs/skill-dianzhen-zhushe.md) |
+| prompt | 电与药接上针之后，失手的性质就从「疼一下」变成「不可逆」 · 提示词 | — | 723 | [`prompt-08-dianzhen-zhushe.md`](../departments/03-zhenjiu/07-cifa-jiufa-xue/chapters/08-dianzhen-zhushe/outputs/prompt-08-dianzhen-zhushe.md) |
+| skill | 电与药接上针之后，失手的性质就从「疼一下」变成「不可逆」 | 电与药接上针之后，失手的性质就从「疼一下」变成「不可逆」——按「两件事共用一条判据：四项写不全，等于没做 → 电针省下的是运针的力，不是候气的力 → 波形表读的是刺激的性质，不是病的名单 → 穴位注射：最危险的一步不产生任何治疗作用」走一遍本章判据 | 622 | [`skill-dianzhen-zhushe.md`](../departments/03-zhenjiu/07-cifa-jiufa-xue/chapters/08-dianzhen-zhushe/outputs/skill-dianzhen-zhushe.md) |
 
-#### 第 9 章 · 埋线、磁疗与激光穴位照射
+#### 第 9 章 · 三种「让刺激留得久」的技术里，只有一种把东西留在了体内
 
 `07-cifa-jiufa-xue/chapters/09-mailiao-ciliao/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 埋线、磁疗与激光穴位照射 · 提示词 | — | 501 | [`prompt-09-mailiao-ciliao.md`](../departments/03-zhenjiu/07-cifa-jiufa-xue/chapters/09-mailiao-ciliao/outputs/prompt-09-mailiao-ciliao.md) |
-| skill | 埋线、磁疗与激光穴位照射 | 埋线、磁疗与激光穴位照射——按「概论源流 → 毫针刺法 → 内经难经 → 金针赋针灸大成 → 灸法 → 特种针法 → 微针系统 → 电针穴位注射 → 埋线磁疗激光 → 安全与数字化」走一遍本章判据 | 414 | [`skill-mailiao-ciliao.md`](../departments/03-zhenjiu/07-cifa-jiufa-xue/chapters/09-mailiao-ciliao/outputs/skill-mailiao-ciliao.md) |
+| prompt | 三种「让刺激留得久」的技术里，只有一种把东西留在了体内 · 提示词 | — | 650 | [`prompt-09-mailiao-ciliao.md`](../departments/03-zhenjiu/07-cifa-jiufa-xue/chapters/09-mailiao-ciliao/outputs/prompt-09-mailiao-ciliao.md) |
+| skill | 三种「让刺激留得久」的技术里，只有一种把东西留在了体内 | 三种「让刺激留得久」的技术里，只有一种把东西留在了体内——按「三种技术回答的是同一个问题：怎么让一次操作管得更久 → 埋线：唯一一个「退出针管，东西留下了」的动作 → 术后反应：分开「正常」与「感染」的是一条时间线，不是一个阈值 → 磁疗与激光：无创换来的，是剂量变得更难说清」走一遍本章判据 | 549 | [`skill-mailiao-ciliao.md`](../departments/03-zhenjiu/07-cifa-jiufa-xue/chapters/09-mailiao-ciliao/outputs/skill-mailiao-ciliao.md) |
 
-#### 第 10 章 · 安全规范与数字化
+#### 第 10 章 · 要害是解剖事实，不是风险清单上的最后一行
 
 `07-cifa-jiufa-xue/chapters/10-anquan-shuzihua/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 安全规范与数字化 · 提示词 | — | 491 | [`prompt-10-anquan-shuzihua.md`](../departments/03-zhenjiu/07-cifa-jiufa-xue/chapters/10-anquan-shuzihua/outputs/prompt-10-anquan-shuzihua.md) |
-| skill | 安全规范与数字化 | 安全规范与数字化——按「概论源流 → 毫针刺法 → 内经难经 → 金针赋针灸大成 → 灸法 → 特种针法 → 微针系统 → 电针穴位注射 → 埋线磁疗激光 → 安全与数字化」走一遍本章判据 | 407 | [`skill-anquan-shuzihua.md`](../departments/03-zhenjiu/07-cifa-jiufa-xue/chapters/10-anquan-shuzihua/outputs/skill-anquan-shuzihua.md) |
+| prompt | 要害是解剖事实，不是风险清单上的最后一行 · 提示词 | — | 616 | [`prompt-10-anquan-shuzihua.md`](../departments/03-zhenjiu/07-cifa-jiufa-xue/chapters/10-anquan-shuzihua/outputs/prompt-10-anquan-shuzihua.md) |
+| skill | 要害是解剖事实，不是风险清单上的最后一行 | 要害是解剖事实，不是风险清单上的最后一行——按「安全的单位是厘米：六类异常里，只有一类扎完才发作 → 禁令不问剂量：能调小的是刺激，不能调小的是位置 → 晕针主要是流程问题，不是体质问题 → 灸量：唯一一种「剂量由病人说了算」的技术」走一遍本章判据 | 522 | [`skill-anquan-shuzihua.md`](../departments/03-zhenjiu/07-cifa-jiufa-xue/chapters/10-anquan-shuzihua/outputs/skill-anquan-shuzihua.md) |
 
 ### 针灸治疗学
 
 > Clinic · 第 5 学期 · 已产出 12 章
 
-#### 第 1 章 · 针灸治疗原则与作用
+#### 第 1 章 · 五条治疗原则不是五句口号，而是五次「能不能下针」的判定
 
 `08-zhenjiu-zhiliao-xue/chapters/01-zhiliao-yuanze/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 针灸治疗原则与作用 · 提示词 | — | 503 | [`prompt-01-zhiliao-yuanze.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/01-zhiliao-yuanze/outputs/prompt-01-zhiliao-yuanze.md) |
-| skill | 针灸治疗原则与作用 | 针灸治疗原则与作用——按「治疗原则 → 诊治特点与处方 → 特定穴 → 头面躯体痛证 → 内科（一） → 内科（二） → 妇儿科 → 皮外科 → 五官科 → 急症与其他 → 时间针法 → 研究进展」走一遍本章判据 | 425 | [`skill-zhiliao-yuanze.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/01-zhiliao-yuanze/outputs/skill-zhiliao-yuanze.md) |
+| prompt | 五条治疗原则不是五句口号，而是五次「能不能下针」的判定 · 提示词 | — | 828 | [`prompt-01-zhiliao-yuanze.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/01-zhiliao-yuanze/outputs/prompt-01-zhiliao-yuanze.md) |
+| skill | 五条治疗原则不是五句口号，而是五次「能不能下针」的判定 | 五条治疗原则不是五句口号，而是五次「能不能下针」的判定——按「治神与守气：两个动词，各有自己的检查点 → 补虚泻实：五个分支，每个都指向一种体征或一种手法 → 清热温寒：它决定的不是「清还是温」，是留不留针 → 治标治本：先后是判据，不是偏好」走一遍本章判据 | 718 | [`skill-zhiliao-yuanze.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/01-zhiliao-yuanze/outputs/skill-zhiliao-yuanze.md) |
 
-#### 第 2 章 · 临床诊治特点与针灸处方
+#### 第 2 章 · 处方不是穴名清单，而是「辨经—选穴—刺灸法」三列必须自洽
 
 `08-zhenjiu-zhiliao-xue/chapters/02-zhenzhi-tedian-chufang/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 临床诊治特点与针灸处方 · 提示词 | — | 509 | [`prompt-02-zhenzhi-tedian-chufang.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/02-zhenzhi-tedian-chufang/outputs/prompt-02-zhenzhi-tedian-chufang.md) |
-| skill | 临床诊治特点与针灸处方 | 临床诊治特点与针灸处方——按「治疗原则 → 诊治特点与处方 → 特定穴 → 头面躯体痛证 → 内科（一） → 内科（二） → 妇儿科 → 皮外科 → 五官科 → 急症与其他 → 时间针法 → 研究进展」走一遍本章判据 | 437 | [`skill-zhenzhi-tedian-chufang.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/02-zhenzhi-tedian-chufang/outputs/skill-zhenzhi-tedian-chufang.md) |
+| prompt | 处方不是穴名清单，而是「辨经—选穴—刺灸法」三列必须自洽 · 提示词 | — | 894 | [`prompt-02-zhenzhi-tedian-chufang.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/02-zhenzhi-tedian-chufang/outputs/prompt-02-zhenzhi-tedian-chufang.md) |
+| skill | 处方不是穴名清单，而是「辨经—选穴—刺灸法」三列必须自洽 | 处方不是穴名清单，而是「辨经—选穴—刺灸法」三列必须自洽——按「辨病的两分：脏腑病与经络肢节病，用穴规律不同 → 辨经：三条进路，一条比一条硬 → 辨证：八纲要落到「针还是灸、深还是浅、补还是泻」 → 选穴四原则：各自的主场与各自的失效」走一遍本章判据 | 791 | [`skill-zhenzhi-tedian-chufang.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/02-zhenzhi-tedian-chufang/outputs/skill-zhenzhi-tedian-chufang.md) |
 
-#### 第 3 章 · 特定穴的临床应用
+#### 第 3 章 · 特定穴是按条件检索的索引，不是「更重要的穴位」
 
 `08-zhenjiu-zhiliao-xue/chapters/03-tedingxue-yingyong/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 特定穴的临床应用 · 提示词 | — | 498 | [`prompt-03-tedingxue-yingyong.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/03-tedingxue-yingyong/outputs/prompt-03-tedingxue-yingyong.md) |
-| skill | 特定穴的临床应用 | 特定穴的临床应用——按「治疗原则 → 诊治特点与处方 → 特定穴 → 头面躯体痛证 → 内科（一） → 内科（二） → 妇儿科 → 皮外科 → 五官科 → 急症与其他 → 时间针法 → 研究进展」走一遍本章判据 | 427 | [`skill-tedingxue-yingyong.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/03-tedingxue-yingyong/outputs/skill-tedingxue-yingyong.md) |
+| prompt | 特定穴是按条件检索的索引，不是「更重要的穴位」 · 提示词 | — | 842 | [`prompt-03-tedingxue-yingyong.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/03-tedingxue-yingyong/outputs/prompt-03-tedingxue-yingyong.md) |
+| skill | 特定穴是按条件检索的索引，不是「更重要的穴位」 | 特定穴是按条件检索的索引，不是「更重要的穴位」——按「五输穴：先记五行归属，再记三种用法 → 子母补泻：本经与他经两条路，以及「补井当补合」 → 原穴与络穴：一络通两经 → 俞募穴：前后配穴的脏腑落点」走一遍本章判据 | 740 | [`skill-tedingxue-yingyong.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/03-tedingxue-yingyong/outputs/skill-tedingxue-yingyong.md) |
 
-#### 第 4 章 · 头面躯体痛证
+#### 第 4 章 · 痛证处方的骨架是「局部穴 ＋ 一条经的远端 ＋ 一个动作」
 
 `08-zhenjiu-zhiliao-xue/chapters/04-toumina-tongzheng/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 头面躯体痛证 · 提示词 | — | 492 | [`prompt-04-toumina-tongzheng.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/04-toumina-tongzheng/outputs/prompt-04-toumina-tongzheng.md) |
-| skill | 头面躯体痛证 | 头面躯体痛证——按「治疗原则 → 诊治特点与处方 → 特定穴 → 头面躯体痛证 → 内科（一） → 内科（二） → 妇儿科 → 皮外科 → 五官科 → 急症与其他 → 时间针法 → 研究进展」走一遍本章判据 | 422 | [`skill-toumina-tongzheng.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/04-toumina-tongzheng/outputs/skill-toumina-tongzheng.md) |
+| prompt | 痛证处方的骨架是「局部穴 ＋ 一条经的远端 ＋ 一个动作」 · 提示词 | — | 847 | [`prompt-04-toumina-tongzheng.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/04-toumina-tongzheng/outputs/prompt-04-toumina-tongzheng.md) |
+| skill | 痛证处方的骨架是「局部穴 ＋ 一条经的远端 ＋ 一个动作」 | 痛证处方的骨架是「局部穴 ＋ 一条经的远端 ＋ 一个动作」——按「十个病证共用一套写法，治法几乎不可区分 → 辨经：痛在哪，就把哪条经的远端穴取上 → 局部与远端的分工：一条规律管两种取穴 → 主穴的四种落点」走一遍本章判据 | 742 | [`skill-toumina-tongzheng.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/04-toumina-tongzheng/outputs/skill-toumina-tongzheng.md) |
 
-#### 第 5 章 · 内科病证（一）
+#### 第 5 章 · 内科前二十一个病证，先问「病在神还是病在形」
 
 `08-zhenjiu-zhiliao-xue/chapters/05-neike-yi/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 内科病证（一） · 提示词 | — | 496 | [`prompt-05-neike-yi.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/05-neike-yi/outputs/prompt-05-neike-yi.md) |
-| skill | 内科病证（一） | 内科病证（一）——按「治疗原则 → 诊治特点与处方 → 特定穴 → 头面躯体痛证 → 内科（一） → 内科（二） → 妇儿科 → 皮外科 → 五官科 → 急症与其他 → 时间针法 → 研究进展」走一遍本章判据 | 415 | [`skill-neike-yi.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/05-neike-yi/outputs/skill-neike-yi.md) |
+| prompt | 内科前二十一个病证，先问「病在神还是病在形」 · 提示词 | — | 908 | [`prompt-05-neike-yi.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/05-neike-yi/outputs/prompt-05-neike-yi.md) |
+| skill | 内科前二十一个病证，先问「病在神还是病在形」 | 内科前二十一个病证，先问「病在神还是病在形」——按「二十一个病证的三分：九个治神，四个治形，八个治气血脏腑 → 治神九证：百会、内关、太冲、丰隆是这一组的骨架 → 形病四证：局部穴加夹脊，不治神 → 气血脏腑八证：虚证走背俞，实证走项背头面」走一遍本章判据 | 797 | [`skill-neike-yi.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/05-neike-yi/outputs/skill-neike-yi.md) |
 
-#### 第 6 章 · 内科病证（二）
+#### 第 6 章 · 内科后二十一个病证，处方的主干是「募穴＋下合穴」
 
 `08-zhenjiu-zhiliao-xue/chapters/06-neike-er/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 内科病证（二） · 提示词 | — | 496 | [`prompt-06-neike-er.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/06-neike-er/outputs/prompt-06-neike-er.md) |
-| skill | 内科病证（二） | 内科病证（二）——按「治疗原则 → 诊治特点与处方 → 特定穴 → 头面躯体痛证 → 内科（一） → 内科（二） → 妇儿科 → 皮外科 → 五官科 → 急症与其他 → 时间针法 → 研究进展」走一遍本章判据 | 415 | [`skill-neike-er.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/06-neike-er/outputs/skill-neike-er.md) |
+| prompt | 内科后二十一个病证，处方的主干是「募穴＋下合穴」 · 提示词 | — | 882 | [`prompt-06-neike-er.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/06-neike-er/outputs/prompt-06-neike-er.md) |
+| skill | 内科后二十一个病证，处方的主干是「募穴＋下合穴」 | 内科后二十一个病证，处方的主干是「募穴＋下合穴」——按「二十一个病证的五个分组 → 受纳传导八证：中脘—天枢—足三里的三点一线 → 水液四证：中极配膀胱俞，俞募同用 → 生殖五证：关元—肾俞—太溪—三阴交的固定组合」走一遍本章判据 | 769 | [`skill-neike-er.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/06-neike-er/outputs/skill-neike-er.md) |
 
-#### 第 7 章 · 妇儿科病证
+#### 第 7 章 · 妇儿科二十二证，一半在调周期，一半在调发育
 
 `08-zhenjiu-zhiliao-xue/chapters/07-fuerke/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 妇儿科病证 · 提示词 | — | 490 | [`prompt-07-fuerke.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/07-fuerke/outputs/prompt-07-fuerke.md) |
-| skill | 妇儿科病证 | 妇儿科病证——按「治疗原则 → 诊治特点与处方 → 特定穴 → 头面躯体痛证 → 内科（一） → 内科（二） → 妇儿科 → 皮外科 → 五官科 → 急症与其他 → 时间针法 → 研究进展」走一遍本章判据 | 409 | [`skill-fuerke.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/07-fuerke/outputs/skill-fuerke.md) |
+| prompt | 妇儿科二十二证，一半在调周期，一半在调发育 · 提示词 | — | 890 | [`prompt-07-fuerke.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/07-fuerke/outputs/prompt-07-fuerke.md) |
+| skill | 妇儿科二十二证，一半在调周期，一半在调发育 | 妇儿科二十二证，一半在调周期，一半在调发育——按「二十二节的三分：经带杂病十节、妊娠产后五节、儿科七节 → 经带杂病十节：一条竖线，四个落点 → 妊娠产后五节：换成局部与特定穴，多一层禁忌 → 儿科七节：从「调周期」切到「调发育」」走一遍本章判据 | 778 | [`skill-fuerke.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/07-fuerke/outputs/skill-fuerke.md) |
 
-#### 第 8 章 · 皮外伤科病证
+#### 第 8 章 · 皮外骨伤二十二证，先分清病在血分、在局部，还是在经筋
 
 `08-zhenjiu-zhiliao-xue/chapters/08-piwaike/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 皮外伤科病证 · 提示词 | — | 493 | [`prompt-08-piwaike.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/08-piwaike/outputs/prompt-08-piwaike.md) |
-| skill | 皮外伤科病证 | 皮外伤科病证——按「治疗原则 → 诊治特点与处方 → 特定穴 → 头面躯体痛证 → 内科（一） → 内科（二） → 妇儿科 → 皮外科 → 五官科 → 急症与其他 → 时间针法 → 研究进展」走一遍本章判据 | 412 | [`skill-piwaike.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/08-piwaike/outputs/skill-piwaike.md) |
+| prompt | 皮外骨伤二十二证，先分清病在血分、在局部，还是在经筋 · 提示词 | — | 926 | [`prompt-08-piwaike.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/08-piwaike/outputs/prompt-08-piwaike.md) |
+| skill | 皮外骨伤二十二证，先分清病在血分、在局部，还是在经筋 | 皮外骨伤二十二证，先分清病在血分、在局部，还是在经筋——按「二十二节的三分：皮肤八、外科十、骨伤四 → 皮肤八节：血分四节、湿热两节、直取两节 → 外科十节：四个被点名的经验效穴，两种共用骨架 → 骨伤四节：局部取穴，但先针远端」走一遍本章判据 | 810 | [`skill-piwaike.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/08-piwaike/outputs/skill-piwaike.md) |
 
-#### 第 9 章 · 五官科病证
+#### 第 9 章 · 五官十六证，先取最近的那个穴，再用一条远端经把火引下去
 
 `08-zhenjiu-zhiliao-xue/chapters/09-wuguan/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 五官科病证 · 提示词 | — | 491 | [`prompt-09-wuguan.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/09-wuguan/outputs/prompt-09-wuguan.md) |
-| skill | 五官科病证 | 五官科病证——按「治疗原则 → 诊治特点与处方 → 特定穴 → 头面躯体痛证 → 内科（一） → 内科（二） → 妇儿科 → 皮外科 → 五官科 → 急症与其他 → 时间针法 → 研究进展」走一遍本章判据 | 409 | [`skill-wuguan.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/09-wuguan/outputs/skill-wuguan.md) |
+| prompt | 五官十六证，先取最近的那个穴，再用一条远端经把火引下去 · 提示词 | — | 965 | [`prompt-09-wuguan.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/09-wuguan/outputs/prompt-09-wuguan.md) |
+| skill | 五官十六证，先取最近的那个穴，再用一条远端经把火引下去 | 五官十六证，先取最近的那个穴，再用一条远端经把火引下去——按「十六节的三段：眼八、耳鼻四、咽喉口四 → 眼科八节：光明是一道分界线 → 眼区操作：三条硬规矩与两个方向 → 耳鼻四节与咽喉口四节：三套远端配对，各管一段」走一遍本章判据 | 847 | [`skill-wuguan.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/09-wuguan/outputs/skill-wuguan.md) |
 
-#### 第 10 章 · 急症与其他病证
+#### 第 10 章 · 急症先保命再取穴，其他病证先问这一针在治什么
 
 `08-zhenjiu-zhiliao-xue/chapters/10-jizheng-qita/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 急症与其他病证 · 提示词 | — | 501 | [`prompt-10-jizheng-qita.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/10-jizheng-qita/outputs/prompt-10-jizheng-qita.md) |
-| skill | 急症与其他病证 | 急症与其他病证——按「治疗原则 → 诊治特点与处方 → 特定穴 → 头面躯体痛证 → 内科（一） → 内科（二） → 妇儿科 → 皮外科 → 五官科 → 急症与其他 → 时间针法 → 研究进展」走一遍本章判据 | 419 | [`skill-jizheng-qita.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/10-jizheng-qita/outputs/skill-jizheng-qita.md) |
+| prompt | 急症先保命再取穴，其他病证先问这一针在治什么 · 提示词 | — | 1004 | [`prompt-10-jizheng-qita.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/10-jizheng-qita/outputs/prompt-10-jizheng-qita.md) |
+| skill | 急症先保命再取穴，其他病证先问这一针在治什么 | 急症先保命再取穴，其他病证先问这一针在治什么——按「总论里的三条，决定了后面十二节的形状 → 督脉开窍、井穴醒神、郄穴止急：三个工具各自的落点 → 出血五证：局部能扎就扎局部，扎不到就换俞募 → 其他病证：从「治急」换成「治人」，判据是补得进去还是补不进去」走一遍本章判据 | 896 | [`skill-jizheng-qita.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/10-jizheng-qita/outputs/skill-jizheng-qita.md) |
 
-#### 第 11 章 · 子午流注与灵龟八法
+#### 第 11 章 · 时间针法算得出坐标，算不出疗效
 
 `08-zhenjiu-zhiliao-xue/chapters/11-zhiwuliu-zhu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 子午流注与灵龟八法 · 提示词 | — | 504 | [`prompt-11-zhiwuliu-zhu.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/11-zhiwuliu-zhu/outputs/prompt-11-zhiwuliu-zhu.md) |
-| skill | 子午流注与灵龟八法 | 子午流注与灵龟八法——按「治疗原则 → 诊治特点与处方 → 特定穴 → 头面躯体痛证 → 内科（一） → 内科（二） → 妇儿科 → 皮外科 → 五官科 → 急症与其他 → 时间针法 → 研究进展」走一遍本章判据 | 423 | [`skill-zhiwuliu-zhu.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/11-zhiwuliu-zhu/outputs/skill-zhiwuliu-zhu.md) |
+| prompt | 时间针法算得出坐标，算不出疗效 · 提示词 | — | 1039 | [`prompt-11-zhiwuliu-zhu.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/11-zhiwuliu-zhu/outputs/prompt-11-zhiwuliu-zhu.md) |
+| skill | 时间针法算得出坐标，算不出疗效 | 时间针法算得出坐标，算不出疗效——按「四个零件：五输穴、阴阳五行、天干地支、六十环周 → 纳子法：只吃时辰，两步出穴 → 纳甲法：日干定时辰，井穴起步，缺口靠两处补丁 → 灵龟八法与飞腾八法：把八脉交会穴装进九宫」走一遍本章判据 | 938 | [`skill-zhiwuliu-zhu.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/11-zhiwuliu-zhu/outputs/skill-zhiwuliu-zhu.md) |
 
-#### 第 12 章 · 针灸临床研究进展
+#### 第 12 章 · 研究进展给的是地图，不是证据表
 
 `08-zhenjiu-zhiliao-xue/chapters/12-yanjiu-jinzhan/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 针灸临床研究进展 · 提示词 | — | 500 | [`prompt-12-yanjiu-jinzhan.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/12-yanjiu-jinzhan/outputs/prompt-12-yanjiu-jinzhan.md) |
-| skill | 针灸临床研究进展 | 针灸临床研究进展——按「治疗原则 → 诊治特点与处方 → 特定穴 → 头面躯体痛证 → 内科（一） → 内科（二） → 妇儿科 → 皮外科 → 五官科 → 急症与其他 → 时间针法 → 研究进展」走一遍本章判据 | 423 | [`skill-yanjiu-jinzhan.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/12-yanjiu-jinzhan/outputs/skill-yanjiu-jinzhan.md) |
+| prompt | 研究进展给的是地图，不是证据表 · 提示词 | — | 844 | [`prompt-12-yanjiu-jinzhan.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/12-yanjiu-jinzhan/outputs/prompt-12-yanjiu-jinzhan.md) |
+| skill | 研究进展给的是地图，不是证据表 | 研究进展给的是地图，不是证据表——按「这一章的形状：八个系统、两类数字、零个等级 → 五个能直接读的数字，各自能推到哪一步 → 读一篇针灸 RCT 的四个必问 → 从「有效」到「适应证」：分级只能这样用」走一遍本章判据 | 745 | [`skill-yanjiu-jinzhan.md`](../departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/12-yanjiu-jinzhan/outputs/skill-yanjiu-jinzhan.md) |
 
 ### 康复医学基础
 
 > Core · 第 5 学期 · 已产出 8 章
 
-#### 第 1 章 · 康复医学概论
+#### 第 1 章 · 康复的目标是功能而不是治愈，判据必须落在活动上
 
 `09-kangfu-yixue-jichu/chapters/01-kangfu-gailun/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 康复医学概论 · 提示词 | — | 482 | [`prompt-01-kangfu-gailun.md`](../departments/03-zhenjiu/09-kangfu-yixue-jichu/chapters/01-kangfu-gailun/outputs/prompt-01-kangfu-gailun.md) |
-| skill | 康复医学概论 | 康复医学概论——按「康复医学概论 → 功能评定 → 运动功能与训练 → 日常生活活动与作业治疗 → 言语、吞咽与认知康复 → 康复护理与并发症预防 → 社区与长期照护 → 康复团队与伦理」走一遍本章判据 | 409 | [`skill-kangfu-gailun.md`](../departments/03-zhenjiu/09-kangfu-yixue-jichu/chapters/01-kangfu-gailun/outputs/skill-kangfu-gailun.md) |
+| prompt | 康复的目标是功能而不是治愈，判据必须落在活动上 · 提示词 | — | 727 | [`prompt-01-kangfu-gailun.md`](../departments/03-zhenjiu/09-kangfu-yixue-jichu/chapters/01-kangfu-gailun/outputs/prompt-01-kangfu-gailun.md) |
+| skill | 康复的目标是功能而不是治愈，判据必须落在活动上 | 康复的目标是功能而不是治愈，判据必须落在活动上——按「两条目标轴：治愈与功能 → 功能不是形容词，是三层结构 → 把「养病」拆成可执行的类别 → 三类人群不是三个标签」走一遍本章判据 | 628 | [`skill-kangfu-gailun.md`](../departments/03-zhenjiu/09-kangfu-yixue-jichu/chapters/01-kangfu-gailun/outputs/skill-kangfu-gailun.md) |
 
-#### 第 2 章 · 功能评定
+#### 第 2 章 · 评定不是打分，是把功能变化变成别人能复核的说法
 
 `09-kangfu-yixue-jichu/chapters/02-gongneng-pingding/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 功能评定 · 提示词 | — | 476 | [`prompt-02-gongneng-pingding.md`](../departments/03-zhenjiu/09-kangfu-yixue-jichu/chapters/02-gongneng-pingding/outputs/prompt-02-gongneng-pingding.md) |
-| skill | 功能评定 | 功能评定——按「康复医学概论 → 功能评定 → 运动功能与训练 → 日常生活活动与作业治疗 → 言语、吞咽与认知康复 → 康复护理与并发症预防 → 社区与长期照护 → 康复团队与伦理」走一遍本章判据 | 409 | [`skill-gongneng-pingding.md`](../departments/03-zhenjiu/09-kangfu-yixue-jichu/chapters/02-gongneng-pingding/outputs/skill-gongneng-pingding.md) |
+| prompt | 评定不是打分，是把功能变化变成别人能复核的说法 · 提示词 | — | 767 | [`prompt-02-gongneng-pingding.md`](../departments/03-zhenjiu/09-kangfu-yixue-jichu/chapters/02-gongneng-pingding/outputs/prompt-02-gongneng-pingding.md) |
+| skill | 评定不是打分，是把功能变化变成别人能复核的说法 | 评定不是打分，是把功能变化变成别人能复核的说法——按「评定的产物不是分数，是共识 → 口径三件套：定义、分子、分母 → 时机是类别，不是日程表 → 记录与转介：评定的终点是一个动作」走一遍本章判据 | 672 | [`skill-gongneng-pingding.md`](../departments/03-zhenjiu/09-kangfu-yixue-jichu/chapters/02-gongneng-pingding/outputs/skill-gongneng-pingding.md) |
 
-#### 第 3 章 · 运动功能与训练
+#### 第 3 章 · 训练不是加量，是在能承受的范围里换回可控的动作
 
 `09-kangfu-yixue-jichu/chapters/03-yundong-gongneng/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 运动功能与训练 · 提示词 | — | 485 | [`prompt-03-yundong-gongneng.md`](../departments/03-zhenjiu/09-kangfu-yixue-jichu/chapters/03-yundong-gongneng/outputs/prompt-03-yundong-gongneng.md) |
-| skill | 运动功能与训练 | 运动功能与训练——按「康复医学概论 → 功能评定 → 运动功能与训练 → 日常生活活动与作业治疗 → 言语、吞咽与认知康复 → 康复护理与并发症预防 → 社区与长期照护 → 康复团队与伦理」走一遍本章判据 | 414 | [`skill-yundong-gongneng.md`](../departments/03-zhenjiu/09-kangfu-yixue-jichu/chapters/03-yundong-gongneng/outputs/skill-yundong-gongneng.md) |
+| prompt | 训练不是加量，是在能承受的范围里换回可控的动作 · 提示词 | — | 919 | [`prompt-03-yundong-gongneng.md`](../departments/03-zhenjiu/09-kangfu-yixue-jichu/chapters/03-yundong-gongneng/outputs/prompt-03-yundong-gongneng.md) |
+| skill | 训练不是加量，是在能承受的范围里换回可控的动作 | 训练不是加量，是在能承受的范围里换回可控的动作——按「训练的目标是动作质量，不是次数 → 负荷没有数字，只有观察口径 → 平衡与步行：把「扶」分成三档 → 暂停比开始更需要规矩」走一遍本章判据 | 823 | [`skill-yundong-gongneng.md`](../departments/03-zhenjiu/09-kangfu-yixue-jichu/chapters/03-yundong-gongneng/outputs/skill-yundong-gongneng.md) |
 
-#### 第 4 章 · 日常生活活动与作业治疗
+#### 第 4 章 · 自理能力是康复的终点，替他做得越多他恢复得越少
 
 `09-kangfu-yixue-jichu/chapters/04-richeng-shenghuo/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 日常生活活动与作业治疗 · 提示词 | — | 497 | [`prompt-04-richeng-shenghuo.md`](../departments/03-zhenjiu/09-kangfu-yixue-jichu/chapters/04-richeng-shenghuo/outputs/prompt-04-richeng-shenghuo.md) |
-| skill | 日常生活活动与作业治疗 | 日常生活活动与作业治疗——按「康复医学概论 → 功能评定 → 运动功能与训练 → 日常生活活动与作业治疗 → 言语、吞咽与认知康复 → 康复护理与并发症预防 → 社区与长期照护 → 康复团队与伦理」走一遍本章判据 | 422 | [`skill-richeng-shenghuo.md`](../departments/03-zhenjiu/09-kangfu-yixue-jichu/chapters/04-richeng-shenghuo/outputs/skill-richeng-shenghuo.md) |
+| prompt | 自理能力是康复的终点，替他做得越多他恢复得越少 · 提示词 | — | 867 | [`prompt-04-richeng-shenghuo.md`](../departments/03-zhenjiu/09-kangfu-yixue-jichu/chapters/04-richeng-shenghuo/outputs/prompt-04-richeng-shenghuo.md) |
+| skill | 自理能力是康复的终点，替他做得越多他恢复得越少 | 自理能力是康复的终点，替他做得越多他恢复得越少——按「ADL 是唯一不需要翻译的终点 → 照护的分寸：帮助的三种错法 → 辅助器具改变的是任务，不是人 → 三条观察线：脑卒中、脊髓损伤、认知障碍」走一遍本章判据 | 771 | [`skill-richeng-shenghuo.md`](../departments/03-zhenjiu/09-kangfu-yixue-jichu/chapters/04-richeng-shenghuo/outputs/skill-richeng-shenghuo.md) |
 
-#### 第 5 章 · 言语、吞咽与认知康复
+#### 第 5 章 · 言语、吞咽与认知康复：三块里只有一块按秒计时
 
 `09-kangfu-yixue-jichu/chapters/05-yanyu-yinshi/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 言语、吞咽与认知康复 · 提示词 | — | 494 | [`prompt-05-yanyu-yinshi.md`](../departments/03-zhenjiu/09-kangfu-yixue-jichu/chapters/05-yanyu-yinshi/outputs/prompt-05-yanyu-yinshi.md) |
-| skill | 言语、吞咽与认知康复 | 言语、吞咽与认知康复——按「康复医学概论 → 功能评定 → 运动功能与训练 → 日常生活活动与作业治疗 → 言语、吞咽与认知康复 → 康复护理与并发症预防 → 社区与长期照护 → 康复团队与伦理」走一遍本章判据 | 416 | [`skill-yanyu-yinshi.md`](../departments/03-zhenjiu/09-kangfu-yixue-jichu/chapters/05-yanyu-yinshi/outputs/skill-yanyu-yinshi.md) |
+| prompt | 言语、吞咽与认知康复：三块里只有一块按秒计时 · 提示词 | — | 965 | [`prompt-05-yanyu-yinshi.md`](../departments/03-zhenjiu/09-kangfu-yixue-jichu/chapters/05-yanyu-yinshi/outputs/prompt-05-yanyu-yinshi.md) |
+| skill | 言语、吞咽与认知康复：三块里只有一块按秒计时 | 言语、吞咽与认知康复：三块里只有一块按秒计时——按「三块的时间尺度不一样，读的顺序就不该一样 → 观察写成「类别」，记录就必须写成「所见」 → 进食安全：体位管重力，性状管速度，两个旋钮都不给刻度 → 认知观察的落点是「这一次决定」，不是「记性几分」」走一遍本章判据 | 857 | [`skill-yanyu-yinshi.md`](../departments/03-zhenjiu/09-kangfu-yixue-jichu/chapters/05-yanyu-yinshi/outputs/skill-yanyu-yinshi.md) |
 
-#### 第 6 章 · 康复护理与并发症预防
+#### 第 6 章 · 康复护理与并发症预防：同一个翻身动作，既是五种并发症的解药，也是引信
 
 `09-kangfu-yixue-jichu/chapters/06-kangfu-huli/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 康复护理与并发症预防 · 提示词 | — | 494 | [`prompt-06-kangfu-huli.md`](../departments/03-zhenjiu/09-kangfu-yixue-jichu/chapters/06-kangfu-huli/outputs/prompt-06-kangfu-huli.md) |
-| skill | 康复护理与并发症预防 | 康复护理与并发症预防——按「康复医学概论 → 功能评定 → 运动功能与训练 → 日常生活活动与作业治疗 → 言语、吞咽与认知康复 → 康复护理与并发症预防 → 社区与长期照护 → 康复团队与伦理」走一遍本章判据 | 415 | [`skill-kangfu-huli.md`](../departments/03-zhenjiu/09-kangfu-yixue-jichu/chapters/06-kangfu-huli/outputs/skill-kangfu-huli.md) |
+| prompt | 康复护理与并发症预防：同一个翻身动作，既是五种并发症的解药，也是引信 · 提示词 | — | 981 | [`prompt-06-kangfu-huli.md`](../departments/03-zhenjiu/09-kangfu-yixue-jichu/chapters/06-kangfu-huli/outputs/prompt-06-kangfu-huli.md) |
+| skill | 康复护理与并发症预防：同一个翻身动作，既是五种并发症的解药，也是引信 | 康复护理与并发症预防：同一个翻身动作，既是五种并发症的解药，也是引信——按「五类风险排在同一条时间轴上，方向却相反 → 体位、变换、转移：三个动作，一条链 → 观察四条线，二十四个维度里只有一个能比大小 → 六要素里，只有「禁忌」不产出记录」走一遍本章判据 | 860 | [`skill-kangfu-huli.md`](../departments/03-zhenjiu/09-kangfu-yixue-jichu/chapters/06-kangfu-huli/outputs/skill-kangfu-huli.md) |
 
-#### 第 7 章 · 社区与长期照护
+#### 第 7 章 · 社区与长期照护：断点不在家里，在从机构到家那一次交接
 
 `09-kangfu-yixue-jichu/chapters/07-shequ-changqi/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 社区与长期照护 · 提示词 | — | 485 | [`prompt-07-shequ-changqi.md`](../departments/03-zhenjiu/09-kangfu-yixue-jichu/chapters/07-shequ-changqi/outputs/prompt-07-shequ-changqi.md) |
-| skill | 社区与长期照护 | 社区与长期照护——按「康复医学概论 → 功能评定 → 运动功能与训练 → 日常生活活动与作业治疗 → 言语、吞咽与认知康复 → 康复护理与并发症预防 → 社区与长期照护 → 康复团队与伦理」走一遍本章判据 | 411 | [`skill-shequ-changqi.md`](../departments/03-zhenjiu/09-kangfu-yixue-jichu/chapters/07-shequ-changqi/outputs/skill-shequ-changqi.md) |
+| prompt | 社区与长期照护：断点不在家里，在从机构到家那一次交接 · 提示词 | — | 971 | [`prompt-07-shequ-changqi.md`](../departments/03-zhenjiu/09-kangfu-yixue-jichu/chapters/07-shequ-changqi/outputs/prompt-07-shequ-changqi.md) |
+| skill | 社区与长期照护：断点不在家里，在从机构到家那一次交接 | 社区与长期照护：断点不在家里，在从机构到家那一次交接——按「三种场所是三个照护密度，不是三个等级 → 交接：六个要素，缺一项等于没交 → 社区护理：任务分三层，家庭是单元 → 多病共存：把「五种病」换成「今天做不到的一件事」」走一遍本章判据 | 860 | [`skill-shequ-changqi.md`](../departments/03-zhenjiu/09-kangfu-yixue-jichu/chapters/07-shequ-changqi/outputs/skill-shequ-changqi.md) |
 
-#### 第 8 章 · 康复团队与伦理
+#### 第 8 章 · 康复团队与伦理：分工写在职责里，伦理写在两列里
 
 `09-kangfu-yixue-jichu/chapters/08-tuandui-lunli/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 康复团队与伦理 · 提示词 | — | 485 | [`prompt-08-tuandui-lunli.md`](../departments/03-zhenjiu/09-kangfu-yixue-jichu/chapters/08-tuandui-lunli/outputs/prompt-08-tuandui-lunli.md) |
-| skill | 康复团队与伦理 | 康复团队与伦理——按「康复医学概论 → 功能评定 → 运动功能与训练 → 日常生活活动与作业治疗 → 言语、吞咽与认知康复 → 康复护理与并发症预防 → 社区与长期照护 → 康复团队与伦理」走一遍本章判据 | 411 | [`skill-tuandui-lunli.md`](../departments/03-zhenjiu/09-kangfu-yixue-jichu/chapters/08-tuandui-lunli/outputs/skill-tuandui-lunli.md) |
+| prompt | 康复团队与伦理：分工写在职责里，伦理写在两列里 · 提示词 | — | 965 | [`prompt-08-tuandui-lunli.md`](../departments/03-zhenjiu/09-kangfu-yixue-jichu/chapters/08-tuandui-lunli/outputs/prompt-08-tuandui-lunli.md) |
+| skill | 康复团队与伦理：分工写在职责里，伦理写在两列里 | 康复团队与伦理：分工写在职责里，伦理写在两列里——按「三种协作深度，分水岭不在关系好坏，在目标由谁定 → 护理六类职责里，只有一类不能被人替代 → 伦理的三层来源，是三种提问方式，不是三套答案 → 两列必填：依据列写「凭什么」，边界列写「不做什么」」走一遍本章判据 | 857 | [`skill-tuandui-lunli.md`](../departments/03-zhenjiu/09-kangfu-yixue-jichu/chapters/08-tuandui-lunli/outputs/skill-tuandui-lunli.md) |
 
 ### 实验针灸学
 
 > Build · 第 6 学期 · 已产出 11 章
 
-#### 第 1 章 · 绪论与学科定位
+#### 第 1 章 · 实验针灸学的分水岭不是技术，而是敢不敢把结论降级
 
 `10-shiyan-zhenjiu-xue/chapters/01-xulun-dingwei/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 绪论与学科定位 · 提示词 | — | 475 | [`prompt-01-xulun-dingwei.md`](../departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/01-xulun-dingwei/outputs/prompt-01-xulun-dingwei.md) |
-| skill | 绪论与学科定位 | 绪论与学科定位——按「绪论 → 腧穴形态 → 经络现象 → 效应特点 → 镇痛 → 神经 → 内分泌免疫 → 循环呼吸消化 → 泌尿生殖运动 → 方法与模型 → 循证与前沿」走一遍本章判据 | 399 | [`skill-xulun-dingwei.md`](../departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/01-xulun-dingwei/outputs/skill-xulun-dingwei.md) |
+| prompt | 实验针灸学的分水岭不是技术，而是敢不敢把结论降级 · 提示词 | — | 819 | [`prompt-01-xulun-dingwei.md`](../departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/01-xulun-dingwei/outputs/prompt-01-xulun-dingwei.md) |
+| skill | 实验针灸学的分水岭不是技术，而是敢不敢把结论降级 | 实验针灸学的分水岭不是技术，而是敢不敢把结论降级——按「「为什么有效」是另一门手艺 → 六个研究范畴其实是一条链 → 三次转折，三种方法代价 → 三条任务与四级证据」走一遍本章判据 | 720 | [`skill-xulun-dingwei.md`](../departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/01-xulun-dingwei/outputs/skill-xulun-dingwei.md) |
 
-#### 第 2 章 · 腧穴的形态结构与功能
+#### 第 2 章 · 穴位不是皮上的一个点，而是贯穿六层的立体接口
 
 `10-shiyan-zhenjiu-xue/chapters/02-shuxue-xingtai/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 腧穴的形态结构与功能 · 提示词 | — | 484 | [`prompt-02-shuxue-xingtai.md`](../departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/02-shuxue-xingtai/outputs/prompt-02-shuxue-xingtai.md) |
-| skill | 腧穴的形态结构与功能 | 腧穴的形态结构与功能——按「绪论 → 腧穴形态 → 经络现象 → 效应特点 → 镇痛 → 神经 → 内分泌免疫 → 循环呼吸消化 → 泌尿生殖运动 → 方法与模型 → 循证与前沿」走一遍本章判据 | 406 | [`skill-shuxue-xingtai.md`](../departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/02-shuxue-xingtai/outputs/skill-shuxue-xingtai.md) |
+| prompt | 穴位不是皮上的一个点，而是贯穿六层的立体接口 · 提示词 | — | 861 | [`prompt-02-shuxue-xingtai.md`](../departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/02-shuxue-xingtai/outputs/prompt-02-shuxue-xingtai.md) |
+| skill | 穴位不是皮上的一个点，而是贯穿六层的立体接口 | 穴位不是皮上的一个点，而是贯穿六层的立体接口——按「定位是坐标，穴位是深度 → 三把刀，三种偏差 → 肥大细胞之争：一个方法学样本 → 穴区靠什么把机械刺激换成神经信号」走一遍本章判据 | 765 | [`skill-shuxue-xingtai.md`](../departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/02-shuxue-xingtai/outputs/skill-shuxue-xingtai.md) |
 
-#### 第 3 章 · 经络现象的现代研究
+#### 第 3 章 · 经络研究缺的不是现象，而是能把现象判死的对照
 
 `10-shiyan-zhenjiu-xue/chapters/03-jingluo-xianxiang/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 经络现象的现代研究 · 提示词 | — | 481 | [`prompt-03-jingluo-xianxiang.md`](../departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/03-jingluo-xianxiang/outputs/prompt-03-jingluo-xianxiang.md) |
-| skill | 经络现象的现代研究 | 经络现象的现代研究——按「绪论 → 腧穴形态 → 经络现象 → 效应特点 → 镇痛 → 神经 → 内分泌免疫 → 循环呼吸消化 → 泌尿生殖运动 → 方法与模型 → 循证与前沿」走一遍本章判据 | 407 | [`skill-jingluo-xianxiang.md`](../departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/03-jingluo-xianxiang/outputs/skill-jingluo-xianxiang.md) |
+| prompt | 经络研究缺的不是现象，而是能把现象判死的对照 · 提示词 | — | 557 | [`prompt-03-jingluo-xianxiang.md`](../departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/03-jingluo-xianxiang/outputs/prompt-03-jingluo-xianxiang.md) |
+| skill | 经络研究缺的不是现象，而是能把现象判死的对照 | 经络研究缺的不是现象，而是能把现象判死的对照——按「循经感传：四条特征，一条软肋 → 自然发生的循经现象：最少暗示，也最难判 → 客观显示：热像、声、电与示踪，四种量四种麻烦 → 三个学说：各有硬证据，各有死穴」走一遍本章判据 | 464 | [`skill-jingluo-xianxiang.md`](../departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/03-jingluo-xianxiang/outputs/skill-jingluo-xianxiang.md) |
 
-#### 第 4 章 · 针灸作用的效应与特点
+#### 第 4 章 · 针灸的效应不是一条线，而是一族随状态漂移的曲线
 
 `10-shiyan-zhenjiu-xue/chapters/04-xiaoying-tedian/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 针灸作用的效应与特点 · 提示词 | — | 484 | [`prompt-04-xiaoying-tedian.md`](../departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/04-xiaoying-tedian/outputs/prompt-04-xiaoying-tedian.md) |
-| skill | 针灸作用的效应与特点 | 针灸作用的效应与特点——按「绪论 → 腧穴形态 → 经络现象 → 效应特点 → 镇痛 → 神经 → 内分泌免疫 → 循环呼吸消化 → 泌尿生殖运动 → 方法与模型 → 循证与前沿」走一遍本章判据 | 407 | [`skill-xiaoying-tedian.md`](../departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/04-xiaoying-tedian/outputs/skill-xiaoying-tedian.md) |
+| prompt | 针灸的效应不是一条线，而是一族随状态漂移的曲线 · 提示词 | — | 769 | [`prompt-04-xiaoying-tedian.md`](../departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/04-xiaoying-tedian/outputs/prompt-04-xiaoying-tedian.md) |
+| skill | 针灸的效应不是一条线，而是一族随状态漂移的曲线 | 针灸的效应不是一条线，而是一族随状态漂移的曲线——按「即时与累积：两把不同的尺子 → 四类因素：穴位、参数、状态、情境 → 参数的三个旋钮与一份报告规范 → 整体性与双向性：一穴何以治相反两病」走一遍本章判据 | 673 | [`skill-xiaoying-tedian.md`](../departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/04-xiaoying-tedian/outputs/skill-xiaoying-tedian.md) |
 
-#### 第 5 章 · 针灸镇痛作用与机制
+#### 第 5 章 · 证据最厚的镇痛方向，恰恰最需要一套降级规则
 
 `10-shiyan-zhenjiu-xue/chapters/05-zhentong-jizhi/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 针灸镇痛作用与机制 · 提示词 | — | 481 | [`prompt-05-zhentong-jizhi.md`](../departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/05-zhentong-jizhi/outputs/prompt-05-zhentong-jizhi.md) |
-| skill | 针灸镇痛作用与机制 | 针灸镇痛作用与机制——按「绪论 → 腧穴形态 → 经络现象 → 效应特点 → 镇痛 → 神经 → 内分泌免疫 → 循环呼吸消化 → 泌尿生殖运动 → 方法与模型 → 循证与前沿」走一遍本章判据 | 404 | [`skill-zhentong-jizhi.md`](../departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/05-zhentong-jizhi/outputs/skill-zhentong-jizhi.md) |
+| prompt | 证据最厚的镇痛方向，恰恰最需要一套降级规则 · 提示词 | — | 968 | [`prompt-05-zhentong-jizhi.md`](../departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/05-zhentong-jizhi/outputs/prompt-05-zhentong-jizhi.md) |
+| skill | 证据最厚的镇痛方向，恰恰最需要一套降级规则 | 证据最厚的镇痛方向，恰恰最需要一套降级规则——按「先读证据的等级差，再读结论 → 闸门在脊髓：节段机制能解释什么，解释不了什么 → 纳洛酮能证明「参与」，不能证明「专属」 → 参数：频率、强度，以及那个倒 U」走一遍本章判据 | 873 | [`skill-zhentong-jizhi.md`](../departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/05-zhentong-jizhi/outputs/skill-zhentong-jizhi.md) |
 
-#### 第 6 章 · 针灸对神经系统的调节
+#### 第 6 章 · 神经系统研究最难的一步，是把「激活了」读成「起效了」
 
 `10-shiyan-zhenjiu-xue/chapters/06-shenjing-tiaojie/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 针灸对神经系统的调节 · 提示词 | — | 484 | [`prompt-06-shenjing-tiaojie.md`](../departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/06-shenjing-tiaojie/outputs/prompt-06-shenjing-tiaojie.md) |
-| skill | 针灸对神经系统的调节 | 针灸对神经系统的调节——按「绪论 → 腧穴形态 → 经络现象 → 效应特点 → 镇痛 → 神经 → 内分泌免疫 → 循环呼吸消化 → 泌尿生殖运动 → 方法与模型 → 循证与前沿」走一遍本章判据 | 408 | [`skill-shenjing-tiaojie.md`](../departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/06-shenjing-tiaojie/outputs/skill-shenjing-tiaojie.md) |
+| prompt | 神经系统研究最难的一步，是把「激活了」读成「起效了」 · 提示词 | — | 953 | [`prompt-06-shenjing-tiaojie.md`](../departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/06-shenjing-tiaojie/outputs/prompt-06-shenjing-tiaojie.md) |
+| skill | 神经系统研究最难的一步，是把「激活了」读成「起效了」 | 神经系统研究最难的一步，是把「激活了」读成「起效了」——按「电与血：两种分辨率，不能互相顶替 → 痛相关电位：唯一能和主观评分对表的指标 → 脊髓背角：最早被证实，也最容易被过度解释的一层 → 自主神经：心率变异性怎么读，才不算瞎猜」走一遍本章判据 | 855 | [`skill-shenjing-tiaojie.md`](../departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/06-shenjing-tiaojie/outputs/skill-shenjing-tiaojie.md) |
 
-#### 第 7 章 · 针灸对内分泌与免疫系统的调节
+#### 第 7 章 · 四个单元写得一样长，四块证据的分量却差着量级
 
 `10-shiyan-zhenjiu-xue/chapters/07-neifen-mianyi/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 针灸对内分泌与免疫系统的调节 · 提示词 | — | 496 | [`prompt-07-neifen-mianyi.md`](../departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/07-neifen-mianyi/outputs/prompt-07-neifen-mianyi.md) |
-| skill | 针灸对内分泌与免疫系统的调节 | 针灸对内分泌与免疫系统的调节——按「绪论 → 腧穴形态 → 经络现象 → 效应特点 → 镇痛 → 神经 → 内分泌免疫 → 循环呼吸消化 → 泌尿生殖运动 → 方法与模型 → 循证与前沿」走一遍本章判据 | 413 | [`skill-neifen-mianyi.md`](../departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/07-neifen-mianyi/outputs/skill-neifen-mianyi.md) |
+| prompt | 四个单元写得一样长，四块证据的分量却差着量级 · 提示词 | — | 1039 | [`prompt-07-neifen-mianyi.md`](../departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/07-neifen-mianyi/outputs/prompt-07-neifen-mianyi.md) |
+| skill | 四个单元写得一样长，四块证据的分量却差着量级 | 四个单元写得一样长，四块证据的分量却差着量级——按「HPA 轴：采血本身就是应激原 → 血糖：为什么阴性结果比阳性更值得读 → 免疫指标：方向、比值与状态依赖 → 胆碱能抗炎通路：一条少见的、有因果链的通路」走一遍本章判据 | 942 | [`skill-neifen-mianyi.md`](../departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/07-neifen-mianyi/outputs/skill-neifen-mianyi.md) |
 
-#### 第 8 章 · 针灸对循环、呼吸、消化系统的调节
+#### 第 8 章 · 三个系统共用一条判读纪律，比各自记住一串指标更有用
 
 `10-shiyan-zhenjiu-xue/chapters/08-xunhuan-huxi-xiaohua/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 针灸对循环、呼吸、消化系统的调节 · 提示词 | — | 502 | [`prompt-08-xunhuan-huxi-xiaohua.md`](../departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/08-xunhuan-huxi-xiaohua/outputs/prompt-08-xunhuan-huxi-xiaohua.md) |
-| skill | 针灸对循环、呼吸、消化系统的调节 | 针灸对循环、呼吸、消化系统的调节——按「绪论 → 腧穴形态 → 经络现象 → 效应特点 → 镇痛 → 神经 → 内分泌免疫 → 循环呼吸消化 → 泌尿生殖运动 → 方法与模型 → 循证与前沿」走一遍本章判据 | 424 | [`skill-xunhuan-huxi-xiaohua.md`](../departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/08-xunhuan-huxi-xiaohua/outputs/skill-xunhuan-huxi-xiaohua.md) |
+| prompt | 三个系统共用一条判读纪律，比各自记住一串指标更有用 · 提示词 | — | 879 | [`prompt-08-xunhuan-huxi-xiaohua.md`](../departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/08-xunhuan-huxi-xiaohua/outputs/prompt-08-xunhuan-huxi-xiaohua.md) |
+| skill | 三个系统共用一条判读纪律，比各自记住一串指标更有用 | 三个系统共用一条判读纪律，比各自记住一串指标更有用——按「同一条纪律：基线、时点、对照 → 心：ST 段与梗死面积能说明什么 → 肺：气道阻力与灌洗液细胞 → 胃肠：双向调节为什么在这里最硬」走一遍本章判据 | 786 | [`skill-xunhuan-huxi-xiaohua.md`](../departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/08-xunhuan-huxi-xiaohua/outputs/skill-xunhuan-huxi-xiaohua.md) |
 
-#### 第 9 章 · 针灸对泌尿、生殖、运动系统的作用
+#### 第 9 章 · 四个系统篇幅几乎相等，证据厚薄却分成四档
 
 `10-shiyan-zhenjiu-xue/chapters/09-miniao-shengzhi-yundong/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 针灸对泌尿、生殖、运动系统的作用 · 提示词 | — | 502 | [`prompt-09-miniao-shengzhi-yundong.md`](../departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/09-miniao-shengzhi-yundong/outputs/prompt-09-miniao-shengzhi-yundong.md) |
-| skill | 针灸对泌尿、生殖、运动系统的作用 | 针灸对泌尿、生殖、运动系统的作用——按「绪论 → 腧穴形态 → 经络现象 → 效应特点 → 镇痛 → 神经 → 内分泌免疫 → 循环呼吸消化 → 泌尿生殖运动 → 方法与模型 → 循证与前沿」走一遍本章判据 | 427 | [`skill-miniao-shengzhi-yundong.md`](../departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/09-miniao-shengzhi-yundong/outputs/skill-miniao-shengzhi-yundong.md) |
+| prompt | 四个系统篇幅几乎相等，证据厚薄却分成四档 · 提示词 | — | 977 | [`prompt-09-miniao-shengzhi-yundong.md`](../departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/09-miniao-shengzhi-yundong/outputs/prompt-09-miniao-shengzhi-yundong.md) |
+| skill | 四个系统篇幅几乎相等，证据厚薄却分成四档 | 四个系统篇幅几乎相等，证据厚薄却分成四档——按「尿量与滤过率：一对不能分开读的指标 → 动情周期：生殖研究的第一道门槛 → 肌力与中位频率：运动研究的两个尺度 → 创面与体温：整体效应的可测窗口」走一遍本章判据 | 892 | [`skill-miniao-shengzhi-yundong.md`](../departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/09-miniao-shengzhi-yundong/outputs/skill-miniao-shengzhi-yundong.md) |
 
-#### 第 10 章 · 研究方法与动物模型
+#### 第 10 章 · 技术章的价值不在会做，而在知道它会在哪里骗你
 
 `10-shiyan-zhenjiu-xue/chapters/10-fangfa-moxing/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 研究方法与动物模型 · 提示词 | — | 486 | [`prompt-10-fangfa-moxing.md`](../departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/10-fangfa-moxing/outputs/prompt-10-fangfa-moxing.md) |
-| skill | 研究方法与动物模型 | 研究方法与动物模型——按「绪论 → 腧穴形态 → 经络现象 → 效应特点 → 镇痛 → 神经 → 内分泌免疫 → 循环呼吸消化 → 泌尿生殖运动 → 方法与模型 → 循证与前沿」走一遍本章判据 | 403 | [`skill-fangfa-moxing.md`](../departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/10-fangfa-moxing/outputs/skill-fangfa-moxing.md) |
+| prompt | 技术章的价值不在会做，而在知道它会在哪里骗你 · 提示词 | — | 957 | [`prompt-10-fangfa-moxing.md`](../departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/10-fangfa-moxing/outputs/prompt-10-fangfa-moxing.md) |
+| skill | 技术章的价值不在会做，而在知道它会在哪里骗你 | 技术章的价值不在会做，而在知道它会在哪里骗你——按「四把尺子：毫秒、毫米与浓度 → 电生理：采样率与麻醉，两个先决条件 → 影像：预处理自由度比样本量更能改结论 → 分子与形态：内参与固定，两处最常见的假象」走一遍本章判据 | 859 | [`skill-fangfa-moxing.md`](../departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/10-fangfa-moxing/outputs/skill-fangfa-moxing.md) |
 
-#### 第 11 章 · 循证针灸学与前沿
+#### 第 11 章 · 收口的不是知识清单，而是说清每句话能撑多重的证据
 
 `10-shiyan-zhenjiu-xue/chapters/11-xunzheng-qianyan/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 循证针灸学与前沿 · 提示词 | — | 483 | [`prompt-11-xunzheng-qianyan.md`](../departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/11-xunzheng-qianyan/outputs/prompt-11-xunzheng-qianyan.md) |
-| skill | 循证针灸学与前沿 | 循证针灸学与前沿——按「绪论 → 腧穴形态 → 经络现象 → 效应特点 → 镇痛 → 神经 → 内分泌免疫 → 循环呼吸消化 → 泌尿生殖运动 → 方法与模型 → 循证与前沿」走一遍本章判据 | 404 | [`skill-xunzheng-qianyan.md`](../departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/11-xunzheng-qianyan/outputs/skill-xunzheng-qianyan.md) |
+| prompt | 收口的不是知识清单，而是说清每句话能撑多重的证据 · 提示词 | — | 850 | [`prompt-11-xunzheng-qianyan.md`](../departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/11-xunzheng-qianyan/outputs/prompt-11-xunzheng-qianyan.md) |
+| skill | 收口的不是知识清单，而是说清每句话能撑多重的证据 | 收口的不是知识清单，而是说清每句话能撑多重的证据——按「三种尺子：证据质量、推荐强度、技术标准 → 系统评价：合并的是效应量，不是结论 → 针刺试验的三处结构性缺陷 → 证据地图：哪几处能说「可能有益」，哪几处只能说「不知道」」走一遍本章判据 | 744 | [`skill-xunzheng-qianyan.md`](../departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/11-xunzheng-qianyan/outputs/skill-xunzheng-qianyan.md) |
 
 ### 物理治疗与运动康复
 
 > Build · 第 6 学期 · 已产出 8 章
 
-#### 第 1 章 · 物理治疗概论
+#### 第 1 章 · 物理治疗的门槛不在选哪一种因子，而在能不能给这个因子配出四个量
 
 `11-wuli-zhiliao/chapters/01-wuli-gailun/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 物理治疗概论 · 提示词 | — | 483 | [`prompt-01-wuli-gailun.md`](../departments/03-zhenjiu/11-wuli-zhiliao/chapters/01-wuli-gailun/outputs/prompt-01-wuli-gailun.md) |
-| skill | 物理治疗概论 | 物理治疗概论——按「物理治疗概论 → 电疗与电针 → 热疗与光疗 → 冷疗、超声与牵引 → 运动疗法基础 → 关节活动与肌力训练 → 平衡、协调与步态训练 → 运动康复方案与风险控制」走一遍本章判据 | 399 | [`skill-wuli-gailun.md`](../departments/03-zhenjiu/11-wuli-zhiliao/chapters/01-wuli-gailun/outputs/skill-wuli-gailun.md) |
+| prompt | 物理治疗的门槛不在选哪一种因子，而在能不能给这个因子配出四个量 · 提示词 | — | 922 | [`prompt-01-wuli-gailun.md`](../departments/03-zhenjiu/11-wuli-zhiliao/chapters/01-wuli-gailun/outputs/prompt-01-wuli-gailun.md) |
+| skill | 物理治疗的门槛不在选哪一种因子，而在能不能给这个因子配出四个量 | 物理治疗的门槛不在选哪一种因子，而在能不能给这个因子配出四个量——按「底本给的是四种刺激技术，共同骨架只有一条 → 四个量：波形、频率、强度、时间 → 剂量本身是有等级的：大补大泻与小补小泻 → 可核的量与不可核的量：参数为什么挤在操作单元」走一遍本章判据 | 801 | [`skill-wuli-gailun.md`](../departments/03-zhenjiu/11-wuli-zhiliao/chapters/01-wuli-gailun/outputs/skill-wuli-gailun.md) |
 
-#### 第 2 章 · 电疗与电针
+#### 第 2 章 · 电针的杀伤力主要不来自参数，而来自那一对电极接在哪
 
 `11-wuli-zhiliao/chapters/02-dianliao/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 电疗与电针 · 提示词 | — | 480 | [`prompt-02-dianliao.md`](../departments/03-zhenjiu/11-wuli-zhiliao/chapters/02-dianliao/outputs/prompt-02-dianliao.md) |
-| skill | 电疗与电针 | 电疗与电针——按「物理治疗概论 → 电疗与电针 → 热疗与光疗 → 冷疗、超声与牵引 → 运动疗法基础 → 关节活动与肌力训练 → 平衡、协调与步态训练 → 运动康复方案与风险控制」走一遍本章判据 | 394 | [`skill-dianliao.md`](../departments/03-zhenjiu/11-wuli-zhiliao/chapters/02-dianliao/outputs/skill-dianliao.md) |
+| prompt | 电针的杀伤力主要不来自参数，而来自那一对电极接在哪 · 提示词 | — | 891 | [`prompt-02-dianliao.md`](../departments/03-zhenjiu/11-wuli-zhiliao/chapters/02-dianliao/outputs/prompt-02-dianliao.md) |
+| skill | 电针的杀伤力主要不来自参数，而来自那一对电极接在哪 | 电针的杀伤力主要不来自参数，而来自那一对电极接在哪——按「电针不是「电加针」，是把手法翻译成一串写得下来的数 → 波形不是三种花样，是三种时间结构 → 强度与回路：两道互相独立的闸 → 时间、疗程与耐受：把「多久」也当成一个变量」走一遍本章判据 | 773 | [`skill-dianliao.md`](../departments/03-zhenjiu/11-wuli-zhiliao/chapters/02-dianliao/outputs/skill-dianliao.md) |
 
-#### 第 3 章 · 热疗与光疗
+#### 第 3 章 · 热疗的剂量藏在壮数与灸时里，光疗在本章只剩一条安全红线
 
 `11-wuli-zhiliao/chapters/03-reliao-guangliao/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 热疗与光疗 · 提示词 | — | 479 | [`prompt-03-reliao-guangliao.md`](../departments/03-zhenjiu/11-wuli-zhiliao/chapters/03-reliao-guangliao/outputs/prompt-03-reliao-guangliao.md) |
-| skill | 热疗与光疗 | 热疗与光疗——按「物理治疗概论 → 电疗与电针 → 热疗与光疗 → 冷疗、超声与牵引 → 运动疗法基础 → 关节活动与肌力训练 → 平衡、协调与步态训练 → 运动康复方案与风险控制」走一遍本章判据 | 402 | [`skill-reliao-guangliao.md`](../departments/03-zhenjiu/11-wuli-zhiliao/chapters/03-reliao-guangliao/outputs/skill-reliao-guangliao.md) |
+| prompt | 热疗的剂量藏在壮数与灸时里，光疗在本章只剩一条安全红线 · 提示词 | — | 879 | [`prompt-03-reliao-guangliao.md`](../departments/03-zhenjiu/11-wuli-zhiliao/chapters/03-reliao-guangliao/outputs/prompt-03-reliao-guangliao.md) |
+| skill | 热疗的剂量藏在壮数与灸时里，光疗在本章只剩一条安全红线 | 热疗的剂量藏在壮数与灸时里，光疗在本章只剩一条安全红线——按「热疗的可核量不是温度，是壮数与灸时 → 火候怎么调：三类灸法各自的旋钮 → 热的两条硬边界：部位与病情 → 光疗为什么只剩一条安全红线」走一遍本章判据 | 767 | [`skill-reliao-guangliao.md`](../departments/03-zhenjiu/11-wuli-zhiliao/chapters/03-reliao-guangliao/outputs/skill-reliao-guangliao.md) |
 
-#### 第 4 章 · 冷疗、超声与牵引
+#### 第 4 章 · 冷与超声是章名上的两个空位，能执行的只有牵引的力与它的禁区
 
 `11-wuli-zhiliao/chapters/04-lengliao-chaosheng/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 冷疗、超声与牵引 · 提示词 | — | 489 | [`prompt-04-lengliao-chaosheng.md`](../departments/03-zhenjiu/11-wuli-zhiliao/chapters/04-lengliao-chaosheng/outputs/prompt-04-lengliao-chaosheng.md) |
-| skill | 冷疗、超声与牵引 | 冷疗、超声与牵引——按「物理治疗概论 → 电疗与电针 → 热疗与光疗 → 冷疗、超声与牵引 → 运动疗法基础 → 关节活动与肌力训练 → 平衡、协调与步态训练 → 运动康复方案与风险控制」走一遍本章判据 | 410 | [`skill-lengliao-chaosheng.md`](../departments/03-zhenjiu/11-wuli-zhiliao/chapters/04-lengliao-chaosheng/outputs/skill-lengliao-chaosheng.md) |
+| prompt | 冷与超声是章名上的两个空位，能执行的只有牵引的力与它的禁区 · 提示词 | — | 949 | [`prompt-04-lengliao-chaosheng.md`](../departments/03-zhenjiu/11-wuli-zhiliao/chapters/04-lengliao-chaosheng/outputs/prompt-04-lengliao-chaosheng.md) |
+| skill | 冷与超声是章名上的两个空位，能执行的只有牵引的力与它的禁区 | 冷与超声是章名上的两个空位，能执行的只有牵引的力与它的禁区——按「章名三个词，底本只落一个 → 牵引的可调量是力、方向、时间 → 力的禁区：先排除结构病变，再谈牵引 → 冷与超声：为什么本课一个数都不给」走一遍本章判据 | 837 | [`skill-lengliao-chaosheng.md`](../departments/03-zhenjiu/11-wuli-zhiliao/chapters/04-lengliao-chaosheng/outputs/skill-lengliao-chaosheng.md) |
 
-#### 第 5 章 · 运动疗法基础
+#### 第 5 章 · 运动疗法的基础不是动作清单，而是评、练、报的分工
 
 `11-wuli-zhiliao/chapters/05-yundong-jichu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 运动疗法基础 · 提示词 | — | 483 | [`prompt-05-yundong-jichu.md`](../departments/03-zhenjiu/11-wuli-zhiliao/chapters/05-yundong-jichu/outputs/prompt-05-yundong-jichu.md) |
-| skill | 运动疗法基础 | 运动疗法基础——按「物理治疗概论 → 电疗与电针 → 热疗与光疗 → 冷疗、超声与牵引 → 运动疗法基础 → 关节活动与肌力训练 → 平衡、协调与步态训练 → 运动康复方案与风险控制」走一遍本章判据 | 401 | [`skill-yundong-jichu.md`](../departments/03-zhenjiu/11-wuli-zhiliao/chapters/05-yundong-jichu/outputs/skill-yundong-jichu.md) |
+| prompt | 运动疗法的基础不是动作清单，而是评、练、报的分工 · 提示词 | — | 920 | [`prompt-05-yundong-jichu.md`](../departments/03-zhenjiu/11-wuli-zhiliao/chapters/05-yundong-jichu/outputs/prompt-05-yundong-jichu.md) |
+| skill | 运动疗法的基础不是动作清单，而是评、练、报的分工 | 运动疗法的基础不是动作清单，而是评、练、报的分工——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 808 | [`skill-yundong-jichu.md`](../departments/03-zhenjiu/11-wuli-zhiliao/chapters/05-yundong-jichu/outputs/skill-yundong-jichu.md) |
 
-#### 第 6 章 · 关节活动与肌力训练
+#### 第 6 章 · 松得开不等于有力，被动手替不了主动练
 
 `11-wuli-zhiliao/chapters/06-guanjie-jili/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 关节活动与肌力训练 · 提示词 | — | 492 | [`prompt-06-guanjie-jili.md`](../departments/03-zhenjiu/11-wuli-zhiliao/chapters/06-guanjie-jili/outputs/prompt-06-guanjie-jili.md) |
-| skill | 关节活动与肌力训练 | 关节活动与肌力训练——按「物理治疗概论 → 电疗与电针 → 热疗与光疗 → 冷疗、超声与牵引 → 运动疗法基础 → 关节活动与肌力训练 → 平衡、协调与步态训练 → 运动康复方案与风险控制」走一遍本章判据 | 406 | [`skill-guanjie-jili.md`](../departments/03-zhenjiu/11-wuli-zhiliao/chapters/06-guanjie-jili/outputs/skill-guanjie-jili.md) |
+| prompt | 松得开不等于有力，被动手替不了主动练 · 提示词 | — | 869 | [`prompt-06-guanjie-jili.md`](../departments/03-zhenjiu/11-wuli-zhiliao/chapters/06-guanjie-jili/outputs/prompt-06-guanjie-jili.md) |
+| skill | 松得开不等于有力，被动手替不了主动练 | 松得开不等于有力，被动手替不了主动练——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 762 | [`skill-guanjie-jili.md`](../departments/03-zhenjiu/11-wuli-zhiliao/chapters/06-guanjie-jili/outputs/skill-guanjie-jili.md) |
 
-#### 第 7 章 · 平衡、协调与步态训练
+#### 第 7 章 · 平衡的判据不是站得稳，是晃了还能把身体拉回来
 
 `11-wuli-zhiliao/chapters/07-pingheng-butai/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 平衡、协调与步态训练 · 提示词 | — | 495 | [`prompt-07-pingheng-butai.md`](../departments/03-zhenjiu/11-wuli-zhiliao/chapters/07-pingheng-butai/outputs/prompt-07-pingheng-butai.md) |
-| skill | 平衡、协调与步态训练 | 平衡、协调与步态训练——按「物理治疗概论 → 电疗与电针 → 热疗与光疗 → 冷疗、超声与牵引 → 运动疗法基础 → 关节活动与肌力训练 → 平衡、协调与步态训练 → 运动康复方案与风险控制」走一遍本章判据 | 410 | [`skill-pingheng-butai.md`](../departments/03-zhenjiu/11-wuli-zhiliao/chapters/07-pingheng-butai/outputs/skill-pingheng-butai.md) |
+| prompt | 平衡的判据不是站得稳，是晃了还能把身体拉回来 · 提示词 | — | 883 | [`prompt-07-pingheng-butai.md`](../departments/03-zhenjiu/11-wuli-zhiliao/chapters/07-pingheng-butai/outputs/prompt-07-pingheng-butai.md) |
+| skill | 平衡的判据不是站得稳，是晃了还能把身体拉回来 | 平衡的判据不是站得稳，是晃了还能把身体拉回来——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 774 | [`skill-pingheng-butai.md`](../departments/03-zhenjiu/11-wuli-zhiliao/chapters/07-pingheng-butai/outputs/skill-pingheng-butai.md) |
 
-#### 第 8 章 · 运动康复方案与风险控制
+#### 第 8 章 · 方案的分量在告知，风险的分量在记录
 
 `11-wuli-zhiliao/chapters/08-fangan-fengxian/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 运动康复方案与风险控制 · 提示词 | — | 498 | [`prompt-08-fangan-fengxian.md`](../departments/03-zhenjiu/11-wuli-zhiliao/chapters/08-fangan-fengxian/outputs/prompt-08-fangan-fengxian.md) |
-| skill | 运动康复方案与风险控制 | 运动康复方案与风险控制——按「物理治疗概论 → 电疗与电针 → 热疗与光疗 → 冷疗、超声与牵引 → 运动疗法基础 → 关节活动与肌力训练 → 平衡、协调与步态训练 → 运动康复方案与风险控制」走一遍本章判据 | 413 | [`skill-fangan-fengxian.md`](../departments/03-zhenjiu/11-wuli-zhiliao/chapters/08-fangan-fengxian/outputs/skill-fangan-fengxian.md) |
+| prompt | 方案的分量在告知，风险的分量在记录 · 提示词 | — | 968 | [`prompt-08-fangan-fengxian.md`](../departments/03-zhenjiu/11-wuli-zhiliao/chapters/08-fangan-fengxian/outputs/prompt-08-fangan-fengxian.md) |
+| skill | 方案的分量在告知，风险的分量在记录 | 方案的分量在告知，风险的分量在记录——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 865 | [`skill-fangan-fengxian.md`](../departments/03-zhenjiu/11-wuli-zhiliao/chapters/08-fangan-fengxian/outputs/skill-fangan-fengxian.md) |
 
 ### 耳穴诊治学
 
 > Build · 第 6 学期 · 已产出 8 章
 
-#### 第 1 章 · 耳穴诊治的源流与理论
+#### 第 1 章 · 「宗脉所聚」把耳变成一张诊图，而不是一个器官
 
 `12-erxue-zhenduan-xue/chapters/01-yuanliu-lilun/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 耳穴诊治的源流与理论 · 提示词 | — | 489 | [`prompt-01-yuanliu-lilun.md`](../departments/03-zhenjiu/12-erxue-zhenduan-xue/chapters/01-yuanliu-lilun/outputs/prompt-01-yuanliu-lilun.md) |
-| skill | 耳穴诊治的源流与理论 | 耳穴诊治的源流与理论——按「耳穴诊治的源流与理论 → 耳廓解剖与分区 → 耳穴定位 → 耳穴诊断 → 耳穴治疗方法 → 耳穴在内科的应用 → 耳穴在妇儿与五官的应用 → 耳穴操作安全与规范」走一遍本章判据 | 414 | [`skill-yuanliu-lilun.md`](../departments/03-zhenjiu/12-erxue-zhenduan-xue/chapters/01-yuanliu-lilun/outputs/skill-yuanliu-lilun.md) |
+| prompt | 「宗脉所聚」把耳变成一张诊图，而不是一个器官 · 提示词 | — | 952 | [`prompt-01-yuanliu-lilun.md`](../departments/03-zhenjiu/12-erxue-zhenduan-xue/chapters/01-yuanliu-lilun/outputs/prompt-01-yuanliu-lilun.md) |
+| skill | 「宗脉所聚」把耳变成一张诊图，而不是一个器官 | 「宗脉所聚」把耳变成一张诊图，而不是一个器官——按「三句经典各管一件事，并排一列就会读出一个并不存在的体系 → 十二条经脉都到耳，但到的方式不对称 → 耳郭分属五脏有五格，耳穴分区有九格，两套坐标不能互相折算 → 倒置胎儿是可以被证伪的：它禁止某些画法」走一遍本章判据 | 846 | [`skill-yuanliu-lilun.md`](../departments/03-zhenjiu/12-erxue-zhenduan-xue/chapters/01-yuanliu-lilun/outputs/skill-yuanliu-lilun.md) |
 | prompt | 整脊的第一道门槛不是手法，是「什么算有效」 · 提示词 | — | 875 | [`prompt-01-yuanliu-lilun.md`](../departments/04-gushang/13-zhongyi-zhengji-xue/chapters/01-yuanliu-lilun/outputs/prompt-01-yuanliu-lilun.md) |
 | skill | 整脊的第一道门槛不是手法，是「什么算有效」 | 整脊的第一道门槛不是手法，是「什么算有效」——按「源流：一次改名，一次对手法的重新定义 → 「骨错缝、筋出槽」能不能被检验 → 三种「整脊」，三种证据基础 → 本课的三条自律」走一遍本章判据 | 770 | [`skill-yuanliu-lilun.md`](../departments/04-gushang/13-zhongyi-zhengji-xue/chapters/01-yuanliu-lilun/outputs/skill-yuanliu-lilun.md) |
 
-#### 第 2 章 · 耳廓解剖与分区
+#### 第 2 章 · 分区是在十三个结构上另划九张网，网眼比结构粗
 
 `12-erxue-zhenduan-xue/chapters/02-jiepou-fenqu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 耳廓解剖与分区 · 提示词 | — | 480 | [`prompt-02-jiepou-fenqu.md`](../departments/03-zhenjiu/12-erxue-zhenduan-xue/chapters/02-jiepou-fenqu/outputs/prompt-02-jiepou-fenqu.md) |
-| skill | 耳廓解剖与分区 | 耳廓解剖与分区——按「耳穴诊治的源流与理论 → 耳廓解剖与分区 → 耳穴定位 → 耳穴诊断 → 耳穴治疗方法 → 耳穴在内科的应用 → 耳穴在妇儿与五官的应用 → 耳穴操作安全与规范」走一遍本章判据 | 407 | [`skill-jiepou-fenqu.md`](../departments/03-zhenjiu/12-erxue-zhenduan-xue/chapters/02-jiepou-fenqu/outputs/skill-jiepou-fenqu.md) |
+| prompt | 分区是在十三个结构上另划九张网，网眼比结构粗 · 提示词 | — | 873 | [`prompt-02-jiepou-fenqu.md`](../departments/03-zhenjiu/12-erxue-zhenduan-xue/chapters/02-jiepou-fenqu/outputs/prompt-02-jiepou-fenqu.md) |
+| skill | 分区是在十三个结构上另划九张网，网眼比结构粗 | 分区是在十三个结构上另划九张网，网眼比结构粗——按「先把地形背下来：底本给了十三个结构名，两处给的不一样 → 九个区：名字比地形粗，粗在什么地方 → 分区之外还有两张看不见的图：厚度与神经 → 底本没给的那部分：区号怎么划、角度多大」走一遍本章判据 | 766 | [`skill-jiepou-fenqu.md`](../departments/03-zhenjiu/12-erxue-zhenduan-xue/chapters/02-jiepou-fenqu/outputs/skill-jiepou-fenqu.md) |
 
-#### 第 3 章 · 耳穴定位
+#### 第 3 章 · 定位的分歧不在手稳，而在先认地形还是先记穴名
 
 `12-erxue-zhenduan-xue/chapters/03-dingwei/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 耳穴定位 · 提示词 | — | 472 | [`prompt-03-dingwei.md`](../departments/03-zhenjiu/12-erxue-zhenduan-xue/chapters/03-dingwei/outputs/prompt-03-dingwei.md) |
-| skill | 耳穴定位 | 耳穴定位——按「耳穴诊治的源流与理论 → 耳廓解剖与分区 → 耳穴定位 → 耳穴诊断 → 耳穴治疗方法 → 耳穴在内科的应用 → 耳穴在妇儿与五官的应用 → 耳穴操作安全与规范」走一遍本章判据 | 396 | [`skill-dingwei.md`](../departments/03-zhenjiu/12-erxue-zhenduan-xue/chapters/03-dingwei/outputs/skill-dingwei.md) |
+| prompt | 定位的分歧不在手稳，而在先认地形还是先记穴名 · 提示词 | — | 931 | [`prompt-03-dingwei.md`](../departments/03-zhenjiu/12-erxue-zhenduan-xue/chapters/03-dingwei/outputs/prompt-03-dingwei.md) |
+| skill | 定位的分歧不在手稳，而在先认地形还是先记穴名 | 定位的分歧不在手稳，而在先认地形还是先记穴名——按「"耳中"是最早的定位，位置精度与主治宽度绑在一起 → 国家标准把"耳中"切成九十三格，粒度是区不是毫米 → 三个可复用的定位动作，与它们各自的失效点 → 三个标准写法，指向几份文件说不清」走一遍本章判据 | 819 | [`skill-dingwei.md`](../departments/03-zhenjiu/12-erxue-zhenduan-xue/chapters/03-dingwei/outputs/skill-dingwei.md) |
 
 #### 第 4 章 · 精神检查是主证，量表只是刻度，不是尺子本身
 
@@ -6462,290 +6462,290 @@
 | --- | --- | --- | :-: | --- |
 | prompt | 精神检查是主证，量表只是刻度，不是尺子本身 · 提示词 | — | 755 | [`prompt-04-zhenduan.md`](../departments/01-zhongyi/20-zhongyi-jingshenbing-xue/chapters/04-zhenduan/outputs/prompt-04-zhenduan.md) |
 | skill | 精神检查是主证，量表只是刻度，不是尺子本身 | 精神检查是主证，量表只是刻度，不是尺子本身——按「三层证据，各有各的权限 → 一张可复核的精神检查记录 → 成组判据：先别阴阳，次定脏腑，再审痰火瘀虚 → 干预动作与停止条件」走一遍本章判据 | 644 | [`skill-04-zhenduan.md`](../departments/01-zhongyi/20-zhongyi-jingshenbing-xue/chapters/04-zhenduan/outputs/skill-04-zhenduan.md) |
-| prompt | 耳穴诊断 · 提示词 | — | 471 | [`prompt-04-zhenduan.md`](../departments/03-zhenjiu/12-erxue-zhenduan-xue/chapters/04-zhenduan/outputs/prompt-04-zhenduan.md) |
-| skill | 耳穴诊断 | 耳穴诊断——按「耳穴诊治的源流与理论 → 耳廓解剖与分区 → 耳穴定位 → 耳穴诊断 → 耳穴治疗方法 → 耳穴在内科的应用 → 耳穴在妇儿与五官的应用 → 耳穴操作安全与规范」走一遍本章判据 | 397 | [`skill-zhenduan.md`](../departments/03-zhenjiu/12-erxue-zhenduan-xue/chapters/04-zhenduan/outputs/skill-zhenduan.md) |
+| prompt | 望、压、电测查的是同一件事的三个通道，没有一条能单独定病名 · 提示词 | — | 932 | [`prompt-04-zhenduan.md`](../departments/03-zhenjiu/12-erxue-zhenduan-xue/chapters/04-zhenduan/outputs/prompt-04-zhenduan.md) |
+| skill | 望、压、电测查的是同一件事的三个通道，没有一条能单独定病名 | 望、压、电测查的是同一件事的三个通道，没有一条能单独定病名——按「"必先诊脉"：诊断发生在刺激之前 → 望诊：看的是形态与颜色，必须在自然光下，只描述不判病 → 压痛法：唯一由患者亲口确认的通道 → 电测：能测出电阻，测不出病名」走一遍本章判据 | 814 | [`skill-zhenduan.md`](../departments/03-zhenjiu/12-erxue-zhenduan-xue/chapters/04-zhenduan/outputs/skill-zhenduan.md) |
 
-#### 第 5 章 · 耳穴治疗方法
+#### 第 5 章 · 耳穴治疗的差别不在针，而在把刺激送到耳廓的哪一层
 
 `12-erxue-zhenduan-xue/chapters/05-zhiliao-fangfa/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 耳穴治疗方法 · 提示词 | — | 477 | [`prompt-05-zhiliao-fangfa.md`](../departments/03-zhenjiu/12-erxue-zhenduan-xue/chapters/05-zhiliao-fangfa/outputs/prompt-05-zhiliao-fangfa.md) |
-| skill | 耳穴治疗方法 | 耳穴治疗方法——按「耳穴诊治的源流与理论 → 耳廓解剖与分区 → 耳穴定位 → 耳穴诊断 → 耳穴治疗方法 → 耳穴在内科的应用 → 耳穴在妇儿与五官的应用 → 耳穴操作安全与规范」走一遍本章判据 | 407 | [`skill-zhiliao-fangfa.md`](../departments/03-zhenjiu/12-erxue-zhenduan-xue/chapters/05-zhiliao-fangfa/outputs/skill-zhiliao-fangfa.md) |
+| prompt | 耳穴治疗的差别不在针，而在把刺激送到耳廓的哪一层 · 提示词 | — | 926 | [`prompt-05-zhiliao-fangfa.md`](../departments/03-zhenjiu/12-erxue-zhenduan-xue/chapters/05-zhiliao-fangfa/outputs/prompt-05-zhiliao-fangfa.md) |
+| skill | 耳穴治疗的差别不在针，而在把刺激送到耳廓的哪一层 | 耳穴治疗的差别不在针，而在把刺激送到耳廓的哪一层——按「五种刺激方式，其实是一条「到达层次」的刻度 → 刺激量：底本给了三种可报的量，唯独没给耳穴自己的 → 把「选方法」变成一条四步链 → 手法这件事，耳穴只继承了一半」走一遍本章判据 | 819 | [`skill-zhiliao-fangfa.md`](../departments/03-zhenjiu/12-erxue-zhenduan-xue/chapters/05-zhiliao-fangfa/outputs/skill-zhiliao-fangfa.md) |
 
-#### 第 6 章 · 耳穴在内科的应用
+#### 第 6 章 · 内科应用的可复现性在辨经那一步，不在穴位表上
 
 `12-erxue-zhenduan-xue/chapters/06-neike-yingyong/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 耳穴在内科的应用 · 提示词 | — | 483 | [`prompt-06-neike-yingyong.md`](../departments/03-zhenjiu/12-erxue-zhenduan-xue/chapters/06-neike-yingyong/outputs/prompt-06-neike-yingyong.md) |
-| skill | 耳穴在内科的应用 | 耳穴在内科的应用——按「耳穴诊治的源流与理论 → 耳廓解剖与分区 → 耳穴定位 → 耳穴诊断 → 耳穴治疗方法 → 耳穴在内科的应用 → 耳穴在妇儿与五官的应用 → 耳穴操作安全与规范」走一遍本章判据 | 411 | [`skill-neike-yingyong.md`](../departments/03-zhenjiu/12-erxue-zhenduan-xue/chapters/06-neike-yingyong/outputs/skill-neike-yingyong.md) |
+| prompt | 内科应用的可复现性在辨经那一步，不在穴位表上 · 提示词 | — | 866 | [`prompt-06-neike-yingyong.md`](../departments/03-zhenjiu/12-erxue-zhenduan-xue/chapters/06-neike-yingyong/outputs/prompt-06-neike-yingyong.md) |
+| skill | 内科应用的可复现性在辨经那一步，不在穴位表上 | 内科应用的可复现性在辨经那一步，不在穴位表上——按「两个病证，一个被拆成三段 → 辨经：把「痛在哪」变成「取哪条经」 → 胃痛：一条完整的链，耳针只占其中一格 → 头痛：耳针的方子与体针的方子不是同一套逻辑」走一遍本章判据 | 761 | [`skill-neike-yingyong.md`](../departments/03-zhenjiu/12-erxue-zhenduan-xue/chapters/06-neike-yingyong/outputs/skill-neike-yingyong.md) |
 
-#### 第 7 章 · 耳穴在妇儿与五官的应用
+#### 第 7 章 · 换人群先换禁忌，取穴反倒可以照搬
 
 `12-erxue-zhenduan-xue/chapters/07-fuer-wuguan/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 耳穴在妇儿与五官的应用 · 提示词 | — | 492 | [`prompt-07-fuer-wuguan.md`](../departments/03-zhenjiu/12-erxue-zhenduan-xue/chapters/07-fuer-wuguan/outputs/prompt-07-fuer-wuguan.md) |
-| skill | 耳穴在妇儿与五官的应用 | 耳穴在妇儿与五官的应用——按「耳穴诊治的源流与理论 → 耳廓解剖与分区 → 耳穴定位 → 耳穴诊断 → 耳穴治疗方法 → 耳穴在内科的应用 → 耳穴在妇儿与五官的应用 → 耳穴操作安全与规范」走一遍本章判据 | 414 | [`skill-fuer-wuguan.md`](../departments/03-zhenjiu/12-erxue-zhenduan-xue/chapters/07-fuer-wuguan/outputs/skill-fuer-wuguan.md) |
+| prompt | 换人群先换禁忌，取穴反倒可以照搬 · 提示词 | — | 819 | [`prompt-07-fuer-wuguan.md`](../departments/03-zhenjiu/12-erxue-zhenduan-xue/chapters/07-fuer-wuguan/outputs/prompt-07-fuer-wuguan.md) |
+| skill | 换人群先换禁忌，取穴反倒可以照搬 | 换人群先换禁忌，取穴反倒可以照搬——按「字数倒挂：最薄的两节，是最该厚的地方 → 鼻病两方对照：同一个部位穴，配穴随病机反转 → 耳病两节：缺口是可以点清的 → 妇与儿：底本给了一个病证，儿科是零」走一遍本章判据 | 717 | [`skill-fuer-wuguan.md`](../departments/03-zhenjiu/12-erxue-zhenduan-xue/chapters/07-fuer-wuguan/outputs/skill-fuer-wuguan.md) |
 
-#### 第 8 章 · 耳穴操作安全与规范
+#### 第 8 章 · 耳穴的安全规范不在底本里，只能从四门技术的条款里取交集
 
 `12-erxue-zhenduan-xue/chapters/08-anquan-guifan/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 耳穴操作安全与规范 · 提示词 | — | 486 | [`prompt-08-anquan-guifan.md`](../departments/03-zhenjiu/12-erxue-zhenduan-xue/chapters/08-anquan-guifan/outputs/prompt-08-anquan-guifan.md) |
-| skill | 耳穴操作安全与规范 | 耳穴操作安全与规范——按「耳穴诊治的源流与理论 → 耳廓解剖与分区 → 耳穴定位 → 耳穴诊断 → 耳穴治疗方法 → 耳穴在内科的应用 → 耳穴在妇儿与五官的应用 → 耳穴操作安全与规范」走一遍本章判据 | 412 | [`skill-anquan-guifan.md`](../departments/03-zhenjiu/12-erxue-zhenduan-xue/chapters/08-anquan-guifan/outputs/skill-anquan-guifan.md) |
+| prompt | 耳穴的安全规范不在底本里，只能从四门技术的条款里取交集 · 提示词 | — | 970 | [`prompt-08-anquan-guifan.md`](../departments/03-zhenjiu/12-erxue-zhenduan-xue/chapters/08-anquan-guifan/outputs/prompt-08-anquan-guifan.md) |
+| skill | 耳穴的安全规范不在底本里，只能从四门技术的条款里取交集 | 耳穴的安全规范不在底本里，只能从四门技术的条款里取交集——按「五节五种技术，没有一节讲耳穴 → 四套条款的交集只有四条 → 把交集落成一张清单 → 耳穴独有的那一项，底本只提了一句」走一遍本章判据 | 859 | [`skill-anquan-guifan.md`](../departments/03-zhenjiu/12-erxue-zhenduan-xue/chapters/08-anquan-guifan/outputs/skill-anquan-guifan.md) |
 
 ### 针刀医学
 
 > Clinic · 第 7 学期 · 已产出 8 章
 
-#### 第 1 章 · 针刀医学概论
+#### 第 1 章 · 「针」与「刀」本是两件器械，合成一件就是把两种权限绑在一起
 
 `13-zhendao-yixue/chapters/01-zhendao-gailun/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 针刀医学概论 · 提示词 | — | 476 | [`prompt-01-zhendao-gailun.md`](../departments/03-zhenjiu/13-zhendao-yixue/chapters/01-zhendao-gailun/outputs/prompt-01-zhendao-gailun.md) |
-| skill | 针刀医学概论 | 针刀医学概论——按「针刀医学概论 → 器械、进针与操作规范 → 软组织解剖与病理 → 颈肩腰腿痛 → 关节与腱鞘疾病 → 神经卡压 → 安全性：禁忌与并发症 → 疗效评价与循证」走一遍本章判据 | 400 | [`skill-zhendao-gailun.md`](../departments/03-zhenjiu/13-zhendao-yixue/chapters/01-zhendao-gailun/outputs/skill-zhendao-gailun.md) |
+| prompt | 「针」与「刀」本是两件器械，合成一件就是把两种权限绑在一起 · 提示词 | — | 874 | [`prompt-01-zhendao-gailun.md`](../departments/03-zhenjiu/13-zhendao-yixue/chapters/01-zhendao-gailun/outputs/prompt-01-zhendao-gailun.md) |
+| skill | 「针」与「刀」本是两件器械，合成一件就是把两种权限绑在一起 | 「针」与「刀」本是两件器械，合成一件就是把两种权限绑在一起——按「正文：形制、权限与判据链 → 四个小节各答什么 → 运行与验证」走一遍本章判据 | 763 | [`skill-zhendao-gailun.md`](../departments/03-zhenjiu/13-zhendao-yixue/chapters/01-zhendao-gailun/outputs/skill-zhendao-gailun.md) |
 
-#### 第 2 章 · 器械、进针与操作规范
+#### 第 2 章 · 刀口方向是第一条纪律，因为深度错了能退，方向错了切的是另一个结构
 
 `13-zhendao-yixue/chapters/02-qixie-guifan/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 器械、进针与操作规范 · 提示词 | — | 489 | [`prompt-02-qixie-guifan.md`](../departments/03-zhenjiu/13-zhendao-yixue/chapters/02-qixie-guifan/outputs/prompt-02-qixie-guifan.md) |
-| skill | 器械、进针与操作规范 | 器械、进针与操作规范——按「针刀医学概论 → 器械、进针与操作规范 → 软组织解剖与病理 → 颈肩腰腿痛 → 关节与腱鞘疾病 → 神经卡压 → 安全性：禁忌与并发症 → 疗效评价与循证」走一遍本章判据 | 406 | [`skill-qixie-guifan.md`](../departments/03-zhenjiu/13-zhendao-yixue/chapters/02-qixie-guifan/outputs/skill-qixie-guifan.md) |
+| prompt | 刀口方向是第一条纪律，因为深度错了能退，方向错了切的是另一个结构 · 提示词 | — | 895 | [`prompt-02-qixie-guifan.md`](../departments/03-zhenjiu/13-zhendao-yixue/chapters/02-qixie-guifan/outputs/prompt-02-qixie-guifan.md) |
+| skill | 刀口方向是第一条纪律，因为深度错了能退，方向错了切的是另一个结构 | 刀口方向是第一条纪律，因为深度错了能退，方向错了切的是另一个结构——按「正文：深浅、方向与三套进针 → 四个小节各答什么 → 运行与验证」走一遍本章判据 | 779 | [`skill-qixie-guifan.md`](../departments/03-zhenjiu/13-zhendao-yixue/chapters/02-qixie-guifan/outputs/skill-qixie-guifan.md) |
 
-#### 第 3 章 · 软组织解剖与病理
+#### 第 3 章 · 粘连、瘢痕、挛缩不是三种病，是同一条修复链上的三个时相
 
 `13-zhendao-yixue/chapters/03-ruanzuzhi-bingli/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 软组织解剖与病理 · 提示词 | — | 483 | [`prompt-03-ruanzuzhi-bingli.md`](../departments/03-zhenjiu/13-zhendao-yixue/chapters/03-ruanzuzhi-bingli/outputs/prompt-03-ruanzuzhi-bingli.md) |
-| skill | 软组织解剖与病理 | 软组织解剖与病理——按「针刀医学概论 → 器械、进针与操作规范 → 软组织解剖与病理 → 颈肩腰腿痛 → 关节与腱鞘疾病 → 神经卡压 → 安全性：禁忌与并发症 → 疗效评价与循证」走一遍本章判据 | 406 | [`skill-ruanzuzhi-bingli.md`](../departments/03-zhenjiu/13-zhendao-yixue/chapters/03-ruanzuzhi-bingli/outputs/skill-ruanzuzhi-bingli.md) |
+| prompt | 粘连、瘢痕、挛缩不是三种病，是同一条修复链上的三个时相 · 提示词 | — | 911 | [`prompt-03-ruanzuzhi-bingli.md`](../departments/03-zhenjiu/13-zhendao-yixue/chapters/03-ruanzuzhi-bingli/outputs/prompt-03-ruanzuzhi-bingli.md) |
+| skill | 粘连、瘢痕、挛缩不是三种病，是同一条修复链上的三个时相 | 粘连、瘢痕、挛缩不是三种病，是同一条修复链上的三个时相——按「正文：分肉之间、三种时相与解结的对象 → 四个小节各答什么 → 运行与验证」走一遍本章判据 | 804 | [`skill-ruanzuzhi-bingli.md`](../departments/03-zhenjiu/13-zhendao-yixue/chapters/03-ruanzuzhi-bingli/outputs/skill-ruanzuzhi-bingli.md) |
 
-#### 第 4 章 · 颈肩腰腿痛
+#### 第 4 章 · 颈肩腰腿痛是针刀最主要的适应证群，因为这一群里痛的位置最常不是病灶的位置
 
 `13-zhendao-yixue/chapters/04-jingjian-yaotui/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 颈肩腰腿痛 · 提示词 | — | 473 | [`prompt-04-jingjian-yaotui.md`](../departments/03-zhenjiu/13-zhendao-yixue/chapters/04-jingjian-yaotui/outputs/prompt-04-jingjian-yaotui.md) |
-| skill | 颈肩腰腿痛 | 颈肩腰腿痛——按「针刀医学概论 → 器械、进针与操作规范 → 软组织解剖与病理 → 颈肩腰腿痛 → 关节与腱鞘疾病 → 神经卡压 → 安全性：禁忌与并发症 → 疗效评价与循证」走一遍本章判据 | 399 | [`skill-jingjian-yaotui.md`](../departments/03-zhenjiu/13-zhendao-yixue/chapters/04-jingjian-yaotui/outputs/skill-jingjian-yaotui.md) |
+| prompt | 颈肩腰腿痛是针刀最主要的适应证群，因为这一群里痛的位置最常不是病灶的位置 · 提示词 | — | 867 | [`prompt-04-jingjian-yaotui.md`](../departments/03-zhenjiu/13-zhendao-yixue/chapters/04-jingjian-yaotui/outputs/prompt-04-jingjian-yaotui.md) |
+| skill | 颈肩腰腿痛是针刀最主要的适应证群，因为这一群里痛的位置最常不是病灶的位置 | 颈肩腰腿痛是针刀最主要的适应证群，因为这一群里痛的位置最常不是病灶的位置——按「正文：位置、五个病名与先排除 → 四个小节各答什么 → 运行与验证」走一遍本章判据 | 750 | [`skill-jingjian-yaotui.md`](../departments/03-zhenjiu/13-zhendao-yixue/chapters/04-jingjian-yaotui/outputs/skill-jingjian-yaotui.md) |
 
-#### 第 5 章 · 关节与腱鞘疾病
+#### 第 5 章 · 这一章叫关节与腱鞘，而腱鞘在正文里只以一个检查手法的名字出现
 
 `13-zhendao-yixue/chapters/05-guanjie-jianqiao/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 关节与腱鞘疾病 · 提示词 | — | 480 | [`prompt-05-guanjie-jianqiao.md`](../departments/03-zhenjiu/13-zhendao-yixue/chapters/05-guanjie-jianqiao/outputs/prompt-05-guanjie-jianqiao.md) |
-| skill | 关节与腱鞘疾病 | 关节与腱鞘疾病——按「针刀医学概论 → 器械、进针与操作规范 → 软组织解剖与病理 → 颈肩腰腿痛 → 关节与腱鞘疾病 → 神经卡压 → 安全性：禁忌与并发症 → 疗效评价与循证」走一遍本章判据 | 404 | [`skill-guanjie-jianqiao.md`](../departments/03-zhenjiu/13-zhendao-yixue/chapters/05-guanjie-jianqiao/outputs/skill-guanjie-jianqiao.md) |
+| prompt | 这一章叫关节与腱鞘，而腱鞘在正文里只以一个检查手法的名字出现 · 提示词 | — | 887 | [`prompt-05-guanjie-jianqiao.md`](../departments/03-zhenjiu/13-zhendao-yixue/chapters/05-guanjie-jianqiao/outputs/prompt-05-guanjie-jianqiao.md) |
+| skill | 这一章叫关节与腱鞘，而腱鞘在正文里只以一个检查手法的名字出现 | 这一章叫关节与腱鞘，而腱鞘在正文里只以一个检查手法的名字出现——按「正文：三个速度、一套检查、一个肘 → 这四节各答什么 → 运行与验证」走一遍本章判据 | 777 | [`skill-guanjie-jianqiao.md`](../departments/03-zhenjiu/13-zhendao-yixue/chapters/05-guanjie-jianqiao/outputs/skill-guanjie-jianqiao.md) |
 
-#### 第 6 章 · 神经卡压
+#### 第 6 章 · 这一章叫神经卡压，而「卡压」二字在 11,230 字正文里一次都没出现
 
 `13-zhendao-yixue/chapters/06-shenjing-kaya/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 神经卡压 · 提示词 | — | 471 | [`prompt-06-shenjing-kaya.md`](../departments/03-zhenjiu/13-zhendao-yixue/chapters/06-shenjing-kaya/outputs/prompt-06-shenjing-kaya.md) |
-| skill | 神经卡压 | 神经卡压——按「针刀医学概论 → 器械、进针与操作规范 → 软组织解剖与病理 → 颈肩腰腿痛 → 关节与腱鞘疾病 → 神经卡压 → 安全性：禁忌与并发症 → 疗效评价与循证」走一遍本章判据 | 395 | [`skill-shenjing-kaya.md`](../departments/03-zhenjiu/13-zhendao-yixue/chapters/06-shenjing-kaya/outputs/skill-shenjing-kaya.md) |
+| prompt | 这一章叫神经卡压，而「卡压」二字在 11,230 字正文里一次都没出现 · 提示词 | — | 896 | [`prompt-06-shenjing-kaya.md`](../departments/03-zhenjiu/13-zhendao-yixue/chapters/06-shenjing-kaya/outputs/prompt-06-shenjing-kaya.md) |
+| skill | 这一章叫神经卡压，而「卡压」二字在 11,230 字正文里一次都没出现 | 这一章叫神经卡压，而「卡压」二字在 11,230 字正文里一次都没出现——按「正文：不仁与不用、根与干、三个跑题的单元 → 这四节各答什么 → 运行与验证」走一遍本章判据 | 780 | [`skill-shenjing-kaya.md`](../departments/03-zhenjiu/13-zhendao-yixue/chapters/06-shenjing-kaya/outputs/skill-shenjing-kaya.md) |
 
-#### 第 7 章 · 安全性：禁忌与并发症
+#### 第 7 章 · 这一章讲的全是针灸的禁忌，针刀那几条底本一个字也没写
 
 `13-zhendao-yixue/chapters/07-anquan-jinji/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 安全性：禁忌与并发症 · 提示词 | — | 488 | [`prompt-07-anquan-jinji.md`](../departments/03-zhenjiu/13-zhendao-yixue/chapters/07-anquan-jinji/outputs/prompt-07-anquan-jinji.md) |
-| skill | 安全性：禁忌与并发症 | 安全性：禁忌与并发症——按「针刀医学概论 → 器械、进针与操作规范 → 软组织解剖与病理 → 颈肩腰腿痛 → 关节与腱鞘疾病 → 神经卡压 → 安全性：禁忌与并发症 → 疗效评价与循证」走一遍本章判据 | 406 | [`skill-anquan-jinji.md`](../departments/03-zhenjiu/13-zhendao-yixue/chapters/07-anquan-jinji/outputs/skill-anquan-jinji.md) |
+| prompt | 这一章讲的全是针灸的禁忌，针刀那几条底本一个字也没写 · 提示词 | — | 913 | [`prompt-07-anquan-jinji.md`](../departments/03-zhenjiu/13-zhendao-yixue/chapters/07-anquan-jinji/outputs/prompt-07-anquan-jinji.md) |
+| skill | 这一章讲的全是针灸的禁忌，针刀那几条底本一个字也没写 | 这一章讲的全是针灸的禁忌，针刀那几条底本一个字也没写——按「正文：两个栏目、五个单元、三条自建 → 这四节各答什么 → 运行与验证」走一遍本章判据 | 803 | [`skill-anquan-jinji.md`](../departments/03-zhenjiu/13-zhendao-yixue/chapters/07-anquan-jinji/outputs/skill-anquan-jinji.md) |
 
-#### 第 8 章 · 疗效评价与循证
+#### 第 8 章 · 这一章讲的全是针灸的证据，针刀的证据一条也没有
 
 `13-zhendao-yixue/chapters/08-liaoxiao-zhengju/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 疗效评价与循证 · 提示词 | — | 480 | [`prompt-08-liaoxiao-zhengju.md`](../departments/03-zhenjiu/13-zhendao-yixue/chapters/08-liaoxiao-zhengju/outputs/prompt-08-liaoxiao-zhengju.md) |
-| skill | 疗效评价与循证 | 疗效评价与循证——按「针刀医学概论 → 器械、进针与操作规范 → 软组织解剖与病理 → 颈肩腰腿痛 → 关节与腱鞘疾病 → 神经卡压 → 安全性：禁忌与并发症 → 疗效评价与循证」走一遍本章判据 | 404 | [`skill-liaoxiao-zhengju.md`](../departments/03-zhenjiu/13-zhendao-yixue/chapters/08-liaoxiao-zhengju/outputs/skill-liaoxiao-zhengju.md) |
+| prompt | 这一章讲的全是针灸的证据，针刀的证据一条也没有 · 提示词 | — | 845 | [`prompt-08-liaoxiao-zhengju.md`](../departments/03-zhenjiu/13-zhendao-yixue/chapters/08-liaoxiao-zhengju/outputs/prompt-08-liaoxiao-zhengju.md) |
+| skill | 这一章讲的全是针灸的证据，针刀的证据一条也没有 | 这一章讲的全是针灸的证据，针刀的证据一条也没有——按「正文：一句「有效」、三层工具、一张别人的地图 → 这四节各答什么 → 运行与验证」走一遍本章判据 | 742 | [`skill-liaoxiao-zhengju.md`](../departments/03-zhenjiu/13-zhendao-yixue/chapters/08-liaoxiao-zhengju/outputs/skill-liaoxiao-zhengju.md) |
 
 ### 针灸镇痛与麻醉
 
 > Build · 第 7 学期 · 已产出 8 章
 
-#### 第 1 章 · 疼痛生理与评估
+#### 第 1 章 · 痛的层次决定评估指标，指标决定针能不能进场
 
 `14-zhenjiu-zhentong-mazui/chapters/01-tengtong-shengli/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 疼痛生理与评估 · 提示词 | — | 474 | [`prompt-01-tengtong-shengli.md`](../departments/03-zhenjiu/14-zhenjiu-zhentong-mazui/chapters/01-tengtong-shengli/outputs/prompt-01-tengtong-shengli.md) |
-| skill | 疼痛生理与评估 | 疼痛生理与评估——按「疼痛生理与评估 → 针刺镇痛机制 → 电针参数与量效 → 急性痛与术后镇痛 → 慢性痛 → 针刺辅助麻醉 → 围手术期应用 → 安全与证据等级」走一遍本章判据 | 406 | [`skill-tengtong-shengli.md`](../departments/03-zhenjiu/14-zhenjiu-zhentong-mazui/chapters/01-tengtong-shengli/outputs/skill-tengtong-shengli.md) |
+| prompt | 痛的层次决定评估指标，指标决定针能不能进场 · 提示词 | — | 556 | [`prompt-01-tengtong-shengli.md`](../departments/03-zhenjiu/14-zhenjiu-zhentong-mazui/chapters/01-tengtong-shengli/outputs/prompt-01-tengtong-shengli.md) |
+| skill | 痛的层次决定评估指标，指标决定针能不能进场 | 痛的层次决定评估指标，指标决定针能不能进场——按「先分层，再谈评估 → 评估的最小集：六个位置，一个都不能空 → 底本的证据结构：指标名齐了，读数规则缺席 → 把层翻译成三个决定」走一遍本章判据 | 461 | [`skill-tengtong-shengli.md`](../departments/03-zhenjiu/14-zhenjiu-zhentong-mazui/chapters/01-tengtong-shengli/outputs/skill-tengtong-shengli.md) |
 
-#### 第 2 章 · 针刺镇痛机制
+#### 第 2 章 · 机制的用处不在解释痛，而在规定什么算证据
 
 `14-zhenjiu-zhentong-mazui/chapters/02-zhentong-jizhi/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 针刺镇痛机制 · 提示词 | — | 471 | [`prompt-02-zhentong-jizhi.md`](../departments/03-zhenjiu/14-zhenjiu-zhentong-mazui/chapters/02-zhentong-jizhi/outputs/prompt-02-zhentong-jizhi.md) |
-| skill | 针刺镇痛机制 | 针刺镇痛机制——按「疼痛生理与评估 → 针刺镇痛机制 → 电针参数与量效 → 急性痛与术后镇痛 → 慢性痛 → 针刺辅助麻醉 → 围手术期应用 → 安全与证据等级」走一遍本章判据 | 402 | [`skill-zhentong-jizhi.md`](../departments/03-zhenjiu/14-zhenjiu-zhentong-mazui/chapters/02-zhentong-jizhi/outputs/skill-zhentong-jizhi.md) |
+| prompt | 机制的用处不在解释痛，而在规定什么算证据 · 提示词 | — | 542 | [`prompt-02-zhentong-jizhi.md`](../departments/03-zhenjiu/14-zhenjiu-zhentong-mazui/chapters/02-zhentong-jizhi/outputs/prompt-02-zhentong-jizhi.md) |
+| skill | 机制的用处不在解释痛，而在规定什么算证据 | 机制的用处不在解释痛，而在规定什么算证据——按「闸门关掉的是一句旧话，不是全部疑问 → 从「参与」走到「必要」，靠的是损毁实验 → 纳洛酮证明「参与」，不证明「专属」 → 机制的三个用法」走一遍本章判据 | 446 | [`skill-zhentong-jizhi.md`](../departments/03-zhenjiu/14-zhenjiu-zhentong-mazui/chapters/02-zhentong-jizhi/outputs/skill-zhentong-jizhi.md) |
 
-#### 第 3 章 · 电针参数与量效
+#### 第 3 章 · 电针真正可调的只有两个把手，其余都是刻度换算
 
 `14-zhenjiu-zhentong-mazui/chapters/03-dianzhen-canshu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 电针参数与量效 · 提示词 | — | 473 | [`prompt-03-dianzhen-canshu.md`](../departments/03-zhenjiu/14-zhenjiu-zhentong-mazui/chapters/03-dianzhen-canshu/outputs/prompt-03-dianzhen-canshu.md) |
-| skill | 电针参数与量效 | 电针参数与量效——按「疼痛生理与评估 → 针刺镇痛机制 → 电针参数与量效 → 急性痛与术后镇痛 → 慢性痛 → 针刺辅助麻醉 → 围手术期应用 → 安全与证据等级」走一遍本章判据 | 405 | [`skill-dianzhen-canshu.md`](../departments/03-zhenjiu/14-zhenjiu-zhentong-mazui/chapters/03-dianzhen-canshu/outputs/skill-dianzhen-canshu.md) |
+| prompt | 电针真正可调的只有两个把手，其余都是刻度换算 · 提示词 | — | 701 | [`prompt-03-dianzhen-canshu.md`](../departments/03-zhenjiu/14-zhenjiu-zhentong-mazui/chapters/03-dianzhen-canshu/outputs/prompt-03-dianzhen-canshu.md) |
+| skill | 电针真正可调的只有两个把手，其余都是刻度换算 | 电针真正可调的只有两个把手，其余都是刻度换算——按「三个选择、两个把手、一个时间 → 波形决定作用性质，频率强度只决定多少 → 量效不是单调上升，是一个倒 U → 安全是前置条件，不是注意事项里的一条」走一遍本章判据 | 604 | [`skill-dianzhen-canshu.md`](../departments/03-zhenjiu/14-zhenjiu-zhentong-mazui/chapters/03-dianzhen-canshu/outputs/skill-dianzhen-canshu.md) |
 
-#### 第 4 章 · 急性痛与术后镇痛
+#### 第 4 章 · 急性痛是唯一能在二十四小时内被证伪的场景
 
 `14-zhenjiu-zhentong-mazui/chapters/04-jixing-tong/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 急性痛与术后镇痛 · 提示词 | — | 476 | [`prompt-04-jixing-tong.md`](../departments/03-zhenjiu/14-zhenjiu-zhentong-mazui/chapters/04-jixing-tong/outputs/prompt-04-jixing-tong.md) |
-| skill | 急性痛与术后镇痛 | 急性痛与术后镇痛——按「疼痛生理与评估 → 针刺镇痛机制 → 电针参数与量效 → 急性痛与术后镇痛 → 慢性痛 → 针刺辅助麻醉 → 围手术期应用 → 安全与证据等级」走一遍本章判据 | 403 | [`skill-jixing-tong.md`](../departments/03-zhenjiu/14-zhenjiu-zhentong-mazui/chapters/04-jixing-tong/outputs/skill-jixing-tong.md) |
+| prompt | 急性痛是唯一能在二十四小时内被证伪的场景 · 提示词 | — | 641 | [`prompt-04-jixing-tong.md`](../departments/03-zhenjiu/14-zhenjiu-zhentong-mazui/chapters/04-jixing-tong/outputs/prompt-04-jixing-tong.md) |
+| skill | 急性痛是唯一能在二十四小时内被证伪的场景 | 急性痛是唯一能在二十四小时内被证伪的场景——按「急与慢的分界不在时长，在时间戳 → 术后为什么是最容易被验证的场景 → 把五条病证线读成急性痛的样本 → 边界：不给剂量，不给深度，不给替代」走一遍本章判据 | 542 | [`skill-jixing-tong.md`](../departments/03-zhenjiu/14-zhenjiu-zhentong-mazui/chapters/04-jixing-tong/outputs/skill-jixing-tong.md) |
 
-#### 第 5 章 · 慢性痛
+#### 第 5 章 · 慢性痛的分水岭不在痛了多久，而在性质与失能是否已经改写
 
 `14-zhenjiu-zhentong-mazui/chapters/05-manxing-tong/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 慢性痛 · 提示词 | — | 461 | [`prompt-05-manxing-tong.md`](../departments/03-zhenjiu/14-zhenjiu-zhentong-mazui/chapters/05-manxing-tong/outputs/prompt-05-manxing-tong.md) |
-| skill | 慢性痛 | 慢性痛——按「疼痛生理与评估 → 针刺镇痛机制 → 电针参数与量效 → 急性痛与术后镇痛 → 慢性痛 → 针刺辅助麻醉 → 围手术期应用 → 安全与证据等级」走一遍本章判据 | 394 | [`skill-manxing-tong.md`](../departments/03-zhenjiu/14-zhenjiu-zhentong-mazui/chapters/05-manxing-tong/outputs/skill-manxing-tong.md) |
+| prompt | 慢性痛的分水岭不在痛了多久，而在性质与失能是否已经改写 · 提示词 | — | 793 | [`prompt-05-manxing-tong.md`](../departments/03-zhenjiu/14-zhenjiu-zhentong-mazui/chapters/05-manxing-tong/outputs/prompt-05-manxing-tong.md) |
+| skill | 慢性痛的分水岭不在痛了多久，而在性质与失能是否已经改写 | 慢性痛的分水岭不在痛了多久，而在性质与失能是否已经改写——按「慢性痛要过的第一道关，不是时长 → 六个单元按「痛从哪里来」重排 → 定位：把「哪里痛」翻成「哪条经」 → 慢性痛的四条纪律」走一遍本章判据 | 679 | [`skill-manxing-tong.md`](../departments/03-zhenjiu/14-zhenjiu-zhentong-mazui/chapters/05-manxing-tong/outputs/skill-manxing-tong.md) |
 
-#### 第 6 章 · 针刺辅助麻醉
+#### 第 6 章 · 针麻能减的是药量，减不掉的是麻醉医师的判断
 
 `14-zhenjiu-zhentong-mazui/chapters/06-zhenci-mazui/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 针刺辅助麻醉 · 提示词 | — | 471 | [`prompt-06-zhenci-mazui.md`](../departments/03-zhenjiu/14-zhenjiu-zhentong-mazui/chapters/06-zhenci-mazui/outputs/prompt-06-zhenci-mazui.md) |
-| skill | 针刺辅助麻醉 | 针刺辅助麻醉——按「疼痛生理与评估 → 针刺镇痛机制 → 电针参数与量效 → 急性痛与术后镇痛 → 慢性痛 → 针刺辅助麻醉 → 围手术期应用 → 安全与证据等级」走一遍本章判据 | 400 | [`skill-zhenci-mazui.md`](../departments/03-zhenjiu/14-zhenjiu-zhentong-mazui/chapters/06-zhenci-mazui/outputs/skill-zhenci-mazui.md) |
+| prompt | 针麻能减的是药量，减不掉的是麻醉医师的判断 · 提示词 | — | 788 | [`prompt-06-zhenci-mazui.md`](../departments/03-zhenjiu/14-zhenjiu-zhentong-mazui/chapters/06-zhenci-mazui/outputs/prompt-06-zhenci-mazui.md) |
+| skill | 针麻能减的是药量，减不掉的是麻醉医师的判断 | 针麻能减的是药量，减不掉的是麻醉医师的判断——按「「针麻」一个词盖了三件事 → 电生理给出的上限在哪里 → 麻醉本身是最大的混杂因素 → 把「辅助」写成可核查的条件」走一遍本章判据 | 680 | [`skill-zhenci-mazui.md`](../departments/03-zhenjiu/14-zhenjiu-zhentong-mazui/chapters/06-zhenci-mazui/outputs/skill-zhenci-mazui.md) |
 
-#### 第 7 章 · 围手术期应用
+#### 第 7 章 · 围手术期的针刺，价值在三个时间窗而不在一套手法
 
 `14-zhenjiu-zhentong-mazui/chapters/07-weishouqi/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 围手术期应用 · 提示词 | — | 471 | [`prompt-07-weishouqi.md`](../departments/03-zhenjiu/14-zhenjiu-zhentong-mazui/chapters/07-weishouqi/outputs/prompt-07-weishouqi.md) |
-| skill | 围手术期应用 | 围手术期应用——按「疼痛生理与评估 → 针刺镇痛机制 → 电针参数与量效 → 急性痛与术后镇痛 → 慢性痛 → 针刺辅助麻醉 → 围手术期应用 → 安全与证据等级」走一遍本章判据 | 397 | [`skill-weishouqi.md`](../departments/03-zhenjiu/14-zhenjiu-zhentong-mazui/chapters/07-weishouqi/outputs/skill-weishouqi.md) |
+| prompt | 围手术期的针刺，价值在三个时间窗而不在一套手法 · 提示词 | — | 871 | [`prompt-07-weishouqi.md`](../departments/03-zhenjiu/14-zhenjiu-zhentong-mazui/chapters/07-weishouqi/outputs/prompt-07-weishouqi.md) |
+| skill | 围手术期的针刺，价值在三个时间窗而不在一套手法 | 围手术期的针刺，价值在三个时间窗而不在一套手法——按「三个时间窗，三段不同的判据 → 内关这个入口，与它挡不住的东西 → 本章最值钱的一节：把护理的类别纪律搬过来 → 四条硬边界与一种记录格式」走一遍本章判据 | 758 | [`skill-weishouqi.md`](../departments/03-zhenjiu/14-zhenjiu-zhentong-mazui/chapters/07-weishouqi/outputs/skill-weishouqi.md) |
 
-#### 第 8 章 · 安全与证据等级
+#### 第 8 章 · 「有效」与「证据充分」是两列，并成一列就会说谎
 
 `14-zhenjiu-zhentong-mazui/chapters/08-anquan-zhengju/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 安全与证据等级 · 提示词 | — | 474 | [`prompt-08-anquan-zhengju.md`](../departments/03-zhenjiu/14-zhenjiu-zhentong-mazui/chapters/08-anquan-zhengju/outputs/prompt-08-anquan-zhengju.md) |
-| skill | 安全与证据等级 | 安全与证据等级——按「疼痛生理与评估 → 针刺镇痛机制 → 电针参数与量效 → 急性痛与术后镇痛 → 慢性痛 → 针刺辅助麻醉 → 围手术期应用 → 安全与证据等级」走一遍本章判据 | 404 | [`skill-anquan-zhengju.md`](../departments/03-zhenjiu/14-zhenjiu-zhentong-mazui/chapters/08-anquan-zhengju/outputs/skill-anquan-zhengju.md) |
+| prompt | 「有效」与「证据充分」是两列，并成一列就会说谎 · 提示词 | — | 817 | [`prompt-08-anquan-zhengju.md`](../departments/03-zhenjiu/14-zhenjiu-zhentong-mazui/chapters/08-anquan-zhengju/outputs/prompt-08-anquan-zhengju.md) |
+| skill | 「有效」与「证据充分」是两列，并成一列就会说谎 | 「有效」与「证据充分」是两列，并成一列就会说谎——按「把病种放进两维表里 → 证据为什么会缩水 → 第二列：安全性 → 措辞纪律：把证据等级译成一句话」走一遍本章判据 | 709 | [`skill-anquan-zhengju.md`](../departments/03-zhenjiu/14-zhenjiu-zhentong-mazui/chapters/08-anquan-zhengju/outputs/skill-anquan-zhengju.md) |
 
 ### 中医康复学
 
 > Clinic · 第 7 学期 · 已产出 10 章
 
-#### 第 1 章 · 中医康复学概论
+#### 第 1 章 · 中医康复借了养生的方法，没借它的对象
 
 `15-zhongyi-kangfu-xue/chapters/01-zhongyi-kangfu-gailun/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 中医康复学概论 · 提示词 | — | 480 | [`prompt-01-zhongyi-kangfu-gailun.md`](../departments/03-zhenjiu/15-zhongyi-kangfu-xue/chapters/01-zhongyi-kangfu-gailun/outputs/prompt-01-zhongyi-kangfu-gailun.md) |
-| skill | 中医康复学概论 | 中医康复学概论——按「中医康复学概论 → 辨证与功能评定 → 中药康复 → 针灸康复 → 推拿康复 → 气功导引康复 → 饮食与情志康复 → 中风康复 → 骨伤与慢病康复 → 社区与家庭康复」走一遍本章判据 | 416 | [`skill-zhongyi-kangfu-gailun.md`](../departments/03-zhenjiu/15-zhongyi-kangfu-xue/chapters/01-zhongyi-kangfu-gailun/outputs/skill-zhongyi-kangfu-gailun.md) |
+| prompt | 中医康复借了养生的方法，没借它的对象 · 提示词 | — | 923 | [`prompt-01-zhongyi-kangfu-gailun.md`](../departments/03-zhenjiu/15-zhongyi-kangfu-xue/chapters/01-zhongyi-kangfu-gailun/outputs/prompt-01-zhongyi-kangfu-gailun.md) |
+| skill | 中医康复借了养生的方法，没借它的对象 | 中医康复借了养生的方法，没借它的对象——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 829 | [`skill-zhongyi-kangfu-gailun.md`](../departments/03-zhenjiu/15-zhongyi-kangfu-xue/chapters/01-zhongyi-kangfu-gailun/outputs/skill-zhongyi-kangfu-gailun.md) |
 
-#### 第 2 章 · 辨证与功能评定
+#### 第 2 章 · 证候与功能是两张纸，缺一张就交不了班
 
 `15-zhongyi-kangfu-xue/chapters/02-bianzheng-pingding/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 辨证与功能评定 · 提示词 | — | 481 | [`prompt-02-bianzheng-pingding.md`](../departments/03-zhenjiu/15-zhongyi-kangfu-xue/chapters/02-bianzheng-pingding/outputs/prompt-02-bianzheng-pingding.md) |
-| skill | 辨证与功能评定 | 辨证与功能评定——按「中医康复学概论 → 辨证与功能评定 → 中药康复 → 针灸康复 → 推拿康复 → 气功导引康复 → 饮食与情志康复 → 中风康复 → 骨伤与慢病康复 → 社区与家庭康复」走一遍本章判据 | 413 | [`skill-bianzheng-pingding.md`](../departments/03-zhenjiu/15-zhongyi-kangfu-xue/chapters/02-bianzheng-pingding/outputs/skill-bianzheng-pingding.md) |
+| prompt | 证候与功能是两张纸，缺一张就交不了班 · 提示词 | — | 878 | [`prompt-02-bianzheng-pingding.md`](../departments/03-zhenjiu/15-zhongyi-kangfu-xue/chapters/02-bianzheng-pingding/outputs/prompt-02-bianzheng-pingding.md) |
+| skill | 证候与功能是两张纸，缺一张就交不了班 | 证候与功能是两张纸，缺一张就交不了班——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 781 | [`skill-bianzheng-pingding.md`](../departments/03-zhenjiu/15-zhongyi-kangfu-xue/chapters/02-bianzheng-pingding/outputs/skill-bianzheng-pingding.md) |
 
-#### 第 3 章 · 中药康复
+#### 第 3 章 · 中药康复只有一条路铺到底：内服
 
 `15-zhongyi-kangfu-xue/chapters/03-zhongyao-kangfu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 中药康复 · 提示词 | — | 472 | [`prompt-03-zhongyao-kangfu.md`](../departments/03-zhenjiu/15-zhongyi-kangfu-xue/chapters/03-zhongyao-kangfu/outputs/prompt-03-zhongyao-kangfu.md) |
-| skill | 中药康复 | 中药康复——按「中医康复学概论 → 辨证与功能评定 → 中药康复 → 针灸康复 → 推拿康复 → 气功导引康复 → 饮食与情志康复 → 中风康复 → 骨伤与慢病康复 → 社区与家庭康复」走一遍本章判据 | 404 | [`skill-zhongyao-kangfu.md`](../departments/03-zhenjiu/15-zhongyi-kangfu-xue/chapters/03-zhongyao-kangfu/outputs/skill-zhongyao-kangfu.md) |
+| prompt | 中药康复只有一条路铺到底：内服 · 提示词 | — | 820 | [`prompt-03-zhongyao-kangfu.md`](../departments/03-zhenjiu/15-zhongyi-kangfu-xue/chapters/03-zhongyao-kangfu/outputs/prompt-03-zhongyao-kangfu.md) |
+| skill | 中药康复只有一条路铺到底：内服 | 中药康复只有一条路铺到底：内服——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 723 | [`skill-zhongyao-kangfu.md`](../departments/03-zhenjiu/15-zhongyi-kangfu-xue/chapters/03-zhongyao-kangfu/outputs/skill-zhongyao-kangfu.md) |
 
-#### 第 4 章 · 针灸康复
+#### 第 4 章 · 名为针灸康复，底本里「灸」是「针」的十一倍
 
 `15-zhongyi-kangfu-xue/chapters/04-zhenjiu-kangfu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 针灸康复 · 提示词 | — | 472 | [`prompt-04-zhenjiu-kangfu.md`](../departments/03-zhenjiu/15-zhongyi-kangfu-xue/chapters/04-zhenjiu-kangfu/outputs/prompt-04-zhenjiu-kangfu.md) |
-| skill | 针灸康复 | 针灸康复——按「中医康复学概论 → 辨证与功能评定 → 中药康复 → 针灸康复 → 推拿康复 → 气功导引康复 → 饮食与情志康复 → 中风康复 → 骨伤与慢病康复 → 社区与家庭康复」走一遍本章判据 | 403 | [`skill-zhenjiu-kangfu.md`](../departments/03-zhenjiu/15-zhongyi-kangfu-xue/chapters/04-zhenjiu-kangfu/outputs/skill-zhenjiu-kangfu.md) |
+| prompt | 名为针灸康复，底本里「灸」是「针」的十一倍 · 提示词 | — | 873 | [`prompt-04-zhenjiu-kangfu.md`](../departments/03-zhenjiu/15-zhongyi-kangfu-xue/chapters/04-zhenjiu-kangfu/outputs/prompt-04-zhenjiu-kangfu.md) |
+| skill | 名为针灸康复，底本里「灸」是「针」的十一倍 | 名为针灸康复，底本里「灸」是「针」的十一倍——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 769 | [`skill-zhenjiu-kangfu.md`](../departments/03-zhenjiu/15-zhongyi-kangfu-xue/chapters/04-zhenjiu-kangfu/outputs/skill-zhenjiu-kangfu.md) |
 
-#### 第 5 章 · 推拿康复
+#### 第 5 章 · 推拿康复的处方是六件事的顺序，不是六个手法
 
 `15-zhongyi-kangfu-xue/chapters/05-tuina-kangfu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 推拿康复 · 提示词 | — | 472 | [`prompt-05-tuina-kangfu.md`](../departments/03-zhenjiu/15-zhongyi-kangfu-xue/chapters/05-tuina-kangfu/outputs/prompt-05-tuina-kangfu.md) |
-| skill | 推拿康复 | 推拿康复——按「中医康复学概论 → 辨证与功能评定 → 中药康复 → 针灸康复 → 推拿康复 → 气功导引康复 → 饮食与情志康复 → 中风康复 → 骨伤与慢病康复 → 社区与家庭康复」走一遍本章判据 | 401 | [`skill-tuina-kangfu.md`](../departments/03-zhenjiu/15-zhongyi-kangfu-xue/chapters/05-tuina-kangfu/outputs/skill-tuina-kangfu.md) |
+| prompt | 推拿康复的处方是六件事的顺序，不是六个手法 · 提示词 | — | 830 | [`prompt-05-tuina-kangfu.md`](../departments/03-zhenjiu/15-zhongyi-kangfu-xue/chapters/05-tuina-kangfu/outputs/prompt-05-tuina-kangfu.md) |
+| skill | 推拿康复的处方是六件事的顺序，不是六个手法 | 推拿康复的处方是六件事的顺序，不是六个手法——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 724 | [`skill-tuina-kangfu.md`](../departments/03-zhenjiu/15-zhongyi-kangfu-xue/chapters/05-tuina-kangfu/outputs/skill-tuina-kangfu.md) |
 
-#### 第 6 章 · 气功导引康复
+#### 第 6 章 · 气功康复教的是把呼吸调慢，不是把气送到某处
 
 `15-zhongyi-kangfu-xue/chapters/06-qigong-kangfu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 气功导引康复 · 提示词 | — | 478 | [`prompt-06-qigong-kangfu.md`](../departments/03-zhenjiu/15-zhongyi-kangfu-xue/chapters/06-qigong-kangfu/outputs/prompt-06-qigong-kangfu.md) |
-| skill | 气功导引康复 | 气功导引康复——按「中医康复学概论 → 辨证与功能评定 → 中药康复 → 针灸康复 → 推拿康复 → 气功导引康复 → 饮食与情志康复 → 中风康复 → 骨伤与慢病康复 → 社区与家庭康复」走一遍本章判据 | 406 | [`skill-qigong-kangfu.md`](../departments/03-zhenjiu/15-zhongyi-kangfu-xue/chapters/06-qigong-kangfu/outputs/skill-qigong-kangfu.md) |
+| prompt | 气功康复教的是把呼吸调慢，不是把气送到某处 · 提示词 | — | 809 | [`prompt-06-qigong-kangfu.md`](../departments/03-zhenjiu/15-zhongyi-kangfu-xue/chapters/06-qigong-kangfu/outputs/prompt-06-qigong-kangfu.md) |
+| skill | 气功康复教的是把呼吸调慢，不是把气送到某处 | 气功康复教的是把呼吸调慢，不是把气送到某处——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 704 | [`skill-qigong-kangfu.md`](../departments/03-zhenjiu/15-zhongyi-kangfu-xue/chapters/06-qigong-kangfu/outputs/skill-qigong-kangfu.md) |
 
-#### 第 7 章 · 饮食与情志康复
+#### 第 7 章 · 饮食与情志康复的处方开在饭桌和床头，不在药罐里
 
 `15-zhongyi-kangfu-xue/chapters/07-yinshi-qingzhi/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 饮食与情志康复 · 提示词 | — | 481 | [`prompt-07-yinshi-qingzhi.md`](../departments/03-zhenjiu/15-zhongyi-kangfu-xue/chapters/07-yinshi-qingzhi/outputs/prompt-07-yinshi-qingzhi.md) |
-| skill | 饮食与情志康复 | 饮食与情志康复——按「中医康复学概论 → 辨证与功能评定 → 中药康复 → 针灸康复 → 推拿康复 → 气功导引康复 → 饮食与情志康复 → 中风康复 → 骨伤与慢病康复 → 社区与家庭康复」走一遍本章判据 | 409 | [`skill-yinshi-qingzhi.md`](../departments/03-zhenjiu/15-zhongyi-kangfu-xue/chapters/07-yinshi-qingzhi/outputs/skill-yinshi-qingzhi.md) |
+| prompt | 饮食与情志康复的处方开在饭桌和床头，不在药罐里 · 提示词 | — | 858 | [`prompt-07-yinshi-qingzhi.md`](../departments/03-zhenjiu/15-zhongyi-kangfu-xue/chapters/07-yinshi-qingzhi/outputs/prompt-07-yinshi-qingzhi.md) |
+| skill | 饮食与情志康复的处方开在饭桌和床头，不在药罐里 | 饮食与情志康复的处方开在饭桌和床头，不在药罐里——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 752 | [`skill-yinshi-qingzhi.md`](../departments/03-zhenjiu/15-zhongyi-kangfu-xue/chapters/07-yinshi-qingzhi/outputs/skill-yinshi-qingzhi.md) |
 
-#### 第 8 章 · 中风康复
+#### 第 8 章 · 中风康复的底本只有一根针，它把急救写在了康复前面
 
 `15-zhongyi-kangfu-xue/chapters/08-zhongfeng-kangfu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 中风康复 · 提示词 | — | 471 | [`prompt-08-zhongfeng-kangfu.md`](../departments/03-zhenjiu/15-zhongyi-kangfu-xue/chapters/08-zhongfeng-kangfu/outputs/prompt-08-zhongfeng-kangfu.md) |
-| skill | 中风康复 | 中风康复——按「中医康复学概论 → 辨证与功能评定 → 中药康复 → 针灸康复 → 推拿康复 → 气功导引康复 → 饮食与情志康复 → 中风康复 → 骨伤与慢病康复 → 社区与家庭康复」走一遍本章判据 | 405 | [`skill-zhongfeng-kangfu.md`](../departments/03-zhenjiu/15-zhongyi-kangfu-xue/chapters/08-zhongfeng-kangfu/outputs/skill-zhongfeng-kangfu.md) |
+| prompt | 中风康复的底本只有一根针，它把急救写在了康复前面 · 提示词 | — | 846 | [`prompt-08-zhongfeng-kangfu.md`](../departments/03-zhenjiu/15-zhongyi-kangfu-xue/chapters/08-zhongfeng-kangfu/outputs/prompt-08-zhongfeng-kangfu.md) |
+| skill | 中风康复的底本只有一根针，它把急救写在了康复前面 | 中风康复的底本只有一根针，它把急救写在了康复前面——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 741 | [`skill-zhongfeng-kangfu.md`](../departments/03-zhenjiu/15-zhongyi-kangfu-xue/chapters/08-zhongfeng-kangfu/outputs/skill-zhongfeng-kangfu.md) |
 
-#### 第 9 章 · 骨伤与慢病康复
+#### 第 9 章 · 骨伤与慢病康复的底本只收了颈、腰和落枕三个病
 
 `15-zhongyi-kangfu-xue/chapters/09-gushang-manbing/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 骨伤与慢病康复 · 提示词 | — | 480 | [`prompt-09-gushang-manbing.md`](../departments/03-zhenjiu/15-zhongyi-kangfu-xue/chapters/09-gushang-manbing/outputs/prompt-09-gushang-manbing.md) |
-| skill | 骨伤与慢病康复 | 骨伤与慢病康复——按「中医康复学概论 → 辨证与功能评定 → 中药康复 → 针灸康复 → 推拿康复 → 气功导引康复 → 饮食与情志康复 → 中风康复 → 骨伤与慢病康复 → 社区与家庭康复」走一遍本章判据 | 410 | [`skill-gushang-manbing.md`](../departments/03-zhenjiu/15-zhongyi-kangfu-xue/chapters/09-gushang-manbing/outputs/skill-gushang-manbing.md) |
+| prompt | 骨伤与慢病康复的底本只收了颈、腰和落枕三个病 · 提示词 | — | 775 | [`prompt-09-gushang-manbing.md`](../departments/03-zhenjiu/15-zhongyi-kangfu-xue/chapters/09-gushang-manbing/outputs/prompt-09-gushang-manbing.md) |
+| skill | 骨伤与慢病康复的底本只收了颈、腰和落枕三个病 | 骨伤与慢病康复的底本只收了颈、腰和落枕三个病——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 671 | [`skill-gushang-manbing.md`](../departments/03-zhenjiu/15-zhongyi-kangfu-xue/chapters/09-gushang-manbing/outputs/skill-gushang-manbing.md) |
 
-#### 第 10 章 · 社区与家庭康复
+#### 第 10 章 · 社区与家庭康复这一章，底本里一个中医词都没有
 
 `15-zhongyi-kangfu-xue/chapters/10-shequ-jiating/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 社区与家庭康复 · 提示词 | — | 483 | [`prompt-10-shequ-jiating.md`](../departments/03-zhenjiu/15-zhongyi-kangfu-xue/chapters/10-shequ-jiating/outputs/prompt-10-shequ-jiating.md) |
-| skill | 社区与家庭康复 | 社区与家庭康复——按「中医康复学概论 → 辨证与功能评定 → 中药康复 → 针灸康复 → 推拿康复 → 气功导引康复 → 饮食与情志康复 → 中风康复 → 骨伤与慢病康复 → 社区与家庭康复」走一遍本章判据 | 408 | [`skill-shequ-jiating.md`](../departments/03-zhenjiu/15-zhongyi-kangfu-xue/chapters/10-shequ-jiating/outputs/skill-shequ-jiating.md) |
+| prompt | 社区与家庭康复这一章，底本里一个中医词都没有 · 提示词 | — | 836 | [`prompt-10-shequ-jiating.md`](../departments/03-zhenjiu/15-zhongyi-kangfu-xue/chapters/10-shequ-jiating/outputs/prompt-10-shequ-jiating.md) |
+| skill | 社区与家庭康复这一章，底本里一个中医词都没有 | 社区与家庭康复这一章，底本里一个中医词都没有——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 729 | [`skill-shequ-jiating.md`](../departments/03-zhenjiu/15-zhongyi-kangfu-xue/chapters/10-shequ-jiating/outputs/skill-shequ-jiating.md) |
 
 ### 针灸学
 
@@ -6771,12 +6771,12 @@
 | skill | 神志病没有化验单，判据只能从「看和问」里长出来 | 神志病没有化验单，判据只能从「看和问」里长出来——按「这门学科的对象是「神」的失序，不是「脑」的病灶 → 7 项观察，3 项靠自述，4 项不靠 → 三项同现才算神志病，单项一律不算 → 能做什么，以及什么时候必须停手」走一遍本章判据 | 667 | [`skill-01-xulun.md`](../departments/01-zhongyi/20-zhongyi-jingshenbing-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 用本章内容做一件事：绪论 | — | 406 | [`prompt-01-xulun.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 绪论 | 用《临床中药学》第 1 章「绪论」的单元层做可核对的教学材料。 | 502 | [`skill-01-xulun.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/01-xulun/outputs/skill-01-xulun.md) |
-| prompt | 绪论 · 提示词 | — | 444 | [`prompt-01-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 绪论 | 绪论——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 369 | [`skill-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 绪论不是开场白：它划定针灸学的边界、来路与读法 · 提示词 | — | 1115 | [`prompt-01-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
+| skill | 绪论不是开场白：它划定针灸学的边界、来路与读法 | 绪论不是开场白：它划定针灸学的边界、来路与读法——按「篇幅账：一半给历史，三分之一给定义 → 两个起源各有物证：砭石在石，灸火在火 → 三次奠基与四次校订：书目是校出来的，不是列出来的 → 学什么：三块内容与一条练习链」走一遍本章判据 | 1002 | [`skill-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 泛化不是模型的属性，是数据与假设的私下约定 · 提示词 | — | 920 | [`prompt-01-xulun.md`](../departments/07-zhineng/16-jiqi-xuexi/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 泛化不是模型的属性，是数据与假设的私下约定 | 泛化不是模型的属性，是数据与假设的私下约定——按「把一个「学习」问题写成四件东西 → 训练误差与泛化误差：两个不同的量 → 归纳偏好：算法必须偏心，而且偏心要写出来 → NFL 定理：一句被引用得最多、理解得最少的话」走一遍本章判据 | 808 | [`skill-xulun.md`](../departments/07-zhineng/16-jiqi-xuexi/chapters/01-xulun/outputs/skill-xulun.md) |
-| prompt | 绪论 · 提示词 | — | 442 | [`prompt-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
-| skill | 绪论 | 绪论——按「运动 → 内脏 → 脉管与内分泌 → 神经：由支架到内脏，再到支配」走一遍本章判据 | 365 | [`skill-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得 · 提示词 | — | 1049 | [`prompt-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
+| skill | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得 | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得——按「定义的第一句就带了限制：只写「类别与关系」 → 从细胞到系统：九大系统是一条由支架到支配的链 → 分科与材料：同一批结构的几种看法 → 姿势、轴与面：全书共用的坐标系」走一遍本章判据 | 931 | [`skill-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链 · 提示词 | — | 901 | [`prompt-01-xulun.md`](../departments/09-jichu/04-yixue-shengwu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链 | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链——按「这门课真正教的是「分层」，不是「名词」 → 三个判据，构成一条可证伪的链 → 16 章有两次转折，不是十六个抽屉 → 每章只回答四个问题」走一遍本章判据 | 781 | [`skill-xulun.md`](../departments/09-jichu/04-yixue-shengwu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 绪论：把「稳态」写成一条可检查的回路 · 提示词 | — | 856 | [`prompt-xulun.md`](../departments/09-jichu/06-shengli-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
@@ -6787,374 +6787,374 @@
 | skill | 绪论 | 绪论——按「层次 → 通道 → 间隙 → 毗邻：由浅入深地读一个局部」走一遍本章判据 | 359 | [`skill-xulun.md`](../departments/09-jichu/08-jubu-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 绪论：一门学科先要学会「怎么描述」 · 提示词 | — | 897 | [`prompt-xulun.md`](../departments/09-jichu/10-bingli-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
 | skill | 绪论：一门学科先要学会「怎么描述」 | 绪论：一门学科先要学会「怎么描述」——按「第一句话不是定义，是一份分工 → 四节十二单元的笔墨，与从原因到临床的五类内容 → 发展简史：观察单位一步步下沉 → 三个观察层次：不是三选一，是三段路」走一遍本章判据 | 789 | [`skill-xulun.md`](../departments/09-jichu/10-bingli-xue/chapters/01-xulun/outputs/skill-xulun.md) |
-| prompt | 流行病学绪论 · 提示词 | — | 463 | [`prompt-01-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 流行病学绪论 | 流行病学绪论——按「描述（分布与测量）→ 分析（病例对照与队列）→ 推断（因果与偏倚）→ 应用（监测与循证）」走一遍本章判据 | 382 | [`skill-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 流行病学先问人群里有多少人发病，再问某个病人为什么病 · 提示词 | — | 1038 | [`prompt-01-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
+| skill | 流行病学先问人群里有多少人发病，再问某个病人为什么病 | 流行病学先问人群里有多少人发病，再问某个病人为什么病——按「定义的三层限制：人群、分布、防制 → 四项任务是一条不能跳步的链 → 方法的分类只看两条线：谁施加干预、有没有比较组 → 同一批数字，三种问法：率、比、比例与三个关联指标」走一遍本章判据 | 921 | [`skill-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 
-#### 第 2 章 · 经络总论
+#### 第 2 章 · 经络不是线路图，是把脏腑与肢节接成闭环的规则
 
 `16-zhenjiu-xue/chapters/02-jingluo-zonglun/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 经络总论 · 提示词 | — | 451 | [`prompt-02-jingluo-zonglun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/02-jingluo-zonglun/outputs/prompt-02-jingluo-zonglun.md) |
-| skill | 经络总论 | 经络总论——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 383 | [`skill-jingluo-zonglun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/02-jingluo-zonglun/outputs/skill-jingluo-zonglun.md) |
+| prompt | 经络不是线路图，是把脏腑与肢节接成闭环的规则 · 提示词 | — | 1021 | [`prompt-02-jingluo-zonglun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/02-jingluo-zonglun/outputs/prompt-02-jingluo-zonglun.md) |
+| skill | 经络不是线路图，是把脏腑与肢节接成闭环的规则 | 经络不是线路图，是把脏腑与肢节接成闭环的规则——按「分层：干、支、络、筋、皮各管一段 → 十二经脉：命名、排布、走向与交接 → 流注：从肺回到肺的闭环 → 奇经八脉与临床落点」走一遍本章判据 | 919 | [`skill-jingluo-zonglun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/02-jingluo-zonglun/outputs/skill-jingluo-zonglun.md) |
 
-#### 第 3 章 · 腧穴总论
+#### 第 3 章 · 腧穴的数目是历代校订出来的，不是一次定死的
 
 `16-zhenjiu-xue/chapters/03-shuxue-zonglun/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 腧穴总论 · 提示词 | — | 452 | [`prompt-03-shuxue-zonglun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/03-shuxue-zonglun/outputs/prompt-03-shuxue-zonglun.md) |
-| skill | 腧穴总论 | 腧穴总论——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 382 | [`skill-shuxue-zonglun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/03-shuxue-zonglun/outputs/skill-shuxue-zonglun.md) |
+| prompt | 腧穴的数目是历代校订出来的，不是一次定死的 · 提示词 | — | 1073 | [`prompt-03-shuxue-zonglun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/03-shuxue-zonglun/outputs/prompt-03-shuxue-zonglun.md) |
+| skill | 腧穴的数目是历代校订出来的，不是一次定死的 | 腧穴的数目是历代校订出来的，不是一次定死的——按「腧穴是两副身份：病反应在这里，针也下在这里 → 分类与数目：361 是校了四遍之后剩下的 → 定位：四路方法，骨度最硬 → 主治规律与特定穴：三条规律，十类接口」走一遍本章判据 | 971 | [`skill-shuxue-zonglun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/03-shuxue-zonglun/outputs/skill-shuxue-zonglun.md) |
 
-#### 第 4 章 · 手太阴肺经及其腧穴
+#### 第 4 章 · 肺经十一穴：一条从胸走到拇指的经，先定属络再定穴
 
 `16-zhenjiu-xue/chapters/04-shoutaiyin-feijing/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 手太阴肺经及其腧穴 · 提示词 | — | 465 | [`prompt-04-shoutaiyin-feijing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/04-shoutaiyin-feijing/outputs/prompt-04-shoutaiyin-feijing.md) |
-| skill | 手太阴肺经及其腧穴 | 手太阴肺经及其腧穴——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 396 | [`skill-shoutaiyin-feijing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/04-shoutaiyin-feijing/outputs/skill-shoutaiyin-feijing.md) |
+| prompt | 肺经十一穴：一条从胸走到拇指的经，先定属络再定穴 · 提示词 | — | 940 | [`prompt-04-shoutaiyin-feijing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/04-shoutaiyin-feijing/outputs/prompt-04-shoutaiyin-feijing.md) |
+| skill | 肺经十一穴：一条从胸走到拇指的经，先定属络再定穴 | 肺经十一穴：一条从胸走到拇指的经，先定属络再定穴——按「循行三段：体内属络、体表胸臂、支脉交大肠 → 主治两端：肺系与循行部位 → 十一穴与七重点 → 操作红线与两个「不给」」走一遍本章判据 | 839 | [`skill-shoutaiyin-feijing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/04-shoutaiyin-feijing/outputs/skill-shoutaiyin-feijing.md) |
 
-#### 第 5 章 · 手阳明大肠经及其腧穴
+#### 第 5 章 · 大肠经二十穴：把面口与肠腑拴在同一条经上的长线
 
 `16-zhenjiu-xue/chapters/05-shouyangming-dachangjing/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 手阳明大肠经及其腧穴 · 提示词 | — | 468 | [`prompt-05-shouyangming-dachangjing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/05-shouyangming-dachangjing/outputs/prompt-05-shouyangming-dachangjing.md) |
-| skill | 手阳明大肠经及其腧穴 | 手阳明大肠经及其腧穴——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 404 | [`skill-shouyangming-dachangjing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/05-shouyangming-dachangjing/outputs/skill-shouyangming-dachangjing.md) |
+| prompt | 大肠经二十穴：把面口与肠腑拴在同一条经上的长线 · 提示词 | — | 939 | [`prompt-05-shouyangming-dachangjing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/05-shouyangming-dachangjing/outputs/prompt-05-shouyangming-dachangjing.md) |
+| skill | 大肠经二十穴：把面口与肠腑拴在同一条经上的长线 | 大肠经二十穴：把面口与肠腑拴在同一条经上的长线——按「循行：从食指到鼻旁，中间绕了一次脏腑 → 主治四类与「面口合谷收」 → 二十穴的三段功能带 → 合谷与曲池：两个穴撑起半章」走一遍本章判据 | 845 | [`skill-shouyangming-dachangjing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/05-shouyangming-dachangjing/outputs/skill-shouyangming-dachangjing.md) |
 
-#### 第 6 章 · 足阳明胃经及其腧穴
+#### 第 6 章 · 胃经的重量不在四十五穴，而在十四组可操作条目
 
 `16-zhenjiu-xue/chapters/06-zuyangming-weijing/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 足阳明胃经及其腧穴 · 提示词 | — | 466 | [`prompt-06-zuyangming-weijing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/06-zuyangming-weijing/outputs/prompt-06-zuyangming-weijing.md) |
-| skill | 足阳明胃经及其腧穴 | 足阳明胃经及其腧穴——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 396 | [`skill-zuyangming-weijing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/06-zuyangming-weijing/outputs/skill-zuyangming-weijing.md) |
+| prompt | 胃经的重量不在四十五穴，而在十四组可操作条目 · 提示词 | — | 824 | [`prompt-06-zuyangming-weijing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/06-zuyangming-weijing/outputs/prompt-06-zuyangming-weijing.md) |
+| skill | 胃经的重量不在四十五穴，而在十四组可操作条目 | 胃经的重量不在四十五穴，而在十四组可操作条目——按「四十五与十四：这一章的容量用在了哪 → 从眶缘到趾端：风险不是一条梯度，是四种 → 按特定穴属性重排，主治才成体系 → 「多气多血」不是形容词，是一条取穴规则」走一遍本章判据 | 734 | [`skill-zuyangming-weijing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/06-zuyangming-weijing/outputs/skill-zuyangming-weijing.md) |
 
-#### 第 7 章 · 足太阴脾经及其腧穴
+#### 第 7 章 · 脾经全部关键压在一个八寸的交叉点上
 
 `16-zhenjiu-xue/chapters/07-zutaiyin-pijing/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 足太阴脾经及其腧穴 · 提示词 | — | 465 | [`prompt-07-zutaiyin-pijing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/07-zutaiyin-pijing/outputs/prompt-07-zutaiyin-pijing.md) |
-| skill | 足太阴脾经及其腧穴 | 足太阴脾经及其腧穴——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 393 | [`skill-zutaiyin-pijing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/07-zutaiyin-pijing/outputs/skill-zutaiyin-pijing.md) |
+| prompt | 脾经全部关键压在一个八寸的交叉点上 · 提示词 | — | 754 | [`prompt-07-zutaiyin-pijing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/07-zutaiyin-pijing/outputs/prompt-07-zutaiyin-pijing.md) |
+| skill | 脾经全部关键压在一个八寸的交叉点上 | 脾经全部关键压在一个八寸的交叉点上——按「全章的骨架是一个八寸的交叉 → 二十一穴与六组条目：重点穴制度说明什么 → 四类主治其实是脾的三个功能 → 能落到操作上的只有一条病机」走一遍本章判据 | 666 | [`skill-zutaiyin-pijing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/07-zutaiyin-pijing/outputs/skill-zutaiyin-pijing.md) |
 
-#### 第 8 章 · 手少阴心经及其腧穴
+#### 第 8 章 · 心经九穴全在手臂上，病候却全在胸咽目
 
 `16-zhenjiu-xue/chapters/08-shoushaoyin-xinjing/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 手少阴心经及其腧穴 · 提示词 | — | 465 | [`prompt-08-shoushaoyin-xinjing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/08-shoushaoyin-xinjing/outputs/prompt-08-shoushaoyin-xinjing.md) |
-| skill | 手少阴心经及其腧穴 | 手少阴心经及其腧穴——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 397 | [`skill-shoushaoyin-xinjing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/08-shoushaoyin-xinjing/outputs/skill-shoushaoyin-xinjing.md) |
+| prompt | 心经九穴全在手臂上，病候却全在胸咽目 · 提示词 | — | 744 | [`prompt-08-shoushaoyin-xinjing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/08-shoushaoyin-xinjing/outputs/prompt-08-shoushaoyin-xinjing.md) |
+| skill | 心经九穴全在手臂上，病候却全在胸咽目 | 心经九穴全在手臂上，病候却全在胸咽目——按「起于心中：体内起点与体表起点不是一处 → 九穴全覆盖，密度却是全书最高 → 腕上一寸半：四穴共用一把尺子 → 四个特定穴，四条功能线」走一遍本章判据 | 659 | [`skill-shoushaoyin-xinjing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/08-shoushaoyin-xinjing/outputs/skill-shoushaoyin-xinjing.md) |
 
-#### 第 9 章 · 手太阳小肠经及其腧穴
+#### 第 9 章 · 小肠经十九穴有七穴挤在肩胛区，主治的头一条却是耳
 
 `16-zhenjiu-xue/chapters/09-shoutaiyang-xiaochangjing/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 手太阳小肠经及其腧穴 · 提示词 | — | 468 | [`prompt-09-shoutaiyang-xiaochangjing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/09-shoutaiyang-xiaochangjing/outputs/prompt-09-shoutaiyang-xiaochangjing.md) |
-| skill | 手太阳小肠经及其腧穴 | 手太阳小肠经及其腧穴——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 405 | [`skill-shoutaiyang-xiaochangjing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/09-shoutaiyang-xiaochangjing/outputs/skill-shoutaiyang-xiaochangjing.md) |
+| prompt | 小肠经十九穴有七穴挤在肩胛区，主治的头一条却是耳 · 提示词 | — | 747 | [`prompt-09-shoutaiyang-xiaochangjing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/09-shoutaiyang-xiaochangjing/outputs/prompt-09-shoutaiyang-xiaochangjing.md) |
+| skill | 小肠经十九穴有七穴挤在肩胛区，主治的头一条却是耳 | 小肠经十九穴有七穴挤在肩胛区，主治的头一条却是耳——按「一条绕行的折线：十九穴怎么分布 → 七穴共用一条规则：向外斜刺 → 「液」是这一章唯一能落到脏腑的线 → 后溪通督：一个输穴把腰背接进来」走一遍本章判据 | 662 | [`skill-shoutaiyang-xiaochangjing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/09-shoutaiyang-xiaochangjing/outputs/skill-shoutaiyang-xiaochangjing.md) |
 
-#### 第 10 章 · 足太阳膀胱经及其腧穴
+#### 第 10 章 · 六十七穴不是清单，是两条平行侧线加一张背俞索引
 
 `16-zhenjiu-xue/chapters/10-zutaiyang-pangguangjing/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 足太阳膀胱经及其腧穴 · 提示词 | — | 471 | [`prompt-10-zutaiyang-pangguangjing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/10-zutaiyang-pangguangjing/outputs/prompt-10-zutaiyang-pangguangjing.md) |
-| skill | 足太阳膀胱经及其腧穴 | 足太阳膀胱经及其腧穴——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 403 | [`skill-zutaiyang-pangguangjing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/10-zutaiyang-pangguangjing/outputs/skill-zutaiyang-pangguangjing.md) |
+| prompt | 六十七穴不是清单，是两条平行侧线加一张背俞索引 · 提示词 | — | 568 | [`prompt-10-zutaiyang-pangguangjing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/10-zutaiyang-pangguangjing/outputs/prompt-10-zutaiyang-pangguangjing.md) |
+| skill | 六十七穴不是清单，是两条平行侧线加一张背俞索引 | 六十七穴不是清单，是两条平行侧线加一张背俞索引——按「六十七穴与一万字：全课最薄的字/穴比 → 两条侧线：一寸五放脏腑，三寸放经筋 → 三个骨性标志，把 20 穴钉在脊柱上 → 三个危险穴，三种风险」走一遍本章判据 | 481 | [`skill-zutaiyang-pangguangjing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/10-zutaiyang-pangguangjing/outputs/skill-zutaiyang-pangguangjing.md) |
 
-#### 第 11 章 · 足少阴肾经及其腧穴
+#### 第 11 章 · 二十七穴里只有十穴配得上独立条目
 
 `16-zhenjiu-xue/chapters/11-zushaoyin-shenjing/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 足少阴肾经及其腧穴 · 提示词 | — | 467 | [`prompt-11-zushaoyin-shenjing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/11-zushaoyin-shenjing/outputs/prompt-11-zushaoyin-shenjing.md) |
-| skill | 足少阴肾经及其腧穴 | 足少阴肾经及其腧穴——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 396 | [`skill-zushaoyin-shenjing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/11-zushaoyin-shenjing/outputs/skill-zushaoyin-shenjing.md) |
+| prompt | 二十七穴里只有十穴配得上独立条目 · 提示词 | — | 621 | [`prompt-11-zushaoyin-shenjing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/11-zushaoyin-shenjing/outputs/prompt-11-zushaoyin-shenjing.md) |
+| skill | 二十七穴里只有十穴配得上独立条目 | 二十七穴里只有十穴配得上独立条目——按「8237 字分给 27 穴：十加十七 → 踝部十穴：九个身份，一个例外 → 一条脉管，三套主治 → 躯干十七穴：两段话里的取穴法」走一遍本章判据 | 536 | [`skill-zushaoyin-shenjing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/11-zushaoyin-shenjing/outputs/skill-zushaoyin-shenjing.md) |
 
-#### 第 12 章 · 手厥阴心包经及其腧穴
+#### 第 12 章 · 九穴共用一条肌腱缝，红线却有八条
 
 `16-zhenjiu-xue/chapters/12-shoujueyin-xinbaojing/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 手厥阴心包经及其腧穴 · 提示词 | — | 470 | [`prompt-12-shoujueyin-xinbaojing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/12-shoujueyin-xinbaojing/outputs/prompt-12-shoujueyin-xinbaojing.md) |
-| skill | 手厥阴心包经及其腧穴 | 手厥阴心包经及其腧穴——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 401 | [`skill-shoujueyin-xinbaojing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/12-shoujueyin-xinbaojing/outputs/skill-shoujueyin-xinbaojing.md) |
+| prompt | 九穴共用一条肌腱缝，红线却有八条 · 提示词 | — | 594 | [`prompt-12-shoujueyin-xinbaojing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/12-shoujueyin-xinbaojing/outputs/prompt-12-shoujueyin-xinbaojing.md) |
+| skill | 九穴共用一条肌腱缝，红线却有八条 | 九穴共用一条肌腱缝，红线却有八条——按「九穴与五千字：穴最少，字最密 → 一条两肌腱之间的缝 → 五个身份之外：劳宫、中冲、天池、天泉 → 八条红线，五种血管神经」走一遍本章判据 | 512 | [`skill-shoujueyin-xinbaojing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/12-shoujueyin-xinbaojing/outputs/skill-shoujueyin-xinbaojing.md) |
 
-#### 第 13 章 · 手少阳三焦经及其腧穴
+#### 第 13 章 · 二十三穴没有一条定位标记，只能顺着一条线读
 
 `16-zhenjiu-xue/chapters/13-shoushaoyang-sanjiaojing/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 手少阳三焦经及其腧穴 · 提示词 | — | 470 | [`prompt-13-shoushaoyang-sanjiaojing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/13-shoushaoyang-sanjiaojing/outputs/prompt-13-shoushaoyang-sanjiaojing.md) |
-| skill | 手少阳三焦经及其腧穴 | 手少阳三焦经及其腧穴——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 404 | [`skill-shoushaoyang-sanjiaojing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/13-shoushaoyang-sanjiaojing/outputs/skill-shoushaoyang-sanjiaojing.md) |
+| prompt | 二十三穴没有一条定位标记，只能顺着一条线读 · 提示词 | — | 582 | [`prompt-13-shoushaoyang-sanjiaojing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/13-shoushaoyang-sanjiaojing/outputs/prompt-13-shoushaoyang-sanjiaojing.md) |
+| skill | 二十三穴没有一条定位标记，只能顺着一条线读 | 二十三穴没有一条定位标记，只能顺着一条线读——按「零标记与七加十六 → 六个转折点 → 绕耳一周：耳病为什么归三焦 → 身份与部位：两套排序在同一条经里打架」走一遍本章判据 | 498 | [`skill-shoushaoyang-sanjiaojing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/13-shoushaoyang-sanjiaojing/outputs/skill-shoushaoyang-sanjiaojing.md) |
 
-#### 第 14 章 · 足少阳胆经及其腧穴
+#### 第 14 章 · 四十四穴的取舍不在穴数，在五个身份
 
 `16-zhenjiu-xue/chapters/14-zushaoyang-danjing/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 足少阳胆经及其腧穴 · 提示词 | — | 467 | [`prompt-14-zushaoyang-danjing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/14-zushaoyang-danjing/outputs/prompt-14-zushaoyang-danjing.md) |
-| skill | 足少阳胆经及其腧穴 | 足少阳胆经及其腧穴——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 396 | [`skill-zushaoyang-danjing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/14-zushaoyang-danjing/outputs/skill-zushaoyang-danjing.md) |
+| prompt | 四十四穴的取舍不在穴数，在五个身份 · 提示词 | — | 630 | [`prompt-14-zushaoyang-danjing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/14-zushaoyang-danjing/outputs/prompt-14-zushaoyang-danjing.md) |
+| skill | 四十四穴的取舍不在穴数，在五个身份 | 四十四穴的取舍不在穴数，在五个身份——按「四十四穴的两种密度 → 五个身份穴 → 一段 464 字里的二十四个穴 → 红线只标了两处，暴露了取舍的标准」走一遍本章判据 | 544 | [`skill-zushaoyang-danjing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/14-zushaoyang-danjing/outputs/skill-zushaoyang-danjing.md) |
 
-#### 第 15 章 · 足厥阴肝经及其腧穴
+#### 第 15 章 · 十四穴七个有身份，另七个只占一行
 
 `16-zhenjiu-xue/chapters/15-zujueyin-ganjing/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 足厥阴肝经及其腧穴 · 提示词 | — | 467 | [`prompt-15-zujueyin-ganjing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/15-zujueyin-ganjing/outputs/prompt-15-zujueyin-ganjing.md) |
-| skill | 足厥阴肝经及其腧穴 | 足厥阴肝经及其腧穴——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 394 | [`skill-zujueyin-ganjing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/15-zujueyin-ganjing/outputs/skill-zujueyin-ganjing.md) |
+| prompt | 十四穴七个有身份，另七个只占一行 · 提示词 | — | 619 | [`prompt-15-zujueyin-ganjing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/15-zujueyin-ganjing/outputs/prompt-15-zujueyin-ganjing.md) |
+| skill | 十四穴七个有身份，另七个只占一行 | 十四穴七个有身份，另七个只占一行——按「十四穴的两个断崖 → 七个身份，七套主治 → 十个字：交出太阴之后 → 剩下七穴与六处红线」走一遍本章判据 | 532 | [`skill-zujueyin-ganjing.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/15-zujueyin-ganjing/outputs/skill-zujueyin-ganjing.md) |
 
-#### 第 16 章 · 督脉及其腧穴
+#### 第 16 章 · 督脉的效力与风险同出一处，都在棘突下那一道凹陷
 
 `16-zhenjiu-xue/chapters/16-dumai/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 督脉及其腧穴 · 提示词 | — | 458 | [`prompt-16-dumai.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/16-dumai/outputs/prompt-16-dumai.md) |
-| skill | 督脉及其腧穴 | 督脉及其腧穴——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 377 | [`skill-dumai.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/16-dumai/outputs/skill-dumai.md) |
+| prompt | 督脉的效力与风险同出一处，都在棘突下那一道凹陷 · 提示词 | — | 760 | [`prompt-16-dumai.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/16-dumai/outputs/prompt-16-dumai.md) |
+| skill | 督脉的效力与风险同出一处，都在棘突下那一道凹陷 | 督脉的效力与风险同出一处，都在棘突下那一道凹陷——按「二十九穴，三个方向 → 「阳脉之海」是四句原文的展开，不是四张清单 → 十三穴成套、十六穴一句：分层的边界在哪 → 两处死区：六处红线全在解剖上」走一遍本章判据 | 655 | [`skill-dumai.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/16-dumai/outputs/skill-dumai.md) |
 
-#### 第 17 章 · 任脉及其腧穴
+#### 第 17 章 · 任脉二十四穴全靠软组织兜底，没有一块骨头替你挡针
 
 `16-zhenjiu-xue/chapters/17-renmai/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 任脉及其腧穴 · 提示词 | — | 458 | [`prompt-17-renmai.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/17-renmai/outputs/prompt-17-renmai.md) |
-| skill | 任脉及其腧穴 | 任脉及其腧穴——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 378 | [`skill-renmai.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/17-renmai/outputs/skill-renmai.md) |
+| prompt | 任脉二十四穴全靠软组织兜底，没有一块骨头替你挡针 · 提示词 | — | 804 | [`prompt-17-renmai.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/17-renmai/outputs/prompt-17-renmai.md) |
+| skill | 任脉二十四穴全靠软组织兜底，没有一块骨头替你挡针 | 任脉二十四穴全靠软组织兜底，没有一块骨头替你挡针——按「一条没有骨头可扶的经脉 → 「阴脉之海」落在一段八寸上 → 九个成套穴，六个的身份来自制度 → 孕妇九次、禁针零次：分寸写在哪」走一遍本章判据 | 699 | [`skill-renmai.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/17-renmai/outputs/skill-renmai.md) |
 
-#### 第 18 章 · 经外奇穴
+#### 第 18 章 · 经外奇穴的密度是全课最高，四十二个穴名只摊到五千字
 
 `16-zhenjiu-xue/chapters/18-jingwai-qixue/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 经外奇穴 · 提示词 | — | 452 | [`prompt-18-jingwai-qixue.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/18-jingwai-qixue/outputs/prompt-18-jingwai-qixue.md) |
-| skill | 经外奇穴 | 经外奇穴——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 381 | [`skill-jingwai-qixue.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/18-jingwai-qixue/outputs/skill-jingwai-qixue.md) |
+| prompt | 经外奇穴的密度是全课最高，四十二个穴名只摊到五千字 · 提示词 | — | 778 | [`prompt-18-jingwai-qixue.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/18-jingwai-qixue/outputs/prompt-18-jingwai-qixue.md) |
+| skill | 经外奇穴的密度是全课最高，四十二个穴名只摊到五千字 | 经外奇穴的密度是全课最高，四十二个穴名只摊到五千字——按「一百二十五字一穴：密度决定体例 → 「奇」在名字，不在位置 → 夹脊：一个穴名顶一条经 → 印堂与膝眼：编制分类，不是本质分类」走一遍本章判据 | 679 | [`skill-jingwai-qixue.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/18-jingwai-qixue/outputs/skill-jingwai-qixue.md) |
 
-#### 第 19 章 · 刺灸法总论
+#### 第 19 章 · 刺灸法总论的产物不是穴位表，而是一张能不能扎的清单
 
 `16-zhenjiu-xue/chapters/19-cijiufa-zonglun/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 刺灸法总论 · 提示词 | — | 455 | [`prompt-19-cijiufa-zonglun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/19-cijiufa-zonglun/outputs/prompt-19-cijiufa-zonglun.md) |
-| skill | 刺灸法总论 | 刺灸法总论——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 385 | [`skill-cijiufa-zonglun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/19-cijiufa-zonglun/outputs/skill-cijiufa-zonglun.md) |
+| prompt | 刺灸法总论的产物不是穴位表，而是一张能不能扎的清单 · 提示词 | — | 761 | [`prompt-19-cijiufa-zonglun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/19-cijiufa-zonglun/outputs/prompt-19-cijiufa-zonglun.md) |
+| skill | 刺灸法总论的产物不是穴位表，而是一张能不能扎的清单 | 刺灸法总论的产物不是穴位表，而是一张能不能扎的清单——按「七个单元，一个穴位条目都没有 → 两节源流：每一件现代针具都能追到一个九针原型 → 消毒：全章唯一可以照着核对的参数 → 体位与揣穴：把「扎得准」拆成两个动作」走一遍本章判据 | 664 | [`skill-cijiufa-zonglun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/19-cijiufa-zonglun/outputs/skill-cijiufa-zonglun.md) |
 
-#### 第 20 章 · 毫针刺法
+#### 第 20 章 · 毫针的风险不在扎错穴，在扎对了却扎过头
 
 `16-zhenjiu-xue/chapters/20-haozhen-cifa/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 毫针刺法 · 提示词 | — | 454 | [`prompt-20-haozhen-cifa.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/20-haozhen-cifa/outputs/prompt-20-haozhen-cifa.md) |
-| skill | 毫针刺法 | 毫针刺法——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 380 | [`skill-haozhen-cifa.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/20-haozhen-cifa/outputs/skill-haozhen-cifa.md) |
+| prompt | 毫针的风险不在扎错穴，在扎对了却扎过头 · 提示词 | — | 778 | [`prompt-20-haozhen-cifa.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/20-haozhen-cifa/outputs/prompt-20-haozhen-cifa.md) |
+| skill | 毫针的风险不在扎错穴，在扎对了却扎过头 | 毫针的风险不在扎错穴，在扎对了却扎过头——按「一万八千字讲一件事：手上功夫 → 可量化的只有五个数 → 得气：全章出现 81 次的那个词 → 补泻：六个单式是四个变量的排列」走一遍本章判据 | 684 | [`skill-haozhen-cifa.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/20-haozhen-cifa/outputs/skill-haozhen-cifa.md) |
 
-#### 第 21 章 · 灸法
+#### 第 21 章 · 灸法真正要记的不是几壮，而是以何为度
 
 `16-zhenjiu-xue/chapters/21-jiufa/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 灸法 · 提示词 | — | 446 | [`prompt-21-jiufa.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/21-jiufa/outputs/prompt-21-jiufa.md) |
-| skill | 灸法 | 灸法——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 369 | [`skill-jiufa.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/21-jiufa/outputs/skill-jiufa.md) |
+| prompt | 灸法真正要记的不是几壮，而是以何为度 · 提示词 | — | 625 | [`prompt-21-jiufa.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/21-jiufa/outputs/prompt-21-jiufa.md) |
+| skill | 灸法真正要记的不是几壮，而是以何为度 | 灸法真正要记的不是几壮，而是以何为度——按「十八种灸法，五个作用 → 以何为度：15 个终点，1 处豁免 → 四种隔物灸：换介质就是换适应证 → 先阳后阴，与那条被自己推翻的规矩」走一遍本章判据 | 525 | [`skill-jiufa.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/21-jiufa/outputs/skill-jiufa.md) |
 
-#### 第 22 章 · 拔罐法及其他刺法
+#### 第 22 章 · 这一章的主语不是穴位，而是器具的可调参数
 
 `16-zhenjiu-xue/chapters/22-baguan-qita-cifa/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 拔罐法及其他刺法 · 提示词 | — | 465 | [`prompt-22-baguan-qita-cifa.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/22-baguan-qita-cifa/outputs/prompt-22-baguan-qita-cifa.md) |
-| skill | 拔罐法及其他刺法 | 拔罐法及其他刺法——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 392 | [`skill-baguan-qita-cifa.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/22-baguan-qita-cifa/outputs/skill-baguan-qita-cifa.md) |
+| prompt | 这一章的主语不是穴位，而是器具的可调参数 · 提示词 | — | 590 | [`prompt-22-baguan-qita-cifa.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/22-baguan-qita-cifa/outputs/prompt-22-baguan-qita-cifa.md) |
+| skill | 这一章的主语不是穴位，而是器具的可调参数 | 这一章的主语不是穴位，而是器具的可调参数——按「九节的配比：一个字数与风险不成比例的一章 → 把九套参数并成一张表 → 同一个「留针」，一头是天，一头是分钟 → 八条红线，与第一节那个空缺」走一遍本章判据 | 499 | [`skill-baguan-qita-cifa.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/22-baguan-qita-cifa/outputs/skill-baguan-qita-cifa.md) |
 
-#### 第 23 章 · 针灸治疗总论
+#### 第 23 章 · 这一章不给穴位，只给把穴位连成方子的规则
 
 `16-zhenjiu-xue/chapters/23-zhiliao-zonglun/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 针灸治疗总论 · 提示词 | — | 460 | [`prompt-23-zhiliao-zonglun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/23-zhiliao-zonglun/outputs/prompt-23-zhiliao-zonglun.md) |
-| skill | 针灸治疗总论 | 针灸治疗总论——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 387 | [`skill-zhiliao-zonglun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/23-zhiliao-zonglun/outputs/skill-zhiliao-zonglun.md) |
+| prompt | 这一章不给穴位，只给把穴位连成方子的规则 · 提示词 | — | 678 | [`prompt-23-zhiliao-zonglun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/23-zhiliao-zonglun/outputs/prompt-23-zhiliao-zonglun.md) |
+| skill | 这一章不给穴位，只给把穴位连成方子的规则 | 这一章不给穴位，只给把穴位连成方子的规则——按「零定位：这一章写的是规则，不是坐标 → 五条治则，四个单元：治神守气寄居在别人的小节里 → 四类选穴、六种配穴：48 次「配穴」在教什么 → 十类特定穴：只有五个数字是底本给的」走一遍本章判据 | 586 | [`skill-zhiliao-zonglun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/23-zhiliao-zonglun/outputs/skill-zhiliao-zonglun.md) |
 
-#### 第 24 章 · 头面躯体痛证
+#### 第 24 章 · 八个痛证是同一张处方的八次填空
 
 `16-zhenjiu-xue/chapters/24-tongzheng/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 头面躯体痛证 · 提示词 | — | 460 | [`prompt-24-tongzheng.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/24-tongzheng/outputs/prompt-24-tongzheng.md) |
-| skill | 头面躯体痛证 | 头面躯体痛证——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 381 | [`skill-tongzheng.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/24-tongzheng/outputs/skill-tongzheng.md) |
+| prompt | 八个痛证是同一张处方的八次填空 · 提示词 | — | 550 | [`prompt-24-tongzheng.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/24-tongzheng/outputs/prompt-24-tongzheng.md) |
+| skill | 八个痛证是同一张处方的八次填空 | 八个痛证是同一张处方的八次填空——按「8 × 2：一张模板的八次复用 → 辨经：每张处方的第一句 → 十条红线，八种失效方式 → 这一章引不来古籍」走一遍本章判据 | 457 | [`skill-tongzheng.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/24-tongzheng/outputs/skill-tongzheng.md) |
 
-#### 第 25 章 · 内科病证
+#### 第 25 章 · 九十个证型压在二万二千字里，平均二百四十九字一个
 
 `16-zhenjiu-xue/chapters/25-neike-bingzheng/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 内科病证 · 提示词 | — | 454 | [`prompt-25-neike-bingzheng.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/25-neike-bingzheng/outputs/prompt-25-neike-bingzheng.md) |
-| skill | 内科病证 | 内科病证——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 383 | [`skill-neike-bingzheng.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/25-neike-bingzheng/outputs/skill-neike-bingzheng.md) |
+| prompt | 九十个证型压在二万二千字里，平均二百四十九字一个 · 提示词 | — | 642 | [`prompt-25-neike-bingzheng.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/25-neike-bingzheng/outputs/prompt-25-neike-bingzheng.md) |
+| skill | 九十个证型压在二万二千字里，平均二百四十九字一个 | 九十个证型压在二万二千字里，平均二百四十九字一个——按「18 病 × 2 单元：一张五段模板的 18 次复用 → 249 字一个证型：本章的写作单位是「句式」不是「段落」 → 四个没有出处的原文 → 十五条红线：按「哪一段出事」分层」走一遍本章判据 | 546 | [`skill-neike-bingzheng.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/25-neike-bingzheng/outputs/skill-neike-bingzheng.md) |
 
-#### 第 26 章 · 妇儿科病证
+#### 第 26 章 · 妇儿科不按「科」分，按周期、胎位、发育三条轴分
 
 `16-zhenjiu-xue/chapters/26-fuer-bingzheng/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 妇儿科病证 · 提示词 | — | 457 | [`prompt-26-fuer-bingzheng.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/26-fuer-bingzheng/outputs/prompt-26-fuer-bingzheng.md) |
-| skill | 妇儿科病证 | 妇儿科病证——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 384 | [`skill-fuer-bingzheng.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/26-fuer-bingzheng/outputs/skill-fuer-bingzheng.md) |
+| prompt | 妇儿科不按「科」分，按周期、胎位、发育三条轴分 · 提示词 | — | 966 | [`prompt-26-fuer-bingzheng.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/26-fuer-bingzheng/outputs/prompt-26-fuer-bingzheng.md) |
+| skill | 妇儿科不按「科」分，按周期、胎位、发育三条轴分 | 妇儿科不按「科」分，按周期、胎位、发育三条轴分——按「三条轴，不是三个「科」 → 辨证：四层尺子，两个「只有两条」 → 处方：任脉与足三阴的交点，加一个例外 → 安全条款：三类人，三条线」走一遍本章判据 | 861 | [`skill-fuer-bingzheng.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/26-fuer-bingzheng/outputs/skill-fuer-bingzheng.md) |
 
-#### 第 27 章 · 皮肤外科病证
+#### 第 27 章 · 皮肤外科九病：皮损看得见，局部取穴就压过了循经
 
 `16-zhenjiu-xue/chapters/27-piwai-bingzheng/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 皮肤外科病证 · 提示词 | — | 459 | [`prompt-27-piwai-bingzheng.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/27-piwai-bingzheng/outputs/prompt-27-piwai-bingzheng.md) |
-| skill | 皮肤外科病证 | 皮肤外科病证——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 387 | [`skill-piwai-bingzheng.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/27-piwai-bingzheng/outputs/skill-piwai-bingzheng.md) |
+| prompt | 皮肤外科九病：皮损看得见，局部取穴就压过了循经 · 提示词 | — | 902 | [`prompt-27-piwai-bingzheng.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/27-piwai-bingzheng/outputs/prompt-27-piwai-bingzheng.md) |
+| skill | 皮肤外科九病：皮损看得见，局部取穴就压过了循经 | 皮肤外科九病：皮损看得见，局部取穴就压过了循经——按「九病四组，四个不同的「看得见」 → 辨证：八个病，八个「看得见的量」 → 处方：阿是穴四张，阳经三个合穴 → 扭伤为什么最厚：一病三部位」走一遍本章判据 | 798 | [`skill-piwai-bingzheng.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/27-piwai-bingzheng/outputs/skill-piwai-bingzheng.md) |
 
-#### 第 28 章 · 五官科病证
+#### 第 28 章 · 五官五病共用一条路径：局部开窍、远端引火下行，代价是引文全部悬空
 
 `16-zhenjiu-xue/chapters/28-wuguan-bingzheng/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 五官科病证 · 提示词 | — | 456 | [`prompt-28-wuguan-bingzheng.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/28-wuguan-bingzheng/outputs/prompt-28-wuguan-bingzheng.md) |
-| skill | 五官科病证 | 五官科病证——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 386 | [`skill-wuguan-bingzheng.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/28-wuguan-bingzheng/outputs/skill-wuguan-bingzheng.md) |
+| prompt | 五官五病共用一条路径：局部开窍、远端引火下行，代价是引文全部悬空 · 提示词 | — | 1125 | [`prompt-28-wuguan-bingzheng.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/28-wuguan-bingzheng/outputs/prompt-28-wuguan-bingzheng.md) |
+| skill | 五官五病共用一条路径：局部开窍、远端引火下行，代价是引文全部悬空 | 五官五病共用一条路径：局部开窍、远端引火下行，代价是引文全部悬空——按「五病一张表：字数、引文、方数 → 路径：两段取穴，加一道放血 → 咽喉那一节：753 字、12 处引文，是全章的样本 → 按语为零：这一章不给自己留判断位」走一遍本章判据 | 1013 | [`skill-wuguan-bingzheng.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/28-wuguan-bingzheng/outputs/skill-wuguan-bingzheng.md) |
 
-#### 第 29 章 · 急症及其他病证
+#### 第 29 章 · 急症八证写得最省：八张方共用内关，最薄的一节给了高热
 
 `16-zhenjiu-xue/chapters/29-jizheng-qita/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 急症及其他病证 · 提示词 | — | 462 | [`prompt-29-jizheng-qita.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/29-jizheng-qita/outputs/prompt-29-jizheng-qita.md) |
-| skill | 急症及其他病证 | 急症及其他病证——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 386 | [`skill-jizheng-qita.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/29-jizheng-qita/outputs/skill-jizheng-qita.md) |
+| prompt | 急症八证写得最省：八张方共用内关，最薄的一节给了高热 · 提示词 | — | 989 | [`prompt-29-jizheng-qita.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/29-jizheng-qita/outputs/prompt-29-jizheng-qita.md) |
+| skill | 急症八证写得最省：八张方共用内关，最薄的一节给了高热 | 急症八证写得最省：八张方共用内关，最薄的一节给了高热——按「八病按「能不能等」排，字数却不按危险排 → 八张方的骨架：内关五张，水沟两张 → 辨证只到虚实为止：分类是为了定方向 → 次序问题：针灸在这八证里排第几」走一遍本章判据 | 879 | [`skill-jizheng-qita.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/29-jizheng-qita/outputs/skill-jizheng-qita.md) |
 
-#### 第 30 章 · 针灸现代研究与数字化
+#### 第 30 章 · 现代研究章靠数字立论：75 个数字串，三条古籍只作背书
 
 `16-zhenjiu-xue/chapters/30-xiandai-yanjiu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 针灸现代研究与数字化 · 提示词 | — | 470 | [`prompt-30-xiandai-yanjiu.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/30-xiandai-yanjiu/outputs/prompt-30-xiandai-yanjiu.md) |
-| skill | 针灸现代研究与数字化 | 针灸现代研究与数字化——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 394 | [`skill-xiandai-yanjiu.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/30-xiandai-yanjiu/outputs/skill-xiandai-yanjiu.md) |
+| prompt | 现代研究章靠数字立论：75 个数字串，三条古籍只作背书 · 提示词 | — | 1026 | [`prompt-30-xiandai-yanjiu.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/30-xiandai-yanjiu/outputs/prompt-30-xiandai-yanjiu.md) |
+| skill | 现代研究章靠数字立论：75 个数字串，三条古籍只作背书 | 现代研究章靠数字立论：75 个数字串，三条古籍只作背书——按「三节的地图：最厚的一节押在未来 → 数字分三层：可核、需核、会过期 → 三条古籍引文的用法：背书，不是证据 → 两处冲突：同一本书里的两个数」走一遍本章判据 | 918 | [`skill-xiandai-yanjiu.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/30-xiandai-yanjiu/outputs/skill-xiandai-yanjiu.md) |
 
 ### 各家针灸学说
 
 > Reference · 第 6 学期 · 已产出 12 章
 
-#### 第 1 章 · 各家针灸学说概述
+#### 第 1 章 · 各家针灸学说考的是一套判据，不是一张人名表
 
 `17-gejia-zhenjiu-xueshuo/chapters/01-gaishu-yanbian/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：各家针灸学说概述 | — | 401 | [`prompt-01-gaishu-yanbian.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/01-gaishu-yanbian/outputs/prompt-01-gaishu-yanbian.md) |
-| skill | 各家针灸学说概述 | 用《各家针灸学说》第 1 章「各家针灸学说概述」的单元层做可核对的教学材料。 | 560 | [`skill-01-gaishu-yanbian.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/01-gaishu-yanbian/outputs/skill-01-gaishu-yanbian.md) |
-| prompt | 用本章内容做一件事：推拿功法学概论与发展简史 | — | 421 | [`prompt-01-gaishu-yanbian.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/01-gaishu-yanbian/outputs/prompt-01-gaishu-yanbian.md) |
-| skill | 推拿功法学概论与发展简史 | 用《推拿功法学》第 1 章「推拿功法学概论与发展简史」的单元层做可核对的教学材料。 | 521 | [`skill-01-gaishu-yanbian.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/01-gaishu-yanbian/outputs/skill-01-gaishu-yanbian.md) |
+| prompt | 各家针灸学说考的是一套判据，不是一张人名表 · 提示词 | — | 791 | [`prompt-01-gaishu-yanbian.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/01-gaishu-yanbian/outputs/prompt-01-gaishu-yanbian.md) |
+| skill | 各家针灸学说考的是一套判据，不是一张人名表 | 各家针灸学说考的是一套判据，不是一张人名表——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 686 | [`skill-01-gaishu-yanbian.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/01-gaishu-yanbian/outputs/skill-01-gaishu-yanbian.md) |
+| prompt | 功法的历史是把身体写成规矩的历史，写进去的只有规矩 · 提示词 | — | 1064 | [`prompt-01-gaishu-yanbian.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/01-gaishu-yanbian/outputs/prompt-01-gaishu-yanbian.md) |
+| skill | 功法的历史是把身体写成规矩的历史，写进去的只有规矩 | 功法的历史是把身体写成规矩的历史，写进去的只有规矩——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 956 | [`skill-01-gaishu-yanbian.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/01-gaishu-yanbian/outputs/skill-01-gaishu-yanbian.md) |
 
-#### 第 2 章 · 针灸学术流派的形成与分类
+#### 第 2 章 · 流派的判据是三根柱子，不是一张分类表
 
 `17-gejia-zhenjiu-xueshuo/chapters/02-liupai-xingcheng/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：针灸学术流派的形成与分类 | — | 405 | [`prompt-02-liupai-xingcheng.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/02-liupai-xingcheng/outputs/prompt-02-liupai-xingcheng.md) |
-| skill | 针灸学术流派的形成与分类 | 用《各家针灸学说》第 2 章「针灸学术流派的形成与分类」的单元层做可核对的教学材料。 | 572 | [`skill-02-liupai-xingcheng.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/02-liupai-xingcheng/outputs/skill-02-liupai-xingcheng.md) |
+| prompt | 流派的判据是三根柱子，不是一张分类表 · 提示词 | — | 823 | [`prompt-02-liupai-xingcheng.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/02-liupai-xingcheng/outputs/prompt-02-liupai-xingcheng.md) |
+| skill | 流派的判据是三根柱子，不是一张分类表 | 流派的判据是三根柱子，不是一张分类表——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 723 | [`skill-02-liupai-xingcheng.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/02-liupai-xingcheng/outputs/skill-02-liupai-xingcheng.md) |
 
-#### 第 3 章 · 《内经》针灸学术思想
+#### 第 3 章 · 《内经》的针道是一条次序，不是一堆刺法
 
 `17-gejia-zhenjiu-xueshuo/chapters/03-neijing-sixiang/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：《内经》针灸学术思想 | — | 403 | [`prompt-03-neijing-sixiang.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/03-neijing-sixiang/outputs/prompt-03-neijing-sixiang.md) |
-| skill | 《内经》针灸学术思想 | 用《各家针灸学说》第 3 章「《内经》针灸学术思想」的单元层做可核对的教学材料。 | 566 | [`skill-03-neijing-sixiang.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/03-neijing-sixiang/outputs/skill-03-neijing-sixiang.md) |
+| prompt | 《内经》的针道是一条次序，不是一堆刺法 · 提示词 | — | 808 | [`prompt-03-neijing-sixiang.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/03-neijing-sixiang/outputs/prompt-03-neijing-sixiang.md) |
+| skill | 《内经》的针道是一条次序，不是一堆刺法 | 《内经》的针道是一条次序，不是一堆刺法——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 706 | [`skill-03-neijing-sixiang.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/03-neijing-sixiang/outputs/skill-03-neijing-sixiang.md) |
 
-#### 第 4 章 · 《难经》与《伤寒杂病论》针灸学术思想
+#### 第 4 章 · 《难经》给穴立规矩，《伤寒论》给用针立次序
 
 `17-gejia-zhenjiu-xueshuo/chapters/04-nanjing-shanghan/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：《难经》与《伤寒杂病论》针灸学术思想 | — | 411 | [`prompt-04-nanjing-shanghan.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/04-nanjing-shanghan/outputs/prompt-04-nanjing-shanghan.md) |
-| skill | 《难经》与《伤寒杂病论》针灸学术思想 | 用《各家针灸学说》第 4 章「《难经》与《伤寒杂病论》针灸学术思想」的单元层做可核对的教学材料。 | 584 | [`skill-04-nanjing-shanghan.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/04-nanjing-shanghan/outputs/skill-04-nanjing-shanghan.md) |
+| prompt | 《难经》给穴立规矩，《伤寒论》给用针立次序 · 提示词 | — | 833 | [`prompt-04-nanjing-shanghan.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/04-nanjing-shanghan/outputs/prompt-04-nanjing-shanghan.md) |
+| skill | 《难经》给穴立规矩，《伤寒论》给用针立次序 | 《难经》给穴立规矩，《伤寒论》给用针立次序——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 730 | [`skill-04-nanjing-shanghan.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/04-nanjing-shanghan/outputs/skill-04-nanjing-shanghan.md) |
 
-#### 第 5 章 · 晋唐针灸医家学术思想
+#### 第 5 章 · 晋唐的功劳在编书：体例、尺度与存佚
 
 `17-gejia-zhenjiu-xueshuo/chapters/05-jintang-yijia/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：晋唐针灸医家学术思想 | — | 404 | [`prompt-05-jintang-yijia.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/05-jintang-yijia/outputs/prompt-05-jintang-yijia.md) |
-| skill | 晋唐针灸医家学术思想 | 用《各家针灸学说》第 5 章「晋唐针灸医家学术思想」的单元层做可核对的教学材料。 | 562 | [`skill-05-jintang-yijia.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/05-jintang-yijia/outputs/skill-05-jintang-yijia.md) |
+| prompt | 晋唐的功劳在编书：体例、尺度与存佚 · 提示词 | — | 886 | [`prompt-05-jintang-yijia.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/05-jintang-yijia/outputs/prompt-05-jintang-yijia.md) |
+| skill | 晋唐的功劳在编书：体例、尺度与存佚 | 晋唐的功劳在编书：体例、尺度与存佚——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 784 | [`skill-05-jintang-yijia.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/05-jintang-yijia/outputs/skill-05-jintang-yijia.md) |
 
-#### 第 6 章 · 宋金元针灸医家学术思想
+#### 第 6 章 · 宋金元把穴定成标准，把时间算成取穴依据
 
 `17-gejia-zhenjiu-xueshuo/chapters/06-songjinyuan-yijia/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：宋金元针灸医家学术思想 | — | 405 | [`prompt-06-songjinyuan-yijia.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/06-songjinyuan-yijia/outputs/prompt-06-songjinyuan-yijia.md) |
-| skill | 宋金元针灸医家学术思想 | 用《各家针灸学说》第 6 章「宋金元针灸医家学术思想」的单元层做可核对的教学材料。 | 572 | [`skill-06-songjinyuan-yijia.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/06-songjinyuan-yijia/outputs/skill-06-songjinyuan-yijia.md) |
+| prompt | 宋金元把穴定成标准，把时间算成取穴依据 · 提示词 | — | 799 | [`prompt-06-songjinyuan-yijia.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/06-songjinyuan-yijia/outputs/prompt-06-songjinyuan-yijia.md) |
+| skill | 宋金元把穴定成标准，把时间算成取穴依据 | 宋金元把穴定成标准，把时间算成取穴依据——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 699 | [`skill-06-songjinyuan-yijia.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/06-songjinyuan-yijia/outputs/skill-06-songjinyuan-yijia.md) |
 
-#### 第 7 章 · 明代针灸医家学术思想
+#### 第 7 章 · 明代七家编的不是七种学说，是七种全书体例
 
 `17-gejia-zhenjiu-xueshuo/chapters/07-mingdai-yijia/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：明代针灸医家学术思想 | — | 404 | [`prompt-07-mingdai-yijia.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/07-mingdai-yijia/outputs/prompt-07-mingdai-yijia.md) |
-| skill | 明代针灸医家学术思想 | 用《各家针灸学说》第 7 章「明代针灸医家学术思想」的单元层做可核对的教学材料。 | 562 | [`skill-07-mingdai-yijia.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/07-mingdai-yijia/outputs/skill-07-mingdai-yijia.md) |
+| prompt | 明代七家编的不是七种学说，是七种全书体例 · 提示词 | — | 852 | [`prompt-07-mingdai-yijia.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/07-mingdai-yijia/outputs/prompt-07-mingdai-yijia.md) |
+| skill | 明代七家编的不是七种学说，是七种全书体例 | 明代七家编的不是七种学说，是七种全书体例——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 747 | [`skill-07-mingdai-yijia.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/07-mingdai-yijia/outputs/skill-07-mingdai-yijia.md) |
 
-#### 第 8 章 · 清代针灸医家学术思想
+#### 第 8 章 · 清代把针灸写成可查的书，也把手法排在认穴之前
 
 `17-gejia-zhenjiu-xueshuo/chapters/08-qingdai-yijia/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：清代针灸医家学术思想 | — | 404 | [`prompt-08-qingdai-yijia.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/08-qingdai-yijia/outputs/prompt-08-qingdai-yijia.md) |
-| skill | 清代针灸医家学术思想 | 用《各家针灸学说》第 8 章「清代针灸医家学术思想」的单元层做可核对的教学材料。 | 562 | [`skill-08-qingdai-yijia.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/08-qingdai-yijia/outputs/skill-08-qingdai-yijia.md) |
+| prompt | 清代把针灸写成可查的书，也把手法排在认穴之前 · 提示词 | — | 927 | [`prompt-08-qingdai-yijia.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/08-qingdai-yijia/outputs/prompt-08-qingdai-yijia.md) |
+| skill | 清代把针灸写成可查的书，也把手法排在认穴之前 | 清代把针灸写成可查的书，也把手法排在认穴之前——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 820 | [`skill-08-qingdai-yijia.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/08-qingdai-yijia/outputs/skill-08-qingdai-yijia.md) |
 
-#### 第 9 章 · 近代针灸医家学术思想
+#### 第 9 章 · 近代把针灸搬进学校，也把它译成西医的语言
 
 `17-gejia-zhenjiu-xueshuo/chapters/09-jindai-yijia/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：近代针灸医家学术思想 | — | 403 | [`prompt-09-jindai-yijia.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/09-jindai-yijia/outputs/prompt-09-jindai-yijia.md) |
-| skill | 近代针灸医家学术思想 | 用《各家针灸学说》第 9 章「近代针灸医家学术思想」的单元层做可核对的教学材料。 | 560 | [`skill-09-jindai-yijia.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/09-jindai-yijia/outputs/skill-09-jindai-yijia.md) |
+| prompt | 近代把针灸搬进学校，也把它译成西医的语言 · 提示词 | — | 834 | [`prompt-09-jindai-yijia.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/09-jindai-yijia/outputs/prompt-09-jindai-yijia.md) |
+| skill | 近代把针灸搬进学校，也把它译成西医的语言 | 近代把针灸搬进学校，也把它译成西医的语言——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 728 | [`skill-09-jindai-yijia.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/09-jindai-yijia/outputs/skill-09-jindai-yijia.md) |
 
-#### 第 10 章 · 当代针灸学术流派
+#### 第 10 章 · 当代六家各把手法的某一个参数做成了可教的东西
 
 `17-gejia-zhenjiu-xueshuo/chapters/10-dangdai-liupai/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：当代针灸学术流派 | — | 403 | [`prompt-10-dangdai-liupai.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/10-dangdai-liupai/outputs/prompt-10-dangdai-liupai.md) |
-| skill | 当代针灸学术流派 | 用《各家针灸学说》第 10 章「当代针灸学术流派」的单元层做可核对的教学材料。 | 561 | [`skill-10-dangdai-liupai.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/10-dangdai-liupai/outputs/skill-10-dangdai-liupai.md) |
+| prompt | 当代六家各把手法的某一个参数做成了可教的东西 · 提示词 | — | 883 | [`prompt-10-dangdai-liupai.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/10-dangdai-liupai/outputs/prompt-10-dangdai-liupai.md) |
+| skill | 当代六家各把手法的某一个参数做成了可教的东西 | 当代六家各把手法的某一个参数做成了可教的东西——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 776 | [`skill-10-dangdai-liupai.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/10-dangdai-liupai/outputs/skill-10-dangdai-liupai.md) |
 
-#### 第 11 章 · 针灸各家学说的临床应用与传承
+#### 第 11 章 · 轴心从人换成法，手法一旦离人就丢了适应证
 
 `17-gejia-zhenjiu-xueshuo/chapters/11-linchuang-chuancheng/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：针灸各家学说的临床应用与传承 | — | 408 | [`prompt-11-linchuang-chuancheng.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/11-linchuang-chuancheng/outputs/prompt-11-linchuang-chuancheng.md) |
-| skill | 针灸各家学说的临床应用与传承 | 用《各家针灸学说》第 11 章「针灸各家学说的临床应用与传承」的单元层做可核对的教学材料。 | 585 | [`skill-11-linchuang-chuancheng.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/11-linchuang-chuancheng/outputs/skill-11-linchuang-chuancheng.md) |
+| prompt | 轴心从人换成法，手法一旦离人就丢了适应证 · 提示词 | — | 864 | [`prompt-11-linchuang-chuancheng.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/11-linchuang-chuancheng/outputs/prompt-11-linchuang-chuancheng.md) |
+| skill | 轴心从人换成法，手法一旦离人就丢了适应证 | 轴心从人换成法，手法一旦离人就丢了适应证——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 765 | [`skill-11-linchuang-chuancheng.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/11-linchuang-chuancheng/outputs/skill-11-linchuang-chuancheng.md) |
 
 #### 第 12 章 · 数字化与 AI 时代：要素可枚举，编码可对齐，裁量不可交出去
 
@@ -7164,25 +7164,25 @@
 | --- | --- | --- | :-: | --- |
 | prompt | 数字化与 AI 时代：要素可枚举，编码可对齐，裁量不可交出去 · 提示词 | — | 598 | [`prompt-shuzihua-ai.md`](../departments/01-zhongyi/10-zhongyi-neike-xue/chapters/12-shuzihua-ai/outputs/prompt-shuzihua-ai.md) |
 | skill | 数字化与 AI 时代：要素可枚举，编码可对齐，裁量不可交出去 | 数字化与 AI 时代：要素可枚举，编码可对齐，裁量不可交出去——按「正文：可枚举的要素与不可交出的裁量 → 逐条落位 → 运行与验证」走一遍本章判据 | 492 | [`skill-shuzihua-ai.md`](../departments/01-zhongyi/10-zhongyi-neike-xue/chapters/12-shuzihua-ai/outputs/skill-shuzihua-ai.md) |
-| prompt | 用本章内容做一件事：各家针灸学说与数字化AI时代 | — | 408 | [`prompt-12-shuzihua-ai.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/12-shuzihua-ai/outputs/prompt-12-shuzihua-ai.md) |
-| skill | 各家针灸学说与数字化AI时代 | 用《各家针灸学说》第 12 章「各家针灸学说与数字化AI时代」的单元层做可核对的教学材料。 | 567 | [`skill-12-shuzihua-ai.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/12-shuzihua-ai/outputs/skill-12-shuzihua-ai.md) |
-| prompt | 用本章内容做一件事：推拿治疗数字化与AI时代 | — | 407 | [`prompt-12-shuzihua-ai.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/12-shuzihua-ai/outputs/prompt-12-shuzihua-ai.md) |
-| skill | 推拿治疗数字化与AI时代 | 用《推拿治疗学》第 12 章「推拿治疗数字化与AI时代」的单元层做可核对的教学材料。 | 545 | [`skill-12-shuzihua-ai.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/12-shuzihua-ai/outputs/skill-12-shuzihua-ai.md) |
+| prompt | 谈数据的一章，引书最少，可计量的数值为零 · 提示词 | — | 758 | [`prompt-12-shuzihua-ai.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/12-shuzihua-ai/outputs/prompt-12-shuzihua-ai.md) |
+| skill | 谈数据的一章，引书最少，可计量的数值为零 | 谈数据的一章，引书最少，可计量的数值为零——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 650 | [`skill-12-shuzihua-ai.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/12-shuzihua-ai/outputs/skill-12-shuzihua-ai.md) |
+| prompt | 设备能把手法变成数字，不能把数字变成判断 · 提示词 | — | 595 | [`prompt-12-shuzihua-ai.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/12-shuzihua-ai/outputs/prompt-12-shuzihua-ai.md) |
+| skill | 设备能把手法变成数字，不能把数字变成判断 | 设备能把手法变成数字，不能把数字变成判断——按「四条路径，替掉的都是「测量」 → VR 与设备：三原则、三层复核、一个身份 → 标准与编码：对齐的是名字，不是疗效 → 数据与伦理：最硬的那条边界」走一遍本章判据 | 497 | [`skill-12-shuzihua-ai.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/12-shuzihua-ai/outputs/skill-12-shuzihua-ai.md) |
 
 ### 推拿功法学
 
 > Build · 第 4 学期 · 已产出 12 章
 
-#### 第 1 章 · 各家针灸学说概述
+#### 第 1 章 · 各家针灸学说考的是一套判据，不是一张人名表
 
 `18-tuina-gongfa-xue/chapters/01-gaishu-yanbian/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：各家针灸学说概述 | — | 401 | [`prompt-01-gaishu-yanbian.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/01-gaishu-yanbian/outputs/prompt-01-gaishu-yanbian.md) |
-| skill | 各家针灸学说概述 | 用《各家针灸学说》第 1 章「各家针灸学说概述」的单元层做可核对的教学材料。 | 560 | [`skill-01-gaishu-yanbian.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/01-gaishu-yanbian/outputs/skill-01-gaishu-yanbian.md) |
-| prompt | 用本章内容做一件事：推拿功法学概论与发展简史 | — | 421 | [`prompt-01-gaishu-yanbian.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/01-gaishu-yanbian/outputs/prompt-01-gaishu-yanbian.md) |
-| skill | 推拿功法学概论与发展简史 | 用《推拿功法学》第 1 章「推拿功法学概论与发展简史」的单元层做可核对的教学材料。 | 521 | [`skill-01-gaishu-yanbian.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/01-gaishu-yanbian/outputs/skill-01-gaishu-yanbian.md) |
+| prompt | 各家针灸学说考的是一套判据，不是一张人名表 · 提示词 | — | 791 | [`prompt-01-gaishu-yanbian.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/01-gaishu-yanbian/outputs/prompt-01-gaishu-yanbian.md) |
+| skill | 各家针灸学说考的是一套判据，不是一张人名表 | 各家针灸学说考的是一套判据，不是一张人名表——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 686 | [`skill-01-gaishu-yanbian.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/01-gaishu-yanbian/outputs/skill-01-gaishu-yanbian.md) |
+| prompt | 功法的历史是把身体写成规矩的历史，写进去的只有规矩 · 提示词 | — | 1064 | [`prompt-01-gaishu-yanbian.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/01-gaishu-yanbian/outputs/prompt-01-gaishu-yanbian.md) |
+| skill | 功法的历史是把身体写成规矩的历史，写进去的只有规矩 | 功法的历史是把身体写成规矩的历史，写进去的只有规矩——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 956 | [`skill-01-gaishu-yanbian.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/01-gaishu-yanbian/outputs/skill-01-gaishu-yanbian.md) |
 
 #### 第 2 章 · 邪盛正衰不是一句断言，是一条能读出方向的轴
 
@@ -7194,207 +7194,207 @@
 | skill | 邪盛正衰不是一句断言，是一条能读出方向的轴 | 邪盛正衰不是一句断言，是一条能读出方向的轴——按「病因的四条入口：问「从哪里进来的」，不问「叫什么病」 → 病机：三件事同时发生，闭与脱是同一过程的两端 → 辨证：先分层，再分证 → 治则的排序：急则治标不是口号，是排班」走一遍本章判据 | 662 | [`skill-02-lilun-jichu.md`](../departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/02-lilun-jichu/outputs/skill-02-lilun-jichu.md) |
 | prompt | 心与脑争了两千年，争的其实是「谁主事」与「谁供血」 · 提示词 | — | 781 | [`prompt-02-lilun-jichu.md`](../departments/01-zhongyi/20-zhongyi-jingshenbing-xue/chapters/02-lilun-jichu/outputs/prompt-02-lilun-jichu.md) |
 | skill | 心与脑争了两千年，争的其实是「谁主事」与「谁供血」 | 心与脑争了两千年，争的其实是「谁主事」与「谁供血」——按「两说的来历：一条从「君主」出发，一条从「髓海」出发 → 8 项观察：4 项指脑，3 项指心，1 项必须合看 → 成组判据：先定虚实，再定在气、痰、瘀、火哪一层 → 干预动作：三法各有边界，停止条件比适应证更硬」走一遍本章判据 | 669 | [`skill-02-lilun-jichu.md`](../departments/01-zhongyi/20-zhongyi-jingshenbing-xue/chapters/02-lilun-jichu/outputs/skill-02-lilun-jichu.md) |
-| prompt | 理论基础与修炼要素 · 提示词 | — | 484 | [`prompt-02-lilun-jichu.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/02-lilun-jichu/outputs/prompt-02-lilun-jichu.md) |
-| skill | 理论基础与修炼要素 | 理论基础与修炼要素——按「概论史 → 理论与三调 → 偏差防治 → 静功动功 → 太极与健身气功 → 辨证施功 → 研究与治未病」走一遍本章判据 | 397 | [`skill-lilun-jichu.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/02-lilun-jichu/outputs/skill-lilun-jichu.md) |
-| prompt | 用本章内容做一件事：推拿功法的理论基础 | — | 418 | [`prompt-02-lilun-jichu.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/02-lilun-jichu/outputs/prompt-02-lilun-jichu.md) |
-| skill | 推拿功法的理论基础 | 用《推拿功法学》第 2 章「推拿功法的理论基础」的单元层做可核对的教学材料。 | 509 | [`skill-02-lilun-jichu.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/02-lilun-jichu/outputs/skill-02-lilun-jichu.md) |
+| prompt | 调息写得最多，不等于调息最要紧 · 提示词 | — | 847 | [`prompt-02-lilun-jichu.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/02-lilun-jichu/outputs/prompt-02-lilun-jichu.md) |
+| skill | 调息写得最多，不等于调息最要紧 | 调息写得最多，不等于调息最要紧——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 746 | [`skill-lilun-jichu.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/02-lilun-jichu/outputs/skill-lilun-jichu.md) |
+| prompt | 理论给的是练功的说法，不是练功的做法 · 提示词 | — | 1048 | [`prompt-02-lilun-jichu.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/02-lilun-jichu/outputs/prompt-02-lilun-jichu.md) |
+| skill | 理论给的是练功的说法，不是练功的做法 | 理论给的是练功的说法，不是练功的做法——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 944 | [`skill-02-lilun-jichu.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/02-lilun-jichu/outputs/skill-02-lilun-jichu.md) |
 | prompt | 运动调的不是肌肉，是气机的升降出入 · 提示词 | — | 900 | [`prompt-02-lilun-jichu.md`](../departments/04-gushang/01-zhongyi-yundong-xue/chapters/02-lilun-jichu/outputs/prompt-02-lilun-jichu.md) |
 | skill | 运动调的不是肌肉，是气机的升降出入 | 运动调的不是肌肉，是气机的升降出入——按「形、气、神：三个层次，三种失败 → 五脏各主一形：分工表与它的边界 → 气血要动，但不能过用 → 经络与关节：为什么「活动关节」等于「行气血」」走一遍本章判据 | 797 | [`skill-lilun-jichu.md`](../departments/04-gushang/01-zhongyi-yundong-xue/chapters/02-lilun-jichu/outputs/skill-lilun-jichu.md) |
 | prompt | 阴阳五行不是哲学装饰，是护理观察里最省事的两把尺 · 提示词 | — | 693 | [`prompt-02-lilun-jichu.md`](../departments/05-huli/24-zhongyi-huli-xue/chapters/02-lilun-jichu/outputs/prompt-02-lilun-jichu.md) |
 | skill | 阴阳五行不是哲学装饰，是护理观察里最省事的两把尺 | 阴阳五行不是哲学装饰，是护理观察里最省事的两把尺——按「阴阳：两把尺，四个问题 → 五行：生克是解释工具，不是护理路径 → 藏象与经络：定位到「哪一脏、哪条经」，护理才有落点 → 气血津液与病因病机：把「虚」拆成能观察的四项」走一遍本章判据 | 592 | [`skill-02-lilun-jichu.md`](../departments/05-huli/24-zhongyi-huli-xue/chapters/02-lilun-jichu/outputs/skill-02-lilun-jichu.md) |
 
-#### 第 3 章 · 推拿功法基本内容与练功要领
+#### 第 3 章 · 三调是一个环，不是一道先后工序
 
 `18-tuina-gongfa-xue/chapters/03-jiben-neirong/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：推拿功法基本内容与练功要领 | — | 422 | [`prompt-03-jiben-neirong.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/03-jiben-neirong/outputs/prompt-03-jiben-neirong.md) |
-| skill | 推拿功法基本内容与练功要领 | 用《推拿功法学》第 3 章「推拿功法基本内容与练功要领」的单元层做可核对的教学材料。 | 521 | [`skill-03-jiben-neirong.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/03-jiben-neirong/outputs/skill-03-jiben-neirong.md) |
+| prompt | 三调是一个环，不是一道先后工序 · 提示词 | — | 992 | [`prompt-03-jiben-neirong.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/03-jiben-neirong/outputs/prompt-03-jiben-neirong.md) |
+| skill | 三调是一个环，不是一道先后工序 | 三调是一个环，不是一道先后工序——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 893 | [`skill-03-jiben-neirong.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/03-jiben-neirong/outputs/skill-03-jiben-neirong.md) |
 
-#### 第 4 章 · 推拿功法与手法功力
+#### 第 4 章 · 功力不是力气大，是力能一直落在同一个点上
 
 `18-tuina-gongfa-xue/chapters/04-gongli-guanxi/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：推拿功法与手法功力 | — | 418 | [`prompt-04-gongli-guanxi.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/04-gongli-guanxi/outputs/prompt-04-gongli-guanxi.md) |
-| skill | 推拿功法与手法功力 | 用《推拿功法学》第 4 章「推拿功法与手法功力」的单元层做可核对的教学材料。 | 513 | [`skill-04-gongli-guanxi.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/04-gongli-guanxi/outputs/skill-04-gongli-guanxi.md) |
+| prompt | 功力不是力气大，是力能一直落在同一个点上 · 提示词 | — | 1055 | [`prompt-04-gongli-guanxi.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/04-gongli-guanxi/outputs/prompt-04-gongli-guanxi.md) |
+| skill | 功力不是力气大，是力能一直落在同一个点上 | 功力不是力气大，是力能一直落在同一个点上——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 951 | [`skill-04-gongli-guanxi.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/04-gongli-guanxi/outputs/skill-04-gongli-guanxi.md) |
 
-#### 第 5 章 · 易筋经
+#### 第 5 章 · 十二势分的是筋的走向，不是动作的花样
 
 `18-tuina-gongfa-xue/chapters/05-yijinjing/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：易筋经 | — | 412 | [`prompt-05-yijinjing.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/05-yijinjing/outputs/prompt-05-yijinjing.md) |
-| skill | 易筋经 | 用《推拿功法学》第 5 章「易筋经」的单元层做可核对的教学材料。 | 493 | [`skill-05-yijinjing.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/05-yijinjing/outputs/skill-05-yijinjing.md) |
+| prompt | 十二势分的是筋的走向，不是动作的花样 · 提示词 | — | 1001 | [`prompt-05-yijinjing.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/05-yijinjing/outputs/prompt-05-yijinjing.md) |
+| skill | 十二势分的是筋的走向，不是动作的花样 | 十二势分的是筋的走向，不是动作的花样——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 895 | [`skill-05-yijinjing.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/05-yijinjing/outputs/skill-05-yijinjing.md) |
 
-#### 第 6 章 · 少林内功
+#### 第 6 章 · 少林内功把「力从足起」写成了一份可检查的姿势清单
 
 `18-tuina-gongfa-xue/chapters/06-shaolin-neigong/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：少林内功 | — | 413 | [`prompt-06-shaolin-neigong.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/06-shaolin-neigong/outputs/prompt-06-shaolin-neigong.md) |
-| skill | 少林内功 | 用《推拿功法学》第 6 章「少林内功」的单元层做可核对的教学材料。 | 507 | [`skill-06-shaolin-neigong.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/06-shaolin-neigong/outputs/skill-06-shaolin-neigong.md) |
+| prompt | 少林内功把「力从足起」写成了一份可检查的姿势清单 · 提示词 | — | 969 | [`prompt-06-shaolin-neigong.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/06-shaolin-neigong/outputs/prompt-06-shaolin-neigong.md) |
+| skill | 少林内功把「力从足起」写成了一份可检查的姿势清单 | 少林内功把「力从足起」写成了一份可检查的姿势清单——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 863 | [`skill-06-shaolin-neigong.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/06-shaolin-neigong/outputs/skill-06-shaolin-neigong.md) |
 
-#### 第 7 章 · 五禽戏
+#### 第 7 章 · 五禽戏的剂量写在一个「汗」字上，不写在分钟数上
 
 `18-tuina-gongfa-xue/chapters/07-wuqinxi/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：五禽戏 | — | 412 | [`prompt-07-wuqinxi.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/07-wuqinxi/outputs/prompt-07-wuqinxi.md) |
-| skill | 五禽戏 | 用《推拿功法学》第 7 章「五禽戏」的单元层做可核对的教学材料。 | 489 | [`skill-07-wuqinxi.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/07-wuqinxi/outputs/skill-07-wuqinxi.md) |
+| prompt | 五禽戏的剂量写在一个「汗」字上，不写在分钟数上 · 提示词 | — | 1025 | [`prompt-07-wuqinxi.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/07-wuqinxi/outputs/prompt-07-wuqinxi.md) |
+| skill | 五禽戏的剂量写在一个「汗」字上，不写在分钟数上 | 五禽戏的剂量写在一个「汗」字上，不写在分钟数上——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 912 | [`skill-07-wuqinxi.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/07-wuqinxi/outputs/skill-07-wuqinxi.md) |
 
-#### 第 8 章 · 八段锦
+#### 第 8 章 · 八段锦的八句歌诀各给一个功效，没有一句给剂量
 
 `18-tuina-gongfa-xue/chapters/08-baduanjin/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：八段锦 | — | 412 | [`prompt-08-baduanjin.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/08-baduanjin/outputs/prompt-08-baduanjin.md) |
-| skill | 八段锦 | 用《推拿功法学》第 8 章「八段锦」的单元层做可核对的教学材料。 | 493 | [`skill-08-baduanjin.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/08-baduanjin/outputs/skill-08-baduanjin.md) |
+| prompt | 八段锦的八句歌诀各给一个功效，没有一句给剂量 · 提示词 | — | 990 | [`prompt-08-baduanjin.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/08-baduanjin/outputs/prompt-08-baduanjin.md) |
+| skill | 八段锦的八句歌诀各给一个功效，没有一句给剂量 | 八段锦的八句歌诀各给一个功效，没有一句给剂量——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 880 | [`skill-08-baduanjin.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/08-baduanjin/outputs/skill-08-baduanjin.md) |
 
-#### 第 9 章 · 六字诀与其他传统功法
+#### 第 9 章 · 六字诀把剂量数成三十六次呼吸，而不是多少分钟
 
 `18-tuina-gongfa-xue/chapters/09-liuzijue-qita/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：六字诀与其他传统功法 | — | 419 | [`prompt-09-liuzijue-qita.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/09-liuzijue-qita/outputs/prompt-09-liuzijue-qita.md) |
-| skill | 六字诀与其他传统功法 | 用《推拿功法学》第 9 章「六字诀与其他传统功法」的单元层做可核对的教学材料。 | 515 | [`skill-09-liuzijue-qita.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/09-liuzijue-qita/outputs/skill-09-liuzijue-qita.md) |
+| prompt | 六字诀把剂量数成三十六次呼吸，而不是多少分钟 · 提示词 | — | 935 | [`prompt-09-liuzijue-qita.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/09-liuzijue-qita/outputs/prompt-09-liuzijue-qita.md) |
+| skill | 六字诀把剂量数成三十六次呼吸，而不是多少分钟 | 六字诀把剂量数成三十六次呼吸，而不是多少分钟——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 829 | [`skill-09-liuzijue-qita.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/09-liuzijue-qita/outputs/skill-09-liuzijue-qita.md) |
 
-#### 第 10 章 · 专项功力训练
+#### 第 10 章 · 全书七成的带单位数值压在这一章，因为它练的是器物规格
 
 `18-tuina-gongfa-xue/chapters/10-zhuanxiang-gongli/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：专项功力训练 | — | 416 | [`prompt-10-zhuanxiang-gongli.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/10-zhuanxiang-gongli/outputs/prompt-10-zhuanxiang-gongli.md) |
-| skill | 专项功力训练 | 用《推拿功法学》第 10 章「专项功力训练」的单元层做可核对的教学材料。 | 516 | [`skill-10-zhuanxiang-gongli.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/10-zhuanxiang-gongli/outputs/skill-10-zhuanxiang-gongli.md) |
+| prompt | 全书七成的带单位数值压在这一章，因为它练的是器物规格 · 提示词 | — | 967 | [`prompt-10-zhuanxiang-gongli.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/10-zhuanxiang-gongli/outputs/prompt-10-zhuanxiang-gongli.md) |
+| skill | 全书七成的带单位数值压在这一章，因为它练的是器物规格 | 全书七成的带单位数值压在这一章，因为它练的是器物规格——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 860 | [`skill-10-zhuanxiang-gongli.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/10-zhuanxiang-gongli/outputs/skill-10-zhuanxiang-gongli.md) |
 
-#### 第 11 章 · 推拿功法在临床的应用
+#### 第 11 章 · 临床处方章的剂量最密，却一个阿拉伯数字也不用
 
 `18-tuina-gongfa-xue/chapters/11-linchuang-yingyong/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：推拿功法在临床的应用 | — | 420 | [`prompt-11-linchuang-yingyong.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/11-linchuang-yingyong/outputs/prompt-11-linchuang-yingyong.md) |
-| skill | 推拿功法在临床的应用 | 用《推拿功法学》第 11 章「推拿功法在临床的应用」的单元层做可核对的教学材料。 | 526 | [`skill-11-linchuang-yingyong.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/11-linchuang-yingyong/outputs/skill-11-linchuang-yingyong.md) |
+| prompt | 临床处方章的剂量最密，却一个阿拉伯数字也不用 · 提示词 | — | 907 | [`prompt-11-linchuang-yingyong.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/11-linchuang-yingyong/outputs/prompt-11-linchuang-yingyong.md) |
+| skill | 临床处方章的剂量最密，却一个阿拉伯数字也不用 | 临床处方章的剂量最密，却一个阿拉伯数字也不用——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 805 | [`skill-11-linchuang-yingyong.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/11-linchuang-yingyong/outputs/skill-11-linchuang-yingyong.md) |
 
-#### 第 12 章 · 推拿功法与现代科学·数字化AI时代
+#### 第 12 章 · 数字化先量出角度与力，最后才轮到那个「意」
 
 `18-tuina-gongfa-xue/chapters/12-xiandai-shuzihua/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：推拿功法与现代科学·数字化AI时代 | — | 427 | [`prompt-12-xiandai-shuzihua.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/12-xiandai-shuzihua/outputs/prompt-12-xiandai-shuzihua.md) |
-| skill | 推拿功法与现代科学·数字化AI时代 | 用《推拿功法学》第 12 章「推拿功法与现代科学·数字化AI时代」的单元层做可核对的教学材料。 | 536 | [`skill-12-xiandai-shuzihua.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/12-xiandai-shuzihua/outputs/skill-12-xiandai-shuzihua.md) |
+| prompt | 数字化先量出角度与力，最后才轮到那个「意」 · 提示词 | — | 923 | [`prompt-12-xiandai-shuzihua.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/12-xiandai-shuzihua/outputs/prompt-12-xiandai-shuzihua.md) |
+| skill | 数字化先量出角度与力，最后才轮到那个「意」 | 数字化先量出角度与力，最后才轮到那个「意」——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 820 | [`skill-12-xiandai-shuzihua.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/12-xiandai-shuzihua/outputs/skill-12-xiandai-shuzihua.md) |
 
 ### 推拿治疗学
 
 > Clinic · 第 7 学期 · 已产出 12 章
 
-#### 第 1 章 · 推拿治疗学概论
+#### 第 1 章 · 推拿治疗学不是手法目录，是从辨证到疗效评定的一条链
 
 `19-tuina-zhiliao-xue/chapters/01-gaishu-tixi/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：推拿治疗学概论 | — | 401 | [`prompt-01-gaishu-tixi.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/01-gaishu-tixi/outputs/prompt-01-gaishu-tixi.md) |
-| skill | 推拿治疗学概论 | 用《推拿治疗学》第 1 章「推拿治疗学概论」的单元层做可核对的教学材料。 | 534 | [`skill-01-gaishu-tixi.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/01-gaishu-tixi/outputs/skill-01-gaishu-tixi.md) |
+| prompt | 推拿治疗学不是手法目录，是从辨证到疗效评定的一条链 · 提示词 | — | 625 | [`prompt-01-gaishu-tixi.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/01-gaishu-tixi/outputs/prompt-01-gaishu-tixi.md) |
+| skill | 推拿治疗学不是手法目录，是从辨证到疗效评定的一条链 | 推拿治疗学不是手法目录，是从辨证到疗效评定的一条链——按「三层定位：手法学重「术」，治疗学重「治」 → 治则：把辨证结论翻译成刺激量的语法 → 八法与处方：治法是手法的组合规则 → 作用原理的两层：可追问的因果，与不可证伪的框架」走一遍本章判据 | 523 | [`skill-01-gaishu-tixi.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/01-gaishu-tixi/outputs/skill-01-gaishu-tixi.md) |
 
-#### 第 2 章 · 推拿治疗基础
+#### 第 2 章 · 处方里最虚的一格不是穴位，是刺激量
 
 `19-tuina-zhiliao-xue/chapters/02-zhiliao-jichu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：推拿治疗基础 | — | 400 | [`prompt-02-zhiliao-jichu.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/02-zhiliao-jichu/outputs/prompt-02-zhiliao-jichu.md) |
-| skill | 推拿治疗基础 | 用《推拿治疗学》第 2 章「推拿治疗基础」的单元层做可核对的教学材料。 | 536 | [`skill-02-zhiliao-jichu.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/02-zhiliao-jichu/outputs/skill-02-zhiliao-jichu.md) |
+| prompt | 处方里最虚的一格不是穴位，是刺激量 · 提示词 | — | 600 | [`prompt-02-zhiliao-jichu.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/02-zhiliao-jichu/outputs/prompt-02-zhiliao-jichu.md) |
+| skill | 处方里最虚的一格不是穴位，是刺激量 | 处方里最虚的一格不是穴位，是刺激量——按「辨证：推拿的四诊重心不在脉，在望形与按诊 → 检查：把「摸得出来」变成「说得出来」 → 处方：七要素、四选穴，与一格空白 → 介质、体位与顺序：把处方排成一条可执行的时间线」走一遍本章判据 | 508 | [`skill-02-zhiliao-jichu.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/02-zhiliao-jichu/outputs/skill-02-zhiliao-jichu.md) |
 
-#### 第 3 章 · 脊柱病证推拿治疗
+#### 第 3 章 · 脊柱推拿的分水岭不在手法，在分型与禁忌
 
 `19-tuina-zhiliao-xue/chapters/03-jizhu-bingzheng/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：脊柱病证推拿治疗 | — | 402 | [`prompt-03-jizhu-bingzheng.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/03-jizhu-bingzheng/outputs/prompt-03-jizhu-bingzheng.md) |
-| skill | 脊柱病证推拿治疗 | 用《推拿治疗学》第 3 章「脊柱病证推拿治疗」的单元层做可核对的教学材料。 | 544 | [`skill-03-jizhu-bingzheng.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/03-jizhu-bingzheng/outputs/skill-03-jizhu-bingzheng.md) |
+| prompt | 脊柱推拿的分水岭不在手法，在分型与禁忌 · 提示词 | — | 580 | [`prompt-03-jizhu-bingzheng.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/03-jizhu-bingzheng/outputs/prompt-03-jizhu-bingzheng.md) |
+| skill | 脊柱推拿的分水岭不在手法，在分型与禁忌 | 脊柱推拿的分水岭不在手法，在分型与禁忌——按「八个病证，一条分型轴 → 手法骨架：为什么八个病证的手法是同一套 → 整复的三条纪律 → 红线清单：这一章真正的主角」走一遍本章判据 | 488 | [`skill-03-jizhu-bingzheng.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/03-jizhu-bingzheng/outputs/skill-03-jizhu-bingzheng.md) |
 
-#### 第 4 章 · 骨关节与筋伤病证推拿治疗
+#### 第 4 章 · 关节与筋伤靠分期，不靠一次扳到位
 
 `19-tuina-zhiliao-xue/chapters/04-guguanjie-jinshang/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：骨关节与筋伤病证推拿治疗 | — | 406 | [`prompt-04-guguanjie-jinshang.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/04-guguanjie-jinshang/outputs/prompt-04-guguanjie-jinshang.md) |
-| skill | 骨关节与筋伤病证推拿治疗 | 用《推拿治疗学》第 4 章「骨关节与筋伤病证推拿治疗」的单元层做可核对的教学材料。 | 558 | [`skill-04-guguanjie-jinshang.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/04-guguanjie-jinshang/outputs/skill-04-guguanjie-jinshang.md) |
+| prompt | 关节与筋伤靠分期，不靠一次扳到位 · 提示词 | — | 576 | [`prompt-04-guguanjie-jinshang.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/04-guguanjie-jinshang/outputs/prompt-04-guguanjie-jinshang.md) |
+| skill | 关节与筋伤靠分期，不靠一次扳到位 | 关节与筋伤靠分期，不靠一次扳到位——按「七个病证，一条分期轴 → 松解买得到什么，买不到什么 → 急性期的禁令：本章最硬的一段 → 能治与不能治：三个数字划出的边界」走一遍本章判据 | 490 | [`skill-04-guguanjie-jinshang.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/04-guguanjie-jinshang/outputs/skill-04-guguanjie-jinshang.md) |
 
-#### 第 5 章 · 内科病证推拿治疗
+#### 第 5 章 · 内科推拿卖的是症状缓解，不是治愈承诺
 
 `19-tuina-zhiliao-xue/chapters/05-neike-bingzheng/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：内科病证推拿治疗 | — | 402 | [`prompt-05-neike-bingzheng.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/05-neike-bingzheng/outputs/prompt-05-neike-bingzheng.md) |
-| skill | 内科病证推拿治疗 | 用《推拿治疗学》第 5 章「内科病证推拿治疗」的单元层做可核对的教学材料。 | 544 | [`skill-05-neike-bingzheng.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/05-neike-bingzheng/outputs/skill-05-neike-bingzheng.md) |
+| prompt | 内科推拿卖的是症状缓解，不是治愈承诺 · 提示词 | — | 556 | [`prompt-05-neike-bingzheng.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/05-neike-bingzheng/outputs/prompt-05-neike-bingzheng.md) |
+| skill | 内科推拿卖的是症状缓解，不是治愈承诺 | 内科推拿卖的是症状缓解，不是治愈承诺——按「八个病证，一张脏腑—体表映射 → 经典在这一章里的两种用法 → 剂量语法：以内科的方式给量 → 辅助定位与转诊清单」走一遍本章判据 | 465 | [`skill-05-neike-bingzheng.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/05-neike-bingzheng/outputs/skill-05-neike-bingzheng.md) |
 
-#### 第 6 章 · 妇科病证推拿治疗
+#### 第 6 章 · 妇科推拿的第一道工序不是通，是排除妊娠
 
 `19-tuina-zhiliao-xue/chapters/06-fuke-bingzheng/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：妇科病证推拿治疗 | — | 402 | [`prompt-06-fuke-bingzheng.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/06-fuke-bingzheng/outputs/prompt-06-fuke-bingzheng.md) |
-| skill | 妇科病证推拿治疗 | 用《推拿治疗学》第 6 章「妇科病证推拿治疗」的单元层做可核对的教学材料。 | 542 | [`skill-06-fuke-bingzheng.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/06-fuke-bingzheng/outputs/skill-06-fuke-bingzheng.md) |
+| prompt | 妇科推拿的第一道工序不是通，是排除妊娠 · 提示词 | — | 594 | [`prompt-06-fuke-bingzheng.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/06-fuke-bingzheng/outputs/prompt-06-fuke-bingzheng.md) |
+| skill | 妇科推拿的第一道工序不是通，是排除妊娠 | 妇科推拿的第一道工序不是通，是排除妊娠——按「四个病证，一条月经周期轴 → 痛经：辨虚实是全部技术前提 → 月经不调：先定类型，再定时窗 → 乳房与哺乳：这一段几乎全是禁令」走一遍本章判据 | 501 | [`skill-06-fuke-bingzheng.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/06-fuke-bingzheng/outputs/skill-06-fuke-bingzheng.md) |
 
-#### 第 7 章 · 儿科病证推拿治疗
+#### 第 7 章 · 小儿的剂量按次数给，成人的时长表搬不过来
 
 `19-tuina-zhiliao-xue/chapters/07-erke-bingzheng/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：儿科病证推拿治疗 | — | 402 | [`prompt-07-erke-bingzheng.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/07-erke-bingzheng/outputs/prompt-07-erke-bingzheng.md) |
-| skill | 儿科病证推拿治疗 | 用《推拿治疗学》第 7 章「儿科病证推拿治疗」的单元层做可核对的教学材料。 | 542 | [`skill-07-erke-bingzheng.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/07-erke-bingzheng/outputs/skill-07-erke-bingzheng.md) |
+| prompt | 小儿的剂量按次数给，成人的时长表搬不过来 · 提示词 | — | 591 | [`prompt-07-erke-bingzheng.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/07-erke-bingzheng/outputs/prompt-07-erke-bingzheng.md) |
+| skill | 小儿的剂量按次数给，成人的时长表搬不过来 | 小儿的剂量按次数给，成人的时长表搬不过来——按「量词换了，手法才算换了 → 四张日期表，一条共同的结构 → 力度上限由「脾常不足」定，不由皮肤嫩定 → 三条不能省的前置条件，与一次交付」走一遍本章判据 | 497 | [`skill-07-erke-bingzheng.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/07-erke-bingzheng/outputs/skill-07-erke-bingzheng.md) |
 
-#### 第 8 章 · 五官与其他病证推拿治疗
+#### 第 8 章 · 五官三病，推拿只够得到功能那一层
 
 `19-tuina-zhiliao-xue/chapters/08-wuguan-qita/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：五官与其他病证推拿治疗 | — | 405 | [`prompt-08-wuguan-qita.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/08-wuguan-qita/outputs/prompt-08-wuguan-qita.md) |
-| skill | 五官与其他病证推拿治疗 | 用《推拿治疗学》第 8 章「五官与其他病证推拿治疗」的单元层做可核对的教学材料。 | 542 | [`skill-08-wuguan-qita.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/08-wuguan-qita/outputs/skill-08-wuguan-qita.md) |
+| prompt | 五官三病，推拿只够得到功能那一层 · 提示词 | — | 596 | [`prompt-08-wuguan-qita.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/08-wuguan-qita/outputs/prompt-08-wuguan-qita.md) |
+| skill | 五官三病，推拿只够得到功能那一层 | 五官三病，推拿只够得到功能那一层——按「三个病，三条「到此为止」的线 → 头面手法：风险低，疗效上限也低 → 近视是这一章的判例：可逆与不可逆的分界 → 耳鸣的难点不在手法，在分诊」走一遍本章判据 | 503 | [`skill-08-wuguan-qita.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/08-wuguan-qita/outputs/skill-08-wuguan-qita.md) |
 
-#### 第 9 章 · 运动损伤与康复推拿
+#### 第 9 章 · 运动损伤的手法表只有一张，日期表有四张
 
 `19-tuina-zhiliao-xue/chapters/09-yundong-kangfu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：运动损伤与康复推拿 | — | 403 | [`prompt-09-yundong-kangfu.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/09-yundong-kangfu/outputs/prompt-09-yundong-kangfu.md) |
-| skill | 运动损伤与康复推拿 | 用《推拿治疗学》第 9 章「运动损伤与康复推拿」的单元层做可核对的教学材料。 | 544 | [`skill-09-yundong-kangfu.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/09-yundong-kangfu/outputs/skill-09-yundong-kangfu.md) |
+| prompt | 运动损伤的手法表只有一张，日期表有四张 · 提示词 | — | 574 | [`prompt-09-yundong-kangfu.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/09-yundong-kangfu/outputs/prompt-09-yundong-kangfu.md) |
+| skill | 运动损伤的手法表只有一张，日期表有四张 | 运动损伤的手法表只有一张，日期表有四张——按「四张日期表 → 急性期为什么必须空手 → 恢复期的顺序是固定的 → 骨折与卒中：两个闸门，两种耐心」走一遍本章判据 | 481 | [`skill-09-yundong-kangfu.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/09-yundong-kangfu/outputs/skill-09-yundong-kangfu.md) |
 
-#### 第 10 章 · 推拿治疗安全与异常处理
+#### 第 10 章 · 推拿的安全事故几乎都不是手法问题，而是诊断问题
 
 `19-tuina-zhiliao-xue/chapters/10-anquan-yichang/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：推拿治疗安全与异常处理 | — | 406 | [`prompt-10-anquan-yichang.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/10-anquan-yichang/outputs/prompt-10-anquan-yichang.md) |
-| skill | 推拿治疗安全与异常处理 | 用《推拿治疗学》第 10 章「推拿治疗安全与异常处理」的单元层做可核对的教学材料。 | 549 | [`skill-10-anquan-yichang.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/10-anquan-yichang/outputs/skill-10-anquan-yichang.md) |
+| prompt | 推拿的安全事故几乎都不是手法问题，而是诊断问题 · 提示词 | — | 610 | [`prompt-10-anquan-yichang.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/10-anquan-yichang/outputs/prompt-10-anquan-yichang.md) |
+| skill | 推拿的安全事故几乎都不是手法问题，而是诊断问题 | 推拿的安全事故几乎都不是手法问题，而是诊断问题——按「先排除，后治疗：次序本身就是知识 → 十条转诊红线 → 异常反应的分界：一种是流程，一种是判断 → 脊柱手法红线」走一遍本章判据 | 512 | [`skill-10-anquan-yichang.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/10-anquan-yichang/outputs/skill-10-anquan-yichang.md) |
 
-#### 第 11 章 · 推拿治疗现代研究与循证
+#### 第 11 章 · 证据等级不决定推拿有没有效，只决定这句话能说多响
 
 `19-tuina-zhiliao-xue/chapters/11-xiandai-yanzheng/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：推拿治疗现代研究与循证 | — | 406 | [`prompt-11-xiandai-yanzheng.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/11-xiandai-yanzheng/outputs/prompt-11-xiandai-yanzheng.md) |
-| skill | 推拿治疗现代研究与循证 | 用《推拿治疗学》第 11 章「推拿治疗现代研究与循证」的单元层做可核对的教学材料。 | 553 | [`skill-11-xiandai-yanzheng.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/11-xiandai-yanzheng/outputs/skill-11-xiandai-yanzheng.md) |
+| prompt | 证据等级不决定推拿有没有效，只决定这句话能说多响 · 提示词 | — | 595 | [`prompt-11-xiandai-yanzheng.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/11-xiandai-yanzheng/outputs/prompt-11-xiandai-yanzheng.md) |
+| skill | 证据等级不决定推拿有没有效，只决定这句话能说多响 | 证据等级不决定推拿有没有效，只决定这句话能说多响——按「分级是一把尺子，不是一个奖章 → 底本自己给的四档结论 → 盲法为什么做不了，以及做了之后能说什么 → 能说的话与不能说的话」走一遍本章判据 | 498 | [`skill-11-xiandai-yanzheng.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/11-xiandai-yanzheng/outputs/skill-11-xiandai-yanzheng.md) |
 
 #### 第 12 章 · 数字化与 AI 时代：要素可枚举，编码可对齐，裁量不可交出去
 
@@ -7404,171 +7404,171 @@
 | --- | --- | --- | :-: | --- |
 | prompt | 数字化与 AI 时代：要素可枚举，编码可对齐，裁量不可交出去 · 提示词 | — | 598 | [`prompt-shuzihua-ai.md`](../departments/01-zhongyi/10-zhongyi-neike-xue/chapters/12-shuzihua-ai/outputs/prompt-shuzihua-ai.md) |
 | skill | 数字化与 AI 时代：要素可枚举，编码可对齐，裁量不可交出去 | 数字化与 AI 时代：要素可枚举，编码可对齐，裁量不可交出去——按「正文：可枚举的要素与不可交出的裁量 → 逐条落位 → 运行与验证」走一遍本章判据 | 492 | [`skill-shuzihua-ai.md`](../departments/01-zhongyi/10-zhongyi-neike-xue/chapters/12-shuzihua-ai/outputs/skill-shuzihua-ai.md) |
-| prompt | 用本章内容做一件事：各家针灸学说与数字化AI时代 | — | 408 | [`prompt-12-shuzihua-ai.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/12-shuzihua-ai/outputs/prompt-12-shuzihua-ai.md) |
-| skill | 各家针灸学说与数字化AI时代 | 用《各家针灸学说》第 12 章「各家针灸学说与数字化AI时代」的单元层做可核对的教学材料。 | 567 | [`skill-12-shuzihua-ai.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/12-shuzihua-ai/outputs/skill-12-shuzihua-ai.md) |
-| prompt | 用本章内容做一件事：推拿治疗数字化与AI时代 | — | 407 | [`prompt-12-shuzihua-ai.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/12-shuzihua-ai/outputs/prompt-12-shuzihua-ai.md) |
-| skill | 推拿治疗数字化与AI时代 | 用《推拿治疗学》第 12 章「推拿治疗数字化与AI时代」的单元层做可核对的教学材料。 | 545 | [`skill-12-shuzihua-ai.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/12-shuzihua-ai/outputs/skill-12-shuzihua-ai.md) |
+| prompt | 谈数据的一章，引书最少，可计量的数值为零 · 提示词 | — | 758 | [`prompt-12-shuzihua-ai.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/12-shuzihua-ai/outputs/prompt-12-shuzihua-ai.md) |
+| skill | 谈数据的一章，引书最少，可计量的数值为零 | 谈数据的一章，引书最少，可计量的数值为零——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 650 | [`skill-12-shuzihua-ai.md`](../departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/12-shuzihua-ai/outputs/skill-12-shuzihua-ai.md) |
+| prompt | 设备能把手法变成数字，不能把数字变成判断 · 提示词 | — | 595 | [`prompt-12-shuzihua-ai.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/12-shuzihua-ai/outputs/prompt-12-shuzihua-ai.md) |
+| skill | 设备能把手法变成数字，不能把数字变成判断 | 设备能把手法变成数字，不能把数字变成判断——按「四条路径，替掉的都是「测量」 → VR 与设备：三原则、三层复核、一个身份 → 标准与编码：对齐的是名字，不是疗效 → 数据与伦理：最硬的那条边界」走一遍本章判据 | 497 | [`skill-12-shuzihua-ai.md`](../departments/03-zhenjiu/19-tuina-zhiliao-xue/chapters/12-shuzihua-ai/outputs/skill-12-shuzihua-ai.md) |
 
 ### 小儿推拿学
 
 > Clinic · 第 8 学期 · 已产出 12 章
 
-#### 第 1 章 · 小儿推拿学发展简史
+#### 第 1 章 · 小儿推拿的独立，不靠手法成熟，靠「儿科」先成为一门学问
 
 `20-xiaoer-tuina-xue/chapters/01-fazhan-jianshi/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：小儿推拿学发展简史 | — | 400 | [`prompt-01-fazhan-jianshi.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/01-fazhan-jianshi/outputs/prompt-01-fazhan-jianshi.md) |
-| skill | 小儿推拿学发展简史 | 用《小儿推拿学》第 1 章「小儿推拿学发展简史」的单元层做可核对的教学材料。 | 537 | [`skill-01-fazhan-jianshi.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/01-fazhan-jianshi/outputs/skill-01-fazhan-jianshi.md) |
+| prompt | 小儿推拿的独立，不靠手法成熟，靠「儿科」先成为一门学问 · 提示词 | — | 974 | [`prompt-01-fazhan-jianshi.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/01-fazhan-jianshi/outputs/prompt-01-fazhan-jianshi.md) |
+| skill | 小儿推拿的独立，不靠手法成熟，靠「儿科」先成为一门学问 | 小儿推拿的独立，不靠手法成熟，靠「儿科」先成为一门学问——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 864 | [`skill-01-fazhan-jianshi.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/01-fazhan-jianshi/outputs/skill-01-fazhan-jianshi.md) |
 
-#### 第 2 章 · 小儿推拿基础知识
+#### 第 2 章 · 小儿的生理决定手法上限，病理决定干预窗口
 
 `20-xiaoer-tuina-xue/chapters/02-jichu-zhishi/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：小儿推拿基础知识 | — | 399 | [`prompt-02-jichu-zhishi.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/02-jichu-zhishi/outputs/prompt-02-jichu-zhishi.md) |
-| skill | 小儿推拿基础知识 | 用《小儿推拿学》第 2 章「小儿推拿基础知识」的单元层做可核对的教学材料。 | 531 | [`skill-02-jichu-zhishi.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/02-jichu-zhishi/outputs/skill-02-jichu-zhishi.md) |
+| prompt | 小儿的生理决定手法上限，病理决定干预窗口 · 提示词 | — | 888 | [`prompt-02-jichu-zhishi.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/02-jichu-zhishi/outputs/prompt-02-jichu-zhishi.md) |
+| skill | 小儿的生理决定手法上限，病理决定干预窗口 | 小儿的生理决定手法上限，病理决定干预窗口——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 783 | [`skill-02-jichu-zhishi.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/02-jichu-zhishi/outputs/skill-02-jichu-zhishi.md) |
 
-#### 第 3 章 · 小儿推拿治疗概要
+#### 第 3 章 · 「轻快柔和」不是形容词，是一组可以交给学生的参数
 
 `20-xiaoer-tuina-xue/chapters/03-zhiliao-gaiyao/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：小儿推拿治疗概要 | — | 399 | [`prompt-03-zhiliao-gaiyao.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/03-zhiliao-gaiyao/outputs/prompt-03-zhiliao-gaiyao.md) |
-| skill | 小儿推拿治疗概要 | 用《小儿推拿学》第 3 章「小儿推拿治疗概要」的单元层做可核对的教学材料。 | 535 | [`skill-03-zhiliao-gaiyao.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/03-zhiliao-gaiyao/outputs/skill-03-zhiliao-gaiyao.md) |
+| prompt | 「轻快柔和」不是形容词，是一组可以交给学生的参数 · 提示词 | — | 921 | [`prompt-03-zhiliao-gaiyao.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/03-zhiliao-gaiyao/outputs/prompt-03-zhiliao-gaiyao.md) |
+| skill | 「轻快柔和」不是形容词，是一组可以交给学生的参数 | 「轻快柔和」不是形容词，是一组可以交给学生的参数——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 814 | [`skill-03-zhiliao-gaiyao.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/03-zhiliao-gaiyao/outputs/skill-03-zhiliao-gaiyao.md) |
 
-#### 第 4 章 · 小儿推拿常用手法
+#### 第 4 章 · 八法的分界不在动作，而在「吸定点是否带动皮下」
 
 `20-xiaoer-tuina-xue/chapters/04-changyong-shoufa/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：小儿推拿常用手法 | — | 399 | [`prompt-04-changyong-shoufa.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/04-changyong-shoufa/outputs/prompt-04-changyong-shoufa.md) |
-| skill | 小儿推拿常用手法 | 用《小儿推拿学》第 4 章「小儿推拿常用手法」的单元层做可核对的教学材料。 | 539 | [`skill-04-changyong-shoufa.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/04-changyong-shoufa/outputs/skill-04-changyong-shoufa.md) |
+| prompt | 八法的分界不在动作，而在「吸定点是否带动皮下」 · 提示词 | — | 955 | [`prompt-04-changyong-shoufa.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/04-changyong-shoufa/outputs/prompt-04-changyong-shoufa.md) |
+| skill | 八法的分界不在动作，而在「吸定点是否带动皮下」 | 八法的分界不在动作，而在「吸定点是否带动皮下」——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 851 | [`skill-04-changyong-shoufa.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/04-changyong-shoufa/outputs/skill-04-changyong-shoufa.md) |
 
-#### 第 5 章 · 小儿推拿特定穴
+#### 第 5 章 · 特定穴的权威不来自引文，来自可复现的定位与次数
 
 `20-xiaoer-tuina-xue/chapters/05-teding-xue/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：小儿推拿特定穴 | — | 398 | [`prompt-05-teding-xue.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/05-teding-xue/outputs/prompt-05-teding-xue.md) |
-| skill | 小儿推拿特定穴 | 用《小儿推拿学》第 5 章「小儿推拿特定穴」的单元层做可核对的教学材料。 | 525 | [`skill-05-teding-xue.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/05-teding-xue/outputs/skill-05-teding-xue.md) |
+| prompt | 特定穴的权威不来自引文，来自可复现的定位与次数 · 提示词 | — | 938 | [`prompt-05-teding-xue.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/05-teding-xue/outputs/prompt-05-teding-xue.md) |
+| skill | 特定穴的权威不来自引文，来自可复现的定位与次数 | 特定穴的权威不来自引文，来自可复现的定位与次数——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 828 | [`skill-05-teding-xue.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/05-teding-xue/outputs/skill-05-teding-xue.md) |
 
-#### 第 6 章 · 肺系病证
+#### 第 6 章 · 肺系四病共用一个处方骨架，差别在「什么时候停」
 
 `20-xiaoer-tuina-xue/chapters/06-feixi-bingzheng/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：肺系病证 | — | 395 | [`prompt-06-feixi-bingzheng.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/06-feixi-bingzheng/outputs/prompt-06-feixi-bingzheng.md) |
-| skill | 肺系病证 | 用《小儿推拿学》第 6 章「肺系病证」的单元层做可核对的教学材料。 | 529 | [`skill-06-feixi-bingzheng.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/06-feixi-bingzheng/outputs/skill-06-feixi-bingzheng.md) |
+| prompt | 肺系四病共用一个处方骨架，差别在「什么时候停」 · 提示词 | — | 912 | [`prompt-06-feixi-bingzheng.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/06-feixi-bingzheng/outputs/prompt-06-feixi-bingzheng.md) |
+| skill | 肺系四病共用一个处方骨架，差别在「什么时候停」 | 肺系四病共用一个处方骨架，差别在「什么时候停」——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 807 | [`skill-06-feixi-bingzheng.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/06-feixi-bingzheng/outputs/skill-06-feixi-bingzheng.md) |
 
-#### 第 7 章 · 脾系病证
+#### 第 7 章 · 脾系六病是同一副脾胃的六个出口，补泻只差一个方向
 
 `20-xiaoer-tuina-xue/chapters/07-pixi-bingzheng/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：脾系病证 | — | 395 | [`prompt-07-pixi-bingzheng.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/07-pixi-bingzheng/outputs/prompt-07-pixi-bingzheng.md) |
-| skill | 脾系病证 | 用《小儿推拿学》第 7 章「脾系病证」的单元层做可核对的教学材料。 | 527 | [`skill-07-pixi-bingzheng.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/07-pixi-bingzheng/outputs/skill-07-pixi-bingzheng.md) |
+| prompt | 脾系六病是同一副脾胃的六个出口，补泻只差一个方向 · 提示词 | — | 943 | [`prompt-07-pixi-bingzheng.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/07-pixi-bingzheng/outputs/prompt-07-pixi-bingzheng.md) |
+| skill | 脾系六病是同一副脾胃的六个出口，补泻只差一个方向 | 脾系六病是同一副脾胃的六个出口，补泻只差一个方向——按「正文：六个出口与一条方向轴 → 运行与验证」走一遍本章判据 | 836 | [`skill-07-pixi-bingzheng.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/07-pixi-bingzheng/outputs/skill-07-pixi-bingzheng.md) |
 
-#### 第 8 章 · 心肝系病证
+#### 第 8 章 · 心肝系三病先排除再辨证，抽搐是唯一不能等的信号
 
 `20-xiaoer-tuina-xue/chapters/08-xinganxi-bingzheng/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：心肝系病证 | — | 396 | [`prompt-08-xinganxi-bingzheng.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/08-xinganxi-bingzheng/outputs/prompt-08-xinganxi-bingzheng.md) |
-| skill | 心肝系病证 | 用《小儿推拿学》第 8 章「心肝系病证」的单元层做可核对的教学材料。 | 537 | [`skill-08-xinganxi-bingzheng.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/08-xinganxi-bingzheng/outputs/skill-08-xinganxi-bingzheng.md) |
+| prompt | 心肝系三病先排除再辨证，抽搐是唯一不能等的信号 · 提示词 | — | 969 | [`prompt-08-xinganxi-bingzheng.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/08-xinganxi-bingzheng/outputs/prompt-08-xinganxi-bingzheng.md) |
+| skill | 心肝系三病先排除再辨证，抽搐是唯一不能等的信号 | 心肝系三病先排除再辨证，抽搐是唯一不能等的信号——按「正文：一刀、两道排除、一组穴 → 运行与验证」走一遍本章判据 | 867 | [`skill-08-xinganxi-bingzheng.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/08-xinganxi-bingzheng/outputs/skill-08-xinganxi-bingzheng.md) |
 
-#### 第 9 章 · 肾系与五官病证
+#### 第 9 章 · 肾系与五官六病都卡在时间上，判的是到点没到点
 
 `20-xiaoer-tuina-xue/chapters/09-shenxi-wuguan/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：肾系与五官病证 | — | 398 | [`prompt-09-shenxi-wuguan.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/09-shenxi-wuguan/outputs/prompt-09-shenxi-wuguan.md) |
-| skill | 肾系与五官病证 | 用《小儿推拿学》第 9 章「肾系与五官病证」的单元层做可核对的教学材料。 | 531 | [`skill-09-shenxi-wuguan.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/09-shenxi-wuguan/outputs/skill-09-shenxi-wuguan.md) |
+| prompt | 肾系与五官六病都卡在时间上，判的是到点没到点 · 提示词 | — | 922 | [`prompt-09-shenxi-wuguan.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/09-shenxi-wuguan/outputs/prompt-09-shenxi-wuguan.md) |
+| skill | 肾系与五官六病都卡在时间上，判的是到点没到点 | 肾系与五官六病都卡在时间上，判的是到点没到点——按「正文：六病一把尺 → 运行与验证」走一遍本章判据 | 816 | [`skill-09-shenxi-wuguan.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/09-shenxi-wuguan/outputs/skill-09-shenxi-wuguan.md) |
 
-#### 第 10 章 · 新生儿与杂病
+#### 第 10 章 · 新生儿不是小一号的小儿，这一层先讲禁再讲法
 
 `20-xiaoer-tuina-xue/chapters/10-xinshenger-zabing/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：新生儿与杂病 | — | 398 | [`prompt-10-xinshenger-zabing.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/10-xinshenger-zabing/outputs/prompt-10-xinshenger-zabing.md) |
-| skill | 新生儿与杂病 | 用《小儿推拿学》第 10 章「新生儿与杂病」的单元层做可核对的教学材料。 | 538 | [`skill-10-xinshenger-zabing.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/10-xinshenger-zabing/outputs/skill-10-xinshenger-zabing.md) |
+| prompt | 新生儿不是小一号的小儿，这一层先讲禁再讲法 · 提示词 | — | 924 | [`prompt-10-xinshenger-zabing.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/10-xinshenger-zabing/outputs/prompt-10-xinshenger-zabing.md) |
+| skill | 新生儿不是小一号的小儿，这一层先讲禁再讲法 | 新生儿不是小一号的小儿，这一层先讲禁再讲法——按「正文：一半讲禁，一半讲找 → 运行与验证」走一遍本章判据 | 822 | [`skill-10-xinshenger-zabing.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/10-xinshenger-zabing/outputs/skill-10-xinshenger-zabing.md) |
 
-#### 第 11 章 · 小儿保健推拿
+#### 第 11 章 · 保健推拿不辨证，它判的是今天能不能做
 
 `20-xiaoer-tuina-xue/chapters/11-baojian-tuina/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：小儿保健推拿 | — | 398 | [`prompt-11-baojian-tuina.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/11-baojian-tuina/outputs/prompt-11-baojian-tuina.md) |
-| skill | 小儿保健推拿 | 用《小儿推拿学》第 11 章「小儿保健推拿」的单元层做可核对的教学材料。 | 530 | [`skill-11-baojian-tuina.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/11-baojian-tuina/outputs/skill-11-baojian-tuina.md) |
+| prompt | 保健推拿不辨证，它判的是今天能不能做 · 提示词 | — | 909 | [`prompt-11-baojian-tuina.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/11-baojian-tuina/outputs/prompt-11-baojian-tuina.md) |
+| skill | 保健推拿不辨证，它判的是今天能不能做 | 保健推拿不辨证，它判的是今天能不能做——按「正文：四套程序，一层底座，五条停手线 → 运行与验证」走一遍本章判据 | 806 | [`skill-11-baojian-tuina.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/11-baojian-tuina/outputs/skill-11-baojian-tuina.md) |
 
-#### 第 12 章 · 小儿推拿安全与数字化AI时代
+#### 第 12 章 · 安全章一个次数都不给，它给的是红线与复核
 
 `20-xiaoer-tuina-xue/chapters/12-anquan-shuzihua/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：小儿推拿安全与数字化AI时代 | — | 406 | [`prompt-12-anquan-shuzihua.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/12-anquan-shuzihua/outputs/prompt-12-anquan-shuzihua.md) |
-| skill | 小儿推拿安全与数字化AI时代 | 用《小儿推拿学》第 12 章「小儿推拿安全与数字化AI时代」的单元层做可核对的教学材料。 | 550 | [`skill-12-anquan-shuzihua.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/12-anquan-shuzihua/outputs/skill-12-anquan-shuzihua.md) |
+| prompt | 安全章一个次数都不给，它给的是红线与复核 · 提示词 | — | 873 | [`prompt-12-anquan-shuzihua.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/12-anquan-shuzihua/outputs/prompt-12-anquan-shuzihua.md) |
+| skill | 安全章一个次数都不给，它给的是红线与复核 | 安全章一个次数都不给，它给的是红线与复核——按「正文：零数值、六类禁、九条红线、四次重复 → 运行与验证」走一遍本章判据 | 770 | [`skill-12-anquan-shuzihua.md`](../departments/03-zhenjiu/20-xiaoer-tuina-xue/chapters/12-anquan-shuzihua/outputs/skill-12-anquan-shuzihua.md) |
 
 ### 针灸临床轮转
 
 > Clinic · 第 9 学期 · 已产出 6 章
 
-#### 第 1 章 · 针灸科门诊轮转：颈肩腰腿痛的接诊与配穴
+#### 第 1 章 · 门诊这一站，先学会停手，再学会配穴
 
 `21-zhenjiu-linchuang-lunzhuan/chapters/01-menzhen-lunzhuan/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 针灸科门诊轮转：颈肩腰腿痛的接诊与配穴 · 提示词 | — | 495 | [`prompt-01-menzhen-lunzhuan.md`](../departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/chapters/01-menzhen-lunzhuan/outputs/prompt-01-menzhen-lunzhuan.md) |
-| skill | 针灸科门诊轮转：颈肩腰腿痛的接诊与配穴 | 针灸科门诊轮转：颈肩腰腿痛的接诊与配穴——按「门诊接诊 → 病种轮转 → 灸罐处置 → 推拿科 → 出科考核」走一遍本章判据 | 393 | [`skill-menzhen-lunzhuan.md`](../departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/chapters/01-menzhen-lunzhuan/outputs/skill-menzhen-lunzhuan.md) |
+| prompt | 门诊这一站，先学会停手，再学会配穴 · 提示词 | — | 880 | [`prompt-01-menzhen-lunzhuan.md`](../departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/chapters/01-menzhen-lunzhuan/outputs/prompt-01-menzhen-lunzhuan.md) |
+| skill | 门诊这一站，先学会停手，再学会配穴 | 门诊这一站，先学会停手，再学会配穴——按「底本把笔墨压在"不能做什么"上 → 三组病种，三把不同的定位刀 → 加穴的理由要落在"受累组织"上，不落在"症状"上 → 几周能带走的一张分诊卡」走一遍本章判据 | 781 | [`skill-menzhen-lunzhuan.md`](../departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/chapters/01-menzhen-lunzhuan/outputs/skill-menzhen-lunzhuan.md) |
 
-#### 第 2 章 · 中风病康复轮转
+#### 第 2 章 · 中风康复这一站，判据在功能，不在症状轻重
 
 `21-zhenjiu-linchuang-lunzhuan/chapters/02-zhongfeng-kangfu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 中风病康复轮转 · 提示词 | — | 448 | [`prompt-02-zhongfeng-kangfu.md`](../departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/chapters/02-zhongfeng-kangfu/outputs/prompt-02-zhongfeng-kangfu.md) |
-| skill | 中风病康复轮转 | 中风病康复轮转——按「门诊接诊 → 病种轮转 → 灸罐处置 → 推拿科 → 出科考核」走一遍本章判据 | 369 | [`skill-zhongfeng-kangfu.md`](../departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/chapters/02-zhongfeng-kangfu/outputs/skill-zhongfeng-kangfu.md) |
+| prompt | 中风康复这一站，判据在功能，不在症状轻重 · 提示词 | — | 907 | [`prompt-02-zhongfeng-kangfu.md`](../departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/chapters/02-zhongfeng-kangfu/outputs/prompt-02-zhongfeng-kangfu.md) |
+| skill | 中风康复这一站，判据在功能，不在症状轻重 | 中风康复这一站，判据在功能，不在症状轻重——按「八节等长，说明这是体例，不是判断 → 先分清是哪侧的脸：一条额纹定方向 → 功能有三层，缺一层就练错方向 → 把症状课翻译成功能课：三个动作」走一遍本章判据 | 805 | [`skill-zhongfeng-kangfu.md`](../departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/chapters/02-zhongfeng-kangfu/outputs/skill-zhongfeng-kangfu.md) |
 
-#### 第 3 章 · 面瘫与周围神经损伤轮转
+#### 第 3 章 · 面瘫这一站先问窗口，窗口判错，手法方向就是反的
 
 `21-zhenjiu-linchuang-lunzhuan/chapters/03-mian-tan/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 面瘫与周围神经损伤轮转 · 提示词 | — | 459 | [`prompt-03-mian-tan.md`](../departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/chapters/03-mian-tan/outputs/prompt-03-mian-tan.md) |
-| skill | 面瘫与周围神经损伤轮转 | 面瘫与周围神经损伤轮转——按「门诊接诊 → 病种轮转 → 灸罐处置 → 推拿科 → 出科考核」走一遍本章判据 | 369 | [`skill-mian-tan.md`](../departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/chapters/03-mian-tan/outputs/skill-mian-tan.md) |
+| prompt | 面瘫这一站先问窗口，窗口判错，手法方向就是反的 · 提示词 | — | 920 | [`prompt-03-mian-tan.md`](../departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/chapters/03-mian-tan/outputs/prompt-03-mian-tan.md) |
+| skill | 面瘫这一站先问窗口，窗口判错，手法方向就是反的 | 面瘫这一站先问窗口，窗口判错，手法方向就是反的——按「两节 7,469 字，面瘫不在里面 → 四个病，同一个问题：这一期还能不能回 → 窗口之内与窗口之外：手法方向为什么相反 → 四条红线，都带时限」走一遍本章判据 | 807 | [`skill-mian-tan.md`](../departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/chapters/03-mian-tan/outputs/skill-mian-tan.md) |
 
-#### 第 4 章 · 灸法与拔罐的适应证与意外处置
+#### 第 4 章 · 灸罐这一站先划边界，边界之内才轮到手感
 
 `21-zhenjiu-linchuang-lunzhuan/chapters/04-jiu-baguan/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 灸法与拔罐的适应证与意外处置 · 提示词 | — | 480 | [`prompt-04-jiu-baguan.md`](../departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/chapters/04-jiu-baguan/outputs/prompt-04-jiu-baguan.md) |
-| skill | 灸法与拔罐的适应证与意外处置 | 灸法与拔罐的适应证与意外处置——按「门诊接诊 → 病种轮转 → 灸罐处置 → 推拿科 → 出科考核」走一遍本章判据 | 377 | [`skill-jiu-baguan.md`](../departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/chapters/04-jiu-baguan/outputs/skill-jiu-baguan.md) |
+| prompt | 灸罐这一站先划边界，边界之内才轮到手感 · 提示词 | — | 968 | [`prompt-04-jiu-baguan.md`](../departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/chapters/04-jiu-baguan/outputs/prompt-04-jiu-baguan.md) |
+| skill | 灸罐这一站先划边界，边界之内才轮到手感 | 灸罐这一站先划边界，边界之内才轮到手感——按「20,356 字里 265 次"记录"：这一节在教边界 → 能不能做：先看体表，再看清单 → 做完看什么：观察也分"类别" → 出事怎么报：四个环节，一个都不能少」走一遍本章判据 | 861 | [`skill-jiu-baguan.md`](../departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/chapters/04-jiu-baguan/outputs/skill-jiu-baguan.md) |
 
-#### 第 5 章 · 推拿科轮转
+#### 第 5 章 · 推拿这一站考的不是会不会做，是第十次还一样不一样
 
 `21-zhenjiu-linchuang-lunzhuan/chapters/05-tuina-lunzhuan/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 推拿科轮转 · 提示词 | — | 450 | [`prompt-05-tuina-lunzhuan.md`](../departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/chapters/05-tuina-lunzhuan/outputs/prompt-05-tuina-lunzhuan.md) |
-| skill | 推拿科轮转 | 推拿科轮转——按「门诊接诊 → 病种轮转 → 灸罐处置 → 推拿科 → 出科考核」走一遍本章判据 | 363 | [`skill-tuina-lunzhuan.md`](../departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/chapters/05-tuina-lunzhuan/outputs/skill-tuina-lunzhuan.md) |
+| prompt | 推拿这一站考的不是会不会做，是第十次还一样不一样 · 提示词 | — | 886 | [`prompt-05-tuina-lunzhuan.md`](../departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/chapters/05-tuina-lunzhuan/outputs/prompt-05-tuina-lunzhuan.md) |
+| skill | 推拿这一站考的不是会不会做，是第十次还一样不一样 | 推拿这一站考的不是会不会做，是第十次还一样不一样——按「一半篇幅在讲"手法之外" → 四要素不是形容词，是四个失效模式 → 刺激量：力×频率×时间，可以记账 → 程序与红线：一松二整三理」走一遍本章判据 | 778 | [`skill-tuina-lunzhuan.md`](../departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/chapters/05-tuina-lunzhuan/outputs/skill-tuina-lunzhuan.md) |
 
 #### 第 6 章 · 出科考核考的不是记得多少，是判断留没留下痕迹
 
@@ -7578,8 +7578,8 @@
 | --- | --- | --- | :-: | --- |
 | prompt | 出科考核考的不是记得多少，是判断留没留下痕迹 · 提示词 | — | 751 | [`prompt-06-chuke-kaohe.md`](../departments/01-zhongyi/21-zhongyi-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/prompt-06-chuke-kaohe.md) |
 | skill | 出科考核考的不是记得多少，是判断留没留下痕迹 | 出科考核考的不是记得多少，是判断留没留下痕迹——按「出科三问 → 结构化病历的十四个字段 → 复盘四问与交接时限 → 判据：达标与不达标两列【教学设定】」走一遍本章判据 | 642 | [`skill-06-chuke-kaohe.md`](../departments/01-zhongyi/21-zhongyi-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/skill-06-chuke-kaohe.md) |
-| prompt | 出科考核与病例复盘 · 提示词 | — | 458 | [`prompt-06-chuke-kaohe.md`](../departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/prompt-06-chuke-kaohe.md) |
-| skill | 出科考核与病例复盘 | 出科考核与病例复盘——按「门诊接诊 → 病种轮转 → 灸罐处置 → 推拿科 → 出科考核」走一遍本章判据 | 368 | [`skill-chuke-kaohe.md`](../departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/skill-chuke-kaohe.md) |
+| prompt | 出科考核要能指到环节，指不到环节的复盘等于没复盘 · 提示词 | — | 889 | [`prompt-06-chuke-kaohe.md`](../departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/prompt-06-chuke-kaohe.md) |
+| skill | 出科考核要能指到环节，指不到环节的复盘等于没复盘 | 出科考核要能指到环节，指不到环节的复盘等于没复盘——按「一节 19,259 字，没有出现一次分数 → 复盘的第一问不是"对不对"，是"哪一步" → 一句合格的复盘长什么样 → 不给分，那给什么」走一遍本章判据 | 778 | [`skill-chuke-kaohe.md`](../departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/skill-chuke-kaohe.md) |
 | prompt | 出科考核：考的不是背，是你能不能把一次接诊从头讲到尾 · 提示词 | — | 701 | [`prompt-chuke-kaohe.md`](../departments/04-gushang/16-gushang-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/prompt-chuke-kaohe.md) |
 | skill | 出科考核：考的不是背，是你能不能把一次接诊从头讲到尾 | 出科考核：考的不是背，是你能不能把一次接诊从头讲到尾——按「考核的五项结构 → 病例汇报的四问 → 病历与知情同意：自查六个字段 → 不良事件复盘：问五句，不追一个人」走一遍本章判据 | 588 | [`skill-chuke-kaohe.md`](../departments/04-gushang/16-gushang-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/skill-chuke-kaohe.md) |
 | prompt | 出科考的是一例能不能讲透，不是做过多少项 · 提示词 | — | 629 | [`prompt-06-chuke-kaohe.md`](../departments/05-huli/26-huli-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/prompt-06-chuke-kaohe.md) |
@@ -7591,101 +7591,101 @@
 
 > Build · 第 10 学期 · 已产出 6 章
 
-#### 第 1 章 · 选题：从质量标志物到可验证假设
+#### 第 1 章 · 选题的成败取决于假设能否被一批样品证伪
 
 `22-zhenjiu-biye-sheji/chapters/01-xuan-ti/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 选题：从质量标志物到可验证假设 · 提示词 | — | 491 | [`prompt-01-xuan-ti.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
-| skill | 选题：从质量标志物到可验证假设 | 选题：从质量标志物到可验证假设——按「选题 → 样品与数据 → 实验与建模 → 方法学验证 → 写作答辩 → 移交」走一遍本章判据 | 378 | [`skill-xuan-ti.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
-| prompt | 选题：从配穴方案到可检验命题 · 提示词 | — | 481 | [`prompt-01-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
-| skill | 选题：从配穴方案到可检验命题 | 选题：从配穴方案到可检验命题——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 373 | [`skill-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
-| prompt | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 · 提示词 | — | 620 | [`prompt-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/prompt-xuan-ti.md) |
-| skill | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题——按「三条判据：骨伤版的可复现、可对照、可接手 → 四步降维：从一个病名到一条命题 → 三份能交出去的骨伤毕设产物 → 里程碑：四件必须交出去的东西」走一遍本章判据 | 503 | [`skill-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题的成败取决于假设能否被一批样品证伪 · 提示词 | — | 641 | [`prompt-01-xuan-ti.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
+| skill | 选题的成败取决于假设能否被一批样品证伪 | 选题的成败取决于假设能否被一批样品证伪——按「选题的真问题不是「做什么」，而是「哪一种不一致」 → 四个槽怎么填：从质量标志物到可检验判据 → 开题节点：交付物、字段与时间表 → 评分维度与五种失效模式」走一遍本章判据 | 535 | [`skill-xuan-ti.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题不是挑一个病，而是把一句经验话逼成能被否证的句子 · 提示词 | — | 923 | [`prompt-01-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
+| skill | 选题不是挑一个病，而是把一句经验话逼成能被否证的句子 | 选题不是挑一个病，而是把一句经验话逼成能被否证的句子——按「底本把"针在哪"写到了寸，把"跟谁比"留成了空格 → 对照只能选一个，选完要能说出它排除了什么 → 把"招几十例"换成四个参数 → 裁剪：写不完的范围等于没范围」走一遍本章判据 | 801 | [`skill-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 · 提示词 | — | 639 | [`prompt-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/prompt-xuan-ti.md) |
+| skill | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题——按「三条判据：骨伤版的可复现、可对照、可接手 → 四步降维：从一个病名到一条命题 → 三份能交出去的骨伤毕设产物 → 里程碑：四件必须交出去的东西」走一遍本章判据 | 522 | [`skill-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题在开题前就定了成败：缺口必须算得出来 · 提示词 | — | 629 | [`prompt-01-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题在开题前就定了成败：缺口必须算得出来 | 选题在开题前就定了成败：缺口必须算得出来——按「好选题的四个判据 → 缺口怎么算：分子、分母、来源 → 选题过大的四种形态 → 开题评什么：评能不能做，不评想不想做」走一遍本章判据 | 522 | [`skill-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
-| prompt | 选题：从管理问题到可测量命题 · 提示词 | — | 468 | [`prompt-01-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
-| skill | 选题：从管理问题到可测量命题 | 选题：从管理问题到可测量命题——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 378 | [`skill-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
-| prompt | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验 · 提示词 | — | 630 | [`prompt-01-xuan-ti.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
-| skill | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验 | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验——按「三条判据：可复现、可对照、可接手 → 四步降维：从中医问题到实验对象 → 三种能交出去的题目形态 → 里程碑与交付物」走一遍本章判据 | 513 | [`skill-xuan-ti.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题的标准不是「有意义」，而是能否在一个学期内被证伪 · 提示词 | — | 937 | [`prompt-01-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
+| skill | 选题的标准不是「有意义」，而是能否在一个学期内被证伪 | 选题的标准不是「有意义」，而是能否在一个学期内被证伪——按「「有意义」是评审语，「可证伪」是设计语 → 四步收缩：从管理问题到可测量命题 → 变量类型先定，方法才有得选 → 设计的四个要素与三种常见缺陷」走一遍本章判据 | 815 | [`skill-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验 · 提示词 | — | 646 | [`prompt-01-xuan-ti.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
+| skill | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验 | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验——按「三条判据：可复现、可对照、可接手 → 四步降维：从中医问题到实验对象 → 三种能交出去的题目形态 → 里程碑与交付物」走一遍本章判据 | 529 | [`skill-xuan-ti.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从专科问题到可验证命题 · 提示词 | — | 467 | [`prompt-01-xuan-ti.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题：从专科问题到可验证命题 | 选题：从专科问题到可验证命题——按「选题 → 数据 → 实现 → 评价 → 答辩 → 移交」走一遍本章判据 | 375 | [`skill-xuan-ti.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从机制假设到可检验实验 · 提示词 | — | 494 | [`prompt-01-xuan-ti.md`](../departments/09-jichu/17-jichu-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题：从机制假设到可检验实验 | 选题：从机制假设到可检验实验——按「选题 → 方案与伦理 → 实施与记录 → 数据分析 → 论文答辩 → 知识移交」走一遍本章判据 | 391 | [`skill-xuan-ti.md`](../departments/09-jichu/17-jichu-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 
-#### 第 2 章 · 数据准备：病例、经穴坐标、刺激参数
+#### 第 2 章 · 一份病例表的价值不在字段多，而在换个人能照着扎回同一个位置
 
 `22-zhenjiu-biye-sheji/chapters/02-shuju-zhunbei/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 数据准备：病例、经穴坐标、刺激参数 · 提示词 | — | 501 | [`prompt-02-shuju-zhunbei.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/02-shuju-zhunbei/outputs/prompt-02-shuju-zhunbei.md) |
-| skill | 数据准备：病例、经穴坐标、刺激参数 | 数据准备：病例、经穴坐标、刺激参数——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 385 | [`skill-shuju-zhunbei.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/02-shuju-zhunbei/outputs/skill-shuju-zhunbei.md) |
+| prompt | 一份病例表的价值不在字段多，而在换个人能照着扎回同一个位置 · 提示词 | — | 883 | [`prompt-02-shuju-zhunbei.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/02-shuju-zhunbei/outputs/prompt-02-shuju-zhunbei.md) |
+| skill | 一份病例表的价值不在字段多，而在换个人能照着扎回同一个位置 | 一份病例表的价值不在字段多，而在换个人能照着扎回同一个位置——按「三类最容易丢的数据，和十行模板的对照 → 定位写成第二个人能照做：四法各留什么字段 → 刺激量与得气：写可核对的数，不写"良好" → 谁在评、什么时候评、谁没做完」走一遍本章判据 | 764 | [`skill-shuju-zhunbei.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/02-shuju-zhunbei/outputs/skill-shuju-zhunbei.md) |
 
-#### 第 3 章 · 方法与系统实现
+#### 第 3 章 · 采集工具只做四件事，多做的每一件都要从招募窗口里扣时间
 
 `22-zhenjiu-biye-sheji/chapters/03-fangfa-shixian/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 方法与系统实现 · 提示词 | — | 460 | [`prompt-03-fangfa-shixian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/03-fangfa-shixian/outputs/prompt-03-fangfa-shixian.md) |
-| skill | 方法与系统实现 | 方法与系统实现——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 366 | [`skill-fangfa-shixian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/03-fangfa-shixian/outputs/skill-fangfa-shixian.md) |
+| prompt | 采集工具只做四件事，多做的每一件都要从招募窗口里扣时间 · 提示词 | — | 892 | [`prompt-03-fangfa-shixian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/03-fangfa-shixian/outputs/prompt-03-fangfa-shixian.md) |
+| skill | 采集工具只做四件事，多做的每一件都要从招募窗口里扣时间 | 采集工具只做四件事，多做的每一件都要从招募窗口里扣时间——按「底本七节示范的其实是"口径"，不是"系统" → 功能清单只留四项，其余写进不做 → 字段映射与四项校验：错误在这一步拦下，不然要等到分析 → 兜底、备份与留痕：三种故障，各写一页纸」走一遍本章判据 | 776 | [`skill-fangfa-shixian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/03-fangfa-shixian/outputs/skill-fangfa-shixian.md) |
 | prompt | 方法与系统实现 · 提示词 | — | 447 | [`prompt-03-fangfa-shixian.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/03-fangfa-shixian/outputs/prompt-03-fangfa-shixian.md) |
 | skill | 方法与系统实现 | 方法与系统实现——按「选题 → 数据 → 实现 → 评价 → 答辩 → 移交」走一遍本章判据 | 368 | [`skill-fangfa-shixian.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/03-fangfa-shixian/outputs/skill-fangfa-shixian.md) |
 
-#### 第 4 章 · 疗效评价与盲法设计
+#### 第 4 章 · 针刺盲不了全部，把盲了几层写清比宣称双盲更值钱
 
 `22-zhenjiu-biye-sheji/chapters/04-liaoxiao-pingjia/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 疗效评价与盲法设计 · 提示词 | — | 477 | [`prompt-04-liaoxiao-pingjia.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/04-liaoxiao-pingjia/outputs/prompt-04-liaoxiao-pingjia.md) |
-| skill | 疗效评价与盲法设计 | 疗效评价与盲法设计——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 372 | [`skill-liaoxiao-pingjia.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/04-liaoxiao-pingjia/outputs/skill-liaoxiao-pingjia.md) |
-| prompt | 疗效不是「好转了」，是先在纸上写死「什么叫没好转」 · 提示词 | — | 637 | [`prompt-liaoxiao-pingjia.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/04-liaoxiao-pingjia/outputs/prompt-liaoxiao-pingjia.md) |
-| skill | 疗效不是「好转了」，是先在纸上写死「什么叫没好转」 | 疗效不是「好转了」，是先在纸上写死「什么叫没好转」——按「终点分三层，主终点只能有一个 → 分数变了不等于好转 → 并发症：定义先于采集，分母先于结论 → 对照、混杂与敏感性」走一遍本章判据 | 534 | [`skill-liaoxiao-pingjia.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/04-liaoxiao-pingjia/outputs/skill-liaoxiao-pingjia.md) |
+| prompt | 针刺盲不了全部，把盲了几层写清比宣称双盲更值钱 · 提示词 | — | 922 | [`prompt-04-liaoxiao-pingjia.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/04-liaoxiao-pingjia/outputs/prompt-04-liaoxiao-pingjia.md) |
+| skill | 针刺盲不了全部，把盲了几层写清比宣称双盲更值钱 | 针刺盲不了全部，把盲了几层写清比宣称双盲更值钱——按「密度最高的那一节，缺的恰是针刺那一段 → 三层盲法：逐层写做得到与做不到 → 假针刺：四种造法，各自能排除什么 → 分析集、区间与偏倚：把 6 个词变成 6 行」走一遍本章判据 | 812 | [`skill-liaoxiao-pingjia.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/04-liaoxiao-pingjia/outputs/skill-liaoxiao-pingjia.md) |
+| prompt | 疗效不是「好转了」，是先在纸上写死「什么叫没好转」 · 提示词 | — | 655 | [`prompt-liaoxiao-pingjia.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/04-liaoxiao-pingjia/outputs/prompt-liaoxiao-pingjia.md) |
+| skill | 疗效不是「好转了」，是先在纸上写死「什么叫没好转」 | 疗效不是「好转了」，是先在纸上写死「什么叫没好转」——按「终点分三层，主终点只能有一个 → 分数变了不等于好转 → 并发症：定义先于采集，分母先于结论 → 对照、混杂与敏感性」走一遍本章判据 | 552 | [`skill-liaoxiao-pingjia.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/04-liaoxiao-pingjia/outputs/skill-liaoxiao-pingjia.md) |
 
-#### 第 5 章 · 论文写作与答辩
+#### 第 5 章 · 论文的说服力在绪论就定了，答辩只是把它念一遍
 
 `22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 论文写作与答辩 · 提示词 | — | 465 | [`prompt-05-lunwen-dabian.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
-| skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 样品与数据 → 实验与建模 → 方法学验证 → 写作答辩 → 移交」走一遍本章判据 | 368 | [`skill-lunwen-dabian.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
-| prompt | 论文写作与答辩 · 提示词 | — | 459 | [`prompt-05-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
-| skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 365 | [`skill-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
-| prompt | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 · 提示词 | — | 622 | [`prompt-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-lunwen-dabian.md) |
-| skill | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好——按「六段骨架：每一段都能用一句话检验 → 图表与数字：先让读者能核对，再让读者相信 → 答辩前先自评：七项检查 → 答辩：三类必答题与五分钟陈述」走一遍本章判据 | 507 | [`skill-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 论文的说服力在绪论就定了，答辩只是把它念一遍 · 提示词 | — | 634 | [`prompt-05-lunwen-dabian.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
+| skill | 论文的说服力在绪论就定了，答辩只是把它念一遍 | 论文的说服力在绪论就定了，答辩只是把它念一遍——按「绪论不是学科介绍，是把判据摆到桌面上 → 证据链的四层：每层对应论文的一个部位 → 答辩：四类必被问到的问题与应答结构 → 评分维度与失效模式」走一遍本章判据 | 531 | [`skill-lunwen-dabian.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 论文的说服力来自十个能复算的数字，不来自十页漂亮的讨论 · 提示词 | — | 858 | [`prompt-05-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
+| skill | 论文的说服力来自十个能复算的数字，不来自十页漂亮的讨论 | 论文的说服力来自十个能复算的数字，不来自十页漂亮的讨论——按「一头一尾：引文在底本里，数字在你的表里 → 十个数字：定稿前唯一的硬检查 → 讨论不是复述，是与三篇文献对位置 → 四类质疑与两轮试讲」走一遍本章判据 | 741 | [`skill-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 · 提示词 | — | 630 | [`prompt-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-lunwen-dabian.md) |
+| skill | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好——按「六段骨架：每一段都能用一句话检验 → 图表与数字：先让读者能核对，再让读者相信 → 答辩前先自评：七项检查 → 答辩：三类必答题与五分钟陈述」走一遍本章判据 | 515 | [`skill-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 答辩评的是判断链，不是字数与图表的数量 · 提示词 | — | 611 | [`prompt-05-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 答辩评的是判断链，不是字数与图表的数量 | 答辩评的是判断链，不是字数与图表的数量——按「四段式：每一段只回答一个问题 → 图表的三条规矩 → 陈述：十五分钟怎么分 → 提问：六类问题与应答方式」走一遍本章判据 | 511 | [`skill-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
-| prompt | 论文写作与答辩 · 提示词 | — | 447 | [`prompt-05-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
-| skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 370 | [`skill-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
-| prompt | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来 · 提示词 | — | 637 | [`prompt-05-lunwen-dabian.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
-| skill | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来 | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来——按「六段结构，与评审表一一对应 → 三张表：主表、消融表、误差表 → 写作顺序：先图表，后文字，最后摘要 → 答辩：20 分钟的分配与五个必答题」走一遍本章判据 | 525 | [`skill-lunwen-dabian.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 答辩不是复述结论，而是当场交代结论的适用条件 · 提示词 | — | 943 | [`prompt-05-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
+| skill | 答辩不是复述结论，而是当场交代结论的适用条件 | 答辩不是复述结论，而是当场交代结论的适用条件——按「一段可用的论证，结构上像一条能执行的条文 → 事实判断与价值判断必须分开写 → 枚举与限定：把「等」字写实 → 答辩现场的五个追问与应答」走一遍本章判据 | 831 | [`skill-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来 · 提示词 | — | 640 | [`prompt-05-lunwen-dabian.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
+| skill | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来 | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来——按「六段结构，与评审表一一对应 → 三张表：主表、消融表、误差表 → 写作顺序：先图表，后文字，最后摘要 → 答辩：20 分钟的分配与五个必答题」走一遍本章判据 | 528 | [`skill-lunwen-dabian.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 446 | [`prompt-05-lunwen-dabian.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据 → 实现 → 评价 → 答辩 → 移交」走一遍本章判据 | 367 | [`skill-lunwen-dabian.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 481 | [`prompt-05-lunwen-dabian.md`](../departments/09-jichu/17-jichu-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 方案与伦理 → 实施与记录 → 数据分析 → 论文答辩 → 知识移交」走一遍本章判据 | 383 | [`skill-lunwen-dabian.md`](../departments/09-jichu/17-jichu-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 
-#### 第 6 章 · 知识移交：实验记录与交接
+#### 第 6 章 · 记录不完整的实验等于没做过，交接不清的成果等于没留下
 
 `22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 知识移交：实验记录与交接 · 提示词 | — | 482 | [`prompt-06-zhishi-yijiao.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
-| skill | 知识移交：实验记录与交接 | 知识移交：实验记录与交接——按「选题 → 样品与数据 → 实验与建模 → 方法学验证 → 写作答辩 → 移交」走一遍本章判据 | 378 | [`skill-zhishi-yijiao.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
-| prompt | 知识移交：方案手册与交接 · 提示词 | — | 473 | [`prompt-06-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
-| skill | 知识移交：方案手册与交接 | 知识移交：方案手册与交接——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 375 | [`skill-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
-| prompt | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 · 提示词 | — | 646 | [`prompt-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-zhishi-yijiao.md) |
-| skill | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法——按「交接包四件：缺一件，复算就断在那一件 → SOP：把「做对」写成「照做也对」 → 三条验收动作：从能跑到敢用 → 失效清单与退役条件」走一遍本章判据 | 527 | [`skill-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 记录不完整的实验等于没做过，交接不清的成果等于没留下 · 提示词 | — | 628 | [`prompt-06-zhishi-yijiao.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
+| skill | 记录不完整的实验等于没做过，交接不清的成果等于没留下 | 记录不完整的实验等于没做过，交接不清的成果等于没留下——按「移交的判据是「别人能不能接着做」 → 交接包四件：记录、方法、数据、联系人 → 三个验收动作怎么执行 → 失效模式、评分与考核」走一遍本章判据 | 521 | [`skill-zhishi-yijiao.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 手册写得再全也移不走手感，移交完成的标志是别人照它做出来 · 提示词 | — | 892 | [`prompt-06-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
+| skill | 手册写得再全也移不走手感，移交完成的标志是别人照它做出来 | 手册写得再全也移不走手感，移交完成的标志是别人照它做出来——按「来路：254 处书名号为什么属于移交清单 → 逐穴一节：把能量化的写到极致 → 不可写项：标出来，配带教，别假装写清了 → 复现验证：三个人、两次、两版」走一遍本章判据 | 774 | [`skill-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 · 提示词 | — | 662 | [`prompt-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-zhishi-yijiao.md) |
+| skill | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法——按「交接包四件：缺一件，复算就断在那一件 → SOP：把「做对」写成「照做也对」 → 三条验收动作：从能跑到敢用 → 失效清单与退役条件」走一遍本章判据 | 543 | [`skill-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 毕设的最后一关，是别人能不能接着用 · 提示词 | — | 588 | [`prompt-06-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
 | skill | 毕设的最后一关，是别人能不能接着用 | 毕设的最后一关，是别人能不能接着用——按「移交包四件，各有各的验收动作 → 数据移交：边界比内容更重要 → 交接会：三段，不要开成汇报会 → 被接手方的三个提问」走一遍本章判据 | 490 | [`skill-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
-| prompt | 知识移交：制度文件与交接 · 提示词 | — | 462 | [`prompt-06-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
-| skill | 知识移交：制度文件与交接 | 知识移交：制度文件与交接——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 380 | [`skill-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
-| prompt | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数 · 提示词 | — | 608 | [`prompt-06-zhishi-yijiao.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
-| skill | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数 | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数——按「模型卡：十二个字段，缺一不可 → 交接包四件：代码、数据、环境、口径 → 验收：三个动作，一个都不能省 → 退役与责任边界」走一遍本章判据 | 496 | [`skill-zhishi-yijiao.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 移交的验收标准是「人走了系统还在转」，不是「文档齐了」 · 提示词 | — | 979 | [`prompt-06-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
+| skill | 移交的验收标准是「人走了系统还在转」，不是「文档齐了」 | 移交的验收标准是「人走了系统还在转」，不是「文档齐了」——按「移交的三类资产：制度、数据、人 → 主数据与字典：一物多码会让三年数据接不上 → 权限、脱敏与审批：去标识化不等于匿名化 → 运维与升级：服务级别、回退条件、迁移校验」走一遍本章判据 | 862 | [`skill-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数 · 提示词 | — | 624 | [`prompt-06-zhishi-yijiao.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
+| skill | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数 | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数——按「模型卡：十二个字段，缺一不可 → 交接包四件：代码、数据、环境、口径 → 验收：三个动作，一个都不能省 → 退役与责任边界」走一遍本章判据 | 512 | [`skill-zhishi-yijiao.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：诊疗路径与交接 · 提示词 | — | 462 | [`prompt-06-zhishi-yijiao.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
 | skill | 知识移交：诊疗路径与交接 | 知识移交：诊疗路径与交接——按「选题 → 数据 → 实现 → 评价 → 答辩 → 移交」走一遍本章判据 | 377 | [`skill-zhishi-yijiao.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：实验协议与交接 · 提示词 | — | 497 | [`prompt-06-zhishi-yijiao.md`](../departments/09-jichu/17-jichu-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
@@ -7716,10 +7716,10 @@
 | skill | 邪盛正衰不是一句断言，是一条能读出方向的轴 | 邪盛正衰不是一句断言，是一条能读出方向的轴——按「病因的四条入口：问「从哪里进来的」，不问「叫什么病」 → 病机：三件事同时发生，闭与脱是同一过程的两端 → 辨证：先分层，再分证 → 治则的排序：急则治标不是口号，是排班」走一遍本章判据 | 662 | [`skill-02-lilun-jichu.md`](../departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/02-lilun-jichu/outputs/skill-02-lilun-jichu.md) |
 | prompt | 心与脑争了两千年，争的其实是「谁主事」与「谁供血」 · 提示词 | — | 781 | [`prompt-02-lilun-jichu.md`](../departments/01-zhongyi/20-zhongyi-jingshenbing-xue/chapters/02-lilun-jichu/outputs/prompt-02-lilun-jichu.md) |
 | skill | 心与脑争了两千年，争的其实是「谁主事」与「谁供血」 | 心与脑争了两千年，争的其实是「谁主事」与「谁供血」——按「两说的来历：一条从「君主」出发，一条从「髓海」出发 → 8 项观察：4 项指脑，3 项指心，1 项必须合看 → 成组判据：先定虚实，再定在气、痰、瘀、火哪一层 → 干预动作：三法各有边界，停止条件比适应证更硬」走一遍本章判据 | 669 | [`skill-02-lilun-jichu.md`](../departments/01-zhongyi/20-zhongyi-jingshenbing-xue/chapters/02-lilun-jichu/outputs/skill-02-lilun-jichu.md) |
-| prompt | 理论基础与修炼要素 · 提示词 | — | 484 | [`prompt-02-lilun-jichu.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/02-lilun-jichu/outputs/prompt-02-lilun-jichu.md) |
-| skill | 理论基础与修炼要素 | 理论基础与修炼要素——按「概论史 → 理论与三调 → 偏差防治 → 静功动功 → 太极与健身气功 → 辨证施功 → 研究与治未病」走一遍本章判据 | 397 | [`skill-lilun-jichu.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/02-lilun-jichu/outputs/skill-lilun-jichu.md) |
-| prompt | 用本章内容做一件事：推拿功法的理论基础 | — | 418 | [`prompt-02-lilun-jichu.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/02-lilun-jichu/outputs/prompt-02-lilun-jichu.md) |
-| skill | 推拿功法的理论基础 | 用《推拿功法学》第 2 章「推拿功法的理论基础」的单元层做可核对的教学材料。 | 509 | [`skill-02-lilun-jichu.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/02-lilun-jichu/outputs/skill-02-lilun-jichu.md) |
+| prompt | 调息写得最多，不等于调息最要紧 · 提示词 | — | 847 | [`prompt-02-lilun-jichu.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/02-lilun-jichu/outputs/prompt-02-lilun-jichu.md) |
+| skill | 调息写得最多，不等于调息最要紧 | 调息写得最多，不等于调息最要紧——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 746 | [`skill-lilun-jichu.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/02-lilun-jichu/outputs/skill-lilun-jichu.md) |
+| prompt | 理论给的是练功的说法，不是练功的做法 · 提示词 | — | 1048 | [`prompt-02-lilun-jichu.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/02-lilun-jichu/outputs/prompt-02-lilun-jichu.md) |
+| skill | 理论给的是练功的说法，不是练功的做法 | 理论给的是练功的说法，不是练功的做法——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 944 | [`skill-02-lilun-jichu.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/02-lilun-jichu/outputs/skill-02-lilun-jichu.md) |
 | prompt | 运动调的不是肌肉，是气机的升降出入 · 提示词 | — | 900 | [`prompt-02-lilun-jichu.md`](../departments/04-gushang/01-zhongyi-yundong-xue/chapters/02-lilun-jichu/outputs/prompt-02-lilun-jichu.md) |
 | skill | 运动调的不是肌肉，是气机的升降出入 | 运动调的不是肌肉，是气机的升降出入——按「形、气、神：三个层次，三种失败 → 五脏各主一形：分工表与它的边界 → 气血要动，但不能过用 → 经络与关节：为什么「活动关节」等于「行气血」」走一遍本章判据 | 797 | [`skill-lilun-jichu.md`](../departments/04-gushang/01-zhongyi-yundong-xue/chapters/02-lilun-jichu/outputs/skill-lilun-jichu.md) |
 | prompt | 阴阳五行不是哲学装饰，是护理观察里最省事的两把尺 · 提示词 | — | 693 | [`prompt-02-lilun-jichu.md`](../departments/05-huli/24-zhongyi-huli-xue/chapters/02-lilun-jichu/outputs/prompt-02-lilun-jichu.md) |
@@ -8797,14 +8797,14 @@
 
 > Clinic · 第 7 学期 · 已产出 8 章
 
-#### 第 1 章 · 耳穴诊治的源流与理论
+#### 第 1 章 · 「宗脉所聚」把耳变成一张诊图，而不是一个器官
 
 `13-zhongyi-zhengji-xue/chapters/01-yuanliu-lilun/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 耳穴诊治的源流与理论 · 提示词 | — | 489 | [`prompt-01-yuanliu-lilun.md`](../departments/03-zhenjiu/12-erxue-zhenduan-xue/chapters/01-yuanliu-lilun/outputs/prompt-01-yuanliu-lilun.md) |
-| skill | 耳穴诊治的源流与理论 | 耳穴诊治的源流与理论——按「耳穴诊治的源流与理论 → 耳廓解剖与分区 → 耳穴定位 → 耳穴诊断 → 耳穴治疗方法 → 耳穴在内科的应用 → 耳穴在妇儿与五官的应用 → 耳穴操作安全与规范」走一遍本章判据 | 414 | [`skill-yuanliu-lilun.md`](../departments/03-zhenjiu/12-erxue-zhenduan-xue/chapters/01-yuanliu-lilun/outputs/skill-yuanliu-lilun.md) |
+| prompt | 「宗脉所聚」把耳变成一张诊图，而不是一个器官 · 提示词 | — | 952 | [`prompt-01-yuanliu-lilun.md`](../departments/03-zhenjiu/12-erxue-zhenduan-xue/chapters/01-yuanliu-lilun/outputs/prompt-01-yuanliu-lilun.md) |
+| skill | 「宗脉所聚」把耳变成一张诊图，而不是一个器官 | 「宗脉所聚」把耳变成一张诊图，而不是一个器官——按「三句经典各管一件事，并排一列就会读出一个并不存在的体系 → 十二条经脉都到耳，但到的方式不对称 → 耳郭分属五脏有五格，耳穴分区有九格，两套坐标不能互相折算 → 倒置胎儿是可以被证伪的：它禁止某些画法」走一遍本章判据 | 846 | [`skill-yuanliu-lilun.md`](../departments/03-zhenjiu/12-erxue-zhenduan-xue/chapters/01-yuanliu-lilun/outputs/skill-yuanliu-lilun.md) |
 | prompt | 整脊的第一道门槛不是手法，是「什么算有效」 · 提示词 | — | 875 | [`prompt-01-yuanliu-lilun.md`](../departments/04-gushang/13-zhongyi-zhengji-xue/chapters/01-yuanliu-lilun/outputs/prompt-01-yuanliu-lilun.md) |
 | skill | 整脊的第一道门槛不是手法，是「什么算有效」 | 整脊的第一道门槛不是手法，是「什么算有效」——按「源流：一次改名，一次对手法的重新定义 → 「骨错缝、筋出槽」能不能被检验 → 三种「整脊」，三种证据基础 → 本课的三条自律」走一遍本章判据 | 770 | [`skill-yuanliu-lilun.md`](../departments/04-gushang/13-zhongyi-zhengji-xue/chapters/01-yuanliu-lilun/outputs/skill-yuanliu-lilun.md) |
 
@@ -9082,8 +9082,8 @@
 | --- | --- | --- | :-: | --- |
 | prompt | 出科考核考的不是记得多少，是判断留没留下痕迹 · 提示词 | — | 751 | [`prompt-06-chuke-kaohe.md`](../departments/01-zhongyi/21-zhongyi-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/prompt-06-chuke-kaohe.md) |
 | skill | 出科考核考的不是记得多少，是判断留没留下痕迹 | 出科考核考的不是记得多少，是判断留没留下痕迹——按「出科三问 → 结构化病历的十四个字段 → 复盘四问与交接时限 → 判据：达标与不达标两列【教学设定】」走一遍本章判据 | 642 | [`skill-06-chuke-kaohe.md`](../departments/01-zhongyi/21-zhongyi-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/skill-06-chuke-kaohe.md) |
-| prompt | 出科考核与病例复盘 · 提示词 | — | 458 | [`prompt-06-chuke-kaohe.md`](../departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/prompt-06-chuke-kaohe.md) |
-| skill | 出科考核与病例复盘 | 出科考核与病例复盘——按「门诊接诊 → 病种轮转 → 灸罐处置 → 推拿科 → 出科考核」走一遍本章判据 | 368 | [`skill-chuke-kaohe.md`](../departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/skill-chuke-kaohe.md) |
+| prompt | 出科考核要能指到环节，指不到环节的复盘等于没复盘 · 提示词 | — | 889 | [`prompt-06-chuke-kaohe.md`](../departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/prompt-06-chuke-kaohe.md) |
+| skill | 出科考核要能指到环节，指不到环节的复盘等于没复盘 | 出科考核要能指到环节，指不到环节的复盘等于没复盘——按「一节 19,259 字，没有出现一次分数 → 复盘的第一问不是"对不对"，是"哪一步" → 一句合格的复盘长什么样 → 不给分，那给什么」走一遍本章判据 | 778 | [`skill-chuke-kaohe.md`](../departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/skill-chuke-kaohe.md) |
 | prompt | 出科考核：考的不是背，是你能不能把一次接诊从头讲到尾 · 提示词 | — | 701 | [`prompt-chuke-kaohe.md`](../departments/04-gushang/16-gushang-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/prompt-chuke-kaohe.md) |
 | skill | 出科考核：考的不是背，是你能不能把一次接诊从头讲到尾 | 出科考核：考的不是背，是你能不能把一次接诊从头讲到尾——按「考核的五项结构 → 病例汇报的四问 → 病历与知情同意：自查六个字段 → 不良事件复盘：问五句，不追一个人」走一遍本章判据 | 588 | [`skill-chuke-kaohe.md`](../departments/04-gushang/16-gushang-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/skill-chuke-kaohe.md) |
 | prompt | 出科考的是一例能不能讲透，不是做过多少项 · 提示词 | — | 629 | [`prompt-06-chuke-kaohe.md`](../departments/05-huli/26-huli-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/prompt-06-chuke-kaohe.md) |
@@ -9095,24 +9095,24 @@
 
 > Build · 第 10 学期 · 已产出 6 章
 
-#### 第 1 章 · 选题：从质量标志物到可验证假设
+#### 第 1 章 · 选题的成败取决于假设能否被一批样品证伪
 
 `17-gushang-biye-sheji/chapters/01-xuan-ti/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 选题：从质量标志物到可验证假设 · 提示词 | — | 491 | [`prompt-01-xuan-ti.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
-| skill | 选题：从质量标志物到可验证假设 | 选题：从质量标志物到可验证假设——按「选题 → 样品与数据 → 实验与建模 → 方法学验证 → 写作答辩 → 移交」走一遍本章判据 | 378 | [`skill-xuan-ti.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
-| prompt | 选题：从配穴方案到可检验命题 · 提示词 | — | 481 | [`prompt-01-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
-| skill | 选题：从配穴方案到可检验命题 | 选题：从配穴方案到可检验命题——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 373 | [`skill-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
-| prompt | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 · 提示词 | — | 620 | [`prompt-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/prompt-xuan-ti.md) |
-| skill | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题——按「三条判据：骨伤版的可复现、可对照、可接手 → 四步降维：从一个病名到一条命题 → 三份能交出去的骨伤毕设产物 → 里程碑：四件必须交出去的东西」走一遍本章判据 | 503 | [`skill-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题的成败取决于假设能否被一批样品证伪 · 提示词 | — | 641 | [`prompt-01-xuan-ti.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
+| skill | 选题的成败取决于假设能否被一批样品证伪 | 选题的成败取决于假设能否被一批样品证伪——按「选题的真问题不是「做什么」，而是「哪一种不一致」 → 四个槽怎么填：从质量标志物到可检验判据 → 开题节点：交付物、字段与时间表 → 评分维度与五种失效模式」走一遍本章判据 | 535 | [`skill-xuan-ti.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题不是挑一个病，而是把一句经验话逼成能被否证的句子 · 提示词 | — | 923 | [`prompt-01-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
+| skill | 选题不是挑一个病，而是把一句经验话逼成能被否证的句子 | 选题不是挑一个病，而是把一句经验话逼成能被否证的句子——按「底本把"针在哪"写到了寸，把"跟谁比"留成了空格 → 对照只能选一个，选完要能说出它排除了什么 → 把"招几十例"换成四个参数 → 裁剪：写不完的范围等于没范围」走一遍本章判据 | 801 | [`skill-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 · 提示词 | — | 639 | [`prompt-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/prompt-xuan-ti.md) |
+| skill | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题——按「三条判据：骨伤版的可复现、可对照、可接手 → 四步降维：从一个病名到一条命题 → 三份能交出去的骨伤毕设产物 → 里程碑：四件必须交出去的东西」走一遍本章判据 | 522 | [`skill-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题在开题前就定了成败：缺口必须算得出来 · 提示词 | — | 629 | [`prompt-01-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题在开题前就定了成败：缺口必须算得出来 | 选题在开题前就定了成败：缺口必须算得出来——按「好选题的四个判据 → 缺口怎么算：分子、分母、来源 → 选题过大的四种形态 → 开题评什么：评能不能做，不评想不想做」走一遍本章判据 | 522 | [`skill-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
-| prompt | 选题：从管理问题到可测量命题 · 提示词 | — | 468 | [`prompt-01-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
-| skill | 选题：从管理问题到可测量命题 | 选题：从管理问题到可测量命题——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 378 | [`skill-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
-| prompt | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验 · 提示词 | — | 630 | [`prompt-01-xuan-ti.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
-| skill | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验 | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验——按「三条判据：可复现、可对照、可接手 → 四步降维：从中医问题到实验对象 → 三种能交出去的题目形态 → 里程碑与交付物」走一遍本章判据 | 513 | [`skill-xuan-ti.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题的标准不是「有意义」，而是能否在一个学期内被证伪 · 提示词 | — | 937 | [`prompt-01-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
+| skill | 选题的标准不是「有意义」，而是能否在一个学期内被证伪 | 选题的标准不是「有意义」，而是能否在一个学期内被证伪——按「「有意义」是评审语，「可证伪」是设计语 → 四步收缩：从管理问题到可测量命题 → 变量类型先定，方法才有得选 → 设计的四个要素与三种常见缺陷」走一遍本章判据 | 815 | [`skill-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验 · 提示词 | — | 646 | [`prompt-01-xuan-ti.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
+| skill | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验 | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验——按「三条判据：可复现、可对照、可接手 → 四步降维：从中医问题到实验对象 → 三种能交出去的题目形态 → 里程碑与交付物」走一遍本章判据 | 529 | [`skill-xuan-ti.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从专科问题到可验证命题 · 提示词 | — | 467 | [`prompt-01-xuan-ti.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题：从专科问题到可验证命题 | 选题：从专科问题到可验证命题——按「选题 → 数据 → 实现 → 评价 → 答辩 → 移交」走一遍本章判据 | 375 | [`skill-xuan-ti.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从机制假设到可检验实验 · 提示词 | — | 494 | [`prompt-01-xuan-ti.md`](../departments/09-jichu/17-jichu-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
@@ -9124,8 +9124,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 影像不是插图，是把「看得见」变成「量得出、量得一样」的那一步 · 提示词 | — | 649 | [`prompt-yingxiang-shuju.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/02-yingxiang-shuju/outputs/prompt-yingxiang-shuju.md) |
-| skill | 影像不是插图，是把「看得见」变成「量得出、量得一样」的那一步 | 影像不是插图，是把「看得见」变成「量得出、量得一样」的那一步——按「三类数据，三种不同的「不可靠」 → 测量协议：五件东西，缺一件就量不成第二遍 → 把「量得准」变成「量得一样」 → 数据卡：让别人判断这份数据能不能用」走一遍本章判据 | 540 | [`skill-yingxiang-shuju.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/02-yingxiang-shuju/outputs/skill-yingxiang-shuju.md) |
+| prompt | 影像不是插图，是把「看得见」变成「量得出、量得一样」的那一步 · 提示词 | — | 650 | [`prompt-yingxiang-shuju.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/02-yingxiang-shuju/outputs/prompt-yingxiang-shuju.md) |
+| skill | 影像不是插图，是把「看得见」变成「量得出、量得一样」的那一步 | 影像不是插图，是把「看得见」变成「量得出、量得一样」的那一步——按「三类数据，三种不同的「不可靠」 → 测量协议：五件东西，缺一件就量不成第二遍 → 把「量得准」变成「量得一样」 → 数据卡：让别人判断这份数据能不能用」走一遍本章判据 | 541 | [`skill-yingxiang-shuju.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/02-yingxiang-shuju/outputs/skill-yingxiang-shuju.md) |
 
 #### 第 3 章 · 把手法写成流程、把支具写成参数，才算做完；「手感」和「定制」都交不出去
 
@@ -9133,61 +9133,61 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 把手法写成流程、把支具写成参数，才算做完；「手感」和「定制」都交不出去 · 提示词 | — | 655 | [`prompt-shoufa-zhiju.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/03-shoufa-zhiju/outputs/prompt-shoufa-zhiju.md) |
-| skill | 把手法写成流程、把支具写成参数，才算做完；「手感」和「定制」都交不出去 | 把手法写成流程、把支具写成参数，才算做完；「手感」和「定制」都交不出去——按「操作规范的最小可执行单元 → 量化三条线：力学、影像、症状不能互相替代 → 支具：从「定制」到可复制的设计单 → 伦理审查：干预性研究不能事后补票」走一遍本章判据 | 538 | [`skill-shoufa-zhiju.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/03-shoufa-zhiju/outputs/skill-shoufa-zhiju.md) |
+| prompt | 把手法写成流程、把支具写成参数，才算做完；「手感」和「定制」都交不出去 · 提示词 | — | 661 | [`prompt-shoufa-zhiju.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/03-shoufa-zhiju/outputs/prompt-shoufa-zhiju.md) |
+| skill | 把手法写成流程、把支具写成参数，才算做完；「手感」和「定制」都交不出去 | 把手法写成流程、把支具写成参数，才算做完；「手感」和「定制」都交不出去——按「操作规范的最小可执行单元 → 量化三条线：力学、影像、症状不能互相替代 → 支具：从「定制」到可复制的设计单 → 伦理审查：干预性研究不能事后补票」走一遍本章判据 | 544 | [`skill-shoufa-zhiju.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/03-shoufa-zhiju/outputs/skill-shoufa-zhiju.md) |
 
-#### 第 4 章 · 疗效评价与盲法设计
+#### 第 4 章 · 针刺盲不了全部，把盲了几层写清比宣称双盲更值钱
 
 `17-gushang-biye-sheji/chapters/04-liaoxiao-pingjia/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 疗效评价与盲法设计 · 提示词 | — | 477 | [`prompt-04-liaoxiao-pingjia.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/04-liaoxiao-pingjia/outputs/prompt-04-liaoxiao-pingjia.md) |
-| skill | 疗效评价与盲法设计 | 疗效评价与盲法设计——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 372 | [`skill-liaoxiao-pingjia.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/04-liaoxiao-pingjia/outputs/skill-liaoxiao-pingjia.md) |
-| prompt | 疗效不是「好转了」，是先在纸上写死「什么叫没好转」 · 提示词 | — | 637 | [`prompt-liaoxiao-pingjia.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/04-liaoxiao-pingjia/outputs/prompt-liaoxiao-pingjia.md) |
-| skill | 疗效不是「好转了」，是先在纸上写死「什么叫没好转」 | 疗效不是「好转了」，是先在纸上写死「什么叫没好转」——按「终点分三层，主终点只能有一个 → 分数变了不等于好转 → 并发症：定义先于采集，分母先于结论 → 对照、混杂与敏感性」走一遍本章判据 | 534 | [`skill-liaoxiao-pingjia.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/04-liaoxiao-pingjia/outputs/skill-liaoxiao-pingjia.md) |
+| prompt | 针刺盲不了全部，把盲了几层写清比宣称双盲更值钱 · 提示词 | — | 922 | [`prompt-04-liaoxiao-pingjia.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/04-liaoxiao-pingjia/outputs/prompt-04-liaoxiao-pingjia.md) |
+| skill | 针刺盲不了全部，把盲了几层写清比宣称双盲更值钱 | 针刺盲不了全部，把盲了几层写清比宣称双盲更值钱——按「密度最高的那一节，缺的恰是针刺那一段 → 三层盲法：逐层写做得到与做不到 → 假针刺：四种造法，各自能排除什么 → 分析集、区间与偏倚：把 6 个词变成 6 行」走一遍本章判据 | 812 | [`skill-liaoxiao-pingjia.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/04-liaoxiao-pingjia/outputs/skill-liaoxiao-pingjia.md) |
+| prompt | 疗效不是「好转了」，是先在纸上写死「什么叫没好转」 · 提示词 | — | 655 | [`prompt-liaoxiao-pingjia.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/04-liaoxiao-pingjia/outputs/prompt-liaoxiao-pingjia.md) |
+| skill | 疗效不是「好转了」，是先在纸上写死「什么叫没好转」 | 疗效不是「好转了」，是先在纸上写死「什么叫没好转」——按「终点分三层，主终点只能有一个 → 分数变了不等于好转 → 并发症：定义先于采集，分母先于结论 → 对照、混杂与敏感性」走一遍本章判据 | 552 | [`skill-liaoxiao-pingjia.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/04-liaoxiao-pingjia/outputs/skill-liaoxiao-pingjia.md) |
 
-#### 第 5 章 · 论文写作与答辩
+#### 第 5 章 · 论文的说服力在绪论就定了，答辩只是把它念一遍
 
 `17-gushang-biye-sheji/chapters/05-lunwen-dabian/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 论文写作与答辩 · 提示词 | — | 465 | [`prompt-05-lunwen-dabian.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
-| skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 样品与数据 → 实验与建模 → 方法学验证 → 写作答辩 → 移交」走一遍本章判据 | 368 | [`skill-lunwen-dabian.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
-| prompt | 论文写作与答辩 · 提示词 | — | 459 | [`prompt-05-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
-| skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 365 | [`skill-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
-| prompt | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 · 提示词 | — | 622 | [`prompt-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-lunwen-dabian.md) |
-| skill | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好——按「六段骨架：每一段都能用一句话检验 → 图表与数字：先让读者能核对，再让读者相信 → 答辩前先自评：七项检查 → 答辩：三类必答题与五分钟陈述」走一遍本章判据 | 507 | [`skill-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 论文的说服力在绪论就定了，答辩只是把它念一遍 · 提示词 | — | 634 | [`prompt-05-lunwen-dabian.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
+| skill | 论文的说服力在绪论就定了，答辩只是把它念一遍 | 论文的说服力在绪论就定了，答辩只是把它念一遍——按「绪论不是学科介绍，是把判据摆到桌面上 → 证据链的四层：每层对应论文的一个部位 → 答辩：四类必被问到的问题与应答结构 → 评分维度与失效模式」走一遍本章判据 | 531 | [`skill-lunwen-dabian.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 论文的说服力来自十个能复算的数字，不来自十页漂亮的讨论 · 提示词 | — | 858 | [`prompt-05-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
+| skill | 论文的说服力来自十个能复算的数字，不来自十页漂亮的讨论 | 论文的说服力来自十个能复算的数字，不来自十页漂亮的讨论——按「一头一尾：引文在底本里，数字在你的表里 → 十个数字：定稿前唯一的硬检查 → 讨论不是复述，是与三篇文献对位置 → 四类质疑与两轮试讲」走一遍本章判据 | 741 | [`skill-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 · 提示词 | — | 630 | [`prompt-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-lunwen-dabian.md) |
+| skill | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好——按「六段骨架：每一段都能用一句话检验 → 图表与数字：先让读者能核对，再让读者相信 → 答辩前先自评：七项检查 → 答辩：三类必答题与五分钟陈述」走一遍本章判据 | 515 | [`skill-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 答辩评的是判断链，不是字数与图表的数量 · 提示词 | — | 611 | [`prompt-05-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 答辩评的是判断链，不是字数与图表的数量 | 答辩评的是判断链，不是字数与图表的数量——按「四段式：每一段只回答一个问题 → 图表的三条规矩 → 陈述：十五分钟怎么分 → 提问：六类问题与应答方式」走一遍本章判据 | 511 | [`skill-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
-| prompt | 论文写作与答辩 · 提示词 | — | 447 | [`prompt-05-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
-| skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 370 | [`skill-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
-| prompt | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来 · 提示词 | — | 637 | [`prompt-05-lunwen-dabian.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
-| skill | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来 | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来——按「六段结构，与评审表一一对应 → 三张表：主表、消融表、误差表 → 写作顺序：先图表，后文字，最后摘要 → 答辩：20 分钟的分配与五个必答题」走一遍本章判据 | 525 | [`skill-lunwen-dabian.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 答辩不是复述结论，而是当场交代结论的适用条件 · 提示词 | — | 943 | [`prompt-05-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
+| skill | 答辩不是复述结论，而是当场交代结论的适用条件 | 答辩不是复述结论，而是当场交代结论的适用条件——按「一段可用的论证，结构上像一条能执行的条文 → 事实判断与价值判断必须分开写 → 枚举与限定：把「等」字写实 → 答辩现场的五个追问与应答」走一遍本章判据 | 831 | [`skill-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来 · 提示词 | — | 640 | [`prompt-05-lunwen-dabian.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
+| skill | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来 | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来——按「六段结构，与评审表一一对应 → 三张表：主表、消融表、误差表 → 写作顺序：先图表，后文字，最后摘要 → 答辩：20 分钟的分配与五个必答题」走一遍本章判据 | 528 | [`skill-lunwen-dabian.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 446 | [`prompt-05-lunwen-dabian.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据 → 实现 → 评价 → 答辩 → 移交」走一遍本章判据 | 367 | [`skill-lunwen-dabian.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 481 | [`prompt-05-lunwen-dabian.md`](../departments/09-jichu/17-jichu-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 方案与伦理 → 实施与记录 → 数据分析 → 论文答辩 → 知识移交」走一遍本章判据 | 383 | [`skill-lunwen-dabian.md`](../departments/09-jichu/17-jichu-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 
-#### 第 6 章 · 知识移交：实验记录与交接
+#### 第 6 章 · 记录不完整的实验等于没做过，交接不清的成果等于没留下
 
 `17-gushang-biye-sheji/chapters/06-zhishi-yijiao/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 知识移交：实验记录与交接 · 提示词 | — | 482 | [`prompt-06-zhishi-yijiao.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
-| skill | 知识移交：实验记录与交接 | 知识移交：实验记录与交接——按「选题 → 样品与数据 → 实验与建模 → 方法学验证 → 写作答辩 → 移交」走一遍本章判据 | 378 | [`skill-zhishi-yijiao.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
-| prompt | 知识移交：方案手册与交接 · 提示词 | — | 473 | [`prompt-06-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
-| skill | 知识移交：方案手册与交接 | 知识移交：方案手册与交接——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 375 | [`skill-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
-| prompt | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 · 提示词 | — | 646 | [`prompt-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-zhishi-yijiao.md) |
-| skill | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法——按「交接包四件：缺一件，复算就断在那一件 → SOP：把「做对」写成「照做也对」 → 三条验收动作：从能跑到敢用 → 失效清单与退役条件」走一遍本章判据 | 527 | [`skill-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 记录不完整的实验等于没做过，交接不清的成果等于没留下 · 提示词 | — | 628 | [`prompt-06-zhishi-yijiao.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
+| skill | 记录不完整的实验等于没做过，交接不清的成果等于没留下 | 记录不完整的实验等于没做过，交接不清的成果等于没留下——按「移交的判据是「别人能不能接着做」 → 交接包四件：记录、方法、数据、联系人 → 三个验收动作怎么执行 → 失效模式、评分与考核」走一遍本章判据 | 521 | [`skill-zhishi-yijiao.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 手册写得再全也移不走手感，移交完成的标志是别人照它做出来 · 提示词 | — | 892 | [`prompt-06-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
+| skill | 手册写得再全也移不走手感，移交完成的标志是别人照它做出来 | 手册写得再全也移不走手感，移交完成的标志是别人照它做出来——按「来路：254 处书名号为什么属于移交清单 → 逐穴一节：把能量化的写到极致 → 不可写项：标出来，配带教，别假装写清了 → 复现验证：三个人、两次、两版」走一遍本章判据 | 774 | [`skill-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 · 提示词 | — | 662 | [`prompt-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-zhishi-yijiao.md) |
+| skill | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法——按「交接包四件：缺一件，复算就断在那一件 → SOP：把「做对」写成「照做也对」 → 三条验收动作：从能跑到敢用 → 失效清单与退役条件」走一遍本章判据 | 543 | [`skill-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 毕设的最后一关，是别人能不能接着用 · 提示词 | — | 588 | [`prompt-06-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
 | skill | 毕设的最后一关，是别人能不能接着用 | 毕设的最后一关，是别人能不能接着用——按「移交包四件，各有各的验收动作 → 数据移交：边界比内容更重要 → 交接会：三段，不要开成汇报会 → 被接手方的三个提问」走一遍本章判据 | 490 | [`skill-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
-| prompt | 知识移交：制度文件与交接 · 提示词 | — | 462 | [`prompt-06-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
-| skill | 知识移交：制度文件与交接 | 知识移交：制度文件与交接——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 380 | [`skill-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
-| prompt | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数 · 提示词 | — | 608 | [`prompt-06-zhishi-yijiao.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
-| skill | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数 | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数——按「模型卡：十二个字段，缺一不可 → 交接包四件：代码、数据、环境、口径 → 验收：三个动作，一个都不能省 → 退役与责任边界」走一遍本章判据 | 496 | [`skill-zhishi-yijiao.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 移交的验收标准是「人走了系统还在转」，不是「文档齐了」 · 提示词 | — | 979 | [`prompt-06-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
+| skill | 移交的验收标准是「人走了系统还在转」，不是「文档齐了」 | 移交的验收标准是「人走了系统还在转」，不是「文档齐了」——按「移交的三类资产：制度、数据、人 → 主数据与字典：一物多码会让三年数据接不上 → 权限、脱敏与审批：去标识化不等于匿名化 → 运维与升级：服务级别、回退条件、迁移校验」走一遍本章判据 | 862 | [`skill-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数 · 提示词 | — | 624 | [`prompt-06-zhishi-yijiao.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
+| skill | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数 | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数——按「模型卡：十二个字段，缺一不可 → 交接包四件：代码、数据、环境、口径 → 验收：三个动作，一个都不能省 → 退役与责任边界」走一遍本章判据 | 512 | [`skill-zhishi-yijiao.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：诊疗路径与交接 · 提示词 | — | 462 | [`prompt-06-zhishi-yijiao.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
 | skill | 知识移交：诊疗路径与交接 | 知识移交：诊疗路径与交接——按「选题 → 数据 → 实现 → 评价 → 答辩 → 移交」走一遍本章判据 | 377 | [`skill-zhishi-yijiao.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：实验协议与交接 · 提示词 | — | 497 | [`prompt-06-zhishi-yijiao.md`](../departments/09-jichu/17-jichu-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
@@ -9531,8 +9531,8 @@
 | skill | 急救护理学的起点是把不可逆点往前推 | 急救护理学的起点是把不可逆点往前推——按「体系的价值在切段，不在分类 → 分诊判据：先看会不会死，再看多久会变 → 时间窗与站位：把「尽快」换算成分钟 → 记录字段与失效模式」走一遍本章判据 | 469 | [`skill-gaishu.md`](../departments/05-huli/20-jijiu-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 老年护理的边界由功能决定，不由年龄决定 · 提示词 | — | 634 | [`prompt-01-gaishu.md`](../departments/05-huli/21-laonian-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 老年护理的边界由功能决定，不由年龄决定 | 老年护理的边界由功能决定，不由年龄决定——按「年龄是群体量，功能是个体量 → 功能的刻度：ADL、IADL 各管一段 → 动作与时限：从基线到复评的 72 小时 → 记录字段与三种失效」走一遍本章判据 | 533 | [`skill-gaishu.md`](../departments/05-huli/21-laonian-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
-| prompt | 康复护理管的是功能，不是病 · 提示词 | — | 488 | [`prompt-01-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
-| skill | 康复护理管的是功能，不是病 | 康复护理管的是功能，不是病——按「功能是照护工作量的计量单位 → 四层口径：功能不是一个词，是四个问题 → 五类时机：谁在什么时候做，交付给谁 → 记录字段与五种失效」走一遍本章判据 | 386 | [`skill-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
+| prompt | 康复护理管的是功能，不是病 · 提示词 | — | 681 | [`prompt-01-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
+| skill | 康复护理管的是功能，不是病 | 康复护理管的是功能，不是病——按「功能是照护工作量的计量单位 → 四层口径：功能不是一个词，是四个问题 → 五类时机：谁在什么时候做，交付给谁 → 记录字段与五种失效」走一遍本章判据 | 586 | [`skill-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 精神科护理的第一产品是安全，第二产品才是症状缓解 · 提示词 | — | 565 | [`prompt-01-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 精神科护理的第一产品是安全，第二产品才是症状缓解 | 精神科护理的第一产品是安全，第二产品才是症状缓解——按「精神科护理的判断从哪开始 → 观察与评估：入院首小时看什么 → 判据分档与动作时限 → 记录字段与失效模式」走一遍本章判据 | 458 | [`skill-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 中医护理的第一步不是操作，是把证说清楚 · 提示词 | — | 757 | [`prompt-01-gaishu.md`](../departments/05-huli/24-zhongyi-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
@@ -11315,8 +11315,8 @@
 | skill | 急救护理学的起点是把不可逆点往前推 | 急救护理学的起点是把不可逆点往前推——按「体系的价值在切段，不在分类 → 分诊判据：先看会不会死，再看多久会变 → 时间窗与站位：把「尽快」换算成分钟 → 记录字段与失效模式」走一遍本章判据 | 469 | [`skill-gaishu.md`](../departments/05-huli/20-jijiu-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 老年护理的边界由功能决定，不由年龄决定 · 提示词 | — | 634 | [`prompt-01-gaishu.md`](../departments/05-huli/21-laonian-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 老年护理的边界由功能决定，不由年龄决定 | 老年护理的边界由功能决定，不由年龄决定——按「年龄是群体量，功能是个体量 → 功能的刻度：ADL、IADL 各管一段 → 动作与时限：从基线到复评的 72 小时 → 记录字段与三种失效」走一遍本章判据 | 533 | [`skill-gaishu.md`](../departments/05-huli/21-laonian-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
-| prompt | 康复护理管的是功能，不是病 · 提示词 | — | 488 | [`prompt-01-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
-| skill | 康复护理管的是功能，不是病 | 康复护理管的是功能，不是病——按「功能是照护工作量的计量单位 → 四层口径：功能不是一个词，是四个问题 → 五类时机：谁在什么时候做，交付给谁 → 记录字段与五种失效」走一遍本章判据 | 386 | [`skill-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
+| prompt | 康复护理管的是功能，不是病 · 提示词 | — | 681 | [`prompt-01-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
+| skill | 康复护理管的是功能，不是病 | 康复护理管的是功能，不是病——按「功能是照护工作量的计量单位 → 四层口径：功能不是一个词，是四个问题 → 五类时机：谁在什么时候做，交付给谁 → 记录字段与五种失效」走一遍本章判据 | 586 | [`skill-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 精神科护理的第一产品是安全，第二产品才是症状缓解 · 提示词 | — | 565 | [`prompt-01-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 精神科护理的第一产品是安全，第二产品才是症状缓解 | 精神科护理的第一产品是安全，第二产品才是症状缓解——按「精神科护理的判断从哪开始 → 观察与评估：入院首小时看什么 → 判据分档与动作时限 → 记录字段与失效模式」走一遍本章判据 | 458 | [`skill-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 中医护理的第一步不是操作，是把证说清楚 · 提示词 | — | 757 | [`prompt-01-gaishu.md`](../departments/05-huli/24-zhongyi-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
@@ -11459,8 +11459,8 @@
 | skill | 急救护理学的起点是把不可逆点往前推 | 急救护理学的起点是把不可逆点往前推——按「体系的价值在切段，不在分类 → 分诊判据：先看会不会死，再看多久会变 → 时间窗与站位：把「尽快」换算成分钟 → 记录字段与失效模式」走一遍本章判据 | 469 | [`skill-gaishu.md`](../departments/05-huli/20-jijiu-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 老年护理的边界由功能决定，不由年龄决定 · 提示词 | — | 634 | [`prompt-01-gaishu.md`](../departments/05-huli/21-laonian-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 老年护理的边界由功能决定，不由年龄决定 | 老年护理的边界由功能决定，不由年龄决定——按「年龄是群体量，功能是个体量 → 功能的刻度：ADL、IADL 各管一段 → 动作与时限：从基线到复评的 72 小时 → 记录字段与三种失效」走一遍本章判据 | 533 | [`skill-gaishu.md`](../departments/05-huli/21-laonian-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
-| prompt | 康复护理管的是功能，不是病 · 提示词 | — | 488 | [`prompt-01-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
-| skill | 康复护理管的是功能，不是病 | 康复护理管的是功能，不是病——按「功能是照护工作量的计量单位 → 四层口径：功能不是一个词，是四个问题 → 五类时机：谁在什么时候做，交付给谁 → 记录字段与五种失效」走一遍本章判据 | 386 | [`skill-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
+| prompt | 康复护理管的是功能，不是病 · 提示词 | — | 681 | [`prompt-01-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
+| skill | 康复护理管的是功能，不是病 | 康复护理管的是功能，不是病——按「功能是照护工作量的计量单位 → 四层口径：功能不是一个词，是四个问题 → 五类时机：谁在什么时候做，交付给谁 → 记录字段与五种失效」走一遍本章判据 | 586 | [`skill-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 精神科护理的第一产品是安全，第二产品才是症状缓解 · 提示词 | — | 565 | [`prompt-01-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 精神科护理的第一产品是安全，第二产品才是症状缓解 | 精神科护理的第一产品是安全，第二产品才是症状缓解——按「精神科护理的判断从哪开始 → 观察与评估：入院首小时看什么 → 判据分档与动作时限 → 记录字段与失效模式」走一遍本章判据 | 458 | [`skill-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 中医护理的第一步不是操作，是把证说清楚 · 提示词 | — | 757 | [`prompt-01-gaishu.md`](../departments/05-huli/24-zhongyi-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
@@ -11649,8 +11649,8 @@
 | skill | 急救护理学的起点是把不可逆点往前推 | 急救护理学的起点是把不可逆点往前推——按「体系的价值在切段，不在分类 → 分诊判据：先看会不会死，再看多久会变 → 时间窗与站位：把「尽快」换算成分钟 → 记录字段与失效模式」走一遍本章判据 | 469 | [`skill-gaishu.md`](../departments/05-huli/20-jijiu-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 老年护理的边界由功能决定，不由年龄决定 · 提示词 | — | 634 | [`prompt-01-gaishu.md`](../departments/05-huli/21-laonian-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 老年护理的边界由功能决定，不由年龄决定 | 老年护理的边界由功能决定，不由年龄决定——按「年龄是群体量，功能是个体量 → 功能的刻度：ADL、IADL 各管一段 → 动作与时限：从基线到复评的 72 小时 → 记录字段与三种失效」走一遍本章判据 | 533 | [`skill-gaishu.md`](../departments/05-huli/21-laonian-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
-| prompt | 康复护理管的是功能，不是病 · 提示词 | — | 488 | [`prompt-01-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
-| skill | 康复护理管的是功能，不是病 | 康复护理管的是功能，不是病——按「功能是照护工作量的计量单位 → 四层口径：功能不是一个词，是四个问题 → 五类时机：谁在什么时候做，交付给谁 → 记录字段与五种失效」走一遍本章判据 | 386 | [`skill-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
+| prompt | 康复护理管的是功能，不是病 · 提示词 | — | 681 | [`prompt-01-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
+| skill | 康复护理管的是功能，不是病 | 康复护理管的是功能，不是病——按「功能是照护工作量的计量单位 → 四层口径：功能不是一个词，是四个问题 → 五类时机：谁在什么时候做，交付给谁 → 记录字段与五种失效」走一遍本章判据 | 586 | [`skill-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 精神科护理的第一产品是安全，第二产品才是症状缓解 · 提示词 | — | 565 | [`prompt-01-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 精神科护理的第一产品是安全，第二产品才是症状缓解 | 精神科护理的第一产品是安全，第二产品才是症状缓解——按「精神科护理的判断从哪开始 → 观察与评估：入院首小时看什么 → 判据分档与动作时限 → 记录字段与失效模式」走一遍本章判据 | 458 | [`skill-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 中医护理的第一步不是操作，是把证说清楚 · 提示词 | — | 757 | [`prompt-01-gaishu.md`](../departments/05-huli/24-zhongyi-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
@@ -11839,8 +11839,8 @@
 | skill | 急救护理学的起点是把不可逆点往前推 | 急救护理学的起点是把不可逆点往前推——按「体系的价值在切段，不在分类 → 分诊判据：先看会不会死，再看多久会变 → 时间窗与站位：把「尽快」换算成分钟 → 记录字段与失效模式」走一遍本章判据 | 469 | [`skill-gaishu.md`](../departments/05-huli/20-jijiu-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 老年护理的边界由功能决定，不由年龄决定 · 提示词 | — | 634 | [`prompt-01-gaishu.md`](../departments/05-huli/21-laonian-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 老年护理的边界由功能决定，不由年龄决定 | 老年护理的边界由功能决定，不由年龄决定——按「年龄是群体量，功能是个体量 → 功能的刻度：ADL、IADL 各管一段 → 动作与时限：从基线到复评的 72 小时 → 记录字段与三种失效」走一遍本章判据 | 533 | [`skill-gaishu.md`](../departments/05-huli/21-laonian-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
-| prompt | 康复护理管的是功能，不是病 · 提示词 | — | 488 | [`prompt-01-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
-| skill | 康复护理管的是功能，不是病 | 康复护理管的是功能，不是病——按「功能是照护工作量的计量单位 → 四层口径：功能不是一个词，是四个问题 → 五类时机：谁在什么时候做，交付给谁 → 记录字段与五种失效」走一遍本章判据 | 386 | [`skill-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
+| prompt | 康复护理管的是功能，不是病 · 提示词 | — | 681 | [`prompt-01-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
+| skill | 康复护理管的是功能，不是病 | 康复护理管的是功能，不是病——按「功能是照护工作量的计量单位 → 四层口径：功能不是一个词，是四个问题 → 五类时机：谁在什么时候做，交付给谁 → 记录字段与五种失效」走一遍本章判据 | 586 | [`skill-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 精神科护理的第一产品是安全，第二产品才是症状缓解 · 提示词 | — | 565 | [`prompt-01-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 精神科护理的第一产品是安全，第二产品才是症状缓解 | 精神科护理的第一产品是安全，第二产品才是症状缓解——按「精神科护理的判断从哪开始 → 观察与评估：入院首小时看什么 → 判据分档与动作时限 → 记录字段与失效模式」走一遍本章判据 | 458 | [`skill-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 中医护理的第一步不是操作，是把证说清楚 · 提示词 | — | 757 | [`prompt-01-gaishu.md`](../departments/05-huli/24-zhongyi-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
@@ -11854,8 +11854,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 可塑性有前提，不是一句安慰话 · 提示词 | — | 508 | [`prompt-02-lilun.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/02-lilun/outputs/prompt-02-lilun.md) |
-| skill | 可塑性有前提，不是一句安慰话 | 可塑性有前提，不是一句安慰话——按「功能的三层与残疾的三层，说的是同一件事的两面 → 可塑性的三个前提：用进、任务特异、时机 → 分期是一把刻度尺：偏瘫六期与护理重点 → 运动学习：练的是任务，不是次数」走一遍本章判据 | 404 | [`skill-lilun.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/02-lilun/outputs/skill-lilun.md) |
+| prompt | 可塑性有前提，不是一句安慰话 · 提示词 | — | 679 | [`prompt-02-lilun.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/02-lilun/outputs/prompt-02-lilun.md) |
+| skill | 可塑性有前提，不是一句安慰话 | 可塑性有前提，不是一句安慰话——按「功能的三层与残疾的三层，说的是同一件事的两面 → 可塑性的三个前提：用进、任务特异、时机 → 分期是一把刻度尺：偏瘫六期与护理重点 → 运动学习：练的是任务，不是次数」走一遍本章判据 | 582 | [`skill-lilun.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/02-lilun/outputs/skill-lilun.md) |
 
 #### 第 3 章 · 康复的效果写在交接里，不在某个人手上
 
@@ -11872,8 +11872,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 评估的用处是把「他说不行」换成「卡在哪一步」 · 提示词 | — | 520 | [`prompt-04-pinggu-jichu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/04-pinggu-jichu/outputs/prompt-04-pinggu-jichu.md) |
-| skill | 评估的用处是把「他说不行」换成「卡在哪一步」 | 评估的用处是把「他说不行」换成「卡在哪一步」——按「评估要交付四样东西，不是八张表 → 五套记录：用什么记，记到什么颗粒度 → 什么时候做、谁做、做完交给谁 → 记录字段与五种读数错误」走一遍本章判据 | 422 | [`skill-pinggu-jichu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/04-pinggu-jichu/outputs/skill-pinggu-jichu.md) |
+| prompt | 评估的用处是把「他说不行」换成「卡在哪一步」 · 提示词 | — | 713 | [`prompt-04-pinggu-jichu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/04-pinggu-jichu/outputs/prompt-04-pinggu-jichu.md) |
+| skill | 评估的用处是把「他说不行」换成「卡在哪一步」 | 评估的用处是把「他说不行」换成「卡在哪一步」——按「评估要交付四样东西，不是八张表 → 五套记录：用什么记，记到什么颗粒度 → 什么时候做、谁做、做完交给谁 → 记录字段与五种读数错误」走一遍本章判据 | 615 | [`skill-pinggu-jichu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/04-pinggu-jichu/outputs/skill-pinggu-jichu.md) |
 
 #### 第 5 章 · 同意不是签个字，是让他知道可以说不
 
@@ -11881,8 +11881,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 同意不是签个字，是让他知道可以说不 · 提示词 | — | 507 | [`prompt-05-lunli-goutong.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/05-lunli-goutong/outputs/prompt-05-lunli-goutong.md) |
-| skill | 同意不是签个字，是让他知道可以说不 | 同意不是签个字，是让他知道可以说不——按「四条原则落到床边，各是什么动作 → 告知要说五件事，「听懂」要验一次 → 拒绝与撤回：记什么、不做什么、谁该知道 → 与表达受限者的沟通：辅助方式的边界」走一遍本章判据 | 408 | [`skill-lunli-goutong.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/05-lunli-goutong/outputs/skill-lunli-goutong.md) |
+| prompt | 同意不是签个字，是让他知道可以说不 · 提示词 | — | 680 | [`prompt-05-lunli-goutong.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/05-lunli-goutong/outputs/prompt-05-lunli-goutong.md) |
+| skill | 同意不是签个字，是让他知道可以说不 | 同意不是签个字，是让他知道可以说不——按「四条原则落到床边，各是什么动作 → 告知要说五件事，「听懂」要验一次 → 拒绝与撤回：记什么、不做什么、谁该知道 → 与表达受限者的沟通：辅助方式的边界」走一遍本章判据 | 588 | [`skill-lunli-goutong.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/05-lunli-goutong/outputs/skill-lunli-goutong.md) |
 
 #### 第 6 章 · 体位是处方，不是把被子掖好
 
@@ -11953,8 +11953,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 骨科康复先问骨头稳不稳，再问能不能动 · 提示词 | — | 536 | [`prompt-13-gu-guanjie.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/13-gu-guanjie/outputs/prompt-13-gu-guanjie.md) |
-| skill | 骨科康复先问骨头稳不稳，再问能不能动 | 骨科康复先问骨头稳不稳，再问能不能动——按「负重限制：一个变量决定全部动作 → 骨折术后：三期各有各的护理重点 → 关节置换：脱位预防靠三条禁令 → 颈腰椎与运动损伤：支具、牵引与肿胀」走一遍本章判据 | 439 | [`skill-gu-guanjie.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/13-gu-guanjie/outputs/skill-gu-guanjie.md) |
+| prompt | 骨科康复先问骨头稳不稳，再问能不能动 · 提示词 | — | 683 | [`prompt-13-gu-guanjie.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/13-gu-guanjie/outputs/prompt-13-gu-guanjie.md) |
+| skill | 骨科康复先问骨头稳不稳，再问能不能动 | 骨科康复先问骨头稳不稳，再问能不能动——按「负重限制：一个变量决定全部动作 → 骨折术后：三期各有各的护理重点 → 关节置换：脱位预防靠三条禁令 → 颈腰椎与运动损伤：支具、牵引与肿胀」走一遍本章判据 | 586 | [`skill-gu-guanjie.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/13-gu-guanjie/outputs/skill-gu-guanjie.md) |
 
 #### 第 14 章 · 心肺康复的门槛不在能不能动，在动到什么程度该停
 
@@ -12031,8 +12031,8 @@
 | skill | 急救护理学的起点是把不可逆点往前推 | 急救护理学的起点是把不可逆点往前推——按「体系的价值在切段，不在分类 → 分诊判据：先看会不会死，再看多久会变 → 时间窗与站位：把「尽快」换算成分钟 → 记录字段与失效模式」走一遍本章判据 | 469 | [`skill-gaishu.md`](../departments/05-huli/20-jijiu-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 老年护理的边界由功能决定，不由年龄决定 · 提示词 | — | 634 | [`prompt-01-gaishu.md`](../departments/05-huli/21-laonian-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 老年护理的边界由功能决定，不由年龄决定 | 老年护理的边界由功能决定，不由年龄决定——按「年龄是群体量，功能是个体量 → 功能的刻度：ADL、IADL 各管一段 → 动作与时限：从基线到复评的 72 小时 → 记录字段与三种失效」走一遍本章判据 | 533 | [`skill-gaishu.md`](../departments/05-huli/21-laonian-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
-| prompt | 康复护理管的是功能，不是病 · 提示词 | — | 488 | [`prompt-01-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
-| skill | 康复护理管的是功能，不是病 | 康复护理管的是功能，不是病——按「功能是照护工作量的计量单位 → 四层口径：功能不是一个词，是四个问题 → 五类时机：谁在什么时候做，交付给谁 → 记录字段与五种失效」走一遍本章判据 | 386 | [`skill-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
+| prompt | 康复护理管的是功能，不是病 · 提示词 | — | 681 | [`prompt-01-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
+| skill | 康复护理管的是功能，不是病 | 康复护理管的是功能，不是病——按「功能是照护工作量的计量单位 → 四层口径：功能不是一个词，是四个问题 → 五类时机：谁在什么时候做，交付给谁 → 记录字段与五种失效」走一遍本章判据 | 586 | [`skill-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 精神科护理的第一产品是安全，第二产品才是症状缓解 · 提示词 | — | 565 | [`prompt-01-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 精神科护理的第一产品是安全，第二产品才是症状缓解 | 精神科护理的第一产品是安全，第二产品才是症状缓解——按「精神科护理的判断从哪开始 → 观察与评估：入院首小时看什么 → 判据分档与动作时限 → 记录字段与失效模式」走一遍本章判据 | 458 | [`skill-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 中医护理的第一步不是操作，是把证说清楚 · 提示词 | — | 757 | [`prompt-01-gaishu.md`](../departments/05-huli/24-zhongyi-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
@@ -12221,8 +12221,8 @@
 | skill | 急救护理学的起点是把不可逆点往前推 | 急救护理学的起点是把不可逆点往前推——按「体系的价值在切段，不在分类 → 分诊判据：先看会不会死，再看多久会变 → 时间窗与站位：把「尽快」换算成分钟 → 记录字段与失效模式」走一遍本章判据 | 469 | [`skill-gaishu.md`](../departments/05-huli/20-jijiu-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 老年护理的边界由功能决定，不由年龄决定 · 提示词 | — | 634 | [`prompt-01-gaishu.md`](../departments/05-huli/21-laonian-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 老年护理的边界由功能决定，不由年龄决定 | 老年护理的边界由功能决定，不由年龄决定——按「年龄是群体量，功能是个体量 → 功能的刻度：ADL、IADL 各管一段 → 动作与时限：从基线到复评的 72 小时 → 记录字段与三种失效」走一遍本章判据 | 533 | [`skill-gaishu.md`](../departments/05-huli/21-laonian-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
-| prompt | 康复护理管的是功能，不是病 · 提示词 | — | 488 | [`prompt-01-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
-| skill | 康复护理管的是功能，不是病 | 康复护理管的是功能，不是病——按「功能是照护工作量的计量单位 → 四层口径：功能不是一个词，是四个问题 → 五类时机：谁在什么时候做，交付给谁 → 记录字段与五种失效」走一遍本章判据 | 386 | [`skill-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
+| prompt | 康复护理管的是功能，不是病 · 提示词 | — | 681 | [`prompt-01-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
+| skill | 康复护理管的是功能，不是病 | 康复护理管的是功能，不是病——按「功能是照护工作量的计量单位 → 四层口径：功能不是一个词，是四个问题 → 五类时机：谁在什么时候做，交付给谁 → 记录字段与五种失效」走一遍本章判据 | 586 | [`skill-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 精神科护理的第一产品是安全，第二产品才是症状缓解 · 提示词 | — | 565 | [`prompt-01-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 精神科护理的第一产品是安全，第二产品才是症状缓解 | 精神科护理的第一产品是安全，第二产品才是症状缓解——按「精神科护理的判断从哪开始 → 观察与评估：入院首小时看什么 → 判据分档与动作时限 → 记录字段与失效模式」走一遍本章判据 | 458 | [`skill-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 中医护理的第一步不是操作，是把证说清楚 · 提示词 | — | 757 | [`prompt-01-gaishu.md`](../departments/05-huli/24-zhongyi-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
@@ -12240,10 +12240,10 @@
 | skill | 邪盛正衰不是一句断言，是一条能读出方向的轴 | 邪盛正衰不是一句断言，是一条能读出方向的轴——按「病因的四条入口：问「从哪里进来的」，不问「叫什么病」 → 病机：三件事同时发生，闭与脱是同一过程的两端 → 辨证：先分层，再分证 → 治则的排序：急则治标不是口号，是排班」走一遍本章判据 | 662 | [`skill-02-lilun-jichu.md`](../departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/02-lilun-jichu/outputs/skill-02-lilun-jichu.md) |
 | prompt | 心与脑争了两千年，争的其实是「谁主事」与「谁供血」 · 提示词 | — | 781 | [`prompt-02-lilun-jichu.md`](../departments/01-zhongyi/20-zhongyi-jingshenbing-xue/chapters/02-lilun-jichu/outputs/prompt-02-lilun-jichu.md) |
 | skill | 心与脑争了两千年，争的其实是「谁主事」与「谁供血」 | 心与脑争了两千年，争的其实是「谁主事」与「谁供血」——按「两说的来历：一条从「君主」出发，一条从「髓海」出发 → 8 项观察：4 项指脑，3 项指心，1 项必须合看 → 成组判据：先定虚实，再定在气、痰、瘀、火哪一层 → 干预动作：三法各有边界，停止条件比适应证更硬」走一遍本章判据 | 669 | [`skill-02-lilun-jichu.md`](../departments/01-zhongyi/20-zhongyi-jingshenbing-xue/chapters/02-lilun-jichu/outputs/skill-02-lilun-jichu.md) |
-| prompt | 理论基础与修炼要素 · 提示词 | — | 484 | [`prompt-02-lilun-jichu.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/02-lilun-jichu/outputs/prompt-02-lilun-jichu.md) |
-| skill | 理论基础与修炼要素 | 理论基础与修炼要素——按「概论史 → 理论与三调 → 偏差防治 → 静功动功 → 太极与健身气功 → 辨证施功 → 研究与治未病」走一遍本章判据 | 397 | [`skill-lilun-jichu.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/02-lilun-jichu/outputs/skill-lilun-jichu.md) |
-| prompt | 用本章内容做一件事：推拿功法的理论基础 | — | 418 | [`prompt-02-lilun-jichu.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/02-lilun-jichu/outputs/prompt-02-lilun-jichu.md) |
-| skill | 推拿功法的理论基础 | 用《推拿功法学》第 2 章「推拿功法的理论基础」的单元层做可核对的教学材料。 | 509 | [`skill-02-lilun-jichu.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/02-lilun-jichu/outputs/skill-02-lilun-jichu.md) |
+| prompt | 调息写得最多，不等于调息最要紧 · 提示词 | — | 847 | [`prompt-02-lilun-jichu.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/02-lilun-jichu/outputs/prompt-02-lilun-jichu.md) |
+| skill | 调息写得最多，不等于调息最要紧 | 调息写得最多，不等于调息最要紧——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 746 | [`skill-lilun-jichu.md`](../departments/03-zhenjiu/04-qigong-xue/chapters/02-lilun-jichu/outputs/skill-lilun-jichu.md) |
+| prompt | 理论给的是练功的说法，不是练功的做法 · 提示词 | — | 1048 | [`prompt-02-lilun-jichu.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/02-lilun-jichu/outputs/prompt-02-lilun-jichu.md) |
+| skill | 理论给的是练功的说法，不是练功的做法 | 理论给的是练功的说法，不是练功的做法——按「学习目标 → 正文 → 运行与验证」走一遍本章判据 | 944 | [`skill-02-lilun-jichu.md`](../departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/02-lilun-jichu/outputs/skill-02-lilun-jichu.md) |
 | prompt | 运动调的不是肌肉，是气机的升降出入 · 提示词 | — | 900 | [`prompt-02-lilun-jichu.md`](../departments/04-gushang/01-zhongyi-yundong-xue/chapters/02-lilun-jichu/outputs/prompt-02-lilun-jichu.md) |
 | skill | 运动调的不是肌肉，是气机的升降出入 | 运动调的不是肌肉，是气机的升降出入——按「形、气、神：三个层次，三种失败 → 五脏各主一形：分工表与它的边界 → 气血要动，但不能过用 → 经络与关节：为什么「活动关节」等于「行气血」」走一遍本章判据 | 797 | [`skill-lilun-jichu.md`](../departments/04-gushang/01-zhongyi-yundong-xue/chapters/02-lilun-jichu/outputs/skill-lilun-jichu.md) |
 | prompt | 阴阳五行不是哲学装饰，是护理观察里最省事的两把尺 · 提示词 | — | 693 | [`prompt-02-lilun-jichu.md`](../departments/05-huli/24-zhongyi-huli-xue/chapters/02-lilun-jichu/outputs/prompt-02-lilun-jichu.md) |
@@ -12318,8 +12318,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 灸与罐的第一道关不是手法，是这个人此刻能不能做 · 提示词 | — | 646 | [`prompt-10-jiu-baguan.md`](../departments/05-huli/24-zhongyi-huli-xue/chapters/10-jiu-baguan/outputs/prompt-10-jiu-baguan.md) |
-| skill | 灸与罐的第一道关不是手法，是这个人此刻能不能做 | 灸与罐的第一道关不是手法，是这个人此刻能不能做——按「灸：核心变量是「热」，不是「穴」 → 罐：核心变量是「负压」与「留罐时间」 → 灸罐共用的三条纪律 → 记录与失效模式」走一遍本章判据 | 544 | [`skill-10-jiu-baguan.md`](../departments/05-huli/24-zhongyi-huli-xue/chapters/10-jiu-baguan/outputs/skill-10-jiu-baguan.md) |
+| prompt | 灸与罐的第一道关不是手法，是这个人此刻能不能做 · 提示词 | — | 656 | [`prompt-10-jiu-baguan.md`](../departments/05-huli/24-zhongyi-huli-xue/chapters/10-jiu-baguan/outputs/prompt-10-jiu-baguan.md) |
+| skill | 灸与罐的第一道关不是手法，是这个人此刻能不能做 | 灸与罐的第一道关不是手法，是这个人此刻能不能做——按「灸：核心变量是「热」，不是「穴」 → 罐：核心变量是「负压」与「留罐时间」 → 灸罐共用的三条纪律 → 记录与失效模式」走一遍本章判据 | 554 | [`skill-10-jiu-baguan.md`](../departments/05-huli/24-zhongyi-huli-xue/chapters/10-jiu-baguan/outputs/skill-10-jiu-baguan.md) |
 
 #### 第 11 章 · 刮痧出痧不是疗效指标，是皮肤反应的读数
 
@@ -12413,8 +12413,8 @@
 | skill | 急救护理学的起点是把不可逆点往前推 | 急救护理学的起点是把不可逆点往前推——按「体系的价值在切段，不在分类 → 分诊判据：先看会不会死，再看多久会变 → 时间窗与站位：把「尽快」换算成分钟 → 记录字段与失效模式」走一遍本章判据 | 469 | [`skill-gaishu.md`](../departments/05-huli/20-jijiu-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 老年护理的边界由功能决定，不由年龄决定 · 提示词 | — | 634 | [`prompt-01-gaishu.md`](../departments/05-huli/21-laonian-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 老年护理的边界由功能决定，不由年龄决定 | 老年护理的边界由功能决定，不由年龄决定——按「年龄是群体量，功能是个体量 → 功能的刻度：ADL、IADL 各管一段 → 动作与时限：从基线到复评的 72 小时 → 记录字段与三种失效」走一遍本章判据 | 533 | [`skill-gaishu.md`](../departments/05-huli/21-laonian-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
-| prompt | 康复护理管的是功能，不是病 · 提示词 | — | 488 | [`prompt-01-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
-| skill | 康复护理管的是功能，不是病 | 康复护理管的是功能，不是病——按「功能是照护工作量的计量单位 → 四层口径：功能不是一个词，是四个问题 → 五类时机：谁在什么时候做，交付给谁 → 记录字段与五种失效」走一遍本章判据 | 386 | [`skill-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
+| prompt | 康复护理管的是功能，不是病 · 提示词 | — | 681 | [`prompt-01-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
+| skill | 康复护理管的是功能，不是病 | 康复护理管的是功能，不是病——按「功能是照护工作量的计量单位 → 四层口径：功能不是一个词，是四个问题 → 五类时机：谁在什么时候做，交付给谁 → 记录字段与五种失效」走一遍本章判据 | 586 | [`skill-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 精神科护理的第一产品是安全，第二产品才是症状缓解 · 提示词 | — | 565 | [`prompt-01-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 精神科护理的第一产品是安全，第二产品才是症状缓解 | 精神科护理的第一产品是安全，第二产品才是症状缓解——按「精神科护理的判断从哪开始 → 观察与评估：入院首小时看什么 → 判据分档与动作时限 → 记录字段与失效模式」走一遍本章判据 | 458 | [`skill-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 中医护理的第一步不是操作，是把证说清楚 · 提示词 | — | 757 | [`prompt-01-gaishu.md`](../departments/05-huli/24-zhongyi-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
@@ -12642,8 +12642,8 @@
 | --- | --- | --- | :-: | --- |
 | prompt | 出科考核考的不是记得多少，是判断留没留下痕迹 · 提示词 | — | 751 | [`prompt-06-chuke-kaohe.md`](../departments/01-zhongyi/21-zhongyi-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/prompt-06-chuke-kaohe.md) |
 | skill | 出科考核考的不是记得多少，是判断留没留下痕迹 | 出科考核考的不是记得多少，是判断留没留下痕迹——按「出科三问 → 结构化病历的十四个字段 → 复盘四问与交接时限 → 判据：达标与不达标两列【教学设定】」走一遍本章判据 | 642 | [`skill-06-chuke-kaohe.md`](../departments/01-zhongyi/21-zhongyi-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/skill-06-chuke-kaohe.md) |
-| prompt | 出科考核与病例复盘 · 提示词 | — | 458 | [`prompt-06-chuke-kaohe.md`](../departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/prompt-06-chuke-kaohe.md) |
-| skill | 出科考核与病例复盘 | 出科考核与病例复盘——按「门诊接诊 → 病种轮转 → 灸罐处置 → 推拿科 → 出科考核」走一遍本章判据 | 368 | [`skill-chuke-kaohe.md`](../departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/skill-chuke-kaohe.md) |
+| prompt | 出科考核要能指到环节，指不到环节的复盘等于没复盘 · 提示词 | — | 889 | [`prompt-06-chuke-kaohe.md`](../departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/prompt-06-chuke-kaohe.md) |
+| skill | 出科考核要能指到环节，指不到环节的复盘等于没复盘 | 出科考核要能指到环节，指不到环节的复盘等于没复盘——按「一节 19,259 字，没有出现一次分数 → 复盘的第一问不是"对不对"，是"哪一步" → 一句合格的复盘长什么样 → 不给分，那给什么」走一遍本章判据 | 778 | [`skill-chuke-kaohe.md`](../departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/skill-chuke-kaohe.md) |
 | prompt | 出科考核：考的不是背，是你能不能把一次接诊从头讲到尾 · 提示词 | — | 701 | [`prompt-chuke-kaohe.md`](../departments/04-gushang/16-gushang-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/prompt-chuke-kaohe.md) |
 | skill | 出科考核：考的不是背，是你能不能把一次接诊从头讲到尾 | 出科考核：考的不是背，是你能不能把一次接诊从头讲到尾——按「考核的五项结构 → 病例汇报的四问 → 病历与知情同意：自查六个字段 → 不良事件复盘：问五句，不追一个人」走一遍本章判据 | 588 | [`skill-chuke-kaohe.md`](../departments/04-gushang/16-gushang-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/skill-chuke-kaohe.md) |
 | prompt | 出科考的是一例能不能讲透，不是做过多少项 · 提示词 | — | 629 | [`prompt-06-chuke-kaohe.md`](../departments/05-huli/26-huli-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/prompt-06-chuke-kaohe.md) |
@@ -12655,24 +12655,24 @@
 
 > Build · 第 10 学期 · 已产出 6 章
 
-#### 第 1 章 · 选题：从质量标志物到可验证假设
+#### 第 1 章 · 选题的成败取决于假设能否被一批样品证伪
 
 `27-huli-biye-sheji/chapters/01-xuan-ti/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 选题：从质量标志物到可验证假设 · 提示词 | — | 491 | [`prompt-01-xuan-ti.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
-| skill | 选题：从质量标志物到可验证假设 | 选题：从质量标志物到可验证假设——按「选题 → 样品与数据 → 实验与建模 → 方法学验证 → 写作答辩 → 移交」走一遍本章判据 | 378 | [`skill-xuan-ti.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
-| prompt | 选题：从配穴方案到可检验命题 · 提示词 | — | 481 | [`prompt-01-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
-| skill | 选题：从配穴方案到可检验命题 | 选题：从配穴方案到可检验命题——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 373 | [`skill-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
-| prompt | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 · 提示词 | — | 620 | [`prompt-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/prompt-xuan-ti.md) |
-| skill | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题——按「三条判据：骨伤版的可复现、可对照、可接手 → 四步降维：从一个病名到一条命题 → 三份能交出去的骨伤毕设产物 → 里程碑：四件必须交出去的东西」走一遍本章判据 | 503 | [`skill-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题的成败取决于假设能否被一批样品证伪 · 提示词 | — | 641 | [`prompt-01-xuan-ti.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
+| skill | 选题的成败取决于假设能否被一批样品证伪 | 选题的成败取决于假设能否被一批样品证伪——按「选题的真问题不是「做什么」，而是「哪一种不一致」 → 四个槽怎么填：从质量标志物到可检验判据 → 开题节点：交付物、字段与时间表 → 评分维度与五种失效模式」走一遍本章判据 | 535 | [`skill-xuan-ti.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题不是挑一个病，而是把一句经验话逼成能被否证的句子 · 提示词 | — | 923 | [`prompt-01-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
+| skill | 选题不是挑一个病，而是把一句经验话逼成能被否证的句子 | 选题不是挑一个病，而是把一句经验话逼成能被否证的句子——按「底本把"针在哪"写到了寸，把"跟谁比"留成了空格 → 对照只能选一个，选完要能说出它排除了什么 → 把"招几十例"换成四个参数 → 裁剪：写不完的范围等于没范围」走一遍本章判据 | 801 | [`skill-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 · 提示词 | — | 639 | [`prompt-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/prompt-xuan-ti.md) |
+| skill | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题——按「三条判据：骨伤版的可复现、可对照、可接手 → 四步降维：从一个病名到一条命题 → 三份能交出去的骨伤毕设产物 → 里程碑：四件必须交出去的东西」走一遍本章判据 | 522 | [`skill-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题在开题前就定了成败：缺口必须算得出来 · 提示词 | — | 629 | [`prompt-01-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题在开题前就定了成败：缺口必须算得出来 | 选题在开题前就定了成败：缺口必须算得出来——按「好选题的四个判据 → 缺口怎么算：分子、分母、来源 → 选题过大的四种形态 → 开题评什么：评能不能做，不评想不想做」走一遍本章判据 | 522 | [`skill-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
-| prompt | 选题：从管理问题到可测量命题 · 提示词 | — | 468 | [`prompt-01-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
-| skill | 选题：从管理问题到可测量命题 | 选题：从管理问题到可测量命题——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 378 | [`skill-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
-| prompt | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验 · 提示词 | — | 630 | [`prompt-01-xuan-ti.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
-| skill | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验 | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验——按「三条判据：可复现、可对照、可接手 → 四步降维：从中医问题到实验对象 → 三种能交出去的题目形态 → 里程碑与交付物」走一遍本章判据 | 513 | [`skill-xuan-ti.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题的标准不是「有意义」，而是能否在一个学期内被证伪 · 提示词 | — | 937 | [`prompt-01-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
+| skill | 选题的标准不是「有意义」，而是能否在一个学期内被证伪 | 选题的标准不是「有意义」，而是能否在一个学期内被证伪——按「「有意义」是评审语，「可证伪」是设计语 → 四步收缩：从管理问题到可测量命题 → 变量类型先定，方法才有得选 → 设计的四个要素与三种常见缺陷」走一遍本章判据 | 815 | [`skill-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验 · 提示词 | — | 646 | [`prompt-01-xuan-ti.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
+| skill | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验 | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验——按「三条判据：可复现、可对照、可接手 → 四步降维：从中医问题到实验对象 → 三种能交出去的题目形态 → 里程碑与交付物」走一遍本章判据 | 529 | [`skill-xuan-ti.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从专科问题到可验证命题 · 提示词 | — | 467 | [`prompt-01-xuan-ti.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题：从专科问题到可验证命题 | 选题：从专科问题到可验证命题——按「选题 → 数据 → 实现 → 评价 → 答辩 → 移交」走一遍本章判据 | 375 | [`skill-xuan-ti.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从机制假设到可检验实验 · 提示词 | — | 494 | [`prompt-01-xuan-ti.md`](../departments/09-jichu/17-jichu-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
@@ -12705,47 +12705,47 @@
 | prompt | 指标选错，做得再规范也回答不了问题 · 提示词 | — | 630 | [`prompt-04-jieju-pingjia.md`](../departments/05-huli/27-huli-biye-sheji/chapters/04-jieju-pingjia/outputs/prompt-04-jieju-pingjia.md) |
 | skill | 指标选错，做得再规范也回答不了问题 | 指标选错，做得再规范也回答不了问题——按「三类指标，各回答一个问题 → 可测量化：分子、分母、时点、比较 → 替代指标：能用，但要说清它替代了什么 → 分析与偏倚：能说什么，不能说什么」走一遍本章判据 | 532 | [`skill-jieju-pingjia.md`](../departments/05-huli/27-huli-biye-sheji/chapters/04-jieju-pingjia/outputs/skill-jieju-pingjia.md) |
 
-#### 第 5 章 · 论文写作与答辩
+#### 第 5 章 · 论文的说服力在绪论就定了，答辩只是把它念一遍
 
 `27-huli-biye-sheji/chapters/05-lunwen-dabian/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 论文写作与答辩 · 提示词 | — | 465 | [`prompt-05-lunwen-dabian.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
-| skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 样品与数据 → 实验与建模 → 方法学验证 → 写作答辩 → 移交」走一遍本章判据 | 368 | [`skill-lunwen-dabian.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
-| prompt | 论文写作与答辩 · 提示词 | — | 459 | [`prompt-05-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
-| skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 365 | [`skill-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
-| prompt | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 · 提示词 | — | 622 | [`prompt-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-lunwen-dabian.md) |
-| skill | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好——按「六段骨架：每一段都能用一句话检验 → 图表与数字：先让读者能核对，再让读者相信 → 答辩前先自评：七项检查 → 答辩：三类必答题与五分钟陈述」走一遍本章判据 | 507 | [`skill-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 论文的说服力在绪论就定了，答辩只是把它念一遍 · 提示词 | — | 634 | [`prompt-05-lunwen-dabian.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
+| skill | 论文的说服力在绪论就定了，答辩只是把它念一遍 | 论文的说服力在绪论就定了，答辩只是把它念一遍——按「绪论不是学科介绍，是把判据摆到桌面上 → 证据链的四层：每层对应论文的一个部位 → 答辩：四类必被问到的问题与应答结构 → 评分维度与失效模式」走一遍本章判据 | 531 | [`skill-lunwen-dabian.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 论文的说服力来自十个能复算的数字，不来自十页漂亮的讨论 · 提示词 | — | 858 | [`prompt-05-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
+| skill | 论文的说服力来自十个能复算的数字，不来自十页漂亮的讨论 | 论文的说服力来自十个能复算的数字，不来自十页漂亮的讨论——按「一头一尾：引文在底本里，数字在你的表里 → 十个数字：定稿前唯一的硬检查 → 讨论不是复述，是与三篇文献对位置 → 四类质疑与两轮试讲」走一遍本章判据 | 741 | [`skill-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 · 提示词 | — | 630 | [`prompt-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-lunwen-dabian.md) |
+| skill | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好——按「六段骨架：每一段都能用一句话检验 → 图表与数字：先让读者能核对，再让读者相信 → 答辩前先自评：七项检查 → 答辩：三类必答题与五分钟陈述」走一遍本章判据 | 515 | [`skill-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 答辩评的是判断链，不是字数与图表的数量 · 提示词 | — | 611 | [`prompt-05-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 答辩评的是判断链，不是字数与图表的数量 | 答辩评的是判断链，不是字数与图表的数量——按「四段式：每一段只回答一个问题 → 图表的三条规矩 → 陈述：十五分钟怎么分 → 提问：六类问题与应答方式」走一遍本章判据 | 511 | [`skill-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
-| prompt | 论文写作与答辩 · 提示词 | — | 447 | [`prompt-05-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
-| skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 370 | [`skill-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
-| prompt | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来 · 提示词 | — | 637 | [`prompt-05-lunwen-dabian.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
-| skill | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来 | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来——按「六段结构，与评审表一一对应 → 三张表：主表、消融表、误差表 → 写作顺序：先图表，后文字，最后摘要 → 答辩：20 分钟的分配与五个必答题」走一遍本章判据 | 525 | [`skill-lunwen-dabian.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 答辩不是复述结论，而是当场交代结论的适用条件 · 提示词 | — | 943 | [`prompt-05-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
+| skill | 答辩不是复述结论，而是当场交代结论的适用条件 | 答辩不是复述结论，而是当场交代结论的适用条件——按「一段可用的论证，结构上像一条能执行的条文 → 事实判断与价值判断必须分开写 → 枚举与限定：把「等」字写实 → 答辩现场的五个追问与应答」走一遍本章判据 | 831 | [`skill-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来 · 提示词 | — | 640 | [`prompt-05-lunwen-dabian.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
+| skill | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来 | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来——按「六段结构，与评审表一一对应 → 三张表：主表、消融表、误差表 → 写作顺序：先图表，后文字，最后摘要 → 答辩：20 分钟的分配与五个必答题」走一遍本章判据 | 528 | [`skill-lunwen-dabian.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 446 | [`prompt-05-lunwen-dabian.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据 → 实现 → 评价 → 答辩 → 移交」走一遍本章判据 | 367 | [`skill-lunwen-dabian.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 481 | [`prompt-05-lunwen-dabian.md`](../departments/09-jichu/17-jichu-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 方案与伦理 → 实施与记录 → 数据分析 → 论文答辩 → 知识移交」走一遍本章判据 | 383 | [`skill-lunwen-dabian.md`](../departments/09-jichu/17-jichu-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 
-#### 第 6 章 · 知识移交：实验记录与交接
+#### 第 6 章 · 记录不完整的实验等于没做过，交接不清的成果等于没留下
 
 `27-huli-biye-sheji/chapters/06-zhishi-yijiao/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 知识移交：实验记录与交接 · 提示词 | — | 482 | [`prompt-06-zhishi-yijiao.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
-| skill | 知识移交：实验记录与交接 | 知识移交：实验记录与交接——按「选题 → 样品与数据 → 实验与建模 → 方法学验证 → 写作答辩 → 移交」走一遍本章判据 | 378 | [`skill-zhishi-yijiao.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
-| prompt | 知识移交：方案手册与交接 · 提示词 | — | 473 | [`prompt-06-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
-| skill | 知识移交：方案手册与交接 | 知识移交：方案手册与交接——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 375 | [`skill-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
-| prompt | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 · 提示词 | — | 646 | [`prompt-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-zhishi-yijiao.md) |
-| skill | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法——按「交接包四件：缺一件，复算就断在那一件 → SOP：把「做对」写成「照做也对」 → 三条验收动作：从能跑到敢用 → 失效清单与退役条件」走一遍本章判据 | 527 | [`skill-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 记录不完整的实验等于没做过，交接不清的成果等于没留下 · 提示词 | — | 628 | [`prompt-06-zhishi-yijiao.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
+| skill | 记录不完整的实验等于没做过，交接不清的成果等于没留下 | 记录不完整的实验等于没做过，交接不清的成果等于没留下——按「移交的判据是「别人能不能接着做」 → 交接包四件：记录、方法、数据、联系人 → 三个验收动作怎么执行 → 失效模式、评分与考核」走一遍本章判据 | 521 | [`skill-zhishi-yijiao.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 手册写得再全也移不走手感，移交完成的标志是别人照它做出来 · 提示词 | — | 892 | [`prompt-06-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
+| skill | 手册写得再全也移不走手感，移交完成的标志是别人照它做出来 | 手册写得再全也移不走手感，移交完成的标志是别人照它做出来——按「来路：254 处书名号为什么属于移交清单 → 逐穴一节：把能量化的写到极致 → 不可写项：标出来，配带教，别假装写清了 → 复现验证：三个人、两次、两版」走一遍本章判据 | 774 | [`skill-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 · 提示词 | — | 662 | [`prompt-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-zhishi-yijiao.md) |
+| skill | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法——按「交接包四件：缺一件，复算就断在那一件 → SOP：把「做对」写成「照做也对」 → 三条验收动作：从能跑到敢用 → 失效清单与退役条件」走一遍本章判据 | 543 | [`skill-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 毕设的最后一关，是别人能不能接着用 · 提示词 | — | 588 | [`prompt-06-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
 | skill | 毕设的最后一关，是别人能不能接着用 | 毕设的最后一关，是别人能不能接着用——按「移交包四件，各有各的验收动作 → 数据移交：边界比内容更重要 → 交接会：三段，不要开成汇报会 → 被接手方的三个提问」走一遍本章判据 | 490 | [`skill-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
-| prompt | 知识移交：制度文件与交接 · 提示词 | — | 462 | [`prompt-06-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
-| skill | 知识移交：制度文件与交接 | 知识移交：制度文件与交接——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 380 | [`skill-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
-| prompt | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数 · 提示词 | — | 608 | [`prompt-06-zhishi-yijiao.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
-| skill | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数 | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数——按「模型卡：十二个字段，缺一不可 → 交接包四件：代码、数据、环境、口径 → 验收：三个动作，一个都不能省 → 退役与责任边界」走一遍本章判据 | 496 | [`skill-zhishi-yijiao.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 移交的验收标准是「人走了系统还在转」，不是「文档齐了」 · 提示词 | — | 979 | [`prompt-06-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
+| skill | 移交的验收标准是「人走了系统还在转」，不是「文档齐了」 | 移交的验收标准是「人走了系统还在转」，不是「文档齐了」——按「移交的三类资产：制度、数据、人 → 主数据与字典：一物多码会让三年数据接不上 → 权限、脱敏与审批：去标识化不等于匿名化 → 运维与升级：服务级别、回退条件、迁移校验」走一遍本章判据 | 862 | [`skill-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数 · 提示词 | — | 624 | [`prompt-06-zhishi-yijiao.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
+| skill | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数 | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数——按「模型卡：十二个字段，缺一不可 → 交接包四件：代码、数据、环境、口径 → 验收：三个动作，一个都不能省 → 退役与责任边界」走一遍本章判据 | 512 | [`skill-zhishi-yijiao.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：诊疗路径与交接 · 提示词 | — | 462 | [`prompt-06-zhishi-yijiao.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
 | skill | 知识移交：诊疗路径与交接 | 知识移交：诊疗路径与交接——按「选题 → 数据 → 实现 → 评价 → 答辩 → 移交」走一遍本章判据 | 377 | [`skill-zhishi-yijiao.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：实验协议与交接 · 提示词 | — | 497 | [`prompt-06-zhishi-yijiao.md`](../departments/09-jichu/17-jichu-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
@@ -12933,8 +12933,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 中医机构的效率，不能按手术台的产出来算 · 提示词 | — | 563 | [`prompt-01-z31.md`](../departments/06-guanli/03-zhongyi-guanli-xue/chapters/01-z31/outputs/prompt-01-z31.md) |
-| skill | 中医机构的效率，不能按手术台的产出来算 | 中医机构的效率，不能按手术台的产出来算——按「一次诊疗的产出，落在三个地方 → 三种效率，三种诱导 → 制度是从外科住院长出来的 → 四条可以拿去核对的判据」走一遍本章判据 | 459 | [`skill-z31.md`](../departments/06-guanli/03-zhongyi-guanli-xue/chapters/01-z31/outputs/skill-z31.md) |
+| prompt | 中医机构的效率，不能按手术台的产出来算 · 提示词 | — | 625 | [`prompt-01-z31.md`](../departments/06-guanli/03-zhongyi-guanli-xue/chapters/01-z31/outputs/prompt-01-z31.md) |
+| skill | 中医机构的效率，不能按手术台的产出来算 | 中医机构的效率，不能按手术台的产出来算——按「一次诊疗的产出，落在三个地方 → 三种效率，三种诱导 → 制度是从外科住院长出来的 → 四条可以拿去核对的判据」走一遍本章判据 | 521 | [`skill-z31.md`](../departments/06-guanli/03-zhongyi-guanli-xue/chapters/01-z31/outputs/skill-z31.md) |
 
 #### 第 2 章 · 规划一家中医机构，真正要决定的是关掉哪些科室
 
@@ -12942,8 +12942,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 规划一家中医机构，真正要决定的是关掉哪些科室 · 提示词 | — | 579 | [`prompt-02-z32.md`](../departments/06-guanli/03-zhongyi-guanli-xue/chapters/02-z32/outputs/prompt-02-z32.md) |
-| skill | 规划一家中医机构，真正要决定的是关掉哪些科室 | 规划一家中医机构，真正要决定的是关掉哪些科室——按「定位三问，先于任何科室表 → 科室的四种角色，四种管法 → 从门诊量到调剂能力：一条必须算完的链 → 计划的三种失败模式」走一遍本章判据 | 472 | [`skill-z32.md`](../departments/06-guanli/03-zhongyi-guanli-xue/chapters/02-z32/outputs/skill-z32.md) |
+| prompt | 规划一家中医机构，真正要决定的是关掉哪些科室 · 提示词 | — | 634 | [`prompt-02-z32.md`](../departments/06-guanli/03-zhongyi-guanli-xue/chapters/02-z32/outputs/prompt-02-z32.md) |
+| skill | 规划一家中医机构，真正要决定的是关掉哪些科室 | 规划一家中医机构，真正要决定的是关掉哪些科室——按「定位三问，先于任何科室表 → 科室的四种角色，四种管法 → 从门诊量到调剂能力：一条必须算完的链 → 计划的三种失败模式」走一遍本章判据 | 527 | [`skill-z32.md`](../departments/06-guanli/03-zhongyi-guanli-xue/chapters/02-z32/outputs/skill-z32.md) |
 
 #### 第 3 章 · 名医工作室的成本，记在导师的号源上
 
@@ -12951,8 +12951,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 名医工作室的成本，记在导师的号源上 · 提示词 | — | 570 | [`prompt-03-z33.md`](../departments/06-guanli/03-zhongyi-guanli-xue/chapters/03-z33/outputs/prompt-03-z33.md) |
-| skill | 名医工作室的成本，记在导师的号源上 | 名医工作室的成本，记在导师的号源上——按「三种组织形态，三种知识传递方式 → 师承的产能天花板是可以算的 → 中医师的人力计量，为什么算不准 → 把师承写进岗位，而不是写进项目」走一遍本章判据 | 468 | [`skill-z33.md`](../departments/06-guanli/03-zhongyi-guanli-xue/chapters/03-z33/outputs/skill-z33.md) |
+| prompt | 名医工作室的成本，记在导师的号源上 · 提示词 | — | 625 | [`prompt-03-z33.md`](../departments/06-guanli/03-zhongyi-guanli-xue/chapters/03-z33/outputs/prompt-03-z33.md) |
+| skill | 名医工作室的成本，记在导师的号源上 | 名医工作室的成本，记在导师的号源上——按「三种组织形态，三种知识传递方式 → 师承的产能天花板是可以算的 → 中医师的人力计量，为什么算不准 → 把师承写进岗位，而不是写进项目」走一遍本章判据 | 523 | [`skill-z33.md`](../departments/06-guanli/03-zhongyi-guanli-xue/chapters/03-z33/outputs/skill-z33.md) |
 
 #### 第 4 章 · 科主任的两套权威，一套来自疗效，一套来自表格
 
@@ -12960,8 +12960,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 科主任的两套权威，一套来自疗效，一套来自表格 · 提示词 | — | 610 | [`prompt-04-z34.md`](../departments/06-guanli/03-zhongyi-guanli-xue/chapters/04-z34/outputs/prompt-04-z34.md) |
-| skill | 科主任的两套权威，一套来自疗效，一套来自表格 | 科主任的两套权威，一套来自疗效，一套来自表格——按「两种权威，常常不在一个人身上 → 激励的三个失真 → 沟通：师带徒的三种传递 → 三件可以立刻做的事」走一遍本章判据 | 503 | [`skill-z34.md`](../departments/06-guanli/03-zhongyi-guanli-xue/chapters/04-z34/outputs/skill-z34.md) |
+| prompt | 科主任的两套权威，一套来自疗效，一套来自表格 · 提示词 | — | 663 | [`prompt-04-z34.md`](../departments/06-guanli/03-zhongyi-guanli-xue/chapters/04-z34/outputs/prompt-04-z34.md) |
+| skill | 科主任的两套权威，一套来自疗效，一套来自表格 | 科主任的两套权威，一套来自疗效，一套来自表格——按「两种权威，常常不在一个人身上 → 激励的三个失真 → 沟通：师带徒的三种传递 → 三件可以立刻做的事」走一遍本章判据 | 556 | [`skill-z34.md`](../departments/06-guanli/03-zhongyi-guanli-xue/chapters/04-z34/outputs/skill-z34.md) |
 
 #### 第 5 章 · 中医治疗率 92%，没有一张方是对证的
 
@@ -12969,8 +12969,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 中医治疗率 92%，没有一张方是对证的 · 提示词 | — | 542 | [`prompt-05-z35.md`](../departments/06-guanli/03-zhongyi-guanli-xue/chapters/05-z35/outputs/prompt-05-z35.md) |
-| skill | 中医治疗率 92%，没有一张方是对证的 | 中医治疗率 92%，没有一张方是对证的——按「指标失真的三条路径 → 哪些指标经得起核 → 质控的三个抓手 → 矛盾是结构性的，不是管理不善」走一遍本章判据 | 439 | [`skill-z35.md`](../departments/06-guanli/03-zhongyi-guanli-xue/chapters/05-z35/outputs/skill-z35.md) |
+| prompt | 中医治疗率 92%，没有一张方是对证的 · 提示词 | — | 598 | [`prompt-05-z35.md`](../departments/06-guanli/03-zhongyi-guanli-xue/chapters/05-z35/outputs/prompt-05-z35.md) |
+| skill | 中医治疗率 92%，没有一张方是对证的 | 中医治疗率 92%，没有一张方是对证的——按「指标失真的三条路径 → 哪些指标经得起核 → 质控的三个抓手 → 矛盾是结构性的，不是管理不善」走一遍本章判据 | 495 | [`skill-z35.md`](../departments/06-guanli/03-zhongyi-guanli-xue/chapters/05-z35/outputs/skill-z35.md) |
 
 #### 第 6 章 · 中药房是成本中心，也是唯一不能省的那道关
 
@@ -12978,8 +12978,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 中药房是成本中心，也是唯一不能省的那道关 · 提示词 | — | 649 | [`prompt-06-z36.md`](../departments/06-guanli/03-zhongyi-guanli-xue/chapters/06-z36/outputs/prompt-06-z36.md) |
-| skill | 中药房是成本中心，也是唯一不能省的那道关 | 中药房是成本中心，也是唯一不能省的那道关——按「中药房的五道流程，四道关 → 饮片质量的判据与责任落点 → 代煎与外包：把风险写进合同 → 治未病：把「未病」翻译成可交付的东西」走一遍本章判据 | 544 | [`skill-z36.md`](../departments/06-guanli/03-zhongyi-guanli-xue/chapters/06-z36/outputs/skill-z36.md) |
+| prompt | 中药房是成本中心，也是唯一不能省的那道关 · 提示词 | — | 713 | [`prompt-06-z36.md`](../departments/06-guanli/03-zhongyi-guanli-xue/chapters/06-z36/outputs/prompt-06-z36.md) |
+| skill | 中药房是成本中心，也是唯一不能省的那道关 | 中药房是成本中心，也是唯一不能省的那道关——按「中药房的五道流程，四道关 → 饮片质量的判据与责任落点 → 代煎与外包：把风险写进合同 → 治未病：把「未病」翻译成可交付的东西」走一遍本章判据 | 608 | [`skill-z36.md`](../departments/06-guanli/03-zhongyi-guanli-xue/chapters/06-z36/outputs/skill-z36.md) |
 
 #### 第 7 章 · 门诊流程是按检查设计的，病人却是来复诊调方的
 
@@ -12987,8 +12987,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 门诊流程是按检查设计的，病人却是来复诊调方的 · 提示词 | — | 581 | [`prompt-07-z37.md`](../departments/06-guanli/03-zhongyi-guanli-xue/chapters/07-z37/outputs/prompt-07-z37.md) |
-| skill | 门诊流程是按检查设计的，病人却是来复诊调方的 | 门诊流程是按检查设计的，病人却是来复诊调方的——按「门诊的四个参数，只有一个能随便动 → 住院：中医病房的时间结构 → 护理、病案与价格：三处被忽视的运行细节 → 成本核算：三个口径，三种结论」走一遍本章判据 | 474 | [`skill-z37.md`](../departments/06-guanli/03-zhongyi-guanli-xue/chapters/07-z37/outputs/skill-z37.md) |
+| prompt | 门诊流程是按检查设计的，病人却是来复诊调方的 · 提示词 | — | 637 | [`prompt-07-z37.md`](../departments/06-guanli/03-zhongyi-guanli-xue/chapters/07-z37/outputs/prompt-07-z37.md) |
+| skill | 门诊流程是按检查设计的，病人却是来复诊调方的 | 门诊流程是按检查设计的，病人却是来复诊调方的——按「门诊的四个参数，只有一个能随便动 → 住院：中医病房的时间结构 → 护理、病案与价格：三处被忽视的运行细节 → 成本核算：三个口径，三种结论」走一遍本章判据 | 530 | [`skill-z37.md`](../departments/06-guanli/03-zhongyi-guanli-xue/chapters/07-z37/outputs/skill-z37.md) |
 
 #### 第 8 章 · 医共体的牌子挂上了，中医馆里没有人会开方
 
@@ -12996,8 +12996,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 医共体的牌子挂上了，中医馆里没有人会开方 · 提示词 | — | 569 | [`prompt-08-z38.md`](../departments/06-guanli/03-zhongyi-guanli-xue/chapters/08-z38/outputs/prompt-08-z38.md) |
-| skill | 医共体的牌子挂上了，中医馆里没有人会开方 | 医共体的牌子挂上了，中医馆里没有人会开方——按「政策的四个抓手，各自改变什么行为 → 医共体的三个组织难题 → 专科联盟的两种形态 → 治理的趋势：从给政策到给接口」走一遍本章判据 | 464 | [`skill-z38.md`](../departments/06-guanli/03-zhongyi-guanli-xue/chapters/08-z38/outputs/skill-z38.md) |
+| prompt | 医共体的牌子挂上了，中医馆里没有人会开方 · 提示词 | — | 630 | [`prompt-08-z38.md`](../departments/06-guanli/03-zhongyi-guanli-xue/chapters/08-z38/outputs/prompt-08-z38.md) |
+| skill | 医共体的牌子挂上了，中医馆里没有人会开方 | 医共体的牌子挂上了，中医馆里没有人会开方——按「政策的四个抓手，各自改变什么行为 → 医共体的三个组织难题 → 专科联盟的两种形态 → 治理的趋势：从给政策到给接口」走一遍本章判据 | 525 | [`skill-z38.md`](../departments/06-guanli/03-zhongyi-guanli-xue/chapters/08-z38/outputs/skill-z38.md) |
 
 ### 卫生事业管理
 
@@ -13633,8 +13633,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 标准化的第一刀，切在名词上 · 提示词 | — | 688 | [`prompt-01-z121.md`](../departments/06-guanli/12-zhongyiyao-biaozhunhua/chapters/01-z121/outputs/prompt-01-z121.md) |
-| skill | 标准化的第一刀，切在名词上 | 标准化的第一刀，切在名词上——按「术语条目不是词典条目 → 四种歧义，四种修法 → 术语表落成表结构，才算真的有了标准 → 三个检验，判一条定义合不合格」走一遍本章判据 | 574 | [`skill-z121.md`](../departments/06-guanli/12-zhongyiyao-biaozhunhua/chapters/01-z121/outputs/skill-z121.md) |
+| prompt | 标准化的第一刀，切在名词上 · 提示词 | — | 895 | [`prompt-01-z121.md`](../departments/06-guanli/12-zhongyiyao-biaozhunhua/chapters/01-z121/outputs/prompt-01-z121.md) |
+| skill | 标准化的第一刀，切在名词上 | 标准化的第一刀，切在名词上——按「术语条目不是词典条目 → 四种歧义，四种修法 → 术语表落成表结构，才算真的有了标准 → 三个检验，判一条定义合不合格」走一遍本章判据 | 788 | [`skill-z121.md`](../departments/06-guanli/12-zhongyiyao-biaozhunhua/chapters/01-z121/outputs/skill-z121.md) |
 
 #### 第 2 章 · 标准的分量，取决于它站在哪一层
 
@@ -13642,8 +13642,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 标准的分量，取决于它站在哪一层 · 提示词 | — | 706 | [`prompt-02-z122.md`](../departments/06-guanli/12-zhongyiyao-biaozhunhua/chapters/02-z122/outputs/prompt-02-z122.md) |
-| skill | 标准的分量，取决于它站在哪一层 | 标准的分量，取决于它站在哪一层——按「五层结构，各有各的法理 → 制定流程七步，每一步都要交出东西 → 层级冲突的三种形态，修法各不相同 → 文本骨架：规范性附录与资料性附录不是一回事」走一遍本章判据 | 590 | [`skill-z122.md`](../departments/06-guanli/12-zhongyiyao-biaozhunhua/chapters/02-z122/outputs/skill-z122.md) |
+| prompt | 标准的分量，取决于它站在哪一层 · 提示词 | — | 859 | [`prompt-02-z122.md`](../departments/06-guanli/12-zhongyiyao-biaozhunhua/chapters/02-z122/outputs/prompt-02-z122.md) |
+| skill | 标准的分量，取决于它站在哪一层 | 标准的分量，取决于它站在哪一层——按「五层结构，各有各的法理 → 制定流程七步，每一步都要交出东西 → 层级冲突的三种形态，修法各不相同 → 文本骨架：规范性附录与资料性附录不是一回事」走一遍本章判据 | 750 | [`skill-z122.md`](../departments/06-guanli/12-zhongyiyao-biaozhunhua/chapters/02-z122/outputs/skill-z122.md) |
 
 #### 第 3 章 · 编码错一位，临床上就是另一味药
 
@@ -13651,8 +13651,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 编码错一位，临床上就是另一味药 · 提示词 | — | 737 | [`prompt-03-z123.md`](../departments/06-guanli/12-zhongyiyao-biaozhunhua/chapters/03-z123/outputs/prompt-03-z123.md) |
-| skill | 编码错一位，临床上就是另一味药 | 编码错一位，临床上就是另一味药——按「分类先于编码，分类错了编码只能错 → 四种编码结构，各有各的失效方式 → 饮片必须单设炮制位，这是安全条款不是洁癖 → 映射不是复制，要记关系类型」走一遍本章判据 | 621 | [`skill-z123.md`](../departments/06-guanli/12-zhongyiyao-biaozhunhua/chapters/03-z123/outputs/skill-z123.md) |
+| prompt | 编码错一位，临床上就是另一味药 · 提示词 | — | 865 | [`prompt-03-z123.md`](../departments/06-guanli/12-zhongyiyao-biaozhunhua/chapters/03-z123/outputs/prompt-03-z123.md) |
+| skill | 编码错一位，临床上就是另一味药 | 编码错一位，临床上就是另一味药——按「分类先于编码，分类错了编码只能错 → 四种编码结构，各有各的失效方式 → 饮片必须单设炮制位，这是安全条款不是洁癖 → 映射不是复制，要记关系类型」走一遍本章判据 | 756 | [`skill-z123.md`](../departments/06-guanli/12-zhongyiyao-biaozhunhua/chapters/03-z123/outputs/skill-z123.md) |
 
 #### 第 4 章 · 标准能不能用，看它能否被一条检测记录复现
 
@@ -13669,8 +13669,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 一张古方的标准，卡在「一两」是多少克 · 提示词 | — | 715 | [`prompt-05-z125.md`](../departments/06-guanli/12-zhongyiyao-biaozhunhua/chapters/05-z125/outputs/prompt-05-z125.md) |
-| skill | 一张古方的标准，卡在「一两」是多少克 | 一张古方的标准，卡在「一两」是多少克——按「标准化的对象是三件，不是一件 → 剂量：三重不确定，三条路线 → 炮制：方中的「半夏」到底是哪一种 → 煎服法：古方里最具体的一段，也最容易被跳过」走一遍本章判据 | 596 | [`skill-z125.md`](../departments/06-guanli/12-zhongyiyao-biaozhunhua/chapters/05-z125/outputs/skill-z125.md) |
+| prompt | 一张古方的标准，卡在「一两」是多少克 · 提示词 | — | 841 | [`prompt-05-z125.md`](../departments/06-guanli/12-zhongyiyao-biaozhunhua/chapters/05-z125/outputs/prompt-05-z125.md) |
+| skill | 一张古方的标准，卡在「一两」是多少克 | 一张古方的标准，卡在「一两」是多少克——按「标准化的对象是三件，不是一件 → 剂量：三重不确定，三条路线 → 炮制：方中的「半夏」到底是哪一种 → 煎服法：古方里最具体的一段，也最容易被跳过」走一遍本章判据 | 729 | [`skill-z125.md`](../departments/06-guanli/12-zhongyiyao-biaozhunhua/chapters/05-z125/outputs/skill-z125.md) |
 
 #### 第 6 章 · 走出国门的标准，先要学会翻译自己
 
@@ -13678,8 +13678,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 走出国门的标准，先要学会翻译自己 · 提示词 | — | 691 | [`prompt-06-z126.md`](../departments/06-guanli/12-zhongyiyao-biaozhunhua/chapters/06-z126/outputs/prompt-06-z126.md) |
-| skill | 走出国门的标准，先要学会翻译自己 | 走出国门的标准，先要学会翻译自己——按「对接有三种模式，义务完全不同 → 翻译的四类难点，各有不同的解法 → 译名的三条判据 → 定义句的语法：一句话要经得起翻译」走一遍本章判据 | 574 | [`skill-z126.md`](../departments/06-guanli/12-zhongyiyao-biaozhunhua/chapters/06-z126/outputs/skill-z126.md) |
+| prompt | 走出国门的标准，先要学会翻译自己 · 提示词 | — | 903 | [`prompt-06-z126.md`](../departments/06-guanli/12-zhongyiyao-biaozhunhua/chapters/06-z126/outputs/prompt-06-z126.md) |
+| skill | 走出国门的标准，先要学会翻译自己 | 走出国门的标准，先要学会翻译自己——按「对接有三种模式，义务完全不同 → 翻译的四类难点，各有不同的解法 → 译名的三条判据 → 定义句的语法：一句话要经得起翻译」走一遍本章判据 | 793 | [`skill-z126.md`](../departments/06-guanli/12-zhongyiyao-biaozhunhua/chapters/06-z126/outputs/skill-z126.md) |
 
 #### 第 7 章 · 操作规范写在纸上，扎针的手不会自己变标准
 
@@ -13687,8 +13687,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 操作规范写在纸上，扎针的手不会自己变标准 · 提示词 | — | 740 | [`prompt-07-z127.md`](../departments/06-guanli/12-zhongyiyao-biaozhunhua/chapters/07-z127/outputs/prompt-07-z127.md) |
-| skill | 操作规范写在纸上，扎针的手不会自己变标准 | 操作规范写在纸上，扎针的手不会自己变标准——按「六要素：缺一件，规范就不可执行 → 可观察化：三级台阶，一级都别跳 → 规范进流程：三个嵌入点 → 培训解决「知道」，符合率靠闭环」走一遍本章判据 | 619 | [`skill-z127.md`](../departments/06-guanli/12-zhongyiyao-biaozhunhua/chapters/07-z127/outputs/skill-z127.md) |
+| prompt | 操作规范写在纸上，扎针的手不会自己变标准 · 提示词 | — | 885 | [`prompt-07-z127.md`](../departments/06-guanli/12-zhongyiyao-biaozhunhua/chapters/07-z127/outputs/prompt-07-z127.md) |
+| skill | 操作规范写在纸上，扎针的手不会自己变标准 | 操作规范写在纸上，扎针的手不会自己变标准——按「六要素：缺一件，规范就不可执行 → 可观察化：三级台阶，一级都别跳 → 规范进流程：三个嵌入点 → 培训解决「知道」，符合率靠闭环」走一遍本章判据 | 771 | [`skill-z127.md`](../departments/06-guanli/12-zhongyiyao-biaozhunhua/chapters/07-z127/outputs/skill-z127.md) |
 
 #### 第 8 章 · 标准发出去不算完，要能算出它有没有用
 
@@ -13696,8 +13696,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 标准发出去不算完，要能算出它有没有用 · 提示词 | — | 688 | [`prompt-08-z128.md`](../departments/06-guanli/12-zhongyiyao-biaozhunhua/chapters/08-z128/outputs/prompt-08-z128.md) |
-| skill | 标准发出去不算完，要能算出它有没有用 | 标准发出去不算完，要能算出它有没有用——按「三个指标，先把分母说清 → 分母可以被操纵，这在评价里是常态 → 四种证据，强度递增，成本也递增 → 复审：三个问题，三种结论」走一遍本章判据 | 569 | [`skill-z128.md`](../departments/06-guanli/12-zhongyiyao-biaozhunhua/chapters/08-z128/outputs/skill-z128.md) |
+| prompt | 标准发出去不算完，要能算出它有没有用 · 提示词 | — | 871 | [`prompt-08-z128.md`](../departments/06-guanli/12-zhongyiyao-biaozhunhua/chapters/08-z128/outputs/prompt-08-z128.md) |
+| skill | 标准发出去不算完，要能算出它有没有用 | 标准发出去不算完，要能算出它有没有用——按「三个指标，先把分母说清 → 分母可以被操纵，这在评价里是常态 → 四种证据，强度递增，成本也递增 → 复审：三个问题，三种结论」走一遍本章判据 | 759 | [`skill-z128.md`](../departments/06-guanli/12-zhongyiyao-biaozhunhua/chapters/08-z128/outputs/skill-z128.md) |
 
 ### 临床科研方法学
 
@@ -13843,8 +13843,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 中医走出去，走的不是文化，是接口 · 提示词 | — | 606 | [`prompt-01-e151.md`](../departments/06-guanli/15-zhongyi-guojijiaoyu/chapters/01-e151/outputs/prompt-01-e151.md) |
-| skill | 中医走出去，走的不是文化，是接口 | 中医走出去，走的不是文化，是接口——按「三条路径，三种遗产 → 先针灸后方药：一个次序造成的结构性偏差 → 教育形态的三次位移 → 判据：看接口，不看规模」走一遍本章判据 | 502 | [`skill-e151.md`](../departments/06-guanli/15-zhongyi-guojijiaoyu/chapters/01-e151/outputs/skill-e151.md) |
+| prompt | 中医走出去，走的不是文化，是接口 · 提示词 | — | 660 | [`prompt-01-e151.md`](../departments/06-guanli/15-zhongyi-guojijiaoyu/chapters/01-e151/outputs/prompt-01-e151.md) |
+| skill | 中医走出去，走的不是文化，是接口 | 中医走出去，走的不是文化，是接口——按「三条路径，三种遗产 → 先针灸后方药：一个次序造成的结构性偏差 → 教育形态的三次位移 → 判据：看接口，不看规模」走一遍本章判据 | 556 | [`skill-e151.md`](../departments/06-guanli/15-zhongyi-guojijiaoyu/chapters/01-e151/outputs/skill-e151.md) |
 
 #### 第 2 章 · 名字定不下来，课就讲不下去
 
@@ -13852,8 +13852,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 名字定不下来，课就讲不下去 · 提示词 | — | 563 | [`prompt-02-e152.md`](../departments/06-guanli/15-zhongyi-guojijiaoyu/chapters/02-e152/outputs/prompt-02-e152.md) |
-| skill | 名字定不下来，课就讲不下去 | 名字定不下来，课就讲不下去——按「三层标准，三种管辖 → 翻译的三种失配 → 不可译的部分怎么处理 → 标准落地的四道工程约束」走一遍本章判据 | 462 | [`skill-e152.md`](../departments/06-guanli/15-zhongyi-guojijiaoyu/chapters/02-e152/outputs/skill-e152.md) |
+| prompt | 名字定不下来，课就讲不下去 · 提示词 | — | 618 | [`prompt-02-e152.md`](../departments/06-guanli/15-zhongyi-guojijiaoyu/chapters/02-e152/outputs/prompt-02-e152.md) |
+| skill | 名字定不下来，课就讲不下去 | 名字定不下来，课就讲不下去——按「三层标准，三种管辖 → 翻译的三种失配 → 不可译的部分怎么处理 → 标准落地的四道工程约束」走一遍本章判据 | 517 | [`skill-e152.md`](../departments/06-guanli/15-zhongyi-guojijiaoyu/chapters/02-e152/outputs/skill-e152.md) |
 
 #### 第 3 章 · 课程被压缩时，先死的是临床
 
@@ -13861,8 +13861,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 课程被压缩时，先死的是临床 · 提示词 | — | 525 | [`prompt-03-e153.md`](../departments/06-guanli/15-zhongyi-guojijiaoyu/chapters/03-e153/outputs/prompt-03-e153.md) |
-| skill | 课程被压缩时，先死的是临床 | 课程被压缩时，先死的是临床——按「三项硬约束，从外向内挤压 → 主干课的不可压缩核 → 教材的三层，与各自的失真方式 → 临床基地：海外最短的一块板」走一遍本章判据 | 424 | [`skill-e153.md`](../departments/06-guanli/15-zhongyi-guojijiaoyu/chapters/03-e153/outputs/skill-e153.md) |
+| prompt | 课程被压缩时，先死的是临床 · 提示词 | — | 585 | [`prompt-03-e153.md`](../departments/06-guanli/15-zhongyi-guojijiaoyu/chapters/03-e153/outputs/prompt-03-e153.md) |
+| skill | 课程被压缩时，先死的是临床 | 课程被压缩时，先死的是临床——按「三项硬约束，从外向内挤压 → 主干课的不可压缩核 → 教材的三层，与各自的失真方式 → 临床基地：海外最短的一块板」走一遍本章判据 | 484 | [`skill-e153.md`](../departments/06-guanli/15-zhongyi-guojijiaoyu/chapters/03-e153/outputs/skill-e153.md) |
 
 #### 第 4 章 · 学历认的是「学过」，执照认的是「能用」
 
@@ -13870,8 +13870,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 学历认的是「学过」，执照认的是「能用」 · 提示词 | — | 575 | [`prompt-04-e154.md`](../departments/06-guanli/15-zhongyi-guojijiaoyu/chapters/04-e154/outputs/prompt-04-e154.md) |
-| skill | 学历认的是「学过」，执照认的是「能用」 | 学历认的是「学过」，执照认的是「能用」——按「两条轨道，两套判据 → 四种错位 → 执照考试考的是什么 → 一条可核对的链条」走一遍本章判据 | 468 | [`skill-e154.md`](../departments/06-guanli/15-zhongyi-guojijiaoyu/chapters/04-e154/outputs/skill-e154.md) |
+| prompt | 学历认的是「学过」，执照认的是「能用」 · 提示词 | — | 635 | [`prompt-04-e154.md`](../departments/06-guanli/15-zhongyi-guojijiaoyu/chapters/04-e154/outputs/prompt-04-e154.md) |
+| skill | 学历认的是「学过」，执照认的是「能用」 | 学历认的是「学过」，执照认的是「能用」——按「两条轨道，两套判据 → 四种错位 → 执照考试考的是什么 → 一条可核对的链条」走一遍本章判据 | 528 | [`skill-e154.md`](../departments/06-guanli/15-zhongyi-guojijiaoyu/chapters/04-e154/outputs/skill-e154.md) |
 
 #### 第 5 章 · 合作办学签的是协议，赌的是师资与病床
 
@@ -13879,8 +13879,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 合作办学签的是协议，赌的是师资与病床 · 提示词 | — | 564 | [`prompt-05-e155.md`](../departments/06-guanli/15-zhongyi-guojijiaoyu/chapters/05-e155/outputs/prompt-05-e155.md) |
-| skill | 合作办学签的是协议，赌的是师资与病床 | 合作办学签的是协议，赌的是师资与病床——按「四种形态，四种法律负担 → 师资：三项成本，一项不可回避 → 临床基地：产权、责任与病例 → 认证与退出：两件必须前置的事」走一遍本章判据 | 458 | [`skill-e155.md`](../departments/06-guanli/15-zhongyi-guojijiaoyu/chapters/05-e155/outputs/skill-e155.md) |
+| prompt | 合作办学签的是协议，赌的是师资与病床 · 提示词 | — | 614 | [`prompt-05-e155.md`](../departments/06-guanli/15-zhongyi-guojijiaoyu/chapters/05-e155/outputs/prompt-05-e155.md) |
+| skill | 合作办学签的是协议，赌的是师资与病床 | 合作办学签的是协议，赌的是师资与病床——按「四种形态，四种法律负担 → 师资：三项成本，一项不可回避 → 临床基地：产权、责任与病例 → 认证与退出：两件必须前置的事」走一遍本章判据 | 508 | [`skill-e155.md`](../departments/06-guanli/15-zhongyi-guojijiaoyu/chapters/05-e155/outputs/skill-e155.md) |
 
 #### 第 6 章 · 学生记住的是比喻，用的是比喻
 
@@ -13888,8 +13888,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 学生记住的是比喻，用的是比喻 · 提示词 | — | 587 | [`prompt-06-e156.md`](../departments/06-guanli/15-zhongyi-guojijiaoyu/chapters/06-e156/outputs/prompt-06-e156.md) |
-| skill | 学生记住的是比喻，用的是比喻 | 学生记住的是比喻，用的是比喻——按「比喻的义务：讲完必须讲它何时失效 → 三类概念错位 → 教学次序：安全边界要前置 → 传播的三条边界」走一遍本章判据 | 485 | [`skill-e156.md`](../departments/06-guanli/15-zhongyi-guojijiaoyu/chapters/06-e156/outputs/skill-e156.md) |
+| prompt | 学生记住的是比喻，用的是比喻 · 提示词 | — | 639 | [`prompt-06-e156.md`](../departments/06-guanli/15-zhongyi-guojijiaoyu/chapters/06-e156/outputs/prompt-06-e156.md) |
+| skill | 学生记住的是比喻，用的是比喻 | 学生记住的是比喻，用的是比喻——按「比喻的义务：讲完必须讲它何时失效 → 三类概念错位 → 教学次序：安全边界要前置 → 传播的三条边界」走一遍本章判据 | 537 | [`skill-e156.md`](../departments/06-guanli/15-zhongyi-guojijiaoyu/chapters/06-e156/outputs/skill-e156.md) |
 
 ### 公共管理学
 
@@ -15437,157 +15437,157 @@
 
 > Clinic · 第 9 学期 · 已产出 6 章
 
-#### 第 1 章 · 医院职能部门实习（医务与质控）
+#### 第 1 章 · 医务科实习的产出不是跟班印象，而是三张能被复核的表
 
 `25-guanli-shixi-shijian/chapters/01-yiwu-shixi/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 医院职能部门实习（医务与质控） · 提示词 | — | 463 | [`prompt-01-yiwu-shixi.md`](../departments/06-guanli/25-guanli-shixi-shijian/chapters/01-yiwu-shixi/outputs/prompt-01-yiwu-shixi.md) |
-| skill | 医院职能部门实习（医务与质控） | 医院职能部门实习（医务与质控）——按「实习 → 数据 → 政策 → 改进 → 答辩」走一遍本章判据 | 383 | [`skill-yiwu-shixi.md`](../departments/06-guanli/25-guanli-shixi-shijian/chapters/01-yiwu-shixi/outputs/skill-yiwu-shixi.md) |
+| prompt | 医务科实习的产出不是跟班印象，而是三张能被复核的表 · 提示词 | — | 1002 | [`prompt-01-yiwu-shixi.md`](../departments/06-guanli/25-guanli-shixi-shijian/chapters/01-yiwu-shixi/outputs/prompt-01-yiwu-shixi.md) |
+| skill | 医务科实习的产出不是跟班印象，而是三张能被复核的表 | 医务科实习的产出不是跟班印象，而是三张能被复核的表——按「先把交付物定死：三张表，而不是一篇感想 → 时限表：病历与核心制度给出的硬刻度 → 权限表：谁能做什么，凭哪一条授权 → 抽样与判定：30 份病历能说明什么，不能说明什么」走一遍本章判据 | 888 | [`skill-yiwu-shixi.md`](../departments/06-guanli/25-guanli-shixi-shijian/chapters/01-yiwu-shixi/outputs/skill-yiwu-shixi.md) |
 
-#### 第 2 章 · 病案与信息科实习
+#### 第 2 章 · 信息科实习的成品是一份口径字典，不是一张好看的报表
 
 `25-guanli-shixi-shijian/chapters/02-binggan-shixi/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 病案与信息科实习 · 提示词 | — | 442 | [`prompt-02-binggan-shixi.md`](../departments/06-guanli/25-guanli-shixi-shijian/chapters/02-binggan-shixi/outputs/prompt-02-binggan-shixi.md) |
-| skill | 病案与信息科实习 | 病案与信息科实习——按「实习 → 数据 → 政策 → 改进 → 答辩」走一遍本章判据 | 372 | [`skill-binggan-shixi.md`](../departments/06-guanli/25-guanli-shixi-shijian/chapters/02-binggan-shixi/outputs/skill-binggan-shixi.md) |
+| prompt | 信息科实习的成品是一份口径字典，不是一张好看的报表 · 提示词 | — | 939 | [`prompt-02-binggan-shixi.md`](../departments/06-guanli/25-guanli-shixi-shijian/chapters/02-binggan-shixi/outputs/prompt-02-binggan-shixi.md) |
+| skill | 信息科实习的成品是一份口径字典，不是一张好看的报表 | 信息科实习的成品是一份口径字典，不是一张好看的报表——按「病案管「记录」，信息科管「从记录里取数」 → 指标必须能拆成分子、分母与来源 → 检索与知识组织：查得到不等于找得准 → 报表与驾驶舱：把结论放在第一屏」走一遍本章判据 | 828 | [`skill-binggan-shixi.md`](../departments/06-guanli/25-guanli-shixi-shijian/chapters/02-binggan-shixi/outputs/skill-binggan-shixi.md) |
 
-#### 第 3 章 · 医保结算与费用结构分析
+#### 第 3 章 · 费用结构分析的起点是把成本分对类，不是把账算快
 
 `25-guanli-shixi-shijian/chapters/03-yibao-jiesuan/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 医保结算与费用结构分析 · 提示词 | — | 451 | [`prompt-03-yibao-jiesuan.md`](../departments/06-guanli/25-guanli-shixi-shijian/chapters/03-yibao-jiesuan/outputs/prompt-03-yibao-jiesuan.md) |
-| skill | 医保结算与费用结构分析 | 医保结算与费用结构分析——按「实习 → 数据 → 政策 → 改进 → 答辩」走一遍本章判据 | 378 | [`skill-yibao-jiesuan.md`](../departments/06-guanli/25-guanli-shixi-shijian/chapters/03-yibao-jiesuan/outputs/skill-yibao-jiesuan.md) |
+| prompt | 费用结构分析的起点是把成本分对类，不是把账算快 · 提示词 | — | 961 | [`prompt-03-yibao-jiesuan.md`](../departments/06-guanli/25-guanli-shixi-shijian/chapters/03-yibao-jiesuan/outputs/prompt-03-yibao-jiesuan.md) |
+| skill | 费用结构分析的起点是把成本分对类，不是把账算快 | 费用结构分析的起点是把成本分对类，不是把账算快——按「结算单上的「费用」与核算里的「成本」不是一回事 → 四组分类决定你能问什么问题 → 科室—项目—病种：三层核算，三个用途 → 结构分析与量本利：保本点怎么算」走一遍本章判据 | 852 | [`skill-yibao-jiesuan.md`](../departments/06-guanli/25-guanli-shixi-shijian/chapters/03-yibao-jiesuan/outputs/skill-yibao-jiesuan.md) |
 
-#### 第 4 章 · 中医药政策落地调研
+#### 第 4 章 · 政策落地调研要查的不是「有没有发文」，而是钱、人、编哪一条断了
 
 `25-guanli-shixi-shijian/chapters/04-zhengce-diaoyan/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 中医药政策落地调研 · 提示词 | — | 445 | [`prompt-04-zhengce-diaoyan.md`](../departments/06-guanli/25-guanli-shixi-shijian/chapters/04-zhengce-diaoyan/outputs/prompt-04-zhengce-diaoyan.md) |
-| skill | 中医药政策落地调研 | 中医药政策落地调研——按「实习 → 数据 → 政策 → 改进 → 答辩」走一遍本章判据 | 376 | [`skill-zhengce-diaoyan.md`](../departments/06-guanli/25-guanli-shixi-shijian/chapters/04-zhengce-diaoyan/outputs/skill-zhengce-diaoyan.md) |
+| prompt | 政策落地调研要查的不是「有没有发文」，而是钱、人、编哪一条断了 · 提示词 | — | 993 | [`prompt-04-zhengce-diaoyan.md`](../departments/06-guanli/25-guanli-shixi-shijian/chapters/04-zhengce-diaoyan/outputs/prompt-04-zhengce-diaoyan.md) |
+| skill | 政策落地调研要查的不是「有没有发文」，而是钱、人、编哪一条断了 | 政策落地调研要查的不是「有没有发文」，而是钱、人、编哪一条断了——按「三层文本先分清：法律、行政法规与规范性文件 → 政策工具四类，落地的接口只有四个 → 调研设计：把「落地」翻译成可观测的量 → 执行偏差有名字：最后一公里与街头官僚」走一遍本章判据 | 878 | [`skill-zhengce-diaoyan.md`](../departments/06-guanli/25-guanli-shixi-shijian/chapters/04-zhengce-diaoyan/outputs/skill-zhengce-diaoyan.md) |
 
-#### 第 5 章 · 管理改进项目（PDCA）
+#### 第 5 章 · PDCA 里最容易空转的是 C：没有基线的 D 检查不出任何东西
 
 `25-guanli-shixi-shijian/chapters/05-pdca-gaijin/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 管理改进项目（PDCA） · 提示词 | — | 454 | [`prompt-05-pdca-gaijin.md`](../departments/06-guanli/25-guanli-shixi-shijian/chapters/05-pdca-gaijin/outputs/prompt-05-pdca-gaijin.md) |
-| skill | 管理改进项目（PDCA） | 管理改进项目（PDCA）——按「实习 → 数据 → 政策 → 改进 → 答辩」走一遍本章判据 | 378 | [`skill-pdca-gaijin.md`](../departments/06-guanli/25-guanli-shixi-shijian/chapters/05-pdca-gaijin/outputs/skill-pdca-gaijin.md) |
+| prompt | PDCA 里最容易空转的是 C：没有基线的 D 检查不出任何东西 · 提示词 | — | 1027 | [`prompt-05-pdca-gaijin.md`](../departments/06-guanli/25-guanli-shixi-shijian/chapters/05-pdca-gaijin/outputs/prompt-05-pdca-gaijin.md) |
+| skill | PDCA 里最容易空转的是 C：没有基线的 D 检查不出任何东西 | PDCA 里最容易空转的是 C：没有基线的 D 检查不出任何东西——按「控制有三条时线，PDCA 只用了后半段 → 标准从哪来：五个来源与「标准先于措施」 → 衡量：四种方法与四个要素 → C 为什么空转：没有基线、没有容差、没有复评时点」走一遍本章判据 | 911 | [`skill-pdca-gaijin.md`](../departments/06-guanli/25-guanli-shixi-shijian/chapters/05-pdca-gaijin/outputs/skill-pdca-gaijin.md) |
 
-#### 第 6 章 · 实践报告与出站考核
+#### 第 6 章 · 报告不是把做过的事写一遍，是让没去过现场的人能重算一遍
 
 `25-guanli-shixi-shijian/chapters/06-shijian-baogao/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 实践报告与出站考核 · 提示词 | — | 464 | [`prompt-06-shijian-baogao.md`](../departments/02-zhongyao/19-zhongyao-zhuanye-shijian/chapters/06-shijian-baogao/outputs/prompt-06-shijian-baogao.md) |
-| skill | 实践报告与出站考核 | 实践报告与出站考核——按「产地调研 → 鉴定 → 炮制 → 制剂中试 → 药房随访 → 出站考核」走一遍本章判据 | 372 | [`skill-shijian-baogao.md`](../departments/02-zhongyao/19-zhongyao-zhuanye-shijian/chapters/06-shijian-baogao/outputs/skill-shijian-baogao.md) |
-| prompt | 实践报告与答辩 · 提示词 | — | 439 | [`prompt-06-shijian-baogao.md`](../departments/06-guanli/25-guanli-shixi-shijian/chapters/06-shijian-baogao/outputs/prompt-06-shijian-baogao.md) |
-| skill | 实践报告与答辩 | 实践报告与答辩——按「实习 → 数据 → 政策 → 改进 → 答辩」走一遍本章判据 | 371 | [`skill-shijian-baogao.md`](../departments/06-guanli/25-guanli-shixi-shijian/chapters/06-shijian-baogao/outputs/skill-shijian-baogao.md) |
+| prompt | 报告不是把做过的事写一遍，是让没去过现场的人能重算一遍 · 提示词 | — | 811 | [`prompt-06-shijian-baogao.md`](../departments/02-zhongyao/19-zhongyao-zhuanye-shijian/chapters/06-shijian-baogao/outputs/prompt-06-shijian-baogao.md) |
+| skill | 报告不是把做过的事写一遍，是让没去过现场的人能重算一遍 | 报告不是把做过的事写一遍，是让没去过现场的人能重算一遍——按「报告的骨架：四段，每段都有硬栏目 → 数字要能被重算：蕴藏量的四个参数 → 三张底表与一套档案：数据要能追回现场 → 出站考核评什么：四档与三类不予通过」走一遍本章判据 | 700 | [`skill-shijian-baogao.md`](../departments/02-zhongyao/19-zhongyao-zhuanye-shijian/chapters/06-shijian-baogao/outputs/skill-shijian-baogao.md) |
+| prompt | 实践报告的可信度来自能被重跑，不来自写得厚 · 提示词 | — | 953 | [`prompt-06-shijian-baogao.md`](../departments/06-guanli/25-guanli-shixi-shijian/chapters/06-shijian-baogao/outputs/prompt-06-shijian-baogao.md) |
+| skill | 实践报告的可信度来自能被重跑，不来自写得厚 | 实践报告的可信度来自能被重跑，不来自写得厚——按「报告的第一性要求：别人按你写的能重跑一遍 → 数据文件：编码、缺失与版本 → 从软件输出到表格：五条转换规则 → 四类误读，必须在答辩前自查一遍」走一遍本章判据 | 847 | [`skill-shijian-baogao.md`](../departments/06-guanli/25-guanli-shixi-shijian/chapters/06-shijian-baogao/outputs/skill-shijian-baogao.md) |
 
 ### 管理毕业设计与知识移交
 
 > Build · 第 10 学期 · 已产出 6 章
 
-#### 第 1 章 · 选题：从质量标志物到可验证假设
+#### 第 1 章 · 选题的成败取决于假设能否被一批样品证伪
 
 `26-guanli-biye-sheji/chapters/01-xuan-ti/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 选题：从质量标志物到可验证假设 · 提示词 | — | 491 | [`prompt-01-xuan-ti.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
-| skill | 选题：从质量标志物到可验证假设 | 选题：从质量标志物到可验证假设——按「选题 → 样品与数据 → 实验与建模 → 方法学验证 → 写作答辩 → 移交」走一遍本章判据 | 378 | [`skill-xuan-ti.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
-| prompt | 选题：从配穴方案到可检验命题 · 提示词 | — | 481 | [`prompt-01-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
-| skill | 选题：从配穴方案到可检验命题 | 选题：从配穴方案到可检验命题——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 373 | [`skill-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
-| prompt | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 · 提示词 | — | 620 | [`prompt-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/prompt-xuan-ti.md) |
-| skill | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题——按「三条判据：骨伤版的可复现、可对照、可接手 → 四步降维：从一个病名到一条命题 → 三份能交出去的骨伤毕设产物 → 里程碑：四件必须交出去的东西」走一遍本章判据 | 503 | [`skill-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题的成败取决于假设能否被一批样品证伪 · 提示词 | — | 641 | [`prompt-01-xuan-ti.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
+| skill | 选题的成败取决于假设能否被一批样品证伪 | 选题的成败取决于假设能否被一批样品证伪——按「选题的真问题不是「做什么」，而是「哪一种不一致」 → 四个槽怎么填：从质量标志物到可检验判据 → 开题节点：交付物、字段与时间表 → 评分维度与五种失效模式」走一遍本章判据 | 535 | [`skill-xuan-ti.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题不是挑一个病，而是把一句经验话逼成能被否证的句子 · 提示词 | — | 923 | [`prompt-01-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
+| skill | 选题不是挑一个病，而是把一句经验话逼成能被否证的句子 | 选题不是挑一个病，而是把一句经验话逼成能被否证的句子——按「底本把"针在哪"写到了寸，把"跟谁比"留成了空格 → 对照只能选一个，选完要能说出它排除了什么 → 把"招几十例"换成四个参数 → 裁剪：写不完的范围等于没范围」走一遍本章判据 | 801 | [`skill-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 · 提示词 | — | 639 | [`prompt-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/prompt-xuan-ti.md) |
+| skill | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题——按「三条判据：骨伤版的可复现、可对照、可接手 → 四步降维：从一个病名到一条命题 → 三份能交出去的骨伤毕设产物 → 里程碑：四件必须交出去的东西」走一遍本章判据 | 522 | [`skill-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题在开题前就定了成败：缺口必须算得出来 · 提示词 | — | 629 | [`prompt-01-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题在开题前就定了成败：缺口必须算得出来 | 选题在开题前就定了成败：缺口必须算得出来——按「好选题的四个判据 → 缺口怎么算：分子、分母、来源 → 选题过大的四种形态 → 开题评什么：评能不能做，不评想不想做」走一遍本章判据 | 522 | [`skill-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
-| prompt | 选题：从管理问题到可测量命题 · 提示词 | — | 468 | [`prompt-01-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
-| skill | 选题：从管理问题到可测量命题 | 选题：从管理问题到可测量命题——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 378 | [`skill-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
-| prompt | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验 · 提示词 | — | 630 | [`prompt-01-xuan-ti.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
-| skill | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验 | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验——按「三条判据：可复现、可对照、可接手 → 四步降维：从中医问题到实验对象 → 三种能交出去的题目形态 → 里程碑与交付物」走一遍本章判据 | 513 | [`skill-xuan-ti.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题的标准不是「有意义」，而是能否在一个学期内被证伪 · 提示词 | — | 937 | [`prompt-01-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
+| skill | 选题的标准不是「有意义」，而是能否在一个学期内被证伪 | 选题的标准不是「有意义」，而是能否在一个学期内被证伪——按「「有意义」是评审语，「可证伪」是设计语 → 四步收缩：从管理问题到可测量命题 → 变量类型先定，方法才有得选 → 设计的四个要素与三种常见缺陷」走一遍本章判据 | 815 | [`skill-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验 · 提示词 | — | 646 | [`prompt-01-xuan-ti.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
+| skill | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验 | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验——按「三条判据：可复现、可对照、可接手 → 四步降维：从中医问题到实验对象 → 三种能交出去的题目形态 → 里程碑与交付物」走一遍本章判据 | 529 | [`skill-xuan-ti.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从专科问题到可验证命题 · 提示词 | — | 467 | [`prompt-01-xuan-ti.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题：从专科问题到可验证命题 | 选题：从专科问题到可验证命题——按「选题 → 数据 → 实现 → 评价 → 答辩 → 移交」走一遍本章判据 | 375 | [`skill-xuan-ti.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从机制假设到可检验实验 · 提示词 | — | 494 | [`prompt-01-xuan-ti.md`](../departments/09-jichu/17-jichu-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题：从机制假设到可检验实验 | 选题：从机制假设到可检验实验——按「选题 → 方案与伦理 → 实施与记录 → 数据分析 → 论文答辩 → 知识移交」走一遍本章判据 | 391 | [`skill-xuan-ti.md`](../departments/09-jichu/17-jichu-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 
-#### 第 2 章 · 数据获取与指标定义
+#### 第 2 章 · 指标不写清分子与分母，后面每个分析都在自证
 
 `26-guanli-biye-sheji/chapters/02-shuju-zhibiao/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 数据获取与指标定义 · 提示词 | — | 453 | [`prompt-02-shuju-zhibiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/02-shuju-zhibiao/outputs/prompt-02-shuju-zhibiao.md) |
-| skill | 数据获取与指标定义 | 数据获取与指标定义——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 374 | [`skill-shuju-zhibiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/02-shuju-zhibiao/outputs/skill-shuju-zhibiao.md) |
+| prompt | 指标不写清分子与分母，后面每个分析都在自证 · 提示词 | — | 954 | [`prompt-02-shuju-zhibiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/02-shuju-zhibiao/outputs/prompt-02-shuju-zhibiao.md) |
+| skill | 指标不写清分子与分母，后面每个分析都在自证 | 指标不写清分子与分母，后面每个分析都在自证——按「二手数据的三道检验：口径、覆盖、可比 → 抽样：概率与非概率的分野 → 核查四法与异常值的双判据 → 频数分布：五步编表与三个特征」走一遍本章判据 | 843 | [`skill-shuju-zhibiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/02-shuju-zhibiao/outputs/skill-shuju-zhibiao.md) |
 
-#### 第 3 章 · 分析与方案实现
+#### 第 3 章 · 选方法不是选结果好看的，是选资料允许的那一个
 
 `26-guanli-biye-sheji/chapters/03-fangan-shixian/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 分析与方案实现 · 提示词 | — | 447 | [`prompt-03-fangan-shixian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/03-fangan-shixian/outputs/prompt-03-fangan-shixian.md) |
-| skill | 分析与方案实现 | 分析与方案实现——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 371 | [`skill-fangan-shixian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/03-fangan-shixian/outputs/skill-fangan-shixian.md) |
+| prompt | 选方法不是选结果好看的，是选资料允许的那一个 · 提示词 | — | 867 | [`prompt-03-fangan-shixian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/03-fangan-shixian/outputs/prompt-03-fangan-shixian.md) |
+| skill | 选方法不是选结果好看的，是选资料允许的那一个 | 选方法不是选结果好看的，是选资料允许的那一个——按「参数与非参数：三条判据 → 编秩的三条硬规则 → 相关与回归：r 与 b 的分工 → 相关不等于因果：四种来源与四条排除」走一遍本章判据 | 756 | [`skill-fangan-shixian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/03-fangan-shixian/outputs/skill-fangan-shixian.md) |
 
-#### 第 4 章 · 效果评价与成本-效益
+#### 第 4 章 · 效果评价的分水岭在视角：站错立场，同一措施会得出相反结论
 
 `26-guanli-biye-sheji/chapters/04-xiaoguo-pingjia/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 效果评价与成本-效益 · 提示词 | — | 456 | [`prompt-04-xiaoguo-pingjia.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/04-xiaoguo-pingjia/outputs/prompt-04-xiaoguo-pingjia.md) |
-| skill | 效果评价与成本-效益 | 效果评价与成本-效益——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 378 | [`skill-xiaoguo-pingjia.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/04-xiaoguo-pingjia/outputs/skill-xiaoguo-pingjia.md) |
+| prompt | 效果评价的分水岭在视角：站错立场，同一措施会得出相反结论 · 提示词 | — | 924 | [`prompt-04-xiaoguo-pingjia.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/04-xiaoguo-pingjia/outputs/prompt-04-xiaoguo-pingjia.md) |
+| skill | 效果评价的分水岭在视角：站错立场，同一措施会得出相反结论 | 效果评价的分水岭在视角：站错立场，同一措施会得出相反结论——按「五步流程：先定视角，再算成本 → 成本识别四类与两条原则 → ICER：比值只说相对 → QALY 与效用：把质量折进时间」走一遍本章判据 | 808 | [`skill-xiaoguo-pingjia.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/04-xiaoguo-pingjia/outputs/skill-xiaoguo-pingjia.md) |
 
-#### 第 5 章 · 论文写作与答辩
+#### 第 5 章 · 论文的说服力在绪论就定了，答辩只是把它念一遍
 
 `26-guanli-biye-sheji/chapters/05-lunwen-dabian/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 论文写作与答辩 · 提示词 | — | 465 | [`prompt-05-lunwen-dabian.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
-| skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 样品与数据 → 实验与建模 → 方法学验证 → 写作答辩 → 移交」走一遍本章判据 | 368 | [`skill-lunwen-dabian.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
-| prompt | 论文写作与答辩 · 提示词 | — | 459 | [`prompt-05-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
-| skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 365 | [`skill-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
-| prompt | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 · 提示词 | — | 622 | [`prompt-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-lunwen-dabian.md) |
-| skill | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好——按「六段骨架：每一段都能用一句话检验 → 图表与数字：先让读者能核对，再让读者相信 → 答辩前先自评：七项检查 → 答辩：三类必答题与五分钟陈述」走一遍本章判据 | 507 | [`skill-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 论文的说服力在绪论就定了，答辩只是把它念一遍 · 提示词 | — | 634 | [`prompt-05-lunwen-dabian.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
+| skill | 论文的说服力在绪论就定了，答辩只是把它念一遍 | 论文的说服力在绪论就定了，答辩只是把它念一遍——按「绪论不是学科介绍，是把判据摆到桌面上 → 证据链的四层：每层对应论文的一个部位 → 答辩：四类必被问到的问题与应答结构 → 评分维度与失效模式」走一遍本章判据 | 531 | [`skill-lunwen-dabian.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 论文的说服力来自十个能复算的数字，不来自十页漂亮的讨论 · 提示词 | — | 858 | [`prompt-05-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
+| skill | 论文的说服力来自十个能复算的数字，不来自十页漂亮的讨论 | 论文的说服力来自十个能复算的数字，不来自十页漂亮的讨论——按「一头一尾：引文在底本里，数字在你的表里 → 十个数字：定稿前唯一的硬检查 → 讨论不是复述，是与三篇文献对位置 → 四类质疑与两轮试讲」走一遍本章判据 | 741 | [`skill-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 · 提示词 | — | 630 | [`prompt-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-lunwen-dabian.md) |
+| skill | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好——按「六段骨架：每一段都能用一句话检验 → 图表与数字：先让读者能核对，再让读者相信 → 答辩前先自评：七项检查 → 答辩：三类必答题与五分钟陈述」走一遍本章判据 | 515 | [`skill-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 答辩评的是判断链，不是字数与图表的数量 · 提示词 | — | 611 | [`prompt-05-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 答辩评的是判断链，不是字数与图表的数量 | 答辩评的是判断链，不是字数与图表的数量——按「四段式：每一段只回答一个问题 → 图表的三条规矩 → 陈述：十五分钟怎么分 → 提问：六类问题与应答方式」走一遍本章判据 | 511 | [`skill-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
-| prompt | 论文写作与答辩 · 提示词 | — | 447 | [`prompt-05-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
-| skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 370 | [`skill-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
-| prompt | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来 · 提示词 | — | 637 | [`prompt-05-lunwen-dabian.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
-| skill | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来 | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来——按「六段结构，与评审表一一对应 → 三张表：主表、消融表、误差表 → 写作顺序：先图表，后文字，最后摘要 → 答辩：20 分钟的分配与五个必答题」走一遍本章判据 | 525 | [`skill-lunwen-dabian.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 答辩不是复述结论，而是当场交代结论的适用条件 · 提示词 | — | 943 | [`prompt-05-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
+| skill | 答辩不是复述结论，而是当场交代结论的适用条件 | 答辩不是复述结论，而是当场交代结论的适用条件——按「一段可用的论证，结构上像一条能执行的条文 → 事实判断与价值判断必须分开写 → 枚举与限定：把「等」字写实 → 答辩现场的五个追问与应答」走一遍本章判据 | 831 | [`skill-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来 · 提示词 | — | 640 | [`prompt-05-lunwen-dabian.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
+| skill | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来 | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来——按「六段结构，与评审表一一对应 → 三张表：主表、消融表、误差表 → 写作顺序：先图表，后文字，最后摘要 → 答辩：20 分钟的分配与五个必答题」走一遍本章判据 | 528 | [`skill-lunwen-dabian.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 446 | [`prompt-05-lunwen-dabian.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据 → 实现 → 评价 → 答辩 → 移交」走一遍本章判据 | 367 | [`skill-lunwen-dabian.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 481 | [`prompt-05-lunwen-dabian.md`](../departments/09-jichu/17-jichu-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 方案与伦理 → 实施与记录 → 数据分析 → 论文答辩 → 知识移交」走一遍本章判据 | 383 | [`skill-lunwen-dabian.md`](../departments/09-jichu/17-jichu-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 
-#### 第 6 章 · 知识移交：实验记录与交接
+#### 第 6 章 · 记录不完整的实验等于没做过，交接不清的成果等于没留下
 
 `26-guanli-biye-sheji/chapters/06-zhishi-yijiao/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 知识移交：实验记录与交接 · 提示词 | — | 482 | [`prompt-06-zhishi-yijiao.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
-| skill | 知识移交：实验记录与交接 | 知识移交：实验记录与交接——按「选题 → 样品与数据 → 实验与建模 → 方法学验证 → 写作答辩 → 移交」走一遍本章判据 | 378 | [`skill-zhishi-yijiao.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
-| prompt | 知识移交：方案手册与交接 · 提示词 | — | 473 | [`prompt-06-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
-| skill | 知识移交：方案手册与交接 | 知识移交：方案手册与交接——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 375 | [`skill-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
-| prompt | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 · 提示词 | — | 646 | [`prompt-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-zhishi-yijiao.md) |
-| skill | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法——按「交接包四件：缺一件，复算就断在那一件 → SOP：把「做对」写成「照做也对」 → 三条验收动作：从能跑到敢用 → 失效清单与退役条件」走一遍本章判据 | 527 | [`skill-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 记录不完整的实验等于没做过，交接不清的成果等于没留下 · 提示词 | — | 628 | [`prompt-06-zhishi-yijiao.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
+| skill | 记录不完整的实验等于没做过，交接不清的成果等于没留下 | 记录不完整的实验等于没做过，交接不清的成果等于没留下——按「移交的判据是「别人能不能接着做」 → 交接包四件：记录、方法、数据、联系人 → 三个验收动作怎么执行 → 失效模式、评分与考核」走一遍本章判据 | 521 | [`skill-zhishi-yijiao.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 手册写得再全也移不走手感，移交完成的标志是别人照它做出来 · 提示词 | — | 892 | [`prompt-06-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
+| skill | 手册写得再全也移不走手感，移交完成的标志是别人照它做出来 | 手册写得再全也移不走手感，移交完成的标志是别人照它做出来——按「来路：254 处书名号为什么属于移交清单 → 逐穴一节：把能量化的写到极致 → 不可写项：标出来，配带教，别假装写清了 → 复现验证：三个人、两次、两版」走一遍本章判据 | 774 | [`skill-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 · 提示词 | — | 662 | [`prompt-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-zhishi-yijiao.md) |
+| skill | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法——按「交接包四件：缺一件，复算就断在那一件 → SOP：把「做对」写成「照做也对」 → 三条验收动作：从能跑到敢用 → 失效清单与退役条件」走一遍本章判据 | 543 | [`skill-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 毕设的最后一关，是别人能不能接着用 · 提示词 | — | 588 | [`prompt-06-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
 | skill | 毕设的最后一关，是别人能不能接着用 | 毕设的最后一关，是别人能不能接着用——按「移交包四件，各有各的验收动作 → 数据移交：边界比内容更重要 → 交接会：三段，不要开成汇报会 → 被接手方的三个提问」走一遍本章判据 | 490 | [`skill-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
-| prompt | 知识移交：制度文件与交接 · 提示词 | — | 462 | [`prompt-06-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
-| skill | 知识移交：制度文件与交接 | 知识移交：制度文件与交接——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 380 | [`skill-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
-| prompt | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数 · 提示词 | — | 608 | [`prompt-06-zhishi-yijiao.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
-| skill | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数 | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数——按「模型卡：十二个字段，缺一不可 → 交接包四件：代码、数据、环境、口径 → 验收：三个动作，一个都不能省 → 退役与责任边界」走一遍本章判据 | 496 | [`skill-zhishi-yijiao.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 移交的验收标准是「人走了系统还在转」，不是「文档齐了」 · 提示词 | — | 979 | [`prompt-06-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
+| skill | 移交的验收标准是「人走了系统还在转」，不是「文档齐了」 | 移交的验收标准是「人走了系统还在转」，不是「文档齐了」——按「移交的三类资产：制度、数据、人 → 主数据与字典：一物多码会让三年数据接不上 → 权限、脱敏与审批：去标识化不等于匿名化 → 运维与升级：服务级别、回退条件、迁移校验」走一遍本章判据 | 862 | [`skill-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数 · 提示词 | — | 624 | [`prompt-06-zhishi-yijiao.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
+| skill | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数 | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数——按「模型卡：十二个字段，缺一不可 → 交接包四件：代码、数据、环境、口径 → 验收：三个动作，一个都不能省 → 退役与责任边界」走一遍本章判据 | 512 | [`skill-zhishi-yijiao.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：诊疗路径与交接 · 提示词 | — | 462 | [`prompt-06-zhishi-yijiao.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
 | skill | 知识移交：诊疗路径与交接 | 知识移交：诊疗路径与交接——按「选题 → 数据 → 实现 → 评价 → 答辩 → 移交」走一遍本章判据 | 377 | [`skill-zhishi-yijiao.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：实验协议与交接 · 提示词 | — | 497 | [`prompt-06-zhishi-yijiao.md`](../departments/09-jichu/17-jichu-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
@@ -15791,8 +15791,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 「指下难明」不是修辞：仪器要解决的是留证，不是替代手指 · 提示词 | — | 639 | [`prompt-01-q1.md`](../departments/07-zhineng/03-zhongyi-zhineng-shebei/chapters/01-q1/outputs/prompt-01-q1.md) |
-| skill | 「指下难明」不是修辞：仪器要解决的是留证，不是替代手指 | 「指下难明」不是修辞：仪器要解决的是留证，不是替代手指——按「仪器先替代的是「没留下证据」 → 可感测的四元：光、电、力、运动 → 六类器械与三级形态：连续性比精度更值钱 → 这一层的位置：所有算法的原料都从这里出」走一遍本章判据 | 519 | [`skill-q1.md`](../departments/07-zhineng/03-zhongyi-zhineng-shebei/chapters/01-q1/outputs/skill-q1.md) |
+| prompt | 「指下难明」不是修辞：仪器要解决的是留证，不是替代手指 · 提示词 | — | 669 | [`prompt-01-q1.md`](../departments/07-zhineng/03-zhongyi-zhineng-shebei/chapters/01-q1/outputs/prompt-01-q1.md) |
+| skill | 「指下难明」不是修辞：仪器要解决的是留证，不是替代手指 | 「指下难明」不是修辞：仪器要解决的是留证，不是替代手指——按「仪器先替代的是「没留下证据」 → 可感测的四元：光、电、力、运动 → 六类器械与三级形态：连续性比精度更值钱 → 这一层的位置：所有算法的原料都从这里出」走一遍本章判据 | 549 | [`skill-q1.md`](../departments/07-zhineng/03-zhongyi-zhineng-shebei/chapters/01-q1/outputs/skill-q1.md) |
 
 #### 第 2 章 · 结论的上限由信号质量封顶：一次两百倍的压缩，误差不会自己报告
 
@@ -15800,8 +15800,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 结论的上限由信号质量封顶：一次两百倍的压缩，误差不会自己报告 · 提示词 | — | 621 | [`prompt-02-q2.md`](../departments/07-zhineng/03-zhongyi-zhineng-shebei/chapters/02-q2/outputs/prompt-02-q2.md) |
-| skill | 结论的上限由信号质量封顶：一次两百倍的压缩，误差不会自己报告 | 结论的上限由信号质量封顶：一次两百倍的压缩，误差不会自己报告——按「六条通道，各自的采样下限 → 预处理：滤波器也会造假 → 质控分三层，缺一层就断链 → Holter：一条 RR 序列能回答什么，不能回答什么」走一遍本章判据 | 498 | [`skill-q2.md`](../departments/07-zhineng/03-zhongyi-zhineng-shebei/chapters/02-q2/outputs/skill-q2.md) |
+| prompt | 结论的上限由信号质量封顶：一次两百倍的压缩，误差不会自己报告 · 提示词 | — | 653 | [`prompt-02-q2.md`](../departments/07-zhineng/03-zhongyi-zhineng-shebei/chapters/02-q2/outputs/prompt-02-q2.md) |
+| skill | 结论的上限由信号质量封顶：一次两百倍的压缩，误差不会自己报告 | 结论的上限由信号质量封顶：一次两百倍的压缩，误差不会自己报告——按「六条通道，各自的采样下限 → 预处理：滤波器也会造假 → 质控分三层，缺一层就断链 → Holter：一条 RR 序列能回答什么，不能回答什么」走一遍本章判据 | 530 | [`skill-q2.md`](../departments/07-zhineng/03-zhongyi-zhineng-shebei/chapters/02-q2/outputs/skill-q2.md) |
 
 #### 第 3 章 · 十问筛成六快：一次由「可测性」主导的裁剪
 
@@ -15809,8 +15809,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 十问筛成六快：一次由「可测性」主导的裁剪 · 提示词 | — | 649 | [`prompt-03-q3.md`](../departments/07-zhineng/03-zhongyi-zhineng-shebei/chapters/03-q3/outputs/prompt-03-q3.md) |
-| skill | 十问筛成六快：一次由「可测性」主导的裁剪 | 十问筛成六快：一次由「可测性」主导的裁剪——按「六快是从可穿戴反推出来的，不是从十问剪出来的 → 六快 × 四元：一半的格子要靠人填 → 评分口径：三条不能破的规矩 → 从分数到证候：这条链上设备只走到第二步」走一遍本章判据 | 536 | [`skill-q3.md`](../departments/07-zhineng/03-zhongyi-zhineng-shebei/chapters/03-q3/outputs/skill-q3.md) |
+| prompt | 十问筛成六快：一次由「可测性」主导的裁剪 · 提示词 | — | 672 | [`prompt-03-q3.md`](../departments/07-zhineng/03-zhongyi-zhineng-shebei/chapters/03-q3/outputs/prompt-03-q3.md) |
+| skill | 十问筛成六快：一次由「可测性」主导的裁剪 | 十问筛成六快：一次由「可测性」主导的裁剪——按「六快是从可穿戴反推出来的，不是从十问剪出来的 → 六快 × 四元：一半的格子要靠人填 → 评分口径：三条不能破的规矩 → 从分数到证候：这条链上设备只走到第二步」走一遍本章判据 | 559 | [`skill-q3.md`](../departments/07-zhineng/03-zhongyi-zhineng-shebei/chapters/03-q3/outputs/skill-q3.md) |
 
 #### 第 4 章 · 「诊法常以平旦」：条件不写进元数据，这次采集就等于没做
 
@@ -15818,8 +15818,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 「诊法常以平旦」：条件不写进元数据，这次采集就等于没做 · 提示词 | — | 600 | [`prompt-04-q4.md`](../departments/07-zhineng/03-zhongyi-zhineng-shebei/chapters/04-q4/outputs/prompt-04-q4.md) |
-| skill | 「诊法常以平旦」：条件不写进元数据，这次采集就等于没做 | 「诊法常以平旦」：条件不写进元数据，这次采集就等于没做——按「把一句话拆成八类可执行约束 → 四条采集链，各自的设备形态与规范要点 → 标准化三层，越往下越难 → 慢性疼痛为什么是第一个落点」走一遍本章判据 | 480 | [`skill-q4.md`](../departments/07-zhineng/03-zhongyi-zhineng-shebei/chapters/04-q4/outputs/skill-q4.md) |
+| prompt | 「诊法常以平旦」：条件不写进元数据，这次采集就等于没做 · 提示词 | — | 628 | [`prompt-04-q4.md`](../departments/07-zhineng/03-zhongyi-zhineng-shebei/chapters/04-q4/outputs/prompt-04-q4.md) |
+| skill | 「诊法常以平旦」：条件不写进元数据，这次采集就等于没做 | 「诊法常以平旦」：条件不写进元数据，这次采集就等于没做——按「把一句话拆成八类可执行约束 → 四条采集链，各自的设备形态与规范要点 → 标准化三层，越往下越难 → 慢性疼痛为什么是第一个落点」走一遍本章判据 | 508 | [`skill-q4.md`](../departments/07-zhineng/03-zhongyi-zhineng-shebei/chapters/04-q4/outputs/skill-q4.md) |
 
 #### 第 5 章 · 从样机到器械：四道门，以及一道不该打开的门
 
@@ -15827,8 +15827,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 从样机到器械：四道门，以及一道不该打开的门 · 提示词 | — | 629 | [`prompt-05-q5.md`](../departments/07-zhineng/03-zhongyi-zhineng-shebei/chapters/05-q5/outputs/prompt-05-q5.md) |
-| skill | 从样机到器械：四道门，以及一道不该打开的门 | 从样机到器械：四道门，以及一道不该打开的门——按「五类技术，先分清它们在哪一层 → 一套能开出课的实训配置 → 设备怎么进诊室：三种集成形态 → 四道门：从样机到器械」走一遍本章判据 | 515 | [`skill-q5.md`](../departments/07-zhineng/03-zhongyi-zhineng-shebei/chapters/05-q5/outputs/skill-q5.md) |
+| prompt | 从样机到器械：四道门，以及一道不该打开的门 · 提示词 | — | 675 | [`prompt-05-q5.md`](../departments/07-zhineng/03-zhongyi-zhineng-shebei/chapters/05-q5/outputs/prompt-05-q5.md) |
+| skill | 从样机到器械：四道门，以及一道不该打开的门 | 从样机到器械：四道门，以及一道不该打开的门——按「五类技术，先分清它们在哪一层 → 一套能开出课的实训配置 → 设备怎么进诊室：三种集成形态 → 四道门：从样机到器械」走一遍本章判据 | 561 | [`skill-q5.md`](../departments/07-zhineng/03-zhongyi-zhineng-shebei/chapters/05-q5/outputs/skill-q5.md) |
 
 #### 第 6 章 · 瓶颈不在传感器上：从「能测」到「能负责」
 
@@ -15836,8 +15836,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 瓶颈不在传感器上：从「能测」到「能负责」 · 提示词 | — | 556 | [`prompt-06-q6.md`](../departments/07-zhineng/03-zhongyi-zhineng-shebei/chapters/06-q6/outputs/prompt-06-q6.md) |
-| skill | 瓶颈不在传感器上：从「能测」到「能负责」 | 瓶颈不在传感器上：从「能测」到「能负责」——按「三层布局，各管一段 → 六条趋势，一个共同分母 → 三组挑战，每组给一条判据 → 四个实验，都能用手边的东西做完」走一遍本章判据 | 443 | [`skill-q6.md`](../departments/07-zhineng/03-zhongyi-zhineng-shebei/chapters/06-q6/outputs/skill-q6.md) |
+| prompt | 瓶颈不在传感器上：从「能测」到「能负责」 · 提示词 | — | 584 | [`prompt-06-q6.md`](../departments/07-zhineng/03-zhongyi-zhineng-shebei/chapters/06-q6/outputs/prompt-06-q6.md) |
+| skill | 瓶颈不在传感器上：从「能测」到「能负责」 | 瓶颈不在传感器上：从「能测」到「能负责」——按「三层布局，各管一段 → 六条趋势，一个共同分母 → 三组挑战，每组给一条判据 → 四个实验，都能用手边的东西做完」走一遍本章判据 | 471 | [`skill-q6.md`](../departments/07-zhineng/03-zhongyi-zhineng-shebei/chapters/06-q6/outputs/skill-q6.md) |
 
 ### 中医自然语言处理
 
@@ -16841,8 +16841,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 人会犹豫，模型不会：医疗 AI 要治理的正是这份「不犹豫」 · 提示词 | — | 598 | [`prompt-ai1.md`](../departments/07-zhineng/15-zhongyi-ai-lunli-zhili/chapters/01-ai1/outputs/prompt-ai1.md) |
-| skill | 人会犹豫，模型不会：医疗 AI 要治理的正是这份「不犹豫」 | 人会犹豫，模型不会：医疗 AI 要治理的正是这份「不犹豫」——按「同质化错误：「和人一样准」不构成安全论证 → 三类不可逆：延误、误伤与泄露 → 责任不能转移：签字栏的物理意义 → 治理的四个动作」走一遍本章判据 | 482 | [`skill-ai1.md`](../departments/07-zhineng/15-zhongyi-ai-lunli-zhili/chapters/01-ai1/outputs/skill-ai1.md) |
+| prompt | 人会犹豫，模型不会：医疗 AI 要治理的正是这份「不犹豫」 · 提示词 | — | 655 | [`prompt-ai1.md`](../departments/07-zhineng/15-zhongyi-ai-lunli-zhili/chapters/01-ai1/outputs/prompt-ai1.md) |
+| skill | 人会犹豫，模型不会：医疗 AI 要治理的正是这份「不犹豫」 | 人会犹豫，模型不会：医疗 AI 要治理的正是这份「不犹豫」——按「同质化错误：「和人一样准」不构成安全论证 → 三类不可逆：延误、误伤与泄露 → 责任不能转移：签字栏的物理意义 → 治理的四个动作」走一遍本章判据 | 539 | [`skill-ai1.md`](../departments/07-zhineng/15-zhongyi-ai-lunli-zhili/chapters/01-ai1/outputs/skill-ai1.md) |
 
 #### 第 2 章 · 先写预期用途，再写模型：合规的顺序不能倒
 
@@ -16850,8 +16850,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 先写预期用途，再写模型：合规的顺序不能倒 · 提示词 | — | 626 | [`prompt-ai2.md`](../departments/07-zhineng/15-zhongyi-ai-lunli-zhili/chapters/02-ai2/outputs/prompt-ai2.md) |
-| skill | 先写预期用途，再写模型：合规的顺序不能倒 | 先写预期用途，再写模型：合规的顺序不能倒——按「预期用途是法律语言，不是市场语言 → 三条证据线，互不替代 → 标准的作用：把「说不清」变成「可对照」 → 中医特有的难题：没有金标准，怎么定「有效」」走一遍本章判据 | 517 | [`skill-ai2.md`](../departments/07-zhineng/15-zhongyi-ai-lunli-zhili/chapters/02-ai2/outputs/skill-ai2.md) |
+| prompt | 先写预期用途，再写模型：合规的顺序不能倒 · 提示词 | — | 667 | [`prompt-ai2.md`](../departments/07-zhineng/15-zhongyi-ai-lunli-zhili/chapters/02-ai2/outputs/prompt-ai2.md) |
+| skill | 先写预期用途，再写模型：合规的顺序不能倒 | 先写预期用途，再写模型：合规的顺序不能倒——按「预期用途是法律语言，不是市场语言 → 三条证据线，互不替代 → 标准的作用：把「说不清」变成「可对照」 → 中医特有的难题：没有金标准，怎么定「有效」」走一遍本章判据 | 558 | [`skill-ai2.md`](../departments/07-zhineng/15-zhongyi-ai-lunli-zhili/chapters/02-ai2/outputs/skill-ai2.md) |
 
 #### 第 3 章 · 患者同意的是「被记录」，不是「被训练」
 
@@ -16859,8 +16859,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 患者同意的是「被记录」，不是「被训练」 · 提示词 | — | 564 | [`prompt-ai3.md`](../departments/07-zhineng/15-zhongyi-ai-lunli-zhili/chapters/03-ai3/outputs/prompt-ai3.md) |
-| skill | 患者同意的是「被记录」，不是「被训练」 | 患者同意的是「被记录」，不是「被训练」——按「同意的三个层次：知悉、理解、自愿 → 目的限定为什么在数据上失效 → 伦理审查审什么：不是审表格，是审风险转移给了谁 → 师徒、流派与秘方：同意的另一个盲区」走一遍本章判据 | 456 | [`skill-ai3.md`](../departments/07-zhineng/15-zhongyi-ai-lunli-zhili/chapters/03-ai3/outputs/skill-ai3.md) |
+| prompt | 患者同意的是「被记录」，不是「被训练」 · 提示词 | — | 603 | [`prompt-ai3.md`](../departments/07-zhineng/15-zhongyi-ai-lunli-zhili/chapters/03-ai3/outputs/prompt-ai3.md) |
+| skill | 患者同意的是「被记录」，不是「被训练」 | 患者同意的是「被记录」，不是「被训练」——按「同意的三个层次：知悉、理解、自愿 → 目的限定为什么在数据上失效 → 伦理审查审什么：不是审表格，是审风险转移给了谁 → 师徒、流派与秘方：同意的另一个盲区」走一遍本章判据 | 495 | [`skill-ai3.md`](../departments/07-zhineng/15-zhongyi-ai-lunli-zhili/chapters/03-ai3/outputs/skill-ai3.md) |
 
 #### 第 4 章 · 脱敏不是删名字：可识别性藏在方剂与病程里
 
@@ -16868,8 +16868,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 脱敏不是删名字：可识别性藏在方剂与病程里 · 提示词 | — | 628 | [`prompt-ai4.md`](../departments/07-zhineng/15-zhongyi-ai-lunli-zhili/chapters/04-ai4/outputs/prompt-ai4.md) |
-| skill | 脱敏不是删名字：可识别性藏在方剂与病程里 | 脱敏不是删名字：可识别性藏在方剂与病程里——按「两类标识符与「组合唯一性」 → 自由文本的难点：中医病案的叙述密度 → 脱敏不等于匿名：法律属性由「能否复原」决定 → 可用性与保护的取舍：分层出域」走一遍本章判据 | 519 | [`skill-ai4.md`](../departments/07-zhineng/15-zhongyi-ai-lunli-zhili/chapters/04-ai4/outputs/skill-ai4.md) |
+| prompt | 脱敏不是删名字：可识别性藏在方剂与病程里 · 提示词 | — | 664 | [`prompt-ai4.md`](../departments/07-zhineng/15-zhongyi-ai-lunli-zhili/chapters/04-ai4/outputs/prompt-ai4.md) |
+| skill | 脱敏不是删名字：可识别性藏在方剂与病程里 | 脱敏不是删名字：可识别性藏在方剂与病程里——按「两类标识符与「组合唯一性」 → 自由文本的难点：中医病案的叙述密度 → 脱敏不等于匿名：法律属性由「能否复原」决定 → 可用性与保护的取舍：分层出域」走一遍本章判据 | 555 | [`skill-ai4.md`](../departments/07-zhineng/15-zhongyi-ai-lunli-zhili/chapters/04-ai4/outputs/skill-ai4.md) |
 
 #### 第 5 章 · 风险分级不是贴标签：每一级都要配一个「谁能停它」的人
 
@@ -16877,8 +16877,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 风险分级不是贴标签：每一级都要配一个「谁能停它」的人 · 提示词 | — | 600 | [`prompt-ai5.md`](../departments/07-zhineng/15-zhongyi-ai-lunli-zhili/chapters/05-ai5/outputs/prompt-ai5.md) |
-| skill | 风险分级不是贴标签：每一级都要配一个「谁能停它」的人 | 风险分级不是贴标签：每一级都要配一个「谁能停它」的人——按「分级的依据是「能不能挽回」，不是「技术多新」 → 分级的落点是岗位，不是等级 → 降级与回退：把「停」拆成更小的动作 → 中医场景的分级难点」走一遍本章判据 | 485 | [`skill-ai5.md`](../departments/07-zhineng/15-zhongyi-ai-lunli-zhili/chapters/05-ai5/outputs/skill-ai5.md) |
+| prompt | 风险分级不是贴标签：每一级都要配一个「谁能停它」的人 · 提示词 | — | 647 | [`prompt-ai5.md`](../departments/07-zhineng/15-zhongyi-ai-lunli-zhili/chapters/05-ai5/outputs/prompt-ai5.md) |
+| skill | 风险分级不是贴标签：每一级都要配一个「谁能停它」的人 | 风险分级不是贴标签：每一级都要配一个「谁能停它」的人——按「分级的依据是「能不能挽回」，不是「技术多新」 → 分级的落点是岗位，不是等级 → 降级与回退：把「停」拆成更小的动作 → 中医场景的分级难点」走一遍本章判据 | 532 | [`skill-ai5.md`](../departments/07-zhineng/15-zhongyi-ai-lunli-zhili/chapters/05-ai5/outputs/skill-ai5.md) |
 
 #### 第 6 章 · 权限的最小化不是少给，是到期就收回
 
@@ -16886,8 +16886,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 权限的最小化不是少给，是到期就收回 · 提示词 | — | 620 | [`prompt-ai6.md`](../departments/07-zhineng/15-zhongyi-ai-lunli-zhili/chapters/06-ai6/outputs/prompt-ai6.md) |
-| skill | 权限的最小化不是少给，是到期就收回 | 权限的最小化不是少给，是到期就收回——按「角色权限与数据权限是两套坐标 → 服务账号：没有工号的员工 → 加密的三个位置与取舍 → 备份不是归档：删得掉才算管得住」走一遍本章判据 | 514 | [`skill-ai6.md`](../departments/07-zhineng/15-zhongyi-ai-lunli-zhili/chapters/06-ai6/outputs/skill-ai6.md) |
+| prompt | 权限的最小化不是少给，是到期就收回 · 提示词 | — | 661 | [`prompt-ai6.md`](../departments/07-zhineng/15-zhongyi-ai-lunli-zhili/chapters/06-ai6/outputs/prompt-ai6.md) |
+| skill | 权限的最小化不是少给，是到期就收回 | 权限的最小化不是少给，是到期就收回——按「角色权限与数据权限是两套坐标 → 服务账号：没有工号的员工 → 加密的三个位置与取舍 → 备份不是归档：删得掉才算管得住」走一遍本章判据 | 555 | [`skill-ai6.md`](../departments/07-zhineng/15-zhongyi-ai-lunli-zhili/chapters/06-ai6/outputs/skill-ai6.md) |
 
 #### 第 7 章 · 可解释不是画热图：审计要的是「这一次依据了哪几条记录」
 
@@ -16895,8 +16895,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 可解释不是画热图：审计要的是「这一次依据了哪几条记录」 · 提示词 | — | 613 | [`prompt-ai7.md`](../departments/07-zhineng/15-zhongyi-ai-lunli-zhili/chapters/07-ai7/outputs/prompt-ai7.md) |
-| skill | 可解释不是画热图：审计要的是「这一次依据了哪几条记录」 | 可解释不是画热图：审计要的是「这一次依据了哪几条记录」——按「三种追溯，三种材料 → 变更管理：版本号之外的「变更理由」 → 解释的层次与对象 → 审计的抽样与定性」走一遍本章判据 | 497 | [`skill-ai7.md`](../departments/07-zhineng/15-zhongyi-ai-lunli-zhili/chapters/07-ai7/outputs/skill-ai7.md) |
+| prompt | 可解释不是画热图：审计要的是「这一次依据了哪几条记录」 · 提示词 | — | 653 | [`prompt-ai7.md`](../departments/07-zhineng/15-zhongyi-ai-lunli-zhili/chapters/07-ai7/outputs/prompt-ai7.md) |
+| skill | 可解释不是画热图：审计要的是「这一次依据了哪几条记录」 | 可解释不是画热图：审计要的是「这一次依据了哪几条记录」——按「三种追溯，三种材料 → 变更管理：版本号之外的「变更理由」 → 解释的层次与对象 → 审计的抽样与定性」走一遍本章判据 | 537 | [`skill-ai7.md`](../departments/07-zhineng/15-zhongyi-ai-lunli-zhili/chapters/07-ai7/outputs/skill-ai7.md) |
 
 #### 第 8 章 · 「系统提示」不是免责声明：责任链的每一环都要有人签字
 
@@ -16931,12 +16931,12 @@
 | skill | 神志病没有化验单，判据只能从「看和问」里长出来 | 神志病没有化验单，判据只能从「看和问」里长出来——按「这门学科的对象是「神」的失序，不是「脑」的病灶 → 7 项观察，3 项靠自述，4 项不靠 → 三项同现才算神志病，单项一律不算 → 能做什么，以及什么时候必须停手」走一遍本章判据 | 667 | [`skill-01-xulun.md`](../departments/01-zhongyi/20-zhongyi-jingshenbing-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 用本章内容做一件事：绪论 | — | 406 | [`prompt-01-xulun.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 绪论 | 用《临床中药学》第 1 章「绪论」的单元层做可核对的教学材料。 | 502 | [`skill-01-xulun.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/01-xulun/outputs/skill-01-xulun.md) |
-| prompt | 绪论 · 提示词 | — | 444 | [`prompt-01-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 绪论 | 绪论——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 369 | [`skill-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 绪论不是开场白：它划定针灸学的边界、来路与读法 · 提示词 | — | 1115 | [`prompt-01-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
+| skill | 绪论不是开场白：它划定针灸学的边界、来路与读法 | 绪论不是开场白：它划定针灸学的边界、来路与读法——按「篇幅账：一半给历史，三分之一给定义 → 两个起源各有物证：砭石在石，灸火在火 → 三次奠基与四次校订：书目是校出来的，不是列出来的 → 学什么：三块内容与一条练习链」走一遍本章判据 | 1002 | [`skill-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 泛化不是模型的属性，是数据与假设的私下约定 · 提示词 | — | 920 | [`prompt-01-xulun.md`](../departments/07-zhineng/16-jiqi-xuexi/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 泛化不是模型的属性，是数据与假设的私下约定 | 泛化不是模型的属性，是数据与假设的私下约定——按「把一个「学习」问题写成四件东西 → 训练误差与泛化误差：两个不同的量 → 归纳偏好：算法必须偏心，而且偏心要写出来 → NFL 定理：一句被引用得最多、理解得最少的话」走一遍本章判据 | 808 | [`skill-xulun.md`](../departments/07-zhineng/16-jiqi-xuexi/chapters/01-xulun/outputs/skill-xulun.md) |
-| prompt | 绪论 · 提示词 | — | 442 | [`prompt-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
-| skill | 绪论 | 绪论——按「运动 → 内脏 → 脉管与内分泌 → 神经：由支架到内脏，再到支配」走一遍本章判据 | 365 | [`skill-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得 · 提示词 | — | 1049 | [`prompt-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
+| skill | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得 | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得——按「定义的第一句就带了限制：只写「类别与关系」 → 从细胞到系统：九大系统是一条由支架到支配的链 → 分科与材料：同一批结构的几种看法 → 姿势、轴与面：全书共用的坐标系」走一遍本章判据 | 931 | [`skill-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链 · 提示词 | — | 901 | [`prompt-01-xulun.md`](../departments/09-jichu/04-yixue-shengwu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链 | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链——按「这门课真正教的是「分层」，不是「名词」 → 三个判据，构成一条可证伪的链 → 16 章有两次转折，不是十六个抽屉 → 每章只回答四个问题」走一遍本章判据 | 781 | [`skill-xulun.md`](../departments/09-jichu/04-yixue-shengwu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 绪论：把「稳态」写成一条可检查的回路 · 提示词 | — | 856 | [`prompt-xulun.md`](../departments/09-jichu/06-shengli-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
@@ -16947,8 +16947,8 @@
 | skill | 绪论 | 绪论——按「层次 → 通道 → 间隙 → 毗邻：由浅入深地读一个局部」走一遍本章判据 | 359 | [`skill-xulun.md`](../departments/09-jichu/08-jubu-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 绪论：一门学科先要学会「怎么描述」 · 提示词 | — | 897 | [`prompt-xulun.md`](../departments/09-jichu/10-bingli-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
 | skill | 绪论：一门学科先要学会「怎么描述」 | 绪论：一门学科先要学会「怎么描述」——按「第一句话不是定义，是一份分工 → 四节十二单元的笔墨，与从原因到临床的五类内容 → 发展简史：观察单位一步步下沉 → 三个观察层次：不是三选一，是三段路」走一遍本章判据 | 789 | [`skill-xulun.md`](../departments/09-jichu/10-bingli-xue/chapters/01-xulun/outputs/skill-xulun.md) |
-| prompt | 流行病学绪论 · 提示词 | — | 463 | [`prompt-01-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 流行病学绪论 | 流行病学绪论——按「描述（分布与测量）→ 分析（病例对照与队列）→ 推断（因果与偏倚）→ 应用（监测与循证）」走一遍本章判据 | 382 | [`skill-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 流行病学先问人群里有多少人发病，再问某个病人为什么病 · 提示词 | — | 1038 | [`prompt-01-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
+| skill | 流行病学先问人群里有多少人发病，再问某个病人为什么病 | 流行病学先问人群里有多少人发病，再问某个病人为什么病——按「定义的三层限制：人群、分布、防制 → 四项任务是一条不能跳步的链 → 方法的分类只看两条线：谁施加干预、有没有比较组 → 同一批数字，三种问法：率、比、比例与三个关联指标」走一遍本章判据 | 921 | [`skill-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 
 #### 第 2 章 · 你报的那个数字，可能只是抽样噪声的形状
 
@@ -17205,24 +17205,24 @@
 
 > Build · 第 10 学期 · 已产出 6 章
 
-#### 第 1 章 · 选题：从质量标志物到可验证假设
+#### 第 1 章 · 选题的成败取决于假设能否被一批样品证伪
 
 `19-zhineng-biye-sheji/chapters/01-xuan-ti/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 选题：从质量标志物到可验证假设 · 提示词 | — | 491 | [`prompt-01-xuan-ti.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
-| skill | 选题：从质量标志物到可验证假设 | 选题：从质量标志物到可验证假设——按「选题 → 样品与数据 → 实验与建模 → 方法学验证 → 写作答辩 → 移交」走一遍本章判据 | 378 | [`skill-xuan-ti.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
-| prompt | 选题：从配穴方案到可检验命题 · 提示词 | — | 481 | [`prompt-01-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
-| skill | 选题：从配穴方案到可检验命题 | 选题：从配穴方案到可检验命题——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 373 | [`skill-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
-| prompt | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 · 提示词 | — | 620 | [`prompt-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/prompt-xuan-ti.md) |
-| skill | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题——按「三条判据：骨伤版的可复现、可对照、可接手 → 四步降维：从一个病名到一条命题 → 三份能交出去的骨伤毕设产物 → 里程碑：四件必须交出去的东西」走一遍本章判据 | 503 | [`skill-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题的成败取决于假设能否被一批样品证伪 · 提示词 | — | 641 | [`prompt-01-xuan-ti.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
+| skill | 选题的成败取决于假设能否被一批样品证伪 | 选题的成败取决于假设能否被一批样品证伪——按「选题的真问题不是「做什么」，而是「哪一种不一致」 → 四个槽怎么填：从质量标志物到可检验判据 → 开题节点：交付物、字段与时间表 → 评分维度与五种失效模式」走一遍本章判据 | 535 | [`skill-xuan-ti.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题不是挑一个病，而是把一句经验话逼成能被否证的句子 · 提示词 | — | 923 | [`prompt-01-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
+| skill | 选题不是挑一个病，而是把一句经验话逼成能被否证的句子 | 选题不是挑一个病，而是把一句经验话逼成能被否证的句子——按「底本把"针在哪"写到了寸，把"跟谁比"留成了空格 → 对照只能选一个，选完要能说出它排除了什么 → 把"招几十例"换成四个参数 → 裁剪：写不完的范围等于没范围」走一遍本章判据 | 801 | [`skill-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 · 提示词 | — | 639 | [`prompt-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/prompt-xuan-ti.md) |
+| skill | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题——按「三条判据：骨伤版的可复现、可对照、可接手 → 四步降维：从一个病名到一条命题 → 三份能交出去的骨伤毕设产物 → 里程碑：四件必须交出去的东西」走一遍本章判据 | 522 | [`skill-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题在开题前就定了成败：缺口必须算得出来 · 提示词 | — | 629 | [`prompt-01-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题在开题前就定了成败：缺口必须算得出来 | 选题在开题前就定了成败：缺口必须算得出来——按「好选题的四个判据 → 缺口怎么算：分子、分母、来源 → 选题过大的四种形态 → 开题评什么：评能不能做，不评想不想做」走一遍本章判据 | 522 | [`skill-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
-| prompt | 选题：从管理问题到可测量命题 · 提示词 | — | 468 | [`prompt-01-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
-| skill | 选题：从管理问题到可测量命题 | 选题：从管理问题到可测量命题——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 378 | [`skill-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
-| prompt | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验 · 提示词 | — | 630 | [`prompt-01-xuan-ti.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
-| skill | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验 | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验——按「三条判据：可复现、可对照、可接手 → 四步降维：从中医问题到实验对象 → 三种能交出去的题目形态 → 里程碑与交付物」走一遍本章判据 | 513 | [`skill-xuan-ti.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题的标准不是「有意义」，而是能否在一个学期内被证伪 · 提示词 | — | 937 | [`prompt-01-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
+| skill | 选题的标准不是「有意义」，而是能否在一个学期内被证伪 | 选题的标准不是「有意义」，而是能否在一个学期内被证伪——按「「有意义」是评审语，「可证伪」是设计语 → 四步收缩：从管理问题到可测量命题 → 变量类型先定，方法才有得选 → 设计的四个要素与三种常见缺陷」走一遍本章判据 | 815 | [`skill-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验 · 提示词 | — | 646 | [`prompt-01-xuan-ti.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
+| skill | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验 | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验——按「三条判据：可复现、可对照、可接手 → 四步降维：从中医问题到实验对象 → 三种能交出去的题目形态 → 里程碑与交付物」走一遍本章判据 | 529 | [`skill-xuan-ti.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从专科问题到可验证命题 · 提示词 | — | 467 | [`prompt-01-xuan-ti.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题：从专科问题到可验证命题 | 选题：从专科问题到可验证命题——按「选题 → 数据 → 实现 → 评价 → 答辩 → 移交」走一遍本章判据 | 375 | [`skill-xuan-ti.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从机制假设到可检验实验 · 提示词 | — | 494 | [`prompt-01-xuan-ti.md`](../departments/09-jichu/17-jichu-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
@@ -17234,8 +17234,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 标注规范不是给数据打标签，是把「谁说了算」写进文件 · 提示词 | — | 640 | [`prompt-02-shujuji-biaozhu.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/02-shujuji-biaozhu/outputs/prompt-02-shujuji-biaozhu.md) |
-| skill | 标注规范不是给数据打标签，是把「谁说了算」写进文件 | 标注规范不是给数据打标签，是把「谁说了算」写进文件——按「规范的五件套：缺一件就会被返工 → 双人标注与一致性：κ 该怎么读 → 切分：三种切法与它们各自防的泄漏 → 数据卡：让别人能判断这份数据能不能用」走一遍本章判据 | 535 | [`skill-shujuji-biaozhu.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/02-shujuji-biaozhu/outputs/skill-shujuji-biaozhu.md) |
+| prompt | 标注规范不是给数据打标签，是把「谁说了算」写进文件 · 提示词 | — | 641 | [`prompt-02-shujuji-biaozhu.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/02-shujuji-biaozhu/outputs/prompt-02-shujuji-biaozhu.md) |
+| skill | 标注规范不是给数据打标签，是把「谁说了算」写进文件 | 标注规范不是给数据打标签，是把「谁说了算」写进文件——按「规范的五件套：缺一件就会被返工 → 双人标注与一致性：κ 该怎么读 → 切分：三种切法与它们各自防的泄漏 → 数据卡：让别人能判断这份数据能不能用」走一遍本章判据 | 536 | [`skill-shujuji-biaozhu.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/02-shujuji-biaozhu/outputs/skill-shujuji-biaozhu.md) |
 
 #### 第 3 章 · 消融不是删模块看掉多少分，是回答「哪一步在替我说话」
 
@@ -17243,8 +17243,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 消融不是删模块看掉多少分，是回答「哪一步在替我说话」 · 提示词 | — | 641 | [`prompt-03-fangfa-xiaorong.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/03-fangfa-xiaorong/outputs/prompt-03-fangfa-xiaorong.md) |
-| skill | 消融不是删模块看掉多少分，是回答「哪一步在替我说话」 | 消融不是删模块看掉多少分，是回答「哪一步在替我说话」——按「管线的四段与可替换点 → 基线三档：从「不做」到「简单做」 → 消融的三种设计：单模块、累积、反向 → 复现三件：种子、参数、一条命令」走一遍本章判据 | 535 | [`skill-fangfa-xiaorong.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/03-fangfa-xiaorong/outputs/skill-fangfa-xiaorong.md) |
+| prompt | 消融不是删模块看掉多少分，是回答「哪一步在替我说话」 · 提示词 | — | 645 | [`prompt-03-fangfa-xiaorong.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/03-fangfa-xiaorong/outputs/prompt-03-fangfa-xiaorong.md) |
+| skill | 消融不是删模块看掉多少分，是回答「哪一步在替我说话」 | 消融不是删模块看掉多少分，是回答「哪一步在替我说话」——按「管线的四段与可替换点 → 基线三档：从「不做」到「简单做」 → 消融的三种设计：单模块、累积、反向 → 复现三件：种子、参数、一条命令」走一遍本章判据 | 539 | [`skill-fangfa-xiaorong.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/03-fangfa-xiaorong/outputs/skill-fangfa-xiaorong.md) |
 
 #### 第 4 章 · 误差分析不是算准确率，是找出「它错在谁身上」
 
@@ -17252,50 +17252,50 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 误差分析不是算准确率，是找出「它错在谁身上」 · 提示词 | — | 627 | [`prompt-04-wucha-fenxi.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/04-wucha-fenxi/outputs/prompt-04-wucha-fenxi.md) |
-| skill | 误差分析不是算准确率，是找出「它错在谁身上」 | 误差分析不是算准确率，是找出「它错在谁身上」——按「先分层，再算数 → 混淆矩阵的临床读法：四格各自的代价 → 不确定性与弃权：把「不知道」做成一个输出 → 可解释性的三种证据，与各自的伪证风险」走一遍本章判据 | 521 | [`skill-wucha-fenxi.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/04-wucha-fenxi/outputs/skill-wucha-fenxi.md) |
+| prompt | 误差分析不是算准确率，是找出「它错在谁身上」 · 提示词 | — | 631 | [`prompt-04-wucha-fenxi.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/04-wucha-fenxi/outputs/prompt-04-wucha-fenxi.md) |
+| skill | 误差分析不是算准确率，是找出「它错在谁身上」 | 误差分析不是算准确率，是找出「它错在谁身上」——按「先分层，再算数 → 混淆矩阵的临床读法：四格各自的代价 → 不确定性与弃权：把「不知道」做成一个输出 → 可解释性的三种证据，与各自的伪证风险」走一遍本章判据 | 525 | [`skill-wucha-fenxi.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/04-wucha-fenxi/outputs/skill-wucha-fenxi.md) |
 
-#### 第 5 章 · 论文写作与答辩
+#### 第 5 章 · 论文的说服力在绪论就定了，答辩只是把它念一遍
 
 `19-zhineng-biye-sheji/chapters/05-lunwen-dabian/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 论文写作与答辩 · 提示词 | — | 465 | [`prompt-05-lunwen-dabian.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
-| skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 样品与数据 → 实验与建模 → 方法学验证 → 写作答辩 → 移交」走一遍本章判据 | 368 | [`skill-lunwen-dabian.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
-| prompt | 论文写作与答辩 · 提示词 | — | 459 | [`prompt-05-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
-| skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 365 | [`skill-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
-| prompt | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 · 提示词 | — | 622 | [`prompt-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-lunwen-dabian.md) |
-| skill | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好——按「六段骨架：每一段都能用一句话检验 → 图表与数字：先让读者能核对，再让读者相信 → 答辩前先自评：七项检查 → 答辩：三类必答题与五分钟陈述」走一遍本章判据 | 507 | [`skill-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 论文的说服力在绪论就定了，答辩只是把它念一遍 · 提示词 | — | 634 | [`prompt-05-lunwen-dabian.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
+| skill | 论文的说服力在绪论就定了，答辩只是把它念一遍 | 论文的说服力在绪论就定了，答辩只是把它念一遍——按「绪论不是学科介绍，是把判据摆到桌面上 → 证据链的四层：每层对应论文的一个部位 → 答辩：四类必被问到的问题与应答结构 → 评分维度与失效模式」走一遍本章判据 | 531 | [`skill-lunwen-dabian.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 论文的说服力来自十个能复算的数字，不来自十页漂亮的讨论 · 提示词 | — | 858 | [`prompt-05-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
+| skill | 论文的说服力来自十个能复算的数字，不来自十页漂亮的讨论 | 论文的说服力来自十个能复算的数字，不来自十页漂亮的讨论——按「一头一尾：引文在底本里，数字在你的表里 → 十个数字：定稿前唯一的硬检查 → 讨论不是复述，是与三篇文献对位置 → 四类质疑与两轮试讲」走一遍本章判据 | 741 | [`skill-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 · 提示词 | — | 630 | [`prompt-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-lunwen-dabian.md) |
+| skill | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好——按「六段骨架：每一段都能用一句话检验 → 图表与数字：先让读者能核对，再让读者相信 → 答辩前先自评：七项检查 → 答辩：三类必答题与五分钟陈述」走一遍本章判据 | 515 | [`skill-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 答辩评的是判断链，不是字数与图表的数量 · 提示词 | — | 611 | [`prompt-05-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 答辩评的是判断链，不是字数与图表的数量 | 答辩评的是判断链，不是字数与图表的数量——按「四段式：每一段只回答一个问题 → 图表的三条规矩 → 陈述：十五分钟怎么分 → 提问：六类问题与应答方式」走一遍本章判据 | 511 | [`skill-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
-| prompt | 论文写作与答辩 · 提示词 | — | 447 | [`prompt-05-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
-| skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 370 | [`skill-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
-| prompt | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来 · 提示词 | — | 637 | [`prompt-05-lunwen-dabian.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
-| skill | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来 | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来——按「六段结构，与评审表一一对应 → 三张表：主表、消融表、误差表 → 写作顺序：先图表，后文字，最后摘要 → 答辩：20 分钟的分配与五个必答题」走一遍本章判据 | 525 | [`skill-lunwen-dabian.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 答辩不是复述结论，而是当场交代结论的适用条件 · 提示词 | — | 943 | [`prompt-05-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
+| skill | 答辩不是复述结论，而是当场交代结论的适用条件 | 答辩不是复述结论，而是当场交代结论的适用条件——按「一段可用的论证，结构上像一条能执行的条文 → 事实判断与价值判断必须分开写 → 枚举与限定：把「等」字写实 → 答辩现场的五个追问与应答」走一遍本章判据 | 831 | [`skill-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来 · 提示词 | — | 640 | [`prompt-05-lunwen-dabian.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
+| skill | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来 | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来——按「六段结构，与评审表一一对应 → 三张表：主表、消融表、误差表 → 写作顺序：先图表，后文字，最后摘要 → 答辩：20 分钟的分配与五个必答题」走一遍本章判据 | 528 | [`skill-lunwen-dabian.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 446 | [`prompt-05-lunwen-dabian.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据 → 实现 → 评价 → 答辩 → 移交」走一遍本章判据 | 367 | [`skill-lunwen-dabian.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 481 | [`prompt-05-lunwen-dabian.md`](../departments/09-jichu/17-jichu-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 方案与伦理 → 实施与记录 → 数据分析 → 论文答辩 → 知识移交」走一遍本章判据 | 383 | [`skill-lunwen-dabian.md`](../departments/09-jichu/17-jichu-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 
-#### 第 6 章 · 知识移交：实验记录与交接
+#### 第 6 章 · 记录不完整的实验等于没做过，交接不清的成果等于没留下
 
 `19-zhineng-biye-sheji/chapters/06-zhishi-yijiao/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 知识移交：实验记录与交接 · 提示词 | — | 482 | [`prompt-06-zhishi-yijiao.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
-| skill | 知识移交：实验记录与交接 | 知识移交：实验记录与交接——按「选题 → 样品与数据 → 实验与建模 → 方法学验证 → 写作答辩 → 移交」走一遍本章判据 | 378 | [`skill-zhishi-yijiao.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
-| prompt | 知识移交：方案手册与交接 · 提示词 | — | 473 | [`prompt-06-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
-| skill | 知识移交：方案手册与交接 | 知识移交：方案手册与交接——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 375 | [`skill-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
-| prompt | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 · 提示词 | — | 646 | [`prompt-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-zhishi-yijiao.md) |
-| skill | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法——按「交接包四件：缺一件，复算就断在那一件 → SOP：把「做对」写成「照做也对」 → 三条验收动作：从能跑到敢用 → 失效清单与退役条件」走一遍本章判据 | 527 | [`skill-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 记录不完整的实验等于没做过，交接不清的成果等于没留下 · 提示词 | — | 628 | [`prompt-06-zhishi-yijiao.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
+| skill | 记录不完整的实验等于没做过，交接不清的成果等于没留下 | 记录不完整的实验等于没做过，交接不清的成果等于没留下——按「移交的判据是「别人能不能接着做」 → 交接包四件：记录、方法、数据、联系人 → 三个验收动作怎么执行 → 失效模式、评分与考核」走一遍本章判据 | 521 | [`skill-zhishi-yijiao.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 手册写得再全也移不走手感，移交完成的标志是别人照它做出来 · 提示词 | — | 892 | [`prompt-06-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
+| skill | 手册写得再全也移不走手感，移交完成的标志是别人照它做出来 | 手册写得再全也移不走手感，移交完成的标志是别人照它做出来——按「来路：254 处书名号为什么属于移交清单 → 逐穴一节：把能量化的写到极致 → 不可写项：标出来，配带教，别假装写清了 → 复现验证：三个人、两次、两版」走一遍本章判据 | 774 | [`skill-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 · 提示词 | — | 662 | [`prompt-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-zhishi-yijiao.md) |
+| skill | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法——按「交接包四件：缺一件，复算就断在那一件 → SOP：把「做对」写成「照做也对」 → 三条验收动作：从能跑到敢用 → 失效清单与退役条件」走一遍本章判据 | 543 | [`skill-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 毕设的最后一关，是别人能不能接着用 · 提示词 | — | 588 | [`prompt-06-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
 | skill | 毕设的最后一关，是别人能不能接着用 | 毕设的最后一关，是别人能不能接着用——按「移交包四件，各有各的验收动作 → 数据移交：边界比内容更重要 → 交接会：三段，不要开成汇报会 → 被接手方的三个提问」走一遍本章判据 | 490 | [`skill-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
-| prompt | 知识移交：制度文件与交接 · 提示词 | — | 462 | [`prompt-06-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
-| skill | 知识移交：制度文件与交接 | 知识移交：制度文件与交接——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 380 | [`skill-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
-| prompt | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数 · 提示词 | — | 608 | [`prompt-06-zhishi-yijiao.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
-| skill | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数 | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数——按「模型卡：十二个字段，缺一不可 → 交接包四件：代码、数据、环境、口径 → 验收：三个动作，一个都不能省 → 退役与责任边界」走一遍本章判据 | 496 | [`skill-zhishi-yijiao.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 移交的验收标准是「人走了系统还在转」，不是「文档齐了」 · 提示词 | — | 979 | [`prompt-06-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
+| skill | 移交的验收标准是「人走了系统还在转」，不是「文档齐了」 | 移交的验收标准是「人走了系统还在转」，不是「文档齐了」——按「移交的三类资产：制度、数据、人 → 主数据与字典：一物多码会让三年数据接不上 → 权限、脱敏与审批：去标识化不等于匿名化 → 运维与升级：服务级别、回退条件、迁移校验」走一遍本章判据 | 862 | [`skill-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数 · 提示词 | — | 624 | [`prompt-06-zhishi-yijiao.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
+| skill | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数 | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数——按「模型卡：十二个字段，缺一不可 → 交接包四件：代码、数据、环境、口径 → 验收：三个动作，一个都不能省 → 退役与责任边界」走一遍本章判据 | 512 | [`skill-zhishi-yijiao.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：诊疗路径与交接 · 提示词 | — | 462 | [`prompt-06-zhishi-yijiao.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
 | skill | 知识移交：诊疗路径与交接 | 知识移交：诊疗路径与交接——按「选题 → 数据 → 实现 → 评价 → 答辩 → 移交」走一遍本章判据 | 377 | [`skill-zhishi-yijiao.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：实验协议与交接 · 提示词 | — | 497 | [`prompt-06-zhishi-yijiao.md`](../departments/09-jichu/17-jichu-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
@@ -17541,8 +17541,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 眼的光学结构：屈光力来自折射率的跃变，不来自透明 · 提示词 | — | 571 | [`prompt-01-e41.md`](../departments/08-wuguan/04-yanke-guangxue-yanguang/chapters/01-e41/outputs/prompt-01-e41.md) |
-| skill | 眼的光学结构：屈光力来自折射率的跃变，不来自透明 | 眼的光学结构：屈光力来自折射率的跃变，不来自透明——按「把一只活眼压成五个数 → 屈光力来自跃变，不来自透明 → 调节：全眼唯一能主动改变屈光力的部件 → 眼轴与屈光状态的匹配」走一遍本章判据 | 460 | [`skill-e41.md`](../departments/08-wuguan/04-yanke-guangxue-yanguang/chapters/01-e41/outputs/skill-e41.md) |
+| prompt | 眼的光学结构：屈光力来自折射率的跃变，不来自透明 · 提示词 | — | 623 | [`prompt-01-e41.md`](../departments/08-wuguan/04-yanke-guangxue-yanguang/chapters/01-e41/outputs/prompt-01-e41.md) |
+| skill | 眼的光学结构：屈光力来自折射率的跃变，不来自透明 | 眼的光学结构：屈光力来自折射率的跃变，不来自透明——按「透明的组织不产生屈光力，台阶才产生 → 模型眼：把活眼按住，只让一个参数动 → 调节与眼轴：只有这两个量能改变结局 → 接口：五轮分成五格，光学压成三行」走一遍本章判据 | 512 | [`skill-e41.md`](../departments/08-wuguan/04-yanke-guangxue-yanguang/chapters/01-e41/outputs/skill-e41.md) |
 
 #### 第 2 章 · 屈光不正的类型：先问「哪条路径」，再问「多少度」
 
@@ -17550,8 +17550,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 屈光不正的类型：先问「哪条路径」，再问「多少度」 · 提示词 | — | 592 | [`prompt-02-e42.md`](../departments/08-wuguan/04-yanke-guangxue-yanguang/chapters/02-e42/outputs/prompt-02-e42.md) |
-| skill | 屈光不正的类型：先问「哪条路径」，再问「多少度」 | 屈光不正的类型：先问「哪条路径」，再问「多少度」——按「四个词里，有一个不对称 → 近视：轴性、屈光性，以及两个必须排除的状态 → 远视：被调节藏起来的度数 → 散光与屈光参差：轴会漂，像会不等」走一遍本章判据 | 481 | [`skill-e42.md`](../departments/08-wuguan/04-yanke-guangxue-yanguang/chapters/02-e42/outputs/skill-e42.md) |
+| prompt | 屈光不正的类型：先问「哪条路径」，再问「多少度」 · 提示词 | — | 614 | [`prompt-02-e42.md`](../departments/08-wuguan/04-yanke-guangxue-yanguang/chapters/02-e42/outputs/prompt-02-e42.md) |
+| skill | 屈光不正的类型：先问「哪条路径」，再问「多少度」 | 屈光不正的类型：先问「哪条路径」，再问「多少度」——按「四个词不在同一层 → 路径一：眼轴 → 路径二：屈光力，以及散光的两个来源 → 接口：能近怯远是症状名，不是机制名」走一遍本章判据 | 503 | [`skill-e42.md`](../departments/08-wuguan/04-yanke-guangxue-yanguang/chapters/02-e42/outputs/skill-e42.md) |
 
 #### 第 3 章 · 视力与对比敏感度：1.0 测的是曲线的尾巴
 
@@ -17559,8 +17559,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 视力与对比敏感度：1.0 测的是曲线的尾巴 · 提示词 | — | 606 | [`prompt-03-e43.md`](../departments/08-wuguan/04-yanke-guangxue-yanguang/chapters/03-e43/outputs/prompt-03-e43.md) |
-| skill | 视力与对比敏感度：1.0 测的是曲线的尾巴 | 视力与对比敏感度：1.0 测的是曲线的尾巴——按「一分视角是约定的尺 → 四种写法，两条换算式 → 测量条件：四件事必须固定 → 对比敏感度：一条倒 U 形曲线」走一遍本章判据 | 499 | [`skill-e43.md`](../departments/08-wuguan/04-yanke-guangxue-yanguang/chapters/03-e43/outputs/skill-e43.md) |
+| prompt | 视力与对比敏感度：1.0 测的是曲线的尾巴 · 提示词 | — | 579 | [`prompt-03-e43.md`](../departments/08-wuguan/04-yanke-guangxue-yanguang/chapters/03-e43/outputs/prompt-03-e43.md) |
+| skill | 视力与对比敏感度：1.0 测的是曲线的尾巴 | 视力与对比敏感度：1.0 测的是曲线的尾巴——按「视力表的刻度是视角 → 0 只是曲线上的一点 → 为什么 1.0 的人仍说看不清 → 接口：问视力之缓急，是眼科问诊第一问」走一遍本章判据 | 472 | [`skill-e43.md`](../departments/08-wuguan/04-yanke-guangxue-yanguang/chapters/03-e43/outputs/skill-e43.md) |
 
 #### 第 4 章 · 验光原理：三个度数都是真的，只有一个是基准
 
@@ -17568,8 +17568,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 验光原理：三个度数都是真的，只有一个是基准 · 提示词 | — | 603 | [`prompt-04-e44.md`](../departments/08-wuguan/04-yanke-guangxue-yanguang/chapters/04-e44/outputs/prompt-04-e44.md) |
-| skill | 验光原理：三个度数都是真的，只有一个是基准 | 验光原理：三个度数都是真的，只有一个是基准——按「九个字：测得准、写得清、退得回 → 他觉：不问「清楚吗」，只看光学现象 → 主觉：把终点问出来 → 麻痹：把「静息态」在活眼上做出来」走一遍本章判据 | 495 | [`skill-e44.md`](../departments/08-wuguan/04-yanke-guangxue-yanguang/chapters/04-e44/outputs/skill-e44.md) |
+| prompt | 验光原理：三个度数都是真的，只有一个是基准 · 提示词 | — | 580 | [`prompt-04-e44.md`](../departments/08-wuguan/04-yanke-guangxue-yanguang/chapters/04-e44/outputs/prompt-04-e44.md) |
+| skill | 验光原理：三个度数都是真的，只有一个是基准 | 验光原理：三个度数都是真的，只有一个是基准——按「三个数，三种测量对象 → 检影：在中和点上停下来 → 主觉：让患者回答，但别让他做主 → 接口：目者，心之使也」走一遍本章判据 | 472 | [`skill-e44.md`](../departments/08-wuguan/04-yanke-guangxue-yanguang/chapters/04-e44/outputs/skill-e44.md) |
 
 #### 第 5 章 · 镜片与矫正：改的是入射光，不是眼
 
@@ -17577,8 +17577,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 镜片与矫正：改的是入射光，不是眼 · 提示词 | — | 628 | [`prompt-05-e45.md`](../departments/08-wuguan/04-yanke-guangxue-yanguang/chapters/05-e45/outputs/prompt-05-e45.md) |
-| skill | 镜片与矫正：改的是入射光，不是眼 | 镜片与矫正：改的是入射光，不是眼——按「镜片改变的是入射光，不是眼 → 球镜与镜眼距：一个数，管所有方向 → 柱镜：轴在哪里，账怎么记 → 棱镜与渐进：两种「不提高清晰度」的镜片」走一遍本章判据 | 525 | [`skill-e45.md`](../departments/08-wuguan/04-yanke-guangxue-yanguang/chapters/05-e45/outputs/skill-e45.md) |
+| prompt | 镜片与矫正：改的是入射光，不是眼 · 提示词 | — | 661 | [`prompt-05-e45.md`](../departments/08-wuguan/04-yanke-guangxue-yanguang/chapters/05-e45/outputs/prompt-05-e45.md) |
+| skill | 镜片与矫正：改的是入射光，不是眼 | 镜片与矫正：改的是入射光，不是眼——按「镜片只做一件事：改入射光的聚散度 → 球柱镜：一个面，两条子午线 → 顶点距离、放大率与棱镜效应 → 接口：外治诸法，治的是「外」」走一遍本章判据 | 558 | [`skill-e45.md`](../departments/08-wuguan/04-yanke-guangxue-yanguang/chapters/05-e45/outputs/skill-e45.md) |
 
 #### 第 6 章 · 儿童屈光与弱视：同一个度数，在六岁与十二岁不是一件事
 
@@ -17586,8 +17586,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 儿童屈光与弱视：同一个度数，在六岁与十二岁不是一件事 · 提示词 | — | 649 | [`prompt-06-e46.md`](../departments/08-wuguan/04-yanke-guangxue-yanguang/chapters/06-e46/outputs/prompt-06-e46.md) |
-| skill | 儿童屈光与弱视：同一个度数，在六岁与十二岁不是一件事 | 儿童屈光与弱视：同一个度数，在六岁与十二岁不是一件事——按「屈光发育与远视储备 → 为什么必须散瞳 → 弱视：不是眼睛有病，是大脑没学会 → 遮盖与压抑：遮的是优势眼」走一遍本章判据 | 536 | [`skill-e46.md`](../departments/08-wuguan/04-yanke-guangxue-yanguang/chapters/06-e46/outputs/skill-e46.md) |
+| prompt | 儿童屈光与弱视：同一个度数，在六岁与十二岁不是一件事 · 提示词 | — | 634 | [`prompt-06-e46.md`](../departments/08-wuguan/04-yanke-guangxue-yanguang/chapters/06-e46/outputs/prompt-06-e46.md) |
+| skill | 儿童屈光与弱视：同一个度数，在六岁与十二岁不是一件事 | 儿童屈光与弱视：同一个度数，在六岁与十二岁不是一件事——按「关键期：视觉系统还在长 → 两类机制：剥夺与竞争 → 筛查与转诊：查什么，什么时候必须转 → 接口：小儿问诊，问的是陪护之人」走一遍本章判据 | 521 | [`skill-e46.md`](../departments/08-wuguan/04-yanke-guangxue-yanguang/chapters/06-e46/outputs/skill-e46.md) |
 
 #### 第 7 章 · 屈光手术与边界：这一章教的是什么时候不做
 
@@ -17595,8 +17595,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 屈光手术与边界：这一章教的是什么时候不做 · 提示词 | — | 578 | [`prompt-07-e47.md`](../departments/08-wuguan/04-yanke-guangxue-yanguang/chapters/07-e47/outputs/prompt-07-e47.md) |
-| skill | 屈光手术与边界：这一章教的是什么时候不做 | 屈光手术与边界：这一章教的是什么时候不做——按「四类术式改的都是同一个量 → 适应证：三条腿的凳子 → 禁忌证：按「能不能愈合」排序 → 风险按性质分，不按概率排」走一遍本章判据 | 471 | [`skill-e47.md`](../departments/08-wuguan/04-yanke-guangxue-yanguang/chapters/07-e47/outputs/skill-e47.md) |
+| prompt | 屈光手术与边界：这一章教的是什么时候不做 · 提示词 | — | 590 | [`prompt-07-e47.md`](../departments/08-wuguan/04-yanke-guangxue-yanguang/chapters/07-e47/outputs/prompt-07-e47.md) |
+| skill | 屈光手术与边界：这一章教的是什么时候不做 | 屈光手术与边界：这一章教的是什么时候不做——按「手术改的是哪一层 → 适应证不是度数，是条件 → 术后的代价：四类问题 → 接口：手术与现代治疗，仍属「治其外」」走一遍本章判据 | 483 | [`skill-e47.md`](../departments/08-wuguan/04-yanke-guangxue-yanguang/chapters/07-e47/outputs/skill-e47.md) |
 
 #### 第 8 章 · 验光记录与安全：记录不是数据，是判断链
 
@@ -17604,8 +17604,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 验光记录与安全：记录不是数据，是判断链 · 提示词 | — | 530 | [`prompt-08-e48.md`](../departments/08-wuguan/04-yanke-guangxue-yanguang/chapters/08-e48/outputs/prompt-08-e48.md) |
-| skill | 验光记录与安全：记录不是数据，是判断链 | 验光记录与安全：记录不是数据，是判断链——按「数据与记录的差别 → 十二项字段，每一项堵一个洞 → 三查，五个卡点 → 把三个数说成人话」走一遍本章判据 | 424 | [`skill-e48.md`](../departments/08-wuguan/04-yanke-guangxue-yanguang/chapters/08-e48/outputs/skill-e48.md) |
+| prompt | 验光记录与安全：记录不是数据，是判断链 · 提示词 | — | 627 | [`prompt-08-e48.md`](../departments/08-wuguan/04-yanke-guangxue-yanguang/chapters/08-e48/outputs/prompt-08-e48.md) |
+| skill | 验光记录与安全：记录不是数据，是判断链 | 验光记录与安全：记录不是数据，是判断链——按「四行是数据，一条链才是记录 → 字段：哪些不能空 → 安全：五类纠纷与三种抗辩力 → 接口：问诊记录，是病案的第一段」走一遍本章判据 | 521 | [`skill-e48.md`](../departments/08-wuguan/04-yanke-guangxue-yanguang/chapters/08-e48/outputs/skill-e48.md) |
 
 ### 中医五官科经典选读
 
@@ -17684,8 +17684,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 四诊：眼科最贵的那五分钟是问出来的 · 提示词 | — | 675 | [`prompt-02-sizhen-shili.md`](../departments/08-wuguan/06-zhongyi-yanke-xue/chapters/02-sizhen-shili/outputs/prompt-02-sizhen-shili.md) |
-| skill | 四诊：眼科最贵的那五分钟是问出来的 | 四诊：眼科最贵的那五分钟是问出来的——按「第一问不是「哪里不舒服」 → 问视力：六种描述，六个方向 → 望诊：五个区，各看一件事 → 器械是「望」的延长线，不是「辨」的替代」走一遍本章判据 | 566 | [`skill-sizhen-shili.md`](../departments/08-wuguan/06-zhongyi-yanke-xue/chapters/02-sizhen-shili/outputs/skill-sizhen-shili.md) |
+| prompt | 四诊：眼科最贵的那五分钟是问出来的 · 提示词 | — | 791 | [`prompt-02-sizhen-shili.md`](../departments/08-wuguan/06-zhongyi-yanke-xue/chapters/02-sizhen-shili/outputs/prompt-02-sizhen-shili.md) |
+| skill | 四诊：眼科最贵的那五分钟是问出来的 | 四诊：眼科最贵的那五分钟是问出来的——按「第一问不是「哪里不舒服」 → 问视力：六种描述，六个方向 → 望诊：五个区，各看一件事 → 器械是「望」的延长线，不是「辨」的替代」走一遍本章判据 | 689 | [`skill-sizhen-shili.md`](../departments/08-wuguan/06-zhongyi-yanke-xue/chapters/02-sizhen-shili/outputs/skill-sizhen-shili.md) |
 
 #### 第 3 章 · 外障：五个字定方向，虚实定用药
 
@@ -18051,8 +18051,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 仪器不是四诊的升级版，它只补了人眼进不去的那一层 · 提示词 | — | 591 | [`prompt-01-e101.md`](../departments/08-wuguan/10-yanke-yingxiang-jiancha/chapters/01-e101/outputs/prompt-01-e101.md) |
-| skill | 仪器不是四诊的升级版，它只补了人眼进不去的那一层 | 仪器不是四诊的升级版，它只补了人眼进不去的那一层——按「结构与功能是两类信息，不能互相折算 → 四区的可及性差得很远，只有一区必须靠窗口 → 影像能答五问，答不了六问 → 闸门是四问，不是三问」走一遍本章判据 | 479 | [`skill-e101.md`](../departments/08-wuguan/10-yanke-yingxiang-jiancha/chapters/01-e101/outputs/skill-e101.md) |
+| prompt | 仪器不是四诊的升级版，它只补了人眼进不去的那一层 · 提示词 | — | 590 | [`prompt-01-e101.md`](../departments/08-wuguan/10-yanke-yingxiang-jiancha/chapters/01-e101/outputs/prompt-01-e101.md) |
+| skill | 仪器不是四诊的升级版，它只补了人眼进不去的那一层 | 仪器不是四诊的升级版，它只补了人眼进不去的那一层——按「结构与功能是两类信息，不能互相折算 → 四区的可及性差得很远，只有一区必须靠窗口 → 影像能答五问，答不了六问 → 闸门是四问，不是三问」走一遍本章判据 | 478 | [`skill-e101.md`](../departments/08-wuguan/10-yanke-yingxiang-jiancha/chapters/01-e101/outputs/skill-e101.md) |
 
 #### 第 2 章 · 解剖基线不是一张数值表，是一组对应关系
 
@@ -18060,8 +18060,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 解剖基线不是一张数值表，是一组对应关系 · 提示词 | — | 589 | [`prompt-02-e102.md`](../departments/08-wuguan/10-yanke-yingxiang-jiancha/chapters/02-e102/outputs/prompt-02-e102.md) |
-| skill | 解剖基线不是一张数值表，是一组对应关系 | 解剖基线不是一张数值表，是一组对应关系——按「看断面，第一句话必须是「这是哪一层」 → 介质是门槛，不是背景 → 两套血管，决定缺血的归属 → 视路的交叉规则：形状即定位」走一遍本章判据 | 482 | [`skill-e102.md`](../departments/08-wuguan/10-yanke-yingxiang-jiancha/chapters/02-e102/outputs/skill-e102.md) |
+| prompt | 解剖基线不是一张数值表，是一组对应关系 · 提示词 | — | 588 | [`prompt-02-e102.md`](../departments/08-wuguan/10-yanke-yingxiang-jiancha/chapters/02-e102/outputs/prompt-02-e102.md) |
+| skill | 解剖基线不是一张数值表，是一组对应关系 | 解剖基线不是一张数值表，是一组对应关系——按「看断面，第一句话必须是「这是哪一层」 → 介质是门槛，不是背景 → 两套血管，决定缺血的归属 → 视路的交叉规则：形状即定位」走一遍本章判据 | 481 | [`skill-e102.md`](../departments/08-wuguan/10-yanke-yingxiang-jiancha/chapters/02-e102/outputs/skill-e102.md) |
 
 #### 第 3 章 · 外障一望即知，影像在这里只做记录，不做诊断
 
@@ -18069,8 +18069,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 外障一望即知，影像在这里只做记录，不做诊断 · 提示词 | — | 601 | [`prompt-03-e103.md`](../departments/08-wuguan/10-yanke-yingxiang-jiancha/chapters/03-e103/outputs/prompt-03-e103.md) |
-| skill | 外障一望即知，影像在这里只做记录，不做诊断 | 外障一望即知，影像在这里只做记录，不做诊断——按「三层观察里，影像只占第三层 → 五条加分，三种不加分 → 照相只做三件事，四种手段各守边界 → 形态记录的最小集是五格，另有三项哨兵」走一遍本章判据 | 492 | [`skill-e103.md`](../departments/08-wuguan/10-yanke-yingxiang-jiancha/chapters/03-e103/outputs/skill-e103.md) |
+| prompt | 外障一望即知，影像在这里只做记录，不做诊断 · 提示词 | — | 600 | [`prompt-03-e103.md`](../departments/08-wuguan/10-yanke-yingxiang-jiancha/chapters/03-e103/outputs/prompt-03-e103.md) |
+| skill | 外障一望即知，影像在这里只做记录，不做诊断 | 外障一望即知，影像在这里只做记录，不做诊断——按「三层观察里，影像只占第三层 → 五条加分，三种不加分 → 照相只做三件事，四种手段各守边界 → 形态记录的最小集是五格，另有三项哨兵」走一遍本章判据 | 491 | [`skill-e103.md`](../departments/08-wuguan/10-yanke-yingxiang-jiancha/chapters/03-e103/outputs/skill-e103.md) |
 
 #### 第 4 章 · 浑浊时读断面，读到的不是「看不清」，是「看起来像缺了一层」
 
@@ -18078,8 +18078,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 浑浊时读断面，读到的不是「看不清」，是「看起来像缺了一层」 · 提示词 | — | 603 | [`prompt-04-e104.md`](../departments/08-wuguan/10-yanke-yingxiang-jiancha/chapters/04-e104/outputs/prompt-04-e104.md) |
-| skill | 浑浊时读断面，读到的不是「看不清」，是「看起来像缺了一层」 | 浑浊时读断面，读到的不是「看不清」，是「看起来像缺了一层」——按「通路通不通，决定后面三步用哪套手段 → 四类手段，四句话，三条组合规则 → 断面的四层判断：连续·厚度·反射·界面 → 造影只回答三件事」走一遍本章判据 | 486 | [`skill-e104.md`](../departments/08-wuguan/10-yanke-yingxiang-jiancha/chapters/04-e104/outputs/skill-e104.md) |
+| prompt | 浑浊时读断面，读到的不是「看不清」，是「看起来像缺了一层」 · 提示词 | — | 602 | [`prompt-04-e104.md`](../departments/08-wuguan/10-yanke-yingxiang-jiancha/chapters/04-e104/outputs/prompt-04-e104.md) |
+| skill | 浑浊时读断面，读到的不是「看不清」，是「看起来像缺了一层」 | 浑浊时读断面，读到的不是「看不清」，是「看起来像缺了一层」——按「通路通不通，决定后面三步用哪套手段 → 四类手段，四句话，三条组合规则 → 断面的四层判断：连续·厚度·反射·界面 → 造影只回答三件事」走一遍本章判据 | 485 | [`skill-e104.md`](../departments/08-wuguan/10-yanke-yingxiang-jiancha/chapters/04-e104/outputs/skill-e104.md) |
 
 #### 第 5 章 · 杯盘比可以记，不能单独承担判读
 
@@ -18087,8 +18087,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 杯盘比可以记，不能单独承担判读 · 提示词 | — | 613 | [`prompt-05-e105.md`](../departments/08-wuguan/10-yanke-yingxiang-jiancha/chapters/05-e105/outputs/prompt-05-e105.md) |
-| skill | 杯盘比可以记，不能单独承担判读 | 杯盘比可以记，不能单独承担判读——按「双轨：结构与功能测的不是同一个对象 → 结构侧不是「拍一张照」，是三组记录 → 视野是序列，趋势要三根柱子 → 结构—功能不一致时，先问是哪一种」走一遍本章判据 | 510 | [`skill-e105.md`](../departments/08-wuguan/10-yanke-yingxiang-jiancha/chapters/05-e105/outputs/skill-e105.md) |
+| prompt | 杯盘比可以记，不能单独承担判读 · 提示词 | — | 606 | [`prompt-05-e105.md`](../departments/08-wuguan/10-yanke-yingxiang-jiancha/chapters/05-e105/outputs/prompt-05-e105.md) |
+| skill | 杯盘比可以记，不能单独承担判读 | 杯盘比可以记，不能单独承担判读——按「双轨：结构与功能测的不是同一个对象 → 结构侧不是「拍一张照」，是三组记录 → 视野是序列，趋势要三根柱子 → 结构—功能不一致时，先问是哪一种」走一遍本章判据 | 503 | [`skill-e105.md`](../departments/08-wuguan/10-yanke-yingxiang-jiancha/chapters/05-e105/outputs/skill-e105.md) |
 
 #### 第 6 章 · 出血的层次携带病程信息，面积不携带
 
@@ -18096,8 +18096,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 出血的层次携带病程信息，面积不携带 · 提示词 | — | 554 | [`prompt-06-e106.md`](../departments/08-wuguan/10-yanke-yingxiang-jiancha/chapters/06-e106/outputs/prompt-06-e106.md) |
-| skill | 出血的层次携带病程信息，面积不携带 | 出血的层次携带病程信息，面积不携带——按「形态决定层次，层次决定威胁 → 三层最小集与三句固定句式 → 量与程：三个相对标尺，三条时程线索 → 复查间隔由四件事决定，不给天数」走一遍本章判据 | 449 | [`skill-e106.md`](../departments/08-wuguan/10-yanke-yingxiang-jiancha/chapters/06-e106/outputs/skill-e106.md) |
+| prompt | 出血的层次携带病程信息，面积不携带 · 提示词 | — | 550 | [`prompt-06-e106.md`](../departments/08-wuguan/10-yanke-yingxiang-jiancha/chapters/06-e106/outputs/prompt-06-e106.md) |
+| skill | 出血的层次携带病程信息，面积不携带 | 出血的层次携带病程信息，面积不携带——按「形态决定层次，层次决定威胁 → 三层最小集与三句固定句式 → 量与程：三个相对标尺，三条时程线索 → 复查间隔由四件事决定，不给天数」走一遍本章判据 | 445 | [`skill-e106.md`](../departments/08-wuguan/10-yanke-yingxiang-jiancha/chapters/06-e106/outputs/skill-e106.md) |
 
 #### 第 7 章 · 报告的好坏不在信息多少，在三段的分工
 
@@ -18105,8 +18105,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 报告的好坏不在信息多少，在三段的分工 · 提示词 | — | 596 | [`prompt-07-e107.md`](../departments/08-wuguan/10-yanke-yingxiang-jiancha/chapters/07-e107/outputs/prompt-07-e107.md) |
-| skill | 报告的好坏不在信息多少，在三段的分工 | 报告的好坏不在信息多少，在三段的分工——按「三段式：三段各自对不同的读者负责 → 建议只有三档，强度必须由所见推出 → 复查项由主诉加首诊所见决定，不由套餐决定 → 四类情形必须提前复查，第五类必须立即联系」走一遍本章判据 | 490 | [`skill-e107.md`](../departments/08-wuguan/10-yanke-yingxiang-jiancha/chapters/07-e107/outputs/skill-e107.md) |
+| prompt | 报告的好坏不在信息多少，在三段的分工 · 提示词 | — | 600 | [`prompt-07-e107.md`](../departments/08-wuguan/10-yanke-yingxiang-jiancha/chapters/07-e107/outputs/prompt-07-e107.md) |
+| skill | 报告的好坏不在信息多少，在三段的分工 | 报告的好坏不在信息多少，在三段的分工——按「三段式：三段各自对不同的读者负责 → 建议只有三档，强度必须由所见推出 → 复查项由主诉加首诊所见决定，不由套餐决定 → 四类情形必须提前复查，第五类必须立即联系」走一遍本章判据 | 494 | [`skill-e107.md`](../departments/08-wuguan/10-yanke-yingxiang-jiancha/chapters/07-e107/outputs/skill-e107.md) |
 
 #### 第 8 章 · 密码泄露了可以改，虹膜泄露了不能换
 
@@ -18114,8 +18114,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 密码泄露了可以改，虹膜泄露了不能换 · 提示词 | — | 633 | [`prompt-08-e108.md`](../departments/08-wuguan/10-yanke-yingxiang-jiancha/chapters/08-e108/outputs/prompt-08-e108.md) |
-| skill | 密码泄露了可以改，虹膜泄露了不能换 | 密码泄露了可以改，虹膜泄露了不能换——按「三条来路：可识别、生物特征、内容与身份耦合 → 采集端的三条规则，第三条最难 → 去标识的边界要按字段定，不按感觉定 → 借阅与二次使用：三种情形，义务不同」走一遍本章判据 | 528 | [`skill-e108.md`](../departments/08-wuguan/10-yanke-yingxiang-jiancha/chapters/08-e108/outputs/skill-e108.md) |
+| prompt | 密码泄露了可以改，虹膜泄露了不能换 · 提示词 | — | 620 | [`prompt-08-e108.md`](../departments/08-wuguan/10-yanke-yingxiang-jiancha/chapters/08-e108/outputs/prompt-08-e108.md) |
+| skill | 密码泄露了可以改，虹膜泄露了不能换 | 密码泄露了可以改，虹膜泄露了不能换——按「三条来路：可识别、生物特征、内容与身份耦合 → 采集端的三条规则，第三条最难 → 去标识的边界要按字段定，不按感觉定 → 借阅与二次使用：三种情形，义务不同」走一遍本章判据 | 515 | [`skill-e108.md`](../departments/08-wuguan/10-yanke-yingxiang-jiancha/chapters/08-e108/outputs/skill-e108.md) |
 
 ### 口腔颌面外科学
 
@@ -18215,101 +18215,101 @@
 
 > Clinic · 第 7 学期 · 已产出 10 章
 
-#### 第 1 章 · 修复学的对象：三类缺损与老年患者
+#### 第 1 章 · 修复学的第一个动作是分类，不是选材料
 
 `12-kouqiang-xiufu-xue/chapters/01-duixiang-sanlei/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 修复学的对象：三类缺损与老年患者 · 提示词 | — | 515 | [`prompt-01-duixiang-sanlei.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/01-duixiang-sanlei/outputs/prompt-01-duixiang-sanlei.md) |
-| skill | 修复学的对象：三类缺损与老年患者 | 修复学的对象：三类缺损与老年患者——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据 | 417 | [`skill-duixiang-sanlei.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/01-duixiang-sanlei/outputs/skill-duixiang-sanlei.md) |
+| prompt | 修复学的第一个动作是分类，不是选材料 · 提示词 | — | 780 | [`prompt-01-duixiang-sanlei.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/01-duixiang-sanlei/outputs/prompt-01-duixiang-sanlei.md) |
+| skill | 修复学的第一个动作是分类，不是选材料 | 修复学的第一个动作是分类，不是选材料——按「三个层级：病变停在牙上、到了牙列、还是到了颌位 → 60 周岁是证据边界，不是礼貌用语 → 「参照」二字：指南不是操作规范 → 运行与验证」走一遍本章判据 | 680 | [`skill-duixiang-sanlei.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/01-duixiang-sanlei/outputs/skill-duixiang-sanlei.md) |
 
-#### 第 2 章 · 修复总原则：安全、有效、微创、健康、知情同意、姑息
+#### 第 2 章 · 六条原则不是口号，每一条都在削减一种具体的失败
 
 `12-kouqiang-xiufu-xue/chapters/02-zong-yuanze/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 修复总原则：安全、有效、微创、健康、知情同意、姑息 · 提示词 | — | 550 | [`prompt-02-zong-yuanze.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/02-zong-yuanze/outputs/prompt-02-zong-yuanze.md) |
-| skill | 修复总原则：安全、有效、微创、健康、知情同意、姑息 | 修复总原则：安全、有效、微创、健康、知情同意、姑息——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据 | 431 | [`skill-zong-yuanze.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/02-zong-yuanze/outputs/skill-zong-yuanze.md) |
+| prompt | 六条原则不是口号，每一条都在削减一种具体的失败 · 提示词 | — | 818 | [`prompt-02-zong-yuanze.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/02-zong-yuanze/outputs/prompt-02-zong-yuanze.md) |
+| skill | 六条原则不是口号，每一条都在削减一种具体的失败 | 六条原则不是口号，每一条都在削减一种具体的失败——按「六条原则各自削减哪一种失败 → 冲突时谁让位：一条不可交换的前置条件 → 姑息不是降级，是准入制的减法 → 知情同意的对象是理解，不是签名」走一遍本章判据 | 709 | [`skill-zong-yuanze.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/02-zong-yuanze/outputs/skill-zong-yuanze.md) |
 
-#### 第 3 章 · 修复前全身评估：疾病、用药与口腔治疗史
+#### 第 3 章 · 修复的第一道门不在口内，在病史里
 
 `12-kouqiang-xiufu-xue/chapters/03-pinggu-quanshen/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 修复前全身评估：疾病、用药与口腔治疗史 · 提示词 | — | 524 | [`prompt-03-pinggu-quanshen.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/03-pinggu-quanshen/outputs/prompt-03-pinggu-quanshen.md) |
-| skill | 修复前全身评估：疾病、用药与口腔治疗史 | 修复前全身评估：疾病、用药与口腔治疗史——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据 | 423 | [`skill-pinggu-quanshen.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/03-pinggu-quanshen/outputs/skill-pinggu-quanshen.md) |
+| prompt | 修复的第一道门不在口内，在病史里 · 提示词 | — | 826 | [`prompt-03-pinggu-quanshen.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/03-pinggu-quanshen/outputs/prompt-03-pinggu-quanshen.md) |
+| skill | 修复的第一道门不在口内，在病史里 | 修复的第一道门不在口内，在病史里——按「患者评估是五项，不是一项 → 七类疾病：七类各有各的卡点 → 四类用药：四种不同的禁忌动作 → 四项全身治疗史与既往修复评价」走一遍本章判据 | 728 | [`skill-pinggu-quanshen.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/03-pinggu-quanshen/outputs/skill-pinggu-quanshen.md) |
 
-#### 第 4 章 · 修复前口腔检查与影像：七项增龄变化与片子的选择
+#### 第 4 章 · 老年的「正常」和年轻人不是同一套标准
 
 `12-kouqiang-xiufu-xue/chapters/04-kouqiang-jiancha/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 修复前口腔检查与影像：七项增龄变化与片子的选择 · 提示词 | — | 536 | [`prompt-04-kouqiang-jiancha.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/04-kouqiang-jiancha/outputs/prompt-04-kouqiang-jiancha.md) |
-| skill | 修复前口腔检查与影像：七项增龄变化与片子的选择 | 修复前口腔检查与影像：七项增龄变化与片子的选择——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据 | 432 | [`skill-kouqiang-jiancha.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/04-kouqiang-jiancha/outputs/skill-kouqiang-jiancha.md) |
+| prompt | 老年的「正常」和年轻人不是同一套标准 · 提示词 | — | 888 | [`prompt-04-kouqiang-jiancha.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/04-kouqiang-jiancha/outputs/prompt-04-kouqiang-jiancha.md) |
+| skill | 老年的「正常」和年轻人不是同一套标准 | 老年的「正常」和年轻人不是同一套标准——按「七项增龄变化，分成「改设计」与「改风险」两组 → 影像：按患者条件选片子，而不是按病变选 → 模型与照相：为设计留依据，为争议留基线 → 检查的出口是两个选项，不是一堆描述」走一遍本章判据 | 789 | [`skill-kouqiang-jiancha.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/04-kouqiang-jiancha/outputs/skill-kouqiang-jiancha.md) |
 
-#### 第 5 章 · 修复前处理、健康宣教与形式选择
+#### 第 5 章 · 修复体的寿命上限，在前三段处理时就定死了
 
 `12-kouqiang-xiufu-xue/chapters/05-shuqian-chuli/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 修复前处理、健康宣教与形式选择 · 提示词 | — | 520 | [`prompt-05-shuqian-chuli.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/05-shuqian-chuli/outputs/prompt-05-shuqian-chuli.md) |
-| skill | 修复前处理、健康宣教与形式选择 | 修复前处理、健康宣教与形式选择——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据 | 413 | [`skill-shuqian-chuli.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/05-shuqian-chuli/outputs/skill-shuqian-chuli.md) |
+| prompt | 修复体的寿命上限，在前三段处理时就定死了 · 提示词 | — | 833 | [`prompt-05-shuqian-chuli.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/05-shuqian-chuli/outputs/prompt-05-shuqian-chuli.md) |
+| skill | 修复体的寿命上限，在前三段处理时就定死了 | 修复体的寿命上限，在前三段处理时就定死了——按「三段处理：控病、口内处理、宣教 → 宣教的对象是「实际执行清洁的人」 → 五种形式：能说出为什么不选另一个 → 操作约束与戴牙后指导」走一遍本章判据 | 729 | [`skill-shuqian-chuli.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/05-shuqian-chuli/outputs/skill-shuqian-chuli.md) |
 
-#### 第 6 章 · 全口义齿的印模与模型：初印模、个别托盘、终印模
+#### 第 6 章 · 全口义齿的固位，一半在印模室里就已经决定
 
 `12-kouqiang-xiufu-xue/chapters/06-quankou-yinmo/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 全口义齿的印模与模型：初印模、个别托盘、终印模 · 提示词 | — | 548 | [`prompt-06-quankou-yinmo.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/06-quankou-yinmo/outputs/prompt-06-quankou-yinmo.md) |
-| skill | 全口义齿的印模与模型：初印模、个别托盘、终印模 | 全口义齿的印模与模型：初印模、个别托盘、终印模——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据 | 429 | [`skill-quankou-yinmo.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/06-quankou-yinmo/outputs/skill-quankou-yinmo.md) |
+| prompt | 全口义齿的固位，一半在印模室里就已经决定 · 提示词 | — | 862 | [`prompt-06-quankou-yinmo.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/06-quankou-yinmo/outputs/prompt-06-quankou-yinmo.md) |
+| skill | 全口义齿的固位，一半在印模室里就已经决定 | 全口义齿的固位，一半在印模室里就已经决定——按「初印模：不求准，只求给出个别托盘的骨架 → 个别托盘：划线、缓冲与 2mm 的均匀厚度 → 边缘整塑：记录的是功能运动下的边界 → 终印模与围模灌制：三次验收的意义」走一遍本章判据 | 758 | [`skill-quankou-yinmo.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/06-quankou-yinmo/outputs/skill-quankou-yinmo.md) |
 
-#### 第 7 章 · 椅旁 CAD/CAM 固定义齿：适应证、预备与后处理
+#### 第 7 章 · 椅旁修复把加工厂搬进诊室，也把全部误差留在同一天
 
 `12-kouqiang-xiufu-xue/chapters/07-yipang-cadcam/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 椅旁 CAD/CAM 固定义齿：适应证、预备与后处理 · 提示词 | — | 583 | [`prompt-07-yipang-cadcam.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/07-yipang-cadcam/outputs/prompt-07-yipang-cadcam.md) |
-| skill | 椅旁 CAD/CAM 固定义齿：适应证、预备与后处理 | 椅旁 CAD/CAM 固定义齿：适应证、预备与后处理——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据 | 431 | [`skill-yipang-cadcam.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/07-yipang-cadcam/outputs/skill-yipang-cadcam.md) |
+| prompt | 椅旁修复把加工厂搬进诊室，也把全部误差留在同一天 · 提示词 | — | 848 | [`prompt-07-yipang-cadcam.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/07-yipang-cadcam/outputs/prompt-07-yipang-cadcam.md) |
+| skill | 椅旁修复把加工厂搬进诊室，也把全部误差留在同一天 | 椅旁修复把加工厂搬进诊室，也把全部误差留在同一天——按「适应证先于材料：三条路径各自的边界 → 七环链：每一环的输出是下一环的输入 → 预备量由材料最小厚度反推 → 后处理不是打磨，以及失败后的退路」走一遍本章判据 | 740 | [`skill-yipang-cadcam.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/07-yipang-cadcam/outputs/skill-yipang-cadcam.md) |
 
-#### 第 8 章 · 材料调和与粘接工艺链：水门汀、酸蚀、硅烷、固化
+#### 第 8 章 · 粘接失败多半不在粘接剂，而在调和与表面处理那几分钟
 
 `12-kouqiang-xiufu-xue/chapters/08-cailiao-tiaohe/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 材料调和与粘接工艺链：水门汀、酸蚀、硅烷、固化 · 提示词 | — | 584 | [`prompt-08-cailiao-tiaohe.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/08-cailiao-tiaohe/outputs/prompt-08-cailiao-tiaohe.md) |
-| skill | 材料调和与粘接工艺链：水门汀、酸蚀、硅烷、固化 | 材料调和与粘接工艺链：水门汀、酸蚀、硅烷、固化——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据 | 430 | [`skill-cailiao-tiaohe.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/08-cailiao-tiaohe/outputs/skill-cailiao-tiaohe.md) |
+| prompt | 粘接失败多半不在粘接剂，而在调和与表面处理那几分钟 · 提示词 | — | 824 | [`prompt-08-cailiao-tiaohe.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/08-cailiao-tiaohe/outputs/prompt-08-cailiao-tiaohe.md) |
+| skill | 粘接失败多半不在粘接剂，而在调和与表面处理那几分钟 | 粘接失败多半不在粘接剂，而在调和与表面处理那几分钟——按「调和的四条硬约束 → 性状是可验收的：三种目标性状 → 贴面粘接链：瓷面四步、基牙两步 → 污染、固化与最致命的那一步」走一遍本章判据 | 716 | [`skill-cailiao-tiaohe.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/08-cailiao-tiaohe/outputs/skill-cailiao-tiaohe.md) |
 
-#### 第 9 章 · 瓷贴面的复查与并发症：功能、美学、生物学三条线
+#### 第 9 章 · 复查不是看一眼，三条线各自抓到不同的失败
 
 `12-kouqiang-xiufu-xue/chapters/09-citie-fucha/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 瓷贴面的复查与并发症：功能、美学、生物学三条线 · 提示词 | — | 548 | [`prompt-09-citie-fucha.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/09-citie-fucha/outputs/prompt-09-citie-fucha.md) |
-| skill | 瓷贴面的复查与并发症：功能、美学、生物学三条线 | 瓷贴面的复查与并发症：功能、美学、生物学三条线——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据 | 427 | [`skill-citie-fucha.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/09-citie-fucha/outputs/skill-citie-fucha.md) |
+| prompt | 复查不是看一眼，三条线各自抓到不同的失败 · 提示词 | — | 833 | [`prompt-09-citie-fucha.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/09-citie-fucha/outputs/prompt-09-citie-fucha.md) |
+| skill | 复查不是看一眼，三条线各自抓到不同的失败 | 复查不是看一眼，三条线各自抓到不同的失败——按「三条线：每条线有各自的工具 → 四类并发症：四种不同的处置逻辑 → 把并发症追溯到上游 → 复查时点与记录」走一遍本章判据 | 727 | [`skill-citie-fucha.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/09-citie-fucha/outputs/skill-citie-fucha.md) |
 
-#### 第 10 章 · 牙齿漂白：着色类型、适应证、方法与风险
+#### 第 10 章 · 漂白是可控的化学损伤，知道它伤什么才敢给谁做
 
 `12-kouqiang-xiufu-xue/chapters/10-piaobai/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 牙齿漂白：着色类型、适应证、方法与风险 · 提示词 | — | 582 | [`prompt-10-piaobai.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/10-piaobai/outputs/prompt-10-piaobai.md) |
-| skill | 牙齿漂白：着色类型、适应证、方法与风险 | 牙齿漂白：着色类型、适应证、方法与风险——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据 | 415 | [`skill-piaobai.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/10-piaobai/outputs/skill-piaobai.md) |
+| prompt | 漂白是可控的化学损伤，知道它伤什么才敢给谁做 · 提示词 | — | 860 | [`prompt-10-piaobai.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/10-piaobai/outputs/prompt-10-piaobai.md) |
+| skill | 漂白是可控的化学损伤，知道它伤什么才敢给谁做 | 漂白是可控的化学损伤，知道它伤什么才敢给谁做——按「先分型：着色来自牙面、牙内，还是牙髓与材料 → 两道门：5 项适应证与 8 项非适应证 → 术前三步与四条路径 → 敏感与复色：必须提前说的两件事」走一遍本章判据 | 747 | [`skill-piaobai.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/10-piaobai/outputs/skill-piaobai.md) |
 
 ### 口腔正畸学
 
 > Clinic · 第 7 学期 · 已产出 10 章
 
-#### 第 1 章 · 隐形矫治的对象与从业要求
+#### 第 1 章 · 隐形矫治是医疗行为，不是软件排牙
 
 `13-kouqiang-zhengji-xue/chapters/01-duixiang-congye/`
 
@@ -18318,7 +18318,7 @@
 | prompt | 隐形矫治的对象与从业要求 · 提示词 | — | 506 | [`prompt-01-duixiang-congye.md`](../departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/01-duixiang-congye/outputs/prompt-01-duixiang-congye.md) |
 | skill | 隐形矫治的对象与从业要求 | 隐形矫治的对象与从业要求——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据 | 415 | [`skill-duixiang-congye.md`](../departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/01-duixiang-congye/outputs/skill-duixiang-congye.md) |
 
-#### 第 2 章 · 治疗风险：依从性、移动偏差与并发症
+#### 第 2 章 · 疗效的一半握在患者手里，医师只能设计另一半
 
 `13-kouqiang-zhengji-xue/chapters/02-zhiliao-fengxian/`
 
@@ -18327,7 +18327,7 @@
 | prompt | 治疗风险：依从性、移动偏差与并发症 · 提示词 | — | 513 | [`prompt-02-zhiliao-fengxian.md`](../departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/02-zhiliao-fengxian/outputs/prompt-02-zhiliao-fengxian.md) |
 | skill | 治疗风险：依从性、移动偏差与并发症 | 治疗风险：依从性、移动偏差与并发症——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据 | 426 | [`skill-zhiliao-fengxian.md`](../departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/02-zhiliao-fengxian/outputs/skill-zhiliao-fengxian.md) |
 
-#### 第 3 章 · 适应证与可预测性分级
+#### 第 3 章 · 适应证不是一个名单，是三级可预测性
 
 `13-kouqiang-zhengji-xue/chapters/03-shiyingzheng/`
 
@@ -18336,7 +18336,7 @@
 | prompt | 适应证与可预测性分级 · 提示词 | — | 492 | [`prompt-03-shiyingzheng.md`](../departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/03-shiyingzheng/outputs/prompt-03-shiyingzheng.md) |
 | skill | 适应证与可预测性分级 | 适应证与可预测性分级——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据 | 408 | [`skill-shiyingzheng.md`](../departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/03-shiyingzheng/outputs/skill-shiyingzheng.md) |
 
-#### 第 4 章 · 资料采集：影像与数字模型
+#### 第 4 章 · 资料不是病历的附件，是方案的原材料
 
 `13-kouqiang-zhengji-xue/chapters/04-ziliao-caiji/`
 
@@ -18345,7 +18345,7 @@
 | prompt | 资料采集：影像与数字模型 · 提示词 | — | 502 | [`prompt-04-ziliao-caiji.md`](../departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/04-ziliao-caiji/outputs/prompt-04-ziliao-caiji.md) |
 | skill | 资料采集：影像与数字模型 | 资料采集：影像与数字模型——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据 | 412 | [`skill-ziliao-caiji.md`](../departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/04-ziliao-caiji/outputs/skill-ziliao-caiji.md) |
 
-#### 第 5 章 · 方案设计流程：目标、虚拟排牙、顺序与附件
+#### 第 5 章 · 隐形矫治是倒着做的：先定终点，再切步骤
 
 `13-kouqiang-zhengji-xue/chapters/05-fangan-sheji/`
 
@@ -18354,7 +18354,7 @@
 | prompt | 方案设计流程：目标、虚拟排牙、顺序与附件 · 提示词 | — | 522 | [`prompt-05-fangan-sheji.md`](../departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/05-fangan-sheji/outputs/prompt-05-fangan-sheji.md) |
 | skill | 方案设计流程：目标、虚拟排牙、顺序与附件 | 方案设计流程：目标、虚拟排牙、顺序与附件——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据 | 428 | [`skill-fangan-sheji.md`](../departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/05-fangan-sheji/outputs/skill-fangan-sheji.md) |
 
-#### 第 6 章 · 推磨牙向远中：适应证、禁忌与设计
+#### 第 6 章 · 远移磨牙是用空间换空间，先问牙槽骨答不答应
 
 `13-kouqiang-zhengji-xue/chapters/06-tui-moya/`
 
@@ -18363,7 +18363,7 @@
 | prompt | 推磨牙向远中：适应证、禁忌与设计 · 提示词 | — | 522 | [`prompt-06-tui-moya.md`](../departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/06-tui-moya/outputs/prompt-06-tui-moya.md) |
 | skill | 推磨牙向远中：适应证、禁忌与设计 | 推磨牙向远中：适应证、禁忌与设计——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据 | 416 | [`skill-tui-moya.md`](../departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/06-tui-moya/outputs/skill-tui-moya.md) |
 
-#### 第 7 章 · 邻面去釉：适应证、禁忌与操作规范
+#### 第 7 章 · 去釉磨掉的是釉质，那一层不会长回来
 
 `13-kouqiang-zhengji-xue/chapters/07-linmian-quyou/`
 
@@ -18372,7 +18372,7 @@
 | prompt | 邻面去釉：适应证、禁忌与操作规范 · 提示词 | — | 522 | [`prompt-07-linmian-quyou.md`](../departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/07-linmian-quyou/outputs/prompt-07-linmian-quyou.md) |
 | skill | 邻面去釉：适应证、禁忌与操作规范 | 邻面去釉：适应证、禁忌与操作规范——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据 | 421 | [`skill-linmian-quyou.md`](../departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/07-linmian-quyou/outputs/skill-linmian-quyou.md) |
 
-#### 第 8 章 · 分步移动：为什么不能一次到位
+#### 第 8 章 · 一次移动多颗牙，等于每颗都不到位
 
 `13-kouqiang-zhengji-xue/chapters/08-fenbu-yidong/`
 
@@ -18381,7 +18381,7 @@
 | prompt | 分步移动：为什么不能一次到位 · 提示词 | — | 512 | [`prompt-08-fenbu-yidong.md`](../departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/08-fenbu-yidong/outputs/prompt-08-fenbu-yidong.md) |
 | skill | 分步移动：为什么不能一次到位 | 分步移动：为什么不能一次到位——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据 | 416 | [`skill-fenbu-yidong.md`](../departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/08-fenbu-yidong/outputs/skill-fenbu-yidong.md) |
 
-#### 第 9 章 · 儿童间隙管理：五类保持器与选择
+#### 第 9 章 · 乳牙早失丢的不是一颗牙，是后面几颗牙的位置
 
 `13-kouqiang-zhengji-xue/chapters/09-jianxi-baochi/`
 
@@ -18390,7 +18390,7 @@
 | prompt | 儿童间隙管理：五类保持器与选择 · 提示词 | — | 532 | [`prompt-09-jianxi-baochi.md`](../departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/09-jianxi-baochi/outputs/prompt-09-jianxi-baochi.md) |
 | skill | 儿童间隙管理：五类保持器与选择 | 儿童间隙管理：五类保持器与选择——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据 | 419 | [`skill-jianxi-baochi.md`](../departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/09-jianxi-baochi/outputs/skill-jianxi-baochi.md) |
 
-#### 第 10 章 · 异位萌出与唇腭裂序列中的正畸
+#### 第 10 章 · 有些错𬌗不是牙齿的问题，是萌出路径与治疗时序的问题
 
 `13-kouqiang-zhengji-xue/chapters/10-yiwei-chuneilie/`
 
@@ -18555,7 +18555,7 @@
 
 > Clinic · 第 9 学期 · 已产出 6 章
 
-#### 第 1 章 · 眼科门诊轮转
+#### 第 1 章 · 眼科门诊的接诊质量，取决于问诊与器械检查的先后次序
 
 `16-wuguan-linchuang-lunzhuan/chapters/01-yanke-lunzhuan/`
 
@@ -18564,7 +18564,7 @@
 | prompt | 眼科门诊轮转 · 提示词 | — | 432 | [`prompt-01-yanke-lunzhuan.md`](../departments/08-wuguan/16-wuguan-linchuang-lunzhuan/chapters/01-yanke-lunzhuan/outputs/prompt-01-yanke-lunzhuan.md) |
 | skill | 眼科门诊轮转 | 眼科门诊轮转——按「门诊 → 检查 → 治疗 → 考核」走一遍本章判据 | 368 | [`skill-yanke-lunzhuan.md`](../departments/08-wuguan/16-wuguan-linchuang-lunzhuan/chapters/01-yanke-lunzhuan/outputs/skill-yanke-lunzhuan.md) |
 
-#### 第 2 章 · 耳鼻喉科门诊轮转
+#### 第 2 章 · 耳鼻喉门诊的本事，是把局部所见换算成脏腑，再换算成一条治法
 
 `16-wuguan-linchuang-lunzhuan/chapters/02-erbihou-lunzhuan/`
 
@@ -18573,7 +18573,7 @@
 | prompt | 耳鼻喉科门诊轮转 · 提示词 | — | 439 | [`prompt-02-erbihou-lunzhuan.md`](../departments/08-wuguan/16-wuguan-linchuang-lunzhuan/chapters/02-erbihou-lunzhuan/outputs/prompt-02-erbihou-lunzhuan.md) |
 | skill | 耳鼻喉科门诊轮转 | 耳鼻喉科门诊轮转——按「门诊 → 检查 → 治疗 → 考核」走一遍本章判据 | 374 | [`skill-erbihou-lunzhuan.md`](../departments/08-wuguan/16-wuguan-linchuang-lunzhuan/chapters/02-erbihou-lunzhuan/outputs/skill-erbihou-lunzhuan.md) |
 
-#### 第 3 章 · 口腔内科轮转
+#### 第 3 章 · 牙痛分虚实只是起点，能不能保住牙取决于转诊是否及时
 
 `16-wuguan-linchuang-lunzhuan/chapters/03-kouqiang-neike/`
 
@@ -18582,7 +18582,7 @@
 | prompt | 口腔内科轮转 · 提示词 | — | 431 | [`prompt-03-kouqiang-neike.md`](../departments/08-wuguan/16-wuguan-linchuang-lunzhuan/chapters/03-kouqiang-neike/outputs/prompt-03-kouqiang-neike.md) |
 | skill | 口腔内科轮转 | 口腔内科轮转——按「门诊 → 检查 → 治疗 → 考核」走一遍本章判据 | 368 | [`skill-kouqiang-neike.md`](../departments/08-wuguan/16-wuguan-linchuang-lunzhuan/chapters/03-kouqiang-neike/outputs/skill-kouqiang-neike.md) |
 
-#### 第 4 章 · 口腔颌面外科轮转
+#### 第 4 章 · 唇部的糜烂与唇部的硬结，在门诊是两条不能混的路
 
 `16-wuguan-linchuang-lunzhuan/chapters/04-hemian-waike/`
 
@@ -18591,7 +18591,7 @@
 | prompt | 口腔颌面外科轮转 · 提示词 | — | 437 | [`prompt-04-hemian-waike.md`](../departments/08-wuguan/16-wuguan-linchuang-lunzhuan/chapters/04-hemian-waike/outputs/prompt-04-hemian-waike.md) |
 | skill | 口腔颌面外科轮转 | 口腔颌面外科轮转——按「门诊 → 检查 → 治疗 → 考核」走一遍本章判据 | 370 | [`skill-hemian-waike.md`](../departments/08-wuguan/16-wuguan-linchuang-lunzhuan/chapters/04-hemian-waike/outputs/skill-hemian-waike.md) |
 
-#### 第 5 章 · 中医五官特色治疗轮转
+#### 第 5 章 · 特色治疗的本事，在该转的转得快，而不是能治的都自己治
 
 `16-wuguan-linchuang-lunzhuan/chapters/05-tese-zhiliao/`
 
@@ -18608,8 +18608,8 @@
 | --- | --- | --- | :-: | --- |
 | prompt | 出科考核考的不是记得多少，是判断留没留下痕迹 · 提示词 | — | 751 | [`prompt-06-chuke-kaohe.md`](../departments/01-zhongyi/21-zhongyi-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/prompt-06-chuke-kaohe.md) |
 | skill | 出科考核考的不是记得多少，是判断留没留下痕迹 | 出科考核考的不是记得多少，是判断留没留下痕迹——按「出科三问 → 结构化病历的十四个字段 → 复盘四问与交接时限 → 判据：达标与不达标两列【教学设定】」走一遍本章判据 | 642 | [`skill-06-chuke-kaohe.md`](../departments/01-zhongyi/21-zhongyi-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/skill-06-chuke-kaohe.md) |
-| prompt | 出科考核与病例复盘 · 提示词 | — | 458 | [`prompt-06-chuke-kaohe.md`](../departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/prompt-06-chuke-kaohe.md) |
-| skill | 出科考核与病例复盘 | 出科考核与病例复盘——按「门诊接诊 → 病种轮转 → 灸罐处置 → 推拿科 → 出科考核」走一遍本章判据 | 368 | [`skill-chuke-kaohe.md`](../departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/skill-chuke-kaohe.md) |
+| prompt | 出科考核要能指到环节，指不到环节的复盘等于没复盘 · 提示词 | — | 889 | [`prompt-06-chuke-kaohe.md`](../departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/prompt-06-chuke-kaohe.md) |
+| skill | 出科考核要能指到环节，指不到环节的复盘等于没复盘 | 出科考核要能指到环节，指不到环节的复盘等于没复盘——按「一节 19,259 字，没有出现一次分数 → 复盘的第一问不是"对不对"，是"哪一步" → 一句合格的复盘长什么样 → 不给分，那给什么」走一遍本章判据 | 778 | [`skill-chuke-kaohe.md`](../departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/skill-chuke-kaohe.md) |
 | prompt | 出科考核：考的不是背，是你能不能把一次接诊从头讲到尾 · 提示词 | — | 701 | [`prompt-chuke-kaohe.md`](../departments/04-gushang/16-gushang-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/prompt-chuke-kaohe.md) |
 | skill | 出科考核：考的不是背，是你能不能把一次接诊从头讲到尾 | 出科考核：考的不是背，是你能不能把一次接诊从头讲到尾——按「考核的五项结构 → 病例汇报的四问 → 病历与知情同意：自查六个字段 → 不良事件复盘：问五句，不追一个人」走一遍本章判据 | 588 | [`skill-chuke-kaohe.md`](../departments/04-gushang/16-gushang-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/skill-chuke-kaohe.md) |
 | prompt | 出科考的是一例能不能讲透，不是做过多少项 · 提示词 | — | 629 | [`prompt-06-chuke-kaohe.md`](../departments/05-huli/26-huli-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/prompt-06-chuke-kaohe.md) |
@@ -18621,30 +18621,30 @@
 
 > Build · 第 10 学期 · 已产出 6 章
 
-#### 第 1 章 · 选题：从质量标志物到可验证假设
+#### 第 1 章 · 选题的成败取决于假设能否被一批样品证伪
 
 `17-wuguan-biye-sheji/chapters/01-xuan-ti/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 选题：从质量标志物到可验证假设 · 提示词 | — | 491 | [`prompt-01-xuan-ti.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
-| skill | 选题：从质量标志物到可验证假设 | 选题：从质量标志物到可验证假设——按「选题 → 样品与数据 → 实验与建模 → 方法学验证 → 写作答辩 → 移交」走一遍本章判据 | 378 | [`skill-xuan-ti.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
-| prompt | 选题：从配穴方案到可检验命题 · 提示词 | — | 481 | [`prompt-01-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
-| skill | 选题：从配穴方案到可检验命题 | 选题：从配穴方案到可检验命题——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 373 | [`skill-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
-| prompt | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 · 提示词 | — | 620 | [`prompt-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/prompt-xuan-ti.md) |
-| skill | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题——按「三条判据：骨伤版的可复现、可对照、可接手 → 四步降维：从一个病名到一条命题 → 三份能交出去的骨伤毕设产物 → 里程碑：四件必须交出去的东西」走一遍本章判据 | 503 | [`skill-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题的成败取决于假设能否被一批样品证伪 · 提示词 | — | 641 | [`prompt-01-xuan-ti.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
+| skill | 选题的成败取决于假设能否被一批样品证伪 | 选题的成败取决于假设能否被一批样品证伪——按「选题的真问题不是「做什么」，而是「哪一种不一致」 → 四个槽怎么填：从质量标志物到可检验判据 → 开题节点：交付物、字段与时间表 → 评分维度与五种失效模式」走一遍本章判据 | 535 | [`skill-xuan-ti.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题不是挑一个病，而是把一句经验话逼成能被否证的句子 · 提示词 | — | 923 | [`prompt-01-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
+| skill | 选题不是挑一个病，而是把一句经验话逼成能被否证的句子 | 选题不是挑一个病，而是把一句经验话逼成能被否证的句子——按「底本把"针在哪"写到了寸，把"跟谁比"留成了空格 → 对照只能选一个，选完要能说出它排除了什么 → 把"招几十例"换成四个参数 → 裁剪：写不完的范围等于没范围」走一遍本章判据 | 801 | [`skill-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 · 提示词 | — | 639 | [`prompt-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/prompt-xuan-ti.md) |
+| skill | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题——按「三条判据：骨伤版的可复现、可对照、可接手 → 四步降维：从一个病名到一条命题 → 三份能交出去的骨伤毕设产物 → 里程碑：四件必须交出去的东西」走一遍本章判据 | 522 | [`skill-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题在开题前就定了成败：缺口必须算得出来 · 提示词 | — | 629 | [`prompt-01-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题在开题前就定了成败：缺口必须算得出来 | 选题在开题前就定了成败：缺口必须算得出来——按「好选题的四个判据 → 缺口怎么算：分子、分母、来源 → 选题过大的四种形态 → 开题评什么：评能不能做，不评想不想做」走一遍本章判据 | 522 | [`skill-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
-| prompt | 选题：从管理问题到可测量命题 · 提示词 | — | 468 | [`prompt-01-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
-| skill | 选题：从管理问题到可测量命题 | 选题：从管理问题到可测量命题——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 378 | [`skill-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
-| prompt | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验 · 提示词 | — | 630 | [`prompt-01-xuan-ti.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
-| skill | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验 | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验——按「三条判据：可复现、可对照、可接手 → 四步降维：从中医问题到实验对象 → 三种能交出去的题目形态 → 里程碑与交付物」走一遍本章判据 | 513 | [`skill-xuan-ti.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题的标准不是「有意义」，而是能否在一个学期内被证伪 · 提示词 | — | 937 | [`prompt-01-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
+| skill | 选题的标准不是「有意义」，而是能否在一个学期内被证伪 | 选题的标准不是「有意义」，而是能否在一个学期内被证伪——按「「有意义」是评审语，「可证伪」是设计语 → 四步收缩：从管理问题到可测量命题 → 变量类型先定，方法才有得选 → 设计的四个要素与三种常见缺陷」走一遍本章判据 | 815 | [`skill-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验 · 提示词 | — | 646 | [`prompt-01-xuan-ti.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
+| skill | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验 | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验——按「三条判据：可复现、可对照、可接手 → 四步降维：从中医问题到实验对象 → 三种能交出去的题目形态 → 里程碑与交付物」走一遍本章判据 | 529 | [`skill-xuan-ti.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从专科问题到可验证命题 · 提示词 | — | 467 | [`prompt-01-xuan-ti.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题：从专科问题到可验证命题 | 选题：从专科问题到可验证命题——按「选题 → 数据 → 实现 → 评价 → 答辩 → 移交」走一遍本章判据 | 375 | [`skill-xuan-ti.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从机制假设到可检验实验 · 提示词 | — | 494 | [`prompt-01-xuan-ti.md`](../departments/09-jichu/17-jichu-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题：从机制假设到可检验实验 | 选题：从机制假设到可检验实验——按「选题 → 方案与伦理 → 实施与记录 → 数据分析 → 论文答辩 → 知识移交」走一遍本章判据 | 391 | [`skill-xuan-ti.md`](../departments/09-jichu/17-jichu-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 
-#### 第 2 章 · 影像与功能检查数据准备
+#### 第 2 章 · 数据准备的第一件事，是给「轮位」定一套不打架的编码
 
 `17-wuguan-biye-sheji/chapters/02-jiancha-shuju/`
 
@@ -18653,18 +18653,18 @@
 | prompt | 影像与功能检查数据准备 · 提示词 | — | 458 | [`prompt-02-jiancha-shuju.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/02-jiancha-shuju/outputs/prompt-02-jiancha-shuju.md) |
 | skill | 影像与功能检查数据准备 | 影像与功能检查数据准备——按「选题 → 数据 → 实现 → 评价 → 答辩 → 移交」走一遍本章判据 | 375 | [`skill-jiancha-shuju.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/02-jiancha-shuju/outputs/skill-jiancha-shuju.md) |
 
-#### 第 3 章 · 方法与系统实现
+#### 第 3 章 · 采集工具只做四件事，多做的每一件都要从招募窗口里扣时间
 
 `17-wuguan-biye-sheji/chapters/03-fangfa-shixian/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 方法与系统实现 · 提示词 | — | 460 | [`prompt-03-fangfa-shixian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/03-fangfa-shixian/outputs/prompt-03-fangfa-shixian.md) |
-| skill | 方法与系统实现 | 方法与系统实现——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 366 | [`skill-fangfa-shixian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/03-fangfa-shixian/outputs/skill-fangfa-shixian.md) |
+| prompt | 采集工具只做四件事，多做的每一件都要从招募窗口里扣时间 · 提示词 | — | 892 | [`prompt-03-fangfa-shixian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/03-fangfa-shixian/outputs/prompt-03-fangfa-shixian.md) |
+| skill | 采集工具只做四件事，多做的每一件都要从招募窗口里扣时间 | 采集工具只做四件事，多做的每一件都要从招募窗口里扣时间——按「底本七节示范的其实是"口径"，不是"系统" → 功能清单只留四项，其余写进不做 → 字段映射与四项校验：错误在这一步拦下，不然要等到分析 → 兜底、备份与留痕：三种故障，各写一页纸」走一遍本章判据 | 776 | [`skill-fangfa-shixian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/03-fangfa-shixian/outputs/skill-fangfa-shixian.md) |
 | prompt | 方法与系统实现 · 提示词 | — | 447 | [`prompt-03-fangfa-shixian.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/03-fangfa-shixian/outputs/prompt-03-fangfa-shixian.md) |
 | skill | 方法与系统实现 | 方法与系统实现——按「选题 → 数据 → 实现 → 评价 → 答辩 → 移交」走一遍本章判据 | 368 | [`skill-fangfa-shixian.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/03-fangfa-shixian/outputs/skill-fangfa-shixian.md) |
 
-#### 第 4 章 · 疗效与安全性评价
+#### 第 4 章 · 疗效评价的诚实度，取决于安全指标有没有和疗效指标一起报
 
 `17-wuguan-biye-sheji/chapters/04-liaoxiao-anquan/`
 
@@ -18673,47 +18673,47 @@
 | prompt | 疗效与安全性评价 · 提示词 | — | 450 | [`prompt-04-liaoxiao-anquan.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/04-liaoxiao-anquan/outputs/prompt-04-liaoxiao-anquan.md) |
 | skill | 疗效与安全性评价 | 疗效与安全性评价——按「选题 → 数据 → 实现 → 评价 → 答辩 → 移交」走一遍本章判据 | 371 | [`skill-liaoxiao-anquan.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/04-liaoxiao-anquan/outputs/skill-liaoxiao-anquan.md) |
 
-#### 第 5 章 · 论文写作与答辩
+#### 第 5 章 · 论文的说服力在绪论就定了，答辩只是把它念一遍
 
 `17-wuguan-biye-sheji/chapters/05-lunwen-dabian/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 论文写作与答辩 · 提示词 | — | 465 | [`prompt-05-lunwen-dabian.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
-| skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 样品与数据 → 实验与建模 → 方法学验证 → 写作答辩 → 移交」走一遍本章判据 | 368 | [`skill-lunwen-dabian.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
-| prompt | 论文写作与答辩 · 提示词 | — | 459 | [`prompt-05-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
-| skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 365 | [`skill-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
-| prompt | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 · 提示词 | — | 622 | [`prompt-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-lunwen-dabian.md) |
-| skill | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好——按「六段骨架：每一段都能用一句话检验 → 图表与数字：先让读者能核对，再让读者相信 → 答辩前先自评：七项检查 → 答辩：三类必答题与五分钟陈述」走一遍本章判据 | 507 | [`skill-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 论文的说服力在绪论就定了，答辩只是把它念一遍 · 提示词 | — | 634 | [`prompt-05-lunwen-dabian.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
+| skill | 论文的说服力在绪论就定了，答辩只是把它念一遍 | 论文的说服力在绪论就定了，答辩只是把它念一遍——按「绪论不是学科介绍，是把判据摆到桌面上 → 证据链的四层：每层对应论文的一个部位 → 答辩：四类必被问到的问题与应答结构 → 评分维度与失效模式」走一遍本章判据 | 531 | [`skill-lunwen-dabian.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 论文的说服力来自十个能复算的数字，不来自十页漂亮的讨论 · 提示词 | — | 858 | [`prompt-05-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
+| skill | 论文的说服力来自十个能复算的数字，不来自十页漂亮的讨论 | 论文的说服力来自十个能复算的数字，不来自十页漂亮的讨论——按「一头一尾：引文在底本里，数字在你的表里 → 十个数字：定稿前唯一的硬检查 → 讨论不是复述，是与三篇文献对位置 → 四类质疑与两轮试讲」走一遍本章判据 | 741 | [`skill-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 · 提示词 | — | 630 | [`prompt-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-lunwen-dabian.md) |
+| skill | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好——按「六段骨架：每一段都能用一句话检验 → 图表与数字：先让读者能核对，再让读者相信 → 答辩前先自评：七项检查 → 答辩：三类必答题与五分钟陈述」走一遍本章判据 | 515 | [`skill-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 答辩评的是判断链，不是字数与图表的数量 · 提示词 | — | 611 | [`prompt-05-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 答辩评的是判断链，不是字数与图表的数量 | 答辩评的是判断链，不是字数与图表的数量——按「四段式：每一段只回答一个问题 → 图表的三条规矩 → 陈述：十五分钟怎么分 → 提问：六类问题与应答方式」走一遍本章判据 | 511 | [`skill-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
-| prompt | 论文写作与答辩 · 提示词 | — | 447 | [`prompt-05-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
-| skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 370 | [`skill-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
-| prompt | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来 · 提示词 | — | 637 | [`prompt-05-lunwen-dabian.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
-| skill | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来 | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来——按「六段结构，与评审表一一对应 → 三张表：主表、消融表、误差表 → 写作顺序：先图表，后文字，最后摘要 → 答辩：20 分钟的分配与五个必答题」走一遍本章判据 | 525 | [`skill-lunwen-dabian.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 答辩不是复述结论，而是当场交代结论的适用条件 · 提示词 | — | 943 | [`prompt-05-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
+| skill | 答辩不是复述结论，而是当场交代结论的适用条件 | 答辩不是复述结论，而是当场交代结论的适用条件——按「一段可用的论证，结构上像一条能执行的条文 → 事实判断与价值判断必须分开写 → 枚举与限定：把「等」字写实 → 答辩现场的五个追问与应答」走一遍本章判据 | 831 | [`skill-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来 · 提示词 | — | 640 | [`prompt-05-lunwen-dabian.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
+| skill | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来 | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来——按「六段结构，与评审表一一对应 → 三张表：主表、消融表、误差表 → 写作顺序：先图表，后文字，最后摘要 → 答辩：20 分钟的分配与五个必答题」走一遍本章判据 | 528 | [`skill-lunwen-dabian.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 446 | [`prompt-05-lunwen-dabian.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据 → 实现 → 评价 → 答辩 → 移交」走一遍本章判据 | 367 | [`skill-lunwen-dabian.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 481 | [`prompt-05-lunwen-dabian.md`](../departments/09-jichu/17-jichu-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 方案与伦理 → 实施与记录 → 数据分析 → 论文答辩 → 知识移交」走一遍本章判据 | 383 | [`skill-lunwen-dabian.md`](../departments/09-jichu/17-jichu-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 
-#### 第 6 章 · 知识移交：实验记录与交接
+#### 第 6 章 · 记录不完整的实验等于没做过，交接不清的成果等于没留下
 
 `17-wuguan-biye-sheji/chapters/06-zhishi-yijiao/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 知识移交：实验记录与交接 · 提示词 | — | 482 | [`prompt-06-zhishi-yijiao.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
-| skill | 知识移交：实验记录与交接 | 知识移交：实验记录与交接——按「选题 → 样品与数据 → 实验与建模 → 方法学验证 → 写作答辩 → 移交」走一遍本章判据 | 378 | [`skill-zhishi-yijiao.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
-| prompt | 知识移交：方案手册与交接 · 提示词 | — | 473 | [`prompt-06-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
-| skill | 知识移交：方案手册与交接 | 知识移交：方案手册与交接——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 375 | [`skill-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
-| prompt | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 · 提示词 | — | 646 | [`prompt-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-zhishi-yijiao.md) |
-| skill | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法——按「交接包四件：缺一件，复算就断在那一件 → SOP：把「做对」写成「照做也对」 → 三条验收动作：从能跑到敢用 → 失效清单与退役条件」走一遍本章判据 | 527 | [`skill-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 记录不完整的实验等于没做过，交接不清的成果等于没留下 · 提示词 | — | 628 | [`prompt-06-zhishi-yijiao.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
+| skill | 记录不完整的实验等于没做过，交接不清的成果等于没留下 | 记录不完整的实验等于没做过，交接不清的成果等于没留下——按「移交的判据是「别人能不能接着做」 → 交接包四件：记录、方法、数据、联系人 → 三个验收动作怎么执行 → 失效模式、评分与考核」走一遍本章判据 | 521 | [`skill-zhishi-yijiao.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 手册写得再全也移不走手感，移交完成的标志是别人照它做出来 · 提示词 | — | 892 | [`prompt-06-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
+| skill | 手册写得再全也移不走手感，移交完成的标志是别人照它做出来 | 手册写得再全也移不走手感，移交完成的标志是别人照它做出来——按「来路：254 处书名号为什么属于移交清单 → 逐穴一节：把能量化的写到极致 → 不可写项：标出来，配带教，别假装写清了 → 复现验证：三个人、两次、两版」走一遍本章判据 | 774 | [`skill-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 · 提示词 | — | 662 | [`prompt-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-zhishi-yijiao.md) |
+| skill | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法——按「交接包四件：缺一件，复算就断在那一件 → SOP：把「做对」写成「照做也对」 → 三条验收动作：从能跑到敢用 → 失效清单与退役条件」走一遍本章判据 | 543 | [`skill-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 毕设的最后一关，是别人能不能接着用 · 提示词 | — | 588 | [`prompt-06-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
 | skill | 毕设的最后一关，是别人能不能接着用 | 毕设的最后一关，是别人能不能接着用——按「移交包四件，各有各的验收动作 → 数据移交：边界比内容更重要 → 交接会：三段，不要开成汇报会 → 被接手方的三个提问」走一遍本章判据 | 490 | [`skill-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
-| prompt | 知识移交：制度文件与交接 · 提示词 | — | 462 | [`prompt-06-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
-| skill | 知识移交：制度文件与交接 | 知识移交：制度文件与交接——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 380 | [`skill-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
-| prompt | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数 · 提示词 | — | 608 | [`prompt-06-zhishi-yijiao.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
-| skill | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数 | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数——按「模型卡：十二个字段，缺一不可 → 交接包四件：代码、数据、环境、口径 → 验收：三个动作，一个都不能省 → 退役与责任边界」走一遍本章判据 | 496 | [`skill-zhishi-yijiao.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 移交的验收标准是「人走了系统还在转」，不是「文档齐了」 · 提示词 | — | 979 | [`prompt-06-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
+| skill | 移交的验收标准是「人走了系统还在转」，不是「文档齐了」 | 移交的验收标准是「人走了系统还在转」，不是「文档齐了」——按「移交的三类资产：制度、数据、人 → 主数据与字典：一物多码会让三年数据接不上 → 权限、脱敏与审批：去标识化不等于匿名化 → 运维与升级：服务级别、回退条件、迁移校验」走一遍本章判据 | 862 | [`skill-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数 · 提示词 | — | 624 | [`prompt-06-zhishi-yijiao.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
+| skill | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数 | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数——按「模型卡：十二个字段，缺一不可 → 交接包四件：代码、数据、环境、口径 → 验收：三个动作，一个都不能省 → 退役与责任边界」走一遍本章判据 | 512 | [`skill-zhishi-yijiao.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：诊疗路径与交接 · 提示词 | — | 462 | [`prompt-06-zhishi-yijiao.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
 | skill | 知识移交：诊疗路径与交接 | 知识移交：诊疗路径与交接——按「选题 → 数据 → 实现 → 评价 → 答辩 → 移交」走一遍本章判据 | 377 | [`skill-zhishi-yijiao.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：实验协议与交接 · 提示词 | — | 497 | [`prompt-06-zhishi-yijiao.md`](../departments/09-jichu/17-jichu-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
@@ -18745,12 +18745,12 @@
 | skill | 神志病没有化验单，判据只能从「看和问」里长出来 | 神志病没有化验单，判据只能从「看和问」里长出来——按「这门学科的对象是「神」的失序，不是「脑」的病灶 → 7 项观察，3 项靠自述，4 项不靠 → 三项同现才算神志病，单项一律不算 → 能做什么，以及什么时候必须停手」走一遍本章判据 | 667 | [`skill-01-xulun.md`](../departments/01-zhongyi/20-zhongyi-jingshenbing-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 用本章内容做一件事：绪论 | — | 406 | [`prompt-01-xulun.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 绪论 | 用《临床中药学》第 1 章「绪论」的单元层做可核对的教学材料。 | 502 | [`skill-01-xulun.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/01-xulun/outputs/skill-01-xulun.md) |
-| prompt | 绪论 · 提示词 | — | 444 | [`prompt-01-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 绪论 | 绪论——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 369 | [`skill-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 绪论不是开场白：它划定针灸学的边界、来路与读法 · 提示词 | — | 1115 | [`prompt-01-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
+| skill | 绪论不是开场白：它划定针灸学的边界、来路与读法 | 绪论不是开场白：它划定针灸学的边界、来路与读法——按「篇幅账：一半给历史，三分之一给定义 → 两个起源各有物证：砭石在石，灸火在火 → 三次奠基与四次校订：书目是校出来的，不是列出来的 → 学什么：三块内容与一条练习链」走一遍本章判据 | 1002 | [`skill-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 泛化不是模型的属性，是数据与假设的私下约定 · 提示词 | — | 920 | [`prompt-01-xulun.md`](../departments/07-zhineng/16-jiqi-xuexi/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 泛化不是模型的属性，是数据与假设的私下约定 | 泛化不是模型的属性，是数据与假设的私下约定——按「把一个「学习」问题写成四件东西 → 训练误差与泛化误差：两个不同的量 → 归纳偏好：算法必须偏心，而且偏心要写出来 → NFL 定理：一句被引用得最多、理解得最少的话」走一遍本章判据 | 808 | [`skill-xulun.md`](../departments/07-zhineng/16-jiqi-xuexi/chapters/01-xulun/outputs/skill-xulun.md) |
-| prompt | 绪论 · 提示词 | — | 442 | [`prompt-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
-| skill | 绪论 | 绪论——按「运动 → 内脏 → 脉管与内分泌 → 神经：由支架到内脏，再到支配」走一遍本章判据 | 365 | [`skill-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得 · 提示词 | — | 1049 | [`prompt-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
+| skill | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得 | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得——按「定义的第一句就带了限制：只写「类别与关系」 → 从细胞到系统：九大系统是一条由支架到支配的链 → 分科与材料：同一批结构的几种看法 → 姿势、轴与面：全书共用的坐标系」走一遍本章判据 | 931 | [`skill-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链 · 提示词 | — | 901 | [`prompt-01-xulun.md`](../departments/09-jichu/04-yixue-shengwu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链 | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链——按「这门课真正教的是「分层」，不是「名词」 → 三个判据，构成一条可证伪的链 → 16 章有两次转折，不是十六个抽屉 → 每章只回答四个问题」走一遍本章判据 | 781 | [`skill-xulun.md`](../departments/09-jichu/04-yixue-shengwu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 绪论：把「稳态」写成一条可检查的回路 · 提示词 | — | 856 | [`prompt-xulun.md`](../departments/09-jichu/06-shengli-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
@@ -18761,91 +18761,91 @@
 | skill | 绪论 | 绪论——按「层次 → 通道 → 间隙 → 毗邻：由浅入深地读一个局部」走一遍本章判据 | 359 | [`skill-xulun.md`](../departments/09-jichu/08-jubu-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 绪论：一门学科先要学会「怎么描述」 · 提示词 | — | 897 | [`prompt-xulun.md`](../departments/09-jichu/10-bingli-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
 | skill | 绪论：一门学科先要学会「怎么描述」 | 绪论：一门学科先要学会「怎么描述」——按「第一句话不是定义，是一份分工 → 四节十二单元的笔墨，与从原因到临床的五类内容 → 发展简史：观察单位一步步下沉 → 三个观察层次：不是三选一，是三段路」走一遍本章判据 | 789 | [`skill-xulun.md`](../departments/09-jichu/10-bingli-xue/chapters/01-xulun/outputs/skill-xulun.md) |
-| prompt | 流行病学绪论 · 提示词 | — | 463 | [`prompt-01-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 流行病学绪论 | 流行病学绪论——按「描述（分布与测量）→ 分析（病例对照与队列）→ 推断（因果与偏倚）→ 应用（监测与循证）」走一遍本章判据 | 382 | [`skill-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 流行病学先问人群里有多少人发病，再问某个病人为什么病 · 提示词 | — | 1038 | [`prompt-01-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
+| skill | 流行病学先问人群里有多少人发病，再问某个病人为什么病 | 流行病学先问人群里有多少人发病，再问某个病人为什么病——按「定义的三层限制：人群、分布、防制 → 四项任务是一条不能跳步的链 → 方法的分类只看两条线：谁施加干预、有没有比较组 → 同一批数字，三种问法：率、比、比例与三个关联指标」走一遍本章判据 | 921 | [`skill-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 
-#### 第 2 章 · 运动系统
+#### 第 2 章 · 运动系统不是「一堆骨头的名字」，而是一套受力与杠杆的分工
 
 `01-renti-jiepou-xue/chapters/02-yundong-xitong/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 运动系统 · 提示词 | — | 448 | [`prompt-yundong-xitong.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/02-yundong-xitong/outputs/prompt-yundong-xitong.md) |
-| skill | 运动系统 | 运动系统——按「运动 → 内脏 → 脉管与内分泌 → 神经：由支架到内脏，再到支配」走一遍本章判据 | 378 | [`skill-yundong-xitong.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/02-yundong-xitong/outputs/skill-yundong-xitong.md) |
+| prompt | 运动系统不是「一堆骨头的名字」，而是一套受力与杠杆的分工 · 提示词 | — | 980 | [`prompt-yundong-xitong.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/02-yundong-xitong/outputs/prompt-yundong-xitong.md) |
+| skill | 运动系统不是「一堆骨头的名字」，而是一套受力与杠杆的分工 | 运动系统不是「一堆骨头的名字」，而是一套受力与杠杆的分工——按「支架、杠杆、动力：三件套怎么分工 → 骨的形态与构造：形状是被受力决定的 → 骨学各论：中轴、上肢、下肢、颅，四组各有各的受力方式 → 连结与关节：稳固与灵活是一笔交易」走一遍本章判据 | 869 | [`skill-yundong-xitong.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/02-yundong-xitong/outputs/skill-yundong-xitong.md) |
 
-#### 第 3 章 · 消化系统
+#### 第 3 章 · 消化器官的位置不是背出来的，是被系膜与腹膜挂住的
 
 `01-renti-jiepou-xue/chapters/03-xiaohua-xitong/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 消化系统 · 提示词 | — | 448 | [`prompt-xiaohua-xitong.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/03-xiaohua-xitong/outputs/prompt-xiaohua-xitong.md) |
-| skill | 消化系统 | 消化系统——按「运动 → 内脏 → 脉管与内分泌 → 神经：由支架到内脏，再到支配」走一遍本章判据 | 378 | [`skill-xiaohua-xitong.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/03-xiaohua-xitong/outputs/skill-xiaohua-xitong.md) |
+| prompt | 消化器官的位置不是背出来的，是被系膜与腹膜挂住的 · 提示词 | — | 935 | [`prompt-xiaohua-xitong.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/03-xiaohua-xitong/outputs/prompt-xiaohua-xitong.md) |
+| skill | 消化器官的位置不是背出来的，是被系膜与腹膜挂住的 | 消化器官的位置不是背出来的，是被系膜与腹膜挂住的——按「一条管道加两套腺：先分清管壁与导管 → 从口腔到肛管：管腔的形态变化就是功能的分工 → 肝与胆道：一套「入肝—出肝」的双向管道 → 腹膜：器官的「悬挂系统」，决定什么叫内位、间位、外位」走一遍本章判据 | 828 | [`skill-xiaohua-xitong.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/03-xiaohua-xitong/outputs/skill-xiaohua-xitong.md) |
 
-#### 第 4 章 · 呼吸系统
+#### 第 4 章 · 呼吸系统的每一段都在回答同一个问题：气走多远、被什么包住
 
 `01-renti-jiepou-xue/chapters/04-huxi-xitong/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 呼吸系统 · 提示词 | — | 448 | [`prompt-huxi-xitong.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/04-huxi-xitong/outputs/prompt-huxi-xitong.md) |
-| skill | 呼吸系统 | 呼吸系统——按「运动 → 内脏 → 脉管与内分泌 → 神经：由支架到内脏，再到支配」走一遍本章判据 | 375 | [`skill-huxi-xitong.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/04-huxi-xitong/outputs/skill-huxi-xitong.md) |
+| prompt | 呼吸系统的每一段都在回答同一个问题：气走多远、被什么包住 · 提示词 | — | 937 | [`prompt-huxi-xitong.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/04-huxi-xitong/outputs/prompt-huxi-xitong.md) |
+| skill | 呼吸系统的每一段都在回答同一个问题：气走多远、被什么包住 | 呼吸系统的每一段都在回答同一个问题：气走多远、被什么包住——按「上呼吸道：把空气「预处理」的三段 → 气管与主支气管：分叉处的几何决定了后果 → 肺：分叶、肺段与两套血管 → 胸膜与纵隔：两层浆膜围出的负压腔」走一遍本章判据 | 823 | [`skill-huxi-xitong.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/04-huxi-xitong/outputs/skill-huxi-xitong.md) |
 
-#### 第 5 章 · 泌尿系统
+#### 第 5 章 · 排尿通路的难点不在管子本身，而在三处狭窄与两性末段的分野
 
 `01-renti-jiepou-xue/chapters/05-miniao-xitong/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 泌尿系统 · 提示词 | — | 448 | [`prompt-miniao-xitong.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/05-miniao-xitong/outputs/prompt-miniao-xitong.md) |
-| skill | 泌尿系统 | 泌尿系统——按「运动 → 内脏 → 脉管与内分泌 → 神经：由支架到内脏，再到支配」走一遍本章判据 | 377 | [`skill-miniao-xitong.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/05-miniao-xitong/outputs/skill-miniao-xitong.md) |
+| prompt | 排尿通路的难点不在管子本身，而在三处狭窄与两性末段的分野 · 提示词 | — | 944 | [`prompt-miniao-xitong.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/05-miniao-xitong/outputs/prompt-miniao-xitong.md) |
+| skill | 排尿通路的难点不在管子本身，而在三处狭窄与两性末段的分野 | 排尿通路的难点不在管子本身，而在三处狭窄与两性末段的分野——按「四个器官，一条连续通路 → 输尿管与膀胱：三处狭窄、一个三角 → 尿道：性别差异是一条可以推理的差异 → 观察与表述：先把「在哪一层」写出来」走一遍本章判据 | 832 | [`skill-miniao-xitong.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/05-miniao-xitong/outputs/skill-miniao-xitong.md) |
 
-#### 第 6 章 · 生殖系统
+#### 第 6 章 · 生殖器官要按连续通路与同源对应来读，不能按名称逐个背诵
 
 `01-renti-jiepou-xue/chapters/06-shengzhi-xitong/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 生殖系统 · 提示词 | — | 448 | [`prompt-shengzhi-xitong.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/06-shengzhi-xitong/outputs/prompt-shengzhi-xitong.md) |
-| skill | 生殖系统 | 生殖系统——按「运动 → 内脏 → 脉管与内分泌 → 神经：由支架到内脏，再到支配」走一遍本章判据 | 379 | [`skill-shengzhi-xitong.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/06-shengzhi-xitong/outputs/skill-shengzhi-xitong.md) |
+| prompt | 生殖器官要按连续通路与同源对应来读，不能按名称逐个背诵 · 提示词 | — | 932 | [`prompt-shengzhi-xitong.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/06-shengzhi-xitong/outputs/prompt-shengzhi-xitong.md) |
+| skill | 生殖器官要按连续通路与同源对应来读，不能按名称逐个背诵 | 生殖器官要按连续通路与同源对应来读，不能按名称逐个背诵——按「男性：从睾丸到尿道的一条排精通路 → 女性：卵巢—输卵管—子宫—阴道 → 外生殖器、乳房与会阴：体表标志与盆底分层 → 年龄变化、周期与同源对应」走一遍本章判据 | 823 | [`skill-shengzhi-xitong.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/06-shengzhi-xitong/outputs/skill-shengzhi-xitong.md) |
 
-#### 第 7 章 · 循环系统
+#### 第 7 章 · 循环系统是两条首尾相接的环路，心的瓣膜决定血只能朝一个方向走
 
 `01-renti-jiepou-xue/chapters/07-xunhuan-xitong/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 循环系统 · 提示词 | — | 448 | [`prompt-xunhuan-xitong.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/07-xunhuan-xitong/outputs/prompt-xunhuan-xitong.md) |
-| skill | 循环系统 | 循环系统——按「运动 → 内脏 → 脉管与内分泌 → 神经：由支架到内脏，再到支配」走一遍本章判据 | 378 | [`skill-xunhuan-xitong.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/07-xunhuan-xitong/outputs/skill-xunhuan-xitong.md) |
+| prompt | 循环系统是两条首尾相接的环路，心的瓣膜决定血只能朝一个方向走 · 提示词 | — | 942 | [`prompt-xunhuan-xitong.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/07-xunhuan-xitong/outputs/prompt-xunhuan-xitong.md) |
+| skill | 循环系统是两条首尾相接的环路，心的瓣膜决定血只能朝一个方向走 | 循环系统是两条首尾相接的环路，心的瓣膜决定血只能朝一个方向走——按「两条环路与一套管道 → 心：位置、四腔与四组瓣膜 → 动脉：主干、分支规律与全身分布 → 静脉与淋巴：回流方向决定描述顺序」走一遍本章判据 | 829 | [`skill-xunhuan-xitong.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/07-xunhuan-xitong/outputs/skill-xunhuan-xitong.md) |
 | prompt | 循环系统 · 提示词 | — | 453 | [`prompt-xunhuan-xitong.md`](../departments/09-jichu/02-zuzhi-peitai-xue/chapters/07-xunhuan-xitong/outputs/prompt-xunhuan-xitong.md) |
 | skill | 循环系统 | 循环系统——按「组织（四类基本组织）→ 器官（系统组织学）→ 胚胎（发生与畸形）」走一遍本章判据 | 381 | [`skill-xunhuan-xitong.md`](../departments/09-jichu/02-zuzhi-peitai-xue/chapters/07-xunhuan-xitong/outputs/skill-xunhuan-xitong.md) |
 
-#### 第 8 章 · 内分泌系统
+#### 第 8 章 · 内分泌腺的形态差异，最后都落在「产物怎么进血」这一件事上
 
 `01-renti-jiepou-xue/chapters/08-neifenmi-xitong/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 内分泌系统 · 提示词 | — | 451 | [`prompt-neifenmi-xitong.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/08-neifenmi-xitong/outputs/prompt-neifenmi-xitong.md) |
-| skill | 内分泌系统 | 内分泌系统——按「运动 → 内脏 → 脉管与内分泌 → 神经：由支架到内脏，再到支配」走一遍本章判据 | 381 | [`skill-neifenmi-xitong.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/08-neifenmi-xitong/outputs/skill-neifenmi-xitong.md) |
+| prompt | 内分泌腺的形态差异，最后都落在「产物怎么进血」这一件事上 · 提示词 | — | 952 | [`prompt-neifenmi-xitong.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/08-neifenmi-xitong/outputs/prompt-neifenmi-xitong.md) |
+| skill | 内分泌腺的形态差异，最后都落在「产物怎么进血」这一件事上 | 内分泌腺的形态差异，最后都落在「产物怎么进血」这一件事上——按「三类结构与三条途径 → 六个腺体：位置、被膜与分部 → 结构、产物与血流：三者如何对齐 → 与神经—体液调节及藏象学说的类别对照」走一遍本章判据 | 842 | [`skill-neifenmi-xitong.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/08-neifenmi-xitong/outputs/skill-neifenmi-xitong.md) |
 
-#### 第 9 章 · 感觉器
+#### 第 9 章 · 感觉器把刺激收进神经通路，辅助装置决定它收得准不准
 
 `01-renti-jiepou-xue/chapters/09-ganjueqi/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 感觉器 · 提示词 | — | 445 | [`prompt-ganjueqi.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/09-ganjueqi/outputs/prompt-ganjueqi.md) |
-| skill | 感觉器 | 感觉器——按「运动 → 内脏 → 脉管与内分泌 → 神经：由支架到内脏，再到支配」走一遍本章判据 | 370 | [`skill-ganjueqi.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/09-ganjueqi/outputs/skill-ganjueqi.md) |
+| prompt | 感觉器把刺激收进神经通路，辅助装置决定它收得准不准 · 提示词 | — | 967 | [`prompt-ganjueqi.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/09-ganjueqi/outputs/prompt-ganjueqi.md) |
+| skill | 感觉器把刺激收进神经通路，辅助装置决定它收得准不准 | 感觉器把刺激收进神经通路，辅助装置决定它收得准不准——按「感觉器与感受器：两件事，不是一件 → 视器：三层壁、三件内容物、四类副器 → 前庭蜗器：外耳收声、中耳传声、内耳感声与感位 → 从感受器到中枢：四条通路与一组比较」走一遍本章判据 | 853 | [`skill-ganjueqi.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/09-ganjueqi/outputs/skill-ganjueqi.md) |
 
-#### 第 10 章 · 神经系统
+#### 第 10 章 · 神经系统的全部内容，是通路与联系在颅腔与椎管里的具体排布
 
 `01-renti-jiepou-xue/chapters/10-shenjing-xitong/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 神经系统 · 提示词 | — | 450 | [`prompt-shenjing-xitong.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/10-shenjing-xitong/outputs/prompt-shenjing-xitong.md) |
-| skill | 神经系统 | 神经系统——按「运动 → 内脏 → 脉管与内分泌 → 神经：由支架到内脏，再到支配」走一遍本章判据 | 379 | [`skill-shenjing-xitong.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/10-shenjing-xitong/outputs/skill-shenjing-xitong.md) |
+| prompt | 神经系统的全部内容，是通路与联系在颅腔与椎管里的具体排布 · 提示词 | — | 988 | [`prompt-shenjing-xitong.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/10-shenjing-xitong/outputs/prompt-shenjing-xitong.md) |
+| skill | 神经系统的全部内容，是通路与联系在颅腔与椎管里的具体排布 | 神经系统的全部内容，是通路与联系在颅腔与椎管里的具体排布——按「脊髓与脊神经：节段、膨大与前后根 → 脑：脑干、小脑、间脑与大脑 → 传导通路：三级神经元与两处交叉 → 内脏神经、被膜、脑室与血管」走一遍本章判据 | 877 | [`skill-shenjing-xitong.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/10-shenjing-xitong/outputs/skill-shenjing-xitong.md) |
 | prompt | 神经系统：全章最密的一节不是电，是抑制 · 提示词 | — | 866 | [`prompt-shenjing-xitong.md`](../departments/09-jichu/06-shengli-xue/chapters/10-shenjing-xitong/outputs/prompt-shenjing-xitong.md) |
 | skill | 神经系统：全章最密的一节不是电，是抑制 | 神经系统：全章最密的一节不是电，是抑制——按「学习目标 → 正文 → 运行与验证 → 附：本章涉及的中国成人参考值（数据层）」走一遍本章判据 | 766 | [`skill-shenjing-xitong.md`](../departments/09-jichu/06-shengli-xue/chapters/10-shenjing-xitong/outputs/skill-shenjing-xitong.md) |
 
@@ -18853,7 +18853,7 @@
 
 > Core · 第 1 学期 · 已产出 20 章
 
-#### 第 1 章 · 组织学绪论
+#### 第 1 章 · 组织学的功夫在「位置」上，不在名词上
 
 `02-zuzhi-peitai-xue/chapters/01-zuzhixue-xulun/`
 
@@ -18862,7 +18862,7 @@
 | prompt | 组织学绪论 · 提示词 | — | 456 | [`prompt-zuzhixue-xulun.md`](../departments/09-jichu/02-zuzhi-peitai-xue/chapters/01-zuzhixue-xulun/outputs/prompt-zuzhixue-xulun.md) |
 | skill | 组织学绪论 | 组织学绪论——按「组织（四类基本组织）→ 器官（系统组织学）→ 胚胎（发生与畸形）」走一遍本章判据 | 383 | [`skill-zuzhixue-xulun.md`](../departments/09-jichu/02-zuzhi-peitai-xue/chapters/01-zuzhixue-xulun/outputs/skill-zuzhixue-xulun.md) |
 
-#### 第 2 章 · 上皮组织
+#### 第 2 章 · 上皮的极性一看出，功能就已经说出一半
 
 `02-zuzhi-peitai-xue/chapters/02-shangpi-zuzhi/`
 
@@ -18871,7 +18871,7 @@
 | prompt | 上皮组织 · 提示词 | — | 453 | [`prompt-shangpi-zuzhi.md`](../departments/09-jichu/02-zuzhi-peitai-xue/chapters/02-shangpi-zuzhi/outputs/prompt-shangpi-zuzhi.md) |
 | skill | 上皮组织 | 上皮组织——按「组织（四类基本组织）→ 器官（系统组织学）→ 胚胎（发生与畸形）」走一遍本章判据 | 380 | [`skill-shangpi-zuzhi.md`](../departments/09-jichu/02-zuzhi-peitai-xue/chapters/02-shangpi-zuzhi/outputs/skill-shangpi-zuzhi.md) |
 
-#### 第 3 章 · 结缔组织
+#### 第 3 章 · 结缔组织不是填充物，而是把全身连成一个力学系统的介质
 
 `02-zuzhi-peitai-xue/chapters/03-jiedi-zuzhi/`
 
@@ -18880,7 +18880,7 @@
 | prompt | 结缔组织 · 提示词 | — | 453 | [`prompt-jiedi-zuzhi.md`](../departments/09-jichu/02-zuzhi-peitai-xue/chapters/03-jiedi-zuzhi/outputs/prompt-jiedi-zuzhi.md) |
 | skill | 结缔组织 | 结缔组织——按「组织（四类基本组织）→ 器官（系统组织学）→ 胚胎（发生与畸形）」走一遍本章判据 | 378 | [`skill-jiedi-zuzhi.md`](../departments/09-jichu/02-zuzhi-peitai-xue/chapters/03-jiedi-zuzhi/outputs/skill-jiedi-zuzhi.md) |
 
-#### 第 4 章 · 肌组织
+#### 第 4 章 · 三型肌组织是同一台滑行机制的三次不同装配
 
 `02-zuzhi-peitai-xue/chapters/04-ji-zuzhi/`
 
@@ -18889,7 +18889,7 @@
 | prompt | 肌组织 · 提示词 | — | 450 | [`prompt-ji-zuzhi.md`](../departments/09-jichu/02-zuzhi-peitai-xue/chapters/04-ji-zuzhi/outputs/prompt-ji-zuzhi.md) |
 | skill | 肌组织 | 肌组织——按「组织（四类基本组织）→ 器官（系统组织学）→ 胚胎（发生与畸形）」走一遍本章判据 | 373 | [`skill-ji-zuzhi.md`](../departments/09-jichu/02-zuzhi-peitai-xue/chapters/04-ji-zuzhi/outputs/skill-ji-zuzhi.md) |
 
-#### 第 5 章 · 神经组织
+#### 第 5 章 · 神经元的形态差异，是它在回路里位置不同的证据
 
 `02-zuzhi-peitai-xue/chapters/05-shenjing-zuzhi/`
 
@@ -18898,7 +18898,7 @@
 | prompt | 神经组织 · 提示词 | — | 453 | [`prompt-shenjing-zuzhi.md`](../departments/09-jichu/02-zuzhi-peitai-xue/chapters/05-shenjing-zuzhi/outputs/prompt-shenjing-zuzhi.md) |
 | skill | 神经组织 | 神经组织——按「组织（四类基本组织）→ 器官（系统组织学）→ 胚胎（发生与畸形）」走一遍本章判据 | 381 | [`skill-shenjing-zuzhi.md`](../departments/09-jichu/02-zuzhi-peitai-xue/chapters/05-shenjing-zuzhi/outputs/skill-shenjing-zuzhi.md) |
 
-#### 第 6 章 · 神经系统
+#### 第 6 章 · 中枢的构筑只有两条原则：胞体聚成层或团，纤维走成束
 
 `02-zuzhi-peitai-xue/chapters/06-shenjing-xitong/`
 
@@ -18907,18 +18907,18 @@
 | prompt | 神经系统 · 提示词 | — | 453 | [`prompt-shenjing-xitong.md`](../departments/09-jichu/02-zuzhi-peitai-xue/chapters/06-shenjing-xitong/outputs/prompt-shenjing-xitong.md) |
 | skill | 神经系统 | 神经系统——按「组织（四类基本组织）→ 器官（系统组织学）→ 胚胎（发生与畸形）」走一遍本章判据 | 382 | [`skill-shenjing-xitong.md`](../departments/09-jichu/02-zuzhi-peitai-xue/chapters/06-shenjing-xitong/outputs/skill-shenjing-xitong.md) |
 
-#### 第 7 章 · 循环系统
+#### 第 7 章 · 循环系统是两条首尾相接的环路，心的瓣膜决定血只能朝一个方向走
 
 `02-zuzhi-peitai-xue/chapters/07-xunhuan-xitong/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 循环系统 · 提示词 | — | 448 | [`prompt-xunhuan-xitong.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/07-xunhuan-xitong/outputs/prompt-xunhuan-xitong.md) |
-| skill | 循环系统 | 循环系统——按「运动 → 内脏 → 脉管与内分泌 → 神经：由支架到内脏，再到支配」走一遍本章判据 | 378 | [`skill-xunhuan-xitong.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/07-xunhuan-xitong/outputs/skill-xunhuan-xitong.md) |
+| prompt | 循环系统是两条首尾相接的环路，心的瓣膜决定血只能朝一个方向走 · 提示词 | — | 942 | [`prompt-xunhuan-xitong.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/07-xunhuan-xitong/outputs/prompt-xunhuan-xitong.md) |
+| skill | 循环系统是两条首尾相接的环路，心的瓣膜决定血只能朝一个方向走 | 循环系统是两条首尾相接的环路，心的瓣膜决定血只能朝一个方向走——按「两条环路与一套管道 → 心：位置、四腔与四组瓣膜 → 动脉：主干、分支规律与全身分布 → 静脉与淋巴：回流方向决定描述顺序」走一遍本章判据 | 829 | [`skill-xunhuan-xitong.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/07-xunhuan-xitong/outputs/skill-xunhuan-xitong.md) |
 | prompt | 循环系统 · 提示词 | — | 453 | [`prompt-xunhuan-xitong.md`](../departments/09-jichu/02-zuzhi-peitai-xue/chapters/07-xunhuan-xitong/outputs/prompt-xunhuan-xitong.md) |
 | skill | 循环系统 | 循环系统——按「组织（四类基本组织）→ 器官（系统组织学）→ 胚胎（发生与畸形）」走一遍本章判据 | 381 | [`skill-xunhuan-xitong.md`](../departments/09-jichu/02-zuzhi-peitai-xue/chapters/07-xunhuan-xitong/outputs/skill-xunhuan-xitong.md) |
 
-#### 第 8 章 · 免疫系统
+#### 第 8 章 · 免疫系统的判读靠分区：同一个细胞，位置不同任务就不同
 
 `02-zuzhi-peitai-xue/chapters/08-mianyi-xitong/`
 
@@ -18927,7 +18927,7 @@
 | prompt | 免疫系统 · 提示词 | — | 453 | [`prompt-mianyi-xitong.md`](../departments/09-jichu/02-zuzhi-peitai-xue/chapters/08-mianyi-xitong/outputs/prompt-mianyi-xitong.md) |
 | skill | 免疫系统 | 免疫系统——按「组织（四类基本组织）→ 器官（系统组织学）→ 胚胎（发生与畸形）」走一遍本章判据 | 380 | [`skill-mianyi-xitong.md`](../departments/09-jichu/02-zuzhi-peitai-xue/chapters/08-mianyi-xitong/outputs/skill-mianyi-xitong.md) |
 
-#### 第 9 章 · 消化系统
+#### 第 9 章 · 消化管是同一套四层结构被逐段改装的结果
 
 `02-zuzhi-peitai-xue/chapters/09-xiaohua-xitong/`
 
@@ -18936,7 +18936,7 @@
 | prompt | 消化系统 · 提示词 | — | 453 | [`prompt-xiaohua-xitong.md`](../departments/09-jichu/02-zuzhi-peitai-xue/chapters/09-xiaohua-xitong/outputs/prompt-xiaohua-xitong.md) |
 | skill | 消化系统 | 消化系统——按「组织（四类基本组织）→ 器官（系统组织学）→ 胚胎（发生与畸形）」走一遍本章判据 | 381 | [`skill-xiaohua-xitong.md`](../departments/09-jichu/02-zuzhi-peitai-xue/chapters/09-xiaohua-xitong/outputs/skill-xiaohua-xitong.md) |
 
-#### 第 10 章 · 呼吸系统
+#### 第 10 章 · 呼吸道是一条逐级减配、逐级变薄的管道
 
 `02-zuzhi-peitai-xue/chapters/10-huxi-xitong/`
 
@@ -18945,7 +18945,7 @@
 | prompt | 呼吸系统 · 提示词 | — | 455 | [`prompt-huxi-xitong.md`](../departments/09-jichu/02-zuzhi-peitai-xue/chapters/10-huxi-xitong/outputs/prompt-huxi-xitong.md) |
 | skill | 呼吸系统 | 呼吸系统——按「组织（四类基本组织）→ 器官（系统组织学）→ 胚胎（发生与畸形）」走一遍本章判据 | 378 | [`skill-huxi-xitong.md`](../departments/09-jichu/02-zuzhi-peitai-xue/chapters/10-huxi-xitong/outputs/skill-huxi-xitong.md) |
 
-#### 第 11 章 · 泌尿系统
+#### 第 11 章 · 肾的两套毛细血管网，让同一份血在一个器官里过两遍
 
 `02-zuzhi-peitai-xue/chapters/11-miniao-xitong/`
 
@@ -18954,7 +18954,7 @@
 | prompt | 泌尿系统 · 提示词 | — | 455 | [`prompt-miniao-xitong.md`](../departments/09-jichu/02-zuzhi-peitai-xue/chapters/11-miniao-xitong/outputs/prompt-miniao-xitong.md) |
 | skill | 泌尿系统 | 泌尿系统——按「组织（四类基本组织）→ 器官（系统组织学）→ 胚胎（发生与畸形）」走一遍本章判据 | 380 | [`skill-miniao-xitong.md`](../departments/09-jichu/02-zuzhi-peitai-xue/chapters/11-miniao-xitong/outputs/skill-miniao-xitong.md) |
 
-#### 第 12 章 · 皮肤
+#### 第 12 章 · 皮肤的屏障由已经没有细胞器的细胞撑着，活细胞只负责在下面补货
 
 `02-zuzhi-peitai-xue/chapters/12-pifu/`
 
@@ -18963,7 +18963,7 @@
 | prompt | 皮肤 · 提示词 | — | 449 | [`prompt-pifu.md`](../departments/09-jichu/02-zuzhi-peitai-xue/chapters/12-pifu/outputs/prompt-pifu.md) |
 | skill | 皮肤 | 皮肤——按「组织（四类基本组织）→ 器官（系统组织学）→ 胚胎（发生与畸形）」走一遍本章判据 | 367 | [`skill-pifu.md`](../departments/09-jichu/02-zuzhi-peitai-xue/chapters/12-pifu/outputs/skill-pifu.md) |
 
-#### 第 13 章 · 眼和耳
+#### 第 13 章 · 眼与耳的共同骨架，是把换能细胞关进腔隙再用中继链送上皮质
 
 `02-zuzhi-peitai-xue/chapters/13-yan-he-er/`
 
@@ -18972,7 +18972,7 @@
 | prompt | 眼和耳 · 提示词 | — | 452 | [`prompt-yan-he-er.md`](../departments/09-jichu/02-zuzhi-peitai-xue/chapters/13-yan-he-er/outputs/prompt-yan-he-er.md) |
 | skill | 眼和耳 | 眼和耳——按「组织（四类基本组织）→ 器官（系统组织学）→ 胚胎（发生与畸形）」走一遍本章判据 | 374 | [`skill-yan-he-er.md`](../departments/09-jichu/02-zuzhi-peitai-xue/chapters/13-yan-he-er/outputs/skill-yan-he-er.md) |
 
-#### 第 14 章 · 内分泌系统
+#### 第 14 章 · 内分泌腺没有导管，于是结构只剩一件事：把腺细胞排到毛细血管边上
 
 `02-zuzhi-peitai-xue/chapters/14-neifenmi-xitong/`
 
@@ -18981,7 +18981,7 @@
 | prompt | 内分泌系统 · 提示词 | — | 458 | [`prompt-neifenmi-xitong.md`](../departments/09-jichu/02-zuzhi-peitai-xue/chapters/14-neifenmi-xitong/outputs/prompt-neifenmi-xitong.md) |
 | skill | 内分泌系统 | 内分泌系统——按「组织（四类基本组织）→ 器官（系统组织学）→ 胚胎（发生与畸形）」走一遍本章判据 | 384 | [`skill-neifenmi-xitong.md`](../departments/09-jichu/02-zuzhi-peitai-xue/chapters/14-neifenmi-xitong/outputs/skill-neifenmi-xitong.md) |
 
-#### 第 15 章 · 男性生殖系统
+#### 第 15 章 · 血睾屏障把一条小管分成两个世界，免疫隔离是它为有序减数分裂付的账
 
 `02-zuzhi-peitai-xue/chapters/15-nanxing-shengzhi-xitong/`
 
@@ -18990,7 +18990,7 @@
 | prompt | 男性生殖系统 · 提示词 | — | 461 | [`prompt-nanxing-shengzhi-xitong.md`](../departments/09-jichu/02-zuzhi-peitai-xue/chapters/15-nanxing-shengzhi-xitong/outputs/prompt-nanxing-shengzhi-xitong.md) |
 | skill | 男性生殖系统 | 男性生殖系统——按「组织（四类基本组织）→ 器官（系统组织学）→ 胚胎（发生与畸形）」走一遍本章判据 | 394 | [`skill-nanxing-shengzhi-xitong.md`](../departments/09-jichu/02-zuzhi-peitai-xue/chapters/15-nanxing-shengzhi-xitong/outputs/skill-nanxing-shengzhi-xitong.md) |
 
-#### 第 16 章 · 女性生殖系统
+#### 第 16 章 · 子宫内膜每月拆掉重建一次，施工令由卵巢的卵泡与黄体轮流签发
 
 `02-zuzhi-peitai-xue/chapters/16-nvxing-shengzhi-xitong/`
 
@@ -18999,7 +18999,7 @@
 | prompt | 女性生殖系统 · 提示词 | — | 461 | [`prompt-nvxing-shengzhi-xitong.md`](../departments/09-jichu/02-zuzhi-peitai-xue/chapters/16-nvxing-shengzhi-xitong/outputs/prompt-nvxing-shengzhi-xitong.md) |
 | skill | 女性生殖系统 | 女性生殖系统——按「组织（四类基本组织）→ 器官（系统组织学）→ 胚胎（发生与畸形）」走一遍本章判据 | 393 | [`skill-nvxing-shengzhi-xitong.md`](../departments/09-jichu/02-zuzhi-peitai-xue/chapters/16-nvxing-shengzhi-xitong/outputs/skill-nvxing-shengzhi-xitong.md) |
 
-#### 第 17 章 · 胚胎学绪论
+#### 第 17 章 · 没有人看过自己的发生，胚胎学的时间线是拼接出来的
 
 `02-zuzhi-peitai-xue/chapters/17-peitaixue-xulun/`
 
@@ -19008,7 +19008,7 @@
 | prompt | 胚胎学绪论 · 提示词 | — | 458 | [`prompt-peitaixue-xulun.md`](../departments/09-jichu/02-zuzhi-peitai-xue/chapters/17-peitaixue-xulun/outputs/prompt-peitaixue-xulun.md) |
 | skill | 胚胎学绪论 | 胚胎学绪论——按「组织（四类基本组织）→ 器官（系统组织学）→ 胚胎（发生与畸形）」走一遍本章判据 | 384 | [`skill-peitaixue-xulun.md`](../departments/09-jichu/02-zuzhi-peitai-xue/chapters/17-peitaixue-xulun/outputs/skill-peitaixue-xulun.md) |
 
-#### 第 18 章 · 人体胚胎早期发生
+#### 第 18 章 · 早期发生只做了一件事：反复把一分成两半
 
 `02-zuzhi-peitai-xue/chapters/18-zaoqi-fasheng/`
 
@@ -19017,7 +19017,7 @@
 | prompt | 人体胚胎早期发生 · 提示词 | — | 467 | [`prompt-zaoqi-fasheng.md`](../departments/09-jichu/02-zuzhi-peitai-xue/chapters/18-zaoqi-fasheng/outputs/prompt-zaoqi-fasheng.md) |
 | skill | 人体胚胎早期发生 | 人体胚胎早期发生——按「组织（四类基本组织）→ 器官（系统组织学）→ 胚胎（发生与畸形）」走一遍本章判据 | 388 | [`skill-zaoqi-fasheng.md`](../departments/09-jichu/02-zuzhi-peitai-xue/chapters/18-zaoqi-fasheng/outputs/skill-zaoqi-fasheng.md) |
 
-#### 第 19 章 · 器官的发生
+#### 第 19 章 · 器官不是新建的，是三胚层用出芽折叠融合分隔这四招改出来的
 
 `02-zuzhi-peitai-xue/chapters/19-qiguan-fasheng/`
 
@@ -19026,7 +19026,7 @@
 | prompt | 器官的发生 · 提示词 | — | 458 | [`prompt-qiguan-fasheng.md`](../departments/09-jichu/02-zuzhi-peitai-xue/chapters/19-qiguan-fasheng/outputs/prompt-qiguan-fasheng.md) |
 | skill | 器官的发生 | 器官的发生——按「组织（四类基本组织）→ 器官（系统组织学）→ 胚胎（发生与畸形）」走一遍本章判据 | 383 | [`skill-qiguan-fasheng.md`](../departments/09-jichu/02-zuzhi-peitai-xue/chapters/19-qiguan-fasheng/outputs/skill-qiguan-fasheng.md) |
 
-#### 第 20 章 · 先天性畸形
+#### 第 20 章 · 畸形的后果由时相决定，而时相偏偏是本章唯一不许写数值的变量
 
 `02-zuzhi-peitai-xue/chapters/20-xiantianxing-jixing/`
 
@@ -19171,12 +19171,12 @@
 | skill | 神志病没有化验单，判据只能从「看和问」里长出来 | 神志病没有化验单，判据只能从「看和问」里长出来——按「这门学科的对象是「神」的失序，不是「脑」的病灶 → 7 项观察，3 项靠自述，4 项不靠 → 三项同现才算神志病，单项一律不算 → 能做什么，以及什么时候必须停手」走一遍本章判据 | 667 | [`skill-01-xulun.md`](../departments/01-zhongyi/20-zhongyi-jingshenbing-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 用本章内容做一件事：绪论 | — | 406 | [`prompt-01-xulun.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 绪论 | 用《临床中药学》第 1 章「绪论」的单元层做可核对的教学材料。 | 502 | [`skill-01-xulun.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/01-xulun/outputs/skill-01-xulun.md) |
-| prompt | 绪论 · 提示词 | — | 444 | [`prompt-01-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 绪论 | 绪论——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 369 | [`skill-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 绪论不是开场白：它划定针灸学的边界、来路与读法 · 提示词 | — | 1115 | [`prompt-01-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
+| skill | 绪论不是开场白：它划定针灸学的边界、来路与读法 | 绪论不是开场白：它划定针灸学的边界、来路与读法——按「篇幅账：一半给历史，三分之一给定义 → 两个起源各有物证：砭石在石，灸火在火 → 三次奠基与四次校订：书目是校出来的，不是列出来的 → 学什么：三块内容与一条练习链」走一遍本章判据 | 1002 | [`skill-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 泛化不是模型的属性，是数据与假设的私下约定 · 提示词 | — | 920 | [`prompt-01-xulun.md`](../departments/07-zhineng/16-jiqi-xuexi/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 泛化不是模型的属性，是数据与假设的私下约定 | 泛化不是模型的属性，是数据与假设的私下约定——按「把一个「学习」问题写成四件东西 → 训练误差与泛化误差：两个不同的量 → 归纳偏好：算法必须偏心，而且偏心要写出来 → NFL 定理：一句被引用得最多、理解得最少的话」走一遍本章判据 | 808 | [`skill-xulun.md`](../departments/07-zhineng/16-jiqi-xuexi/chapters/01-xulun/outputs/skill-xulun.md) |
-| prompt | 绪论 · 提示词 | — | 442 | [`prompt-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
-| skill | 绪论 | 绪论——按「运动 → 内脏 → 脉管与内分泌 → 神经：由支架到内脏，再到支配」走一遍本章判据 | 365 | [`skill-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得 · 提示词 | — | 1049 | [`prompt-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
+| skill | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得 | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得——按「定义的第一句就带了限制：只写「类别与关系」 → 从细胞到系统：九大系统是一条由支架到支配的链 → 分科与材料：同一批结构的几种看法 → 姿势、轴与面：全书共用的坐标系」走一遍本章判据 | 931 | [`skill-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链 · 提示词 | — | 901 | [`prompt-01-xulun.md`](../departments/09-jichu/04-yixue-shengwu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链 | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链——按「这门课真正教的是「分层」，不是「名词」 → 三个判据，构成一条可证伪的链 → 16 章有两次转折，不是十六个抽屉 → 每章只回答四个问题」走一遍本章判据 | 781 | [`skill-xulun.md`](../departments/09-jichu/04-yixue-shengwu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 绪论：把「稳态」写成一条可检查的回路 · 提示词 | — | 856 | [`prompt-xulun.md`](../departments/09-jichu/06-shengli-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
@@ -19187,8 +19187,8 @@
 | skill | 绪论 | 绪论——按「层次 → 通道 → 间隙 → 毗邻：由浅入深地读一个局部」走一遍本章判据 | 359 | [`skill-xulun.md`](../departments/09-jichu/08-jubu-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 绪论：一门学科先要学会「怎么描述」 · 提示词 | — | 897 | [`prompt-xulun.md`](../departments/09-jichu/10-bingli-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
 | skill | 绪论：一门学科先要学会「怎么描述」 | 绪论：一门学科先要学会「怎么描述」——按「第一句话不是定义，是一份分工 → 四节十二单元的笔墨，与从原因到临床的五类内容 → 发展简史：观察单位一步步下沉 → 三个观察层次：不是三选一，是三段路」走一遍本章判据 | 789 | [`skill-xulun.md`](../departments/09-jichu/10-bingli-xue/chapters/01-xulun/outputs/skill-xulun.md) |
-| prompt | 流行病学绪论 · 提示词 | — | 463 | [`prompt-01-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 流行病学绪论 | 流行病学绪论——按「描述（分布与测量）→ 分析（病例对照与队列）→ 推断（因果与偏倚）→ 应用（监测与循证）」走一遍本章判据 | 382 | [`skill-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 流行病学先问人群里有多少人发病，再问某个病人为什么病 · 提示词 | — | 1038 | [`prompt-01-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
+| skill | 流行病学先问人群里有多少人发病，再问某个病人为什么病 | 流行病学先问人群里有多少人发病，再问某个病人为什么病——按「定义的三层限制：人群、分布、防制 → 四项任务是一条不能跳步的链 → 方法的分类只看两条线：谁施加干预、有没有比较组 → 同一批数字，三种问法：率、比、比例与三个关联指标」走一遍本章判据 | 921 | [`skill-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 
 #### 第 2 章 · 这门学科划的不是「细胞」这条线，是「可测的细胞状态」这条线
 
@@ -19329,7 +19329,7 @@
 
 > Core · 第 2 学期 · 已产出 18 章
 
-#### 第 1 章 · 正常人体学概述与人体构造层次
+#### 第 1 章 · 人体不是零件的堆叠，而是可逐层追问的构造体系
 
 `05-zhengchang-renti-xue/chapters/01-gaishu-yu-cengci/`
 
@@ -19338,7 +19338,7 @@
 | prompt | 正常人体学概述与人体构造层次 · 提示词 | — | 474 | [`prompt-01-gaishu-yu-cengci.md`](../departments/09-jichu/05-zhengchang-renti-xue/chapters/01-gaishu-yu-cengci/outputs/prompt-01-gaishu-yu-cengci.md) |
 | skill | 正常人体学概述与人体构造层次 | 正常人体学概述与人体构造层次——按「构造层次 → 系统解剖与组织 → 生理功能与整体调节 → 平台对接」走一遍本章判据 | 400 | [`skill-gaishu-yu-cengci.md`](../departments/09-jichu/05-zhengchang-renti-xue/chapters/01-gaishu-yu-cengci/outputs/skill-gaishu-yu-cengci.md) |
 
-#### 第 2 章 · 细胞与基本组织
+#### 第 2 章 · 四类基本组织不是分类摆件，而是功能的四个前置条件
 
 `05-zhengchang-renti-xue/chapters/02-xibao-yu-jiben-zuzhi/`
 
@@ -19347,7 +19347,7 @@
 | prompt | 细胞与基本组织 · 提示词 | — | 453 | [`prompt-02-xibao-yu-jiben-zuzhi.md`](../departments/09-jichu/05-zhengchang-renti-xue/chapters/02-xibao-yu-jiben-zuzhi/outputs/prompt-02-xibao-yu-jiben-zuzhi.md) |
 | skill | 细胞与基本组织 | 细胞与基本组织——按「构造层次 → 系统解剖与组织 → 生理功能与整体调节 → 平台对接」走一遍本章判据 | 390 | [`skill-xibao-yu-jiben-zuzhi.md`](../departments/09-jichu/05-zhengchang-renti-xue/chapters/02-xibao-yu-jiben-zuzhi/outputs/skill-xibao-yu-jiben-zuzhi.md) |
 
-#### 第 3 章 · 人体发生与发育概述
+#### 第 3 章 · 发育的每一个阶段都是下一阶段的前提，顺序本身就是知识
 
 `05-zhengchang-renti-xue/chapters/03-fasheng-yu-fayu-gaishu/`
 
@@ -19356,7 +19356,7 @@
 | prompt | 人体发生与发育概述 · 提示词 | — | 459 | [`prompt-03-fasheng-yu-fayu-gaishu.md`](../departments/09-jichu/05-zhengchang-renti-xue/chapters/03-fasheng-yu-fayu-gaishu/outputs/prompt-03-fasheng-yu-fayu-gaishu.md) |
 | skill | 人体发生与发育概述 | 人体发生与发育概述——按「构造层次 → 系统解剖与组织 → 生理功能与整体调节 → 平台对接」走一遍本章判据 | 396 | [`skill-fasheng-yu-fayu-gaishu.md`](../departments/09-jichu/05-zhengchang-renti-xue/chapters/03-fasheng-yu-fayu-gaishu/outputs/skill-fasheng-yu-fayu-gaishu.md) |
 
-#### 第 4 章 · 运动系统
+#### 第 4 章 · 骨是支架、关节是许可、肌是动力，三者缺一动作就不成立
 
 `05-zhengchang-renti-xue/chapters/04-yundong-xitong/`
 
@@ -19365,7 +19365,7 @@
 | prompt | 运动系统 · 提示词 | — | 444 | [`prompt-04-yundong-xitong.md`](../departments/09-jichu/05-zhengchang-renti-xue/chapters/04-yundong-xitong/outputs/prompt-04-yundong-xitong.md) |
 | skill | 运动系统 | 运动系统——按「构造层次 → 系统解剖与组织 → 生理功能与整体调节 → 平台对接」走一遍本章判据 | 378 | [`skill-yundong-xitong.md`](../departments/09-jichu/05-zhengchang-renti-xue/chapters/04-yundong-xitong/outputs/skill-yundong-xitong.md) |
 
-#### 第 5 章 · 消化系统
+#### 第 5 章 · 消化管是一条连续流水线，每一处褶皱都在为吸收记账
 
 `05-zhengchang-renti-xue/chapters/05-xiaohua-xitong/`
 
@@ -19374,7 +19374,7 @@
 | prompt | 消化系统 · 提示词 | — | 444 | [`prompt-05-xiaohua-xitong.md`](../departments/09-jichu/05-zhengchang-renti-xue/chapters/05-xiaohua-xitong/outputs/prompt-05-xiaohua-xitong.md) |
 | skill | 消化系统 | 消化系统——按「构造层次 → 系统解剖与组织 → 生理功能与整体调节 → 平台对接」走一遍本章判据 | 378 | [`skill-xiaohua-xitong.md`](../departments/09-jichu/05-zhengchang-renti-xue/chapters/05-xiaohua-xitong/outputs/skill-xiaohua-xitong.md) |
 
-#### 第 6 章 · 呼吸系统
+#### 第 6 章 · 呼吸不是把气吸进来，而是把胸腔的一次形变换成一次交换
 
 `05-zhengchang-renti-xue/chapters/06-huxi-xitong/`
 
@@ -19383,7 +19383,7 @@
 | prompt | 呼吸系统 · 提示词 | — | 444 | [`prompt-06-huxi-xitong.md`](../departments/09-jichu/05-zhengchang-renti-xue/chapters/06-huxi-xitong/outputs/prompt-06-huxi-xitong.md) |
 | skill | 呼吸系统 | 呼吸系统——按「构造层次 → 系统解剖与组织 → 生理功能与整体调节 → 平台对接」走一遍本章判据 | 375 | [`skill-huxi-xitong.md`](../departments/09-jichu/05-zhengchang-renti-xue/chapters/06-huxi-xitong/outputs/skill-huxi-xitong.md) |
 
-#### 第 7 章 · 泌尿系统
+#### 第 7 章 · 尿不是滤出来的，而是滤过之后被逐段改写的结果
 
 `05-zhengchang-renti-xue/chapters/07-miniao-xitong/`
 
@@ -19392,7 +19392,7 @@
 | prompt | 泌尿系统 · 提示词 | — | 444 | [`prompt-07-miniao-xitong.md`](../departments/09-jichu/05-zhengchang-renti-xue/chapters/07-miniao-xitong/outputs/prompt-07-miniao-xitong.md) |
 | skill | 泌尿系统 | 泌尿系统——按「构造层次 → 系统解剖与组织 → 生理功能与整体调节 → 平台对接」走一遍本章判据 | 377 | [`skill-miniao-xitong.md`](../departments/09-jichu/05-zhengchang-renti-xue/chapters/07-miniao-xitong/outputs/skill-miniao-xitong.md) |
 
-#### 第 8 章 · 生殖系统
+#### 第 8 章 · 生殖系统的关键在于一条通路，而不在于器官清单
 
 `05-zhengchang-renti-xue/chapters/08-shengzhi-xitong/`
 
@@ -19401,7 +19401,7 @@
 | prompt | 生殖系统 · 提示词 | — | 444 | [`prompt-08-shengzhi-xitong.md`](../departments/09-jichu/05-zhengchang-renti-xue/chapters/08-shengzhi-xitong/outputs/prompt-08-shengzhi-xitong.md) |
 | skill | 生殖系统 | 生殖系统——按「构造层次 → 系统解剖与组织 → 生理功能与整体调节 → 平台对接」走一遍本章判据 | 379 | [`skill-shengzhi-xitong.md`](../departments/09-jichu/05-zhengchang-renti-xue/chapters/08-shengzhi-xitong/outputs/skill-shengzhi-xitong.md) |
 
-#### 第 9 章 · 脉管系统
+#### 第 9 章 · 两条回路、四道瓣膜、一套传导：心既是泵，也是路由
 
 `05-zhengchang-renti-xue/chapters/09-maiguan-xitong/`
 
@@ -19410,7 +19410,7 @@
 | prompt | 脉管系统 · 提示词 | — | 444 | [`prompt-09-maiguan-xitong.md`](../departments/09-jichu/05-zhengchang-renti-xue/chapters/09-maiguan-xitong/outputs/prompt-09-maiguan-xitong.md) |
 | skill | 脉管系统 | 脉管系统——按「构造层次 → 系统解剖与组织 → 生理功能与整体调节 → 平台对接」走一遍本章判据 | 378 | [`skill-maiguan-xitong.md`](../departments/09-jichu/05-zhengchang-renti-xue/chapters/09-maiguan-xitong/outputs/skill-maiguan-xitong.md) |
 
-#### 第 10 章 · 感觉器官
+#### 第 10 章 · 感觉器官要记的不是层数，而是刺激在哪一层变成信号
 
 `05-zhengchang-renti-xue/chapters/10-ganjue-qiguan/`
 
@@ -19419,7 +19419,7 @@
 | prompt | 感觉器官 · 提示词 | — | 446 | [`prompt-10-ganjue-qiguan.md`](../departments/09-jichu/05-zhengchang-renti-xue/chapters/10-ganjue-qiguan/outputs/prompt-10-ganjue-qiguan.md) |
 | skill | 感觉器官 | 感觉器官——按「构造层次 → 系统解剖与组织 → 生理功能与整体调节 → 平台对接」走一遍本章判据 | 377 | [`skill-ganjue-qiguan.md`](../departments/09-jichu/05-zhengchang-renti-xue/chapters/10-ganjue-qiguan/outputs/skill-ganjue-qiguan.md) |
 
-#### 第 11 章 · 神经系统
+#### 第 11 章 · 神经系统的分层不是目录，而是信号必须逐级换手的地方
 
 `05-zhengchang-renti-xue/chapters/11-shenjing-xitong/`
 
@@ -19428,7 +19428,7 @@
 | prompt | 神经系统 · 提示词 | — | 446 | [`prompt-11-shenjing-xitong.md`](../departments/09-jichu/05-zhengchang-renti-xue/chapters/11-shenjing-xitong/outputs/prompt-11-shenjing-xitong.md) |
 | skill | 神经系统 | 神经系统——按「构造层次 → 系统解剖与组织 → 生理功能与整体调节 → 平台对接」走一遍本章判据 | 379 | [`skill-shenjing-xitong.md`](../departments/09-jichu/05-zhengchang-renti-xue/chapters/11-shenjing-xitong/outputs/skill-shenjing-xitong.md) |
 
-#### 第 12 章 · 内分泌系统
+#### 第 12 章 · 内分泌的层级不是官阶，而是一条能自己踩刹车的回路
 
 `05-zhengchang-renti-xue/chapters/12-neifenmi-xitong/`
 
@@ -19437,7 +19437,7 @@
 | prompt | 内分泌系统 · 提示词 | — | 449 | [`prompt-12-neifenmi-xitong.md`](../departments/09-jichu/05-zhengchang-renti-xue/chapters/12-neifenmi-xitong/outputs/prompt-12-neifenmi-xitong.md) |
 | skill | 内分泌系统 | 内分泌系统——按「构造层次 → 系统解剖与组织 → 生理功能与整体调节 → 平台对接」走一遍本章判据 | 381 | [`skill-neifenmi-xitong.md`](../departments/09-jichu/05-zhengchang-renti-xue/chapters/12-neifenmi-xitong/outputs/skill-neifenmi-xitong.md) |
 
-#### 第 13 章 · 血液与内环境稳态
+#### 第 13 章 · 稳态不是「不变」，而是一条允许波动的容差带
 
 `05-zhengchang-renti-xue/chapters/13-xueye-yu-neihuanjing/`
 
@@ -19446,7 +19446,7 @@
 | prompt | 血液与内环境稳态 · 提示词 | — | 458 | [`prompt-13-xueye-yu-neihuanjing.md`](../departments/09-jichu/05-zhengchang-renti-xue/chapters/13-xueye-yu-neihuanjing/outputs/prompt-13-xueye-yu-neihuanjing.md) |
 | skill | 血液与内环境稳态 | 血液与内环境稳态——按「构造层次 → 系统解剖与组织 → 生理功能与整体调节 → 平台对接」走一遍本章判据 | 392 | [`skill-xueye-yu-neihuanjing.md`](../departments/09-jichu/05-zhengchang-renti-xue/chapters/13-xueye-yu-neihuanjing/outputs/skill-xueye-yu-neihuanjing.md) |
 
-#### 第 14 章 · 血液循环与呼吸功能调节
+#### 第 14 章 · 循环与呼吸不是两个系统，是一条链的两段
 
 `05-zhengchang-renti-xue/chapters/14-xunhuan-huxi-tiaojie/`
 
@@ -19455,7 +19455,7 @@
 | prompt | 血液循环与呼吸功能调节 · 提示词 | — | 467 | [`prompt-14-xunhuan-huxi-tiaojie.md`](../departments/09-jichu/05-zhengchang-renti-xue/chapters/14-xunhuan-huxi-tiaojie/outputs/prompt-14-xunhuan-huxi-tiaojie.md) |
 | skill | 血液循环与呼吸功能调节 | 血液循环与呼吸功能调节——按「构造层次 → 系统解剖与组织 → 生理功能与整体调节 → 平台对接」走一遍本章判据 | 398 | [`skill-xunhuan-huxi-tiaojie.md`](../departments/09-jichu/05-zhengchang-renti-xue/chapters/14-xunhuan-huxi-tiaojie/outputs/skill-xunhuan-huxi-tiaojie.md) |
 
-#### 第 15 章 · 消化吸收与能量代谢
+#### 第 15 章 · 吸收的关键不是「吃进去」，而是面积与回流同时到位
 
 `05-zhengchang-renti-xue/chapters/15-xiaohua-nengliang-daixie/`
 
@@ -19464,7 +19464,7 @@
 | prompt | 消化吸收与能量代谢 · 提示词 | — | 461 | [`prompt-15-xiaohua-nengliang-daixie.md`](../departments/09-jichu/05-zhengchang-renti-xue/chapters/15-xiaohua-nengliang-daixie/outputs/prompt-15-xiaohua-nengliang-daixie.md) |
 | skill | 消化吸收与能量代谢 | 消化吸收与能量代谢——按「构造层次 → 系统解剖与组织 → 生理功能与整体调节 → 平台对接」走一遍本章判据 | 398 | [`skill-xiaohua-nengliang-daixie.md`](../departments/09-jichu/05-zhengchang-renti-xue/chapters/15-xiaohua-nengliang-daixie/outputs/skill-xiaohua-nengliang-daixie.md) |
 
-#### 第 16 章 · 排泄与体温与体液调节
+#### 第 16 章 · 排出有四条路，体温只靠四个散热点收尾
 
 `05-zhengchang-renti-xue/chapters/16-paixie-tiwen-tiye/`
 
@@ -19473,7 +19473,7 @@
 | prompt | 排泄与体温与体液调节 · 提示词 | — | 464 | [`prompt-16-paixie-tiwen-tiye.md`](../departments/09-jichu/05-zhengchang-renti-xue/chapters/16-paixie-tiwen-tiye/outputs/prompt-16-paixie-tiwen-tiye.md) |
 | skill | 排泄与体温与体液调节 | 排泄与体温与体液调节——按「构造层次 → 系统解剖与组织 → 生理功能与整体调节 → 平台对接」走一遍本章判据 | 393 | [`skill-paixie-tiwen-tiye.md`](../departments/09-jichu/05-zhengchang-renti-xue/chapters/16-paixie-tiwen-tiye/outputs/skill-paixie-tiwen-tiye.md) |
 
-#### 第 17 章 · 人体功能的整体调节与保护要求
+#### 第 17 章 · 三种调节的分界不在快慢，而在谁不需要被指挥
 
 `05-zhengchang-renti-xue/chapters/17-zhengti-tiaojie-baohu/`
 
@@ -19482,7 +19482,7 @@
 | prompt | 人体功能的整体调节与保护要求 · 提示词 | — | 476 | [`prompt-17-zhengti-tiaojie-baohu.md`](../departments/09-jichu/05-zhengchang-renti-xue/chapters/17-zhengti-tiaojie-baohu/outputs/prompt-17-zhengti-tiaojie-baohu.md) |
 | skill | 人体功能的整体调节与保护要求 | 人体功能的整体调节与保护要求——按「构造层次 → 系统解剖与组织 → 生理功能与整体调节 → 平台对接」走一遍本章判据 | 405 | [`skill-zhengti-tiaojie-baohu.md`](../departments/09-jichu/05-zhengchang-renti-xue/chapters/17-zhengti-tiaojie-baohu/outputs/skill-zhengti-tiaojie-baohu.md) |
 
-#### 第 18 章 · 正常人体学与 tcmP 平台
+#### 第 18 章 · 知识库的价值不在存了多少条，而在每条都写得出依据与边界
 
 `05-zhengchang-renti-xue/chapters/18-pingtai-lianjie/`
 
@@ -19490,10 +19490,10 @@
 | --- | --- | --- | :-: | --- |
 | prompt | 正常人体学与 tcmP 平台 · 提示词 | — | 470 | [`prompt-18-pingtai-lianjie.md`](../departments/09-jichu/05-zhengchang-renti-xue/chapters/18-pingtai-lianjie/outputs/prompt-18-pingtai-lianjie.md) |
 | skill | 正常人体学与 tcmP 平台 | 正常人体学与 tcmP 平台——按「构造层次 → 系统解剖与组织 → 生理功能与整体调节 → 平台对接」走一遍本章判据 | 395 | [`skill-pingtai-lianjie.md`](../departments/09-jichu/05-zhengchang-renti-xue/chapters/18-pingtai-lianjie/outputs/skill-pingtai-lianjie.md) |
-| prompt | 疾病学基础与 tcmP 平台 · 提示词 | — | 469 | [`prompt-18-pingtai-lianjie.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/18-pingtai-lianjie/outputs/prompt-18-pingtai-lianjie.md) |
-| skill | 疾病学基础与 tcmP 平台 | 疾病学基础与 tcmP 平台——按「疾病概念 → 基本病理过程 → 系统疾病 → 治疗与防治」走一遍本章判据 | 386 | [`skill-pingtai-lianjie.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/18-pingtai-lianjie/outputs/skill-pingtai-lianjie.md) |
-| prompt | 流行病学与 tcmP 平台 · 提示词 | — | 480 | [`prompt-18-pingtai-lianjie.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/18-pingtai-lianjie/outputs/prompt-18-pingtai-lianjie.md) |
-| skill | 流行病学与 tcmP 平台 | 流行病学与 tcmP 平台——按「描述（分布与测量）→ 分析（病例对照与队列）→ 推断（因果与偏倚）→ 应用（监测与循证）」走一遍本章判据 | 402 | [`skill-pingtai-lianjie.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/18-pingtai-lianjie/outputs/skill-pingtai-lianjie.md) |
+| prompt | 平台能不能用，取决于每条单元有没有「依据」和「边界」两列 · 提示词 | — | 863 | [`prompt-18-pingtai-lianjie.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/18-pingtai-lianjie/outputs/prompt-18-pingtai-lianjie.md) |
+| skill | 平台能不能用，取决于每条单元有没有「依据」和「边界」两列 | 平台能不能用，取决于每条单元有没有「依据」和「边界」两列——按「单元的四段编码：让每条结论都能反查 → 两列硬约束：依据与边界 → 平台表与契约：表给人看，契约给机器判 → 病例与图像、智能辅助：两条不能越的线」走一遍本章判据 | 752 | [`skill-pingtai-lianjie.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/18-pingtai-lianjie/outputs/skill-pingtai-lianjie.md) |
+| prompt | 视频课不是"把正文念一遍"，是让每一段旁白都能指回一个判据 · 提示词 | — | 700 | [`prompt-18-pingtai-lianjie.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/18-pingtai-lianjie/outputs/prompt-18-pingtai-lianjie.md) |
+| skill | 视频课不是"把正文念一遍"，是让每一段旁白都能指回一个判据 | 视频课不是"把正文念一遍"，是让每一段旁白都能指回一个判据——按「一门课在平台里的四层形态 → 从正文到讲稿：有字不等于有旁白 → 从讲稿到成片：三段一步都不能跳 → 交付层：没有清单的成片等于不可发现」走一遍本章判据 | 598 | [`skill-pingtai-lianjie.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/18-pingtai-lianjie/outputs/skill-pingtai-lianjie.md) |
 
 ### 生理学
 
@@ -19519,12 +19519,12 @@
 | skill | 神志病没有化验单，判据只能从「看和问」里长出来 | 神志病没有化验单，判据只能从「看和问」里长出来——按「这门学科的对象是「神」的失序，不是「脑」的病灶 → 7 项观察，3 项靠自述，4 项不靠 → 三项同现才算神志病，单项一律不算 → 能做什么，以及什么时候必须停手」走一遍本章判据 | 667 | [`skill-01-xulun.md`](../departments/01-zhongyi/20-zhongyi-jingshenbing-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 用本章内容做一件事：绪论 | — | 406 | [`prompt-01-xulun.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 绪论 | 用《临床中药学》第 1 章「绪论」的单元层做可核对的教学材料。 | 502 | [`skill-01-xulun.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/01-xulun/outputs/skill-01-xulun.md) |
-| prompt | 绪论 · 提示词 | — | 444 | [`prompt-01-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 绪论 | 绪论——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 369 | [`skill-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 绪论不是开场白：它划定针灸学的边界、来路与读法 · 提示词 | — | 1115 | [`prompt-01-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
+| skill | 绪论不是开场白：它划定针灸学的边界、来路与读法 | 绪论不是开场白：它划定针灸学的边界、来路与读法——按「篇幅账：一半给历史，三分之一给定义 → 两个起源各有物证：砭石在石，灸火在火 → 三次奠基与四次校订：书目是校出来的，不是列出来的 → 学什么：三块内容与一条练习链」走一遍本章判据 | 1002 | [`skill-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 泛化不是模型的属性，是数据与假设的私下约定 · 提示词 | — | 920 | [`prompt-01-xulun.md`](../departments/07-zhineng/16-jiqi-xuexi/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 泛化不是模型的属性，是数据与假设的私下约定 | 泛化不是模型的属性，是数据与假设的私下约定——按「把一个「学习」问题写成四件东西 → 训练误差与泛化误差：两个不同的量 → 归纳偏好：算法必须偏心，而且偏心要写出来 → NFL 定理：一句被引用得最多、理解得最少的话」走一遍本章判据 | 808 | [`skill-xulun.md`](../departments/07-zhineng/16-jiqi-xuexi/chapters/01-xulun/outputs/skill-xulun.md) |
-| prompt | 绪论 · 提示词 | — | 442 | [`prompt-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
-| skill | 绪论 | 绪论——按「运动 → 内脏 → 脉管与内分泌 → 神经：由支架到内脏，再到支配」走一遍本章判据 | 365 | [`skill-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得 · 提示词 | — | 1049 | [`prompt-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
+| skill | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得 | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得——按「定义的第一句就带了限制：只写「类别与关系」 → 从细胞到系统：九大系统是一条由支架到支配的链 → 分科与材料：同一批结构的几种看法 → 姿势、轴与面：全书共用的坐标系」走一遍本章判据 | 931 | [`skill-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链 · 提示词 | — | 901 | [`prompt-01-xulun.md`](../departments/09-jichu/04-yixue-shengwu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链 | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链——按「这门课真正教的是「分层」，不是「名词」 → 三个判据，构成一条可证伪的链 → 16 章有两次转折，不是十六个抽屉 → 每章只回答四个问题」走一遍本章判据 | 781 | [`skill-xulun.md`](../departments/09-jichu/04-yixue-shengwu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 绪论：把「稳态」写成一条可检查的回路 · 提示词 | — | 856 | [`prompt-xulun.md`](../departments/09-jichu/06-shengli-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
@@ -19535,8 +19535,8 @@
 | skill | 绪论 | 绪论——按「层次 → 通道 → 间隙 → 毗邻：由浅入深地读一个局部」走一遍本章判据 | 359 | [`skill-xulun.md`](../departments/09-jichu/08-jubu-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 绪论：一门学科先要学会「怎么描述」 · 提示词 | — | 897 | [`prompt-xulun.md`](../departments/09-jichu/10-bingli-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
 | skill | 绪论：一门学科先要学会「怎么描述」 | 绪论：一门学科先要学会「怎么描述」——按「第一句话不是定义，是一份分工 → 四节十二单元的笔墨，与从原因到临床的五类内容 → 发展简史：观察单位一步步下沉 → 三个观察层次：不是三选一，是三段路」走一遍本章判据 | 789 | [`skill-xulun.md`](../departments/09-jichu/10-bingli-xue/chapters/01-xulun/outputs/skill-xulun.md) |
-| prompt | 流行病学绪论 · 提示词 | — | 463 | [`prompt-01-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 流行病学绪论 | 流行病学绪论——按「描述（分布与测量）→ 分析（病例对照与队列）→ 推断（因果与偏倚）→ 应用（监测与循证）」走一遍本章判据 | 382 | [`skill-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 流行病学先问人群里有多少人发病，再问某个病人为什么病 · 提示词 | — | 1038 | [`prompt-01-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
+| skill | 流行病学先问人群里有多少人发病，再问某个病人为什么病 | 流行病学先问人群里有多少人发病，再问某个病人为什么病——按「定义的三层限制：人群、分布、防制 → 四项任务是一条不能跳步的链 → 方法的分类只看两条线：谁施加干预、有没有比较组 → 同一批数字，三种问法：率、比、比例与三个关联指标」走一遍本章判据 | 921 | [`skill-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 
 #### 第 2 章 · 细胞的基本功能：一条从膜到肌丝的链
 
@@ -19610,14 +19610,14 @@
 | prompt | 内分泌：谁作用于谁，而不是多少 · 提示词 | — | 765 | [`prompt-neifenmi.md`](../departments/09-jichu/06-shengli-xue/chapters/09-neifenmi/outputs/prompt-neifenmi.md) |
 | skill | 内分泌：谁作用于谁，而不是多少 | 内分泌：谁作用于谁，而不是多少——按「学习目标 → 正文 → 运行与验证 → 免责」走一遍本章判据 | 663 | [`skill-neifenmi.md`](../departments/09-jichu/06-shengli-xue/chapters/09-neifenmi/outputs/skill-neifenmi.md) |
 
-#### 第 10 章 · 神经系统
+#### 第 10 章 · 神经系统的全部内容，是通路与联系在颅腔与椎管里的具体排布
 
 `06-shengli-xue/chapters/10-shenjing-xitong/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 神经系统 · 提示词 | — | 450 | [`prompt-shenjing-xitong.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/10-shenjing-xitong/outputs/prompt-shenjing-xitong.md) |
-| skill | 神经系统 | 神经系统——按「运动 → 内脏 → 脉管与内分泌 → 神经：由支架到内脏，再到支配」走一遍本章判据 | 379 | [`skill-shenjing-xitong.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/10-shenjing-xitong/outputs/skill-shenjing-xitong.md) |
+| prompt | 神经系统的全部内容，是通路与联系在颅腔与椎管里的具体排布 · 提示词 | — | 988 | [`prompt-shenjing-xitong.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/10-shenjing-xitong/outputs/prompt-shenjing-xitong.md) |
+| skill | 神经系统的全部内容，是通路与联系在颅腔与椎管里的具体排布 | 神经系统的全部内容，是通路与联系在颅腔与椎管里的具体排布——按「脊髓与脊神经：节段、膨大与前后根 → 脑：脑干、小脑、间脑与大脑 → 传导通路：三级神经元与两处交叉 → 内脏神经、被膜、脑室与血管」走一遍本章判据 | 877 | [`skill-shenjing-xitong.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/10-shenjing-xitong/outputs/skill-shenjing-xitong.md) |
 | prompt | 神经系统：全章最密的一节不是电，是抑制 · 提示词 | — | 866 | [`prompt-shenjing-xitong.md`](../departments/09-jichu/06-shengli-xue/chapters/10-shenjing-xitong/outputs/prompt-shenjing-xitong.md) |
 | skill | 神经系统：全章最密的一节不是电，是抑制 | 神经系统：全章最密的一节不是电，是抑制——按「学习目标 → 正文 → 运行与验证 → 附：本章涉及的中国成人参考值（数据层）」走一遍本章判据 | 766 | [`skill-shenjing-xitong.md`](../departments/09-jichu/06-shengli-xue/chapters/10-shenjing-xitong/outputs/skill-shenjing-xitong.md) |
 
@@ -19654,12 +19654,12 @@
 | skill | 神志病没有化验单，判据只能从「看和问」里长出来 | 神志病没有化验单，判据只能从「看和问」里长出来——按「这门学科的对象是「神」的失序，不是「脑」的病灶 → 7 项观察，3 项靠自述，4 项不靠 → 三项同现才算神志病，单项一律不算 → 能做什么，以及什么时候必须停手」走一遍本章判据 | 667 | [`skill-01-xulun.md`](../departments/01-zhongyi/20-zhongyi-jingshenbing-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 用本章内容做一件事：绪论 | — | 406 | [`prompt-01-xulun.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 绪论 | 用《临床中药学》第 1 章「绪论」的单元层做可核对的教学材料。 | 502 | [`skill-01-xulun.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/01-xulun/outputs/skill-01-xulun.md) |
-| prompt | 绪论 · 提示词 | — | 444 | [`prompt-01-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 绪论 | 绪论——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 369 | [`skill-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 绪论不是开场白：它划定针灸学的边界、来路与读法 · 提示词 | — | 1115 | [`prompt-01-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
+| skill | 绪论不是开场白：它划定针灸学的边界、来路与读法 | 绪论不是开场白：它划定针灸学的边界、来路与读法——按「篇幅账：一半给历史，三分之一给定义 → 两个起源各有物证：砭石在石，灸火在火 → 三次奠基与四次校订：书目是校出来的，不是列出来的 → 学什么：三块内容与一条练习链」走一遍本章判据 | 1002 | [`skill-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 泛化不是模型的属性，是数据与假设的私下约定 · 提示词 | — | 920 | [`prompt-01-xulun.md`](../departments/07-zhineng/16-jiqi-xuexi/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 泛化不是模型的属性，是数据与假设的私下约定 | 泛化不是模型的属性，是数据与假设的私下约定——按「把一个「学习」问题写成四件东西 → 训练误差与泛化误差：两个不同的量 → 归纳偏好：算法必须偏心，而且偏心要写出来 → NFL 定理：一句被引用得最多、理解得最少的话」走一遍本章判据 | 808 | [`skill-xulun.md`](../departments/07-zhineng/16-jiqi-xuexi/chapters/01-xulun/outputs/skill-xulun.md) |
-| prompt | 绪论 · 提示词 | — | 442 | [`prompt-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
-| skill | 绪论 | 绪论——按「运动 → 内脏 → 脉管与内分泌 → 神经：由支架到内脏，再到支配」走一遍本章判据 | 365 | [`skill-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得 · 提示词 | — | 1049 | [`prompt-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
+| skill | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得 | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得——按「定义的第一句就带了限制：只写「类别与关系」 → 从细胞到系统：九大系统是一条由支架到支配的链 → 分科与材料：同一批结构的几种看法 → 姿势、轴与面：全书共用的坐标系」走一遍本章判据 | 931 | [`skill-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链 · 提示词 | — | 901 | [`prompt-01-xulun.md`](../departments/09-jichu/04-yixue-shengwu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链 | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链——按「这门课真正教的是「分层」，不是「名词」 → 三个判据，构成一条可证伪的链 → 16 章有两次转折，不是十六个抽屉 → 每章只回答四个问题」走一遍本章判据 | 781 | [`skill-xulun.md`](../departments/09-jichu/04-yixue-shengwu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 绪论：把「稳态」写成一条可检查的回路 · 提示词 | — | 856 | [`prompt-xulun.md`](../departments/09-jichu/06-shengli-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
@@ -19670,10 +19670,10 @@
 | skill | 绪论 | 绪论——按「层次 → 通道 → 间隙 → 毗邻：由浅入深地读一个局部」走一遍本章判据 | 359 | [`skill-xulun.md`](../departments/09-jichu/08-jubu-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 绪论：一门学科先要学会「怎么描述」 · 提示词 | — | 897 | [`prompt-xulun.md`](../departments/09-jichu/10-bingli-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
 | skill | 绪论：一门学科先要学会「怎么描述」 | 绪论：一门学科先要学会「怎么描述」——按「第一句话不是定义，是一份分工 → 四节十二单元的笔墨，与从原因到临床的五类内容 → 发展简史：观察单位一步步下沉 → 三个观察层次：不是三选一，是三段路」走一遍本章判据 | 789 | [`skill-xulun.md`](../departments/09-jichu/10-bingli-xue/chapters/01-xulun/outputs/skill-xulun.md) |
-| prompt | 流行病学绪论 · 提示词 | — | 463 | [`prompt-01-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 流行病学绪论 | 流行病学绪论——按「描述（分布与测量）→ 分析（病例对照与队列）→ 推断（因果与偏倚）→ 应用（监测与循证）」走一遍本章判据 | 382 | [`skill-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 流行病学先问人群里有多少人发病，再问某个病人为什么病 · 提示词 | — | 1038 | [`prompt-01-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
+| skill | 流行病学先问人群里有多少人发病，再问某个病人为什么病 | 流行病学先问人群里有多少人发病，再问某个病人为什么病——按「定义的三层限制：人群、分布、防制 → 四项任务是一条不能跳步的链 → 方法的分类只看两条线：谁施加干预、有没有比较组 → 同一批数字，三种问法：率、比、比例与三个关联指标」走一遍本章判据 | 921 | [`skill-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 
-#### 第 2 章 · 糖化学
+#### 第 2 章 · 糖的身份由羟基的朝向决定，甜不甜与认不认得是两件事
 
 `07-shenghua-xue/chapters/02-tang-huaxue/`
 
@@ -19682,7 +19682,7 @@
 | prompt | 糖化学 · 提示词 | — | 453 | [`prompt-tang-huaxue.md`](../departments/09-jichu/07-shenghua-xue/chapters/02-tang-huaxue/outputs/prompt-tang-huaxue.md) |
 | skill | 糖化学 | 糖化学——按「物质（结构性质）→ 代谢（能量与调节）→ 信息（复制转录翻译）→ 技术」走一遍本章判据 | 374 | [`skill-tang-huaxue.md`](../departments/09-jichu/07-shenghua-xue/chapters/02-tang-huaxue/outputs/skill-tang-huaxue.md) |
 
-#### 第 3 章 · 脂质化学
+#### 第 3 章 · 脂质不溶于水不是缺陷，是它被选来做膜与储能的原因
 
 `07-shenghua-xue/chapters/03-zhizhi-huaxue/`
 
@@ -19691,7 +19691,7 @@
 | prompt | 脂质化学 · 提示词 | — | 456 | [`prompt-zhizhi-huaxue.md`](../departments/09-jichu/07-shenghua-xue/chapters/03-zhizhi-huaxue/outputs/prompt-zhizhi-huaxue.md) |
 | skill | 脂质化学 | 脂质化学——按「物质（结构性质）→ 代谢（能量与调节）→ 信息（复制转录翻译）→ 技术」走一遍本章判据 | 378 | [`skill-zhizhi-huaxue.md`](../departments/09-jichu/07-shenghua-xue/chapters/03-zhizhi-huaxue/outputs/skill-zhizhi-huaxue.md) |
 
-#### 第 4 章 · 蛋白质化学
+#### 第 4 章 · 蛋白质的功能写在序列里，但要等折叠完成才读得出来
 
 `07-shenghua-xue/chapters/04-danbaizhi-huaxue/`
 
@@ -19700,7 +19700,7 @@
 | prompt | 蛋白质化学 · 提示词 | — | 459 | [`prompt-danbaizhi-huaxue.md`](../departments/09-jichu/07-shenghua-xue/chapters/04-danbaizhi-huaxue/outputs/prompt-danbaizhi-huaxue.md) |
 | skill | 蛋白质化学 | 蛋白质化学——按「物质（结构性质）→ 代谢（能量与调节）→ 信息（复制转录翻译）→ 技术」走一遍本章判据 | 383 | [`skill-danbaizhi-huaxue.md`](../departments/09-jichu/07-shenghua-xue/chapters/04-danbaizhi-huaxue/outputs/skill-danbaizhi-huaxue.md) |
 
-#### 第 5 章 · 核酸化学
+#### 第 5 章 · 碱基配对只有一种几何解，核酸才能同时做储存与复制
 
 `07-shenghua-xue/chapters/05-hesuan-huaxue/`
 
@@ -19709,7 +19709,7 @@
 | prompt | 核酸化学 · 提示词 | — | 456 | [`prompt-hesuan-huaxue.md`](../departments/09-jichu/07-shenghua-xue/chapters/05-hesuan-huaxue/outputs/prompt-hesuan-huaxue.md) |
 | skill | 核酸化学 | 核酸化学——按「物质（结构性质）→ 代谢（能量与调节）→ 信息（复制转录翻译）→ 技术」走一遍本章判据 | 378 | [`skill-hesuan-huaxue.md`](../departments/09-jichu/07-shenghua-xue/chapters/05-hesuan-huaxue/outputs/skill-hesuan-huaxue.md) |
 
-#### 第 6 章 · 酶
+#### 第 6 章 · 酶的高效来自降低活化能，专一来自形状互补
 
 `07-shenghua-xue/chapters/06-mei/`
 
@@ -19718,7 +19718,7 @@
 | prompt | 酶 · 提示词 | — | 447 | [`prompt-mei.md`](../departments/09-jichu/07-shenghua-xue/chapters/06-mei/outputs/prompt-mei.md) |
 | skill | 酶 | 酶——按「物质（结构性质）→ 代谢（能量与调节）→ 信息（复制转录翻译）→ 技术」走一遍本章判据 | 362 | [`skill-mei.md`](../departments/09-jichu/07-shenghua-xue/chapters/06-mei/outputs/skill-mei.md) |
 
-#### 第 7 章 · 维生素和微量元素
+#### 第 7 章 · 维生素本身不供能，它的价值在辅酶那一半
 
 `07-shenghua-xue/chapters/07-weishengsu-yu-weiliang-yuansu/`
 
@@ -19727,7 +19727,7 @@
 | prompt | 维生素和微量元素 · 提示词 | — | 468 | [`prompt-weishengsu-yu-weiliang-yuansu.md`](../departments/09-jichu/07-shenghua-xue/chapters/07-weishengsu-yu-weiliang-yuansu/outputs/prompt-weishengsu-yu-weiliang-yuansu.md) |
 | skill | 维生素和微量元素 | 维生素和微量元素——按「物质（结构性质）→ 代谢（能量与调节）→ 信息（复制转录翻译）→ 技术」走一遍本章判据 | 402 | [`skill-weishengsu-yu-weiliang-yuansu.md`](../departments/09-jichu/07-shenghua-xue/chapters/07-weishengsu-yu-weiliang-yuansu/outputs/skill-weishengsu-yu-weiliang-yuansu.md) |
 
-#### 第 8 章 · 生物氧化与能量代谢
+#### 第 8 章 · 呼吸链不是管道，是按氧化还原电位排好的一组能量台阶
 
 `07-shenghua-xue/chapters/08-shengwu-yanghua-yu-nengliang/`
 
@@ -19736,7 +19736,7 @@
 | prompt | 生物氧化与能量代谢 · 提示词 | — | 471 | [`prompt-shengwu-yanghua-yu-nengliang.md`](../departments/09-jichu/07-shenghua-xue/chapters/08-shengwu-yanghua-yu-nengliang/outputs/prompt-shengwu-yanghua-yu-nengliang.md) |
 | skill | 生物氧化与能量代谢 | 生物氧化与能量代谢——按「物质（结构性质）→ 代谢（能量与调节）→ 信息（复制转录翻译）→ 技术」走一遍本章判据 | 403 | [`skill-shengwu-yanghua-yu-nengliang.md`](../departments/09-jichu/07-shenghua-xue/chapters/08-shengwu-yanghua-yu-nengliang/outputs/skill-shengwu-yanghua-yu-nengliang.md) |
 
-#### 第 9 章 · 糖代谢
+#### 第 9 章 · 血糖稳住不靠某一步强，靠三条去路与两条来路互相顶着
 
 `07-shenghua-xue/chapters/09-tang-daixie/`
 
@@ -19745,7 +19745,7 @@
 | prompt | 糖代谢 · 提示词 | — | 453 | [`prompt-tang-daixie.md`](../departments/09-jichu/07-shenghua-xue/chapters/09-tang-daixie/outputs/prompt-tang-daixie.md) |
 | skill | 糖代谢 | 糖代谢——按「物质（结构性质）→ 代谢（能量与调节）→ 信息（复制转录翻译）→ 技术」走一遍本章判据 | 374 | [`skill-tang-daixie.md`](../departments/09-jichu/07-shenghua-xue/chapters/09-tang-daixie/outputs/skill-tang-daixie.md) |
 
-#### 第 10 章 · 脂质代谢
+#### 第 10 章 · 脂肪是能量的仓库，但仓门由激素与载脂蛋白两把钥匙管着
 
 `07-shenghua-xue/chapters/10-zhizhi-daixie/`
 
@@ -19754,7 +19754,7 @@
 | prompt | 脂质代谢 · 提示词 | — | 458 | [`prompt-zhizhi-daixie.md`](../departments/09-jichu/07-shenghua-xue/chapters/10-zhizhi-daixie/outputs/prompt-zhizhi-daixie.md) |
 | skill | 脂质代谢 | 脂质代谢——按「物质（结构性质）→ 代谢（能量与调节）→ 信息（复制转录翻译）→ 技术」走一遍本章判据 | 378 | [`skill-zhizhi-daixie.md`](../departments/09-jichu/07-shenghua-xue/chapters/10-zhizhi-daixie/outputs/skill-zhizhi-daixie.md) |
 
-#### 第 11 章 · 氨基酸代谢
+#### 第 11 章 · 氨基酸的氮比碳难处理，所以身体把它转成尿素排掉
 
 `07-shenghua-xue/chapters/11-anjisuan-daixie/`
 
@@ -19763,7 +19763,7 @@
 | prompt | 氨基酸代谢 · 提示词 | — | 461 | [`prompt-anjisuan-daixie.md`](../departments/09-jichu/07-shenghua-xue/chapters/11-anjisuan-daixie/outputs/prompt-anjisuan-daixie.md) |
 | skill | 氨基酸代谢 | 氨基酸代谢——按「物质（结构性质）→ 代谢（能量与调节）→ 信息（复制转录翻译）→ 技术」走一遍本章判据 | 382 | [`skill-anjisuan-daixie.md`](../departments/09-jichu/07-shenghua-xue/chapters/11-anjisuan-daixie/outputs/skill-anjisuan-daixie.md) |
 
-#### 第 12 章 · 核苷酸代谢
+#### 第 12 章 · 碱基环能否被打开，决定了核苷酸代谢的两条终点与两套药理
 
 `07-shenghua-xue/chapters/12-hegansuan-daixie/`
 
@@ -19772,7 +19772,7 @@
 | prompt | 核苷酸代谢 · 提示词 | — | 461 | [`prompt-hegansuan-daixie.md`](../departments/09-jichu/07-shenghua-xue/chapters/12-hegansuan-daixie/outputs/prompt-hegansuan-daixie.md) |
 | skill | 核苷酸代谢 | 核苷酸代谢——按「物质（结构性质）→ 代谢（能量与调节）→ 信息（复制转录翻译）→ 技术」走一遍本章判据 | 383 | [`skill-hegansuan-daixie.md`](../departments/09-jichu/07-shenghua-xue/chapters/12-hegansuan-daixie/outputs/skill-hegansuan-daixie.md) |
 
-#### 第 13 章 · 代谢调节
+#### 第 13 章 · 代谢调节的要害不在开关，而在多条途径争夺同一个中间产物池
 
 `07-shenghua-xue/chapters/13-daixie-tiaojie/`
 
@@ -19781,7 +19781,7 @@
 | prompt | 代谢调节 · 提示词 | — | 458 | [`prompt-daixie-tiaojie.md`](../departments/09-jichu/07-shenghua-xue/chapters/13-daixie-tiaojie/outputs/prompt-daixie-tiaojie.md) |
 | skill | 代谢调节 | 代谢调节——按「物质（结构性质）→ 代谢（能量与调节）→ 信息（复制转录翻译）→ 技术」走一遍本章判据 | 379 | [`skill-daixie-tiaojie.md`](../departments/09-jichu/07-shenghua-xue/chapters/13-daixie-tiaojie/outputs/skill-daixie-tiaojie.md) |
 
-#### 第 14 章 · 血液生化
+#### 第 14 章 · 血液把全身代谢摊进一管样本，判读靠的是成分之间的比值
 
 `07-shenghua-xue/chapters/14-xueye-shenghua/`
 
@@ -19790,7 +19790,7 @@
 | prompt | 血液生化 · 提示词 | — | 458 | [`prompt-xueye-shenghua.md`](../departments/09-jichu/07-shenghua-xue/chapters/14-xueye-shenghua/outputs/prompt-xueye-shenghua.md) |
 | skill | 血液生化 | 血液生化——按「物质（结构性质）→ 代谢（能量与调节）→ 信息（复制转录翻译）→ 技术」走一遍本章判据 | 379 | [`skill-xueye-shenghua.md`](../departments/09-jichu/07-shenghua-xue/chapters/14-xueye-shenghua/outputs/skill-xueye-shenghua.md) |
 
-#### 第 15 章 · 肝胆生化
+#### 第 15 章 · 肝脏把不溶于水的东西改造成溶于水，代价是中间产物可能更毒
 
 `07-shenghua-xue/chapters/15-gandan-shenghua/`
 
@@ -19799,7 +19799,7 @@
 | prompt | 肝胆生化 · 提示词 | — | 458 | [`prompt-gandan-shenghua.md`](../departments/09-jichu/07-shenghua-xue/chapters/15-gandan-shenghua/outputs/prompt-gandan-shenghua.md) |
 | skill | 肝胆生化 | 肝胆生化——按「物质（结构性质）→ 代谢（能量与调节）→ 信息（复制转录翻译）→ 技术」走一遍本章判据 | 380 | [`skill-gandan-shenghua.md`](../departments/09-jichu/07-shenghua-xue/chapters/15-gandan-shenghua/outputs/skill-gandan-shenghua.md) |
 
-#### 第 16 章 · 水盐代谢和酸碱平衡
+#### 第 16 章 · 酸碱紊乱的判据不是 pH 落没落在区间里，而是代偿有没有到位
 
 `07-shenghua-xue/chapters/16-shuiyan-yu-suanjian-pingheng/`
 
@@ -19808,7 +19808,7 @@
 | prompt | 水盐代谢和酸碱平衡 · 提示词 | — | 473 | [`prompt-shuiyan-yu-suanjian-pingheng.md`](../departments/09-jichu/07-shenghua-xue/chapters/16-shuiyan-yu-suanjian-pingheng/outputs/prompt-shuiyan-yu-suanjian-pingheng.md) |
 | skill | 水盐代谢和酸碱平衡 | 水盐代谢和酸碱平衡——按「物质（结构性质）→ 代谢（能量与调节）→ 信息（复制转录翻译）→ 技术」走一遍本章判据 | 403 | [`skill-shuiyan-yu-suanjian-pingheng.md`](../departments/09-jichu/07-shenghua-xue/chapters/16-shuiyan-yu-suanjian-pingheng/outputs/skill-shuiyan-yu-suanjian-pingheng.md) |
 
-#### 第 17 章 · DNA的生物合成
+#### 第 17 章 · DNA 复制的一切别扭，都是聚合酶只会朝一个方向延长逼出来的
 
 `07-shenghua-xue/chapters/17-dna-shengwu-hecheng/`
 
@@ -19817,7 +19817,7 @@
 | prompt | DNA的生物合成 · 提示词 | — | 470 | [`prompt-dna-shengwu-hecheng.md`](../departments/09-jichu/07-shenghua-xue/chapters/17-dna-shengwu-hecheng/outputs/prompt-dna-shengwu-hecheng.md) |
 | skill | DNA的生物合成 | DNA的生物合成——按「物质（结构性质）→ 代谢（能量与调节）→ 信息（复制转录翻译）→ 技术」走一遍本章判据 | 392 | [`skill-dna-shengwu-hecheng.md`](../departments/09-jichu/07-shenghua-xue/chapters/17-dna-shengwu-hecheng/outputs/skill-dna-shengwu-hecheng.md) |
 
-#### 第 18 章 · RNA的生物合成
+#### 第 18 章 · 转录的全部调控空间在起点、终点与剪接，抄写本身没有选择余地
 
 `07-shenghua-xue/chapters/18-rna-shengwu-hecheng/`
 
@@ -19826,7 +19826,7 @@
 | prompt | RNA的生物合成 · 提示词 | — | 470 | [`prompt-rna-shengwu-hecheng.md`](../departments/09-jichu/07-shenghua-xue/chapters/18-rna-shengwu-hecheng/outputs/prompt-rna-shengwu-hecheng.md) |
 | skill | RNA的生物合成 | RNA的生物合成——按「物质（结构性质）→ 代谢（能量与调节）→ 信息（复制转录翻译）→ 技术」走一遍本章判据 | 392 | [`skill-rna-shengwu-hecheng.md`](../departments/09-jichu/07-shenghua-xue/chapters/18-rna-shengwu-hecheng/outputs/skill-rna-shengwu-hecheng.md) |
 
-#### 第 19 章 · 蛋白质的生物合成
+#### 第 19 章 · 翻译的准确不靠一条规则，而靠两次校对与四次高能键的预付
 
 `07-shenghua-xue/chapters/19-danbaizhi-shengwu-hecheng/`
 
@@ -19835,7 +19835,7 @@
 | prompt | 蛋白质的生物合成 · 提示词 | — | 470 | [`prompt-danbaizhi-shengwu-hecheng.md`](../departments/09-jichu/07-shenghua-xue/chapters/19-danbaizhi-shengwu-hecheng/outputs/prompt-danbaizhi-shengwu-hecheng.md) |
 | skill | 蛋白质的生物合成 | 蛋白质的生物合成——按「物质（结构性质）→ 代谢（能量与调节）→ 信息（复制转录翻译）→ 技术」走一遍本章判据 | 398 | [`skill-danbaizhi-shengwu-hecheng.md`](../departments/09-jichu/07-shenghua-xue/chapters/19-danbaizhi-shengwu-hecheng/outputs/skill-danbaizhi-shengwu-hecheng.md) |
 
-#### 第 20 章 · 基因表达调控
+#### 第 20 章 · 原核用一套操纵子省能量，真核用五层关卡换精细
 
 `07-shenghua-xue/chapters/20-jiyin-biaoda-tiaokong/`
 
@@ -19844,7 +19844,7 @@
 | prompt | 基因表达调控 · 提示词 | — | 464 | [`prompt-jiyin-biaoda-tiaokong.md`](../departments/09-jichu/07-shenghua-xue/chapters/20-jiyin-biaoda-tiaokong/outputs/prompt-jiyin-biaoda-tiaokong.md) |
 | skill | 基因表达调控 | 基因表达调控——按「物质（结构性质）→ 代谢（能量与调节）→ 信息（复制转录翻译）→ 技术」走一遍本章判据 | 390 | [`skill-jiyin-biaoda-tiaokong.md`](../departments/09-jichu/07-shenghua-xue/chapters/20-jiyin-biaoda-tiaokong/outputs/skill-jiyin-biaoda-tiaokong.md) |
 
-#### 第 21 章 · 生物化学与分子生物学常用技术
+#### 第 21 章 · 分子技术的选择不看好坏，只看它那个致命假设你的样本能不能满足
 
 `07-shenghua-xue/chapters/21-changyong-jishu/`
 
@@ -19877,12 +19877,12 @@
 | skill | 神志病没有化验单，判据只能从「看和问」里长出来 | 神志病没有化验单，判据只能从「看和问」里长出来——按「这门学科的对象是「神」的失序，不是「脑」的病灶 → 7 项观察，3 项靠自述，4 项不靠 → 三项同现才算神志病，单项一律不算 → 能做什么，以及什么时候必须停手」走一遍本章判据 | 667 | [`skill-01-xulun.md`](../departments/01-zhongyi/20-zhongyi-jingshenbing-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 用本章内容做一件事：绪论 | — | 406 | [`prompt-01-xulun.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 绪论 | 用《临床中药学》第 1 章「绪论」的单元层做可核对的教学材料。 | 502 | [`skill-01-xulun.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/01-xulun/outputs/skill-01-xulun.md) |
-| prompt | 绪论 · 提示词 | — | 444 | [`prompt-01-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 绪论 | 绪论——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 369 | [`skill-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 绪论不是开场白：它划定针灸学的边界、来路与读法 · 提示词 | — | 1115 | [`prompt-01-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
+| skill | 绪论不是开场白：它划定针灸学的边界、来路与读法 | 绪论不是开场白：它划定针灸学的边界、来路与读法——按「篇幅账：一半给历史，三分之一给定义 → 两个起源各有物证：砭石在石，灸火在火 → 三次奠基与四次校订：书目是校出来的，不是列出来的 → 学什么：三块内容与一条练习链」走一遍本章判据 | 1002 | [`skill-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 泛化不是模型的属性，是数据与假设的私下约定 · 提示词 | — | 920 | [`prompt-01-xulun.md`](../departments/07-zhineng/16-jiqi-xuexi/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 泛化不是模型的属性，是数据与假设的私下约定 | 泛化不是模型的属性，是数据与假设的私下约定——按「把一个「学习」问题写成四件东西 → 训练误差与泛化误差：两个不同的量 → 归纳偏好：算法必须偏心，而且偏心要写出来 → NFL 定理：一句被引用得最多、理解得最少的话」走一遍本章判据 | 808 | [`skill-xulun.md`](../departments/07-zhineng/16-jiqi-xuexi/chapters/01-xulun/outputs/skill-xulun.md) |
-| prompt | 绪论 · 提示词 | — | 442 | [`prompt-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
-| skill | 绪论 | 绪论——按「运动 → 内脏 → 脉管与内分泌 → 神经：由支架到内脏，再到支配」走一遍本章判据 | 365 | [`skill-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得 · 提示词 | — | 1049 | [`prompt-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
+| skill | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得 | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得——按「定义的第一句就带了限制：只写「类别与关系」 → 从细胞到系统：九大系统是一条由支架到支配的链 → 分科与材料：同一批结构的几种看法 → 姿势、轴与面：全书共用的坐标系」走一遍本章判据 | 931 | [`skill-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链 · 提示词 | — | 901 | [`prompt-01-xulun.md`](../departments/09-jichu/04-yixue-shengwu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链 | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链——按「这门课真正教的是「分层」，不是「名词」 → 三个判据，构成一条可证伪的链 → 16 章有两次转折，不是十六个抽屉 → 每章只回答四个问题」走一遍本章判据 | 781 | [`skill-xulun.md`](../departments/09-jichu/04-yixue-shengwu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 绪论：把「稳态」写成一条可检查的回路 · 提示词 | — | 856 | [`prompt-xulun.md`](../departments/09-jichu/06-shengli-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
@@ -19893,10 +19893,10 @@
 | skill | 绪论 | 绪论——按「层次 → 通道 → 间隙 → 毗邻：由浅入深地读一个局部」走一遍本章判据 | 359 | [`skill-xulun.md`](../departments/09-jichu/08-jubu-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 绪论：一门学科先要学会「怎么描述」 · 提示词 | — | 897 | [`prompt-xulun.md`](../departments/09-jichu/10-bingli-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
 | skill | 绪论：一门学科先要学会「怎么描述」 | 绪论：一门学科先要学会「怎么描述」——按「第一句话不是定义，是一份分工 → 四节十二单元的笔墨，与从原因到临床的五类内容 → 发展简史：观察单位一步步下沉 → 三个观察层次：不是三选一，是三段路」走一遍本章判据 | 789 | [`skill-xulun.md`](../departments/09-jichu/10-bingli-xue/chapters/01-xulun/outputs/skill-xulun.md) |
-| prompt | 流行病学绪论 · 提示词 | — | 463 | [`prompt-01-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 流行病学绪论 | 流行病学绪论——按「描述（分布与测量）→ 分析（病例对照与队列）→ 推断（因果与偏倚）→ 应用（监测与循证）」走一遍本章判据 | 382 | [`skill-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 流行病学先问人群里有多少人发病，再问某个病人为什么病 · 提示词 | — | 1038 | [`prompt-01-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
+| skill | 流行病学先问人群里有多少人发病，再问某个病人为什么病 | 流行病学先问人群里有多少人发病，再问某个病人为什么病——按「定义的三层限制：人群、分布、防制 → 四项任务是一条不能跳步的链 → 方法的分类只看两条线：谁施加干预、有没有比较组 → 同一批数字，三种问法：率、比、比例与三个关联指标」走一遍本章判据 | 921 | [`skill-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 
-#### 第 2 章 · 上肢
+#### 第 2 章 · 上肢的层次是按通道排的，所以断在哪一段能推出坏在哪一条
 
 `08-jubu-jiepou-xue/chapters/02-shangzhi/`
 
@@ -19905,7 +19905,7 @@
 | prompt | 上肢 · 提示词 | — | 437 | [`prompt-shangzhi.md`](../departments/09-jichu/08-jubu-jiepou-xue/chapters/02-shangzhi/outputs/prompt-shangzhi.md) |
 | skill | 上肢 | 上肢——按「层次 → 通道 → 间隙 → 毗邻：由浅入深地读一个局部」走一遍本章判据 | 362 | [`skill-shangzhi.md`](../departments/09-jichu/08-jubu-jiepou-xue/chapters/02-shangzhi/outputs/skill-shangzhi.md) |
 
-#### 第 3 章 · 下肢
+#### 第 3 章 · 下肢的难点不在记血管，而在同一个区里叠着两套通道
 
 `08-jubu-jiepou-xue/chapters/03-xiazhi/`
 
@@ -19914,7 +19914,7 @@
 | prompt | 下肢 · 提示词 | — | 437 | [`prompt-xiazhi.md`](../departments/09-jichu/08-jubu-jiepou-xue/chapters/03-xiazhi/outputs/prompt-xiazhi.md) |
 | skill | 下肢 | 下肢——按「层次 → 通道 → 间隙 → 毗邻：由浅入深地读一个局部」走一遍本章判据 | 360 | [`skill-xiazhi.md`](../departments/09-jichu/08-jubu-jiepou-xue/chapters/03-xiazhi/outputs/skill-xiazhi.md) |
 
-#### 第 4 章 · 头部
+#### 第 4 章 · 头部的答案在「谁跟谁粘在一起」，不在五层的名字里
 
 `08-jubu-jiepou-xue/chapters/04-toubu/`
 
@@ -19934,7 +19934,7 @@
 | prompt | 颈部 · 提示词 | — | 437 | [`prompt-jingbu.md`](../departments/09-jichu/08-jubu-jiepou-xue/chapters/05-jingbu/outputs/prompt-jingbu.md) |
 | skill | 颈部 | 颈部——按「层次 → 通道 → 间隙 → 毗邻：由浅入深地读一个局部」走一遍本章判据 | 360 | [`skill-jingbu.md`](../departments/09-jichu/08-jubu-jiepou-xue/chapters/05-jingbu/outputs/skill-jingbu.md) |
 
-#### 第 6 章 · 胸部
+#### 第 6 章 · 胸部的所有位置都得带参照，因为它的容积一直在变
 
 `08-jubu-jiepou-xue/chapters/06-xiongbu/`
 
@@ -19943,7 +19943,7 @@
 | prompt | 胸部 · 提示词 | — | 437 | [`prompt-xiongbu.md`](../departments/09-jichu/08-jubu-jiepou-xue/chapters/06-xiongbu/outputs/prompt-xiongbu.md) |
 | skill | 胸部 | 胸部——按「层次 → 通道 → 间隙 → 毗邻：由浅入深地读一个局部」走一遍本章判据 | 361 | [`skill-xiongbu.md`](../departments/09-jichu/08-jubu-jiepou-xue/chapters/06-xiongbu/outputs/skill-xiongbu.md) |
 
-#### 第 7 章 · 腹部
+#### 第 7 章 · 腹部先分「被腹膜包了几面」，再谈器官在哪
 
 `08-jubu-jiepou-xue/chapters/07-fubu/`
 
@@ -19952,7 +19952,7 @@
 | prompt | 腹部 · 提示词 | — | 437 | [`prompt-fubu.md`](../departments/09-jichu/08-jubu-jiepou-xue/chapters/07-fubu/outputs/prompt-fubu.md) |
 | skill | 腹部 | 腹部——按「层次 → 通道 → 间隙 → 毗邻：由浅入深地读一个局部」走一遍本章判据 | 358 | [`skill-fubu.md`](../departments/09-jichu/08-jubu-jiepou-xue/chapters/07-fubu/outputs/skill-fubu.md) |
 
-#### 第 8 章 · 盆部和会阴
+#### 第 8 章 · 骨盆下口靠两个膈封闭，会阴的层次得先说清从哪个方向数
 
 `08-jubu-jiepou-xue/chapters/08-penbu-huiyin/`
 
@@ -19961,7 +19961,7 @@
 | prompt | 盆部和会阴 · 提示词 | — | 446 | [`prompt-penbu-huiyin.md`](../departments/09-jichu/08-jubu-jiepou-xue/chapters/08-penbu-huiyin/outputs/prompt-penbu-huiyin.md) |
 | skill | 盆部和会阴 | 盆部和会阴——按「层次 → 通道 → 间隙 → 毗邻：由浅入深地读一个局部」走一遍本章判据 | 372 | [`skill-penbu-huiyin.md`](../departments/09-jichu/08-jubu-jiepou-xue/chapters/08-penbu-huiyin/outputs/skill-penbu-huiyin.md) |
 
-#### 第 9 章 · 脊柱区
+#### 第 9 章 · 脊柱区的所有层次都在为一条管让路，所以答案总在「壁上」
 
 `08-jubu-jiepou-xue/chapters/09-jizhuqu/`
 
@@ -20106,12 +20106,12 @@
 | skill | 神志病没有化验单，判据只能从「看和问」里长出来 | 神志病没有化验单，判据只能从「看和问」里长出来——按「这门学科的对象是「神」的失序，不是「脑」的病灶 → 7 项观察，3 项靠自述，4 项不靠 → 三项同现才算神志病，单项一律不算 → 能做什么，以及什么时候必须停手」走一遍本章判据 | 667 | [`skill-01-xulun.md`](../departments/01-zhongyi/20-zhongyi-jingshenbing-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 用本章内容做一件事：绪论 | — | 406 | [`prompt-01-xulun.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 绪论 | 用《临床中药学》第 1 章「绪论」的单元层做可核对的教学材料。 | 502 | [`skill-01-xulun.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/01-xulun/outputs/skill-01-xulun.md) |
-| prompt | 绪论 · 提示词 | — | 444 | [`prompt-01-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 绪论 | 绪论——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 369 | [`skill-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 绪论不是开场白：它划定针灸学的边界、来路与读法 · 提示词 | — | 1115 | [`prompt-01-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
+| skill | 绪论不是开场白：它划定针灸学的边界、来路与读法 | 绪论不是开场白：它划定针灸学的边界、来路与读法——按「篇幅账：一半给历史，三分之一给定义 → 两个起源各有物证：砭石在石，灸火在火 → 三次奠基与四次校订：书目是校出来的，不是列出来的 → 学什么：三块内容与一条练习链」走一遍本章判据 | 1002 | [`skill-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 泛化不是模型的属性，是数据与假设的私下约定 · 提示词 | — | 920 | [`prompt-01-xulun.md`](../departments/07-zhineng/16-jiqi-xuexi/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 泛化不是模型的属性，是数据与假设的私下约定 | 泛化不是模型的属性，是数据与假设的私下约定——按「把一个「学习」问题写成四件东西 → 训练误差与泛化误差：两个不同的量 → 归纳偏好：算法必须偏心，而且偏心要写出来 → NFL 定理：一句被引用得最多、理解得最少的话」走一遍本章判据 | 808 | [`skill-xulun.md`](../departments/07-zhineng/16-jiqi-xuexi/chapters/01-xulun/outputs/skill-xulun.md) |
-| prompt | 绪论 · 提示词 | — | 442 | [`prompt-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
-| skill | 绪论 | 绪论——按「运动 → 内脏 → 脉管与内分泌 → 神经：由支架到内脏，再到支配」走一遍本章判据 | 365 | [`skill-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得 · 提示词 | — | 1049 | [`prompt-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
+| skill | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得 | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得——按「定义的第一句就带了限制：只写「类别与关系」 → 从细胞到系统：九大系统是一条由支架到支配的链 → 分科与材料：同一批结构的几种看法 → 姿势、轴与面：全书共用的坐标系」走一遍本章判据 | 931 | [`skill-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链 · 提示词 | — | 901 | [`prompt-01-xulun.md`](../departments/09-jichu/04-yixue-shengwu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链 | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链——按「这门课真正教的是「分层」，不是「名词」 → 三个判据，构成一条可证伪的链 → 16 章有两次转折，不是十六个抽屉 → 每章只回答四个问题」走一遍本章判据 | 781 | [`skill-xulun.md`](../departments/09-jichu/04-yixue-shengwu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 绪论：把「稳态」写成一条可检查的回路 · 提示词 | — | 856 | [`prompt-xulun.md`](../departments/09-jichu/06-shengli-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
@@ -20122,8 +20122,8 @@
 | skill | 绪论 | 绪论——按「层次 → 通道 → 间隙 → 毗邻：由浅入深地读一个局部」走一遍本章判据 | 359 | [`skill-xulun.md`](../departments/09-jichu/08-jubu-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 绪论：一门学科先要学会「怎么描述」 · 提示词 | — | 897 | [`prompt-xulun.md`](../departments/09-jichu/10-bingli-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
 | skill | 绪论：一门学科先要学会「怎么描述」 | 绪论：一门学科先要学会「怎么描述」——按「第一句话不是定义，是一份分工 → 四节十二单元的笔墨，与从原因到临床的五类内容 → 发展简史：观察单位一步步下沉 → 三个观察层次：不是三选一，是三段路」走一遍本章判据 | 789 | [`skill-xulun.md`](../departments/09-jichu/10-bingli-xue/chapters/01-xulun/outputs/skill-xulun.md) |
-| prompt | 流行病学绪论 · 提示词 | — | 463 | [`prompt-01-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 流行病学绪论 | 流行病学绪论——按「描述（分布与测量）→ 分析（病例对照与队列）→ 推断（因果与偏倚）→ 应用（监测与循证）」走一遍本章判据 | 382 | [`skill-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 流行病学先问人群里有多少人发病，再问某个病人为什么病 · 提示词 | — | 1038 | [`prompt-01-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
+| skill | 流行病学先问人群里有多少人发病，再问某个病人为什么病 | 流行病学先问人群里有多少人发病，再问某个病人为什么病——按「定义的三层限制：人群、分布、防制 → 四项任务是一条不能跳步的链 → 方法的分类只看两条线：谁施加干预、有没有比较组 → 同一批数字，三种问法：率、比、比例与三个关联指标」走一遍本章判据 | 921 | [`skill-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 
 #### 第 2 章 · 疾病概论：把「病」写成一个过程，而不是一张标签
 
@@ -21235,7 +21235,7 @@
 
 > Core · 第 4 学期 · 已产出 15 章
 
-#### 第 1 章 · 免疫学绪论
+#### 第 1 章 · 免疫的本质是分清自己与非己的能力
 
 `13-mianyi-bingyuan-shengwu/chapters/01-mianyi-xulun/`
 
@@ -21244,7 +21244,7 @@
 | prompt | 免疫学绪论 · 提示词 | — | 465 | [`prompt-01-mianyi-xulun.md`](../departments/09-jichu/13-mianyi-bingyuan-shengwu/chapters/01-mianyi-xulun/outputs/prompt-01-mianyi-xulun.md) |
 | skill | 免疫学绪论 | 免疫学绪论——按「免疫基础（抗原—分子—细胞—应答）→ 免疫病理与应用 → 病原总论 → 各论（菌—毒—真菌—虫）」走一遍本章判据 | 397 | [`skill-mianyi-xulun.md`](../departments/09-jichu/13-mianyi-bingyuan-shengwu/chapters/01-mianyi-xulun/outputs/skill-mianyi-xulun.md) |
 
-#### 第 2 章 · 抗原
+#### 第 2 章 · 抗原的分量不在分子大小，而在能否被识别的表位
 
 `13-mianyi-bingyuan-shengwu/chapters/02-kangyuan/`
 
@@ -21253,7 +21253,7 @@
 | prompt | 抗原 · 提示词 | — | 456 | [`prompt-02-kangyuan.md`](../departments/09-jichu/13-mianyi-bingyuan-shengwu/chapters/02-kangyuan/outputs/prompt-02-kangyuan.md) |
 | skill | 抗原 | 抗原——按「免疫基础（抗原—分子—细胞—应答）→ 免疫病理与应用 → 病原总论 → 各论（菌—毒—真菌—虫）」走一遍本章判据 | 387 | [`skill-kangyuan.md`](../departments/09-jichu/13-mianyi-bingyuan-shengwu/chapters/02-kangyuan/outputs/skill-kangyuan.md) |
 
-#### 第 3 章 · 免疫分子
+#### 第 3 章 · 抗体、补体与细胞因子各司其职，缺一环则识别化为空谈
 
 `13-mianyi-bingyuan-shengwu/chapters/03-mianyi-fenzi/`
 
@@ -21262,7 +21262,7 @@
 | prompt | 免疫分子 · 提示词 | — | 462 | [`prompt-03-mianyi-fenzi.md`](../departments/09-jichu/13-mianyi-bingyuan-shengwu/chapters/03-mianyi-fenzi/outputs/prompt-03-mianyi-fenzi.md) |
 | skill | 免疫分子 | 免疫分子——按「免疫基础（抗原—分子—细胞—应答）→ 免疫病理与应用 → 病原总论 → 各论（菌—毒—真菌—虫）」走一遍本章判据 | 395 | [`skill-mianyi-fenzi.md`](../departments/09-jichu/13-mianyi-bingyuan-shengwu/chapters/03-mianyi-fenzi/outputs/skill-mianyi-fenzi.md) |
 
-#### 第 4 章 · 免疫细胞
+#### 第 4 章 · 免疫细胞的分工，决定了应答在哪一层被改写
 
 `13-mianyi-bingyuan-shengwu/chapters/04-mianyi-xibao/`
 
@@ -21271,7 +21271,7 @@
 | prompt | 免疫细胞 · 提示词 | — | 462 | [`prompt-04-mianyi-xibao.md`](../departments/09-jichu/13-mianyi-bingyuan-shengwu/chapters/04-mianyi-xibao/outputs/prompt-04-mianyi-xibao.md) |
 | skill | 免疫细胞 | 免疫细胞——按「免疫基础（抗原—分子—细胞—应答）→ 免疫病理与应用 → 病原总论 → 各论（菌—毒—真菌—虫）」走一遍本章判据 | 395 | [`skill-mianyi-xibao.md`](../departments/09-jichu/13-mianyi-bingyuan-shengwu/chapters/04-mianyi-xibao/outputs/skill-mianyi-xibao.md) |
 
-#### 第 5 章 · 免疫应答
+#### 第 5 章 · 免疫应答是按时间表编排的四段接力
 
 `13-mianyi-bingyuan-shengwu/chapters/05-mianyi-yingda/`
 
@@ -21280,7 +21280,7 @@
 | prompt | 免疫应答 · 提示词 | — | 462 | [`prompt-05-mianyi-yingda.md`](../departments/09-jichu/13-mianyi-bingyuan-shengwu/chapters/05-mianyi-yingda/outputs/prompt-05-mianyi-yingda.md) |
 | skill | 免疫应答 | 免疫应答——按「免疫基础（抗原—分子—细胞—应答）→ 免疫病理与应用 → 病原总论 → 各论（菌—毒—真菌—虫）」走一遍本章判据 | 396 | [`skill-mianyi-yingda.md`](../departments/09-jichu/13-mianyi-bingyuan-shengwu/chapters/05-mianyi-yingda/outputs/skill-mianyi-yingda.md) |
 
-#### 第 6 章 · 超敏反应
+#### 第 6 章 · 同一套应答机制，指向错处即为损伤
 
 `13-mianyi-bingyuan-shengwu/chapters/06-chaomin-fanying/`
 
@@ -21289,7 +21289,7 @@
 | prompt | 超敏反应 · 提示词 | — | 462 | [`prompt-06-chaomin-fanying.md`](../departments/09-jichu/13-mianyi-bingyuan-shengwu/chapters/06-chaomin-fanying/outputs/prompt-06-chaomin-fanying.md) |
 | skill | 超敏反应 | 超敏反应——按「免疫基础（抗原—分子—细胞—应答）→ 免疫病理与应用 → 病原总论 → 各论（菌—毒—真菌—虫）」走一遍本章判据 | 398 | [`skill-chaomin-fanying.md`](../departments/09-jichu/13-mianyi-bingyuan-shengwu/chapters/06-chaomin-fanying/outputs/skill-chaomin-fanying.md) |
 
-#### 第 7 章 · 免疫学应用
+#### 第 7 章 · 免疫学的用处，全在把不可见的识别变成可读的信号
 
 `13-mianyi-bingyuan-shengwu/chapters/07-mianyi-yingyong/`
 
@@ -21298,7 +21298,7 @@
 | prompt | 免疫学应用 · 提示词 | — | 465 | [`prompt-07-mianyi-yingyong.md`](../departments/09-jichu/13-mianyi-bingyuan-shengwu/chapters/07-mianyi-yingyong/outputs/prompt-07-mianyi-yingyong.md) |
 | skill | 免疫学应用 | 免疫学应用——按「免疫基础（抗原—分子—细胞—应答）→ 免疫病理与应用 → 病原总论 → 各论（菌—毒—真菌—虫）」走一遍本章判据 | 400 | [`skill-mianyi-yingyong.md`](../departments/09-jichu/13-mianyi-bingyuan-shengwu/chapters/07-mianyi-yingyong/outputs/skill-mianyi-yingyong.md) |
 
-#### 第 8 章 · 病原生物学绪论
+#### 第 8 章 · 病原生物学的核心，是共生关系被打破的那一刻
 
 `13-mianyi-bingyuan-shengwu/chapters/08-bingyuan-xulun/`
 
@@ -21307,7 +21307,7 @@
 | prompt | 病原生物学绪论 · 提示词 | — | 471 | [`prompt-08-bingyuan-xulun.md`](../departments/09-jichu/13-mianyi-bingyuan-shengwu/chapters/08-bingyuan-xulun/outputs/prompt-08-bingyuan-xulun.md) |
 | skill | 病原生物学绪论 | 病原生物学绪论——按「免疫基础（抗原—分子—细胞—应答）→ 免疫病理与应用 → 病原总论 → 各论（菌—毒—真菌—虫）」走一遍本章判据 | 403 | [`skill-bingyuan-xulun.md`](../departments/09-jichu/13-mianyi-bingyuan-shengwu/chapters/08-bingyuan-xulun/outputs/skill-bingyuan-xulun.md) |
 
-#### 第 9 章 · 细菌学总论
+#### 第 9 章 · 细菌的致病力写在结构上，也写在生长条件里
 
 `13-mianyi-bingyuan-shengwu/chapters/09-xijun-zonglun/`
 
@@ -21316,7 +21316,7 @@
 | prompt | 细菌学总论 · 提示词 | — | 465 | [`prompt-09-xijun-zonglun.md`](../departments/09-jichu/13-mianyi-bingyuan-shengwu/chapters/09-xijun-zonglun/outputs/prompt-09-xijun-zonglun.md) |
 | skill | 细菌学总论 | 细菌学总论——按「免疫基础（抗原—分子—细胞—应答）→ 免疫病理与应用 → 病原总论 → 各论（菌—毒—真菌—虫）」走一遍本章判据 | 398 | [`skill-xijun-zonglun.md`](../departments/09-jichu/13-mianyi-bingyuan-shengwu/chapters/09-xijun-zonglun/outputs/skill-xijun-zonglun.md) |
 
-#### 第 10 章 · 常见致病细菌
+#### 第 10 章 · 常见病原菌的辨识，靠毒力因子与染色反应两条线索
 
 `13-mianyi-bingyuan-shengwu/chapters/10-changjian-xijun/`
 
@@ -21325,7 +21325,7 @@
 | prompt | 常见致病细菌 · 提示词 | — | 470 | [`prompt-10-changjian-xijun.md`](../departments/09-jichu/13-mianyi-bingyuan-shengwu/chapters/10-changjian-xijun/outputs/prompt-10-changjian-xijun.md) |
 | skill | 常见致病细菌 | 常见致病细菌——按「免疫基础（抗原—分子—细胞—应答）→ 免疫病理与应用 → 病原总论 → 各论（菌—毒—真菌—虫）」走一遍本章判据 | 402 | [`skill-changjian-xijun.md`](../departments/09-jichu/13-mianyi-bingyuan-shengwu/chapters/10-changjian-xijun/outputs/skill-changjian-xijun.md) |
 
-#### 第 11 章 · 病毒学总论
+#### 第 11 章 · 病毒没有独立代谢，故其致病全凭借宿主之手
 
 `13-mianyi-bingyuan-shengwu/chapters/11-bingdu-zonglun/`
 
@@ -21334,7 +21334,7 @@
 | prompt | 病毒学总论 · 提示词 | — | 467 | [`prompt-11-bingdu-zonglun.md`](../departments/09-jichu/13-mianyi-bingyuan-shengwu/chapters/11-bingdu-zonglun/outputs/prompt-11-bingdu-zonglun.md) |
 | skill | 病毒学总论 | 病毒学总论——按「免疫基础（抗原—分子—细胞—应答）→ 免疫病理与应用 → 病原总论 → 各论（菌—毒—真菌—虫）」走一遍本章判据 | 399 | [`skill-bingdu-zonglun.md`](../departments/09-jichu/13-mianyi-bingyuan-shengwu/chapters/11-bingdu-zonglun/outputs/skill-bingdu-zonglun.md) |
 
-#### 第 12 章 · 常见致病病毒
+#### 第 12 章 · 常见病毒的差别，在于侵犯哪一类细胞与留下何种免疫印记
 
 `13-mianyi-bingyuan-shengwu/chapters/12-changjian-bingdu/`
 
@@ -21343,7 +21343,7 @@
 | prompt | 常见致病病毒 · 提示词 | — | 470 | [`prompt-12-changjian-bingdu.md`](../departments/09-jichu/13-mianyi-bingyuan-shengwu/chapters/12-changjian-bingdu/outputs/prompt-12-changjian-bingdu.md) |
 | skill | 常见致病病毒 | 常见致病病毒——按「免疫基础（抗原—分子—细胞—应答）→ 免疫病理与应用 → 病原总论 → 各论（菌—毒—真菌—虫）」走一遍本章判据 | 403 | [`skill-changjian-bingdu.md`](../departments/09-jichu/13-mianyi-bingyuan-shengwu/chapters/12-changjian-bingdu/outputs/skill-changjian-bingdu.md) |
 
-#### 第 13 章 · 真菌学
+#### 第 13 章 · 真菌致病多不靠毒素，而靠机会与慢性迁延
 
 `13-mianyi-bingyuan-shengwu/chapters/13-zhenjunxue/`
 
@@ -21352,7 +21352,7 @@
 | prompt | 真菌学 · 提示词 | — | 461 | [`prompt-13-zhenjunxue.md`](../departments/09-jichu/13-mianyi-bingyuan-shengwu/chapters/13-zhenjunxue/outputs/prompt-13-zhenjunxue.md) |
 | skill | 真菌学 | 真菌学——按「免疫基础（抗原—分子—细胞—应答）→ 免疫病理与应用 → 病原总论 → 各论（菌—毒—真菌—虫）」走一遍本章判据 | 391 | [`skill-zhenjunxue.md`](../departments/09-jichu/13-mianyi-bingyuan-shengwu/chapters/13-zhenjunxue/outputs/skill-zhenjunxue.md) |
 
-#### 第 14 章 · 医学寄生虫学概述
+#### 第 14 章 · 寄生虫病的要害，是生活史里那一段离开人体的路程
 
 `13-mianyi-bingyuan-shengwu/chapters/14-jishengchong-gaishu/`
 
@@ -21361,7 +21361,7 @@
 | prompt | 医学寄生虫学概述 · 提示词 | — | 476 | [`prompt-14-jishengchong-gaishu.md`](../departments/09-jichu/13-mianyi-bingyuan-shengwu/chapters/14-jishengchong-gaishu/outputs/prompt-14-jishengchong-gaishu.md) |
 | skill | 医学寄生虫学概述 | 医学寄生虫学概述——按「免疫基础（抗原—分子—细胞—应答）→ 免疫病理与应用 → 病原总论 → 各论（菌—毒—真菌—虫）」走一遍本章判据 | 410 | [`skill-jishengchong-gaishu.md`](../departments/09-jichu/13-mianyi-bingyuan-shengwu/chapters/14-jishengchong-gaishu/outputs/skill-jishengchong-gaishu.md) |
 
-#### 第 15 章 · 常见致病寄生虫
+#### 第 15 章 · 常见寄生虫的辨识，落在虫卵形态与宿主转换上
 
 `13-mianyi-bingyuan-shengwu/chapters/15-changjian-jishengchong/`
 
@@ -21374,160 +21374,160 @@
 
 > Core · 第 4 学期 · 已产出 18 章
 
-#### 第 1 章 · 疾病学基础概述与疾病概念
+#### 第 1 章 · 疾病不是一张名录，而是一组可以追问的关系
 
 `14-jibing-xue-jichu/chapters/01-gaishu-jibing-gainian/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 疾病学基础概述与疾病概念 · 提示词 | — | 467 | [`prompt-01-gaishu-jibing-gainian.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/01-gaishu-jibing-gainian/outputs/prompt-01-gaishu-jibing-gainian.md) |
-| skill | 疾病学基础概述与疾病概念 | 疾病学基础概述与疾病概念——按「疾病概念 → 基本病理过程 → 系统疾病 → 治疗与防治」走一遍本章判据 | 392 | [`skill-gaishu-jibing-gainian.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/01-gaishu-jibing-gainian/outputs/skill-gaishu-jibing-gainian.md) |
+| prompt | 疾病不是一张名录，而是一组可以追问的关系 · 提示词 | — | 919 | [`prompt-01-gaishu-jibing-gainian.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/01-gaishu-jibing-gainian/outputs/prompt-01-gaishu-jibing-gainian.md) |
+| skill | 疾病不是一张名录，而是一组可以追问的关系 | 疾病不是一张名录，而是一组可以追问的关系——按「健康与疾病：两类状态，一套观察维度 → 病因、条件、诱因：三格分开，讨论才有层次 → 三条一般规律：把过程读成链，而不是点 → 转归两类：恢复不是原样复现」走一遍本章判据 | 823 | [`skill-gaishu-jibing-gainian.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/01-gaishu-jibing-gainian/outputs/skill-gaishu-jibing-gainian.md) |
 
-#### 第 2 章 · 细胞与组织的损伤与适应
+#### 第 2 章 · 损伤与适应是同一件事的两头，判据在「还能不能回去」
 
 `14-jibing-xue-jichu/chapters/02-sunshang-yu-shiying/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 细胞与组织的损伤与适应 · 提示词 | — | 464 | [`prompt-02-sunshang-yu-shiying.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/02-sunshang-yu-shiying/outputs/prompt-02-sunshang-yu-shiying.md) |
-| skill | 细胞与组织的损伤与适应 | 细胞与组织的损伤与适应——按「疾病概念 → 基本病理过程 → 系统疾病 → 治疗与防治」走一遍本章判据 | 388 | [`skill-sunshang-yu-shiying.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/02-sunshang-yu-shiying/outputs/skill-sunshang-yu-shiying.md) |
+| prompt | 损伤与适应是同一件事的两头，判据在「还能不能回去」 · 提示词 | — | 916 | [`prompt-02-sunshang-yu-shiying.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/02-sunshang-yu-shiying/outputs/prompt-02-sunshang-yu-shiying.md) |
+| skill | 损伤与适应是同一件事的两头，判据在「还能不能回去」 | 损伤与适应是同一件事的两头，判据在「还能不能回去」——按「可逆与不可逆：分界线画在「改变能不能回去」 → 适应四型：先改自己，再谈受损 → 两条死亡路径：靠三件事把坏死与凋亡分开 → 修复：再生能力分三档，肉芽长成瘢痕」走一遍本章判据 | 813 | [`skill-sunshang-yu-shiying.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/02-sunshang-yu-shiying/outputs/skill-sunshang-yu-shiying.md) |
 
-#### 第 3 章 · 炎症与修复
+#### 第 3 章 · 炎症不是一种病，是三样变化的配比
 
 `14-jibing-xue-jichu/chapters/03-yanzheng-yu-xiufu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 炎症与修复 · 提示词 | — | 446 | [`prompt-03-yanzheng-yu-xiufu.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/03-yanzheng-yu-xiufu/outputs/prompt-03-yanzheng-yu-xiufu.md) |
-| skill | 炎症与修复 | 炎症与修复——按「疾病概念 → 基本病理过程 → 系统疾病 → 治疗与防治」走一遍本章判据 | 374 | [`skill-yanzheng-yu-xiufu.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/03-yanzheng-yu-xiufu/outputs/skill-yanzheng-yu-xiufu.md) |
+| prompt | 炎症不是一种病，是三样变化的配比 · 提示词 | — | 853 | [`prompt-03-yanzheng-yu-xiufu.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/03-yanzheng-yu-xiufu/outputs/prompt-03-yanzheng-yu-xiufu.md) |
+| skill | 炎症不是一种病，是三样变化的配比 | 炎症不是一种病，是三样变化的配比——按「三样变化同时在场，比例才是判据 → 三条划分轴：病程、病变、部位 → 修复的三环节：清除、增生、重塑 → 全身账：局部配比决定全身反应的类别」走一遍本章判据 | 757 | [`skill-yanzheng-yu-xiufu.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/03-yanzheng-yu-xiufu/outputs/skill-yanzheng-yu-xiufu.md) |
 
-#### 第 4 章 · 血液循环障碍
+#### 第 4 章 · 循环障碍不是六种病，是血在管里走错了地方
 
 `14-jibing-xue-jichu/chapters/04-xunhuan-zhangai/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 血液循环障碍 · 提示词 | — | 449 | [`prompt-04-xunhuan-zhangai.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/04-xunhuan-zhangai/outputs/prompt-04-xunhuan-zhangai.md) |
-| skill | 血液循环障碍 | 血液循环障碍——按「疾病概念 → 基本病理过程 → 系统疾病 → 治疗与防治」走一遍本章判据 | 374 | [`skill-xunhuan-zhangai.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/04-xunhuan-zhangai/outputs/skill-xunhuan-zhangai.md) |
+| prompt | 循环障碍不是六种病，是血在管里走错了地方 · 提示词 | — | 885 | [`prompt-04-xunhuan-zhangai.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/04-xunhuan-zhangai/outputs/prompt-04-xunhuan-zhangai.md) |
+| skill | 循环障碍不是六种病，是血在管里走错了地方 | 循环障碍不是六种病，是血在管里走错了地方——按「充血与出血：一字之差，方向相反 → 血栓形成：三个条件，缺一不成 → 栓塞与梗死：栓子走的是路，梗死看的是三件事 → 水肿：四个环节，任何一环都能开口」走一遍本章判据 | 783 | [`skill-xunhuan-zhangai.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/04-xunhuan-zhangai/outputs/skill-xunhuan-zhangai.md) |
 
-#### 第 5 章 · 水电解质与酸碱平衡紊乱
+#### 第 5 章 · 水、电解质与酸碱是三笔账，混着算就全错
 
 `14-jibing-xue-jichu/chapters/05-shuidianjie-suojian-wenluan/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 水电解质与酸碱平衡紊乱 · 提示词 | — | 464 | [`prompt-05-shuidianjie-suojian-wenluan.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/05-shuidianjie-suojian-wenluan/outputs/prompt-05-shuidianjie-suojian-wenluan.md) |
-| skill | 水电解质与酸碱平衡紊乱 | 水电解质与酸碱平衡紊乱——按「疾病概念 → 基本病理过程 → 系统疾病 → 治疗与防治」走一遍本章判据 | 396 | [`skill-shuidianjie-suojian-wenluan.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/05-shuidianjie-suojian-wenluan/outputs/skill-shuidianjie-suojian-wenluan.md) |
+| prompt | 水、电解质与酸碱是三笔账，混着算就全错 · 提示词 | — | 876 | [`prompt-05-shuidianjie-suojian-wenluan.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/05-shuidianjie-suojian-wenluan/outputs/prompt-05-shuidianjie-suojian-wenluan.md) |
+| skill | 水、电解质与酸碱是三笔账，混着算就全错 | 水、电解质与酸碱是三笔账，混着算就全错——按「三个维度不能折叠：容量、渗透、钠水平 → 脱水三型：丢的不只是水，是水与钠的比例 → 钾：四个端，三条调节速度 → 酸碱：先定原发环节，再看代偿方向」走一遍本章判据 | 787 | [`skill-shuidianjie-suojian-wenluan.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/05-shuidianjie-suojian-wenluan/outputs/skill-shuidianjie-suojian-wenluan.md) |
 
-#### 第 6 章 · 缺氧与发热
+#### 第 6 章 · 缺氧看断在哪一环，发热看调定点挪到哪
 
 `14-jibing-xue-jichu/chapters/06-queyang-yu-fare/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 缺氧与发热 · 提示词 | — | 446 | [`prompt-06-queyang-yu-fare.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/06-queyang-yu-fare/outputs/prompt-06-queyang-yu-fare.md) |
-| skill | 缺氧与发热 | 缺氧与发热——按「疾病概念 → 基本病理过程 → 系统疾病 → 治疗与防治」走一遍本章判据 | 372 | [`skill-queyang-yu-fare.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/06-queyang-yu-fare/outputs/skill-queyang-yu-fare.md) |
+| prompt | 缺氧看断在哪一环，发热看调定点挪到哪 · 提示词 | — | 886 | [`prompt-06-queyang-yu-fare.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/06-queyang-yu-fare/outputs/prompt-06-queyang-yu-fare.md) |
+| skill | 缺氧看断在哪一环，发热看调定点挪到哪 | 缺氧看断在哪一环，发热看调定点挪到哪——按「四种缺氧：一条链上的四个断点 → 缺氧的影响：代偿与损伤用同一套反应 → 发热不是体温升高，是调定点先挪了 → 三期的判据：调定点与体温谁高」走一遍本章判据 | 786 | [`skill-queyang-yu-fare.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/06-queyang-yu-fare/outputs/skill-queyang-yu-fare.md) |
 
-#### 第 7 章 · 休克与应激
+#### 第 7 章 · 休克的分期不取决于血压读数，而取决于代偿还剩多少余地
 
 `14-jibing-xue-jichu/chapters/07-xiuke-yu-yingji/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 休克与应激 · 提示词 | — | 446 | [`prompt-07-xiuke-yu-yingji.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/07-xiuke-yu-yingji/outputs/prompt-07-xiuke-yu-yingji.md) |
-| skill | 休克与应激 | 休克与应激——按「疾病概念 → 基本病理过程 → 系统疾病 → 治疗与防治」走一遍本章判据 | 372 | [`skill-xiuke-yu-yingji.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/07-xiuke-yu-yingji/outputs/skill-xiuke-yu-yingji.md) |
+| prompt | 休克的分期不取决于血压读数，而取决于代偿还剩多少余地 · 提示词 | — | 937 | [`prompt-07-xiuke-yu-yingji.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/07-xiuke-yu-yingji/outputs/prompt-07-xiuke-yu-yingji.md) |
+| skill | 休克的分期不取决于血压读数，而取决于代偿还剩多少余地 | 休克的分期不取决于血压读数，而取决于代偿还剩多少余地——按「休克的共同点只有一句：有效灌注不够用 → 三期不是三个台阶，而是同一条链上的三个位置 → 应激的两条通路：快的那条与慢的那条 → 从功能偏离到功能紊乱，中间隔着一条正反馈」走一遍本章判据 | 829 | [`skill-xiuke-yu-yingji.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/07-xiuke-yu-yingji/outputs/skill-xiuke-yu-yingji.md) |
 
-#### 第 8 章 · 肿瘤
+#### 第 8 章 · 良性与恶性的分界写在界面上，不写在体积上
 
 `14-jibing-xue-jichu/chapters/08-zhongliu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 肿瘤 · 提示词 | — | 437 | [`prompt-08-zhongliu.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/08-zhongliu/outputs/prompt-08-zhongliu.md) |
-| skill | 肿瘤 | 肿瘤——按「疾病概念 → 基本病理过程 → 系统疾病 → 治疗与防治」走一遍本章判据 | 359 | [`skill-zhongliu.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/08-zhongliu/outputs/skill-zhongliu.md) |
+| prompt | 良性与恶性的分界写在界面上，不写在体积上 · 提示词 | — | 894 | [`prompt-08-zhongliu.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/08-zhongliu/outputs/prompt-08-zhongliu.md) |
+| skill | 良性与恶性的分界写在界面上，不写在体积上 | 良性与恶性的分界写在界面上，不写在体积上——按「肿瘤是一个调控问题，不是一个肿块问题 → 实质与间质：两本必须分开记的账 → 生长方式与扩散路径是两件事 → 良恶之分：六条对照，全部是「多、常、较」」走一遍本章判据 | 785 | [`skill-zhongliu.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/08-zhongliu/outputs/skill-zhongliu.md) |
 
-#### 第 9 章 · 心血管系统疾病
+#### 第 9 章 · 血管壁的改变以十年计，血压只是它最后被看见的那一面
 
 `14-jibing-xue-jichu/chapters/09-xinxueguan-jibing/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 心血管系统疾病 · 提示词 | — | 452 | [`prompt-09-xinxueguan-jibing.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/09-xinxueguan-jibing/outputs/prompt-09-xinxueguan-jibing.md) |
-| skill | 心血管系统疾病 | 心血管系统疾病——按「疾病概念 → 基本病理过程 → 系统疾病 → 治疗与防治」走一遍本章判据 | 378 | [`skill-xinxueguan-jibing.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/09-xinxueguan-jibing/outputs/skill-xinxueguan-jibing.md) |
+| prompt | 血管壁的改变以十年计，血压只是它最后被看见的那一面 · 提示词 | — | 917 | [`prompt-09-xinxueguan-jibing.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/09-xinxueguan-jibing/outputs/prompt-09-xinxueguan-jibing.md) |
+| skill | 血管壁的改变以十年计，血压只是它最后被看见的那一面 | 血管壁的改变以十年计，血压只是它最后被看见的那一面——按「三层管壁、三种成分：内皮是界面，不是衬里 → 病变进程五个环节：一条可以交错出现的链 → 血压的五个调节环节：那个「高」字落在哪里 → 心功能不全：代偿本身就是要付账的那一项」走一遍本章判据 | 812 | [`skill-xinxueguan-jibing.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/09-xinxueguan-jibing/outputs/skill-xinxueguan-jibing.md) |
 
-#### 第 10 章 · 呼吸系统疾病
+#### 第 10 章 · 气流受限不是某种病的别名，而是结构与功能之间那道必须分开写的界
 
 `14-jibing-xue-jichu/chapters/10-huxi-xitong-jibing/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 呼吸系统疾病 · 提示词 | — | 451 | [`prompt-10-huxi-xitong-jibing.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/10-huxi-xitong-jibing/outputs/prompt-10-huxi-xitong-jibing.md) |
-| skill | 呼吸系统疾病 | 呼吸系统疾病——按「疾病概念 → 基本病理过程 → 系统疾病 → 治疗与防治」走一遍本章判据 | 377 | [`skill-huxi-xitong-jibing.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/10-huxi-xitong-jibing/outputs/skill-huxi-xitong-jibing.md) |
+| prompt | 气流受限不是某种病的别名，而是结构与功能之间那道必须分开写的界 · 提示词 | — | 996 | [`prompt-10-huxi-xitong-jibing.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/10-huxi-xitong-jibing/outputs/prompt-10-huxi-xitong-jibing.md) |
+| skill | 气流受限不是某种病的别名，而是结构与功能之间那道必须分开写的界 | 气流受限不是某种病的别名，而是结构与功能之间那道必须分开写的界——按「感染：部位、病原、病程，三条线索不许合并 → 肺气肿：先看结构，再看它欠下的功能账 → 气流受限的三条来源：阻力、动力、塌陷 → 通气与换气：两套结构，别用一套问题去问」走一遍本章判据 | 885 | [`skill-huxi-xitong-jibing.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/10-huxi-xitong-jibing/outputs/skill-huxi-xitong-jibing.md) |
 
-#### 第 11 章 · 消化与泌尿系统疾病
+#### 第 11 章 · 同一处病变有两本账：结构写一层，功能写一层，对不上才是常态
 
 `14-jibing-xue-jichu/chapters/11-xiaohua-miniao-jibing/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 消化与泌尿系统疾病 · 提示词 | — | 460 | [`prompt-11-xiaohua-miniao-jibing.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/11-xiaohua-miniao-jibing/outputs/prompt-11-xiaohua-miniao-jibing.md) |
-| skill | 消化与泌尿系统疾病 | 消化与泌尿系统疾病——按「疾病概念 → 基本病理过程 → 系统疾病 → 治疗与防治」走一遍本章判据 | 386 | [`skill-xiaohua-miniao-jibing.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/11-xiaohua-miniao-jibing/outputs/skill-xiaohua-miniao-jibing.md) |
+| prompt | 同一处病变有两本账：结构写一层，功能写一层，对不上才是常态 · 提示词 | — | 954 | [`prompt-11-xiaohua-miniao-jibing.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/11-xiaohua-miniao-jibing/outputs/prompt-11-xiaohua-miniao-jibing.md) |
+| skill | 同一处病变有两本账：结构写一层，功能写一层，对不上才是常态 | 同一处病变有两本账：结构写一层，功能写一层，对不上才是常态——按「黏膜缺损分两个层次，这一个层次差决定修复方式 → 溃疡：四个维度定类别，四层结构定描述 → 肝：结构一本账，功能一本账 → 肾：四个组成部分，三个功能，两条修复路径」走一遍本章判据 | 848 | [`skill-xiaohua-miniao-jibing.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/11-xiaohua-miniao-jibing/outputs/skill-xiaohua-miniao-jibing.md) |
 
-#### 第 12 章 · 免疫与病原相关疾病
+#### 第 12 章 · 免疫应答的四个环节，比任何一型超敏反应的名字都更该记住
 
 `14-jibing-xue-jichu/chapters/12-mianyi-bingyuan-jibing/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 免疫与病原相关疾病 · 提示词 | — | 460 | [`prompt-12-mianyi-bingyuan-jibing.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/12-mianyi-bingyuan-jibing/outputs/prompt-12-mianyi-bingyuan-jibing.md) |
-| skill | 免疫与病原相关疾病 | 免疫与病原相关疾病——按「疾病概念 → 基本病理过程 → 系统疾病 → 治疗与防治」走一遍本章判据 | 387 | [`skill-mianyi-bingyuan-jibing.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/12-mianyi-bingyuan-jibing/outputs/skill-mianyi-bingyuan-jibing.md) |
+| prompt | 免疫应答的四个环节，比任何一型超敏反应的名字都更该记住 · 提示词 | — | 969 | [`prompt-12-mianyi-bingyuan-jibing.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/12-mianyi-bingyuan-jibing/outputs/prompt-12-mianyi-bingyuan-jibing.md) |
+| skill | 免疫应答的四个环节，比任何一型超敏反应的名字都更该记住 | 免疫应答的四个环节，比任何一型超敏反应的名字都更该记住——按「两条防线：一条快而宽，一条慢而准 → 四个环节：识别、活化、效应、调节 → 超敏反应：按机制分类，不按编号排序 → 缺陷、自身免疫、病原与传播链：四件容易混的事」走一遍本章判据 | 866 | [`skill-mianyi-bingyuan-jibing.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/12-mianyi-bingyuan-jibing/outputs/skill-mianyi-bingyuan-jibing.md) |
 
-#### 第 13 章 · 药物作用基础
+#### 第 13 章 · 药物作用不是一份用药清单，而是一条可追问的体内过程链
 
 `14-jibing-xue-jichu/chapters/13-yaowu-zuoyong-jichu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 药物作用基础 · 提示词 | — | 451 | [`prompt-13-yaowu-zuoyong-jichu.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/13-yaowu-zuoyong-jichu/outputs/prompt-13-yaowu-zuoyong-jichu.md) |
-| skill | 药物作用基础 | 药物作用基础——按「疾病概念 → 基本病理过程 → 系统疾病 → 治疗与防治」走一遍本章判据 | 378 | [`skill-yaowu-zuoyong-jichu.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/13-yaowu-zuoyong-jichu/outputs/skill-yaowu-zuoyong-jichu.md) |
+| prompt | 药物作用不是一份用药清单，而是一条可追问的体内过程链 · 提示词 | — | 920 | [`prompt-13-yaowu-zuoyong-jichu.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/13-yaowu-zuoyong-jichu/outputs/prompt-13-yaowu-zuoyong-jichu.md) |
+| skill | 药物作用不是一份用药清单，而是一条可追问的体内过程链 | 药物作用不是一份用药清单，而是一条可追问的体内过程链——按「四组对照轴：类别是提问角度，不是四个抽屉 → 四个环节与三组因素：药在体内走的那条路 → 核对、观察、记录、报告：四个动作各自的判据 → 四个常见误读与改写法」走一遍本章判据 | 815 | [`skill-yaowu-zuoyong-jichu.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/13-yaowu-zuoyong-jichu/outputs/skill-yaowu-zuoyong-jichu.md) |
 
-#### 第 14 章 · 抗感染与抗炎治疗基础
+#### 第 14 章 · 抗感染与抗炎的分界，不在药名，而在「针对什么、凭什么用、何时停」
 
 `14-jibing-xue-jichu/chapters/14-kangganran-kangyan/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 抗感染与抗炎治疗基础 · 提示词 | — | 463 | [`prompt-14-kangganran-kangyan.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/14-kangganran-kangyan/outputs/prompt-14-kangganran-kangyan.md) |
-| skill | 抗感染与抗炎治疗基础 | 抗感染与抗炎治疗基础——按「疾病概念 → 基本病理过程 → 系统疾病 → 治疗与防治」走一遍本章判据 | 385 | [`skill-kangganran-kangyan.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/14-kangganran-kangyan/outputs/skill-kangganran-kangyan.md) |
+| prompt | 抗感染与抗炎的分界，不在药名，而在「针对什么、凭什么用、何时停」 · 提示词 | — | 989 | [`prompt-14-kangganran-kangyan.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/14-kangganran-kangyan/outputs/prompt-14-kangganran-kangyan.md) |
+| skill | 抗感染与抗炎的分界，不在药名，而在「针对什么、凭什么用、何时停」 | 抗感染与抗炎的分界，不在药名，而在「针对什么、凭什么用、何时停」——按「抗感染先问三件事：针对什么、凭什么用、何时评估 → 抗炎不是抗感染，免疫调节不是「增强免疫力」 → 用药监护：三个时点、一条报告线、一件不能替人做的事 → 耐药：一个群体现象，不能写成对某个人的判断」走一遍本章判据 | 877 | [`skill-kangganran-kangyan.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/14-kangganran-kangyan/outputs/skill-kangganran-kangyan.md) |
 
-#### 第 15 章 · 肿瘤与慢性病治疗基础
+#### 第 15 章 · 肿瘤与慢性病的治疗叙述，先从「不说有效」开始
 
 `14-jibing-xue-jichu/chapters/15-zhongliu-manxingbing-zhiliao/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 肿瘤与慢性病治疗基础 · 提示词 | — | 463 | [`prompt-15-zhongliu-manxingbing-zhiliao.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/15-zhongliu-manxingbing-zhiliao/outputs/prompt-15-zhongliu-manxingbing-zhiliao.md) |
-| skill | 肿瘤与慢性病治疗基础 | 肿瘤与慢性病治疗基础——按「疾病概念 → 基本病理过程 → 系统疾病 → 治疗与防治」走一遍本章判据 | 395 | [`skill-zhongliu-manxingbing-zhiliao.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/15-zhongliu-manxingbing-zhiliao/outputs/skill-zhongliu-manxingbing-zhiliao.md) |
+| prompt | 肿瘤与慢性病的治疗叙述，先从「不说有效」开始 · 提示词 | — | 977 | [`prompt-15-zhongliu-manxingbing-zhiliao.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/15-zhongliu-manxingbing-zhiliao/outputs/prompt-15-zhongliu-manxingbing-zhiliao.md) |
+| skill | 肿瘤与慢性病的治疗叙述，先从「不说有效」开始 | 肿瘤与慢性病的治疗叙述，先从「不说有效」开始——按「局部与全身：两种类别，两套代价 → 治疗反应不等于疗效 → 支持治疗不是「没别的办法了」 → 四条叙述禁令与替换句」走一遍本章判据 | 885 | [`skill-zhongliu-manxingbing-zhiliao.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/15-zhongliu-manxingbing-zhiliao/outputs/skill-zhongliu-manxingbing-zhiliao.md) |
 
-#### 第 16 章 · 疾病防治与康复基础
+#### 第 16 章 · 预防的成败不在口号，而在「谁、在什么时点、做什么」
 
 `14-jibing-xue-jichu/chapters/16-jibing-fangzhi-kangfu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 疾病防治与康复基础 · 提示词 | — | 460 | [`prompt-16-jibing-fangzhi-kangfu.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/16-jibing-fangzhi-kangfu/outputs/prompt-16-jibing-fangzhi-kangfu.md) |
-| skill | 疾病防治与康复基础 | 疾病防治与康复基础——按「疾病概念 → 基本病理过程 → 系统疾病 → 治疗与防治」走一遍本章判据 | 386 | [`skill-jibing-fangzhi-kangfu.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/16-jibing-fangzhi-kangfu/outputs/skill-jibing-fangzhi-kangfu.md) |
+| prompt | 预防的成败不在口号，而在「谁、在什么时点、做什么」 · 提示词 | — | 907 | [`prompt-16-jibing-fangzhi-kangfu.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/16-jibing-fangzhi-kangfu/outputs/prompt-16-jibing-fangzhi-kangfu.md) |
+| skill | 预防的成败不在口号，而在「谁、在什么时点、做什么」 | 预防的成败不在口号，而在「谁、在什么时点、做什么」——按「三级预防不是三个名词，是三个时点 → 早期发现的三条途径与一条硬约束 → 康复：目标不是「恢复如初」 → 转介与随访：闭环的三个要素」走一遍本章判据 | 805 | [`skill-jibing-fangzhi-kangfu.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/16-jibing-fangzhi-kangfu/outputs/skill-jibing-fangzhi-kangfu.md) |
 
-#### 第 17 章 · 疾病学基础的伦理与沟通要求
+#### 第 17 章 · 伦理不是附录条款，而是记录能不能摊开给当事人看的那条底线
 
 `14-jibing-xue-jichu/chapters/17-lunli-yu-goutong/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 疾病学基础的伦理与沟通要求 · 提示词 | — | 472 | [`prompt-17-lunli-yu-goutong.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/17-lunli-yu-goutong/outputs/prompt-17-lunli-yu-goutong.md) |
-| skill | 疾病学基础的伦理与沟通要求 | 疾病学基础的伦理与沟通要求——按「疾病概念 → 基本病理过程 → 系统疾病 → 治疗与防治」走一遍本章判据 | 389 | [`skill-lunli-yu-goutong.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/17-lunli-yu-goutong/outputs/skill-lunli-yu-goutong.md) |
+| prompt | 伦理不是附录条款，而是记录能不能摊开给当事人看的那条底线 · 提示词 | — | 904 | [`prompt-17-lunli-yu-goutong.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/17-lunli-yu-goutong/outputs/prompt-17-lunli-yu-goutong.md) |
+| skill | 伦理不是附录条款，而是记录能不能摊开给当事人看的那条底线 | 伦理不是附录条款，而是记录能不能摊开给当事人看的那条底线——按「告知：四类内容、三种方式、一条前置 → 隐私：去标识化与脱敏不是一回事 → 不污名化：三条可操作的改写规则 → 不良事件报告：对事不对人」走一遍本章判据 | 794 | [`skill-lunli-yu-goutong.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/17-lunli-yu-goutong/outputs/skill-lunli-yu-goutong.md) |
 
-#### 第 18 章 · 正常人体学与 tcmP 平台
+#### 第 18 章 · 知识库的价值不在存了多少条，而在每条都写得出依据与边界
 
 `14-jibing-xue-jichu/chapters/18-pingtai-lianjie/`
 
@@ -21535,10 +21535,10 @@
 | --- | --- | --- | :-: | --- |
 | prompt | 正常人体学与 tcmP 平台 · 提示词 | — | 470 | [`prompt-18-pingtai-lianjie.md`](../departments/09-jichu/05-zhengchang-renti-xue/chapters/18-pingtai-lianjie/outputs/prompt-18-pingtai-lianjie.md) |
 | skill | 正常人体学与 tcmP 平台 | 正常人体学与 tcmP 平台——按「构造层次 → 系统解剖与组织 → 生理功能与整体调节 → 平台对接」走一遍本章判据 | 395 | [`skill-pingtai-lianjie.md`](../departments/09-jichu/05-zhengchang-renti-xue/chapters/18-pingtai-lianjie/outputs/skill-pingtai-lianjie.md) |
-| prompt | 疾病学基础与 tcmP 平台 · 提示词 | — | 469 | [`prompt-18-pingtai-lianjie.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/18-pingtai-lianjie/outputs/prompt-18-pingtai-lianjie.md) |
-| skill | 疾病学基础与 tcmP 平台 | 疾病学基础与 tcmP 平台——按「疾病概念 → 基本病理过程 → 系统疾病 → 治疗与防治」走一遍本章判据 | 386 | [`skill-pingtai-lianjie.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/18-pingtai-lianjie/outputs/skill-pingtai-lianjie.md) |
-| prompt | 流行病学与 tcmP 平台 · 提示词 | — | 480 | [`prompt-18-pingtai-lianjie.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/18-pingtai-lianjie/outputs/prompt-18-pingtai-lianjie.md) |
-| skill | 流行病学与 tcmP 平台 | 流行病学与 tcmP 平台——按「描述（分布与测量）→ 分析（病例对照与队列）→ 推断（因果与偏倚）→ 应用（监测与循证）」走一遍本章判据 | 402 | [`skill-pingtai-lianjie.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/18-pingtai-lianjie/outputs/skill-pingtai-lianjie.md) |
+| prompt | 平台能不能用，取决于每条单元有没有「依据」和「边界」两列 · 提示词 | — | 863 | [`prompt-18-pingtai-lianjie.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/18-pingtai-lianjie/outputs/prompt-18-pingtai-lianjie.md) |
+| skill | 平台能不能用，取决于每条单元有没有「依据」和「边界」两列 | 平台能不能用，取决于每条单元有没有「依据」和「边界」两列——按「单元的四段编码：让每条结论都能反查 → 两列硬约束：依据与边界 → 平台表与契约：表给人看，契约给机器判 → 病例与图像、智能辅助：两条不能越的线」走一遍本章判据 | 752 | [`skill-pingtai-lianjie.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/18-pingtai-lianjie/outputs/skill-pingtai-lianjie.md) |
+| prompt | 视频课不是"把正文念一遍"，是让每一段旁白都能指回一个判据 · 提示词 | — | 700 | [`prompt-18-pingtai-lianjie.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/18-pingtai-lianjie/outputs/prompt-18-pingtai-lianjie.md) |
+| skill | 视频课不是"把正文念一遍"，是让每一段旁白都能指回一个判据 | 视频课不是"把正文念一遍"，是让每一段旁白都能指回一个判据——按「一门课在平台里的四层形态 → 从正文到讲稿：有字不等于有旁白 → 从讲稿到成片：三段一步都不能跳 → 交付层：没有清单的成片等于不可发现」走一遍本章判据 | 598 | [`skill-pingtai-lianjie.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/18-pingtai-lianjie/outputs/skill-pingtai-lianjie.md) |
 
 ### 流行病学
 
@@ -21564,12 +21564,12 @@
 | skill | 神志病没有化验单，判据只能从「看和问」里长出来 | 神志病没有化验单，判据只能从「看和问」里长出来——按「这门学科的对象是「神」的失序，不是「脑」的病灶 → 7 项观察，3 项靠自述，4 项不靠 → 三项同现才算神志病，单项一律不算 → 能做什么，以及什么时候必须停手」走一遍本章判据 | 667 | [`skill-01-xulun.md`](../departments/01-zhongyi/20-zhongyi-jingshenbing-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 用本章内容做一件事：绪论 | — | 406 | [`prompt-01-xulun.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 绪论 | 用《临床中药学》第 1 章「绪论」的单元层做可核对的教学材料。 | 502 | [`skill-01-xulun.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/01-xulun/outputs/skill-01-xulun.md) |
-| prompt | 绪论 · 提示词 | — | 444 | [`prompt-01-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 绪论 | 绪论——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 369 | [`skill-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 绪论不是开场白：它划定针灸学的边界、来路与读法 · 提示词 | — | 1115 | [`prompt-01-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
+| skill | 绪论不是开场白：它划定针灸学的边界、来路与读法 | 绪论不是开场白：它划定针灸学的边界、来路与读法——按「篇幅账：一半给历史，三分之一给定义 → 两个起源各有物证：砭石在石，灸火在火 → 三次奠基与四次校订：书目是校出来的，不是列出来的 → 学什么：三块内容与一条练习链」走一遍本章判据 | 1002 | [`skill-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 泛化不是模型的属性，是数据与假设的私下约定 · 提示词 | — | 920 | [`prompt-01-xulun.md`](../departments/07-zhineng/16-jiqi-xuexi/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 泛化不是模型的属性，是数据与假设的私下约定 | 泛化不是模型的属性，是数据与假设的私下约定——按「把一个「学习」问题写成四件东西 → 训练误差与泛化误差：两个不同的量 → 归纳偏好：算法必须偏心，而且偏心要写出来 → NFL 定理：一句被引用得最多、理解得最少的话」走一遍本章判据 | 808 | [`skill-xulun.md`](../departments/07-zhineng/16-jiqi-xuexi/chapters/01-xulun/outputs/skill-xulun.md) |
-| prompt | 绪论 · 提示词 | — | 442 | [`prompt-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
-| skill | 绪论 | 绪论——按「运动 → 内脏 → 脉管与内分泌 → 神经：由支架到内脏，再到支配」走一遍本章判据 | 365 | [`skill-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得 · 提示词 | — | 1049 | [`prompt-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
+| skill | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得 | 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得——按「定义的第一句就带了限制：只写「类别与关系」 → 从细胞到系统：九大系统是一条由支架到支配的链 → 分科与材料：同一批结构的几种看法 → 姿势、轴与面：全书共用的坐标系」走一遍本章判据 | 931 | [`skill-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链 · 提示词 | — | 901 | [`prompt-01-xulun.md`](../departments/09-jichu/04-yixue-shengwu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链 | 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链——按「这门课真正教的是「分层」，不是「名词」 → 三个判据，构成一条可证伪的链 → 16 章有两次转折，不是十六个抽屉 → 每章只回答四个问题」走一遍本章判据 | 781 | [`skill-xulun.md`](../departments/09-jichu/04-yixue-shengwu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 绪论：把「稳态」写成一条可检查的回路 · 提示词 | — | 856 | [`prompt-xulun.md`](../departments/09-jichu/06-shengli-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
@@ -21580,154 +21580,154 @@
 | skill | 绪论 | 绪论——按「层次 → 通道 → 间隙 → 毗邻：由浅入深地读一个局部」走一遍本章判据 | 359 | [`skill-xulun.md`](../departments/09-jichu/08-jubu-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 绪论：一门学科先要学会「怎么描述」 · 提示词 | — | 897 | [`prompt-xulun.md`](../departments/09-jichu/10-bingli-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
 | skill | 绪论：一门学科先要学会「怎么描述」 | 绪论：一门学科先要学会「怎么描述」——按「第一句话不是定义，是一份分工 → 四节十二单元的笔墨，与从原因到临床的五类内容 → 发展简史：观察单位一步步下沉 → 三个观察层次：不是三选一，是三段路」走一遍本章判据 | 789 | [`skill-xulun.md`](../departments/09-jichu/10-bingli-xue/chapters/01-xulun/outputs/skill-xulun.md) |
-| prompt | 流行病学绪论 · 提示词 | — | 463 | [`prompt-01-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 流行病学绪论 | 流行病学绪论——按「描述（分布与测量）→ 分析（病例对照与队列）→ 推断（因果与偏倚）→ 应用（监测与循证）」走一遍本章判据 | 382 | [`skill-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/skill-xulun.md) |
+| prompt | 流行病学先问人群里有多少人发病，再问某个病人为什么病 · 提示词 | — | 1038 | [`prompt-01-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
+| skill | 流行病学先问人群里有多少人发病，再问某个病人为什么病 | 流行病学先问人群里有多少人发病，再问某个病人为什么病——按「定义的三层限制：人群、分布、防制 → 四项任务是一条不能跳步的链 → 方法的分类只看两条线：谁施加干预、有没有比较组 → 同一批数字，三种问法：率、比、比例与三个关联指标」走一遍本章判据 | 921 | [`skill-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 
-#### 第 2 章 · 疾病分布与描述性研究
+#### 第 2 章 · 一个率说不清分母，后面的分析就全是猜
 
 `15-liuxingbing-xue/chapters/02-jibing-fenbu-miaoshu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 疾病分布与描述性研究 · 提示词 | — | 475 | [`prompt-02-jibing-fenbu-miaoshu.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/02-jibing-fenbu-miaoshu/outputs/prompt-02-jibing-fenbu-miaoshu.md) |
-| skill | 疾病分布与描述性研究 | 疾病分布与描述性研究——按「描述（分布与测量）→ 分析（病例对照与队列）→ 推断（因果与偏倚）→ 应用（监测与循证）」走一遍本章判据 | 405 | [`skill-jibing-fenbu-miaoshu.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/02-jibing-fenbu-miaoshu/outputs/skill-jibing-fenbu-miaoshu.md) |
+| prompt | 一个率说不清分母，后面的分析就全是猜 · 提示词 | — | 1055 | [`prompt-02-jibing-fenbu-miaoshu.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/02-jibing-fenbu-miaoshu/outputs/prompt-02-jibing-fenbu-miaoshu.md) |
+| skill | 一个率说不清分母，后面的分析就全是猜 | 一个率说不清分母，后面的分析就全是猜——按「频率指标只有三个零件：分子、分母、观察时间 → 发病率家族：同一个「新发」，三种分母 → 患病率、死亡率、病死率：分母一换，结论就翻 → 三间分布：标化之后才有可比」走一遍本章判据 | 961 | [`skill-jibing-fenbu-miaoshu.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/02-jibing-fenbu-miaoshu/outputs/skill-jibing-fenbu-miaoshu.md) |
 
-#### 第 3 章 · 现况调查与筛检
+#### 第 3 章 · 筛检阳性只说明该进一步查，不说明已经患病
 
 `15-liuxingbing-xue/chapters/03-xiankuang-shaijian/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 现况调查与筛检 · 提示词 | — | 466 | [`prompt-03-xiankuang-shaijian.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/03-xiankuang-shaijian/outputs/prompt-03-xiankuang-shaijian.md) |
-| skill | 现况调查与筛检 | 现况调查与筛检——按「描述（分布与测量）→ 分析（病例对照与队列）→ 推断（因果与偏倚）→ 应用（监测与循证）」走一遍本章判据 | 397 | [`skill-xiankuang-shaijian.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/03-xiankuang-shaijian/outputs/skill-xiankuang-shaijian.md) |
+| prompt | 筛检阳性只说明该进一步查，不说明已经患病 · 提示词 | — | 1071 | [`prompt-03-xiankuang-shaijian.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/03-xiankuang-shaijian/outputs/prompt-03-xiankuang-shaijian.md) |
+| skill | 筛检阳性只说明该进一步查，不说明已经患病 | 筛检阳性只说明该进一步查，不说明已经患病——按「「同时性」把现况调查锁在患病率上 → 抽样与样本量：有一类误差，加样本也消不掉 → 四格表：四个格子算出全部指标 → 同一个试验，两种患病率，两个预测值」走一遍本章判据 | 973 | [`skill-xiankuang-shaijian.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/03-xiankuang-shaijian/outputs/skill-xiankuang-shaijian.md) |
 
-#### 第 4 章 · 病例对照研究
+#### 第 4 章 · 病例对照研究从结局倒着走，给出的只是比值不是风险
 
 `15-liuxingbing-xue/chapters/04-bingli-duizhao/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 病例对照研究 · 提示词 | — | 463 | [`prompt-04-bingli-duizhao.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/04-bingli-duizhao/outputs/prompt-04-bingli-duizhao.md) |
-| skill | 病例对照研究 | 病例对照研究——按「描述（分布与测量）→ 分析（病例对照与队列）→ 推断（因果与偏倚）→ 应用（监测与循证）」走一遍本章判据 | 391 | [`skill-bingli-duizhao.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/04-bingli-duizhao/outputs/skill-bingli-duizhao.md) |
+| prompt | 病例对照研究从结局倒着走，给出的只是比值不是风险 · 提示词 | — | 1018 | [`prompt-04-bingli-duizhao.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/04-bingli-duizhao/outputs/prompt-04-bingli-duizhao.md) |
+| skill | 病例对照研究从结局倒着走，给出的只是比值不是风险 | 病例对照研究从结局倒着走，给出的只是比值不是风险——按「由果及因：方向反过来，代价也反过来 → 选谁：病例要新发，对照要出自源人群 → 四格表算出比值比：3.5 是怎么来的 → 分层与匹配：把混杂关进层里」走一遍本章判据 | 912 | [`skill-bingli-duizhao.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/04-bingli-duizhao/outputs/skill-bingli-duizhao.md) |
 
-#### 第 5 章 · 队列研究
+#### 第 5 章 · 队列研究先量暴露再等结局，等出来的是发生率
 
 `15-liuxingbing-xue/chapters/05-duilie/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 队列研究 · 提示词 | — | 457 | [`prompt-05-duilie.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/05-duilie/outputs/prompt-05-duilie.md) |
-| skill | 队列研究 | 队列研究——按「描述（分布与测量）→ 分析（病例对照与队列）→ 推断（因果与偏倚）→ 应用（监测与循证）」走一遍本章判据 | 379 | [`skill-duilie.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/05-duilie/outputs/skill-duilie.md) |
+| prompt | 队列研究先量暴露再等结局，等出来的是发生率 · 提示词 | — | 1066 | [`prompt-05-duilie.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/05-duilie/outputs/prompt-05-duilie.md) |
+| skill | 队列研究先量暴露再等结局，等出来的是发生率 | 队列研究先量暴露再等结局，等出来的是发生率——按「由因及果：时序是队列唯一的本钱 → 三类队列：往前往后，资料质量不同 → 选人群定暴露：健康工人效应与口径可复核 → 随访与失访：失访偏倚是队列的命门」走一遍本章判据 | 955 | [`skill-duilie.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/05-duilie/outputs/skill-duilie.md) |
 
-#### 第 6 章 · 实验流行病学
+#### 第 6 章 · 干预有没有效，取决于谁被分到了哪一组
 
 `15-liuxingbing-xue/chapters/06-shiyan-liuxingbingxue/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 实验流行病学 · 提示词 | — | 463 | [`prompt-06-shiyan-liuxingbingxue.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/06-shiyan-liuxingbingxue/outputs/prompt-06-shiyan-liuxingbingxue.md) |
-| skill | 实验流行病学 | 实验流行病学——按「描述（分布与测量）→ 分析（病例对照与队列）→ 推断（因果与偏倚）→ 应用（监测与循证）」走一遍本章判据 | 398 | [`skill-shiyan-liuxingbingxue.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/06-shiyan-liuxingbingxue/outputs/skill-shiyan-liuxingbingxue.md) |
+| prompt | 干预有没有效，取决于谁被分到了哪一组 · 提示词 | — | 1025 | [`prompt-06-shiyan-liuxingbingxue.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/06-shiyan-liuxingbingxue/outputs/prompt-06-shiyan-liuxingbingxue.md) |
+| skill | 干预有没有效，取决于谁被分到了哪一组 | 干预有没有效，取决于谁被分到了哪一组——按「四个特征与一条底线：谁分组，决定能说什么 → 随机、对照、重复：三个词各有各的漏洞 → 盲法与安慰剂：要防的不只是病人的期待 → 方案、注册、伦理、质量：试验在第一个受试者之前就完成了一半」走一遍本章判据 | 932 | [`skill-shiyan-liuxingbingxue.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/06-shiyan-liuxingbingxue/outputs/skill-shiyan-liuxingbingxue.md) |
 
-#### 第 7 章 · 病因与因果推断
+#### 第 7 章 · 因果要过五道关，关联只是第一道门
 
 `15-liuxingbing-xue/chapters/07-bingyin-yinguo/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 病因与因果推断 · 提示词 | — | 466 | [`prompt-07-bingyin-yinguo.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/07-bingyin-yinguo/outputs/prompt-07-bingyin-yinguo.md) |
-| skill | 病因与因果推断 | 病因与因果推断——按「描述（分布与测量）→ 分析（病例对照与队列）→ 推断（因果与偏倚）→ 应用（监测与循证）」走一遍本章判据 | 393 | [`skill-bingyin-yinguo.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/07-bingyin-yinguo/outputs/skill-bingyin-yinguo.md) |
+| prompt | 因果要过五道关，关联只是第一道门 · 提示词 | — | 1042 | [`prompt-07-bingyin-yinguo.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/07-bingyin-yinguo/outputs/prompt-07-bingyin-yinguo.md) |
+| skill | 因果要过五道关，关联只是第一道门 | 因果要过五道关，关联只是第一道门——按「病因的意思比「致病因子」宽得多 → 三个模型各管一段距离 → 必要与充分都难找，于是有了组分病因 → 三类关联、五条准则、一条底线」走一遍本章判据 | 944 | [`skill-bingyin-yinguo.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/07-bingyin-yinguo/outputs/skill-bingyin-yinguo.md) |
 
-#### 第 8 章 · 传染病流行病学
+#### 第 8 章 · 传染病防控算的不是一个人，是一条链的再生数
 
 `15-liuxingbing-xue/chapters/08-chuanranbing/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 传染病流行病学 · 提示词 | — | 466 | [`prompt-08-chuanranbing.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/08-chuanranbing/outputs/prompt-08-chuanranbing.md) |
-| skill | 传染病流行病学 | 传染病流行病学——按「描述（分布与测量）→ 分析（病例对照与队列）→ 推断（因果与偏倚）→ 应用（监测与循证）」走一遍本章判据 | 391 | [`skill-chuanranbing.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/08-chuanranbing/outputs/skill-chuanranbing.md) |
+| prompt | 传染病防控算的不是一个人，是一条链的再生数 · 提示词 | — | 912 | [`prompt-08-chuanranbing.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/08-chuanranbing/outputs/prompt-08-chuanranbing.md) |
+| skill | 传染病防控算的不是一个人，是一条链的再生数 | 传染病防控算的不是一个人，是一条链的再生数——按「感染谱：冰山露出的一角不是全部 → 三环节与两个因素：切断任何一环，链就断 → 疫源地与流行强度：名词背后是范围与基线 → 免疫预防：保护率、效果指数与群体屏障」走一遍本章判据 | 807 | [`skill-chuanranbing.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/08-chuanranbing/outputs/skill-chuanranbing.md) |
 
-#### 第 9 章 · 慢性病与伤害流行病学
+#### 第 9 章 · 慢病防的是几十年的暴露，伤害防的是那一秒的能量
 
 `15-liuxingbing-xue/chapters/09-manxingbing-shanghai/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 慢性病与伤害流行病学 · 提示词 | — | 475 | [`prompt-09-manxingbing-shanghai.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/09-manxingbing-shanghai/outputs/prompt-09-manxingbing-shanghai.md) |
-| skill | 慢性病与伤害流行病学 | 慢性病与伤害流行病学——按「描述（分布与测量）→ 分析（病例对照与队列）→ 推断（因果与偏倚）→ 应用（监测与循证）」走一遍本章判据 | 405 | [`skill-manxingbing-shanghai.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/09-manxingbing-shanghai/outputs/skill-manxingbing-shanghai.md) |
+| prompt | 慢病防的是几十年的暴露，伤害防的是那一秒的能量 · 提示词 | — | 951 | [`prompt-09-manxingbing-shanghai.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/09-manxingbing-shanghai/outputs/prompt-09-manxingbing-shanghai.md) |
+| skill | 慢病防的是几十年的暴露，伤害防的是那一秒的能量 | 慢病防的是几十年的暴露，伤害防的是那一秒的能量——按「六个特点，决定了它不能用治急病的方式防 → 危险因素分四类，可改变的那类才是抓手 → 三级预防：一级最省，三级最贵 → 伤害不是意外：能量、宿主与哈登矩阵」走一遍本章判据 | 852 | [`skill-manxingbing-shanghai.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/09-manxingbing-shanghai/outputs/skill-manxingbing-shanghai.md) |
 
-#### 第 10 章 · 流行病学研究设计
+#### 第 10 章 · 设计不是方法的名字，而是研究能回答什么问题的预算表
 
 `15-liuxingbing-xue/chapters/10-yanjiu-sheji/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 流行病学研究设计 · 提示词 | — | 471 | [`prompt-10-yanjiu-sheji.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/10-yanjiu-sheji/outputs/prompt-10-yanjiu-sheji.md) |
-| skill | 流行病学研究设计 | 流行病学研究设计——按「描述（分布与测量）→ 分析（病例对照与队列）→ 推断（因果与偏倚）→ 应用（监测与循证）」走一遍本章判据 | 393 | [`skill-yanjiu-sheji.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/10-yanjiu-sheji/outputs/skill-yanjiu-sheji.md) |
+| prompt | 设计不是方法的名字，而是研究能回答什么问题的预算表 · 提示词 | — | 822 | [`prompt-10-yanjiu-sheji.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/10-yanjiu-sheji/outputs/prompt-10-yanjiu-sheji.md) |
+| skill | 设计不是方法的名字，而是研究能回答什么问题的预算表 | 设计不是方法的名字，而是研究能回答什么问题的预算表——按「设计的选择发生在拿到数据之前 → 把关切磨成问题：五个要素与一条可检验性 → 三类取向、四类设计：能与不能 → 样本量：六个输入，一个都不能省」走一遍本章判据 | 712 | [`skill-yanjiu-sheji.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/10-yanjiu-sheji/outputs/skill-yanjiu-sheji.md) |
 
-#### 第 11 章 · 流行病学数据的整理与分析
+#### 第 11 章 · 口径没定死的数字，越算越像真的
 
 `15-liuxingbing-xue/chapters/11-shuju-zhengli-fenxi/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 流行病学数据的整理与分析 · 提示词 | — | 483 | [`prompt-11-shuju-zhengli-fenxi.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/11-shuju-zhengli-fenxi/outputs/prompt-11-shuju-zhengli-fenxi.md) |
-| skill | 流行病学数据的整理与分析 | 流行病学数据的整理与分析——按「描述（分布与测量）→ 分析（病例对照与队列）→ 推断（因果与偏倚）→ 应用（监测与循证）」走一遍本章判据 | 408 | [`skill-shuju-zhengli-fenxi.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/11-shuju-zhengli-fenxi/outputs/skill-shuju-zhengli-fenxi.md) |
+| prompt | 口径没定死的数字，越算越像真的 · 提示词 | — | 1023 | [`prompt-11-shuju-zhengli-fenxi.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/11-shuju-zhengli-fenxi/outputs/prompt-11-shuju-zhengli-fenxi.md) |
+| skill | 口径没定死的数字，越算越像真的 | 口径没定死的数字，越算越像真的——按「整理三条铁律：可追溯、有记录、与定义一致 → 质量控制分三段：事前、事中、事后 → 敏感个人信息：最小必要、去标识化、留痕 → 描述性分析先看分布，再谈率」走一遍本章判据 | 930 | [`skill-shuju-zhengli-fenxi.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/11-shuju-zhengli-fenxi/outputs/skill-shuju-zhengli-fenxi.md) |
 
-#### 第 12 章 · 偏倚、混杂与交互作用
+#### 第 12 章 · 混杂不会因为样本变大而缩小
 
 `15-liuxingbing-xue/chapters/12-pianyi-hunza/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 偏倚、混杂与交互作用 · 提示词 | — | 477 | [`prompt-12-pianyi-hunza.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/12-pianyi-hunza/outputs/prompt-12-pianyi-hunza.md) |
-| skill | 偏倚、混杂与交互作用 | 偏倚、混杂与交互作用——按「描述（分布与测量）→ 分析（病例对照与队列）→ 推断（因果与偏倚）→ 应用（监测与循证）」走一遍本章判据 | 397 | [`skill-pianyi-hunza.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/12-pianyi-hunza/outputs/skill-pianyi-hunza.md) |
+| prompt | 混杂不会因为样本变大而缩小 · 提示词 | — | 937 | [`prompt-12-pianyi-hunza.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/12-pianyi-hunza/outputs/prompt-12-pianyi-hunza.md) |
+| skill | 混杂不会因为样本变大而缩小 | 混杂不会因为样本变大而缩小——按「偏倚是方向的偏移，不是精度的抖动 → 选择偏倚：入口决定结论 → 信息偏倚：问出来的与测出来的 → 混杂的三个条件：两处关联，加上不在路径上」走一遍本章判据 | 839 | [`skill-pianyi-hunza.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/12-pianyi-hunza/outputs/skill-pianyi-hunza.md) |
 
-#### 第 13 章 · 现场调查的组织与质量控制
+#### 第 13 章 · 现场质控不是多跑一趟，而是把可追溯性提前到对象还在场的当天
 
 `15-liuxingbing-xue/chapters/13-xianchang-diaocha-zhikong/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 现场调查的组织与质量控制 · 提示词 | — | 483 | [`prompt-13-xianchang-diaocha-zhikong.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/13-xianchang-diaocha-zhikong/outputs/prompt-13-xianchang-diaocha-zhikong.md) |
-| skill | 现场调查的组织与质量控制 | 现场调查的组织与质量控制——按「描述（分布与测量）→ 分析（病例对照与队列）→ 推断（因果与偏倚）→ 应用（监测与循证）」走一遍本章判据 | 414 | [`skill-xianchang-diaocha-zhikong.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/13-xianchang-diaocha-zhikong/outputs/skill-xianchang-diaocha-zhikong.md) |
+| prompt | 现场质控不是多跑一趟，而是把可追溯性提前到对象还在场的当天 · 提示词 | — | 706 | [`prompt-13-xianchang-diaocha-zhikong.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/13-xianchang-diaocha-zhikong/outputs/prompt-13-xianchang-diaocha-zhikong.md) |
+| skill | 现场质控不是多跑一趟，而是把可追溯性提前到对象还在场的当天 | 现场质控不是多跑一趟，而是把可追溯性提前到对象还在场的当天——按「调查表的结构：三个层次，缺一层就不可核对 → 问题的设计：口径先于文采 → 预调查：五个目的，一条纪律 → 现场组织与实施：四层架构、六个环节」走一遍本章判据 | 614 | [`skill-xianchang-diaocha-zhikong.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/13-xianchang-diaocha-zhikong/outputs/skill-xianchang-diaocha-zhikong.md) |
 
-#### 第 14 章 · 疾病监测与公共卫生应对
+#### 第 14 章 · 监测不是"报表越多越好"，而是同一口径下的连续追问
 
 `15-liuxingbing-xue/chapters/14-jibing-jiance-gongwei/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 疾病监测与公共卫生应对 · 提示词 | — | 480 | [`prompt-14-jibing-jiance-gongwei.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/14-jibing-jiance-gongwei/outputs/prompt-14-jibing-jiance-gongwei.md) |
-| skill | 疾病监测与公共卫生应对 | 疾病监测与公共卫生应对——按「描述（分布与测量）→ 分析（病例对照与队列）→ 推断（因果与偏倚）→ 应用（监测与循证）」走一遍本章判据 | 408 | [`skill-jibing-jiance-gongwei.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/14-jibing-jiance-gongwei/outputs/skill-jibing-jiance-gongwei.md) |
+| prompt | 监测不是"报表越多越好"，而是同一口径下的连续追问 · 提示词 | — | 724 | [`prompt-14-jibing-jiance-gongwei.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/14-jibing-jiance-gongwei/outputs/prompt-14-jibing-jiance-gongwei.md) |
+| skill | 监测不是"报表越多越好"，而是同一口径下的连续追问 | 监测不是"报表越多越好"，而是同一口径下的连续追问——按「监测的三要素，与两种方式各自的短板 → 系统评价：六个维度，每个都要先说口径 → 分析：发病率与患病率混用是本章最硬的一条禁令 → 报告、通报与数据质量：五类要素、五性」走一遍本章判据 | 632 | [`skill-jibing-jiance-gongwei.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/14-jibing-jiance-gongwei/outputs/skill-jibing-jiance-gongwei.md) |
 
-#### 第 15 章 · 分子与遗传流行病学
+#### 第 15 章 · 分子与遗传流行病学能给出的，是人群里的线索，不是个体的结论
 
 `15-liuxingbing-xue/chapters/15-fenzi-yichuan/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 分子与遗传流行病学 · 提示词 | — | 474 | [`prompt-15-fenzi-yichuan.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/15-fenzi-yichuan/outputs/prompt-15-fenzi-yichuan.md) |
-| skill | 分子与遗传流行病学 | 分子与遗传流行病学——按「描述（分布与测量）→ 分析（病例对照与队列）→ 推断（因果与偏倚）→ 应用（监测与循证）」走一遍本章判据 | 396 | [`skill-fenzi-yichuan.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/15-fenzi-yichuan/outputs/skill-fenzi-yichuan.md) |
+| prompt | 分子与遗传流行病学能给出的，是人群里的线索，不是个体的结论 · 提示词 | — | 765 | [`prompt-15-fenzi-yichuan.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/15-fenzi-yichuan/outputs/prompt-15-fenzi-yichuan.md) |
+| skill | 分子与遗传流行病学能给出的，是人群里的线索，不是个体的结论 | 分子与遗传流行病学能给出的，是人群里的线索，不是个体的结论——按「生物标志物：测的是一个环节，不是一个结论 → 分子流行病学的设计：窗口前移的代价是把偏倚也提前 → 遗传因素：四层思路、三类设计、一条局限 → 关联不是机制：四种让它看起来像机制的原因」走一遍本章判据 | 661 | [`skill-fenzi-yichuan.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/15-fenzi-yichuan/outputs/skill-fenzi-yichuan.md) |
 
-#### 第 16 章 · 循证医学与系统评价
+#### 第 16 章 · 证据分级管的是"能回答哪类问题"，不是"哪个结论更权威"
 
 `15-liuxingbing-xue/chapters/16-xunzheng-yixue/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 循证医学与系统评价 · 提示词 | — | 474 | [`prompt-16-xunzheng-yixue.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/16-xunzheng-yixue/outputs/prompt-16-xunzheng-yixue.md) |
-| skill | 循证医学与系统评价 | 循证医学与系统评价——按「描述（分布与测量）→ 分析（病例对照与队列）→ 推断（因果与偏倚）→ 应用（监测与循证）」走一遍本章判据 | 397 | [`skill-xunzheng-yixue.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/16-xunzheng-yixue/outputs/skill-xunzheng-yixue.md) |
+| prompt | 证据分级管的是"能回答哪类问题"，不是"哪个结论更权威" · 提示词 | — | 732 | [`prompt-16-xunzheng-yixue.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/16-xunzheng-yixue/outputs/prompt-16-xunzheng-yixue.md) |
+| skill | 证据分级管的是"能回答哪类问题"，不是"哪个结论更权威" | 证据分级管的是"能回答哪类问题"，不是"哪个结论更权威"——按「三要素结构，与"证据不是唯一依据" → 证据分级：按设计分层，但它只对某类问题有效 → 系统评价：可重复才是它与传统综述的分水岭 → 定量综合：三个条件、一条禁令、两种稳健性检查」走一遍本章判据 | 630 | [`skill-xunzheng-yixue.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/16-xunzheng-yixue/outputs/skill-xunzheng-yixue.md) |
 
-#### 第 17 章 · 流行病学与中医药研究
+#### 第 17 章 · 中医药研究的方法学难点，只能靠设计解决，不能靠放宽标准解决
 
 `15-liuxingbing-xue/chapters/17-zhongyi-yao-yanjiu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 流行病学与中医药研究 · 提示词 | — | 477 | [`prompt-17-zhongyi-yao-yanjiu.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/17-zhongyi-yao-yanjiu/outputs/prompt-17-zhongyi-yao-yanjiu.md) |
-| skill | 流行病学与中医药研究 | 流行病学与中医药研究——按「描述（分布与测量）→ 分析（病例对照与队列）→ 推断（因果与偏倚）→ 应用（监测与循证）」走一遍本章判据 | 403 | [`skill-zhongyi-yao-yanjiu.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/17-zhongyi-yao-yanjiu/outputs/skill-zhongyi-yao-yanjiu.md) |
+| prompt | 中医药研究的方法学难点，只能靠设计解决，不能靠放宽标准解决 · 提示词 | — | 756 | [`prompt-17-zhongyi-yao-yanjiu.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/17-zhongyi-yao-yanjiu/outputs/prompt-17-zhongyi-yao-yanjiu.md) |
+| skill | 中医药研究的方法学难点，只能靠设计解决，不能靠放宽标准解决 | 中医药研究的方法学难点，只能靠设计解决，不能靠放宽标准解决——按「研究问题：先问"能回答什么"，再问"效果如何" → 设计与问题的适配：三层，各有各的回答范围 → 辨证论治与标准化：张力在，但不是死结 → 对照、随机、结局、盲法：四个可逐条检查的装置」走一遍本章判据 | 657 | [`skill-zhongyi-yao-yanjiu.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/17-zhongyi-yao-yanjiu/outputs/skill-zhongyi-yao-yanjiu.md) |
 
-#### 第 18 章 · 正常人体学与 tcmP 平台
+#### 第 18 章 · 知识库的价值不在存了多少条，而在每条都写得出依据与边界
 
 `15-liuxingbing-xue/chapters/18-pingtai-lianjie/`
 
@@ -21735,16 +21735,16 @@
 | --- | --- | --- | :-: | --- |
 | prompt | 正常人体学与 tcmP 平台 · 提示词 | — | 470 | [`prompt-18-pingtai-lianjie.md`](../departments/09-jichu/05-zhengchang-renti-xue/chapters/18-pingtai-lianjie/outputs/prompt-18-pingtai-lianjie.md) |
 | skill | 正常人体学与 tcmP 平台 | 正常人体学与 tcmP 平台——按「构造层次 → 系统解剖与组织 → 生理功能与整体调节 → 平台对接」走一遍本章判据 | 395 | [`skill-pingtai-lianjie.md`](../departments/09-jichu/05-zhengchang-renti-xue/chapters/18-pingtai-lianjie/outputs/skill-pingtai-lianjie.md) |
-| prompt | 疾病学基础与 tcmP 平台 · 提示词 | — | 469 | [`prompt-18-pingtai-lianjie.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/18-pingtai-lianjie/outputs/prompt-18-pingtai-lianjie.md) |
-| skill | 疾病学基础与 tcmP 平台 | 疾病学基础与 tcmP 平台——按「疾病概念 → 基本病理过程 → 系统疾病 → 治疗与防治」走一遍本章判据 | 386 | [`skill-pingtai-lianjie.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/18-pingtai-lianjie/outputs/skill-pingtai-lianjie.md) |
-| prompt | 流行病学与 tcmP 平台 · 提示词 | — | 480 | [`prompt-18-pingtai-lianjie.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/18-pingtai-lianjie/outputs/prompt-18-pingtai-lianjie.md) |
-| skill | 流行病学与 tcmP 平台 | 流行病学与 tcmP 平台——按「描述（分布与测量）→ 分析（病例对照与队列）→ 推断（因果与偏倚）→ 应用（监测与循证）」走一遍本章判据 | 402 | [`skill-pingtai-lianjie.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/18-pingtai-lianjie/outputs/skill-pingtai-lianjie.md) |
+| prompt | 平台能不能用，取决于每条单元有没有「依据」和「边界」两列 · 提示词 | — | 863 | [`prompt-18-pingtai-lianjie.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/18-pingtai-lianjie/outputs/prompt-18-pingtai-lianjie.md) |
+| skill | 平台能不能用，取决于每条单元有没有「依据」和「边界」两列 | 平台能不能用，取决于每条单元有没有「依据」和「边界」两列——按「单元的四段编码：让每条结论都能反查 → 两列硬约束：依据与边界 → 平台表与契约：表给人看，契约给机器判 → 病例与图像、智能辅助：两条不能越的线」走一遍本章判据 | 752 | [`skill-pingtai-lianjie.md`](../departments/09-jichu/14-jibing-xue-jichu/chapters/18-pingtai-lianjie/outputs/skill-pingtai-lianjie.md) |
+| prompt | 视频课不是"把正文念一遍"，是让每一段旁白都能指回一个判据 · 提示词 | — | 700 | [`prompt-18-pingtai-lianjie.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/18-pingtai-lianjie/outputs/prompt-18-pingtai-lianjie.md) |
+| skill | 视频课不是"把正文念一遍"，是让每一段旁白都能指回一个判据 | 视频课不是"把正文念一遍"，是让每一段旁白都能指回一个判据——按「一门课在平台里的四层形态 → 从正文到讲稿：有字不等于有旁白 → 从讲稿到成片：三段一步都不能跳 → 交付层：没有清单的成片等于不可发现」走一遍本章判据 | 598 | [`skill-pingtai-lianjie.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/18-pingtai-lianjie/outputs/skill-pingtai-lianjie.md) |
 
 ### 科研实训与实验设计
 
 > Build · 第 9 学期 · 已产出 6 章
 
-#### 第 1 章 · 实验室安全与规范
+#### 第 1 章 · 规范的作用不是禁止动作，而是把不可逆的后果提前变成可核查的条款
 
 `16-jichu-keyan-shixun/chapters/01-shiyanshi-anquan/`
 
@@ -21753,7 +21753,7 @@
 | prompt | 实验室安全与规范 · 提示词 | — | 474 | [`prompt-01-shiyanshi-anquan.md`](../departments/09-jichu/16-jichu-keyan-shixun/chapters/01-shiyanshi-anquan/outputs/prompt-01-shiyanshi-anquan.md) |
 | skill | 实验室安全与规范 | 实验室安全与规范——按「安全与规范 → 设计与实施 → 数据与结果 → 报告与考核」走一遍本章判据 | 382 | [`skill-shiyanshi-anquan.md`](../departments/09-jichu/16-jichu-keyan-shixun/chapters/01-shiyanshi-anquan/outputs/skill-shiyanshi-anquan.md) |
 
-#### 第 2 章 · 实验设计与对照设置
+#### 第 2 章 · 对照不是一个组，是给「反事实」找的一个可观察的替身
 
 `16-jichu-keyan-shixun/chapters/02-shiyan-sheji/`
 
@@ -21762,7 +21762,7 @@
 | prompt | 实验设计与对照设置 · 提示词 | — | 468 | [`prompt-02-shiyan-sheji.md`](../departments/09-jichu/16-jichu-keyan-shixun/chapters/02-shiyan-sheji/outputs/prompt-02-shiyan-sheji.md) |
 | skill | 实验设计与对照设置 | 实验设计与对照设置——按「安全与规范 → 设计与实施 → 数据与结果 → 报告与考核」走一遍本章判据 | 380 | [`skill-shiyan-sheji.md`](../departments/09-jichu/16-jichu-keyan-shixun/chapters/02-shiyan-sheji/outputs/skill-shiyan-sheji.md) |
 
-#### 第 3 章 · 形态学与分子实验实训
+#### 第 3 章 · 你看到的从来不是组织本身，是处理过的那一片
 
 `16-jichu-keyan-shixun/chapters/03-xingtai-fenzi/`
 
@@ -21771,7 +21771,7 @@
 | prompt | 形态学与分子实验实训 · 提示词 | — | 482 | [`prompt-03-xingtai-fenzi.md`](../departments/09-jichu/16-jichu-keyan-shixun/chapters/03-xingtai-fenzi/outputs/prompt-03-xingtai-fenzi.md) |
 | skill | 形态学与分子实验实训 | 形态学与分子实验实训——按「安全与规范 → 设计与实施 → 数据与结果 → 报告与考核」走一遍本章判据 | 383 | [`skill-xingtai-fenzi.md`](../departments/09-jichu/16-jichu-keyan-shixun/chapters/03-xingtai-fenzi/outputs/skill-xingtai-fenzi.md) |
 
-#### 第 4 章 · 数据采集与统计分析
+#### 第 4 章 · 统计的错多半不在算法，在你选的那个分母上
 
 `16-jichu-keyan-shixun/chapters/04-shuju-tongji/`
 
@@ -21780,7 +21780,7 @@
 | prompt | 数据采集与统计分析 · 提示词 | — | 468 | [`prompt-04-shuju-tongji.md`](../departments/09-jichu/16-jichu-keyan-shixun/chapters/04-shuju-tongji/outputs/prompt-04-shuju-tongji.md) |
 | skill | 数据采集与统计分析 | 数据采集与统计分析——按「安全与规范 → 设计与实施 → 数据与结果 → 报告与考核」走一遍本章判据 | 380 | [`skill-shuju-tongji.md`](../departments/09-jichu/16-jichu-keyan-shixun/chapters/04-shuju-tongji/outputs/skill-shuju-tongji.md) |
 
-#### 第 5 章 · 结果解读与可重复性
+#### 第 5 章 · 解读结果靠的是机制判断，不是看偏离明不明显
 
 `16-jichu-keyan-shixun/chapters/05-jieguo-jiedu/`
 
@@ -21789,7 +21789,7 @@
 | prompt | 结果解读与可重复性 · 提示词 | — | 468 | [`prompt-05-jieguo-jiedu.md`](../departments/09-jichu/16-jichu-keyan-shixun/chapters/05-jieguo-jiedu/outputs/prompt-05-jieguo-jiedu.md) |
 | skill | 结果解读与可重复性 | 结果解读与可重复性——按「安全与规范 → 设计与实施 → 数据与结果 → 报告与考核」走一遍本章判据 | 380 | [`skill-jieguo-jiedu.md`](../departments/09-jichu/16-jichu-keyan-shixun/chapters/05-jieguo-jiedu/outputs/skill-jieguo-jiedu.md) |
 
-#### 第 6 章 · 实训报告与考核
+#### 第 6 章 · 报告不是把过程讲一遍，是把证据链交出来让人查
 
 `16-jichu-keyan-shixun/chapters/06-shixun-baogao/`
 
@@ -21802,30 +21802,30 @@
 
 > Build · 第 10 学期 · 已产出 6 章
 
-#### 第 1 章 · 选题：从质量标志物到可验证假设
+#### 第 1 章 · 选题的成败取决于假设能否被一批样品证伪
 
 `17-jichu-biye-sheji/chapters/01-xuan-ti/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 选题：从质量标志物到可验证假设 · 提示词 | — | 491 | [`prompt-01-xuan-ti.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
-| skill | 选题：从质量标志物到可验证假设 | 选题：从质量标志物到可验证假设——按「选题 → 样品与数据 → 实验与建模 → 方法学验证 → 写作答辩 → 移交」走一遍本章判据 | 378 | [`skill-xuan-ti.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
-| prompt | 选题：从配穴方案到可检验命题 · 提示词 | — | 481 | [`prompt-01-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
-| skill | 选题：从配穴方案到可检验命题 | 选题：从配穴方案到可检验命题——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 373 | [`skill-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
-| prompt | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 · 提示词 | — | 620 | [`prompt-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/prompt-xuan-ti.md) |
-| skill | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题——按「三条判据：骨伤版的可复现、可对照、可接手 → 四步降维：从一个病名到一条命题 → 三份能交出去的骨伤毕设产物 → 里程碑：四件必须交出去的东西」走一遍本章判据 | 503 | [`skill-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题的成败取决于假设能否被一批样品证伪 · 提示词 | — | 641 | [`prompt-01-xuan-ti.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
+| skill | 选题的成败取决于假设能否被一批样品证伪 | 选题的成败取决于假设能否被一批样品证伪——按「选题的真问题不是「做什么」，而是「哪一种不一致」 → 四个槽怎么填：从质量标志物到可检验判据 → 开题节点：交付物、字段与时间表 → 评分维度与五种失效模式」走一遍本章判据 | 535 | [`skill-xuan-ti.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题不是挑一个病，而是把一句经验话逼成能被否证的句子 · 提示词 | — | 923 | [`prompt-01-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
+| skill | 选题不是挑一个病，而是把一句经验话逼成能被否证的句子 | 选题不是挑一个病，而是把一句经验话逼成能被否证的句子——按「底本把"针在哪"写到了寸，把"跟谁比"留成了空格 → 对照只能选一个，选完要能说出它排除了什么 → 把"招几十例"换成四个参数 → 裁剪：写不完的范围等于没范围」走一遍本章判据 | 801 | [`skill-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 · 提示词 | — | 639 | [`prompt-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/prompt-xuan-ti.md) |
+| skill | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题——按「三条判据：骨伤版的可复现、可对照、可接手 → 四步降维：从一个病名到一条命题 → 三份能交出去的骨伤毕设产物 → 里程碑：四件必须交出去的东西」走一遍本章判据 | 522 | [`skill-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题在开题前就定了成败：缺口必须算得出来 · 提示词 | — | 629 | [`prompt-01-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题在开题前就定了成败：缺口必须算得出来 | 选题在开题前就定了成败：缺口必须算得出来——按「好选题的四个判据 → 缺口怎么算：分子、分母、来源 → 选题过大的四种形态 → 开题评什么：评能不能做，不评想不想做」走一遍本章判据 | 522 | [`skill-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
-| prompt | 选题：从管理问题到可测量命题 · 提示词 | — | 468 | [`prompt-01-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
-| skill | 选题：从管理问题到可测量命题 | 选题：从管理问题到可测量命题——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 378 | [`skill-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
-| prompt | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验 · 提示词 | — | 630 | [`prompt-01-xuan-ti.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
-| skill | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验 | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验——按「三条判据：可复现、可对照、可接手 → 四步降维：从中医问题到实验对象 → 三种能交出去的题目形态 → 里程碑与交付物」走一遍本章判据 | 513 | [`skill-xuan-ti.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题的标准不是「有意义」，而是能否在一个学期内被证伪 · 提示词 | — | 937 | [`prompt-01-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
+| skill | 选题的标准不是「有意义」，而是能否在一个学期内被证伪 | 选题的标准不是「有意义」，而是能否在一个学期内被证伪——按「「有意义」是评审语，「可证伪」是设计语 → 四步收缩：从管理问题到可测量命题 → 变量类型先定，方法才有得选 → 设计的四个要素与三种常见缺陷」走一遍本章判据 | 815 | [`skill-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验 · 提示词 | — | 646 | [`prompt-01-xuan-ti.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
+| skill | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验 | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验——按「三条判据：可复现、可对照、可接手 → 四步降维：从中医问题到实验对象 → 三种能交出去的题目形态 → 里程碑与交付物」走一遍本章判据 | 529 | [`skill-xuan-ti.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从专科问题到可验证命题 · 提示词 | — | 467 | [`prompt-01-xuan-ti.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题：从专科问题到可验证命题 | 选题：从专科问题到可验证命题——按「选题 → 数据 → 实现 → 评价 → 答辩 → 移交」走一遍本章判据 | 375 | [`skill-xuan-ti.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从机制假设到可检验实验 · 提示词 | — | 494 | [`prompt-01-xuan-ti.md`](../departments/09-jichu/17-jichu-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题：从机制假设到可检验实验 | 选题：从机制假设到可检验实验——按「选题 → 方案与伦理 → 实施与记录 → 数据分析 → 论文答辩 → 知识移交」走一遍本章判据 | 391 | [`skill-xuan-ti.md`](../departments/09-jichu/17-jichu-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 
-#### 第 2 章 · 实验方案与伦理审批
+#### 第 2 章 · 方案经不起偏倚追问，伦理批件就过不了
 
 `17-jichu-biye-sheji/chapters/02-fangan-lunli/`
 
@@ -21834,7 +21834,7 @@
 | prompt | 实验方案与伦理审批 · 提示词 | — | 488 | [`prompt-02-fangan-lunli.md`](../departments/09-jichu/17-jichu-biye-sheji/chapters/02-fangan-lunli/outputs/prompt-02-fangan-lunli.md) |
 | skill | 实验方案与伦理审批 | 实验方案与伦理审批——按「选题 → 方案与伦理 → 实施与记录 → 数据分析 → 论文答辩 → 知识移交」走一遍本章判据 | 386 | [`skill-fangan-lunli.md`](../departments/09-jichu/17-jichu-biye-sheji/chapters/02-fangan-lunli/outputs/skill-fangan-lunli.md) |
 
-#### 第 3 章 · 实验实施与原始记录
+#### 第 3 章 · 原始记录的分量在于别人能照着重做出同一结果
 
 `17-jichu-biye-sheji/chapters/03-shiyan-shishi/`
 
@@ -21843,7 +21843,7 @@
 | prompt | 实验实施与原始记录 · 提示词 | — | 488 | [`prompt-03-shiyan-shishi.md`](../departments/09-jichu/17-jichu-biye-sheji/chapters/03-shiyan-shishi/outputs/prompt-03-shiyan-shishi.md) |
 | skill | 实验实施与原始记录 | 实验实施与原始记录——按「选题 → 方案与伦理 → 实施与记录 → 数据分析 → 论文答辩 → 知识移交」走一遍本章判据 | 387 | [`skill-shiyan-shishi.md`](../departments/09-jichu/17-jichu-biye-sheji/chapters/03-shiyan-shishi/outputs/skill-shiyan-shishi.md) |
 
-#### 第 4 章 · 数据分析与结果呈现
+#### 第 4 章 · 分析方法没有高级低级，只有配不配这批数据
 
 `17-jichu-biye-sheji/chapters/04-shuju-fenxi/`
 
@@ -21852,47 +21852,47 @@
 | prompt | 数据分析与结果呈现 · 提示词 | — | 479 | [`prompt-04-shuju-fenxi.md`](../departments/09-jichu/17-jichu-biye-sheji/chapters/04-shuju-fenxi/outputs/prompt-04-shuju-fenxi.md) |
 | skill | 数据分析与结果呈现 | 数据分析与结果呈现——按「选题 → 方案与伦理 → 实施与记录 → 数据分析 → 论文答辩 → 知识移交」走一遍本章判据 | 385 | [`skill-shuju-fenxi.md`](../departments/09-jichu/17-jichu-biye-sheji/chapters/04-shuju-fenxi/outputs/skill-shuju-fenxi.md) |
 
-#### 第 5 章 · 论文写作与答辩
+#### 第 5 章 · 论文的说服力在绪论就定了，答辩只是把它念一遍
 
 `17-jichu-biye-sheji/chapters/05-lunwen-dabian/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 论文写作与答辩 · 提示词 | — | 465 | [`prompt-05-lunwen-dabian.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
-| skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 样品与数据 → 实验与建模 → 方法学验证 → 写作答辩 → 移交」走一遍本章判据 | 368 | [`skill-lunwen-dabian.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
-| prompt | 论文写作与答辩 · 提示词 | — | 459 | [`prompt-05-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
-| skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 365 | [`skill-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
-| prompt | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 · 提示词 | — | 622 | [`prompt-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-lunwen-dabian.md) |
-| skill | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好——按「六段骨架：每一段都能用一句话检验 → 图表与数字：先让读者能核对，再让读者相信 → 答辩前先自评：七项检查 → 答辩：三类必答题与五分钟陈述」走一遍本章判据 | 507 | [`skill-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 论文的说服力在绪论就定了，答辩只是把它念一遍 · 提示词 | — | 634 | [`prompt-05-lunwen-dabian.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
+| skill | 论文的说服力在绪论就定了，答辩只是把它念一遍 | 论文的说服力在绪论就定了，答辩只是把它念一遍——按「绪论不是学科介绍，是把判据摆到桌面上 → 证据链的四层：每层对应论文的一个部位 → 答辩：四类必被问到的问题与应答结构 → 评分维度与失效模式」走一遍本章判据 | 531 | [`skill-lunwen-dabian.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 论文的说服力来自十个能复算的数字，不来自十页漂亮的讨论 · 提示词 | — | 858 | [`prompt-05-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
+| skill | 论文的说服力来自十个能复算的数字，不来自十页漂亮的讨论 | 论文的说服力来自十个能复算的数字，不来自十页漂亮的讨论——按「一头一尾：引文在底本里，数字在你的表里 → 十个数字：定稿前唯一的硬检查 → 讨论不是复述，是与三篇文献对位置 → 四类质疑与两轮试讲」走一遍本章判据 | 741 | [`skill-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 · 提示词 | — | 630 | [`prompt-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-lunwen-dabian.md) |
+| skill | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好——按「六段骨架：每一段都能用一句话检验 → 图表与数字：先让读者能核对，再让读者相信 → 答辩前先自评：七项检查 → 答辩：三类必答题与五分钟陈述」走一遍本章判据 | 515 | [`skill-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 答辩评的是判断链，不是字数与图表的数量 · 提示词 | — | 611 | [`prompt-05-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 答辩评的是判断链，不是字数与图表的数量 | 答辩评的是判断链，不是字数与图表的数量——按「四段式：每一段只回答一个问题 → 图表的三条规矩 → 陈述：十五分钟怎么分 → 提问：六类问题与应答方式」走一遍本章判据 | 511 | [`skill-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
-| prompt | 论文写作与答辩 · 提示词 | — | 447 | [`prompt-05-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
-| skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 370 | [`skill-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
-| prompt | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来 · 提示词 | — | 637 | [`prompt-05-lunwen-dabian.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
-| skill | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来 | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来——按「六段结构，与评审表一一对应 → 三张表：主表、消融表、误差表 → 写作顺序：先图表，后文字，最后摘要 → 答辩：20 分钟的分配与五个必答题」走一遍本章判据 | 525 | [`skill-lunwen-dabian.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 答辩不是复述结论，而是当场交代结论的适用条件 · 提示词 | — | 943 | [`prompt-05-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
+| skill | 答辩不是复述结论，而是当场交代结论的适用条件 | 答辩不是复述结论，而是当场交代结论的适用条件——按「一段可用的论证，结构上像一条能执行的条文 → 事实判断与价值判断必须分开写 → 枚举与限定：把「等」字写实 → 答辩现场的五个追问与应答」走一遍本章判据 | 831 | [`skill-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来 · 提示词 | — | 640 | [`prompt-05-lunwen-dabian.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
+| skill | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来 | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来——按「六段结构，与评审表一一对应 → 三张表：主表、消融表、误差表 → 写作顺序：先图表，后文字，最后摘要 → 答辩：20 分钟的分配与五个必答题」走一遍本章判据 | 528 | [`skill-lunwen-dabian.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 446 | [`prompt-05-lunwen-dabian.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据 → 实现 → 评价 → 答辩 → 移交」走一遍本章判据 | 367 | [`skill-lunwen-dabian.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 481 | [`prompt-05-lunwen-dabian.md`](../departments/09-jichu/17-jichu-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 方案与伦理 → 实施与记录 → 数据分析 → 论文答辩 → 知识移交」走一遍本章判据 | 383 | [`skill-lunwen-dabian.md`](../departments/09-jichu/17-jichu-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 
-#### 第 6 章 · 知识移交：实验记录与交接
+#### 第 6 章 · 记录不完整的实验等于没做过，交接不清的成果等于没留下
 
 `17-jichu-biye-sheji/chapters/06-zhishi-yijiao/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 知识移交：实验记录与交接 · 提示词 | — | 482 | [`prompt-06-zhishi-yijiao.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
-| skill | 知识移交：实验记录与交接 | 知识移交：实验记录与交接——按「选题 → 样品与数据 → 实验与建模 → 方法学验证 → 写作答辩 → 移交」走一遍本章判据 | 378 | [`skill-zhishi-yijiao.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
-| prompt | 知识移交：方案手册与交接 · 提示词 | — | 473 | [`prompt-06-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
-| skill | 知识移交：方案手册与交接 | 知识移交：方案手册与交接——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 375 | [`skill-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
-| prompt | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 · 提示词 | — | 646 | [`prompt-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-zhishi-yijiao.md) |
-| skill | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法——按「交接包四件：缺一件，复算就断在那一件 → SOP：把「做对」写成「照做也对」 → 三条验收动作：从能跑到敢用 → 失效清单与退役条件」走一遍本章判据 | 527 | [`skill-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 记录不完整的实验等于没做过，交接不清的成果等于没留下 · 提示词 | — | 628 | [`prompt-06-zhishi-yijiao.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
+| skill | 记录不完整的实验等于没做过，交接不清的成果等于没留下 | 记录不完整的实验等于没做过，交接不清的成果等于没留下——按「移交的判据是「别人能不能接着做」 → 交接包四件：记录、方法、数据、联系人 → 三个验收动作怎么执行 → 失效模式、评分与考核」走一遍本章判据 | 521 | [`skill-zhishi-yijiao.md`](../departments/02-zhongyao/20-zhongyao-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 手册写得再全也移不走手感，移交完成的标志是别人照它做出来 · 提示词 | — | 892 | [`prompt-06-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
+| skill | 手册写得再全也移不走手感，移交完成的标志是别人照它做出来 | 手册写得再全也移不走手感，移交完成的标志是别人照它做出来——按「来路：254 处书名号为什么属于移交清单 → 逐穴一节：把能量化的写到极致 → 不可写项：标出来，配带教，别假装写清了 → 复现验证：三个人、两次、两版」走一遍本章判据 | 774 | [`skill-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 · 提示词 | — | 662 | [`prompt-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-zhishi-yijiao.md) |
+| skill | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法——按「交接包四件：缺一件，复算就断在那一件 → SOP：把「做对」写成「照做也对」 → 三条验收动作：从能跑到敢用 → 失效清单与退役条件」走一遍本章判据 | 543 | [`skill-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 毕设的最后一关，是别人能不能接着用 · 提示词 | — | 588 | [`prompt-06-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
 | skill | 毕设的最后一关，是别人能不能接着用 | 毕设的最后一关，是别人能不能接着用——按「移交包四件，各有各的验收动作 → 数据移交：边界比内容更重要 → 交接会：三段，不要开成汇报会 → 被接手方的三个提问」走一遍本章判据 | 490 | [`skill-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
-| prompt | 知识移交：制度文件与交接 · 提示词 | — | 462 | [`prompt-06-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
-| skill | 知识移交：制度文件与交接 | 知识移交：制度文件与交接——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 380 | [`skill-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
-| prompt | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数 · 提示词 | — | 608 | [`prompt-06-zhishi-yijiao.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
-| skill | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数 | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数——按「模型卡：十二个字段，缺一不可 → 交接包四件：代码、数据、环境、口径 → 验收：三个动作，一个都不能省 → 退役与责任边界」走一遍本章判据 | 496 | [`skill-zhishi-yijiao.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 移交的验收标准是「人走了系统还在转」，不是「文档齐了」 · 提示词 | — | 979 | [`prompt-06-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
+| skill | 移交的验收标准是「人走了系统还在转」，不是「文档齐了」 | 移交的验收标准是「人走了系统还在转」，不是「文档齐了」——按「移交的三类资产：制度、数据、人 → 主数据与字典：一物多码会让三年数据接不上 → 权限、脱敏与审批：去标识化不等于匿名化 → 运维与升级：服务级别、回退条件、迁移校验」走一遍本章判据 | 862 | [`skill-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数 · 提示词 | — | 624 | [`prompt-06-zhishi-yijiao.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
+| skill | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数 | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数——按「模型卡：十二个字段，缺一不可 → 交接包四件：代码、数据、环境、口径 → 验收：三个动作，一个都不能省 → 退役与责任边界」走一遍本章判据 | 512 | [`skill-zhishi-yijiao.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：诊疗路径与交接 · 提示词 | — | 462 | [`prompt-06-zhishi-yijiao.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
 | skill | 知识移交：诊疗路径与交接 | 知识移交：诊疗路径与交接——按「选题 → 数据 → 实现 → 评价 → 答辩 → 移交」走一遍本章判据 | 377 | [`skill-zhishi-yijiao.md`](../departments/08-wuguan/17-wuguan-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：实验协议与交接 · 提示词 | — | 497 | [`prompt-06-zhishi-yijiao.md`](../departments/09-jichu/17-jichu-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |

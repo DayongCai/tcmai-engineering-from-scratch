@@ -5,7 +5,7 @@
   {
    "n": 1,
    "slug": "01-lujing-zhiku",
-   "title": "研发路径与证据链：从药材到上市",
+   "title": "研发失败多数不是做不出药，而是证不出可复现",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/01-lujing-zhiku/docs/zh.md",
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-gacp-yaocai",
-   "title": "药材源头：GACP 与可持续供应",
+   "title": "源头记录写不到地块，批间一致性就只是这三批的运气",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/02-gacp-yaocai/docs/zh.md",
@@ -23,7 +23,7 @@
   {
    "n": 3,
    "slug": "03-gmp-shengchan",
-   "title": "生产：GMP 与关键控制点",
+   "title": "GMP 的水平不看厂房，看换一个班组能否做出等价的批",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/03-gmp-shengchan/docs/zh.md",
@@ -32,7 +32,7 @@
   {
    "n": 4,
    "slug": "04-zhiliang-biaozhiwu",
-   "title": "质量控制：标志物、指纹图谱与质量标准",
+   "title": "标准成熟的标志是别人拿它去检别的批次，结论和你一致",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/04-zhiliang-biaozhiwu/docs/zh.md",
@@ -41,7 +41,7 @@
   {
    "n": 5,
    "slug": "05-wuranwu-canyu",
-   "title": "污染物与残留：限度、来源与检验",
+   "title": "污染物的控制成本是反的：源头拦最便宜，成品检最贵",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/05-wuranwu-canyu/docs/zh.md",
@@ -50,7 +50,7 @@
   {
    "n": 6,
    "slug": "06-shangshi-jiankong",
-   "title": "上市后：安全性监测与药物警戒",
+   "title": "监测的价值不在发现报告，在把信号闭成环",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/06-shangshi-jiankong/docs/zh.md",
@@ -59,7 +59,7 @@
   {
    "n": 7,
    "slug": "07-zhuce-ziliao",
-   "title": "注册资料：技术要求如何落成可审评的文件",
+   "title": "资料不是把证据摞高，是让陌生人半小时内看懂证据到哪一步",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/07-zhuce-ziliao/docs/zh.md",
@@ -68,7 +68,7 @@
   {
    "n": 8,
    "slug": "08-chanye-jiaofu",
-   "title": "产业化与知识移交",
+   "title": "移交完成的标志不是签收，是别人独立做出一批合格产品",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/08-chanye-jiaofu/docs/zh.md",

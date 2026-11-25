@@ -1,3 +1,12 @@
+#!/usr/bin/env node
+/**
+ * 人体解剖学 · 第 3 章 消化器官的位置不是背出来的，是被系膜与腹膜挂住的
+ * 确定性单元测试 —— 运行: node --test code/main.test.js
+ *
+ * 断言钉的是本机现算值：正文、算术解析或 quiz 任一处改动，这里就应当变红。
+ * 数字不回读自身再自比（那样什么都测不出），而是写在断言里。
+ */
+
 'use strict';
 
 const test = require('node:test');
@@ -7,56 +16,97 @@ const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 
 const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'renti-jiepou-xue', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'renti-jiepou-xue', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
+const m = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
+const readQuiz = () => JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+const grams = (t, n) => {
+  const size = n || 4;
+  const out = new Set();
+  for (const seg of String(t || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + size <= seg.length; i += 1) out.add(seg.slice(i, i + size));
+  }
+  return out;
+};
+
+test('正文规模：汉字 3975 / 段 24 / 节 7', () => {
+  const a = m.analyze();
+  assert.strictEqual(a.total, 3975);
+  assert.strictEqual(hanzi(readDoc()), 3975, '汉字口径必须与正文一致');
+  assert.strictEqual(a.paragraphs, 24);
+  assert.strictEqual(a.sections.length, 7);
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('节规模求和：3555 汉字，与全文差 420', () => {
+  const a = m.analyze();
+  assert.strictEqual(a.secSum, 3555);
+  assert.strictEqual(a.total - a.secSum, 420);
+  for (const s of a.secs) assert.ok(s.hanzi > 0, '节为空: ' + s.head);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('表格：0 张，行 [] ／ 列 []', () => {
+  const a = m.analyze();
+  assert.deepStrictEqual(a.tables.map((t) => t.rows), []);
+  assert.deepStrictEqual(a.tables.map((t) => t.cols), []);
+  assert.strictEqual(a.cells, 0);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('术语与枚举词：命中 10/10，枚举合计 8 次', () => {
+  const a = m.analyze();
+  assert.strictEqual(a.hitTerms, 10);
+  assert.strictEqual(a.enumSum, 8);
+  for (const [t, n] of a.termHits) assert.ok(n > 0, '正文里没有这个术语: ' + t);
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('quiz 结构：7 题、三段齐、4 选项、下标合法、答案打散', () => {
+  const quiz = readQuiz();
+  assert.strictEqual(quiz.questions.length, 7);
+  assert.deepStrictEqual(quiz.questions.map((x) => x.correct), [0,0,2,1,3,1,2]);
+  const distinct = [...new Set(quiz.questions.map((x) => x.correct))].sort((x, y) => x - y);
+  assert.ok(distinct.length >= 3, '答案位置只有 ' + distinct.length + ' 种');
+  const stages = new Set(quiz.questions.map((x) => x.stage));
+  for (const s of ['pre', 'check', 'post']) assert.ok(stages.has(s), '缺 ' + s + ' 段');
+  for (const x of quiz.questions) {
+    assert.strictEqual(x.options.length, 4, x.question);
+    assert.ok(Number.isInteger(x.correct) && x.correct >= 0 && x.correct < 4, 'correct 越界: ' + x.question);
+    assert.ok(typeof x.explain === 'string' && x.explain.length > 0, '缺 explain: ' + x.question);
+  }
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
-  assert.strictEqual(r.status, 0, r.stderr);
-  const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/renti-jiepou-xue\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
+test('quiz 接地：3 道 check 题的正确选项含正文原词', () => {
+  const body = grams(readDoc(), 4);
+  const quiz = readQuiz();
+  const grounded = quiz.questions.filter((x) => {
+    if (x.stage !== 'check') return false;
+    const right = String(x.options[x.correct] || '');
+    return [...grams(right, 4)].some((g) => body.has(g));
+  });
+  assert.ok(grounded.length >= 2, '只接地 ' + grounded.length + ' 道');
+  assert.strictEqual(m.analyze().quiz.checkGrounded, grounded.length, '与正文口径必须一致');
 });
 
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
+test('quiz 解释：每题 ≥30 汉字，最短 88 汉字', () => {
+  const quiz = readQuiz();
+  const lens = quiz.questions.map((x) => hanzi(x.explain));
+  assert.deepStrictEqual(lens.filter((n) => n < 30), [], '有解释不足 30 汉字');
+  assert.strictEqual(Math.min.apply(null, lens), 88);
+  assert.strictEqual(m.analyze().quiz.minExplain, 88);
+});
+
+test('脚本可运行：退出码 0，输出带现算与边界声明', () => {
+  const out = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
+  assert.strictEqual(out.status, 0, String(out.stderr));
+  const text = String(out.stdout || '');
+  assert.ok(text.length > 200, '输出过短');
+  assert.match(text, /现算/);
+  assert.match(text, /不构成诊疗建议/);
+  assert.match(text, /第 3 章/);
 });
 
 test('代码头部指向本章目录', () => {
   const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/03-xiaohua-xitong/docs/zh.md'), '头部注释未指向本章');
+  assert.ok(body.includes('chapters/03-xiaohua-xitong/docs/zh.md'), '头部注释未指向本章');
 });

@@ -29,38 +29,37 @@ platform:
 
 chapters:
   - slug: 01-yuanze-kunjing
-    title: 第1章 护理伦理的原则、困境与决策
-    segments: 5
+    title: 四个原则不是四句口号，是四种能被追问的动作
     video: rendered
-    estimate_minutes: 1.02
-    measured_minutes: 1.02
+    estimate_minutes: 1.02      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.02      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-zhiqing-tongyi
-    title: 第2章 知情同意与患者自主权
-    segments: 5
+    title: 签字只是同意的痕迹，同意是一个被听懂的过程
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.97
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.97      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-yinsi-xinxi
-    title: 第3章 隐私保护与信息使用
-    segments: 5
+    title: 隐私的边界由用途划定，不由权限划定
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.98
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.98      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-chacuo-faze
-    title: 第4章 护理差错与不良事件的法与责
-    segments: 5
+    title: 报告的自由度，决定差错的可见度
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1.01
+    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.01      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-anning-shengming
-    title: 第5章 安宁疗护与生命伦理
-    segments: 5
+    title: 终末照护的第一项技术，是把话听完
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.96
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-fagui-zhifan
-    title: 第6章 护理法规与执业规范
-    segments: 5
+    title: 规范不是捆住动作的条文，是划出可被信任的范围
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

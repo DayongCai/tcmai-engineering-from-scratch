@@ -201,7 +201,21 @@ function renderCourse(course) {
   const cdir = path.join(COURSES, course.id);
   const subjectDir = path.join(ROOT, 'departments', course.id);
   let yamlText = fs.readFileSync(course.yamlPath, 'utf8');
-  const chapters = readChapters(yamlText).filter((c) => !chapterArg || c.slug === chapterArg);
+  const staleOnly = argv.includes('--stale');
+  let chapters = readChapters(yamlText).filter((c) => !chapterArg || c.slug === chapterArg);
+  // --stale：只重做「正文比讲稿新」或还没有讲稿的章。
+  // 为什么需要它：正文被补实后旧讲稿仍是薄稿，成片就成了 1 分钟空壳（全库实测 1739 章）。
+  if (staleOnly) {
+    chapters = chapters.filter((c) => {
+      const d = path.join(subjectDir, 'chapters', String(c.slug), 'docs', 'zh.md');
+      const l = path.join(cdir, String(c.slug), 'narration', 'lesson.json');
+      if (!fs.existsSync(d)) return false;
+      if (!fs.existsSync(l)) return true;
+      return fs.statSync(d).mtimeMs > fs.statSync(l).mtimeMs;
+    });
+    if (!chapters.length) { console.log(`  ✓ ${course.id}: 没有陈旧章，跳过`); return; }
+    console.log(`  ↻ ${course.id}: 陈旧章 ${chapters.length} 个，逐个重做`);
+  }
   if (chapterArg && !chapters.length) {
     console.error(`✗ ${course.id} 的 course.yaml 里没有章 ${chapterArg}`);
     process.exit(1);

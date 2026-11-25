@@ -1,7 +1,7 @@
 {
   "chapter": "49-structure-and-function-of-the-musculoskeletal-system",
-  "slideCount": 33,
-  "segmentCount": 19,
+  "slideCount": 34,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
@@ -11,7 +11,7 @@
     {
       "n": 2,
       "segment": 2,
-      "chars": 87
+      "chars": 30
     },
     {
       "n": 3,
@@ -26,146 +26,151 @@
     {
       "n": 5,
       "segment": 5,
-      "chars": 418
+      "chars": 302
     },
     {
       "n": 6,
-      "segment": 6,
-      "chars": 329
+      "segment": 5,
+      "chars": 394
     },
     {
       "n": 7,
-      "segment": 6,
-      "chars": 163
+      "segment": 5,
+      "chars": 269
     },
     {
       "n": 8,
-      "segment": 7,
+      "segment": 5,
       "chars": 377
     },
     {
       "n": 9,
-      "segment": 7,
-      "chars": 94
+      "segment": 5,
+      "chars": 341
     },
     {
       "n": 10,
-      "segment": 8,
-      "chars": 389
+      "segment": 5,
+      "chars": 216
     },
     {
       "n": 11,
-      "segment": 8,
-      "chars": 325
+      "segment": 5,
+      "chars": 274
     },
     {
       "n": 12,
-      "segment": 8,
+      "segment": 5,
       "chars": 280
     },
     {
       "n": 13,
-      "segment": 9,
-      "chars": 406
+      "segment": 6,
+      "chars": 253
     },
     {
       "n": 14,
-      "segment": 9,
-      "chars": 100
+      "segment": 6,
+      "chars": 290
     },
     {
       "n": 15,
-      "segment": 10,
+      "segment": 6,
       "chars": 340
     },
     {
       "n": 16,
-      "segment": 10,
-      "chars": 193
+      "segment": 6,
+      "chars": 379
     },
     {
       "n": 17,
-      "segment": 11,
-      "chars": 336
+      "segment": 6,
+      "chars": 295
     },
     {
       "n": 18,
-      "segment": 11,
-      "chars": 129
+      "segment": 7,
+      "chars": 402
     },
     {
       "n": 19,
-      "segment": 12,
-      "chars": 384
+      "segment": 7,
+      "chars": 252
     },
     {
       "n": 20,
-      "segment": 12,
-      "chars": 239
-    },
-    {
-      "n": 21,
-      "segment": 13,
+      "segment": 7,
       "chars": 357
     },
     {
+      "n": 21,
+      "segment": 7,
+      "chars": 352
+    },
+    {
       "n": 22,
-      "segment": 13,
-      "chars": 187
+      "segment": 7,
+      "chars": 292
     },
     {
       "n": 23,
-      "segment": 14,
-      "chars": 398
+      "segment": 7,
+      "chars": 261
     },
     {
       "n": 24,
-      "segment": 14,
-      "chars": 274
-    },
-    {
-      "n": 25,
-      "segment": 15,
+      "segment": 7,
       "chars": 344
     },
     {
+      "n": 25,
+      "segment": 7,
+      "chars": 396
+    },
+    {
       "n": 26,
-      "segment": 15,
-      "chars": 142
-    },
-    {
-      "n": 27,
-      "segment": 16,
-      "chars": 239
-    },
-    {
-      "n": 28,
-      "segment": 16,
+      "segment": 7,
       "chars": 335
     },
     {
-      "n": 29,
-      "segment": 17,
+      "n": 27,
+      "segment": 8,
       "chars": 432
     },
     {
-      "n": 30,
-      "segment": 17,
+      "n": 28,
+      "segment": 8,
       "chars": 155
     },
     {
-      "n": 31,
-      "segment": 18,
+      "n": 29,
+      "segment": 9,
       "chars": 420
     },
     {
+      "n": 30,
+      "segment": 9,
+      "chars": 372
+    },
+    {
+      "n": 31,
+      "segment": 9,
+      "chars": 358
+    },
+    {
       "n": 32,
-      "segment": 18,
-      "chars": 224
+      "segment": 9,
+      "chars": 371
     },
     {
       "n": 33,
-      "segment": 19,
+      "segment": 9,
+      "chars": 115
+    },
+    {
+      "n": 34,
+      "segment": 10,
       "chars": 52
     }
   ]

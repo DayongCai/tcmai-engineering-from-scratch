@@ -1,31 +1,86 @@
 {
   "chapter": "07-lunli-falv",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 16,
+  "segmentCount": 11,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 11
+      "chars": 26
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 96
+      "chars": 28
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 49
+      "chars": 148
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 106
+      "chars": 155
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 391
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 235
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 396
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 75
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 403
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 154
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 336
+    },
+    {
+      "n": 12,
+      "segment": 9,
+      "chars": 406
+    },
+    {
+      "n": 13,
+      "segment": 9,
+      "chars": 138
+    },
+    {
+      "n": 14,
+      "segment": 10,
+      "chars": 357
+    },
+    {
+      "n": 15,
+      "segment": 10,
+      "chars": 88
+    },
+    {
+      "n": 16,
+      "segment": 11,
       "chars": 52
     }
   ]

@@ -29,38 +29,37 @@ platform:
 
 chapters:
   - slug: 01-xuqiu-hegui
-    title: 第1章 需求与数据合规评估
-    segments: 5
+    title: 合规不是在合同上签字，是在第一行代码之前画好边界
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.93
+    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-jiagou-jiekou
-    title: 第2章 系统架构与接口实现
-    segments: 5
+    title: 接口定不下来，架构就只是画在纸上的分工
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.93
+    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-xunlian-pingce
-    title: 第3章 模型训练与评测流水线
-    segments: 5
+    title: 一次跑通不算流水线，能跑出同一个数才算
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.96
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-bushu-huidu
-    title: 第4章 临床部署与灰度验证
-    segments: 5
+    title: 上线不是发布，是把决策权交出去的那一刻
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.93
+    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-yunwei-fupan
-    title: 第5章 运维、监控与事故复盘
-    segments: 5
+    title: 复盘不是找责任人，是把下一次的失败提前写出来
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.95
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-yanshou-wendang
-    title: 第6章 交付验收与文档
-    segments: 5
+    title: 验收的标准不是文档齐了，是别人能接手
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.89
+    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.89      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

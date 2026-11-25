@@ -18,7 +18,7 @@
       "spoken": "第 10 章 · 老年脾胃肝胆病证：能吃，才谈得上治",
       "estimateSeconds": 5,
       "audio": "001.mp3",
-      "audioSeconds": 5.26
+      "audioSeconds": 5.256
     },
     {
       "n": 2,
@@ -28,7 +28,7 @@
       "spoken": "「脾胃者，仓廪之官，五味出焉」——教材·第10章·10.1.1（《素问·灵兰秘典论》）",
       "estimateSeconds": 9,
       "audio": "002.mp3",
-      "audioSeconds": 8.14
+      "audioSeconds": 8.136
     },
     {
       "n": 3,
@@ -38,7 +38,7 @@
       "spoken": "「顾护脾胃」在别处是原则，在本章是前提：老人吃不下、吸收不了，任何补泻都无意义。本章六病（胃痞胃痛、噎膈纳呆、泄泻、消渴、胁痛肝病、胆胀）看似分散，共同点都是「入口到出口」这条线。",
       "estimateSeconds": 20,
       "audio": "003.mp3",
-      "audioSeconds": 18.94
+      "audioSeconds": 18.936
     },
     {
       "n": 4,
@@ -48,7 +48,7 @@
       "spoken": "环境逼迫（老年消化功能衰退＋多重用药伤胃）+ 知识积累（本章 7 单元 14,197 汉字，三辨主病机 269；四位面主脾胃肝胆 786（全书最高）；引书 16 部 19 次；数值 384（全书最高））",
       "estimateSeconds": 19,
       "audio": "004.mp3",
-      "audioSeconds": 20.5
+      "audioSeconds": 20.496
     },
     {
       "n": 5,
@@ -59,7 +59,7 @@
       "spoken": "这一段以代码实现为主，请看画面上的代码块。",
       "estimateSeconds": 5,
       "audio": "005.mp3",
-      "audioSeconds": 4.51
+      "audioSeconds": 4.512
     },
     {
       "n": 6,
@@ -69,10 +69,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "006.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 68.64,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 1.15,
+    "measuredMinutes": 1.14,
+    "ratio": 0.995
+  }
 }

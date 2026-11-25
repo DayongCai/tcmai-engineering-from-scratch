@@ -1,62 +1,90 @@
 'use strict';
+/**
+ * code/main.test.js — 第 5 章契约测试
+ *
+ * 只核对「这一章是否真的自洽」：正文规模与结构的实测值被钉死（改字数即报），
+ * 习题的阶段、选项与接地逐条核对，且 quiz 与 main.js 都不得残留旧脚手架词。
+ * 与 main.js 的内部实现解耦：断言落在数据契约与真实进程输出上。
+ */
 
-const test = require('node:test');
+const { test } = require('node:test');
 const assert = require('node:assert');
+const { spawnSync } = require('node:child_process');
 const fs = require('node:fs');
 const path = require('node:path');
-const { spawnSync } = require('node:child_process');
 
-const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'peiwu-yu-jinji', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'peiwu-yu-jinji', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const HAN = /[\u4e00-\u9fff]/g;
+const hz = (s) => (String(s || '').match(HAN) || []).length;
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
-});
+const doc = fs.readFileSync(path.join(__dirname, '..', 'docs', 'zh.md'), 'utf8');
+const quizRaw = fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8');
+const quiz = JSON.parse(quizRaw);
+const questions = Array.isArray(quiz) ? quiz : quiz.questions || [];
+const run = spawnSync(process.execPath, ['main.js'], { cwd: __dirname, encoding: 'utf8' });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
-});
+const stageOf = (q) => q.stage || q.phase;
+const why = (q) => q.explain || q.explanation || '';
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
-});
-
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
-});
-
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
-});
-
-test('脚本可运行且输出含教学样例与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
-  assert.strictEqual(r.status, 0, r.stderr);
-  const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/peiwu-yu-jinji\/units\.json 现算/);
+test('main.js 退出码为 0 且有实质输出', () => {
+  assert.strictEqual(run.status, 0, `main.js 退出码 ${run.status}\n${run.stderr}`);
+  const out = String(run.stdout || '');
+  assert.ok(out.length > 80, `输出只有 ${out.length} 字符`);
   assert.match(out, /不构成临床判断依据/);
 });
 
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
+test('正文规模与结构（实测值钉死）', () => {
+  assert.strictEqual(hz(doc), 3398, `正文字数 ${hz(doc)}`);
+  assert.strictEqual((doc.match(/^## /gm) || []).length, 7, '二级节数');
+  assert.strictEqual((doc.match(/^\|[-\s|:]+\|$/gm) || []).length, 0, '表格数');
 });
 
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/05-zhenghou-jinji/docs/zh.md'), '头部注释未指向本章');
+test('名目在正文里各自成立', () => {
+  const want = {"证候":10,"药性":10,"对撞":9,"禁忌":18};
+  for (const [name, n] of Object.entries(want)) {
+    const got = (doc.match(new RegExp(name, 'g')) || []).length;
+    assert.strictEqual(got, n, `「${name}」出现 ${got} 次，正文改写后应重算`);
+  }
+});
+
+test('习题题量与阶段齐备', () => {
+  assert.strictEqual(questions.length, 7, `题量 ${questions.length}`);
+  const stage = (n) => questions.filter((q) => stageOf(q) === n).length;
+  assert.strictEqual(stage('pre'), 1);
+  assert.strictEqual(stage('check'), 4);
+  assert.strictEqual(stage('post'), 2);
+});
+
+test('每题 4 个互异选项且答案下标合法、答案不集中在同一位置', () => {
+  for (const [i, q] of questions.entries()) {
+    const opts = q.options || [];
+    assert.strictEqual(opts.length, 4, `第 ${i + 1} 题选项数不是 4`);
+    assert.strictEqual(new Set(opts.map(String)).size, 4, `第 ${i + 1} 题选项重复`);
+    assert.ok(Number.isInteger(q.correct) && q.correct >= 0 && q.correct < 4, `第 ${i + 1} 题答案下标非法`);
+  }
+  const positions = new Set(questions.map((q) => q.correct));
+  assert.ok(positions.size >= 3, `正确答案只落在 ${positions.size} 个位置`);
+});
+
+test('每题解释 ≥30 汉字', () => {
+  for (const [i, q] of questions.entries()) {
+    assert.ok(hz(why(q)) >= 30, `第 ${i + 1} 题解释只有 ${hz(why(q))} 汉字`);
+  }
+});
+
+test('check 题判据能在正文里找到（接地 ≥2 且实测为 4）', () => {
+  const body = doc.replace(/[^\u4e00-\u9fff]/g, '');
+  const grounded = questions.filter((q) => {
+    if (stageOf(q) !== 'check') return false;
+    const key = String((q.options || [])[q.correct] || '').replace(/[^\u4e00-\u9fff]/g, '');
+    for (let i = 0; i + 4 <= key.length; i += 1) if (body.includes(key.slice(i, i + 4))) return true;
+    return false;
+  });
+  assert.strictEqual(grounded.length, 4, `接地 check 题 ${grounded.length} 道`);
+});
+
+test('没有旧脚手架指纹', () => {
+  const raw = `${doc}\n${quizRaw}`;
+  for (const bad of ['三辨', '四位面', '单元规模', '本章实测', '见 code/main.js 输出']) {
+    assert.ok(!raw.includes(bad), `残留旧脚手架词：${bad}`);
+  }
 });

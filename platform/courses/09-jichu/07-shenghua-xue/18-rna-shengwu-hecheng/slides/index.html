@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"/>
-<title>第 18 章 · RNA的生物合成 · 幻灯片</title>
+<title>第 18 章 · 转录的全部调控空间在起点、终点与剪接，抄写本身没有选择余地 · 幻灯片</title>
 <style>
 
 :root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
@@ -59,24 +59,81 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <body>
 <div id="deck">
 <section class="slide" data-i="0">
-  <div class="slide-inner"><h1 class="big">第 18 章 · RNA的生物合成</h1></div>
-  <div class="slide-foot"><span>1 / 5</span><span>title</span></div>
+  <div class="slide-inner"><h1 class="big">第 18 章 · 转录的全部调控空间在起点、终点与剪接，抄写本身没有选择余地</h1></div>
+  <div class="slide-foot"><span>1 / 14</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「《生物化学·RNA的生物合成》」——教材第18章；章号一一对应。本章要回答的是：RNA的生物合成：这一章的判据是什么，什么算「看懂了」。</blockquote></div>
-  <div class="slide-foot"><span>2 / 5</span><span>motto</span></div>
+  <div class="slide-inner"><blockquote class="motto">「意之所随者，不可以言传也。」——《庄子·天道》</blockquote></div>
+  <div class="slide-foot"><span>2 / 14</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
-  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">RNA 合成：转录与加工。</p></div>
-  <div class="slide-foot"><span>3 / 5</span><span>problem</span></div>
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">按常引口径，DNA 复制的错误率约为十亿分之一，转录的错误率约为万分之一到十万分之一——<strong>差了三到五个数量级。</strong> 如果「准确」是唯一标准，转录简直是一场灾难。但细胞并不在意：一个基因每天可以转录出许多份 mRNA，每份 mRNA 的寿命以小时计，抄错的那些被降解掉，重抄一份的成本远低于把整个基因组重新校对一遍。<strong>转录的「不准确」是设计，不是缺陷</strong>：它用「可丢弃的抄本」换「高频的产出」。这笔交易一旦看清，本章的几个结构特征就都能解释：为什么 mRNA 只占总 RNA 的极小一部分却承担全部编码任务；为什么真核生物要给 mRNA 加帽、加尾、剪接（三步都在提高「这一份抄本能不能用、能用多久」）；为什么调控的着力点全在「起不起、起在哪、抄多长、抄完怎么剪」这四件事上，而不在「抄得准不准」。</p></div>
+  <div class="slide-foot"><span>3 / 14</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
-  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（生物化学的判据是「底物—酶—产物—能量」四件套：这一步谁催化、能量怎么走，说不清就是没懂）+ 知识积累（本章 12 单元 20,330 汉字；三辨主 <strong>信息传递与调控 328</strong>；四位面（教材篇结构）主 <strong>下篇·医学生化专题与遗传信息 20330</strong>；引书 <strong>0 部 0 次</strong>；数值类命中 0）</p></div>
-  <div class="slide-foot"><span>4 / 5</span><span>roots</span></div>
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（细胞要按需生产蛋白质，需求随时变，而基因组不能变；唯一能在不变基因组的前提下改变产出的办法，就是控制「抄多少份、抄哪一段」；同时抄写必须快，快就必然不精确，于是只能用「多抄几份、坏的扔掉」来补偿）+ 知识积累（三种聚合酶的分工、模板链与编码链的方向关系、启动子的结构、三步加工的先后与作用，四件事分别对应「谁抄、抄哪条、从哪起、抄完怎么改」；缺一件，转录就只是一条从基因到 mRNA 的直线）</p></div>
+  <div class="slide-foot"><span>4 / 14</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
+  <div class="slide-inner"><div class="kicker">一、三种聚合酶，三种产物，一条分工线</div>
+                <div class="compact dense"><p>真核生物的核内转录由三种 RNA 聚合酶分担，分工按「产物用途」划线：</p>
+<div class="table-wrap"><table><thead><tr><th>聚合酶</th><th>主要产物</th><th>产物去向</th></tr></thead><tbody><tr><td>聚合酶Ⅰ</td><td>核糖体 RNA 的大分子前体</td><td>核仁，加工成 rRNA</td></tr><tr><td>聚合酶Ⅱ</td><td>信使 RNA 前体</td><td>核质，加工后出核翻译</td></tr><tr><td>聚合酶Ⅲ</td><td>转运 RNA、5S rRNA 等小 RNA</td><td>核质，参与翻译机器组装</td></tr></tbody></table></div>
+<p>这条分工线的逻辑是：<strong>占总量最大的（rRNA）交给专用的聚合酶，因为需求稳定且量大；需求最易变的（mRNA）交给调控最复杂的聚合酶Ⅱ；用量小但种类多的（tRNA）交给聚合酶Ⅲ。</strong> 三种酶对抑制剂的敏感性不同，这一点在第五节有用。</p>
+<p>原核生物只有一种 RNA 聚合酶，靠不同的 σ 因子识别不同的启动子来分工。<strong>「一种酶 + 多个识别因子」与「三种酶 + 各自识别」是同一个问题的两种解法</strong>：前者经济，后者可以独立调控。这种「经济与精细」的取舍，在第二十章还会再出现一次。</p></div></div>
+  <div class="slide-foot"><span>5 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">二、模板链与编码链：一个必须一次分清的区别</div>
+                <div class="compact"><p>转录只抄一条链。这条被抄的链叫<strong>模板链</strong>（也叫反义链），它与新合成的 RNA 反向平行、碱基互补；另一条不被抄的链叫<strong>编码链</strong>（也叫有义链），它的序列与 RNA 序列一致（只是 T 换成 U）。</p>
+<p>这个区别之所以重要，是因为三件事都建立在它上面：</p>
+<ol><li><strong>方向的书写。</strong> 基因的「上游」「下游」是按编码链的 5′→3′ 方向定义的，启动子在转录起始点的上游。若把模板链当成编码链，所有方向词都会反过来。</li><li><strong>同一段 DNA 可以有两个基因。</strong> 因为两条链都可以作为模板，只是方向相反、读框不同。重叠基因的存在就是这条规则的直接结果。</li><li><strong>突变命名的参照。</strong> 说「第几位的碱基由 A 变为 G」，参照的是编码链。参照错了，位置就全错。</li></ol></div></div>
+  <div class="slide-foot"><span>6 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">二、模板链与编码链：一个必须一次分清的区别</div>
+                <div class="compact"><p><strong>这是本章最容易出错、也最容易被跳过的部分。</strong> 教材把它单列一节，不是为了增加名词，而是因为后面所有的调控描述都以此为前提。一个实用的检查方法：看到一个启动子序列，先问「它在编码链的上游还是下游」，再问「它被哪条链上的聚合酶识别」——两问都答对，方向感就建立了。</p></div></div>
+  <div class="slide-foot"><span>7 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">三、起始与终止：调控的全部着力点</div>
+                <div class="compact"><p>转录分起始、延长、终止三步，但<strong>调控几乎全部集中在起始</strong>。原因很简单：一旦聚合酶进入了延长阶段，它就会一路抄到底，中途停下的情形（暂停、终止）虽有，但不是主要的调控手段。<strong>把闸门装在起点，比在河道中间设卡便宜得多。</strong></p>
+<p>起始的核心是启动子。原核的启动子有两个保守区（按常引口径位于起始点上游约十与三十五碱基处），σ 因子识别它们，把聚合酶带到正确的位置。真核的聚合酶Ⅱ启动子更复杂：核心启动子（含 TATA 框等元件）负责定位起始点，上游的调控元件（增强子、沉默子）负责「起不起、起多强」，两者之间靠转录因子与中介复合体连接。</p>
+<p>由此得到三条判读规则：</p></div></div>
+  <div class="slide-foot"><span>8 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">三、起始与终止：调控的全部着力点</div>
+                <div class="compact"><ul><li><strong>核心启动子决定「从哪起」。</strong> 它错了，转录本会从错误的位置开始，读框全乱。</li><li><strong>调控元件决定「起不起」。</strong> 增强子可以在很远的位置起作用，方向也可以颠倒，因为它靠的是空间上的接触，不是沿序列的一维传递。</li><li><strong>染色质状态决定「能不能碰到」。</strong> 这是真核特有的一层，第二十章展开。<strong>同样的启动子，包在紧密的染色质里就是关的，露出来才是开的。</strong></li></ul>
+<p>终止的方式原核与真核不同：原核多靠「转录出的 RNA 形成发夹结构 + 一串 U」或不依赖因子的终止，真核的聚合酶Ⅱ终止与 polyA 位点的切割耦联。<strong>终止的作用不只是「停下来」，它还界定了「这份转录本的末端在哪」</strong>，与第四节的加尾直接相关。</p></div></div>
+  <div class="slide-foot"><span>9 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">四、加工：加帽、加尾、剪接，三处改造</div>
+                <div class="compact dense"><p>真核的 mRNA 前体必须经过三步加工才能出核翻译。三步各自解决一个问题：</p>
+<ol><li><strong>加帽</strong>：在 5′ 端加上 7-甲基鸟苷结构。作用有三：保护 5′ 端不被外切酶降解、帮助 mRNA 出核、被翻译起始因子识别。<strong>帽子是「通行证」。</strong></li><li><strong>加尾</strong>：在 3′ 端切割后加上一段多聚腺苷酸尾巴，长度按常引口径为数十到二百余个腺苷酸。作用是提高稳定性与出核效率。<strong>尾巴是「保质期的延长线」。</strong></li><li><strong>剪接</strong>：切除内含子、连接外显子。这一步是<strong>真核转录最核心的「信息重组」环节</strong>：同一个基因，通过选择性剪接可以产生多种不同的成熟 mRNA，从而产生多种蛋白质。</li></ol>
+<p>剪接的意义值得单独强调。按常引口径，人类基因平均含多个外显子，多数基因存在选择性剪接。这意味着<strong>「一个基因一种蛋白」是错的</strong>：基因给出的是「一组可选片段」，成熟转录本才是「这一次选了哪几个」。把基因等同于蛋白质，是从这一步开始就错了。</p></div></div>
+  <div class="slide-foot"><span>10 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">四、加工：加帽、加尾、剪接，三处改造</div>
+                <div class="compact"><p>三步加工的先后不是任意的：加帽在转录早期就发生（保护新生的 5′ 端），剪接可以与转录同时进行，加尾在 3′ 端切割后立即发生。<strong>加工与转录耦联</strong>，这一点决定了「转录本在被抄完之前就已经开始被改造」，也决定了调控可以在加工环节再插一手。</p></div></div>
+  <div class="slide-foot"><span>11 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">五、抑制剂与选择性：为什么「抑制转录」不能只讲毒性</div>
+                <div class="compact"><p>转录抑制剂按作用对象可以分成几类：与 DNA 模板结合而阻碍聚合酶推进的、嵌入碱基对之间改变模板结构的、直接抑制聚合酶活性的、抑制特定聚合酶（如聚合酶Ⅱ）的。教材列这一类内容，用意不在记住名称，而在建立一个判断：<strong>抑制的「选择性」来自靶点的差异，而不是来自药物本身的「强弱」。</strong></p>
+<p>三种聚合酶的差异提供了一个天然的 selectivity 窗口：抑制聚合酶Ⅱ的化合物会优先打击 mRNA 的合成，对 rRNA 与 tRNA 的影响相对小；而抑制原核 RNA 聚合酶的化合物对真核的聚合酶作用弱，这就是「抗菌选择性」的分子基础之一。<strong>理解这一点，就能理解为什么同一类化合物在不同生物上的表现可以相差很大，而不必把它归因于「毒性不同」这种空话。</strong></p>
+<p>这类内容必须写清边界：本章只讲作用环节与选择性的来源，不写具体化合物名称、剂量、浓度与用途；「抑制转录」在教学中是一个机制类别，在临床上是另一套需要严格条件与监测的处置，两者不可混谈。</p></div></div>
+  <div class="slide-foot"><span>12 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><ul><li>本章的「复制错误率十亿分之一」「转录错误率万分之一到十万分之一」「polyA 尾数十到二百余个腺苷酸」「人类基因平均含多个外显子」均为常引口径，不同教材数值略有出入；「错误率差三到五个数量级」是按上述口径算出的量级比较，不是精确倍数。</li><li>「转录的不准确是设计」是一个解释性判断，用于说明「可丢弃抄本」这一策略；它不意味着转录错误无害——错误若发生在关键位点，后果依然可以是严重的。</li><li>三种聚合酶的分工以真核核内转录的典型情形为代表；线粒体与叶绿体有各自的聚合酶，植物还有额外的聚合酶，不能一概而论。</li><li>本章只写抑制剂的类别与作用环节，不写化合物名称、剂量与用途；涉及个体的处置须由具备资质的执业人员依现行规范作出。</li><li>引用古籍只到书名与篇名，取其问题意识（「意之所随者，不可以言传」用以说明抄本与原本的关系），不表示古文献已含现代转录理论。</li></ul></div></div>
+  <div class="slide-foot"><span>13 / 14</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="13">
   <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
-  <div class="slide-foot"><span>5 / 5</span><span>disclaimer</span></div>
+  <div class="slide-foot"><span>14 / 14</span><span>disclaimer</span></div>
 </section>
 </div>
 <div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>

@@ -29,62 +29,61 @@ platform:
 
 chapters:
   - slug: 01-duixiang-congye
-    title: 第1章 隐形矫治的对象与从业要求
-    segments: 5
+    title: 隐形矫治是医疗行为，不是软件排牙
     video: rendered
-    estimate_minutes: 1.1
-    measured_minutes: 1.09
+    estimate_minutes: 1.10      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.09      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-zhiliao-fengxian
-    title: 第2章 治疗风险：依从性、移动偏差与并发症
-    segments: 5
+    title: 疗效的一半握在患者手里，医师只能设计另一半
     video: rendered
-    estimate_minutes: 1.17
-    measured_minutes: 1.16
+    estimate_minutes: 1.17      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.16      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-shiyingzheng
-    title: 第3章 适应证与可预测性分级
-    segments: 5
+    title: 适应证不是一个名单，是三级可预测性
     video: rendered
-    estimate_minutes: 1.12
-    measured_minutes: 1.11
+    estimate_minutes: 1.12      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.11      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-ziliao-caiji
-    title: 第4章 资料采集：影像与数字模型
-    segments: 5
+    title: 资料不是病历的附件，是方案的原材料
     video: rendered
-    estimate_minutes: 1.13
-    measured_minutes: 1.15
+    estimate_minutes: 1.13      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.15      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-fangan-sheji
-    title: 第5章 方案设计流程：目标、虚拟排牙、顺序与附件
-    segments: 5
+    title: 隐形矫治是倒着做的：先定终点，再切步骤
     video: rendered
-    estimate_minutes: 1.22
-    measured_minutes: 1.22
+    estimate_minutes: 1.22      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.22      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-tui-moya
-    title: 第6章 推磨牙向远中：适应证、禁忌与设计
-    segments: 5
+    title: 远移磨牙是用空间换空间，先问牙槽骨答不答应
     video: rendered
-    estimate_minutes: 1.18
-    measured_minutes: 1.18
+    estimate_minutes: 1.18      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.18      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-linmian-quyou
-    title: 第7章 邻面去釉：适应证、禁忌与操作规范
-    segments: 5
+    title: 去釉磨掉的是釉质，那一层不会长回来
     video: rendered
-    estimate_minutes: 1.15
-    measured_minutes: 1.16
+    estimate_minutes: 1.15      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.16      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-fenbu-yidong
-    title: 第8章 分步移动：为什么不能一次到位
-    segments: 5
+    title: 一次移动多颗牙，等于每颗都不到位
     video: rendered
-    estimate_minutes: 1.13
-    measured_minutes: 1.12
+    estimate_minutes: 1.13      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.12      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-jianxi-baochi
-    title: 第9章 儿童间隙管理：五类保持器与选择
-    segments: 5
+    title: 乳牙早失丢的不是一颗牙，是后面几颗牙的位置
     video: rendered
-    estimate_minutes: 1.15
-    measured_minutes: 1.17
+    estimate_minutes: 1.15      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.17      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-yiwei-chuneilie
-    title: 第10章 异位萌出与唇腭裂序列中的正畸
-    segments: 5
+    title: 有些错𬌗不是牙齿的问题，是萌出路径与治疗时序的问题
     video: rendered
-    estimate_minutes: 1.2
-    measured_minutes: 1.18
+    estimate_minutes: 1.20      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.18      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

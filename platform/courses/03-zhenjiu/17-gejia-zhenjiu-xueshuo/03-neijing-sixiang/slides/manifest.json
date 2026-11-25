@@ -1,31 +1,96 @@
 {
   "chapter": "03-neijing-sixiang",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 18,
+  "segmentCount": 8,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 14
+      "chars": 23
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 55
+      "chars": 95
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 89
+      "chars": 204
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 123
+      "chars": 146
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 147
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 418
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 344
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 412
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 231
+    },
+    {
+      "n": 10,
+      "segment": 6,
+      "chars": 413
+    },
+    {
+      "n": 11,
+      "segment": 6,
+      "chars": 311
+    },
+    {
+      "n": 12,
+      "segment": 6,
+      "chars": 350
+    },
+    {
+      "n": 13,
+      "segment": 6,
+      "chars": 335
+    },
+    {
+      "n": 14,
+      "segment": 6,
+      "chars": 330
+    },
+    {
+      "n": 15,
+      "segment": 6,
+      "chars": 363
+    },
+    {
+      "n": 16,
+      "segment": 7,
+      "chars": 326
+    },
+    {
+      "n": 17,
+      "segment": 7,
+      "chars": 124
+    },
+    {
+      "n": 18,
+      "segment": 8,
       "chars": 52
     }
   ]

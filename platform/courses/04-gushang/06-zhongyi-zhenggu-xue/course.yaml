@@ -29,74 +29,73 @@ platform:
 
 chapters:
   - slug: 01-xulun-lilun
-    title: 第1章 绪论与理论基础
-    segments: 5
+    title: 正骨是一门判断的学问，不是一套手法的目录
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.97
+    estimate_minutes: 11.82      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.51      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-shoufa-gailun
-    title: 第2章 正骨手法概论
-    segments: 5
+    title: 手法的四个变量：体位、着力点、方向、幅度
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.94
+    estimate_minutes: 12.23      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 6.73      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-zhenggu-bafa
-    title: 第3章 正骨八法与常用手法
-    segments: 5
+    title: 八法的次序比八法的名目重要
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 1.02
+    estimate_minutes: 11.77      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.51      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-guzhe-zonglun
-    title: 第4章 骨折总论
-    segments: 5
+    title: 复位的成功标准写在功能里，不写在片子上
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.94
+    estimate_minutes: 12.67      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.75      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-shangzhi-guzhe
-    title: 第5章 上肢骨折
-    segments: 5
+    title: 上肢的目标函数是「手能到该到的地方」
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.96
+    estimate_minutes: 12.33      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.42      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-xiazhi-guzhe
-    title: 第6章 下肢骨折
-    segments: 5
+    title: 下肢的第一标准是能承重，第二才是对线
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.94
+    estimate_minutes: 11.12      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.23      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-qugan-guzhe
-    title: 第7章 躯干与骨盆骨折
-    segments: 5
+    title: 躯干的正骨，底线是不制造第二个损伤
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.95
+    estimate_minutes: 10.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.99      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-guanjie-tuowei
-    title: 第8章 关节脱位
-    segments: 5
+    title: 脱位复位成功的那一刻，评估才刚开始
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.93
+    estimate_minutes: 10.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.30      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-jinshang-zonglun
-    title: 第9章 筋伤总论
-    segments: 5
+    title: 筋伤不是「没有骨折」，是另一类损伤
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.93
+    estimate_minutes: 10.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.07      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-jingjian-yaotui
-    title: 第10章 颈肩腰腿筋伤
-    segments: 5
+    title: 颈肩腰腿：手法收益最大，风险也最集中
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.96
+    estimate_minutes: 11.22      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.73      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 11-sizhi-xiaoer
-    title: 第11章 四肢关节筋伤与小儿骨伤
-    segments: 5
+    title: 儿童不是小一号的成人，老人也不是老一号的成人
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1.05
+    estimate_minutes: 10.73      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.59      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 12-gubing-kangfu
-    title: 第12章 骨病与康复
-    segments: 5
+    title: 康复从受伤那天开始，不是治疗结束之后
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.98
+    estimate_minutes: 11.15      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.89      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

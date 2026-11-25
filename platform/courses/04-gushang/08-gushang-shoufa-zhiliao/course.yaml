@@ -29,62 +29,61 @@ platform:
 
 chapters:
   - slug: 01-shoufa-jichu
-    title: 第1章 手法治疗的基础
-    segments: 5
+    title: 手法不是力气活：四个字约束的是一组物理量
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1
+    estimate_minutes: 13.20      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.74      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-zhenggu-bafa
-    title: 第2章 正骨八法与常用手法
-    segments: 5
+    title: 八法是六条，而且是一条链：断在「摸」上，后面全错
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1
+    estimate_minutes: 14.68      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 12.09      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-ruanzuzhi-shoufa
-    title: 第3章 软组织手法
-    segments: 5
+    title: 「松」与「伤」只差三个变量：力落在哪一层、停了多久、着力面多大
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 0.98
+    estimate_minutes: 10.87      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.31      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-zhenggu-shoufa
-    title: 第4章 整复类手法
-    segments: 5
+    title: 复位不是「推回去」，是把四个方向的移位逐个消到容差以内
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.97
+    estimate_minutes: 11.23      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.43      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-jingjian
-    title: 第5章 颈肩部手法
-    segments: 5
+    title: 颈肩的风险不在手上，在筛上
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.95
+    estimate_minutes: 11.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.56      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-yaotui
-    title: 第6章 腰腿部手法
-    segments: 5
+    title: 腰腿痛有一半时间在做鉴别，鉴别没做完就不动手
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.95
+    estimate_minutes: 10.20      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.35      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-guanjie-songdong
-    title: 第7章 关节松动手法
-    segments: 5
+    title: 松动不改位置，只改活动度：这条界划错，处方就错
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.96
+    estimate_minutes: 10.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.88      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-xiaoer-shoufa
-    title: 第8章 小儿骨伤手法
-    segments: 5
+    title: 小儿的手法清单短得多，因为最薄的一层是骺板
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.95
+    estimate_minutes: 11.62      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-fengxian-jinji
-    title: 第9章 风险、禁忌与意外处理
-    segments: 5
+    title: 手法是主动加荷：先排危险，再谈手法
     video: rendered
-    estimate_minutes: 1.02
-    measured_minutes: 1.06
+    estimate_minutes: 9.72      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.87      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-pingjia
-    title: 第10章 疗效评价与方案设计
-    segments: 5
+    title: 「好多了」不是结论：没有时点的疗效，等于没有疗效
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1
+    estimate_minutes: 9.83      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.63      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

@@ -1,31 +1,86 @@
 {
   "chapter": "08-anquan-zhengju",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 16,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 11
+      "chars": 27
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 81
+      "chars": 30
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 16
+      "chars": 153
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 107
+      "chars": 104
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 399
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 377
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 386
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 318
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 214
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 332
+    },
+    {
+      "n": 11,
+      "segment": 7,
+      "chars": 361
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 373
+    },
+    {
+      "n": 13,
+      "segment": 8,
+      "chars": 219
+    },
+    {
+      "n": 14,
+      "segment": 9,
+      "chars": 379
+    },
+    {
+      "n": 15,
+      "segment": 9,
+      "chars": 73
+    },
+    {
+      "n": 16,
+      "segment": 10,
       "chars": 52
     }
   ]

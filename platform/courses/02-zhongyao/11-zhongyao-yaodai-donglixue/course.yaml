@@ -29,50 +29,49 @@ platform:
 
 chapters:
   - slug: 01-adme-gailun
-    title: 第1章 中药药代动力学概论
-    segments: 5
+    title: 药代动力学先问成分能不能被追到
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.94
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-tinei-guocheng
-    title: 第2章 体内过程与生物利用度
-    segments: 5
+    title: 生物利用度是剂型与工艺的最终判决
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.95
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-canshu-moxing
-    title: 第3章 药动学参数与房室模型
-    segments: 5
+    title: 参数不是数据，是可比较性的契约
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.94
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-chengfen-zhuanyun
-    title: 第4章 成分吸收与转运
-    segments: 5
+    title: 进了血的成分是被转运体挑过的
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.9
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-daixie-daixiewu
-    title: 第5章 代谢与代谢物
-    segments: 5
+    title: 代谢不是减活，是把外来物改成能排出去的形状
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.91
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-xianghu-zuoyong
-    title: 第6章 药物相互作用与酶
-    segments: 5
+    title: 相互作用的证据差一级，结论就差一个量级
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.93
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-fufang-tedian
-    title: 第7章 中药复方药动学特点
-    segments: 5
+    title: 复方的暴露是一条谱，不是一个点
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.93
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-fangfaxue-guifan
-    title: 第8章 方法学与研究规范
-    segments: 5
+    title: 方法学的门槛不在仪器，在于别人能不能重做一遍
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.92
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

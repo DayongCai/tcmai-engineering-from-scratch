@@ -60,23 +60,309 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <div id="deck">
 <section class="slide" data-i="0">
   <div class="slide-inner"><h1 class="big">第 16 章 · 心血管系统疾病：把病名还原成「位置、形态与后果」</h1></div>
-  <div class="slide-foot"><span>1 / 5</span><span>title</span></div>
+  <div class="slide-foot"><span>1 / 43</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「本教材只写病变与形态与关系的类别，不写数值与单位与参考值」——教材·第16章·16.1.1（《病理学·第16章·16.1》）</blockquote></div>
-  <div class="slide-foot"><span>2 / 5</span><span>motto</span></div>
+  <div class="slide-inner"><blockquote class="motto">「心者，君主之官也，神明出焉。」——《素问·灵兰秘典论》</blockquote></div>
+  <div class="slide-foot"><span>2 / 43</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
   <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">「动脉粥样硬化」五个字你能默出来，斑块的三层结构也能画。可把标本推到你面前，问一句「纤维帽在哪、坏死物在哪、管腔被压成什么形状」，再问「这片灰黄色心肌和那条血管是什么关系」，四问答不出两问——病名就还只是一个标签，不是一条可以指着说的链。</p></div>
-  <div class="slide-foot"><span>3 / 5</span><span>problem</span></div>
+  <div class="slide-foot"><span>3 / 43</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
   <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（带教把切片放到目镜里，只问「你先说层次，再说改变」，学生张口就是病名，接不下去；换成问「这个改变会让下游哪个器官先出问题」，链条断在管腔与心肌之间）+ 知识积累（本章 12 个单元、20,456 字的词频结构显示：形态 761 次、器官 166 次，病因只有 46 次、机制 52 次——教材把力气几乎全花在「看得见什么」上，病因与机制只给类别；这是分工不是缺陷，但它意味着「形态→后果」这条链必须由学习者自己接上）</p></div>
-  <div class="slide-foot"><span>4 / 5</span><span>roots</span></div>
+  <div class="slide-foot"><span>4 / 43</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
+  <div class="slide-inner"><div class="kicker">一、第一句话不是定义，是一次定位练习</div>
+                <div class="compact"><p>教材讲动脉粥样硬化，第一句没有给定义，而是先指明位置：病变主要发生在动脉内膜，并可累及内膜下与中膜。这句是全书口径的一个样本——它把「写什么」限定在类别与关系上，不给数值，也不给判读。于是每一个病名后面都必须跟三样东西——病变在哪一层（内膜、内膜下、中膜，还是管壁全层）、形态属于哪一类（脂纹、斑块、坏死、血栓、纤维化）、后果落在哪个器官（心肌、脑、肾、眼底）。三样缺一样，描述就退回成名词背诵。</p>
+<p>本章 12 个单元其实都在做同一件事：把「病名」拆成这条三段式。拆得最完整的两处是 16.1.1（斑块的四个阶段）与 16.1.3（梗死的三段演变），<code>code/main.js</code> 会现算这两条序列各被几个单元写全——答案都是一个，这说明教材的写法是「一处写全、其余承接」，读的时候必须知道承接到哪里去。</p></div></div>
+  <div class="slide-foot"><span>5 / 43</span><span>body</span></div>
+</section>
+<section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">二、四节的排法，与三个词频数字</div>
+                <div class="compact dense"><p><code>code/main.js</code> 按节统计，四节规模几乎持平：</p>
+<div class="table-wrap"><table><thead><tr><th>节</th><th>主题</th><th>单元</th><th>汉字</th></tr></thead><tbody><tr><td>16.1</td><td>动脉粥样硬化与冠心病</td><td>3</td><td>5136</td></tr><tr><td>16.2</td><td>高血压病与风湿病</td><td>3</td><td>5040</td></tr><tr><td>16.3</td><td>感染性心内膜炎与心肌疾病</td><td>3</td><td>5062</td></tr><tr><td>16.4</td><td>心力衰竭</td><td>3</td><td>5218</td></tr></tbody></table></div>
+<p>四个话题没有主次，平均每单元 1705 字。这个均分本身是一条信息：<strong>本章不是「四种病各讲一遍」，而是「四组形态各占一块地」</strong>。16.1 讲血管壁本身的病变怎么一步步做出来，16.2 讲全身性因素（压力、免疫）如何在血管与器官上留下痕迹，16.3 讲外来因素（病原、炎症）与心肌自身结构改变，16.4 收口到「心脏撑不住时，形态上留下什么」。</p>
+<p>这个顺序不能倒过来读。先读心力衰竭，你只会记住「心肌肥大、心腔扩张」两个词，却不知道它们各自是被什么逼出来的；先读 16.1 到 16.3，再到 16.4，肥大与扩张才有前因。</p></div></div>
+  <div class="slide-foot"><span>6 / 43</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">二、四节的排法，与三个词频数字</div>
+                <div class="compact"><p>本章三视角合计：形态 761 次、机制 52 次、病因 46 次。四层级合计：器官 166 次、细胞 108 次、系统 58 次、组织 44 次。两句话可以概括这张分布：</p>
+<ul><li><strong>形态是绝对主轴</strong>，占三视角的绝大多数；病因与机制加起来不到形态的七分之一。</li><li><strong>落点在器官层</strong>，不是细胞层也不是系统层；细胞层的词多半出现在「心肌细胞」「内皮细胞」这类结构主语里，不是在做分子推演。</li></ul>
+<p>这不是教材偷懒。病理学的提问方式是「这个器官上看得见什么改变」，病因学的问题（为什么这个人会得）在这本书里只给类别：感染、理化、遗传、免疫、生活方式。<strong>类别是分类用的，不是解释用的</strong>；要解释，得回到机制层，而机制在本章只以「多认为……是启动环节」这种句式出现一次或两次。</p></div></div>
+  <div class="slide-foot"><span>7 / 43</span><span>body</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">二、四节的排法，与三个词频数字</div>
+                <div class="compact"><p>读法上的结论只有一条：<strong>不要把类别当因果</strong>。看到「与血脂异常、高血压、糖代谢异常相关」，那是危险因素的归类，不是「血脂高所以一定长斑块」的推论。教材自己在同一段里声明「不针对任何个体或人群作归因」，这句话是边界，不是客套。</p></div></div>
+  <div class="slide-foot"><span>8 / 43</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">三、动脉粥样硬化：一条从脂纹到复合病变的序列</div>
+                <div class="compact dense"><p>16.1.1 把斑块按形态分成四类，这四类是同一病灶的不同阶段，不是四种病：</p>
+<blockquote><p>「脂纹为内膜表面平坦或微隆起的病灶，镜下以泡沫细胞聚集为特点」——教材·第16章·16.1.1（《病理学·第16章·16.1》）</p></blockquote>
+<p>四类的差别可以压成一张表：</p>
+<div class="table-wrap"><table><thead><tr><th>类别</th><th>位置</th><th>主要构成</th><th>肉眼印象</th></tr></thead><tbody><tr><td>脂纹</td><td>内膜表面</td><td>泡沫细胞聚集</td><td>平坦或微隆起</td></tr><tr><td>纤维斑块</td><td>内膜内</td><td>纤维帽 + 其下脂质与泡沫细胞</td><td>灰白色隆起</td></tr><tr><td>粥样斑块</td><td>纤维帽深部</td><td>坏死物 + 胆固醇结晶 + 钙盐</td><td>黄色粥样物</td></tr><tr><td>复合病变</td><td>斑块自身或管壁全层</td><td>出血、破裂、血栓、钙化、动脉瘤</td><td>形态突变</td></tr></tbody></table></div>
+<p>这张表真正的用处在于<strong>读切面</strong>：拿到一个斑块，先问纤维帽完不完整，再问帽下有没有坏死物，最后问管腔被压成偏心还是环状。三个问题对应三个层次，顺序不能换——先看管腔会漏掉早期病灶，先看坏死物会把手上的脂纹误判成斑块。</p></div></div>
+  <div class="slide-foot"><span>9 / 43</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">三、动脉粥样硬化：一条从脂纹到复合病变的序列</div>
+                <div class="compact"><p>教材对好发部位也给了一条规律：承受血流冲击与压力较高的部位、分支开口与弯曲处多见。这条规律的用法不是背清单，而是理解「为什么是这些地方」——血流状态改变内皮，内皮一坏，后面的脂质进入、单核细胞迁入、平滑肌迁移才有条件。机制在这里只写到「多认为内皮细胞损伤是启动环节」，再往下就没有了，这正好是本书的分工边界。</p></div></div>
+  <div class="slide-foot"><span>10 / 43</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">四、冠心病与高血压病：管腔与心肌、细小动脉与器官</div>
+                <div class="compact dense"><p>16.1.2 讲冠状动脉本身的病变，关键是一句形态特点：多发性与偏心性。多发性意味着「一处狭窄不能解释全部心肌改变」；偏心性意味着「同一横切面上管腔还剩多少，取决于切在哪个方向」。所以教材要求横切与纵切配合：横切看管腔形状与斑块周径分布，纵切看病变沿血管的延伸。切面选错，描述就会把偏心狭窄写成「管腔普遍变小」。</p>
+<p>16.1.3 把对应关系推到器官层：</p>
+<blockquote><p>「心肌梗死是心肌的缺血性坏死，其病变部位与受累冠状动脉的供血区域相对应」——教材·第16章·16.1.3（《病理学·第16章·16.1》）</p></blockquote>
+<p>这句话是本章最实用的工具之一。它给了你一个反推方向：看到心肌病灶的分布，就能反推是哪一支血管出了问题；反过来，看到血管病变的部位，就能预判心肌病灶会长在哪里。教材同时提醒两件事：心绞痛可以没有明显形态改变（形态与功能不平行），梗死的形态随时间演变（早期肉眼不明显，随后坏死物吸收、肉芽组织自周边向中心生长、最后纤维化形成瘢痕）。</p></div></div>
+  <div class="slide-foot"><span>11 / 43</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">四、冠心病与高血压病：管腔与心肌、细小动脉与器官</div>
+                <div class="compact dense"><p>心肌梗死的合并病变里，最需要按形态理解的是心室壁破裂与室壁瘤：前者发生在坏死区软化的阶段，形态基础是「心肌结构丧失」；后者是心室壁的局限性膨出，切面见瘤壁由纤维组织构成。两者都与「时间」有关，而不是与「梗死面积」单独有关——这也是为什么教材反复写「序列」。</p>
+<p>16.2.1 的骨架只有一句：</p>
+<blockquote><p>「细动脉的形态改变以玻璃样变为主」——教材·第16章·16.2.1（《病理学·第16章·16.2》）</p></blockquote>
+<p>围绕这句可以展开成三层：细动脉玻璃样变（血浆蛋白渗入管壁、管壁增厚、管腔狭窄）、小动脉内膜增生（胶原与弹力纤维增多、内弹力板分层断裂）、急进型的纤维素样坏死。三层都是「管壁的结构改变」，不是「血压的数字」。教材在这里格外克制：不写分级、不写分度、不写分期数值，只说「按病变与病程特点可分为缓进型与急进型」。<strong>这是本书不给值的直接体现</strong>：血压高低是判读，形态改变是描述，两者不能互相替代。</p>
+<p>器官改变按「心—脑—肾—眼底」四站走，每一站都能追回同一条起点：</p></div></div>
+  <div class="slide-foot"><span>12 / 43</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">四、冠心病与高血压病：管腔与心肌、细小动脉与器官</div>
+                <div class="compact"><ul><li>心：压力负荷长期增加 → 左心室向心性肥大（室壁增厚、心腔相对缩小）；代偿下降后心腔扩张，转为离心性肥大。</li><li>脑：细小动脉硬化与痉挛 → 软化灶；微小动脉瘤破裂 → 脑内出血；血管通透性改变 → 脑水肿。</li><li>肾：入球细动脉玻璃样变 → 肾小球缺血、纤维化与玻璃样变 → 肾小管萎缩、间质纤维增生 → 表面细颗粒状的固缩肾。</li><li>眼底：视网膜细动脉硬化，血管迂曲、管壁反光增强、动静脉交叉处改变。</li></ul>
+<p>四站里，只有肾的形态改变被教材称为「典型」。这个词值得注意：它不是说别的器官不重要，而是说肾的改变最能一眼看出「血管病变→实质病变」这条链。</p></div></div>
+  <div class="slide-foot"><span>13 / 43</span><span>body</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">五、风湿病、心内膜炎与心肌疾病：一个可以被指认的小体</div>
+                <div class="compact"><p>风湿病的基本病变分三期，中间那一期给了本章唯一一个「可指认的结构」：</p>
+<blockquote><p>「增生期以风湿小体的形成为标志」——教材·第16章·16.2.2（《病理学·第16章·16.2》）</p></blockquote>
+<p>风湿小体的构成是「中心纤维素样坏死 + 周围风湿细胞、淋巴细胞、浆细胞」。风湿细胞胞体较大、胞质丰富、核呈空泡状、染色质呈粗颗粒状并常呈毛虫样排列——这些描述不是文学修辞，是辨认依据：<strong>在切片上找一个「中心坏死、周边细胞成堆、细胞核像毛虫」的结构</strong>，找到它，这一期的诊断性形态就到位了。</p>
+<p>教材还专门做了鉴别：风湿小体 vs 结核性肉芽肿 vs 异物性肉芽肿。三者的差别在中心（纤维素样坏死 / 干酪样坏死 / 异物）与周边（风湿细胞 / 上皮样细胞与多核巨细胞 / 异物巨细胞）。这张鉴别表的价值在于：它把「肉芽肿」从一个笼统的词拆成了三种可比较的形态。</p>
+<p>16.2.3 把病变推到瓣膜：</p></div></div>
+  <div class="slide-foot"><span>14 / 43</span><span>body</span></div>
+</section>
+<section class="slide" data-i="14">
+  <div class="slide-inner"><div class="kicker">五、风湿病、心内膜炎与心肌疾病：一个可以被指认的小体</div>
+                <div class="compact"><blockquote><p>「风湿性心内膜炎的赘生物位于瓣膜闭锁缘，呈灰白色半透明状并排列成串珠样」——教材·第16章·16.2.3（《病理学·第16章·16.2》）</p></blockquote>
+<p>「闭锁缘 + 串珠样 + 附着牢固」这三个特征，是后面与感染性心内膜炎鉴别的全部依据。慢性心瓣膜病则是反复发作后的形态后果：瓣叶增厚、卷曲、粘连、缩短，腱索增粗融合，瓣膜口变形。按功能分成狭窄与关闭不全，前者以粘连增厚为基础，后者以卷曲缩短与腱索融合为基础；同一瓣膜可以两者并存。</p>
+<p>16.3.1 的起点是病原与瓣膜基础状态的关系：</p>
+<blockquote><p>「急性感染性心内膜炎多由致病力较强的化脓性细菌引起，病变常发生于本来无明显病变的瓣膜」——教材·第16章·16.3.1（《病理学·第16章·16.3》）</p></blockquote></div></div>
+  <div class="slide-foot"><span>15 / 43</span><span>body</span></div>
+</section>
+<section class="slide" data-i="15">
+  <div class="slide-inner"><div class="kicker">五、风湿病、心内膜炎与心肌疾病：一个可以被指认的小体</div>
+                <div class="compact"><p>这句话的结构值得学：<strong>病原的致病力 × 瓣膜的基础状态 = 病变的形态</strong>。急性者瓣膜原本正常、赘生物大而松脆、可伴瓣膜坏死溃疡穿孔与瓣周脓肿；亚急性者瓣膜多有原有病变（风湿性心瓣膜病、先天畸形）、赘生物较局限、病程较缓。两者的赘生物差别不在「大小」，而在「附着方式与是否伴明显破坏」。</p>
+<p>后果一侧，教材给了两条线：栓塞（赘生物碎片随血流到各器官，引起梗死；血管壁炎性损伤可形成细菌性动脉瘤）与免疫复合物性改变（肾小球病变、皮肤小结节与出血、视网膜改变）。这两条线说明：<strong>心内膜的局部病变可以写成全身的病</strong>，但写的时候仍要按部位分项，不能一句「全身受累」了事。</p></div></div>
+  <div class="slide-foot"><span>16 / 43</span><span>body</span></div>
+</section>
+<section class="slide" data-i="16">
+  <div class="slide-inner"><div class="kicker">五、风湿病、心内膜炎与心肌疾病：一个可以被指认的小体</div>
+                <div class="compact"><p>16.3.2 与 16.3.3 是本章最容易混的一对。心肌炎的核心术语是「炎细胞浸润」——病毒性以淋巴细胞与单核细胞为主、细菌性以中性粒细胞为主并可形成小脓肿、寄生虫性以嗜酸性粒细胞与肉芽肿为主。心肌病的核心术语是「心肌细胞与间质的结构改变」——扩张型以心腔扩张为主、肥厚型以室壁不对称增厚（常累及室间隔）与心肌细胞排列紊乱为主、限制型以心内膜与心内膜下纤维化为主。教材把这条界线写得很直白：心肌炎「以炎细胞浸润为特征性形态」，心肌病「炎细胞浸润并不突出」。<strong>术语一混，描述就失当</strong>。</p>
+<p>16.4.1 先把病因归成三类：心肌舒缩功能障碍（心肌炎、心肌病、心肌梗死）、负荷过重（压力负荷、容量负荷）、充盈受限（心包与心内膜病变）。这三类不是并列的知识点，而是三条通往同一形态的路径：压力负荷 → 向心性肥大；容量负荷 → 心腔扩张伴心肌肥大；心肌受损 → 收缩力下降 → 心腔扩张。</p>
+<p>16.4.2 给出机制的形态落点：</p></div></div>
+  <div class="slide-foot"><span>17 / 43</span><span>body</span></div>
+</section>
+<section class="slide" data-i="17">
+  <div class="slide-inner"><div class="kicker">五、风湿病、心内膜炎与心肌疾病：一个可以被指认的小体</div>
+                <div class="compact"><blockquote><p>「心室重构是心力衰竭过程中的重要形态改变，表现为心肌肥大与间质纤维化与心腔扩张的组合」——教材·第16章·16.4.2（《病理学·第16章·16.4》）</p></blockquote>
+<p>「组合」这个词很关键：三者不是三选一，而是同时出现、互相加重。心肌肥大让收缩单元变多，但间质纤维化让顺应性下降；心腔扩张在一定范围内拉长心肌纤维、增强收缩（紧张源性扩张），超过限度则收缩力下降（肌源性扩张）。<strong>代偿与失代偿之间没有一条画好的线</strong>，这是本章唯一一处「同一形态有两种意义」的地方，也是考试最爱设陷阱的地方。</p></div></div>
+  <div class="slide-foot"><span>18 / 43</span><span>body</span></div>
+</section>
+<section class="slide" data-i="18">
+  <div class="slide-inner"><div class="kicker">五、风湿病、心内膜炎与心肌疾病：一个可以被指认的小体</div>
+                <div class="compact"><p>16.4.3 把功能代谢变化按系统摊开：心血管（心输出量下降、淤血、静脉压升高）、呼吸（肺淤血与肺水肿 → 劳力性呼吸困难、端坐呼吸、夜间阵发性呼吸困难）、水盐（钠水潴留、心性水肿，多见于下垂部位）、泌尿（尿量减少、肾淤血）、消化（肝淤血呈槟榔样外观、胃肠道淤血）、代谢（心肌缺氧下无氧代谢增强）。这一节的写法是「一个形态基础，对一组功能表现」，读的时候要反过来练：给一组表现，能不能说出形态基础。</p></div></div>
+  <div class="slide-foot"><span>19 / 43</span><span>body</span></div>
+</section>
+<section class="slide" data-i="19">
+  <div class="slide-inner"><div class="kicker">六、心力衰竭是形态终点，也是链条的终点</div>
+                <div class="compact dense"><div class="codeblock"><div class="codeblock-lang">text</div><pre><code class="lang-text">血管壁（16.1.1 脂纹→纤维斑块→粥样斑块→复合病变）
+   │  管腔：偏心性狭窄（16.1.2）
+   ▼
+心肌供血（16.1.3 心绞痛 / 心肌梗死 / 心肌纤维化）
+   │
+   ├── 全身性因素：压力（16.2.1 细小动脉玻璃样变→心脑肾眼底）
+   └── 免疫性因素：风湿（16.2.2 风湿小体 → 16.2.3 瓣膜）
+   │
+   ▼
+外来因素与心肌自身（16.3.1 赘生物 → 16.3.2 心肌炎 / 16.3.3 心肌病）
+   │
+   ▼
+泵功能（16.4.1 病因三类 → 16.4.2 重构与代偿 → 16.4.3 功能代谢变化）</code></pre></div>
+<p>链上任何一环被跳过，后面的环节就会退化成名词。这也是为什么本章最后落在 16.4.3：形态讲完了，还得说清它<strong>不许拿来做什么</strong>——不作诊断、不作正常与异常判定、不作预后判定，具体判断由具备资质的人员依现行规范与机构制度作出。</p></div></div>
+  <div class="slide-foot"><span>20 / 43</span><span>body</span></div>
+</section>
+<section class="slide" data-i="20">
+  <div class="slide-inner"><div class="kicker">六、心力衰竭是形态终点，也是链条的终点</div>
+                <div class="compact"><p>&lt;!-- UNITNOTES:BEGIN 本节由 scripts/render_bingli_unit_notes.js 从 standards/bingli/unit-notes/ 生成，勿手改 --&gt;</p></div></div>
+  <div class="slide-foot"><span>21 / 43</span><span>body</span></div>
+</section>
+<section class="slide" data-i="21">
+  <div class="slide-inner"><div class="kicker">十二个小节：逐条落位</div>
+                <div class="compact dense"><p>教材第 16 章 4 节 × 3 小节 = 12 个知识单元。这一节把它们逐一落位：每个单元一段，说清这一节在问什么、答案落在哪一层、与同章其它单元是什么关系。<strong>没有被主题叙述点到的单元，在这里也必须有位置。</strong></p>
+<h4 id="16-1-1-动脉粥样硬化">16.1.1 动脉粥样硬化</h4>
+<p>本节问的是动脉壁上的病变按什么顺序演变，以及一个斑块为什么会带来超出狭窄本身的后果。答案落在形态这一层，按发展次序归纳类别：脂纹与脂斑属早期，表现为内膜下的脂质沉积；纤维斑块在沉积之上形成纤维帽；粥样斑块在内膜下蓄积脂质与坏死物，表面仍有纤维帽覆盖；继发改变包括斑块内出血、破裂、钙化与血栓形成。几类不是几种病，而是同一过程的不同阶段，取材时相不同所见也不同。要害在于斑块不是静态的一块：它有自身的演变与并发症，多数严重后果来自继发改变而非管腔的逐渐变窄。与下一节的关系是本节提供基本形态，下一节把它落到具体的动脉与器官上，本章末节再把各类表现收进心力衰竭的后果类别。</p>
+<h4 id="16-1-2-冠状动脉粥样硬化症">16.1.2 冠状动脉粥样硬化症</h4></div></div>
+  <div class="slide-foot"><span>22 / 43</span><span>body</span></div>
+</section>
+<section class="slide" data-i="22">
+  <div class="slide-inner"><div class="kicker">十二个小节：逐条落位</div>
+                <div class="compact"><p>本节问的是上述基本病变落在冠状动脉上时，形态与部位有什么特点，以及它为何成为下一节的基础。答案仍在形态这一层，属于器官化的一步。病变以冠状动脉内膜的脂质沉积与纤维斑块形成为主，部位多在冠状动脉的近端与分支开口处，这一分布与血流的分叉和受力状态相关。理解的主线是冠状动脉的供应范围与心肌代谢需求之间的关系：同样类别的病变，落在主干与落在末梢，影响的心肌范围不同，形态后果也不同。与上一节的关系是基本病变在此获得具体的解剖落点，与下一节的关系是本节只描述血管，下一节才讨论由此产生的心脏病变类别。表述只写部位与形态类别，不写管腔狭窄的数值与分级。</p>
+<h4 id="16-1-3-冠状动脉硬化性心脏病">16.1.3 冠状动脉硬化性心脏病</h4></div></div>
+  <div class="slide-foot"><span>23 / 43</span><span>body</span></div>
+</section>
+<section class="slide" data-i="23">
+  <div class="slide-inner"><div class="kicker">十二个小节：逐条落位</div>
+                <div class="compact"><p>本节问的是冠状动脉的病变如何转变为心脏本身的病变，以及这些病变按什么依据分类。答案落在器官与功能这一层。按病变与表现之间的对应关系，可分心绞痛、心肌梗死与心肌纤维化等类别，其共同的形态基础都是冠状动脉供血与心肌需求之间的失衡。几类的差别在于失衡的方式：需求暂时超过供应、供应突然中断、长期供应不足。这一分类把血管病变与心肌形态变化接在同一条链上，是本章由血管走向心脏的关键一步。与上一节的关系是因果相接，与后面高血压病一节的关系是并列，两者都属心脏的常见病变类别，但入口不同，一为冠状动脉，一为细小动脉。表述上只写类别与时序关系，不写发作频度与时限的数值，也不写缓解与否的具体情形。</p>
+<h4 id="16-2-1-高血压病">16.2.1 高血压病</h4></div></div>
+  <div class="slide-foot"><span>24 / 43</span><span>body</span></div>
+</section>
+<section class="slide" data-i="24">
+  <div class="slide-inner"><div class="kicker">十二个小节：逐条落位</div>
+                <div class="compact"><p>本节问的是一种以循环系统压力状态改变为主的全身性疾病，其形态落点在哪里。答案落在血管与器官形态这一层。病变以全身细小动脉的硬化为形态基础，心、脑、肾与眼底等器官出现继发改变；按病因可分原发性与继发性两类。要害是细小动脉这个落点：持续的压力改变首先伤的是小血管，管壁增厚、管腔变小，器官的改变则是小血管病变的下游后果，而不是压力本身直接造成的。这就解释了为何同一疾病在不同器官上留下不同类别的形态改变。与前一节的关系是并列的入口差异，与心力衰竭一节的关系是本节所述的心脏改变为其提供病因类别之一。器官改变与血管改变的这种先后关系，是本节的判读要点。表述不写压力数值，也不作分级。</p>
+<h4 id="16-2-2-风湿病的基本病变">16.2.2 风湿病的基本病变</h4></div></div>
+  <div class="slide-foot"><span>25 / 43</span><span>body</span></div>
+</section>
+<section class="slide" data-i="25">
+  <div class="slide-inner"><div class="kicker">十二个小节：逐条落位</div>
+                <div class="compact"><p>本节问的是一种与免疫反应相关的全身性结缔组织病变，其基本形态是什么，以及为何要单独讲基本病变。答案落在形态这一层，讲的是病变的共同单位而不是某个器官的表现。病变本质为变态反应性炎症，基本形态为结缔组织的变质、增生与纤维化，典型者为风湿小体：中心为纤维素样坏死，周围为增生的细胞。要点是病变有阶段性：活动期以增生为主，静止期以纤维化为主，形态随阶段改变，取材时相不同所见也不同。与下一节的关系是本节给共同单位，下一节把这一单位落到心脏各层与瓣膜上。把基本病变与器官病变分开讲，正是为了避免以单一器官的形态代替共同单位。表述只写形态类别与时相关系，不写检验数值，也不作活动程度的判定。</p>
+<h4 id="16-2-3-风湿病的各器官病变与慢性心瓣膜病">16.2.3 风湿病的各器官病变与慢性心瓣膜病</h4></div></div>
+  <div class="slide-foot"><span>26 / 43</span><span>body</span></div>
+</section>
+<section class="slide" data-i="26">
+  <div class="slide-inner"><div class="kicker">十二个小节：逐条落位</div>
+                <div class="compact"><p>本节问的是同一基本病变累及心脏时，在不同层次上分别留下什么，以及慢性心瓣膜病如何由反复发作累积而成。答案落在器官形态这一层。累及心脏时可有心内膜炎、心肌炎与心包炎，三者可单独或同时存在。心内膜炎以瓣膜病变最突出：闭锁缘出现纤维素样坏死与血栓形成，赘生物位于闭锁缘、单行排列、不易脱落，这一点与感染性心内膜炎的赘生物正好相反，是两者最稳的形态对照。慢性心瓣膜病是反复发作的后果：瓣膜增厚、变硬、卷曲与粘连，形成狭窄与关闭不全两类改变。心内膜、心肌与心包三层受累的并存与否，是描述时必须交代的范围条件。与上一节的关系是基本病变在此获得器官落点，与心力衰竭一节的关系是瓣膜改变为其提供病因类别。</p>
+<h4 id="16-3-1-急性与亚急性感染性心内膜炎">16.3.1 急性与亚急性感染性心内膜炎</h4></div></div>
+  <div class="slide-foot"><span>27 / 43</span><span>body</span></div>
+</section>
+<section class="slide" data-i="27">
+  <div class="slide-inner"><div class="kicker">十二个小节：逐条落位</div>
+                <div class="compact"><p>本节问的是病原经血流到达心内膜与瓣膜后，形态上如何表现，以及急性与亚急性凭什么分开。答案落在形态与经过这一层。基本改变为炎症与赘生物形成，两者的差别体现在赘生物的性状与瓣膜的基础状态上。急性者多发生在原有病变尚轻的瓣膜，致病力较强，赘生物较大、松软、易脱落，脱落后可随血流造成其他部位的变化；亚急性者多在已有病变的瓣膜上发生，经过较长，赘生物相对结实。判读要点是把赘生物的特征与瓣膜的基础状态两条合起来看，单看一条容易归错类别。与上一节的关系是本节与风湿性心内膜炎构成对照，与心肌炎一节的关系是同属心脏炎症而落点不同。不写病原名称以外的检验数值。</p>
+<h4 id="16-3-2-心肌炎">16.3.2 心肌炎</h4></div></div>
+  <div class="slide-foot"><span>28 / 43</span><span>body</span></div>
+</section>
+<section class="slide" data-i="28">
+  <div class="slide-inner"><div class="kicker">十二个小节：逐条落位</div>
+                <div class="compact"><p>本节问的是心肌本身的炎症性病变按什么依据分类，以及为何形态与功能的关系需要单独说明。答案落在形态这一层。基本改变是心肌细胞的变性坏死与间质的炎细胞浸润；按病因可分病毒性、细菌性、寄生虫性与免疫性等类别，按范围可分局限性与弥漫性。病毒性者以心肌细胞的变性坏死与间质炎细胞浸润为主，形态改变与临床表现之间并不平行：范围比程度更能解释功能后果，弥漫性改变即使单处轻微，累计影响也明显。这一条把形态描述从逐点记录引向分布与范围的认识。与上一节的关系是炎症的落点由内膜转向心肌，与心肌病一节的关系是本节属炎症类别，后者以排除已知病因为前提。表述不写酶学数值。</p>
+<h4 id="16-3-3-心肌病">16.3.3 心肌病</h4></div></div>
+  <div class="slide-foot"><span>29 / 43</span><span>body</span></div>
+</section>
+<section class="slide" data-i="29">
+  <div class="slide-inner"><div class="kicker">十二个小节：逐条落位</div>
+                <div class="compact"><p>本节问的是一组以心肌结构与功能改变为主的病变，凭什么把它们归在一起，又凭什么再分下去。答案落在分类与形态这一层。归入的前提是排除：须先排除心瓣膜病、冠状动脉病变、高血压病与先天性心血管畸形等已知原因，剩下的才归入本类。再分按形态与功能特点：扩张型以心腔扩张为主，收缩功能受影响；肥厚型以心肌肥厚为主，尤其累及室间隔；限制型以充盈受限为主，心肌顺应性改变。几类的共同点是心肌本身是病变主体，差别在于形态改变的方向。要点是它是一个排除性类别，判读次序是先排除再归类。与上一节的关系是炎症与变性两类主体的分野，与心力衰竭一节的关系是几类都可成为其病因。</p>
+<h4 id="16-4-1-心力衰竭的病因和分类">16.4.1 心力衰竭的病因和分类</h4></div></div>
+  <div class="slide-foot"><span>30 / 43</span><span>body</span></div>
+</section>
+<section class="slide" data-i="30">
+  <div class="slide-inner"><div class="kicker">十二个小节：逐条落位</div>
+                <div class="compact"><p>本节问的是心脏作为泵在什么条件下不能满足机体需要，以及这些条件如何分类。答案落在病因与分类这一层。心力衰竭指心脏的收缩与舒张功能障碍，使心输出量不能满足代谢需要并出现循环淤血的过程。分类可沿三条轴：按基本病因分压力负荷过重、容量负荷过重与心肌本身病变；按发生部位分左心、右心与全心；按发生速度分急性与慢性。要害是负荷与泵两类病因的形态走向不同：负荷问题先引起心肌肥厚，泵的问题先引起心腔扩张，这一差别为下一节的代偿与重构埋下线索。与前面各节的关系是本节汇总入口，冠状动脉病变、高血压病、瓣膜病与心肌病都在此汇成同一后果类别。表述不写压力与容量的数值。</p>
+<h4 id="16-4-2-发病机制与代偿反应">16.4.2 发病机制与代偿反应</h4></div></div>
+  <div class="slide-foot"><span>31 / 43</span><span>body</span></div>
+</section>
+<section class="slide" data-i="31">
+  <div class="slide-inner"><div class="kicker">十二个小节：逐条落位</div>
+                <div class="compact"><p>本节问的是心脏在泵功能下降之后靠什么维持，以及这些维持手段为何最终反而推动病变进展。答案落在机制与形态这一层。基本环节是心肌收缩力减弱与心室舒张功能异常，心室重构是进展的形态基础。代偿可归纳为几条：心率加快，见效快但耗能增加；心脏扩张，使前负荷增加，在一定范围内有效；心肌肥厚，是对后负荷增加的适应，长期则转向失代偿。要害是代偿都有代价，重构本身就是从代偿走向失代偿的那条路：心肌细胞与间质的构成改变，使心室在形态上更僵硬、在功能上更依赖充盈状态。代偿与失代偿因此不是两个阶段，而是同一条形态路径上的两端。与上一节的关系是病因在此转为机制，与下一节的关系是本节所述改变在功能上外显为各系统的表现。</p>
+<h4 id="16-4-3-主要功能代谢变化">16.4.3 主要功能代谢变化</h4></div></div>
+  <div class="slide-foot"><span>32 / 43</span><span>body</span></div>
+</section>
+<section class="slide" data-i="32">
+  <div class="slide-inner"><div class="kicker">十二个小节：逐条落位</div>
+                <div class="compact"><p>本节问的是泵功能下降与循环淤血在全身各系统上分别以什么类别表现出来。答案落在功能与代谢这一层，是把机制接到表现上的一步。可按系统归纳：心血管方面为心输出量下降与淤血的相应表现类别；呼吸方面为肺淤血引起的呼吸改变类别；泌尿方面为肾血流减少使水钠排出减少；消化与神经方面为淤血与灌注不足的相应类别；同时伴心肌与全身的代谢改变。要害是每一项功能变化都能在淤血与灌注不足这两条线上找到位置，一条是回流受阻，一条是前向灌注不足，两条线交叉解释了表现为何分散于多个系统。与前一节的关系是机制与表现，与本章开头的形态各节的关系是由形态回到功能，形成闭环。</p>
+<p>&lt;!-- UNITNOTES:END --&gt;</p></div></div>
+  <div class="slide-foot"><span>33 / 43</span><span>body</span></div>
+</section>
+<section class="slide" data-i="33">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><ul><li><strong>引文是教材正文，不是经典。</strong> 本章引用格式为「教材·第N章·N.M.K」，全部逐字取自教材正文；教材谈到中医之处是学科对话，不是古籍引文，要引经典须回原书核对。</li><li><strong>词频只描述写法，不描述难度。</strong> 形态 761 次、病因 46 次，说明教材把笔墨放在形态，不说明病因不重要；换一套词表，数字就会变，本书词表固定在 <code>scripts/build_bingli_text.py</code>，可复算但不可外推。</li><li><strong>类别不是因果。</strong> 「与高血压、血脂异常相关」是危险因素归类，不是因果断言；教材在同段声明「不针对任何个体或人群作归因」，这句是边界。</li><li><strong>序列是抽象，时程是缺的。</strong> 本章能写出「脂纹→斑块→复合病变」「坏死→肉芽→瘢痕」的顺序，但给不出各阶段的时间跨度——<strong>教材不给值</strong>，这是底本的取舍，不是本章疏漏。需要时程与阈值时另立数据层，另立来源与校验，并标注「不从本书推」。</li><li>**形态与功能不平行。</li></ul></div></div>
+  <div class="slide-foot"><span>34 / 43</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="34">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><p>** 心绞痛可无明显形态改变，心肌肥大的程度与症状的轻重也不成比例；本章只描述形态，不据形态推断病情。</p>
+<ul><li><strong>边界声明</strong>：本章只解释教材的病变与形态与关系的类别，<strong>不写数值与单位与参考值，不作正常与异常判定，不构成诊断、治疗或用药依据</strong>；任何个体的状态判断须由具备资质的人员依现行规范作出。</li></ul>
+<h3 id="运行与验证">运行与验证</h3>
+<div class="codeblock"><div class="codeblock-lang">bash</div><pre><code class="lang-bash"># 1) 现算本章规模：小节数、汉字数、表格、引文行、单元编号与每节字数
+node code/main.js
+
+# 2) 单测：10 项断言（正文实测值 + quiz 结构与接地）
+node --test code/main.test.js</code></pre></div>
+<p><code>main.js</code> 只读 <code>docs/zh.md</code>，打印五行：章号与判断句；规模（汉字、二级小节、表格与行数）；出证（引文行、单元编号、图注）；算术（每节均值、每单元均值、最长一节）；核对（题记加各节之和是否等于正文汉字数）。末行是教学边界声明。</p></div></div>
+  <div class="slide-foot"><span>35 / 43</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="35">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><p><code>main.test.js</code> 把这些实测值逐个钉成断言，并对 <code>quiz.json</code> 的题数、分段、选项数、答案分布与「正确选项能在正文里找到原词」做结构检查。</p>
+<p><strong>具体的数不抄在这里</strong>：它们由正文现算，抄进正文就会随下一次改动过期——要看就现跑。正文改一个字而断言没跟着改，单测会直接失败。</p>
+<h3 id="免责声明">免责声明</h3>
+<p><strong>免责声明：</strong>本章为病理学教学材料。文中所有概念、分类与形态描述，取自教材《病理学》第 16 章的表述与 <code>standards/bingli</code> 的机器可读层；数字为程序现算，规则已在文中写明。</p>
+<p>本章不提供任何诊断、治疗或用药建议，不给出正常值、参考值或参考范围，也不对任何个体的状态作出正常或异常的判断。文中出现的「病变」「形态」「序列」均为形态学层面的说明，不能替代临床评估。若出现身体不适或急症，请立即就医。</p>
+<h3 id="图注-可独立阅读">图注（可独立阅读）</h3></div></div>
+  <div class="slide-foot"><span>36 / 43</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="36">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><p>本课图版未随教材提供，<strong>图注先行</strong>：下列图注各自成文，不看图也能读；正文提图只写图号（如「图 16-1 图注」）。</p>
+<p><strong>图 16-1　16.1 动脉粥样硬化与冠心病（形态与机制示意图）</strong></p></div></div>
+  <div class="slide-foot"><span>37 / 43</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="37">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><blockquote><p>图注：本图分三段呈现16.1 动脉粥样硬化与冠心病——① 16.1.1 动脉粥样硬化；② 16.1.2 冠状动脉粥样硬化症；③ 16.1.3 冠状动脉硬化性心脏病。
+① 部位与切面：限于教材第 16 章 16.1 节所界定的范围，不扩展到相邻区域。
+② 方位与参照：三段按教材叙述顺序排列；形态类以16.1.1 动脉粥样硬化为一端、16.1.3 冠状动脉硬化性心脏病为另一端，16.1.2 冠状动脉粥样硬化症居中；过程类则按先后相承。
+③ 可见与不可见：可见者为三段的顺序与相互关系；不可见者为细胞水平的超微结构、分子细节与一切量值参数（本课不给）。
+④ 判据：只读本图注、不看图，也能复述这三段并说出它们的相互关系，即算读懂本节。
+出处：教材·第 16 章·16.1.1（图注据教材文字写就；教材未附原图，图版待补）。
+正文回指：正文提图只写图号（「图 16-1 图注」），不写「见「图 16-4 图注」」「见「图 16-4 图注」」。</p></blockquote></div></div>
+  <div class="slide-foot"><span>38 / 43</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="38">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><p><strong>图 16-2　16.2 高血压病与风湿病（形态与机制示意图）</strong></p></div></div>
+  <div class="slide-foot"><span>39 / 43</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="39">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><blockquote><p>图注：本图分三段呈现16.2 高血压病与风湿病——① 16.2.1 高血压病；② 16.2.2 风湿病的基本病变；③ 16.2.3 风湿病的各器官病变与慢性心瓣膜病。
+① 部位与切面：限于教材第 16 章 16.2 节所界定的范围，不扩展到相邻区域。
+② 方位与参照：三段按教材叙述顺序排列；形态类以16.2.1 高血压病为一端、16.2.3 风湿病的各器官病变与慢性心瓣膜病为另一端，16.2.2 风湿病的基本病变居中；过程类则按先后相承。
+③ 可见与不可见：可见者为三段的顺序与相互关系；不可见者为细胞水平的超微结构、分子细节与一切量值参数（本课不给）。
+④ 判据：只读本图注、不看图，也能复述这三段并说出它们的相互关系，即算读懂本节。
+出处：教材·第 16 章·16.2.1（图注据教材文字写就；教材未附原图，图版待补）。
+正文回指：正文提图只写图号（「图 16-2 图注」），不写「见「图 16-4 图注」」「见「图 16-4 图注」」。</p></blockquote></div></div>
+  <div class="slide-foot"><span>40 / 43</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="40">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><p><strong>图 16-3　16.3 感染性心内膜炎与心肌疾病（形态与机制示意图）</strong></p>
+<blockquote><p>图注：本图分三段呈现16.3 感染性心内膜炎与心肌疾病——① 16.3.1 急性与亚急性感染性心内膜炎；② 16.3.2 心肌炎；③ 16.3.3 心肌病。
+① 部位与切面：限于教材第 16 章 16.3 节所界定的范围，不扩展到相邻区域。
+② 方位与参照：三段按教材叙述顺序排列；形态类以16.3.1 急性与亚急性感染性心内膜炎为一端、16.3.3 心肌病为另一端，16.3.2 心肌炎居中；过程类则按先后相承。
+③ 可见与不可见：可见者为三段的顺序与相互关系；不可见者为细胞水平的超微结构、分子细节与一切量值参数（本课不给）。
+④ 判据：只读本图注、不看图，也能复述这三段并说出它们的相互关系，即算读懂本节。
+出处：教材·第 16 章·16.3.1（图注据教材文字写就；教材未附原图，图版待补）。
+正文回指：正文提图只写图号（「图 16-3 图注」），不写「见「图 16-4 图注」」「见「图 16-4 图注」」。</p></blockquote></div></div>
+  <div class="slide-foot"><span>41 / 43</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="41">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><p><strong>图 16-4　16.4 心力衰竭（形态与机制示意图）</strong></p>
+<blockquote><p>图注：本图分三段呈现16.4 心力衰竭——① 16.4.1 心力衰竭的病因和分类；② 16.4.2 发病机制与代偿反应；③ 16.4.3 主要功能代谢变化。
+① 部位与切面：限于教材第 16 章 16.4 节所界定的范围，不扩展到相邻区域。
+② 方位与参照：三段按教材叙述顺序排列；形态类以16.4.1 心力衰竭的病因和分类为一端、16.4.3 主要功能代谢变化为另一端，16.4.2 发病机制与代偿反应居中；过程类则按先后相承。
+③ 可见与不可见：可见者为三段的顺序与相互关系；不可见者为细胞水平的超微结构、分子细节与一切量值参数（本课不给）。
+④ 判据：只读本图注、不看图，也能复述这三段并说出它们的相互关系，即算读懂本节。
+出处：教材·第 16 章·16.4.1（图注据教材文字写就；教材未附原图，图版待补）。
+正文回指：正文提图只写图号（「图 16-4 图注」），不写「见「图 16-4 图注」」「见「图 16-4 图注」」。</p></blockquote></div></div>
+  <div class="slide-foot"><span>42 / 43</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="42">
   <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
-  <div class="slide-foot"><span>5 / 5</span><span>disclaimer</span></div>
+  <div class="slide-foot"><span>43 / 43</span><span>disclaimer</span></div>
 </section>
 </div>
 <div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>

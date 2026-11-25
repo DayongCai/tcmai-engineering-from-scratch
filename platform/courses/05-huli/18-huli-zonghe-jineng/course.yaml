@@ -29,110 +29,109 @@ platform:
 
 chapters:
   - slug: 01-ch01
-    title: 第1章 护理综合技能概述与训练要求
-    segments: 5
+    title: 技能的分水岭不在考站里，在考站外
     video: rendered
-    estimate_minutes: 1.07
-    measured_minutes: 1.05
+    estimate_minutes: 1.07      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.05      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-ch02
-    title: 第2章 技能操作的基本规范与准备要求
-    segments: 5
+    title: 规范不是流程的长度，是每个断点都有人接
     video: rendered
-    estimate_minutes: 1.07
-    measured_minutes: 1.05
+    estimate_minutes: 1.07      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.05      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-ch03
-    title: 第3章 技能操作中的患者安全与权益保护
-    segments: 5
+    title: 安全的第一道防线不是谨慎，是可核对的重复
     video: rendered
-    estimate_minutes: 1.07
-    measured_minutes: 1.07
+    estimate_minutes: 1.07      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.07      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-ch04
-    title: 第4章 生命体征与一般状况观察类技能
-    segments: 5
+    title: 观察的价值不在测到数，在测到之后谁接手
     video: rendered
-    estimate_minutes: 1.07
-    measured_minutes: 1.06
+    estimate_minutes: 1.07      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.06      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-ch05
-    title: 第5章 给药相关护理技能
-    segments: 5
+    title: 给药的安全冗余全在给药之前，不在给药之后
     video: rendered
-    estimate_minutes: 1.03
-    measured_minutes: 1.02
+    estimate_minutes: 1.03      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.02      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-ch06
-    title: 第6章 无菌技术与伤口护理类技能
-    segments: 5
+    title: 无菌的成败由看不见的边界决定，不由动作决定
     video: rendered
-    estimate_minutes: 1.05
-    measured_minutes: 1.04
+    estimate_minutes: 1.05      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.04      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-ch07
-    title: 第7章 氧疗与气道护理类技能
-    segments: 5
+    title: 气道护理的分数在判断谁接手，不在设定多少
     video: rendered
-    estimate_minutes: 1.03
-    measured_minutes: 1.03
+    estimate_minutes: 1.03      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.03      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-ch08
-    title: 第8章 排泄与导尿护理类技能
-    segments: 5
+    title: 排泄护理的难点不在置管，在留置期间的每一次观察
     video: rendered
-    estimate_minutes: 1.03
-    measured_minutes: 1.02
+    estimate_minutes: 1.03      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.02      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-ch09
-    title: 第9章 体位与活动与转运类技能
-    segments: 5
+    title: 体位与转运的风险不在搬动那一刻，在搬动之前的评估
     video: rendered
-    estimate_minutes: 1.03
-    measured_minutes: 1.03
+    estimate_minutes: 1.03      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.03      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-ch10
-    title: 第10章 急救与复苏配合技能
-    segments: 5
+    title: 急救配合的评价标准是让位是否及时，不是动作是否好看
     video: rendered
-    estimate_minutes: 1.03
-    measured_minutes: 1.03
+    estimate_minutes: 1.03      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.03      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 11-ch11
-    title: 第11章 中医护理技能
-    segments: 5
+    title: 中医护理技能的边界，比它的手法更需要被写清楚
     video: rendered
-    estimate_minutes: 1.03
-    measured_minutes: 1.02
+    estimate_minutes: 1.03      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.02      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 12-ch12
-    title: 第12章 围手术期与专科协作类技能
-    segments: 5
+    title: 围手术期的质量由交接决定，而不由手术本身决定
     video: rendered
-    estimate_minutes: 1.07
-    measured_minutes: 1.07
+    estimate_minutes: 1.07      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.07      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 13-ch13
-    title: 第13章 综合模拟训练与情景演练
-    segments: 5
+    title: 模拟训练的价值不在演得像，在复盘时敢说哪一步错了
     video: rendered
-    estimate_minutes: 1.05
-    measured_minutes: 1.07
+    estimate_minutes: 1.05      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.07      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 14-ch14
-    title: 第14章 技能考核与评价要求
-    segments: 5
+    title: 考核评分的信度来自扣分点，而不是来自总分
     video: rendered
-    estimate_minutes: 1.03
-    measured_minutes: 1.05
+    estimate_minutes: 1.03      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.05      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 15-ch15
-    title: 第15章 技能教学与团队协作
-    segments: 5
+    title: 示教的效果取决于学员能复述什么，而不是老师演示了什么
     video: rendered
-    estimate_minutes: 1.03
-    measured_minutes: 1.04
+    estimate_minutes: 1.03      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.04      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 16-ch16
-    title: 第16章 技能风险与质量安全管理
-    segments: 5
+    title: 风险管理的成熟度看报告量，不看差错量
     video: rendered
-    estimate_minutes: 1.05
-    measured_minutes: 1.06
+    estimate_minutes: 1.05      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.06      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 17-ch17
-    title: 第17章 社区与居家护理技能
-    segments: 5
+    title: 居家护理的能力，是把机构标准翻译成家庭条件
     video: rendered
-    estimate_minutes: 1.03
-    measured_minutes: 1.04
+    estimate_minutes: 1.03      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.04      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 18-ch18
-    title: 第18章 护理综合技能与 tcmP 平台
-    segments: 5
+    title: 平台不替人做判断，它只让判断可追溯
     video: rendered
-    estimate_minutes: 1.07
-    measured_minutes: 1.07
+    estimate_minutes: 1.07      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.07      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

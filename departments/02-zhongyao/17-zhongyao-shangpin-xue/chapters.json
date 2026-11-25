@@ -5,7 +5,7 @@
   {
    "n": 1,
    "slug": "01-daolun",
-   "title": "中药商品学导论",
+   "title": "中药商品学管的是价值怎么形成，不是药能治什么病",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/01-daolun/docs/zh.md",
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-lishi-liutong",
-   "title": "中药商品的历史与流通演变",
+   "title": "药市不是被设计出来的，是被「产地分散、需求广泛、运输慢」逼出来的",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/02-lishi-liutong/docs/zh.md",
@@ -23,7 +23,7 @@
   {
    "n": 3,
    "slug": "03-fenlei-mingming",
-   "title": "中药商品的分类与命名",
+   "title": "分类是给管理留位置，命名是给争议留证据",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/03-fenlei-mingming/docs/zh.md",
@@ -32,7 +32,7 @@
   {
    "n": 4,
    "slug": "04-daodi-chanqu",
-   "title": "道地药材与产区",
+   "title": "道地是「产区＋种质＋工艺」的共同署名，不是一枚产地印章",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/04-daodi-chanqu/docs/zh.md",
@@ -41,7 +41,7 @@
   {
    "n": 5,
    "slug": "05-zhiliang-biaozhun",
-   "title": "中药商品的质量标准体系",
+   "title": "标准不是一张合格证，是一串「谁说了算、说到哪一步」的效力排序",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/05-zhiliang-biaozhun/docs/zh.md",
@@ -50,7 +50,7 @@
   {
    "n": 6,
    "slug": "06-jianding-fangfa",
-   "title": "中药商品的鉴定方法",
+   "title": "鉴定的第一步不是看药，是把「一批货」变成「一份能代表它的样」",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/06-jianding-fangfa/docs/zh.md",
@@ -59,7 +59,7 @@
   {
    "n": 7,
    "slug": "07-guige-dengji",
-   "title": "中药材商品的规格等级",
+   "title": "规格分级给的是可比的级差，不是质量的判决",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/07-guige-dengji/docs/zh.md",
@@ -68,7 +68,7 @@
   {
    "n": 8,
    "slug": "08-yinpian",
-   "title": "中药饮片商品",
+   "title": "饮片的规格是切出来的，药性是炮出来的，责任是批号绑住的",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/08-yinpian/docs/zh.md",
@@ -77,7 +77,7 @@
   {
    "n": 9,
    "slug": "09-zhongchengyao",
-   "title": "中成药商品",
+   "title": "中成药卖的是可复现的处方，不是一堆药材",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/09-zhongchengyao/docs/zh.md",
@@ -86,7 +86,7 @@
   {
    "n": 10,
    "slug": "10-baozhuang-chucang",
-   "title": "中药商品的包装与贮藏养护",
+   "title": "变质不是意外，是四项环境因素各自找到了入口",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/10-baozhuang-chucang/docs/zh.md",
@@ -95,7 +95,7 @@
   {
    "n": 11,
    "slug": "11-jingying-zhiliang",
-   "title": "中药商品的经营与质量管理",
+   "title": "经营质量的全部证据，是一条能倒着走的记录链",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/11-jingying-zhiliang/docs/zh.md",
@@ -104,7 +104,7 @@
   {
    "n": 12,
    "slug": "12-jiage-shichang",
-   "title": "中药商品的价格与市场",
+   "title": "药材价格对产量的敏感，远高于对需求的敏感",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/12-jiage-shichang/docs/zh.md",
@@ -113,7 +113,7 @@
   {
    "n": 13,
    "slug": "13-pinpai-zhishi",
-   "title": "中药商品的品牌与知识产权",
+   "title": "品牌护住的是来源的名声，护不住这一批药的质量",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/13-pinpai-zhishi/docs/zh.md",
@@ -122,7 +122,7 @@
   {
    "n": 14,
    "slug": "14-teshu-guanli",
-   "title": "特殊管理的中药商品",
+   "title": "特殊管理管的不是等级，是每一笔货的来去",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/14-teshu-guanli/docs/zh.md",
@@ -131,7 +131,7 @@
   {
    "n": 15,
    "slug": "15-guomao-maoyi",
-   "title": "中药商品的国际贸易",
+   "title": "出口卖的不是好药，是那个市场认得的商品",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/15-guomao-maoyi/docs/zh.md",
@@ -140,7 +140,7 @@
   {
    "n": 16,
    "slug": "16-jianguan-hegui",
-   "title": "中药商品的监管与合规",
+   "title": "监管划的是底线，合规做的是把底线变成流程",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/16-jianguan-hegui/docs/zh.md",
@@ -149,7 +149,7 @@
   {
    "n": 17,
    "slug": "17-fengxian-zhuisu",
-   "title": "中药商品的质量风险与追溯",
+   "title": "追溯不解决质量问题，它只解决「出了问题找谁」",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/17-fengxian-zhuisu/docs/zh.md",
@@ -158,7 +158,7 @@
   {
    "n": 18,
    "slug": "18-jiaoxue-pingtai",
-   "title": "中药商品学与 tcmP 智能教学平台",
+   "title": "编码不是排版，是把「哪一句」变成「哪一个地址」",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/18-jiaoxue-pingtai/docs/zh.md",

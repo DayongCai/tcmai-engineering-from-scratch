@@ -29,50 +29,49 @@ platform:
 
 chapters:
   - slug: 01-dh1
-    title: 第1章 数字人体的概念与来源
-    segments: 5
+    title: 人体先被写成可寻址的结构，才谈得上被计算
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.9
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-dh2
-    title: 第2章 数据从哪里来：体表、影像与传感
-    segments: 5
+    title: 数据不是「采得越细越好」，而是「这一层问题配这一层数据」
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 0.99
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.99      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-dh3
-    title: 第3章 结构与层级：把人体写成知识组织
-    segments: 5
+    title: 人体不是一棵树，写成一棵树就得付代价
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 0.98
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.98      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-dh4
-    title: 第4章 建模：降维、嵌入与参数化
-    segments: 5
+    title: 建模是选择「忘掉什么」，不是追求「记住一切」
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.96
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-dh5
-    title: 第5章 人群分型与聚类
-    segments: 5
+    title: 聚类总能给你几个簇，问题是你敢不敢把它们当分型
     video: rendered
-    estimate_minutes: 0.87
-    measured_minutes: 0.88
+    estimate_minutes: 0.87      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.88      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-dh6
-    title: 第6章 仿真结果怎么验：评估与对照
-    segments: 5
+    title: 收敛只证明方程被解对了，不证明方程是对的
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.95
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-dh7
-    title: 第7章 可视化与交互：系统怎么长
-    segments: 5
+    title: 可视化不是把模型画出来，而是把不确定度摆到台面上
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.94
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-dh8
-    title: 第8章 隐私：人体数据是敏感信息
-    segments: 5
+    title: 去掉了姓名，人体数据仍然是一个人
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.96
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

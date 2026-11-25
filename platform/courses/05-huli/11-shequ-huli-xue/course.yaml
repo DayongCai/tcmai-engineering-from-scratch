@@ -29,50 +29,49 @@ platform:
 
 chapters:
   - slug: 01-duixiang-moshi
-    title: 第1章 社区护理的对象与模式
-    segments: 5
+    title: 社区护理的对象不是「辖区居民」，是一张按风险叠起来的分层名单
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.94
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-fangshi-dangan
-    title: 第2章 家庭访视与健康档案
-    segments: 5
+    title: 访视不是串门：没有记录的走访，只是去过
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.98
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.98      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-manxing-guanli
-    title: 第3章 慢性病的社区管理
-    segments: 5
+    title: 慢病管理的产出不是「随访次数」，是「他自己能处理的那几步」
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.94
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-chuanran-yimiao
-    title: 第4章 传染病与疫苗接种
-    segments: 5
+    title: 防疫的成败在报得早与说得少：报告要快，议论要停
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.96
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-laonian-zhaohu
-    title: 第5章 老年与失能人群照护
-    segments: 5
+    title: 照护失能老人，先算清「哪几件事他做不了」，再谈人力
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 0.99
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.99      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-jiankang-jiaoyu
-    title: 第6章 健康教育的设计与评价
-    segments: 5
+    title: 健康教育的产出不是「讲了几场」，是「他回去改了哪一步」
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.97
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.97      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-weisheng-xinxihua
-    title: 第7章 社区卫生服务的信息化与急救
-    segments: 5
+    title: 系统能替你提醒，替不了你判断；电话能替你呼救，替不了你先动手
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1.01
+    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.01      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-zhiliang-kejixing
-    title: 第8章 社区护理的质量与可及性
-    segments: 5
+    title: 可及性不是「有没有服务」，是「他能不能用得上」
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

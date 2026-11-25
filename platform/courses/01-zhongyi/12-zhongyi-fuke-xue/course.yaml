@@ -29,80 +29,79 @@ platform:
 
 chapters:
   - slug: 01-xulun
-    title: 第1章 绪论
-    segments: 6
+    title: 妇科的门槛不是病名多，而是把「经带胎产」压成一条链、四类事
     video: rendered
-    estimate_minutes: 1.55
-    measured_minutes: 1.54
+    estimate_minutes: 1.55      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.54      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-shengzhi-shengli
-    title: 第2章 女性生殖脏器解剖与生理
-    segments: 6
+    title: 月经不是每月一次出血，而是一台四段换挡的发动机
     video: rendered
-    estimate_minutes: 1.4
-    measured_minutes: 1.38
+    estimate_minutes: 1.40      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.38      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-bingyin-bingji
-    title: 第3章 妇科疾病的病因病机
-    segments: 6
+    title: 妇科病因不是一张清单，是四个入口接三条通路
     video: rendered
-    estimate_minutes: 1.33
-    measured_minutes: 1.31
+    estimate_minutes: 1.33      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.31      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-zhenduan-bianzheng
-    title: 第4章 妇科疾病的诊断与辨证
-    segments: 6
+    title: 四诊不是四个动作，是把「期量色质」填进四栏
     video: rendered
-    estimate_minutes: 1.45
-    measured_minutes: 1.39
+    estimate_minutes: 1.45      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.39      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-zhiliao
-    title: 第5章 妇科疾病的治疗
-    segments: 6
+    title: 治法不是九个方子，是六组动作加一个「按段换挡」
     video: rendered
-    estimate_minutes: 1.4
-    measured_minutes: 1.37
+    estimate_minutes: 1.40      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.37      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-yufang-baojian
-    title: 第6章 妇科预防与保健
-    segments: 6
+    title: 保健的核心不是「做什么」，是每个阶段「不许做什么」
     video: rendered
-    estimate_minutes: 1.53
-    measured_minutes: 1.5
+    estimate_minutes: 1.53      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.50      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-yuejing-qiliang-sezhi
-    title: 第7章 月经病·期量色质异常
-    segments: 6
+    title: 八个病名，其实只动了四栏里的两个
     video: rendered
-    estimate_minutes: 1.52
-    measured_minutes: 1.44
+    estimate_minutes: 1.52      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.44      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-bijing-benglou
-    title: 第8章 月经病·闭经崩漏与经行诸证
-    segments: 6
+    title: 两个大病在「血」，十二个小病在「周期与全身」
     video: rendered
-    estimate_minutes: 1.45
-    measured_minutes: 1.42
+    estimate_minutes: 1.45      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.42      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-daixia-bing
-    title: 第9章 带下病
-    segments: 6
+    title: 带下病只有一个病名，却有两个相反的方向
     video: rendered
-    estimate_minutes: 1.27
-    measured_minutes: 1.22
+    estimate_minutes: 1.27      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.22      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-renshen-bing
-    title: 第10章 妊娠病
-    segments: 6
+    title: 妊娠病有一条「胎」的安全线，和一个必须破的例外
     video: rendered
-    estimate_minutes: 1.38
-    measured_minutes: 1.36
+    estimate_minutes: 1.38      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.36      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 11-chanhou-bing
-    title: 第11章 产后病
-    segments: 6
+    title: 产后的所有病，都从「多虚多瘀」这一条轴上分出去
     video: rendered
-    estimate_minutes: 1.47
-    measured_minutes: 1.45
+    estimate_minutes: 1.47      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.45      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 12-fuke-zabing
-    title: 第12章 妇科杂病
-    segments: 6
+    title: 六个「不属于经带胎产」的病，各有一条自己的判据线
     video: rendered
-    estimate_minutes: 1.48
-    measured_minutes: 1.44
+    estimate_minutes: 1.48      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.44      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 13-jizhen-shuzihua
-    title: 第13章 妇科急症与数字化AI时代
-    segments: 6
+    title: 四类急症，一条可算的链
     video: rendered
-    estimate_minutes: 1.32
-    measured_minutes: 1.31
+    estimate_minutes: 1.32      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.31      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

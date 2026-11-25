@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * 第 10 章 专项功力训练 —— 确定性单元测试
+ * 推拿功法学 · 本章正文与习题自检 —— 确定性单元测试
  * 运行: node --test code/main.test.js
  */
 
@@ -8,46 +8,86 @@
 
 const assert = require('node:assert');
 const test = require('node:test');
+const fs = require('node:fs');
+const path = require('node:path');
+const { spawnSync } = require('node:child_process');
 
-const { CHAPTER, KEYS, load, chapterUnits, merge, rank, shape, citations, byBookSection } = require('./main.js');
+const M = require('./main.js');
 
-const data = load();
-const list = chapterUnits(data);
+const MAIN = path.join(__dirname, 'main.js');
+const SLUG = path.basename(path.resolve(__dirname, '..'));
 
-test('本章单元数与映射一致', () => {
-  assert.strictEqual(list.length, 4);
-  assert.deepStrictEqual(list.map((u) => u.sub), ['10.1.1', '10.1.2', '10.2.1', '10.2.2']);
+test('章号与 slug 与目录一致，章题可解析', () => {
+  assert.strictEqual(M.SLUG, SLUG);
+  assert.strictEqual(M.CHAPTER, String(Number(SLUG.slice(0, 2))));
+  assert.ok(M.TITLE.length > 4, '章题未解析：' + M.TITLE);
 });
 
-test('规模：7655 字 · 平均 1914 字/单元', () => {
-  const s = shape(list);
-  assert.strictEqual(s.hanzi, 7655);
-  assert.strictEqual(s.mean, 1914);
+test('正文规模达标：汉字 >=2500，二级节 >=4', () => {
+  const a = M.audit();
+  assert.ok(a.hanzi >= 2500, '汉字 ' + a.hanzi);
+  assert.ok(a.secs >= 4, '二级节 ' + a.secs);
+  assert.strictEqual(a.hanzi, M.hz(M.doc));
 });
 
-test('三辨重心是「调身」', () => {
-  const views = rank(merge(list, 'views'));
-  assert.strictEqual(views[0].key, '调身');
-  assert.strictEqual(views[0].count, 171);
+test('chapterUnits 与 chapterKeys 一致，每单元都有题与字数', () => {
+  const units = M.chapterUnits();
+  assert.deepStrictEqual(units.map((u) => u.key), M.chapterKeys());
+  assert.ok(units.length >= 4, '单元 ' + units.length);
+  assert.ok(units.every((u) => u.title.length > 0 && u.hanzi > 0));
 });
 
-test('四位面重心是「专项功力」，且至少 2 层有落点', () => {
-  const levels = Object.fromEntries(rank(merge(list, 'levels')).map((v) => [v.key, v.count]));
-  assert.strictEqual(levels['专项功力'], 127);
-  assert.ok(Object.values(levels).filter((n) => n > 0).length >= 2);
+test('习题 6 题，pre 1 / check 3 / post 2，每题 4 选项', () => {
+  const s = M.summarize();
+  assert.strictEqual(s.total, 6);
+  assert.deepStrictEqual(s.stages, { pre: 1, check: 3, post: 2 });
+  assert.ok(s.four, '有题不是 4 选项');
+  assert.ok(s.idx, 'correct 下标非法');
 });
 
-test('引书成规模：≥1 部、≥1 次引用', () => {
-  const c = citations(list);
-  assert.ok(c.books >= 1, `引书 ${c.books}`);
-  assert.ok(c.total >= 1, `引用 ${c.total}`);
+test('每条解释 40-80 汉字', () => {
+  for (const q of M.quiz.questions) {
+    const n = M.hz(M.why(q));
+    assert.ok(n >= 40 && n <= 80, n + ' 汉字：' + q.question);
+  }
 });
 
-test('数值计数与单元层一致（43 处数值类命中）', () => {
-  assert.strictEqual(shape(list).valueLike, 43);
+test('三道 check 全部接地，正确选项含 >=6 汉字原文', () => {
+  const body = M.shingles(M.doc, 6);
+  const checks = M.quiz.questions.filter((q) => q.stage === 'check');
+  assert.strictEqual(checks.length, 3);
+  for (const q of checks) {
+    assert.ok(M.grounded(q.options[q.correct]), '未接地：' + q.question);
+    const segs = String(q.options[q.correct]).replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/);
+    const hit = segs.some((seg) => {
+      for (let i = 0; i + 6 <= seg.length; i += 1) if (body.has(seg.slice(i, i + 6))) return true;
+      return false;
+    });
+    assert.ok(hit, '缺 6 字原文：' + q.question);
+  }
 });
 
-test('每个单元都来自教材，且 locator 指到教材章与小节', () => {
-  for (const u of list) assert.match(u.locator, /^教材·第\d+章·\d+\.\d+\.\d+$/);
-  assert.ok(byBookSection(list).every((s) => s.units > 0));
+test('summarize 判定达标，且 audit 与之一致', () => {
+  assert.strictEqual(M.summarize().ok, true);
+  assert.strictEqual(M.audit().quiz.ok, true);
+});
+
+test('quiz 与正文不含模板残留', () => {
+  // 判据用码位写，避免测试文件本身带出旧词
+  const bad = [/\u4e09\u8fa8/, /\u56db\u4f4d\u9762/, /\u5355\u5143\u89c4\u6a21/,
+    /\u672c\u7ae0\u5b9e\u6d4b/, /\u672c\u8bfe\u7b2c\s*\d+\s*\u7ae0[（(]/,
+    /\u89c1\s*code\/main\.js\s*\u8f93\u51fa/];
+  const qraw = fs.readFileSync(M.QUIZ, 'utf8');
+  for (const re of bad) {
+    assert.ok(!re.test(qraw), 'quiz 命中 ' + re);
+    assert.ok(!re.test(M.doc), '正文命中 ' + re);
+  }
+});
+
+test('脚本可运行：退出 0，打印接地数与题量', () => {
+  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8' });
+  assert.strictEqual(r.status, 0, r.stderr);
+  assert.match(r.stdout, /接地 check 题 3\/3/);
+  assert.match(r.stdout, /习题 6 题/);
+  assert.match(r.stdout, /不构成诊疗建议/);
 });

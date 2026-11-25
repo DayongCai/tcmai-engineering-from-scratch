@@ -26,7 +26,12 @@ blockquote.motto{font-family:var(--serif);font-size:clamp(20px,2.6vw,34px);line-
   text-transform:uppercase;margin-bottom:14px}
 .kicker.warn{color:var(--cinnabar)}
 p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var(--serif)}
-.compact{font-size:clamp(19px,1.75vw,27px);line-height:1.85;max-height:70vh;overflow:auto}
+.compact{font-size:clamp(19px,1.75vw,27px);line-height:1.85;max-height:70vh;overflow:hidden}
+.compact.dense{font-size:clamp(16px,1.42vw,22px);line-height:1.6;max-height:80vh}
+.compact.dense table{font-size:14px}
+.compact.denser{font-size:clamp(14px,1.22vw,18px);line-height:1.5;max-height:82vh}
+.compact.denser table{font-size:12px}
+.compact.denser pre{font-size:12px}
 .compact h2,.compact h3{font-family:var(--serif);margin:.6em 0 .3em;font-size:1.15em}
 .compact pre{background:var(--paper-2);border:1px solid var(--line);border-radius:8px;padding:12px;overflow:auto;font-size:15px}
 .compact code{background:var(--paper-2);border:1px solid var(--line);border-radius:4px;padding:1px 4px;font-family:var(--mono)}
@@ -55,152 +60,204 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <div id="deck">
 <section class="slide" data-i="0">
   <div class="slide-inner"><h1 class="big">第 34 章 · 性传播感染：四层屏障、一条上行链与六类防控</h1></div>
-  <div class="slide-foot"><span>1 / 27</span><span>title</span></div>
+  <div class="slide-foot"><span>1 / 28</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「只讨论机制与防控原则的类别，不作任何价值判断」——补充·hermes-病理生理学讲义·第34章·34.1（《hermes-病理生理学讲义·第34章·34.1》）</blockquote></div>
-  <div class="slide-foot"><span>2 / 27</span><span>motto</span></div>
+  <div class="slide-inner"><blockquote class="motto">「或从呼吸上蚀其咽，或从下焦蚀其肛阴，蚀上为惑，蚀下为狐。」——《金匮要略·百合病狐惑阴阳毒病脉证并治》</blockquote></div>
+  <div class="slide-foot"><span>2 / 28</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
   <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">这一章最容易写成两张表：一张病原表，一张防控措施表。两张表都能背，却都答不了真正的问题——为什么一次轻症感染能在多年后变成不孕，为什么筛查比等症状更有用，为什么去污名化不是礼貌问题而是防控环节。要把这三问答出来，得先握住一条链：屏障有四层，入侵有四种，扩散有方向，修复会留痕。链一立，症状轻重与后果轻重就不再同步，无症状者就成了传播链上最关键的一环，而污名化也就有了可测量的位置——它挡在就诊那一步。</p></div>
-  <div class="slide-foot"><span>3 / 27</span><span>problem</span></div>
+  <div class="slide-foot"><span>3 / 28</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
   <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（这一章的话题在讨论课上最容易滑向两类失误：把感染读成道德问题，或把「没症状」读成「没问题」。前者让讨论失焦，后者让机制推理直接中断；两种失误都不是知识缺口，而是框架缺口）+ 知识积累（本章 11 节、5375 个非空白字符，关键词频现算为「感染」56 次、「病原」49 次、「黏膜」22 次、「传播」20 次、「筛查」7 次、「屏障」6 次：感染与病原各占一头，黏膜与传播居中，筛查与屏障最少。这个分布正好说明本章的重心是<strong>机制链</strong>而不是措施清单——措施只占两节，且都不展开具体方案。读的时候若把注意力放在措施上，会错过前面八节给出的那条链）</p></div>
-  <div class="slide-foot"><span>4 / 27</span><span>roots</span></div>
+  <div class="slide-foot"><span>4 / 28</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
-  <div class="slide-inner"><div class="kicker">一、STI 与 STD：一个词的取舍</div>
-                <div class="compact"><p>34.1 从两个词的分野开始。性传播感染指主要通过性接触传播的病原体所引起的感染，落脚在感染——描述的是病原体在体内的定植与复制这一生物学事实，不预设是否有症状、是否已造成器官损害。性传播疾病是较早的用词，落脚在疾病，即已出现临床表现的状态。</p>
+  <div class="slide-inner"><div class="kicker">词与屏障：四层防线为何会被突破（34.1–34.3）</div>
+                <div class="compact"><h3 id="sti-与-std-一个词的取舍">STI 与 STD：一个词的取舍</h3>
+<p>34.1 从两个词的分野开始。性传播感染指主要通过性接触传播的病原体所引起的感染，落脚在感染——描述的是病原体在体内的定植与复制这一生物学事实，不预设是否有症状、是否已造成器官损害。性传播疾病是较早的用词，落脚在疾病，即已出现临床表现的状态。</p>
 <p>两者的差别不是文字游戏：多数感染在相当长的时间内无症状，若以疾病为框架，这些感染者就会被排除在视野之外，而他们恰恰是传播链上最重要的一环。因此现代公共卫生语境更倾向使用感染一词。这一处取舍在本章的位置很关键——它决定了后面七节的读法：症状不是判断的入口，接触与机制才是。</p>
 <p>讲义还立了一条写法上的规矩：</p>
-<blockquote><p>「只讨论机制与防控原则的类别，不作任何价值判断」——补充·hermes-病理生理学讲义·第34章·34.1</p></blockquote>
-<p>讲义给的理由不是礼貌，而是机制上的必要——污名化会延迟就诊、抑制告知伴侣、降低筛查参与，从而直接削弱防控效果。这条规矩在本页全程生效：凡涉个体，只写机制与类别，不写评价。</p></div></div>
-  <div class="slide-foot"><span>5 / 27</span><span>body</span></div>
+<blockquote><p>「只讨论机制与防控原则的类别，不作任何价值判断」——补充·hermes-病理生理学讲义·第34章·34.1</p></blockquote></div></div>
+  <div class="slide-foot"><span>5 / 28</span><span>body</span></div>
 </section>
 <section class="slide" data-i="5">
-  <div class="slide-inner"><div class="kicker">二、四层屏障：为什么「完整」也会被突破</div>
-                <div class="compact"><p>34.2 把生殖道黏膜写成四层，各层各有机制。物理层是上皮本身：阴道与宫颈外口为复层鳞状上皮，多层细胞构成厚实的机械屏障，抵抗力较强；宫颈管内口与子宫内膜为单层柱状上皮，细胞层薄、间隙大，是更易被侵入的部位。这一差别解释了为什么宫颈的鳞柱交界区是多种病原的易感部位——此处两型上皮相接，转化活跃，防御相对薄弱。</p>
+  <div class="slide-inner"><div class="kicker">词与屏障：四层防线为何会被突破（34.1–34.3）</div>
+                <div class="compact dense"><p>讲义给的理由不是礼貌，而是机制上的必要——污名化会延迟就诊、抑制告知伴侣、降低筛查参与，从而直接削弱防控效果。这条规矩在本页全程生效：凡涉个体，只写机制与类别，不写评价。</p>
+<h3 id="四层屏障-为什么-完整-也会被突破">四层屏障：为什么「完整」也会被突破</h3>
+<p>34.2 把生殖道黏膜写成四层，各层各有机制。物理层是上皮本身：阴道与宫颈外口为复层鳞状上皮，多层细胞构成厚实的机械屏障，抵抗力较强；宫颈管内口与子宫内膜为单层柱状上皮，细胞层薄、间隙大，是更易被侵入的部位。这一差别解释了为什么宫颈的鳞柱交界区是多种病原的易感部位——此处两型上皮相接，转化活跃，防御相对薄弱。</p>
 <p>化学层包括黏液与酸碱度：宫颈黏液形成物理屏障并含溶菌酶、乳铁蛋白与防御素；阴道由乳酸杆菌分解糖原产酸，维持酸性环境。讲义点明一层关键：雌激素状态直接决定这一层的强度——雌激素低下时糖原减少、酸度下降、上皮变薄，防御整体削弱。这解释了为什么绝经后与产后感染易感性上升，也说明评估阴道感染必须看激素状态。</p></div></div>
-  <div class="slide-foot"><span>6 / 27</span><span>body</span></div>
+  <div class="slide-foot"><span>6 / 28</span><span>body</span></div>
 </section>
 <section class="slide" data-i="6">
-  <div class="slide-inner"><div class="kicker">二、四层屏障：为什么「完整」也会被突破</div>
-                <div class="compact"><p>免疫层包括黏膜相关淋巴组织、分泌型免疫球蛋白 A 与上皮细胞、巨噬细胞分泌的细胞因子；其特点是「局部产生、局部作用」（补充·hermes-病理生理学讲义·第34章·34.2）——血清抗体水平不能代表黏膜保护力，这是黏膜疫苗研发困难的原因之一。微生物层是常被忽略的一环：正常阴道菌群以乳酸杆菌为主，通过占位、产酸与产抗菌物质形成定植抵抗，使外来病原难以立足；菌群失调会破坏这一层，为感染创造条件。讲义由此提示：某些反复感染的根源是防御层被破坏，而非病原体特别顽固。</p></div></div>
-  <div class="slide-foot"><span>7 / 27</span><span>body</span></div>
+  <div class="slide-inner"><div class="kicker">词与屏障：四层防线为何会被突破（34.1–34.3）</div>
+                <div class="compact"><p>免疫层包括黏膜相关淋巴组织、分泌型免疫球蛋白 A 与上皮细胞、巨噬细胞分泌的细胞因子；其特点是「局部产生、局部作用」（补充·hermes-病理生理学讲义·第34章·34.2）——血清抗体水平不能代表黏膜保护力，这是黏膜疫苗研发困难的原因之一。微生物层是常被忽略的一环：正常阴道菌群以乳酸杆菌为主，通过占位、产酸与产抗菌物质形成定植抵抗，使外来病原难以立足；菌群失调会破坏这一层，为感染创造条件。讲义由此提示：某些反复感染的根源是防御层被破坏，而非病原体特别顽固。</p>
+<h3 id="四类入侵-共同的前提是接触">四类入侵：共同的前提是接触</h3></div></div>
+  <div class="slide-foot"><span>7 / 28</span><span>body</span></div>
 </section>
 <section class="slide" data-i="7">
-  <div class="slide-inner"><div class="kicker">三、四类入侵：共同的前提是接触</div>
+  <div class="slide-inner"><div class="kicker">词与屏障：四层防线为何会被突破（34.1–34.3）</div>
                 <div class="compact"><p>34.3 把入侵途径归为四类。第一类是直接穿透完整黏膜——部分病原可主动侵入完整上皮细胞，如某些病毒与细胞表面受体结合后进入细胞，螺旋体可穿过微小间隙进入黏膜下；这类病原不需要黏膜破损即可建立感染。第二类是经微损伤进入——性行为本身造成的黏膜微小破损，是多数病原进入上皮下的通道。讲义由此得出两个结论：黏膜完整不等于不会感染；合并其他引起溃疡或炎症的感染会提高其他病原的传播效率，因为「溃疡是一个开放的门」（补充·hermes-病理生理学讲义·第34章·34.3）。</p>
 <p>第三类是细胞内寄生——衣原体等病原进入上皮细胞后在其中复制，形成包涵体，逃避抗体与吞噬细胞的作用；细胞内寄生使这类感染难以被免疫系统彻底清除，也使其易于转为慢性与潜伏。第四类是表面黏附与定植——原虫与真菌通过黏附素附着于上皮表面，不必然侵入深层，通过局部炎症与分泌物改变造成症状。</p></div></div>
-  <div class="slide-foot"><span>8 / 27</span><span>body</span></div>
+  <div class="slide-foot"><span>8 / 28</span><span>body</span></div>
 </section>
 <section class="slide" data-i="8">
-  <div class="slide-inner"><div class="kicker">三、四类入侵：共同的前提是接触</div>
+  <div class="slide-inner"><div class="kicker">词与屏障：四层防线为何会被突破（34.1–34.3）</div>
                 <div class="compact"><p>四类途径的共同前提是接触：病原必须到达易感黏膜。防控的第一原则因此是减少黏膜接触与微损伤——讲义顺带解释了屏障类措施为何效率最高：它作用于所有病原的共同入口，而不依赖对具体病原的识别。</p></div></div>
-  <div class="slide-foot"><span>9 / 27</span><span>body</span></div>
+  <div class="slide-foot"><span>9 / 28</span><span>body</span></div>
 </section>
 <section class="slide" data-i="9">
-  <div class="slide-inner"><div class="kicker">四、上行链：一次感染如何变成终身后果</div>
-                <div class="compact"><p>34.4 讲扩散方向，这是本章最长的一条因果链。上行扩散是女性生殖道感染最重要的扩散方式：病原自阴道到宫颈、子宫内膜、输卵管、盆腔腹膜逐级上行。促进上行的因素有五处：宫颈黏液屏障的改变（激素周期、炎症）、月经期内膜剥脱造成的表面开放、精子作为载体把病原带入上段、以及宫腔操作造成的机械性推送。</p>
+  <div class="slide-inner"><div class="kicker">上行与长期后果：瘢痕、无症状与再感染（34.4–34.7）</div>
+                <div class="compact"><h3 id="上行链-一次感染如何变成终身后果">上行链：一次感染如何变成终身后果</h3>
+<p>34.4 讲扩散方向，这是本章最长的一条因果链。上行扩散是女性生殖道感染最重要的扩散方式：病原自阴道到宫颈、子宫内膜、输卵管、盆腔腹膜逐级上行。促进上行的因素有五处：宫颈黏液屏障的改变（激素周期、炎症）、月经期内膜剥脱造成的表面开放、精子作为载体把病原带入上段、以及宫腔操作造成的机械性推送。</p>
 <p>上行的后果是盆腔炎性疾病：输卵管黏膜的炎症造成纤毛损伤与管腔狭窄，炎症修复形成粘连，卵巢与输卵管之间形成包裹。这一连串改变的终点是三个后果——不孕（输卵管不通或功能受损）、异位妊娠（运输受阻使受精卵滞留）、慢性盆腔痛（粘连与神经受累）。讲义把这一整条压成一个式子：</p>
 <blockquote><p>「感染 → 炎症 → 瘢痕 → 结构改变 → 终身功能后果」——补充·hermes-病理生理学讲义·第34章·34.4</p></blockquote></div></div>
-  <div class="slide-foot"><span>10 / 27</span><span>body</span></div>
+  <div class="slide-foot"><span>10 / 28</span><span>body</span></div>
 </section>
 <section class="slide" data-i="10">
-  <div class="slide-inner"><div class="kicker">四、上行链：一次感染如何变成终身后果</div>
-                <div class="compact"><p>这条式子是本章的骨干，也是与前一章妊娠相关异常、不孕三要素的接口：那两处的机制起点，在这里。局部扩散包括向邻近结构蔓延；淋巴与血行播散较少见但后果严重，可致全身性感染。男性生殖道的扩散以逆行为主，终点多为附睾炎，后果是管腔的炎症性狭窄，影响精子成熟与输出——与前一章男性不育的后睾丸因素接上。</p></div></div>
-  <div class="slide-foot"><span>11 / 27</span><span>body</span></div>
+  <div class="slide-inner"><div class="kicker">上行与长期后果：瘢痕、无症状与再感染（34.4–34.7）</div>
+                <div class="compact"><p>这条式子是本章的骨干，也是与前一章妊娠相关异常、不孕三要素的接口：那两处的机制起点，在这里。局部扩散包括向邻近结构蔓延；淋巴与血行播散较少见但后果严重，可致全身性感染。男性生殖道的扩散以逆行为主，终点多为附睾炎，后果是管腔的炎症性狭窄，影响精子成熟与输出——与前一章男性不育的后睾丸因素接上。</p>
+<h3 id="病原与综合征-一张对照的用法">病原与综合征：一张对照的用法</h3>
+<p>34.5 按病原类别归纳，看清一类病原对应一组综合征。细菌：淋球菌侵犯柱状上皮，引起化脓性炎症；螺旋体引起梅毒，特点是分期与潜伏——初期为局部无痛性溃疡，二期为全身播散性表现，此后进入无症状潜伏期，晚期可累及心血管与神经系统。这一分期结构说明病原未被清除，只是被免疫系统压制到低水平。衣原体细胞内寄生，感染常轻微或无症状，但上行后造成的输卵管损伤往往比淋球菌更隐匿——因为缺乏明显的化脓表现，患者不易察觉，延误就诊。这是「症状轻而后果重」的典型（补充·hermes-病理生理学讲义·第34章·34.5）。</p></div></div>
+  <div class="slide-foot"><span>11 / 28</span><span>body</span></div>
 </section>
 <section class="slide" data-i="11">
-  <div class="slide-inner"><div class="kicker">五、病原与综合征：一张对照的用法</div>
-                <div class="compact"><p>34.5 按病原类别归纳，看清一类病原对应一组综合征。细菌：淋球菌侵犯柱状上皮，引起化脓性炎症；螺旋体引起梅毒，特点是分期与潜伏——初期为局部无痛性溃疡，二期为全身播散性表现，此后进入无症状潜伏期，晚期可累及心血管与神经系统。这一分期结构说明病原未被清除，只是被免疫系统压制到低水平。衣原体细胞内寄生，感染常轻微或无症状，但上行后造成的输卵管损伤往往比淋球菌更隐匿——因为缺乏明显的化脓表现，患者不易察觉，延误就诊。这是「症状轻而后果重」的典型（补充·hermes-病理生理学讲义·第34章·34.5）。</p></div></div>
-  <div class="slide-foot"><span>12 / 27</span><span>body</span></div>
+  <div class="slide-inner"><div class="kicker">上行与长期后果：瘢痕、无症状与再感染（34.4–34.7）</div>
+                <div class="compact"><p>病毒一类各有面貌：单纯疱疹病毒引起复发性溃疡，初次感染后可潜伏于神经节，在免疫波动时复发；人乳头瘤病毒引起生殖器疣与上皮内瘤变，高危型持续感染与宫颈癌相关；人类免疫缺陷病毒通过黏膜进入免疫细胞，造成免疫功能的进行性损害；乙型肝炎病毒可经性接触传播，同时有血液与母婴途径。原虫（滴虫）与真菌（念珠菌）两类多见于分泌物增多与局部炎症，其中念珠菌性外阴阴道炎的传播以非性途径为主，机制更接近菌群失调加局部防御下降。体外寄生虫（阴虱与疥螨）则属体表寄生而非黏膜感染。</p>
+<p>这张对照的价值在于它把病原生物学特性与临床表现类型连起来：细胞外化脓菌造成分泌物，细胞内寄生者造成隐匿损伤，病毒造成潜伏与复发，溃疡性病原造成开放门户。记住这四句，比记住一串病原名有用。</p>
+<h3 id="从急性到瘢痕-修复才是长期后果">从急性到瘢痕：修复才是长期后果</h3>
+<p>34.6 只有一节，却给了本章最重要的一次视角转换：感染的直接损害多可逆，炎症后的修复才是长期后果的来源。</p></div></div>
+  <div class="slide-foot"><span>12 / 28</span><span>body</span></div>
 </section>
 <section class="slide" data-i="12">
-  <div class="slide-inner"><div class="kicker">五、病原与综合征：一张对照的用法</div>
-                <div class="compact"><p>病毒一类各有面貌：单纯疱疹病毒引起复发性溃疡，初次感染后可潜伏于神经节，在免疫波动时复发；人乳头瘤病毒引起生殖器疣与上皮内瘤变，高危型持续感染与宫颈癌相关；人类免疫缺陷病毒通过黏膜进入免疫细胞，造成免疫功能的进行性损害；乙型肝炎病毒可经性接触传播，同时有血液与母婴途径。原虫（滴虫）与真菌（念珠菌）两类多见于分泌物增多与局部炎症，其中念珠菌性外阴阴道炎的传播以非性途径为主，机制更接近菌群失调加局部防御下降。体外寄生虫（阴虱与疥螨）则属体表寄生而非黏膜感染。</p>
-<p>这张对照的价值在于它把病原生物学特性与临床表现类型连起来：细胞外化脓菌造成分泌物，细胞内寄生者造成隐匿损伤，病毒造成潜伏与复发，溃疡性病原造成开放门户。记住这四句，比记住一串病原名有用。</p></div></div>
-  <div class="slide-foot"><span>13 / 27</span><span>body</span></div>
+  <div class="slide-inner"><div class="kicker">上行与长期后果：瘢痕、无症状与再感染（34.4–34.7）</div>
+                <div class="compact dense"><p>急性期以血管扩张、渗出与中性粒细胞浸润为主，目的是清除病原；若病原被迅速清除，组织可完全修复。若炎症持续或反复，修复转向纤维化：成纤维细胞增殖、胶原沉积、组织弹性下降。在管道器官（输卵管、附睾管、尿道），纤维化的结果是狭窄或闭锁；在浆膜面，结果是粘连；在腺体，结果是囊肿或脓肿。讲义把这条链写成三个词的递进：</p>
+<blockquote><p>「急性炎症 → 慢性炎症 → 纤维化」——补充·hermes-病理生理学讲义·第34章·34.6</p></blockquote>
+<p>这一链条解释了为什么感染的长期后果与初始症状的严重程度不成比例——轻症感染若未被识别与处理，同样可以走到纤维化终点。这句话是本章所有筛查推理的机制根据。</p>
+<p>溃疡的作用单独说明：生殖道溃疡造成黏膜连续性中断，使免疫细胞暴露、炎症细胞聚集，既增加其他病原进入的机会，也增加感染者向外传播病原的效率。因此溃疡性感染在传播动力学上具有放大效应，是防控的重点类别。</p>
+<h3 id="无症状与再感染-动力学的两个结论">无症状与再感染：动力学的两个结论</h3></div></div>
+  <div class="slide-foot"><span>13 / 28</span><span>body</span></div>
 </section>
 <section class="slide" data-i="13">
-  <div class="slide-inner"><div class="kicker">六、从急性到瘢痕：修复才是长期后果</div>
-                <div class="compact"><p>34.6 只有一节，却给了本章最重要的一次视角转换：感染的直接损害多可逆，炎症后的修复才是长期后果的来源。</p>
-<p>急性期以血管扩张、渗出与中性粒细胞浸润为主，目的是清除病原；若病原被迅速清除，组织可完全修复。若炎症持续或反复，修复转向纤维化：成纤维细胞增殖、胶原沉积、组织弹性下降。在管道器官（输卵管、附睾管、尿道），纤维化的结果是狭窄或闭锁；在浆膜面，结果是粘连；在腺体，结果是囊肿或脓肿。讲义把这条链写成三个词的递进：</p>
-<blockquote><p>「急性炎症 → 慢性炎症 → 纤维化」——补充·hermes-病理生理学讲义·第34章·34.6</p></blockquote>
-<p>这一链条解释了为什么感染的长期后果与初始症状的严重程度不成比例——轻症感染若未被识别与处理，同样可以走到纤维化终点。这句话是本章所有筛查推理的机制根据。</p></div></div>
-  <div class="slide-foot"><span>14 / 27</span><span>body</span></div>
-</section>
-<section class="slide" data-i="14">
-  <div class="slide-inner"><div class="kicker">六、从急性到瘢痕：修复才是长期后果</div>
-                <div class="compact"><p>溃疡的作用单独说明：生殖道溃疡造成黏膜连续性中断，使免疫细胞暴露、炎症细胞聚集，既增加其他病原进入的机会，也增加感染者向外传播病原的效率。因此溃疡性感染在传播动力学上具有放大效应，是防控的重点类别。</p></div></div>
-  <div class="slide-foot"><span>15 / 27</span><span>body</span></div>
-</section>
-<section class="slide" data-i="15">
-  <div class="slide-inner"><div class="kicker">七、无症状与再感染：动力学的两个结论</div>
+  <div class="slide-inner"><div class="kicker">上行与长期后果：瘢痕、无症状与再感染（34.4–34.7）</div>
                 <div class="compact"><p>34.7 只有两段，却推出本章两个实践结论。第一段讲无症状：女性宫颈与输卵管的感染常无明显症状，男性尿道感染亦可轻微或自限；无症状者不会主动就诊，因而不会被诊断、不会被治疗，却仍具传染性。这一结构性事实推出两个结论：筛查是必要的，因为症状驱动的诊断会漏掉大部分感染者；伴侣通知与同步处理是必要的，因为感染在伴侣之间往返循环，单方处理会导致再感染。</p>
 <p>第二段讲再感染的机制，分两层：免疫层面，生殖道黏膜免疫的记忆往往短暂且局部，同一病原可反复感染；行为层面，未处理的伴侣构成持续暴露源。因此「治愈后又出现症状」的常见原因是再感染，而不是没治好（补充·hermes-病理生理学讲义·第34章·34.7）——这一区分决定了处理方向。讲义还把传播效率的差异归到三处：病原特性、感染部位、是否存在溃疡；差异解释了为什么不同感染的流行模式不同，也解释了为什么针对高传播效率病原的干预能产生超出其自身负担的额外收益。</p></div></div>
-  <div class="slide-foot"><span>16 / 27</span><span>body</span></div>
+  <div class="slide-foot"><span>14 / 28</span><span>body</span></div>
 </section>
-<section class="slide" data-i="16">
-  <div class="slide-inner"><div class="kicker">八、免疫逃逸：五种策略与三个推论</div>
-                <div class="compact"><p>34.8 先讲黏膜免疫的独特性：以分泌型免疫球蛋白 A 为主要体液防御，细胞免疫在细胞内寄生菌与病毒的清除中起主导作用，而全身性抗体对黏膜表面的保护有限。</p>
+<section class="slide" data-i="14">
+  <div class="slide-inner"><div class="kicker">逃逸、传播与防控：五种策略到六类互补（34.8–34.11）</div>
+                <div class="compact dense"><h3 id="免疫逃逸-五种策略与三个推论">免疫逃逸：五种策略与三个推论</h3>
+<p>34.8 先讲黏膜免疫的独特性：以分泌型免疫球蛋白 A 为主要体液防御，细胞免疫在细胞内寄生菌与病毒的清除中起主导作用，而全身性抗体对黏膜表面的保护有限。</p>
 <p>逃逸策略归为五类：抗原变异（表面抗原不断改变，使既往抗体失效）；潜伏（病毒基因组进入神经节或宿主细胞核，不表达或低表达抗原，在免疫波动时重新激活）；整合（病毒基因组整合入宿主 DNA，随细胞分裂传递）；细胞内寄生（在细胞内复制，避开抗体）；免疫抑制（直接攻击免疫细胞，造成进行性免疫缺陷）。</p>
 <p>讲义把这一层的用处写成三个推论：它解释了为什么感染过不等于免疫，为什么某些感染无法根除只能控制，以及为什么疫苗设计对不同病原的难度差异巨大——「抗原稳定的病原较易制备有效疫苗，抗原高变或可潜伏的病原则困难得多」（补充·hermes-病理生理学讲义·第34章·34.8）。第三条推论与前一节、后两节都接得上：疫苗属防控六类里的第二类，其可行性由这一节决定。</p></div></div>
-  <div class="slide-foot"><span>17 / 27</span><span>body</span></div>
+  <div class="slide-foot"><span>15 / 28</span><span>body</span></div>
+</section>
+<section class="slide" data-i="15">
+  <div class="slide-inner"><div class="kicker">逃逸、传播与防控：五种策略到六类互补（34.8–34.11）</div>
+                <div class="compact"><h3 id="垂直传播-三条途径与筛查时点">垂直传播：三条途径与筛查时点</h3>
+<p>34.9 篇幅最短，结构最清楚。垂直传播指病原由母体传给胎儿或新生儿，途径分三类。宫内传播：病原经胎盘越过母胎界面，可造成胎儿感染、发育异常或流产；这一途径取决于病原能否穿过胎盘屏障以及在母体血中的载量。产时传播：分娩过程中新生儿经过产道时接触含病原的分泌物与血液；宫颈与阴道的感染在此途径中最为关键，因为新生儿直接暴露于产道黏膜。产后传播：通过哺乳或密切接触；这一途径仅对少数病原成立，且可通过替代喂养方式规避；对多数病原，哺乳的收益大于风险。</p>
+<p>机制意义在于：它把成人感染与儿童健康连成一条链，使孕期筛查成为一项具有跨代效益的干预。筛查的逻辑是「在分娩前识别，以便在产时采取阻断措施」——讲义特意点出，时点是倒推出来的：不是按孕周习惯安排，而是按产程的那个时间点往回推（补充·hermes-病理生理学讲义·第34章·34.9）。</p>
+<h3 id="防控六类-互补而不替代">防控六类：互补而不替代</h3></div></div>
+  <div class="slide-foot"><span>16 / 28</span><span>body</span></div>
+</section>
+<section class="slide" data-i="16">
+  <div class="slide-inner"><div class="kicker">逃逸、传播与防控：五种策略到六类互补（34.8–34.11）</div>
+                <div class="compact"><p>34.10 把措施按作用环节分成六类，并明说各类之间互补而非替代。第一类减少暴露：「屏障类措施（物理阻隔）作用于所有病原的共同入口，是效率最高的单一干预」（补充·hermes-病理生理学讲义·第34章·34.10），局限在依从性与使用正确性，而非机制本身。第二类免疫预防：针对特定病原的疫苗可建立免疫记忆，从源头降低感染与相关肿瘤的发生，可行性取决于抗原的稳定性——与前一节直接呼应。第三类筛查与早期识别：把被动等待症状转为主动发现；方案设计依据是感染到严重后果的时间跨度、检测方法的敏感性、以及目标人群的患病率。</p></div></div>
+  <div class="slide-foot"><span>17 / 28</span><span>body</span></div>
 </section>
 <section class="slide" data-i="17">
-  <div class="slide-inner"><div class="kicker">九、垂直传播：三条途径与筛查时点</div>
-                <div class="compact"><p>34.9 篇幅最短，结构最清楚。垂直传播指病原由母体传给胎儿或新生儿，途径分三类。宫内传播：病原经胎盘越过母胎界面，可造成胎儿感染、发育异常或流产；这一途径取决于病原能否穿过胎盘屏障以及在母体血中的载量。产时传播：分娩过程中新生儿经过产道时接触含病原的分泌物与血液；宫颈与阴道的感染在此途径中最为关键，因为新生儿直接暴露于产道黏膜。产后传播：通过哺乳或密切接触；这一途径仅对少数病原成立，且可通过替代喂养方式规避；对多数病原，哺乳的收益大于风险。</p>
-<p>机制意义在于：它把成人感染与儿童健康连成一条链，使孕期筛查成为一项具有跨代效益的干预。筛查的逻辑是「在分娩前识别，以便在产时采取阻断措施」——讲义特意点出，时点是倒推出来的：不是按孕周习惯安排，而是按产程的那个时间点往回推（补充·hermes-病理生理学讲义·第34章·34.9）。</p></div></div>
-  <div class="slide-foot"><span>18 / 27</span><span>body</span></div>
+  <div class="slide-inner"><div class="kicker">逃逸、传播与防控：五种策略到六类互补（34.8–34.11）</div>
+                <div class="compact"><p>第四类伴侣通知与同步处理：打破往返感染的必要环节，实施时应遵循自愿、保密、支持性的原则，避免因强制而造成回避。第五类规范治疗：目标是清除病原、阻断传播、防止后遗症；讲义明说具体方案属临床决策范畴，本章不展开，只强调两条原则——完成全程与复查确认，理由是部分病原在症状消失后仍可存在，过早停药会导致复发与耐药。第六类健康教育与社会环境：提供准确、无评判的信息，降低就医门槛，减少歧视；讲义承认这一类的效果难以量化，但它决定了前五类能否真正落地。</p>
+<p>六类的排列有次序：从入口到免疫、到发现、到循环、到清除、最后到环境。次序本身就是一套读法——任何单独一类都补不上另一类的缺口。</p>
+<h3 id="沟通与去污名化-一条可测量的链">沟通与去污名化：一条可测量的链</h3></div></div>
+  <div class="slide-foot"><span>18 / 28</span><span>body</span></div>
 </section>
 <section class="slide" data-i="18">
-  <div class="slide-inner"><div class="kicker">十、防控六类：互补而不替代</div>
-                <div class="compact"><p>34.10 把措施按作用环节分成六类，并明说各类之间互补而非替代。第一类减少暴露：「屏障类措施（物理阻隔）作用于所有病原的共同入口，是效率最高的单一干预」（补充·hermes-病理生理学讲义·第34章·34.10），局限在依从性与使用正确性，而非机制本身。第二类免疫预防：针对特定病原的疫苗可建立免疫记忆，从源头降低感染与相关肿瘤的发生，可行性取决于抗原的稳定性——与前一节直接呼应。第三类筛查与早期识别：把被动等待症状转为主动发现；方案设计依据是感染到严重后果的时间跨度、检测方法的敏感性、以及目标人群的患病率。</p></div></div>
-  <div class="slide-foot"><span>19 / 27</span><span>body</span></div>
-</section>
-<section class="slide" data-i="19">
-  <div class="slide-inner"><div class="kicker">十、防控六类：互补而不替代</div>
-                <div class="compact"><p>第四类伴侣通知与同步处理：打破往返感染的必要环节，实施时应遵循自愿、保密、支持性的原则，避免因强制而造成回避。第五类规范治疗：目标是清除病原、阻断传播、防止后遗症；讲义明说具体方案属临床决策范畴，本章不展开，只强调两条原则——完成全程与复查确认，理由是部分病原在症状消失后仍可存在，过早停药会导致复发与耐药。第六类健康教育与社会环境：提供准确、无评判的信息，降低就医门槛，减少歧视；讲义承认这一类的效果难以量化，但它决定了前五类能否真正落地。</p>
-<p>六类的排列有次序：从入口到免疫、到发现、到循环、到清除、最后到环境。次序本身就是一套读法——任何单独一类都补不上另一类的缺口。</p></div></div>
-  <div class="slide-foot"><span>20 / 27</span><span>body</span></div>
-</section>
-<section class="slide" data-i="20">
-  <div class="slide-inner"><div class="kicker">十一、沟通与去污名化：一条可测量的链</div>
+  <div class="slide-inner"><div class="kicker">逃逸、传播与防控：五种策略到六类互补（34.8–34.11）</div>
                 <div class="compact"><p>34.11 把污名化写成「可测量的防控障碍」（补充·hermes-病理生理学讲义·第34章·34.11），而不是态度问题。链条是：污名导致羞耻与恐惧，进而延迟或回避就诊，无症状期因此延长，传播机会增加，并发症与后遗症增加，污名进一步强化。这是一个闭环，切断它的入口就是沟通方式。</p>
 <p>具体原则归为四条。其一，使用中性、描述性的语言：说生殖道感染而非带评价色彩的词，问是否做过相关检查而非质疑对方的行为；语言的选择直接影响回答的真实性。其二，把感染定位为生物学事件而非道德事件：感染的发生取决于接触、病原特性与防御状态，与人的品格无关；这一框架既准确，也降低防御心理。其三，说明信息用途与保密范围：患者对信息会被谁看到、会不会被告诉别人的担忧，往往比疾病本身更影响坦诚程度；明确说明比反复保证更有效。其四，把伴侣通知处理为支持性过程而非追责：目的是阻断再感染与保护伴侣健康，应提供具体方法与心理支持，而非施加压力。</p></div></div>
-  <div class="slide-foot"><span>21 / 27</span><span>body</span></div>
+  <div class="slide-foot"><span>19 / 28</span><span>body</span></div>
+</section>
+<section class="slide" data-i="19">
+  <div class="slide-inner"><div class="kicker">逃逸、传播与防控：五种策略到六类互补（34.8–34.11）</div>
+                <div class="compact"><p>护理实践中的一个具体体现是提问的顺序与措辞：把性健康史放在常规病史之中，用与其他系统相同的语气提问，可以显著降低被询问者的紧张。讲义对这一点的评价很克制：这不需要额外时间，只需要一致的措辞习惯——一句机制层面的说明，落到动作上就是这么小的一件事。</p></div></div>
+  <div class="slide-foot"><span>20 / 28</span><span>body</span></div>
+</section>
+<section class="slide" data-i="20">
+  <div class="slide-inner"><div class="kicker">节级落位：讲义 34.1–34.11</div>
+                <div class="compact dense"><div class="table-wrap"><table><thead><tr><th>节号</th><th>一句话落位</th></tr></thead><tbody><tr><td>34.1 概念与范围</td><td>感染与疾病两个词的取舍；只讨论机制与类别</td></tr><tr><td>34.2 生殖道黏膜屏障</td><td>物理、化学、免疫、微生物四层；激素决定化学层强弱</td></tr><tr><td>34.3 入侵途径</td><td>四类途径，共同前提是接触；屏障作用于共同入口</td></tr><tr><td>34.4 上行扩散与播散</td><td>一条从感染到终身功能后果的式子；男性以逆行为主</td></tr><tr><td>34.5 病原类别与综合征</td><td>四句对照：化脓、隐匿、潜伏、开放门户</td></tr><tr><td>34.6 炎症后果</td><td>直接损害可逆，修复才是长期后果；溃疡放大传播</td></tr><tr><td>34.7 无症状与传播动力学</td><td>筛查与伴侣通知的两个结论；再感染与没治好的区分</td></tr><tr><td>34.8 免疫应答与逃逸</td><td>五种策略；感染过不等于免疫；疫苗难度差异</td></tr><tr><td>34.9 垂直传播</td><td>三条途径；筛查时点由产程倒推</td></tr><tr><td>34.10 防控原则的类别</td><td>六类互补；完成全程与复查确认两条原则</td></tr><tr><td>34.11 沟通与去污名化</td><td>一条闭环链；四条沟通原则</td></tr></tbody></table></div></div></div>
+  <div class="slide-foot"><span>21 / 28</span><span>body</span></div>
 </section>
 <section class="slide" data-i="21">
-  <div class="slide-inner"><div class="kicker">十一、沟通与去污名化：一条可测量的链</div>
-                <div class="compact"><p>护理实践中的一个具体体现是提问的顺序与措辞：把性健康史放在常规病史之中，用与其他系统相同的语气提问，可以显著降低被询问者的紧张。讲义对这一点的评价很克制：这不需要额外时间，只需要一致的措辞习惯——一句机制层面的说明，落到动作上就是这么小的一件事。</p></div></div>
-  <div class="slide-foot"><span>22 / 27</span><span>body</span></div>
+  <div class="slide-inner"><div class="kicker">节级落位：讲义 34.1–34.11</div>
+                <div class="compact"><p>十一节的次序是一条链的次序：34.1 定词，34.2 与 34.3 给入口，34.4 给方向，34.5 与 34.6 给后果，34.7 与 34.8 给动力学与逃逸，34.9 给跨代，34.10 与 34.11 给措施与沟通。前八节讲机制，后三节讲怎么用——若从 34.10 开始读，六类措施会变成六条并列的口号。</p></div></div>
+  <div class="slide-foot"><span>22 / 28</span><span>body</span></div>
 </section>
 <section class="slide" data-i="22">
-  <div class="slide-inner"><div class="kicker">十二、节级落位：讲义 34.1–34.11</div>
-                <div class="compact"><div class="table-wrap"><table><thead><tr><th>节号</th><th>一句话落位</th></tr></thead><tbody><tr><td>34.1 概念与范围</td><td>感染与疾病两个词的取舍；只讨论机制与类别</td></tr><tr><td>34.2 生殖道黏膜屏障</td><td>物理、化学、免疫、微生物四层；激素决定化学层强弱</td></tr><tr><td>34.3 入侵途径</td><td>四类途径，共同前提是接触；屏障作用于共同入口</td></tr><tr><td>34.4 上行扩散与播散</td><td>一条从感染到终身功能后果的式子；男性以逆行为主</td></tr><tr><td>34.5 病原类别与综合征</td><td>四句对照：化脓、隐匿、潜伏、开放门户</td></tr><tr><td>34.6 炎症后果</td><td>直接损害可逆，修复才是长期后果；溃疡放大传播</td></tr><tr><td>34.7 无症状与传播动力学</td><td>筛查与伴侣通知的两个结论；再感染与没治好的区分</td></tr><tr><td>34.8 免疫应答与逃逸</td><td>五种策略；感染过不等于免疫；疫苗难度差异</td></tr><tr><td>34.9 垂直传播</td><td>三条途径；筛查时点由产程倒推</td></tr><tr><td>34.10 防控原则的类别</td><td>六类互补；完成全程与复查确认两条原则</td></tr><tr><td>34.11 沟通与去污名化</td><td>一条闭环链；四条沟通原则</td></tr></tbody></table></div></div></div>
-  <div class="slide-foot"><span>23 / 27</span><span>body</span></div>
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><ul><li><strong>引文只有一层。</strong> 本章引文格式统一为<code>补充·hermes-病理生理学讲义·第34章·N.M</code>，章号等于课程章号，节号逐条真实存在。讲义是本仓库原创的教学正文，不是任何外文教材的译本；引用它不等于引用外文教材原文。</li><li><strong>本章丢掉了什么：数值。</strong> 讲义这一章 5375 个非空白字符里，数字加计量单位的命中为零（<code>node code/main.js</code> 复算，不照抄声明）。讲义把可量化处改成方向与类别——增加、减少、延长、短暂、持续。本书照录这一取舍：<strong>描述类别可以，给出取值不行。</strong></li><li><strong>不写正常值、参考区间与单位。</strong> 凡遇多久算潜伏期、多少算阳性的追问，统一回本书不给值，另立数据层、另立来源与校验。</li><li><strong>不作诊断，也不作正常与异常的判定。</strong> 感染在本章只作状态类别；无症状感染是机制事实，不是对某个人的判断。凡涉个体，一律中性表述、不贴标签、不作疗效断言。</li><li><strong>不写治疗方案。</strong> 讲义明说具体方案属临床决策范畴；</li></ul></div></div>
+  <div class="slide-foot"><span>23 / 28</span><span>boundary</span></div>
 </section>
 <section class="slide" data-i="23">
-  <div class="slide-inner"><div class="kicker">十二、节级落位：讲义 34.1–34.11</div>
-                <div class="compact"><p>十一节的次序是一条链的次序：34.1 定词，34.2 与 34.3 给入口，34.4 给方向，34.5 与 34.6 给后果，34.7 与 34.8 给动力学与逃逸，34.9 给跨代，34.10 与 34.11 给措施与沟通。前八节讲机制，后三节讲怎么用——若从 34.10 开始读，六类措施会变成六条并列的口号。</p></div></div>
-  <div class="slide-foot"><span>24 / 27</span><span>body</span></div>
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><p>本页只写防控原则的类别，不写药物、剂量与疗程。</p>
+<ul><li><strong>不作价值判断。</strong> 本章的写法全程回避道德化表述，理由已写在 34.1 与 34.11：污名化是可测量的防控障碍，不是措辞偏好。</li><li><strong>边界声明</strong>：本章只解释讲义给出的机制类别与防控原则类别，<strong>不写数值与单位与正常值，不作正常与异常判定，不构成诊断、治疗或用药依据</strong>；任何个体的状态判断须由具备资质的人员依现行规范作出。</li></ul>
+<h3 id="运行与验证">运行与验证</h3>
+<div class="codeblock"><div class="codeblock-lang">bash</div><pre><code class="lang-bash"># 1) 现算讲义规模、节级分布、关键词频，并核本页的引文、引语、节覆盖、裸值与 quiz
+node code/main.js
+
+# 2) 单测：章号与标题 / 节数与节号区间 / 字数 / 引文逐字 / 节覆盖 / 裸值零容忍 / quiz 契约 / 边界句
+node --test code/main.test.js</code></pre></div></div></div>
+  <div class="slide-foot"><span>24 / 28</span><span>boundary</span></div>
 </section>
 <section class="slide" data-i="24">
   <div class="slide-inner"><div class="kicker">代价与边界</div>
-                <div class="compact"><ul><li><strong>引文只有一层。</strong> 本章引文格式统一为<code>补充·hermes-病理生理学讲义·第34章·N.M</code>，章号等于课程章号，节号逐条真实存在。讲义是本仓库原创的教学正文，不是任何外文教材的译本；引用它不等于引用外文教材原文。</li><li><strong>本章丢掉了什么：数值。</strong> 讲义这一章 5375 个非空白字符里，数字加计量单位的命中为零（<code>node code/main.js</code> 复算，不照抄声明）。讲义把可量化处改成方向与类别——增加、减少、延长、短暂、持续。本书照录这一取舍：<strong>描述类别可以，给出取值不行。</strong></li><li><strong>不写正常值、参考区间与单位。</strong> 凡遇多久算潜伏期、多少算阳性的追问，统一回本书不给值，另立数据层、另立来源与校验。</li><li><strong>不作诊断，也不作正常与异常的判定。</strong> 感染在本章只作状态类别；无症状感染是机制事实，不是对某个人的判断。凡涉个体，一律中性表述、不贴标签、不作疗效断言。</li><li><strong>不写治疗方案。</strong> 讲义明说具体方案属临床决策范畴；</li></ul></div></div>
-  <div class="slide-foot"><span>25 / 27</span><span>boundary</span></div>
+                <div class="compact dense"><h1 id="3-章级门-全-53-章契约-只看自己负责的章是否全绿">3) 章级门（全 53 章契约，只看自己负责的章是否全绿）</h1>
+<p>cd /e/tcmai-engineering-from-scatch &amp;&amp; node tests/test_binglishengli_chapters.js</p>
+<div class="codeblock"><div class="codeblock-lang">text</div><pre><code class="lang-text">
+`node code/main.js` 的真实输出（节选；本页正文字数那一行故意不贴——把它抄进来会改变它自己读到的数）：
+
+```text
+═══ 性传播感染（病理生理学 第34章 · 讲义 U09 单元）═══
+讲义规模: 34.1–34.11 · 11 节 · 5375 非空白字符 · 平均每节 489 字
+篇幅两极: 最短 34.9（336 字）／最长 34.5（632 字）
+
+关键词频（讲义本章正文，同一批词横向比）:
+  感染   56 次
+  病原   49 次
+  黏膜   22 次
+  传播   20 次
+  筛查    7 次
+  屏障    6 次
+  → 重心落在「感染」：本章给的是机制类别，不是病名清单。</code></pre></div></div></div>
+  <div class="slide-foot"><span>25 / 28</span><span>boundary</span></div>
 </section>
 <section class="slide" data-i="25">
   <div class="slide-inner"><div class="kicker">代价与边界</div>
-                <div class="compact"><p>本页只写防控原则的类别，不写药物、剂量与疗程。</p>
-<ul><li><strong>不作价值判断。</strong> 本章的写法全程回避道德化表述，理由已写在 34.1 与 34.11：污名化是可测量的防控障碍，不是措辞偏好。</li><li><strong>边界声明</strong>：本章只解释讲义给出的机制类别与防控原则类别，<strong>不写数值与单位与正常值，不作正常与异常判定，不构成诊断、治疗或用药依据</strong>；任何个体的状态判断须由具备资质的人员依现行规范作出。</li></ul></div></div>
-  <div class="slide-foot"><span>26 / 27</span><span>boundary</span></div>
+                <div class="compact dense"><p>讲义引文: 12 条 · 指向第34章 11 个不同节
+引文错章: 0 条 · 节号不存在: 0 条
+引语逐字: 12 条，讲义里找不到的 0 条
+节覆盖: 11 / 11 → 每节都有落位
+正文裸值行: 0 行
+quiz: 6 题（pre 1 · check 3 · post 2）· 无题干键 0 题 · 无引证 0 题</p>
+<div class="codeblock"><div class="codeblock-lang">text</div><pre><code class="lang-text">
+`code/main.js` 的最后一行固定为下面这句，也是单测与章级门共同依赖的字符串：
+
+```text
+教学边界：本章只说明讲义给出的机制类别与防控原则类别，不写数值与单位与正常值，不构成诊断、治疗或用药依据</code></pre></div>
+<p><strong>免责声明：</strong>本章为病理生理学教学材料。文中所有概念、机制与防控原则的类别，取自本仓库原创讲义第 34 章（34.1–34.11）与本仓库 <code>standards/binglishengli/supplements/jiangyi.json</code> 的机器可读层；数字为程序现算，规则已在文中写明。</p></div></div>
+  <div class="slide-foot"><span>26 / 28</span><span>boundary</span></div>
 </section>
 <section class="slide" data-i="26">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><p>本章不提供任何诊断、治疗或用药建议，不给出正常值与参考范围，也不对任何个体的状态作出正常或异常的判断。文中出现的四层屏障、上行链、六类防控等均为概念层与机制层的说明，不能替代临床评估。若出现身体不适或急症，请立即就医。</p></div></div>
+  <div class="slide-foot"><span>27 / 28</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="27">
   <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
-  <div class="slide-foot"><span>27 / 27</span><span>disclaimer</span></div>
+  <div class="slide-foot"><span>28 / 28</span><span>disclaimer</span></div>
 </section>
 </div>
 <div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>

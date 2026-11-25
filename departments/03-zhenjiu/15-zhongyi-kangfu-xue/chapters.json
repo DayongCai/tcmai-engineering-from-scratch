@@ -4,7 +4,7 @@
   {
    "n": 1,
    "slug": "01-zhongyi-kangfu-gailun",
-   "title": "中医康复学概论",
+   "title": "中医康复借了养生的方法，没借它的对象",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -12,7 +12,7 @@
   {
    "n": 2,
    "slug": "02-bianzheng-pingding",
-   "title": "辨证与功能评定",
+   "title": "证候与功能是两张纸，缺一张就交不了班",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -20,7 +20,7 @@
   {
    "n": 3,
    "slug": "03-zhongyao-kangfu",
-   "title": "中药康复",
+   "title": "中药康复只有一条路铺到底：内服",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -28,7 +28,7 @@
   {
    "n": 4,
    "slug": "04-zhenjiu-kangfu",
-   "title": "针灸康复",
+   "title": "名为针灸康复，底本里「灸」是「针」的十一倍",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -36,7 +36,7 @@
   {
    "n": 5,
    "slug": "05-tuina-kangfu",
-   "title": "推拿康复",
+   "title": "推拿康复的处方是六件事的顺序，不是六个手法",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -44,7 +44,7 @@
   {
    "n": 6,
    "slug": "06-qigong-kangfu",
-   "title": "气功导引康复",
+   "title": "气功康复教的是把呼吸调慢，不是把气送到某处",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -52,7 +52,7 @@
   {
    "n": 7,
    "slug": "07-yinshi-qingzhi",
-   "title": "饮食与情志康复",
+   "title": "饮食与情志康复的处方开在饭桌和床头，不在药罐里",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -60,7 +60,7 @@
   {
    "n": 8,
    "slug": "08-zhongfeng-kangfu",
-   "title": "中风康复",
+   "title": "中风康复的底本只有一根针，它把急救写在了康复前面",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -68,7 +68,7 @@
   {
    "n": 9,
    "slug": "09-gushang-manbing",
-   "title": "骨伤与慢病康复",
+   "title": "骨伤与慢病康复的底本只收了颈、腰和落枕三个病",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -76,7 +76,7 @@
   {
    "n": 10,
    "slug": "10-shequ-jiating",
-   "title": "社区与家庭康复",
+   "title": "社区与家庭康复这一章，底本里一个中医词都没有",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

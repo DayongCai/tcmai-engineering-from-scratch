@@ -1,31 +1,81 @@
 {
   "chapter": "04-jingjian-yaotui",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 15,
+  "segmentCount": 8,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 9
+      "chars": 40
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 74
+      "chars": 38
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 11
+      "chars": 121
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 103
+      "chars": 158
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 418
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 346
+    },
+    {
+      "n": 7,
+      "segment": 5,
+      "chars": 352
+    },
+    {
+      "n": 8,
+      "segment": 5,
+      "chars": 407
+    },
+    {
+      "n": 9,
+      "segment": 5,
+      "chars": 293
+    },
+    {
+      "n": 10,
+      "segment": 5,
+      "chars": 407
+    },
+    {
+      "n": 11,
+      "segment": 5,
+      "chars": 397
+    },
+    {
+      "n": 12,
+      "segment": 5,
+      "chars": 367
+    },
+    {
+      "n": 13,
+      "segment": 6,
+      "chars": 407
+    },
+    {
+      "n": 14,
+      "segment": 7,
+      "chars": 499
+    },
+    {
+      "n": 15,
+      "segment": 8,
       "chars": 52
     }
   ]

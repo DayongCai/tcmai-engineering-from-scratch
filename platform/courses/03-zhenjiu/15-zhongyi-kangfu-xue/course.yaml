@@ -29,62 +29,61 @@ platform:
 
 chapters:
   - slug: 01-zhongyi-kangfu-gailun
-    title: 第1章 中医康复学概论
-    segments: 5
+    title: 中医康复借了养生的方法，没借它的对象
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.96
+    estimate_minutes: 13.48      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 12.8      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-bianzheng-pingding
-    title: 第2章 辨证与功能评定
-    segments: 5
+    title: 证候与功能是两张纸，缺一张就交不了班
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.92
+    estimate_minutes: 11.1      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.76      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-zhongyao-kangfu
-    title: 第3章 中药康复
-    segments: 5
+    title: 中药康复只有一条路铺到底：内服
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.88
+    estimate_minutes: 12.12      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.42      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-zhenjiu-kangfu
-    title: 第4章 针灸康复
-    segments: 5
+    title: 名为针灸康复，底本里「灸」是「针」的十一倍
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.89
+    estimate_minutes: 13.4      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.75      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-tuina-kangfu
-    title: 第5章 推拿康复
-    segments: 5
+    title: 推拿康复的处方是六件事的顺序，不是六个手法
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.9
+    estimate_minutes: 13.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 12.1      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-qigong-kangfu
-    title: 第6章 气功导引康复
-    segments: 5
+    title: 气功康复教的是把呼吸调慢，不是把气送到某处
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.92
+    estimate_minutes: 13.25      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.35      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-yinshi-qingzhi
-    title: 第7章 饮食与情志康复
-    segments: 5
+    title: 饮食与情志康复的处方开在饭桌和床头，不在药罐里
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.93
+    estimate_minutes: 13.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 12.15      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-zhongfeng-kangfu
-    title: 第8章 中风康复
-    segments: 5
+    title: 中风康复的底本只有一根针，它把急救写在了康复前面
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.87
+    estimate_minutes: 13.87      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.81      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-gushang-manbing
-    title: 第9章 骨伤与慢病康复
-    segments: 5
+    title: 骨伤与慢病康复的底本只收了颈、腰和落枕三个病
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.92
+    estimate_minutes: 14.15      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 12.32      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-shequ-jiating
-    title: 第10章 社区与家庭康复
-    segments: 5
+    title: 社区与家庭康复这一章，底本里一个中医词都没有
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.94
+    estimate_minutes: 13.4      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.27      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

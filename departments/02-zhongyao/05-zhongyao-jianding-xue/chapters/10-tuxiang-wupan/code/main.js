@@ -1,13 +1,15 @@
 #!/usr/bin/env node
 /**
- * 中药化学 · 第 10 章 图像识别在性状鉴定中的误判分析：本章统计口径
- * 课程: departments/02-zhongyao/05-zhongyao-jianding-xue/chapters/10-tuxiang-wupan/docs/zh.md
- * 数据: standards/zhongyao-jianding/units.json（55 单元层，每单元带三辨=结构特征/理化性质/提分与检识 与 四位面=生源途径 词频）
- * 取数: standards/zhongyao-jianding/chapter-map.json（课程章 → 教材单元号）
+ * 中药鉴定学 · 第 10 章 图像识别错得最有规律的地方，正是药材最相像的地方
+ * 课程: departments/02-zhongyao/05-zhongyao-jianding-xue/chapters/10-tuxiang-wupan
+ * 输入: 只读本目录的 docs/zh.md 与 quiz.json（不回溯上游数据层，不读教材底稿）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：正文引用的每个规模、重心、引书数，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 输出三块，全部现算，不手打：
+ *   1. 本章规模：汉字、段、二级/三级节、表格行与列
+ *   2. 本章算术：四步流水线 / 三类易错样本 / 四条边界的条目与词频、条目对账与占比、
+ *      置信度与正确率的表述对账、quiz 结构
+ *   3. 自检：任一判据不合即 exit 1
  */
 
 'use strict';
@@ -15,107 +17,167 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'zhongyao-jianding', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
+
+const CJK = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+const HANZI = (s) => (String(s || '').match(CJK) || []).length;
+const hits = (text, word) => text.split(word).length - 1;
+
+/** 正文结构：汉字 / 段 / 节 / 表格行列 */
+function shape(md) {
+  const text = String(md).split(String.fromCharCode(13)).join('');
+  const prose = text.replace(/^```[\s\S]*?^```/gm, '');
+  const blocks = prose.split(/\n{2,}/).map((b) => b.trim()).filter(Boolean);
+  const body = blocks.filter((b) => !/^#{1,6}\s/.test(b) && !/^>/.test(b) && !/^[-*]\s/.test(b) && !/^\|/.test(b));
+
+  const tables = [];
+  const lines = prose.split('\n');
+  for (let i = 0; i < lines.length; i += 1) {
+    if (!/^\s*\|/.test(lines[i])) continue;
+    let j = i;
+    while (j < lines.length && /^\s*\|/.test(lines[j])) j += 1;
+    const group = lines.slice(i, j);
+    const sep = group.length > 1 && /^\s*\|[\s:|-]+\|\s*$/.test(group[1]);
+    const cols = (group[0].match(/\|/g) || []).length - 1;
+    tables.push({ rows: Math.max(0, group.length - (sep ? 2 : 1)), cols: Math.max(0, cols) });
+    i = j - 1;
   }
-  throw new Error('没找到 standards/zhongyao-jianding/units.json —— 章节目录是否已脱离仓库？');
-}
+  const rows = tables.reduce((a, t) => a + t.rows, 0);
+  const cells = tables.reduce((a, t) => a + t.rows * t.cols, 0);
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'zhongyao-jianding', 'units.json');
-const CHAPTER = '10';
-const KEYS = ['12.3.1', '12.3.2'];
-
-const load = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-
-function chapterUnits(units) {
-  return units.units
-    .filter((u) => KEYS.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-const sum = (d) => Object.values(d).reduce((a, b) => a + b, 0);
-
-function merge(list, field) {
-  const out = {};
-  for (const u of list) {
-    const src = (u.measure && u.measure[field]) || {};
-    for (const [k, v] of Object.entries(src)) out[k] = (out[k] || 0) + v;
-  }
-  return out;
-}
-
-function rank(dict) {
-  const tot = sum(dict);
-  return Object.entries(dict)
-    .map(([key, count]) => ({ key, count, share: tot ? count / tot : 0 }))
-    .sort((a, b) => b.count - a.count);
-}
-
-function byBookSection(list) {
-  const out = new Map();
-  for (const u of list) {
-    const key = `教材第${u.chapter}章`;
-    const it = out.get(key) || { sec: key, units: 0, hanzi: 0 };
-    it.units += 1;
-    it.hanzi += u.hanzi;
-    out.set(key, it);
-  }
-  return [...out.values()];
-}
-
-function citations(list) {
-  const counter = new Map();
-  for (const u of list) {
-    for (const m of u.prose.matchAll(/《([^》]+)》/g)) counter.set(m[1], (counter.get(m[1]) || 0) + 1);
-  }
-  const ranked = [...counter.entries()].sort((a, b) => b[1] - a[1]);
-  return { books: counter.size, total: sum(Object.fromEntries(counter)), top: ranked.slice(0, 3) };
-}
-
-function shape(list) {
-  const hanzi = list.reduce((a, u) => a + u.hanzi, 0);
   return {
-    units: list.length,
-    hanzi,
-    mean: list.length ? Math.round(hanzi / list.length) : 0,
-    valueLike: list.reduce((a, u) => a + u.measure.valueLike, 0),
-    digits: list.reduce((a, u) => a + u.measure.digits, 0),
+    hanzi: HANZI(text),
+    blocks: blocks.length,
+    body: body.length,
+    sections: (text.match(/^##\s+/gm) || []).length,
+    subsections: (text.match(/^###\s+/gm) || []).length,
+    tables: tables.length,
+    rows,
+    cols: tables.reduce((a, t) => Math.max(a, t.cols), 0),
+    cells,
+    bodyText: body.join('\n'),
+    intro: (text.match(/^#\s+(.+)$/m) || [, ''])[1].trim(),
   };
 }
 
-/** 取穴与刺灸的操作词：本章正文里出现多少处「定位／分寸／直刺／灸」类的可执行指令 */
-function hands(list) {
-  const WORDS = ['定位', '骨度', '分寸', '同身寸', '直刺', '斜刺', '平刺', '艾灸', '温针灸', '留针', '禁针', '禁灸'];
-  const pairs = WORDS.map((w) => [w, list.reduce((a, u) => a + u.prose.split(w).length - 1, 0)]);
-  return Object.fromEntries(pairs).constructor === Object
-    ? pairs.filter(([, c]) => c).sort((a, b) => b[1] - a[1])
-    : pairs;
+/** 引书：只数正文里成对的书名号 */
+function citations(text) {
+  const counter = new Map();
+  for (const m of String(text).matchAll(/《([^》]+)》/g)) counter.set(m[1], (counter.get(m[1]) || 0) + 1);
+  const ranked = [...counter.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'zh'));
+  return { books: counter.size, total: ranked.reduce((a, [, n]) => a + n, 0), top: ranked.slice(0, 3) };
 }
 
-module.exports = { CHAPTER, KEYS, load, chapterUnits, merge, rank, byBookSection, citations, shape, hands, sum };
+/** 本章的三组清单：四步流水线、三类易错样本、四条边界 */
+const GROUPS = [
+  { key: '四步流水线', words: ['图像采集', '预处理', '特征提取', '分类识别'] },
+  { key: '三类易错样本', words: ['近缘品种', '加工改形', '连续变异'] },
+  { key: '四条边界', words: ['功能边界', '证据边界', '风险边界', '伦理边界'] },
+];
+
+/** 置信度 / 正确率 的表述对账：两个词在正文里必须被分开写 */
+const VERDICT = { conf: '置信度', acc: '正确率', review: '人工复核', quick: '快速检测' };
+
+function groups(text) {
+  const rows = GROUPS.map(({ key, words }) => {
+    const items = words.map((w) => ({ key: w, n: hits(text, w) }));
+    return { key, items, present: items.filter((i) => i.n > 0).length, total: items.length, freq: items.reduce((a, i) => a + i.n, 0) };
+  });
+  const itemsTotal = rows.reduce((a, r) => a + r.total, 0);
+  const itemsFound = rows.reduce((a, r) => a + r.present, 0);
+  const freq = rows.reduce((a, r) => a + r.freq, 0);
+  for (const r of rows) r.share = freq ? r.freq / freq : 0;
+  return { rows, itemsTotal, itemsFound, freq, itemShare: itemsTotal ? itemsFound / itemsTotal : 0 };
+}
+
+function verdicts(text) {
+  return {
+    conf: hits(text, VERDICT.conf),
+    acc: hits(text, VERDICT.acc),
+    review: hits(text, VERDICT.review),
+    quick: hits(text, VERDICT.quick),
+  };
+}
+
+/** quiz 结构自检 */
+function quizCheck(quiz) {
+  const qs = Array.isArray(quiz.questions) ? quiz.questions : [];
+  const problems = [];
+  if (qs.length < 5) problems.push(`题量 ${qs.length} < 5`);
+  const stageCount = { pre: 0, check: 0, post: 0 };
+  const dist = [0, 0, 0, 0];
+  let explainShort = 0;
+  let optionBad = 0;
+  for (const q of qs) {
+    if (Object.prototype.hasOwnProperty.call(stageCount, q.stage)) stageCount[q.stage] += 1;
+    else problems.push(`未知 stage: ${q.stage}`);
+    const opts = Array.isArray(q.options) ? q.options : [];
+    if (opts.length !== 4) optionBad += 1;
+    if (!(Number.isInteger(q.correct) && q.correct >= 0 && q.correct < opts.length)) {
+      problems.push('correct 下标非法：' + q.question);
+    } else {
+      dist[q.correct] += 1;
+    }
+    if (HANZI(q.explain) < 30) explainShort += 1;
+  }
+  for (const s of ['pre', 'check', 'post']) if (!stageCount[s]) problems.push(`缺 ${s} 段`);
+  if (optionBad) problems.push(`${optionBad} 题不是四选项`);
+  if (explainShort) problems.push(`${explainShort} 题解析不足 30 汉字`);
+  return { count: qs.length, stageCount, dist, optionBad, explainShort, problems };
+}
+
+module.exports = { DOC, QUIZ, shape, citations, groups, verdicts, quizCheck, GROUPS, VERDICT, HANZI };
 
 if (require.main === module) {
-  const data = load();
-  const list = chapterUnits(data);
-  const s = shape(list);
-  console.log('═══ 中药化学 · 第 10 章 图像识别在性状鉴定中的误判分析 ═══');
-  console.log(`单元 ${s.units} · 汉字 ${s.hanzi} · 平均 ${s.mean} 字/单元`);
-  console.log(`数值类命中 ${s.valueLike} · 数字字符 ${s.digits}`);
-  console.log('\n按教材章：');
-  for (const sec of byBookSection(list)) console.log(`  ${sec.sec}  ${sec.units} 单元 · ${sec.hanzi} 字`);
-  console.log('\n三辨重心：');
-  for (const v of rank(merge(list, 'views'))) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
-  console.log('\n四位面覆盖：');
-  for (const v of rank(merge(list, 'levels'))) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
-  const c = citations(list);
-  console.log(`\n引书 ${c.books} 部 · 引用 ${c.total} 次 · 前三：${c.top.map(([n, k]) => `${n}(${k})`).join('、')}`);
-  console.log('\n操作词命中：' + hands(list).map(([w, k]) => `${w}×${k}`).join('  '));
-  for (const u of list) console.log(`  ${u.sub}\t${u.title}\t${u.hanzi}字`);
-  console.log('※ 教学样例：数字由 standards/zhongyao-jianding/units.json 现算，不构成诊疗建议，不能替代医师面诊。');
+  for (const f of [DOC, QUIZ]) if (!fs.existsSync(f)) throw new Error('缺输入文件: ' + f);
+  const md = fs.readFileSync(DOC, 'utf8');
+  const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+  const s = shape(md);
+
+  const problems = [];
+  const ok = (cond, msg) => { if (!cond) problems.push(msg); };
+
+  ok(s.hanzi >= 2500, `汉字 ${s.hanzi} < 2500`);
+  ok(s.sections >= 4 && s.sections <= 8, `二级节 ${s.sections} 个（要求 4–8）`);
+  ok(s.body >= 8, `正文段 ${s.body} < 8`);
+
+  const g = groups(md);
+  const v = verdicts(md);
+  const c = citations(md);
+
+  for (const r of g.rows) {
+    ok(r.present === r.total, `${r.key} 只命中 ${r.present}/${r.total}：缺 ${r.items.filter((i) => !i.n).map((i) => i.key).join('、')}`);
+  }
+  ok(g.itemsFound === g.itemsTotal, `条目对账 ${g.itemsFound}/${g.itemsTotal}`);
+  ok(g.freq === g.rows.reduce((a, r) => a + r.freq, 0), '词频合计与分组不符');
+  ok(v.conf > 0 && v.acc > 0, '正文必须把「置信度」与「正确率」分开写');
+  ok(v.review > 0, '正文没有写人工复核环节');
+  ok(c.books >= 1, `引书 ${c.books} < 1`);
+
+  const q = quizCheck(quiz);
+  for (const p of q.problems) problems.push('quiz: ' + p);
+
+  const pct = (x) => (x * 100).toFixed(1) + '%';
+  console.log('═══ 中药鉴定学 · 第 10 章 ' + s.intro.replace(/^第\s*10\s*章\s*[·・:：]\s*/, '') + ' ═══');
+  console.log(`规模：汉字 ${s.hanzi} · 段 ${s.blocks}（正文段 ${s.body}）· 二级节 ${s.sections} · 三级节 ${s.subsections}`);
+  console.log(`表格：${s.tables} 张 · 行 ${s.rows} · 列 ${s.cols} · 单元格 ${s.cells}`);
+  console.log(`引书：${c.books} 部 · 引用 ${c.total} 次 · 前三 ${c.top.map(([n, k]) => `${n}(${k})`).join('、') || '—'}`);
+  console.log('\n三组清单（条目命中与词频）：');
+  for (const r of g.rows) {
+    console.log(`  ${r.key}  ${r.present}/${r.total} 命中 · 词频 ${String(r.freq).padStart(3)} · 占词频 ${pct(r.share)}`);
+    console.log(`    ${r.items.map((i) => `${i.key}×${i.n}`).join('  ')}`);
+  }
+  console.log(`  条目对账 ${g.itemsFound}/${g.itemsTotal}（${pct(g.itemShare)}）· 词频合计 ${g.freq}`);
+  console.log(`\n置信度 / 正确率对账：置信度 ${v.conf} · 正确率 ${v.acc} · 人工复核 ${v.review} · 快速检测 ${v.quick}`);
+  console.log(`\nquiz 自检：${q.count} 题（pre ${q.stageCount.pre} / check ${q.stageCount.check} / post ${q.stageCount.post}）· 四选项 ${q.count - q.optionBad}/${q.count} · 解析 ≥30 汉字 ${q.count - q.explainShort}/${q.count} · 答案分布 ${q.dist.map((n, i) => `${i}:${n}`).join(' ')}`);
+
+  if (problems.length) {
+    console.log('\n✗ 本章口径不自洽（' + problems.length + ' 处）：');
+    for (const p of problems) console.log('  - ' + p);
+    console.log('※ 数字为教学样例，由本章正文与随堂题现算；不构成任何药材的真伪结论。');
+    process.exit(1);
+  }
+  console.log('\n✓ 规模、三组清单条目、置信度对账与 quiz 结构四项互相对得上');
+  console.log('※ 教学样例：全部数字由本章 docs/zh.md 与 quiz.json 现算，不含准确率、误判率与阈值；不构成任何药材的真伪结论，AI 输出一律标「可辅助参考」，须由具备鉴定资质的专业人员人工复核。');
 }

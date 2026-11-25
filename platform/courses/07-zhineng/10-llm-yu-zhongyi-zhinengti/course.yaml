@@ -29,74 +29,73 @@ platform:
 
 chapters:
   - slug: 01-llm1
-    title: 第1章 从统计学习到表示学习
-    segments: 5
+    title: 特征是人挑的，表示是数据自己长出来的
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.95
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-llm2
-    title: 第2章 神经网络：层、激活与反向传播
-    segments: 5
+    title: 深层网络不是更聪明，是把误差分配得更细
     video: rendered
-    estimate_minutes: 1.02
-    measured_minutes: 1.03
+    estimate_minutes: 1.02      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.03      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-llm3
-    title: 第3章 表征与嵌入：把词与证候放进同一空间
-    segments: 5
+    title: 证候要能被检索，先得能被放进一个能算距离的空间
     video: rendered
-    estimate_minutes: 1.05
-    measured_minutes: 1.06
+    estimate_minutes: 1.05      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.06      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-llm4
-    title: 第4章 概率图与序列生成
-    segments: 5
+    title: 模型说的每一句话，都是在一个概率分布上抽的一次签
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.92
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-llm5
-    title: 第5章 半监督与自训练：标注不够时怎么办
-    segments: 5
+    title: 标注不够时，最贵的不是算法，是判断哪些样本值得标
     video: rendered
-    estimate_minutes: 1.02
-    measured_minutes: 1.02
+    estimate_minutes: 1.02      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.02      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-llm6
-    title: 第6章 泛化从哪来：计算学习理论的回答
-    segments: 5
+    title: 泛化不是模型的本事，是假设与问题凑巧对上了
     video: rendered
-    estimate_minutes: 1.02
-    measured_minutes: 1.02
+    estimate_minutes: 1.02      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.02      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-llm7
-    title: 第7章 知识增强：规则与图谱怎么进模型
-    segments: 5
+    title: 知识不是喂给模型的背景，是它必须引用的证据
     video: rendered
-    estimate_minutes: 1.03
-    measured_minutes: 1.06
+    estimate_minutes: 1.03      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.06      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-llm8
-    title: 第8章 强化学习与对齐
-    segments: 5
+    title: 对齐不是让模型更聪明，是让它在该停的地方停
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.93
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-llm9
-    title: 第9章 评估：基准分、幻觉与人工评
-    segments: 5
+    title: 测不出幻觉率的模型，不该进临床流程
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1.02
+    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.02      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-llm10
-    title: 第10章 智能体的工具与检索
-    segments: 5
+    title: 智能体不是一个更会说话的模型，是一个会被工具纠正的循环
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.91
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 11-llm11
-    title: 第11章 部署与成本：算力、延迟与更新
-    segments: 5
+    title: 延迟与单价不是运维指标，是临床能不能用的门槛
     video: rendered
-    estimate_minutes: 1.02
-    measured_minutes: 1.02
+    estimate_minutes: 1.02      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.02      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 12-llm12
-    title: 第12章 生成内容的责任与合规
-    segments: 5
+    title: 模型可以生成建议，但不能承担责任——所以它不能给建议
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.94
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

@@ -37,293 +37,293 @@ chapters:
     title: 药理学先立的是提问方式，药物改机体与机体处置药物的两个方向决定全书分工
     unit: 第一篇 总论
     video: rendered
-    estimate_minutes: 22.40
-    measured_minutes: 21.42
+    estimate_minutes: 36.15
+    measured_minutes: 19.34
   - slug: 02-pharmacodynamics
     title: 药物作用与药理效应分属分子事件与整体表现，两套语言混用就说不清机制
     unit: 第一篇 总论
     video: rendered
-    estimate_minutes: 30.37
-    measured_minutes: 29.82
+    estimate_minutes: 38.37
+    measured_minutes: 29.63
   - slug: 03-pharmacokinetics
     title: 房室模型只是拟合曲线的工具，拟合得上不等于机制成立
     unit: 第一篇 总论
     video: rendered
-    estimate_minutes: 18.78
-    measured_minutes: 18.08
+    estimate_minutes: 40.62
+    measured_minutes: 15.71
   - slug: 04-factors-affecting-drug-response
     title: 效应差异先问落在过程端还是反应性端，答不出就等于还没有分析
     unit: 第一篇 总论
     video: rendered
-    estimate_minutes: 19.48
+    estimate_minutes: 43.43
     measured_minutes: 18.85
   - slug: 05-autonomic-nervous-system-overview
     title: 以受体为主纲不是编排习惯，而是解剖、递质与临床应用共同给出的答案
     unit: 第二篇 作用于传出神经系统的药物
     video: rendered
-    estimate_minutes: 18.83
+    estimate_minutes: 45.82
     measured_minutes: 18.45
   - slug: 06-cholinergic-agonists
     title: 抗胆碱酯酶药不碰受体，它的效应完全依赖已被释放的乙酰胆碱
     unit: 第二篇 作用于传出神经系统的药物
     video: rendered
-    estimate_minutes: 19.67
-    measured_minutes: 19.02
+    estimate_minutes: 33.32
+    measured_minutes: 18.83
   - slug: 07-organophosphates-and-cholinesterase-reactivating-agents
     title: 磷酰化写定了中毒的时间表，老化一旦发生，复活药就失去作用位点
     unit: 第二篇 作用于传出神经系统的药物
     video: rendered
-    estimate_minutes: 21.30
-    measured_minutes: 20.75
+    estimate_minutes: 33.28
+    measured_minutes: 20.56
   - slug: 08-cholinergic-antagonists
     title: 抗胆碱药本身不产生效应，它显示的只是原有张力的对比
     unit: 第二篇 作用于传出神经系统的药物
     video: rendered
-    estimate_minutes: 18.60
-    measured_minutes: 18.27
+    estimate_minutes: 38.30
+    measured_minutes: 16.31
   - slug: 09-adrenergic-agonists
     title: 拟肾上腺素药的作用来自受体在组织中的分布，而不是药物自身的独特性质
     unit: 第二篇 作用于传出神经系统的药物
     video: rendered
-    estimate_minutes: 19.23
-    measured_minutes: 18.74
+    estimate_minutes: 31.52
+    measured_minutes: 16.88
   - slug: 10-adrenergic-antagonists
     title: 阻断药只取消一层驱动，α1 与 α2 的效应方向相反不是强弱之分
     unit: 第二篇 作用于传出神经系统的药物
     video: rendered
-    estimate_minutes: 19.92
-    measured_minutes: 19.40
+    estimate_minutes: 36.25
+    measured_minutes: 17.57
   - slug: 11-local-anesthetics
     title: 碱基型负责穿膜、阳离子型负责结合，感觉先于运动的顺序决定了观察表分栏
     unit: 第二篇 作用于传出神经系统的药物
     video: rendered
-    estimate_minutes: 23.92
-    measured_minutes: 23.31
+    estimate_minutes: 33.92
+    measured_minutes: 19.71
   - slug: 12-general-anesthetics
     title: 全身麻醉药的分类只给坐标不给名次，机制是网络而不是一把锁
     unit: 第三篇 作用于中枢神经系统的药物
     video: rendered
-    estimate_minutes: 24.20
-    measured_minutes: 23.26
+    estimate_minutes: 33.62
+    measured_minutes: 19.05
   - slug: 13-sedative-hypnotics
     title: 镇静与催眠是同一机制上的剂量档位，不是一个管入睡、一个管维持
     unit: 第三篇 作用于中枢神经系统的药物
     video: rendered
-    estimate_minutes: 23.65
-    measured_minutes: 22.93
+    estimate_minutes: 32.68
+    measured_minutes: 19.26
   - slug: 14-antiepileptic-and-anticonvulsant-drugs
     title: 抗癫痫药的全部难点在选择性：压低异常放电，又不许压掉正常神经功能
     unit: 第三篇 作用于中枢神经系统的药物
     video: rendered
-    estimate_minutes: 25.58
-    measured_minutes: 24.88
+    estimate_minutes: 35.87
+    measured_minutes: 21.08
   - slug: 15-antipsychotic-drugs
     title: 抗精神病药的治疗作用与不良反应出自同一条受体通路，分开讲就讲不通
     unit: 第三篇 作用于中枢神经系统的药物
     video: rendered
-    estimate_minutes: 21.18
-    measured_minutes: 20.59
+    estimate_minutes: 30.38
+    measured_minutes: 18.40
   - slug: 16-drugs-for-neurodegenerative-diseases
     title: 现有药物只补偿递质、不阻止神经元丢失，效应的上限由残存神经元决定
     unit: 第三篇 作用于中枢神经系统的药物
     video: rendered
-    estimate_minutes: 25.97
-    measured_minutes: 24.99
+    estimate_minutes: 32.28
+    measured_minutes: 22.94
   - slug: 17-antipyretic-analgesic-and-anti-inflammatory-drugs
     title: 解热、镇痛、抗炎不是三套机制，而是同一条前列腺素线在三处的分配
     unit: 第三篇 作用于中枢神经系统的药物
     video: rendered
-    estimate_minutes: 25.92
-    measured_minutes: 25.50
+    estimate_minutes: 40.72
+    measured_minutes: 23.41
   - slug: 18-opioid-analgesics
     title: 镇痛药的选择性在于保住意识，它与解热镇痛药、局麻药分处三个环节
     unit: 第三篇 作用于中枢神经系统的药物
     video: rendered
-    estimate_minutes: 23.17
-    measured_minutes: 23.01
+    estimate_minutes: 38.47
+    measured_minutes: 20.76
   - slug: 19-central-nervous-system-stimulants
     title: 中枢兴奋药的危险不在兴奋不足，而在脊髓层被削弱的抑制
     unit: 第三篇 作用于中枢神经系统的药物
     video: rendered
-    estimate_minutes: 22.43
-    measured_minutes: 22.18
+    estimate_minutes: 39.57
+    measured_minutes: 16.20
   - slug: 20-histamine-and-antihistamines
     title: 两代 H1 抗组胺药的分野不在强弱，而在能不能进入中枢
     unit: 第四篇 影响自体活性物质的药物
     video: rendered
-    estimate_minutes: 22.33
-    measured_minutes: 21.58
+    estimate_minutes: 35.88
+    measured_minutes: 17.96
   - slug: 21-other-autacoid-drugs
     title: 同一自体活性物质能给出相反效应，差别在受体亚型分布而不在物质本身
     unit: 第四篇 影响自体活性物质的药物
     video: rendered
-    estimate_minutes: 21.60
-    measured_minutes: 21.15
+    estimate_minutes: 40.27
+    measured_minutes: 17.74
   - slug: 22-drugs-acting-on-cardiovascular-ion-channels
     title: 离子通道药的效应取决于通道处于什么状态，而不只取决于阻滞哪种离子
     unit: 第五篇 作用于心血管系统的药物
     video: rendered
-    estimate_minutes: 21.53
-    measured_minutes: 20.97
+    estimate_minutes: 36.22
+    measured_minutes: 18.01
   - slug: 23-drugs-for-chronic-heart-failure
     title: 慢性心衰的中心环节是重构与神经内分泌激活，不是「泵弱了」这一个直觉
     unit: 第五篇 作用于心血管系统的药物
     video: rendered
-    estimate_minutes: 25.00
-    measured_minutes: 25.01
+    estimate_minutes: 39.77
+    measured_minutes: 24.83
   - slug: 24-antihypertensive-drugs
     title: 降压的终点不是把数字降下来，而是让覆盖撑过整个给药间隔
     unit: 第五篇 作用于心血管系统的药物
     video: rendered
-    estimate_minutes: 22.85
-    measured_minutes: 22.88
+    estimate_minutes: 46.07
+    measured_minutes: 22.69
   - slug: 25-antianginal-drugs
     title: 抗心绞痛药争的是耗氧与灌注的平衡，β 阻断药不扩血管也算一种解法
     unit: 第五篇 作用于心血管系统的药物
     video: rendered
-    estimate_minutes: 24.73
-    measured_minutes: 24.63
+    estimate_minutes: 30.27
+    measured_minutes: 24.45
   - slug: 26-antiarrhythmic-drugs
     title: 抗心律失常药既能治心律失常也能致心律失常，因为动的是同一台电生理机器
     unit: 第五篇 作用于心血管系统的药物
     video: rendered
-    estimate_minutes: 26.62
-    measured_minutes: 26.45
+    estimate_minutes: 33.47
+    measured_minutes: 26.26
   - slug: 27-antiatherosclerotic-drugs
     title: 抗动脉粥样硬化药分四类靠的是卡在事件链的哪一步，不是药效强弱
     unit: 第五篇 作用于心血管系统的药物
     video: rendered
-    estimate_minutes: 21.48
-    measured_minutes: 20.72
+    estimate_minutes: 35.28
+    measured_minutes: 18.13
   - slug: 28-diuretics-and-dehydrating-agents
     title: 利尿药动的是管腔侧转运体，脱水药靠的是血管侧渗透压，两者不在同一侧发力
     unit: 第六篇 作用于内脏系统和血液系统的药物
     video: rendered
-    estimate_minutes: 23.08
-    measured_minutes: 22.54
+    estimate_minutes: 32.58
+    measured_minutes: 19.79
   - slug: 29-gastrointestinal-drugs
     title: 抗溃疡药的三条路径互相制约，所以分类不能按化学结构切
     unit: 第六篇 作用于内脏系统和血液系统的药物
     video: rendered
-    estimate_minutes: 18.23
-    measured_minutes: 17.88
+    estimate_minutes: 36.80
+    measured_minutes: 15.00
   - slug: 30-respiratory-system-drugs
     title: 呼吸系统药的分节依据是症状出现的时相，不是化学结构或作用强弱
     unit: 第六篇 作用于内脏系统和血液系统的药物
     video: rendered
-    estimate_minutes: 19.17
-    measured_minutes: 17.44
+    estimate_minutes: 29.35
+    measured_minutes: 17.26
   - slug: 31-uterine-stimulants
     title: 子宫兴奋药的选择性越低，需要跟上的观察密度就越高
     unit: 第六篇 作用于内脏系统和血液系统的药物
     video: rendered
-    estimate_minutes: 25.95
-    measured_minutes: 25.62
+    estimate_minutes: 31.25
+    measured_minutes: 23.53
   - slug: 32-antianemic-drugs
     title: 抗贫血药补的是三个不同层次，血象恢复的先后次序本身就是观察项目
     unit: 第六篇 作用于内脏系统和血液系统的药物
     video: rendered
-    estimate_minutes: 26.67
-    measured_minutes: 26.37
+    estimate_minutes: 30.07
+    measured_minutes: 24.16
   - slug: 33-drugs-affecting-coagulation
     title: 抗凝与溶栓不是强弱两档，而是一个管「不再长」、一个管「已经长的」
     unit: 第六篇 作用于内脏系统和血液系统的药物
     video: rendered
-    estimate_minutes: 25.25
-    measured_minutes: 24.78
+    estimate_minutes: 30.68
+    measured_minutes: 22.67
   - slug: 34-adrenocortical-hormones
     title: 糖皮质激素的一个受体给出两套效应，剂量与疗程因此是分类的一列而非附注
     unit: 第七篇 作用于内分泌系统药物
     video: rendered
-    estimate_minutes: 27.83
-    measured_minutes: 27.48
+    estimate_minutes: 37.37
+    measured_minutes: 25.28
   - slug: 35-thyroid-hormones-and-antithyroid-drugs
     title: T3 与 T4 的差别是一个碘原子，含量多少不等于活性强弱
     unit: 第七篇 作用于内分泌系统药物
     video: rendered
-    estimate_minutes: 18.68
-    measured_minutes: 17.96
+    estimate_minutes: 41.63
+    measured_minutes: 17.77
   - slug: 36-antihyperglycemic-drugs
     title: 降血糖药先按途径分两支、再按环节分组，化学结构排不进第一层
     unit: 第七篇 作用于内分泌系统药物
     video: rendered
-    estimate_minutes: 16.70
-    measured_minutes: 16.26
+    estimate_minutes: 43.72
+    measured_minutes: 16.08
   - slug: 37-sex-hormones-and-contraceptives
     title: 性激素类药的结构先决定它能不能口服，首过效应比活性强弱更早一步筛药
     unit: 第七篇 作用于内分泌系统药物
     video: rendered
-    estimate_minutes: 15.88
-    measured_minutes: 15.40
+    estimate_minutes: 45.53
+    measured_minutes: 45.58
   - slug: 38-antimicrobial-drugs-overview
     title: 抗微生物治疗的地基是选择性毒性，离开「只伤病原体」这一步就没有化疗
     unit: 第八篇 化学治疗药物
     video: rendered
-    estimate_minutes: 16.50
-    measured_minutes: 15.96
+    estimate_minutes: 46.02
+    measured_minutes: 15.77
   - slug: 39-synthetic-antibacterial-drugs
     title: 人工合成抗菌药的共同点只在出身，四条靶点线彼此并不通用
     unit: 第八篇 化学治疗药物
     video: rendered
-    estimate_minutes: 23.33
-    measured_minutes: 22.95
+    estimate_minutes: 46.85
+    measured_minutes: 16.87
   - slug: 40-beta-lactam-antibiotics
     title: β-内酰胺类的共同点只是那个四元环，环在不在决定药还有没有效
     unit: 第八篇 化学治疗药物
     video: rendered
-    estimate_minutes: 24.92
-    measured_minutes: 24.70
+    estimate_minutes: 34.53
+    measured_minutes: 21.92
   - slug: 41-macrolides-lincosamides-and-polypeptide-antibiotics
     title: 同一个五十S 靶点上的药未必能合用，位点重叠反而会互相抢位
     unit: 第八篇 化学治疗药物
     video: rendered
-    estimate_minutes: 23.93
-    measured_minutes: 23.30
+    estimate_minutes: 31.93
+    measured_minutes: 20.21
   - slug: 42-aminoglycoside-antibiotics
     title: 氨基糖苷类的抗菌谱由转运决定，毒性则由药物蓄积在哪一处决定
     unit: 第八篇 化学治疗药物
     video: rendered
-    estimate_minutes: 25.27
-    measured_minutes: 24.95
+    estimate_minutes: 36.27
+    measured_minutes: 22.05
   - slug: 43-tetracyclines-and-chloramphenicol
     title: 四环素类与氯霉素类编在一章不是因为同构，而是同一种「宽谱的代价」
     unit: 第八篇 化学治疗药物
     video: rendered
-    estimate_minutes: 20.35
-    measured_minutes: 19.80
+    estimate_minutes: 37.92
+    measured_minutes: 37.34
   - slug: 44-antifungal-and-antiviral-drugs
     title: 抗真菌药的选择性只剩一步之差，靶点长在「真菌有、人没有」处才成立
     unit: 第八篇 化学治疗药物
     video: rendered
-    estimate_minutes: 17.87
-    measured_minutes: 17.37
+    estimate_minutes: 45.25
+    measured_minutes: 44.12
   - slug: 45-antituberculosis-and-antileprosy-drugs
     title: 结核菌群不同步，一种药治到底在机制上就不可能覆盖全部菌群
     unit: 第八篇 化学治疗药物
     video: rendered
-    estimate_minutes: 18.17
-    measured_minutes: 17.55
+    estimate_minutes: 33.05
+    measured_minutes: 32.80
   - slug: 46-antiparasitic-drugs
     title: 抗寄生虫药的共同点不是「杀虫」，而是在生活史的某一阶段找到宿主与虫体的差别
     unit: 第八篇 化学治疗药物
     video: rendered
-    estimate_minutes: 23.57
-    measured_minutes: 23.00
+    estimate_minutes: 35.20
+    measured_minutes: 35.07
   - slug: 47-anticancer-drugs
     title: 抗肿瘤药的选择性只能是相对的，给药间隔要靠动力学算而不是靠经验
     unit: 第八篇 化学治疗药物
     video: rendered
-    estimate_minutes: 24.42
-    measured_minutes: 24.09
+    estimate_minutes: 42.48
+    measured_minutes: 42.50
   - slug: 48-immunosuppressants
     title: 免疫抑制药作用在哪一环，就欠哪一方面的防御，抑制越广欠账越多
     unit: 第九篇 影响免疫功能的药物
     video: rendered
-    estimate_minutes: 28.78
-    measured_minutes: 28.01
+    estimate_minutes: 43.43
+    measured_minutes: 43.16
   - slug: 49-immunostimulants
     title: 免疫增强药与抑制药方向相反但道理相同，佐剂离开抗原就只剩局部炎症
     unit: 第九篇 影响免疫功能的药物
     video: rendered
-    estimate_minutes: 28.52
-    measured_minutes: 27.99
+    estimate_minutes: 45.03
+    measured_minutes: 44.82

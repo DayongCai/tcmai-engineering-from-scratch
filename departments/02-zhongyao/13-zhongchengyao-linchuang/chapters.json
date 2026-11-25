@@ -4,7 +4,7 @@
   {
    "n": 1,
    "slug": "01-gailun-fenlei",
-   "title": "中成药概论与分类",
+   "title": "剂型是把用法固定在药里的那一步",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -12,7 +12,7 @@
   {
    "n": 2,
    "slug": "02-jixing-gongyi",
-   "title": "剂型与制备工艺",
+   "title": "剂型决定药怎么出来，工艺决定每一批是不是同一批",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -20,7 +20,7 @@
   {
    "n": 3,
    "slug": "03-zhiliang-biaozhun",
-   "title": "质量标准与检验",
+   "title": "标准不替好药背书，它只替不合格的药划线",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -28,7 +28,7 @@
   {
    "n": 4,
    "slug": "04-zhusheji",
-   "title": "中药注射剂与特殊剂型",
+   "title": "注射剂拿掉了胃肠这道屏障，就得把每一项要求补回来",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -36,7 +36,7 @@
   {
    "n": 5,
    "slug": "05-neike-yongyao",
-   "title": "内科常用中成药",
+   "title": "选药的入口是证候，不是药名里的那两个字",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -44,7 +44,7 @@
   {
    "n": 6,
    "slug": "06-fuke-erke",
-   "title": "妇科与儿科用药",
+   "title": "人群一变，剂量、疗程、禁忌三样一起变",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -52,7 +52,7 @@
   {
    "n": 7,
    "slug": "07-gushang-pifu",
-   "title": "骨伤与皮肤科用药",
+   "title": "外用不是内服的降级版，它换了一条吸收路径",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -60,7 +60,7 @@
   {
    "n": 8,
    "slug": "08-lianhe-yongyao",
-   "title": "联合用药与相互作用",
+   "title": "联用不是加法，是把两条作用曲线叠在同一张图上",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -68,7 +68,7 @@
   {
    "n": 9,
    "slug": "09-buliang-fanying",
-   "title": "不良反应与监测",
+   "title": "监测的对象不是药，是药、人和用法组成的三元组",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -76,7 +76,7 @@
   {
    "n": 10,
    "slug": "10-heli-yongyao",
-   "title": "合理使用与处方审核",
+   "title": "合理用药的最后一公里，是一张能被打勾的核对表",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

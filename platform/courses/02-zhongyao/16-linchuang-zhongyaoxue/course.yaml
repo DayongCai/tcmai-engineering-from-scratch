@@ -29,92 +29,91 @@ platform:
 
 chapters:
   - slug: 01-xulun
-    title: 第1章 绪论
-    segments: 5
+    title: 临床中药学不是中药学的缩写，而是换了一道题
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 0.97
+    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.97      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-jiben-lilun
-    title: 第2章 中药的基本理论
-    segments: 5
+    title: 药性不是四组形容词，而是一套能把药放到证上的坐标
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.93
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-paozhi-zhiji
-    title: 第3章 中药的炮制与制剂
-    segments: 5
+    title: 炮制不改药名，改的是这味药在方子里干什么
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.92
+    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-yongfa-jiliang
-    title: 第4章 中药的用法与剂量
-    segments: 5
+    title: 煎法与剂量是两处最容易被跳过的疗效变量
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.95
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-jiebiao
-    title: 第5章 解表药
-    segments: 5
+    title: 解表药考的是一句话：这个热在表还是在里
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.9
+    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-qingre
-    title: 第6章 清热药
-    segments: 5
+    title: 清热药分五类，分的不是五种热而是五个位置
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.91
+    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-xiexia-qushi
-    title: 第7章 泻下药与祛风湿药
-    segments: 5
+    title: 泻下与祛风湿都攻邪，难的不是敢用而是判定邪还在不在
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.95
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-huashi-lijin
-    title: 第8章 化湿药与利水渗湿药
-    segments: 5
+    title: 湿与水的分界不在病名，而在小便通不通、肿不肿
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.92
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-wenli-liqi-xiaoshi
-    title: 第9章 温里药·理气药·消食药
-    segments: 5
+    title: 温、行、消三法并立，是因为中焦的寒、滞、积常同时到场
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.98
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.98      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-zhixue-huoxue
-    title: 第10章 止血药与活血化瘀药
-    segments: 5
+    title: 止血与活血是同一件事的两端：瘀不去则血不归经
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.96
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 11-huatan-anshen
-    title: 第11章 化痰止咳平喘药与安神药
-    segments: 5
+    title: 痰与神是一件事的两头：化痰即所以安神，安神须先问痰
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.95
+    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 12-pinggan-kaiqiao
-    title: 第12章 平肝息风药与开窍药
-    segments: 5
+    title: 平肝息风治的是「动」，开窍治的是「闭」：闭证与脱证只差一步
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.95
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 13-buxu
-    title: 第13章 补虚药
-    segments: 5
+    title: 补虚药最容易用错：补有方向，补更有时机
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.93
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 14-shoushe-yongtu
-    title: 第14章 收涩药与涌吐药
-    segments: 5
+    title: 收涩与涌吐是一对反向操作：一个关门，一个开闸
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.95
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 15-gongdu-badu
-    title: 第15章 攻毒杀虫止痒药与拔毒化腐生肌药
-    segments: 5
+    title: 以毒攻毒的药，边界写在剂量与用法上
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1.02
+    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.02      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

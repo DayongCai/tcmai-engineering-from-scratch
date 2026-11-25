@@ -18,7 +18,7 @@
       "spoken": "第 1 章 · 概论与源流：骨病学的边界先与骨折筋伤划清",
       "estimateSeconds": 5,
       "audio": "001.mp3",
-      "audioSeconds": 5.78
+      "audioSeconds": 5.784
     },
     {
       "n": 2,
@@ -28,7 +28,7 @@
       "spoken": "「肾气热，则腰脊不举，骨枯而髓减，发为骨痿」——教材·第1章·1.2.1（《素问·痿论》）",
       "estimateSeconds": 10,
       "audio": "002.mp3",
-      "audioSeconds": 9.17
+      "audioSeconds": 9.168
     },
     {
       "n": 3,
@@ -38,7 +38,7 @@
       "spoken": "骨病学与骨伤科学同属骨伤科，学生第一件事就是分不清边界：骨折、筋伤、脱位是「伤」，骨髓炎、骨结核、骨肿瘤、骨质疏松、骨坏死是「病」。分不清的后果很具体——把骨肿瘤的夜间痛当软组织劳损、把骨结核的冷脓肿当普通感染，都发生在边界模糊的那一步。",
       "estimateSeconds": 26,
       "audio": "003.mp3",
-      "audioSeconds": 25.18
+      "audioSeconds": 25.176
     },
     {
       "n": 4,
@@ -59,7 +59,7 @@
       "spoken": "这一段以代码实现为主，请看画面上的代码块。",
       "estimateSeconds": 5,
       "audio": "005.mp3",
-      "audioSeconds": 4.51
+      "audioSeconds": 4.512
     },
     {
       "n": 6,
@@ -69,10 +69,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "006.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 73.34,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 1.28,
+    "measuredMinutes": 1.22,
+    "ratio": 0.953
+  }
 }

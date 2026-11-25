@@ -29,50 +29,49 @@ platform:
 
 chapters:
   - slug: 01-e1
-    title: 第1章 信息标准与编码基础
-    segments: 5
+    title: 安全的第一道闸门不在防火墙，在字段定义
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.92
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-e2
-    title: 第2章 标准落地的合规要求
-    segments: 5
+    title: 标准落地不是文件对照，是把要求变成字段
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.91
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-e3
-    title: 第3章 政策法规与伦理总则
-    segments: 5
+    title: 合规的底线是分级，不是覆盖率
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.93
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-e4
-    title: 第4章 伦理审查与知情同意
-    segments: 5
+    title: 同意不是一次签字，是一段可撤回的授权
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.9
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-e5
-    title: 第5章 信息安全体系与风险
-    segments: 5
+    title: 风险不是漏洞清单，是可能性乘影响
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.93
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-e6
-    title: 第6章 访问控制与加密备份
-    segments: 5
+    title: 权限不是发给岗位的，是发给任务的
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.92
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-e7
-    title: 第7章 病案与医疗数据管理
-    segments: 5
+    title: 病案的每一次调阅都应当留下能追问的痕迹
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.91
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-e8
-    title: 第8章 数据治理与隐私保护
-    segments: 5
+    title: 去标识不是删掉姓名，是让组合失去分辨力
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.92
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

@@ -4,10 +4,10 @@
   "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
   "cueCount": 5,
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
-  "audioTotalSeconds": 61.4,
+  "audioTotalSeconds": 61.416,
   "estimatedCues": 0,
   "videoSeconds": 61.442667,
-  "videoMinusNarrationSeconds": 0.043,
+  "videoMinusNarrationSeconds": 0.027,
   "textMatchesNarration": true,
   "mismatches": [],
   "cues": [
@@ -15,8 +15,8 @@
       "n": 1,
       "role": "title",
       "start": 0,
-      "end": 2.59,
-      "seconds": 2.59,
+      "end": 2.592,
+      "seconds": 2.592,
       "estimated": false,
       "text": "第 20 章 · 毫针刺法",
       "audio": "001.mp3"
@@ -24,9 +24,9 @@
     {
       "n": 2,
       "role": "motto",
-      "start": 2.59,
-      "end": 16.65,
-      "seconds": 14.06,
+      "start": 2.592,
+      "end": 16.656,
+      "seconds": 14.064,
       "estimated": false,
       "text": "「《针灸学·毫针刺法》」——教材第20章；课程章号与教材章号一一对应。本章要回答的是：毫针刺法这一章，要能用一句话说清它解决什么问题。",
       "audio": "002.mp3"
@@ -34,9 +34,9 @@
     {
       "n": 3,
       "role": "problem",
-      "start": 16.65,
-      "end": 23.2,
-      "seconds": 6.55,
+      "start": 16.656,
+      "end": 23.208,
+      "seconds": 6.552,
       "estimated": false,
       "text": "毫针刺法最重的一章：进针、行针、补泻、得气、意外处理。",
       "audio": "003.mp3"
@@ -44,9 +44,9 @@
     {
       "n": 4,
       "role": "roots",
-      "start": 23.2,
-      "end": 50.1,
-      "seconds": 26.9,
+      "start": 23.208,
+      "end": 50.112,
+      "seconds": 26.904,
       "estimated": false,
       "text": "环境逼迫（针灸学是全科的合订本：经络、腧穴、手法、治疗四块必须能互相对上，不能各背一段）+ 知识积累（本章 14 单元 18,227 汉字；三辨主 刺灸技术 577；四位面（教材四板块）主 刺灸技法 18227；引书 6 部 13 次；数值类命中 24）",
       "audio": "004.mp3"
@@ -54,9 +54,9 @@
     {
       "n": 5,
       "role": "disclaimer",
-      "start": 50.1,
-      "end": 61.4,
-      "seconds": 11.3,
+      "start": 50.112,
+      "end": 61.416,
+      "seconds": 11.304,
       "estimated": false,
       "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "audio": "005.mp3"

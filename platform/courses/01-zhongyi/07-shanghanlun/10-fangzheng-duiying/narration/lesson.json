@@ -28,7 +28,7 @@
       "spoken": "「太阳病，头痛发热，身疼恶风，无汗而喘者，麻黄汤主之。」——《伤寒论·辨太阳病脉证并治中》",
       "estimateSeconds": 10,
       "audio": "002.mp3",
-      "audioSeconds": 9.62
+      "audioSeconds": 9.624
     },
     {
       "n": 3,
@@ -38,7 +38,7 @@
       "spoken": "你做了个「输入症状、输出方剂」的小工具：算症状重合度、排序、取第一。第一版给「下利+厥+恶寒」排出的第一位是调胃承气汤——一个泻下方。症状全对上了，方向完全反了。",
       "estimateSeconds": 18,
       "audio": "003.mp3",
-      "audioSeconds": 16.58
+      "audioSeconds": 16.584
     },
     {
       "n": 4,
@@ -48,7 +48,7 @@
       "spoken": "环境逼迫(要做方证检索) + 知识积累(三种打分 × 失败案例 = 知道什么时候不能信排序)",
       "estimateSeconds": 9,
       "audio": "004.mp3",
-      "audioSeconds": 8.57
+      "audioSeconds": 8.568
     },
     {
       "n": 5,
@@ -59,7 +59,7 @@
       "spoken": "从底本建出「方—症」共现矩阵，并说出支持度为什么必须与分数一起报\n复现两种朴素打分的失败案例，解释各自偏袒了什么\n用「覆盖率门槛 × 提升度」得到可用排序，并说明它仍然不是辨证\n判断一个方证检索结果什么情况下必须弃用",
       "estimateSeconds": 22,
       "audio": "005.mp3",
-      "audioSeconds": 22.39
+      "audioSeconds": 22.392
     },
     {
       "n": 6,
@@ -70,7 +70,7 @@
       "spoken": "方-症矩阵（实测）\n第一行就埋着陷阱：桂枝汤横跨 12 篇、134 条，它的「症状画像」宽到几乎覆盖任何组合。支持度越高，画像越糊——这是方证检索最大的偏倚来源。\n第一版：Jaccard（症状重合 / 并集）\nJaccard 只看重合比例，不看这个症状在全库有多常见。「厥」45 条、「恶寒」107 条，谁都有；于是支持度大、什么都沾的方占便宜。第四例是整个方法的照妖镜。\n第二版：纯提升度（lift = 方内占比 / 全库占比）\nlift 修好了第四例，却把前三例搞坏：一个只用 1 个罕见症状命中的小方，平均提升度可以高到离谱。平均掩盖了覆盖。\n第三版：覆盖率门槛 × 平均提升度\n四例全对。但注意「腑实」一例：大承气汤排第二（7.69），原因是查询里没有「大便硬」——第 4 章讲过，那正是大承气的入口条件。排序对不对，取决于你输入了什么，而不是模型多聪明。",
       "estimateSeconds": 77,
       "audio": "006.mp3",
-      "audioSeconds": 75.1
+      "audioSeconds": 75.096
     },
     {
       "n": 7,
@@ -81,7 +81,7 @@
       "spoken": "这一段以代码实现为主，请看画面上的代码块。",
       "estimateSeconds": 5,
       "audio": "007.mp3",
-      "audioSeconds": 4.51
+      "audioSeconds": 4.512
     },
     {
       "n": 8,
@@ -92,7 +92,7 @@
       "spoken": "预期：matchHybrid(['下利','厥','恶寒'])[0].formula === '四逆汤'；match(['下利','厥','恶寒'])[0].formula === '调胃承气汤'（故意保留失败案例）；matchHybrid(['无汗','脉浮','头痛','喘'])[0].formula === '麻黄汤'。",
       "estimateSeconds": 34,
       "audio": "008.mp3",
-      "audioSeconds": 21.86
+      "audioSeconds": 21.864
     },
     {
       "n": 9,
@@ -102,10 +102,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "009.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 176.66,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 3.2,
+    "measuredMinutes": 2.94,
+    "ratio": 0.92
+  }
 }

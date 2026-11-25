@@ -1,31 +1,96 @@
 {
   "chapter": "04-toumina-tongzheng",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 18,
+  "segmentCount": 12,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 10
+      "chars": 29
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 65
+      "chars": 43
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 35
+      "chars": 138
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 116
+      "chars": 100
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 395
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 195
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 405
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 109
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 349
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 136
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 352
+    },
+    {
+      "n": 12,
+      "segment": 9,
+      "chars": 383
+    },
+    {
+      "n": 13,
+      "segment": 9,
+      "chars": 157
+    },
+    {
+      "n": 14,
+      "segment": 10,
+      "chars": 432
+    },
+    {
+      "n": 15,
+      "segment": 10,
+      "chars": 66
+    },
+    {
+      "n": 16,
+      "segment": 11,
+      "chars": 417
+    },
+    {
+      "n": 17,
+      "segment": 11,
+      "chars": 97
+    },
+    {
+      "n": 18,
+      "segment": 12,
       "chars": 52
     }
   ]

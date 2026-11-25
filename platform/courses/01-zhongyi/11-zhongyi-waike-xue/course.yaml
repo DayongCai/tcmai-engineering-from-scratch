@@ -29,80 +29,79 @@ platform:
 
 chapters:
   - slug: 01-fazhan-gaishu
-    title: 第1章 中医外科学发展概要
-    segments: 6
+    title: 发展概要：这门专科先要说清「它管哪一块」
     video: rendered
-    estimate_minutes: 1.85
-    measured_minutes: 1.76
+    estimate_minutes: 1.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.76      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-mingming-bingyin-bingji
-    title: 第2章 中医外科疾病的命名与病因病机
-    segments: 6
+    title: 命名与病因病机：一个病名里藏着三层判据
     video: rendered
-    estimate_minutes: 1.53
-    measured_minutes: 1.47
+    estimate_minutes: 1.53      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.47      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-bianzheng
-    title: 第3章 中医外科疾病的辨证
-    segments: 6
+    title: 辨证：外科的判据长在「看得见的地方」
     video: rendered
-    estimate_minutes: 1.4
-    measured_minutes: 1.35
+    estimate_minutes: 1.40      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.35      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-zhifa
-    title: 第4章 中医外科疾病的治法
-    segments: 6
+    title: 治法：消、托、补不是三个选项，是一条时间轴
     video: rendered
-    estimate_minutes: 1.28
-    measured_minutes: 1.28
+    estimate_minutes: 1.28      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.28      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-chuangyang
-    title: 第5章 疮疡
-    segments: 6
+    title: 疮疡：十个病证，同一套五段模板
     video: rendered
-    estimate_minutes: 1.72
-    measured_minutes: 1.61
+    estimate_minutes: 1.72      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.61      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-rufang-jibing
-    title: 第6章 乳房疾病
-    segments: 6
+    title: 乳房疾病：同一个部位，四种性质
     video: rendered
-    estimate_minutes: 1.42
-    measured_minutes: 1.39
+    estimate_minutes: 1.42      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.39      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-ying-liu-yan
-    title: 第7章 瘿、瘤、岩
-    segments: 6
+    title: 瘿、瘤、岩：一条「质地轴」，八个病证
     video: rendered
-    estimate_minutes: 1.48
-    measured_minutes: 1.42
+    estimate_minutes: 1.48      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.42      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-pifu-jibing
-    title: 第8章 皮肤疾病
-    segments: 6
+    title: 皮肤疾病：九种皮损，一套「形态 → 分期 → 病因」的读法
     video: rendered
-    estimate_minutes: 1.63
-    measured_minutes: 1.62
+    estimate_minutes: 1.63      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.62      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-gangmen-zhichang
-    title: 第9章 肛门直肠疾病
-    segments: 6
+    title: 肛门直肠疾病：一条齿线分内外，一根手指定良恶
     video: rendered
-    estimate_minutes: 1.47
-    measured_minutes: 1.41
+    estimate_minutes: 1.47      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.41      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-miniao-nanxing
-    title: 第10章 泌尿男性疾病
-    segments: 6
+    title: 泌尿男性疾病：三个系统，三条不可错过的红线
     video: rendered
-    estimate_minutes: 1.62
-    measured_minutes: 1.53
+    estimate_minutes: 1.62      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.53      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 11-zhouwei-xueguan
-    title: 第11章 周围血管疾病
-    segments: 6
+    title: 周围血管疾病：先动脉、再静脉，别把两边混成一边
     video: rendered
-    estimate_minutes: 1.65
-    measured_minutes: 1.62
+    estimate_minutes: 1.65      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.62      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 12-qita-waike
-    title: 第12章 其他外科疾病
-    segments: 6
+    title: 其他外科疾病：六证，五类「先救命再治病」
     video: rendered
-    estimate_minutes: 1.6
-    measured_minutes: 1.55
+    estimate_minutes: 1.60      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.55      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 13-shuzihua-ai
-    title: 第13章 中医外科学数字化与 AI 时代
-    segments: 6
+    title: 数字化与 AI 时代：把「看得见的判据」变成可计算的字段
     video: rendered
-    estimate_minutes: 1.52
-    measured_minutes: 1.48
+    estimate_minutes: 1.52      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.48      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

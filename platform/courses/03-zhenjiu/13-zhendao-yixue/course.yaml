@@ -29,50 +29,49 @@ platform:
 
 chapters:
   - slug: 01-zhendao-gailun
-    title: 第1章 针刀医学概论
-    segments: 5
+    title: 「针」与「刀」本是两件器械，合成一件就是把两种权限绑在一起
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.9
+    estimate_minutes: 13.03      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 4.35      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-qixie-guifan
-    title: 第2章 器械、进针与操作规范
-    segments: 5
+    title: 刀口方向是第一条纪律，因为深度错了能退，方向错了切的是另一个结构
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.97
+    estimate_minutes: 12.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 4.31      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-ruanzuzhi-bingli
-    title: 第3章 软组织解剖与病理
-    segments: 5
+    title: 粘连、瘢痕、挛缩不是三种病，是同一条修复链上的三个时相
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.95
+    estimate_minutes: 14.35      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 4.03      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-jingjian-yaotui
-    title: 第4章 颈肩腰腿痛
-    segments: 5
+    title: 颈肩腰腿痛是针刀最主要的适应证群，因为这一群里痛的位置最常不是病灶的位置
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.88
+    estimate_minutes: 14.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 4.02      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-guanjie-jianqiao
-    title: 第5章 关节与腱鞘疾病
-    segments: 5
+    title: 这一章叫关节与腱鞘，而腱鞘在正文里只以一个检查手法的名字出现
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.94
+    estimate_minutes: 15.1      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 3.88      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-shenjing-kaya
-    title: 第6章 神经卡压
-    segments: 5
+    title: 这一章叫神经卡压，而「卡压」二字在 11,230 字正文里一次都没出现
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.88
+    estimate_minutes: 12.62      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 3.97      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-anquan-jinji
-    title: 第7章 安全性：禁忌与并发症
-    segments: 5
+    title: 这一章讲的全是针灸的禁忌，针刀那几条底本一个字也没写
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.97
+    estimate_minutes: 14.62      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 3.82      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-liaoxiao-zhengju
-    title: 第8章 疗效评价与循证
-    segments: 5
+    title: 这一章讲的全是针灸的证据，针刀的证据一条也没有
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.92
+    estimate_minutes: 13.2      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 3.74      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

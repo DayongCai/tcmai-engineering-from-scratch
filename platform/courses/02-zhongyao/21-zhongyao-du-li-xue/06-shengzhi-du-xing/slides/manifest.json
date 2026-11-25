@@ -1,31 +1,76 @@
 {
   "chapter": "06-shengzhi-du-xing",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 14,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 19
+      "chars": 25
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 90
+      "chars": 46
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 69
+      "chars": 203
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 107
+      "chars": 137
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 330
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 170
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 375
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 80
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 372
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 142
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 298
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 255
+    },
+    {
+      "n": 13,
+      "segment": 9,
+      "chars": 410
+    },
+    {
+      "n": 14,
+      "segment": 10,
       "chars": 52
     }
   ]

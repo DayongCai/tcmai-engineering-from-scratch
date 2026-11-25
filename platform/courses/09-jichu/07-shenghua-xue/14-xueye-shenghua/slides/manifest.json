@@ -1,31 +1,86 @@
 {
   "chapter": "14-xueye-shenghua",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 16,
+  "segmentCount": 11,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 9
+      "chars": 31
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 61
+      "chars": 41
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 14
+      "chars": 328
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 140
+      "chars": 212
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 330
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 296
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 343
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 290
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 375
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 235
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 404
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 153
+    },
+    {
+      "n": 13,
+      "segment": 9,
+      "chars": 348
+    },
+    {
+      "n": 14,
+      "segment": 9,
+      "chars": 145
+    },
+    {
+      "n": 15,
+      "segment": 10,
+      "chars": 355
+    },
+    {
+      "n": 16,
+      "segment": 11,
       "chars": 52
     }
   ]

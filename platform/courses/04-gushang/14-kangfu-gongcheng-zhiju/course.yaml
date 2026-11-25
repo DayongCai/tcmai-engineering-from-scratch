@@ -29,50 +29,49 @@ platform:
 
 chapters:
   - slug: 01-gailun
-    title: 第1章 康复工程概论
-    segments: 5
+    title: 支具不治病，它改变的是力的分配
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1
+    estimate_minutes: 12.70      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.41      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-fenlei-cailiao
-    title: 第2章 支具分类与材料
-    segments: 5
+    title: 分类看约束的方向，材料看它能撑多久
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 0.99
+    estimate_minutes: 12.47      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.08      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-jizhu-zhiju
-    title: 第3章 脊柱支具
-    segments: 5
+    title: 脊柱支具靠三点力，不靠把躯干裹紧
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.95
+    estimate_minutes: 11.62      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.52      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-shangzhi-zhiju
-    title: 第4章 上肢支具
-    segments: 5
+    title: 手部支具的目标是滑动，不是固定
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.94
+    estimate_minutes: 11.82      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.72      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-xiazhi-zhiju
-    title: 第5章 下肢支具
-    segments: 5
+    title: 下肢支具先回答负重，再回答步态
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.95
+    estimate_minutes: 11.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.16      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-zuxie-yali
-    title: 第6章 矫形鞋与压力治疗
-    segments: 5
+    title: 鞋垫改变力矩，压力衣改变梯度
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1
+    estimate_minutes: 11.53      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-zhuxing-fuzhu
-    title: 第7章 助行器、轮椅与转移辅具
-    segments: 5
+    title: 辅具的第一判据是使用者能不能自己用
     video: rendered
-    estimate_minutes: 1.02
-    measured_minutes: 1.03
+    estimate_minutes: 10.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.25      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-pinggu-suifang
-    title: 第8章 适配评估与随访
-    segments: 5
+    title: 适配好不好，皮肤先说话
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 0.98
+    estimate_minutes: 11.47      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.54      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

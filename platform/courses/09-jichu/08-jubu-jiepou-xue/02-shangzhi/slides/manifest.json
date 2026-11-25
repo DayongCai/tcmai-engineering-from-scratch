@@ -1,31 +1,106 @@
 {
   "chapter": "02-shangzhi",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 20,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 6
+      "chars": 31
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 57
+      "chars": 22
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 15
+      "chars": 176
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 135
+      "chars": 130
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 329
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 298
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 312
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 385
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 186
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 345
+    },
+    {
+      "n": 11,
+      "segment": 7,
+      "chars": 201
+    },
+    {
+      "n": 12,
+      "segment": 7,
+      "chars": 280
+    },
+    {
+      "n": 13,
+      "segment": 7,
+      "chars": 214
+    },
+    {
+      "n": 14,
+      "segment": 8,
+      "chars": 176
+    },
+    {
+      "n": 15,
+      "segment": 8,
+      "chars": 296
+    },
+    {
+      "n": 16,
+      "segment": 8,
+      "chars": 165
+    },
+    {
+      "n": 17,
+      "segment": 8,
+      "chars": 400
+    },
+    {
+      "n": 18,
+      "segment": 8,
+      "chars": 302
+    },
+    {
+      "n": 19,
+      "segment": 9,
+      "chars": 346
+    },
+    {
+      "n": 20,
+      "segment": 10,
       "chars": 52
     }
   ]

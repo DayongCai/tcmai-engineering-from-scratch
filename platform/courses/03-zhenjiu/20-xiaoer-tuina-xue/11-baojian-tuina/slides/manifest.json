@@ -1,31 +1,81 @@
 {
   "chapter": "11-baojian-tuina",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 15,
+  "segmentCount": 7,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 11
+      "chars": 23
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 56
+      "chars": 94
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 42
+      "chars": 246
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 120
+      "chars": 106
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 391
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 388
+    },
+    {
+      "n": 7,
+      "segment": 5,
+      "chars": 410
+    },
+    {
+      "n": 8,
+      "segment": 5,
+      "chars": 355
+    },
+    {
+      "n": 9,
+      "segment": 5,
+      "chars": 308
+    },
+    {
+      "n": 10,
+      "segment": 5,
+      "chars": 281
+    },
+    {
+      "n": 11,
+      "segment": 5,
+      "chars": 311
+    },
+    {
+      "n": 12,
+      "segment": 5,
+      "chars": 112
+    },
+    {
+      "n": 13,
+      "segment": 6,
+      "chars": 402
+    },
+    {
+      "n": 14,
+      "segment": 6,
+      "chars": 228
+    },
+    {
+      "n": 15,
+      "segment": 7,
       "chars": 52
     }
   ]

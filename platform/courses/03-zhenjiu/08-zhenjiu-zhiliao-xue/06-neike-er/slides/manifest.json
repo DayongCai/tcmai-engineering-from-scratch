@@ -1,31 +1,96 @@
 {
   "chapter": "06-neike-er",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 18,
+  "segmentCount": 12,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 11
+      "chars": 28
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 67
+      "chars": 50
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 20
+      "chars": 132
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 120
+      "chars": 103
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 308
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 119
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 418
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 276
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 295
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 222
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 346
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 138
+    },
+    {
+      "n": 13,
+      "segment": 9,
+      "chars": 354
+    },
+    {
+      "n": 14,
+      "segment": 10,
+      "chars": 300
+    },
+    {
+      "n": 15,
+      "segment": 10,
+      "chars": 252
+    },
+    {
+      "n": 16,
+      "segment": 11,
+      "chars": 316
+    },
+    {
+      "n": 17,
+      "segment": 11,
+      "chars": 224
+    },
+    {
+      "n": 18,
+      "segment": 12,
       "chars": 52
     }
   ]

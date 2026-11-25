@@ -28,7 +28,7 @@
       "spoken": "「《针灸学·头面躯体痛证》」——教材第24章；课程章号与教材章号一一对应。本章要回答的是：头面躯体痛证这一章，要能用一句话说清它解决什么问题。",
       "estimateSeconds": 15,
       "audio": "002.mp3",
-      "audioSeconds": 15.07
+      "audioSeconds": 15.072
     },
     {
       "n": 3,
@@ -38,7 +38,7 @@
       "spoken": "痛证是针灸证据最厚的一块：取穴—手法—疗程链条完整。",
       "estimateSeconds": 6,
       "audio": "003.mp3",
-      "audioSeconds": 5.59
+      "audioSeconds": 5.592
     },
     {
       "n": 4,
@@ -48,7 +48,7 @@
       "spoken": "环境逼迫（针灸学是全科的合订本：经络、腧穴、手法、治疗四块必须能互相对上，不能各背一段）+ 知识积累（本章 16 单元 16,997 汉字；三辨主 临床治疗 195；四位面（教材四板块）主 临床治疗 16997；引书 1 部 21 次；数值类命中 62）",
       "estimateSeconds": 25,
       "audio": "004.mp3",
-      "audioSeconds": 27.17
+      "audioSeconds": 27.168
     },
     {
       "n": 5,
@@ -58,10 +58,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "005.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 62.38,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 1.0,
+    "measuredMinutes": 1.04,
+    "ratio": 1.04
+  }
 }

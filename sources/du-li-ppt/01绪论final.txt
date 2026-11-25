@@ -1,0 +1,206 @@
+Visio
+Visio.Drawing.11
+beijingcdy@yeah.net
+mailto:beijingcdy@yeah.net
+___PPT12
+___PPT10
+单击此处编辑母版标题样式
+单击此处编辑母版文本样式
+第二级
+第三级
+第四级
+第五级
+___PPT9
+Office ;N槝
+主讲教师:蔡大勇
+13161160668
+010-57833218
+2016-04-01
+01序言
+序号
+内容
+性质-机遇(方剂≠中药)
+方剂毒理(第四章第4节)
+方剂毒效(第二章)
+方剂治疗毒效毒理
+精准医学的方剂优势
+问题与讨论
+toxicological herb = 926 in high-wire
+01.Effect of Trigonella foenum graecum L on the Activities of Antioxidant Enzym… Sharma 2015 Journal of Evidence-Based Complementary & Alternative Medicine
+02.Metabolomic Characteristics of Arsenic-Associated Diabetes in a Prospective .Martin 2015 Toxicol. Sci. 144:338
+03.Suppression of the Pregnane X Receptor during Endoplasmic Reticulum Stress I… Vachirayonsti 2015 Toxicol. Sci. 144:382
+04.Metabolic Methanol: Molecular Pathways and Physiological Roles
+Dorokhov 2015 Physiol Rev 95:603
+05.Effect of St John's wort on bone formation in the orthopaedically expanded p..Halicioglu 2015 Eur J Orthod 37:164
+06.Systemic Exposure to and Disposition of Catechols Derived from Salvia miltio…Li 2015 Drug Metab. Dispos. 43:679
+08.Evaluation of Potential Attractants for Six Species of Stored-Product Psocid…Diaz-Montano 2015 J Econ Entomol
+09.Botanical alternatives to antibiotics for use in organic poultry production Diaz-Sanchez 2015 Poultry Science
+10.The adverse health effects of synthetic cannabinoids with emphasis on psycho…van Amsterdam 2015 J Psychopharmacol 29:254
+11.Enhancement of Cancer Chemotherapeutic Efficacy of Cyclophosphamide by Curcu..Murali 2015 Integr Cancer Ther 14:172
+12.Hydrastine Pharmacokinetics and Metabolism after a Single Oral Dose of Golde…Gupta 2015 Drug Metab. Dispos. 43:534
+13.The role of light, soil and human factors on the probability of occurrence o…Paudel 2015 J Plant Ecol
+14.Human Sex Hormone-Binding Globulin Binding Affinities of 125 Structurally Di…Hong 2015 Toxicol. Sci. 143:333
+16.Using euhalophytes to understand salt tolerance and to develop saline agricu…Song 2015 Ann. Bot. 115:541
+17.Identifying Effective Medicinal Plants for Cold in Lorestan Province, West o…Delfan 2015 Journal of Evidence-Based Complementary & Alternative Medicine
+18.Schisandrol B Protects Against Acetaminophen-Induced Hepatotoxicity by Inhib…Jiang 2015 Toxicol. Sci. 143:107
+第一章 绪论
+1.概念
+1.1药物毒理学( drug toxicology) 研究药物对人类危害及其防治对策的科学。
+①药物危害对子孙后代的纵向影响和在人群中播散流行的横向影响。从用药患者个体上看，主要考虑外来的药物分子与有生命机体既有分子之间的相互反应，所引起的有害作用，而不是治疗或营养等有益作用。
+②防治对策 懂得使用药物会出现有害作用，人类社会应尽可能限制使用，需要使用时预先采取降低危害的措施。
+1.2毒性(toxicity) 物质引起机体有害作用的固有能力。分子结构决定了这种内在的、不可改变的性质。
+毒效应(toxic effect) 在特定条件下，物质对机体健康引起的有害作用。改变条件有可能阻止毒效应的发生。
+剂量(dose) 给予机体物质的重量，用g•kg-1，mg•kg-1表示单位体重给予物质的重量。
+02概念
+1.3药物 (drug) 能防治疾病、促进健康的物质。
+毒物(poison) 较低剂量可引起机体损害的物质。
+中毒(poisoning) 由毒物所引起机体的疾病。
+药物和毒物的相对区别在于剂量大小，即用以治病的低剂量为药物，造成损害的高剂量为毒物。依据毒性剂量的等级，把物质和划分为食品、药品和毒品，把药物可划分为极毒、剧毒、中等毒、低毒、无毒5个等级。
+03概念
+药物是一把双刃剑
+药理学
+药物毒理学
+安全合理用药
+Pharmacology
+治病
+Drug toxicology
+致病
+2. 发展概况
+2.1古代药物毒理学
+①古希腊到18世纪，人类以品尝经验来 认识药物毒性。广义“毒性” 是中药性能的重要标志，即中药的偏性效用；狭义毒性是指药物对机体的损害。
+②我国隋代医籍就有矿物药中毒记载。
+③汉代《农奉草经》 按毒性把药物分为上、中、下三品。
+2.2现代药物毒理学
+①1926年报道家兔缓慢静脉注射洋地黄的最小致死量后，以药物半数致死量(LD50)为主体的药物毒理学迅速发展。
+②1985年我国卫生部《新药审批办法》规定，新药必须研究一般毒性和特殊毒性，我国药物毒理学研究才逐步接近国际发展前沿。
+③药物毒理学从整体发展到器官、细胞或分子研究，从用药患者毒性作用发展到人类用药安全保障，逐步形成了生态、环境、管理、行为、遗传、免疫等毒理学分支的知识体系。
+04发展概况
+古代神农尝百草
+现代GLP实验室
+05发展概况
+药物
+动物
+途径
+LD50
+等级
+乙醇
+小鼠
+经口
+10000
+无毒
+氯化钠
+腹腔
+4000
+硫酸吗啡
+大鼠
+900
+低毒
+苯巴比妥钠
+150
+中等毒
+硫酸士的宁
+剧毒
+烟碱
+静脉
+极毒
+河豚毒素
+0.1
+肉毒杆菌毒素
+0.00001
+常见药物的半数致死剂量(mg·kg-1)与毒性等级
+06发展概况
+07发展概况
+3.研究目的与意义
+3.1研究目的
+①药毒效应 药物对人类产生治疗疾病以外的作用及其机制。
+②药毒性质 停药后生物体内的药物损害不可恢复称为不可逆性药毒，将影响终生健康；停药后药物损害能够恢复称为可逆性药毒。
+③药毒剂量 药物能引起生物损害作用的剂量范围。
+④药毒定位 药物损害生物的具体器官、组织、细胞和生物分子。
+08研究目的与意义
+3.2研究意义
+①权衡用药利弊 临床医师同时考虑毒性作用与治疗作用的相互关系，才能对用药影响患者终生健康状态有正确的评价。
+如抗肿瘤分子药物的使用，古代“神农尝百草”，中医复方的毒性，合理使用“有毒砒霜” 治疗白血病等。
+②核准新药上市 与具有相同功效的类似药物比较，以非临床研究与临床试验的毒理学资料为依据，药政部门核准新药上市，既需考虑该药对用药患者本人的利弊，更要洞察该药对人类素质整体的得失。
+危害性(hazardness)指用药引起中毒的可能性。
+安全性(safety) 药物影响人类健康状态的危险程度。
+历史上的“反应停”事件,由于非临床毒理学研究不全面，未发现其致畸作用, 核准上市；导致大量婴儿发生畸形。
+③积累安全用药资料 临床观察到罕见的特异质毒性反应与“代谢酶缺陷或环境诱因”有关。只有临床资料积累到一定程度，才有动物实验和药物流行病学研究，最后弄清药物损害机制，能提出预防措施或解救药物。
+09研究目的与意义
+反应停 thalidomide
+10研究目的与意义
+4.研究任务与内容
+4.1研究任务
+评价药物对人类健康的危害，为临床医师合理用药与药政部门新药审批提供科学依据。药物危害可能发生在人体发育的任何阶段。
+药物对人类危害的作用阶段
+11研究任务与内容
+4.2研究内容
+药物毒理学涉及描述性研究、机制性研究与管理性研究3个领域。已经建立了严密的研究程序，为系统完整的药物安全评价提供依据，体现了科学的谨慎态度、经济原则和伦理道德。.
+①非临床毒理学研究 以非人体为对象，主要观察急性毒性、长期毒性和局部毒性等一般毒性，和药物损害组织器官的机制(靶器官毒理)，生殖毒性、致突变、致癌、致畸与依赖性等特殊毒性，以及药物体内过程(毒动学)。
+②临床毒理学研究 以人体为对象，主要观察健康人群对药物的耐受程度与体内过程，受控或所有适应症患者的不良反应和危险性，以及人群多态性和环境复杂性所致的特异质毒性反应。
+12研究任务与内容
+药物毒理研究程序
+13研究任务与内容
+5.研究方法
+根据实验的目，药物毒理学采取体内试验和体外试验，观察药物与生物之间的相互作用，分析毒效学和毒代学的基本规律。由于每种试验都存在局限性，往往以多种试验优点互相验证，采取平行程序法系统判断用药安全。
+平行程序法互相验证多种试验
+14研究方法
+5.1体内试验
+指对整体动物用药，观察药物引起的功能、代谢和形态变化。
+常用小鼠、大鼠、豚鼠、仓鼠、家兔、狗和猴子等哺乳动物，判断急性毒性与累积毒性；但影响因素多，体内试验难以准确认定药毒的分子机制与药物转化的代谢酶。动物用药安全结果，可外推到人而设计人体临床研究。
+5.2体外试验
+指对离体的器官、组织、细胞、细胞器或生物分子用药，观察药物的毒性作用以及机制、代谢转化及其产物。
+特定液体携带药物经血管流经存活离体器官，观察药物与器官之间的相互作用。用培养细胞或细菌，观察药物与单一类型细胞之间的相互作用。用离心纯化得到的线粒体或微体等细胞器，观察药物与单一细胞器之间的相互作用。
+15研究方法
+5.3临床试验
+指观察“药物与健康人、受控患者或所有患者”之间的相互作用分别称为Ⅰ、Ⅱ、Ⅲ期临床试验；主要观察药物疗效与药毒作用，评价危险性，制定临床合理用药的原则。
+Ⅰ临床研究
+Ⅱ临床研究
+Ⅲ临床研究
+探索人用安全剂量
+安全性{
+大范围的人群观察
+疗效（有效性）
+不良反应（安全性）
+16研究方法
+5.4流行病学研究
+以人群为研究对象，主要观察整体社会的药物利用状态。除了验证前期的研究结果外，注重人类多态性和环境复杂性对药毒作用易感性的影响。对于使用药物延迟数十年才出现临床症状的药源性疾病，药物不良反应报告是原因研究的重要线索。
+描述阶段
+病因假设阶段
+病因检验阶段
+确认病例分布流行
+用药与延迟发病关系
+筛选标志制定方法
+病因验证阶段
+用药与发病因果关系
+17研究方法
+6.学习资源
+6.1药物毒理学参考资料
+①英文毒理学期刊已超过150种，目录从Casarett &Doull’s Toxicology各章后所附文献中查到。
+②《毒理学杂志》、《中国毒理学与药理学杂志》、《中国毒理学通讯》、《癌变∙畸变∙突变》、《环境与职业医学》、《中华劳动卫生职业病杂志》、《工业卫生与职业病》、《卫生研究》以及药理学杂志、大学学报中均可查到毒理学文献。
+③药物毒理资料可检索DIF(Drug Information)药物信息全文数据库和IPA(Interna tional Pharmacology Abstract)国际药物学文摘库。
+④我国中毒控制中心正在建立毒理学数据库《化救通》收集1500多种化学物的理化特性、毒性、中毒表现、急救和卫生标准等资料。
+18学习资源
+机构名称
+网站
+中国药理学会
+http://www.cnphars.org/
+中国毒理学会
+http://www.chntox.org/
+第2军医大学毒理学教研室
+www.toxsmmu.com/index.asp
+国际毒理学联盟
+http://www.toxicology.org/index.asp
+美国食品药品管理局
+http://www.fda.gov/default.htm
+美国医学图书馆毒理数据库
+http://toxnet.nlm.nih.gov/
+美国毒理学理事会
+http://abtox.org/
+系统生物学
+http://www.systemsbiology.org/
+中国国家中毒控制中心
+http://www.npcc.org.cn/
+中国疾病预防控制中心
+http://www.chinacdc.net.cn/
+6.2 药物毒理相关网络资料
+19学习资源

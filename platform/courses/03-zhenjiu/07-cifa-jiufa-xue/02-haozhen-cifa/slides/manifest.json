@@ -1,31 +1,81 @@
 {
   "chapter": "02-haozhen-cifa",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 15,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 8
+      "chars": 30
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 62
+      "chars": 40
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 25
+      "chars": 215
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 125
+      "chars": 137
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 293
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 281
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 399
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 174
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 352
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 155
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 86
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 478
+    },
+    {
+      "n": 13,
+      "segment": 8,
+      "chars": 47
+    },
+    {
+      "n": 14,
+      "segment": 9,
+      "chars": 389
+    },
+    {
+      "n": 15,
+      "segment": 10,
       "chars": 52
     }
   ]

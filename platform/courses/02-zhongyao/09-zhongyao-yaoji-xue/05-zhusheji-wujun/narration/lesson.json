@@ -28,7 +28,7 @@
       "spoken": "「《神农本草经·序例》」——教材·第2章·2.1.1。本章要回答的是：中药注射剂为什么是风险最高的一类剂型。",
       "estimateSeconds": 12,
       "audio": "002.mp3",
-      "audioSeconds": 11.35
+      "audioSeconds": 11.352
     },
     {
       "n": 3,
@@ -38,7 +38,7 @@
       "spoken": "它绕过全部屏障：热原、微粒、渗透压、无菌，任何一项不合格都不是局部问题，而是全身性后果。",
       "estimateSeconds": 10,
       "audio": "003.mp3",
-      "audioSeconds": 9.91
+      "audioSeconds": 9.912
     },
     {
       "n": 4,
@@ -58,10 +58,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "005.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 56.69,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 0.93,
+    "measuredMinutes": 0.94,
+    "ratio": 1.012
+  }
 }

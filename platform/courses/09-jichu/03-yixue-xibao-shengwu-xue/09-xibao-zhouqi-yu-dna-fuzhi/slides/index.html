@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"/>
-<title>第 9 章 · 细胞周期与 DNA 复制 · 幻灯片</title>
+<title>第 9 章 · 细胞周期不是四个阶段，是三道闸门加一套计时器 · 幻灯片</title>
 <style>
 
 :root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
@@ -59,24 +59,84 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <body>
 <div id="deck">
 <section class="slide" data-i="0">
-  <div class="slide-inner"><h1 class="big">第 9 章 · 细胞周期与 DNA 复制</h1></div>
-  <div class="slide-foot"><span>1 / 5</span><span>title</span></div>
+  <div class="slide-inner"><h1 class="big">第 9 章 · 细胞周期不是四个阶段，是三道闸门加一套计时器</h1></div>
+  <div class="slide-foot"><span>1 / 14</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「〔派生〕细胞周期与 DNA 复制」——母本：生物化学第17章。本章要回答的是：细胞周期与 DNA 复制：这一章的判据是什么，什么算「看懂了」。</blockquote></div>
-  <div class="slide-foot"><span>2 / 5</span><span>motto</span></div>
+  <div class="slide-inner"><blockquote class="motto">「夫春生夏长，秋收冬藏，此天道之大经也。」——《史记·太史公自序》</blockquote></div>
+  <div class="slide-foot"><span>2 / 14</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
-  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">细胞周期与 DNA 复制：本课第 9 章，正文逐字取自生物化学。</p></div>
-  <div class="slide-foot"><span>3 / 5</span><span>problem</span></div>
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">把一个正在分裂的细胞核拿走，剩下的胞质里放进另一个核，这个核会提前进入分裂——这说明「什么时候分裂」不是由核自己决定的，而是由胞质里一套<strong>可扩散的计时器</strong>决定。反过来，把两个处于不同时期的细胞融合，较早的那个会被拖着走。这套实验逻辑指向一个结论：周期的推进靠的是 cyclin 的合成与降解，而不是靠「时间到了」。数目设定：哺乳动物细胞的一个完整周期常在一天上下（常引口径），但 G1 的长度可以从几小时到几年（如神经元退出周期、肝细胞停在 G0），S 与 M 相对固定——<strong>周期的可调部分几乎全在 G1</strong>，这个不对称是理解「为什么增殖信号都打在 G1」的钥匙。</p></div>
+  <div class="slide-foot"><span>3 / 14</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
-  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（细胞生物学的判据是「结构—功能—方法」三件套：看得见什么、靠什么实现、用什么看见）+ 知识积累（本章 12 单元 20,426 汉字；三辨主 <strong>功能与过程 261</strong>；四位面（章群结构）主 <strong>核与基因表达与技术 20426</strong>；引书 <strong>0 部 0 次</strong>；数值类命中 0）</p></div>
-  <div class="slide-foot"><span>4 / 5</span><span>roots</span></div>
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（分裂一次要把整个基因组复制一遍并精确分开，任何一处错位都可能产生非整倍体；细胞宁可停下来，也不能带着错误往下走，因此必须有「停下来」的机制，而不只是「往前走」的机制）+ 知识积累（CDK–cyclin 的组合 × 三道检验点的判据 × 复制与分离的机械过程，三者合起来才能解释「为什么抗癌治疗既打增殖，也打检验点」）</p></div>
+  <div class="slide-foot"><span>4 / 14</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
+  <div class="slide-inner"><div class="kicker">一、四个时期与一套计时器</div>
+                <div class="compact dense"><div class="table-wrap"><table><thead><tr><th>时期</th><th>主要事件</th><th>长度特征</th><th>关键判据</th></tr></thead><tbody><tr><td>G1</td><td>生长、整合信号、准备复制</td><td>最可变</td><td>是否越过限制点</td></tr><tr><td>S</td><td>DNA 复制、组蛋白合成</td><td>相对固定</td><td>复制是否完成、有无损伤</td></tr><tr><td>G2</td><td>检查复制质量、准备分裂</td><td>相对固定</td><td>损伤是否修复</td></tr><tr><td>M</td><td>核分裂与胞质分裂</td><td>短</td><td>纺锤体是否正确连接</td></tr></tbody></table></div>
+<p><strong>G0 不是「休息」，是「退出」。</strong> 神经元、心肌细胞基本停在 G0 且不再返回；肝细胞停在 G0 但可被信号召回；成纤维细胞在培养中容易退回 G0。三种「停」的机制不同，恢复能力也不同——这直接决定了不同器官的再生能力（第 11 章）。</p>
+<p>周期的推进由一个简单的化学逻辑驱动：<strong>CDK（周期蛋白依赖性激酶）本身没有活性，必须结合 cyclin 才有活性；cyclin 的浓度随周期涨落，CDK 的浓度基本不变。</strong> 于是「什么时候推进」被写成了「什么时候有足够的 cyclin」。</p></div></div>
+  <div class="slide-foot"><span>5 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">一、四个时期与一套计时器</div>
+                <div class="compact"><div class="table-wrap"><table><thead><tr><th>复合物</th><th>主要作用</th><th>底物举例</th><th>被什么抑制</th></tr></thead><tbody><tr><td>cyclin D–CDK4/6</td><td>启动 G1，磷酸化 Rb</td><td>Rb</td><td>p16 等抑制因子</td></tr><tr><td>cyclin E–CDK2</td><td>越过限制点，启动复制准备</td><td>Rb、p27</td><td>p21、p27</td></tr><tr><td>cyclin A–CDK2</td><td>推动 S 期</td><td>复制因子</td><td>p21</td></tr><tr><td>cyclin B–CDK1</td><td>进入 M 期</td><td>核纤层、凝缩蛋白</td><td>磷酸化调控、APC/C</td></tr></tbody></table></div>
+<p>三个要点决定了这套系统的行为：</p>
+<p><strong>其一，正反馈。</strong> cyclin E–CDK2 磷酸化 Rb，释放 E2F，E2F 又转录出更多 cyclin E——这是一个自锁环。一旦越过阈值，细胞就「决定」复制，即使撤去生长因子也回不去。<strong>这就是「限制点」的分子含义：不是速度控制，是承诺。</strong></p></div></div>
+  <div class="slide-foot"><span>6 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">一、四个时期与一套计时器</div>
+                <div class="compact"><p><strong>其二，负反馈与振荡。</strong> cyclin B–CDK1 激活 APC/C，APC/C 又降解 cyclin B，CDK1 活性骤降，细胞退出 M 期。<strong>「自己把自己关掉」是振荡的必要条件</strong>，否则系统会卡在一个状态。</p>
+<p><strong>其三，多重刹车。</strong> p53 在 DNA 损伤时转录 p21，p21 抑制 CDK2，细胞停在 G1；如果损伤过重，p53 转而启动凋亡。<strong>同一个分子在轻度与重度损伤下给出相反的决定</strong>——这个「开关式」的行为，是本章最值得记住的设计。</p></div></div>
+  <div class="slide-foot"><span>7 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">一、四个时期与一套计时器</div>
+                <div class="compact"><p>计时器之外还有一道约束常被忽略：<strong>细胞不能越分越小，也不能越分越大</strong>。分裂必须与生长耦合，否则连续几轮之后细胞体积就会漂移到不可用的范围。模式生物里的证据显示，酵母主要靠「长到某个体积才启动」的体积阈值，哺乳动物细胞则更依赖「上一轮的大小 + 生长速率」的组合校正。<strong>「什么时候分裂」因此有两个输入：周期计时器与体积/生长状态</strong>，两者在 G1 与 G2 各有一处交汇。这解释了为什么营养充足时细胞周期会缩短——不是因为计时器走快了，是因为体积阈值更早被跨过。</p></div></div>
+  <div class="slide-foot"><span>8 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">二、三道闸门：每一道问一个不同的问题</div>
+                <div class="compact dense"><div class="table-wrap"><table><thead><tr><th>闸门</th><th>位置</th><th>问的问题</th><th>失败后果</th></tr></thead><tbody><tr><td>G1/S（限制点）</td><td>G1 晚期</td><td>环境允许吗？DNA 有损伤吗？</td><td>带损伤复制，突变固定</td></tr><tr><td>G2/M</td><td>G2 末</td><td>复制完整吗？损伤修好了吗？</td><td>带着断裂进入分裂</td></tr><tr><td>纺锤体组装检查点</td><td>中期</td><td>每条染色体都双向连接了吗？</td><td>染色体丢失或错分</td></tr></tbody></table></div>
+<p>三道闸门的共同逻辑是：<strong>「不允许」是默认状态，必须被主动解除。</strong> 这不是吹毛求疵——如果默认允许，任何一次复制错误都会立刻变成两个子细胞的永久突变。检验点的存在使细胞获得了「等待」的能力，而等待需要时间与能量，这就是为什么损伤修复与周期阻滞总是成对出现。</p>
+<p>纺锤体组装检查点值得单独说：它监控的是<strong>力学</strong>，不是化学。动粒未被微管正确连接时，会产生「未满足」信号，阻止 APC/C 激活；只有所有染色体都达成双向连接、张力正确，信号才消失，后期才能启动。<strong>「数够了才走」这条规则，是把机械状态翻译成生化决定的最干净的例子。</strong></p></div></div>
+  <div class="slide-foot"><span>9 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">三、复制：半保留，双向，两条链不一样</div>
+                <div class="compact"><p>DNA 复制有三个不能改的事实，它们共同决定了复制叉的形态：</p>
+<ol><li><strong>半保留。</strong> 每条子链以一条母链为模板，复制完成后每个双链各含一条旧链。</li><li><strong>双向。</strong> 从起点向两侧同时展开，形成两个复制叉。</li><li><strong>方向性。</strong> DNA 聚合酶只能沿一个方向延伸，而两条模板链方向相反。</li></ol>
+<p>第三条造成了一个不对称：<strong>前导链可以连续合成，后随链只能分段合成再连接</strong>（这些短片段被称为冈崎片段）。这套设计带来两个后果：后随链的合成更慢、更容易出错；以及<strong>线性染色体末端无法被完整复制</strong>——因为末端的 RNA 引物被移除后，没有上游的 3′ 端可供延伸。</p>
+<p>端粒与端粒酶正是对这个缺陷的补偿（第 7 章）。<strong>「复制机制有缺陷，所以需要端粒」这个因果顺序不能颠倒</strong>：端粒不是设计出来的保护帽，而是补丁。</p></div></div>
+  <div class="slide-foot"><span>10 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">四、有丝分裂：把两套基因组分开的机械过程</div>
+                <div class="compact dense"><div class="table-wrap"><table><thead><tr><th>阶段</th><th>事件</th><th>关键结构</th></tr></thead><tbody><tr><td>前期</td><td>染色质凝缩，中心体分离，纺锤体开始形成</td><td>凝缩蛋白、中心体</td></tr><tr><td>前中期</td><td>核膜崩解，微管捕获动粒</td><td>动粒、微管</td></tr><tr><td>中期</td><td>染色体排列在赤道板，双向连接达成</td><td>纺锤体检查点</td></tr><tr><td>后期</td><td>姐妹染色单体分离，向两极移动</td><td>APC/C、动力蛋白</td></tr><tr><td>末期</td><td>核膜重建，染色体解凝缩</td><td>核纤层、膜泡</td></tr><tr><td>胞质分裂</td><td>收缩环缢缩（动物）或细胞板形成（植物）</td><td>肌动蛋白—肌球蛋白</td></tr></tbody></table></div>
+<p>后期分离靠两股力：微管去聚合时动粒被「拉着走」，以及两极微管相互滑动把两极推开。<strong>两股力方向一致、机制不同</strong>，任一失效都会导致分离不全——这是非整倍体的常见来源。</p>
+<p>减数分裂是在这套机制上加了两处改动：一次复制之后连续两次分裂；第一次分裂时同源染色体配对并发生重组，然后分离的是同源染色体而不是姐妹染色单体。<strong>重组把「父母的两套」重新洗牌</strong>，这是遗传多样性的来源，也是连锁分析的基础。</p></div></div>
+  <div class="slide-foot"><span>11 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">五、周期失调与肿瘤：不是「变快」，是「闸门坏了」</div>
+                <div class="compact"><p>一个常见误解是「癌细胞分裂得快」。实际观察到的往往是：周期并没有显著加快，<strong>闸门失效</strong>导致本不该进入周期的细胞进入了周期，本该死掉的细胞活了下来。</p>
+<ul><li><strong>癌基因</strong>（如 Ras、Myc）的作用多是「踩油门」：持续提供增殖信号，使细胞不依赖外源生长因子。</li><li><strong>抑癌基因</strong>（如 Rb、p53）的作用是「刹车」：Rb 缺失使限制点消失，p53 缺失使损伤无法触发阻滞或凋亡。</li><li><strong>两者的组合</strong>才构成完整的失控：只有油门没有刹车失灵，细胞仍会被其他检查点拦住。</li></ul>
+<p>由此得到一条治疗逻辑：<strong>打增殖的药对「快分裂」的细胞有效，但也伤及骨髓、肠上皮、毛囊这些正常快分裂的组织</strong>；而针对特定驱动突变的药可以更精准，但肿瘤会通过旁路激活或二次突变产生耐药。<strong>耐药不是例外，是选择的结果</strong>——这一点在第 11 章讲克隆演化时会再出现。</p></div></div>
+  <div class="slide-foot"><span>12 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><ul><li>本章的「一天上下」「G1 可变」均为<strong>常引口径</strong>；不同细胞类型的周期长度差异极大，本章不给任何以小时计的期长、CDK 活性阈值或检验点等待时间的数值。</li><li>CDK–cyclin 表是主干的简化。实际细胞中还有大量旁路与冗余（多个 cyclin 可以代偿），把表读成「唯一通路」会低估系统的鲁棒性。</li><li>「癌基因/抑癌基因」是功能分类，同一个基因在不同组织、不同阶段可以扮演不同角色；本章不给任何分子分型、分期或预后判据。</li><li>本章不涉及化疗、靶向药、内分泌治疗的具体药物、剂量与方案；只说明机制层面的治疗逻辑。</li><li>检验点研究的多数结论来自培养细胞与酵母模型，在体组织的检验点行为受微环境与免疫监视影响，不能直接外推。</li></ul>
+<blockquote><p><strong>免责声明：</strong> 本章为医学细胞生物学的教学材料，用于建立「计时—闸门—分离」的分析框架，不构成医学意见、诊断或治疗建议。文中机制说明为教学层面的概括；肿瘤的诊断、分期与治疗须由具备资质的执业人员依现行规范作出。</p></blockquote></div></div>
+  <div class="slide-foot"><span>13 / 14</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="13">
   <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
-  <div class="slide-foot"><span>5 / 5</span><span>disclaimer</span></div>
+  <div class="slide-foot"><span>14 / 14</span><span>disclaimer</span></div>
 </section>
 </div>
 <div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>

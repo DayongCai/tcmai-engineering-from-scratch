@@ -7,56 +7,51 @@ const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 
 const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'liuxingbing-xue', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'liuxingbing-xue', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const { analyze, formulaAudit, quizSummary, readDoc, CHAPTER, SLUG, TITLE } = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+test('脚本自带自检：规模、算术、公式复核、quiz 结构', () => {
+  const r = analyze();
+  assert.ok(r.docHanzi > 1000, '正文汉字过少：' + r.docHanzi);
+  assert.ok(r.paragraphs >= 10, '段落过少：' + r.paragraphs);
+  assert.ok(r.sections.length >= 5, '节数过少：' + r.sections.length);
+  assert.ok(r.arith.lines.length >= 4, '算术输出过少');
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('正文里每一处二元算式都能复算', () => {
+  const bad = formulaAudit(readDoc()).filter((x) => !x.ok);
+  assert.deepStrictEqual(bad.map((x) => x.expr), [], '有算式对不上');
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('quiz 六项硬指标：题量、三段、四选项、解释长度、答案合法、check 接地', () => {
+  const q = quizSummary(JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8')), readDoc());
+  assert.ok(q.total >= 6, '题量不足：' + q.total);
+  assert.ok(q.stageComplete, 'pre/check/post 不齐');
+  assert.ok(q.allFour, '有题目不是 4 个选项');
+  assert.strictEqual(q.badCorrect, 0, '有题目 correct 下标非法');
+  assert.ok(q.minExplain >= 30, '有解释短于 30 汉字');
+  assert.ok(q.checkGrounded >= 2, 'check 题接地不足：' + q.checkGrounded);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('只读本章正文与 quiz，不碰 standards 取数层', () => {
+  const src = fs.readFileSync(MAIN, 'utf8');
+  assert.ok(!src.includes("'standards'"), '代码里出现了 standards 取数');
+  assert.ok(!/units\.json|chapter-map/.test(src), '代码里出现了单元层取数');
+  assert.ok(src.includes("'..', 'docs', 'zh.md'"), '正文路径不对');
+  assert.ok(src.includes("'..', 'quiz.json'"), 'quiz 路径不对');
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
-});
-
-test('脚本可运行且输出含教学样例与边界声明', () => {
+test('脚本可运行且退出码为 0，输出含自检结论', () => {
   const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/liuxingbing-xue\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
+  assert.match(out, /公式复核：/);
+  assert.match(out, /自检：通过/);
+  assert.match(out, /不构成诊疗建议/);
 });
 
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/06-shiyan-liuxingbingxue/docs/zh.md'), '头部注释未指向本章');
+test('章节号与标题取自正文一级标题', () => {
+  const h1 = readDoc().match(/^#\s*第\s*(\d+)\s*章\s*·\s*(.+)$/m);
+  assert.ok(h1, '正文缺少一级标题');
+  assert.strictEqual(Number(h1[1]), CHAPTER);
+  assert.strictEqual(h1[2].trim(), TITLE);
 });

@@ -38,6 +38,16 @@ const all = fs.readdirSync(STD).filter((d) => fs.existsSync(path.join(STD, d, 'r
 // 但「complete 却没块」必须报——那说明注入失败。
 const drafts = all.filter((d) => readJson(`standards/${d}/rewrite-plan.json`).status === 'draft');
 const courses = all.filter((d) => !drafts.includes(d));
+
+// 教材章由生成器整篇产出、而非 import_textbooks 导入的科目，见 data/textbook-generators.json
+// （同一份表 apply_rewrite_block.py 也读）。两类区别：
+//   rewriteBlocks=false → 整篇由生成器重算，没有 REWRITE 块，本文件整门跳过；
+//   rewriteBlocks=true  → 块照旧，但正文由生成器产出，不带「请勿手改」尾注，
+//                         [7] 改由该生成器自己的 --check 保证（见 check 链）。
+const GENS = (() => {
+  const p = path.join(ROOT, 'data', 'textbook-generators.json');
+  return fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, 'utf8')).subjects || {} : {};
+})();
 console.log(`\n源正文层 + 判断层（已注入 ${courses.length} 门；草稿 ${drafts.length} 门不入门）\n`);
 
 const SECTIONS = ['## N.1 概念与出处', '## N.2 为什么可以这样翻译', '## N.3 这个翻译丢掉了什么',
@@ -46,6 +56,11 @@ const SECTIONS = ['## N.1 概念与出处', '## N.2 为什么可以这样翻译'
 for (const slug of courses) {
   const cfg = readJson(`standards/${slug}/rewrite-plan.json`);
   const subj = cfg.subject || slug;
+  const gen = GENS[subj];
+  if (gen && gen.rewriteBlocks === false) {
+    console.log(`  skip - [${slug}] 整篇由 ${gen.generator} 生成，不注入 REWRITE 块（见 data/textbook-generators.json）`);
+    continue;
+  }
   const dir = path.join(ROOT, 'textbooks', cfg.dept, subj);
   const errs = [];
   let blocks = 0;
@@ -73,9 +88,13 @@ for (const slug of courses) {
     for (const k of ['n2', 'n5']) {
       if (hanzi(ch[k]) < 200) errs.push(`第 ${n} 章：plan.${k} 只有 ${hanzi(ch[k])} 汉字`);
     }
-    // [7] 正文尾注仍在：块前内容必须含 import_textbooks 的「请勿手改」提示
+    // [7] 正文尾注仍在：块前内容必须含 import_textbooks 的「请勿手改」提示。
+    // 正文由脚本生成器产出的科目（rewriteBlocks=true，如 08-jingui-yaolue）没有这条尾注，
+    // 其正文完整性由生成器自己的 --check 保证，这里只核块本身。
     const body = t.slice(0, iB);
-    if (!body.includes('请勿手改')) errs.push(`第 ${n} 章：块前正文缺 import_textbooks 尾注（正文被改过？）`);
+    if (!(gen && gen.rewriteBlocks) && !body.includes('请勿手改')) {
+      errs.push(`第 ${n} 章：块前正文缺 import_textbooks 尾注（正文被改过？）`);
+    }
   }
 
   ok(!errs.length, `[${slug}] ${blocks}/${cfg.chapters.length} 章：块在文末、八节齐、免责位置正确、N.2/N.5 ≥200 汉字、正文尾注完好${errs.length ? '；' + errs[0] : ''}`);

@@ -28,7 +28,7 @@
       "spoken": "「《F:/textbooks/机器学习·医疗保障与社会救助》」——教材第7章。本章要回答的是：医疗保障与社会救助：这一章要回答什么。",
       "estimateSeconds": 14,
       "audio": "002.mp3",
-      "audioSeconds": 12.82
+      "audioSeconds": 12.816
     },
     {
       "n": 3,
@@ -38,7 +38,7 @@
       "spoken": "医疗保障与社会救助：本课第 7 章。",
       "estimateSeconds": 3,
       "audio": "003.mp3",
-      "audioSeconds": 3.82
+      "audioSeconds": 3.816
     },
     {
       "n": 4,
@@ -48,7 +48,7 @@
       "spoken": "环境逼迫（社会医学的判据是「差异量得出、机制说得清、干预可评」）+ 知识积累（本章 22 单元 34,993 汉字；三辨主 绩效与评价 1181；四位面（章群结构）主 体系与政策 34993；引书 11 部 29 次；数值类命中 0）",
       "estimateSeconds": 22,
       "audio": "004.mp3",
-      "audioSeconds": 24.5
+      "audioSeconds": 24.504
     },
     {
       "n": 5,
@@ -58,10 +58,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "005.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 55.92,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 0.88,
+    "measuredMinutes": 0.93,
+    "ratio": 1.055
+  }
 }

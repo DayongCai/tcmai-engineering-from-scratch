@@ -18,7 +18,7 @@
       "spoken": "第 1 章 · 儿科护理概述与工作模式",
       "estimateSeconds": 3,
       "audio": "001.mp3",
-      "audioSeconds": 3.79
+      "audioSeconds": 3.792
     },
     {
       "n": 2,
@@ -28,7 +28,7 @@
       "spoken": "「《儿科护理学·第1章 儿科护理学概述》」——教材第 1 章章目级引文；教材无篇名级引文，非本章原文篇名。本章要回答的是：儿科护理概述与工作模式这一章的核心判据是什么。",
       "estimateSeconds": 18,
       "audio": "002.mp3",
-      "audioSeconds": 17.33
+      "audioSeconds": 17.328
     },
     {
       "n": 3,
@@ -38,7 +38,7 @@
       "spoken": "概述与工作模式合章：先讲儿科护理的对象特殊性与团队协作。",
       "estimateSeconds": 6,
       "audio": "003.mp3",
-      "audioSeconds": 6.29
+      "audioSeconds": 6.288
     },
     {
       "n": 4,
@@ -48,7 +48,7 @@
       "spoken": "环境逼迫（儿童不能自述、代偿窗窄、剂量按体重算，观察要更密、沟通要走家长）+ 知识积累（本章 2 单元 38,182 汉字；三辨主 疾病护理 551；四位面（系统）主 学龄前与学龄 27；引书 0 部 0 次；数值类命中 0）",
       "estimateSeconds": 22,
       "audio": "004.mp3",
-      "audioSeconds": 22.99
+      "audioSeconds": 22.992
     },
     {
       "n": 5,
@@ -58,10 +58,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "005.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 61.7,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 1.0,
+    "measuredMinutes": 1.03,
+    "ratio": 1.028
+  }
 }

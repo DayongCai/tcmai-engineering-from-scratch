@@ -28,7 +28,7 @@
       "spoken": "「七七，任脉虚，太冲脉衰少，天癸竭，地道不通，故形坏而无子也」——教材·第6章·6.3.2（《素问·上古天真论》）",
       "estimateSeconds": 12,
       "audio": "002.mp3",
-      "audioSeconds": 12.02
+      "audioSeconds": 12.024
     },
     {
       "n": 3,
@@ -38,7 +38,7 @@
       "spoken": "保健章最容易被读成「多喝水、早点睡」。教材的写法不同：它按五个阶段（经期、孕期、产褥期、哺乳期、绝经期）逐个给出「此期身体处于什么状态 ， 因此禁止做什么」。每一条都对应一个具体病（经期受寒，痛经；孕期提重，胎动不安；产褥当风，产后身痛）。学生记不住，是因为只记禁令不记机制。",
       "estimateSeconds": 30,
       "audio": "003.mp3",
-      "audioSeconds": 29.02
+      "audioSeconds": 29.016
     },
     {
       "n": 4,
@@ -59,7 +59,7 @@
       "spoken": "这一段以代码实现为主，请看画面上的代码块。",
       "estimateSeconds": 5,
       "audio": "005.mp3",
-      "audioSeconds": 4.51
+      "audioSeconds": 4.512
     },
     {
       "n": 6,
@@ -69,10 +69,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "006.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 89.98,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 1.53,
+    "measuredMinutes": 1.5,
+    "ratio": 0.978
+  }
 }

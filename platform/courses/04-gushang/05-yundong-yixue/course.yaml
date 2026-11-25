@@ -29,50 +29,49 @@ platform:
 
 chapters:
   - slug: 01-gailun
-    title: 第1章 运动医学概论
-    segments: 5
+    title: 运动医学的终点不是不疼，是这个人还能不能做回原来那个动作
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 0.99
+    estimate_minutes: 9.38      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.11      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-sunshang-jizhi
-    title: 第2章 运动损伤的机制与分类
-    segments: 5
+    title: 分类的价值不在名字起得准，在这一刀切下去处理方案会跟着变
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1.01
+    estimate_minutes: 8.37      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.15      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-pinggu-yingxiang
-    title: 第3章 损伤评估与影像
-    segments: 5
+    title: 影像回答哪里断了，查体回答他还能做什么，两者不能互相代替
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.99
+    estimate_minutes: 10.30      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.46      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-jixing-chuli
-    title: 第4章 急性损伤处理与康复分期
-    segments: 5
+    title: 冰敷退场不是因为冷不好，是因为「先消炎」这个前提被换掉了
     video: rendered
-    estimate_minutes: 1.03
-    measured_minutes: 1.05
+    estimate_minutes: 9.50      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 7.83      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-sizhi-sunshang
-    title: 第5章 上肢与下肢常见损伤
-    segments: 5
+    title: 踝与膝的伤多半不是那一次扭，是扭完之后没人管它该稳在哪
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1.01
+    estimate_minutes: 11.43      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.33      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-qugan-guoyong
-    title: 第6章 躯干损伤与过用性损伤
-    segments: 5
+    title: 过用性损伤不是用得太多，是修复追不上破坏
     video: rendered
-    estimate_minutes: 1.02
-    measured_minutes: 1.02
+    estimate_minutes: 10.62      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.01      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-fanghu-xunlian
-    title: 第7章 运动防护与体能训练
-    segments: 5
+    title: 热身不是为了活动开，是为了在第一次发力之前把该查的都查一遍
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1.02
+    estimate_minutes: 9.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.54      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-chongfan-yundong
-    title: 第8章 重返运动与复发预防
-    segments: 5
+    title: 能上场不是判据，能在这个强度下反复出现而不出问题才是
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1
+    estimate_minutes: 10.03      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.19      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

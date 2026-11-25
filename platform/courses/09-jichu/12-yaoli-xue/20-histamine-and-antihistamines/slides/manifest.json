@@ -1,131 +1,196 @@
 {
   "chapter": "20-histamine-and-antihistamines",
-  "slideCount": 25,
-  "segmentCount": 15,
+  "slideCount": 38,
+  "segmentCount": 12,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 32
+      "chars": 30
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 46
+      "chars": 18
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 196
+      "chars": 50
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 218
+      "chars": 85
     },
     {
       "n": 5,
       "segment": 5,
-      "chars": 343
+      "chars": 90
     },
     {
       "n": 6,
       "segment": 5,
-      "chars": 266
+      "chars": 338
     },
     {
       "n": 7,
-      "segment": 6,
-      "chars": 312
+      "segment": 5,
+      "chars": 302
     },
     {
       "n": 8,
       "segment": 6,
-      "chars": 133
+      "chars": 419
     },
     {
       "n": 9,
-      "segment": 7,
-      "chars": 286
+      "segment": 6,
+      "chars": 408
     },
     {
       "n": 10,
-      "segment": 7,
-      "chars": 294
+      "segment": 6,
+      "chars": 270
     },
     {
       "n": 11,
-      "segment": 8,
-      "chars": 317
+      "segment": 6,
+      "chars": 204
     },
     {
       "n": 12,
-      "segment": 8,
-      "chars": 155
+      "segment": 7,
+      "chars": 364
     },
     {
       "n": 13,
-      "segment": 9,
-      "chars": 402
+      "segment": 7,
+      "chars": 332
     },
     {
       "n": 14,
-      "segment": 9,
-      "chars": 333
+      "segment": 7,
+      "chars": 321
     },
     {
       "n": 15,
-      "segment": 10,
-      "chars": 331
+      "segment": 7,
+      "chars": 166
     },
     {
       "n": 16,
-      "segment": 10,
-      "chars": 147
+      "segment": 8,
+      "chars": 229
     },
     {
       "n": 17,
-      "segment": 11,
-      "chars": 318
+      "segment": 8,
+      "chars": 295
     },
     {
       "n": 18,
-      "segment": 11,
-      "chars": 387
+      "segment": 8,
+      "chars": 389
     },
     {
       "n": 19,
-      "segment": 11,
-      "chars": 147
+      "segment": 9,
+      "chars": 288
     },
     {
       "n": 20,
-      "segment": 12,
-      "chars": 313
+      "segment": 9,
+      "chars": 283
     },
     {
       "n": 21,
-      "segment": 12,
-      "chars": 344
+      "segment": 9,
+      "chars": 350
     },
     {
       "n": 22,
-      "segment": 13,
-      "chars": 377
+      "segment": 9,
+      "chars": 187
     },
     {
       "n": 23,
-      "segment": 14,
-      "chars": 380
+      "segment": 10,
+      "chars": 321
     },
     {
       "n": 24,
-      "segment": 14,
-      "chars": 269
+      "segment": 10,
+      "chars": 299
     },
     {
       "n": 25,
-      "segment": 15,
+      "segment": 10,
+      "chars": 288
+    },
+    {
+      "n": 26,
+      "segment": 10,
+      "chars": 238
+    },
+    {
+      "n": 27,
+      "segment": 10,
+      "chars": 278
+    },
+    {
+      "n": 28,
+      "segment": 10,
+      "chars": 250
+    },
+    {
+      "n": 29,
+      "segment": 10,
+      "chars": 289
+    },
+    {
+      "n": 30,
+      "segment": 10,
+      "chars": 252
+    },
+    {
+      "n": 31,
+      "segment": 10,
+      "chars": 284
+    },
+    {
+      "n": 32,
+      "segment": 10,
+      "chars": 406
+    },
+    {
+      "n": 33,
+      "segment": 10,
+      "chars": 237
+    },
+    {
+      "n": 34,
+      "segment": 10,
+      "chars": 409
+    },
+    {
+      "n": 35,
+      "segment": 10,
+      "chars": 216
+    },
+    {
+      "n": 36,
+      "segment": 11,
+      "chars": 524
+    },
+    {
+      "n": 37,
+      "segment": 11,
+      "chars": 383
+    },
+    {
+      "n": 38,
+      "segment": 12,
       "chars": 52
     }
   ]

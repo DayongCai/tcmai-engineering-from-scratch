@@ -48,7 +48,7 @@
       "spoken": "环境逼迫（养生要回答的是「什么人、什么季节、该调什么」，缺了对象与时令，方法就成空话）+ 知识积累（本章 9 单元 24,935 汉字；三辨主 养生方法 381；四位面（时令与人群）主 起居与运动 350；引书 43 部 64 次；数值类命中 0）",
       "estimateSeconds": 24,
       "audio": "004.mp3",
-      "audioSeconds": 24.89
+      "audioSeconds": 24.888
     },
     {
       "n": 5,
@@ -58,10 +58,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "005.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 59.47,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 0.97,
+    "measuredMinutes": 0.99,
+    "ratio": 1.025
+  }
 }

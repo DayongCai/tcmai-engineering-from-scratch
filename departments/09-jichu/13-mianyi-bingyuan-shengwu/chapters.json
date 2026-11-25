@@ -6,7 +6,7 @@
   {
    "n": 1,
    "slug": "01-mianyi-xulun",
-   "title": "免疫学绪论",
+   "title": "免疫的本质是分清自己与非己的能力",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-kangyuan",
-   "title": "抗原",
+   "title": "抗原的分量不在分子大小，而在能否被识别的表位",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -22,7 +22,7 @@
   {
    "n": 3,
    "slug": "03-mianyi-fenzi",
-   "title": "免疫分子",
+   "title": "抗体、补体与细胞因子各司其职，缺一环则识别化为空谈",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -30,7 +30,7 @@
   {
    "n": 4,
    "slug": "04-mianyi-xibao",
-   "title": "免疫细胞",
+   "title": "免疫细胞的分工，决定了应答在哪一层被改写",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -38,7 +38,7 @@
   {
    "n": 5,
    "slug": "05-mianyi-yingda",
-   "title": "免疫应答",
+   "title": "免疫应答是按时间表编排的四段接力",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -46,7 +46,7 @@
   {
    "n": 6,
    "slug": "06-chaomin-fanying",
-   "title": "超敏反应",
+   "title": "同一套应答机制，指向错处即为损伤",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -54,7 +54,7 @@
   {
    "n": 7,
    "slug": "07-mianyi-yingyong",
-   "title": "免疫学应用",
+   "title": "免疫学的用处，全在把不可见的识别变成可读的信号",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -62,7 +62,7 @@
   {
    "n": 8,
    "slug": "08-bingyuan-xulun",
-   "title": "病原生物学绪论",
+   "title": "病原生物学的核心，是共生关系被打破的那一刻",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -70,7 +70,7 @@
   {
    "n": 9,
    "slug": "09-xijun-zonglun",
-   "title": "细菌学总论",
+   "title": "细菌的致病力写在结构上，也写在生长条件里",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -78,7 +78,7 @@
   {
    "n": 10,
    "slug": "10-changjian-xijun",
-   "title": "常见致病细菌",
+   "title": "常见病原菌的辨识，靠毒力因子与染色反应两条线索",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -86,7 +86,7 @@
   {
    "n": 11,
    "slug": "11-bingdu-zonglun",
-   "title": "病毒学总论",
+   "title": "病毒没有独立代谢，故其致病全凭借宿主之手",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -94,7 +94,7 @@
   {
    "n": 12,
    "slug": "12-changjian-bingdu",
-   "title": "常见致病病毒",
+   "title": "常见病毒的差别，在于侵犯哪一类细胞与留下何种免疫印记",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -102,7 +102,7 @@
   {
    "n": 13,
    "slug": "13-zhenjunxue",
-   "title": "真菌学",
+   "title": "真菌致病多不靠毒素，而靠机会与慢性迁延",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -110,7 +110,7 @@
   {
    "n": 14,
    "slug": "14-jishengchong-gaishu",
-   "title": "医学寄生虫学概述",
+   "title": "寄生虫病的要害，是生活史里那一段离开人体的路程",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -118,7 +118,7 @@
   {
    "n": 15,
    "slug": "15-changjian-jishengchong",
-   "title": "常见致病寄生虫",
+   "title": "常见寄生虫的辨识，落在虫卵形态与宿主转换上",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

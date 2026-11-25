@@ -38,7 +38,7 @@
       "spoken": "教材此章只写《中国药典》；方法学通则与指导原则在「四部」，篇名按此补足。",
       "estimateSeconds": 8,
       "audio": "003.mp3",
-      "audioSeconds": 7.54
+      "audioSeconds": 7.536
     },
     {
       "n": 4,
@@ -48,7 +48,7 @@
       "spoken": "环境逼迫（中药是混合物，任何一个「成分」都要先分出来才能说清楚）+ 知识积累（本章 3 单元 8,560 汉字；三辨主 提分与检识 257；四位面（生源途径）主 莽草酸途径 21；引书 2 部 4 次；数值类命中 0）",
       "estimateSeconds": 21,
       "audio": "004.mp3",
-      "audioSeconds": 21.17
+      "audioSeconds": 21.168
     },
     {
       "n": 5,
@@ -58,10 +58,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "005.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 54.65,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 0.92,
+    "measuredMinutes": 0.91,
+    "ratio": 0.994
+  }
 }

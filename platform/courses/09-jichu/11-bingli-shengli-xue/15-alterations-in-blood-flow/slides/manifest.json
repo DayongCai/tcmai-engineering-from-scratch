@@ -1,7 +1,7 @@
 {
   "chapter": "15-alterations-in-blood-flow",
-  "slideCount": 28,
-  "segmentCount": 17,
+  "slideCount": 26,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
@@ -11,7 +11,7 @@
     {
       "n": 2,
       "segment": 2,
-      "chars": 75
+      "chars": 29
     },
     {
       "n": 3,
@@ -26,121 +26,111 @@
     {
       "n": 5,
       "segment": 5,
-      "chars": 313
+      "chars": 331
     },
     {
       "n": 6,
       "segment": 5,
-      "chars": 294
+      "chars": 405
     },
     {
       "n": 7,
-      "segment": 6,
-      "chars": 384
+      "segment": 5,
+      "chars": 350
     },
     {
       "n": 8,
-      "segment": 6,
-      "chars": 329
+      "segment": 5,
+      "chars": 408
     },
     {
       "n": 9,
-      "segment": 7,
-      "chars": 388
+      "segment": 5,
+      "chars": 334
     },
     {
       "n": 10,
-      "segment": 7,
-      "chars": 67
+      "segment": 6,
+      "chars": 398
     },
     {
       "n": 11,
-      "segment": 8,
-      "chars": 377
+      "segment": 6,
+      "chars": 408
     },
     {
       "n": 12,
-      "segment": 8,
-      "chars": 150
+      "segment": 6,
+      "chars": 356
     },
     {
       "n": 13,
-      "segment": 9,
-      "chars": 403
+      "segment": 6,
+      "chars": 355
     },
     {
       "n": 14,
-      "segment": 9,
-      "chars": 93
+      "segment": 6,
+      "chars": 403
     },
     {
       "n": 15,
-      "segment": 10,
-      "chars": 377
+      "segment": 6,
+      "chars": 232
     },
     {
       "n": 16,
-      "segment": 10,
-      "chars": 178
+      "segment": 7,
+      "chars": 334
     },
     {
       "n": 17,
-      "segment": 11,
-      "chars": 333
+      "segment": 7,
+      "chars": 406
     },
     {
       "n": 18,
-      "segment": 11,
-      "chars": 156
+      "segment": 7,
+      "chars": 337
     },
     {
       "n": 19,
-      "segment": 12,
-      "chars": 313
+      "segment": 7,
+      "chars": 339
     },
     {
       "n": 20,
-      "segment": 12,
-      "chars": 123
-    },
-    {
-      "n": 21,
-      "segment": 13,
-      "chars": 382
-    },
-    {
-      "n": 22,
-      "segment": 14,
-      "chars": 311
-    },
-    {
-      "n": 23,
-      "segment": 14,
-      "chars": 219
-    },
-    {
-      "n": 24,
-      "segment": 15,
+      "segment": 8,
       "chars": 328
     },
     {
-      "n": 25,
-      "segment": 15,
+      "n": 21,
+      "segment": 8,
       "chars": 116
     },
     {
-      "n": 26,
-      "segment": 16,
+      "n": 22,
+      "segment": 9,
       "chars": 399
     },
     {
-      "n": 27,
-      "segment": 16,
-      "chars": 318
+      "n": 23,
+      "segment": 9,
+      "chars": 379
     },
     {
-      "n": 28,
-      "segment": 17,
+      "n": 24,
+      "segment": 9,
+      "chars": 387
+    },
+    {
+      "n": 25,
+      "segment": 9,
+      "chars": 368
+    },
+    {
+      "n": 26,
+      "segment": 10,
       "chars": 52
     }
   ]

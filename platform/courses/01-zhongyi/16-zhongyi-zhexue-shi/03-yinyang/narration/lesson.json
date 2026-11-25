@@ -38,7 +38,7 @@
       "spoken": "阴阳最容易被当成两个「东西」：阴虚、阳虚、阴阳两虚，好像在数实物。实际阴阳是一组关系：没有孤立的阴，也没有孤立的阳。这一章要说明的是：为什么这组关系可以在任何层面重复使用（脏、证、药、时）。",
       "estimateSeconds": 21,
       "audio": "003.mp3",
-      "audioSeconds": 20.35
+      "audioSeconds": 20.352
     },
     {
       "n": 4,
@@ -59,7 +59,7 @@
       "spoken": "这一段以代码实现为主，请看画面上的代码块。",
       "estimateSeconds": 5,
       "audio": "005.mp3",
-      "audioSeconds": 4.51
+      "audioSeconds": 4.512
     },
     {
       "n": 6,
@@ -69,10 +69,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "006.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 63.41,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 1.05,
+    "measuredMinutes": 1.06,
+    "ratio": 1.006
+  }
 }

@@ -5,61 +5,61 @@
   {
    "n": 1,
    "slug": "01-yuanliu-yuanli",
-   "title": "推拿的源流与治疗原理",
+   "title": "推拿的疗效有通路，源流只是它的来路",
    "status": "🚧"
   },
   {
    "n": 2,
    "slug": "02-shiyingzheng-fengxian",
-   "title": "推拿的适应证、禁忌与风险",
+   "title": "推拿能治什么，取决于它的作用落在哪一层",
    "status": "🚧"
   },
   {
    "n": 3,
    "slug": "03-chengren-buwei",
-   "title": "成人推拿的常用部位与操作",
+   "title": "手法的名字记着力面，处方的效力记在顺序上",
    "status": "🚧"
   },
   {
    "n": 4,
    "slug": "04-xiaoer-tuina",
-   "title": "小儿推拿的特定穴与手法",
+   "title": "小儿推拿换掉的不是穴位尺寸，是补泻的计量单位",
    "status": "🚧"
   },
   {
    "n": 5,
    "slug": "05-jizhu-tuina",
-   "title": "脊柱推拿与手法安全性",
+   "title": "脊柱手法的技术含量，一半在决定不做哪一手",
    "status": "🚧"
   },
   {
    "n": 6,
    "slug": "06-jingjian-yaotui",
-   "title": "推拿治疗颈肩腰腿痛",
+   "title": "病名换了九个，处方的骨架只有一套",
    "status": "🚧"
   },
   {
    "n": 7,
    "slug": "07-neike-fuke",
-   "title": "推拿在内科与妇科的应用",
+   "title": "内科妇科推拿的差别不在手法而在时程",
    "status": "🚧"
   },
   {
    "n": 8,
    "slug": "08-lixue-celiang",
-   "title": "推拿的力学测量与剂量",
+   "title": "手法剂量里频率可抄，力度只能自己校准",
    "status": "🚧"
   },
   {
    "n": 9,
    "slug": "09-liaoxiao-pingjia",
-   "title": "推拿疗效的评价与盲法难题",
+   "title": "手法不能设盲，疗效判据只能外置",
    "status": "🚧"
   },
   {
    "n": 10,
    "slug": "10-chufang-jilu",
-   "title": "推拿处方的结构化记录",
+   "title": "一份可复现的处方只由可判定字段构成",
    "status": "🚧"
   }
  ]

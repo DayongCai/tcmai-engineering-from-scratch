@@ -29,74 +29,73 @@ platform:
 
 chapters:
   - slug: 01-huaxue-leixing
-    title: 第1章 中药化学成分的类型与分布
-    segments: 5
+    title: 中药化学的第一件事不是提纯，是给一团混合物分堆
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 0.99
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.99      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-tiqu-fenli
-    title: 第2章 提取分离：溶剂、色谱与制备
-    segments: 5
+    title: 提取不是把成分取出来，是把杂质一层层扔掉
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.96
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-shengwujian
-    title: 第3章 生物碱类：结构与活性
-    segments: 5
+    title: 生物碱的全部工艺，都写在 pKa 与溶解度这两张表上
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.93
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-huangtong
-    title: 第4章 黄酮类：结构与显色
-    segments: 5
+    title: 黄酮的颜色、酸性与荧光，都由同一个共轭体系决定
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.92
+    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-tielei-huiyou
-    title: 第5章 萜类与挥发油
-    segments: 5
+    title: 萜类与挥发油：能不能蒸馏，由五个碳的个数决定
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.93
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-zaogan-lei
-    title: 第6章 皂苷类：溶血与表面活性
-    segments: 5
+    title: 皂苷的两张面孔：一面起泡溶血，一面是补益药的主体
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.93
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-kun-xiangdousu
-    title: 第7章 醌类与香豆素
-    segments: 5
+    title: 醌与香豆素：一个羰基与一个内酯环，把泻下和荧光分成两路
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.92
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-duotang-rouzhi
-    title: 第8章 多糖与鞣质
-    segments: 5
+    title: 多糖与鞣质：分子量一过大，显色反应就换了主人
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.89
+    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.89      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-jiegou-bopu
-    title: 第9章 结构鉴定：波谱解析入门
-    segments: 5
+    title: 四种波谱各管一段，凑不齐就不叫结构
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.93
+    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-yaoxiao-wuzhi
-    title: 第10章 有效成分与药效物质基础
-    segments: 5
+    title: 「有效成分」是化学判断，不是疗效结论
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.94
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 11-hanshang-ceding
-    title: 第11章 成分含量测定与方法学验证
-    segments: 5
+    title: 含量测定的数字，先由方法定义，再由样品证明
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.91
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 12-chengfen-badian
-    title: 第12章 成分—靶点网络与活性预测
-    segments: 5
+    title: 网络图上的「核心靶点」是算出来的假说
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.96
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

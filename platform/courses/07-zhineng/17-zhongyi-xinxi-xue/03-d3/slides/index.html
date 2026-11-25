@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"/>
-<title>第 3 章 · 中医药信息标准化／中医药数据表示与数据元／中医药数据库技术／医院信息系统与中医临床信息化 · 幻灯片</title>
+<title>第 3 章 · 标准化：标准不是一份文档，是代码里的枚举与校验 · 幻灯片</title>
 <style>
 
 :root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
@@ -59,19 +59,19 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <body>
 <div id="deck">
 <section class="slide" data-i="0">
-  <div class="slide-inner"><h1 class="big">第 3 章 · 中医药信息标准化／中医药数据表示与数据元／中医药数据库技术／医院信息系统与中医临床信息化</h1></div>
+  <div class="slide-inner"><h1 class="big">第 3 章 · 标准化：标准不是一份文档，是代码里的枚举与校验</h1></div>
   <div class="slide-foot"><span>1 / 5</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「《中医信息学·中医药信息标准化／中医药数据表示》」——教材第3章。本章要回答的是：中医药信息标准化／中医药数据表示与数据元／中医药数据库技术／医院信息系统与中医临床信息化：这一章要回答什么。</blockquote></div>
+  <div class="slide-inner"><blockquote class="motto">「名不正则言不顺，言不顺则事不成」——《论语·子路》</blockquote></div>
   <div class="slide-foot"><span>2 / 5</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
-  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">中医药信息标准化／中医药数据表示与数据元／中医药数据库技术／医院信息系统与中医临床信息化：本课第 3 章。</p></div>
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">一份标准发布之后最常见的结局，是装进文件柜，业务系统照旧自由录入。检验标准的地方不在发布会，在一条 INSERT 语句上——值域没约束住，标准就等于零。教材给了个具体现场：同一份病历，A 院写「消渴」，B 院写「糖尿病」，医保系统里是第三个代码。三份数据放到一起，谁也对不上号，而每一份在自己院里都「没问题」。</p></div>
   <div class="slide-foot"><span>3 / 5</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
-  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（信息学的判据是「标准—表示—检索」三件套）+ 知识积累（本章 24 单元 1,390 汉字；三辨主 <strong>方法与技术 18</strong>；四位面（章群结构）主 <strong>位面2 1390</strong>；引书 <strong>2 部 2 次</strong>；数值类命中 4）</p></div>
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（上报口径、结算口径、科研口径三套并存，任何一方都不肯先改）+ 知识积累（本章 24 个单元 1,390 汉字，标准化只占开头 6 个单元，表示、数据库、HIS 占了其余——教材把标准当引子，其实它是后面每一节的隐含前提）</p></div>
   <div class="slide-foot"><span>4 / 5</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">

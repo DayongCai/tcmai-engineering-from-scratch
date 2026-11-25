@@ -28,7 +28,7 @@
       "spoken": "「因而饱食，筋脉横解，肠澼为痔」——教材·第9章·9.1.1（《素问·生气通天论》）",
       "estimateSeconds": 9,
       "audio": "002.mp3",
-      "audioSeconds": 8.62
+      "audioSeconds": 8.616
     },
     {
       "n": 3,
@@ -48,7 +48,7 @@
       "spoken": "环境逼迫（直肠癌最典型的延误路径就是「按痔治了半年」；教材把「40 岁以上、排便习惯改变、便血、便条变细」写成警示条件）+ 知识积累（本章 40 个单元、27,005 字里，三辨重心落在病因（213 次）、四位面落在脏腑（155 次）——比皮肤病更偏「因」，因为肛肠病的病因集中在湿、热、燥、气虚下陷四路，而病位又始终挂在脾胃大肠）",
       "estimateSeconds": 35,
       "audio": "004.mp3",
-      "audioSeconds": 32.95
+      "audioSeconds": 32.952
     },
     {
       "n": 5,
@@ -59,7 +59,7 @@
       "spoken": "这一段以代码实现为主，请看画面上的代码块。",
       "estimateSeconds": 5,
       "audio": "005.mp3",
-      "audioSeconds": 4.51
+      "audioSeconds": 4.512
     },
     {
       "n": 6,
@@ -69,10 +69,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "006.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 84.86,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 1.47,
+    "measuredMinutes": 1.41,
+    "ratio": 0.964
+  }
 }

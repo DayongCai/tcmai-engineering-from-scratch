@@ -18,7 +18,7 @@
       "spoken": "第 3 章 · 病因病机：四个入口，三条通路",
       "estimateSeconds": 4,
       "audio": "001.mp3",
-      "audioSeconds": 4.63
+      "audioSeconds": 4.632
     },
     {
       "n": 2,
@@ -38,7 +38,7 @@
       "spoken": "妇科的病因看起来和内科一样（六淫、七情、饮食劳倦），但权重完全不同：教材把「情志」放在极重的位置，并专列「房劳多产」这一内科没有的病因。学生若照内科的比例去分配注意力，就会漏掉妇科最独特的两条：数伤于血与房劳多产。",
       "estimateSeconds": 23,
       "audio": "003.mp3",
-      "audioSeconds": 22.13
+      "audioSeconds": 22.128
     },
     {
       "n": 4,
@@ -48,7 +48,7 @@
       "spoken": "环境逼迫（女性的经、孕、产、乳在几十年里反复耗血，同一致病因素在不同阶段累积效应不同）+ 知识积累（本章 7 单元、11,099 字，病机 253 居三辨首位、冲任 113 居四位面首位——本章是全课程唯一「冲任」居首的章，因为病机学说就长在这里；数值 0，全章无一处数字，是纯理论章）",
       "estimateSeconds": 29,
       "audio": "004.mp3",
-      "audioSeconds": 28.85
+      "audioSeconds": 28.848
     },
     {
       "n": 5,
@@ -59,7 +59,7 @@
       "spoken": "这一段以代码实现为主，请看画面上的代码块。",
       "estimateSeconds": 5,
       "audio": "005.mp3",
-      "audioSeconds": 4.51
+      "audioSeconds": 4.512
     },
     {
       "n": 6,
@@ -69,10 +69,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "006.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 78.86,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 1.33,
+    "measuredMinutes": 1.31,
+    "ratio": 0.986
+  }
 }

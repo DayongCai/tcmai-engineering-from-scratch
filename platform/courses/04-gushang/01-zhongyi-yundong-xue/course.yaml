@@ -29,50 +29,49 @@ platform:
 
 chapters:
   - slug: 01-gailun-yuanliu
-    title: 第1章 中医运动学概论与源流
-    segments: 5
+    title: 导引能进医书，靠的不是古老，是能被开出方
     video: rendered
-    estimate_minutes: 1.03
-    measured_minutes: 1.03
+    estimate_minutes: 11.43      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 7.45      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-lilun-jichu
-    title: 第2章 运动的中医理论基础
-    segments: 5
+    title: 运动调的不是肌肉，是气机的升降出入
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1.02
+    estimate_minutes: 11.07      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.51      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-gongneng-suzhi
-    title: 第3章 运动功能与体能要素
-    segments: 5
+    title: 体能不是六项指标的并列，是一条有先后的链
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1.01
+    estimate_minutes: 10.58      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.40      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-daoyin-chufang
-    title: 第4章 导引功法与运动处方
-    segments: 5
+    title: 处方的完整性不在功法选得对不对，在停的条件写没写
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1.01
+    estimate_minutes: 9.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.53      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-guanjie-jianrou
-    title: 第5章 关节活动与柔韧训练
-    segments: 5
+    title: 柔韧不是拉得越开越好，是关节在该动的地方动、该稳的地方稳
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 0.99
+    estimate_minutes: 10.78      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.29      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-jili-naili
-    title: 第6章 肌力与耐力训练
-    segments: 5
+    title: 力量练的是能不能做，耐力练的是能做多久
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 0.97
+    estimate_minutes: 11.87      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.04      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-pingheng-diedao
-    title: 第7章 平衡、协调与跌倒预防
-    segments: 5
+    title: 跌倒不是意外，是一次没通过的压力测试
     video: rendered
-    estimate_minutes: 1.02
-    measured_minutes: 1.03
+    estimate_minutes: 11.18      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.86      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-shanghai-yufang
-    title: 第8章 运动损伤的预防与康复
-    segments: 5
+    title: 损伤处理的第一件事不是止痛，是判断这能不能由你处理
     video: rendered
-    estimate_minutes: 1.02
-    measured_minutes: 1.04
+    estimate_minutes: 12.77      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.43      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

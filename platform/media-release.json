@@ -1,6 +1,6 @@
 {
   "schema": "tcm-media-index/1",
-  "generatedAt": "2026-11-23T06:43:33.431Z",
+  "generatedAt": "2026-11-23T19:57:24.091Z",
   "note": "APP 只读这一份：每门课、每章的 HLS 地址 / 时长 / 封面 / 字幕。播放用 HLS，支持 EXT-X-MEDIA 字幕组。",
   "segmentSeconds": 6,
   "ladder": [
@@ -15,8 +15,8 @@
       "height": 540
     }
   ],
-  "totalDurationSec": 186548.184,
-  "totalBytes": 7853226051,
+  "totalDurationSec": 332908.776,
+  "totalBytes": 13640381835,
   "courses": [
     {
       "id": "01-zhongyi/01-zhongyi-jichu-lilun",
@@ -43,12 +43,204 @@
       "publishJson": "01-zhongyi/10-zhongyi-neike-xue/publish.json"
     },
     {
+      "id": "02-zhongyao/21-zhongyao-du-li-xue",
+      "title": "中药毒理学",
+      "chapterCount": 10,
+      "totalDurationSec": 4617.094,
+      "totalBytes": 188219570,
+      "publishJson": "02-zhongyao/21-zhongyao-du-li-xue/publish.json"
+    },
+    {
+      "id": "04-gushang/01-zhongyi-yundong-xue",
+      "title": "中医运动学",
+      "chapterCount": 8,
+      "totalDurationSec": 4289.668,
+      "totalBytes": 175577842,
+      "publishJson": "04-gushang/01-zhongyi-yundong-xue/publish.json"
+    },
+    {
+      "id": "04-gushang/02-yao-shang-jiepou",
+      "title": "骨伤解剖学",
+      "chapterCount": 10,
+      "totalDurationSec": 6126.646,
+      "totalBytes": 246682479,
+      "publishJson": "04-gushang/02-yao-shang-jiepou/publish.json"
+    },
+    {
+      "id": "04-gushang/03-gushang-kexue-jichu",
+      "title": "中医骨伤科学基础",
+      "chapterCount": 10,
+      "totalDurationSec": 6219.184,
+      "totalBytes": 238361266,
+      "publishJson": "04-gushang/03-gushang-kexue-jichu/publish.json"
+    },
+    {
+      "id": "04-gushang/04-chuangshang-jijiu-xue",
+      "title": "创伤急救学",
+      "chapterCount": 8,
+      "totalDurationSec": 4553.152,
+      "totalBytes": 186735686,
+      "publishJson": "04-gushang/04-chuangshang-jijiu-xue/publish.json"
+    },
+    {
+      "id": "04-gushang/05-yundong-yixue",
+      "title": "运动医学与损伤防护",
+      "chapterCount": 8,
+      "totalDurationSec": 3865.41,
+      "totalBytes": 154315877,
+      "publishJson": "04-gushang/05-yundong-yixue/publish.json"
+    },
+    {
+      "id": "04-gushang/06-zhongyi-zhenggu-xue",
+      "title": "中医正骨学",
+      "chapterCount": 12,
+      "totalDurationSec": 6429.21,
+      "totalBytes": 267579800,
+      "publishJson": "04-gushang/06-zhongyi-zhenggu-xue/publish.json"
+    },
+    {
+      "id": "04-gushang/07-zhongyi-jinshang-xue",
+      "title": "中医筋伤学",
+      "chapterCount": 10,
+      "totalDurationSec": 6186.066,
+      "totalBytes": 256718598,
+      "publishJson": "04-gushang/07-zhongyi-jinshang-xue/publish.json"
+    },
+    {
+      "id": "04-gushang/08-gushang-shoufa-zhiliao",
+      "title": "骨伤科手法治疗学",
+      "chapterCount": 10,
+      "totalDurationSec": 5599.874,
+      "totalBytes": 227617513,
+      "publishJson": "04-gushang/08-gushang-shoufa-zhiliao/publish.json"
+    },
+    {
+      "id": "04-gushang/09-guke-yingxiang-zhenduan",
+      "title": "骨科影像诊断学",
+      "chapterCount": 10,
+      "totalDurationSec": 5640.17,
+      "totalBytes": 179280556,
+      "publishJson": "04-gushang/09-guke-yingxiang-zhenduan/publish.json"
+    },
+    {
+      "id": "04-gushang/10-jizhu-bing-xue",
+      "title": "脊柱病学",
+      "chapterCount": 10,
+      "totalDurationSec": 4899.018,
+      "totalBytes": 168559724,
+      "publishJson": "04-gushang/10-jizhu-bing-xue/publish.json"
+    },
+    {
+      "id": "04-gushang/11-guanjie-bing-xue",
+      "title": "关节病学",
+      "chapterCount": 10,
+      "totalDurationSec": 5890.898,
+      "totalBytes": 196279194,
+      "publishJson": "04-gushang/11-guanjie-bing-xue/publish.json"
+    },
+    {
+      "id": "04-gushang/12-guzhishusong-tuibian",
+      "title": "骨质疏松与退行性疾病",
+      "chapterCount": 8,
+      "totalDurationSec": 4313.738,
+      "totalBytes": 146726663,
+      "publishJson": "04-gushang/12-guzhishusong-tuibian/publish.json"
+    },
+    {
+      "id": "04-gushang/14-kangfu-gongcheng-zhiju",
+      "title": "康复工程与支具学",
+      "chapterCount": 8,
+      "totalDurationSec": 4655.526,
+      "totalBytes": 190859786,
+      "publishJson": "04-gushang/14-kangfu-gongcheng-zhiju/publish.json"
+    },
+    {
+      "id": "04-gushang/15-gushang-kangfu-pingding",
+      "title": "骨伤康复评定",
+      "chapterCount": 8,
+      "totalDurationSec": 4137.582,
+      "totalBytes": 170574655,
+      "publishJson": "04-gushang/15-gushang-kangfu-pingding/publish.json"
+    },
+    {
+      "id": "04-gushang/16-gushang-linchuang-lunzhuan",
+      "title": "骨伤临床轮转",
+      "chapterCount": 6,
+      "totalDurationSec": 2307.874,
+      "totalBytes": 88521090,
+      "publishJson": "04-gushang/16-gushang-linchuang-lunzhuan/publish.json"
+    },
+    {
       "id": "04-gushang/17-gushang-biye-sheji",
       "title": "骨伤毕业设计与知识移交",
       "chapterCount": 6,
-      "totalDurationSec": 403.702,
-      "totalBytes": 13441124,
+      "totalDurationSec": 2832.77,
+      "totalBytes": 90729811,
       "publishJson": "04-gushang/17-gushang-biye-sheji/publish.json"
+    },
+    {
+      "id": "09-jichu/01-renti-jiepou-xue",
+      "title": "人体解剖学",
+      "chapterCount": 10,
+      "totalDurationSec": 7689.5,
+      "totalBytes": 325731810,
+      "publishJson": "09-jichu/01-renti-jiepou-xue/publish.json"
+    },
+    {
+      "id": "09-jichu/02-zuzhi-peitai-xue",
+      "title": "组织学与胚胎学",
+      "chapterCount": 20,
+      "totalDurationSec": 13872.364,
+      "totalBytes": 564411290,
+      "publishJson": "09-jichu/02-zuzhi-peitai-xue/publish.json"
+    },
+    {
+      "id": "09-jichu/03-yixue-xibao-shengwu-xue",
+      "title": "医学细胞生物学",
+      "chapterCount": 12,
+      "totalDurationSec": 5850.954,
+      "totalBytes": 241055188,
+      "publishJson": "09-jichu/03-yixue-xibao-shengwu-xue/publish.json"
+    },
+    {
+      "id": "09-jichu/04-yixue-shengwu-xue",
+      "title": "医学生物学",
+      "chapterCount": 16,
+      "totalDurationSec": 7729.366,
+      "totalBytes": 312649737,
+      "publishJson": "09-jichu/04-yixue-shengwu-xue/publish.json"
+    },
+    {
+      "id": "09-jichu/05-zhengchang-renti-xue",
+      "title": "正常人体学",
+      "chapterCount": 18,
+      "totalDurationSec": 10303.26,
+      "totalBytes": 431952913,
+      "publishJson": "09-jichu/05-zhengchang-renti-xue/publish.json"
+    },
+    {
+      "id": "09-jichu/06-shengli-xue",
+      "title": "生理学",
+      "chapterCount": 11,
+      "totalDurationSec": 5304.965,
+      "totalBytes": 205679583,
+      "publishJson": "09-jichu/06-shengli-xue/publish.json"
+    },
+    {
+      "id": "09-jichu/08-jubu-jiepou-xue",
+      "title": "局部解剖学",
+      "chapterCount": 9,
+      "totalDurationSec": 7034.371,
+      "totalBytes": 289757223,
+      "publishJson": "09-jichu/08-jubu-jiepou-xue/publish.json"
+    },
+    {
+      "id": "09-jichu/09-yixue-yichuan-xue",
+      "title": "医学遗传学",
+      "chapterCount": 12,
+      "totalDurationSec": 6415.634,
+      "totalBytes": 256019054,
+      "publishJson": "09-jichu/09-yixue-yichuan-xue/publish.json"
     },
     {
       "id": "09-jichu/11-bingli-shengli-xue",
@@ -70,8 +262,8 @@
   "repoRecord": "platform/media-release.json",
   "regenerate": "npm run media:hls:index",
   "previous": {
-    "generatedAt": "2026-11-23T06:40:38.626Z",
-    "totalBytes": 7842928902,
-    "courses": 6
+    "generatedAt": "2026-11-23T18:57:50.954Z",
+    "totalBytes": 13452162265,
+    "courses": 29
   }
 }

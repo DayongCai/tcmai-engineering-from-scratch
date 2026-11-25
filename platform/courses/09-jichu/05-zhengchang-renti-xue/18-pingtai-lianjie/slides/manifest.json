@@ -1,31 +1,91 @@
 {
   "chapter": "18-pingtai-lianjie",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 17,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 17
+      "chars": 32
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 78
+      "chars": 23
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 23
+      "chars": 165
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 137
+      "chars": 95
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 271
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 385
+    },
+    {
+      "n": 7,
+      "segment": 5,
+      "chars": 275
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 386
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 403
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 341
+    },
+    {
+      "n": 11,
+      "segment": 7,
+      "chars": 188
+    },
+    {
+      "n": 12,
+      "segment": 7,
+      "chars": 239
+    },
+    {
+      "n": 13,
+      "segment": 8,
+      "chars": 325
+    },
+    {
+      "n": 14,
+      "segment": 8,
+      "chars": 416
+    },
+    {
+      "n": 15,
+      "segment": 8,
+      "chars": 314
+    },
+    {
+      "n": 16,
+      "segment": 9,
+      "chars": 425
+    },
+    {
+      "n": 17,
+      "segment": 10,
       "chars": 52
     }
   ]

@@ -28,7 +28,7 @@
       "spoken": "「《中医养生学·第1章》」——教材第 1 章章目级引文；教材无篇名级引文，非本章原文篇名。本章要回答的是：养生的基本原则：天人相应这一章的核心判据是什么。",
       "estimateSeconds": 16,
       "audio": "002.mp3",
-      "audioSeconds": 15.5
+      "audioSeconds": 15.504
     },
     {
       "n": 3,
@@ -38,7 +38,7 @@
       "spoken": "绪论、简史、理论基础与原则合章：先立「为什么这样养」。",
       "estimateSeconds": 6,
       "audio": "003.mp3",
-      "audioSeconds": 5.9
+      "audioSeconds": 5.904
     },
     {
       "n": 4,
@@ -48,7 +48,7 @@
       "spoken": "环境逼迫（养生要回答的是「什么人、什么季节、该调什么」，缺了对象与时令，方法就成空话）+ 知识积累（本章 35 单元 58,774 汉字；三辨主 养生方法 1062；四位面（时令与人群）主 起居与运动 335；引书 90 部 164 次；数值类命中 20）",
       "estimateSeconds": 25,
       "audio": "004.mp3",
-      "audioSeconds": 25.75
+      "audioSeconds": 25.752
     },
     {
       "n": 5,
@@ -58,10 +58,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "005.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 62.54,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 1.02,
+    "measuredMinutes": 1.04,
+    "ratio": 1.025
+  }
 }

@@ -5,7 +5,7 @@
     {
       "n": 1,
       "slug": "01-shiyanshi-anquan",
-      "title": "实验室安全与规范",
+      "title": "规范的作用不是禁止动作，而是把不可逆的后果提前变成可核查的条款",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/01-shiyanshi-anquan/docs/zh.md",
@@ -14,7 +14,7 @@
     {
       "n": 2,
       "slug": "02-shiyan-sheji",
-      "title": "实验设计与对照设置",
+      "title": "对照不是一个组，是给「反事实」找的一个可观察的替身",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/02-shiyan-sheji/docs/zh.md",
@@ -23,7 +23,7 @@
     {
       "n": 3,
       "slug": "03-xingtai-fenzi",
-      "title": "形态学与分子实验实训",
+      "title": "你看到的从来不是组织本身，是处理过的那一片",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/03-xingtai-fenzi/docs/zh.md",
@@ -32,7 +32,7 @@
     {
       "n": 4,
       "slug": "04-shuju-tongji",
-      "title": "数据采集与统计分析",
+      "title": "统计的错多半不在算法，在你选的那个分母上",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/04-shuju-tongji/docs/zh.md",
@@ -41,7 +41,7 @@
     {
       "n": 5,
       "slug": "05-jieguo-jiedu",
-      "title": "结果解读与可重复性",
+      "title": "解读结果靠的是机制判断，不是看偏离明不明显",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/05-jieguo-jiedu/docs/zh.md",
@@ -50,7 +50,7 @@
     {
       "n": 6,
       "slug": "06-shixun-baogao",
-      "title": "实训报告与考核",
+      "title": "报告不是把过程讲一遍，是把证据链交出来让人查",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/06-shixun-baogao/docs/zh.md",

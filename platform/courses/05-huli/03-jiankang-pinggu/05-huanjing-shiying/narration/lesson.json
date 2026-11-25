@@ -18,7 +18,7 @@
       "spoken": "第 5 章 · 环境生态适应能力：场所、季节与可达性的判读",
       "estimateSeconds": 5,
       "audio": "001.mp3",
-      "audioSeconds": 6.19
+      "audioSeconds": 6.192
     },
     {
       "n": 2,
@@ -28,7 +28,7 @@
       "spoken": "「《健康评估·第5章》」——派生课无本章原文篇名，引父课单元；非本章原文篇名。本章要回答的是：环境生态适应能力：场所、季节与可达性的判读这一章的核心判据是什么。",
       "estimateSeconds": 17,
       "audio": "002.mp3",
-      "audioSeconds": 16.97
+      "audioSeconds": 16.968
     },
     {
       "n": 3,
@@ -38,7 +38,7 @@
       "spoken": "环境域最容易被漏：同一个功能水平，换个居住环境结局就不同。",
       "estimateSeconds": 6,
       "audio": "003.mp3",
-      "audioSeconds": 6.38
+      "audioSeconds": 6.384
     },
     {
       "n": 4,
@@ -48,7 +48,7 @@
       "spoken": "环境逼迫（四域里任何一域掉出「最合适」，其余三域的代偿都会在数月内被耗尽）+ 知识积累（本章 1 单元 17,895 汉字；三辨主 记录与沟通 341；四位面（适应能力四域）主 生理适应 177；引书 0 部 0 次；数值类命中 0）",
       "estimateSeconds": 22,
       "audio": "004.mp3",
-      "audioSeconds": 23.21
+      "audioSeconds": 23.208
     },
     {
       "n": 5,
@@ -58,10 +58,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "005.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 64.06,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 1.02,
+    "measuredMinutes": 1.07,
+    "ratio": 1.05
+  }
 }

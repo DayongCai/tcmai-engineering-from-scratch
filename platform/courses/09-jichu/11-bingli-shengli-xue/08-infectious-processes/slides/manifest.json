@@ -1,7 +1,7 @@
 {
   "chapter": "08-infectious-processes",
-  "slideCount": 27,
-  "segmentCount": 17,
+  "slideCount": 28,
+  "segmentCount": 11,
   "slides": [
     {
       "n": 1,
@@ -11,7 +11,7 @@
     {
       "n": 2,
       "segment": 2,
-      "chars": 84
+      "chars": 42
     },
     {
       "n": 3,
@@ -26,116 +26,121 @@
     {
       "n": 5,
       "segment": 5,
-      "chars": 361
+      "chars": 389
     },
     {
       "n": 6,
       "segment": 5,
-      "chars": 287
+      "chars": 374
     },
     {
       "n": 7,
-      "segment": 6,
-      "chars": 381
+      "segment": 5,
+      "chars": 320
     },
     {
       "n": 8,
-      "segment": 6,
-      "chars": 400
+      "segment": 5,
+      "chars": 418
     },
     {
       "n": 9,
-      "segment": 7,
+      "segment": 5,
       "chars": 418
     },
     {
       "n": 10,
-      "segment": 8,
-      "chars": 409
+      "segment": 6,
+      "chars": 311
     },
     {
       "n": 11,
-      "segment": 8,
-      "chars": 97
+      "segment": 6,
+      "chars": 408
     },
     {
       "n": 12,
-      "segment": 9,
-      "chars": 340
+      "segment": 6,
+      "chars": 401
     },
     {
       "n": 13,
-      "segment": 9,
-      "chars": 313
+      "segment": 6,
+      "chars": 403
     },
     {
       "n": 14,
-      "segment": 9,
-      "chars": 122
+      "segment": 6,
+      "chars": 364
     },
     {
       "n": 15,
-      "segment": 10,
-      "chars": 392
+      "segment": 7,
+      "chars": 276
     },
     {
       "n": 16,
-      "segment": 10,
-      "chars": 155
+      "segment": 7,
+      "chars": 314
     },
     {
       "n": 17,
-      "segment": 11,
-      "chars": 413
+      "segment": 7,
+      "chars": 245
     },
     {
       "n": 18,
-      "segment": 12,
-      "chars": 388
+      "segment": 8,
+      "chars": 303
     },
     {
       "n": 19,
-      "segment": 13,
-      "chars": 400
+      "segment": 8,
+      "chars": 343
     },
     {
       "n": 20,
-      "segment": 13,
-      "chars": 104
+      "segment": 8,
+      "chars": 375
     },
     {
       "n": 21,
-      "segment": 14,
-      "chars": 394
-    },
-    {
-      "n": 22,
-      "segment": 14,
-      "chars": 73
-    },
-    {
-      "n": 23,
-      "segment": 15,
+      "segment": 9,
       "chars": 339
     },
     {
-      "n": 24,
-      "segment": 15,
+      "n": 22,
+      "segment": 9,
       "chars": 88
     },
     {
+      "n": 23,
+      "segment": 10,
+      "chars": 418
+    },
+    {
+      "n": 24,
+      "segment": 10,
+      "chars": 393
+    },
+    {
       "n": 25,
-      "segment": 16,
-      "chars": 407
+      "segment": 10,
+      "chars": 416
     },
     {
       "n": 26,
-      "segment": 16,
-      "chars": 322
+      "segment": 10,
+      "chars": 363
     },
     {
       "n": 27,
-      "segment": 17,
+      "segment": 10,
+      "chars": 122
+    },
+    {
+      "n": 28,
+      "segment": 11,
       "chars": 52
     }
   ]

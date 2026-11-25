@@ -29,86 +29,85 @@ platform:
 
 chapters:
   - slug: 01-gaishu-lilun
-    title: 第1章 内科护理概述与理论基础
-    segments: 5
+    title: 不诊断不等于不判断：内科护理的分寸全在观察的颗粒度上
     video: rendered
-    estimate_minutes: 1.1
-    measured_minutes: 1.12
+    estimate_minutes: 1.10      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.12      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-pinggu-guancha
-    title: 第2章 内科护理评估与病情观察
-    segments: 5
+    title: 评估的价值不在第一次问全，而在第二次问得比第一次少
     video: rendered
-    estimate_minutes: 1.08
-    measured_minutes: 1.08
+    estimate_minutes: 1.08      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.08      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-jishu-anquan
-    title: 第3章 内科常用护理技术与安全
-    segments: 5
+    title: 技术安全的关口不在禁忌表上，在开做前那三个必须核对的动作里
     video: rendered
-    estimate_minutes: 1.08
-    measured_minutes: 1.11
+    estimate_minutes: 1.08      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.11      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-zhengzhuang-huli
-    title: 第4章 内科常见症状的护理
-    segments: 5
+    title: 症状是同一个词，背后却是五条互不通用的观察线
     video: rendered
-    estimate_minutes: 1.02
-    measured_minutes: 1.05
+    estimate_minutes: 1.02      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.05      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-yaowu-jingmai
-    title: 第5章 药物治疗与静脉治疗的护理安全
-    segments: 5
+    title: 给药的错很少错在没对上，多错在对上之后再没有人看那一眼
     video: rendered
-    estimate_minutes: 1.1
-    measured_minutes: 1.1
+    estimate_minutes: 1.10      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.10      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-yingyang-huli
-    title: 第6章 内科营养支持与饮食护理
-    segments: 5
+    title: 「吃不下」不是一句主诉，而是一笔当场就能算出来的缺口
     video: rendered
-    estimate_minutes: 1.05
-    measured_minutes: 1.09
+    estimate_minutes: 1.05      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.09      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-huxi-huli
-    title: 第7章 呼吸系统疾病护理
-    segments: 5
+    title: 呼吸的恶化很少是突然的，多半是「再观察一下」攒出来的
     video: rendered
-    estimate_minutes: 1.02
-    measured_minutes: 1.04
+    estimate_minutes: 1.02      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.04      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-xunhuan-huli
-    title: 第8章 循环系统疾病护理
-    segments: 5
+    title: 循环的账要按天算：体重与出入量比一次听诊更早开口
     video: rendered
-    estimate_minutes: 1.02
-    measured_minutes: 1.03
+    estimate_minutes: 1.02      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.03      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-xiaohua-huli
-    title: 第9章 消化系统疾病护理
-    segments: 5
+    title: 消化道先看进出对不对得上，再看疼在哪里
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1.01
+    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.01      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-miniao-huli
-    title: 第10章 泌尿系统疾病护理
-    segments: 5
+    title: 尿量是内科最诚实的一项指标，前提是有人按同一个口径记
     video: rendered
-    estimate_minutes: 1.05
-    measured_minutes: 1.06
+    estimate_minutes: 1.05      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.06      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 11-xueye-huli
-    title: 第11章 血液系统疾病护理
-    segments: 5
+    title: 血液科的危险不在出血本身，在「看起来还好」的那几个小时
     video: rendered
-    estimate_minutes: 1.03
-    measured_minutes: 1.07
+    estimate_minutes: 1.03      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.07      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 12-neifenmi-huli
-    title: 第12章 内分泌与代谢性疾病护理
-    segments: 5
+    title: 内分泌的观察要跨过「今天」：一次测量说明不了一件事
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1.05
+    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.05      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 13-fengshi-shenjing
-    title: 第13章 风湿免疫与神经系统疾病护理
-    segments: 5
+    title: 风湿与神经合成一章，因为两者的失能都比疼痛更早发生
     video: rendered
-    estimate_minutes: 1.12
-    measured_minutes: 1.13
+    estimate_minutes: 1.12      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.13      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 14-chuanran-zhiliang
-    title: 第14章 传染病护理、质量风险与平台
-    segments: 5
+    title: 传染、质量、平台三件事，共用一条「先防住、再留痕」的次序
     video: rendered
-    estimate_minutes: 1.18
-    measured_minutes: 1.18
+    estimate_minutes: 1.18      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.18      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

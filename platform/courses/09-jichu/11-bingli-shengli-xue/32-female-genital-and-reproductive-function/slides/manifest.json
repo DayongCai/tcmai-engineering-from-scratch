@@ -1,7 +1,7 @@
 {
   "chapter": "32-female-genital-and-reproductive-function",
-  "slideCount": 26,
-  "segmentCount": 18,
+  "slideCount": 28,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
@@ -11,7 +11,7 @@
     {
       "n": 2,
       "segment": 2,
-      "chars": 82
+      "chars": 38
     },
     {
       "n": 3,
@@ -26,111 +26,121 @@
     {
       "n": 5,
       "segment": 5,
-      "chars": 412
+      "chars": 219
     },
     {
       "n": 6,
-      "segment": 6,
-      "chars": 418
+      "segment": 5,
+      "chars": 345
     },
     {
       "n": 7,
-      "segment": 7,
-      "chars": 380
+      "segment": 5,
+      "chars": 318
     },
     {
       "n": 8,
-      "segment": 8,
-      "chars": 411
+      "segment": 5,
+      "chars": 380
     },
     {
       "n": 9,
-      "segment": 9,
-      "chars": 266
+      "segment": 6,
+      "chars": 294
     },
     {
       "n": 10,
-      "segment": 9,
-      "chars": 221
+      "segment": 6,
+      "chars": 419
     },
     {
       "n": 11,
-      "segment": 10,
-      "chars": 285
+      "segment": 6,
+      "chars": 369
     },
     {
       "n": 12,
-      "segment": 10,
-      "chars": 160
+      "segment": 6,
+      "chars": 315
     },
     {
       "n": 13,
-      "segment": 11,
-      "chars": 391
+      "segment": 7,
+      "chars": 407
     },
     {
       "n": 14,
-      "segment": 12,
-      "chars": 246
+      "segment": 7,
+      "chars": 267
     },
     {
       "n": 15,
-      "segment": 12,
-      "chars": 190
+      "segment": 7,
+      "chars": 274
     },
     {
       "n": 16,
-      "segment": 13,
-      "chars": 329
+      "segment": 7,
+      "chars": 265
     },
     {
       "n": 17,
-      "segment": 13,
-      "chars": 157
+      "segment": 7,
+      "chars": 177
     },
     {
       "n": 18,
-      "segment": 14,
+      "segment": 7,
       "chars": 355
     },
     {
       "n": 19,
-      "segment": 14,
-      "chars": 100
+      "segment": 7,
+      "chars": 373
     },
     {
       "n": 20,
-      "segment": 15,
+      "segment": 7,
       "chars": 257
     },
     {
       "n": 21,
-      "segment": 15,
-      "chars": 257
-    },
-    {
-      "n": 22,
-      "segment": 16,
+      "segment": 8,
       "chars": 394
     },
     {
-      "n": 23,
-      "segment": 16,
+      "n": 22,
+      "segment": 8,
       "chars": 103
     },
     {
-      "n": 24,
-      "segment": 17,
+      "n": 23,
+      "segment": 9,
       "chars": 407
     },
     {
+      "n": 24,
+      "segment": 9,
+      "chars": 348
+    },
+    {
       "n": 25,
-      "segment": 17,
-      "chars": 200
+      "segment": 9,
+      "chars": 345
     },
     {
       "n": 26,
-      "segment": 18,
+      "segment": 9,
+      "chars": 361
+    },
+    {
+      "n": 27,
+      "segment": 9,
+      "chars": 111
+    },
+    {
+      "n": 28,
+      "segment": 10,
       "chars": 52
     }
   ]

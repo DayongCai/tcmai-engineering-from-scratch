@@ -26,7 +26,12 @@ blockquote.motto{font-family:var(--serif);font-size:clamp(20px,2.6vw,34px);line-
   text-transform:uppercase;margin-bottom:14px}
 .kicker.warn{color:var(--cinnabar)}
 p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var(--serif)}
-.compact{font-size:clamp(19px,1.75vw,27px);line-height:1.85;max-height:70vh;overflow:auto}
+.compact{font-size:clamp(19px,1.75vw,27px);line-height:1.85;max-height:70vh;overflow:hidden}
+.compact.dense{font-size:clamp(16px,1.42vw,22px);line-height:1.6;max-height:80vh}
+.compact.dense table{font-size:14px}
+.compact.denser{font-size:clamp(14px,1.22vw,18px);line-height:1.5;max-height:82vh}
+.compact.denser table{font-size:12px}
+.compact.denser pre{font-size:12px}
 .compact h2,.compact h3{font-family:var(--serif);margin:.6em 0 .3em;font-size:1.15em}
 .compact pre{background:var(--paper-2);border:1px solid var(--line);border-radius:8px;padding:12px;overflow:auto;font-size:15px}
 .compact code{background:var(--paper-2);border:1px solid var(--line);border-radius:4px;padding:1px 4px;font-family:var(--mono)}
@@ -58,7 +63,7 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
   <div class="slide-foot"><span>1 / 26</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「胆盐、磷脂与胆固醇三者的相对比例决定胆固醇的溶解状态」——补充·hermes-病理生理学讲义·第37章·37.1（《hermes-病理生理学讲义·第37章·37.1》）</blockquote></div>
+  <div class="slide-inner"><blockquote class="motto">「气为上膈者，食饮入而还出。」——《灵枢·上膈》</blockquote></div>
   <div class="slide-foot"><span>2 / 26</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
@@ -70,8 +75,9 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
   <div class="slide-foot"><span>4 / 26</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
-  <div class="slide-inner"><div class="kicker">一、胆汁：三样溶质的比例决定一切</div>
-                <div class="compact"><p>37.1 从成分讲起。胆汁由肝细胞生成，溶质包括胆盐、磷脂、胆固醇、胆色素与电解质，其中前四样的关系最要紧：</p>
+  <div class="slide-inner"><div class="kicker">胆汁与成石：三样溶质、一紧一松与三要素（37.1–37.3）</div>
+                <div class="compact dense"><h3 id="胆汁-三样溶质的比例决定一切">胆汁：三样溶质的比例决定一切</h3>
+<p>37.1 从成分讲起。胆汁由肝细胞生成，溶质包括胆盐、磷脂、胆固醇、胆色素与电解质，其中前四样的关系最要紧：</p>
 <blockquote><p>「胆盐、磷脂与胆固醇三者的相对比例决定胆固醇的溶解状态」——补充·hermes-病理生理学讲义·第37章·37.1</p></blockquote>
 <p>机制是物理化学的：胆盐与磷脂形成微胶粒，把胆固醇装进去；比例失衡时胆固醇析出结晶。这句话是全章的地基——结石不是「钙多了」，而是「比例偏了」，两者导出的预防思路完全不同。</p>
 <p>胆汁生成分两部分：胆盐依赖性流随胆盐的肠肝循环回流而变动，胆盐非依赖性流由肝细胞的分泌压驱动。这一划分解释了一个常被问到的现象：禁食期间胆汁仍在生成，只是转向胆囊储存；而胆盐池缩小（回肠病变、胆盐丢失）时，胆汁的量与成分同时改变。</p>
@@ -80,152 +86,212 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
   <div class="slide-foot"><span>5 / 26</span><span>body</span></div>
 </section>
 <section class="slide" data-i="5">
-  <div class="slide-inner"><div class="kicker">一、胆汁：三样溶质的比例决定一切</div>
-                <div class="compact"><p>一面让有限的胆盐池在进食时能一次性释放足够的胆盐；另一面让胆固醇更接近饱和，为成石创造条件。同一件事既是功能又是风险，这是本章第一处保护机制自带代价的地方。</p></div></div>
+  <div class="slide-inner"><div class="kicker">胆汁与成石：三样溶质、一紧一松与三要素（37.1–37.3）</div>
+                <div class="compact"><p>一面让有限的胆盐池在进食时能一次性释放足够的胆盐；另一面让胆固醇更接近饱和，为成石创造条件。同一件事既是功能又是风险，这是本章第一处保护机制自带代价的地方。</p>
+<h3 id="胆囊-一紧一松的协同">胆囊：一紧一松的协同</h3>
+<p>37.2 把胆囊写成储存、浓缩、排空三件事。消化间期 Oddi 括约肌张力高，胆汁转而进入胆囊；进食后胆囊收缩素使胆囊收缩、括约肌松弛，胆汁进入十二指肠。这套一紧一松的协同是胆汁排放的关键：</p>
+<blockquote><p>「任何一端失调都造成淤滞」——补充·hermes-病理生理学讲义·第37章·37.2</p></blockquote>
+<p>淤滞是本章的枢纽词。它既是结石形成的时间条件，也是感染的条件，而感染与结石又各自加重淤滞：</p>
+<blockquote><p>「淤滞又促进成石与感染，形成正反馈」——补充·hermes-病理生理学讲义·第37章·37.2</p></blockquote></div></div>
   <div class="slide-foot"><span>6 / 26</span><span>body</span></div>
 </section>
 <section class="slide" data-i="6">
-  <div class="slide-inner"><div class="kicker">二、胆囊：一紧一松的协同</div>
-                <div class="compact"><p>37.2 把胆囊写成储存、浓缩、排空三件事。消化间期 Oddi 括约肌张力高，胆汁转而进入胆囊；进食后胆囊收缩素使胆囊收缩、括约肌松弛，胆汁进入十二指肠。这套一紧一松的协同是胆汁排放的关键：</p>
-<blockquote><p>「任何一端失调都造成淤滞」——补充·hermes-病理生理学讲义·第37章·37.2</p></blockquote>
-<p>淤滞是本章的枢纽词。它既是结石形成的时间条件，也是感染的条件，而感染与结石又各自加重淤滞：</p>
-<blockquote><p>「淤滞又促进成石与感染，形成正反馈」——补充·hermes-病理生理学讲义·第37章·37.2</p></blockquote>
-<p>胆囊排空障碍的原因列了四项：动力低下、结石嵌顿于胆囊颈部、长期禁食、全肠外营养（缺乏胆囊收缩素刺激）。最后两项值得单独记住——它们是没有病的人因治疗方式而得病的例子，机制是被动的：没有进食就没有胆囊收缩素的脉冲。</p></div></div>
+  <div class="slide-inner"><div class="kicker">胆汁与成石：三样溶质、一紧一松与三要素（37.1–37.3）</div>
+                <div class="compact dense"><p>胆囊排空障碍的原因列了四项：动力低下、结石嵌顿于胆囊颈部、长期禁食、全肠外营养（缺乏胆囊收缩素刺激）。最后两项值得单独记住——它们是没有病的人因治疗方式而得病的例子，机制是被动的：没有进食就没有胆囊收缩素的脉冲。</p>
+<p>讲义在这一节末尾提炼出一条可以覆盖全章的通则：凡是「有分泌、有储存、有排放」的系统（胆汁、胰液、尿液），疾病都可沿产生、排放、反流三个环节分析。这条通则的用处是它把两个器官装进同一套坐标——本章后半讲胰腺时，用的正是同一条线。</p>
+<h3 id="胆石三要素-缺一不成石">胆石三要素：缺一不成石</h3>
+<p>37.3 把成石压成三个条件，且强调同时满足：胆汁胆固醇过饱和（胆固醇分泌过多、胆盐池缩小、磷脂不足）、成核（黏蛋白、免疫球蛋白等促成核因子促进结晶，抗成核因子不足）、胆囊动力低下（淤滞给结晶生长的时间）。</p>
+<blockquote><p>「胆石形成需要三个条件同时满足」——补充·hermes-病理生理学讲义·第37章·37.3</p></blockquote></div></div>
   <div class="slide-foot"><span>7 / 26</span><span>body</span></div>
 </section>
 <section class="slide" data-i="7">
-  <div class="slide-inner"><div class="kicker">二、胆囊：一紧一松的协同</div>
-                <div class="compact"><p>讲义在这一节末尾提炼出一条可以覆盖全章的通则：凡是「有分泌、有储存、有排放」的系统（胆汁、胰液、尿液），疾病都可沿产生、排放、反流三个环节分析。这条通则的用处是它把两个器官装进同一套坐标——本章后半讲胰腺时，用的正是同一条线。</p></div></div>
+  <div class="slide-inner"><div class="kicker">胆汁与成石：三样溶质、一紧一松与三要素（37.1–37.3）</div>
+                <div class="compact"><p>三要素的解释力在于它的否定式：三者缺一，结石难以形成。这一句同时解答了两个常见困惑——为什么胆固醇饱和者并非都长结石，为什么单纯降胆固醇并不能消除结石风险。前者缺成核与淤滞，后者只动了第一要素。</p>
+<p>色素结石机制不同：以胆红素钙沉淀为主，常见于溶血、胆道感染与肝硬化。两套机制并列，不要互相套用。</p>
+<p>随后是本章最重要的定位思想：</p>
+<blockquote><p>「同一块结石，位置决定疾病，这是本章最重要的定位思想」——补充·hermes-病理生理学讲义·第37章·37.3</p></blockquote>
+<p>胆囊内可长期无症状；嵌顿于胆囊颈是急性胆囊炎；掉入胆总管是梗阻性黄疸、胆管炎与胰腺炎。同一物、四处位置、四种病——位置不是修饰，而是诊断本身。</p></div></div>
   <div class="slide-foot"><span>8 / 26</span><span>body</span></div>
 </section>
 <section class="slide" data-i="8">
-  <div class="slide-inner"><div class="kicker">三、胆石三要素：缺一不成石</div>
-                <div class="compact"><p>37.3 把成石压成三个条件，且强调同时满足：胆汁胆固醇过饱和（胆固醇分泌过多、胆盐池缩小、磷脂不足）、成核（黏蛋白、免疫球蛋白等促成核因子促进结晶，抗成核因子不足）、胆囊动力低下（淤滞给结晶生长的时间）。</p>
-<blockquote><p>「胆石形成需要三个条件同时满足」——补充·hermes-病理生理学讲义·第37章·37.3</p></blockquote>
-<p>三要素的解释力在于它的否定式：三者缺一，结石难以形成。这一句同时解答了两个常见困惑——为什么胆固醇饱和者并非都长结石，为什么单纯降胆固醇并不能消除结石风险。前者缺成核与淤滞，后者只动了第一要素。</p>
-<p>色素结石机制不同：以胆红素钙沉淀为主，常见于溶血、胆道感染与肝硬化。两套机制并列，不要互相套用。</p>
-<p>随后是本章最重要的定位思想：</p>
-<blockquote><p>「同一块结石，位置决定疾病，这是本章最重要的定位思想」——补充·hermes-病理生理学讲义·第37章·37.3</p></blockquote></div></div>
-  <div class="slide-foot"><span>9 / 26</span><span>body</span></div>
-</section>
-<section class="slide" data-i="9">
-  <div class="slide-inner"><div class="kicker">三、胆石三要素：缺一不成石</div>
-                <div class="compact"><p>胆囊内可长期无症状；嵌顿于胆囊颈是急性胆囊炎；掉入胆总管是梗阻性黄疸、胆管炎与胰腺炎。同一物、四处位置、四种病——位置不是修饰，而是诊断本身。</p></div></div>
-  <div class="slide-foot"><span>10 / 26</span><span>body</span></div>
-</section>
-<section class="slide" data-i="10">
-  <div class="slide-inner"><div class="kicker">四、从绞痛到脓毒症：一条时限性的链</div>
-                <div class="compact"><p>37.4 先讲胆绞痛：结石暂时嵌顿，胆囊强烈收缩，右上腹或上腹剧痛、放射至右肩背、伴恶心呕吐。</p>
+  <div class="slide-inner"><div class="kicker">从绞痛到脓毒症：黄疸定位与三道保险（37.4–37.7）</div>
+                <div class="compact dense"><h3 id="从绞痛到脓毒症-一条时限性的链">从绞痛到脓毒症：一条时限性的链</h3>
+<p>37.4 先讲胆绞痛：结石暂时嵌顿，胆囊强烈收缩，右上腹或上腹剧痛、放射至右肩背、伴恶心呕吐。</p>
 <blockquote><p>「疼痛的时程取决于嵌顿是否自行缓解」——补充·hermes-病理生理学讲义·第37章·37.4</p></blockquote>
 <p>缓解则疼痛消退，持续则进入炎症阶段——同一句主诉的两种走法，分岔点在时间而不在强度。</p>
 <p>嵌顿持续时，胆囊壁受压、缺血、黏膜损伤，继发感染形成急性胆囊炎；炎症可进展为坏疽、穿孔与腹膜炎。结石进入胆总管造成胆道梗阻：胆汁不能排出，结合胆红素反流入血出现黄疸，胆盐入血引起皮肤瘙痒。梗阻合并感染即急性胆管炎，表现为腹痛、寒战高热与黄疸，重者出现感染性休克与意识改变。</p>
 <p>讲义对这一整条的判断是：</p>
 <blockquote><p>「胆道梗阻不是单纯的机械问题，而是随时可能转为全身感染的时限性问题」——补充·hermes-病理生理学讲义·第37章·37.4</p></blockquote>
 <p>时限性是关键词。它解释了为什么胆道梗阻不能先观察一段时间——机制上它不缺一个病因，缺的是时间。</p></div></div>
-  <div class="slide-foot"><span>11 / 26</span><span>body</span></div>
+  <div class="slide-foot"><span>9 / 26</span><span>body</span></div>
 </section>
-<section class="slide" data-i="11">
-  <div class="slide-inner"><div class="kicker">五、黄疸三档：定位决定检查方向</div>
-                <div class="compact"><p>37.5 把黄疸按机制分三档：肝前性（溶血使胆红素生成过多，以非结合胆红素为主，尿胆红素阴性，粪色加深）、肝性（摄取、结合或排泄障碍，混合性升高）、肝后性（胆道梗阻，以结合胆红素为主，尿色深、粪色变浅）。</p>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">从绞痛到脓毒症：黄疸定位与三道保险（37.4–37.7）</div>
+                <div class="compact dense"><h3 id="黄疸三档-定位决定检查方向">黄疸三档：定位决定检查方向</h3>
+<p>37.5 把黄疸按机制分三档：肝前性（溶血使胆红素生成过多，以非结合胆红素为主，尿胆红素阴性，粪色加深）、肝性（摄取、结合或排泄障碍，混合性升高）、肝后性（胆道梗阻，以结合胆红素为主，尿色深、粪色变浅）。</p>
 <p>三档不是三种颜色，而是三个方向：</p>
 <blockquote><p>「这一分档决定检查方向：肝前看溶血证据，肝性看肝细胞损伤标志，肝后看胆管是否扩张」——补充·hermes-病理生理学讲义·第37章·37.5</p></blockquote>
 <p>胆汁淤积则要分成两类：一类有梗阻，一类没有梗阻——后者是肝细胞膜转运体功能下降导致的分泌障碍。这两类的处理方向完全不同，而表面上都叫淤积。讲义在淤积这一节开头就下了一句很硬的话：淤积不只是胆汁流不下去，还包括转运体功能下降导致的分泌障碍。</p>
 <p>淤积的后果是双重的：胆盐在肝内蓄积造成肝细胞损伤并激活星状细胞推动纤维化；肠道缺乏胆盐则脂肪与脂溶性维生素吸收障碍，出现脂肪泻、夜盲与依赖维生素 K 的凝血因子合成不足。</p></div></div>
+  <div class="slide-foot"><span>10 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">从绞痛到脓毒症：黄疸定位与三道保险（37.4–37.7）</div>
+                <div class="compact dense"><blockquote><p>「因此淤积的评估必须同时看肝和肠两端」——补充·hermes-病理生理学讲义·第37章·37.5</p></blockquote>
+<p>一端看损伤，一端看缺失，两端都查才叫完整——这一句把 37.5 与 35.7 的部位地图接上。</p>
+<h3 id="三道保险-酶为什么不在腺内消化自己">三道保险：酶为什么不在腺内消化自己</h3>
+<p>37.6 是本章的结构核心，写得极清楚。胰腺外分泌的酶以酶原形式合成与储存，这是第一道保险：胰蛋白酶原、糜蛋白酶原、磷脂酶原与羧肽酶原均无活性。小肠刷状缘的肠激酶把胰蛋白酶原切成活性胰蛋白酶，后者再激活其余酶原——一个级联放大的总开关。</p>
+<p>第二道保险是细胞内隔离：酶原储存于酶原颗粒，与含水解酶的溶酶体分开，避免自家消化在细胞内发生。第三道保险是腔内冲洗与抑制剂：充足的分泌液把酶带入十二指肠，腔内还有蛋白酶抑制剂作为兜底。</p>
+<p>三道保险合起来只保证一件事：酶的激活发生在应该发生的地方——小肠腔内。于是急性胰腺炎的定义就有了机制版本：</p></div></div>
+  <div class="slide-foot"><span>11 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">从绞痛到脓毒症：黄疸定位与三道保险（37.4–37.7）</div>
+                <div class="compact dense"><blockquote><p>「急性胰腺炎的本质，就是这三道保险在腺内被同时突破」——补充·hermes-病理生理学讲义·第37章·37.6</p></blockquote>
+<p>「同时」二字是关键。突破一道不够，三道一起失守才成病——这也解释了为什么同样的诱因在不同人身上结局不同：诱因只是敲门，门开不开取决于三道保险各自的余量。</p>
+<h3 id="急性胰腺炎-从腺泡到全身炎症">急性胰腺炎：从腺泡到全身炎症</h3>
+<p>37.7 讲触发与共同通路。触发因素分两类：胆石（壶腹部梗阻使胰液排出受阻、胆汁反流入胰管）与酒精（增加腺泡对刺激的敏感性、改变胰液成分使蛋白栓形成）；此外还有高甘油三酯血症、部分药物、内镜操作与腹部创伤。</p>
+<p>共同通路是一条四段链：</p>
+<blockquote><p>「腺泡内钙信号紊乱 → 酶原提前激活 → 腺泡坏死 → 炎症介质释放」——补充·hermes-病理生理学讲义·第37章·37.7</p></blockquote>
+<p>四段的次序不能换：钙信号在前，酶原激活在后。这也是为什么把急性胰腺炎理解成单纯的炎症不够——它的起点是细胞内的离子事件。</p></div></div>
   <div class="slide-foot"><span>12 / 26</span><span>body</span></div>
 </section>
 <section class="slide" data-i="12">
-  <div class="slide-inner"><div class="kicker">五、黄疸三档：定位决定检查方向</div>
-                <div class="compact"><blockquote><p>「因此淤积的评估必须同时看肝和肠两端」——补充·hermes-病理生理学讲义·第37章·37.5</p></blockquote>
-<p>一端看损伤，一端看缺失，两端都查才叫完整——这一句把 37.5 与 35.7 的部位地图接上。</p></div></div>
+  <div class="slide-inner"><div class="kicker">从绞痛到脓毒症：黄疸定位与三道保险（37.4–37.7）</div>
+                <div class="compact"><p>腺泡损伤释放的损伤相关分子激活巨噬细胞与中性粒细胞，炎症从局部扩散为全身炎症反应综合征。讲义把这一步称为分水岭：</p>
+<blockquote><p>「局部坏死本身可以自限，而全身炎症放大决定器官功能是否受累」——补充·hermes-病理生理学讲义·第37章·37.7</p></blockquote>
+<p>一句话把轻重两极分开：决定预后的不是坏死多少，而是炎症放大到哪一步。</p></div></div>
   <div class="slide-foot"><span>13 / 26</span><span>body</span></div>
 </section>
 <section class="slide" data-i="13">
-  <div class="slide-inner"><div class="kicker">六、三道保险：酶为什么不在腺内消化自己</div>
-                <div class="compact"><p>37.6 是本章的结构核心，写得极清楚。胰腺外分泌的酶以酶原形式合成与储存，这是第一道保险：胰蛋白酶原、糜蛋白酶原、磷脂酶原与羧肽酶原均无活性。小肠刷状缘的肠激酶把胰蛋白酶原切成活性胰蛋白酶，后者再激活其余酶原——一个级联放大的总开关。</p>
-<p>第二道保险是细胞内隔离：酶原储存于酶原颗粒，与含水解酶的溶酶体分开，避免自家消化在细胞内发生。第三道保险是腔内冲洗与抑制剂：充足的分泌液把酶带入十二指肠，腔内还有蛋白酶抑制剂作为兜底。</p>
-<p>三道保险合起来只保证一件事：酶的激活发生在应该发生的地方——小肠腔内。于是急性胰腺炎的定义就有了机制版本：</p>
-<blockquote><p>「急性胰腺炎的本质，就是这三道保险在腺内被同时突破」——补充·hermes-病理生理学讲义·第37章·37.6</p></blockquote>
-<p>「同时」二字是关键。突破一道不够，三道一起失守才成病——这也解释了为什么同样的诱因在不同人身上结局不同：诱因只是敲门，门开不开取决于三道保险各自的余量。</p></div></div>
-  <div class="slide-foot"><span>14 / 26</span><span>body</span></div>
-</section>
-<section class="slide" data-i="14">
-  <div class="slide-inner"><div class="kicker">七、急性胰腺炎：从腺泡到全身炎症</div>
-                <div class="compact"><p>37.7 讲触发与共同通路。触发因素分两类：胆石（壶腹部梗阻使胰液排出受阻、胆汁反流入胰管）与酒精（增加腺泡对刺激的敏感性、改变胰液成分使蛋白栓形成）；此外还有高甘油三酯血症、部分药物、内镜操作与腹部创伤。</p>
-<p>共同通路是一条四段链：</p>
-<blockquote><p>「腺泡内钙信号紊乱 → 酶原提前激活 → 腺泡坏死 → 炎症介质释放」——补充·hermes-病理生理学讲义·第37章·37.7</p></blockquote>
-<p>四段的次序不能换：钙信号在前，酶原激活在后。这也是为什么把急性胰腺炎理解成单纯的炎症不够——它的起点是细胞内的离子事件。</p>
-<p>腺泡损伤释放的损伤相关分子激活巨噬细胞与中性粒细胞，炎症从局部扩散为全身炎症反应综合征。讲义把这一步称为分水岭：</p>
-<blockquote><p>「局部坏死本身可以自限，而全身炎症放大决定器官功能是否受累」——补充·hermes-病理生理学讲义·第37章·37.7</p></blockquote>
-<p>一句话把轻重两极分开：决定预后的不是坏死多少，而是炎症放大到哪一步。</p></div></div>
-  <div class="slide-foot"><span>15 / 26</span><span>body</span></div>
-</section>
-<section class="slide" data-i="15">
-  <div class="slide-inner"><div class="kicker">八、局部与全身：四条后果线</div>
-                <div class="compact"><p>37.8 分两层写。局部后果：胰腺水肿、出血与坏死；胰周液体渗出形成积液与假性囊肿；坏死组织继发感染是后期死亡的主因。</p>
+  <div class="slide-inner"><div class="kicker">后果与线索：四条后果线、纤维化与安静的定位（37.8–37.11）</div>
+                <div class="compact dense"><h3 id="局部与全身-四条后果线">局部与全身：四条后果线</h3>
+<p>37.8 分两层写。局部后果：胰腺水肿、出血与坏死；胰周液体渗出形成积液与假性囊肿；坏死组织继发感染是后期死亡的主因。</p>
 <p>全身后果按机制展开四条线：</p>
 <ul><li><strong>循环</strong>：大量液体渗入腹膜后间隙与腹腔，有效循环血量下降，导致低血压与肾前性灌注不足。</li><li><strong>钙</strong>：脂肪坏死区的游离脂肪酸与钙结合，形成皂化，出现低钙血症，</li></ul>
 <blockquote><p>「其程度提示坏死范围」——补充·hermes-病理生理学讲义·第37章·37.8</p></blockquote>
 <ul><li><strong>呼吸</strong>：炎症介质使肺毛细血管通透性增加，引起肺间质水肿，构成急性呼吸窘迫的方向。</li><li><strong>凝血与心肌</strong>：胰酶与炎症介质可直接损伤血管内皮与心肌，造成凝血失衡与心功能抑制。</li></ul>
 <p>四条线各有各的入口，但共用同一批介质。这一节的收口是一句极重要的分寸话：</p>
 <blockquote><p>「酶的高低反映腺泡损伤的量，器官功能反映炎症放大的后果，两者不是同一件事」——补充·hermes-病理生理学讲义·第37章·37.8</p></blockquote></div></div>
-  <div class="slide-foot"><span>16 / 26</span><span>body</span></div>
+  <div class="slide-foot"><span>14 / 26</span><span>body</span></div>
 </section>
-<section class="slide" data-i="16">
-  <div class="slide-inner"><div class="kicker">八、局部与全身：四条后果线</div>
-                <div class="compact"><p>所以临床用「器官功能是否受累」区分轻症与重症，而不是单看酶升高的幅度。这一条与 36.11 的血压早期可维持是同一类提醒：指标的变化方向与病情的严重程度并不总是同步。</p></div></div>
-  <div class="slide-foot"><span>17 / 26</span><span>body</span></div>
-</section>
-<section class="slide" data-i="17">
-  <div class="slide-inner"><div class="kicker">九、慢性胰腺炎：纤维化拿走了两套功能</div>
-                <div class="compact"><p>37.9 讲反复炎症的结局：腺体纤维化与钙化，腺泡逐渐被纤维组织取代，胰管扭曲、扩张并形成结石。</p>
+<section class="slide" data-i="14">
+  <div class="slide-inner"><div class="kicker">后果与线索：四条后果线、纤维化与安静的定位（37.8–37.11）</div>
+                <div class="compact dense"><p>所以临床用「器官功能是否受累」区分轻症与重症，而不是单看酶升高的幅度。这一条与 36.11 的血压早期可维持是同一类提醒：指标的变化方向与病情的严重程度并不总是同步。</p>
+<h3 id="慢性胰腺炎-纤维化拿走了两套功能">慢性胰腺炎：纤维化拿走了两套功能</h3>
+<p>37.9 讲反复炎症的结局：腺体纤维化与钙化，腺泡逐渐被纤维组织取代，胰管扭曲、扩张并形成结石。</p>
 <p>外分泌功能不全的后果有次序：</p>
 <blockquote><p>「脂肪消化受损最显著」——补充·hermes-病理生理学讲义·第37章·37.9</p></blockquote>
 <p>脂肪泻、体重下降、脂溶性维生素缺乏最先出现；蛋白质消化不良随后导致肌少症与水肿。为什么脂肪排第一？因为脂肪消化同时依赖胰脂肪酶与胆盐两条通路，而蛋白质还有胃蛋白酶与刷状缘肽酶分担——依赖的环节越多，越先失守。这一条正好把 35.6 与 36.9 的吸收分期收在一处。</p>
-<p>疼痛机制复杂：胰管内压升高、神经周围炎症、胰腺实质压力增高共同作用，因此止痛不能只靠镇痛，还要处理压力与炎症。</p>
-<p>另一后果是内分泌受损：胰岛被纤维化累及时出现糖尿病。胰腺源性糖尿病的特点值得单独记：</p>
-<blockquote><p>「升糖与降糖两个方向同时失灵，血糖波动大」——补充·hermes-病理生理学讲义·第37章·37.9</p></blockquote></div></div>
+<p>疼痛机制复杂：胰管内压升高、神经周围炎症、胰腺实质压力增高共同作用，因此止痛不能只靠镇痛，还要处理压力与炎症。</p></div></div>
+  <div class="slide-foot"><span>15 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="15">
+  <div class="slide-inner"><div class="kicker">后果与线索：四条后果线、纤维化与安静的定位（37.8–37.11）</div>
+                <div class="compact dense"><p>另一后果是内分泌受损：胰岛被纤维化累及时出现糖尿病。胰腺源性糖尿病的特点值得单独记：</p>
+<blockquote><p>「升糖与降糖两个方向同时失灵，血糖波动大」——补充·hermes-病理生理学讲义·第37章·37.9</p></blockquote>
+<p>胰岛素与胰高血糖素同源同腺，一起缺失的结果不是「血糖偏高」，而是「血糖不稳」，低血糖风险反而更高。</p>
+<h3 id="肿瘤线索-一处极安静的定位">肿瘤线索：一处极安静的定位</h3>
+<p>37.10 篇幅最短，信息密度最高。胰腺癌多位于胰头，早期症状隐匿；常见表现为进行性体重下降、上腹隐痛放射至背部、新发糖尿病或原有糖尿病失控。胰头肿瘤压迫胆总管引起无痛性进行性黄疸与胆囊肿大——讲义给了一个对照：这与结石性梗阻的疼痛加波动性黄疸正好相反。位置相同，表现相反，这就是定位的价值：结石有痛且波动，肿瘤无痛且进行。</p>
+<p>胆管癌与胆囊癌以梗阻性黄疸、体重下降与反复胆道感染为主要表现。讲义在这一节的落点是：</p>
+<blockquote><p>「追问体重趋势是识别关键」——补充·hermes-病理生理学讲义·第37章·37.10</p></blockquote></div></div>
+  <div class="slide-foot"><span>16 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="16">
+  <div class="slide-inner"><div class="kicker">后果与线索：四条后果线、纤维化与安静的定位（37.8–37.11）</div>
+                <div class="compact dense"><p>因为这类患者常以消化不良首诊。体重趋势不是一项检查，而是一条时间线——它不告诉你是什么病，只告诉你该往深处查。</p>
+<h3 id="护理评估-五条线-一条时间轴">护理评估：五条线，一条时间轴</h3>
+<p>37.11 把评估写成五条线，每条都有机制依据：</p>
+<ul><li><strong>疼痛</strong>：部位、放射、诱因（油腻饮食后发作提示胆源性，饮酒后提示酒精性）、缓解方式与既往类似发作史——诱因是定位的第一步。</li><li><strong>消化吸收</strong>：粪便性状（油脂漂浮、量多、恶臭提示脂肪泻）、体重与肌肉量趋势——按 37.9 的次序，脂肪先失守。</li><li><strong>黄疸</strong>：尿色、粪色、皮肤瘙痒、出血倾向（依赖维生素 K 的凝血因子合成不足）——四者分别对应胆红素、胆盐与凝血三条通路。</li><li><strong>液体与电解质</strong>：呕吐、禁食、引流液的量与性质，警惕第三间隙丢失——与 37.8 的循环线同源。</li><li><strong>饮食与随访</strong>：胆囊切除后部分患者出现胆汁酸性腹泻，需在随访中解释与处理。讲义另给了三条方向：</li></ul></div></div>
+  <div class="slide-foot"><span>17 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="17">
+  <div class="slide-inner"><div class="kicker">后果与线索：四条后果线、纤维化与安静的定位（37.8–37.11）</div>
+                <div class="compact"><blockquote><p>「规律进食以维持胆囊排空、避免暴饮暴食与高脂饮食、戒酒」——补充·hermes-病理生理学讲义·第37章·37.11</p></blockquote>
+<p>五条线的共同点是它们都是方向性观察，没有一条要求给出数值。这不是省略，而是本书的口径：能写趋势就不写阈值。</p></div></div>
   <div class="slide-foot"><span>18 / 26</span><span>body</span></div>
 </section>
 <section class="slide" data-i="18">
-  <div class="slide-inner"><div class="kicker">九、慢性胰腺炎：纤维化拿走了两套功能</div>
-                <div class="compact"><p>胰岛素与胰高血糖素同源同腺，一起缺失的结果不是「血糖偏高」，而是「血糖不稳」，低血糖风险反而更高。</p></div></div>
+  <div class="slide-inner"><div class="kicker">节级落位：讲义 37.1–37.11</div>
+                <div class="compact dense"><div class="table-wrap"><table><thead><tr><th>节号</th><th>一句话落位</th></tr></thead><tbody><tr><td>37.1 胆汁的生成与成分</td><td>三样溶质的比例决定溶解状态；浓缩是双刃剑</td></tr><tr><td>37.2 胆囊的浓缩与排空</td><td>一紧一松；淤滞促进成石与感染，形成正反馈</td></tr><tr><td>37.3 胆石三要素</td><td>过饱和、成核、动力低下缺一不成；位置决定疾病</td></tr><tr><td>37.4 绞痛、胆囊炎与胆管梗阻</td><td>疼痛时程看嵌顿是否缓解；梗阻是时限性问题</td></tr><tr><td>37.5 胆汁淤积与黄疸定位</td><td>三档定检查方向；淤积看肝与肠两端</td></tr><tr><td>37.6 酶原激活的三道保险</td><td>酶原、隔离、冲洗抑制剂；三道同时突破才成病</td></tr><tr><td>37.7 急性胰腺炎</td><td>钙信号在前；坏死可自限，炎症放大决定器官受累</td></tr><tr><td>37.8 局部与全身后果</td><td>四条后果线；酶的高低与器官功能不是同一件事</td></tr><tr><td>37.9 慢性胰腺炎</td><td>脂肪最先失守；升糖降糖同时失灵，血糖波动大</td></tr><tr><td>37.10 胰腺与胆道肿瘤线索</td><td>无痛进行性黄疸对照疼痛波动性黄疸；追问体重趋势</td></tr><tr><td>37.11 护理评估与随访</td><td>五条线全是方向性观察；胆囊切除后的胆汁酸性腹泻</td></tr></tbody></table></div></div></div>
   <div class="slide-foot"><span>19 / 26</span><span>body</span></div>
 </section>
 <section class="slide" data-i="19">
-  <div class="slide-inner"><div class="kicker">十、肿瘤线索：一处极安静的定位</div>
-                <div class="compact"><p>37.10 篇幅最短，信息密度最高。胰腺癌多位于胰头，早期症状隐匿；常见表现为进行性体重下降、上腹隐痛放射至背部、新发糖尿病或原有糖尿病失控。胰头肿瘤压迫胆总管引起无痛性进行性黄疸与胆囊肿大——讲义给了一个对照：这与结石性梗阻的疼痛加波动性黄疸正好相反。位置相同，表现相反，这就是定位的价值：结石有痛且波动，肿瘤无痛且进行。</p>
-<p>胆管癌与胆囊癌以梗阻性黄疸、体重下降与反复胆道感染为主要表现。讲义在这一节的落点是：</p>
-<blockquote><p>「追问体重趋势是识别关键」——补充·hermes-病理生理学讲义·第37章·37.10</p></blockquote>
-<p>因为这类患者常以消化不良首诊。体重趋势不是一项检查，而是一条时间线——它不告诉你是什么病，只告诉你该往深处查。</p></div></div>
+  <div class="slide-inner"><div class="kicker">节级落位：讲义 37.1–37.11</div>
+                <div class="compact"><p>十一节的次序是两条平行的链：37.1 至 37.5 走胆道（成分、排放、成石、梗阻、淤积），37.6 至 37.9 走胰腺（保险、突破、后果、慢性化），37.10 与 37.11 把两条链收进定位与评估。两条链共用 37.2 那条三环节通则。</p></div></div>
   <div class="slide-foot"><span>20 / 26</span><span>body</span></div>
 </section>
 <section class="slide" data-i="20">
-  <div class="slide-inner"><div class="kicker">十一、护理评估：五条线，一条时间轴</div>
-                <div class="compact"><p>37.11 把评估写成五条线，每条都有机制依据：</p>
-<ul><li><strong>疼痛</strong>：部位、放射、诱因（油腻饮食后发作提示胆源性，饮酒后提示酒精性）、缓解方式与既往类似发作史——诱因是定位的第一步。</li><li><strong>消化吸收</strong>：粪便性状（油脂漂浮、量多、恶臭提示脂肪泻）、体重与肌肉量趋势——按 37.9 的次序，脂肪先失守。</li><li><strong>黄疸</strong>：尿色、粪色、皮肤瘙痒、出血倾向（依赖维生素 K 的凝血因子合成不足）——四者分别对应胆红素、胆盐与凝血三条通路。</li><li><strong>液体与电解质</strong>：呕吐、禁食、引流液的量与性质，警惕第三间隙丢失——与 37.8 的循环线同源。</li><li><strong>饮食与随访</strong>：胆囊切除后部分患者出现胆汁酸性腹泻，需在随访中解释与处理。讲义另给了三条方向：</li></ul>
-<blockquote><p>「规律进食以维持胆囊排空、避免暴饮暴食与高脂饮食、戒酒」——补充·hermes-病理生理学讲义·第37章·37.11</p></blockquote>
-<p>五条线的共同点是它们都是方向性观察，没有一条要求给出数值。这不是省略，而是本书的口径：能写趋势就不写阈值。</p></div></div>
-  <div class="slide-foot"><span>21 / 26</span><span>body</span></div>
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><ul><li><strong>引文只有一层。</strong> 本章引文格式统一为<code>补充·hermes-病理生理学讲义·第37章·N.M</code>，章号等于课程章号，节号逐条真实存在。讲义是本仓库原创的教学正文，不是任何外文教材的译本；引用它不等于引用外文教材原文。</li><li><strong>本章丢掉了什么：数值。</strong> 讲义这一章通篇不用数字加计量单位说话，凡可量化处一律改写成方向与类别——升高、下降、过饱和、不足、进行性、波动性。本书照录这一取舍：<strong>描述类别可以，给出取值不行。</strong> 本页的规模与词频由 <code>node code/main.js</code> 现算，但讲义究竟用了几个数值，不由本页断言。</li><li><strong>不写正常值、参考区间与单位。</strong> 凡遇黄疸多少算高、酶升高多少算重的追问，统一回本书不给值，另立数据层、另立来源与校验。</li><li><strong>不作诊断，也不作正常与异常的判定。</strong> 三要素、三档黄疸、四条后果线都只作机制类别；绞痛、脂肪泻、体重下降只作线索。凡涉个体，一律中性表述、不贴标签、不作疗效断言。</li><li>**不写治疗方案。</li></ul></div></div>
+  <div class="slide-foot"><span>21 / 26</span><span>boundary</span></div>
 </section>
 <section class="slide" data-i="21">
-  <div class="slide-inner"><div class="kicker">十二、节级落位：讲义 37.1–37.11</div>
-                <div class="compact"><div class="table-wrap"><table><thead><tr><th>节号</th><th>一句话落位</th></tr></thead><tbody><tr><td>37.1 胆汁的生成与成分</td><td>三样溶质的比例决定溶解状态；浓缩是双刃剑</td></tr><tr><td>37.2 胆囊的浓缩与排空</td><td>一紧一松；淤滞促进成石与感染，形成正反馈</td></tr><tr><td>37.3 胆石三要素</td><td>过饱和、成核、动力低下缺一不成；位置决定疾病</td></tr><tr><td>37.4 绞痛、胆囊炎与胆管梗阻</td><td>疼痛时程看嵌顿是否缓解；梗阻是时限性问题</td></tr><tr><td>37.5 胆汁淤积与黄疸定位</td><td>三档定检查方向；淤积看肝与肠两端</td></tr><tr><td>37.6 酶原激活的三道保险</td><td>酶原、隔离、冲洗抑制剂；三道同时突破才成病</td></tr><tr><td>37.7 急性胰腺炎</td><td>钙信号在前；坏死可自限，炎症放大决定器官受累</td></tr><tr><td>37.8 局部与全身后果</td><td>四条后果线；酶的高低与器官功能不是同一件事</td></tr><tr><td>37.9 慢性胰腺炎</td><td>脂肪最先失守；升糖降糖同时失灵，血糖波动大</td></tr><tr><td>37.10 胰腺与胆道肿瘤线索</td><td>无痛进行性黄疸对照疼痛波动性黄疸；追问体重趋势</td></tr><tr><td>37.11 护理评估与随访</td><td>五条线全是方向性观察；胆囊切除后的胆汁酸性腹泻</td></tr></tbody></table></div></div></div>
-  <div class="slide-foot"><span>22 / 26</span><span>body</span></div>
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><p>** 讲义在机制层提到限食、戒酒、去因一类方向；本页不写药物、剂量、疗程，也不写内镜与手术的操作。</p>
+<ul><li><strong>一处对照按讲义原样保留。</strong> 结石有痛且波动、肿瘤无痛且进行，这是类别对照，不是诊断规则；本页不把它写成判据，也不用于任何个体的判断。</li><li><strong>边界声明</strong>：本章只说明讲义给出的生成与排放环节的机制类别，<strong>不写数值与单位与正常值，不作正常与异常判定，不构成诊断、治疗或用药依据</strong>；任何个体的状态判断须由具备资质的人员依现行规范作出。</li></ul>
+<h3 id="运行与验证">运行与验证</h3>
+<div class="codeblock"><div class="codeblock-lang">bash</div><pre><code class="lang-bash"># 1) 现算讲义规模、节级分布、关键词频，并核本页的引文、引语、节覆盖、裸值与 quiz
+node code/main.js
+
+# 2) 单测：章号与标题 / 节数与节号区间 / 字数 / 引文逐字 / 节覆盖 / 裸值零容忍 / quiz 契约 / 边界句
+node --test code/main.test.js</code></pre></div></div></div>
+  <div class="slide-foot"><span>22 / 26</span><span>boundary</span></div>
 </section>
 <section class="slide" data-i="22">
-  <div class="slide-inner"><div class="kicker">十二、节级落位：讲义 37.1–37.11</div>
-                <div class="compact"><p>十一节的次序是两条平行的链：37.1 至 37.5 走胆道（成分、排放、成石、梗阻、淤积），37.6 至 37.9 走胰腺（保险、突破、后果、慢性化），37.10 与 37.11 把两条链收进定位与评估。两条链共用 37.2 那条三环节通则。</p></div></div>
-  <div class="slide-foot"><span>23 / 26</span><span>body</span></div>
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><h1 id="3-章级门-全-53-章契约-只看自己负责的章是否全绿">3) 章级门（全 53 章契约，只看自己负责的章是否全绿）</h1>
+<p>cd /e/tcmai-engineering-from-scatch &amp;&amp; node tests/test_binglishengli_chapters.js</p>
+<div class="codeblock"><div class="codeblock-lang">text</div><pre><code class="lang-text">
+`node code/main.js` 的真实输出（节选；「本页正文」那一行故意不贴——把它抄进来会改变它自己读到的数）：
+
+```text
+═══ 胆囊与外分泌胰腺功能异常（病理生理学 第37章 · 讲义 U10 单元）═══
+讲义章题: 胆囊与外分泌胰腺功能异常（Alterations in Function of the Gallbladder and Exocrine Pancreas）
+讲义规模: 37.1–37.11 · 11 节 · 3239 非空白字符 · 平均每节 294 字
+篇幅两极: 最短 37.11（238 字）／最长 37.5（331 字）</code></pre></div></div></div>
+  <div class="slide-foot"><span>23 / 26</span><span>boundary</span></div>
 </section>
 <section class="slide" data-i="23">
   <div class="slide-inner"><div class="kicker">代价与边界</div>
-                <div class="compact"><ul><li><strong>引文只有一层。</strong> 本章引文格式统一为<code>补充·hermes-病理生理学讲义·第37章·N.M</code>，章号等于课程章号，节号逐条真实存在。讲义是本仓库原创的教学正文，不是任何外文教材的译本；引用它不等于引用外文教材原文。</li><li><strong>本章丢掉了什么：数值。</strong> 讲义这一章通篇不用数字加计量单位说话，凡可量化处一律改写成方向与类别——升高、下降、过饱和、不足、进行性、波动性。本书照录这一取舍：<strong>描述类别可以，给出取值不行。</strong> 本页的规模与词频由 <code>node code/main.js</code> 现算，但讲义究竟用了几个数值，不由本页断言。</li><li><strong>不写正常值、参考区间与单位。</strong> 凡遇黄疸多少算高、酶升高多少算重的追问，统一回本书不给值，另立数据层、另立来源与校验。</li><li><strong>不作诊断，也不作正常与异常的判定。</strong> 三要素、三档黄疸、四条后果线都只作机制类别；绞痛、脂肪泻、体重下降只作线索。凡涉个体，一律中性表述、不贴标签、不作疗效断言。</li><li>**不写治疗方案。</li></ul></div></div>
+                <div class="compact denser"><p>节级分布:
+  37.1 胆汁的生成与成分 · 319 字
+  37.2 胆囊的浓缩与排空 · 299 字
+  37.3 胆石形成的三要素 · 280 字
+  37.4 胆绞痛、胆囊炎与胆管梗阻 · 319 字
+  37.5 胆汁淤积与黄疸的定位 · 331 字
+  37.6 胰液分泌与酶原激活的三道保险 · 292 字
+  37.7 急性胰腺炎：自身消化的机制 · 307 字
+  37.8 局部与全身后果 · 309 字
+  37.9 慢性胰腺炎与胰腺外分泌功能不全 · 289 字
+  37.10 胰腺与胆道肿瘤的线索 · 256 字
+  37.11 护理评估与随访要点 · 238 字</p>
+<p>关键词频（讲义本章正文，同一批词横向比）:
+  胰　　　  27 次
+  胆盐　　  16 次
+  胆汁　　  15 次
+  梗阻　　  13 次
+  结石　　  12 次
+  脂肪　　   8 次
+  → 重心落在「胰」：本章给的是机制类别，不是病名清单。</p>
+<p>讲义引文: 20 条 · 指向第37章 11 个不同节
+引文错章: 0 条 · 节号不存在: 0 条
+引语逐字: 23 条，讲义里找不到的 0 条
+节覆盖: 11 / 11 → 每节都有落位
+正文裸值行: 0 行
+quiz: 6 题（pre 1 · check 3 · post 2）· 无题干键 0 题 · 无引证 0 题</p></div></div>
   <div class="slide-foot"><span>24 / 26</span><span>boundary</span></div>
 </section>
 <section class="slide" data-i="24">
   <div class="slide-inner"><div class="kicker">代价与边界</div>
-                <div class="compact"><p>** 讲义在机制层提到限食、戒酒、去因一类方向；本页不写药物、剂量、疗程，也不写内镜与手术的操作。</p>
-<ul><li><strong>一处对照按讲义原样保留。</strong> 结石有痛且波动、肿瘤无痛且进行，这是类别对照，不是诊断规则；本页不把它写成判据，也不用于任何个体的判断。</li><li><strong>边界声明</strong>：本章只说明讲义给出的生成与排放环节的机制类别，<strong>不写数值与单位与正常值，不作正常与异常判定，不构成诊断、治疗或用药依据</strong>；任何个体的状态判断须由具备资质的人员依现行规范作出。</li></ul></div></div>
+                <div class="compact dense"><p>教学边界：本章只说明讲义给出的生成与排放环节的机制类别，不写数值与单位与正常值，不构成诊断、治疗或用药依据</p>
+<div class="codeblock"><div class="codeblock-lang">text</div><pre><code class="lang-text">
+`code/main.js` 的最后一行固定为下面这句，也是单测与章级门共同依赖的字符串：
+
+```text
+教学边界：本章只说明讲义给出的生成与排放环节的机制类别，不写数值与单位与正常值，不构成诊断、治疗或用药依据</code></pre></div>
+<p><strong>免责声明：</strong>本章为病理生理学教学材料。文中所有概念、机制与临床类别，取自本仓库原创讲义第 37 章（37.1–37.11）与本仓库 <code>standards/binglishengli/supplements/jiangyi.json</code> 的机器可读层；数字为程序现算，规则已在文中写明。</p>
+<p>本章不提供任何诊断、治疗或用药建议，不给出正常值与参考范围，也不对任何个体的状态作出正常或异常的判断。文中出现的三要素、三道保险、四条后果线等均为概念层与机制层的说明，不能替代临床评估。若出现身体不适或急症，请立即就医。</p></div></div>
   <div class="slide-foot"><span>25 / 26</span><span>boundary</span></div>
 </section>
 <section class="slide" data-i="25">

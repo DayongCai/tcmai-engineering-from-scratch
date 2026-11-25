@@ -28,7 +28,7 @@
       "spoken": "「《内科护理学·第三章 内科护理评估与病情观察》」——本章讲评估与观察，教材无篇名级引文；篇名按该书章目补足，非本章原文篇名。本章要回答的是：内科病情观察最难的是什么。",
       "estimateSeconds": 18,
       "audio": "002.mp3",
-      "audioSeconds": 17.9
+      "audioSeconds": 17.904
     },
     {
       "n": 3,
@@ -38,7 +38,7 @@
       "spoken": "是「变化的方向」而不是「当下的数值」：单次血压 90/60 可能是常态，两小时内从 140/90 掉下来才是信号。",
       "estimateSeconds": 12,
       "audio": "003.mp3",
-      "audioSeconds": 10.78
+      "audioSeconds": 10.776
     },
     {
       "n": 4,
@@ -58,10 +58,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "005.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 65.06,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 1.08,
+    "measuredMinutes": 1.08,
+    "ratio": 1.001
+  }
 }

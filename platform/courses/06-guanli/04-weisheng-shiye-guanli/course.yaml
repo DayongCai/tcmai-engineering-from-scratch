@@ -29,50 +29,49 @@ platform:
 
 chapters:
   - slug: 01-w1
-    title: 第1章 卫生管理体制与组织体系
-    segments: 5
+    title: 谁都能管，等于谁都不管：卫生管理体制的责任链
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.95
+    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-w2
-    title: 第2章 政策法规与资源配置
-    segments: 5
+    title: 规划不能只写在纸上：资源配置是按规则分，不是按需要给
     video: rendered
-    estimate_minutes: 0.87
-    measured_minutes: 0.92
+    estimate_minutes: 0.87      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-w3
-    title: 第3章 服务体系与分级诊疗
-    segments: 5
+    title: 分级诊疗不是把病人往下推，是让下面接得住
     video: rendered
-    estimate_minutes: 0.87
-    measured_minutes: 0.9
+    estimate_minutes: 0.87      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-w4
-    title: 第4章 基层卫生与公共卫生
-    segments: 5
+    title: 公共卫生买的是项目，健康要的是结果
     video: rendered
-    estimate_minutes: 0.87
-    measured_minutes: 0.91
+    estimate_minutes: 0.87      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-w5
-    title: 第5章 医疗与人力资源管理
-    segments: 5
+    title: 卫生人力不是缺人，是缺在错的地方
     video: rendered
-    estimate_minutes: 0.87
-    measured_minutes: 0.9
+    estimate_minutes: 0.87      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-w6
-    title: 第6章 财务·保障与药械
-    segments: 5
+    title: 支付方式是一根杠杆，撬动的是医生的手
     video: rendered
-    estimate_minutes: 0.85
-    measured_minutes: 0.91
+    estimate_minutes: 0.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-w7
-    title: 第7章 信息·绩效与监督
-    segments: 5
+    title: 指标测的是能被记录的东西，不是要紧的东西
     video: rendered
-    estimate_minutes: 0.85
-    measured_minutes: 0.92
+    estimate_minutes: 0.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-w8
-    title: 第8章 中医管理·国际比较
-    segments: 5
+    title: 并重写在方针里，落在编制与支付上
     video: rendered
-    estimate_minutes: 0.87
-    measured_minutes: 0.91
+    estimate_minutes: 0.87      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

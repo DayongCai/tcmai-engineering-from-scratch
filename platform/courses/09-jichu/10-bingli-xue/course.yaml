@@ -29,128 +29,127 @@ platform:
 
 chapters:
   - slug: 01-xulun
-    title: 第1章 绪论
-    segments: 5
+    title: 绪论：一门学科先要学会「怎么描述」
     video: rendered
-    estimate_minutes: 1.55
-    measured_minutes: 1.45
+    estimate_minutes: 41.28      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 40.45      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-jibing-gailun
-    title: 第2章 疾病概论
-    segments: 5
+    title: 疾病概论：把「病」写成一个过程，而不是一张标签
     video: rendered
-    estimate_minutes: 1.77
-    measured_minutes: 1.62
+    estimate_minutes: 41.28      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 40.62      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-shiying-sunshang-xiufu
-    title: 第3章 细胞和组织的适应、损伤与修复
-    segments: 5
+    title: 细胞和组织的适应、损伤与修复：一条线上的三段，还是三个话题
     video: rendered
-    estimate_minutes: 1.8
-    measured_minutes: 1.73
+    estimate_minutes: 43.08      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 42.98      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-jubu-xueye-xunhuan-zhangai
-    title: 第4章 局部血液循环障碍
-    segments: 5
+    title: 局部血液循环障碍：把「血怎么了」写成一条单向链
     video: rendered
-    estimate_minutes: 1.6
-    measured_minutes: 1.52
+    estimate_minutes: 40.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 40.05      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-yanzheng
-    title: 第5章 炎症
-    segments: 5
+    title: 炎症：把「防御性反应」拆成损伤与应答两笔账
     video: rendered
-    estimate_minutes: 1.95
-    measured_minutes: 1.85
+    estimate_minutes: 40.08      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 38.98      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-zhongliu
-    title: 第6章 肿瘤
-    segments: 5
+    title: 肿瘤：把「新生物」拆成克隆、异型与扩散三件事
     video: rendered
-    estimate_minutes: 2.12
-    measured_minutes: 1.99
+    estimate_minutes: 43.35      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 42.18      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-shui-dianjiezhi-wenluan
-    title: 第7章 水、电解质代谢紊乱
-    segments: 5
+    title: 水、电解质代谢紊乱：把「容量与渗透压」当成两把尺
     video: rendered
-    estimate_minutes: 1.98
-    measured_minutes: 1.87
+    estimate_minutes: 41.47      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 40.44      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-shuizhong
-    title: 第8章 水肿
-    segments: 5
+    title: 水肿：把「水多了」拆成两个平衡
     video: rendered
-    estimate_minutes: 1.68
-    measured_minutes: 1.61
+    estimate_minutes: 39.02      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 38.61      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-suanjian-pingheng-wenluan
-    title: 第9章 酸碱平衡紊乱
-    segments: 5
+    title: 酸碱平衡紊乱：把「偏酸偏碱」拆成方向与原发环节
     video: rendered
-    estimate_minutes: 1.75
-    measured_minutes: 1.65
+    estimate_minutes: 41.73      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 41.32      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-queyang
-    title: 第10章 缺氧
-    segments: 5
+    title: 缺氧：把「喘不上气」翻译成一条氧运输链
     video: rendered
-    estimate_minutes: 2.03
-    measured_minutes: 1.92
+    estimate_minutes: 45.23      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 44.53      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 11-fare
-    title: 第11章 发热
-    segments: 5
+    title: 发热：把一个「设定值」讲成三段因果
     video: rendered
-    estimate_minutes: 2.05
-    measured_minutes: 1.95
+    estimate_minutes: 45.10      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 40.89      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 12-yingji-jibing
-    title: 第12章 应激与疾病
-    segments: 5
+    title: 应激与疾病：把「压力大」写成一张资源调度表
     video: rendered
-    estimate_minutes: 2.22
-    measured_minutes: 2.09
+    estimate_minutes: 49.38      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 48.67      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 13-xiuke
-    title: 第13章 休克
-    segments: 8
+    title: 休克：把「灌注不足」写成一条会自己加速的链
     video: rendered
-    estimate_minutes: 4.73
-    measured_minutes: 4.37
+    estimate_minutes: 45.68      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 45.18      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 14-dic
-    title: 第14章 弥散性血管内凝血
-    segments: 8
+    title: 弥散性血管内凝血：凝血在前、纤溶在后
     video: rendered
-    estimate_minutes: 4.23
-    measured_minutes: 4.08
+    estimate_minutes: 45.57      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 45.16      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 15-queshangzaiguanzhu-sunshang
-    title: 第15章 缺血-再灌注损伤
-    segments: 8
+    title: 缺血-再灌注损伤：恢复血流为什么会加重损伤
     video: rendered
-    estimate_minutes: 4.68
-    measured_minutes: 4.62
+    estimate_minutes: 44.72      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 44.27      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 16-xinxueguan-jibing
-    title: 第16章 心血管系统疾病
-    segments: 5
+    title: 心血管系统疾病：把病名还原成「位置、形态与后果」
     video: rendered
-    estimate_minutes: 1.68
-    measured_minutes: 1.58
+    estimate_minutes: 40.40      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 39.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 17-huxi-jibing
-    title: 第17章 呼吸系统疾病
-    segments: 5
+    title: 呼吸系统疾病：从气道到肺泡，再由肺及心
     video: rendered
-    estimate_minutes: 1.57
-    measured_minutes: 1.5
+    estimate_minutes: 40.65      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 40.39      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 18-xiaohua-jibing
-    title: 第18章 消化系统疾病
-    segments: 5
+    title: 消化系统疾病：黏膜层、胃壁全层、肝小叶
     video: rendered
-    estimate_minutes: 1.6
-    measured_minutes: 1.54
+    estimate_minutes: 40.65      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 40.55      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 19-miniao-shengzhi-jibing
-    title: 第19章 泌尿及生殖系统疾病
-    segments: 5
+    title: 泌尿及生殖系统疾病：病变沿着哪条管道走
     video: rendered
-    estimate_minutes: 1.87
-    measured_minutes: 1.76
+    estimate_minutes: 40.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 40.75      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 20-shenjing-neifenmi-jibing
-    title: 第20章 常见神经及内分泌系统疾病
-    segments: 5
+    title: 常见神经及内分泌系统疾病：把「类别」当成一把尺子
     video: rendered
-    estimate_minutes: 2.07
-    measured_minutes: 1.9
+    estimate_minutes: 40.42      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 40.46      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 21-chuanranbing-jishengchong
-    title: 第21章 常见传染病及寄生虫病
-    segments: 5
+    title: 常见传染病及寄生虫病：九种病，一张对照表
     video: rendered
-    estimate_minutes: 1.68
-    measured_minutes: 1.63
+    estimate_minutes: 38.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 39.28      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

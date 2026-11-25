@@ -18,7 +18,7 @@
       "spoken": "第 2 章 · 围手术期护理基础",
       "estimateSeconds": 3,
       "audio": "001.mp3",
-      "audioSeconds": 3.19
+      "audioSeconds": 3.192
     },
     {
       "n": 2,
@@ -28,7 +28,7 @@
       "spoken": "「《外科护理学·第3章 围手术期护理基础》」——教材第 3 章章目级引文；教材无篇名级引文，非本章原文篇名。本章要回答的是：围手术期护理基础这一章的核心判据是什么。",
       "estimateSeconds": 17,
       "audio": "002.mp3",
-      "audioSeconds": 17.06
+      "audioSeconds": 17.064
     },
     {
       "n": 3,
@@ -48,7 +48,7 @@
       "spoken": "环境逼迫（外科病人一次手术就跨越四个阶段，护理要在每个阶段回答不同的问题）+ 知识积累（本章 1 单元 17,368 汉字；三辨主 术中术后照护 230；四位面（术式类别）主 普通外科 0；引书 0 部 0 次；数值类命中 0）",
       "estimateSeconds": 22,
       "audio": "004.mp3",
-      "audioSeconds": 22.54
+      "audioSeconds": 22.536
     },
     {
       "n": 5,
@@ -58,10 +58,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "005.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 59.98,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 0.97,
+    "measuredMinutes": 1.0,
+    "ratio": 1.034
+  }
 }

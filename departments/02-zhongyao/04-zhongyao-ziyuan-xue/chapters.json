@@ -5,7 +5,7 @@
   {
    "n": 1,
    "slug": "01-fenbu-quhua",
-   "title": "中药资源的分布与区划",
+   "title": "区划不是画在地图上的线，而是一组可复核的判据",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/01-fenbu-quhua/docs/zh.md",
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-daodi-xingcheng",
-   "title": "道地药材的形成与评价",
+   "title": "道地是三件事同时对上的结果，不是一句产地评语",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/02-daodi-xingcheng/docs/zh.md",
@@ -23,7 +23,7 @@
   {
    "n": 3,
    "slug": "03-yewai-diaocha",
-   "title": "野生资源的调查与蕴藏量估算",
+   "title": "蕴藏量不是一个数，而是一条由四步误差叠出来的区间",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/03-yewai-diaocha/docs/zh.md",
@@ -32,7 +32,7 @@
   {
    "n": 4,
    "slug": "04-zaipei-gap",
-   "title": "栽培技术与规范化种植",
+   "title": "栽培不是把野药搬进地里，而是把不可控的风险换成可记账的风险",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/04-zaipei-gap/docs/zh.md",
@@ -41,7 +41,7 @@
   {
    "n": 5,
    "slug": "05-kaifa-liyong",
-   "title": "资源的开发利用与产业化",
+   "title": "开发不是把药材换成产品，而是把年允收量换算成产品线的上限",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/05-kaifa-liyong/docs/zh.md",
@@ -50,7 +50,7 @@
   {
    "n": 6,
    "slug": "06-binwei-baohu",
-   "title": "濒危物种保护与政策",
+   "title": "保护不是把物种围起来，而是把采挖压力从野生种群上挪走",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/06-binwei-baohu/docs/zh.md",
@@ -59,7 +59,7 @@
   {
    "n": 7,
    "slug": "07-pucha-shujuku",
-   "title": "资源普查数据的建库与制图",
+   "title": "数据库的可信度不取决于记录条数，而取决于三列能否被独立回查",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/07-pucha-shujuku/docs/zh.md",
@@ -68,7 +68,7 @@
   {
    "n": 8,
    "slug": "08-gongxu-moxing",
-   "title": "供需模型与价格波动的量化",
+   "title": "药材价格的大起大落，来自供给曲线在短期近乎垂直",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/08-gongxu-moxing/docs/zh.md",

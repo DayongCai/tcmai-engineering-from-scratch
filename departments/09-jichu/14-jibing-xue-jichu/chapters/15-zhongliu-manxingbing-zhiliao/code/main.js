@@ -1,13 +1,17 @@
 #!/usr/bin/env node
 /**
- * 疾病学基础 · 第 15 章 肿瘤与慢性病治疗基础：本章统计口径
- * 课程: departments/09-jichu/14-jibing-xue-jichu/chapters/15-zhongliu-manxingbing-zhiliao/docs/zh.md
- * 数据: standards/jibing-xue-jichu/units.json（216 单元层，每单元带三辨与四位面词频）
- * 取数: standards/jibing-xue-jichu/chapter-map.json（课程章 → 教材单元号）
- * 依赖: 仅 Node.js 标准库
+ * 疾病学基础 · 第 15 章 肿瘤与慢性病的治疗叙述，先从「不说有效」开始
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ *   node code/main.js
+ *
+ * 只读两处：
+ *   正文  chapters/15-zhongliu-manxingbing-zhiliao/docs/zh.md
+ *   习题  chapters/15-zhongliu-manxingbing-zhiliao/quiz.json
+ * 依赖：仅 Node.js 标准库。不读任何取数表：正文改了，这里打印的数字跟着变。
+ *
+ *   · 规模：汉字、段、节标题、表格张数与每张表的列数／行数
+ *   · 本章算术：从覆盖表、现象表与禁令表解析条目，再算不良反应的分类组合
+ *   · 习题：题量、三段分布、选项数、解释长度、答案位置是否打散、check 题能否在正文找到原词
  */
 
 'use strict';
@@ -15,87 +19,211 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'jibing-xue-jichu', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/jibing-xue-jichu/units.json —— 章节目录是否已脱离仓库？');
-}
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'jibing-xue-jichu', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'jibing-xue-jichu', 'chapter-map.json');
-const CHAPTER = '15';
+const CHAPTER = 15;
 const SLUG = '15-zhongliu-manxingbing-zhiliao';
+const TITLE = '肿瘤与慢性病的治疗叙述，先从「不说有效」开始';
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+/* ── 文本口径 ────────────────────────────────────────────────────── */
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+const count = (text, term) => String(text).split(term).length - 1;
+const readDoc = () => fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+const docLines = (doc) => String(doc).split(/\r?\n/);
+
+/** 节标题：`## 一、…` */
+function sections(doc) {
+  return docLines(doc).filter((l) => /^##\s+/.test(l)).map((l) => l.replace(/^##\s+/, '').trim());
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+/** 段：非空，不以标题、引文、表格行、清单符号或编号起始 */
+function paragraphs(doc) {
+  return docLines(doc)
+    .map((l) => l.trim())
+    .filter((l) => l && !/^[#>|]/.test(l) && !/^[-*+]\s/.test(l) && !/^\d+[.、]/.test(l))
+    .filter((l) => !l.includes('|'));
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+/** markdown 表格：表头 + 去分隔行的数据行 */
+function tables(doc) {
+  const ls = docLines(doc);
+  const cells = (l) => l.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map((c) => c.trim());
+  const out = [];
+  let i = 0;
+  while (i < ls.length) {
+    if (/^\s*\|/.test(ls[i])) {
+      const block = [];
+      while (i < ls.length && /^\s*\|/.test(ls[i])) {
+        block.push(ls[i]);
+        i += 1;
+      }
+      const header = cells(block[0]);
+      const rows = block.slice(1).filter((l) => !/^\s*\|[\s:|-]+\|\s*$/.test(l)).map(cells);
+      out.push({ header, cols: header.length, rows });
+    } else {
+      i += 1;
+    }
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return out;
+}
+
+const tableBy = (ts, kw) => ts.find((t) => t.header.join(' ').includes(kw));
+
+/** 并列项：先削括号内的举例，再按顿号切 */
+function items(s) {
+  return String(s || '')
+    .replace(/（[^）]*）/g, '')
+    .split(/[、，,；;／]/)
+    .map((x) => x.trim())
+    .filter(Boolean);
+}
+
+/* ── 本章算术（逐章注入，全部从正文解析） ────────────────────────── */
+
+function chapterArithmetic(doc, ts) {
+  const scope = tableBy(ts, '主要代价方向'); // 局部 / 全身
+  const pheno = tableBy(ts, '可能的解释'); // 三行现象
+  const ban = tableBy(ts, '为什么不行'); // 四条禁令
+
+  const scopeRows = scope ? scope.rows.map((r) => r[0]) : [];
+  const phenoRows = pheno ? pheno.rows.map((r) => r[0]) : [];
+  const banRows = ban ? ban.rows.map((r) => r[0]) : [];
+
+  // 不良反应的三把尺子
+  const t1 = (doc.match(/按时间分（([^）]+)）/) || [])[1] || '';
+  const t2 = (doc.match(/按可预期性分（([^）]+)）/) || [])[1] || '';
+  const t3 = (doc.match(/按程度分（([^）]+)）/) || [])[1] || '';
+  const k1 = items(t1);
+  const k2 = items(t2);
+  const k3 = items(t3);
+
+  const supM = doc.match(/支持治疗的类别大致可分四组：([^。]+)/);
+  const supGroups = supM ? items(supM[1]) : [];
+
+  const stepM = doc.match(/护理要求围绕「([^」]+)」三步/);
+  const supSteps = stepM ? stepM[1].split('—').map((s) => s.trim()).filter(Boolean) : [];
+
+  const reqM = doc.match(/把边界收成三条要求：([^。]+)/);
+  const reqs = reqM ? items(reqM[1]) : [];
+
+  return {
+    scopeRows,
+    phenoRows,
+    banRows,
+    k1,
+    k2,
+    k3,
+    supGroups,
+    supSteps,
+    reqs,
+    lines: [
+      '作用范围 ' + scopeRows.length + ' 类（' + scopeRows.join('／') + '）：覆盖与全身代价的交换，不是强弱',
+      '反应观察 ' + phenoRows.length + ' 类现象，每类至少三种解释并存，记录只写现象与时序',
+      '不良反应分类 ' + k1.length + ' × ' + k2.length + ' × ' + k3.length + ' = ' +
+        k1.length * k2.length * k3.length + ' 个类别组合，观察时点因此不同',
+      '支持治疗 ' + supGroups.length + ' 组（' + supGroups.join('／') + '）· ' + supSteps.length +
+        ' 步（' + supSteps.join(' → ') + '），缺复评则无从判断有没有用',
+      '叙述禁令 ' + banRows.length + ' 条，每条一句替换句；边界三要求 ' + reqs.length + ' 条（' +
+        reqs.join('／') + '）',
+    ],
+  };
+}
+
+/* ── 习题：结构 + 接地 ──────────────────────────────────────────── */
+
+/** 正文里 4 字以上的连续汉字片段 */
+function grams(text, n = 4) {
+  const out = new Set();
+  for (const seg of String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+}
+
+function quizSummary(quiz, doc) {
+  const body = grams(doc);
+  const qs = Array.isArray(quiz.questions) ? quiz.questions : [];
+  const stage = { pre: 0, check: 0, post: 0 };
+  const rows = qs.map((q, i) => {
+    if (stage[q.stage] !== undefined) stage[q.stage] += 1;
+    const opts = Array.isArray(q.options) ? q.options : [];
+    const right = String(opts[q.correct] || '');
+    const hit = [...grams(right)].filter((g) => body.has(g));
+    const why = q.explain || q.explanation || '';
+    return { n: i + 1, stage: q.stage, options: opts.length, correct: q.correct, explainHanzi: hanzi(why), grounded: hit.length, sample: hit.slice(0, 3) };
+  });
+  return {
+    total: qs.length,
+    stage,
+    rows,
+    answers: qs.map((q) => q.correct),
+    distinctAnswers: new Set(qs.map((q) => q.correct)).size,
+    checkGrounded: rows.filter((x) => x.stage === 'check' && x.grounded > 0).length,
+    minExplain: rows.length ? Math.min(...rows.map((x) => x.explainHanzi)) : 0,
+    allFourOptions: rows.every((x) => x.options === 4),
+    stageComplete: ['pre', 'check', 'post'].every((s) => stage[s] > 0),
+  };
+}
+
+/* ── 汇总 ──────────────────────────────────────────────────────── */
+
+function analyze() {
+  const doc = readDoc();
+  const ts = tables(doc);
+  const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+  return {
+    docHanzi: hanzi(doc),
+    paragraphs: paragraphs(doc).length,
+    sections: sections(doc),
+    tables: ts.map((t) => ({ header: t.header, cols: t.cols, rows: t.rows.length })),
+    arith: chapterArithmetic(doc, ts),
+    quiz: quizSummary(quiz, doc),
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`疾病学基础 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const r = analyze();
+  console.log(`疾病学基础 第 ${CHAPTER} 章 · ${TITLE}`);
+  console.log(`正文 ${r.docHanzi.toLocaleString('en-US')} 汉字 · ${r.paragraphs} 段 · 节 ${r.sections.length} 个`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log('结构：');
+  for (const s of r.sections) console.log(`  ${s}`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`表 ${r.tables.length} 张：`);
+  r.tables.forEach((t, i) => console.log(`  [${i + 1}] ${t.header.join(' / ')} —— ${t.cols} 列 × ${t.rows} 行`));
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log('本章算术（全部从正文解析后计算）：');
+  for (const line of r.arith.lines) console.log(`  ${line}`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/jibing-xue-jichu/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log(
+    `quiz ${r.quiz.total} 题（pre ${r.quiz.stage.pre} / check ${r.quiz.stage.check} / post ${r.quiz.stage.post}）· 答案 ${r.quiz.answers.join('/')}`
+  );
+  console.log(
+    `  check 题接地 ${r.quiz.checkGrounded} 道 · 答案落在 ${r.quiz.distinctAnswers} 个位置 · 最短解释 ${r.quiz.minExplain} 汉字`
+  );
+  console.log('※ 以上数字由本章正文与 quiz 现算，改正文后重跑即可复核。');
+  console.log('※ 本章为教学材料，只讲治疗类别、反应观察与叙述要求，不作任何疗效或预后判断，不构成诊疗建议。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  analyze,
+  readDoc,
+  sections,
+  paragraphs,
+  tables,
+  tableBy,
+  grams,
+  hanzi,
+  count,
+  items,
+  quizSummary,
+  CHAPTER,
+  SLUG,
+  TITLE,
+  DOC,
+  QUIZ,
+};

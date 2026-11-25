@@ -38,7 +38,7 @@
       "spoken": "这一章把全书最危险的部分与最抽象的部分放在一起。连接点在于：急症要求「几秒内认出四类之一」，数字化要求「把这条识别写成可复现的判据」。教材 13.1.1 引《景岳全书》「血脱者当益其气」——六字既是急救原则，也是一个可以被写成规则的条件句。",
       "estimateSeconds": 26,
       "audio": "003.mp3",
-      "audioSeconds": 24.05
+      "audioSeconds": 24.048
     },
     {
       "n": 4,
@@ -48,7 +48,7 @@
       "spoken": "环境逼迫（妇科急症常在数分钟到数小时内决定结局：异位妊娠破裂、产后大出血、子痫抽搐）+ 知识积累（本章 7 单元、10,337 字，证候表现 45、胞宫 18 居四位面首位——因为四类急症全部落在胞宫与冲任上；数值 23 处，多为时间与比例）",
       "estimateSeconds": 24,
       "audio": "004.mp3",
-      "audioSeconds": 25.03
+      "audioSeconds": 25.032
     },
     {
       "n": 5,
@@ -59,7 +59,7 @@
       "spoken": "这一段以代码实现为主，请看画面上的代码块。",
       "estimateSeconds": 5,
       "audio": "005.mp3",
-      "audioSeconds": 4.51
+      "audioSeconds": 4.512
     },
     {
       "n": 6,
@@ -69,10 +69,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "006.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 78.46,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 1.32,
+    "measuredMinutes": 1.31,
+    "ratio": 0.993
+  }
 }

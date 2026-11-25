@@ -29,38 +29,37 @@ platform:
 
 chapters:
   - slug: 01-ip1
-    title: 第1章 知识产权的对象：从技术方案到权利
-    segments: 5
+    title: 一张方子不是一件财产，它是一束可以分开主张的权利
     video: rendered
-    estimate_minutes: 1.02
-    measured_minutes: 1.03
+    estimate_minutes: 1.02      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.03      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-ip2
-    title: 第2章 中医药领域的知识产权形态
-    segments: 5
+    title: 中药的知识产权不是一个筐，是五种互不替代的保护
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.96
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-ip3
-    title: 第3章 专利：从发明到授权
-    segments: 5
+    title: 专利审查不问方子灵不灵，只问它是不是新的、难想到的、做得出的
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.94
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-ip4
-    title: 第4章 成果转化：从实验室到产品
-    segments: 5
+    title: 转化不是把专利卖出去，是把一段不确定的未来切成可交付的几段
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.98
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.98      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-ip5
-    title: 第5章 新兴技术与伦理：知识产权的前沿争议
-    segments: 5
+    title: 新技术的麻烦不在能不能申请，在申请下来算谁的
     video: rendered
-    estimate_minutes: 1.07
-    measured_minutes: 1.06
+    estimate_minutes: 1.07      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.06      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-ip6
-    title: 第6章 侵权、许可纠纷与救济
-    segments: 5
+    title: 侵权判定不比两个方子像不像，比权利要求覆盖不覆盖
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.98
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.98      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

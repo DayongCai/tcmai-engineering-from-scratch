@@ -1,31 +1,86 @@
 {
   "chapter": "05-mingqing",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 16,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 8
+      "chars": 30
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 63
+      "chars": 35
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 21
+      "chars": 296
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 122
+      "chars": 162
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 263
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 324
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 350
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 347
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 294
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 295
+    },
+    {
+      "n": 11,
+      "segment": 7,
+      "chars": 371
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 411
+    },
+    {
+      "n": 13,
+      "segment": 8,
+      "chars": 296
+    },
+    {
+      "n": 14,
+      "segment": 9,
+      "chars": 352
+    },
+    {
+      "n": 15,
+      "segment": 9,
+      "chars": 219
+    },
+    {
+      "n": 16,
+      "segment": 10,
       "chars": 52
     }
   ]

@@ -18,7 +18,7 @@
       "spoken": "第 2 章 · 来源鉴定：基原与拉丁名核对",
       "estimateSeconds": 4,
       "audio": "001.mp3",
-      "audioSeconds": 4.34
+      "audioSeconds": 4.344
     },
     {
       "n": 2,
@@ -28,7 +28,7 @@
       "spoken": "「《新修本草·孔志约序》」——教材·第4章·4.1.1。本章要回答的是：同名异物、同物异名，为什么第一步先查拉丁名。",
       "estimateSeconds": 13,
       "audio": "002.mp3",
-      "audioSeconds": 12.17
+      "audioSeconds": 12.168
     },
     {
       "n": 3,
@@ -38,7 +38,7 @@
       "spoken": "中文名会串（「木香」有云木香与川木香，「防己」有粉防己与广防己）；拉丁学名是唯一不重名的标识，基原一错，后面四法全白做。",
       "estimateSeconds": 13,
       "audio": "003.mp3",
-      "audioSeconds": 11.93
+      "audioSeconds": 11.928
     },
     {
       "n": 4,
@@ -48,7 +48,7 @@
       "spoken": "环境逼迫（中药是混合物，任何一个「成分」都要先分出来才能说清楚）+ 知识积累（本章 6 单元 17,094 汉字；三辨主 检查方法 374；四位面（鉴定四法）主 基原 246；引书 27 部 85 次；数值类命中 0）",
       "estimateSeconds": 21,
       "audio": "004.mp3",
-      "audioSeconds": 22.06
+      "audioSeconds": 22.056
     },
     {
       "n": 5,
@@ -58,10 +58,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "005.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 61.8,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 1.03,
+    "measuredMinutes": 1.03,
+    "ratio": 0.997
+  }
 }

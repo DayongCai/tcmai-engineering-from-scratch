@@ -6,7 +6,7 @@
   {
    "n": 1,
    "slug": "01-xulun",
-   "title": "绪论",
+   "title": "解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-yundong-xitong",
-   "title": "运动系统",
+   "title": "运动系统不是「一堆骨头的名字」，而是一套受力与杠杆的分工",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -22,7 +22,7 @@
   {
    "n": 3,
    "slug": "03-xiaohua-xitong",
-   "title": "消化系统",
+   "title": "消化器官的位置不是背出来的，是被系膜与腹膜挂住的",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -30,7 +30,7 @@
   {
    "n": 4,
    "slug": "04-huxi-xitong",
-   "title": "呼吸系统",
+   "title": "呼吸系统的每一段都在回答同一个问题：气走多远、被什么包住",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -38,7 +38,7 @@
   {
    "n": 5,
    "slug": "05-miniao-xitong",
-   "title": "泌尿系统",
+   "title": "排尿通路的难点不在管子本身，而在三处狭窄与两性末段的分野",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -46,7 +46,7 @@
   {
    "n": 6,
    "slug": "06-shengzhi-xitong",
-   "title": "生殖系统",
+   "title": "生殖器官要按连续通路与同源对应来读，不能按名称逐个背诵",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -54,7 +54,7 @@
   {
    "n": 7,
    "slug": "07-xunhuan-xitong",
-   "title": "循环系统",
+   "title": "循环系统是两条首尾相接的环路，心的瓣膜决定血只能朝一个方向走",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -62,7 +62,7 @@
   {
    "n": 8,
    "slug": "08-neifenmi-xitong",
-   "title": "内分泌系统",
+   "title": "内分泌腺的形态差异，最后都落在「产物怎么进血」这一件事上",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -70,7 +70,7 @@
   {
    "n": 9,
    "slug": "09-ganjueqi",
-   "title": "感觉器",
+   "title": "感觉器把刺激收进神经通路，辅助装置决定它收得准不准",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -78,7 +78,7 @@
   {
    "n": 10,
    "slug": "10-shenjing-xitong",
-   "title": "神经系统",
+   "title": "神经系统的全部内容，是通路与联系在颅腔与椎管里的具体排布",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"/>
-<title>第 14 章 · 群体遗传学 · 幻灯片</title>
+<title>第 14 章 · 群体遗传学算的不是「谁会病」，是「这个变异在这个人群里能待多久」 · 幻灯片</title>
 <style>
 
 :root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
@@ -59,24 +59,86 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <body>
 <div id="deck">
 <section class="slide" data-i="0">
-  <div class="slide-inner"><h1 class="big">第 14 章 · 群体遗传学</h1></div>
-  <div class="slide-foot"><span>1 / 5</span><span>title</span></div>
+  <div class="slide-inner"><h1 class="big">第 14 章 · 群体遗传学算的不是「谁会病」，是「这个变异在这个人群里能待多久」</h1></div>
+  <div class="slide-foot"><span>1 / 14</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「群体遗传学把研究对象从个体与家系拓展到群体，关注遗传信息在群体中的分布与传递。」——教材·医学生物学·第14章·14.1.1。本章要回答的是：群体遗传学：Hardy-Weinberg 是基准。</blockquote></div>
-  <div class="slide-foot"><span>2 / 5</span><span>motto</span></div>
+  <div class="slide-inner"><blockquote class="motto">「靡不有初，鲜克有终。」——《诗经·大雅·荡》</blockquote></div>
+  <div class="slide-foot"><span>2 / 14</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
-  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">群体遗传学：Hardy-Weinberg 是基准。</p></div>
-  <div class="slide-foot"><span>3 / 5</span><span>problem</span></div>
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">一种隐性遗传病的人群患病率若为万分之一，直觉会告诉你「携带者大约也是万分之一」。算一遍就知道错了：设患病率 q² = 1/10000，则 q = 0.01，携带者频率 2pq ≈ 0.0198，接近百分之二。也就是说，<strong>每一万个新生儿里约有一个患者，但每一百个人里约有两个携带者</strong>——携带者与患者的比例约为 2/q，此例约二百比一（演算）。这个反直觉的差距，是群体遗传学最实用的一条结论：罕见病的风险主要藏在看不见的携带者身上。本章要处理的就是这类「用频率说话」的推理：它从哪来、在什么条件下成立、以及什么时候会骗人。</p></div>
+  <div class="slide-foot"><span>3 / 14</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
-  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（医学生物学的判据是「结构—功能—变异」三件套：看得见的结构，讲得清的功能，找得到的变异）+ 知识积累（本章 12 单元 20,580 汉字；三辨主 <strong>遗传与变异 395</strong>；四位面（章群结构）主 <strong>群体临床与中医 20580</strong>；引书 <strong>0 部 0 次</strong>；数值类命中 0）</p></div>
-  <div class="slide-foot"><span>4 / 5</span><span>roots</span></div>
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（筛查、婚配指导、携带者检测、公共卫生决策都需要人群层面的频率判断，而个体层面看不见的东西只能在群体层面估计）+ 知识积累（平衡的前提 × 五种改变频率的力量 × 小群体的随机效应 × 频率数据的解释边界，四者缺一，频率就会被当成命运）</p></div>
+  <div class="slide-foot"><span>4 / 14</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
+  <div class="slide-inner"><div class="kicker">一、哈迪-温伯格平衡：五个前提，三条推论</div>
+                <div class="compact dense"><p>哈迪-温伯格平衡描述的是：在一个理想群体里，如果没有改变频率的力量，等位基因频率与基因型频率在世代之间保持不变，且基因型频率由等位基因频率唯一决定：p² + 2pq + q² = 1。</p>
+<p>它的前提有五条，每条都不能少：</p>
+<ol><li><strong>群体足够大</strong>（随机抽样误差可忽略）；</li><li><strong>随机交配</strong>（配子的结合与任何基因型无关）；</li><li><strong>没有突变</strong>（或突变率可忽略）；</li><li><strong>没有选择</strong>（各基因型的生存与生殖能力相同）；</li><li><strong>没有迁移</strong>（没有外来个体的基因流入）。</li></ol>
+<p>三条推论比公式本身更有用：</p>
+<ul><li><strong>推论一</strong>：知道等位基因频率，就能算出基因型频率。这是所有携带者频率估计的基础；</li><li><strong>推论二</strong>：稀有等位基因几乎只以杂合形式存在。因为 q² 比 2pq 小得多，q 越小时差距越大；</li><li><strong>推论三</strong>：平衡是一个<strong>零假设</strong>。它的价值不在于「群体真的不变」，而在于「一旦偏离，说明有力量在作用」——这正好是找病因的入口。</li></ul></div></div>
+  <div class="slide-foot"><span>5 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">二、平衡不是「不变」，是「没有力量时的默认」</div>
+                <div class="compact"><p>初学者常把哈迪-温伯格平衡理解成「群体永远不变」，这是误读。它的正确地位是<strong>基准线</strong>：在没有突变、选择、漂变、迁移、非随机交配的情况下，频率不会自己变化。有了这条基准线，观察到的偏离才有意义。</p>
+<p>偏离的方向还能提示力量的性质：</p>
+<ul><li>杂合子明显少于预期 → 可能是群体分层（把两个频率不同的亚群混在一起）、近亲婚配、或杂合子劣势；</li><li>某种基因型明显缺失 → 可能是该基因型在胚胎期致死（选择）；</li><li>某个等位基因在多个孤立群体中频率差异极大 → 可能是漂变或奠基者效应。</li></ul>
+<p>所以群体遗传学的实际操作，是先算期望、再看偏离、最后解释偏离。跳过第一步，后面的讨论就没有依据。</p></div></div>
+  <div class="slide-foot"><span>6 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">三、五种力量，各自改变频率的方式不同</div>
+                <div class="compact"><div class="table-wrap"><table><thead><tr><th>力量</th><th>作用方式</th><th>对多样性的影响</th><th>时间尺度</th></tr></thead><tbody><tr><td>突变</td><td>不断引入新的等位基因</td><td>增加</td><td>极慢（每代极小）</td></tr><tr><td>选择</td><td>降低某些基因型的生殖贡献</td><td>减少（或维持平衡）</td><td>中等</td></tr><tr><td>遗传漂变</td><td>小群体中的随机抽样误差</td><td>减少（固定或丢失）</td><td>快（群体越小越快）</td></tr><tr><td>迁移</td><td>外来基因流入</td><td>增加（或均一化）</td><td>中等</td></tr><tr><td>非随机交配</td><td>改变基因型组合，不改变等位基因频率</td><td>改变基因型分布</td><td>快</td></tr></tbody></table></div>
+<p>最后一行值得单独说：<strong>近亲婚配不改变等位基因频率，只改变基因型频率</strong>。它把杂合子拆成更多的纯合子，于是隐性病的发病率上升，但致病变异在人群中的总量不变。这条区分常被混淆——「近亲导致基因变坏」是错的，「近亲让隐性变异更容易相遇」才对。</p></div></div>
+  <div class="slide-foot"><span>7 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">三、五种力量，各自改变频率的方式不同</div>
+                <div class="compact"><p>漂变的量级可以用一个粗略的尺度感受：每代频率的随机波动幅度大致与群体大小的平方根成反比，因此群体越小，波动越大。这就是为什么孤立小群体里某些罕见病会「异常集中」——不是那里的人更容易突变，而是奠基者带进来的少数几个拷贝被随机放大了。</p>
+<p>突变与选择之间还有一层平衡关系值得知道：对隐性致病变异，若突变率为 μ、纯合子的选择系数为 s，则平衡时的等位基因频率近似为 q ≈ √(μ/s)。代入 μ = 10⁻⁶、s = 1（患者几乎不生育），得 q ≈ 0.001，携带者频率约千分之二（演算）。这条关系的意义在于：<strong>即使选择把患者全部淘汰，变异也不会消失</strong>——它不断由突变补充，平衡在一个很低的水平上。这解释了一个看似矛盾的现象：严重的隐性病为什么在人群中长期存在。</p></div></div>
+  <div class="slide-foot"><span>8 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">四、携带者为什么远多于患者</div>
+                <div class="compact"><p>把第 9 章的概率观与本章的频率观合起来，就得到一条极有用的比例关系：对隐性病，携带者与患者的比值约为 2/q。</p>
+<p>这个关系有三个直接用途：</p>
+<ul><li><strong>估计携带者频率</strong>：知道患病率，就能估携带者频率，无需直接检测全人群；</li><li><strong>判断筛查价值</strong>：患病率越低，携带者与患者的比值越大，越说明「只查患者」看不见风险的主体；</li><li><strong>理解「家族里没有病人」不等于「没有风险」</strong>：一个家族几代没有患者，完全可能是因为变异一直以杂合形式传递。</li></ul>
+<p>同时要提醒它的前提：这条关系假设群体处于平衡、且该病由单一常见致病变异造成。若一个病由多种不同的罕见变异引起（等位基因异质性），单个变异的频率不能代表整体携带率；若群体存在分层或近亲结构，估计会失真。</p></div></div>
+  <div class="slide-foot"><span>9 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">五、奠基者效应与瓶颈：小群体的数学会骗人</div>
+                <div class="compact"><p>两个概念常被混用，其实机制不同：</p>
+<ul><li><strong>奠基者效应</strong>：一小群人建立了新群体，频率由这少数人的基因组成决定，此后被漂变放大；</li><li><strong>瓶颈效应</strong>：一个大群体突然缩小，随机丢失了大量变异，之后再扩大，多样性仍然偏低。</li></ul>
+<p>两者的共同后果是：<strong>同一个变异在特定人群中的频率，可能远高于全球平均</strong>。这不是因为该人群「体质特殊」，而是历史事件的结果。教学中处理这类现象有一条底线：只描述频率与历史，不作人群优劣或体质本质的判断，也不把群体频率读成个体属性。</p></div></div>
+  <div class="slide-foot"><span>10 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">六、频率数据的三个陷阱</div>
+                <div class="compact"><p>群体频率进入临床时，最容易踩三个坑：</p>
+<ol><li><strong>把人群频率当个体风险</strong>：人群携带率百分之二，不等于「你有百分之二的概率生出患儿」，后者还要看配偶的基因型；</li><li><strong>忽略人群差异</strong>：在一个祖源人群中常见的变异，换一个群体可能极罕见，用错参照人群会系统性高估或低估；</li><li><strong>忽略检测的检出率</strong>：所谓「携带者筛查阴性」，只说明<strong>所检测的那一组变异</strong>未检出。若该病的致病变异谱很广，阴性结果的残余风险仍然存在。</li></ol>
+<p>三个坑的共同点是：<strong>频率是群体的属性，风险是个体的推断</strong>。两者之间隔着基因型、配偶状态、检测范围三道关，任何一道没交代，数字就会被误读。</p></div></div>
+  <div class="slide-foot"><span>11 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">六、频率数据的三个陷阱</div>
+                <div class="compact"><p>还有一条更技术、但极其实用的推论：<strong>筛查的阳性预测值取决于患病率</strong>。同一个检测，在患病率高的高危人群里做，阳性结果多半是真的；搬到患病率极低的一般人群里做，阳性结果里假阳性的比例会急剧上升。这不是检测变差了，而是贝叶斯式的必然——先验越低，同样的似然比给出的后验越低。所有「全人群普筛」的争议，根子都在这里：收益与损害的平衡点随患病率移动，不能用一个方案套所有人群。</p></div></div>
+  <div class="slide-foot"><span>12 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><ul><li>本章所有数字均为<strong>演算示例</strong>：q² = 1/10000 → q = 0.01、2pq ≈ 0.0198、携带者与患者比约 2/q ≈ 200，均按哈迪-温伯格公式计算，不对应任何具体疾病或人群的实测频率。</li><li>「五种力量」「三个陷阱」为教学归纳；真实群体的结构（分层、近亲、混合）远比模型复杂，实际估计需要专门的统计方法。</li><li>本章不涉及具体疾病的筛查方案、诊断标准与干预指征，也不给任何检验项目的参考区间；涉及判定须由具备资质的执业人员依现行规范作出。</li><li>讨论人群频率时坚持中性表述，不贴标签，不作人群优劣判断。</li><li>本课为派生课，正文按章题重写，不逐字取自任何单一教材；引用古籍只到书名与篇名。</li></ul>
+<blockquote><p><strong>免责声明：</strong> 本章为群体遗传学的教学材料，用于建立「频率—平衡—偏离—限度」的推断框架，不构成医学意见、诊断或治疗建议。文中一切频率均为教学演算；具体的筛查、判读与咨询须由具备资质的执业人员依现行规范与所在机构制度作出。</p></blockquote></div></div>
+  <div class="slide-foot"><span>13 / 14</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="13">
   <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
-  <div class="slide-foot"><span>5 / 5</span><span>disclaimer</span></div>
+  <div class="slide-foot"><span>14 / 14</span><span>disclaimer</span></div>
 </section>
 </div>
 <div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>

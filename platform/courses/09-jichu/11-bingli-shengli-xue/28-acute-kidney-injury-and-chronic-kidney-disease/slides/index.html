@@ -26,7 +26,12 @@ blockquote.motto{font-family:var(--serif);font-size:clamp(20px,2.6vw,34px);line-
   text-transform:uppercase;margin-bottom:14px}
 .kicker.warn{color:var(--cinnabar)}
 p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var(--serif)}
-.compact{font-size:clamp(19px,1.75vw,27px);line-height:1.85;max-height:70vh;overflow:auto}
+.compact{font-size:clamp(19px,1.75vw,27px);line-height:1.85;max-height:70vh;overflow:hidden}
+.compact.dense{font-size:clamp(16px,1.42vw,22px);line-height:1.6;max-height:80vh}
+.compact.dense table{font-size:14px}
+.compact.denser{font-size:clamp(14px,1.22vw,18px);line-height:1.5;max-height:82vh}
+.compact.denser table{font-size:12px}
+.compact.denser pre{font-size:12px}
 .compact h2,.compact h3{font-family:var(--serif);margin:.6em 0 .3em;font-size:1.15em}
 .compact pre{background:var(--paper-2);border:1px solid var(--line);border-radius:8px;padding:12px;overflow:auto;font-size:15px}
 .compact code{background:var(--paper-2);border:1px solid var(--line);border-radius:4px;padding:1px 4px;font-family:var(--mono)}
@@ -58,7 +63,7 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
   <div class="slide-foot"><span>1 / 27</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「肾单位丧失 → 残余肾单位代偿 → 代偿超负荷 → 失代偿与纤维化 → 更多肾单位丧失」——补充·hermes-病理生理学讲义·第28章·28.1（《hermes-病理生理学讲义·第28章·28.1》）</blockquote></div>
+  <div class="slide-inner"><blockquote class="motto">「邪气盛则实，精气夺则虚。」——《素问·通评虚实论》</blockquote></div>
   <div class="slide-foot"><span>2 / 27</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
@@ -70,8 +75,9 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
   <div class="slide-foot"><span>4 / 27</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
-  <div class="slide-inner"><div class="kicker">一、一条主线，两条时间轴（28.1）</div>
-                <div class="compact"><p>讲义开篇先把两节合成一条链：</p>
+  <div class="slide-inner"><div class="kicker">一条主线两条轴：储备、代价与三类急性（28.1–28.3）</div>
+                <div class="compact"><h3 id="一条主线-两条时间轴-28-1">一条主线，两条时间轴（28.1）</h3>
+<p>讲义开篇先把两节合成一条链：</p>
 <blockquote><p>「肾单位丧失 → 残余肾单位代偿 → 代偿超负荷 → 失代偿与纤维化 → 更多肾单位丧失」——补充·hermes-病理生理学讲义·第28章·28.1</p></blockquote>
 <p>这条链的首段与末段同名，中间隔着一个看起来是好消息的环节——代偿。急与慢的差别只落在两个词上：速度与可逆性。急性损伤以数小时至数日为单位推进，机制是细胞损伤与功能抑制，结构多完整，去除病因后常可恢复，代偿空间大；慢性则以数月到数年推进，机制是不可逆的硬化与纤维化，代偿空间逐步耗尽。</p>
 <p>于是讲义给出本章的定性句：</p>
@@ -79,135 +85,137 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
   <div class="slide-foot"><span>5 / 27</span><span>body</span></div>
 </section>
 <section class="slide" data-i="5">
-  <div class="slide-inner"><div class="kicker">一、一条主线，两条时间轴（28.1）</div>
-                <div class="compact"><p>两面如何互为因果，讲义列了两条方向：一次严重的急性损伤可使部分肾单位永久丧失，从而启动慢性过程；慢性患者的肾单位储备少，任何一次打击都更容易演变为急性。临床上二者并存，称为急性-on-慢性。这句术语的教学价值在于它把「又急又慢」从矛盾变成了结构：同一个肾上同时跑着两条时间轴，一条在数日内掉，一条在数年内掉。</p></div></div>
+  <div class="slide-inner"><div class="kicker">一条主线两条轴：储备、代价与三类急性（28.1–28.3）</div>
+                <div class="compact dense"><p>两面如何互为因果，讲义列了两条方向：一次严重的急性损伤可使部分肾单位永久丧失，从而启动慢性过程；慢性患者的肾单位储备少，任何一次打击都更容易演变为急性。临床上二者并存，称为急性-on-慢性。这句术语的教学价值在于它把「又急又慢」从矛盾变成了结构：同一个肾上同时跑着两条时间轴，一条在数日内掉，一条在数年内掉。</p>
+<h3 id="功能储备与代偿的代价-28-2">功能储备与代偿的代价（28.2）</h3>
+<p>健康肾脏有相当大的功能储备。肾单位一部分丧失后，剩余肾单位通过三条路维持总体滤过与排泄：单个肾单位滤过增加（入球小动脉扩张、出球小动脉收缩，提高肾小球内压与滤过分数）；残余肾单位肥大（小管上皮增生、管腔扩张，重吸收与排泄能力增强）；代偿性排钾、排酸、排磷增加，每个肾单位排出更多溶质。</p>
+<p>三条路都有效，代价写在工况上：</p>
+<blockquote><p>「每个肾单位长期处于高流量、高压力的工况」——补充·hermes-病理生理学讲义·第28章·28.2</p></blockquote></div></div>
   <div class="slide-foot"><span>6 / 27</span><span>body</span></div>
 </section>
 <section class="slide" data-i="6">
-  <div class="slide-inner"><div class="kicker">二、功能储备与代偿的代价（28.2）</div>
-                <div class="compact"><p>健康肾脏有相当大的功能储备。肾单位一部分丧失后，剩余肾单位通过三条路维持总体滤过与排泄：单个肾单位滤过增加（入球小动脉扩张、出球小动脉收缩，提高肾小球内压与滤过分数）；残余肾单位肥大（小管上皮增生、管腔扩张，重吸收与排泄能力增强）；代偿性排钾、排酸、排磷增加，每个肾单位排出更多溶质。</p>
-<p>三条路都有效，代价写在工况上：</p>
-<blockquote><p>「每个肾单位长期处于高流量、高压力的工况」——补充·hermes-病理生理学讲义·第28章·28.2</p></blockquote>
-<p>肾小球内高压 → 足细胞受机械牵张 → 蛋白尿；小管负荷增加 → 耗氧增加、炎症与趋化因子表达上调 → 间质炎症与纤维化。于是有了本章最反直觉的一句：</p>
-<blockquote><p>「代偿本身即是进行性损害的动力」——补充·hermes-病理生理学讲义·第28章·28.2</p></blockquote></div></div>
+  <div class="slide-inner"><div class="kicker">一条主线两条轴：储备、代价与三类急性（28.1–28.3）</div>
+                <div class="compact"><p>肾小球内高压 → 足细胞受机械牵张 → 蛋白尿；小管负荷增加 → 耗氧增加、炎症与趋化因子表达上调 → 间质炎症与纤维化。于是有了本章最反直觉的一句：</p>
+<blockquote><p>「代偿本身即是进行性损害的动力」——补充·hermes-病理生理学讲义·第28章·28.2</p></blockquote>
+<p>这句话把「代偿」从中性词改成了带代价的词。代偿不是修复，是把剩余单位推到超负荷去顶住总量；顶住了总量，也就把损害写进了每一个剩余单位。凡是把代偿写成机体自我修复的叙述，都会在这一步丢掉整个慢性化的机制——因为没有超负荷，就没有后面那条自我推进的链。</p>
+<h3 id="三类急性损伤-前-中-后-28-3">三类急性损伤：前、中、后（28.3）</h3>
+<p>按损伤部位把急性肾损伤分三类，是临床推理的第一步。</p></div></div>
   <div class="slide-foot"><span>7 / 27</span><span>body</span></div>
 </section>
 <section class="slide" data-i="7">
-  <div class="slide-inner"><div class="kicker">二、功能储备与代偿的代价（28.2）</div>
-                <div class="compact"><p>这句话把「代偿」从中性词改成了带代价的词。代偿不是修复，是把剩余单位推到超负荷去顶住总量；顶住了总量，也就把损害写进了每一个剩余单位。凡是把代偿写成机体自我修复的叙述，都会在这一步丢掉整个慢性化的机制——因为没有超负荷，就没有后面那条自我推进的链。</p></div></div>
-  <div class="slide-foot"><span>8 / 27</span><span>body</span></div>
-</section>
-<section class="slide" data-i="8">
-  <div class="slide-inner"><div class="kicker">三、三类急性损伤：前、中、后（28.3）</div>
-                <div class="compact"><p>按损伤部位把急性肾损伤分三类，是临床推理的第一步。</p>
-<p><strong>肾前性</strong>是灌注不足：有效循环血量下降（失血、脱水、心衰、脓毒症血管扩张）或肾血管收缩（非甾体抗炎药、转换酶抑制剂、肝肾综合征）→ 肾灌注压下降 → 自身调节失效 → 滤过率下降。此时肾小管结构完好，只是原料不足；机体的代偿是最大限度保钠保水——肾素-血管紧张素-醛固酮系统激活、ADH 升高、小管重吸收增强，于是尿量少、尿钠低、尿浓缩。讲义把这条代偿特征直接当成鉴别要点：</p>
+  <div class="slide-inner"><div class="kicker">一条主线两条轴：储备、代价与三类急性（28.1–28.3）</div>
+                <div class="compact"><p><strong>肾前性</strong>是灌注不足：有效循环血量下降（失血、脱水、心衰、脓毒症血管扩张）或肾血管收缩（非甾体抗炎药、转换酶抑制剂、肝肾综合征）→ 肾灌注压下降 → 自身调节失效 → 滤过率下降。此时肾小管结构完好，只是原料不足；机体的代偿是最大限度保钠保水——肾素-血管紧张素-醛固酮系统激活、ADH 升高、小管重吸收增强，于是尿量少、尿钠低、尿浓缩。讲义把这条代偿特征直接当成鉴别要点：</p>
 <blockquote><p>「肾前性者尿「浓而省」，肾性者小管失去浓缩与保钠能力，尿「淡而费」」——补充·hermes-病理生理学讲义·第28章·28.3</p></blockquote>
 <p>浓而省与淡而费，是同一套化验在两个部位的两种读法：一个在省，一个在漏。这句之所以重要，是因为它把「结构完好」与「结构受损」的差别落到了可观察的方向上，而不是落在推测上。</p>
 <p>肾前性持续过久 → 缺血加重 → 转为肾性（急性肾小管坏死）。这是功能性向器质性的转化，也是三类之间可以互相转化的第一条通道。</p></div></div>
+  <div class="slide-foot"><span>8 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">一条主线两条轴：储备、代价与三类急性（28.1–28.3）</div>
+                <div class="compact"><p><strong>肾性</strong>是实质损伤：急性肾小管坏死（最常见）、急性间质性肾炎、肾小球肾炎急进性发作、血管性（血栓性微血管病、恶性高血压）与感染性（肾盂肾炎）。<strong>肾后性</strong>是梗阻：双侧输尿管梗阻、膀胱出口梗阻、孤立肾的输尿管梗阻 → 压力逆传 → 滤过压下降；特点是解除梗阻后可迅速恢复，因此任何急性损伤都必须先排除梗阻。</p>
+<p>三类之间的转化有两个方向值得记：肾后性 → 间质炎症与纤维化 → 叠加肾性成分；肾性 → 容量管理不当 → 叠加肾前性成分。也就是说，「三类」是入口的三个格子，不是三个互斥的病。</p></div></div>
   <div class="slide-foot"><span>9 / 27</span><span>body</span></div>
 </section>
 <section class="slide" data-i="9">
-  <div class="slide-inner"><div class="kicker">三、三类急性损伤：前、中、后（28.3）</div>
-                <div class="compact"><p><strong>肾性</strong>是实质损伤：急性肾小管坏死（最常见）、急性间质性肾炎、肾小球肾炎急进性发作、血管性（血栓性微血管病、恶性高血压）与感染性（肾盂肾炎）。<strong>肾后性</strong>是梗阻：双侧输尿管梗阻、膀胱出口梗阻、孤立肾的输尿管梗阻 → 压力逆传 → 滤过压下降；特点是解除梗阻后可迅速恢复，因此任何急性损伤都必须先排除梗阻。</p>
-<p>三类之间的转化有两个方向值得记：肾后性 → 间质炎症与纤维化 → 叠加肾性成分；肾性 → 容量管理不当 → 叠加肾前性成分。也就是说，「三类」是入口的三个格子，不是三个互斥的病。</p></div></div>
+  <div class="slide-inner"><div class="kicker">急性段的内部与全身：四层机制、高钾与分期（28.4–28.6）</div>
+                <div class="compact"><h3 id="急性肾小管坏死-四层细胞机制与三相-28-4">急性肾小管坏死：四层细胞机制与三相（28.4）</h3>
+<p>急性肾小管坏死是肾性损伤的主体，多见于缺血与肾毒性两类情形（脓毒症、大手术、休克；氨基糖苷类、造影剂、重金属、肌红蛋白、血红蛋白）。细胞机制四层：能量代谢障碍（近端小管耗氧最高，缺血时 ATP 迅速耗竭，钠钾泵失活，细胞内钠水积聚、细胞肿胀、刷状缘脱落）；细胞骨架与极性丧失（整合素分布改变，上皮细胞从基膜脱落入管腔）；管腔阻塞（脱落细胞与蛋白、肌红蛋白管型堵塞小管，管腔内压升高，滤过进一步下降）；滤液回漏（上皮屏障破损，滤过液经破损处回漏至间质，实际排出减少）。</p>
+<p>缺血-再灌注产生大量活性氧，内皮损伤致微循环障碍（无复流），炎症细胞浸润加重损伤，这三条与前四层叠加，构成一个自我放大的局部环境。</p></div></div>
   <div class="slide-foot"><span>10 / 27</span><span>body</span></div>
 </section>
 <section class="slide" data-i="10">
-  <div class="slide-inner"><div class="kicker">四、急性肾小管坏死：四层细胞机制与三相（28.4）</div>
-                <div class="compact"><p>急性肾小管坏死是肾性损伤的主体，多见于缺血与肾毒性两类情形（脓毒症、大手术、休克；氨基糖苷类、造影剂、重金属、肌红蛋白、血红蛋白）。细胞机制四层：能量代谢障碍（近端小管耗氧最高，缺血时 ATP 迅速耗竭，钠钾泵失活，细胞内钠水积聚、细胞肿胀、刷状缘脱落）；细胞骨架与极性丧失（整合素分布改变，上皮细胞从基膜脱落入管腔）；管腔阻塞（脱落细胞与蛋白、肌红蛋白管型堵塞小管，管腔内压升高，滤过进一步下降）；滤液回漏（上皮屏障破损，滤过液经破损处回漏至间质，实际排出减少）。</p>
-<p>缺血-再灌注产生大量活性氧，内皮损伤致微循环障碍（无复流），炎症细胞浸润加重损伤，这三条与前四层叠加，构成一个自我放大的局部环境。</p></div></div>
+  <div class="slide-inner"><div class="kicker">急性段的内部与全身：四层机制、高钾与分期（28.4–28.6）</div>
+                <div class="compact"><p>临床过程分三相，讲义特意注明不必然全部出现：起始期（损伤发生，滤过率开始下降，尿量尚可）；维持期（滤过率处于低谷，出现少尿或无尿，也可为非少尿型，水与溶质潴留 → 容量过负荷、高钾、代谢性酸中毒、尿毒症症状）；恢复期（小管上皮再生，尿量骤增，可致容量不足、低钾、低钠）。第三相有一句提醒：</p>
+<blockquote><p>「这是最容易被忽视的危险期」——补充·hermes-病理生理学讲义·第28章·28.4</p></blockquote>
+<p>被忽视的原因写在句子的后半段：临床关注点往往还停留在尿少上。尿一多，注意力就撤了，而危险恰恰在撤走的那一刻发生。这是本章第一个注意力的错位——危险不在表现最响的时候，而在表现转向的时候。</p>
+<h3 id="急性损伤的全身后果-高钾最急-28-5">急性损伤的全身后果：高钾最急（28.5）</h3></div></div>
   <div class="slide-foot"><span>11 / 27</span><span>body</span></div>
 </section>
 <section class="slide" data-i="11">
-  <div class="slide-inner"><div class="kicker">四、急性肾小管坏死：四层细胞机制与三相（28.4）</div>
-                <div class="compact"><p>临床过程分三相，讲义特意注明不必然全部出现：起始期（损伤发生，滤过率开始下降，尿量尚可）；维持期（滤过率处于低谷，出现少尿或无尿，也可为非少尿型，水与溶质潴留 → 容量过负荷、高钾、代谢性酸中毒、尿毒症症状）；恢复期（小管上皮再生，尿量骤增，可致容量不足、低钾、低钠）。第三相有一句提醒：</p>
-<blockquote><p>「这是最容易被忽视的危险期」——补充·hermes-病理生理学讲义·第28章·28.4</p></blockquote>
-<p>被忽视的原因写在句子的后半段：临床关注点往往还停留在尿少上。尿一多，注意力就撤了，而危险恰恰在撤走的那一刻发生。这是本章第一个注意力的错位——危险不在表现最响的时候，而在表现转向的时候。</p></div></div>
+  <div class="slide-inner"><div class="kicker">急性段的内部与全身：四层机制、高钾与分期（28.4–28.6）</div>
+                <div class="compact dense"><p>急性肾损伤不是尿少这么简单，讲义按系统列了后果：容量（水肿、肺水肿、高血压，机制是钠水排出减少）、电解质（高钾最危险，低钠或高钠、高磷、低钙）、酸碱（代谢性酸中毒，排氢与产铵减少、碳酸氢盐消耗）、心血管（心律失常、心衰）、消化（恶心、呕吐、食欲下降、消化道出血）、神经（嗜睡、意识模糊、抽搐）、免疫（感染易感，尿毒症致白细胞功能受损）、药物代谢（药物蓄积与毒性，经肾排泄减少）。</p>
+<p>八栏里只有一栏被单独加了最字：</p>
+<blockquote><p>「高钾血症是 AKI 最紧急的威胁」——补充·hermes-病理生理学讲义·第28章·28.5</p></blockquote>
+<p>理由是可用的时间窗：它可在短时间内引起致命性心律失常，而其他几栏多以天计。讲义另给了观察方向——对少尿、酸中毒、组织损伤（挤压伤、溶血）者高度警惕，并关注心电图改变的方向（T 波高尖、QRS 增宽）；具体处理属临床急救范畴，讲义明确不涉及。本书照此收口：只写威胁的排序与观察方向，不写处置。</p>
+<h3 id="慢性肾脏病的定义与分期逻辑-28-6">慢性肾脏病的定义与分期逻辑（28.6）</h3></div></div>
   <div class="slide-foot"><span>12 / 27</span><span>body</span></div>
 </section>
 <section class="slide" data-i="12">
-  <div class="slide-inner"><div class="kicker">五、急性损伤的全身后果：高钾最急（28.5）</div>
-                <div class="compact"><p>急性肾损伤不是尿少这么简单，讲义按系统列了后果：容量（水肿、肺水肿、高血压，机制是钠水排出减少）、电解质（高钾最危险，低钠或高钠、高磷、低钙）、酸碱（代谢性酸中毒，排氢与产铵减少、碳酸氢盐消耗）、心血管（心律失常、心衰）、消化（恶心、呕吐、食欲下降、消化道出血）、神经（嗜睡、意识模糊、抽搐）、免疫（感染易感，尿毒症致白细胞功能受损）、药物代谢（药物蓄积与毒性，经肾排泄减少）。</p>
-<p>八栏里只有一栏被单独加了最字：</p>
-<blockquote><p>「高钾血症是 AKI 最紧急的威胁」——补充·hermes-病理生理学讲义·第28章·28.5</p></blockquote>
-<p>理由是可用的时间窗：它可在短时间内引起致命性心律失常，而其他几栏多以天计。讲义另给了观察方向——对少尿、酸中毒、组织损伤（挤压伤、溶血）者高度警惕，并关注心电图改变的方向（T 波高尖、QRS 增宽）；具体处理属临床急救范畴，讲义明确不涉及。本书照此收口：只写威胁的排序与观察方向，不写处置。</p></div></div>
-  <div class="slide-foot"><span>13 / 27</span><span>body</span></div>
-</section>
-<section class="slide" data-i="13">
-  <div class="slide-inner"><div class="kicker">六、慢性肾脏病的定义与分期逻辑（28.6）</div>
+  <div class="slide-inner"><div class="kicker">急性段的内部与全身：四层机制、高钾与分期（28.4–28.6）</div>
                 <div class="compact"><p>慢性肾脏病的定义建立在两个要素上：肾损害的证据（蛋白尿、血尿、影像学异常、病理异常、小管功能异常），或肾小球滤过率下降；且持续时间足够长，以数月为尺度表示不可逆。</p>
 <p>分期按滤过率下降的程度由轻到重排列，用于分层管理与风险沟通。讲义在这里划了一条很硬的线：</p>
 <blockquote><p>「本讲义不给出任何分期界值」——补充·hermes-病理生理学讲义·第28章·28.6</p></blockquote>
 <p>理由写在同一处：界值属临床指南范畴，且随年龄、体型、是否合并其他疾病而需个体化解读。本书照录这条线，并且把它扩成一条通则——凡属「多少算一期」的追问，一律回<strong>本书不给值，需另立数据层</strong>。要掌握的只是方向：滤过率越下降，并发症的种类与严重度越多（贫血、酸中毒、高磷、高钾、容量过负荷）；分期越靠后，药物经肾排泄的蓄积风险越高，需重新评估用药；蛋白尿的程度与进展速度相关，是独立的风险标志。</p></div></div>
+  <div class="slide-foot"><span>13 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">急性段的内部与全身：四层机制、高钾与分期（28.4–28.6）</div>
+                <div class="compact"><p>方向之外还有一个时点问题：慢性肾脏病早期（滤过率尚可时）就可能出现浓缩能力下降、夜尿增多、高血压与蛋白尿，而明显的尿毒症症状往往出现在肾功能严重受损之后。于是「等症状出现再查」必然延误——这句话不是劝人勤查，而是指出症状在时间轴上天然滞后。</p></div></div>
   <div class="slide-foot"><span>14 / 27</span><span>body</span></div>
 </section>
 <section class="slide" data-i="14">
-  <div class="slide-inner"><div class="kicker">六、慢性肾脏病的定义与分期逻辑（28.6）</div>
-                <div class="compact"><p>方向之外还有一个时点问题：慢性肾脏病早期（滤过率尚可时）就可能出现浓缩能力下降、夜尿增多、高血压与蛋白尿，而明显的尿毒症症状往往出现在肾功能严重受损之后。于是「等症状出现再查」必然延误——这句话不是劝人勤查，而是指出症状在时间轴上天然滞后。</p></div></div>
+  <div class="slide-inner"><div class="kicker">慢性段的推进与替代：六条自我推进与三组功能（28.7–28.11）</div>
+                <div class="compact"><h3 id="六条自我推进-28-7">六条自我推进（28.7）</h3>
+<p>慢性肾脏病一旦启动，即使原发病因被控制，肾功能仍可能继续下降。讲义列了六条机制：</p>
+<p>其一，残余肾单位高滤过——肾小球内高压机械牵张足细胞与系膜细胞，促纤维化因子（TGF-β、结缔组织生长因子）表达，系膜基质增多，硬化。其二，蛋白尿的毒性——滤出的蛋白在管腔内激活补体、诱导趋化因子与炎症，小管上皮释放炎症介质，间质炎症。其三，肾素-血管紧张素-醛固酮系统——血管紧张素 II 促进 TGF-β 与纤溶酶原激活物抑制剂表达，醛固酮促进纤维化与炎症。其四，缺氧与管周毛细血管丢失——间质纤维化使管周毛细血管稀疏，局部缺血，更多小管损伤，形成慢性缺氧的恶性循环。其五，磷与 FGF23——磷排泄减少，FGF23 升高以促磷排泄，但 FGF23 抑制活性维生素 D，低钙、PTH 升高，骨病与血管钙化。其六，炎症与氧化应激——尿毒症环境本身促炎。</p></div></div>
   <div class="slide-foot"><span>15 / 27</span><span>body</span></div>
 </section>
 <section class="slide" data-i="15">
-  <div class="slide-inner"><div class="kicker">七、六条自我推进（28.7）</div>
-                <div class="compact"><p>慢性肾脏病一旦启动，即使原发病因被控制，肾功能仍可能继续下降。讲义列了六条机制：</p>
-<p>其一，残余肾单位高滤过——肾小球内高压机械牵张足细胞与系膜细胞，促纤维化因子（TGF-β、结缔组织生长因子）表达，系膜基质增多，硬化。其二，蛋白尿的毒性——滤出的蛋白在管腔内激活补体、诱导趋化因子与炎症，小管上皮释放炎症介质，间质炎症。其三，肾素-血管紧张素-醛固酮系统——血管紧张素 II 促进 TGF-β 与纤溶酶原激活物抑制剂表达，醛固酮促进纤维化与炎症。其四，缺氧与管周毛细血管丢失——间质纤维化使管周毛细血管稀疏，局部缺血，更多小管损伤，形成慢性缺氧的恶性循环。其五，磷与 FGF23——磷排泄减少，FGF23 升高以促磷排泄，但 FGF23 抑制活性维生素 D，低钙、PTH 升高，骨病与血管钙化。其六，炎症与氧化应激——尿毒症环境本身促炎。</p></div></div>
+  <div class="slide-inner"><div class="kicker">慢性段的推进与替代：六条自我推进与三组功能（28.7–28.11）</div>
+                <div class="compact dense"><p>六条不是六个并列的原因，而是同一条循环的六个接口：高滤过起头，蛋白尿与 RAAS 加速，缺氧把局部损伤放大，磷与 PTH 把损害推到骨与血管，炎症铺底。讲义给的结论只有一句，却是全章的落点：</p>
+<blockquote><p>「打断自我推进的环节」——补充·hermes-病理生理学讲义·第28章·28.7</p></blockquote>
+<p>它同时否定了一种期待：等滤过率自行回升。讲义的原话是「因为它不会回升」。这句话把治疗目标从「恢复」改成「延缓」，也解释了为什么患者教育必须讲清机制——不讲清，依从性无从建立。</p>
+<h3 id="三组功能丧失-28-8">三组功能丧失（28.8）</h3>
+<p>慢性肾脏病是全身疾病的缩影，因为肾脏承担的三组功能同时丧失。</p>
+<p><strong>排泄功能丧失 → 尿毒症</strong>：尿素、肌酐、尿酸、胍类、胺类、中分子物质蓄积，出现食欲下降、恶心、呕吐、乏力、皮肤瘙痒、意识改变、血小板功能异常（出血倾向）。讲义在此加了一句限定：症状的严重度与滤过率下降相关，但个体差异大，不能仅凭症状判断病情。</p></div></div>
   <div class="slide-foot"><span>16 / 27</span><span>body</span></div>
 </section>
 <section class="slide" data-i="16">
-  <div class="slide-inner"><div class="kicker">七、六条自我推进（28.7）</div>
-                <div class="compact"><p>六条不是六个并列的原因，而是同一条循环的六个接口：高滤过起头，蛋白尿与 RAAS 加速，缺氧把局部损伤放大，磷与 PTH 把损害推到骨与血管，炎症铺底。讲义给的结论只有一句，却是全章的落点：</p>
-<blockquote><p>「打断自我推进的环节」——补充·hermes-病理生理学讲义·第28章·28.7</p></blockquote>
-<p>它同时否定了一种期待：等滤过率自行回升。讲义的原话是「因为它不会回升」。这句话把治疗目标从「恢复」改成「延缓」，也解释了为什么患者教育必须讲清机制——不讲清，依从性无从建立。</p></div></div>
+  <div class="slide-inner"><div class="kicker">慢性段的推进与替代：六条自我推进与三组功能（28.7–28.11）</div>
+                <div class="compact dense"><p><strong>调节功能丧失 → 水电解质酸碱紊乱</strong>：钠水潴留致高血压、水肿、心衰；钾排出减少加酸中毒加 RAAS 抑制致高钾；排氢与产铵不足致代谢性酸中毒（早期可为高氯性，晚期阴离子间隙增大）；磷排出减少致高磷、低钙、PTH 升高。</p>
+<p><strong>内分泌功能丧失 → 贫血、骨病、心血管病</strong>：肾性贫血（EPO 不足为主因，加铁利用障碍、尿毒症毒素抑制骨髓、失血、红细胞寿命缩短，表现为正细胞正色素性贫血）；肾性骨病（低钙、高磷、活性维生素 D 不足、PTH 升高共同作用，可表现为高转化性、低转化性与混合型）；心血管并发症。讲义对最后一栏的判断是全章最重的一句：</p>
+<blockquote><p>「CKD 患者最主要的死因」——补充·hermes-病理生理学讲义·第28章·28.8</p></blockquote>
+<p>机制是一串并行的力：容量与压力负荷、贫血、钙磷沉积致血管钙化、炎症、尿毒症毒素、RAAS 激活。讲义把它总结为心血管病与肾病互为加速器（心肾综合征）。</p>
+<h3 id="替代治疗-只讲原理-28-9">替代治疗：只讲原理（28.9）</h3></div></div>
   <div class="slide-foot"><span>17 / 27</span><span>body</span></div>
 </section>
 <section class="slide" data-i="17">
-  <div class="slide-inner"><div class="kicker">八、三组功能丧失（28.8）</div>
-                <div class="compact"><p>慢性肾脏病是全身疾病的缩影，因为肾脏承担的三组功能同时丧失。</p>
-<p><strong>排泄功能丧失 → 尿毒症</strong>：尿素、肌酐、尿酸、胍类、胺类、中分子物质蓄积，出现食欲下降、恶心、呕吐、乏力、皮肤瘙痒、意识改变、血小板功能异常（出血倾向）。讲义在此加了一句限定：症状的严重度与滤过率下降相关，但个体差异大，不能仅凭症状判断病情。</p>
-<p><strong>调节功能丧失 → 水电解质酸碱紊乱</strong>：钠水潴留致高血压、水肿、心衰；钾排出减少加酸中毒加 RAAS 抑制致高钾；排氢与产铵不足致代谢性酸中毒（早期可为高氯性，晚期阴离子间隙增大）；磷排出减少致高磷、低钙、PTH 升高。</p>
-<p><strong>内分泌功能丧失 → 贫血、骨病、心血管病</strong>：肾性贫血（EPO 不足为主因，加铁利用障碍、尿毒症毒素抑制骨髓、失血、红细胞寿命缩短，表现为正细胞正色素性贫血）；肾性骨病（低钙、高磷、活性维生素 D 不足、PTH 升高共同作用，可表现为高转化性、低转化性与混合型）；心血管并发症。讲义对最后一栏的判断是全章最重的一句：</p></div></div>
-  <div class="slide-foot"><span>18 / 27</span><span>body</span></div>
-</section>
-<section class="slide" data-i="18">
-  <div class="slide-inner"><div class="kicker">八、三组功能丧失（28.8）</div>
-                <div class="compact"><blockquote><p>「CKD 患者最主要的死因」——补充·hermes-病理生理学讲义·第28章·28.8</p></blockquote>
-<p>机制是一串并行的力：容量与压力负荷、贫血、钙磷沉积致血管钙化、炎症、尿毒症毒素、RAAS 激活。讲义把它总结为心血管病与肾病互为加速器（心肾综合征）。</p></div></div>
-  <div class="slide-foot"><span>19 / 27</span><span>body</span></div>
-</section>
-<section class="slide" data-i="19">
-  <div class="slide-inner"><div class="kicker">九、替代治疗：只讲原理（28.9）</div>
+  <div class="slide-inner"><div class="kicker">慢性段的推进与替代：六条自我推进与三组功能（28.7–28.11）</div>
                 <div class="compact"><p>当肾功能丧失到无法维持内环境稳定时，需要肾脏替代治疗。讲义只讲原理与类别，不涉及任何处方参数。</p>
 <p>血液透析：血液经透析器，与透析液隔半透膜进行弥散（清除小分子溶质）与超滤（清除水分）；需血管通路。特点：清除效率高、间歇进行，血流动力学波动较大。腹膜透析：以腹膜为半透膜，透析液注入腹腔，通过弥散与渗透超滤清除溶质与水分；可居家、连续性强，但需导管与严格无菌操作，有腹膜炎风险。肾移植：</p>
 <blockquote><p>「最接近生理的替代方式」——补充·hermes-病理生理学讲义·第28章·28.9</p></blockquote>
 <p>需免疫抑制治疗与长期随访，供体短缺是主要限制。</p>
-<p>讲义另给了一句判断口径——什么时候开始替代治疗是综合判断，取决于症状、并发症与营养状态，而不是单一指标。这句话与 28.6 的「不给界值」是同一条纪律的两次出现。</p></div></div>
-  <div class="slide-foot"><span>20 / 27</span><span>body</span></div>
+<p>讲义另给了一句判断口径——什么时候开始替代治疗是综合判断，取决于症状、并发症与营养状态，而不是单一指标。这句话与 28.6 的「不给界值」是同一条纪律的两次出现。</p>
+<h3 id="肾毒性与两条原则-28-10">肾毒性与两条原则（28.10）</h3></div></div>
+  <div class="slide-foot"><span>18 / 27</span><span>body</span></div>
 </section>
-<section class="slide" data-i="20">
-  <div class="slide-inner"><div class="kicker">十、肾毒性与两条原则（28.10）</div>
-                <div class="compact"><p>肾脏是药物毒性的主要靶器官，原因有三：血流量大（暴露量大）、小管浓缩使管内浓度高、小管上皮代谢活跃。机制分五类：血流动力学（非甾体抗炎药、转换酶抑制剂与受体拮抗剂、造影剂，作用于入球与出球小动脉）；直接小管毒性（氨基糖苷类、两性霉素、铂类、造影剂，伤近端小管）；过敏性间质性肾炎（青霉素类、非甾体抗炎药、质子泵抑制剂，伤间质）；结晶性肾病（部分抗病毒药、化疗药、大量维生素 C，堵小管腔）；梗阻性（抗胆碱能药、部分抗抑郁药致排尿困难，堵下尿路）。</p>
+<section class="slide" data-i="18">
+  <div class="slide-inner"><div class="kicker">慢性段的推进与替代：六条自我推进与三组功能（28.7–28.11）</div>
+                <div class="compact dense"><p>肾脏是药物毒性的主要靶器官，原因有三：血流量大（暴露量大）、小管浓缩使管内浓度高、小管上皮代谢活跃。机制分五类：血流动力学（非甾体抗炎药、转换酶抑制剂与受体拮抗剂、造影剂，作用于入球与出球小动脉）；直接小管毒性（氨基糖苷类、两性霉素、铂类、造影剂，伤近端小管）；过敏性间质性肾炎（青霉素类、非甾体抗炎药、质子泵抑制剂，伤间质）；结晶性肾病（部分抗病毒药、化疗药、大量维生素 C，堵小管腔）；梗阻性（抗胆碱能药、部分抗抑郁药致排尿困难，堵下尿路）。</p>
 <p>讲义给两条原则：</p>
 <blockquote><p>「先评估肾功能再用药」——补充·hermes-病理生理学讲义·第28章·28.10</p></blockquote>
-<p>第二条是避免叠加：多种肾毒性因素同时存在时，风险不是相加而是相乘（如造影加脱水加非甾体抗炎药）。相乘这个词是本章唯一一处对风险结构的量化表述，而它给的仍只是结构，不是数值——三个因素各自的风险不能相乘成数，但可以相乘成不该同时出现这一判断。</p></div></div>
-  <div class="slide-foot"><span>21 / 27</span><span>body</span></div>
+<p>第二条是避免叠加：多种肾毒性因素同时存在时，风险不是相加而是相乘（如造影加脱水加非甾体抗炎药）。相乘这个词是本章唯一一处对风险结构的量化表述，而它给的仍只是结构，不是数值——三个因素各自的风险不能相乘成数，但可以相乘成不该同时出现这一判断。</p>
+<h3 id="生命周期-28-11">生命周期（28.11）</h3></div></div>
+  <div class="slide-foot"><span>19 / 27</span><span>body</span></div>
 </section>
-<section class="slide" data-i="21">
-  <div class="slide-inner"><div class="kicker">十一、生命周期（28.11）</div>
-                <div class="compact"><p>儿童：急性损伤常见于脱水、脓毒症、先天性尿路梗阻与药物；慢性病的病因以先天性与遗传性为主，生长迟缓是突出表现，需关注营养与骨代谢。儿童肾单位储备少，液体管理须更精细。</p>
+<section class="slide" data-i="19">
+  <div class="slide-inner"><div class="kicker">慢性段的推进与替代：六条自我推进与三组功能（28.7–28.11）</div>
+                <div class="compact dense"><p>儿童：急性损伤常见于脱水、脓毒症、先天性尿路梗阻与药物；慢性病的病因以先天性与遗传性为主，生长迟缓是突出表现，需关注营养与骨代谢。儿童肾单位储备少，液体管理须更精细。</p>
 <p>老年人：</p>
 <blockquote><p>「肾单位数目与 GFR 生理性下降」——补充·hermes-病理生理学讲义·第28章·28.11</p></blockquote>
 <p>浓缩与保钠能力减弱，口渴感迟钝，故脱水与容量过负荷都易发生；合并用药多，药物相互作用与肾毒性风险高；急性损伤后恢复能力差，更易转为慢性。</p>
 <p>整体照护的主线是四件事：延缓进展、管理并发症、准备替代治疗、心理社会支持。讲义把护理角色写得极具体：血压与体重的趋势记录、用药清单的核对（尤其非处方止痛药与造影检查）、饮食中钠钾磷蛋白的个体化指导、贫血与骨病的随访提醒、疫苗与感染预防，以及最后一项——</p>
 <blockquote><p>「帮助患者理解「为什么没有症状也要坚持」」——补充·hermes-病理生理学讲义·第28章·28.11</p></blockquote></div></div>
-  <div class="slide-foot"><span>22 / 27</span><span>body</span></div>
+  <div class="slide-foot"><span>20 / 27</span><span>body</span></div>
 </section>
-<section class="slide" data-i="22">
-  <div class="slide-inner"><div class="kicker">十一、生命周期（28.11）</div>
+<section class="slide" data-i="20">
+  <div class="slide-inner"><div class="kicker">慢性段的推进与替代：六条自我推进与三组功能（28.7–28.11）</div>
                 <div class="compact"><p>这一句把全章接回 28.6：因为症状天然滞后，而损害在下行。讲不清这一层，所有观察与随访都会在「我感觉还好」面前失效。</p></div></div>
-  <div class="slide-foot"><span>23 / 27</span><span>body</span></div>
+  <div class="slide-foot"><span>21 / 27</span><span>body</span></div>
 </section>
-<section class="slide" data-i="23">
-  <div class="slide-inner"><div class="kicker">十二、十一章压成一条链</div>
-                <div class="compact"><div class="codeblock"><div class="codeblock-lang">text</div><pre><code class="lang-text">28.1 一条主线：肾单位丧失 → 代偿 → 超负荷 → 失代偿与纤维化 → 更多丧失
+<section class="slide" data-i="21">
+  <div class="slide-inner"><div class="kicker">十一章压成一条链</div>
+                <div class="compact denser"><div class="codeblock"><div class="codeblock-lang">text</div><pre><code class="lang-text">28.1 一条主线：肾单位丧失 → 代偿 → 超负荷 → 失代偿与纤维化 → 更多丧失
         │  急与慢只差速度与可逆性；二者互为因果（急性-on-慢性）
         ▼
 28.2 代偿三条路（单单位高滤过 / 残余肥大 / 排钾排酸排磷增加）
@@ -229,16 +237,40 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 28.9 替代三法：血透（间歇高效）· 腹透（连续平稳）· 移植（最接近生理）
 28.10 肾毒性五机制 ＋ 两条原则：先评估、不叠加
 28.11 生命周期：儿童储备少、老年恢复差；照护的落点是让患者理解为什么没有症状也要坚持</code></pre></div></div></div>
-  <div class="slide-foot"><span>24 / 27</span><span>body</span></div>
+  <div class="slide-foot"><span>22 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="22">
+  <div class="slide-inner"><div class="kicker">十一章压成一条链</div>
+                <div class="compact"><p>链上任何一环被跳过都会出问题：跳过 28.2 的代偿代价，28.7 的六条就没有起点；跳过 28.3 的浓与淡，肾前与肾性永远分不开；跳过 28.5 的排序，八栏后果会变成平均用力；跳过 28.6 的不给界值，后面每一次追问都会滑向「多少算一期」。</p></div></div>
+  <div class="slide-foot"><span>23 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="23">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><ul><li><strong>正文引文是讲义正文，不是教材；本章 MOTTO 另引一句经典原文，出处到书名与篇名。</strong> 格式统一为<code>补充·hermes-病理生理学讲义·第28章·28.M</code>。讲义是本仓库原创的简体中文教学讲义，不是任何外文教材的译本。</li><li><strong>本章丢掉了什么：数值。</strong> 讲义 11 节 4971 个非空白字符里没有分期界值、没有滤过率数值、没有透析参数。本书照录：<strong>可以写方向与排序，不能给取值。</strong> 凡多少算一期、肌酐多少算高一类的追问，统一回<strong>本书不给值，需另立数据层</strong>。</li><li><strong>排序不是判据。</strong> 28.5 按致命速度排的八栏、28.10 按机制排的五类，都是观察与归类的顺序，不是严重度评分，也不是诊断标准。</li><li><strong>本章不写处置。</strong> 高钾的处理、透析的时机与处方、用药调整，一律只写机制与观察方向；讲义自己也是这么收口的。</li><li><strong>不作诊断，也不作预后判定。</strong> 「可逆」与「不可逆」在文中是机制属性，不是对某个人的判断。</li><li><strong>边界声明</strong>：本章只解释讲义给出的机制链条与系统后果，<strong>不写数值与单位与正常值，不作正常与异常判定，不构成诊断、治疗或用药依据</strong>；任何个体的状态判断须由具备资质的人员依现行规范作出。</li></ul></div></div>
+  <div class="slide-foot"><span>24 / 27</span><span>boundary</span></div>
 </section>
 <section class="slide" data-i="24">
-  <div class="slide-inner"><div class="kicker">十二、十一章压成一条链</div>
-                <div class="compact"><p>链上任何一环被跳过都会出问题：跳过 28.2 的代偿代价，28.7 的六条就没有起点；跳过 28.3 的浓与淡，肾前与肾性永远分不开；跳过 28.5 的排序，八栏后果会变成平均用力；跳过 28.6 的不给界值，后面每一次追问都会滑向「多少算一期」。</p></div></div>
-  <div class="slide-foot"><span>25 / 27</span><span>body</span></div>
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><h3 id="运行与验证">运行与验证</h3>
+<div class="codeblock"><div class="codeblock-lang">bash</div><pre><code class="lang-bash"># 1) 现算讲义规模、术语词频、docs 的引文与节号覆盖、裸值行
+node code/main.js
+
+# 2) 单测：节数 / docs 规模 / 节覆盖 / 引文 / 逐字引语 / 裸值 / quiz 契约
+node --test code/main.test.js
+
+# 3) 章级门（六文件 + 引文逐字 + quiz 契约 + 单测 + 教学边界 + 节覆盖）
+cd /e/tcmai-engineering-from-scatch &amp;&amp; node tests/test_binglishengli_chapters.js</code></pre></div>
+<p><code>node code/main.js</code> 的真实输出（节选）：</p>
+<div class="codeblock"><div class="codeblock-lang">text</div><pre><code class="lang-text">讲义规模: 11 节 · 4971 非空白字符 · 3549 汉字 · 平均每节 323 汉字
+术语词频（整章逐字计数）：肾单位 14 次 / 尿毒症 10 次 / 滤过 9 次 / 代偿 9 次</code></pre></div>
+<p><code>code/main.js</code> 的最后一行固定为下面这句，也是单测与章级门共同依赖的字符串：</p></div></div>
+  <div class="slide-foot"><span>25 / 27</span><span>boundary</span></div>
 </section>
 <section class="slide" data-i="25">
   <div class="slide-inner"><div class="kicker">代价与边界</div>
-                <div class="compact"><ul><li><strong>引文是讲义正文，不是教材。</strong> 格式统一为<code>补充·hermes-病理生理学讲义·第28章·28.M</code>。讲义是本仓库原创的简体中文教学讲义，不是任何外文教材的译本。</li><li><strong>本章丢掉了什么：数值。</strong> 讲义 11 节 4971 个非空白字符里没有分期界值、没有滤过率数值、没有透析参数。本书照录：<strong>可以写方向与排序，不能给取值。</strong> 凡多少算一期、肌酐多少算高一类的追问，统一回<strong>本书不给值，需另立数据层</strong>。</li><li><strong>排序不是判据。</strong> 28.5 按致命速度排的八栏、28.10 按机制排的五类，都是观察与归类的顺序，不是严重度评分，也不是诊断标准。</li><li><strong>本章不写处置。</strong> 高钾的处理、透析的时机与处方、用药调整，一律只写机制与观察方向；讲义自己也是这么收口的。</li><li><strong>不作诊断，也不作预后判定。</strong> 「可逆」与「不可逆」在文中是机制属性，不是对某个人的判断。</li><li><strong>边界声明</strong>：本章只解释讲义给出的机制链条与系统后果，<strong>不写数值与单位与正常值，不作正常与异常判定，不构成诊断、治疗或用药依据</strong>；任何个体的状态判断须由具备资质的人员依现行规范作出。</li></ul></div></div>
+                <div class="compact"><div class="codeblock"><div class="codeblock-lang">text</div><pre><code class="lang-text">教学边界：本章只说明讲义给出的机制链条与系统后果，不写数值与单位与正常值，不构成诊断、治疗或用药依据</code></pre></div>
+<p><strong>免责声明：</strong>本章为病理生理学教学材料。文中的机制链条与系统后果取自《hermes-病理生理学讲义》第 28 章（11 节）与本仓库的机器可读层 <code>standards/binglishengli/supplements/jiangyi.json</code>；数字为程序现算，规则已在文中写明。</p>
+<p>本章不提供任何诊断、治疗或用药建议，不给出正常值与参考区间，也不对任何个体的状态作出判断；代偿、可逆、自我推进均为机制层的说明，不能替代临床评估。若出现身体不适或急症，请立即就医。</p></div></div>
   <div class="slide-foot"><span>26 / 27</span><span>boundary</span></div>
 </section>
 <section class="slide" data-i="26">

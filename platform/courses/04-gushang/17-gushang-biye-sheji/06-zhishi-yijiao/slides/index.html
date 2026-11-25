@@ -60,23 +60,96 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <div id="deck">
 <section class="slide" data-i="0">
   <div class="slide-inner"><h1 class="big">第 6 章 · 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法</h1></div>
-  <div class="slide-foot"><span>1 / 5</span><span>title</span></div>
+  <div class="slide-foot"><span>1 / 17</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
   <div class="slide-inner"><blockquote class="motto">「学然后知不足，教然后知困。知不足，然后能自反也；知困，然后能自强也。」——《礼记·学记》</blockquote></div>
-  <div class="slide-foot"><span>2 / 5</span><span>motto</span></div>
+  <div class="slide-foot"><span>2 / 17</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
   <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">本系的毕设拆成三份可交付案例，建设成本 211,000 元、回本中位 18.6 个月，这个模型隐含一个前提：接手的人能在没有作者的情况下继续使用。测试这个前提不需要问卷，只需要一个动作——<strong>找一个没参与过项目的人，把交接包给他，看他在多长时间内跑出与论文主表一致的数、并按规范做出一次可比的手法操作</strong>。多数毕设在这个动作上失败，而失败原因几乎不是代码写得差：缺的是环境、口径、测量协议与失效清单这四样，缺哪一样，接手人都得回头找你，而那时候你已经离校。</p></div>
-  <div class="slide-foot"><span>3 / 5</span><span>problem</span></div>
+  <div class="slide-foot"><span>3 / 17</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
   <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（交付要能接手、科室要能照做、复算要能重来；一份只有作者会跑会做的材料，在账面上等价于零）+ 知识积累（父课把操作规范讲到了「做对」这一层，没有讲到「别人照做也对」这一层；后者靠的不是文档厚度，是四件能被独立验证的材料）</p></div>
-  <div class="slide-foot"><span>4 / 5</span><span>roots</span></div>
+  <div class="slide-foot"><span>4 / 17</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
+  <div class="slide-inner"><div class="kicker">一、交接包四件：缺一件，复算就断在那一件</div>
+                <div class="compact dense"><div class="table-wrap"><table><thead><tr><th>件</th><th>内容</th><th>断掉的症状</th></tr></thead><tbody><tr><td>数据与测量协议</td><td>原始导出、去标识规则、测量协议版本、双人子集、切分文件</td><td>「数据我拿到了，但不知道哪一版」「不知道你们量角取哪个点」</td></tr><tr><td>代码与参数</td><td>从原始导出到主表的全部脚本，含清洗、切分、统计，参数外置</td><td>依赖一个手工整理的中间表，重建不出来</td></tr><tr><td>环境与版本</td><td>依赖清单与版本锁定、运行命令、硬件要求、数据校验值</td><td>「我这能跑，你那报错」</td></tr><tr><td>口径与术语</td><td>指标定义、阈值来源、量表版本与计分规则、命名对照</td><td>同一个词指两件事，数字对不上</td></tr></tbody></table></div>
+<p>第二件的关键词是<strong>参数外置</strong>。所有可调的输入——纳入条件、切分种子、终点的界值、量表版本——都应该在配置文件里，而不是散落在脚本的字符串中间。检验办法很直接：让别人只改配置文件里的一个值，重跑，看结果是否按预期变化。改不动，说明参数还埋在代码里。</p></div></div>
+  <div class="slide-foot"><span>5 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">一、交接包四件：缺一件，复算就断在那一件</div>
+                <div class="compact"><p>第三件最容易被低估。统计与绘图库的版本变动会改变默认行为，默认行为改变结果；不同版本的同一函数，可能在缺失值处理或四舍五入上不同。锁定版本清单（而不是只写包名）成本只有几分钟，收益是把「环境问题」这一类求助永久消除。同时把数据文件的校验值写进去，接手人就能确认自己拿到的是同一份数据，而不是同名的新版本。</p>
+<p>第四件是骨伤项目特有的难点。「复位程度」「力线」「优良」这些词，在不同科室、不同教材里指的范围不一样。你的标签与终点用的是哪一套，必须在口径文件里写清，并给出与常用评分体系、影像测量惯例的对照。没有这份对照，接手人看到「改善」两个字，不知道对应你表里的哪一列。</p></div></div>
+  <div class="slide-foot"><span>6 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">二、SOP：把「做对」写成「照做也对」</div>
+                <div class="compact dense"><p>标准操作规程的价值不在于它完备，而在于它可执行。可执行的判据是五个问题都能当场回答。</p>
+<div class="table-wrap"><table><thead><tr><th>问题</th><th>不合格的答法</th><th>合格的答法长什么样</th></tr></thead><tbody><tr><td>谁来做</td><td>「由治疗师完成」</td><td>写明资质、培训要求、是否需要带教确认</td></tr><tr><td>什么条件下做</td><td>「适用于腰痛」</td><td>写明纳入条件、排除条件、由谁判定</td></tr><tr><td>具体做什么</td><td>「行手法松解」</td><td>体位、接触点、方向、节律、剂量口径逐项写</td></tr><tr><td>做到什么算完</td><td>「以患者感觉舒适为准」</td><td>写明可观察的完成标志与记录字段</td></tr><tr><td>做不到怎么办</td><td>空着</td><td>写明中止条件、替代路径、上报对象</td></tr></tbody></table></div>
+<p>第五个问题是整套 SOP 的安全阀，也是最常空缺的一格。任何操作都会遇到「今天不适合做」的情况：受试者状态不对、局部皮肤有反应、出现新的症状。SOP 要写清这些情况怎么识别、由谁决定中止、中止后记录什么。没有这一格，规范在纸面上完美，在现实里会被临场发挥替代——而临场发挥的部分，恰恰是你最想留痕的部分。</p></div></div>
+  <div class="slide-foot"><span>7 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">二、SOP：把「做对」写成「照做也对」</div>
+                <div class="compact"><p>SOP 的检验办法与第一章的里程碑同构：找一位具备资质但没参与设计的操作者，只给规范，不给口头解释，让他做一遍。做完比较两件事——他做的和你要的是不是同一件事（力学曲线、关键步骤的完成情况），他有没有在哪一步停下来问你。停下来问的地方，就是规范写得不够的地方。这个动作在答辩前做，代价是半天；在离校后做，代价是整份交付作废。</p></div></div>
+  <div class="slide-foot"><span>8 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">三、三条验收动作：从能跑到敢用</div>
+                <div class="compact dense"><p>交接是否成功，不由交付方宣布，由接手方验证。三个动作构成一条阶梯，每一级测的东西不同。</p>
+<div class="table-wrap"><table><thead><tr><th>动作</th><th>谁做</th><th>通过标准</th><th>失败说明什么</th></tr></thead><tbody><tr><td>复算</td><td>未参与项目的人，只看交接包</td><td>跑出与论文主表一致的数</td><td>数据、代码、环境或口径有缺口</td></tr><tr><td>改一处</td><td>同一人，改一个参数或换一批输入</td><td>结果按预期变化，且能解释为什么</td><td>参数没真正外置，或流程藏着未言明的假设</td></tr><tr><td>找一处错</td><td>同一人，按失效清单复现一个失败</td><td>能复现，且失败形态与描述一致</td><td>失效清单是编的，或不可复现</td></tr></tbody></table></div>
+<p>第二级最有用，因为它测的不是「能不能跑」，而是「理解得对不对」。一个只会原样运行的人，遇到新数据就束手无策；一个能改一处并解释变化的人，才算接住了。骨伤项目在这一级要多加一项：换一名操作者按 SOP 做一遍，比较关键测量与力学指标的差异。这一项测的是<strong>操作者之间的一致性</strong>，它与第二章的测量者一致性是同一条思路，只是对象从「量片子的人」换成了「做手法的人」。</p></div></div>
+  <div class="slide-foot"><span>9 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">三、三条验收动作：从能跑到敢用</div>
+                <div class="compact"><p>第三级常被跳过，理由是「没必要自己揭短」。恰恰相反：把失效复现做成交接的一部分，等于把「什么时候不可信」从口头承诺变成了可检验的资产。接手人第一次遇到异常时，手里有清单，就不会把问题误判成「系统坏了」或者「方法没用」。</p></div></div>
+  <div class="slide-foot"><span>10 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">四、失效清单与退役条件</div>
+                <div class="compact dense"><p>任何交付物都有不再适用的条件。移交时若不写明，停用就只能发生在压力最大的时刻，并且由最没有决定权的人临时拍板。</p>
+<div class="table-wrap"><table><thead><tr><th>条件</th><th>判据</th><th>触发后做什么</th></tr></thead><tbody><tr><td>量表或评分体系更新</td><td>所用版本被修订、计分规则改变</td><td>重新映射并复评，未完成前标注「未适配」</td></tr><tr><td>设备更换</td><td>影像设备、力学测试设备换代或重新标定</td><td>重做一致性检验，更新测量协议版本</td></tr><tr><td>人群外使用</td><td>出现适用范围之外的受试者</td><td>拒绝套用或强制人工复核</td></tr><tr><td>性能漂移</td><td>定期复评低于交接时的分层基线</td><td>暂停使用，重新评估</td></tr><tr><td>人员变动</td><td>维护人离岗且未完成再交接</td><td>转入手工流程，不得无人维护运行</td></tr></tbody></table></div>
+<p>第一行在骨伤里发生得比想象中频繁。量表版本一变，历史分数的可比性就断了；如果口径文件里没记版本号，你甚至不知道自己断在哪。第二行同理：新设备的图像分辨率与畸变不同，旧的端点选取规则未必还适用，一致性要重测，而不是沿用旧数。</p></div></div>
+  <div class="slide-foot"><span>11 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">四、失效清单与退役条件</div>
+                <div class="compact"><p>第四行的判据必须写成可测的形式。「效果变差就停」不是判据；「按固定周期在固定复评样本上重算主终点，若某一分层低于交接基线一定幅度则暂停」才是。具体幅度依场景与后果确定，本章不给数值。</p>
+<p>还有一条常被忘记的：<strong>责任边界</strong>。交付物提供的是判断依据，不是判断本身；进入病历或治疗方案的每一条，都必须由具备资质的人复核并留痕。写明这条，不是为了免责，是为了让事后能重建「当时可得的信息是什么」。</p></div></div>
+  <div class="slide-foot"><span>12 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">五、常见失败模式</div>
+                <div class="compact dense"><div class="table-wrap"><table><thead><tr><th>失败</th><th>症状</th><th>根因</th><th>纠正动作</th></tr></thead><tbody><tr><td>文档代替交接</td><td>交了三十页说明，没人跑通</td><td>说明多、可执行材料少</td><td>只留四件，每件附一条命令或一张表</td></tr><tr><td>环境不定版</td><td>「装最新版就行」</td><td>依赖未锁定</td><td>生成版本清单并实测一次</td></tr><tr><td>口径各说各话</td><td>同一个词两种含义</td><td>无术语与量表对照</td><td>补口径表，标注版本</td></tr><tr><td>失效清单空缺</td><td>「基本没有失败」</td><td>未系统采集</td><td>从异常表反推三条最小复现</td></tr><tr><td>单点依赖</td><td>只有作者会跑会做</td><td>未做接手验收</td><td>强制由第三方执行三条动作</td></tr><tr><td>无退役条件</td><td>出问题才临时决定</td><td>未预设判据</td><td>写五条触发条件与责任人</td></tr></tbody></table></div>
+<p>「文档代替交接」的成因不是懒，是混淆了两种文本：说明文档写给「想知道为什么的人」，交接包写给「要把它跑起来的人」。前者可以很长，后者必须很短，且每一步都能被执行、被验证。一份好的交接包读起来像清单，不像散文。</p></div></div>
+  <div class="slide-foot"><span>13 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">五、常见失败模式</div>
+                <div class="compact"><p>「单点依赖」在毕设里几乎是结构性的——一个人做，一个人会。破解办法只有一个：在还有时间修的时候，让第三方跑一遍。这件事放在答辩前，是质检；放在离校前一天，是赌博。</p></div></div>
+  <div class="slide-foot"><span>14 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="14">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><p><strong>完整交接的成本可能接近开发本身。</strong> 数据卡、协议版本、参数外置、失效复现，每一项都要额外时间，而最后阶段最缺时间。可行的做法是让这些材料在过程中同步生长：数据卡在第二章写，测量协议在第二章定版，主表脚本在第四章成型，口径表随分析更新。最后只剩打包与验收，而不是从零补写。</p>
+<p><strong>移交不等于责任转移。</strong> 口径写清、边界写明，只说明交付方尽到了说明义务，不意味着使用方可以免于复核。任何进入临床流程的判断，仍须由具备资质的人员作出并留痕。</p>
+<p><strong>本章不给维护周期、复评频率或漂移阈值。</strong> 这些取决于预期用途、人群、后果严重度与机构条件，须依现行医疗质量管理、医疗器械与数据管理要求及所在机构制度确定。</p>
+<p><strong>文中的成本、回本周期与案例拆分是本系毕设口径的教学数字</strong>（建设成本 211,000 元、回本中位 18.6 个月等），不指向任何具体项目或机构，不构成报价、承诺或收益预测；实际交付要求以合同、批准文件与所在单位制度为准。</p></div></div>
+  <div class="slide-foot"><span>15 / 17</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="15">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><p><strong>免责声明：</strong> 本章为教学材料，不构成医学意见、诊断或治疗建议，也不构成合规或法律意见；交付物涉及真实数据与临床使用时，须依现行伦理审查、个人信息保护、医疗器械与数据安全管理要求及所在机构制度，由具备相应资质与职责的人员决定。</p></div></div>
+  <div class="slide-foot"><span>16 / 17</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="16">
   <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
-  <div class="slide-foot"><span>5 / 5</span><span>disclaimer</span></div>
+  <div class="slide-foot"><span>17 / 17</span><span>disclaimer</span></div>
 </section>
 </div>
 <div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>

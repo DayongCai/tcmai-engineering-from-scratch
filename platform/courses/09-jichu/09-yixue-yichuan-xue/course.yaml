@@ -29,74 +29,73 @@ platform:
 
 chapters:
   - slug: 01-yichuanxue-gailun
-    title: 第1章 医学遗传学概论
-    segments: 5
+    title: 遗传学的医学价值不在「找到那个基因」，在「把个体风险从人群平均里拆出来」
     video: rendered
-    estimate_minutes: 1.03
-    measured_minutes: 1.02
+    estimate_minutes: 11.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.79      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-jiyin-de-jiegou-zuzhi
-    title: 第2章 基因的结构与组织
-    segments: 5
+    title: 基因不是「一段编码」，是一套带开关的坐标系
     video: rendered
-    estimate_minutes: 1.05
-    measured_minutes: 1.03
+    estimate_minutes: 9.73      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 7.41      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-jiyin-tubian-yu-xiaoying
-    title: 第3章 基因突变与效应
-    segments: 5
+    title: 突变的后果不取决于它多大，取决于它落在哪一格、以及阅读框还在不在
     video: rendered
-    estimate_minutes: 1.03
-    measured_minutes: 1.02
+    estimate_minutes: 10.62      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 7.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-xipu-yu-chuandi-fangshi
-    title: 第4章 系谱分析与传递方式
-    segments: 5
+    title: 系谱不是「看图猜病」，是一台把家族史折成概率的机器
     video: rendered
-    estimate_minutes: 1.05
-    measured_minutes: 1.06
+    estimate_minutes: 10.07      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.11      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-dan-jiyin-yichuanbing
-    title: 第5章 单基因遗传病
-    segments: 5
+    title: 单基因病的「单」，说的是传递单位，不是病因的单一性
     video: rendered
-    estimate_minutes: 1.03
-    measured_minutes: 1.01
+    estimate_minutes: 10.53      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.54      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-duo-jiyin-yuzhi-moxing
-    title: 第6章 多基因遗传与阈值模型
-    segments: 5
+    title: 多基因病不在某一条染色体上，在「易患性的分布」里
     video: rendered
-    estimate_minutes: 1.08
-    measured_minutes: 1.06
+    estimate_minutes: 11.58      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.88      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-yiganxing-yu-zaifa-fengxian
-    title: 第7章 易感性与再发风险
-    segments: 5
+    title: 再发风险不是一个数字，是一个随每条新信息改动的后验
     video: rendered
-    estimate_minutes: 1.03
-    measured_minutes: 1.04
+    estimate_minutes: 10.68      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.48      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-heti-yu-ranse-ti-jibian
-    title: 第8章 核型与染色体畸变
-    segments: 5
+    title: 核型是一条「分辨率就是判据」的技术
     video: rendered
-    estimate_minutes: 1.03
-    measured_minutes: 1.03
+    estimate_minutes: 10.40      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.13      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-changjian-ranse-ti-bing
-    title: 第9章 常见染色体病
-    segments: 5
+    title: 染色体病的表型不是「某个基因坏了」，是「一整批基因的剂量偏了」
     video: rendered
-    estimate_minutes: 1.02
-    measured_minutes: 0.99
+    estimate_minutes: 11.87      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.49      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-qunti-yichuan-xue
-    title: 第10章 群体遗传学
-    segments: 5
+    title: 遗传平衡不是自然界的常态，是一把用来量「什么力在起作用」的尺子
     video: rendered
-    estimate_minutes: 1.03
-    measured_minutes: 1
+    estimate_minutes: 10.17      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.42      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 11-linchuang-yichuan-xue
-    title: 第11章 临床遗传学
-    segments: 5
+    title: 遗传咨询的产出不是「一个风险数字」，是一份能在几个选项里做决定的框架
     video: rendered
-    estimate_minutes: 1.03
-    measured_minutes: 1.01
+    estimate_minutes: 10.67      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.52      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 12-zhongyi-yichuan-xue
-    title: 第12章 中医遗传学
-    segments: 5
+    title: 「禀赋」不是遗传学的同义词，它是一套描述系统，价值在提问而不在术语对接
     video: rendered
-    estimate_minutes: 1.03
-    measured_minutes: 1
+    estimate_minutes: 11.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

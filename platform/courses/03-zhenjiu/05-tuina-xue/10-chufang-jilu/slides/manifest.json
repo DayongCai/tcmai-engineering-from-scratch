@@ -1,31 +1,81 @@
 {
   "chapter": "10-chufang-jilu",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 15,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 15
+      "chars": 22
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 52
+      "chars": 22
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 42
+      "chars": 205
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 105
+      "chars": 134
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 384
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 400
+    },
+    {
+      "n": 7,
+      "segment": 5,
+      "chars": 34
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 355
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 361
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 410
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 322
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 142
+    },
+    {
+      "n": 13,
+      "segment": 9,
+      "chars": 348
+    },
+    {
+      "n": 14,
+      "segment": 9,
+      "chars": 126
+    },
+    {
+      "n": 15,
+      "segment": 10,
       "chars": 52
     }
   ]

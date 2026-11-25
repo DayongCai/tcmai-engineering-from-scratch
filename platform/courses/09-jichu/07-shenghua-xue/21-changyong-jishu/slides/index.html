@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"/>
-<title>第 21 章 · 生物化学与分子生物学常用技术 · 幻灯片</title>
+<title>第 21 章 · 分子技术的选择不看好坏，只看它那个致命假设你的样本能不能满足 · 幻灯片</title>
 <style>
 
 :root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
@@ -59,24 +59,99 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <body>
 <div id="deck">
 <section class="slide" data-i="0">
-  <div class="slide-inner"><h1 class="big">第 21 章 · 生物化学与分子生物学常用技术</h1></div>
-  <div class="slide-foot"><span>1 / 5</span><span>title</span></div>
+  <div class="slide-inner"><h1 class="big">第 21 章 · 分子技术的选择不看好坏，只看它那个致命假设你的样本能不能满足</h1></div>
+  <div class="slide-foot"><span>1 / 17</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「《生物化学·生物化学与分子生物学常用技术》」——教材第21章；章号一一对应。本章要回答的是：生物化学与分子生物学常用技术：这一章的判据是什么，什么算「看懂了」。</blockquote></div>
-  <div class="slide-foot"><span>2 / 5</span><span>motto</span></div>
+  <div class="slide-inner"><blockquote class="motto">「故圣人杂合以治，各得其所宜。」——《素问·异法方宜论》</blockquote></div>
+  <div class="slide-foot"><span>2 / 17</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
-  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">常用技术：分离、杂交与扩增。</p></div>
-  <div class="slide-foot"><span>3 / 5</span><span>problem</span></div>
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">聚合酶链反应按常引口径每轮把目标片段复制一倍，三十轮之后理论放大倍数为二的三十次方，约十亿倍（1,073,741,824）；四十轮约一万亿倍。这个数字看上去是「能力」，实际上是一张<strong>条件单</strong>：指数放大要求每一轮都能准确地找到引物结合的位置，因此<strong>你必须事先知道目标片段两端的序列</strong>。不知道两端，这套能力等于零。同样，印迹技术要求样本里的目标分子足够完整、足够多；测序的短读长要求有一个可比的参考序列；抗体识别要求抗体真的只认那一个抗原。<strong>每一项技术的能力，都与它的「致命假设」成反比：能力越强，假设越硬。</strong> 选技术不是选「先进的」，而是问「我这个样本，能不能满足它那个假设」。</p></div>
+  <div class="slide-foot"><span>3 / 17</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
-  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（生物化学的判据是「底物—酶—产物—能量」四件套：这一步谁催化、能量怎么走，说不清就是没懂）+ 知识积累（本章 12 单元 20,503 汉字；三辨主 <strong>物质组成与性质 92</strong>；四位面（教材篇结构）主 <strong>末篇·常用技术 20503</strong>；引书 <strong>0 部 0 次</strong>；数值类命中 0）</p></div>
-  <div class="slide-foot"><span>4 / 5</span><span>roots</span></div>
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（生物样本的成分复杂、目标分子含量极低、可获得的材料量有限，任何一步都必须在「分离」与「识别」之间做出取舍；同一份样本往往只能选一条路线，选了就回不去）+ 知识积累（三把分离尺子、印迹的两步拆分、PCR 的引物依赖、测序的读长与通量交换、重组 DNA 的四个环节，五件事各自对应一种「能力的边界」；缺一件，就只能按名字记技术，答不出「为什么这个样本不能用这个方法」）</p></div>
+  <div class="slide-foot"><span>4 / 17</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
+  <div class="slide-inner"><div class="kicker">一、分离：三把尺子，三种偏见</div>
+                <div class="compact"><p>所有分离技术的底层只有三把尺子：<strong>大小、电荷、亲和力。</strong></p>
+<ul><li><strong>按大小</strong>：离心（差速与密度梯度）、凝胶过滤层析、凝胶电泳。分子越小，沉降或迁移越快（在同样的介质与条件下）。这把尺子的偏见是：<strong>它只看大小，不看身份。</strong> 两个大小相同的不同蛋白会一起被分到同一管。</li><li><strong>按电荷</strong>：离子交换层析、等电聚焦、电泳（在电场中按电荷/质量比迁移）。这把尺子的偏见是：<strong>电荷相近的不同分子会共迁移</strong>，且电荷会随 pH 改变。</li><li><strong>按亲和力</strong>：亲和层析、免疫沉淀。用配体或抗体去「钓」目标。这把尺子的偏见是：<strong>亲和力不等于特异性</strong>，配体可能钓到结构相似的「近亲」。</li></ul></div></div>
+  <div class="slide-foot"><span>5 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">一、分离：三把尺子，三种偏见</div>
+                <div class="compact"><p>三把尺子可以串联使用，串联的收益是分辨率提高，代价是每一步都有损失（回收率下降、活性可能受损）。<strong>分离的本质是「用偏见换分辨率」：你选择了哪把尺子，就接受了它看不见什么。</strong> 这句话可以用来检查任何一张纯化流程图——凡是只写「经过某柱」而不写「这一步去掉什么、损失什么」的，都是没讲透。</p>
+<p>核酸的分离还有一层特殊性：DNA 与 RNA 的化学性质接近，分离的关键是<strong>抑制核酸酶</strong>与<strong>区分两类核酸</strong>。RNA 极易被 RNase 降解，而 RNase 无处不在且极耐热，因此 RNA 操作的难点不在「提得出来」，而在「提出来还是完整的」。<strong>这就是为什么 RNA 相关的技术流程里，防降解的步骤比提取本身更占篇幅。</strong></p></div></div>
+  <div class="slide-foot"><span>6 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">二、印迹：把「分离」与「识别」拆成两步</div>
+                <div class="compact dense"><p>印迹技术（blotting）的核心思路很简洁：<strong>先用第一把尺子把混合物分开，再把分开的結果固定到膜上，最后用「识别」把目标显出来。</strong></p>
+<p>三种印迹按「识别什么」分工：</p>
+<div class="table-wrap"><table><thead><tr><th>技术</th><th>分离对象</th><th>识别手段</th><th>回答的问题</th></tr></thead><tbody><tr><td>Southern 印迹</td><td>DNA</td><td>核酸探针杂交</td><td>这段序列在不在、有多大、拷贝数</td></tr><tr><td>Northern 印迹</td><td>RNA</td><td>核酸探针杂交</td><td>这个转录本在不在、有多大、丰度如何</td></tr><tr><td>Western 印迹</td><td>蛋白质</td><td>抗体识别</td><td>这个蛋白在不在、有多大、修饰状态</td></tr></tbody></table></div>
+<p>三者的共同结构是「分离 → 转移 → 识别」，共同的能力边界也相同：<strong>只能回答「在不在、多大、多少」，不能回答「在哪里、和谁在一起、活的还是死的」。</strong> 后者需要原位杂交、免疫组化、免疫共沉淀等另一类技术。</p></div></div>
+  <div class="slide-foot"><span>7 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">二、印迹：把「分离」与「识别」拆成两步</div>
+                <div class="compact"><p>Western 印迹还有一条特殊的边界：它依赖抗体。<strong>抗体的特异性是整个实验的天花板</strong>——抗体若认了别的蛋白，条带再漂亮也是错的。这也是为什么这一类实验必须设对照（阴性对照、内参、分子量标记），对照的作用不是「让结果好看」，而是<strong>检验那个致命假设是否成立</strong>。</p></div></div>
+  <div class="slide-foot"><span>8 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">三、PCR：指数放大的代价是「必须知道两端」</div>
+                <div class="compact dense"><p>PCR 的三个步骤按温度循环：</p>
+<ol><li><strong>变性</strong>：高温使双链解开。</li><li><strong>退火</strong>：降温让引物与模板上的互补序列结合。</li><li><strong>延伸</strong>：在适宜温度下由耐热聚合酶从引物 3′ 端延长。</li></ol>
+<p>每循环一次，目标片段数量翻倍；三十轮约十亿倍。这个放大能力带来三个直接后果，也带来三个硬约束：</p>
+<ul><li><strong>能力</strong>：极微量的模板也能被检出；可以定点扩增一段已知序列；可以与逆转录联用（RT-PCR）检测 RNA。</li><li><strong>约束一：必须知道两端序列。</strong> 引物是「按已知序列设计」的，两端未知就无法设计引物，PCR 对此完全无能。这是它最硬的假设。</li><li><strong>约束二：产物长度有限。</strong> 常规条件下扩增长片段效率下降，长片段需要特殊体系。</li><li><strong>约束三：污染即假阳性。</strong> 因为放大能力太强，前一轮的产物飘到下一管里就足以造成假阳性。<strong>能力越强，防污染的要求越硬</strong>——这是「能力与假设成反比」最直观的例子。</li></ul></div></div>
+  <div class="slide-foot"><span>9 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">三、PCR：指数放大的代价是「必须知道两端」</div>
+                <div class="compact"><p>定量 PCR 在扩增的同时测量信号，把「有没有」变成「有多少」。但它的定量依赖标准曲线与内参，<strong>「相对定量」与「绝对定量」是两件事</strong>，把相对值当绝对值用，是这一类实验最常见的误读。</p></div></div>
+  <div class="slide-foot"><span>10 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">四、测序：读长与通量的交换</div>
+                <div class="compact dense"><p>测序技术的发展可以用一条主线概括：<strong>读长与通量不可兼得。</strong></p>
+<ul><li><strong>第一代（双脱氧链终止法）</strong>：用双脱氧核苷酸终止延伸，得到一组长度不同的片段，按长度分离后读出序列。读长按常引口径为数百到一千碱基，通量低，但准确度高、读长较长。</li><li><strong>第二代（高通量并行测序）</strong>：把大量片段同时扩增并并行读取，通量极高，单读长较短。代价是<strong>短读长需要参考序列或组装</strong>，重复序列区域难以跨越。</li><li><strong>第三代（单分子实时测序）</strong>：直接读单个分子的信号，读长可达数千到数万碱基（常引口径），代价是单次准确率相对较低，需要多次覆盖或校正。</li></ul>
+<p>这三代的取舍不是「谁取代谁」，而是<strong>三种不同的假设</strong>：第一代假设「样本量足够、目标单一」；第二代假设「有参考序列或足够覆盖度」；第三代假设「能接受较高的原始错误率、并有校正手段」。<strong>选测序方案，先问「我的问题是找已知变异、还是发现新结构、还是要跨重复区」，答案决定用哪一代。</strong></p></div></div>
+  <div class="slide-foot"><span>11 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">五、重组 DNA 与模式生物：把「一个基因」搬进「可操作的背景」</div>
+                <div class="compact"><p>重组 DNA 技术的四个环节是：<strong>切割、连接、导入、筛选。</strong></p>
+<ul><li><strong>切割</strong>：用限制性内切酶在特定序列处切断 DNA。酶的识别序列短（常引口径四到八个碱基），因此在足够大的基因组里会切出许多片段——<strong>「特异」是相对的，位点越短，出现的频率越高。</strong></li><li><strong>连接</strong>：用连接酶把目的片段与载体接起来。载体提供复制起点与选择标记，使「外来片段」能随宿主一起复制。</li><li><strong>导入</strong>：转化、转染、显微注射、病毒载体等，按宿主与材料选择。</li><li><strong>筛选</strong>：用选择标记（如抗性基因）先筛「拿到了载体的」，再用报告基因或测序筛「拿对了的」。</li></ul>
+<p>四个环节里，<strong>筛选是最容易被低估的一步</strong>。切割与连接是概率事件，产物是混合物；没有可靠的筛选，前面的工作无法验证。<strong>这也是「能力与假设」的又一次体现：导入效率再高，筛不出来就等于没做。</strong></p></div></div>
+  <div class="slide-foot"><span>12 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">五、重组 DNA 与模式生物：把「一个基因」搬进「可操作的背景」</div>
+                <div class="compact"><p>转基因动物与基因打靶是这套技术在整体水平上的延伸：前者把外源基因导入生殖系，使其在个体中表达；后者利用同源重组在特定位点改造内源基因（敲除、敲入、点突变）。两者的价值在于<strong>把「一个基因」放进「一个可观察的整体」</strong>，从而回答「这个基因在整体里做什么」——这是细胞实验无法回答的问题。代价是周期长、成本高、伦理审查严格。</p></div></div>
+  <div class="slide-foot"><span>13 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">六、伦理与信息：技术越强，边界越硬</div>
+                <div class="compact dense"><p>这一章的技术有一个共同点：<strong>它们都能产生关于个体的信息，而且信息量与不确定性同时增加。</strong></p>
+<ul><li>测序可以读出一个个体的全部序列，也会读出大量「意义不明」的变异。</li><li>表达谱可以显示组织状态，也可能暴露与当前问题无关的信息。</li><li>基因编辑可以改变生殖系，其影响跨代。</li></ul>
+<p>因此这一章必须写明三条边界：</p>
+<ol><li><strong>信息的最小必要。</strong> 只取回答当前问题所需的信息，不因为「顺便能测」就全测。<strong>「能测」不等于「该测」。</strong></li><li><strong>可识别信息的保护。</strong> 样本、序列、图像都属于敏感个人信息，去标识化与脱敏不是同一件事，处理时须按规定取得同意并经伦理审查。</li><li><strong>不替代专业判断。</strong> 技术给出的是数据，判读需要结合背景；任何辅助工具的输出（包括结构预测与自动注释）都只能作为参考，须经人工复核并留痕。</li></ol></div></div>
+  <div class="slide-foot"><span>14 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="14">
+  <div class="slide-inner"><div class="kicker">六、伦理与信息：技术越强，边界越硬</div>
+                <div class="compact"><p>把这三条写在技术章里，不是「加一段道德说教」，而是<strong>因为技术的能力边界与伦理边界是同一件事的两面</strong>：一项技术的假设越硬，它给出的结论越依赖样本与条件，因此越需要人来判断「这个结论能用到哪里」。</p></div></div>
+  <div class="slide-foot"><span>15 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="15">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><ul><li>本章的「二的三十次方约十亿倍」「三十轮」「双脱氧法读长数百到一千碱基」「三代测序读长数千到数万」「限制酶识别四到八个碱基」均为常引口径，不同教材与不同平台数值有出入，不作为选择依据。</li><li>「能力与致命假设成反比」是本章的解释框架，用于组织技术选择；它不是定量规律，也不意味着「假设越弱的技术越好」——假设置弱往往意味着分辨率或通量下降。</li><li>本章只写技术的原理类别与适用关系，不写试剂、仪器、耗材的规格型号与品牌，不写具体操作参数（温度、时间、循环数、浓度）；这些属于实训手册的范围，须按机构制度执行。</li><li>涉及人体的样本、序列与图像按敏感个人信息处理；涉及人体的实训须经伦理审查。本章不含任何诊断标准、判读阈值与处置方案。</li><li>引用古籍只到书名与篇名，取其问题意识（「各得其所宜」用以说明技术须与对象相配），不表示古文献已含现代分子技术。</li></ul></div></div>
+  <div class="slide-foot"><span>16 / 17</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="16">
   <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
-  <div class="slide-foot"><span>5 / 5</span><span>disclaimer</span></div>
+  <div class="slide-foot"><span>17 / 17</span><span>disclaimer</span></div>
 </section>
 </div>
 <div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>

@@ -28,7 +28,7 @@
       "spoken": "「《精神科护理学·第16章》」——教材第 16 章章目级引文；教材无篇名级引文，非本章原文篇名。本章要回答的是：精神科护理的法律与伦理实践这一章的核心判据是什么。",
       "estimateSeconds": 17,
       "audio": "002.mp3",
-      "audioSeconds": 16.58
+      "audioSeconds": 16.584
     },
     {
       "n": 3,
@@ -38,7 +38,7 @@
       "spoken": "法律伦理独立成章：自愿与非自愿的边界。",
       "estimateSeconds": 4,
       "audio": "003.mp3",
-      "audioSeconds": 4.42
+      "audioSeconds": 4.416
     },
     {
       "n": 4,
@@ -58,10 +58,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "005.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 60.5,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 0.98,
+    "measuredMinutes": 1.01,
+    "ratio": 1.025
+  }
 }

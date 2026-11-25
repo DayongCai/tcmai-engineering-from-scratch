@@ -29,110 +29,109 @@ platform:
 
 chapters:
   - slug: 01-m1
-    title: 第1章 管理与管理学
-    segments: 5
+    title: 管理不是把事做完，是让同样的力气换出不同的结果
     video: rendered
-    estimate_minutes: 0.82
-    measured_minutes: 0.84
+    estimate_minutes: 0.82      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.84      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-m2
-    title: 第2章 管理理论的形成与发展
-    segments: 5
+    title: 每一种"最优解"都是它那个年代的应急方案
     video: rendered
-    estimate_minutes: 0.87
-    measured_minutes: 0.89
+    estimate_minutes: 0.87      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.89      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-m3
-    title: 第3章 管理的基本原理与方法
-    segments: 5
+    title: 原理用来排除错误做法，方法才用来动手
     video: rendered
-    estimate_minutes: 0.87
-    measured_minutes: 0.88
+    estimate_minutes: 0.87      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.88      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-m4
-    title: 第4章 决策
-    segments: 5
+    title: 决策不是选最好的，是在信息不够时选一个能交代的
     video: rendered
-    estimate_minutes: 0.78
-    measured_minutes: 0.78
+    estimate_minutes: 0.78      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.78      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-m5
-    title: 第5章 计划
-    segments: 5
+    title: 计划不是把目标写下来，是把目标拆到有人签字
     video: rendered
-    estimate_minutes: 0.78
-    measured_minutes: 0.77
+    estimate_minutes: 0.78      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.77      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-m6
-    title: 第6章 战略管理
-    segments: 5
+    title: 战略不是决定做什么，是决定不做什么
     video: rendered
-    estimate_minutes: 0.82
-    measured_minutes: 0.82
+    estimate_minutes: 0.82      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.82      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-m7
-    title: 第7章 组织设计与组织结构
-    segments: 5
+    title: 组织图上的每一根线，都要有人能被叫来问
     video: rendered
-    estimate_minutes: 0.85
-    measured_minutes: 0.88
+    estimate_minutes: 0.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.88      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-m8
-    title: 第8章 组织变革与组织文化
-    segments: 5
+    title: 变革死在半路，文化活在细节
     video: rendered
-    estimate_minutes: 0.85
-    measured_minutes: 0.87
+    estimate_minutes: 0.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.87      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-m9
-    title: 第9章 人力资源管理
-    segments: 5
+    title: 人力不是成本项，是唯一会自己决定出多少力的资源
     video: rendered
-    estimate_minutes: 0.82
-    measured_minutes: 0.85
+    estimate_minutes: 0.82      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.85      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-m10
-    title: 第10章 领导
-    segments: 5
+    title: 领导不是让人听话，是让人在没有你的时候也肯多走一步
     video: rendered
-    estimate_minutes: 0.78
-    measured_minutes: 0.79
+    estimate_minutes: 0.78      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.79      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 11-m11
-    title: 第11章 激励
-    segments: 5
+    title: 钱买到的是不反对，不是多做一点
     video: rendered
-    estimate_minutes: 0.8
-    measured_minutes: 0.79
+    estimate_minutes: 0.80      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.79      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 12-m12
-    title: 第12章 沟通
-    segments: 5
+    title: 说过了不等于传到了，传到了不等于懂了
     video: rendered
-    estimate_minutes: 0.78
-    measured_minutes: 0.8
+    estimate_minutes: 0.78      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.80      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 13-m13
-    title: 第13章 控制
-    segments: 5
+    title: 控制不是抓住谁的错，是让偏差在还来得及的时候出现
     video: rendered
-    estimate_minutes: 0.8
-    measured_minutes: 0.8
+    estimate_minutes: 0.80      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.80      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 14-m14
-    title: 第14章 管理创新与创业
-    segments: 5
+    title: 创新不是想出新点子，是让新点子活着走出实验室
     video: rendered
-    estimate_minutes: 0.83
-    measured_minutes: 0.88
+    estimate_minutes: 0.83      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.88      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 15-m15
-    title: 第15章 管理伦理与社会责任
-    segments: 5
+    title: 伦理不是不做坏事，是在没人看见且有好处时还选择不做
     video: rendered
-    estimate_minutes: 0.87
-    measured_minutes: 0.89
+    estimate_minutes: 0.87      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.89      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 16-m16
-    title: 第16章 管理信息系统与数字化管理
-    segments: 5
+    title: 信息化不是把纸搬到屏幕上，是让决策在数据到达的地方发生
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.95
+    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 17-m17
-    title: 第17章 中医药机构管理（中医专题）
-    segments: 5
+    title: 中医院的难题不是要不要特色，是特色怎么被计量和付钱
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.93
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 18-m18
-    title: 第18章 管理学基础与AI教学平台
-    segments: 5
+    title: 这门课真正的作业，是回去改一件你科室里的事
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.93
+    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

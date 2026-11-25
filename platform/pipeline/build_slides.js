@@ -40,6 +40,9 @@ if (!fs.existsSync(subjectDir)) {
 const chapters = fs
   .readdirSync(path.join(subjectDir, 'chapters'))
   .filter((d) => fs.statSync(path.join(subjectDir, 'chapters', d)).isDirectory())
+  // --chapter <slug>：只重造这一章的幻灯片。整门重造会把其他章也写一遍（讲稿/正文没变时
+  // 内容一样但 mtime 全变），接着就得为它们重导帧重渲片，否则 slides 比成片新。
+  .filter((d) => !argv.includes('--chapter') || d === argv[argv.indexOf('--chapter') + 1])
   .sort();
 
 const figuresJs = fs.readFileSync(path.join(ROOT, 'site', 'figures.js'), 'utf8');

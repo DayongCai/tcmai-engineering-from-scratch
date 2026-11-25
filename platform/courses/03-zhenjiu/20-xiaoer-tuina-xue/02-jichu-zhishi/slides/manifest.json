@@ -1,31 +1,91 @@
 {
   "chapter": "02-jichu-zhishi",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 17,
+  "segmentCount": 8,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 12
+      "chars": 24
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 56
+      "chars": 93
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 44
+      "chars": 150
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 120
+      "chars": 167
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 166
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 399
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 378
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 411
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 347
+    },
+    {
+      "n": 10,
+      "segment": 6,
+      "chars": 418
+    },
+    {
+      "n": 11,
+      "segment": 6,
+      "chars": 263
+    },
+    {
+      "n": 12,
+      "segment": 6,
+      "chars": 412
+    },
+    {
+      "n": 13,
+      "segment": 6,
+      "chars": 260
+    },
+    {
+      "n": 14,
+      "segment": 6,
+      "chars": 230
+    },
+    {
+      "n": 15,
+      "segment": 7,
+      "chars": 497
+    },
+    {
+      "n": 16,
+      "segment": 7,
+      "chars": 176
+    },
+    {
+      "n": 17,
+      "segment": 8,
       "chars": 52
     }
   ]

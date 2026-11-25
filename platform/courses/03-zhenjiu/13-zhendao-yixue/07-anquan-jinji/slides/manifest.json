@@ -1,31 +1,86 @@
 {
   "chapter": "07-anquan-jinji",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 16,
+  "segmentCount": 8,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 14
+      "chars": 30
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 84
+      "chars": 22
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 18
+      "chars": 162
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 105
+      "chars": 159
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 402
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 347
+    },
+    {
+      "n": 7,
+      "segment": 5,
+      "chars": 309
+    },
+    {
+      "n": 8,
+      "segment": 5,
+      "chars": 331
+    },
+    {
+      "n": 9,
+      "segment": 5,
+      "chars": 338
+    },
+    {
+      "n": 10,
+      "segment": 5,
+      "chars": 338
+    },
+    {
+      "n": 11,
+      "segment": 5,
+      "chars": 407
+    },
+    {
+      "n": 12,
+      "segment": 5,
+      "chars": 373
+    },
+    {
+      "n": 13,
+      "segment": 5,
+      "chars": 54
+    },
+    {
+      "n": 14,
+      "segment": 6,
+      "chars": 313
+    },
+    {
+      "n": 15,
+      "segment": 7,
+      "chars": 488
+    },
+    {
+      "n": 16,
+      "segment": 8,
       "chars": 52
     }
   ]

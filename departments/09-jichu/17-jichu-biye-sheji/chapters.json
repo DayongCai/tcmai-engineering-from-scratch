@@ -5,7 +5,7 @@
     {
       "n": 1,
       "slug": "01-xuan-ti",
-      "title": "选题：从机制假设到可检验实验",
+      "title": "好选题是在证据缺口上开出的可检验问题",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/01-xuan-ti/docs/zh.md",
@@ -14,7 +14,7 @@
     {
       "n": 2,
       "slug": "02-fangan-lunli",
-      "title": "实验方案与伦理审批",
+      "title": "方案经不起偏倚追问，伦理批件就过不了",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/02-fangan-lunli/docs/zh.md",
@@ -23,7 +23,7 @@
     {
       "n": 3,
       "slug": "03-shiyan-shishi",
-      "title": "实验实施与原始记录",
+      "title": "原始记录的分量在于别人能照着重做出同一结果",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/03-shiyan-shishi/docs/zh.md",
@@ -32,7 +32,7 @@
     {
       "n": 4,
       "slug": "04-shuju-fenxi",
-      "title": "数据分析与结果呈现",
+      "title": "分析方法没有高级低级，只有配不配这批数据",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/04-shuju-fenxi/docs/zh.md",
@@ -41,7 +41,7 @@
     {
       "n": 5,
       "slug": "05-lunwen-dabian",
-      "title": "论文写作与答辩",
+      "title": "论文与答辩输在口径不一致，不输在口才",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/05-lunwen-dabian/docs/zh.md",
@@ -50,7 +50,7 @@
     {
       "n": 6,
       "slug": "06-zhishi-yijiao",
-      "title": "知识移交：实验协议与交接",
+      "title": "移交不是交钥匙，是把判断的依据一并交出去",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/06-zhishi-yijiao/docs/zh.md",

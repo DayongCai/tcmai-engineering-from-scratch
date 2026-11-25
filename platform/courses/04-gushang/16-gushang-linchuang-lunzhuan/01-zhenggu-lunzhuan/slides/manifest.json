@@ -1,31 +1,81 @@
 {
   "chapter": "01-zhenggu-lunzhuan",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 15,
+  "segmentCount": 11,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 17
+      "chars": 27
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 100
+      "chars": 41
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 22
+      "chars": 143
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 122
+      "chars": 102
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 357
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 95
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 276
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 349
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 395
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 370
+    },
+    {
+      "n": 11,
+      "segment": 7,
+      "chars": 186
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 404
+    },
+    {
+      "n": 13,
+      "segment": 9,
+      "chars": 396
+    },
+    {
+      "n": 14,
+      "segment": 10,
+      "chars": 290
+    },
+    {
+      "n": 15,
+      "segment": 11,
       "chars": 52
     }
   ]

@@ -29,50 +29,49 @@ platform:
 
 chapters:
   - slug: 01-fenlei-yaoqiu
-    title: 第1章 手法的分类与基本要求
-    segments: 5
+    title: 分类给的是坐标，手法给的是动作
     video: rendered
-    estimate_minutes: 1.03
-    measured_minutes: 1.01
+    estimate_minutes: 11.37      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.01      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-baidong-yizhichan
-    title: 第2章 摆动类手法：一指禅与滚法
-    segments: 5
+    title: 同属摆动类，一指禅与㨰法仍不能互替
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1.04
+    estimate_minutes: 11.18      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-moca-jiya
-    title: 第3章 摩擦类与挤压类手法
-    segments: 5
+    title: 同一个「推」字，在两类手法里是两个动作
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.94
+    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-zhendong-kouji
-    title: 第4章 振动类与叩击类手法
-    segments: 5
+    title: 振动求透，叩击求响，两套节律两套判据
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.99
+    estimate_minutes: 13.12      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 12.8      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-yundong-guanjie
-    title: 第5章 运动关节类手法
-    segments: 5
+    title: 关节的极限写在解剖里，不写在手感里
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.92
+    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-lixue-canshu
-    title: 第6章 手法的力学参数与测量
-    segments: 5
+    title: 手法可测的只有力、频、时，剩下的交给手感
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.94
+    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-xunlian-pingjia
-    title: 第7章 手法训练的评价与反馈
-    segments: 5
+    title: 合格线由训练史画出，不由当场表现画出
     video: rendered
-    estimate_minutes: 0.87
-    measured_minutes: 0.89
+    estimate_minutes: 14.48      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 14.26      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-biaozhun-guifan
-    title: 第8章 手法标准化的操作规范
-    segments: 5
+    title: 规范能统一动作，统一不了「这一例该不该动手」
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.94
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

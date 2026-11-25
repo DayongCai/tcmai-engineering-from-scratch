@@ -4,10 +4,10 @@
   "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
   "cueCount": 5,
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
-  "audioTotalSeconds": 64.6,
+  "audioTotalSeconds": 64.608,
   "estimatedCues": 0,
   "videoSeconds": 64.632667,
-  "videoMinusNarrationSeconds": 0.033,
+  "videoMinusNarrationSeconds": 0.025,
   "textMatchesNarration": true,
   "mismatches": [],
   "cues": [
@@ -25,8 +25,8 @@
       "n": 2,
       "role": "motto",
       "start": 3.72,
-      "end": 19.73,
-      "seconds": 16.01,
+      "end": 19.728,
+      "seconds": 16.008,
       "estimated": false,
       "text": "「《针灸学·拔罐法及其他刺法》」——教材第22章；课程章号与教材章号一一对应。本章要回答的是：拔罐法及其他刺法这一章，要能用一句话说清它解决什么问题。",
       "audio": "002.mp3"
@@ -34,9 +34,9 @@
     {
       "n": 3,
       "role": "problem",
-      "start": 19.73,
-      "end": 26.47,
-      "seconds": 6.74,
+      "start": 19.728,
+      "end": 26.472,
+      "seconds": 6.744,
       "estimated": false,
       "text": "拔罐、三棱针、皮肤针、火针、电针：器械换了，规范不变。",
       "audio": "003.mp3"
@@ -44,9 +44,9 @@
     {
       "n": 4,
       "role": "roots",
-      "start": 26.47,
-      "end": 53.3,
-      "seconds": 26.83,
+      "start": 26.472,
+      "end": 53.304,
+      "seconds": 26.832,
       "estimated": false,
       "text": "环境逼迫（针灸学是全科的合订本：经络、腧穴、手法、治疗四块必须能互相对上，不能各背一段）+ 知识积累（本章 9 单元 14,375 汉字；三辨主 刺灸技术 122；四位面（教材四板块）主 刺灸技法 14375；引书 17 部 27 次；数值类命中 63）",
       "audio": "004.mp3"
@@ -54,9 +54,9 @@
     {
       "n": 5,
       "role": "disclaimer",
-      "start": 53.3,
-      "end": 64.6,
-      "seconds": 11.3,
+      "start": 53.304,
+      "end": 64.608,
+      "seconds": 11.304,
       "estimated": false,
       "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "audio": "005.mp3"

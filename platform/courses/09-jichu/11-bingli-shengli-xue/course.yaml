@@ -37,317 +37,317 @@ chapters:
     title: 第 1 章 · 病理生理学导论：四个问题与一套不判定的口径
     unit: U01
     video: rendered
-    estimate_minutes: 30.10
-    measured_minutes: 29.02
+    estimate_minutes: 31.93
+    measured_minutes: 30.74
   - slug: 02-homeostasis-allostasis-and-adaptive-responses-to-stressors
     title: 第 2 章 · 稳态、异稳态与对应激源的适应性反应：设定点是可以被移动的
     unit: U01
     video: rendered
-    estimate_minutes: 27.72
-    measured_minutes: 26.79
+    estimate_minutes: 29.47
+    measured_minutes: 28.56
   - slug: 03-cell-structure-and-function
     title: 第 3 章 · 细胞结构与功能：结构是损伤的受力点清单
     unit: U02
     video: rendered
-    estimate_minutes: 21.72
-    measured_minutes: 21.17
+    estimate_minutes: 23.32
+    measured_minutes: 22.66
   - slug: 04-cell-injury-aging-and-death
     title: 第 4 章 · 细胞损伤、衰老与死亡：一条线、两种死法、一个例外
     unit: U02
     video: rendered
-    estimate_minutes: 24.32
-    measured_minutes: 23.60
+    estimate_minutes: 25.82
+    measured_minutes: 25.07
   - slug: 05-genome-structure-regulation-and-tissue-differentiation
     title: 第 5 章 · 基因组结构、调控与组织分化：同一份底稿的十种读法
     unit: U02
     video: rendered
-    estimate_minutes: 20.52
-    measured_minutes: 19.84
+    estimate_minutes: 21.95
+    measured_minutes: 21.20
   - slug: 06-genetic-and-developmental-disorders
     title: 第 6 章 · 遗传与发育性疾病：读的是传递的形状，不是概率表
     unit: U02
     video: rendered
-    estimate_minutes: 25.35
-    measured_minutes: 24.60
+    estimate_minutes: 26.82
+    measured_minutes: 25.98
   - slug: 07-neoplasia
     title: 第 7 章 · 肿瘤：一串约束被逐条突破的累积
     unit: U02
     video: rendered
-    estimate_minutes: 23.58
-    measured_minutes: 22.63
+    estimate_minutes: 25.67
+    measured_minutes: 24.54
   - slug: 08-infectious-processes
     title: 第 8 章 · 感染过程：从定植到器官功能障碍的一条连续谱
     unit: U03
     video: rendered
-    estimate_minutes: 24.55
-    measured_minutes: 23.61
+    estimate_minutes: 26.63
+    measured_minutes: 25.52
   - slug: 09-inflammation-and-immunity
     title: 第 9 章 · 炎症与免疫：两套系统、三条判据与一个交汇点
     unit: U03
     video: rendered
-    estimate_minutes: 25.75
-    measured_minutes: 24.78
+    estimate_minutes: 27.83
+    measured_minutes: 26.72
   - slug: 10-alterations-in-immune-function
     title: 第 10 章 · 免疫功能异常：三条约束、四型判据与一个「谁在执行」
     unit: U03
     video: rendered
-    estimate_minutes: 26.70
-    measured_minutes: 25.29
+    estimate_minutes: 28.97
+    measured_minutes: 27.39
   - slug: 11-malignant-disorders-of-white-blood-cells
     title: 第 11 章 · 白细胞恶性肿瘤：四条机制收十个节
     unit: U03
     video: rendered
-    estimate_minutes: 24.60
-    measured_minutes: 23.59
+    estimate_minutes: 26.55
+    measured_minutes: 25.44
   - slug: 12-hiv-disease-and-aids
     title: 第 12 章 · HIV 感染与艾滋病：一个受体决定了整条病程
     unit: U03
     video: rendered
-    estimate_minutes: 24.78
-    measured_minutes: 24.04
+    estimate_minutes: 26.75
+    measured_minutes: 25.86
   - slug: 13-alterations-in-oxygen-transport
     title: 第 13 章 · 氧运输异常：先定哪一段断，再谈缺氧
     unit: U04
     video: rendered
-    estimate_minutes: 27.37
-    measured_minutes: 26.75
+    estimate_minutes: 29.43
+    measured_minutes: 28.72
   - slug: 14-alterations-in-hemostasis-and-blood-coagulation
     title: 第 14 章 · 止血与凝血异常：三条线，两种形态，一个终末通路
     unit: U04
     video: rendered
-    estimate_minutes: 28.40
-    measured_minutes: 27.64
+    estimate_minutes: 30.40
+    measured_minutes: 29.53
   - slug: 15-alterations-in-blood-flow
     title: 第 15 章 · 血流异常：一个压差、两套阻力与一条时间窗
     unit: U04
     video: rendered
-    estimate_minutes: 23.80
-    measured_minutes: 23.33
+    estimate_minutes: 25.50
+    measured_minutes: 24.95
   - slug: 16-alterations-in-blood-pressure
     title: 第 16 章 · 血压异常：一个讲数字的章节，为何一个数字都不给
     unit: U04
     video: rendered
-    estimate_minutes: 23.22
-    measured_minutes: 22.92
+    estimate_minutes: 24.87
+    measured_minutes: 24.52
   - slug: 17-cardiac-function
     title: 第 17 章 · 心脏功能：四个旋钮与一条钙的链条
     unit: U05
     video: rendered
-    estimate_minutes: 27.05
-    measured_minutes: 26.44
+    estimate_minutes: 28.77
+    measured_minutes: 28.14
   - slug: 18-alterations-in-cardiac-function
     title: 第 18 章 · 心脏功能异常：四类失衡与一张正反馈网络
     unit: U05
     video: rendered
-    estimate_minutes: 24.03
-    measured_minutes: 23.52
+    estimate_minutes: 25.90
+    measured_minutes: 25.34
   - slug: 19-heart-failure-and-dysrhythmias
     title: 第 19 章 · 心力衰竭与心律失常
     unit: U05
     video: rendered
-    estimate_minutes: 26.18
-    measured_minutes: 25.38
+    estimate_minutes: 28.28
+    measured_minutes: 27.40
   - slug: 20-shock
     title: 第 20 章 · 休克是灌注问题，血压还撑得住并不等于组织没有缺血
     unit: U05
     video: rendered
-    estimate_minutes: 24.63
-    measured_minutes: 24.21
+    estimate_minutes: 26.80
+    measured_minutes: 26.25
   - slug: 21-respiratory-function-and-alterations-in-gas-exchange
     title: 第 21 章 · 呼吸功能与气体交换异常
     unit: U06
     video: rendered
-    estimate_minutes: 29.63
-    measured_minutes: 28.86
+    estimate_minutes: 31.65
+    measured_minutes: 30.82
   - slug: 22-obstructive-pulmonary-disorders
     title: 第 22 章 · 阻塞性肺疾病：气流受限总在呼气相暴露，喘鸣消失不是好转
     unit: U06
     video: rendered
-    estimate_minutes: 29.25
-    measured_minutes: 28.64
+    estimate_minutes: 31.48
+    measured_minutes: 30.76
   - slug: 23-restrictive-pulmonary-disorders
     title: 第 23 章 · 限制性肺疾病：装不下的六个位置
     unit: U06
     video: rendered
-    estimate_minutes: 24.93
-    measured_minutes: 24.84
+    estimate_minutes: 26.37
+    measured_minutes: 26.22
   - slug: 24-fluid-and-electrolyte-homeostasis-and-imbalances
     title: 第 24 章 · 水电解质稳态与失衡：两个轴，一条出口
     unit: U07
     video: rendered
-    estimate_minutes: 28.92
-    measured_minutes: 28.73
+    estimate_minutes: 30.67
+    measured_minutes: 30.43
   - slug: 25-acid-base-homeostasis-and-imbalances
     title: 第 25 章 · 酸碱平衡与失衡：三道防线与一条方向判据
     unit: U07
     video: rendered
-    estimate_minutes: 25.47
-    measured_minutes: 25.29
+    estimate_minutes: 27.15
+    measured_minutes: 26.85
   - slug: 26-renal-function
     title: 第 26 章 · 肾脏功能：一条四环节的链，三组功能
     unit: U08
     video: rendered
-    estimate_minutes: 29.50
-    measured_minutes: 29.09
+    estimate_minutes: 31.18
+    measured_minutes: 30.70
   - slug: 27-intrarenal-disorders
     title: 第 27 章 · 肾内疾病：先定部位，再定性质
     unit: U08
     video: rendered
-    estimate_minutes: 21.60
-    measured_minutes: 21.51
+    estimate_minutes: 23.18
+    measured_minutes: 23.01
   - slug: 28-acute-kidney-injury-and-chronic-kidney-disease
     title: 第 28 章 · 急性肾损伤与慢性肾脏病：一条主线，两条时间轴
     unit: U08
     video: rendered
-    estimate_minutes: 23.07
-    measured_minutes: 22.81
+    estimate_minutes: 24.67
+    measured_minutes: 24.29
   - slug: 29-disorders-of-the-lower-urinary-tract
     title: 第 29 章 · 下尿路疾病：一条分界线，三组症状
     unit: U08
     video: rendered
-    estimate_minutes: 23.73
-    measured_minutes: 23.50
+    estimate_minutes: 25.45
+    measured_minutes: 25.16
   - slug: 30-male-genital-and-reproductive-function
     title: 第 30 章 · 男性生殖功能：一套解剖，三层调控
     unit: U09
     video: rendered
-    estimate_minutes: 25.32
-    measured_minutes: 24.93
+    estimate_minutes: 26.85
+    measured_minutes: 26.32
   - slug: 31-alterations-in-male-genital-and-reproductive-function
     title: 第 31 章 · 男性生殖功能异常：先把表现放回六个类别
     unit: U09
     video: rendered
-    estimate_minutes: 21.75
-    measured_minutes: 21.65
+    estimate_minutes: 23.23
+    measured_minutes: 23.09
   - slug: 32-female-genital-and-reproductive-function
     title: 第 32 章 · 女性生殖功能：一条周期性轴与它的读出器
     unit: U09
     video: rendered
-    estimate_minutes: 21.95
-    measured_minutes: 21.86
+    estimate_minutes: 23.70
+    measured_minutes: 23.52
   - slug: 33-alterations-in-female-genital-and-reproductive-function
     title: 第 33 章 · 女性生殖功能异常：五层排查、三源激素与一条因果环
     unit: U09
     video: rendered
-    estimate_minutes: 25.30
-    measured_minutes: 24.91
+    estimate_minutes: 26.92
+    measured_minutes: 26.45
   - slug: 34-sexually-transmitted-infections
     title: 第 34 章 · 性传播感染：四层屏障、一条上行链与六类防控
     unit: U09
     video: rendered
-    estimate_minutes: 23.13
-    measured_minutes: 22.85
+    estimate_minutes: 24.87
+    measured_minutes: 24.54
   - slug: 35-gastrointestinal-function
     title: 第 35 章 · 胃肠功能：四类功能、一条调控链与从症状反推环节
     unit: U10
     video: rendered
-    estimate_minutes: 22.17
-    measured_minutes: 22.00
+    estimate_minutes: 23.72
+    measured_minutes: 23.47
   - slug: 36-gastrointestinal-disorders
     title: 第 36 章 · 胃肠疾病：三类机制、一个深度对应与四种分型
     unit: U10
     video: rendered
-    estimate_minutes: 26.28
-    measured_minutes: 26.03
+    estimate_minutes: 28.07
+    measured_minutes: 27.76
   - slug: 37-alterations-in-function-of-the-gallbladder-and-exocrine-pancreas
     title: 第 37 章 · 胆囊与外分泌胰腺功能异常：一个三环节通则、三道保险与一处定位
     unit: U10
     video: rendered
-    estimate_minutes: 21.30
-    measured_minutes: 21.15
+    estimate_minutes: 22.88
+    measured_minutes: 22.68
   - slug: 38-liver-diseases
     title: 第 38 章 · 肝脏疾病：四条主线、两条后果线与一个可逆窗口
     unit: U10
     video: rendered
-    estimate_minutes: 24.20
-    measured_minutes: 23.91
+    estimate_minutes: 25.93
+    measured_minutes: 25.59
   - slug: 39-endocrine-physiology-and-mechanisms-of-hypothalamic-pituitary-regulation
     title: 第 39 章 · 内分泌生理与下丘脑-垂体调控机制：两层整合、三级轴与五种读法
     unit: U11
     video: rendered
-    estimate_minutes: 27.25
-    measured_minutes: 27.24
+    estimate_minutes: 29.00
+    measured_minutes: 28.94
   - slug: 40-disorders-of-endocrine-function
     title: 第 40 章 · 内分泌功能紊乱：四种型态、一张定位表与五种急症
     unit: U11
     video: rendered
-    estimate_minutes: 26.42
-    measured_minutes: 26.12
+    estimate_minutes: 28.02
+    measured_minutes: 27.68
   - slug: 41-diabetes-mellitus
     title: 第 41 章 · 糖尿病：一个不对称结构、三条环节与两类血管
     unit: U11
     video: rendered
-    estimate_minutes: 29.27
-    measured_minutes: 28.99
+    estimate_minutes: 30.97
+    measured_minutes: 30.67
   - slug: 42-alterations-in-metabolism-and-nutrition
     title: 第 42 章 · 代谢与营养异常：一个调定点、两种代谢模式与一条再喂养链
     unit: U11
     video: rendered
-    estimate_minutes: 28.68
-    measured_minutes: 28.36
+    estimate_minutes: 30.42
+    measured_minutes: 30.04
   - slug: 43-structure-and-function-of-the-nervous-system
     title: 第 43 章 · 神经系统结构与功能：一张由缺损反推部位的定位图
     unit: U12
     video: rendered
-    estimate_minutes: 23.60
-    measured_minutes: 23.17
+    estimate_minutes: 25.05
+    measured_minutes: 24.52
   - slug: 44-acute-disorders-of-brain-function
     title: 第 44 章 · 脑功能急性疾病：一条链，四个干预点
     unit: U12
     video: rendered
-    estimate_minutes: 24.97
-    measured_minutes: 24.84
+    estimate_minutes: 26.45
+    measured_minutes: 26.21
   - slug: 45-chronic-disorders-of-neurologic-function
     title: 第 45 章 · 慢性神经功能障碍：部位与储备，而不是时间与压力
     unit: U12
     video: rendered
-    estimate_minutes: 25.10
-    measured_minutes: 24.53
+    estimate_minutes: 26.48
+    measured_minutes: 25.82
   - slug: 46-alterations-in-special-sensory-function
     title: 第 46 章 · 特殊感觉功能异常：缺损的形状就是定位器
     unit: U12
     video: rendered
-    estimate_minutes: 24.48
-    measured_minutes: 24.22
+    estimate_minutes: 26.05
+    measured_minutes: 25.70
   - slug: 47-pain
     title: 第 47 章 · 疼痛：四环节、两级敏化与一条从症状到疾病的转弯
     unit: U12
     video: rendered
-    estimate_minutes: 23.83
-    measured_minutes: 23.75
+    estimate_minutes: 25.60
+    measured_minutes: 25.51
   - slug: 48-mental-health-disorders
     title: 第 48 章 · 精神心理健康障碍：三层整合、五个维度与一条去污名化的边界
     unit: U13
     video: rendered
-    estimate_minutes: 38.05
-    measured_minutes: 37.65
+    estimate_minutes: 40.42
+    measured_minutes: 39.95
   - slug: 49-structure-and-function-of-the-musculoskeletal-system
     title: 第 49 章 · 骨骼肌肉系统结构与功能：六项功能、一条耦联与三处结构弱点
     unit: U14
     video: rendered
-    estimate_minutes: 29.58
-    measured_minutes: 29.39
+    estimate_minutes: 31.33
+    measured_minutes: 31.10
   - slug: 50-alterations-in-musculoskeletal-function-trauma-infection-and-disease
     title: 第 50 章 · 骨骼肌肉功能异常：力学环境、两个恶性循环与一条废用链
     unit: U14
     video: rendered
-    estimate_minutes: 33.02
-    measured_minutes: 32.62
+    estimate_minutes: 34.93
+    measured_minutes: 34.53
   - slug: 51-alterations-in-musculoskeletal-function-rheumatic-disorders
     title: 第 51 章 · 风湿性疾病：两种范式、一条损伤链与全身代价
     unit: U14
     video: rendered
-    estimate_minutes: 31.03
-    measured_minutes: 30.51
+    estimate_minutes: 32.75
+    measured_minutes: 32.20
   - slug: 52-alterations-in-the-integumentary-system
     title: 第 52 章 · 皮肤系统异常：五件组件的屏障与四条后果
     unit: U15
     video: rendered
-    estimate_minutes: 30.85
-    measured_minutes: 30.86
+    estimate_minutes: 32.57
+    measured_minutes: 32.58
   - slug: 53-burn-injuries
     title: 第 53 章 · 烧伤：局部三道带、四路全身反应与一条把两者接起来的链
     unit: U15
     video: rendered
-    estimate_minutes: 30.50
-    measured_minutes: 30.79
+    estimate_minutes: 32.43
+    measured_minutes: 32.67

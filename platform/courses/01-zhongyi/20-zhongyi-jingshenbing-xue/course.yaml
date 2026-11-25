@@ -29,74 +29,73 @@ platform:
 
 chapters:
   - slug: 01-xulun
-    title: 第1章 第1章 绪论
-    segments: 6
+    title: 神志病没有化验单，判据只能从「看和问」里长出来
     video: rendered
-    estimate_minutes: 1.2
-    measured_minutes: 1.18
+    estimate_minutes: 1.20      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.18      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-lilun-jichu
-    title: 第2章 第2章 中医精神病学的理论基础
-    segments: 6
+    title: 心与脑争了两千年，争的其实是「谁主事」与「谁供血」
     video: rendered
-    estimate_minutes: 1.12
-    measured_minutes: 1.12
+    estimate_minutes: 1.12      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.12      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-bingyin-bingji
-    title: 第3章 第3章 精神疾病的病因病机
-    segments: 6
+    title: 七情不是「想不开」，是气机停在了某个方向
     video: rendered
-    estimate_minutes: 1.13
-    measured_minutes: 1.14
+    estimate_minutes: 1.13      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.14      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-zhenduan
-    title: 第4章 第4章 精神疾病的诊断
-    segments: 6
+    title: 精神检查是主证，量表只是刻度，不是尺子本身
     video: rendered
-    estimate_minutes: 1.13
-    measured_minutes: 1.12
+    estimate_minutes: 1.13      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.12      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-zhiliao-yuanze
-    title: 第5章 第5章 治疗原则与常用治法
-    segments: 6
+    title: 治神志病的第一味药不是方子，是「先安全，后辨证」
     video: rendered
-    estimate_minutes: 1.1
-    measured_minutes: 1.12
+    estimate_minutes: 1.10      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.12      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-dianzheng-kuangzheng
-    title: 第6章 第6章 癫证与狂证
-    segments: 6
+    title: 癫与狂不是两种病，是同一个「痰」的两种温度
     video: rendered
-    estimate_minutes: 1.13
-    measured_minutes: 1.13
+    estimate_minutes: 1.13      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.13      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-yubing
-    title: 第7章 第7章 郁病
-    segments: 6
+    title: 郁病的终点不在肝，在肾——疏肝只解开头一段
     video: rendered
-    estimate_minutes: 1.05
-    measured_minutes: 1.06
+    estimate_minutes: 1.05      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.06      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-bumian-jiaolv
-    title: 第8章 第8章 不寐与焦虑障碍
-    segments: 6
+    title: 睡不好先看早醒，早醒先看情绪底色
     video: rendered
-    estimate_minutes: 1.15
-    measured_minutes: 1.1
+    estimate_minutes: 1.15      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.10      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-xianzheng-fazuoxing
-    title: 第9章 第9章 痫证与其他发作性精神障碍
-    segments: 6
+    title: 发作的那几分钟，决定后面所有的用药纪律
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 0.97
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.97      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-chidai-zhanwang
-    title: 第10章 第10章 痴呆与谵妄
-    segments: 6
+    title: 一个慢一个急：痴呆要缓图，谵妄要先查因
     video: rendered
-    estimate_minutes: 1.08
-    measured_minutes: 1.05
+    estimate_minutes: 1.08      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.05      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 11-qita-zhangai
-    title: 第11章 第11章 其他精神障碍
-    segments: 6
+    title: 酒、儿童、产妇：三类人各有不能照搬的方
     video: rendered
-    estimate_minutes: 1.03
-    measured_minutes: 1.07
+    estimate_minutes: 1.03      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.07      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 12-jiehe-kangfu-shuzihua
-    title: 第12章 第12章 中西医结合治疗、康复与数字化
-    segments: 6
+    title: 合作的边界写在纸面上，才算合作
     video: rendered
-    estimate_minutes: 1.12
-    measured_minutes: 1.13
+    estimate_minutes: 1.12      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.13      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

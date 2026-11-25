@@ -1,31 +1,76 @@
 {
   "chapter": "12-gubing-kangfu",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 14,
+  "segmentCount": 11,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 10
+      "chars": 23
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 76
+      "chars": 47
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 16
+      "chars": 187
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 119
+      "chars": 171
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 377
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 362
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 216
+    },
+    {
+      "n": 8,
+      "segment": 7,
+      "chars": 349
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 86
+    },
+    {
+      "n": 10,
+      "segment": 8,
+      "chars": 393
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 122
+    },
+    {
+      "n": 12,
+      "segment": 9,
+      "chars": 408
+    },
+    {
+      "n": 13,
+      "segment": 10,
+      "chars": 358
+    },
+    {
+      "n": 14,
+      "segment": 11,
       "chars": 52
     }
   ]

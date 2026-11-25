@@ -29,122 +29,121 @@ platform:
 
 chapters:
   - slug: 01-zuzhixue-xulun
-    title: 第1章 组织学绪论
-    segments: 5
+    title: 组织学的功夫在「位置」上，不在名词上
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.96
+    estimate_minutes: 13.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.33      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-shangpi-zuzhi
-    title: 第2章 上皮组织
-    segments: 5
+    title: 上皮的极性一看出，功能就已经说出一半
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.94
+    estimate_minutes: 14.70      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 12.70      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-jiedi-zuzhi
-    title: 第3章 结缔组织
-    segments: 5
+    title: 结缔组织不是填充物，而是把全身连成一个力学系统的介质
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.95
+    estimate_minutes: 14.58      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-ji-zuzhi
-    title: 第4章 肌组织
-    segments: 5
+    title: 三型肌组织是同一台滑行机制的三次不同装配
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.94
+    estimate_minutes: 13.27      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.30      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-shenjing-zuzhi
-    title: 第5章 神经组织
-    segments: 5
+    title: 神经元的形态差异，是它在回路里位置不同的证据
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.94
+    estimate_minutes: 14.40      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-shenjing-xitong
-    title: 第6章 神经系统
-    segments: 5
+    title: 中枢的构筑只有两条原则：胞体聚成层或团，纤维走成束
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.95
+    estimate_minutes: 12.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.10      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-xunhuan-xitong
-    title: 第7章 循环系统
-    segments: 5
+    title: 管壁三层的厚薄比例，就是一段血管的功能简历
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.94
+    estimate_minutes: 14.35      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 12.25      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-mianyi-xitong
-    title: 第8章 免疫系统
-    segments: 5
+    title: 免疫系统的判读靠分区：同一个细胞，位置不同任务就不同
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.94
+    estimate_minutes: 14.75      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.46      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-xiaohua-xitong
-    title: 第9章 消化系统
-    segments: 5
+    title: 消化管是同一套四层结构被逐段改装的结果
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.94
+    estimate_minutes: 14.62      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 12.70      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-huxi-xitong
-    title: 第10章 呼吸系统
-    segments: 5
+    title: 呼吸道是一条逐级减配、逐级变薄的管道
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.93
+    estimate_minutes: 14.17      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.85      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 11-miniao-xitong
-    title: 第11章 泌尿系统
-    segments: 5
+    title: 肾的两套毛细血管网，让同一份血在一个器官里过两遍
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.92
+    estimate_minutes: 14.40      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.54      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 12-pifu
-    title: 第12章 皮肤
-    segments: 5
+    title: 皮肤的屏障由已经没有细胞器的细胞撑着，活细胞只负责在下面补货
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.92
+    estimate_minutes: 15.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 15.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 13-yan-he-er
-    title: 第13章 眼和耳
-    segments: 5
+    title: 眼与耳的共同骨架，是把换能细胞关进腔隙再用中继链送上皮质
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.94
+    estimate_minutes: 16.02      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 15.88      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 14-neifenmi-xitong
-    title: 第14章 内分泌系统
-    segments: 5
+    title: 内分泌腺没有导管，于是结构只剩一件事：把腺细胞排到毛细血管边上
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.96
+    estimate_minutes: 15.83      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 15.73      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 15-nanxing-shengzhi-xitong
-    title: 第15章 男性生殖系统
-    segments: 5
+    title: 血睾屏障把一条小管分成两个世界，免疫隔离是它为有序减数分裂付的账
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.97
+    estimate_minutes: 16.03      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 6.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 16-nvxing-shengzhi-xitong
-    title: 第16章 女性生殖系统
-    segments: 5
+    title: 子宫内膜每月拆掉重建一次，施工令由卵巢的卵泡与黄体轮流签发
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 0.99
+    estimate_minutes: 15.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.13      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 17-peitaixue-xulun
-    title: 第17章 胚胎学绪论
-    segments: 5
+    title: 没有人看过自己的发生，胚胎学的时间线是拼接出来的
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.94
+    estimate_minutes: 12.65      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.35      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 18-zaoqi-fasheng
-    title: 第18章 人体胚胎早期发生
-    segments: 5
+    title: 早期发生只做了一件事：反复把一分成两半
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1
+    estimate_minutes: 14.30      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 19-qiguan-fasheng
-    title: 第19章 器官的发生
-    segments: 5
+    title: 器官不是新建的，是三胚层用出芽折叠融合分隔这四招改出来的
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.95
+    estimate_minutes: 15.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 14.34      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 20-xiantianxing-jixing
-    title: 第20章 先天性畸形
-    segments: 5
+    title: 畸形的后果由时相决定，而时相偏偏是本章唯一不许写数值的变量
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.95
+    estimate_minutes: 14.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.36      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

@@ -5,7 +5,7 @@
     {
       "n": 1,
       "slug": "01-xuan-ti",
-      "title": "选题：从专科问题到可验证命题",
+      "title": "选题不是挑一个病名，是把一句主诉压到可测的指标上",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/01-xuan-ti/docs/zh.md",
@@ -14,7 +14,7 @@
     {
       "n": 2,
       "slug": "02-jiancha-shuju",
-      "title": "影像与功能检查数据准备",
+      "title": "数据准备的第一件事，是给「轮位」定一套不打架的编码",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/02-jiancha-shuju/docs/zh.md",
@@ -23,7 +23,7 @@
     {
       "n": 3,
       "slug": "03-fangfa-shixian",
-      "title": "方法与系统实现",
+      "title": "系统上线前要能回答一句：这条建议错了，谁负责",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/03-fangfa-shixian/docs/zh.md",
@@ -32,7 +32,7 @@
     {
       "n": 4,
       "slug": "04-liaoxiao-anquan",
-      "title": "疗效与安全性评价",
+      "title": "疗效评价的诚实度，取决于安全指标有没有和疗效指标一起报",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/04-liaoxiao-anquan/docs/zh.md",
@@ -41,7 +41,7 @@
     {
       "n": 5,
       "slug": "05-lunwen-dabian",
-      "title": "论文写作与答辩",
+      "title": "综述里每一句「历代认为」，都要能落到一本具体的书",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/05-lunwen-dabian/docs/zh.md",
@@ -50,7 +50,7 @@
     {
       "n": 6,
       "slug": "06-zhishi-yijiao",
-      "title": "知识移交：诊疗路径与交接",
+      "title": "移交的不是结论，是「哪条解剖标志对应哪条经」的对照表",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/06-zhishi-yijiao/docs/zh.md",

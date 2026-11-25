@@ -18,7 +18,7 @@
       "spoken": "第 7 章 · 治未病与健康管理",
       "estimateSeconds": 3,
       "audio": "001.mp3",
-      "audioSeconds": 3.38
+      "audioSeconds": 3.384
     },
     {
       "n": 2,
@@ -28,7 +28,7 @@
       "spoken": "「《中医养生学·第12章》」——教材第 12 章章目级引文；教材无篇名级引文，非本章原文篇名。本章要回答的是：治未病与健康管理这一章的核心判据是什么。",
       "estimateSeconds": 16,
       "audio": "002.mp3",
-      "audioSeconds": 15.22
+      "audioSeconds": 15.216
     },
     {
       "n": 3,
@@ -38,7 +38,7 @@
       "spoken": "治未病独立成章：把养生接到健康管理与数字化。",
       "estimateSeconds": 5,
       "audio": "003.mp3",
-      "audioSeconds": 5.33
+      "audioSeconds": 5.328
     },
     {
       "n": 4,
@@ -48,7 +48,7 @@
       "spoken": "环境逼迫（养生要回答的是「什么人、什么季节、该调什么」，缺了对象与时令，方法就成空话）+ 知识积累（本章 14 单元 33,210 汉字；三辨主 养生方法 421；四位面（时令与人群）主 起居与运动 183；引书 10 部 13 次；数值类命中 1）",
       "estimateSeconds": 24,
       "audio": "004.mp3",
-      "audioSeconds": 24.17
+      "audioSeconds": 24.168
     },
     {
       "n": 5,
@@ -58,10 +58,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "005.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 59.4,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 0.98,
+    "measuredMinutes": 0.99,
+    "ratio": 1.007
+  }
 }

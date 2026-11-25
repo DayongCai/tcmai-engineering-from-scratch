@@ -1,7 +1,7 @@
 {
   "chapter": "05-genome-structure-regulation-and-tissue-differentiation",
   "slideCount": 23,
-  "segmentCount": 15,
+  "segmentCount": 11,
   "slides": [
     {
       "n": 1,
@@ -11,7 +11,7 @@
     {
       "n": 2,
       "segment": 2,
-      "chars": 81
+      "chars": 38
     },
     {
       "n": 3,
@@ -26,96 +26,96 @@
     {
       "n": 5,
       "segment": 5,
-      "chars": 353
+      "chars": 376
     },
     {
       "n": 6,
       "segment": 5,
-      "chars": 414
+      "chars": 415
     },
     {
       "n": 7,
       "segment": 5,
-      "chars": 83
+      "chars": 411
     },
     {
       "n": 8,
+      "segment": 5,
+      "chars": 399
+    },
+    {
+      "n": 9,
+      "segment": 5,
+      "chars": 148
+    },
+    {
+      "n": 10,
       "segment": 6,
       "chars": 388
     },
     {
-      "n": 9,
-      "segment": 6,
-      "chars": 73
-    },
-    {
-      "n": 10,
-      "segment": 7,
-      "chars": 374
-    },
-    {
       "n": 11,
-      "segment": 8,
-      "chars": 366
+      "segment": 6,
+      "chars": 408
     },
     {
       "n": 12,
-      "segment": 8,
-      "chars": 262
+      "segment": 6,
+      "chars": 344
     },
     {
       "n": 13,
-      "segment": 9,
-      "chars": 393
+      "segment": 6,
+      "chars": 361
     },
     {
       "n": 14,
-      "segment": 9,
-      "chars": 363
+      "segment": 7,
+      "chars": 385
     },
     {
       "n": 15,
-      "segment": 9,
-      "chars": 69
-    },
-    {
-      "n": 16,
-      "segment": 10,
-      "chars": 369
-    },
-    {
-      "n": 17,
-      "segment": 10,
-      "chars": 76
-    },
-    {
-      "n": 18,
-      "segment": 11,
-      "chars": 419
-    },
-    {
-      "n": 19,
-      "segment": 12,
-      "chars": 400
-    },
-    {
-      "n": 20,
-      "segment": 13,
-      "chars": 401
-    },
-    {
-      "n": 21,
-      "segment": 14,
+      "segment": 7,
       "chars": 392
     },
     {
+      "n": 16,
+      "segment": 7,
+      "chars": 119
+    },
+    {
+      "n": 17,
+      "segment": 8,
+      "chars": 416
+    },
+    {
+      "n": 18,
+      "segment": 9,
+      "chars": 401
+    },
+    {
+      "n": 19,
+      "segment": 10,
+      "chars": 419
+    },
+    {
+      "n": 20,
+      "segment": 10,
+      "chars": 415
+    },
+    {
+      "n": 21,
+      "segment": 10,
+      "chars": 327
+    },
+    {
       "n": 22,
-      "segment": 14,
-      "chars": 286
+      "segment": 10,
+      "chars": 222
     },
     {
       "n": 23,
-      "segment": 15,
+      "segment": 11,
       "chars": 52
     }
   ]

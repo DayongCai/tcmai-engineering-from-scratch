@@ -29,74 +29,73 @@ platform:
 
 chapters:
   - slug: 01-gaishu-yuanliu
-    title: 第1章 第1章 中医骨病学概论与源流
-    segments: 6
+    title: 骨病学的门槛不在辨证，而在先把「病」从「伤」里择出来
     video: rendered
-    estimate_minutes: 1.28
-    measured_minutes: 1.22
+    estimate_minutes: 1.28      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.22      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-fenlei-bingyin-bingji
-    title: 第2章 第2章 骨病的分类和病因病机
-    segments: 6
+    title: 「肾主骨」要落到三条可测的轴上，否则它只是一个结论
     video: rendered
-    estimate_minutes: 1.2
-    measured_minutes: 1.15
+    estimate_minutes: 1.20      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.15      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-linchuang-zhencha
-    title: 第3章 第3章 骨病的临床诊查
-    segments: 6
+    title: 影像不是辅助检查，它是分型与边界的判据
     video: rendered
-    estimate_minutes: 1.18
-    measured_minutes: 1.19
+    estimate_minutes: 1.18      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.19      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-zhiliao-fangfa
-    title: 第4章 第4章 骨病的治疗方法
-    segments: 6
+    title: 五条路各有各的禁区，选路之前先算边界
     video: rendered
-    estimate_minutes: 1.1
-    measured_minutes: 1.09
+    estimate_minutes: 1.10      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.09      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-huaxing-guisuiyan-guanjieyan
-    title: 第5章 第5章 化脓性骨髓炎与化脓性关节炎
-    segments: 6
+    title: 化脓的病，要先问脓积在哪一层
     video: rendered
-    estimate_minutes: 1.22
-    measured_minutes: 1.23
+    estimate_minutes: 1.22      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.23      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-gu-guanjie-jiehe
-    title: 第6章 第6章 骨与关节结核
-    segments: 6
+    title: 冷脓肿不热，截瘫不可逆，中间那段就是诊断的窗口
     video: rendered
-    estimate_minutes: 1.07
-    measured_minutes: 1.08
+    estimate_minutes: 1.07      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.08      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-gu-zhongliu
-    title: 第7章 第7章 骨肿瘤
-    segments: 6
+    title: 良恶之分看边界与生长方式，不看肿块大小
     video: rendered
-    estimate_minutes: 1.23
-    measured_minutes: 1.23
+    estimate_minutes: 1.23      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.23      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-gu-daixie
-    title: 第8章 第8章 骨代谢性疾病
-    segments: 6
+    title: 骨量是一本账，看余额也要看已经发生的支出
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1
+    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-gu-quexue-xingsi
-    title: 第9章 第9章 骨缺血性坏死
-    segments: 6
+    title: 塌陷是一条单行道，围塌陷期是唯一的岔口
     video: rendered
-    estimate_minutes: 1.08
-    measured_minutes: 1.08
+    estimate_minutes: 1.08      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.08      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-tuixing-mianyixing
-    title: 第10章 第10章 骨关节退行性与免疫性疾病
-    segments: 6
+    title: 痹的时间感不止一种：越动越痛，越歇越僵
     video: rendered
-    estimate_minutes: 1.17
-    measured_minutes: 1.13
+    estimate_minutes: 1.17      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.13      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 11-gu-jixing-ruangu
-    title: 第11章 第11章 骨畸形与骨软骨病
-    segments: 6
+    title: 畸形的窗口只开一次：骨在长，机会不等人
     video: rendered
-    estimate_minutes: 1.02
-    measured_minutes: 1
+    estimate_minutes: 1.02      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 12-kangfu-shuzihua
-    title: 第12章 第12章 骨病康复与数字化AI时代
-    segments: 6
+    title: 「动静结合」要拆成负荷、时相、监测三个可执行变量
     video: rendered
-    estimate_minutes: 1.17
-    measured_minutes: 1.13
+    estimate_minutes: 1.17      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.13      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

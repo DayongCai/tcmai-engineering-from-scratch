@@ -1,31 +1,91 @@
 {
   "chapter": "01-gailun-bingyin",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 17,
+  "segmentCount": 11,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 13
+      "chars": 30
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 67
+      "chars": 37
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 22
+      "chars": 167
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 127
+      "chars": 178
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 367
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 73
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 319
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 168
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 394
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 241
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 418
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 343
+    },
+    {
+      "n": 13,
+      "segment": 9,
+      "chars": 388
+    },
+    {
+      "n": 14,
+      "segment": 9,
+      "chars": 76
+    },
+    {
+      "n": 15,
+      "segment": 10,
+      "chars": 360
+    },
+    {
+      "n": 16,
+      "segment": 10,
+      "chars": 87
+    },
+    {
+      "n": 17,
+      "segment": 11,
       "chars": 52
     }
   ]

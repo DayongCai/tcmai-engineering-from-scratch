@@ -1,31 +1,96 @@
 {
   "chapter": "12-xiandai-shuzihua",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 18,
+  "segmentCount": 8,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 22
+      "chars": 26
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 58
+      "chars": 100
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 34
+      "chars": 231
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 99
+      "chars": 115
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 119
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 391
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 419
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 366
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 299
+    },
+    {
+      "n": 10,
+      "segment": 6,
+      "chars": 309
+    },
+    {
+      "n": 11,
+      "segment": 6,
+      "chars": 414
+    },
+    {
+      "n": 12,
+      "segment": 6,
+      "chars": 292
+    },
+    {
+      "n": 13,
+      "segment": 6,
+      "chars": 174
+    },
+    {
+      "n": 14,
+      "segment": 6,
+      "chars": 400
+    },
+    {
+      "n": 15,
+      "segment": 6,
+      "chars": 113
+    },
+    {
+      "n": 16,
+      "segment": 7,
+      "chars": 384
+    },
+    {
+      "n": 17,
+      "segment": 7,
+      "chars": 308
+    },
+    {
+      "n": 18,
+      "segment": 8,
       "chars": 52
     }
   ]

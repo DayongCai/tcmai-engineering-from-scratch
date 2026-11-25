@@ -27,62 +27,61 @@ platform:
 
 chapters:
   - slug: 01-zucheng-mingming
-    title: 第1章 经络系统的组成与命名
+    title: 经络不是血管的别名，而是一套分层的通道系统
     video: rendered
-    segments: 5
-    estimate_minutes: 1.08
-    measured_minutes: 1.13
+    estimate_minutes: 12.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 12.39      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-shier-jingmai
-    title: 第2章 十二经脉的走向与交接
-    segments: 5
+    title: 十二经的走向不是路线图，而是十二处交接点上的传递规则
     video: rendered
-    estimate_minutes: 1.12
-    measured_minutes: 1.15
+    estimate_minutes: 10.75      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.63      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-qijing-bamai
-    title: 第3章 奇经八脉的循行与功能
-    segments: 5
+    title: 奇经八脉不是十二经的备用线，而是气血的蓄水池
     video: rendered
-    estimate_minutes: 1.1
-    measured_minutes: 1.13
+    estimate_minutes: 15.05      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 14.64      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-jingbie-jinjing
-    title: 第4章 经别、经筋与皮部
-    segments: 5
+    title: 经别经筋皮部只是配件，四街四海才是经气的纵横坐标
     video: rendered
-    estimate_minutes: 1.13
-    measured_minutes: 1.14
+    estimate_minutes: 15.37      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 15.11      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-biaoli-peishu
-    title: 第5章 经络与脏腑的表里配属
-    segments: 5
+    title: 表里配属写在属络上，却只能从取穴路径上验出来
     video: rendered
-    estimate_minutes: 1.07
-    measured_minutes: 1.11
+    estimate_minutes: 10.68      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.4      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-bingli-fanying
-    title: 第6章 经络的病理反应与诊断意义
-    segments: 5
+    title: 病候是一张定位表，不是一份症状清单
     video: rendered
-    estimate_minutes: 1.05
-    measured_minutes: 1.1
+    estimate_minutes: 14.35      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 14.06      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-jingluo-kongjian
-    title: 第7章 经络图的空间结构与坐标
-    segments: 5
+    title: 经络图不是一张画，而是一套可折量的坐标系
     video: rendered
-    estimate_minutes: 1.07
-    measured_minutes: 1.11
+    estimate_minutes: 14.45      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 13.98      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-liuzhu-shijian
-    title: 第8章 经脉流注次序与时间节律
-    segments: 5
+    title: 流注是一个闭环，时辰表是后人往环上刻的刻度
     video: rendered
-    estimate_minutes: 1.1
-    measured_minutes: 1.14
+    estimate_minutes: 13.1      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 12.89      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-jiepou-zhengyi
-    title: 第9章 经络的现代解剖学对应争议
-    segments: 5
+    title: 「找不到对应结构」是一个研究状态，不是一句结论
     video: rendered
-    estimate_minutes: 1.03
-    measured_minutes: 1.1
+    estimate_minutes: 14.75      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 13.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-tupu-jianku
-    title: 第10章 经络数据的图谱化建库
-    segments: 5
+    title: 建库的最小单元不是一条经脉，而是一个三元组
     video: rendered
-    estimate_minutes: 1.1
-    measured_minutes: 1.15
+    estimate_minutes: 15.4      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 15.04      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

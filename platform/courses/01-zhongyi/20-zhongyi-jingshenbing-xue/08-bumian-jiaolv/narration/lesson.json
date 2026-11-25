@@ -18,7 +18,7 @@
       "spoken": "第 8 章 · 不寐与焦虑障碍：睡不好是「神不守舍」",
       "estimateSeconds": 5,
       "audio": "001.mp3",
-      "audioSeconds": 4.82
+      "audioSeconds": 4.824
     },
     {
       "n": 2,
@@ -48,7 +48,7 @@
       "spoken": "环境逼迫（失眠与焦虑互为因果，镇静药长期使用有依赖风险）+ 知识积累（本章 4 单元 11,392 汉字，三辨主病因 322；四位面主情感情绪 109；引书 10 部 11 次；数值 83）",
       "estimateSeconds": 18,
       "audio": "004.mp3",
-      "audioSeconds": 19.06
+      "audioSeconds": 19.056
     },
     {
       "n": 5,
@@ -59,7 +59,7 @@
       "spoken": "这一段以代码实现为主，请看画面上的代码块。",
       "estimateSeconds": 5,
       "audio": "005.mp3",
-      "audioSeconds": 4.51
+      "audioSeconds": 4.512
     },
     {
       "n": 6,
@@ -69,10 +69,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "006.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 65.74,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 1.15,
+    "measuredMinutes": 1.1,
+    "ratio": 0.953
+  }
 }

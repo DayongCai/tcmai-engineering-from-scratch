@@ -29,62 +29,61 @@ platform:
 
 chapters:
   - slug: 01-u1
-    title: 第1章 多模态是什么：从四诊到设备
-    segments: 5
+    title: 四诊本来就是多模态，缺的不是传感器而是时钟
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.94
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-u2
-    title: 第2章 采集链路与质控
-    segments: 5
+    title: 采集链上掉一次时钟，融合就少一分可信
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.86
+    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.86      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-u3
-    title: 第3章 信号与图像的基本处理
-    segments: 5
+    title: 预处理不是洗干净，是翻译到同一把尺子上
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.89
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.89      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-u4
-    title: 第4章 特征、降维与表征
-    segments: 5
+    title: 特征是压缩，压缩必须留下判据
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.9
+    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-u5
-    title: 第5章 神经网络与表征学习
-    segments: 5
+    title: 学到的表征，未必是你想要的那个
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.92
+    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-u6
-    title: 第6章 融合策略与对齐
-    segments: 5
+    title: 融合的难点不在拼，而在对齐
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.88
+    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.88      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-u7
-    title: 第7章 无监督分型与聚类
-    segments: 5
+    title: 聚类出来的亚型，先问它稳不稳
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.89
+    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.89      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-u8
-    title: 第8章 结构化知识怎么接进来
-    segments: 5
+    title: 知识不是特征，是约束
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.9
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-u9
-    title: 第9章 评估：多模态是否真的更好
-    segments: 5
+    title: 说多模态更好之前，先让它可被反驳
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.96
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-u10
-    title: 第10章 隐私与合规（多源数据的红线）
-    segments: 5
+    title: 多源数据的红线，在合并之前就画好了
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 0.94
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

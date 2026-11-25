@@ -29,50 +29,49 @@ platform:
 
 chapters:
   - slug: 01-gudaixie-jichu
-    title: 第1章 骨代谢基础
-    segments: 5
+    title: 骨量的峰值，三十岁那年就已经写定
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.97
+    estimate_minutes: 13.15      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.50      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-zhenduan-pinggu
-    title: 第2章 诊断与骨折风险评估
-    segments: 5
+    title: 一张 T 值报告，回答不了「他会不会骨折」
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1
+    estimate_minutes: 13.15      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.10      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-guzhishusong
-    title: 第3章 骨质疏松症
-    segments: 5
+    title: 「原发性」是排除出来的，不是默认的
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 0.97
+    estimate_minutes: 12.05      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-guguanjieyan
-    title: 第4章 骨关节炎
-    segments: 5
+    title: 骨关节炎不是「磨没了」，是整个关节在改建
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.96
+    estimate_minutes: 13.13      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 6.32      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-tuibian-yingxiang
-    title: 第5章 退行性变的影像评估
-    segments: 5
+    title: 报告上的「退变」，有一半是年龄
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1
+    estimate_minutes: 12.33      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.87      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-yaowu
-    title: 第6章 药物与非药物治疗
-    segments: 5
+    title: 抗骨质疏松药不改「骨头的年龄」，只改斜率
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 0.98
+    estimate_minutes: 12.83      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 12.57      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-kangfu-diedao
-    title: 第7章 运动康复与跌倒预防
-    segments: 5
+    title: 跌倒不是意外，是一串可以被算出来的事件
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1.01
+    estimate_minutes: 11.60      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.51      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-changqi-guanli
-    title: 第8章 长期管理与随访
-    segments: 5
+    title: 骨质疏松的治疗，多半输在第二年
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 0.97
+    estimate_minutes: 13.47      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 13.16      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

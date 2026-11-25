@@ -29,64 +29,64 @@ platform:
 
 chapters:
   - slug: 01-yin-yang-er-fenlei
-    title: 阴阳学说 → 二分类：从零实现逻辑回归
+    title: 阴阳不是两个筐，而是一条能反向追问的偏向轴
     video: rendered
-    estimate_minutes: 4.2      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 5.8      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 4.15      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 5.79      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 02-wu-xing-duo-fenlei
-    title: 五行学说 → 多分类：从零实现 Softmax
+    title: 五行是一张十根边的约束网，不是一个分成五份的筐
     video: rendered
-    estimate_minutes: 3.6      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 5.0      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 3.62      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 5.05      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 03-zang-xiang-tupu
-    title: 藏象学说 → 知识图谱：脏腑关系的图表示
+    title: 藏象是一张「黑箱—输出」对照表，解剖实体只解释了它的一半
     video: rendered
-    estimate_minutes: 3.6      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 5.3      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 3.62      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 5.25      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 04-xulun
-    title: 绪论：中医学的学科属性与工程化边界
+    title: 中基的「基础」不是简单，是替所有临床科目背下了同一套定义
     video: rendered
-    estimate_minutes: 4.8      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 4.6      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 4.80      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 4.55      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 05-qi-xue-jin-ye
-    title: 气血津液 → 状态向量与守恒约束
+    title: 气血津液给的是方向，不是配额，所以它不能当化验单读
     video: rendered
-    estimate_minutes: 4.6      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 4.4      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 4.58      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 4.40      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 06-jingluo-tuxing
-    title: 经络学说 → 图上的路径与可及性
+    title: 十二经是一条闭合的环，环上的接点比穴名更值得先记住
     video: rendered
-    estimate_minutes: 4.6      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 4.3      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 4.58      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 4.35      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 07-bingyin-bingji
-    title: 病因病机 → 因果图与失效模式
+    title: 病因不是一份清单，而是一台从症状倒推的反向机器
     video: rendered
-    estimate_minutes: 4.8      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 4.6      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 4.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 4.58      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 08-fangzhi-yuanze
-    title: 防治原则 → 策略选择与代价函数
+    title: 治则不是八个字的目录，是八条各带「何时不能用」的判据
     video: rendered
-    estimate_minutes: 4.6      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 4.4      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 4.63      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 4.42      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 09-tizhi-fabing
-    title: 体质与发病 → 先验分布与风险分层
+    title: 体质决定的是「从化方向」，不是「一定会得什么病」
     video: rendered
-    estimate_minutes: 4.5      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 4.2      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 4.45      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 4.23      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 10-siwei-fangfa
-    title: 中医思维方法：形式化能做到与做不到的
+    title: 象思维的第一步不是联想，是说清这个象排除了哪些解释
     video: rendered
-    estimate_minutes: 4.7      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 4.4      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 4.65      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 4.41      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
 
 capstone:

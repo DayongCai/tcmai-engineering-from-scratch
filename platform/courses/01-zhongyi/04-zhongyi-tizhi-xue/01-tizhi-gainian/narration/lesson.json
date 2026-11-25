@@ -28,7 +28,7 @@
       "spoken": "「人之生也，有刚有柔，有弱有强，有短有长，有阴有阳」——教材·第1章·1.1（《灵枢·寿夭刚柔》）",
       "estimateSeconds": 11,
       "audio": "002.mp3",
-      "audioSeconds": 10.03
+      "audioSeconds": 10.032
     },
     {
       "n": 3,
@@ -38,7 +38,7 @@
       "spoken": "体质与证候的区别，学生几乎都能说一句「体质稳定、证候变动」，但一落到病例上就混：把一个「痰湿质的人此刻的气虚证」写成「气虚质」。分不清的后果是调理方向错——该化湿的补了气，该补气的化了湿。",
       "estimateSeconds": 20,
       "audio": "003.mp3",
-      "audioSeconds": 18.07
+      "audioSeconds": 18.072
     },
     {
       "n": 4,
@@ -59,7 +59,7 @@
       "spoken": "这一段以代码实现为主，请看画面上的代码块。",
       "estimateSeconds": 5,
       "audio": "005.mp3",
-      "audioSeconds": 4.51
+      "audioSeconds": 4.512
     },
     {
       "n": 6,
@@ -69,10 +69,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "006.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
-  "audioMeasuredSeconds": 69,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "audioMeasuredSeconds": 69.0,
+  "estimateVsActual": {
+    "estimateMinutes": 1.2,
+    "measuredMinutes": 1.15,
+    "ratio": 0.958
+  }
 }

@@ -29,128 +29,127 @@ platform:
 
 chapters:
   - slug: 01-xulun
-    title: 第1章 绪论
-    segments: 5
+    title: 生物化学不背物质清单，它追问的是分子之间那条因果链
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 0.94
+    estimate_minutes: 10.52      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.47      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-tang-huaxue
-    title: 第2章 糖化学
-    segments: 5
+    title: 糖的身份由羟基的朝向决定，甜不甜与认不认得是两件事
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.95
+    estimate_minutes: 9.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.29      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-zhizhi-huaxue
-    title: 第3章 脂质化学
-    segments: 5
+    title: 脂质不溶于水不是缺陷，是它被选来做膜与储能的原因
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.97
+    estimate_minutes: 9.38      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 7.47      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-danbaizhi-huaxue
-    title: 第4章 蛋白质化学
-    segments: 5
+    title: 蛋白质的功能写在序列里，但要等折叠完成才读得出来
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.97
+    estimate_minutes: 10.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.02      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-hesuan-huaxue
-    title: 第5章 核酸化学
-    segments: 5
+    title: 碱基配对只有一种几何解，核酸才能同时做储存与复制
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.96
+    estimate_minutes: 10.27      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.69      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-mei
-    title: 第6章 酶
-    segments: 5
+    title: 酶的高效来自降低活化能，专一来自形状互补
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.91
+    estimate_minutes: 9.73      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.08      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-weishengsu-yu-weiliang-yuansu
-    title: 第7章 维生素和微量元素
-    segments: 5
+    title: 维生素本身不供能，它的价值在辅酶那一半
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1
+    estimate_minutes: 9.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.50      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-shengwu-yanghua-yu-nengliang
-    title: 第8章 生物氧化与能量代谢
-    segments: 5
+    title: 呼吸链不是管道，是按氧化还原电位排好的一组能量台阶
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1
+    estimate_minutes: 10.30      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.18      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-tang-daixie
-    title: 第9章 糖代谢
-    segments: 5
+    title: 血糖稳住不靠某一步强，靠三条去路与两条来路互相顶着
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.94
+    estimate_minutes: 11.65      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.41      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-zhizhi-daixie
-    title: 第10章 脂质代谢
-    segments: 5
+    title: 脂肪是能量的仓库，但仓门由激素与载脂蛋白两把钥匙管着
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.94
+    estimate_minutes: 10.63      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.33      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 11-anjisuan-daixie
-    title: 第11章 氨基酸代谢
-    segments: 5
+    title: 氨基酸的氮比碳难处理，所以身体把它转成尿素排掉
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.96
+    estimate_minutes: 11.18      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.11      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 12-hegansuan-daixie
-    title: 第12章 核苷酸代谢
-    segments: 5
+    title: 碱基环能否被打开，决定了核苷酸代谢的两条终点与两套药理
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.96
+    estimate_minutes: 14.70      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.54      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 13-daixie-tiaojie
-    title: 第13章 代谢调节
-    segments: 5
+    title: 代谢调节的要害不在开关，而在多条途径争夺同一个中间产物池
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.95
+    estimate_minutes: 14.48      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.83      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 14-xueye-shenghua
-    title: 第14章 血液生化
-    segments: 5
+    title: 血液把全身代谢摊进一管样本，判读靠的是成分之间的比值
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.97
+    estimate_minutes: 13.57      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.78      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 15-gandan-shenghua
-    title: 第15章 肝胆生化
-    segments: 5
+    title: 肝脏把不溶于水的东西改造成溶于水，代价是中间产物可能更毒
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.95
+    estimate_minutes: 13.32      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.26      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 16-shuiyan-yu-suanjian-pingheng
-    title: 第16章 水盐代谢和酸碱平衡
-    segments: 5
+    title: 酸碱紊乱的判据不是 pH 落没落在区间里，而是代偿有没有到位
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1.02
+    estimate_minutes: 11.62      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 17-dna-shengwu-hecheng
-    title: 第17章 DNA的生物合成
-    segments: 5
+    title: DNA 复制的一切别扭，都是聚合酶只会朝一个方向延长逼出来的
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1
+    estimate_minutes: 12.12      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 7.58      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 18-rna-shengwu-hecheng
-    title: 第18章 RNA的生物合成
-    segments: 5
+    title: 转录的全部调控空间在起点、终点与剪接，抄写本身没有选择余地
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1
+    estimate_minutes: 11.05      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.63      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 19-danbaizhi-shengwu-hecheng
-    title: 第19章 蛋白质的生物合成
-    segments: 5
+    title: 翻译的准确不靠一条规则，而靠两次校对与四次高能键的预付
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 0.99
+    estimate_minutes: 11.78      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.24      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 20-jiyin-biaoda-tiaokong
-    title: 第20章 基因表达调控
-    segments: 5
+    title: 原核用一套操纵子省能量，真核用五层关卡换精细
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 0.98
+    estimate_minutes: 11.75      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.49      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 21-changyong-jishu
-    title: 第21章 生物化学与分子生物学常用技术
-    segments: 5
+    title: 分子技术的选择不看好坏，只看它那个致命假设你的样本能不能满足
     video: rendered
-    estimate_minutes: 1.05
-    measured_minutes: 1.04
+    estimate_minutes: 12.43      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.34      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

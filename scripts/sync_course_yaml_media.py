@@ -52,9 +52,9 @@ def build_block(dept_slug: str, subj: str) -> list[str]:
             est = L.get('estimateTotalSeconds')
             meas = L.get('audioMeasuredSeconds')
             if est:
-                lines.append(f"    estimate_minutes: {est / 60:.1f}      # = lesson.json estimateTotalSeconds ÷ 60")
+                lines.append(f"    estimate_minutes: {est / 60:.2f}      # = lesson.json estimateTotalSeconds ÷ 60")
             if meas:
-                lines.append(f"    measured_minutes: {meas / 60:.1f}      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）")
+                lines.append(f"    measured_minutes: {meas / 60:.2f}      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）")
         lines.append('')
     return lines
 

@@ -1,7 +1,7 @@
 {
   "chapter": "14-alterations-in-hemostasis-and-blood-coagulation",
-  "slideCount": 31,
-  "segmentCount": 18,
+  "slideCount": 30,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
@@ -11,7 +11,7 @@
     {
       "n": 2,
       "segment": 2,
-      "chars": 67
+      "chars": 29
     },
     {
       "n": 3,
@@ -31,131 +31,126 @@
     {
       "n": 6,
       "segment": 5,
-      "chars": 109
+      "chars": 378
     },
     {
       "n": 7,
-      "segment": 6,
-      "chars": 348
+      "segment": 5,
+      "chars": 369
     },
     {
       "n": 8,
+      "segment": 5,
+      "chars": 367
+    },
+    {
+      "n": 9,
+      "segment": 5,
+      "chars": 414
+    },
+    {
+      "n": 10,
+      "segment": 5,
+      "chars": 374
+    },
+    {
+      "n": 11,
+      "segment": 5,
+      "chars": 357
+    },
+    {
+      "n": 12,
+      "segment": 6,
+      "chars": 372
+    },
+    {
+      "n": 13,
+      "segment": 6,
+      "chars": 400
+    },
+    {
+      "n": 14,
+      "segment": 6,
+      "chars": 389
+    },
+    {
+      "n": 15,
       "segment": 6,
       "chars": 375
     },
     {
-      "n": 9,
-      "segment": 7,
-      "chars": 368
-    },
-    {
-      "n": 10,
-      "segment": 7,
-      "chars": 403
-    },
-    {
-      "n": 11,
-      "segment": 8,
-      "chars": 389
-    },
-    {
-      "n": 12,
-      "segment": 8,
-      "chars": 171
-    },
-    {
-      "n": 13,
-      "segment": 9,
-      "chars": 344
-    },
-    {
-      "n": 14,
-      "segment": 9,
-      "chars": 115
-    },
-    {
-      "n": 15,
-      "segment": 10,
-      "chars": 369
-    },
-    {
       "n": 16,
-      "segment": 10,
-      "chars": 103
+      "segment": 6,
+      "chars": 138
     },
     {
       "n": 17,
-      "segment": 11,
-      "chars": 317
+      "segment": 7,
+      "chars": 382
     },
     {
       "n": 18,
-      "segment": 11,
-      "chars": 336
+      "segment": 7,
+      "chars": 359
     },
     {
       "n": 19,
-      "segment": 12,
-      "chars": 356
+      "segment": 7,
+      "chars": 378
     },
     {
       "n": 20,
-      "segment": 12,
-      "chars": 122
+      "segment": 7,
+      "chars": 322
     },
     {
       "n": 21,
-      "segment": 13,
-      "chars": 334
+      "segment": 7,
+      "chars": 338
     },
     {
       "n": 22,
-      "segment": 13,
-      "chars": 300
+      "segment": 7,
+      "chars": 383
     },
     {
       "n": 23,
-      "segment": 14,
-      "chars": 367
+      "segment": 7,
+      "chars": 381
     },
     {
       "n": 24,
-      "segment": 14,
-      "chars": 405
-    },
-    {
-      "n": 25,
-      "segment": 15,
-      "chars": 351
-    },
-    {
-      "n": 26,
-      "segment": 15,
-      "chars": 192
-    },
-    {
-      "n": 27,
-      "segment": 16,
+      "segment": 8,
       "chars": 367
     },
     {
-      "n": 28,
-      "segment": 16,
+      "n": 25,
+      "segment": 8,
       "chars": 114
     },
     {
-      "n": 29,
-      "segment": 17,
+      "n": 26,
+      "segment": 9,
       "chars": 409
     },
     {
-      "n": 30,
-      "segment": 17,
-      "chars": 216
+      "n": 27,
+      "segment": 9,
+      "chars": 341
     },
     {
-      "n": 31,
-      "segment": 18,
+      "n": 28,
+      "segment": 9,
+      "chars": 379
+    },
+    {
+      "n": 29,
+      "segment": 9,
+      "chars": 292
+    },
+    {
+      "n": 30,
+      "segment": 10,
       "chars": 52
     }
   ]

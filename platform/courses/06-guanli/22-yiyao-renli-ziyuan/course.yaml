@@ -29,110 +29,109 @@ platform:
 
 chapters:
   - slug: 01-r1
-    title: 第1章 医药人力资源管理导论
-    segments: 5
+    title: 医药人力管理的难点不在发钱，在三条执业轨道不能混着管
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.89
+    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.89      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-r2
-    title: 第2章 医药行业人力资源规划
-    segments: 5
+    title: 人力规划不是算总人数，是算最小安全班组的缺口
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.89
+    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.89      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-r3
-    title: 第3章 医药岗位分析与职位设计
-    segments: 5
+    title: 岗位说明书不是职责清单，是判断标准
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.93
+    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-r4
-    title: 第4章 医药人才招聘与优化配置
-    segments: 5
+    title: 医师、护士、药师不能用同一把尺子招
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.92
+    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-r5
-    title: 第5章 医药人才培养与开发
-    segments: 5
+    title: 培训的产出不是学时，是能独立做的那件事
     video: rendered
-    estimate_minutes: 0.85
-    measured_minutes: 0.88
+    estimate_minutes: 0.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.88      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-r6
-    title: 第6章 医药人才评价与胜任力管理
-    segments: 5
+    title: 评价的信度不在表格精细，在评价人有没有见过他干活
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.94
+    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-r7
-    title: 第7章 医药绩效管理与考核
-    segments: 5
+    title: 绩效方案考的是可测量的部分，漏掉的会以别的方式回来
     video: rendered
-    estimate_minutes: 0.87
-    measured_minutes: 0.89
+    estimate_minutes: 0.87      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.89      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-r8
-    title: 第8章 医药薪酬管理与激励
-    segments: 5
+    title: 夜班补贴的关键不是数额，是它承认了什么
     video: rendered
-    estimate_minutes: 0.87
-    measured_minutes: 0.88
+    estimate_minutes: 0.87      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.88      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-r9
-    title: 第9章 医药职业发展与人才梯队建设
-    segments: 5
+    title: 留人不是加工资，是把"看不到成长"变成看得见的台阶
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.94
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-r10
-    title: 第10章 医药劳动关系与用工合规
-    segments: 5
+    title: 用工合规的成本不在赔钱，在「值班」这两个字没有定义
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.93
+    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 11-r11
-    title: 第11章 医药人才流动与配置优化
-    segments: 5
+    title: 人才流动的问题不是流失率高，是内部流动比外部流动还慢
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.92
+    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 12-r12
-    title: 第12章 医药人力资源信息化与数据治理
-    segments: 5
+    title: 人事系统的失败不在功能少，在三张表对不上
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.96
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 13-r13
-    title: 第13章 中医药人才传承与培养
-    segments: 5
+    title: 传承断的不是名师，是「跟师」没有写进任何一张考核表
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.94
+    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 14-r14
-    title: 第14章 医药企业文化与职业道德
-    segments: 5
+    title: 文化的载体不是标语，是遇到利益冲突时默认怎么做
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.92
+    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 15-r15
-    title: 第15章 医药行业人力资源合规与监管
-    segments: 5
+    title: 监管查的不是制度文本，是「人、证、岗、记录」能不能对上
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.96
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 16-r16
-    title: 第16章 医院与医药企业人力资源管理实践
-    segments: 5
+    title: 医院管编制与业务量，药企管管线与弹性，能互相借的只有三件事
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.98
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.98      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 17-r17
-    title: 第17章 医药人力资源管理国际比较与趋势
-    segments: 5
+    title: 国际比较的用处不是判断谁更好，是看清同一工具换个约束就失效
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.98
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.98      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 18-r18
-    title: 第18章 医药人力资源管理与 tcmP 智能教学平台
-    segments: 5
+    title: 平台能教会人怎么算，教不了人怎么在排班表前做决定
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1.03
+    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.03      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

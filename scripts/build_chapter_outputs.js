@@ -83,6 +83,19 @@ function judgments(md, n = 6) {
       if (out.length >= n) return out;
     }
   }
+  // 兜底：正文没有加粗判断句时（例如整章用叙述句写成），改取段落首句原文。
+  // 必须是原文逐字片段，否则 outputs 门「首 12 字须在正文里」会判红。
+  if (out.length < 2) {
+    for (const line of md.split('\n')) {
+      const l = line.trim();
+      if (!l || /^[|#>\-*\d]/.test(l)) continue;
+      const first = l.split(/[。！？]/)[0];
+      if (hz(first) < 12 || seen.has(first)) continue;
+      seen.add(first);
+      out.push(first);
+      if (out.length >= n) break;
+    }
+  }
   return out;
 }
 

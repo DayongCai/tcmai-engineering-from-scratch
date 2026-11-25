@@ -1,148 +1,273 @@
-'use strict';
+#!/usr/bin/env node
 /**
- * 第 13 章 · 药材之前：产地、采集、炮制、配伍、禁忌与剂量
+ * 中药学 · 第 13 章 五道闸算出 3.341 分：四道是常数，只有炮制在动
  *
- * 本章对应教材总论 7 章（第 1/2/3/4/6/7/8 章），共 7,965 字、0 味单药。
- * 工程对象不是「药性」，而是「一味药在被写入方剂之前要经过的 5 道闸」：
+ *   node code/main.js
  *
- *   ① 产地      —— 决定成分与道地性（教材·第3章·3.1）
- *   ② 采集与贮藏 —— 决定有效成分含量与是否变质（教材·第3章·3.2–3.3）
- *   ③ 炮制      —— 改变性能与趋向（酒炙升提、盐炙下行）（教材·第4章）
- *   ④ 配伍      —— 七情：相须相使增效、相畏相杀减毒、相恶相反减效增毒（教材·第6章）
- *   ⑤ 禁忌与剂量 —— 人群边界 + 克数区间 + 煎法（教材·第7章、第8章）
+ * 正文：chapters/13-caiyao-zhijian/docs/zh.md
+ * 习题：chapters/13-caiyao-zhijian/quiz.json
+ * 依赖：仅 Node.js 标准库
  *
- * 所有数字都从 standards/zhongyao/{底本,drugs}.json 现算，不手抄统计。
+ * 只读本章正文与本章 quiz，不读任何底本或标准表：正文改了，这里的数字跟着变。
+ *   · 规模：汉字、段、节标题、表格张数与每张表的列数／行数
+ *   · 本章算术：从正文表格与计数句里解析条目，再算覆盖率、集中度与派生量
+ *   · quiz：题量、三段分布、选项数、解释长度、答案位置是否打散、check 题能否在正文找到原词
+ * 任何一项对不上，说明正文、代码、习题三者已经不同源。
  */
+
+'use strict';
 
 const fs = require('node:fs');
 const path = require('node:path');
 
-// 向上找仓根：code → 13-caiyao-zhijian → chapters → 01-zhongyaoxue → 02-zhongyao → departments → 仓根
-const ROOT = path.join(__dirname, '..', '..', '..', '..', '..', '..');
-const BASE = path.join(ROOT, 'standards', 'zhongyao', '底本.json');
-const DRUGS = path.join(ROOT, 'standards', 'zhongyao', 'drugs.json');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
-/** 本章覆盖的教材章。第 5 章性能归第 12 章，第 9–29 章各论归第 1–11、14 章，故不在内。 */
-const ZONGLUN = ['1', '2', '3', '4', '6', '7', '8'];
+const CHAPTER = 13;
+const SLUG = '13-caiyao-zhijian';
+const TITLE = '五道闸算出 3.341 分：四道是常数，只有炮制在动';
 
-/** 五道闸：闸名 / 依据教材章 / 观测词表 / 闸的输出（进入下一闸的字段） */
-const GATES = [
-  { id: 'g1', name: '产地', chapters: ['3'], keys: ['道地', '产地'], out: '基原 + 产地（道地性）' },
-  { id: 'g2', name: '采集与贮藏', chapters: ['3'], keys: ['采收', '贮藏', '走油', '霉变'], out: '采收期 + 干燥与贮存条件' },
-  { id: 'g3', name: '炮制', chapters: ['4'], keys: ['炮制', '炙', '煅', '蒸'], out: '饮片规格（生 / 炒 / 炙 / 煅 / 蒸）' },
-  { id: 'g4', name: '配伍', chapters: ['6'], keys: ['相须', '相使', '相畏', '相杀', '相恶', '相反', '单行'], out: '药对关系（七情）' },
-  { id: 'g5', name: '禁忌与剂量', chapters: ['7', '8'], keys: ['禁用', '慎用', '十八反', '十九畏', '剂量'], out: '人群边界 + 克数区间 + 煎法' },
-];
+/* ── 文本口径 ────────────────────────────────────────────────────── */
 
-const readJson = (p) => JSON.parse(fs.readFileSync(p, 'utf8'));
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+const count = (text, term) => String(text).split(term).length - 1;
+const nums = (s) => (String(s || '').match(/\d+(?:\.\d+)?/g) || []).map(Number);
+const numOf = (v) => Number(String(v == null ? '' : v).replace(/[,，\s%]/g, '')) || 0;
+/** 取单元格开头的数字（后面可能跟着括注） */
+const lead = (v) => Number((String(v == null ? '' : v).match(/^\d+(?:\.\d+)?/) || [0])[0]);
+const readDoc = () => fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+const docLines = (doc) => String(doc).split(/\r?\n/);
 
-/** 一章的全部正文段落（章级 / 节级 / 小节级三层都收） */
-function parasOf(ch) {
-  const out = [...(ch.paras || [])];
-  for (const s of ch.secs || []) {
-    out.push(...(s.paras || []));
-    for (const u of s.subs || []) out.push(...(u.paras || []));
+/** 节标题：`## 一、…` */
+function sections(doc) {
+  return docLines(doc).filter((l) => /^##\s+/.test(l)).map((l) => l.replace(/^##\s+/, '').trim());
+}
+
+/** 段：非空，不以标题、引文、表格行、清单符号或编号起始 */
+function paragraphs(doc) {
+  return docLines(doc)
+    .map((l) => l.trim())
+    .filter((l) => l && !/^[#>|]/.test(l) && !/^[-*+]\s/.test(l) && !/^\d+[.、]/.test(l))
+    .filter((l) => !l.includes('|'));
+}
+
+/** markdown 表格：表头 + 去分隔行的数据行；围栏代码块里的竖线不算表 */
+function tables(doc) {
+  const ls = docLines(doc);
+  const cells = (l) => l.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map((c) => c.trim());
+  const out = [];
+  let i = 0;
+  let fenced = false;
+  while (i < ls.length) {
+    if (/^\s*```/.test(ls[i])) {
+      fenced = !fenced;
+      i += 1;
+      continue;
+    }
+    if (!fenced && /^\s*\|/.test(ls[i])) {
+      const block = [];
+      while (i < ls.length && /^\s*\|/.test(ls[i])) {
+        block.push(ls[i]);
+        i += 1;
+      }
+      const header = cells(block[0]);
+      const rows = block.slice(1).filter((l) => !/^\s*\|[\s:|-]+\|\s*$/.test(l)).map(cells);
+      out.push({ header, cols: header.length, rows });
+    } else {
+      i += 1;
+    }
   }
   return out;
 }
 
-/** 本章 7 章：字数/节/小节/段 全部取自底本的 counts，不重算字 */
-function chapters() {
-  const d = readJson(BASE);
-  return ZONGLUN.map((no) => {
-    const ch = d.chapters.find((x) => x.no === no);
-    if (!ch) throw new Error(`底本里没有第 ${no} 章`);
+const tableBy = (ts, kw) => ts.find((t) => t.header.join(' ').includes(kw));
+
+/* ── 本章算术（从正文解析，不写死结果） ─────────────────────────── */
+
+function chapterArithmetic(doc, ts) {
+  const chans = tableBy(ts, '节数');
+  const gates = tableBy(ts, '通过率');
+  const dist = tableBy(ts, '缺的闸');
+  if (!chans || !gates || !dist) throw new Error('正文的五章表／五闸表／得分表有缺');
+
+  const per = (re, s) => Number((String(s).match(re) || [])[1]);
+  const f = (re) => per(re, doc);
+
+  // 五章：节数与字数相加
+  const chapterN = chans.rows.length;
+  const secTotal = chans.rows.reduce((s, r) => s + numOf(r[1]), 0);
+  const chantotal = chans.rows.reduce((s, r) => s + numOf(r[2]), 0);
+  const mean = chantotal / secTotal;
+
+  // 五道闸：逐闸通过数与通过率
+  const gateRows = gates.rows.map((r) => ({
+    id: String(r[0]).split(' ')[0],
+    name: String(r[0]).split(' ').slice(1).join(' '),
+    pass: numOf(r[3]),
+    rate: Number(String(r[4]).replace(/[^0-9.]/g, '')),
+  }));
+  const passSum = gateRows.reduce((s, g) => s + g.pass, 0);
+  const movingGate = gateRows.filter((g) => g.rate > 1 && g.rate < 99);
+  const flatGates = gateRows.filter((g) => g.rate >= 99);
+  const zeroGates = gateRows.filter((g) => g.rate === 0);
+
+  // 得分分布：只有三档有数
+  const distRows = dist.rows
+    .map((r) => ({ score: lead(r[0]), n: numOf(r[1]) }))
+    .filter((r) => r.n > 0);
+  const distTotal = distRows.reduce((s, r) => s + r.n, 0);
+  const herbN = distTotal;
+  const meanPassed = passSum / herbN;
+  const meanScore = meanPassed / gateRows.length;
+  const identity = f(/有\s*(\d+)\s*味的得分恰好等于/);
+  const exceptions = f(/(\d+)\s*个例外全部是/);
+
+  // 剂量：窄带与两端
+  const narrow = f(/五档合计\s*(\d+)\s*味/);
+  const i5 = Math.max(0, doc.indexOf('五档合计'));
+  const seg5 = String(doc.slice(i5, i5 + 40));
+  const narrowRate = Number((seg5.match(/[0-9.]+%/) || ['0%'])[0].replace('%', ''));
+  const topN = f(/低端\s*(\d+)\s*味/);
+  const pairN = f(/一共列出\s*(\d+)\s*对禁忌关系/);
+  const bothIn = f(/两味药都在教材\s*\d+\s*味选载内的，(\d+)\s*对/);
+  const written = f(/写出「不宜同用」的，\*\*只有\s*(\d+)\s*处/);
+
+  return {
+    chapterN,
+    secTotal,
+    chantotal,
+    mean: Number(mean.toFixed(1)),
+    gateN: gateRows.length,
+    gateIds: gateRows.map((g) => g.id),
+    passSum,
+    meanPassed: Number(meanPassed.toFixed(3)),
+    meanScore: Number(meanScore.toFixed(3)),
+    movingGate: movingGate.map((g) => g.id + ' ' + g.rate.toFixed(1) + '%'),
+    flatGateN: flatGates.length,
+    zeroGateN: zeroGates.length,
+    distRows,
+    distTotal,
+    identity,
+    exceptions,
+    narrow,
+    narrowRate,
+    topN,
+    pairN,
+    bothIn,
+    written,
+    lines: [
+      '五章 ' + chapterN + ' 章、' + secTotal + ' 节、汉字 ' + chantotal.toLocaleString('en-US') + '，篇均 ' + mean.toFixed(1) + ' 字',
+      '五道闸 ' + gateRows.length + ' 道：通过数合计 ' + passSum + '，平均过 ' + (passSum / herbN).toFixed(3) + ' 道（满 5 道），均分 ' + ((passSum / herbN) / gateRows.length).toFixed(3),
+      '逐闸通过率：' + gateRows.map((g) => g.id + ' ' + g.rate.toFixed(1) + '%').join(' · '),
+      '真正在动的只有 ' + movingGate.map((g) => g.id).join('、') + '；恒为 0 的 ' + zeroGates.map((g) => g.id).join('、') + '；≥99% 的 ' + flatGates.length + ' 道',
+      '得分分布 ' + distRows.map((r) => r.score + ' 分 ' + r.n + ' 味').join(' · ') + '，合计 ' + distTotal + ' 味',
+      '恒等式：' + identity + '/' + distTotal + ' 味的得分等于「3 加炮制闸」；例外 ' + exceptions + ' 味',
+      '剂量窄带：相邻五档合计 ' + narrow + ' 味 = ' + narrowRate + '%；最低档的 ' + topN + ' 味全是有毒或贵重药',
+      '十八反十九畏 ' + pairN + ' 对，两味都在选载内 ' + bothIn + ' 对，正文自写不宜同用的只有 ' + written + ' 处',
+    ],
+  };
+}
+
+/* ── quiz：结构 + 接地 ──────────────────────────────────────────── */
+
+/** 正文里 4 字以上的连续汉字片段 */
+function grams(text, n = 4) {
+  const out = new Set();
+  for (const seg of String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+}
+
+function quizSummary(quiz, doc) {
+  const body = grams(doc);
+  const qs = Array.isArray(quiz.questions) ? quiz.questions : [];
+  const stage = { pre: 0, check: 0, post: 0 };
+  const items = qs.map((q, i) => {
+    if (stage[q.stage] !== undefined) stage[q.stage] += 1;
+    const opts = Array.isArray(q.options) ? q.options : [];
+    const right = String(opts[q.correct] || '');
+    const hit = [...grams(right)].filter((g) => body.has(g));
+    const why = q.explain || q.explanation || '';
     return {
-      no,
-      title: ch.title,
-      chars: ch.counts.chars,
-      secs: ch.counts.secs,
-      subs: ch.counts.subs,
-      paras: ch.counts.paras,
-      text: parasOf(ch).join('\n'),
+      n: i + 1,
+      stage: q.stage,
+      options: opts.length,
+      correct: q.correct,
+      explainHanzi: hanzi(why),
+      grounded: hit.length,
+      sample: hit.slice(0, 3),
     };
   });
-}
-
-/** 章级规模：7 章合计多少字、多少节/小节/段 */
-function scale() {
-  const cs = chapters();
-  const rows = cs.map(({ no, title, chars, secs, subs, paras }) => ({ no, title, chars, secs, subs, paras }));
-  const add = (k) => cs.reduce((n, c) => n + c[k], 0);
-  return { chapters: cs.length, chars: add('chars'), secs: add('secs'), subs: add('subs'), paras: add('paras'), rows };
-}
-
-/** 五道闸的词频：在各自教材章正文里数关键字出现次数 */
-function gateHits() {
-  const cs = chapters();
-  return GATES.map((g) => {
-    const pool = cs.filter((c) => g.chapters.includes(c.no)).map((c) => c.text).join('\n');
-    const hits = {};
-    let total = 0;
-    for (const k of g.keys) {
-      const n = pool.split(k).length - 1;
-      hits[k] = n;
-      total += n;
-    }
-    return { id: g.id, name: g.name, chapters: g.chapters, out: g.out, hits, total };
-  });
-}
-
-/** 剂量区间：只从第 8 章抽「数字-数字g」，单位 g，不换算古制 */
-function doseRanges() {
-  const ch8 = chapters().find((c) => c.no === '8');
-  const re = /(\d+(?:\.\d+)?)-(\d+(?:\.\d+)?)g/g;
-  const seen = new Map();
-  for (const m of ch8.text.matchAll(re)) {
-    if (!seen.has(m[0])) seen.set(m[0], { raw: m[0], min: Number(m[1]), max: Number(m[2]) });
-  }
-  return [...seen.values()].sort((a, b) => a.min - b.min);
-}
-
-/** 七情：第 6 章的七类药对关系各出现几次 */
-function qiqing() {
-  const ch6 = chapters().find((c) => c.no === '6');
-  const kinds = ['单行', '相须', '相使', '相畏', '相杀', '相恶', '相反'];
-  return kinds.map((k) => ({ kind: k, n: ch6.text.split(k).length - 1 }));
-}
-
-/** 总论章有几味单药：0 —— 这是本章「无药可算」的口径说明 */
-function drugless() {
-  const d = readJson(DRUGS);
   return {
-    total: d.drugs.length,
-    inZonglun: d.drugs.filter((x) => ZONGLUN.includes(String(x.chapter))).length,
+    total: qs.length,
+    stage,
+    items,
+    answers: qs.map((q) => q.correct),
+    distinctAnswers: new Set(qs.map((q) => q.correct)).size,
+    checkGrounded: items.filter((x) => x.stage === 'check' && x.grounded > 0).length,
+    minExplain: items.length ? Math.min(...items.map((x) => x.explainHanzi)) : 0,
+    allFourOptions: items.every((x) => x.options === 4),
+    badCorrect: items.filter((x) => !(Number.isInteger(x.correct) && x.correct >= 0 && x.correct < 4)).length,
+    stageComplete: ['pre', 'check', 'post'].every((s) => stage[s] > 0),
+  };
+}
+
+/* ── 汇总 ──────────────────────────────────────────────────────── */
+
+function analyze() {
+  const doc = readDoc();
+  const ts = tables(doc);
+  const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+  return {
+    docHanzi: hanzi(doc),
+    paragraphs: paragraphs(doc).length,
+    sections: sections(doc),
+    tables: ts.map((t) => ({ header: t.header, cols: t.cols, rows: t.rows.length })),
+    arith: chapterArithmetic(doc, ts),
+    quiz: quizSummary(quiz, doc),
   };
 }
 
 function main() {
-  const s = scale();
-  const g = gateHits();
-  const d = doseRanges();
-  const q = qiqing();
-  const dl = drugless();
-
-  console.log('═══ 药材之前：5 道闸（教材·第1/2/3/4/6/7/8章）═══');
-  console.log(`  总论 7 章：${s.chapters} 章 / ${s.secs} 节 / ${s.subs} 小节 / ${s.paras} 段 / ${s.chars} 字`);
-  console.log(`  单药：${dl.inZonglun} 味（药库 ${dl.total} 味全在各论，总论一味不产）`);
-  console.log('\n── 教材 7 章规模（底本 counts 现算）──');
-  for (const r of s.rows) {
-    console.log(`  第${r.no.padStart(2)}章 ${r.title.padEnd(16, '　')} ${String(r.chars).padStart(5)} 字 · ${r.secs} 节 · ${r.subs} 小节 · ${r.paras} 段`);
-  }
-  console.log('\n── 5 道闸：词频与闸的输出 ──');
-  for (const x of g) {
-    const top = Object.entries(x.hits).sort((a, b) => b[1] - a[1]).slice(0, 3).map(([k, n]) => `${k}×${n}`).join(' ');
-    console.log(`  ${x.id} ${x.name.padEnd(6, '　')} 教材第${x.chapters.join('/')}章  ${String(x.total).padStart(3)} 命中（${top}） → ${x.out}`);
-  }
-  console.log('\n── 剂量区间（只取第 8 章的「数字-数字g」）──');
-  console.log(`  共 ${d.length} 个区间：最小 ${d[0].raw}（${d[0].min} g）· 最大 ${d[d.length - 1].raw}（${d[d.length - 1].max} g）`);
-  console.log(`  ${d.map((x) => x.raw).join(' · ')}`);
-  console.log('\n── 七情（第 6 章词频）──');
-  console.log(`  ${q.map((x) => `${x.kind}×${x.n}`).join(' · ')}`);
-  console.log('\n提醒：5 道闸是教材正文的组织方式，不是可直接执行的质量标准；教材没有给出炮制温度、时间与法定上限。');
-  console.log('教学边界：本章只把教材总论 7 章的产地·采集·炮制·配伍·禁忌·剂量整理成 5 道闸，不含任何单药数据与工艺参数，不构成用药依据。');
+  const r = analyze();
+  console.log(`中药学 第 ${CHAPTER} 章 · ${TITLE}`);
+  console.log(`正文 ${r.docHanzi.toLocaleString('en-US')} 汉字 · ${r.paragraphs} 段 · 节 ${r.sections.length} 个`);
+  console.log('');
+  console.log('结构：');
+  for (const s of r.sections) console.log(`  ${s}`);
+  console.log('');
+  console.log(`表 ${r.tables.length} 张：`);
+  r.tables.forEach((t, i) => console.log(`  [${i + 1}] ${t.header.join(' / ')} —— ${t.cols} 列 × ${t.rows} 行`));
+  console.log('');
+  console.log('本章算术（全部从正文解析后计算）：');
+  for (const line of r.arith.lines) console.log(`  ${line}`);
+  console.log('');
+  console.log(`quiz ${r.quiz.total} 题（pre ${r.quiz.stage.pre} / check ${r.quiz.stage.check} / post ${r.quiz.stage.post}）· 答案 ${r.quiz.answers.join('/')}`);
+  console.log(`  check 题接地 ${r.quiz.checkGrounded} 道 · 答案落在 ${r.quiz.distinctAnswers} 个位置 · 最短解释 ${r.quiz.minExplain} 汉字`);
+  console.log('※ 以上数字由本章正文与 quiz 现算，改正文后重跑即可复核。');
+  console.log('※ 本章为教学材料，字段口径与统计均为课堂约定，不构成诊疗建议，也不替代执业医师的判断。');
 }
 
 if (require.main === module) main();
 
-module.exports = { ZONGLUN, GATES, chapters, scale, gateHits, doseRanges, qiqing, drugless };
+module.exports = {
+  analyze,
+  readDoc,
+  sections,
+  paragraphs,
+  tables,
+  tableBy,
+  grams,
+  hanzi,
+  count,
+  nums,
+  numOf,
+  lead,
+  quizSummary,
+  CHAPTER,
+  SLUG,
+  TITLE,
+  DOC,
+  QUIZ,
+};

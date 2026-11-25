@@ -26,7 +26,12 @@ blockquote.motto{font-family:var(--serif);font-size:clamp(20px,2.6vw,34px);line-
   text-transform:uppercase;margin-bottom:14px}
 .kicker.warn{color:var(--cinnabar)}
 p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var(--serif)}
-.compact{font-size:clamp(19px,1.75vw,27px);line-height:1.85;max-height:70vh;overflow:auto}
+.compact{font-size:clamp(19px,1.75vw,27px);line-height:1.85;max-height:70vh;overflow:hidden}
+.compact.dense{font-size:clamp(16px,1.42vw,22px);line-height:1.6;max-height:80vh}
+.compact.dense table{font-size:14px}
+.compact.denser{font-size:clamp(14px,1.22vw,18px);line-height:1.5;max-height:82vh}
+.compact.denser table{font-size:12px}
+.compact.denser pre{font-size:12px}
 .compact h2,.compact h3{font-family:var(--serif);margin:.6em 0 .3em;font-size:1.15em}
 .compact pre{background:var(--paper-2);border:1px solid var(--line);border-radius:8px;padding:12px;overflow:auto;font-size:15px}
 .compact code{background:var(--paper-2);border:1px solid var(--line);border-radius:4px;padding:1px 4px;font-family:var(--mono)}
@@ -58,7 +63,7 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
   <div class="slide-foot"><span>1 / 23</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「染色质的开放与关闭状态，是基因能否被转录的第一道闸门」——补充·hermes-病理生理学讲义·第5章·5.1（《hermes-病理生理学讲义·第5章·5.1》）</blockquote></div>
+  <div class="slide-inner"><blockquote class="motto">「数之可千，推之可万，万之大不可胜数，然其要一也。」——《素问·阴阳离合论》</blockquote></div>
   <div class="slide-foot"><span>2 / 23</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
@@ -70,8 +75,9 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
   <div class="slide-foot"><span>4 / 23</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
-  <div class="slide-inner"><div class="kicker">一、先看底稿：结构与组成（5.1–5.2）</div>
-                <div class="compact"><h3 id="5-1-dna-结构与染色体组装">5.1 DNA 结构与染色体组装</h3>
+  <div class="slide-inner"><div class="kicker">从底稿到产物：结构、转录与加工（5.1–5.4）</div>
+                <div class="compact dense"><h3 id="先看底稿-结构与组成-5-1-5-2">先看底稿：结构与组成（5.1–5.2）</h3>
+<h4 id="5-1-dna-结构与染色体组装">5.1 DNA 结构与染色体组装</h4>
 <p>讲义从碱基配对讲起，但落点不在化学，在可用性：</p>
 <blockquote><p>「这一互补性是 DNA 复制高保真与分子杂交检测（如 PCR、测序、FISH）的技术基础」——补充·hermes-病理生理学讲义·第5章·5.1</p></blockquote>
 <p>一句话把「结构」与「检测」接上了。互补配对既保证了复制时的准确，也保证了探针能找到靶序列——同一套规则，一个用于遗传，一个用于诊断。本章最后一节列的检测手段，根都在这里。</p>
@@ -81,9 +87,9 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
   <div class="slide-foot"><span>5 / 23</span><span>body</span></div>
 </section>
 <section class="slide" data-i="5">
-  <div class="slide-inner"><div class="kicker">一、先看底稿：结构与组成（5.1–5.2）</div>
-                <div class="compact"><p>闸门这个比喻要留住。后面讲转录因子、讲增强子、讲甲基化，讲的都是这道闸门怎么开、怎么关、谁能开。常染色质疏松、转录活跃，异染色质浓缩、转录沉默——两者不是两种 DNA，是同一种 DNA 的两种状态。</p>
-<h3 id="5-2-人类基因组的组成">5.2 人类基因组的组成</h3>
+  <div class="slide-inner"><div class="kicker">从底稿到产物：结构、转录与加工（5.1–5.4）</div>
+                <div class="compact dense"><p>闸门这个比喻要留住。后面讲转录因子、讲增强子、讲甲基化，讲的都是这道闸门怎么开、怎么关、谁能开。常染色质疏松、转录活跃，异染色质浓缩、转录沉默——两者不是两种 DNA，是同一种 DNA 的两种状态。</p>
+<h4 id="5-2-人类基因组的组成">5.2 人类基因组的组成</h4>
 <p>这一节的任务是把基因组就是基因的集合这个直觉打掉。讲义列了四个反直觉的特点：编码基因只占很小一部分、内含子占单个基因的绝大部分、非编码序列占绝大多数、重复序列大量存在。</p>
 <p>第三点最需要消化：</p>
 <blockquote><p>「包括调控元件（启动子、增强子、沉默子）、非编码 RNA 基因」——补充·hermes-病理生理学讲义·第5章·5.2</p></blockquote>
@@ -92,87 +98,84 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
   <div class="slide-foot"><span>6 / 23</span><span>body</span></div>
 </section>
 <section class="slide" data-i="6">
-  <div class="slide-inner"><div class="kicker">一、先看底稿：结构与组成（5.1–5.2）</div>
-                <div class="compact"><p>本节最后把基因的定义改写了一次：从编码一条多肽的片段扩展为产生一个有功能产物的基因组区段。定义的扩展本身就是本章的立场——产物可以是 RNA，调控序列也是基因的一部分。</p></div></div>
-  <div class="slide-foot"><span>7 / 23</span><span>body</span></div>
-</section>
-<section class="slide" data-i="7">
-  <div class="slide-inner"><div class="kicker">二、打开与关闭：转录层（5.3）</div>
-                <div class="compact"><h3 id="5-3-转录水平的调控">5.3 转录水平的调控</h3>
+  <div class="slide-inner"><div class="kicker">从底稿到产物：结构、转录与加工（5.1–5.4）</div>
+                <div class="compact dense"><p>本节最后把基因的定义改写了一次：从编码一条多肽的片段扩展为产生一个有功能产物的基因组区段。定义的扩展本身就是本章的立场——产物可以是 RNA，调控序列也是基因的一部分。</p>
+<h3 id="打开与关闭-转录层-5-3">打开与关闭：转录层（5.3）</h3>
+<h4 id="5-3-转录水平的调控">5.3 转录水平的调控</h4>
 <p>三类元件与一类蛋白：启动子定起点、增强子与沉默子定效率、转录因子负责认序列。讲义对增强子的描述有一处细节值得注意——它可以位于远距离的上游、下游或内含子中，靠染色质空间折叠与启动子接触。距离不重要，接触才重要。</p>
 <p>转录因子的分工是本节的关键切分：</p>
 <blockquote><p>「序列特异性 DNA 结合蛋白，分为通用转录因子与特异性转录因子」——补充·hermes-病理生理学讲义·第5章·5.3</p></blockquote>
 <p>通用因子负责「能不能转录」，特异因子负责哪一个基因、在哪一种细胞里转录。后一句正是组织特异性的来源：</p>
-<blockquote><p>「是因为肝细胞核内存在激活白蛋白增强子的转录因子组合，而其他细胞缺乏这套组合」——补充·hermes-病理生理学讲义·第5章·5.3</p></blockquote>
-<p>注意「组合」两个字。不是一个因子决定一个基因，是一套组合决定一批基因。这也解释了为什么同一份基因组在不同细胞里读出不同结果——读法由组合决定，不由序列决定。</p></div></div>
+<blockquote><p>「是因为肝细胞核内存在激活白蛋白增强子的转录因子组合，而其他细胞缺乏这套组合」——补充·hermes-病理生理学讲义·第5章·5.3</p></blockquote></div></div>
+  <div class="slide-foot"><span>7 / 23</span><span>body</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">从底稿到产物：结构、转录与加工（5.1–5.4）</div>
+                <div class="compact dense"><p>注意「组合」两个字。不是一个因子决定一个基因，是一套组合决定一批基因。这也解释了为什么同一份基因组在不同细胞里读出不同结果——读法由组合决定，不由序列决定。</p>
+<p>本节末句把激素与信号通路接了进来：类固醇激素受体本身就是配体激活的转录因子。信号与转录在这里合流，第 3 章 3.8 讲过的核受体，在这里有了完整的落点。</p>
+<h3 id="出厂前的加工-转录后与翻译-5-4">出厂前的加工：转录后与翻译（5.4）</h3>
+<h4 id="5-4-转录后与翻译水平的调控">5.4 转录后与翻译水平的调控</h4>
+<p>前体 mRNA 要经加帽、加尾、剪接才能出核。讲义把每一步都写成调控节点，其中剪接那一条最重：</p>
+<blockquote><p>「使同一基因产生多种 mRNA 异构体，是蛋白质多样性的重要来源」——补充·hermes-病理生理学讲义·第5章·5.4</p></blockquote>
+<p>可变剪接意味着一个基因一种蛋白是错的。同一个基因可以按不同方式拼接，产出功能不同甚至相反的蛋白。这一条对疾病的意义在于：剪接位点突变不改变蛋白的编码信息，却能改变拼接方式，于是产出的东西要么缺一段、要么多一段。</p></div></div>
   <div class="slide-foot"><span>8 / 23</span><span>body</span></div>
 </section>
 <section class="slide" data-i="8">
-  <div class="slide-inner"><div class="kicker">二、打开与关闭：转录层（5.3）</div>
-                <div class="compact"><p>本节末句把激素与信号通路接了进来：类固醇激素受体本身就是配体激活的转录因子。信号与转录在这里合流，第 3 章 3.8 讲过的核受体，在这里有了完整的落点。</p></div></div>
+  <div class="slide-inner"><div class="kicker">从底稿到产物：结构、转录与加工（5.1–5.4）</div>
+                <div class="compact"><p>微小 RNA 那一条给了数量级的描述：一个 miRNA 可调控数十至上百个靶基因。这个比例说明它在调控网络里的位置——不是开关，是音量旋钮，一次拧动影响一片。</p>
+<p>本节末句点了可干预性：RNA 干扰与反义寡核苷酸技术正是利用这些机制发展出的手段。这句话的分量在于「利用」二字——它说明这一层不只是解释，还是入口。</p></div></div>
   <div class="slide-foot"><span>9 / 23</span><span>body</span></div>
 </section>
 <section class="slide" data-i="9">
-  <div class="slide-inner"><div class="kicker">三、出厂前的加工：转录后与翻译（5.4）</div>
-                <div class="compact"><h3 id="5-4-转录后与翻译水平的调控">5.4 转录后与翻译水平的调控</h3>
-<p>前体 mRNA 要经加帽、加尾、剪接才能出核。讲义把每一步都写成调控节点，其中剪接那一条最重：</p>
-<blockquote><p>「使同一基因产生多种 mRNA 异构体，是蛋白质多样性的重要来源」——补充·hermes-病理生理学讲义·第5章·5.4</p></blockquote>
-<p>可变剪接意味着一个基因一种蛋白是错的。同一个基因可以按不同方式拼接，产出功能不同甚至相反的蛋白。这一条对疾病的意义在于：剪接位点突变不改变蛋白的编码信息，却能改变拼接方式，于是产出的东西要么缺一段、要么多一段。</p>
-<p>微小 RNA 那一条给了数量级的描述：一个 miRNA 可调控数十至上百个靶基因。这个比例说明它在调控网络里的位置——不是开关，是音量旋钮，一次拧动影响一片。</p>
-<p>本节末句点了可干预性：RNA 干扰与反义寡核苷酸技术正是利用这些机制发展出的手段。这句话的分量在于「利用」二字——它说明这一层不只是解释，还是入口。</p></div></div>
-  <div class="slide-foot"><span>10 / 23</span><span>body</span></div>
-</section>
-<section class="slide" data-i="10">
-  <div class="slide-inner"><div class="kicker">四、不改进序列的改写：表观遗传（5.5）</div>
-                <div class="compact"><h3 id="5-5-表观遗传调控">5.5 表观遗传调控</h3>
+  <div class="slide-inner"><div class="kicker">不改序列的改写与身份锁定：表观与分化（5.5–5.7）</div>
+                <div class="compact dense"><h3 id="不改进序列的改写-表观遗传-5-5">不改进序列的改写：表观遗传（5.5）</h3>
+<h4 id="5-5-表观遗传调控">5.5 表观遗传调控</h4>
 <p>这一节是本章的枢纽。定义先立边界：</p>
 <blockquote><p>「指不改变 DNA 碱基序列、但可稳定遗传给子代细胞（有时跨代）的表达状态改变」——补充·hermes-病理生理学讲义·第5章·5.5</p></blockquote>
 <p>三个限定：不改序列、可稳定遗传、是表达状态的改变。第一个限定把它与突变分开，第二个限定把它与一时的表达波动分开。合起来就是一句话——写在同一份底稿上的批注，也能被继承。</p>
 <p>四类机制排成一张表：DNA 甲基化（多在 CpG 岛，通常抑制转录）、组蛋白修饰（乙酰化多促开放，甲基化视位点而定）、染色质重塑（改变可及性）、非编码 RNA（招募修饰酶）。表的第三列是效应，读法要小心：只有甲基化那一条是单向的，其余三条都取决于位置与组合。</p>
 <p>基因组印记是本节最能说明问题的一例：</p>
 <blockquote><p>「某些基因的表达取决于亲本来源」——补充·hermes-病理生理学讲义·第5章·5.5</p></blockquote></div></div>
+  <div class="slide-foot"><span>10 / 23</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">不改序列的改写与身份锁定：表观与分化（5.5–5.7）</div>
+                <div class="compact dense"><p>同样一段 DNA，来自父亲或母亲，表型不同。这一句把基因决定性状这个说法彻底改写：决定性状的不只是序列，还有这段序列的来路。印记异常导致的疾病因此有一个共同特征——同一处异常，父源与母源的表现可以完全不同。</p>
+<p>本节末段把环境接了进来：</p>
+<blockquote><p>「能通过改变甲基化与组蛋白修饰影响基因表达」——补充·hermes-病理生理学讲义·第5章·5.5</p></blockquote>
+<p>营养、应激、毒物暴露、运动都能改写批注，且部分改变在发育关键期留下长期影响。这句话在写作上的用处是：它让「遗传」与「环境」从对立变成交互——不是二者各占多少，而是环境通过表观标记写进遗传的读法里。</p>
+<h3 id="把身份锁住-分化与干细胞-5-6-5-7">把身份锁住：分化与干细胞（5.6–5.7）</h3>
+<h4 id="5-6-细胞分化与谱系决定">5.6 细胞分化与谱系决定</h4>
+<p>分化的核心是差异基因表达，这一点第 3 章 3.10 已经给过结论。本节的新东西是两步走：先决定，再分化。决定阶段表型尚未显现，但命运已定——这句话解释了一个常见的困惑：为什么有些细胞看起来还没变，却已经不会再变成别的。</p></div></div>
   <div class="slide-foot"><span>11 / 23</span><span>body</span></div>
 </section>
 <section class="slide" data-i="11">
-  <div class="slide-inner"><div class="kicker">四、不改进序列的改写：表观遗传（5.5）</div>
-                <div class="compact"><p>同样一段 DNA，来自父亲或母亲，表型不同。这一句把基因决定性状这个说法彻底改写：决定性状的不只是序列，还有这段序列的来路。印记异常导致的疾病因此有一个共同特征——同一处异常，父源与母源的表现可以完全不同。</p>
-<p>本节末段把环境接了进来：</p>
-<blockquote><p>「能通过改变甲基化与组蛋白修饰影响基因表达」——补充·hermes-病理生理学讲义·第5章·5.5</p></blockquote>
-<p>营养、应激、毒物暴露、运动都能改写批注，且部分改变在发育关键期留下长期影响。这句话在写作上的用处是：它让「遗传」与「环境」从对立变成交互——不是二者各占多少，而是环境通过表观标记写进遗传的读法里。</p></div></div>
-  <div class="slide-foot"><span>12 / 23</span><span>body</span></div>
-</section>
-<section class="slide" data-i="12">
-  <div class="slide-inner"><div class="kicker">五、把身份锁住：分化与干细胞（5.6–5.7）</div>
-                <div class="compact"><h3 id="5-6-细胞分化与谱系决定">5.6 细胞分化与谱系决定</h3>
-<p>分化的核心是差异基因表达，这一点第 3 章 3.10 已经给过结论。本节的新东西是两步走：先决定，再分化。决定阶段表型尚未显现，但命运已定——这句话解释了一个常见的困惑：为什么有些细胞看起来还没变，却已经不会再变成别的。</p>
-<p>主控转录因子那一条最有力：</p>
+  <div class="slide-inner"><div class="kicker">不改序列的改写与身份锁定：表观与分化（5.5–5.7）</div>
+                <div class="compact dense"><p>主控转录因子那一条最有力：</p>
 <blockquote><p>「单一或少数转录因子即可启动整套分化程序」——补充·hermes-病理生理学讲义·第5章·5.6</p></blockquote>
 <p>一个因子启动一整套程序，还能诱导已分化细胞转分化。这个少数决定多数的结构，是分化能被重编程的技术前提，也是 5.7 诱导多能干细胞的基础。</p>
 <p>锁定的机制写在第三条：谱系特异基因的增强子去甲基化并保持开放，无关基因被甲基化关闭。到这里，5.5 的表观遗传与 5.6 的分化合上了——分化就是一次长期的、可继承的批注。</p>
 <p>本节末句把失衡点了名：</p>
-<blockquote><p>「则是分化程序近乎丧失，见于高度恶性肿瘤」——补充·hermes-病理生理学讲义·第5章·5.6</p></blockquote></div></div>
-  <div class="slide-foot"><span>13 / 23</span><span>body</span></div>
+<blockquote><p>「则是分化程序近乎丧失，见于高度恶性肿瘤」——补充·hermes-病理生理学讲义·第5章·5.6</p></blockquote>
+<p>间变描述的是分化程序丢了多少，不是长得有多大。这个区分在第 7 章会再出现，本章只需记住它是「批注被擦掉」的极端形态。</p>
+<h4 id="5-7-干细胞与潜能分级">5.7 干细胞与潜能分级</h4></div></div>
+  <div class="slide-foot"><span>12 / 23</span><span>body</span></div>
 </section>
-<section class="slide" data-i="13">
-  <div class="slide-inner"><div class="kicker">五、把身份锁住：分化与干细胞（5.6–5.7）</div>
-                <div class="compact"><p>间变描述的是分化程序丢了多少，不是长得有多大。这个区分在第 7 章会再出现，本章只需记住它是「批注被擦掉」的极端形态。</p>
-<h3 id="5-7-干细胞与潜能分级">5.7 干细胞与潜能分级</h3>
-<p>干细胞的两个本质属性：自我更新与多向分化潜能。潜能分三级：全能（可形成完整个体及胚外组织）、多能（三个胚层的各类细胞，但不能独立形成完整体）、多潜能或专能（只能分化为特定谱系）。</p>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">不改序列的改写与身份锁定：表观与分化（5.5–5.7）</div>
+                <div class="compact dense"><p>干细胞的两个本质属性：自我更新与多向分化潜能。潜能分三级：全能（可形成完整个体及胚外组织）、多能（三个胚层的各类细胞，但不能独立形成完整体）、多潜能或专能（只能分化为特定谱系）。</p>
 <p>诱导多能干细胞那一条的价值不在技术，在结论：</p>
 <blockquote><p>「证明了分化状态的可逆性，也带来畸胎瘤风险与伦理讨论」——补充·hermes-病理生理学讲义·第5章·5.7</p></blockquote>
 <p>可逆性这三个字把分化从单向路改成了可回头的路。而括号里的风险与讨论提醒：可逆不等于可随意。</p>
 <p>微环境那一段给了一个可检验的说法：</p>
-<blockquote><p>「由支持细胞、ECM 与信号分子构成，决定干细胞是静息、自我更新还是分化」——补充·hermes-病理生理学讲义·第5章·5.7</p></blockquote></div></div>
-  <div class="slide-foot"><span>14 / 23</span><span>body</span></div>
+<blockquote><p>「由支持细胞、ECM 与信号分子构成，决定干细胞是静息、自我更新还是分化」——补充·hermes-病理生理学讲义·第5章·5.7</p></blockquote>
+<p>干细胞的状态不由自己决定，由它所处的位置决定。所以微环境被破坏（放疗、纤维化）会导致再生能力长期下降——不是干细胞没了，是它待的地方没了。</p></div></div>
+  <div class="slide-foot"><span>13 / 23</span><span>body</span></div>
 </section>
-<section class="slide" data-i="14">
-  <div class="slide-inner"><div class="kicker">五、把身份锁住：分化与干细胞（5.6–5.7）</div>
-                <div class="compact"><p>干细胞的状态不由自己决定，由它所处的位置决定。所以微环境被破坏（放疗、纤维化）会导致再生能力长期下降——不是干细胞没了，是它待的地方没了。</p></div></div>
-  <div class="slide-foot"><span>15 / 23</span><span>body</span></div>
-</section>
-<section class="slide" data-i="15">
-  <div class="slide-inner"><div class="kicker">六、组织的更新账本（5.8）</div>
-                <div class="compact"><h3 id="5-8-组织更新与再生策略">5.8 组织更新与再生策略</h3>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">更新账本与调控失常：稳态的两种读法（5.8–5.9）</div>
+                <div class="compact dense"><h3 id="组织的更新账本-5-8">组织的更新账本（5.8）</h3>
+<h4 id="5-8-组织更新与再生策略">5.8 组织更新与再生策略</h4>
 <p>三类组织：持续分裂型（终生快速更新）、稳定型（平时静息，损伤时被激活）、永久型（出生后基本不再分裂）。这张表是第 4 章 4.10 再生能力的完整版，两处可以对照读——第 4 章给结论，本章给分类依据。</p>
 <p>肝再生是稳定型的典范：</p>
 <blockquote><p>「部分肝切除后，成熟肝细胞重新进入细胞周期，通过增生恢复体积与功能」——补充·hermes-病理生理学讲义·第5章·5.8</p></blockquote>
@@ -180,27 +183,29 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <p>永久型的结局写得最冷：</p>
 <blockquote><p>「损伤后由纤维瘢痕替代，功能永久损失」——补充·hermes-病理生理学讲义·第5章·5.8</p></blockquote>
 <p>这句后面还接了一句因果——这是心梗后心力衰竭与脑梗死后神经功能缺损的结构基础。把「不能再生」与「用瘢痕顶上」连起来，才解释了为什么这两类病的功能损失是永久的。</p></div></div>
-  <div class="slide-foot"><span>16 / 23</span><span>body</span></div>
+  <div class="slide-foot"><span>14 / 23</span><span>body</span></div>
 </section>
-<section class="slide" data-i="16">
-  <div class="slide-inner"><div class="kicker">六、组织的更新账本（5.8）</div>
-                <div class="compact"><p>本节末段给了再生医学的三条路径：干细胞移植、内源性再生激活、组织工程。三条的共同前提是理解该组织的更新类型与微环境条件——换句话说，先读账本，再谈干预。</p></div></div>
-  <div class="slide-foot"><span>17 / 23</span><span>body</span></div>
-</section>
-<section class="slide" data-i="17">
-  <div class="slide-inner"><div class="kicker">七、调控失常即病因（5.9）</div>
-                <div class="compact"><h3 id="5-9-基因调控失常与疾病">5.9 基因调控失常与疾病</h3>
+<section class="slide" data-i="14">
+  <div class="slide-inner"><div class="kicker">更新账本与调控失常：稳态的两种读法（5.8–5.9）</div>
+                <div class="compact dense"><p>本节末段给了再生医学的三条路径：干细胞移植、内源性再生激活、组织工程。三条的共同前提是理解该组织的更新类型与微环境条件——换句话说，先读账本，再谈干预。</p>
+<h3 id="调控失常即病因-5-9">调控失常即病因（5.9）</h3>
+<h4 id="5-9-基因调控失常与疾病">5.9 基因调控失常与疾病</h4>
 <p>这一节是本章的收口，它把前面七节逐层对应到疾病：转录调控异常、剪接异常、微小 RNA 失调、表观遗传异常、染色质结构异常。</p>
 <p>五条的写法有一个共同结构——先给机制，再给后果。转录层：增强子突变使癌基因过量表达，转录因子融合蛋白阻断正常分化程序。剪接层：位点突变导致外显子跳跃或内含子保留。微小 RNA 层：抑癌性缺失或促癌性扩增。表观层：肿瘤细胞常呈全基因组低甲基化与抑癌基因启动子高甲基化并存的模式。染色质层：组蛋白修饰酶突变影响神经发育。</p>
 <p>表观那一条的描述值得单独读：同时激活不该表达的基因、沉默本该表达的基因。一句话两个方向，这正是批注被系统性改写的样子。</p>
-<p>本节末句是全章的结论：</p>
-<blockquote><p>「同样致病，且理论上更易被药物逆转」——补充·hermes-病理生理学讲义·第5章·5.9</p></blockquote>
-<p>前半句说疾病不一定源于序列改变；后半句给出理由——序列改不回来，批注可以改。这句话是本章对治疗思路的唯一一处暗示，但它停在「理论上」，不越到方案。</p></div></div>
-  <div class="slide-foot"><span>18 / 23</span><span>body</span></div>
+<p>本节末句是全章的结论：</p></div></div>
+  <div class="slide-foot"><span>15 / 23</span><span>body</span></div>
 </section>
-<section class="slide" data-i="18">
-  <div class="slide-inner"><div class="kicker">八、检测按层次排（5.10）</div>
-                <div class="compact"><h3 id="5-10-临床与检测联系">5.10 临床与检测联系</h3>
+<section class="slide" data-i="15">
+  <div class="slide-inner"><div class="kicker">更新账本与调控失常：稳态的两种读法（5.8–5.9）</div>
+                <div class="compact"><blockquote><p>「同样致病，且理论上更易被药物逆转」——补充·hermes-病理生理学讲义·第5章·5.9</p></blockquote>
+<p>前半句说疾病不一定源于序列改变；后半句给出理由——序列改不回来，批注可以改。这句话是本章对治疗思路的唯一一处暗示，但它停在「理论上」，不越到方案。</p></div></div>
+  <div class="slide-foot"><span>16 / 23</span><span>body</span></div>
+</section>
+<section class="slide" data-i="16">
+  <div class="slide-inner"><div class="kicker">检测按层次排（5.10）</div>
+                <div class="compact dense"><h3 id="检测按层次排-5-10">检测按层次排（5.10）</h3>
+<h4 id="5-10-临床与检测联系">5.10 临床与检测联系</h4>
 <p>讲义把检测按层次排成三档：染色体水平（核型分析、FISH、染色体微阵列）、基因水平（Sanger 测序、二代测序、PCR 与片段分析）、表达与表观水平（RNA 测序、甲基化检测、蛋白免疫组化）。三档对应本章的三层结构——序列、读法、以及读法的标记。</p>
 <p>本节的重点不在技术，在读结果的态度：</p>
 <blockquote><p>「检测结果须与表型、家族史结合解读」——补充·hermes-病理生理学讲义·第5章·5.10</p></blockquote>
@@ -208,11 +213,11 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <blockquote><p>「检出意义未明的变异不应直接作为诊断依据」——补充·hermes-病理生理学讲义·第5章·5.10</p></blockquote>
 <p>这两句合起来是一条纪律：检出不等于解释。同一个变异在不同个体可有不同表现，这正是 5.5 讲的外显率与表现度差异——批注相同，读法可以不同。</p>
 <p>护理那一段落在沟通与隐私：关注患者对遗传信息的理解程度、隐私与心理社会影响，并协助其获得遗传咨询。第 6 章会把遗传咨询展开成一整节，本章只作提领。</p></div></div>
-  <div class="slide-foot"><span>19 / 23</span><span>body</span></div>
+  <div class="slide-foot"><span>17 / 23</span><span>body</span></div>
 </section>
-<section class="slide" data-i="19">
-  <div class="slide-inner"><div class="kicker">九、把十节压成一条链</div>
-                <div class="compact"><div class="codeblock"><div class="codeblock-lang">text</div><pre><code class="lang-text">5.1 结构（互补配对 → 压缩 → 闸门） · 5.2 组成（编码少、非编码多）
+<section class="slide" data-i="17">
+  <div class="slide-inner"><div class="kicker">把十节压成一条链</div>
+                <div class="compact denser"><div class="codeblock"><div class="codeblock-lang">text</div><pre><code class="lang-text">5.1 结构（互补配对 → 压缩 → 闸门） · 5.2 组成（编码少、非编码多）
         │  底稿只有一份，读法有很多种
         ▼
 5.3 转录（启动子 / 增强子 / 转录因子组合）→ 组织特异性
@@ -235,17 +240,44 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
         ▼
 本章的产出：一份底稿 + 四种读法 + 一句结论（序列正常也能致病）</code></pre></div>
 <p>链上最容易断的两处：一是把 5.5 读成修饰清单，而不是读成 5.6 分化的机制基础；二是把 5.9 的五条读成五个并列的病，而看不出它们是同一份底稿在五个层次上的读错。</p></div></div>
-  <div class="slide-foot"><span>20 / 23</span><span>body</span></div>
+  <div class="slide-foot"><span>18 / 23</span><span>body</span></div>
+</section>
+<section class="slide" data-i="18">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><ul><li><strong>正文引文是讲义正文，不是经典；本章 MOTTO 另引一句经典原文，出处到书名与篇名。</strong> 本章引用格式统一为<code>补充·hermes-病理生理学讲义·第N章·N.M</code>，章号等于本课程章号（第 5 章），节号取自讲义 5.1 至 5.10。讲义是本仓库原创教学正文，不是任何外文教材的译本；引用它不等于引用外文教材原文。</li><li><strong>本章丢掉的是什么：数值。</strong> 讲义第 5 章 67 段正文里，数字加计量单位的命中为 0 处（<code>node code/main.js</code> 复算，不照抄声明）。讲义把可量化的地方一律写成类别与关系——多、少、稳定、可逆、高频、低频——本书照录这个取舍：<strong>描述类别可以，给出取值不行。</strong></li><li><strong>本章不写数值，也不做换算。</strong> 不写基因组大小、基因数目、重复次数与任何参考区间；凡遇「多少个基因」扩增多少次算异常的追问，统一回答：本书不给值，需另立数据层。</li><li><strong>本章不作诊断，也不作正常与异常的判定。</strong> 变异、甲基化模式、剪接异构体在本章只作机制层的说明；</li></ul></div></div>
+  <div class="slide-foot"><span>19 / 23</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="19">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><p>检出意义未明的变异不应直接作为诊断依据，这一条讲义自己写明，本书照录并加以强调。</p>
+<ul><li><strong>词频只描述写法，不描述难度。</strong> 表观遗传与分化两词只在 5.6 与 5.9 并置，说明全章的两端是锁定与解锁失灵，不说明 5.1 与 5.2 可以不学——底稿不讲清，读法就无从谈起。</li><li><strong>调控层不是治疗承诺。</strong> 讲义说这一类机制理论上更易被药物逆转，说的是可能性高于序列缺陷，不是「已有方案」。本书不写任何干预手段与适应证。</li><li><strong>边界声明</strong>：教学边界：本章只说明基因组结构、调控与组织分化的类别与关系，不写数值与单位与正常值，不构成诊断/用药依据；任何个体的状态判断须由具备资质的人员依现行规范作出。</li></ul>
+<h3 id="运行与验证">运行与验证</h3>
+<div class="codeblock"><div class="codeblock-lang">bash</div><pre><code class="lang-bash"># 1) 现算本章规模、节数、段数、数值命中与两词并置的节
+node code/main.js
+
+# 2) 单测：章号 / 节数 / 字数 / 节号格式 / docs 零裸值 / 引文逐字 / quiz 契约 / 教学边界
+node --test code/main.test.js</code></pre></div></div></div>
+  <div class="slide-foot"><span>20 / 23</span><span>boundary</span></div>
 </section>
 <section class="slide" data-i="20">
   <div class="slide-inner"><div class="kicker">代价与边界</div>
-                <div class="compact"><ul><li><strong>引文是讲义正文，不是经典。</strong> 本章引用格式统一为<code>补充·hermes-病理生理学讲义·第N章·N.M</code>，章号等于本课程章号（第 5 章），节号取自讲义 5.1 至 5.10。讲义是本仓库原创教学正文，不是任何外文教材的译本；引用它不等于引用外文教材原文。</li><li><strong>本章丢掉的是什么：数值。</strong> 讲义第 5 章 67 段正文里，数字加计量单位的命中为 0 处（<code>node code/main.js</code> 复算，不照抄声明）。讲义把可量化的地方一律写成类别与关系——多、少、稳定、可逆、高频、低频——本书照录这个取舍：<strong>描述类别可以，给出取值不行。</strong></li><li><strong>本章不写数值，也不做换算。</strong> 不写基因组大小、基因数目、重复次数与任何参考区间；凡遇「多少个基因」扩增多少次算异常的追问，统一回答：本书不给值，需另立数据层。</li><li><strong>本章不作诊断，也不作正常与异常的判定。</strong> 变异、甲基化模式、剪接异构体在本章只作机制层的说明；</li></ul></div></div>
+                <div class="compact dense"><h1 id="3-章级门-全库-53-章">3) 章级门（全库 53 章）</h1>
+<p>cd /e/tcmai-engineering-from-scatch &amp;&amp; node tests/test_binglishengli_chapters.js</p>
+<div class="codeblock"><div class="codeblock-lang">text</div><pre><code class="lang-text">
+`node code/main.js` 的真实输出（节选）：
+
+```text
+讲义规模: 第 5 章 · 10 节 · 67 段 · 2696 汉字 · 4214 非空白字符
+口径核验: 67 段的数值型命中 0 处（讲义 valueLike = 0，这里复算而不是照抄声明）
+小节号格式: 全部合规（5.M）</code></pre></div>
+<p><code>code/main.js</code> 的最后一行固定为下面这句，也是单测与章级门共同依赖的字符串：</p>
+<div class="codeblock"><div class="codeblock-lang">text</div><pre><code class="lang-text">教学边界：本章只说明基因组结构、调控与组织分化的类别与关系，不写数值与单位与正常值，不构成诊断/用药依据</code></pre></div></div></div>
   <div class="slide-foot"><span>21 / 23</span><span>boundary</span></div>
 </section>
 <section class="slide" data-i="21">
   <div class="slide-inner"><div class="kicker">代价与边界</div>
-                <div class="compact"><p>检出意义未明的变异不应直接作为诊断依据，这一条讲义自己写明，本书照录并加以强调。</p>
-<ul><li><strong>词频只描述写法，不描述难度。</strong> 表观遗传与分化两词只在 5.6 与 5.9 并置，说明全章的两端是锁定与解锁失灵，不说明 5.1 与 5.2 可以不学——底稿不讲清，读法就无从谈起。</li><li><strong>调控层不是治疗承诺。</strong> 讲义说这一类机制理论上更易被药物逆转，说的是可能性高于序列缺陷，不是「已有方案」。本书不写任何干预手段与适应证。</li><li><strong>边界声明</strong>：教学边界：本章只说明基因组结构、调控与组织分化的类别与关系，不写数值与单位与正常值，不构成诊断/用药依据；任何个体的状态判断须由具备资质的人员依现行规范作出。</li></ul></div></div>
+                <div class="compact"><p><strong>免责声明：</strong>本章为病理生理学教学材料。文中所有结构、层次与关系，取自本仓库原创《hermes-病理生理学讲义》第 5 章的表述与 <code>standards/binglishengli</code> 的机器可读层；规模数字为程序现算，规则已在文中写明。</p>
+<p>本章不提供任何诊断、治疗或用药建议，不给出正常值与参考范围，也不对任何个体的状态作出正常或异常的判断。文中出现的「闸门」「批注」「锁定与解锁」均为机制层的比喻，不能替代临床评估。若出现身体不适或急症，请立即就医。</p></div></div>
   <div class="slide-foot"><span>22 / 23</span><span>boundary</span></div>
 </section>
 <section class="slide" data-i="22">

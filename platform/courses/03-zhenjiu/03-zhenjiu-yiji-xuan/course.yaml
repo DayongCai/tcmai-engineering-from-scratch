@@ -29,50 +29,49 @@ platform:
 
 chapters:
   - slug: 01-lingshu-xuandu
-    title: 第1章 《灵枢》选读
-    segments: 5
+    title: 《灵枢》不是针法手册，而是针道的总纲
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.98
+    estimate_minutes: 13.8      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-suwen-nanjing
-    title: 第2章 《素问》与《难经》选读
-    segments: 5
+    title: 《素问》立治则，《难经》把治则算成补泻公式
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1.01
+    estimate_minutes: 15.28      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-jia-yi-jing-suitang
-    title: 第3章 《针灸甲乙经》与隋唐医论
-    segments: 5
+    title: 《甲乙经》把穴编成目录，隋唐把针灸写进方书与医德
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1.02
+    estimate_minutes: 15.48      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 14.9      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-songjinyuan
-    title: 第4章 宋金元医论
-    segments: 5
+    title: 宋金元把针灸变成国家标准、时间表和一家之言
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.97
+    estimate_minutes: 15.47      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 14.99      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-mingqing
-    title: 第5章 明清医论
-    segments: 5
+    title: 明清针灸的份量不在新穴新法，而在把经验编成可教的体例
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.95
+    estimate_minutes: 14.83      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 14.29      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-gefu
-    title: 第6章 针灸歌赋
-    segments: 5
+    title: 歌赋用押韵换来了记得住，代价是把异文压成一个说法
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.98
+    estimate_minutes: 14.3      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 13.62      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-yian
-    title: 第7章 针灸医案
-    segments: 5
+    title: 医案留下的是一条决策链，不是一个成功率
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.96
+    estimate_minutes: 14.38      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 13.84      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-shuzihua-yuedu
-    title: 第8章 医籍选读与数字化
-    segments: 5
+    title: 检索能把找不到变成找得到太多，判断仍要回到原文
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.96
+    estimate_minutes: 13.68      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 13.31      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

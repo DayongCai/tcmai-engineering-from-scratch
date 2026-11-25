@@ -4,10 +4,10 @@
   "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
   "cueCount": 5,
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
-  "audioTotalSeconds": 63.05,
+  "audioTotalSeconds": 63.048,
   "estimatedCues": 0,
   "videoSeconds": 63.074667,
-  "videoMinusNarrationSeconds": 0.025,
+  "videoMinusNarrationSeconds": 0.027,
   "textMatchesNarration": true,
   "mismatches": [],
   "cues": [
@@ -15,8 +15,8 @@
       "n": 1,
       "role": "title",
       "start": 0,
-      "end": 3.77,
-      "seconds": 3.77,
+      "end": 3.768,
+      "seconds": 3.768,
       "estimated": false,
       "text": "第 7 章 · 足太阴脾经及其腧穴",
       "audio": "001.mp3"
@@ -24,9 +24,9 @@
     {
       "n": 2,
       "role": "motto",
-      "start": 3.77,
-      "end": 20.07,
-      "seconds": 16.3,
+      "start": 3.768,
+      "end": 20.064,
+      "seconds": 16.296,
       "estimated": false,
       "text": "「《针灸学·足太阴脾经及其腧穴》」——教材第7章；课程章号与教材章号一一对应。本章要回答的是：足太阴脾经及其腧穴这一章，要能用一句话说清它解决什么问题。",
       "audio": "002.mp3"
@@ -34,9 +34,9 @@
     {
       "n": 3,
       "role": "problem",
-      "start": 20.07,
-      "end": 25.81,
-      "seconds": 5.74,
+      "start": 20.064,
+      "end": 25.8,
+      "seconds": 5.736,
       "estimated": false,
       "text": "足太阴脾经主运化，与腹部、下肢内侧穴位连成一线。",
       "audio": "003.mp3"
@@ -44,9 +44,9 @@
     {
       "n": 4,
       "role": "roots",
-      "start": 25.81,
-      "end": 51.75,
-      "seconds": 25.94,
+      "start": 25.8,
+      "end": 51.744,
+      "seconds": 25.944,
       "estimated": false,
       "text": "环境逼迫（针灸学是全科的合订本：经络、腧穴、手法、治疗四块必须能互相对上，不能各背一段）+ 知识积累（本章 3 单元 5,575 汉字；三辨主 临床治疗 86；四位面（教材四板块）主 经络腧穴各论 5575；引书 2 部 9 次；数值类命中 25）",
       "audio": "004.mp3"
@@ -54,9 +54,9 @@
     {
       "n": 5,
       "role": "disclaimer",
-      "start": 51.75,
-      "end": 63.05,
-      "seconds": 11.3,
+      "start": 51.744,
+      "end": 63.048,
+      "seconds": 11.304,
       "estimated": false,
       "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "audio": "005.mp3"

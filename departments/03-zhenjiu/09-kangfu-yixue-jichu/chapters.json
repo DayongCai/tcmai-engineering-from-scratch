@@ -4,7 +4,7 @@
   {
    "n": 1,
    "slug": "01-kangfu-gailun",
-   "title": "康复医学概论",
+   "title": "康复的目标是功能而不是治愈，判据必须落在活动上",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -12,7 +12,7 @@
   {
    "n": 2,
    "slug": "02-gongneng-pingding",
-   "title": "功能评定",
+   "title": "评定不是打分，是把功能变化变成别人能复核的说法",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -20,7 +20,7 @@
   {
    "n": 3,
    "slug": "03-yundong-gongneng",
-   "title": "运动功能与训练",
+   "title": "训练不是加量，是在能承受的范围里换回可控的动作",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -28,7 +28,7 @@
   {
    "n": 4,
    "slug": "04-richeng-shenghuo",
-   "title": "日常生活活动与作业治疗",
+   "title": "自理能力是康复的终点，替他做得越多他恢复得越少",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -36,7 +36,7 @@
   {
    "n": 5,
    "slug": "05-yanyu-yinshi",
-   "title": "言语、吞咽与认知康复",
+   "title": "言语、吞咽与认知康复：三块里只有一块按秒计时",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -44,7 +44,7 @@
   {
    "n": 6,
    "slug": "06-kangfu-huli",
-   "title": "康复护理与并发症预防",
+   "title": "康复护理与并发症预防：同一个翻身动作，既是五种并发症的解药，也是引信",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -52,7 +52,7 @@
   {
    "n": 7,
    "slug": "07-shequ-changqi",
-   "title": "社区与长期照护",
+   "title": "社区与长期照护：断点不在家里，在从机构到家那一次交接",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -60,7 +60,7 @@
   {
    "n": 8,
    "slug": "08-tuandui-lunli",
-   "title": "康复团队与伦理",
+   "title": "康复团队与伦理：分工写在职责里，伦理写在两列里",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

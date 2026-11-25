@@ -1,31 +1,86 @@
 {
   "chapter": "04-richeng-shenghuo",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 16,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 15
+      "chars": 27
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 88
+      "chars": 26
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 12
+      "chars": 126
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 108
+      "chars": 211
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 395
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 310
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 406
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 281
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 247
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 301
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 267
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 403
+    },
+    {
+      "n": 13,
+      "segment": 8,
+      "chars": 212
+    },
+    {
+      "n": 14,
+      "segment": 9,
+      "chars": 415
+    },
+    {
+      "n": 15,
+      "segment": 9,
+      "chars": 264
+    },
+    {
+      "n": 16,
+      "segment": 10,
       "chars": 52
     }
   ]

@@ -29,50 +29,49 @@ platform:
 
 chapters:
   - slug: 01-z121
-    title: 第1章 标准化的对象：从术语到数据元
-    segments: 5
+    title: 标准化的第一刀，切在名词上
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 0.99
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.99      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-z122
-    title: 第2章 标准体系与层级
-    segments: 5
+    title: 标准的分量，取决于它站在哪一层
     video: rendered
-    estimate_minutes: 0.85
-    measured_minutes: 0.88
+    estimate_minutes: 0.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.88      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-z123
-    title: 第3章 编码与分类
-    segments: 5
+    title: 编码错一位，临床上就是另一味药
     video: rendered
-    estimate_minutes: 0.87
-    measured_minutes: 0.86
+    estimate_minutes: 0.87      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.86      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-z124
-    title: 第4章 数据元与元数据
-    segments: 5
+    title: 标准能不能用，看它能否被一条检测记录复现
     video: rendered
-    estimate_minutes: 0.85
-    measured_minutes: 0.88
+    estimate_minutes: 0.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.88      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-z125
-    title: 第5章 知识组织与本体
-    segments: 5
+    title: 一张古方的标准，卡在「一两」是多少克
     video: rendered
-    estimate_minutes: 0.85
-    measured_minutes: 0.88
+    estimate_minutes: 0.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.88      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-z126
-    title: 第6章 映射与对齐
-    segments: 5
+    title: 走出国门的标准，先要学会翻译自己
     video: rendered
-    estimate_minutes: 0.85
-    measured_minutes: 0.86
+    estimate_minutes: 0.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.86      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-z127
-    title: 第7章 标准落地：系统与流程
-    segments: 5
+    title: 操作规范写在纸上，扎针的手不会自己变标准
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.94
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-z128
-    title: 第8章 标准评价与合规
-    segments: 5
+    title: 标准发出去不算完，要能算出它有没有用
     video: rendered
-    estimate_minutes: 0.85
-    measured_minutes: 0.89
+    estimate_minutes: 0.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.89      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

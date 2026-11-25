@@ -29,86 +29,85 @@ platform:
 
 chapters:
   - slug: 01-gaishu
-    title: 第1章 中医护理适宜技术概述与特点
-    segments: 5
+    title: 「适宜」指的是资源可及，不是风险低
     video: rendered
-    estimate_minutes: 1.02
-    measured_minutes: 1.01
+    estimate_minutes: 1.02      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.01      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-qiandu-pinggu
-    title: 第2章 实施前准备与评估要求
-    segments: 5
+    title: 准备阶段真正要产出的是一个「可以做」的结论
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.98
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.98      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-shuxue-jingluo
-    title: 第3章 腧穴与经络基础
-    segments: 5
+    title: 取穴的误差多半不在手上，在体位和侧别上
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.97
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.97      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-anmo-tiefu
-    title: 第4章 腧穴按压与穴位贴敷
-    segments: 5
+    title: 轻手法不是低风险，是低信号
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.99
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.99      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-aijiu-baguan
-    title: 第5章 艾灸与拔罐
-    segments: 5
+    title: 灸与罐真正要控的是两个不可逆的量
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.96
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-guasha-reyun
-    title: 第6章 刮痧与热熨
-    segments: 5
+    title: 刮痧与热熨的观察对象是「一片」，不是一个点
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.93
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-erxue-ciji
-    title: 第7章 耳穴与穴位刺激类技术
-    segments: 5
+    title: 耳穴的风险不在贴上的那一刻，在留着的那些天
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 1
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-xunxi-waifu
-    title: 第8章 中药熏洗与外敷
-    segments: 5
+    title: 熏洗与外敷是两条通道同时开着
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.96
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-yaoshan-yinshi
-    title: 第9章 药膳与饮食调护
-    segments: 5
+    title: 药膳这一章最讲禁忌，却一次都不说「中止」
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.94
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-qingzhi-yangsheng
-    title: 第10章 情志护理与养生
-    segments: 5
+    title: 这一章不动手，所以更没有「做到位」这回事
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.96
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 11-chuantong-yundong
-    title: 第11章 传统运动与导引类护理
-    segments: 5
+    title: 导引的风险靶点从皮肤换成了心肺和关节
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.98
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.98      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 12-zhengzhuang-yingyong
-    title: 第12章 常见症状的适宜技术应用
-    segments: 5
+    title: 症状应用章的动作是「选」，不是「做」
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 13-guancha-anquan
-    title: 第13章 观察记录、安全与效果评价
-    segments: 5
+    title: 观察、记录、评价是同一条链上的三次落笔
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1.03
+    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.03      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 14-tuiguang-pingtai
-    title: 第14章 技术推广、质量管理与平台
-    segments: 5
+    title: 能复制出去的是过程，不是手感
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1.02
+    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.02      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

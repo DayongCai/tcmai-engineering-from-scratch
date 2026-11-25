@@ -1,53 +1,155 @@
 #!/usr/bin/env node
 /**
- * 第 1 章 中药资源的分布与区划 —— 确定性单元测试
+ * 第 1 章 区划不是画在地图上的线，而是一组可复核的判据 —— 正文统计与习题契约的确定性单元测试
  * 运行: node --test code/main.test.js
+ *
+ * 断言只落在可对账的结构上：本章正文的汉字数、二/三级节数、每张表的行列与数字列合计、
+ * 引文条数、本章判据计数，以及 quiz 的题量、三段、四选项、解释长度、答案分布与正文接地。
+ * 期望值是 docs/zh.md 的实测读数（main.js 现算，测试钉住）；正文一改，这里立刻报警。
  */
 
 'use strict';
 
 const assert = require('node:assert');
 const test = require('node:test');
+const fs = require('node:fs');
+const path = require('node:path');
+const { spawnSync } = require('node:child_process');
 
-const { CHAPTER, KEYS, load, chapterUnits, merge, rank, shape, citations, byBookSection } = require('./main.js');
+const { CHAPTER, TITLE, DOC, analyze, model, quizStats, selfCheck } = require('./main.js');
 
-const data = load();
-const list = chapterUnits(data);
+const A = analyze();
+const M = model();
+const Q = quizStats();
+const QUIZ = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8'));
+const BODY = fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
 
-test('本章单元数与映射一致', () => {
-  assert.strictEqual(list.length, 12);
-  assert.deepStrictEqual(list.map((u) => u.sub), ['1.1.1', '1.1.2', '1.2.1', '1.2.2', '2.1.1', '2.1.2', '2.2.1', '2.2.2', '8.1.1', '8.1.2', '8.2.1', '8.2.2']);
+/** 正文里 4 字以上的连续汉字片段，用来判「选项是否接地」 */
+function shingles(text, n = 4) {
+  const clean = String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ');
+  const out = new Set();
+  for (const seg of clean.split(/\s+/)) for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  return out;
+}
+const bodyGrams = shingles(BODY);
+
+const EXPECT = {
+  "hanzi": 2848,
+  "paragraphs": 28,
+  "h2": 6,
+  "h3": 0,
+  "tables": [
+    [
+      3,
+      3
+    ],
+    [
+      2,
+      11
+    ]
+  ],
+  "sums": [],
+  "quotes": 14,
+  "books": [
+    "本草蒙筌·总论"
+  ]
+};
+const MODEL = {
+  "voteRows": 3,
+  "regions": [
+    "东北",
+    "华北",
+    "西北",
+    "西南",
+    "华东",
+    "华南",
+    "华中"
+  ],
+  "failures": 4,
+  "points": 3
+};
+
+test('规模：正文汉字、正文段、二三级节（实测值）', () => {
+  assert.strictEqual(CHAPTER, 1);
+  assert.match(A.h1, new RegExp(`^第 ${1} 章 · `));
+  assert.strictEqual(TITLE, A.h1.replace(/^第\s*\d+\s*章\s*·\s*/, ''));
+  assert.strictEqual(A.hanzi, EXPECT.hanzi);
+  assert.strictEqual(A.paragraphs, EXPECT.paragraphs);
+  assert.strictEqual(A.h2.length, EXPECT.h2);
+  assert.strictEqual(A.h3.length, EXPECT.h3);
+  assert.ok(A.h2.length >= 4 && A.h2.length <= 8, `二级节 ${A.h2.length} 不在 4–8`);
+  assert.ok(A.h2.some((t) => /代价与边界/.test(t)), '缺「代价与边界」');
 });
 
-test('规模：31521 字 · 平均 2627 字/单元', () => {
-  const s = shape(list);
-  assert.strictEqual(s.hanzi, 31521);
-  assert.strictEqual(s.mean, 2627);
+test('表格尺寸（列 × 行）与实测值一致', () => {
+  assert.deepStrictEqual(A.tables.map((t) => [t.cols, t.rows]), EXPECT.tables);
 });
 
-test('三辨重心是「利用与管理」', () => {
-  const views = rank(merge(list, 'views'));
-  assert.strictEqual(views[0].key, '利用与管理');
-  assert.strictEqual(views[0].count, 471);
+test('计数列合计与正文表内数字一致（实测值）', () => {
+  const sums = [];
+  for (const t of A.tables) for (const c of t.numeric) sums.push([t.idx, c.name, c.sum]);
+  assert.deepStrictEqual(sums, EXPECT.sums);
+  for (const t of A.tables) for (const c of t.numeric) {
+    if (c.ok === false) assert.fail(`表 ${t.idx}「${c.name}」数据行合计 ${c.sum} ≠ 合计行 ${c.declared}`);
+  }
 });
 
-test('四位面重心是「动物资源」，且至少 2 层有落点', () => {
-  const levels = Object.fromEntries(rank(merge(list, 'levels')).map((v) => [v.key, v.count]));
-  assert.strictEqual(levels['动物资源'], 353);
-  assert.ok(Object.values(levels).filter((n) => n > 0).length >= 2);
+test('引文与 MOTTO（实测值）', () => {
+  assert.strictEqual(A.quotes, EXPECT.quotes);
+  assert.deepStrictEqual(A.books, EXPECT.books);
 });
 
-test('引书成规模：≥25 部、≥84 次引用', () => {
-  const c = citations(list);
-  assert.ok(c.books >= 25, `引书 ${c.books}`);
-  assert.ok(c.total >= 84, `引用 ${c.total}`);
+test('本章判据计数（实测值，全部由正文现算）', () => {
+  assert.deepStrictEqual(M, MODEL);
+  assert.strictEqual(M.voteRows, 3, '三票判据项应为 P1/P2/P3 三项');
+  assert.deepStrictEqual(M.regions, ['东北', '华北', '西北', '西南', '华东', '华南', '华中']);
+  assert.strictEqual(M.failures, 4, '正文列四种失效模式');
+  assert.strictEqual(M.points, 3, '三类取样点位');
 });
 
-test('数值计数与单元层一致（0 处数值类命中）', () => {
-  assert.strictEqual(shape(list).valueLike, 0);
+test('正文自检通过（章号、字数、节数、表格合计、MOTTO）', () => {
+  assert.strictEqual(selfCheck(), true);
 });
 
-test('每个单元都来自教材，且 locator 指到教材章与小节', () => {
-  for (const u of list) assert.match(u.locator, /^教材·第\d+章·\d+\.\d+\.\d+$/);
-  assert.ok(byBookSection(list).every((s) => s.units > 0));
+test('quiz 结构：6 题、三段齐、4 选项、explain ≥30 汉字、答案打散', () => {
+  const qs = QUIZ.questions;
+  assert.ok(qs.length >= 5, `只有 ${qs.length} 题`);
+  const stages = new Set(qs.map((q) => q.stage));
+  for (const s of ['pre', 'check', 'post']) assert.ok(stages.has(s), '缺 ' + s);
+  for (const q of qs) {
+    assert.strictEqual(q.options.length, 4, q.question);
+    assert.ok(Number.isInteger(q.correct) && q.correct >= 0 && q.correct < 4, q.question);
+    assert.ok((String(q.explain).match(HANZI) || []).length >= 30, q.question);
+    assert.strictEqual(new Set(q.options).size, 4, `选项重复：${q.question}`);
+  }
+  assert.ok(new Set(qs.map((q) => q.correct)).size >= 3, '答案过于集中');
+  assert.deepStrictEqual(qs.map((q) => q.stage), ['pre', 'check', 'check', 'check', 'post', 'post']);
+  assert.strictEqual(Q.n, qs.length);
+  assert.strictEqual(Q.minExplain, Math.min(...qs.map((q) => (String(q.explain).match(HANZI) || []).length)));
+});
+
+test('quiz 接地：≥2 道 check 题的正确选项能在正文找到 4 字原词', () => {
+  const grounded = QUIZ.questions.filter((q) => {
+    if (q.stage !== 'check') return false;
+    const grams = shingles(String(q.options[q.correct]));
+    return [...grams].some((g) => bodyGrams.has(g));
+  });
+  assert.ok(grounded.length >= 2, `只有 ${grounded.length} 道接地`);
+  assert.strictEqual(Q.grounded, grounded.length);
+});
+
+test('quiz 与代码都不含旧脚手架指纹', () => {
+  const bad = /三辨|四位面|单元规模|本章实测|本课第\s*\d+\s*章[（(]|见\s*code\/main\.js\s*输出/;
+  assert.ok(!bad.test(JSON.stringify(QUIZ)));
+  assert.ok(!bad.test(fs.readFileSync(path.join(__dirname, 'main.js'), 'utf8')));
+});
+
+test('脚本可运行，退出码 0，最后一行是教学边界声明', () => {
+  const r = spawnSync(process.execPath, [path.join(__dirname, 'main.js')], { encoding: 'utf8', timeout: 60000 });
+  assert.strictEqual(r.status, 0, r.stderr);
+  const out = String(r.stdout || '');
+  assert.ok(out.length > 200, '输出过短');
+  const last = out.trim().split('\n').filter(Boolean).pop();
+  assert.ok(/教学边界/.test(last) && /不构成/.test(last), `最后一行不是教学边界：${last}`);
 });

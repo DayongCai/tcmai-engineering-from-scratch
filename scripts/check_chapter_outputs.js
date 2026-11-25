@@ -72,11 +72,15 @@ function main() {
         }
         if (!/node code\/main\.js/.test(text)) v.push(`${c}: ${name} 未指向 node code/main.js`);
       }
-      const mHan = prompt.match(/([\d,]+)\s*汉字/);
+      // 只认生成器写的那句声明（「本章 N 节 / M 汉字」）。prompt 正文里会原样引用
+      // 小节标题（如「24 味、6 节、2,956 字：…」），裸 /(\d+)\s*节/ 会先命中引文，
+      // 把正确的声明判成漂移——这是门的假阳性，不是 outputs 过期。
+      const mDecl = prompt.match(/本章\s*(\d+)\s*节\s*\/\s*([\d,]+)\s*汉字/);
+      const mHan = mDecl ? [null, mDecl[2]] : prompt.match(/([\d,]+)\s*汉字/);
       if (mHan && Number(mHan[1].replace(/,/g, '')) !== hanzi) {
         v.push(`${c}: prompt 声明汉字 ${mHan[1]} ≠ 实测 ${hanzi}`);
       }
-      const mSec = prompt.match(/(\d+)\s*节/);
+      const mSec = mDecl ? [null, mDecl[1]] : null;
       if (mSec && Number(mSec[1]) !== secs) v.push(`${c}: prompt 声明节数 ${mSec[1]} ≠ 实测 ${secs}`);
       const mQ = prompt.match(/习题\s*(\d+)\s*道/);
       if (mQ && Number(mQ[1]) !== qn) v.push(`${c}: prompt 声明习题 ${mQ[1]} ≠ 实际 ${qn}`);

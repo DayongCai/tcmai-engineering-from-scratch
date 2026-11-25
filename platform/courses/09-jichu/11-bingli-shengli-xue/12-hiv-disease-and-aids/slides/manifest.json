@@ -1,7 +1,7 @@
 {
   "chapter": "12-hiv-disease-and-aids",
-  "slideCount": 29,
-  "segmentCount": 17,
+  "slideCount": 28,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
@@ -11,7 +11,7 @@
     {
       "n": 2,
       "segment": 2,
-      "chars": 73
+      "chars": 31
     },
     {
       "n": 3,
@@ -26,126 +26,121 @@
     {
       "n": 5,
       "segment": 5,
-      "chars": 401
+      "chars": 259
     },
     {
       "n": 6,
       "segment": 5,
-      "chars": 188
+      "chars": 406
     },
     {
       "n": 7,
-      "segment": 6,
-      "chars": 420
+      "segment": 5,
+      "chars": 417
     },
     {
       "n": 8,
-      "segment": 6,
-      "chars": 169
+      "segment": 5,
+      "chars": 342
     },
     {
       "n": 9,
-      "segment": 7,
-      "chars": 317
+      "segment": 5,
+      "chars": 395
     },
     {
       "n": 10,
-      "segment": 7,
-      "chars": 326
+      "segment": 5,
+      "chars": 212
     },
     {
       "n": 11,
-      "segment": 7,
-      "chars": 123
+      "segment": 6,
+      "chars": 342
     },
     {
       "n": 12,
-      "segment": 8,
-      "chars": 318
+      "segment": 6,
+      "chars": 410
     },
     {
       "n": 13,
-      "segment": 8,
-      "chars": 279
+      "segment": 6,
+      "chars": 346
     },
     {
       "n": 14,
-      "segment": 9,
-      "chars": 372
+      "segment": 6,
+      "chars": 384
     },
     {
       "n": 15,
-      "segment": 9,
-      "chars": 361
+      "segment": 6,
+      "chars": 305
     },
     {
       "n": 16,
-      "segment": 10,
-      "chars": 371
-    },
-    {
-      "n": 17,
-      "segment": 10,
+      "segment": 6,
       "chars": 119
     },
     {
+      "n": 17,
+      "segment": 7,
+      "chars": 416
+    },
+    {
       "n": 18,
-      "segment": 11,
-      "chars": 407
+      "segment": 7,
+      "chars": 329
     },
     {
       "n": 19,
-      "segment": 11,
-      "chars": 124
+      "segment": 7,
+      "chars": 401
     },
     {
       "n": 20,
-      "segment": 12,
-      "chars": 411
+      "segment": 7,
+      "chars": 397
     },
     {
       "n": 21,
-      "segment": 12,
-      "chars": 214
+      "segment": 7,
+      "chars": 406
     },
     {
       "n": 22,
-      "segment": 13,
-      "chars": 412
+      "segment": 7,
+      "chars": 266
     },
     {
       "n": 23,
-      "segment": 13,
-      "chars": 68
-    },
-    {
-      "n": 24,
-      "segment": 14,
-      "chars": 373
-    },
-    {
-      "n": 25,
-      "segment": 14,
-      "chars": 87
-    },
-    {
-      "n": 26,
-      "segment": 15,
+      "segment": 8,
       "chars": 414
     },
     {
-      "n": 27,
-      "segment": 16,
+      "n": 24,
+      "segment": 9,
       "chars": 400
     },
     {
-      "n": 28,
-      "segment": 16,
-      "chars": 221
+      "n": 25,
+      "segment": 9,
+      "chars": 346
     },
     {
-      "n": 29,
-      "segment": 17,
+      "n": 26,
+      "segment": 9,
+      "chars": 381
+    },
+    {
+      "n": 27,
+      "segment": 9,
+      "chars": 285
+    },
+    {
+      "n": 28,
+      "segment": 10,
       "chars": 52
     }
   ]

@@ -18,7 +18,7 @@
       "spoken": "第 4 章 · 五行：分类还是生成",
       "estimateSeconds": 3,
       "audio": "001.mp3",
-      "audioSeconds": 3.65
+      "audioSeconds": 3.648
     },
     {
       "n": 2,
@@ -38,7 +38,7 @@
       "spoken": "五行有两种读法：分类（把万物归为五类）与生成（相生相克的动态）。学生常停在第一种，于是把五行当成一张物种表；而中医用的是第二种——一张关系网。",
       "estimateSeconds": 15,
       "audio": "003.mp3",
-      "audioSeconds": 14.62
+      "audioSeconds": 14.616
     },
     {
       "n": 4,
@@ -48,7 +48,7 @@
       "spoken": "环境逼迫（临床上用五行，用的是生克传变，不是归类）+ 知识积累（本章 1 单元；五行在内经仅 129 次，临床 0 次——全书最低，却承载最多误解）",
       "estimateSeconds": 15,
       "audio": "004.mp3",
-      "audioSeconds": 14.62
+      "audioSeconds": 14.616
     },
     {
       "n": 5,
@@ -59,7 +59,7 @@
       "spoken": "这一段以代码实现为主，请看画面上的代码块。",
       "estimateSeconds": 5,
       "audio": "005.mp3",
-      "audioSeconds": 4.51
+      "audioSeconds": 4.512
     },
     {
       "n": 6,
@@ -69,10 +69,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "006.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 59.14,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 1.0,
+    "measuredMinutes": 0.99,
+    "ratio": 0.986
+  }
 }

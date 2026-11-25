@@ -5,7 +5,7 @@
     {
       "n": 1,
       "slug": "01-yanke-lunzhuan",
-      "title": "眼科门诊轮转",
+      "title": "眼科门诊的接诊质量，取决于问诊与器械检查的先后次序",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/01-yanke-lunzhuan/docs/zh.md",
@@ -14,7 +14,7 @@
     {
       "n": 2,
       "slug": "02-erbihou-lunzhuan",
-      "title": "耳鼻喉科门诊轮转",
+      "title": "耳鼻喉门诊的本事，是把局部所见换算成脏腑，再换算成一条治法",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/02-erbihou-lunzhuan/docs/zh.md",
@@ -23,7 +23,7 @@
     {
       "n": 3,
       "slug": "03-kouqiang-neike",
-      "title": "口腔内科轮转",
+      "title": "牙痛分虚实只是起点，能不能保住牙取决于转诊是否及时",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/03-kouqiang-neike/docs/zh.md",
@@ -32,7 +32,7 @@
     {
       "n": 4,
       "slug": "04-hemian-waike",
-      "title": "口腔颌面外科轮转",
+      "title": "唇部的糜烂与唇部的硬结，在门诊是两条不能混的路",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/04-hemian-waike/docs/zh.md",
@@ -41,7 +41,7 @@
     {
       "n": 5,
       "slug": "05-tese-zhiliao",
-      "title": "中医五官特色治疗轮转",
+      "title": "特色治疗的本事，在该转的转得快，而不是能治的都自己治",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/05-tese-zhiliao/docs/zh.md",
@@ -50,7 +50,7 @@
     {
       "n": 6,
       "slug": "06-chuke-kaohe",
-      "title": "出科考核与病例复盘",
+      "title": "出科考的判据不是背得出辨证，是三分钟内说出该转还是该治",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/06-chuke-kaohe/docs/zh.md",

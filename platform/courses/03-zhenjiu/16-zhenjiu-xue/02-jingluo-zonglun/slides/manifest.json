@@ -1,31 +1,96 @@
 {
   "chapter": "02-jingluo-zonglun",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 18,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 8
+      "chars": 26
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 66
+      "chars": 29
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 23
+      "chars": 209
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 124
+      "chars": 187
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 250
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 359
+    },
+    {
+      "n": 7,
+      "segment": 5,
+      "chars": 242
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 360
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 278
+    },
+    {
+      "n": 10,
+      "segment": 6,
+      "chars": 370
+    },
+    {
+      "n": 11,
+      "segment": 7,
+      "chars": 355
+    },
+    {
+      "n": 12,
+      "segment": 7,
+      "chars": 98
+    },
+    {
+      "n": 13,
+      "segment": 8,
+      "chars": 380
+    },
+    {
+      "n": 14,
+      "segment": 8,
+      "chars": 332
+    },
+    {
+      "n": 15,
+      "segment": 8,
+      "chars": 152
+    },
+    {
+      "n": 16,
+      "segment": 9,
+      "chars": 411
+    },
+    {
+      "n": 17,
+      "segment": 9,
+      "chars": 129
+    },
+    {
+      "n": 18,
+      "segment": 10,
       "chars": 52
     }
   ]

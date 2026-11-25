@@ -29,50 +29,49 @@ platform:
 
 chapters:
   - slug: 01-e1
-    title: 第1章 导论：健康与经济
-    segments: 5
+    title: 健康是目的，费用是代价：把两者混成一个数，账就永远算不清
     video: rendered
-    estimate_minutes: 0.83
-    measured_minutes: 0.88
+    estimate_minutes: 0.83      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.88      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-e2
-    title: 第2章 需求与供给
-    segments: 5
+    title: 医疗的需求是被供给方写出来的：「物多则贱」在这里失效
     video: rendered
-    estimate_minutes: 0.82
-    measured_minutes: 0.82
+    estimate_minutes: 0.82      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.82      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-e3
-    title: 第3章 市场与政府作用
-    segments: 5
+    title: 市场能给服务定价，但不能替社会决定谁先得到
     video: rendered
-    estimate_minutes: 0.83
-    measured_minutes: 0.87
+    estimate_minutes: 0.83      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.87      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-e4
-    title: 第4章 筹资与卫生总费用
-    segments: 5
+    title: 钱从哪里来，决定谁能用：筹资结构比筹资总量更能解释可及性
     video: rendered
-    estimate_minutes: 0.83
-    measured_minutes: 0.88
+    estimate_minutes: 0.83      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.88      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-e5
-    title: 第5章 医疗保险的经济学分析
-    segments: 5
+    title: 保险卖的是确定性，赔的是激励：逆选择与道德风险是一枚硬币的两面
     video: rendered
-    estimate_minutes: 0.87
-    measured_minutes: 0.9
+    estimate_minutes: 0.87      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-e6
-    title: 第6章 价格与成本核算
-    segments: 5
+    title: 价格不是标价，是行为指令：换个支付方式，同一台手术会有两种做法
     video: rendered
-    estimate_minutes: 0.82
-    measured_minutes: 0.86
+    estimate_minutes: 0.82      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.86      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-e7
-    title: 第7章 经济学评价与药物经济学
-    segments: 5
+    title: 「值不值」是一个比值加一个预算：成本效果再好，也可能买不起
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.92
+    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-e8
-    title: 第8章 资源配置·政策·中医与智能
-    segments: 5
+    title: 控费的最后一步不是省钱，是把钱从低价值处搬到高价值处
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.96
+    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

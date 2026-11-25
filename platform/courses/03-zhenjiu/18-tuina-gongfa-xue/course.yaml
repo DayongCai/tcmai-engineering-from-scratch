@@ -29,74 +29,73 @@ platform:
 
 chapters:
   - slug: 01-gaishu-yanbian
-    title: 第1章 推拿功法学概论与发展简史
-    segments: 5
+    title: 功法的历史是把身体写成规矩的历史，写进去的只有规矩
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.95
+    estimate_minutes: 15.0      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.19      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-lilun-jichu
-    title: 第2章 推拿功法的理论基础
-    segments: 5
+    title: 理论给的是练功的说法，不是练功的做法
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.92
+    estimate_minutes: 14.77      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 13.0      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-jiben-neirong
-    title: 第3章 推拿功法基本内容与练功要领
-    segments: 5
+    title: 三调是一个环，不是一道先后工序
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.98
+    estimate_minutes: 15.47      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 13.73      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-gongli-guanxi
-    title: 第4章 推拿功法与手法功力
-    segments: 5
+    title: 功力不是力气大，是力能一直落在同一个点上
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.95
+    estimate_minutes: 14.55      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 12.84      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-yijinjing
-    title: 第5章 易筋经
-    segments: 5
+    title: 十二势分的是筋的走向，不是动作的花样
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.88
+    estimate_minutes: 15.82      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 14.21      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-shaolin-neigong
-    title: 第6章 少林内功
-    segments: 5
+    title: 少林内功把「力从足起」写成了一份可检查的姿势清单
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.89
+    estimate_minutes: 14.77      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 13.29      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-wuqinxi
-    title: 第7章 五禽戏
-    segments: 5
+    title: 五禽戏的剂量写在一个「汗」字上，不写在分钟数上
     video: rendered
-    estimate_minutes: 0.87
-    measured_minutes: 0.88
+    estimate_minutes: 14.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 13.16      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-baduanjin
-    title: 第8章 八段锦
-    segments: 5
+    title: 八段锦的八句歌诀各给一个功效，没有一句给剂量
     video: rendered
-    estimate_minutes: 0.87
-    measured_minutes: 0.86
+    estimate_minutes: 14.67      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 12.84      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-liuzijue-qita
-    title: 第9章 六字诀与其他传统功法
-    segments: 5
+    title: 六字诀把剂量数成三十六次呼吸，而不是多少分钟
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.91
+    estimate_minutes: 15.45      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 13.79      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-zhuanxiang-gongli
-    title: 第10章 专项功力训练
-    segments: 5
+    title: 全书七成的带单位数值压在这一章，因为它练的是器物规格
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.94
+    estimate_minutes: 15.28      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 13.9      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 11-linchuang-yingyong
-    title: 第11章 推拿功法在临床的应用
-    segments: 5
+    title: 临床处方章的剂量最密，却一个阿拉伯数字也不用
     video: rendered
-    estimate_minutes: 0.87
-    measured_minutes: 0.89
+    estimate_minutes: 15.57      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 14.25      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 12-xiandai-shuzihua
-    title: 第12章 推拿功法与现代科学·数字化AI时代
-    segments: 5
+    title: 数字化先量出角度与力，最后才轮到那个「意」
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.94
+    estimate_minutes: 15.83      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 14.51      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

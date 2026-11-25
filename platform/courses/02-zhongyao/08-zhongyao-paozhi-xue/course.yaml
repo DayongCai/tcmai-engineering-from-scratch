@@ -29,56 +29,55 @@ platform:
 
 chapters:
   - slug: 01-mudi-yuanliu
-    title: 第1章 炮制的目的与历史源流
-    segments: 5
+    title: 炮制不是一道加工工序，而是药材变成药的那一步
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 0.99
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.99      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-jingzhi-qiezhi
-    title: 第2章 净制与切制：炮制的前处理
-    segments: 5
+    title: 净制的难点不是去杂，而是判断哪一部分才算药
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.92
+    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-chaofa
-    title: 第3章 炒法：清炒与加辅料炒
-    segments: 5
+    title: 炒法考的是终点，不是火候：火候只是通往终点的一段路
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1.03
+    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.03      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-zhifa-fuliao
-    title: 第4章 炙法与酒醋蜜盐的辅料
-    segments: 5
+    title: 辅料不是调味，是借另一味药的性去改这一味药
     video: rendered
-    estimate_minutes: 1.02
-    measured_minutes: 1.06
+    estimate_minutes: 1.02      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.06      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-duanfa
-    title: 第5章 煅法与煅淬
-    segments: 5
+    title: 煅法的全部难点，是把看不见的变化写成看得见的终点
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 0.99
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.99      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-zhengzhu-fajiao
-    title: 第6章 蒸煮燀与发酵
-    segments: 5
+    title: 水火共制是两道题：水进不进得去，酶死没死
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1.02
+    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.02      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-fuzhi-fa
-    title: 第7章 复制法与特殊炮制
-    segments: 5
+    title: 复制法不是多洗几遍，是用辅料一步步改写药性
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-chengfen-yingxiang
-    title: 第8章 炮制对成分与药效的影响
-    segments: 5
+    title: 成分变了不等于疗效更好，中间隔着一条证据链
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1.03
+    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.03      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-gongyi-biaozhun
-    title: 第9章 炮制工艺的标准化与质控
-    segments: 5
+    title: 标准化的上限是参数，下限是性状
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.95
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

@@ -29,62 +29,61 @@ platform:
 
 chapters:
   - slug: 01-m1
-    title: 第1章 脉象采集：物理基础、传感器与信号质控
-    segments: 5
+    title: 脉象采集：机器接得住波形，接不住「按到什么程度」
     video: rendered
-    estimate_minutes: 1.07
-    measured_minutes: 1.1
+    estimate_minutes: 1.07      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.10      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-m2
-    title: 第2章 朴素贝叶斯与概率判据
-    segments: 5
+    title: 朴素贝叶斯：先验选错了，后验算得再准也是错的
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.98
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.98      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-m3
-    title: 第3章 特征选择与降维
-    segments: 5
+    title: 特征提取：可重复的不是特征，是提取它的那套流程
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.94
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-m4
-    title: 第4章 线性判别与基线模型
-    segments: 5
+    title: 浮沉迟数：把一个形容词切成两类，切点就是全部
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.97
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.97      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-m5
-    title: 第5章 决策树与可解释规则
-    segments: 5
+    title: 决策树：能背下来的规则，才是能进诊室的规则
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.95
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-m6
-    title: 第6章 神经网络与表征学习
-    segments: 5
+    title: 端到端学习：省掉特征工程，也省掉了「谁在负责」
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.97
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.97      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-m7
-    title: 第7章 核方法与支持向量机
-    segments: 5
+    title: 支持向量机：边界由最难分的那几个人决定
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.96
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-m8
-    title: 第8章 集成学习与稳健性
-    segments: 5
+    title: 集成学习：平均能降方差，但降不掉「大家都错在同一处」
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.94
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-m9
-    title: 第9章 聚类与无监督分型
-    segments: 5
+    title: 聚类：算法一定会给你几个簇，问题是谁来认领它们
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.93
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-m10
-    title: 第10章 模型评估与交叉验证
-    segments: 5
+    title: 评估：唯一能证伪前面九章的那一步，也是最容易被走过场的一步
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.98
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.98      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

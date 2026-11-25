@@ -1,137 +1,129 @@
-'use strict';
+#!/usr/bin/env node
 /**
- * 第 1 章 单测（教材·第5章 中药的性能）
- * 断言里钉死期望值；程序里的数字全部现算。
+ * 中药学 · 第 1 章 性能五要素是总论的共用语法，不是任何一味药的取值
+ * 确定性单元测试 —— 运行: node --test code/main.test.js
+ *
+ * 断言钉的是本机实测值：正文、算术解析或 quiz 任一处改动，这里就应当变红。
+ * 数字不从 main.js 回读再自比（那样什么都测不出），而是写在断言里。
  */
-const assert = require('node:assert');
+
+'use strict';
+
 const test = require('node:test');
+const assert = require('node:assert');
 const fs = require('node:fs');
 const path = require('node:path');
-const { execFileSync } = require('node:child_process');
+const { spawnSync } = require('node:child_process');
 
-const {
-  book, ch, drugs, CH_NO, sec, sub, para, text, fold,
-  shape, lex, mentions, citation, resolve,
-} = require('./main.js');
+const MAIN = path.join(__dirname, 'main.js');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
+const m = require('./main.js');
 
-const DOCS = path.join(__dirname, '..', 'docs', 'zh.md');
-
-test('规模：本章 2,126 字 = 全书 63,865 字的 3.33%', () => {
-  const s = shape();
-  assert.strictEqual(CH_NO, '5');
-  assert.strictEqual(s.total, 2126);
-  assert.strictEqual(book.counts.chars, 63865);
-  assert.strictEqual(s.total, s.rows.reduce((n, r) => n + r.chars, 0));
-  assert.ok(Math.abs(s.share - 2126 / 63865) < 1e-12);
-  assert.ok(s.share > 0.03 && s.share < 0.034);
-});
-
-test('结构：5 节 10 小节 20 段 20 段标题，五节同构（每节 2 小节 / 4 段）', () => {
-  const s = shape();
-  assert.strictEqual(s.secs, 5);
-  assert.strictEqual(s.subs, 10);
-  assert.strictEqual(s.paras, 20);
-  assert.strictEqual(s.items, 20);
-  assert.deepStrictEqual(s.rows.map((r) => [r.subs, r.paras]), [[2, 4], [2, 4], [2, 4], [2, 4], [2, 4]]);
-  assert.strictEqual(s.uniform, true);
-  assert.deepStrictEqual(s.rows.map((r) => r.chars), [399, 442, 457, 403, 425]);
-  assert.strictEqual(s.spread, 58);
-  assert.strictEqual(s.max, 457);
-  assert.strictEqual(s.min, 399);
-});
-
-test('教材原文核对：5.1.1 首段起句与 5.5.1 的毒性三级逐字一致', () => {
-  const p = para('5.1.1', 0);
-  assert.ok(
-    p.startsWith('四气（四性）指药物寒、热、温、凉四种药性（另有平性，实际仍偏于温凉）：'),
-    p.slice(0, 40),
-  );
-  const tox = para('5.5.1', 1);
-  for (const t of ['大毒（如川乌、马钱子、巴豆）', '有毒（如附子、半夏、苍耳子）', '小毒（如苦杏仁、吴茱萸、蛇床子）']) {
-    assert.ok(tox.includes(t), `5.5.1 第 2 段缺 ${t}`);
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
+const readQuiz = () => JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+const grams = (t, n = 4) => {
+  const out = new Set();
+  for (const seg of String(t || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
   }
-  // 五味那句「辛能散能行（…）」的括号内举例逐字可查
-  assert.ok(para('5.2.1', 0).includes('辛能散能行（发散表邪、行气活血——薄荷、川芎）'));
-  // 段标题与段正文一比一：20 个 items、20 段 paras
-  const items = ch.secs.flatMap((s) => s.subs.flatMap((u) => u.items || []));
-  assert.strictEqual(items.length, ch.counts.paras);
+  return out;
+};
+
+test('正文规模：汉字 2972 / 段 24 / 节 6', () => {
+  const r = m.analyze();
+  assert.strictEqual(r.docHanzi, 2972);
+  assert.strictEqual(r.paragraphs, 24);
+  assert.strictEqual(r.sections.length, 6);
+  assert.strictEqual(hanzi(readDoc()), 2972, '汉字口径必须与正文一致');
 });
 
-test('本仓库口径说明：引用只写「教材·第5章·M.M」，三级节点可校验，docs 不用旧称', () => {
-  assert.strictEqual(citation('5.1.1'), '教材·第5章·5.1.1');
-  assert.strictEqual(resolve('5.1'), true);
-  assert.strictEqual(resolve('5.1.2'), true);
-  assert.strictEqual(resolve('5.1.2.1'), true);
-  assert.strictEqual(resolve('5.1.9'), false);
-  assert.strictEqual(resolve('5.6'), false);
+test('表格：3 张，列数 [4,4,3]，行数 [6,4,11]', () => {
+  const r = m.analyze();
+  assert.deepStrictEqual(r.tables.map((t) => t.cols), [4, 4, 3]);
+  assert.deepStrictEqual(r.tables.map((t) => t.rows), [6, 4, 11]);
+});
 
-  const doc = fs.readFileSync(DOCS, 'utf8');
-  for (const w of ['\u5e95\u672c', '\u539f\u6587']) {
-    assert.ok(!doc.includes(w), 'docs 不得把旧称当引用标签');
+test('本章算术：栏位与覆盖', () => {
+  const a = m.analyze().arith;
+  assert.strictEqual(a.slots, 6, 'slots');
+  assert.strictEqual(a.emptySlots, 1, 'emptySlots');
+  assert.deepStrictEqual(a.emptyNames, ['升降浮沉'], 'emptyNames');
+});
+
+test('本章算术：标签计数与归经均值', () => {
+  const a = m.analyze().arith;
+  assert.strictEqual(a.gasBins, 9, 'gasBins');
+  assert.strictEqual(a.gasSum, 287, 'gasSum');
+  assert.strictEqual(a.tasteKinds, 8, 'tasteKinds');
+  assert.strictEqual(a.tasteLabels, 445, 'tasteLabels');
+  assert.strictEqual(a.meridianFilled, 284, 'meridianFilled');
+  assert.strictEqual(a.meridLabels, 692, 'meridLabels');
+  assert.strictEqual(a.meridMean, 2.44, 'meridMean');
+});
+
+test('本章算术：毒性分布与代价条数', () => {
+  const a = m.analyze().arith;
+  assert.strictEqual(a.toxicSum, 44, 'toxicSum');
+  assert.strictEqual(a.herbSum, 287, 'herbSum');
+  assert.strictEqual(a.toxicRate, 15.3, 'toxicRate');
+  assert.strictEqual(a.cleanClass, 1, 'cleanClass');
+  assert.strictEqual(a.cleanName, '补虚', 'cleanName');
+  assert.strictEqual(a.hardRules, 3, 'hardRules');
+  assert.strictEqual(a.costLines, 5, 'costLines');
+});
+
+test('quiz 结构：6 题、三段齐、4 选项、下标合法、答案打散', () => {
+  const q = readQuiz();
+  assert.strictEqual(q.questions.length, 6);
+  assert.deepStrictEqual(q.questions.map((x) => x.correct), [1, 1, 0, 3, 2, 3]);
+  const distinct = [...new Set(q.questions.map((x) => x.correct))].sort((a, b) => a - b);
+  assert.ok(distinct.length >= 3, '答案位置只有 ' + distinct.length + ' 种');
+  assert.deepStrictEqual(distinct, [0, 1, 2, 3]);
+  const stages = new Set(q.questions.map((x) => x.stage));
+  for (const s of ['pre', 'check', 'post']) assert.ok(stages.has(s), '缺 ' + s + ' 段');
+  for (const x of q.questions) {
+    assert.ok(['pre', 'check', 'post'].includes(x.stage), 'stage: ' + x.stage);
+    assert.strictEqual(x.options.length, 4, x.question);
+    assert.ok(Number.isInteger(x.correct) && x.correct >= 0 && x.correct < 4, 'correct 越界: ' + x.question);
+    assert.ok(typeof x.explain === 'string' && x.explain.length > 0, '缺 explain: ' + x.question);
   }
-  const cites = [
-    ...[...doc.matchAll(/《中药学·第(\d+)章·([\d.]+)》/g)].map((m) => [m[1], m[2]]),
-    ...[...doc.matchAll(/教材·第(\d+)章·([\d.]+)/g)].map((m) => [m[1], m[2]]),
-  ];
-  assert.ok(cites.length >= 6, `docs 的教材级引用只有 ${cites.length} 条`);
-  for (const [no, node] of cites) {
-    assert.strictEqual(no, '5');
-    assert.strictEqual(resolve(node), true, `引用 ${node} 落不到教材节点`);
-  }
-  // docs 里必须出现本章字数
-  assert.ok(doc.replace(/,/g, '').includes('2126'));
-  const han = (doc.match(/[\u4e00-\u9fa5]/g) || []).length;
-  assert.ok(han >= 1500, `docs 汉字数 ${han} < 1500`);
 });
 
-test('术语热度 ≠ 篇幅：五味 12 次最多、四气 3 次最少，极差 58 字', () => {
-  const l = lex();
-  assert.deepStrictEqual(l.elements.map((x) => [x.word, x.n]), [
-    ['五味', 12], ['毒性', 7], ['归经', 6], ['升降浮沉', 4], ['四气', 3],
-  ]);
-  assert.strictEqual(l.most.word, '五味');
-  assert.strictEqual(l.least.word, '四气');
-  const s = shape();
-  const longest = [...s.rows].sort((a, b) => b.chars - a.chars)[0];
-  // 术语最多的那节（五味 442 字）与篇幅最长的那节（升降浮沉 457 字）不是同一节
-  assert.strictEqual(longest.title, '升降浮沉');
-  assert.strictEqual(s.rows[1].title, l.most.word);
-  assert.notStrictEqual(longest.title, l.most.word);
-  assert.strictEqual(s.rows[1].chars, 442);
+test('quiz 接地：至少 2 道 check 题的正确选项含正文原词', () => {
+  const body = grams(readDoc());
+  const q = readQuiz();
+  const grounded = q.questions.filter((x) => {
+    if (x.stage !== 'check') return false;
+    const right = String(x.options[x.correct] || '');
+    return [...grams(right)].some((g) => body.has(g));
+  });
+  assert.ok(grounded.length >= 2, '只接地 ' + grounded.length + ' 道');
+  assert.strictEqual(grounded.length, 3, '本章应有 3 道接地 check 题');
+  assert.strictEqual(m.analyze().quiz.checkGrounded, grounded.length, 'main.js 与测试口径必须一致');
 });
 
-test('举药 54 味 / 94 处，立目 0 条：总论是词表不是数据库', () => {
-  const m = mentions();
-  assert.strictEqual(m.distinct, 54);
-  assert.strictEqual(m.places, 94);
-  assert.strictEqual(m.records, 0);
-  assert.strictEqual(m.bookRecords, 287);
-  assert.strictEqual(m.recordRate, 0);
-  assert.ok(m.names.includes('麻黄') && m.names.includes('石膏') && m.names.includes('甘草'));
-  // 药名与性味字段并未出现在本章正文里
-  assert.ok(!text().includes('归肺、膀胱经'));
-  assert.ok(drugs.filter((d) => String(d.chapter) === CH_NO).length === 0);
+test('quiz 解释：每题 ≥30 汉字，最短 67 汉字', () => {
+  const q = readQuiz();
+  const lens = q.questions.map((x) => hanzi(x.explain));
+  assert.deepStrictEqual(lens.filter((n) => n < 30), [], '有解释不足 30 汉字');
+  assert.strictEqual(Math.min(...lens), 67);
+  assert.strictEqual(m.analyze().quiz.minExplain, 67);
 });
 
-test('运行时最后一行是教学边界声明', () => {
-  const out = execFileSync(process.execPath, [path.join(__dirname, 'main.js')], { encoding: 'utf8' });
-  const lines = out.trim().split(/\r?\n/);
-  const last = lines[lines.length - 1];
-  assert.ok(last.startsWith('教学边界：'), last);
-  assert.ok(last.endsWith('不构成用药依据。'), last);
-  assert.ok(/教材·第5章/.test(out));
+test('脚本可运行：退出码 0，输出带现算声明与边界声明', () => {
+  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
+  assert.strictEqual(r.status, 0, String(r.stderr));
+  const out = String(r.stdout || '');
+  assert.ok(out.length > 200, '输出过短');
+  assert.match(out, /现算/);
+  assert.match(out, /不构成诊疗建议/);
+  assert.match(out, /第 1 章/);
+  assert.match(out, /287/);
 });
 
-test('quiz 契约：6 题 pre/check×3/post×2', () => {
-  const q = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8'));
-  const qs = q.questions || q;
-  assert.strictEqual(qs.length, 6);
-  assert.deepStrictEqual(qs.map((x) => x.stage), ['pre', 'check', 'check', 'check', 'post', 'post']);
-  for (const x of qs) {
-    assert.strictEqual(x.options.length, 4);
-    assert.ok(Number.isInteger(x.correct) && x.correct >= 0 && x.correct <= 3);
-    assert.ok((x.explanation || '').length >= 10);
-  }
-  // 折叠函数本身也要可用：quiz 讲到的「辛能散能行」在本章可逐字回查
-  assert.ok(fold(text()).includes(fold('辛能散能行（发散表邪、行气活血——薄荷、川芎）')));
+test('代码头部指向本章目录', () => {
+  const body = fs.readFileSync(MAIN, 'utf8');
+  assert.ok(body.includes('chapters/01-xingneng-siqi/docs/zh.md'), '头部注释未指向本章');
 });

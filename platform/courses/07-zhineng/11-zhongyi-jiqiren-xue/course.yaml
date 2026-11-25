@@ -29,50 +29,49 @@ platform:
 
 chapters:
   - slug: 01-rob1
-    title: 第1章 机器人是什么：从器械到执行体
-    segments: 5
+    title: 机器人不是更快的器械，是必须能停下来的执行体
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 0.97
+    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.97      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-rob2
-    title: 第2章 感知：传感器与信号
-    segments: 5
+    title: 感知的瓶颈不在传感器，在「信号到语义」的那一跳
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.92
+    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-rob3
-    title: 第3章 决策：强化学习与序贯选择
-    segments: 5
+    title: 决策的难点不是选最优，是错一步还能回头
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 1
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-rob4
-    title: 第4章 规划与规则约束
-    segments: 5
+    title: 接触式任务的规划，不能只算「怎么过去」，要算「怎么压下去」
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.91
+    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-rob5
-    title: 第5章 控制与反馈：线性模型的视角
-    segments: 5
+    title: 控制的好坏不看增益多高，看超调落在人体上是多少牛
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.97
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.97      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-rob6
-    title: 第6章 系统集成与接口
-    segments: 5
+    title: 集成不是把模块连起来，是把「同一个词的同一个意思」对齐
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.89
+    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.89      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-rob7
-    title: 第7章 安全与失效处理
-    segments: 5
+    title: 安全不是「不出故障」，是故障之后朝哪个方向倒
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.89
+    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.89      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-rob8
-    title: 第8章 中医场景：推拿、灸疗机器人的边界
-    segments: 5
+    title: 能交给机器的是「可参数化的部分」，不是「手法」
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1
+    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

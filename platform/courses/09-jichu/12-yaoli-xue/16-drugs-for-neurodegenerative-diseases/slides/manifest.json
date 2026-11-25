@@ -1,151 +1,176 @@
 {
   "chapter": "16-drugs-for-neurodegenerative-diseases",
-  "slideCount": 29,
-  "segmentCount": 14,
+  "slideCount": 34,
+  "segmentCount": 12,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 28
+      "chars": 37
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 43
+      "chars": 16
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 197
+      "chars": 50
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 207
+      "chars": 85
     },
     {
       "n": 5,
       "segment": 5,
-      "chars": 254
+      "chars": 329
     },
     {
       "n": 6,
       "segment": 5,
-      "chars": 318
+      "chars": 306
     },
     {
       "n": 7,
-      "segment": 6,
-      "chars": 410
+      "segment": 5,
+      "chars": 138
     },
     {
       "n": 8,
       "segment": 6,
-      "chars": 167
+      "chars": 290
     },
     {
       "n": 9,
-      "segment": 7,
-      "chars": 416
+      "segment": 6,
+      "chars": 217
     },
     {
       "n": 10,
-      "segment": 7,
-      "chars": 347
+      "segment": 6,
+      "chars": 389
     },
     {
       "n": 11,
-      "segment": 7,
-      "chars": 166
+      "segment": 6,
+      "chars": 221
     },
     {
       "n": 12,
-      "segment": 8,
-      "chars": 56
+      "segment": 7,
+      "chars": 418
     },
     {
       "n": 13,
-      "segment": 8,
-      "chars": 490
+      "segment": 7,
+      "chars": 243
     },
     {
       "n": 14,
       "segment": 8,
-      "chars": 109
+      "chars": 338
     },
     {
       "n": 15,
-      "segment": 9,
-      "chars": 290
+      "segment": 8,
+      "chars": 403
     },
     {
       "n": 16,
-      "segment": 9,
-      "chars": 288
+      "segment": 8,
+      "chars": 392
     },
     {
       "n": 17,
-      "segment": 10,
-      "chars": 368
+      "segment": 8,
+      "chars": 152
     },
     {
       "n": 18,
-      "segment": 10,
-      "chars": 369
-    },
-    {
-      "n": 19,
-      "segment": 10,
-      "chars": 369
-    },
-    {
-      "n": 20,
-      "segment": 10,
-      "chars": 382
-    },
-    {
-      "n": 21,
-      "segment": 11,
-      "chars": 351
-    },
-    {
-      "n": 22,
-      "segment": 11,
+      "segment": 9,
       "chars": 297
     },
     {
-      "n": 23,
-      "segment": 11,
-      "chars": 138
-    },
-    {
-      "n": 24,
-      "segment": 12,
-      "chars": 269
-    },
-    {
-      "n": 25,
-      "segment": 12,
-      "chars": 412
-    },
-    {
-      "n": 26,
-      "segment": 12,
-      "chars": 111
-    },
-    {
-      "n": 27,
-      "segment": 13,
+      "n": 19,
+      "segment": 9,
       "chars": 396
     },
     {
+      "n": 20,
+      "segment": 9,
+      "chars": 380
+    },
+    {
+      "n": 21,
+      "segment": 9,
+      "chars": 190
+    },
+    {
+      "n": 22,
+      "segment": 10,
+      "chars": 413
+    },
+    {
+      "n": 23,
+      "segment": 10,
+      "chars": 334
+    },
+    {
+      "n": 24,
+      "segment": 10,
+      "chars": 409
+    },
+    {
+      "n": 25,
+      "segment": 10,
+      "chars": 251
+    },
+    {
+      "n": 26,
+      "segment": 10,
+      "chars": 376
+    },
+    {
+      "n": 27,
+      "segment": 10,
+      "chars": 286
+    },
+    {
       "n": 28,
-      "segment": 13,
-      "chars": 175
+      "segment": 10,
+      "chars": 416
     },
     {
       "n": 29,
-      "segment": 14,
+      "segment": 10,
+      "chars": 358
+    },
+    {
+      "n": 30,
+      "segment": 10,
+      "chars": 96
+    },
+    {
+      "n": 31,
+      "segment": 11,
+      "chars": 409
+    },
+    {
+      "n": 32,
+      "segment": 11,
+      "chars": 290
+    },
+    {
+      "n": 33,
+      "segment": 11,
+      "chars": 158
+    },
+    {
+      "n": 34,
+      "segment": 12,
       "chars": 52
     }
   ]

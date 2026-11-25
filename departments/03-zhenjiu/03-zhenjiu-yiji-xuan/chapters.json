@@ -4,7 +4,7 @@
   {
    "n": 1,
    "slug": "01-lingshu-xuandu",
-   "title": "《灵枢》选读",
+   "title": "《灵枢》不是针法手册，而是针道的总纲",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -12,7 +12,7 @@
   {
    "n": 2,
    "slug": "02-suwen-nanjing",
-   "title": "《素问》与《难经》选读",
+   "title": "《素问》立治则，《难经》把治则算成补泻公式",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -20,7 +20,7 @@
   {
    "n": 3,
    "slug": "03-jia-yi-jing-suitang",
-   "title": "《针灸甲乙经》与隋唐医论",
+   "title": "《甲乙经》把穴编成目录，隋唐把针灸写进方书与医德",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -28,7 +28,7 @@
   {
    "n": 4,
    "slug": "04-songjinyuan",
-   "title": "宋金元医论",
+   "title": "宋金元把针灸变成国家标准、时间表和一家之言",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -36,7 +36,7 @@
   {
    "n": 5,
    "slug": "05-mingqing",
-   "title": "明清医论",
+   "title": "明清针灸的份量不在新穴新法，而在把经验编成可教的体例",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -44,7 +44,7 @@
   {
    "n": 6,
    "slug": "06-gefu",
-   "title": "针灸歌赋",
+   "title": "歌赋用押韵换来了记得住，代价是把异文压成一个说法",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -52,7 +52,7 @@
   {
    "n": 7,
    "slug": "07-yian",
-   "title": "针灸医案",
+   "title": "医案留下的是一条决策链，不是一个成功率",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -60,7 +60,7 @@
   {
    "n": 8,
    "slug": "08-shuzihua-yuedu",
-   "title": "医籍选读与数字化",
+   "title": "检索能把找不到变成找得到太多，判断仍要回到原文",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

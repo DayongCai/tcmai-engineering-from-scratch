@@ -1,141 +1,191 @@
 {
   "chapter": "34-adrenocortical-hormones",
-  "slideCount": 27,
-  "segmentCount": 14,
+  "slideCount": 37,
+  "segmentCount": 12,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 30
+      "chars": 39
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 63
+      "chars": 22
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 201
+      "chars": 50
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 207
+      "chars": 85
     },
     {
       "n": 5,
       "segment": 5,
-      "chars": 285
+      "chars": 339
     },
     {
       "n": 6,
       "segment": 5,
-      "chars": 325
+      "chars": 334
     },
     {
       "n": 7,
       "segment": 5,
-      "chars": 286
+      "chars": 231
     },
     {
       "n": 8,
       "segment": 6,
-      "chars": 375
+      "chars": 416
     },
     {
       "n": 9,
-      "segment": 7,
-      "chars": 262
+      "segment": 6,
+      "chars": 364
     },
     {
       "n": 10,
-      "segment": 7,
-      "chars": 369
+      "segment": 6,
+      "chars": 364
     },
     {
       "n": 11,
-      "segment": 8,
-      "chars": 375
+      "segment": 6,
+      "chars": 394
     },
     {
       "n": 12,
-      "segment": 8,
-      "chars": 359
+      "segment": 7,
+      "chars": 401
     },
     {
       "n": 13,
-      "segment": 9,
-      "chars": 348
+      "segment": 7,
+      "chars": 352
     },
     {
       "n": 14,
+      "segment": 7,
+      "chars": 168
+    },
+    {
+      "n": 15,
+      "segment": 8,
+      "chars": 416
+    },
+    {
+      "n": 16,
+      "segment": 8,
+      "chars": 408
+    },
+    {
+      "n": 17,
+      "segment": 8,
+      "chars": 354
+    },
+    {
+      "n": 18,
+      "segment": 8,
+      "chars": 200
+    },
+    {
+      "n": 19,
+      "segment": 9,
+      "chars": 297
+    },
+    {
+      "n": 20,
       "segment": 9,
       "chars": 349
     },
     {
-      "n": 15,
-      "segment": 9,
-      "chars": 265
-    },
-    {
-      "n": 16,
-      "segment": 10,
-      "chars": 407
-    },
-    {
-      "n": 17,
-      "segment": 10,
-      "chars": 347
-    },
-    {
-      "n": 18,
-      "segment": 10,
-      "chars": 276
-    },
-    {
-      "n": 19,
-      "segment": 11,
-      "chars": 381
-    },
-    {
-      "n": 20,
-      "segment": 11,
-      "chars": 301
-    },
-    {
       "n": 21,
-      "segment": 12,
-      "chars": 394
+      "segment": 9,
+      "chars": 314
     },
     {
       "n": 22,
-      "segment": 12,
-      "chars": 415
+      "segment": 9,
+      "chars": 229
     },
     {
       "n": 23,
-      "segment": 12,
-      "chars": 378
+      "segment": 10,
+      "chars": 394
     },
     {
       "n": 24,
-      "segment": 12,
-      "chars": 125
+      "segment": 10,
+      "chars": 281
     },
     {
       "n": 25,
-      "segment": 13,
-      "chars": 414
+      "segment": 10,
+      "chars": 320
     },
     {
       "n": 26,
-      "segment": 13,
-      "chars": 191
+      "segment": 10,
+      "chars": 392
     },
     {
       "n": 27,
-      "segment": 14,
+      "segment": 10,
+      "chars": 328
+    },
+    {
+      "n": 28,
+      "segment": 10,
+      "chars": 355
+    },
+    {
+      "n": 29,
+      "segment": 10,
+      "chars": 343
+    },
+    {
+      "n": 30,
+      "segment": 10,
+      "chars": 341
+    },
+    {
+      "n": 31,
+      "segment": 10,
+      "chars": 314
+    },
+    {
+      "n": 32,
+      "segment": 10,
+      "chars": 286
+    },
+    {
+      "n": 33,
+      "segment": 10,
+      "chars": 136
+    },
+    {
+      "n": 34,
+      "segment": 11,
+      "chars": 514
+    },
+    {
+      "n": 35,
+      "segment": 11,
+      "chars": 353
+    },
+    {
+      "n": 36,
+      "segment": 11,
+      "chars": 136
+    },
+    {
+      "n": 37,
+      "segment": 12,
       "chars": 52
     }
   ]

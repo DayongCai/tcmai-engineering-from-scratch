@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"/>
-<title>第 7 章 · 安全性：禁忌与并发症 · 幻灯片</title>
+<title>第 7 章 · 这一章讲的全是针灸的禁忌，针刀那几条底本一个字也没写 · 幻灯片</title>
 <style>
 
 :root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
@@ -59,24 +59,107 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <body>
 <div id="deck">
 <section class="slide" data-i="0">
-  <div class="slide-inner"><h1 class="big">第 7 章 · 安全性：禁忌与并发症</h1></div>
-  <div class="slide-foot"><span>1 / 5</span><span>title</span></div>
+  <div class="slide-inner"><h1 class="big">第 7 章 · 这一章讲的全是针灸的禁忌，针刀那几条底本一个字也没写</h1></div>
+  <div class="slide-foot"><span>1 / 16</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「《针刀医学·安全性：禁忌与并发症》」——派生课：篇名为本课程章名，出处见 units.json 的 source 字段。本章要回答的是：安全性：禁忌与并发症的核心判据是什么。</blockquote></div>
-  <div class="slide-foot"><span>2 / 5</span><span>motto</span></div>
+  <div class="slide-inner"><blockquote class="motto">「脏有要害，不可不察。」——《素问·刺禁论》</blockquote></div>
+  <div class="slide-foot"><span>2 / 16</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
-  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">感染、出血、神经损伤三件事必须写死。</p></div>
-  <div class="slide-foot"><span>3 / 5</span><span>problem</span></div>
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">本章 5 单元、7,831 汉字，占全课 74,739 字的 10.48%，八章里排第六，只比第 4 章的 3,236 字厚。5 个单元全部来自《针法灸法学》：「针刀」二字出现 0 次。出现的是另外几个词：感染 20 次、出血 17 次、晕针 12 次、断针 3 次、气胸 1 次。这些是词，不是条目——按「针刀」检索，11 万多字的父课里，为这门技术写下的安全条文是零。</p></div>
+  <div class="slide-foot"><span>3 / 16</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
-  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（派生课的判断力来自把父课的片段重排成一条决策链）+ 知识积累（本章 5 单元 7,831 汉字；三辨主 <strong>病证与安全 63</strong>；四位面（观察视角）主 <strong>安全与证据 7831</strong>；引书 <strong>6 部 8 次</strong>；数值类命中 0）</p></div>
-  <div class="slide-foot"><span>4 / 5</span><span>roots</span></div>
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（《针法灸法学》的禁忌章写得最像规范，逐条列部位与人群，取来即成章；而针刀的禁忌在五门父课里散在各病的「按语」与「注意事项」中，没有一处汇总，取不到整段）+ 知识积累（毫针是「刺入」，针刀是「切开」；切开多出三个变量——方向、切割量、深度——而针灸教材的禁忌体系里没有对应条目，能迁移的只有「部位与人群」这一层）</p></div>
+  <div class="slide-foot"><span>4 / 16</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
+  <div class="slide-inner"><div class="kicker">正文：两个栏目、五个单元、三条自建</div>
+                <div class="compact dense"><h3 id="一-古人把-部位-深度-排在第一条-把-状态-排在第二条">一、古人把「部位×深度」排在第一条，把「状态」排在第二条</h3>
+<p>底本 7.4 引了《素问·刺禁论》，只有八个字：「脏有要害，不可不察。」原文长得多，结构也更清楚：先列误刺的要害：</p>
+<blockquote><p>「刺中肺，三日死，其动为欬。……刺跗上中大脉，血出不止死。……刺头中脑户，入脑，立死。」——《素问·刺禁论》</p></blockquote>
+<p>最后说状态：</p>
+<blockquote><p>「无刺大醉，令人气乱。无刺大怒，令人气逆。无刺大劳人，无刺新饱人，无刺大饥人，无刺大渴人，无刺大惊人。」——《素问·刺禁论》</p></blockquote>
+<p>两句合起来就是一张核查表：要害部位、管道、人的状态。三千年过去，术前的核查仍然是这三栏——只不过「脏」换成了脏器投影区，「大脉」换成了动静脉，「大醉大怒」换成了醉酒、情绪激动与未控的高血压。</p>
+<p>值得注意的是它的排序：部位在最前，状态在最后。这个顺序与今天「先看适应证、后看禁忌」的写法相反：进针之前，先要知道这一针下去有多深、底下是什么。</p>
+<h3 id="二-五个单元-逐条分-可迁移-与-不可迁移">二、五个单元，逐条分「可迁移」与「不可迁移」</h3></div></div>
+  <div class="slide-foot"><span>5 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">正文：两个栏目、五个单元、三条自建</div>
+                <div class="compact"><p>底本的五个单元讲的是灸、电针、刺血、毫针、火针。针刀不属这五种，所以每一条都要问：它靠的是「部位与人群」，还是「这种器械的特性」？前者可迁移，后者不能。</p>
+<p><strong>施灸禁忌（7.1，1,650 字）——部位与人群可迁移，灸法与灸量不可。</strong> 底本列了六类：颜面五官（皮肤薄嫩、瘢痕灸禁用，眼区更禁）、大血管浅表处（颈动脉搏动处、寸口、股动脉）、关节活动部位（瘢痕挛缩影响屈伸）、孕妇（腹部与腰骶禁灸，合谷、三阴交、至阴、肩井亦禁）、特定腧穴（乳中禁针禁灸、神阙禁针可灸、石门古有断孕之说）、其他（阴部与肛周黏膜、皮肤破损感染溃疡处、心肺体表投影区不用强刺激灸法；醉酒、过饥过饱、过劳、大惊大怒之后不宜立即施灸）。它还引了《针灸大成》的禁灸穴歌，说其要义「正在于颜面五官、大血管及重要脏器所在之处不宜施灸」。</p></div></div>
+  <div class="slide-foot"><span>6 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">正文：两个栏目、五个单元、三条自建</div>
+                <div class="compact"><p>可迁移的是那句要义：颜面、大血管、脏器投影区、孕妇腹腰骶、皮肤有感染破损处——这五类，对任何造成创口的操作都成立。不可迁移的是灸法与灸量，因为针刀不放热。</p>
+<p><strong>电针禁忌（7.2，1,755 字）——整节不可迁移，但有一个动作可以。</strong> 起搏器植入者绝对禁用，是这一节的第一条；孕妇下腹腰骶与合谷、三阴交、至阴不用；严重心脏病与电子植入设备慎用或禁用；癫痫不宜强刺激；风府、哑门与颈项胸背电流宜小；颈动脉窦附近（人迎、扶突）慎用；恶性肿瘤与结核病灶局部不宜。针刀没有电流，这一节整体不适用。</p>
+<p>但有一个动作必须留下：把「问起搏器」变成流程里的固定一格。针刀对应的那一格不是起搏器，是抗凝药与降糖药——底本在刺血一节正好写了这件事。</p></div></div>
+  <div class="slide-foot"><span>7 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">正文：两个栏目、五个单元、三条自建</div>
+                <div class="compact"><p><strong>刺血禁忌（7.3，801 字）——高度可迁移。</strong> 严重贫血、低血压、虚脱者禁用；血小板减少、血友病、白血病禁用；「凝血功能障碍或正在服用抗凝药物者慎用或禁用，操作前应详细询问病史与用药情况」；月经期与妊娠期禁用；醉酒、过饥过饱、大惊大怒、过度疲劳者暂缓。部位上：大血管走行处禁深刺，动脉搏动处禁刺，眼区、颈动脉窦、脐部及脏器投影区禁刺，皮肤感染溃疡瘢痕处禁刺。特殊人群：老人血管弹性差、小儿皮肤娇嫩、糖尿病创口愈合迟缓、传染病患者须按规范隔离操作。</p>
+<p>这一节可迁移度最高，理由很简单：刺血与针刀都造成创口，都要面对同一批人（抗凝、糖尿病、凝血障碍、妊娠）。底本甚至连术后都写了：「24 小时内不宜沾水、搔抓」；血肿「24 小时内冷敷以止血，24 小时后热敷并轻轻按摩」。</p></div></div>
+  <div class="slide-foot"><span>8 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">正文：两个栏目、五个单元、三条自建</div>
+                <div class="compact"><p><strong>毫针宜忌（7.4，2,881 字）——部位层可迁移，深度层不可。</strong> 胸背部肺、心、肝、脾、肾投影区禁深刺直刺，一般取斜刺或平刺，以免「刺伤肺脏引起气胸」；风府、哑门「针刺方向必须朝向喉结，且严格控制深度，严禁向上方深刺，以免损伤延髓」；睛明、承泣须闭目、押手固定眼球、细针慢进、禁提插捻转；缺盆、天突、人迎深部有肺尖、大血管与颈动脉窦，须避开血管、控制深度方向；腋窝、肘窝、腘窝慎刺或禁刺；人迎、气冲、冲阳等动脉搏动处避开或禁刺，「若针下触及搏动感，应立即退针」；孕妇禁刺合谷、三阴交、至阴、昆仑、肩井与腹腰骶全部腧穴。</p>
+<p>部位层几乎逐条可用：脏器投影区、大血管、神经干密集处、孕妇腹腰骶。深度层不能用，因为毫针的「寸」与针刀的「切割深度」不是同一个量，换算是编造。本章不换算。</p></div></div>
+  <div class="slide-foot"><span>9 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">正文：两个栏目、五个单元、三条自建</div>
+                <div class="compact"><p><strong>火针禁忌（7.5，744 字）——术后护理层几乎逐条可迁移。</strong> 烧针须通红、离火速刺；进针快准，不在皮肤表面停留、滑动或重复刺入同一针孔；酒精灯安全；出针后红晕灼热属正常，小水疱任其吸收、大水疱无菌抽吸后包扎；「嘱患者术后 24 小时内针孔不宜沾水，保持清洁干燥，结痂前忌搔抓，痂皮任其自然脱落」；对皮肤感觉迟钝者（糖尿病、脊髓病变）与小儿老人尤须谨慎，防止无痛性烫伤；局部红肿化脓按外科感染处理。</p>
+<p>火针与针刀在「造成创口」这一点上同类，所以术后那一段可以整体搬过来：24 小时不沾水、结痂前任其脱落、感觉迟钝者风险更高、红肿化脓按感染处理。</p>
+<h3 id="三-不可迁移的那一栏-才是针刀自己的事">三、不可迁移的那一栏，才是针刀自己的事</h3>
+<p>把五节的可迁移部分叠起来，本章能写死的只有三段。这三段是本章的建构，不是底本原文，不与底本混写。</p></div></div>
+  <div class="slide-foot"><span>10 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">正文：两个栏目、五个单元、三条自建</div>
+                <div class="compact dense"><p><strong>术前。</strong> 问四件事：抗凝与抗血小板用药、血糖控制、拟操作部位有无感染或破损、是否妊娠。前两件对应 7.3 与 7.5，第三件对应 7.1 与 7.4 的部位禁忌，第四件对应各节一致的孕妇条目。另加晕针史（7.3 专门写了处置，说明它是常见事件，不是罕见意外）。</p>
+<p><strong>术中。</strong> 无菌（一人一针一用，7.3 原话）、方向（7.4 对风府哑门的方向要求，其精神是「方向是变量」）、遇触电感立即退针调整方向（6.4 环跳条）。这三条都不是参数，是纪律。</p>
+<p><strong>术后。</strong> 创口护理按 7.5 火针那一段执行；红肿热痛或渗液即返诊，按感染处理（7.3 与 7.5 都有）。</p>
+<p>这就是本章能给的全部。切割的方向、切割量、深度——底本一个字没有，本课不给。谁若在本章之外读到具体数字，那不是本章的，也不应被当作本课立场。</p>
+<p>《素问·宝命全形论》有一句正好说术中那一段：</p>
+<blockquote><p>「经气已至，慎守勿失。深浅在志，远近若一。如临深渊，手如握虎，神无营于众物。」——《素问·宝命全形论》</p></blockquote></div></div>
+  <div class="slide-foot"><span>11 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">正文：两个栏目、五个单元、三条自建</div>
+                <div class="compact"><p>「如临深渊，手如握虎」，说的是手上的分量与心里的分量。「深浅在志」四个字尤重：深浅不是背下来的数，是当场判断的事。这句话对刀刃比对针尖更贴切——刀刃一旦进去，深浅就不再只是「志」的问题了。</p>
+<h3 id="四-晕针与感染-底本里最可直接照用的一段">四、晕针与感染：底本里最可直接照用的一段</h3>
+<p>7.3 给了两段处置，写得比前面所有禁忌都具体。</p>
+<p>晕针的表现：面色苍白、头晕心悸、汗出肢冷、恶心欲吐、脉细弱，重者昏厥不省。处理：立即停止操作、迅速出针、扶患者平卧、头低足高、松开衣带、注意保暖、饮温糖水，掐或针刺人中、内关、足三里、涌泉，或灸百会、气海；「经上述处理仍不缓解者，须采取现代急救措施，并注意与低血糖、心源性晕厥相鉴别」。</p>
+<p>感染的预防：严格消毒，一人一针一用；针孔以无菌棉球按压，24 小时内不宜沾水、搔抓；「若针孔红肿疼痛、渗液化脓，为感染之象」，局部消毒、外涂消炎药膏，必要时内服清热解毒中药或抗生素。</p></div></div>
+  <div class="slide-foot"><span>12 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">正文：两个栏目、五个单元、三条自建</div>
+                <div class="compact"><p>这两段可以整段照用：它们不依赖器械，只依赖「人可能晕、创口可能感染」这两个事实——正是针刀最常遇到的两件事。</p></div></div>
+  <div class="slide-foot"><span>13 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">这四节各答什么</div>
+                <div class="compact"><p><strong>第一节答「古人怎么排序」。</strong> 部位、管道、状态三栏，部位在前；这个顺序比今天很多写法更保守，也更接近「先知道底下是什么」。</p>
+<p><strong>第二节答「哪些能搬、哪些不能」。</strong> 灸的部位与人群可搬、灸法不可；电针整节不可、问诊动作可；刺血高度可搬；毫针的部位层可搬、深度层不可；火针的术后护理几乎全可搬。</p>
+<p><strong>第三节答「剩下什么」。</strong> 术前问四件事、术中三条纪律、术后按火针那一段执行——三段，标明为本章建构，不含一个参数。</p>
+<p><strong>第四节答「真出事时怎么办」。</strong> 晕针与感染两段处置整段照用，因为它们与器械无关。</p>
+<p>四节合起来：先看古人把什么排第一（一）→ 再逐节判断能不能搬（二）→ 搬完剩下三条自建的纪律（三）→ 最后是两条最可能用得上的处置（四）。</p></div></div>
+  <div class="slide-foot"><span>14 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="14">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><ul><li><strong>「可迁移／不可迁移」的分栏是本章所加。</strong> 底本只是把五种疗法的禁忌各写一遍，没有这个分法。分栏的风险是让读者以为迁移是当然的；实际上迁移只到「部位与人群」，不到「量与深度」。</li><li><strong>术前四问、术中三条、术后一段，是本章的建构。</strong> 三段不含参数，依据也只是部分的（抗凝对应刺血节、术后对应火针节、触电感对应环跳条）。当作教学清单可以，当作操作规范不行。</li><li><strong>本课不给针刀的规格、进针深度、手法量、次数与疗程。</strong> 底本 7,831 字里没有一条是针刀的，本章不替它编。</li><li><strong>「24 小时不沾水」来自火针与刺血的术后条文，不是针刀的研究结论。</strong> 按同类操作迁移，标明来源；它是保守的护理惯例，不是循证结论。</li><li><strong>经典条文的作用是排序，不是依据。</strong> 刺禁论给的是「先看部位」这个顺序；它不能证明任何现代操作的安全性，也不能替代当代的规范与培训。</li><li><strong>边界声明</strong>：本章只讲禁忌的分类、可迁移性的判断与处置原则，<strong>不提供针刀规格、进针深度、手法量、疗程与取穴参数，不作诊断、不作疗效断言，不构成诊疗依据</strong>。具体操作由具备资质、经过规范培训的人员依现行规范、临床路径与所在机构制度作出。</li></ul></div></div>
+  <div class="slide-foot"><span>15 / 16</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="15">
   <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
-  <div class="slide-foot"><span>5 / 5</span><span>disclaimer</span></div>
+  <div class="slide-foot"><span>16 / 16</span><span>disclaimer</span></div>
 </section>
 </div>
 <div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>

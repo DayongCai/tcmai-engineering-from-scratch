@@ -18,7 +18,7 @@
       "spoken": "第 3 章 · 表征与嵌入：把词与证候放进同一空间",
       "estimateSeconds": 5,
       "audio": "001.mp3",
-      "audioSeconds": 5.3
+      "audioSeconds": 5.304
     },
     {
       "n": 2,
@@ -28,7 +28,7 @@
       "spoken": "「《F:/textbooks/机器学习·表征与嵌入：把词与证候放进同一空》」——教材第3章。本章要回答的是：表征与嵌入：把词与证候放进同一空间：这一章要回答什么。",
       "estimateSeconds": 18,
       "audio": "002.mp3",
-      "audioSeconds": 16.42
+      "audioSeconds": 16.416
     },
     {
       "n": 3,
@@ -38,7 +38,7 @@
       "spoken": "表征与嵌入：把词与证候放进同一空间：本课第 3 章。",
       "estimateSeconds": 5,
       "audio": "003.mp3",
-      "audioSeconds": 5.74
+      "audioSeconds": 5.736
     },
     {
       "n": 4,
@@ -48,7 +48,7 @@
       "spoken": "环境逼迫（大模型的判据是「说得出依据、测得出底线」：测不出幻觉率的模型不许进临床流程）+ 知识积累（本章 14 单元 12,322 汉字；三辨主 表示与生成 174；四位面（章群结构）主 基础与表示 12322；引书 1 部 1 次；数值类命中 12）",
       "estimateSeconds": 24,
       "audio": "004.mp3",
-      "audioSeconds": 24.55
+      "audioSeconds": 24.552
     },
     {
       "n": 5,
@@ -58,10 +58,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "005.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 63.31,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 1.05,
+    "measuredMinutes": 1.06,
+    "ratio": 1.005
+  }
 }

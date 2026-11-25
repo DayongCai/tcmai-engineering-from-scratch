@@ -29,86 +29,85 @@ platform:
 
 chapters:
   - slug: 01-fazhan-gaishu
-    title: 第1章 中医儿科学发展概要
-    segments: 6
+    title: 哑科的第一课：把病人的话换成可观察的证据
     video: rendered
-    estimate_minutes: 1.48
-    measured_minutes: 1.4
+    estimate_minutes: 1.48      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.40      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-shengli-bingli-tedian
-    title: 第2章 小儿生理病理特点
-    segments: 6
+    title: 四句话不是口号：每一句都对应一个能测出来的偏差
     video: rendered
-    estimate_minutes: 1.47
-    measured_minutes: 1.4
+    estimate_minutes: 1.47      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.40      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-shengzhang-yangyu-baojian
-    title: 第3章 小儿生长发育与喂养保健
-    segments: 6
+    title: 「养得对不对」只有三个证据：曲线、餐次、接种本
     video: rendered
-    estimate_minutes: 1.5
-    measured_minutes: 1.4
+    estimate_minutes: 1.50      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.40      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-erke-sizhen
-    title: 第4章 儿科四诊概要
-    segments: 6
+    title: 脉既难凭：儿科的证据从皮肤、孔窍和一条食指上取
     video: rendered
-    estimate_minutes: 1.25
-    measured_minutes: 1.22
+    estimate_minutes: 1.25      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.22      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-bianzheng-zhifa
-    title: 第5章 儿科辨证与治法概要
-    segments: 6
+    title: 三套辨证不是三个答案：一套定位、一套分期、一条用药律
     video: rendered
-    estimate_minutes: 1.42
-    measured_minutes: 1.38
+    estimate_minutes: 1.42      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.38      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-feixi-jibing
-    title: 第6章 肺系疾病
-    segments: 6
+    title: 肺系的五个停靠点：从「流鼻涕」到「闭气」只隔两天
     video: rendered
-    estimate_minutes: 1.27
-    measured_minutes: 1.26
+    estimate_minutes: 1.27      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.26      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-pixi-jibing
-    title: 第7章 脾系疾病
-    segments: 6
+    title: 脾系的九个病，是同一条管道上的九种堵法
     video: rendered
-    estimate_minutes: 1.37
-    measured_minutes: 1.37
+    estimate_minutes: 1.37      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.37      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-xingan-jibing
-    title: 第8章 心肝系疾病
-    segments: 6
+    title: 心肝系的六个病分属两把时钟：一把按月走，一把按分钟走
     video: rendered
-    estimate_minutes: 1.43
-    measured_minutes: 1.4
+    estimate_minutes: 1.43      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.40      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-shenxi-jibing
-    title: 第9章 肾系疾病
-    segments: 6
+    title: 肾系只有一个总闸：水出不去，或者关不住
     video: rendered
-    estimate_minutes: 1.4
-    measured_minutes: 1.38
+    estimate_minutes: 1.40      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.38      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-chuanranbing
-    title: 第10章 传染病
-    segments: 6
+    title: 八个传染病，一张表就排得开：先看热与疹谁先谁后
     video: rendered
-    estimate_minutes: 1.25
-    measured_minutes: 1.21
+    estimate_minutes: 1.25      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.21      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 11-chongzheng
-    title: 第11章 虫证
-    segments: 6
+    title: 虫证只有一个判据：虫现在在哪里
     video: rendered
-    estimate_minutes: 1.25
-    measured_minutes: 1.19
+    estimate_minutes: 1.25      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.19      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 12-xinshenger-jibing
-    title: 第12章 新生儿疾病
-    segments: 6
+    title: 出生头 28 天只有三件事：黄、硬、脐
     video: rendered
-    estimate_minutes: 1.3
-    measured_minutes: 1.29
+    estimate_minutes: 1.30      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.29      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 13-qita-bingzheng
-    title: 第13章 其他病证
-    segments: 6
+    title: 三个「看着不重」的病：一个随气温走，一个藏在感冒之后，一个绕不开皮肤
     video: rendered
-    estimate_minutes: 1.27
-    measured_minutes: 1.23
+    estimate_minutes: 1.27      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.23      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 14-jizhen-shuzihua
-    title: 第14章 儿科急症与数字化AI时代
-    segments: 6
+    title: 先救命，再谈可计算：三分钟定生死，一套术语定教学
     video: rendered
-    estimate_minutes: 1.17
-    measured_minutes: 1.14
+    estimate_minutes: 1.17      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.14      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

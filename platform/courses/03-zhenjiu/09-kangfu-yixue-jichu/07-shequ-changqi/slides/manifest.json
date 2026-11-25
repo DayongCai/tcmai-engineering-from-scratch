@@ -1,31 +1,91 @@
 {
   "chapter": "07-shequ-changqi",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 17,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 11
+      "chars": 30
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 80
+      "chars": 42
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 12
+      "chars": 243
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 109
+      "chars": 149
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 277
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 335
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 411
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 127
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 361
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 232
+    },
+    {
+      "n": 11,
+      "segment": 7,
+      "chars": 193
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 288
+    },
+    {
+      "n": 13,
+      "segment": 8,
+      "chars": 376
+    },
+    {
+      "n": 14,
+      "segment": 8,
+      "chars": 304
+    },
+    {
+      "n": 15,
+      "segment": 9,
+      "chars": 365
+    },
+    {
+      "n": 16,
+      "segment": 9,
+      "chars": 167
+    },
+    {
+      "n": 17,
+      "segment": 10,
       "chars": 52
     }
   ]

@@ -1,31 +1,101 @@
 {
   "chapter": "09-wuguan",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 19,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 9
+      "chars": 31
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 64
+      "chars": 25
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 27
+      "chars": 224
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 122
+      "chars": 159
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 260
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 331
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 357
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 371
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 150
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 47
+    },
+    {
+      "n": 11,
+      "segment": 7,
+      "chars": 374
+    },
+    {
+      "n": 12,
+      "segment": 7,
+      "chars": 95
+    },
+    {
+      "n": 13,
+      "segment": 8,
+      "chars": 31
+    },
+    {
+      "n": 14,
+      "segment": 8,
+      "chars": 400
+    },
+    {
+      "n": 15,
+      "segment": 8,
+      "chars": 363
+    },
+    {
+      "n": 16,
+      "segment": 9,
+      "chars": 21
+    },
+    {
+      "n": 17,
+      "segment": 9,
+      "chars": 457
+    },
+    {
+      "n": 18,
+      "segment": 9,
+      "chars": 250
+    },
+    {
+      "n": 19,
+      "segment": 10,
       "chars": 52
     }
   ]

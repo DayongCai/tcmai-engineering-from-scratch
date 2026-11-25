@@ -1,73 +1,66 @@
-'use strict';
+#!/usr/bin/env node
 /**
- * 危险穴位进针校验：安全深度上限 + 方向禁令
+ * 针灸学 · 腧穴学 · 第 11 章 「不可深刺」是三种不同的禁令，混成一个深度上限就会在最危险处失灵：正文与习题自检
+ * 课程: departments/03-zhenjiu/02-shuxue-xue/chapters/11-weixian-shendu
+ * 依赖: 仅 Node.js 标准库；只读 ../docs/zh.md 与 ../quiz.json，不读 standards/。
  *
- *   node code/main.js
- *
- * 口径：
- *   limit = d0 × k(BMI)       —— d0 是教材给中等体型的参考深度（寸）
- *   方向命中 forbid 列表      —— 直接 forbid，不参与深度比较（方向不是"更深"）
- *   判定：allow / warn(>80% limit) / forbid(超过 limit)
- *
- * 这是教学模型：系数按经验分段，未做影像学标定。
+ * 输出的数：正文字数、二级节数、题数、阶段分布、接地数。接地数指 check 题
+ * 的正确选项里至少有一个 ≥4 字的词组真的出现在当章正文里 —— 习题必须与正文同源。
  */
 
-const POINTS = {
-  风池: { d0: 1.0, zone: '颅颈交界', forbid: ['内上方', '直刺深刺'], vital: '椎动脉 / 延髓' },
-  肺俞: { d0: 0.8, zone: '胸壁', forbid: ['向内斜刺'], vital: '胸膜 / 肺' },
-  人迎: { d0: 0.3, zone: '颈动脉三角', forbid: ['直刺深刺'], vital: '颈动脉 / 迷走神经' },
-  肩井: { d0: 0.5, zone: '肩胛上', forbid: ['直刺深刺'], vital: '肺尖' },
+'use strict';
+
+const fs = require('node:fs');
+const path = require('node:path');
+
+const DIR = __dirname;
+const DOC = path.join(DIR, '..', 'docs', 'zh.md');
+const QUIZ = path.join(DIR, '..', 'quiz.json');
+
+const doc = fs.readFileSync(DOC, 'utf8');
+const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+
+const CH = '11';
+const TITLE = '「不可深刺」是三种不同的禁令，混成一个深度上限就会在最危险处失灵';
+
+const hz = (s) => (s.match(/[\u4e00-\u9fff]/g) || []).length;
+const secs = (doc.match(/^## /gm) || []).length;
+
+/** 正文里的 4 字连续汉字片段集合 */
+function shingles(text, n = 4) {
+  const clean = String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ');
+  const out = new Set();
+  for (const seg of clean.split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+}
+
+const body = shingles(doc);
+const grounded = (s) => {
+  const clean = String(s || '').replace(/[^\u4e00-\u9fff]/g, '');
+  for (let i = 0; i + 4 <= clean.length; i += 1) if (body.has(clean.slice(i, i + 4))) return true;
+  return false;
 };
 
-function kOf(bmi) {
-  if (bmi < 18.5) return 0.8;
-  if (bmi < 24) return 1.0;
-  if (bmi < 28) return 1.25;
-  return 1.4;
+const stages = { pre: 0, check: 0, post: 0 };
+for (const q of quiz.questions) stages[q.stage] = (stages[q.stage] || 0) + 1;
+
+const checks = quiz.questions.filter((q) => q.stage === 'check');
+const hit = checks.filter((q) => grounded(q.options[q.correct])).length;
+const minExplain = Math.min(...quiz.questions.map((q) => hz(q.explain || q.explanation)));
+
+console.log(`第 ${CH} 章 · ${TITLE}`);
+console.log(`正文 ${hz(doc)} 汉字 · 二级节 ${secs}`);
+console.log(`习题 ${quiz.questions.length} 题 (pre ${stages.pre}/check ${stages.check}/post ${stages.post}) · 最短解释 ${minExplain} 汉字`);
+console.log(`接地 check 题 ${hit}/${checks.length}`);
+
+const ok = hz(doc) >= 2500 && secs >= 4 && quiz.questions.length === 6
+  && stages.pre >= 1 && stages.check >= 3 && stages.post >= 2
+  && hit >= 3 && minExplain >= 40
+  && quiz.questions.every((q) => Array.isArray(q.options) && q.options.length === 4
+    && Number.isInteger(q.correct) && q.correct >= 0 && q.correct < 4);
+if (!ok) {
+  console.error('自检未通过');
+  process.exit(1);
 }
-
-function limitOf(point, bmi) {
-  const p = POINTS[point];
-  if (!p) throw new Error(`未收录穴位: ${point}`);
-  return +(p.d0 * kOf(bmi)).toFixed(2);
-}
-
-function check(point, bmi, direction, planned) {
-  const p = POINTS[point];
-  if (!p) throw new Error(`未收录穴位: ${point}`);
-  const limit = limitOf(point, bmi);
-
-  if (p.forbid.some((f) => direction.includes(f))) {
-    return {
-      verdict: 'forbid',
-      limit,
-      reason: `方向「${direction}」属禁用方向，可能伤及${p.vital}；深度再浅也不能抵消方向风险`,
-    };
-  }
-  if (planned > limit) {
-    return { verdict: 'forbid', limit, reason: `计划 ${planned} 寸超过上限 ${limit} 寸（${p.zone}）` };
-  }
-  if (planned > limit * 0.8) {
-    return { verdict: 'warn', limit, reason: `已用 ${(planned / limit * 100).toFixed(0)}% 上限，留出余量` };
-  }
-  return { verdict: 'allow', limit, reason: `在 ${limit} 寸上限内` };
-}
-
-function main() {
-  const cases = [
-    ['风池', 22, '向鼻尖', 1.0],
-    ['风池', 22, '向内上方', 1.0],
-    ['风池', 30, '向鼻尖', 1.3],
-    ['肺俞', 22, '向内斜刺', 0.6],
-    ['人迎', 25, '直刺', 0.2],
-  ];
-  for (const [pt, bmi, dir, d] of cases) {
-    const r = check(pt, bmi, dir, d);
-    console.log(`${pt} BMI=${bmi} 方向=${dir} 计划=${d}寸 → ${r.verdict.toUpperCase()}（上限 ${r.limit}）`);
-    console.log(`   ${r.reason}`);
-  }
-  console.log('\n本输出为教学样例，不构成操作参数；实际进针须由执业医师判断。');
-}
-
-if (require.main === module) main();
-module.exports = { POINTS, kOf, limitOf, check };

@@ -29,68 +29,67 @@ platform:
 
 chapters:
   - slug: 01-xulun
-    title: 第1章 绪论：生理学研究的对象与三个水平
-    segments: 5
+    title: 绪论：把「稳态」写成一条可检查的回路
     video: rendered
-    estimate_minutes: 1.57
-    measured_minutes: 1.43
+    estimate_minutes: 34.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.58      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-xibao-jiben-gongneng
-    title: 第2章 细胞的基本功能：跨膜转运·信号转导·电活动·收缩
-    segments: 5
+    title: 细胞的基本功能：一条从膜到肌丝的链
     video: rendered
-    estimate_minutes: 1.53
-    measured_minutes: 1.41
+    estimate_minutes: 33.58      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 31.42      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-xueye
-    title: 第3章 血液：组成·理化特性·血细胞与凝血
-    segments: 5
+    title: 血液：用三张图替掉一张数字表
     video: rendered
-    estimate_minutes: 1.53
-    measured_minutes: 1.47
+    estimate_minutes: 35.87      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 34.86      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-xueye-xunhuan
-    title: 第4章 血液循环：泵血·血管·调节·器官循环
-    segments: 6
+    title: 血液循环：泵血·血管·调节·器官循环
     video: rendered
-    estimate_minutes: 2.22
-    measured_minutes: 2.2
+    estimate_minutes: 44.52      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 43.67      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-huxi
-    title: 第5章 呼吸：通气·换气·气体运输·呼吸调节
-    segments: 6
+    title: 呼吸：通气·换气·气体运输·呼吸调节
     video: rendered
-    estimate_minutes: 2.28
-    measured_minutes: 2.19
+    estimate_minutes: 44.80      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 43.72      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-xiaohua-xishou
-    title: 第6章 消化和吸收：分泌·运动·吸收与调节
-    segments: 6
+    title: 消化和吸收：分泌·运动·吸收与调节
     video: rendered
-    estimate_minutes: 2.38
-    measured_minutes: 2.28
+    estimate_minutes: 49.58      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 48.41      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-nengliang-tiwen
-    title: 第7章 能量代谢与体温：代谢率·产热散热·体温调节
-    segments: 6
+    title: 能量代谢与体温：产与散的两本账
     video: rendered
-    estimate_minutes: 2.13
-    measured_minutes: 2.02
+    estimate_minutes: 37.23      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 36.21      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-shenzang-paixie
-    title: 第8章 肾脏的排泄功能：滤过·重吸收·分泌·调节
-    segments: 6
+    title: 肾脏的排泄功能：一条流水线，三个方向
     video: rendered
-    estimate_minutes: 2.22
-    measured_minutes: 2.07
+    estimate_minutes: 37.33      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 36.76      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-neifenmi
-    title: 第9章 内分泌：激素·轴系·各内分泌腺功能
-    segments: 6
+    title: 内分泌：谁作用于谁，而不是多少
     video: rendered
-    estimate_minutes: 2.27
-    measured_minutes: 2.16
+    estimate_minutes: 36.63      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 35.88      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-shenjing-xitong
-    title: 第10章 神经系统：神经元·突触·感觉运动·高级功能
-    segments: 6
+    title: 神经系统：全章最密的一节不是电，是抑制
     video: rendered
-    estimate_minutes: 2.67
-    measured_minutes: 2.61
+    estimate_minutes: 37.62      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.34      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 11-ganjue-qiguan
-    title: 第11章 感觉器官：感受器的一般特性与各感官功能
-    segments: 6
+    title: 感觉器官：全书最容易被写成参数表的一章，给了最多的「不给值」
     video: rendered
-    estimate_minutes: 2.48
-    measured_minutes: 2.42
+    estimate_minutes: 37.38      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.72      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

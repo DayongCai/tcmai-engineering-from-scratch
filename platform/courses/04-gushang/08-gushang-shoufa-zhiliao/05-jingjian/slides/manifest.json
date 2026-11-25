@@ -1,31 +1,96 @@
 {
   "chapter": "05-jingjian",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 18,
+  "segmentCount": 13,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 9
+      "chars": 17
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 78
+      "chars": 73
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 13
+      "chars": 128
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 122
+      "chars": 150
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 245
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 420
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 103
+    },
+    {
+      "n": 8,
+      "segment": 7,
+      "chars": 405
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 84
+    },
+    {
+      "n": 10,
+      "segment": 8,
+      "chars": 292
+    },
+    {
+      "n": 11,
+      "segment": 9,
+      "chars": 252
+    },
+    {
+      "n": 12,
+      "segment": 10,
+      "chars": 303
+    },
+    {
+      "n": 13,
+      "segment": 10,
+      "chars": 139
+    },
+    {
+      "n": 14,
+      "segment": 11,
+      "chars": 273
+    },
+    {
+      "n": 15,
+      "segment": 11,
+      "chars": 269
+    },
+    {
+      "n": 16,
+      "segment": 12,
+      "chars": 316
+    },
+    {
+      "n": 17,
+      "segment": 12,
+      "chars": 132
+    },
+    {
+      "n": 18,
+      "segment": 13,
       "chars": 52
     }
   ]

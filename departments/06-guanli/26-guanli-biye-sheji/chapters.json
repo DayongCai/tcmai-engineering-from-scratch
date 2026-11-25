@@ -5,7 +5,7 @@
     {
       "n": 1,
       "slug": "01-xuan-ti",
-      "title": "选题：从管理问题到可测量命题",
+      "title": "选题的标准不是「有意义」，而是能否在一个学期内被证伪",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/01-xuan-ti/docs/zh.md",
@@ -14,7 +14,7 @@
     {
       "n": 2,
       "slug": "02-shuju-zhibiao",
-      "title": "数据获取与指标定义",
+      "title": "指标不写清分子与分母，后面每个分析都在自证",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/02-shuju-zhibiao/docs/zh.md",
@@ -23,7 +23,7 @@
     {
       "n": 3,
       "slug": "03-fangan-shixian",
-      "title": "分析与方案实现",
+      "title": "选方法不是选结果好看的，是选资料允许的那一个",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/03-fangan-shixian/docs/zh.md",
@@ -32,7 +32,7 @@
     {
       "n": 4,
       "slug": "04-xiaoguo-pingjia",
-      "title": "效果评价与成本-效益",
+      "title": "效果评价的分水岭在视角：站错立场，同一措施会得出相反结论",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/04-xiaoguo-pingjia/docs/zh.md",
@@ -41,7 +41,7 @@
     {
       "n": 5,
       "slug": "05-lunwen-dabian",
-      "title": "论文写作与答辩",
+      "title": "答辩不是复述结论，而是当场交代结论的适用条件",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/05-lunwen-dabian/docs/zh.md",
@@ -50,7 +50,7 @@
     {
       "n": 6,
       "slug": "06-zhishi-yijiao",
-      "title": "知识移交：制度文件与交接",
+      "title": "移交的验收标准是「人走了系统还在转」，不是「文档齐了」",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/06-zhishi-yijiao/docs/zh.md",

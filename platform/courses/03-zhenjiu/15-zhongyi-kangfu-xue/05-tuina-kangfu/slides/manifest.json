@@ -1,31 +1,91 @@
 {
   "chapter": "05-tuina-kangfu",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 17,
+  "segmentCount": 8,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 8
+      "chars": 25
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 73
+      "chars": 120
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 14
+      "chars": 235
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 111
+      "chars": 176
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 130
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 347
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 283
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 219
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 342
+    },
+    {
+      "n": 10,
+      "segment": 6,
+      "chars": 358
+    },
+    {
+      "n": 11,
+      "segment": 6,
+      "chars": 397
+    },
+    {
+      "n": 12,
+      "segment": 6,
+      "chars": 412
+    },
+    {
+      "n": 13,
+      "segment": 6,
+      "chars": 376
+    },
+    {
+      "n": 14,
+      "segment": 6,
+      "chars": 332
+    },
+    {
+      "n": 15,
+      "segment": 7,
+      "chars": 426
+    },
+    {
+      "n": 16,
+      "segment": 7,
+      "chars": 250
+    },
+    {
+      "n": 17,
+      "segment": 8,
       "chars": 52
     }
   ]

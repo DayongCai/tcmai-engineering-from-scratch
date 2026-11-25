@@ -4,10 +4,10 @@
   "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
   "cueCount": 5,
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
-  "audioTotalSeconds": 63.74,
+  "audioTotalSeconds": 63.744,
   "estimatedCues": 0,
   "videoSeconds": 63.762667,
-  "videoMinusNarrationSeconds": 0.023,
+  "videoMinusNarrationSeconds": 0.019,
   "textMatchesNarration": true,
   "mismatches": [],
   "cues": [
@@ -15,8 +15,8 @@
       "n": 1,
       "role": "title",
       "start": 0,
-      "end": 4.25,
-      "seconds": 4.25,
+      "end": 4.248,
+      "seconds": 4.248,
       "estimated": false,
       "text": "第 13 章 · 手少阳三焦经及其腧穴",
       "audio": "001.mp3"
@@ -24,9 +24,9 @@
     {
       "n": 2,
       "role": "motto",
-      "start": 4.25,
-      "end": 21.46,
-      "seconds": 17.21,
+      "start": 4.248,
+      "end": 21.456,
+      "seconds": 17.208,
       "estimated": false,
       "text": "「《针灸学·手少阳三焦经及其腧穴》」——教材第13章；课程章号与教材章号一一对应。本章要回答的是：手少阳三焦经及其腧穴这一章，要能用一句话说清它解决什么问题。",
       "audio": "002.mp3"
@@ -34,9 +34,9 @@
     {
       "n": 3,
       "role": "problem",
-      "start": 21.46,
-      "end": 26.33,
-      "seconds": 4.87,
+      "start": 21.456,
+      "end": 26.328,
+      "seconds": 4.872,
       "estimated": false,
       "text": "手少阳三焦经循耳后、肩颈，头侧痛常用。",
       "audio": "003.mp3"
@@ -44,9 +44,9 @@
     {
       "n": 4,
       "role": "roots",
-      "start": 26.33,
+      "start": 26.328,
       "end": 52.44,
-      "seconds": 26.11,
+      "seconds": 26.112,
       "estimated": false,
       "text": "环境逼迫（针灸学是全科的合订本：经络、腧穴、手法、治疗四块必须能互相对上，不能各背一段）+ 知识积累（本章 3 单元 5,429 汉字；三辨主 临床治疗 96；四位面（教材四板块）主 经络腧穴各论 5429；引书 4 部 14 次；数值类命中 33）",
       "audio": "004.mp3"
@@ -55,8 +55,8 @@
       "n": 5,
       "role": "disclaimer",
       "start": 52.44,
-      "end": 63.74,
-      "seconds": 11.3,
+      "end": 63.744,
+      "seconds": 11.304,
       "estimated": false,
       "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "audio": "005.mp3"

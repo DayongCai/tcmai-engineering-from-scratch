@@ -29,92 +29,91 @@ platform:
 
 chapters:
   - slug: 01-fangfa-ducong
-    title: 第1章 方剂与治法：方从法出
-    segments: 6
+    title: 方剂与治法：方从法出
     video: rendered
-    estimate_minutes: 1.73
-    measured_minutes: 1.63
+    estimate_minutes: 1.73      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.63      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-junchen-zuoshi
-    title: 第2章 君臣佐使：组方的角色结构
-    segments: 6
+    title: 君臣佐使：组方的角色结构
     video: rendered
-    estimate_minutes: 1.72
-    measured_minutes: 1.7
+    estimate_minutes: 1.72      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.70      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-jiebiaoji
-    title: 第3章 解表剂：辛温与辛凉的分野
-    segments: 6
+    title: 解表剂：辛温与辛凉的分野
     video: rendered
-    estimate_minutes: 1.8
-    measured_minutes: 1.72
+    estimate_minutes: 1.80      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.72      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-xiexia-hejie
-    title: 第4章 泻下剂与和解剂
-    segments: 7
+    title: 泻下剂与和解剂：下与和，方向相反的两个「通」
     video: rendered
-    estimate_minutes: 2.7
-    measured_minutes: 2.49
+    estimate_minutes: 2.70      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 2.49      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-qingre-qushu
-    title: 第5章 清热剂与祛暑剂
-    segments: 7
+    title: 清热剂与祛暑剂：热在哪一层
     video: rendered
-    estimate_minutes: 3
-    measured_minutes: 2.87
+    estimate_minutes: 3.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 2.87      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-wenli-buyi
-    title: 第6章 温里剂与补益剂
-    segments: 7
+    title: 温里剂与补益剂：温与补，只差一味
     video: rendered
-    estimate_minutes: 3.18
-    measured_minutes: 3.01
+    estimate_minutes: 3.18      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 3.01      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-guse-anshen
-    title: 第7章 固涩剂与安神剂
-    segments: 5
+    title: 固涩剂与安神剂：收与镇，两道相反的闸门
     video: rendered
-    estimate_minutes: 2.22
-    measured_minutes: 2.13
+    estimate_minutes: 2.22      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 2.13      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-liqi-lixue
-    title: 第8章 理气剂与理血剂
-    segments: 5
+    title: 理气剂与理血剂：气为血帅，血为气母
     video: rendered
-    estimate_minutes: 2.08
-    measured_minutes: 2.05
+    estimate_minutes: 2.08      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 2.05      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-zhifeng-zhizao
-    title: 第9章 治风剂与治燥剂
-    segments: 5
+    title: 治风剂与治燥剂：外邪与内伤的两条线
     video: rendered
-    estimate_minutes: 1.98
-    measured_minutes: 1.91
+    estimate_minutes: 1.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-qushi-qutan
-    title: 第10章 祛湿剂与祛痰剂
-    segments: 6
+    title: 祛湿剂与祛痰剂：湿与痰是两条路，不是两级
     video: rendered
-    estimate_minutes: 1.58
-    measured_minutes: 1.59
+    estimate_minutes: 1.58      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.59      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 11-xiaoshi-quchong
-    title: 第11章 消食剂、驱虫剂与涌吐剂
-    segments: 6
+    title: 消食、驱虫、涌吐：三种"去邪"的力度与风险
     video: rendered
-    estimate_minutes: 1.6
-    measured_minutes: 1.57
+    estimate_minutes: 1.60      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.57      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 12-peiwu-gongxian
-    title: 第12章 方剂配伍的数据化：药物共现网络
-    segments: 6
+    title: 方剂配伍的数据化：药物共现网络
     video: rendered
-    estimate_minutes: 2.57
-    measured_minutes: 2.56
+    estimate_minutes: 2.57      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 2.56      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 13-jixing-jianfu
-    title: 第13章 剂型与煎服法：方剂的物理形态
-    segments: 6
+    title: 剂型与煎服法：方剂的物理形态
     video: rendered
-    estimate_minutes: 3.35
-    measured_minutes: 3.27
+    estimate_minutes: 3.35      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 3.27      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 14-biaoli-yongyang
-    title: 第14章 表里双解与治痈疡：六首方的两个方向
-    segments: 6
+    title: 表里双解与治痈疡：六首方的两个方向
     video: rendered
-    estimate_minutes: 3.57
-    measured_minutes: 3.39
+    estimate_minutes: 3.57      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 3.39      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 15-fangzheng-ai
-    title: 第15章 方证对应与 AI：第24章的四个层次
-    segments: 6
+    title: 方证对应与 AI：第24章的四个层次
     video: rendered
-    estimate_minutes: 3.07
-    measured_minutes: 2.92
+    estimate_minutes: 3.07      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 2.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

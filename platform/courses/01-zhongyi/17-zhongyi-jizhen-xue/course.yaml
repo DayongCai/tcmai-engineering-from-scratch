@@ -29,74 +29,73 @@ platform:
 
 chapters:
   - slug: 01-xulun
-    title: 第1章 第1章 绪论
-    segments: 6
+    title: 急诊学的对象不是病，是那条还在下坠的曲线
     video: rendered
-    estimate_minutes: 1.23
-    measured_minutes: 1.15
+    estimate_minutes: 1.23      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.15      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-lilun-jichu
-    title: 第2章 第2章 中医急诊学的理论基础
-    segments: 6
+    title: 邪盛正衰不是一句断言，是一条能读出方向的轴
     video: rendered
-    estimate_minutes: 1.02
-    measured_minutes: 0.97
+    estimate_minutes: 1.02      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.97      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-zhengzhuang-jianbie
-    title: 第3章 第3章 急诊常见症状的鉴别
-    segments: 6
+    title: 鉴别的功夫不在排病名，在给每个入口配一条出口
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1.02
+    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.02      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-jijiu-jishu-fangyao
-    title: 第4章 第4章 常用急救技术与方药
-    segments: 6
+    title: 急救先有形，后有名：手上没有动作，辨证只是评语
     video: rendered
-    estimate_minutes: 1.05
-    measured_minutes: 1.07
+    estimate_minutes: 1.05      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.07      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-waigan-rebing
-    title: 第5章 第5章 外感热病急症
-    segments: 6
+    title: 热不是敌人，热伤到的那个器官才是
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 0.98
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.98      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-xinnao-jizheng
-    title: 第6章 第6章 心脑急症
-    segments: 6
+    title: 心脑急症里，时间窗比证型更硬
     video: rendered
-    estimate_minutes: 1.1
-    measured_minutes: 1.08
+    estimate_minutes: 1.10      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.08      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-feixi-jizheng
-    title: 第7章 第7章 肺系急症
-    segments: 6
+    title: 喘要分三级，咯血要数口数——肺急症的判断都落在「量」上
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1.01
+    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.01      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-piwei-gandan-jizheng
-    title: 第8章 第8章 脾胃肝胆急症
-    segments: 6
+    title: 吐泻看脱水，腹痛看能不能开刀，急黄看神志
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 0.99
+    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.99      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-shenxi-zhongdu
-    title: 第9章 第9章 肾系与中毒急症
-    segments: 6
+    title: 闭与毒：一个算尿量，一个算时间
     video: rendered
-    estimate_minutes: 1.07
-    measured_minutes: 1.08
+    estimate_minutes: 1.07      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.08      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-xuezheng-chuangshang
-    title: 第10章 第10章 血证与创伤急症
-    segments: 6
+    title: 血往哪里流：看得见的血好算，看不见的血难算
     video: rendered
-    estimate_minutes: 1.07
-    measured_minutes: 1.04
+    estimate_minutes: 1.07      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.04      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 11-zhongzheng-jianhu
-    title: 第11章 第11章 急危重症与重症监护协同
-    segments: 6
+    title: 分清谁能做：重症协同不是把中医搬进监护室，是把判断做在床旁
     video: rendered
-    estimate_minutes: 1.13
-    measured_minutes: 1.13
+    estimate_minutes: 1.13      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.13      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 12-shuzihua-yujing
-    title: 第12章 第12章 中医急诊数字化与智能预警
-    segments: 6
+    title: 预警的价值不在早报，在少报错——早半小时要用误报率换
     video: rendered
-    estimate_minutes: 1.13
-    measured_minutes: 1.11
+    estimate_minutes: 1.13      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.11      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

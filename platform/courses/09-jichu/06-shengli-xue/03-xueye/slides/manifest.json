@@ -1,7 +1,7 @@
 {
   "chapter": "03-xueye",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 38,
+  "segmentCount": 9,
   "slides": [
     {
       "n": 1,
@@ -26,6 +26,171 @@
     {
       "n": 5,
       "segment": 5,
+      "chars": 382
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 383
+    },
+    {
+      "n": 7,
+      "segment": 5,
+      "chars": 395
+    },
+    {
+      "n": 8,
+      "segment": 5,
+      "chars": 266
+    },
+    {
+      "n": 9,
+      "segment": 5,
+      "chars": 306
+    },
+    {
+      "n": 10,
+      "segment": 5,
+      "chars": 418
+    },
+    {
+      "n": 11,
+      "segment": 5,
+      "chars": 346
+    },
+    {
+      "n": 12,
+      "segment": 5,
+      "chars": 406
+    },
+    {
+      "n": 13,
+      "segment": 5,
+      "chars": 280
+    },
+    {
+      "n": 14,
+      "segment": 5,
+      "chars": 414
+    },
+    {
+      "n": 15,
+      "segment": 5,
+      "chars": 332
+    },
+    {
+      "n": 16,
+      "segment": 5,
+      "chars": 307
+    },
+    {
+      "n": 17,
+      "segment": 5,
+      "chars": 337
+    },
+    {
+      "n": 18,
+      "segment": 5,
+      "chars": 361
+    },
+    {
+      "n": 19,
+      "segment": 5,
+      "chars": 340
+    },
+    {
+      "n": 20,
+      "segment": 5,
+      "chars": 357
+    },
+    {
+      "n": 21,
+      "segment": 5,
+      "chars": 392
+    },
+    {
+      "n": 22,
+      "segment": 5,
+      "chars": 323
+    },
+    {
+      "n": 23,
+      "segment": 5,
+      "chars": 384
+    },
+    {
+      "n": 24,
+      "segment": 5,
+      "chars": 386
+    },
+    {
+      "n": 25,
+      "segment": 5,
+      "chars": 347
+    },
+    {
+      "n": 26,
+      "segment": 5,
+      "chars": 337
+    },
+    {
+      "n": 27,
+      "segment": 5,
+      "chars": 351
+    },
+    {
+      "n": 28,
+      "segment": 5,
+      "chars": 327
+    },
+    {
+      "n": 29,
+      "segment": 6,
+      "chars": 497
+    },
+    {
+      "n": 30,
+      "segment": 7,
+      "chars": 113
+    },
+    {
+      "n": 31,
+      "segment": 7,
+      "chars": 2316
+    },
+    {
+      "n": 32,
+      "segment": 7,
+      "chars": 13
+    },
+    {
+      "n": 33,
+      "segment": 8,
+      "chars": 87
+    },
+    {
+      "n": 34,
+      "segment": 8,
+      "chars": 410
+    },
+    {
+      "n": 35,
+      "segment": 8,
+      "chars": 394
+    },
+    {
+      "n": 36,
+      "segment": 8,
+      "chars": 408
+    },
+    {
+      "n": 37,
+      "segment": 8,
+      "chars": 397
+    },
+    {
+      "n": 38,
+      "segment": 9,
       "chars": 52
     }
   ]

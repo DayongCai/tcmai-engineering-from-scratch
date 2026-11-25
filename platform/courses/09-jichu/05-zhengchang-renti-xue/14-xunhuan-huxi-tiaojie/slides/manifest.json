@@ -1,31 +1,86 @@
 {
   "chapter": "14-xunhuan-huxi-tiaojie",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 16,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 16
+      "chars": 24
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 76
+      "chars": 28
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 22
+      "chars": 166
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 140
+      "chars": 97
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 379
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 353
+    },
+    {
+      "n": 7,
+      "segment": 5,
+      "chars": 234
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 322
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 413
+    },
+    {
+      "n": 10,
+      "segment": 6,
+      "chars": 304
+    },
+    {
+      "n": 11,
+      "segment": 7,
+      "chars": 403
+    },
+    {
+      "n": 12,
+      "segment": 7,
+      "chars": 409
+    },
+    {
+      "n": 13,
+      "segment": 8,
+      "chars": 328
+    },
+    {
+      "n": 14,
+      "segment": 8,
+      "chars": 327
+    },
+    {
+      "n": 15,
+      "segment": 9,
+      "chars": 377
+    },
+    {
+      "n": 16,
+      "segment": 10,
       "chars": 52
     }
   ]

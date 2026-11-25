@@ -29,98 +29,97 @@ platform:
 
 chapters:
   - slug: 01-xulun
-    title: 第1章 绪论
-    segments: 5
+    title: 这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链
     video: rendered
-    estimate_minutes: 1.13
-    measured_minutes: 1.12
+    estimate_minutes: 10.33      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.14      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-yixue-xibao-shengwuxue-gailun
-    title: 第2章 医学细胞生物学概论
-    segments: 5
+    title: 这门学科划的不是「细胞」这条线，是「可测的细胞状态」这条线
     video: rendered
-    estimate_minutes: 1.02
-    measured_minutes: 1.04
+    estimate_minutes: 10.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.56      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-xibao-gaishu
-    title: 第3章 细胞概述
-    segments: 5
+    title: 细胞的大小不是自由选择，是表面积与体积算出来的一道硬账
     video: rendered
-    estimate_minutes: 1.03
-    measured_minutes: 1.04
+    estimate_minutes: 11.15      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.43      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-xibaomo
-    title: 第4章 细胞膜
-    segments: 5
+    title: 膜的本事不是「挡住」，是「让不该过的过得慢，让该过的过得快」
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1
+    estimate_minutes: 11.28      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.01      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-xibao-zhi
-    title: 第5章 细胞质
-    segments: 5
+    title: 细胞质不是一锅汤，是一条有方向、有分区、要收费的流水线
     video: rendered
-    estimate_minutes: 1.13
-    measured_minutes: 1.14
+    estimate_minutes: 10.55      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.53      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-xibao-he
-    title: 第6章 细胞核
-    segments: 5
+    title: 核的全部本事，是让两米长的信息住进一间六微米的屋子还找得到
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1
+    estimate_minutes: 11.08      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.31      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-zengzhi-fenhua-shuailao-siwang
-    title: 第7章 细胞增殖、分化、衰老和死亡
-    segments: 5
+    title: 增殖、分化、衰老、死亡不是四件事，是同一个开关的四个位置
     video: rendered
-    estimate_minutes: 1.15
-    measured_minutes: 1.18
+    estimate_minutes: 10.37      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-ganxibao-yu-xibao-gongcheng
-    title: 第8章 干细胞和细胞工程
-    segments: 5
+    title: 干细胞的门槛不是「什么都能变」，是「变了还能变回来」
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1.01
+    estimate_minutes: 10.30      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 7.73      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-yixue-yichuanxue-gailun
-    title: 第9章 医学遗传学概述
-    segments: 5
+    title: 遗传学研究的不是「病」，是「差异怎么传下去」
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1.01
+    estimate_minutes: 10.63      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 6.79      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-jiyin-ji-jiyin-tubian
-    title: 第10章 基因及基因突变
-    segments: 5
+    title: 基因不是一段密码，是一段带标点、带批注、还会被剪接的文本
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1
+    estimate_minutes: 9.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 7.99      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 11-dan-jiyin-yichuan
-    title: 第11章 单基因遗传与单基因遗传病
-    segments: 5
+    title: 3∶1 不是疾病的规律，是配子随机结合的算术
     video: rendered
-    estimate_minutes: 1.02
-    measured_minutes: 1.06
+    estimate_minutes: 9.05      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 6.55      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 12-duo-jiyin-yichuan
-    title: 第12章 多基因遗传与多基因遗传病
-    segments: 5
+    title: 多基因病的遗传不是「传下去」，是「分布的一端被推过了线」
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1.02
+    estimate_minutes: 10.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.85      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 13-renlei-ranse-ti-yu-ranse-ti-bing
-    title: 第13章 人类染色体与染色体病
-    segments: 5
+    title: 核型分析做的事，是把一条连续的信息流切成四十六段可数的实物
     video: rendered
-    estimate_minutes: 1.07
-    measured_minutes: 1.1
+    estimate_minutes: 10.03      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.72      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 14-qunti-yichuan-xue
-    title: 第14章 群体遗传学
-    segments: 5
+    title: 群体遗传学算的不是「谁会病」，是「这个变异在这个人群里能待多久」
     video: rendered
-    estimate_minutes: 1.1
-    measured_minutes: 1.05
+    estimate_minutes: 10.20      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 7.11      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 15-linchuang-yichuan-xue
-    title: 第15章 临床遗传学
-    segments: 5
+    title: 临床遗传学最难的环节不是测出变异，是把变异说成人话
     video: rendered
-    estimate_minutes: 1.17
-    measured_minutes: 1.18
+    estimate_minutes: 9.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.44      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 16-zhongyi-yichuan-xue
-    title: 第16章 中医遗传学
-    segments: 5
+    title: 中医讲「禀赋」，讲的不是基因，是「一个人从父母那里带来的起点与限度」
     video: rendered
-    estimate_minutes: 1.15
-    measured_minutes: 1.13
+    estimate_minutes: 10.60      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.23      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

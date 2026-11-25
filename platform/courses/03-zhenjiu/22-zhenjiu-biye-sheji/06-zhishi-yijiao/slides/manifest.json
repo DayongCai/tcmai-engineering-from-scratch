@@ -1,31 +1,76 @@
 {
   "chapter": "06-zhishi-yijiao",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 14,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 16
+      "chars": 32
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 88
+      "chars": 30
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 31
+      "chars": 170
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 116
+      "chars": 160
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 309
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 361
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 341
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 92
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 404
+    },
+    {
+      "n": 10,
+      "segment": 8,
+      "chars": 389
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 145
+    },
+    {
+      "n": 12,
+      "segment": 9,
+      "chars": 392
+    },
+    {
+      "n": 13,
+      "segment": 9,
+      "chars": 306
+    },
+    {
+      "n": 14,
+      "segment": 10,
       "chars": 52
     }
   ]

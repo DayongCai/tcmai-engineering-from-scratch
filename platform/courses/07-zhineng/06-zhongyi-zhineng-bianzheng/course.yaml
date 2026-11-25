@@ -29,62 +29,61 @@ platform:
 
 chapters:
   - slug: 01-xingshihua-guize
-    title: 第1章 辨证的形式化：从规则到概率
-    segments: 5
+    title: 辨证算不出来，多半是「证」先没写清楚
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.95
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-caiji-xindu
-    title: 第2章 症状采集的界面与信度
-    segments: 5
+    title: 采集界面决定了证候能算到多细
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.89
+    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.89      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-guize-yinqing
-    title: 第3章 规则引擎与专家系统
-    segments: 5
+    title: 规则引擎的天花板，是它写不出的那条例外
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.9
+    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-beiyesi-tuili
-    title: 第4章 贝叶斯网络与概率推理
-    segments: 5
+    title: 贝叶斯的先验，就是医者没写出来的那部分经验
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.91
+    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-qianru-biaoshi
-    title: 第5章 症状—证候的嵌入表示
-    segments: 5
+    title: 向量能算出「像」，算不出「为什么是证」
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.9
+    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-duozheng-shuchu
-    title: 第6章 多证并存的输出设计
-    segments: 5
+    title: 证候不是一道单选题，但系统必须给出一个答案
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.88
+    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.88      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-yizhixing-pinggu
-    title: 第7章 与医生诊断的一致性评估
-    segments: 9
+    title: kappa 高不代表系统对，只代表它像那位医生
     video: rendered
-    estimate_minutes: 3.02
-    measured_minutes: 2.81
+    estimate_minutes: 3.02      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 2.81      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-anquan-daijia
-    title: 第8章 安全性：漏诊与误诊的代价
-    segments: 5
+    title: 漏诊与误诊的代价不对称，阈值就不该对称
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.93
+    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-jieshi-shuchu
-    title: 第9章 可解释输出的设计
-    segments: 5
+    title: 解释不是附赠的一段话，是可被反驳的证据链
     video: rendered
-    estimate_minutes: 0.87
-    measured_minutes: 0.86
+    estimate_minutes: 0.87      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.86      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-shiyong-baogao
-    title: 第10章 临床试用的设计与报告
-    segments: 5
+    title: 试用不是演示，是事先写好的失败条件
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.89
+    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.89      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

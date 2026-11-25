@@ -29,62 +29,61 @@ platform:
 
 chapters:
   - slug: 01-gailun-fenlei
-    title: 第1章 中成药概论与分类
-    segments: 5
+    title: 剂型是把用法固定在药里的那一步
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.93
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-jixing-gongyi
-    title: 第2章 剂型与制备工艺
-    segments: 5
+    title: 剂型决定药怎么出来，工艺决定每一批是不是同一批
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.93
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-zhiliang-biaozhun
-    title: 第3章 质量标准与检验
-    segments: 5
+    title: 标准不替好药背书，它只替不合格的药划线
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.91
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-zhusheji
-    title: 第4章 中药注射剂与特殊剂型
-    segments: 5
+    title: 注射剂拿掉了胃肠这道屏障，就得把每一项要求补回来
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.96
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-neike-yongyao
-    title: 第5章 内科常用中成药
-    segments: 5
+    title: 选药的入口是证候，不是药名里的那两个字
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.94
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-fuke-erke
-    title: 第6章 妇科与儿科用药
-    segments: 5
+    title: 人群一变，剂量、疗程、禁忌三样一起变
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.92
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-gushang-pifu
-    title: 第7章 骨伤与皮肤科用药
-    segments: 5
+    title: 外用不是内服的降级版，它换了一条吸收路径
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.92
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-lianhe-yongyao
-    title: 第8章 联合用药与相互作用
-    segments: 5
+    title: 联用不是加法，是把两条作用曲线叠在同一张图上
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.95
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-buliang-fanying
-    title: 第9章 不良反应与监测
-    segments: 5
+    title: 监测的对象不是药，是药、人和用法组成的三元组
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.89
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.89      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-heli-yongyao
-    title: 第10章 合理使用与处方审核
-    segments: 5
+    title: 合理用药的最后一公里，是一张能被打勾的核对表
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.96
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

@@ -29,38 +29,37 @@ platform:
 
 chapters:
   - slug: 01-shiyanshi-anquan
-    title: 第1章 实验室安全与规范
-    segments: 5
+    title: 规范的作用不是禁止动作，而是把不可逆的后果提前变成可核查的条款
     video: rendered
-    estimate_minutes: 1.02
-    measured_minutes: 1.05
+    estimate_minutes: 1.02      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.05      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-shiyan-sheji
-    title: 第2章 实验设计与对照设置
-    segments: 5
+    title: 对照不是一个组，是给「反事实」找的一个可观察的替身
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.99
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.99      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-xingtai-fenzi
-    title: 第3章 形态学与分子实验实训
-    segments: 5
+    title: 你看到的从来不是组织本身，是处理过的那一片
     video: rendered
-    estimate_minutes: 1.05
-    measured_minutes: 1.09
+    estimate_minutes: 1.05      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.09      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-shuju-tongji
-    title: 第4章 数据采集与统计分析
-    segments: 5
+    title: 统计的错多半不在算法，在你选的那个分母上
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 1
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-jieguo-jiedu
-    title: 第5章 结果解读与可重复性
-    segments: 5
+    title: 解读结果靠的是机制判断，不是看偏离明不明显
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 1
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-shixun-baogao
-    title: 第6章 实训报告与考核
-    segments: 5
+    title: 报告不是把过程讲一遍，是把证据链交出来让人查
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1.04
+    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.04      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

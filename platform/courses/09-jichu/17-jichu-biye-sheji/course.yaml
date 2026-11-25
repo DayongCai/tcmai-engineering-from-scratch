@@ -29,38 +29,37 @@ platform:
 
 chapters:
   - slug: 01-xuan-ti
-    title: 第1章 选题：从机制假设到可检验实验
-    segments: 5
+    title: 好选题是在证据缺口上开出的可检验问题
     video: rendered
-    estimate_minutes: 1.03
-    measured_minutes: 1.07
+    estimate_minutes: 10.77      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.61      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-fangan-lunli
-    title: 第2章 实验方案与伦理审批
-    segments: 5
+    title: 方案经不起偏倚追问，伦理批件就过不了
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1.04
+    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.04      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-shiyan-shishi
-    title: 第3章 实验实施与原始记录
-    segments: 5
+    title: 原始记录的分量在于别人能照着重做出同一结果
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1.05
+    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.05      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-shuju-fenxi
-    title: 第4章 数据分析与结果呈现
-    segments: 5
+    title: 分析方法没有高级低级，只有配不配这批数据
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 1
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-lunwen-dabian
-    title: 第5章 论文写作与答辩
-    segments: 5
+    title: 论文与答辩输在口径不一致，不输在口才
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1.02
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.02      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-zhishi-yijiao
-    title: 第6章 知识移交：实验协议与交接
-    segments: 5
+    title: 移交不是交钥匙，是把判断的依据一并交出去
     video: rendered
-    estimate_minutes: 1.05
-    measured_minutes: 1.09
+    estimate_minutes: 1.05      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.09      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

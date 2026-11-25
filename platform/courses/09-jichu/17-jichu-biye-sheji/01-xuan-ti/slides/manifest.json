@@ -1,31 +1,76 @@
 {
   "chapter": "01-xuan-ti",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 14,
+  "segmentCount": 9,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 18
+      "chars": 22
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 72
+      "chars": 30
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 35
+      "chars": 96
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 120
+      "chars": 131
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 314
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 280
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 196
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 336
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 197
+    },
+    {
+      "n": 10,
+      "segment": 6,
+      "chars": 233
+    },
+    {
+      "n": 11,
+      "segment": 7,
+      "chars": 312
+    },
+    {
+      "n": 12,
+      "segment": 7,
+      "chars": 407
+    },
+    {
+      "n": 13,
+      "segment": 8,
+      "chars": 368
+    },
+    {
+      "n": 14,
+      "segment": 9,
       "chars": 52
     }
   ]

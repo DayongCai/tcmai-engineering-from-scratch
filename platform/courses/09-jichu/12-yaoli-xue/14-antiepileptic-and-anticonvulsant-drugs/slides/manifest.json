@@ -1,27 +1,27 @@
 {
   "chapter": "14-antiepileptic-and-anticonvulsant-drugs",
-  "slideCount": 26,
-  "segmentCount": 15,
+  "slideCount": 38,
+  "segmentCount": 12,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 24
+      "chars": 37
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 102
+      "chars": 23
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 226
+      "chars": 50
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 123
+      "chars": 85
     },
     {
       "n": 5,
@@ -31,7 +31,7 @@
     {
       "n": 6,
       "segment": 5,
-      "chars": 274
+      "chars": 292
     },
     {
       "n": 7,
@@ -41,96 +41,156 @@
     {
       "n": 8,
       "segment": 6,
-      "chars": 356
+      "chars": 264
     },
     {
       "n": 9,
-      "segment": 7,
-      "chars": 340
+      "segment": 6,
+      "chars": 173
     },
     {
       "n": 10,
       "segment": 7,
-      "chars": 298
+      "chars": 350
     },
     {
       "n": 11,
       "segment": 7,
-      "chars": 131
+      "chars": 340
     },
     {
       "n": 12,
-      "segment": 8,
-      "chars": 409
+      "segment": 7,
+      "chars": 131
     },
     {
       "n": 13,
       "segment": 8,
-      "chars": 319
+      "chars": 419
     },
     {
       "n": 14,
-      "segment": 9,
-      "chars": 408
+      "segment": 8,
+      "chars": 319
     },
     {
       "n": 15,
       "segment": 9,
-      "chars": 400
+      "chars": 364
     },
     {
       "n": 16,
       "segment": 9,
-      "chars": 361
+      "chars": 287
     },
     {
       "n": 17,
-      "segment": 10,
-      "chars": 328
+      "segment": 9,
+      "chars": 272
     },
     {
       "n": 18,
-      "segment": 10,
-      "chars": 378
+      "segment": 9,
+      "chars": 292
     },
     {
       "n": 19,
-      "segment": 11,
-      "chars": 371
+      "segment": 10,
+      "chars": 372
     },
     {
       "n": 20,
-      "segment": 11,
-      "chars": 159
+      "segment": 10,
+      "chars": 409
     },
     {
       "n": 21,
-      "segment": 12,
-      "chars": 374
+      "segment": 10,
+      "chars": 316
     },
     {
       "n": 22,
-      "segment": 12,
-      "chars": 173
+      "segment": 10,
+      "chars": 400
     },
     {
       "n": 23,
-      "segment": 13,
-      "chars": 268
+      "segment": 10,
+      "chars": 394
     },
     {
       "n": 24,
-      "segment": 13,
-      "chars": 283
+      "segment": 10,
+      "chars": 252
     },
     {
       "n": 25,
-      "segment": 14,
-      "chars": 511
+      "segment": 10,
+      "chars": 400
     },
     {
       "n": 26,
-      "segment": 15,
+      "segment": 10,
+      "chars": 401
+    },
+    {
+      "n": 27,
+      "segment": 10,
+      "chars": 388
+    },
+    {
+      "n": 28,
+      "segment": 10,
+      "chars": 390
+    },
+    {
+      "n": 29,
+      "segment": 10,
+      "chars": 358
+    },
+    {
+      "n": 30,
+      "segment": 10,
+      "chars": 342
+    },
+    {
+      "n": 31,
+      "segment": 10,
+      "chars": 358
+    },
+    {
+      "n": 32,
+      "segment": 10,
+      "chars": 166
+    },
+    {
+      "n": 33,
+      "segment": 11,
+      "chars": 405
+    },
+    {
+      "n": 34,
+      "segment": 11,
+      "chars": 278
+    },
+    {
+      "n": 35,
+      "segment": 11,
+      "chars": 179
+    },
+    {
+      "n": 36,
+      "segment": 11,
+      "chars": 413
+    },
+    {
+      "n": 37,
+      "segment": 11,
+      "chars": 184
+    },
+    {
+      "n": 38,
+      "segment": 12,
       "chars": 52
     }
   ]

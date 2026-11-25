@@ -3,11 +3,11 @@
  "generated": "scripts/build_video_lessons.js",
  "totals": {
   "subjects": 189,
-  "withVideo": 8,
-  "none": 181,
-  "lectures": 428,
+  "withVideo": 33,
+  "none": 156,
+  "lectures": 688,
   "cues": 177254,
-  "durationSec": 594209.082
+  "durationSec": 740973.376
  },
  "subjects": [
   {
@@ -28,71 +28,71 @@
      "path": "platform/courses/01-zhongyi/01-zhongyi-jichu-lilun",
      "rows": [
       {
-       "title": "阴阳学说 → 二分类：从零实现逻辑回归",
-       "durationSec": 348,
+       "title": "阴阳不是两个筐，而是一条能反向追问的偏向轴",
+       "durationSec": 347,
        "status": "rendered",
        "no": 1,
        "cues": 0
       },
       {
-       "title": "五行学说 → 多分类：从零实现 Softmax",
-       "durationSec": 300,
+       "title": "五行是一张十根边的约束网，不是一个分成五份的筐",
+       "durationSec": 303,
        "status": "rendered",
        "no": 2,
        "cues": 0
       },
       {
-       "title": "藏象学说 → 知识图谱：脏腑关系的图表示",
-       "durationSec": 318,
+       "title": "藏象是一张「黑箱—输出」对照表，解剖实体只解释了它的一半",
+       "durationSec": 315,
        "status": "rendered",
        "no": 3,
        "cues": 0
       },
       {
-       "title": "绪论：中医学的学科属性与工程化边界",
-       "durationSec": 276,
+       "title": "中基的「基础」不是简单，是替所有临床科目背下了同一套定义",
+       "durationSec": 273,
        "status": "rendered",
        "no": 4,
        "cues": 0
       },
       {
-       "title": "气血津液 → 状态向量与守恒约束",
+       "title": "气血津液给的是方向，不是配额，所以它不能当化验单读",
        "durationSec": 264,
        "status": "rendered",
        "no": 5,
        "cues": 0
       },
       {
-       "title": "经络学说 → 图上的路径与可及性",
-       "durationSec": 258,
+       "title": "十二经是一条闭合的环，环上的接点比穴名更值得先记住",
+       "durationSec": 261,
        "status": "rendered",
        "no": 6,
        "cues": 0
       },
       {
-       "title": "病因病机 → 因果图与失效模式",
-       "durationSec": 276,
+       "title": "病因不是一份清单，而是一台从症状倒推的反向机器",
+       "durationSec": 275,
        "status": "rendered",
        "no": 7,
        "cues": 0
       },
       {
-       "title": "防治原则 → 策略选择与代价函数",
-       "durationSec": 264,
+       "title": "治则不是八个字的目录，是八条各带「何时不能用」的判据",
+       "durationSec": 265,
        "status": "rendered",
        "no": 8,
        "cues": 0
       },
       {
-       "title": "体质与发病 → 先验分布与风险分层",
-       "durationSec": 252,
+       "title": "体质决定的是「从化方向」，不是「一定会得什么病」",
+       "durationSec": 254,
        "status": "rendered",
        "no": 9,
        "cues": 0
       },
       {
        "title": "用代码讲清一个中医基础理论命题",
-       "durationSec": 264,
+       "durationSec": 265,
        "status": "rendered",
        "no": 10,
        "cues": 0
@@ -2828,12 +2828,93 @@
    "deptTitle": "中药系",
    "semester": 6,
    "chapters": 10,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 10,
+     "durationSec": 4617.094,
+     "path": "platform/courses/02-zhongyao/21-zhongyao-du-li-xue",
+     "rows": [
+      {
+       "title": "毒性不是标签，是三个剂量与一条曲线共同决定的区间",
+       "durationSec": 506,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "决定毒性的是代谢产物与靶分子的反应，不是药材的名字",
+       "durationSec": 491,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "肝不是被药毒死的，是被自己的代谢酶改造出的产物毒死的",
+       "durationSec": 408,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "肾不是被毒物泡坏的，是被浓缩机制放大的",
+       "durationSec": 397,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "心与神经的毒性，按分钟计，而标签按剂计",
+       "durationSec": 396,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "致畸的窗口不是九个月，是器官形成的那十几天",
+       "durationSec": 460,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "减毒不是把毒药变没毒，是把暴露曲线往左推",
+       "durationSec": 470,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "监测不是等报告，是先定义什么算异常",
+       "durationSec": 459,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      },
+      {
+       "title": "试验的样本量，决定了结论能说到哪一步",
+       "durationSec": 534,
+       "status": "rendered",
+       "no": 9,
+       "cues": 0
+      },
+      {
+       "title": "致癌的门槛不是剂量，是潜伏期",
+       "durationSec": 497,
+       "status": "rendered",
+       "no": 10,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 10,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 4617.094,
+   "plan": "departments/02-zhongyao/21-zhongyao-du-li-xue/video/教案.md"
   },
   {
    "slug": "01-jingluo-xue",
@@ -3150,12 +3231,79 @@
    "deptTitle": "骨伤系",
    "semester": 4,
    "chapters": 8,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 8,
+     "durationSec": 4289.668,
+     "path": "platform/courses/04-gushang/01-zhongyi-yundong-xue",
+     "rows": [
+      {
+       "title": "导引能进医书，靠的不是古老，是能被开出方",
+       "durationSec": 447,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "运动调的不是肌肉，是气机的升降出入",
+       "durationSec": 511,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "体能不是六项指标的并列，是一条有先后的链",
+       "durationSec": 564,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "处方的完整性不在功法选得对不对，在停的条件写没写",
+       "durationSec": 512,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "柔韧不是拉得越开越好，是关节在该动的地方动、该稳的地方稳",
+       "durationSec": 497,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "力量练的是能不能做，耐力练的是能做多久",
+       "durationSec": 602,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "跌倒不是意外，是一次没通过的压力测试",
+       "durationSec": 532,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "损伤处理的第一件事不是止痛，是判断这能不能由你处理",
+       "durationSec": 626,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 8,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 4289.668,
+   "plan": "departments/04-gushang/01-zhongyi-yundong-xue/video/教案.md"
   },
   {
    "slug": "02-yao-shang-jiepou",
@@ -3164,12 +3312,93 @@
    "deptTitle": "骨伤系",
    "semester": 4,
    "chapters": 10,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 10,
+     "durationSec": 6126.646,
+     "path": "platform/courses/04-gushang/02-yao-shang-jiepou",
+     "rows": [
+      {
+       "title": "骨不是一根柱子：它按受力方向长成",
+       "durationSec": 693,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "骺板是一条时间线，不是一道缝",
+       "durationSec": 673,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "关节的稳定不在骨头上，在骨头以外的四层",
+       "durationSec": 602,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "肌不拉骨头，它拉的是自己的附着点",
+       "durationSec": 617,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "神经和血管走的是空隙，不是路线",
+       "durationSec": 617,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "脊柱的稳定是三根柱子的事，不是一块骨头的事",
+       "durationSec": 565,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "上肢用稳定换灵活，代价写在同一副骨架上",
+       "durationSec": 662,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "下肢的力线一偏，整副骨架都要还债",
+       "durationSec": 575,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      },
+      {
+       "title": "摸得到的解剖，才是能在病人身上用的解剖",
+       "durationSec": 602,
+       "status": "rendered",
+       "no": 9,
+       "cues": 0
+      },
+      {
+       "title": "同一个结构，在三种影像上是三个样子",
+       "durationSec": 746,
+       "status": "rendered",
+       "no": 10,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 10,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 6126.646,
+   "plan": "departments/04-gushang/02-yao-shang-jiepou/video/教案.md"
   },
   {
    "slug": "03-gushang-kexue-jichu",
@@ -3178,12 +3407,93 @@
    "deptTitle": "骨伤系",
    "semester": 5,
    "chapters": 10,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 10,
+     "durationSec": 6219.184,
+     "path": "platform/courses/04-gushang/03-gushang-kexue-jichu",
+     "rows": [
+      {
+       "title": "正骨先有程序，才有流派",
+       "durationSec": 668,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "影像能看见骨折线，看不见病人是怎么伤的",
+       "durationSec": 551,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "治疗的次序比方法清单重要",
+       "durationSec": 621,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "急救的第一个动作不是接骨",
+       "durationSec": 613,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "上肢骨折的难点不在接骨，在功能",
+       "durationSec": 581,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "下肢骨折先算血，再算骨",
+       "durationSec": 603,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "脱位是关节的事，后果常在关节外",
+       "durationSec": 653,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "筋伤的病人大多不需要手术，但都需要诊断",
+       "durationSec": 772,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      },
+      {
+       "title": "内伤看不见伤口，骨病不总是外伤",
+       "durationSec": 715,
+       "status": "rendered",
+       "no": 9,
+       "cues": 0
+      },
+      {
+       "title": "康复不是治疗之后，是治疗的一部分",
+       "durationSec": 770,
+       "status": "rendered",
+       "no": 10,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 10,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 6219.184,
+   "plan": "departments/04-gushang/03-gushang-kexue-jichu/video/教案.md"
   },
   {
    "slug": "04-chuangshang-jijiu-xue",
@@ -3192,12 +3502,79 @@
    "deptTitle": "骨伤系",
    "semester": 5,
    "chapters": 8,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 8,
+     "durationSec": 4553.152,
+     "path": "platform/courses/04-gushang/04-chuangshang-jijiu-xue",
+     "rows": [
+      {
+       "title": "急救的第一分钟不救任何人，只做判断",
+       "durationSec": 527,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "搬运不是把人抬走，是把断端抬走",
+       "durationSec": 591,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "止住看得见的血，盯住看不见的血",
+       "durationSec": 588,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "颅脑伤救的是\"不再加重\"，脊柱伤救的是\"不再移动\"",
+       "durationSec": 584,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "胸腹伤的死因，多半在体表看不见",
+       "durationSec": 472,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "四肢急救的成败，落在\"末梢\"两个字上",
+       "durationSec": 590,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "挤压伤的危险，在松开的瞬间",
+       "durationSec": 619,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "灾难现场最稀缺的不是技术，是\"谁先走\"的决定",
+       "durationSec": 582,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 8,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 4553.152,
+   "plan": "departments/04-gushang/04-chuangshang-jijiu-xue/video/教案.md"
   },
   {
    "slug": "05-yundong-yixue",
@@ -3206,12 +3583,79 @@
    "deptTitle": "骨伤系",
    "semester": 5,
    "chapters": 8,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 8,
+     "durationSec": 3865.41,
+     "path": "platform/courses/04-gushang/05-yundong-yixue",
+     "rows": [
+      {
+       "title": "运动医学的终点不是不疼，是这个人还能不能做回原来那个动作",
+       "durationSec": 547,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "分类的价值不在名字起得准，在这一刀切下去处理方案会跟着变",
+       "durationSec": 489,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "影像回答哪里断了，查体回答他还能做什么，两者不能互相代替",
+       "durationSec": 568,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "冰敷退场不是因为冷不好，是因为「先消炎」这个前提被换掉了",
+       "durationSec": 470,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "踝与膝的伤多半不是那一次扭，是扭完之后没人管它该稳在哪",
+       "durationSec": 560,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "过用性损伤不是用得太多，是修复追不上破坏",
+       "durationSec": 541,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "热身不是为了活动开，是为了在第一次发力之前把该查的都查一遍",
+       "durationSec": 512,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "能上场不是判据，能在这个强度下反复出现而不出问题才是",
+       "durationSec": 551,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 8,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 3865.41,
+   "plan": "departments/04-gushang/05-yundong-yixue/video/教案.md"
   },
   {
    "slug": "06-zhongyi-zhenggu-xue",
@@ -3220,12 +3664,107 @@
    "deptTitle": "骨伤系",
    "semester": 6,
    "chapters": 12,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 12,
+     "durationSec": 6429.21,
+     "path": "platform/courses/04-gushang/06-zhongyi-zhenggu-xue",
+     "rows": [
+      {
+       "title": "正骨是一门判断的学问，不是一套手法的目录",
+       "durationSec": 691,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "手法的四个变量：体位、着力点、方向、幅度",
+       "durationSec": 404,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "八法的次序比八法的名目重要",
+       "durationSec": 571,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "复位的成功标准写在功能里，不写在片子上",
+       "durationSec": 645,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "上肢的目标函数是「手能到该到的地方」",
+       "durationSec": 625,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "下肢的第一标准是能承重，第二才是对线",
+       "durationSec": 554,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "躯干的正骨，底线是不制造第二个损伤",
+       "durationSec": 539,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "脱位复位成功的那一刻，评估才刚开始",
+       "durationSec": 558,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      },
+      {
+       "title": "筋伤不是「没有骨折」，是另一类损伤",
+       "durationSec": 544,
+       "status": "rendered",
+       "no": 9,
+       "cues": 0
+      },
+      {
+       "title": "颈肩腰腿：手法收益最大，风险也最集中",
+       "durationSec": 524,
+       "status": "rendered",
+       "no": 10,
+       "cues": 0
+      },
+      {
+       "title": "儿童不是小一号的成人，老人也不是老一号的成人",
+       "durationSec": 515,
+       "status": "rendered",
+       "no": 11,
+       "cues": 0
+      },
+      {
+       "title": "康复从受伤那天开始，不是治疗结束之后",
+       "durationSec": 533,
+       "status": "rendered",
+       "no": 12,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 12,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 6429.21,
+   "plan": "departments/04-gushang/06-zhongyi-zhenggu-xue/video/教案.md"
   },
   {
    "slug": "07-zhongyi-jinshang-xue",
@@ -3234,12 +3773,93 @@
    "deptTitle": "骨伤系",
    "semester": 6,
    "chapters": 10,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 10,
+     "durationSec": 6186.066,
+     "path": "platform/courses/04-gushang/07-zhongyi-jinshang-xue",
+     "rows": [
+      {
+       "title": "筋伤不是「软组织损伤」的同义词",
+       "durationSec": 658,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "分期的尺子是肿、痛、活动度，不是日历",
+       "durationSec": 543,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "压痛点的位置，比疼了多久更有信息量",
+       "durationSec": 500,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "手法的水平不在力度，在边界",
+       "durationSec": 536,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "颈部的手法，先学会不做",
+       "durationSec": 781,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "抬不起来的肩，先分关节囊还是肌腱",
+       "durationSec": 670,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "「捶着舒服」是一条诊断线索",
+       "durationSec": 665,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "崴脚要分级，不稳比痛更要紧",
+       "durationSec": 728,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      },
+      {
+       "title": "小部位靠结构定位，不靠痛点定位",
+       "durationSec": 571,
+       "status": "rendered",
+       "no": 9,
+       "cues": 0
+      },
+      {
+       "title": "康复是在正确的时间给正确的负荷",
+       "durationSec": 533,
+       "status": "rendered",
+       "no": 10,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 10,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 6186.066,
+   "plan": "departments/04-gushang/07-zhongyi-jinshang-xue/video/教案.md"
   },
   {
    "slug": "08-gushang-shoufa-zhiliao",
@@ -3248,12 +3868,93 @@
    "deptTitle": "骨伤系",
    "semester": 6,
    "chapters": 10,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 10,
+     "durationSec": 5599.874,
+     "path": "platform/courses/04-gushang/08-gushang-shoufa-zhiliao",
+     "rows": [
+      {
+       "title": "手法不是力气活：四个字约束的是一组物理量",
+       "durationSec": 644,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "八法是六条，而且是一条链：断在「摸」上，后面全错",
+       "durationSec": 725,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "「松」与「伤」只差三个变量：力落在哪一层、停了多久、着力面多大",
+       "durationSec": 559,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "复位不是「推回去」，是把四个方向的移位逐个消到容差以内",
+       "durationSec": 566,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "颈肩的风险不在手上，在筛上",
+       "durationSec": 634,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "腰腿痛有一半时间在做鉴别，鉴别没做完就不动手",
+       "durationSec": 561,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "松动不改位置，只改活动度：这条界划错，处方就错",
+       "durationSec": 533,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "小儿的手法清单短得多，因为最薄的一层是骺板",
+       "durationSec": 594,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      },
+      {
+       "title": "手法是主动加荷：先排危险，再谈手法",
+       "durationSec": 532,
+       "status": "rendered",
+       "no": 9,
+       "cues": 0
+      },
+      {
+       "title": "「好多了」不是结论：没有时点的疗效，等于没有疗效",
+       "durationSec": 578,
+       "status": "rendered",
+       "no": 10,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 10,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 5599.874,
+   "plan": "departments/04-gushang/08-gushang-shoufa-zhiliao/video/教案.md"
   },
   {
    "slug": "09-guke-yingxiang-zhenduan",
@@ -3262,12 +3963,93 @@
    "deptTitle": "骨伤系",
    "semester": 6,
    "chapters": 10,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 10,
+     "durationSec": 5640.17,
+     "path": "platform/courses/04-gushang/09-guke-yingxiang-zhenduan",
+     "rows": [
+      {
+       "title": "先问要回答什么，再决定拍什么",
+       "durationSec": 704,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "正常不是\"没有异常\"，是知道什么算正常",
+       "durationSec": 648,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "病变不是病名，是几种基本变化的组合",
+       "durationSec": 663,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "骨折的片子，先看片子，再看骨头",
+       "durationSec": 724,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "关节的伤，看不见的那一半才是麻烦",
+       "durationSec": 656,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "脊柱的片子，最危险的不是那条骨折线",
+       "durationSec": 643,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "退变是年龄写在片子上的字，痛是另一回事",
+       "durationSec": 667,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "感染与肿瘤在早期长得像，时间是最好的鉴别",
+       "durationSec": 592,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      },
+      {
+       "title": "骨坏死最早的那一步，只有 MRI 看得见",
+       "durationSec": 569,
+       "status": "rendered",
+       "no": 9,
+       "cues": 0
+      },
+      {
+       "title": "儿童不是缩小的成人，肿瘤不是一诊断就手术",
+       "durationSec": 556,
+       "status": "rendered",
+       "no": 10,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 10,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 5640.17,
+   "plan": "departments/04-gushang/09-guke-yingxiang-zhenduan/video/教案.md"
   },
   {
    "slug": "10-jizhu-bing-xue",
@@ -3276,12 +4058,93 @@
    "deptTitle": "骨伤系",
    "semester": 7,
    "chapters": 10,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 10,
+     "durationSec": 4899.018,
+     "path": "platform/courses/04-gushang/10-jizhu-bing-xue",
+     "rows": [
+      {
+       "title": "脊柱不是一根柱子，而是一组会互相代偿的关节",
+       "durationSec": 637,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "片子回答「有没有」，不回答「痛不痛」",
+       "durationSec": 555,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "颈痛九成不是颈椎病，颈椎病九成不必手术",
+       "durationSec": 502,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "颈椎损伤的第一分钟，比后面的三十天更重要",
+       "durationSec": 526,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "椎间盘突出是影像诊断，腰痛是一个人的生活",
+       "durationSec": 524,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "走不远的人：狭窄与滑脱，先分清是管窄还是骨错位",
+       "durationSec": 637,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "侧弯不是姿势问题：谁在长，谁在弯，谁在代偿",
+       "durationSec": 643,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "一次椎体压缩骨折，是下一次骨折的预告",
+       "durationSec": 645,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      },
+      {
+       "title": "手法与手术之间，隔着的不是勇气，是判据",
+       "durationSec": 629,
+       "status": "rendered",
+       "no": 9,
+       "cues": 0
+      },
+      {
+       "title": "把「治好」换成「能过」：脊柱的长期管理",
+       "durationSec": 650,
+       "status": "rendered",
+       "no": 10,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 10,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 4899.018,
+   "plan": "departments/04-gushang/10-jizhu-bing-xue/video/教案.md"
   },
   {
    "slug": "11-guanjie-bing-xue",
@@ -3290,12 +4153,93 @@
    "deptTitle": "骨伤系",
    "semester": 7,
    "chapters": 10,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 10,
+     "durationSec": 5890.898,
+     "path": "platform/courses/04-gushang/11-guanjie-bing-xue",
+     "rows": [
+      {
+       "title": "关节病的第一个动作不是开药，是把病人放进正确的类别里",
+       "durationSec": 704,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "关节病的体征长得很慢，判据必须写在流程里",
+       "durationSec": 611,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "治疗不是选项的堆叠，是先分层、再分期、后选法",
+       "durationSec": 681,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "化脓性关节病的时间里没有「观察一下」这个选项",
+       "durationSec": 655,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "骨结核最像的不是结核，是劳损",
+       "durationSec": 416,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "骨肿瘤的第一个动作是拍片，不是解释",
+       "durationSec": 716,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "骨量的流失是安静的，骨折是它第一次说话",
+       "durationSec": 772,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "骨坏死的窗口期，落在 X 线还看不见的那段时间里",
+       "durationSec": 682,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      },
+      {
+       "title": "骨关节炎与类风湿的治疗方向是相反的",
+       "durationSec": 879,
+       "status": "rendered",
+       "no": 9,
+       "cues": 0
+      },
+      {
+       "title": "畸形不疼，所以它总在没人看着的时候长",
+       "durationSec": 764,
+       "status": "rendered",
+       "no": 10,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 10,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 5890.898,
+   "plan": "departments/04-gushang/11-guanjie-bing-xue/video/教案.md"
   },
   {
    "slug": "12-guzhishusong-tuibian",
@@ -3304,12 +4248,79 @@
    "deptTitle": "骨伤系",
    "semester": 7,
    "chapters": 8,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 8,
+     "durationSec": 4313.738,
+     "path": "platform/courses/04-gushang/12-guzhishusong-tuibian",
+     "rows": [
+      {
+       "title": "骨量的峰值，三十岁那年就已经写定",
+       "durationSec": 570,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "一张 T 值报告，回答不了「他会不会骨折」",
+       "durationSec": 606,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "「原发性」是排除出来的，不是默认的",
+       "durationSec": 598,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "骨关节炎不是「磨没了」，是整个关节在改建",
+       "durationSec": 379,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "报告上的「退变」，有一半是年龄",
+       "durationSec": 712,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "抗骨质疏松药不改「骨头的年龄」，只改斜率",
+       "durationSec": 754,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "跌倒不是意外，是一串可以被算出来的事件",
+       "durationSec": 691,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "骨质疏松的治疗，多半输在第二年",
+       "durationSec": 790,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 8,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 4313.738,
+   "plan": "departments/04-gushang/12-guzhishusong-tuibian/video/教案.md"
   },
   {
    "slug": "13-zhongyi-zhengji-xue",
@@ -3332,12 +4343,79 @@
    "deptTitle": "骨伤系",
    "semester": 8,
    "chapters": 8,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 8,
+     "durationSec": 4655.526,
+     "path": "platform/courses/04-gushang/14-kangfu-gongcheng-zhiju",
+     "rows": [
+      {
+       "title": "支具不治病，它改变的是力的分配",
+       "durationSec": 625,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "分类看约束的方向，材料看它能撑多久",
+       "durationSec": 545,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "脊柱支具靠三点力，不靠把躯干裹紧",
+       "durationSec": 571,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "手部支具的目标是滑动，不是固定",
+       "durationSec": 583,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "下肢支具先回答负重，再回答步态",
+       "durationSec": 610,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "鞋垫改变力矩，压力衣改变梯度",
+       "durationSec": 595,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "辅具的第一判据是使用者能不能自己用",
+       "durationSec": 555,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "适配好不好，皮肤先说话",
+       "durationSec": 572,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 8,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 4655.526,
+   "plan": "departments/04-gushang/14-kangfu-gongcheng-zhiju/video/教案.md"
   },
   {
    "slug": "15-gushang-kangfu-pingding",
@@ -3346,12 +4424,79 @@
    "deptTitle": "骨伤系",
    "semester": 8,
    "chapters": 8,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 8,
+     "durationSec": 4137.582,
+     "path": "platform/courses/04-gushang/15-gushang-kangfu-pingding",
+     "rows": [
+      {
+       "title": "评定不是给功能打分，是把「他现在不能做什么」换成「下一步做什么」",
+       "durationSec": 418,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "角度量得出来，力量量得出来，「够不够用」量不出来",
+       "durationSec": 553,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "平衡不好的人不是站不住，是他不知道自己正在站不住",
+       "durationSec": 496,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "ADL 满分的人，可以完全回不到原来的生活",
+       "durationSec": 520,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "疼痛评分是他给你的一个数，不是他承受的那个量",
+       "durationSec": 537,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "片子上的愈合有时间表，能不能负重没有",
+       "durationSec": 520,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "量表不是越全越好，是能测出变化才算有用",
+       "durationSec": 541,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "报告是写给三个月后的自己看的，不是写给今天签字的人看的",
+       "durationSec": 552,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 8,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 4137.582,
+   "plan": "departments/04-gushang/15-gushang-kangfu-pingding/video/教案.md"
   },
   {
    "slug": "16-gushang-linchuang-lunzhuan",
@@ -3360,12 +4505,65 @@
    "deptTitle": "骨伤系",
    "semester": 9,
    "chapters": 6,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 6,
+     "durationSec": 2307.874,
+     "path": "platform/courses/04-gushang/16-gushang-linchuang-lunzhuan",
+     "rows": [
+      {
+       "title": "正骨轮转：复位做得好不好，看的是你喊停的那一次",
+       "durationSec": 448,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "筋伤轮转：门槛不在手上，在禁忌筛查那三分钟",
+       "durationSec": 318,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "脊柱轮转：最贵的错误，是把红旗征当成落枕",
+       "durationSec": 371,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "关节轮转：先分清「能等」和「不能等」",
+       "durationSec": 406,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "创伤轮转：第一课是分工，不是技术",
+       "durationSec": 313,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "出科考核：考的不是背，是你能不能把一次接诊从头讲到尾",
+       "durationSec": 452,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 6,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 2307.874,
+   "plan": "departments/04-gushang/16-gushang-linchuang-lunzhuan/video/教案.md"
   },
   {
    "slug": "17-gushang-biye-sheji",
@@ -3374,12 +4572,65 @@
    "deptTitle": "骨伤系",
    "semester": 10,
    "chapters": 6,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 6,
+     "durationSec": 2832.77,
+     "path": "platform/courses/04-gushang/17-gushang-biye-sheji",
+     "rows": [
+      {
+       "title": "选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题",
+       "durationSec": 511,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "影像不是插图，是把「看得见」变成「量得出、量得一样」的那一步",
+       "durationSec": 444,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "把手法写成流程、把支具写成参数，才算做完；「手感」和「定制」都交不出去",
+       "durationSec": 460,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "疗效不是「好转了」，是先在纸上写死「什么叫没好转」",
+       "durationSec": 495,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好",
+       "durationSec": 589,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法",
+       "durationSec": 541,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 6,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 2832.77,
+   "plan": "departments/04-gushang/17-gushang-biye-sheji/video/教案.md"
   },
   {
    "slug": "01-zhongyi-huli-jichu",
@@ -4860,12 +6111,93 @@
    "deptTitle": "基础医学院",
    "semester": 1,
    "chapters": 10,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 10,
+     "durationSec": 7689.5,
+     "path": "platform/courses/09-jichu/01-renti-jiepou-xue",
+     "rows": [
+      {
+       "title": "解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得",
+       "durationSec": 710,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "运动系统不是「一堆骨头的名字」，而是一套受力与杠杆的分工",
+       "durationSec": 774,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "消化器官的位置不是背出来的，是被系膜与腹膜挂住的",
+       "durationSec": 803,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "呼吸系统的每一段都在回答同一个问题：气走多远、被什么包住",
+       "durationSec": 658,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "排尿通路的难点不在管子本身，而在三处狭窄与两性末段的分野",
+       "durationSec": 695,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "生殖器官要按连续通路与同源对应来读，不能按名称逐个背诵",
+       "durationSec": 708,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "循环系统是两条首尾相接的环路，心的瓣膜决定血只能朝一个方向走",
+       "durationSec": 822,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "内分泌腺的形态差异，最后都落在「产物怎么进血」这一件事上",
+       "durationSec": 841,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      },
+      {
+       "title": "感觉器把刺激收进神经通路，辅助装置决定它收得准不准",
+       "durationSec": 676,
+       "status": "rendered",
+       "no": 9,
+       "cues": 0
+      },
+      {
+       "title": "神经系统的全部内容，是通路与联系在颅腔与椎管里的具体排布",
+       "durationSec": 1421,
+       "status": "rendered",
+       "no": 10,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 10,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 7689.5,
+   "plan": "departments/09-jichu/01-renti-jiepou-xue/video/教案.md"
   },
   {
    "slug": "02-zuzhi-peitai-xue",
@@ -4874,12 +6206,163 @@
    "deptTitle": "基础医学院",
    "semester": 1,
    "chapters": 20,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 20,
+     "durationSec": 13872.364,
+     "path": "platform/courses/09-jichu/02-zuzhi-peitai-xue",
+     "rows": [
+      {
+       "title": "组织学的功夫在「位置」上，不在名词上",
+       "durationSec": 680,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "上皮的极性一看出，功能就已经说出一半",
+       "durationSec": 762,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "结缔组织不是填充物，而是把全身连成一个力学系统的介质",
+       "durationSec": 716,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "三型肌组织是同一台滑行机制的三次不同装配",
+       "durationSec": 618,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "神经元的形态差异，是它在回路里位置不同的证据",
+       "durationSec": 655,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "中枢的构筑只有两条原则：胞体聚成层或团，纤维走成束",
+       "durationSec": 666,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "管壁三层的厚薄比例，就是一段血管的功能简历",
+       "durationSec": 735,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "免疫系统的判读靠分区：同一个细胞，位置不同任务就不同",
+       "durationSec": 688,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      },
+      {
+       "title": "消化管是同一套四层结构被逐段改装的结果",
+       "durationSec": 762,
+       "status": "rendered",
+       "no": 9,
+       "cues": 0
+      },
+      {
+       "title": "呼吸道是一条逐级减配、逐级变薄的管道",
+       "durationSec": 711,
+       "status": "rendered",
+       "no": 10,
+       "cues": 0
+      },
+      {
+       "title": "肾的两套毛细血管网，让同一份血在一个器官里过两遍",
+       "durationSec": 692,
+       "status": "rendered",
+       "no": 11,
+       "cues": 0
+      },
+      {
+       "title": "皮肤的屏障由已经没有细胞器的细胞撑着，活细胞只负责在下面补货",
+       "durationSec": 958,
+       "status": "rendered",
+       "no": 12,
+       "cues": 0
+      },
+      {
+       "title": "眼与耳的共同骨架，是把换能细胞关进腔隙再用中继链送上皮质",
+       "durationSec": 953,
+       "status": "rendered",
+       "no": 13,
+       "cues": 0
+      },
+      {
+       "title": "内分泌腺没有导管，于是结构只剩一件事：把腺细胞排到毛细血管边上",
+       "durationSec": 944,
+       "status": "rendered",
+       "no": 14,
+       "cues": 0
+      },
+      {
+       "title": "血睾屏障把一条小管分成两个世界，免疫隔离是它为有序减数分裂付的账",
+       "durationSec": 414,
+       "status": "rendered",
+       "no": 15,
+       "cues": 0
+      },
+      {
+       "title": "子宫内膜每月拆掉重建一次，施工令由卵巢的卵泡与黄体轮流签发",
+       "durationSec": 668,
+       "status": "rendered",
+       "no": 16,
+       "cues": 0
+      },
+      {
+       "title": "没有人看过自己的发生，胚胎学的时间线是拼接出来的",
+       "durationSec": 621,
+       "status": "rendered",
+       "no": 17,
+       "cues": 0
+      },
+      {
+       "title": "早期发生只做了一件事：反复把一分成两半",
+       "durationSec": 658,
+       "status": "rendered",
+       "no": 18,
+       "cues": 0
+      },
+      {
+       "title": "器官不是新建的，是三胚层用出芽折叠融合分隔这四招改出来的",
+       "durationSec": 860,
+       "status": "rendered",
+       "no": 19,
+       "cues": 0
+      },
+      {
+       "title": "畸形的后果由时相决定，而时相偏偏是本章唯一不许写数值的变量",
+       "durationSec": 682,
+       "status": "rendered",
+       "no": 20,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 20,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 13872.364,
+   "plan": "departments/09-jichu/02-zuzhi-peitai-xue/video/教案.md"
   },
   {
    "slug": "03-yixue-xibao-shengwu-xue",
@@ -4888,12 +6371,107 @@
    "deptTitle": "基础医学院",
    "semester": 1,
    "chapters": 12,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 12,
+     "durationSec": 5850.954,
+     "path": "platform/courses/09-jichu/03-yixue-xibao-shengwu-xue",
+     "rows": [
+      {
+       "title": "细胞学说真正的断言不是「小」，是「一切账都记在膜内」",
+       "durationSec": 487,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "膜的本事不是「挡住」，是「让该过的过得快，让不该过的过得慢」",
+       "durationSec": 486,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "连接不是把细胞粘住，是把「这一层」变成一个可以调控的整体",
+       "durationSec": 454,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "基质不是填充物，是细胞每天在读的一份说明书",
+       "durationSec": 553,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "骨架不是骨头，是一套会自己拆了重装的轨道",
+       "durationSec": 589,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "信号不是一路跑到底，是每一小段都重新发一次",
+       "durationSec": 534,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "染色质不是打包好的档案，是一份随时被翻开的活页",
+       "durationSec": 480,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "调控的答案不在「开或关」，在「多少、何时、在哪」",
+       "durationSec": 585,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      },
+      {
+       "title": "细胞周期不是四个阶段，是三道闸门加一套计时器",
+       "durationSec": 378,
+       "status": "rendered",
+       "no": 9,
+       "cues": 0
+      },
+      {
+       "title": "蛋白不是「造出来」的，是「按图纸装配，再一路过安检」",
+       "durationSec": 426,
+       "status": "rendered",
+       "no": 10,
+       "cues": 0
+      },
+      {
+       "title": "分化不是学会新本事，是把已有的本事关掉大部分",
+       "durationSec": 520,
+       "status": "rendered",
+       "no": 11,
+       "cues": 0
+      },
+      {
+       "title": "方法的可信度不由仪器决定，由对照决定",
+       "durationSec": 359,
+       "status": "rendered",
+       "no": 12,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 12,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 5850.954,
+   "plan": "departments/09-jichu/03-yixue-xibao-shengwu-xue/video/教案.md"
   },
   {
    "slug": "04-yixue-shengwu-xue",
@@ -4902,12 +6480,135 @@
    "deptTitle": "基础医学院",
    "semester": 2,
    "chapters": 16,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 16,
+     "durationSec": 7729.366,
+     "path": "platform/courses/09-jichu/04-yixue-shengwu-xue",
+     "rows": [
+      {
+       "title": "这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链",
+       "durationSec": 488,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "这门学科划的不是「细胞」这条线，是「可测的细胞状态」这条线",
+       "durationSec": 634,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "细胞的大小不是自由选择，是表面积与体积算出来的一道硬账",
+       "durationSec": 506,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "膜的本事不是「挡住」，是「让不该过的过得慢，让该过的过得快」",
+       "durationSec": 661,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "细胞质不是一锅汤，是一条有方向、有分区、要收费的流水线",
+       "durationSec": 512,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "核的全部本事，是让两米长的信息住进一间六微米的屋子还找得到",
+       "durationSec": 559,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "增殖、分化、衰老、死亡不是四件事，是同一个开关的四个位置",
+       "durationSec": 538,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "干细胞的门槛不是「什么都能变」，是「变了还能变回来」",
+       "durationSec": 464,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      },
+      {
+       "title": "遗传学研究的不是「病」，是「差异怎么传下去」",
+       "durationSec": 407,
+       "status": "rendered",
+       "no": 9,
+       "cues": 0
+      },
+      {
+       "title": "基因不是一段密码，是一段带标点、带批注、还会被剪接的文本",
+       "durationSec": 479,
+       "status": "rendered",
+       "no": 10,
+       "cues": 0
+      },
+      {
+       "title": "3∶1 不是疾病的规律，是配子随机结合的算术",
+       "durationSec": 393,
+       "status": "rendered",
+       "no": 11,
+       "cues": 0
+      },
+      {
+       "title": "多基因病的遗传不是「传下去」，是「分布的一端被推过了线」",
+       "durationSec": 531,
+       "status": "rendered",
+       "no": 12,
+       "cues": 0
+      },
+      {
+       "title": "核型分析做的事，是把一条连续的信息流切成四十六段可数的实物",
+       "durationSec": 583,
+       "status": "rendered",
+       "no": 13,
+       "cues": 0
+      },
+      {
+       "title": "群体遗传学算的不是「谁会病」，是「这个变异在这个人群里能待多久」",
+       "durationSec": 427,
+       "status": "rendered",
+       "no": 14,
+       "cues": 0
+      },
+      {
+       "title": "临床遗传学最难的环节不是测出变异，是把变异说成人话",
+       "durationSec": 506,
+       "status": "rendered",
+       "no": 15,
+       "cues": 0
+      },
+      {
+       "title": "中医讲「禀赋」，讲的不是基因，是「一个人从父母那里带来的起点与限度」",
+       "durationSec": 494,
+       "status": "rendered",
+       "no": 16,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 16,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 7729.366,
+   "plan": "departments/09-jichu/04-yixue-shengwu-xue/video/教案.md"
   },
   {
    "slug": "05-zhengchang-renti-xue",
@@ -4916,12 +6617,149 @@
    "deptTitle": "基础医学院",
    "semester": 2,
    "chapters": 18,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 18,
+     "durationSec": 10303.26,
+     "path": "platform/courses/09-jichu/05-zhengchang-renti-xue",
+     "rows": [
+      {
+       "title": "人体不是零件的堆叠，而是可逐层追问的构造体系",
+       "durationSec": 791,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "四类基本组织不是分类摆件，而是功能的四个前置条件",
+       "durationSec": 721,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "发育的每一个阶段都是下一阶段的前提，顺序本身就是知识",
+       "durationSec": 505,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "骨是支架、关节是许可、肌是动力，三者缺一动作就不成立",
+       "durationSec": 684,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "消化管是一条连续流水线，每一处褶皱都在为吸收记账",
+       "durationSec": 523,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "呼吸不是把气吸进来，而是把胸腔的一次形变换成一次交换",
+       "durationSec": 568,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "尿不是滤出来的，而是滤过之后被逐段改写的结果",
+       "durationSec": 618,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "生殖系统的关键在于一条通路，而不在于器官清单",
+       "durationSec": 526,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      },
+      {
+       "title": "两条回路、四道瓣膜、一套传导：心既是泵，也是路由",
+       "durationSec": 491,
+       "status": "rendered",
+       "no": 9,
+       "cues": 0
+      },
+      {
+       "title": "感觉器官要记的不是层数，而是刺激在哪一层变成信号",
+       "durationSec": 477,
+       "status": "rendered",
+       "no": 10,
+       "cues": 0
+      },
+      {
+       "title": "神经系统的分层不是目录，而是信号必须逐级换手的地方",
+       "durationSec": 576,
+       "status": "rendered",
+       "no": 11,
+       "cues": 0
+      },
+      {
+       "title": "内分泌的层级不是官阶，而是一条能自己踩刹车的回路",
+       "durationSec": 500,
+       "status": "rendered",
+       "no": 12,
+       "cues": 0
+      },
+      {
+       "title": "稳态不是「不变」，而是一条允许波动的容差带",
+       "durationSec": 483,
+       "status": "rendered",
+       "no": 13,
+       "cues": 0
+      },
+      {
+       "title": "循环与呼吸不是两个系统，是一条链的两段",
+       "durationSec": 652,
+       "status": "rendered",
+       "no": 14,
+       "cues": 0
+      },
+      {
+       "title": "吸收的关键不是「吃进去」，而是面积与回流同时到位",
+       "durationSec": 755,
+       "status": "rendered",
+       "no": 15,
+       "cues": 0
+      },
+      {
+       "title": "排出有四条路，体温只靠四个散热点收尾",
+       "durationSec": 914,
+       "status": "rendered",
+       "no": 16,
+       "cues": 0
+      },
+      {
+       "title": "三种调节的分界不在快慢，而在谁不需要被指挥",
+       "durationSec": 537,
+       "status": "rendered",
+       "no": 17,
+       "cues": 0
+      },
+      {
+       "title": "知识库的价值不在存了多少条，而在每条都写得出依据与边界",
+       "durationSec": 693,
+       "status": "rendered",
+       "no": 18,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 18,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 10303.26,
+   "plan": "departments/09-jichu/05-zhengchang-renti-xue/video/教案.md"
   },
   {
    "slug": "06-shengli-xue",
@@ -4930,12 +6768,100 @@
    "deptTitle": "基础医学院",
    "semester": 2,
    "chapters": 11,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 11,
+     "durationSec": 5304.965,
+     "path": "platform/courses/09-jichu/06-shengli-xue",
+     "rows": [
+      {
+       "title": "绪论：把「稳态」写成一条可检查的回路",
+       "durationSec": 575,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "细胞的基本功能：一条从膜到肌丝的链",
+       "durationSec": 1885,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "血液：用三张图替掉一张数字表",
+       "durationSec": 2092,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "血液循环：泵血·血管·调节·器官循环",
+       "durationSec": 2620,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "呼吸：通气·换气·气体运输·呼吸调节",
+       "durationSec": 2623,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "消化和吸收：分泌·运动·吸收与调节",
+       "durationSec": 2905,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "能量代谢与体温：产与散的两本账",
+       "durationSec": 2173,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "肾脏的排泄功能：一条流水线，三个方向",
+       "durationSec": 2206,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      },
+      {
+       "title": "内分泌：谁作用于谁，而不是多少",
+       "durationSec": 2153,
+       "status": "rendered",
+       "no": 9,
+       "cues": 0
+      },
+      {
+       "title": "神经系统：全章最密的一节不是电，是抑制",
+       "durationSec": 680,
+       "status": "rendered",
+       "no": 10,
+       "cues": 0
+      },
+      {
+       "title": "感觉器官：全书最容易被写成参数表的一章，给了最多的「不给值」",
+       "durationSec": 643,
+       "status": "rendered",
+       "no": 11,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 11,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 5304.965,
+   "plan": "departments/09-jichu/06-shengli-xue/video/教案.md"
   },
   {
    "slug": "07-shenghua-xue",
@@ -4958,12 +6884,86 @@
    "deptTitle": "基础医学院",
    "semester": 3,
    "chapters": 9,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 9,
+     "durationSec": 7034.371,
+     "path": "platform/courses/09-jichu/08-jubu-jiepou-xue",
+     "rows": [
+      {
+       "title": "局部解剖学教的不是缩小的人体，而是一条从皮肤走到骨的路线",
+       "durationSec": 660,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "上肢的层次是按通道排的，所以断在哪一段能推出坏在哪一条",
+       "durationSec": 841,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "下肢的难点不在记血管，而在同一个区里叠着两套通道",
+       "durationSec": 741,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "头部的答案在「谁跟谁粘在一起」，不在五层的名字里",
+       "durationSec": 833,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "颈部的问题不是结构多，而是筋膜把结构隔成了互不相通的层",
+       "durationSec": 726,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "胸部的所有位置都得带参照，因为它的容积一直在变",
+       "durationSec": 886,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "腹部先分「被腹膜包了几面」，再谈器官在哪",
+       "durationSec": 892,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "骨盆下口靠两个膈封闭，会阴的层次得先说清从哪个方向数",
+       "durationSec": 1112,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      },
+      {
+       "title": "脊柱区的所有层次都在为一条管让路，所以答案总在「壁上」",
+       "durationSec": 1080,
+       "status": "rendered",
+       "no": 9,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 9,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 7034.371,
+   "plan": "departments/09-jichu/08-jubu-jiepou-xue/video/教案.md"
   },
   {
    "slug": "09-yixue-yichuan-xue",
@@ -4972,12 +6972,107 @@
    "deptTitle": "基础医学院",
    "semester": 3,
    "chapters": 12,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 12,
+     "durationSec": 6415.634,
+     "path": "platform/courses/09-jichu/09-yixue-yichuan-xue",
+     "rows": [
+      {
+       "title": "遗传学的医学价值不在「找到那个基因」，在「把个体风险从人群平均里拆出来」",
+       "durationSec": 587,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "基因不是「一段编码」，是一套带开关的坐标系",
+       "durationSec": 445,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "突变的后果不取决于它多大，取决于它落在哪一格、以及阅读框还在不在",
+       "durationSec": 474,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "系谱不是「看图猜病」，是一台把家族史折成概率的机器",
+       "durationSec": 547,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "单基因病的「单」，说的是传递单位，不是病因的单一性",
+       "durationSec": 512,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "多基因病不在某一条染色体上，在「易患性的分布」里",
+       "durationSec": 533,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "再发风险不是一个数字，是一个随每条新信息改动的后验",
+       "durationSec": 569,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "核型是一条「分辨率就是判据」的技术",
+       "durationSec": 608,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      },
+      {
+       "title": "染色体病的表型不是「某个基因坏了」，是「一整批基因的剂量偏了」",
+       "durationSec": 689,
+       "status": "rendered",
+       "no": 9,
+       "cues": 0
+      },
+      {
+       "title": "遗传平衡不是自然界的常态，是一把用来量「什么力在起作用」的尺子",
+       "durationSec": 505,
+       "status": "rendered",
+       "no": 10,
+       "cues": 0
+      },
+      {
+       "title": "遗传咨询的产出不是「一个风险数字」，是一份能在几个选项里做决定的框架",
+       "durationSec": 571,
+       "status": "rendered",
+       "no": 11,
+       "cues": 0
+      },
+      {
+       "title": "「禀赋」不是遗传学的同义词，它是一套描述系统，价值在提问而不在术语对接",
+       "durationSec": 596,
+       "status": "rendered",
+       "no": 12,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 12,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 6415.634,
+   "plan": "departments/09-jichu/09-yixue-yichuan-xue/video/教案.md"
   },
   {
    "slug": "10-bingli-xue",
@@ -5012,371 +7107,371 @@
      "rows": [
       {
        "title": "第 1 章 · 病理生理学导论：四个问题与一套不判定的口径",
-       "durationSec": 1741,
+       "durationSec": 1844,
        "status": "rendered",
        "no": 1,
        "cues": 0
       },
       {
        "title": "第 2 章 · 稳态、异稳态与对应激源的适应性反应：设定点是可以被移动的",
-       "durationSec": 1607,
+       "durationSec": 1714,
        "status": "rendered",
        "no": 2,
        "cues": 0
       },
       {
        "title": "第 3 章 · 细胞结构与功能：结构是损伤的受力点清单",
-       "durationSec": 1270,
+       "durationSec": 1360,
        "status": "rendered",
        "no": 3,
        "cues": 0
       },
       {
        "title": "第 4 章 · 细胞损伤、衰老与死亡：一条线、两种死法、一个例外",
-       "durationSec": 1416,
+       "durationSec": 1504,
        "status": "rendered",
        "no": 4,
        "cues": 0
       },
       {
        "title": "第 5 章 · 基因组结构、调控与组织分化：同一份底稿的十种读法",
-       "durationSec": 1190,
+       "durationSec": 1272,
        "status": "rendered",
        "no": 5,
        "cues": 0
       },
       {
        "title": "第 6 章 · 遗传与发育性疾病：读的是传递的形状，不是概率表",
-       "durationSec": 1476,
+       "durationSec": 1559,
        "status": "rendered",
        "no": 6,
        "cues": 0
       },
       {
        "title": "第 7 章 · 肿瘤：一串约束被逐条突破的累积",
-       "durationSec": 1358,
+       "durationSec": 1472,
        "status": "rendered",
        "no": 7,
        "cues": 0
       },
       {
        "title": "第 8 章 · 感染过程：从定植到器官功能障碍的一条连续谱",
-       "durationSec": 1417,
+       "durationSec": 1531,
        "status": "rendered",
        "no": 8,
        "cues": 0
       },
       {
        "title": "第 9 章 · 炎症与免疫：两套系统、三条判据与一个交汇点",
-       "durationSec": 1487,
+       "durationSec": 1603,
        "status": "rendered",
        "no": 9,
        "cues": 0
       },
       {
        "title": "第 10 章 · 免疫功能异常：三条约束、四型判据与一个「谁在执行」",
-       "durationSec": 1517,
+       "durationSec": 1643,
        "status": "rendered",
        "no": 10,
        "cues": 0
       },
       {
        "title": "第 11 章 · 白细胞恶性肿瘤：四条机制收十个节",
-       "durationSec": 1415,
+       "durationSec": 1526,
        "status": "rendered",
        "no": 11,
        "cues": 0
       },
       {
        "title": "第 12 章 · HIV 感染与艾滋病：一个受体决定了整条病程",
-       "durationSec": 1442,
+       "durationSec": 1552,
        "status": "rendered",
        "no": 12,
        "cues": 0
       },
       {
        "title": "第 13 章 · 氧运输异常：先定哪一段断，再谈缺氧",
-       "durationSec": 1605,
+       "durationSec": 1723,
        "status": "rendered",
        "no": 13,
        "cues": 0
       },
       {
        "title": "第 14 章 · 止血与凝血异常：三条线，两种形态，一个终末通路",
-       "durationSec": 1658,
+       "durationSec": 1772,
        "status": "rendered",
        "no": 14,
        "cues": 0
       },
       {
        "title": "第 15 章 · 血流异常：一个压差、两套阻力与一条时间窗",
-       "durationSec": 1400,
+       "durationSec": 1497,
        "status": "rendered",
        "no": 15,
        "cues": 0
       },
       {
        "title": "第 16 章 · 血压异常：一个讲数字的章节，为何一个数字都不给",
-       "durationSec": 1375,
+       "durationSec": 1471,
        "status": "rendered",
        "no": 16,
        "cues": 0
       },
       {
        "title": "第 17 章 · 心脏功能：四个旋钮与一条钙的链条",
-       "durationSec": 1586,
+       "durationSec": 1688,
        "status": "rendered",
        "no": 17,
        "cues": 0
       },
       {
        "title": "第 18 章 · 心脏功能异常：四类失衡与一张正反馈网络",
-       "durationSec": 1411,
+       "durationSec": 1520,
        "status": "rendered",
        "no": 18,
        "cues": 0
       },
       {
        "title": "第 19 章 · 心力衰竭与心律失常",
-       "durationSec": 1523,
+       "durationSec": 1644,
        "status": "rendered",
        "no": 19,
        "cues": 0
       },
       {
        "title": "第 20 章 · 休克是灌注问题，血压还撑得住并不等于组织没有缺血",
-       "durationSec": 1453,
+       "durationSec": 1575,
        "status": "rendered",
        "no": 20,
        "cues": 0
       },
       {
        "title": "第 21 章 · 呼吸功能与气体交换异常",
-       "durationSec": 1732,
+       "durationSec": 1849,
        "status": "rendered",
        "no": 21,
        "cues": 0
       },
       {
        "title": "第 22 章 · 阻塞性肺疾病：气流受限总在呼气相暴露，喘鸣消失不是好转",
-       "durationSec": 1718,
+       "durationSec": 1846,
        "status": "rendered",
        "no": 22,
        "cues": 0
       },
       {
        "title": "第 23 章 · 限制性肺疾病：装不下的六个位置",
-       "durationSec": 1490,
+       "durationSec": 1573,
        "status": "rendered",
        "no": 23,
        "cues": 0
       },
       {
        "title": "第 24 章 · 水电解质稳态与失衡：两个轴，一条出口",
-       "durationSec": 1724,
+       "durationSec": 1826,
        "status": "rendered",
        "no": 24,
        "cues": 0
       },
       {
        "title": "第 25 章 · 酸碱平衡与失衡：三道防线与一条方向判据",
-       "durationSec": 1517,
+       "durationSec": 1611,
        "status": "rendered",
        "no": 25,
        "cues": 0
       },
       {
        "title": "第 26 章 · 肾脏功能：一条四环节的链，三组功能",
-       "durationSec": 1745,
+       "durationSec": 1842,
        "status": "rendered",
        "no": 26,
        "cues": 0
       },
       {
        "title": "第 27 章 · 肾内疾病：先定部位，再定性质",
-       "durationSec": 1291,
+       "durationSec": 1381,
        "status": "rendered",
        "no": 27,
        "cues": 0
       },
       {
        "title": "第 28 章 · 急性肾损伤与慢性肾脏病：一条主线，两条时间轴",
-       "durationSec": 1369,
+       "durationSec": 1457,
        "status": "rendered",
        "no": 28,
        "cues": 0
       },
       {
        "title": "第 29 章 · 下尿路疾病：一条分界线，三组症状",
-       "durationSec": 1410,
+       "durationSec": 1510,
        "status": "rendered",
        "no": 29,
        "cues": 0
       },
       {
        "title": "第 30 章 · 男性生殖功能：一套解剖，三层调控",
-       "durationSec": 1496,
+       "durationSec": 1579,
        "status": "rendered",
        "no": 30,
        "cues": 0
       },
       {
        "title": "第 31 章 · 男性生殖功能异常：先把表现放回六个类别",
-       "durationSec": 1299,
+       "durationSec": 1385,
        "status": "rendered",
        "no": 31,
        "cues": 0
       },
       {
        "title": "第 32 章 · 女性生殖功能：一条周期性轴与它的读出器",
-       "durationSec": 1312,
+       "durationSec": 1411,
        "status": "rendered",
        "no": 32,
        "cues": 0
       },
       {
        "title": "第 33 章 · 女性生殖功能异常：五层排查、三源激素与一条因果环",
-       "durationSec": 1495,
+       "durationSec": 1587,
        "status": "rendered",
        "no": 33,
        "cues": 0
       },
       {
        "title": "第 34 章 · 性传播感染：四层屏障、一条上行链与六类防控",
-       "durationSec": 1371,
+       "durationSec": 1472,
        "status": "rendered",
        "no": 34,
        "cues": 0
       },
       {
        "title": "第 35 章 · 胃肠功能：四类功能、一条调控链与从症状反推环节",
-       "durationSec": 1320,
+       "durationSec": 1408,
        "status": "rendered",
        "no": 35,
        "cues": 0
       },
       {
        "title": "第 36 章 · 胃肠疾病：三类机制、一个深度对应与四种分型",
-       "durationSec": 1562,
+       "durationSec": 1666,
        "status": "rendered",
        "no": 36,
        "cues": 0
       },
       {
        "title": "第 37 章 · 胆囊与外分泌胰腺功能异常：一个三环节通则、三道保险与一处定位",
-       "durationSec": 1269,
+       "durationSec": 1361,
        "status": "rendered",
        "no": 37,
        "cues": 0
       },
       {
        "title": "第 38 章 · 肝脏疾病：四条主线、两条后果线与一个可逆窗口",
-       "durationSec": 1435,
+       "durationSec": 1535,
        "status": "rendered",
        "no": 38,
        "cues": 0
       },
       {
        "title": "第 39 章 · 内分泌生理与下丘脑-垂体调控机制：两层整合、三级轴与五种读法",
-       "durationSec": 1634,
+       "durationSec": 1736,
        "status": "rendered",
        "no": 39,
        "cues": 0
       },
       {
        "title": "第 40 章 · 内分泌功能紊乱：四种型态、一张定位表与五种急症",
-       "durationSec": 1567,
+       "durationSec": 1661,
        "status": "rendered",
        "no": 40,
        "cues": 0
       },
       {
        "title": "第 41 章 · 糖尿病：一个不对称结构、三条环节与两类血管",
-       "durationSec": 1739,
+       "durationSec": 1840,
        "status": "rendered",
        "no": 41,
        "cues": 0
       },
       {
        "title": "第 42 章 · 代谢与营养异常：一个调定点、两种代谢模式与一条再喂养链",
-       "durationSec": 1702,
+       "durationSec": 1802,
        "status": "rendered",
        "no": 42,
        "cues": 0
       },
       {
        "title": "第 43 章 · 神经系统结构与功能：一张由缺损反推部位的定位图",
-       "durationSec": 1390,
+       "durationSec": 1471,
        "status": "rendered",
        "no": 43,
        "cues": 0
       },
       {
        "title": "第 44 章 · 脑功能急性疾病：一条链，四个干预点",
-       "durationSec": 1490,
+       "durationSec": 1573,
        "status": "rendered",
        "no": 44,
        "cues": 0
       },
       {
        "title": "第 45 章 · 慢性神经功能障碍：部位与储备，而不是时间与压力",
-       "durationSec": 1472,
+       "durationSec": 1549,
        "status": "rendered",
        "no": 45,
        "cues": 0
       },
       {
        "title": "第 46 章 · 特殊感觉功能异常：缺损的形状就是定位器",
-       "durationSec": 1453,
+       "durationSec": 1542,
        "status": "rendered",
        "no": 46,
        "cues": 0
       },
       {
        "title": "第 47 章 · 疼痛：四环节、两级敏化与一条从症状到疾病的转弯",
-       "durationSec": 1425,
+       "durationSec": 1531,
        "status": "rendered",
        "no": 47,
        "cues": 0
       },
       {
        "title": "第 48 章 · 精神心理健康障碍：三层整合、五个维度与一条去污名化的边界",
-       "durationSec": 2259,
+       "durationSec": 2397,
        "status": "rendered",
        "no": 48,
        "cues": 0
       },
       {
        "title": "第 49 章 · 骨骼肌肉系统结构与功能：六项功能、一条耦联与三处结构弱点",
-       "durationSec": 1763,
+       "durationSec": 1866,
        "status": "rendered",
        "no": 49,
        "cues": 0
       },
       {
        "title": "第 50 章 · 骨骼肌肉功能异常：力学环境、两个恶性循环与一条废用链",
-       "durationSec": 1957,
+       "durationSec": 2072,
        "status": "rendered",
        "no": 50,
        "cues": 0
       },
       {
        "title": "第 51 章 · 风湿性疾病：两种范式、一条损伤链与全身代价",
-       "durationSec": 1831,
+       "durationSec": 1932,
        "status": "rendered",
        "no": 51,
        "cues": 0
       },
       {
        "title": "第 52 章 · 皮肤系统异常：五件组件的屏障与四条后果",
-       "durationSec": 1852,
+       "durationSec": 1955,
        "status": "rendered",
        "no": 52,
        "cues": 0
       },
       {
        "title": "第 53 章 · 烧伤：局部三道带、四路全身反应与一条把两者接起来的链",
-       "durationSec": 1847,
+       "durationSec": 1960,
        "status": "rendered",
        "no": 53,
        "cues": 0
@@ -5408,21 +7503,21 @@
      "rows": [
       {
        "title": "药理学先立的是提问方式，药物改机体与机体处置药物的两个方向决定全书分工",
-       "durationSec": 1285,
+       "durationSec": 1160,
        "status": "rendered",
        "no": 1,
        "cues": 0
       },
       {
        "title": "药物作用与药理效应分属分子事件与整体表现，两套语言混用就说不清机制",
-       "durationSec": 1789,
+       "durationSec": 1778,
        "status": "rendered",
        "no": 2,
        "cues": 0
       },
       {
        "title": "房室模型只是拟合曲线的工具，拟合得上不等于机制成立",
-       "durationSec": 1085,
+       "durationSec": 943,
        "status": "rendered",
        "no": 3,
        "cues": 0
@@ -5443,308 +7538,308 @@
       },
       {
        "title": "抗胆碱酯酶药不碰受体，它的效应完全依赖已被释放的乙酰胆碱",
-       "durationSec": 1141,
+       "durationSec": 1130,
        "status": "rendered",
        "no": 6,
        "cues": 0
       },
       {
        "title": "磷酰化写定了中毒的时间表，老化一旦发生，复活药就失去作用位点",
-       "durationSec": 1245,
+       "durationSec": 1234,
        "status": "rendered",
        "no": 7,
        "cues": 0
       },
       {
        "title": "抗胆碱药本身不产生效应，它显示的只是原有张力的对比",
-       "durationSec": 1096,
+       "durationSec": 979,
        "status": "rendered",
        "no": 8,
        "cues": 0
       },
       {
        "title": "拟肾上腺素药的作用来自受体在组织中的分布，而不是药物自身的独特性质",
-       "durationSec": 1124,
+       "durationSec": 1013,
        "status": "rendered",
        "no": 9,
        "cues": 0
       },
       {
        "title": "阻断药只取消一层驱动，α1 与 α2 的效应方向相反不是强弱之分",
-       "durationSec": 1164,
+       "durationSec": 1054,
        "status": "rendered",
        "no": 10,
        "cues": 0
       },
       {
        "title": "碱基型负责穿膜、阳离子型负责结合，感觉先于运动的顺序决定了观察表分栏",
-       "durationSec": 1399,
+       "durationSec": 1183,
        "status": "rendered",
        "no": 11,
        "cues": 0
       },
       {
        "title": "全身麻醉药的分类只给坐标不给名次，机制是网络而不是一把锁",
-       "durationSec": 1396,
+       "durationSec": 1143,
        "status": "rendered",
        "no": 12,
        "cues": 0
       },
       {
        "title": "镇静与催眠是同一机制上的剂量档位，不是一个管入睡、一个管维持",
-       "durationSec": 1376,
+       "durationSec": 1156,
        "status": "rendered",
        "no": 13,
        "cues": 0
       },
       {
        "title": "抗癫痫药的全部难点在选择性：压低异常放电，又不许压掉正常神经功能",
-       "durationSec": 1493,
+       "durationSec": 1265,
        "status": "rendered",
        "no": 14,
        "cues": 0
       },
       {
        "title": "抗精神病药的治疗作用与不良反应出自同一条受体通路，分开讲就讲不通",
-       "durationSec": 1235,
+       "durationSec": 1104,
        "status": "rendered",
        "no": 15,
        "cues": 0
       },
       {
        "title": "现有药物只补偿递质、不阻止神经元丢失，效应的上限由残存神经元决定",
-       "durationSec": 1499,
+       "durationSec": 1376,
        "status": "rendered",
        "no": 16,
        "cues": 0
       },
       {
        "title": "解热、镇痛、抗炎不是三套机制，而是同一条前列腺素线在三处的分配",
-       "durationSec": 1530,
+       "durationSec": 1405,
        "status": "rendered",
        "no": 17,
        "cues": 0
       },
       {
        "title": "镇痛药的选择性在于保住意识，它与解热镇痛药、局麻药分处三个环节",
-       "durationSec": 1381,
+       "durationSec": 1246,
        "status": "rendered",
        "no": 18,
        "cues": 0
       },
       {
        "title": "中枢兴奋药的危险不在兴奋不足，而在脊髓层被削弱的抑制",
-       "durationSec": 1331,
+       "durationSec": 972,
        "status": "rendered",
        "no": 19,
        "cues": 0
       },
       {
        "title": "两代 H1 抗组胺药的分野不在强弱，而在能不能进入中枢",
-       "durationSec": 1295,
+       "durationSec": 1078,
        "status": "rendered",
        "no": 20,
        "cues": 0
       },
       {
        "title": "同一自体活性物质能给出相反效应，差别在受体亚型分布而不在物质本身",
-       "durationSec": 1269,
+       "durationSec": 1064,
        "status": "rendered",
        "no": 21,
        "cues": 0
       },
       {
        "title": "离子通道药的效应取决于通道处于什么状态，而不只取决于阻滞哪种离子",
-       "durationSec": 1258,
+       "durationSec": 1081,
        "status": "rendered",
        "no": 22,
        "cues": 0
       },
       {
        "title": "慢性心衰的中心环节是重构与神经内分泌激活，不是「泵弱了」这一个直觉",
-       "durationSec": 1501,
+       "durationSec": 1490,
        "status": "rendered",
        "no": 23,
        "cues": 0
       },
       {
        "title": "降压的终点不是把数字降下来，而是让覆盖撑过整个给药间隔",
-       "durationSec": 1373,
+       "durationSec": 1361,
        "status": "rendered",
        "no": 24,
        "cues": 0
       },
       {
        "title": "抗心绞痛药争的是耗氧与灌注的平衡，β 阻断药不扩血管也算一种解法",
-       "durationSec": 1478,
+       "durationSec": 1467,
        "status": "rendered",
        "no": 25,
        "cues": 0
       },
       {
        "title": "抗心律失常药既能治心律失常也能致心律失常，因为动的是同一台电生理机器",
-       "durationSec": 1587,
+       "durationSec": 1576,
        "status": "rendered",
        "no": 26,
        "cues": 0
       },
       {
        "title": "抗动脉粥样硬化药分四类靠的是卡在事件链的哪一步，不是药效强弱",
-       "durationSec": 1243,
+       "durationSec": 1088,
        "status": "rendered",
        "no": 27,
        "cues": 0
       },
       {
        "title": "利尿药动的是管腔侧转运体，脱水药靠的是血管侧渗透压，两者不在同一侧发力",
-       "durationSec": 1352,
+       "durationSec": 1187,
        "status": "rendered",
        "no": 28,
        "cues": 0
       },
       {
        "title": "抗溃疡药的三条路径互相制约，所以分类不能按化学结构切",
-       "durationSec": 1073,
+       "durationSec": 900,
        "status": "rendered",
        "no": 29,
        "cues": 0
       },
       {
        "title": "呼吸系统药的分节依据是症状出现的时相，不是化学结构或作用强弱",
-       "durationSec": 1046,
+       "durationSec": 1036,
        "status": "rendered",
        "no": 30,
        "cues": 0
       },
       {
        "title": "子宫兴奋药的选择性越低，需要跟上的观察密度就越高",
-       "durationSec": 1537,
+       "durationSec": 1412,
        "status": "rendered",
        "no": 31,
        "cues": 0
       },
       {
        "title": "抗贫血药补的是三个不同层次，血象恢复的先后次序本身就是观察项目",
-       "durationSec": 1582,
+       "durationSec": 1450,
        "status": "rendered",
        "no": 32,
        "cues": 0
       },
       {
        "title": "抗凝与溶栓不是强弱两档，而是一个管「不再长」、一个管「已经长的」",
-       "durationSec": 1487,
+       "durationSec": 1360,
        "status": "rendered",
        "no": 33,
        "cues": 0
       },
       {
        "title": "糖皮质激素的一个受体给出两套效应，剂量与疗程因此是分类的一列而非附注",
-       "durationSec": 1649,
+       "durationSec": 1517,
        "status": "rendered",
        "no": 34,
        "cues": 0
       },
       {
        "title": "T3 与 T4 的差别是一个碘原子，含量多少不等于活性强弱",
-       "durationSec": 1078,
+       "durationSec": 1066,
        "status": "rendered",
        "no": 35,
        "cues": 0
       },
       {
        "title": "降血糖药先按途径分两支、再按环节分组，化学结构排不进第一层",
-       "durationSec": 976,
+       "durationSec": 965,
        "status": "rendered",
        "no": 36,
        "cues": 0
       },
       {
        "title": "性激素类药的结构先决定它能不能口服，首过效应比活性强弱更早一步筛药",
-       "durationSec": 924,
+       "durationSec": 2735,
        "status": "rendered",
        "no": 37,
        "cues": 0
       },
       {
        "title": "抗微生物治疗的地基是选择性毒性，离开「只伤病原体」这一步就没有化疗",
-       "durationSec": 958,
+       "durationSec": 946,
        "status": "rendered",
        "no": 38,
        "cues": 0
       },
       {
        "title": "人工合成抗菌药的共同点只在出身，四条靶点线彼此并不通用",
-       "durationSec": 1377,
+       "durationSec": 1012,
        "status": "rendered",
        "no": 39,
        "cues": 0
       },
       {
        "title": "β-内酰胺类的共同点只是那个四元环，环在不在决定药还有没有效",
-       "durationSec": 1482,
+       "durationSec": 1315,
        "status": "rendered",
        "no": 40,
        "cues": 0
       },
       {
        "title": "同一个五十S 靶点上的药未必能合用，位点重叠反而会互相抢位",
-       "durationSec": 1398,
+       "durationSec": 1213,
        "status": "rendered",
        "no": 41,
        "cues": 0
       },
       {
        "title": "氨基糖苷类的抗菌谱由转运决定，毒性则由药物蓄积在哪一处决定",
-       "durationSec": 1497,
+       "durationSec": 1323,
        "status": "rendered",
        "no": 42,
        "cues": 0
       },
       {
        "title": "四环素类与氯霉素类编在一章不是因为同构，而是同一种「宽谱的代价」",
-       "durationSec": 1188,
+       "durationSec": 2240,
        "status": "rendered",
        "no": 43,
        "cues": 0
       },
       {
        "title": "抗真菌药的选择性只剩一步之差，靶点长在「真菌有、人没有」处才成立",
-       "durationSec": 1042,
+       "durationSec": 2647,
        "status": "rendered",
        "no": 44,
        "cues": 0
       },
       {
        "title": "结核菌群不同步，一种药治到底在机制上就不可能覆盖全部菌群",
-       "durationSec": 1053,
+       "durationSec": 1968,
        "status": "rendered",
        "no": 45,
        "cues": 0
       },
       {
        "title": "抗寄生虫药的共同点不是「杀虫」，而是在生活史的某一阶段找到宿主与虫体的差别",
-       "durationSec": 1380,
+       "durationSec": 2104,
        "status": "rendered",
        "no": 46,
        "cues": 0
       },
       {
        "title": "抗肿瘤药的选择性只能是相对的，给药间隔要靠动力学算而不是靠经验",
-       "durationSec": 1445,
+       "durationSec": 2550,
        "status": "rendered",
        "no": 47,
        "cues": 0
       },
       {
        "title": "免疫抑制药作用在哪一环，就欠哪一方面的防御，抑制越广欠账越多",
-       "durationSec": 1681,
+       "durationSec": 2590,
        "status": "rendered",
        "no": 48,
        "cues": 0
       },
       {
        "title": "免疫增强药与抑制药方向相反但道理相同，佐剂离开抗原就只剩局部炎症",
-       "durationSec": 1679,
+       "durationSec": 2689,
        "status": "rendered",
        "no": 49,
        "cues": 0

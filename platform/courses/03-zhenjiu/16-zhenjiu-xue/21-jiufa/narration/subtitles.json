@@ -4,10 +4,10 @@
   "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
   "cueCount": 5,
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
-  "audioTotalSeconds": 57.67,
+  "audioTotalSeconds": 57.672,
   "estimatedCues": 0,
   "videoSeconds": 57.708667,
-  "videoMinusNarrationSeconds": 0.039,
+  "videoMinusNarrationSeconds": 0.037,
   "textMatchesNarration": true,
   "mismatches": [],
   "cues": [
@@ -25,8 +25,8 @@
       "n": 2,
       "role": "motto",
       "start": 2.4,
-      "end": 15.82,
-      "seconds": 13.42,
+      "end": 15.816,
+      "seconds": 13.416,
       "estimated": false,
       "text": "「《针灸学·灸法》」——教材第21章；课程章号与教材章号一一对应。本章要回答的是：灸法这一章，要能用一句话说清它解决什么问题。",
       "audio": "002.mp3"
@@ -34,9 +34,9 @@
     {
       "n": 3,
       "role": "problem",
-      "start": 15.82,
-      "end": 20.93,
-      "seconds": 5.11,
+      "start": 15.816,
+      "end": 20.928,
+      "seconds": 5.112,
       "estimated": false,
       "text": "灸法：艾炷、艾条、温针灸，灸量与适应证。",
       "audio": "003.mp3"
@@ -44,8 +44,8 @@
     {
       "n": 4,
       "role": "roots",
-      "start": 20.93,
-      "end": 46.37,
+      "start": 20.928,
+      "end": 46.368,
       "seconds": 25.44,
       "estimated": false,
       "text": "环境逼迫（针灸学是全科的合订本：经络、腧穴、手法、治疗四块必须能互相对上，不能各背一段）+ 知识积累（本章 7 单元 8,672 汉字；三辨主 刺灸技术 117；四位面（教材四板块）主 刺灸技法 8672；引书 10 部 13 次；数值类命中 4）",
@@ -54,9 +54,9 @@
     {
       "n": 5,
       "role": "disclaimer",
-      "start": 46.37,
-      "end": 57.67,
-      "seconds": 11.3,
+      "start": 46.368,
+      "end": 57.672,
+      "seconds": 11.304,
       "estimated": false,
       "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "audio": "005.mp3"

@@ -28,7 +28,7 @@
       "spoken": "「《F:/textbooks/机器学习·数字人体的概念与来源》」——教材第1章。本章要回答的是：数字人体的概念与来源：这一章要回答什么。",
       "estimateSeconds": 15,
       "audio": "002.mp3",
-      "audioSeconds": 13.01
+      "audioSeconds": 13.008
     },
     {
       "n": 3,
@@ -48,7 +48,7 @@
       "spoken": "环境逼迫（数字人体的判据是「结构与出处对得上」：没有出处的几何体只算示意）+ 知识积累（本章 15 单元 1,792 汉字；三辨主 结构与层级 2；四位面（章群结构）主 结构与采集 1792；引书 3 部 3 次；数值类命中 0）",
       "estimateSeconds": 22,
       "audio": "004.mp3",
-      "audioSeconds": 22.49
+      "audioSeconds": 22.488
     },
     {
       "n": 5,
@@ -58,10 +58,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "005.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 54.12,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 0.92,
+    "measuredMinutes": 0.9,
+    "ratio": 0.984
+  }
 }

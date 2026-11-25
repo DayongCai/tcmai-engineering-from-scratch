@@ -29,62 +29,61 @@ platform:
 
 chapters:
   - slug: 01-e81
-    title: 第1章 口腔的中医解剖与生理
-    segments: 5
+    title: 口腔不是一条通道，是六扇各有主人的门
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.88
+    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.88      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-e82
-    title: 第2章 口齿疾病的病因病机
-    segments: 5
+    title: 「火」是口齿科最省力的答案，也是最容易错的那一个
     video: rendered
-    estimate_minutes: 0.85
-    measured_minutes: 0.87
+    estimate_minutes: 0.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.87      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-e83
-    title: 第3章 口齿疾病的辨证要点
-    segments: 5
+    title: 口镜看得见红肿，看不见该不该清
     video: rendered
-    estimate_minutes: 0.85
-    measured_minutes: 0.87
+    estimate_minutes: 0.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.87      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-e84
-    title: 第4章 口齿疾病的治法与外治
-    segments: 5
+    title: 治法不是一张方剂清单，是五道闸门
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.88
+    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.88      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-e85
-    title: 第5章 牙痛与龋病
-    segments: 5
+    title: 痛可以用药压下去，洞不会自己长回来
     video: rendered
-    estimate_minutes: 0.83
-    measured_minutes: 0.81
+    estimate_minutes: 0.83      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.81      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-e86
-    title: 第6章 牙周病与牙龈出血
-    segments: 5
+    title: 出血多不等于病重，不出血也不等于好了
     video: rendered
-    estimate_minutes: 0.85
-    measured_minutes: 0.86
+    estimate_minutes: 0.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.86      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-e87
-    title: 第7章 口疮与口腔黏膜病
-    segments: 5
+    title: 口疮是自限的病，两周不愈就不再是口疮
     video: rendered
-    estimate_minutes: 0.85
-    measured_minutes: 0.87
+    estimate_minutes: 0.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.87      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-e88
-    title: 第8章 口臭与口干
-    segments: 5
+    title: 口臭的第一嫌疑不在胃，口干的第一嫌疑不在阴虚
     video: rendered
-    estimate_minutes: 0.83
-    measured_minutes: 0.82
+    estimate_minutes: 0.83      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.82      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-e89
-    title: 第9章 口齿急症与外伤
-    segments: 5
+    title: 急症章的一半功夫，是教人少做五件事
     video: rendered
-    estimate_minutes: 0.83
-    measured_minutes: 0.86
+    estimate_minutes: 0.83      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.86      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-e810
-    title: 第10章 口齿调护与预防
-    segments: 5
+    title: 「好好刷牙」说了几十年，牙龈还在出血
     video: rendered
-    estimate_minutes: 0.85
-    measured_minutes: 0.85
+    estimate_minutes: 0.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.85      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

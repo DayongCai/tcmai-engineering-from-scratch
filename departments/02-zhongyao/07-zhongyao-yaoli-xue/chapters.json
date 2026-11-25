@@ -5,7 +5,7 @@
   {
    "n": 1,
    "slug": "01-yanjiu-fanshi",
-   "title": "中药药理的研究范式与特殊性",
+   "title": "中药药理不是化药药理的中文译本",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/01-yanjiu-fanshi/docs/zh.md",
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-yaoxiaoxue",
-   "title": "药效学：量效关系与模型选择",
+   "title": "中药的量效曲线不是一条线，是一个开关带",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/02-yaoxiaoxue/docs/zh.md",
@@ -23,7 +23,7 @@
   {
    "n": 3,
    "slug": "03-jiebiao-yaoli",
-   "title": "解表、清热类药的药理",
+   "title": "解表与清热之间，隔着一个「表」字",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/03-jiebiao-yaoli/docs/zh.md",
@@ -32,7 +32,7 @@
   {
    "n": 4,
    "slug": "04-xiexia-qushi-wenli",
-   "title": "泻下、祛湿、温里与理气类药的药理",
+   "title": "攻邪之品见效最快，账单也最快到期",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/04-xiexia-qushi-wenli/docs/zh.md",
@@ -41,7 +41,7 @@
   {
    "n": 5,
    "slug": "05-huoxue-yaoli",
-   "title": "活血化瘀与止血类药的药理",
+   "title": "活血化瘀的研究热度来自指标好测，不来自疗效更硬",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/05-huoxue-yaoli/docs/zh.md",
@@ -50,7 +50,7 @@
   {
    "n": 6,
    "slug": "06-buxu-mianyi",
-   "title": "补虚类药的免疫调节",
+   "title": "补虚之品能提高免疫，也能把免疫按下去",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/06-buxu-mianyi/docs/zh.md",
@@ -59,7 +59,7 @@
   {
    "n": 7,
    "slug": "07-huatan-anshen",
-   "title": "化痰平喘与安神类药的药理",
+   "title": "痰与神都没有化验单，这一章只能靠替代终点说话",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/07-huatan-anshen/docs/zh.md",
@@ -68,7 +68,7 @@
   {
    "n": 8,
    "slug": "08-duxing-anquan",
-   "title": "中药的毒性与安全评价",
+   "title": "毒性分级写在书上，安全窗写在实验里，两套数不能互相换算",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/08-duxing-anquan/docs/zh.md",
@@ -77,7 +77,7 @@
   {
    "n": 9,
    "slug": "09-yaodai-peiwu",
-   "title": "药代动力学与配伍影响",
+   "title": "配伍改的不是药效的强弱，是有效成分进到血里的量",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/09-yaodai-peiwu/docs/zh.md",
@@ -86,7 +86,7 @@
   {
    "n": 10,
    "slug": "10-zhengxing-moxing",
-   "title": "动物模型与证候模型的争议",
+   "title": "药效不是药的性质，是药与模型之间的一个差",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/10-zhengxing-moxing/docs/zh.md",
@@ -95,7 +95,7 @@
   {
    "n": 11,
    "slug": "11-zhengju-fenji",
-   "title": "药理证据的分级与临床转化",
+   "title": "一条药理证据的等级，先由药材能不能复现决定",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/11-zhengju-fenji/docs/zh.md",

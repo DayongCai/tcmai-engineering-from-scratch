@@ -4,7 +4,7 @@
   {
    "n": 1,
    "slug": "01-wuli-gailun",
-   "title": "物理治疗概论",
+   "title": "物理治疗的门槛不在选哪一种因子，而在能不能给这个因子配出四个量",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -12,7 +12,7 @@
   {
    "n": 2,
    "slug": "02-dianliao",
-   "title": "电疗与电针",
+   "title": "电针的杀伤力主要不来自参数，而来自那一对电极接在哪",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -20,7 +20,7 @@
   {
    "n": 3,
    "slug": "03-reliao-guangliao",
-   "title": "热疗与光疗",
+   "title": "热疗的剂量藏在壮数与灸时里，光疗在本章只剩一条安全红线",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -28,7 +28,7 @@
   {
    "n": 4,
    "slug": "04-lengliao-chaosheng",
-   "title": "冷疗、超声与牵引",
+   "title": "冷与超声是章名上的两个空位，能执行的只有牵引的力与它的禁区",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -36,7 +36,7 @@
   {
    "n": 5,
    "slug": "05-yundong-jichu",
-   "title": "运动疗法基础",
+   "title": "运动疗法的基础不是动作清单，而是评、练、报的分工",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -44,7 +44,7 @@
   {
    "n": 6,
    "slug": "06-guanjie-jili",
-   "title": "关节活动与肌力训练",
+   "title": "松得开不等于有力，被动手替不了主动练",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -52,7 +52,7 @@
   {
    "n": 7,
    "slug": "07-pingheng-butai",
-   "title": "平衡、协调与步态训练",
+   "title": "平衡的判据不是站得稳，是晃了还能把身体拉回来",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -60,7 +60,7 @@
   {
    "n": 8,
    "slug": "08-fangan-fengxian",
-   "title": "运动康复方案与风险控制",
+   "title": "方案的分量在告知，风险的分量在记录",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

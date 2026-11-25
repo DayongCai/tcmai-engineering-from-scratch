@@ -1,31 +1,76 @@
 {
   "chapter": "13-xueye-yu-neihuanjing",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 14,
+  "segmentCount": 9,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 13
+      "chars": 26
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 70
+      "chars": 20
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 19
+      "chars": 166
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 140
+      "chars": 101
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 276
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 297
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 378
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 404
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 145
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 393
+    },
+    {
+      "n": 11,
+      "segment": 7,
+      "chars": 272
+    },
+    {
+      "n": 12,
+      "segment": 7,
+      "chars": 171
+    },
+    {
+      "n": 13,
+      "segment": 8,
+      "chars": 419
+    },
+    {
+      "n": 14,
+      "segment": 9,
       "chars": 52
     }
   ]

@@ -29,50 +29,49 @@ platform:
 
 chapters:
   - slug: 01-xuepai-xingcheng
-    title: 第1章 学派的形成：地域、师承与文本
-    segments: 6
+    title: 学派不是标签，是同一个病人身上的四种不同提问
     video: rendered
-    estimate_minutes: 1.15
-    measured_minutes: 1.12
+    estimate_minutes: 1.15      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.12      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-liuwansu-huore
-    title: 第2章 刘完素与火热论
-    segments: 6
+    title: 把「火」抬成终点，等于用一个高频字换掉一整套低频解释
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 0.96
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-zhangcongzheng-gongxie
-    title: 第3章 张从正与攻邪论
-    segments: 6
+    title: 「三法该尽治病」的可检版本：出口 120 条，禁令 80 条
     video: rendered
-    estimate_minutes: 1.08
-    measured_minutes: 1.04
+    estimate_minutes: 1.08      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.04      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-ligao-piwei
-    title: 第4章 李杲与脾胃论
-    segments: 6
+    title: 内伤发热：给一个已有 60 条记载的老问题造一套 0 命中的新词
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 0.99
+    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.99      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-zhuzhenheng-ziyin
-    title: 第5章 朱震亨与滋阴论
-    segments: 6
+    title: 相火论把「火」从病邪改写成身体的常驻设施
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 0.97
+    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.97      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-zhangjingyue-wenbu
-    title: 第6章 张景岳与温补学派
-    segments: 6
+    title: 七个词换三十四证：0.25% 的文本命中如何占住四分之一的证候
     video: rendered
-    estimate_minutes: 1.07
-    measured_minutes: 1.04
+    estimate_minutes: 1.07      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.04      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-yetianshi-wenbing
-    title: 第7章 叶天士与温病学派
-    segments: 6
+    title: 温病不是一派：三套坐标互不翻译，硬译必错
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.95
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-duibi-jiegouhua
-    title: 第8章 学派观点的对照阅读与结构化
-    segments: 6
+    title: 三个排序三个答案：一张表能算出三件事，算不出两件事
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.95
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

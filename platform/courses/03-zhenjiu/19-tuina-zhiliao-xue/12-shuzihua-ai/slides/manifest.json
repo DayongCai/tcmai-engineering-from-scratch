@@ -1,31 +1,86 @@
 {
   "chapter": "12-shuzihua-ai",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 16,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 17
+      "chars": 25
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 58
+      "chars": 27
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 40
+      "chars": 224
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 104
+      "chars": 319
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 308
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 246
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 399
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 399
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 295
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 317
+    },
+    {
+      "n": 11,
+      "segment": 7,
+      "chars": 328
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 264
+    },
+    {
+      "n": 13,
+      "segment": 8,
+      "chars": 383
+    },
+    {
+      "n": 14,
+      "segment": 9,
+      "chars": 376
+    },
+    {
+      "n": 15,
+      "segment": 9,
+      "chars": 167
+    },
+    {
+      "n": 16,
+      "segment": 10,
       "chars": 52
     }
   ]

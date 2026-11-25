@@ -29,110 +29,109 @@ platform:
 
 chapters:
   - slug: 01-gaishu
-    title: 第1章 康复护理学概述
-    segments: 5
+    title: 康复护理管的是功能，不是病
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.96
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-lilun
-    title: 第2章 康复护理的理论基础
-    segments: 5
+    title: 可塑性有前提，不是一句安慰话
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 0.98
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.98      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-tuandui-moshi
-    title: 第3章 康复护理团队与工作模式
-    segments: 5
+    title: 康复的效果写在交接里，不在某个人手上
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-pinggu-jichu
-    title: 第4章 康复护理评估基础
-    segments: 5
+    title: 评估的用处是把「他说不行」换成「卡在哪一步」
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.96
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-lunli-goutong
-    title: 第5章 康复护理伦理与沟通
-    segments: 5
+    title: 同意不是签个字，是让他知道可以说不
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.96
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-jishu-anquan
-    title: 第6章 康复护理基本技术与安全
-    segments: 5
+    title: 体位是处方，不是把被子掖好
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 1
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-yundong-gongneng
-    title: 第7章 运动功能康复护理
-    segments: 5
+    title: 训练的成败取决于护理怎么排那二十三个小时
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.96
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-adl
-    title: 第8章 日常生活活动能力康复护理
-    segments: 5
+    title: 让他自己做，比替他做慢得多也难得多
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1.01
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.01      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-yanyu-yantun-renzhi
-    title: 第9章 言语、吞咽与认知康复护理
-    segments: 5
+    title: 误吸的风险不在餐盘里，在喂饭的人手上
     video: rendered
-    estimate_minutes: 1.02
-    measured_minutes: 1.02
+    estimate_minutes: 1.02      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.02      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-zhongyi-kangfu
-    title: 第10章 中医康复护理技术
-    segments: 5
+    title: 中医技术的边界，比它的手法更需要交代
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.95
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 11-bingfazheng-yufang
-    title: 第11章 康复护理中的并发症预防
-    segments: 5
+    title: 并发症不是意外，是没被记录下来的趋势
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1.02
+    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.02      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 12-shenjing-xitong
-    title: 第12章 神经系统疾病康复护理
-    segments: 5
+    title: 神经康复的难处，是从「没变化」里看出变化
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 13-gu-guanjie
-    title: 第13章 骨与关节疾病康复护理
-    segments: 5
+    title: 骨科康复先问骨头稳不稳，再问能不能动
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 1
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 14-xinfei-daixie
-    title: 第14章 心肺与代谢疾病康复护理
-    segments: 5
+    title: 心肺康复的门槛不在能不能动，在动到什么程度该停
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1.01
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.01      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 15-teshu-renqun
-    title: 第15章 特殊人群康复护理
-    segments: 5
+    title: 特殊人群的护理，先去掉标签再谈方案
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 0.96
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 16-shequ-jujia
-    title: 第16章 社区与居家康复护理
-    segments: 5
+    title: 出院不是终点，是把病房里的假设全部推翻
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.98
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.98      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 17-zhiliang-fengxian
-    title: 第17章 康复护理质量与风险管理
-    segments: 5
+    title: 质量不是不出事，是把出事的方式提前写下来
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 18-pingtai
-    title: 第18章 康复护理学与教学平台
-    segments: 5
+    title: 教学平台给的是可复算的地基，不是标准答案
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 0.99
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.99      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

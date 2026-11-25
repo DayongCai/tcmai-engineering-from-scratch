@@ -1,31 +1,71 @@
 {
   "chapter": "04-jinzhenfu-dacheng",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 13,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 17
+      "chars": 30
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 80
+      "chars": 53
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 22
+      "chars": 212
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 123
+      "chars": 160
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 409
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 174
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 414
+    },
+    {
+      "n": 8,
+      "segment": 7,
+      "chars": 372
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 109
+    },
+    {
+      "n": 10,
+      "segment": 8,
+      "chars": 395
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 278
+    },
+    {
+      "n": 12,
+      "segment": 9,
+      "chars": 416
+    },
+    {
+      "n": 13,
+      "segment": 10,
       "chars": 52
     }
   ]

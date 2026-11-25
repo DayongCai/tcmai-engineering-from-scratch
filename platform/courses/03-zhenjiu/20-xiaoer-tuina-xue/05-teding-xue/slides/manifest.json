@@ -1,31 +1,91 @@
 {
   "chapter": "05-teding-xue",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 17,
+  "segmentCount": 8,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 11
+      "chars": 27
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 58
+      "chars": 130
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 53
+      "chars": 175
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 121
+      "chars": 152
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 138
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 396
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 326
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 104
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 361
+    },
+    {
+      "n": 10,
+      "segment": 6,
+      "chars": 369
+    },
+    {
+      "n": 11,
+      "segment": 6,
+      "chars": 399
+    },
+    {
+      "n": 12,
+      "segment": 6,
+      "chars": 346
+    },
+    {
+      "n": 13,
+      "segment": 6,
+      "chars": 387
+    },
+    {
+      "n": 14,
+      "segment": 6,
+      "chars": 126
+    },
+    {
+      "n": 15,
+      "segment": 7,
+      "chars": 470
+    },
+    {
+      "n": 16,
+      "segment": 7,
+      "chars": 207
+    },
+    {
+      "n": 17,
+      "segment": 8,
       "chars": 52
     }
   ]

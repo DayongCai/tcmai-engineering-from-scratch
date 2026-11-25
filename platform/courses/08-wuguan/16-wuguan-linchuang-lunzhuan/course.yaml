@@ -29,38 +29,37 @@ platform:
 
 chapters:
   - slug: 01-yanke-lunzhuan
-    title: 第1章 眼科门诊轮转
-    segments: 5
+    title: 眼科门诊的接诊质量，取决于问诊与器械检查的先后次序
     video: rendered
-    estimate_minutes: 0.83
-    measured_minutes: 0.84
+    estimate_minutes: 0.83      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.84      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-erbihou-lunzhuan
-    title: 第2章 耳鼻喉科门诊轮转
-    segments: 5
+    title: 耳鼻喉门诊的本事，是把局部所见换算成脏腑，再换算成一条治法
     video: rendered
-    estimate_minutes: 0.85
-    measured_minutes: 0.89
+    estimate_minutes: 0.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.89      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-kouqiang-neike
-    title: 第3章 口腔内科轮转
-    segments: 5
+    title: 牙痛分虚实只是起点，能不能保住牙取决于转诊是否及时
     video: rendered
-    estimate_minutes: 0.83
-    measured_minutes: 0.83
+    estimate_minutes: 0.83      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.83      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-hemian-waike
-    title: 第4章 口腔颌面外科轮转
-    segments: 5
+    title: 唇部的糜烂与唇部的硬结，在门诊是两条不能混的路
     video: rendered
-    estimate_minutes: 0.85
-    measured_minutes: 0.87
+    estimate_minutes: 0.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.87      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-tese-zhiliao
-    title: 第5章 中医五官特色治疗轮转
-    segments: 5
+    title: 特色治疗的本事，在该转的转得快，而不是能治的都自己治
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.91
+    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-chuke-kaohe
-    title: 第6章 出科考核与病例复盘
-    segments: 5
+    title: 出科考的判据不是背得出辨证，是三分钟内说出该转还是该治
     video: rendered
-    estimate_minutes: 0.87
-    measured_minutes: 0.9
+    estimate_minutes: 0.87      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

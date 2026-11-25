@@ -29,50 +29,49 @@ platform:
 
 chapters:
   - slug: 01-e11
-    title: 第1章 耳鼻咽喉的解剖概览
-    segments: 5
+    title: 四区不是四个器官，是四个入口：一本书凭什么装得下耳鼻咽喉口齿
     video: rendered
-    estimate_minutes: 0.87
-    measured_minutes: 0.88
+    estimate_minutes: 0.87      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.88      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-e12
-    title: 第2章 耳的应用解剖
-    segments: 5
+    title: 耳：三段两层膜，看得见的边界在鼓膜就断了
     video: rendered
-    estimate_minutes: 0.83
-    measured_minutes: 0.83
+    estimate_minutes: 0.83      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.83      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-e13
-    title: 第3章 鼻与鼻窦
-    segments: 5
+    title: 鼻与鼻窦：一条路、四间挂屋，滞留是链不是点
     video: rendered
-    estimate_minutes: 0.83
-    measured_minutes: 0.84
+    estimate_minutes: 0.83      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.84      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-e14
-    title: 第4章 咽喉的解剖
-    segments: 5
+    title: 咽喉：一条共用的管子，四处分岔与一个不能迟半拍的关门动作
     video: rendered
-    estimate_minutes: 0.85
-    measured_minutes: 0.85
+    estimate_minutes: 0.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.85      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-e15
-    title: 第5章 口腔与涎腺
-    segments: 5
+    title: 口腔与涎腺：三套坐标，记不住坐标就只剩「嘴里有个地方」
     video: rendered
-    estimate_minutes: 0.85
-    measured_minutes: 0.83
+    estimate_minutes: 0.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.83      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-e16
-    title: 第6章 神经与血管支配
-    segments: 5
+    title: 神经与血管：给一句模糊的症状配一条可追的线
     video: rendered
-    estimate_minutes: 0.83
-    measured_minutes: 0.86
+    estimate_minutes: 0.83      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.86      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-e17
-    title: 第7章 生理功能与免疫
-    segments: 5
+    title: 生理：功能拆得开，症状才反推得回去
     video: rendered
-    estimate_minutes: 0.83
-    measured_minutes: 0.86
+    estimate_minutes: 0.83      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.86      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-e18
-    title: 第8章 检查法与正常所见
-    segments: 5
+    title: 检查法：每一个「未见异常」都得带一个范围
     video: rendered
-    estimate_minutes: 0.87
-    measured_minutes: 0.9
+    estimate_minutes: 0.87      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

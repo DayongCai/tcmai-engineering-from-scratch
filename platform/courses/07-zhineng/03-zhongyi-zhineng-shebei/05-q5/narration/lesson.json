@@ -28,7 +28,7 @@
       "spoken": "「《中医智能仪器与可穿戴设备·智能装备 · 扩展现实 · ／智》」——教材第5章。本章要回答的是：智能装备 · 扩展现实 · ／智慧中医综合实训：设备清单与／伦理、安全与展望（含实验）／光遗传学与神经调控（2026：这一章要回答什么。",
       "estimateSeconds": 24,
       "audio": "002.mp3",
-      "audioSeconds": 22.25
+      "audioSeconds": 22.248
     },
     {
       "n": 3,
@@ -48,7 +48,7 @@
       "spoken": "环境逼迫（智能设备的判据是「物理量—采集链路—质控指标」三件套）+ 知识积累（本章 16 单元 1,918 汉字；三辨主 方法与技术 19；四位面（章群结构）主 位面3 1918；引书 0 部 0 次；数值类命中 6）",
       "estimateSeconds": 21,
       "audio": "004.mp3",
-      "audioSeconds": 20.5
+      "audioSeconds": 20.496
     },
     {
       "n": 5,
@@ -58,10 +58,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "005.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 78.89,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 1.37,
+    "measuredMinutes": 1.31,
+    "ratio": 0.962
+  }
 }

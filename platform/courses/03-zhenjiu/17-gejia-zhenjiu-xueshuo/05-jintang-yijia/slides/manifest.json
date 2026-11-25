@@ -1,31 +1,91 @@
 {
   "chapter": "05-jintang-yijia",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 17,
+  "segmentCount": 8,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 14
+      "chars": 21
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 55
+      "chars": 125
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 91
+      "chars": 187
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 121
+      "chars": 146
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 150
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 319
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 418
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 377
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 412
+    },
+    {
+      "n": 10,
+      "segment": 6,
+      "chars": 347
+    },
+    {
+      "n": 11,
+      "segment": 6,
+      "chars": 420
+    },
+    {
+      "n": 12,
+      "segment": 6,
+      "chars": 341
+    },
+    {
+      "n": 13,
+      "segment": 6,
+      "chars": 296
+    },
+    {
+      "n": 14,
+      "segment": 6,
+      "chars": 126
+    },
+    {
+      "n": 15,
+      "segment": 7,
+      "chars": 450
+    },
+    {
+      "n": 16,
+      "segment": 7,
+      "chars": 135
+    },
+    {
+      "n": 17,
+      "segment": 8,
       "chars": 52
     }
   ]

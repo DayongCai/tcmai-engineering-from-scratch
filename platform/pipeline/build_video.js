@@ -152,9 +152,14 @@ for (const ch of chapters) {
     const partFile = path.join(videoDir, `part-${String(i + 1).padStart(3, '0')}.mp4`);
 
     // 时长必须用**实测配音时长**，不能用估算：估算只用于排期，用它定时长会让字幕整体偏移
-    const seconds = Number.isFinite(seg.audioSeconds) && seg.audioSeconds > 0
-      ? seg.audioSeconds
-      : seg.estimateSeconds;
+    // 而且「实测」要以音频文件本身为准（ffprobe），不能信 lesson.json 里的 audioSeconds——
+    // 那个字段在旧批次里记的是估算值，会让画面被拉长到估算长度、段尾留一段静音。
+    const probeSeconds = hasAudio && ffprobe
+      ? Number((spawnSync(ffprobe, ['-v', 'error', '-show_entries', 'format=duration', '-of', 'default=nw=1:nk=1', audioFile], { encoding: 'utf8' }).stdout || '').trim())
+      : NaN;
+    const seconds = Number.isFinite(probeSeconds) && probeSeconds > 0
+      ? probeSeconds
+      : (Number.isFinite(seg.audioSeconds) && seg.audioSeconds > 0 ? seg.audioSeconds : seg.estimateSeconds);
     // 一段配多张片时按时长按字数分摊，片内字幕与画面才对得上
     const totalChars = charsOf(i + 1) || 1;
     const segSlides = manifest ? manifest.slides.filter((x) => x.segment === i + 1) : [];
@@ -164,6 +169,19 @@ for (const ch of chapters) {
           path: f,
           seconds: Math.max(0.4, (seconds * (segSlides[k] ? segSlides[k].chars : 1)) / totalChars),
         }));
+    if (plans.length === 0) {
+      // 不能把空数组丢给 ffmpeg：滤镜会拿到 concat=n=0，报
+      // 「Value 0.000000 for parameter 'n' out of range」，看着像 ffmpeg 的错，
+      // 实际是 slides/manifest.json 没覆盖到这一段（讲稿段数与幻灯片页数不同步）。
+      const covered = manifest
+        ? Math.max(...manifest.slides.map((x) => x.segment || 0), 0)
+        : 0;
+      console.error(
+        `  ✗ ${ch} 第 ${i + 1} 段无对应画面帧（slides/manifest.json 只覆盖到第 ${covered} 段，` +
+        `讲稿 ${narr.segments.length} 段）——先重跑 build_slides.js 再导帧`
+      );
+      break;
+    }
     const args = ffmpegArgs({ frames: plans, seconds, audioFile: hasAudio ? audioFile : null, out: partFile });
     const r = spawnSync(ffmpeg, args, { encoding: 'utf8' });
     if (r.status !== 0) {

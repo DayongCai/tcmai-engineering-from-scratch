@@ -29,110 +29,109 @@ platform:
 
 chapters:
   - slug: 01-fazhan-daolun
-    title: 第1章 护理学的发展与护理学导论
-    segments: 5
+    title: 护理之所以成为专业，是因为它的做法能被不在场的人复核
     video: rendered
-    estimate_minutes: 1.15
-    measured_minutes: 1.13
+    estimate_minutes: 13.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 13.55      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-linian-jiazhiguan
-    title: 第2章 护理理念与护理专业价值观
-    segments: 5
+    title: 理念不是墙上的标语，而是两种做法都合规时你选哪一个
     video: rendered
-    estimate_minutes: 1.02
-    measured_minutes: 1.03
+    estimate_minutes: 13.47      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 12.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-jiben-gainian
-    title: 第3章 护理学的基本概念与理论
-    segments: 5
+    title: 四个基本概念不是四个词，是一条断哪一节都塌的链
     video: rendered
-    estimate_minutes: 1.05
-    measured_minutes: 1.07
+    estimate_minutes: 12.87      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 12.64      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-huanhuan-goutong
-    title: 第4章 护患关系与沟通
-    segments: 5
+    title: 护患关系的第一项技术，是把「帮忙」限制在照护目标里
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1
+    estimate_minutes: 10.68      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.40      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-huli-chengxu
-    title: 第5章 护理程序
-    segments: 5
+    title: 护理程序不是五步流水线，而是一个能被评价打回的循环
     video: rendered
-    estimate_minutes: 1.02
-    measured_minutes: 1
+    estimate_minutes: 11.37      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-jiankang-jiaoyu
-    title: 第6章 健康教育
-    segments: 5
+    title: 健康教育的效果，不在讲了几条，在他回家做对了几件
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 0.99
+    estimate_minutes: 11.35      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.77      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-lunli-falv
-    title: 第7章 护理伦理与法律
-    segments: 5
+    title: 伦理原则打架的那一刻，才是伦理真正开始的地方
     video: rendered
-    estimate_minutes: 1.08
-    measured_minutes: 1.08
+    estimate_minutes: 11.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.66      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-zhuanye-tuandui
-    title: 第8章 护理专业与团队协作
-    segments: 5
+    title: 团队协作的瓶颈不在人数，在有没有人敢说不
     video: rendered
-    estimate_minutes: 1.02
-    measured_minutes: 1.04
+    estimate_minutes: 11.30      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-zhiye-suyang
-    title: 第9章 护理职业素养与人文关怀
-    segments: 5
+    title: 人文关怀不是态度好，是看见了这个人的处境并因此改了做法
     video: rendered
-    estimate_minutes: 1.02
-    measured_minutes: 1.04
+    estimate_minutes: 11.57      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.21      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-shengming-tizheng
-    title: 第10章 生命体征观察与基础护理技术概论
-    segments: 5
+    title: 生命体征的价值不在那四个数，在谁去看第二遍
     video: rendered
-    estimate_minutes: 1.02
-    measured_minutes: 1.03
+    estimate_minutes: 11.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.70      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 11-huanzhe-anquan
-    title: 第11章 患者安全与护理质量
-    segments: 5
+    title: 安全不是不出事，是出事之前有人敢喊停
     video: rendered
-    estimate_minutes: 1.03
-    measured_minutes: 1.06
+    estimate_minutes: 12.38      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 12.12      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 12-shushi-xiuxi
-    title: 第12章 舒适、休息与活动
-    segments: 5
+    title: 舒适是他说了算的指标，护士能改的是条件
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1.03
+    estimate_minutes: 11.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.58      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 13-yingyang-paixie
-    title: 第13章 营养与排泄的护理
-    segments: 5
+    title: 营养护理的功夫，在「吃进去」之前和「排出来」之后
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.99
+    estimate_minutes: 11.77      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.67      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 14-geiyao-zhiliao
-    title: 第14章 给药与治疗的护理
-    segments: 5
+    title: 给药的差错几乎都不是「不知道」，是没在被打断之前核完
     video: rendered
-    estimate_minutes: 1.02
-    measured_minutes: 1.02
+    estimate_minutes: 11.77      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.52      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 15-zhongyi-huli-jichu
-    title: 第15章 中医护理基础与应用
-    segments: 5
+    title: 辨证施护的「辨」，是把同一个症状分到不同的人身上
     video: rendered
-    estimate_minutes: 1.07
-    measured_minutes: 1.08
+    estimate_minutes: 11.72      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.53      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 16-teshu-renqun
-    title: 第16章 特殊人群的护理
-    segments: 5
+    title: 特殊人群的「特殊」，不在标签，在同一个动作对他们的风险不同
     video: rendered
-    estimate_minutes: 1.02
-    measured_minutes: 1.03
+    estimate_minutes: 11.82      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.56      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 17-shequ-jiankang
-    title: 第17章 社区护理与健康管理
-    segments: 5
+    title: 社区护理的产出不在一张床，而在一群人三年后的状态
     video: rendered
-    estimate_minutes: 1.05
-    measured_minutes: 1.06
+    estimate_minutes: 11.60      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.38      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 18-pingtai-duijie
-    title: 第18章 护理学导论与 tcmP 平台
-    segments: 5
+    title: 能被机器读懂，是正文被复核的最低条件
     video: rendered
-    estimate_minutes: 1.02
-    measured_minutes: 1.04
+    estimate_minutes: 15.03      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 15.02      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

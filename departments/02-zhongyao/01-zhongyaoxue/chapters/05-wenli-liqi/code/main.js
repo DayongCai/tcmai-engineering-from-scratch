@@ -1,189 +1,299 @@
-'use strict';
+#!/usr/bin/env node
 /**
- * 第 5 章 · 温里药与理气药：寒与滞，两条互相垂直的轴
+ * 中药学 · 第 5 章 温里往下走、理气横着走，十九条记录里有一条自相矛盾
  *
  *   node code/main.js
  *
- * 口径：
- *   - 规模、分布、均分全部从 standards/zhongyao/{底本,drugs}.json 现算，不写死计数。
- *   - 「热性分」是有序标度：大寒 -4 … 平 0 … 大热 +4。
- *   - 「纵向轴」= 归肾、心的频次 / 药数（往下、往里的温）；「横向轴」= 归肝、肺的频次 / 药数
- *     （往外、往上的行）。这只是把归经频次换个分母看，不是临床权重。
- *   - 「毒」只认原文的「有毒 / 大毒 / 小毒」；丁香的归经原文残缺，留空。
+ * 正文：chapters/05-wenli-liqi/docs/zh.md
+ * 习题：chapters/05-wenli-liqi/quiz.json
+ * 依赖：仅 Node.js 标准库
+ *
+ * 只读本章正文与本章 quiz，不读任何底本或标准表：正文改了，这里的数字跟着变。
+ *   · 规模：汉字、段、节标题、表格张数与每张表的列数／行数
+ *   · 本章算术：从正文表格与计数句里解析条目，再算覆盖率、集中度与派生量
+ *   · quiz：题量、三段分布、选项数、解释长度、答案位置是否打散、check 题能否在正文找到原词
+ * 任何一项对不上，说明正文、代码、习题三者已经不同源。
  */
 
-const fs = require('fs');
-const path = require('path');
+'use strict';
 
-const ROOT = path.join(__dirname, '..', '..', '..', '..', '..', '..');
-const STD = path.join(ROOT, 'standards', 'zhongyao');
-const base = JSON.parse(fs.readFileSync(path.join(STD, '底本.json'), 'utf8'));
-const drugs = JSON.parse(fs.readFileSync(path.join(STD, 'drugs.json'), 'utf8')).drugs;
+const fs = require('node:fs');
+const path = require('node:path');
 
-const NOS = ['15', '16'];
-const LABEL = { 15: '温里', 16: '理气' };
-const QI_ORDER = ['大寒', '寒', '微寒', '凉', '平', '微温', '温', '热', '大热'];
-const QI_SCORE = { 大寒: -4, 寒: -3, 微寒: -2, 凉: -1, 平: 0, 微温: 1, 温: 2, 热: 3, 大热: 4 };
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
-const dw = (s) => [...String(s)].reduce((n, ch) => n + (/[\u2e80-\u9fff\uff00-\uffef]/.test(ch) ? 2 : 1), 0);
-const pad = (s, n) => String(s) + ' '.repeat(Math.max(0, n - dw(s)));
-const num = (x, d = 2) => (x == null ? '—' : Number(x).toFixed(d));
+const CHAPTER = 5;
+const SLUG = '05-wenli-liqi';
+const TITLE = '温里往下走、理气横着走，十九条记录里有一条自相矛盾';
 
-function table(headers, rows) {
-  const w = headers.map((h, i) => Math.max(dw(h), ...rows.map((r) => dw(r[i]))));
-  const line = (cells) => cells.map((c, i) => pad(c, w[i])).join('  ');
-  console.log(line(headers));
-  console.log(w.map((x) => '-'.repeat(x)).join('  '));
-  for (const r of rows) console.log(line(r));
+/* ── 文本口径 ────────────────────────────────────────────────────── */
+
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+const count = (text, term) => String(text).split(term).length - 1;
+const nums = (s) => (String(s || '').match(/\d+(?:\.\d+)?/g) || []).map(Number);
+const numOf = (v) => Number(String(v == null ? '' : v).replace(/[,，\s%]/g, '')) || 0;
+/** 取单元格开头的数字（后面可能跟着括注） */
+const lead = (v) => Number((String(v == null ? '' : v).match(/^\d+(?:\.\d+)?/) || [0])[0]);
+const readDoc = () => fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+const docLines = (doc) => String(doc).split(/\r?\n/);
+
+/** 节标题：`## 一、…` */
+function sections(doc) {
+  return docLines(doc).filter((l) => /^##\s+/.test(l)).map((l) => l.replace(/^##\s+/, '').trim());
 }
 
-const scope = () => base.chapters.filter((c) => NOS.includes(String(c.no)));
+/** 段：非空，不以标题、引文、表格行、清单符号或编号起始 */
+function paragraphs(doc) {
+  return docLines(doc)
+    .map((l) => l.trim())
+    .filter((l) => l && !/^[#>|]/.test(l) && !/^[-*+]\s/.test(l) && !/^\d+[.、]/.test(l))
+    .filter((l) => !l.includes('|'));
+}
 
-function counts() {
-  let secs = 0;
-  let subs = 0;
-  let paras = 0;
-  let chars = 0;
-  const byCh = {};
-  for (const c of scope()) {
-    const p = { secs: (c.secs || []).length, subs: 0, paras: 0, chars: c.counts.chars };
-    for (const s of c.secs) {
-      for (const u of s.subs) {
-        p.subs += 1;
-        p.paras += (u.paras || []).length;
-      }
+/** markdown 表格：表头 + 去分隔行的数据行；围栏代码块里的竖线不算表 */
+function tables(doc) {
+  const ls = docLines(doc);
+  const cells = (l) => l.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map((c) => c.trim());
+  const out = [];
+  let i = 0;
+  let fenced = false;
+  while (i < ls.length) {
+    if (/^\s*```/.test(ls[i])) {
+      fenced = !fenced;
+      i += 1;
+      continue;
     }
-    byCh[c.no] = p;
-    secs += p.secs;
-    subs += p.subs;
-    paras += p.paras;
-    chars += p.chars;
-  }
-  return { chapters: scope().length, secs, subs, paras, chars, byCh };
-}
-
-const group = (nos = NOS) => drugs.filter((d) => nos.includes(String(d.chapter)));
-const fullText = (d) => Object.values(d.fields).join(' ') + ' ' + (d.nature.raw || '');
-const isToxic = (d) => /有毒|大毒|小毒/.test(fullText(d));
-
-function qiDist(list) {
-  const m = new Map();
-  for (const d of list) m.set(d.nature.qi || '(空)', (m.get(d.nature.qi || '(空)') || 0) + 1);
-  return m;
-}
-
-function qiScore(list) {
-  const v = list.map((d) => QI_SCORE[d.nature.qi]).filter((x) => x != null);
-  return v.length ? v.reduce((a, b) => a + b, 0) / v.length : null;
-}
-
-function guijingCount(list) {
-  const m = new Map();
-  for (const d of list) for (const g of d.nature.guijing) m.set(g, (m.get(g) || 0) + 1);
-  return m;
-}
-
-/** 纵向轴（肾、心）与横向轴（肝、肺）的「每药平均命中经络数」 */
-function axes(list) {
-  const g = guijingCount(list);
-  const n = list.length || 1;
-  const v = ((g.get('肾') || 0) + (g.get('心') || 0)) / n;
-  const h = ((g.get('肝') || 0) + (g.get('肺') || 0)) / n;
-  return { v, h, n };
-}
-
-function doseCap(d) {
-  const m = String(d.fields['用法用量与使用注意']).match(/(\d+(?:\.\d+)?)\s*[-~～]\s*(\d+(?:\.\d+)?)\s*g/);
-  return m ? parseFloat(m[2]) : null;
-}
-
-function perChapter() {
-  const out = {};
-  for (const no of NOS) {
-    const list = group([no]);
-    const caps = list.map(doseCap).filter((x) => x != null);
-    out[no] = {
-      drugs: list.length,
-      chars: base.chapters.find((c) => String(c.no) === no).counts.chars,
-      qi: qiScore(list),
-      xin: list.filter((d) => d.nature.wei.includes('辛')).length,
-      ku: list.filter((d) => d.nature.wei.some((w) => w.includes('苦'))).length,
-      gan: list.filter((d) => d.nature.wei.includes('甘')).length,
-      toxic: list.filter(isToxic).length,
-      capAvg: caps.length ? caps.reduce((a, b) => a + b, 0) / caps.length : null,
-      capMax: caps.length ? Math.max(...caps) : null,
-      topGui: [...guijingCount(list).entries()].sort((a, b) => b[1] - a[1]).slice(0, 4),
-      ...axes(list),
-    };
+    if (!fenced && /^\s*\|/.test(ls[i])) {
+      const block = [];
+      while (i < ls.length && /^\s*\|/.test(ls[i])) {
+        block.push(ls[i]);
+        i += 1;
+      }
+      const header = cells(block[0]);
+      const rows = block.slice(1).filter((l) => !/^\s*\|[\s:|-]+\|\s*$/.test(l)).map(cells);
+      out.push({ header, cols: header.length, rows });
+    } else {
+      i += 1;
+    }
   }
   return out;
 }
 
+const tableBy = (ts, kw) => ts.find((t) => t.header.join(' ').includes(kw));
+
+/* ── 本章算术（从正文解析，不写死结果） ─────────────────────────── */
+
+function chapterArithmetic(doc, ts) {
+  const cover = tableBy(ts, '15.1 温里');
+  const mer = tableBy(ts, '读法');
+  const use = tableBy(ts, '用法要点');
+  if (!cover || !mer || !use) throw new Error('正文的覆盖表／归经表／用法表有缺');
+
+  const per = (re, s) => Number((String(s).match(re) || [])[1]);
+  const f = (re) => per(re, doc);
+  const row = (k) => cover.rows.find((r) => String(r[0]).startsWith(k));
+
+  // 两节味数取自表头
+  const coldN = per(/（(\d+)\s*味）/, cover.header[1]);
+  const heatN = per(/（(\d+)\s*味）/, cover.header[2]);
+  const total = coldN + heatN;
+
+  const gas = row('四气已填');
+  const taste = row('五味已填');
+  const merid = row('归经已填');
+  const toxic = row('标毒');
+  const blank = row('性味整栏空白');
+
+  const gasColdFill = per(/^(\d+)/, gas[1]);
+  const gasHeatFill = per(/^(\d+)/, gas[2]);
+  const hotCold = per(/热\s*(\d+)/, gas[1]);
+  const warmCold = per(/温\s*(\d+)/, gas[1]);
+  const coldCold = per(/寒\s*(\d+)/, gas[1]);
+  const warmHeat = per(/温\s*(\d+)/, gas[2]);
+  const flatHeat = per(/平\s*(\d+)/, gas[2]);
+  const coldHeat = per(/寒\s*(\d+)/, gas[2]);
+  const heatTiers = ['温', '平', '寒'].filter((k) => new RegExp(k + '\\s*\\d+').test(gas[2])).length;
+
+  const xinCold = per(/辛\s*(\d+)/, taste[1]);
+  const xinHeat = per(/辛\s*(\d+)/, taste[2]);
+  const meridColdFill = per(/^(\d+)/, merid[1]);
+  const meridHeatFill = per(/^(\d+)/, merid[2]);
+  const toxicN = per(/^(\d+)/, toxic[3]) || nums(toxic[1]).reduce((a, b) => a + b, 0) + nums(toxic[2]).reduce((a, b) => a + b, 0);
+  const blankN = per(/^(\d+)/, blank[3]) || nums(blank[1])[0] + nums(blank[2])[0];
+
+  // 归经表：温里独有的竖线与理气独有的旁支
+  const merRow = (k) => mer.rows.find((r) => String(r[0]).startsWith(k));
+  const kidney = merRow('肾');
+  const heart = merRow('心');
+  const spleen = merRow('脾');
+  const colon = merRow('大肠');
+  const branch = merRow('三焦');
+  const vertical = Number(kidney[1]) + Number(heart[1]);
+  const horizontal = Number(colon[2]) + nums(branch[2]).reduce((a, b) => a + b, 0);
+  const spleenBoth = Number(spleen[1]) === Number(spleen[2]) && Number(spleen[1]) === meridColdFill;
+
+  // 用法表：剂量上界跨度
+  const uppers = use.rows.map((r) => { const n = nums(r[1]); return n[n.length - 1]; });
+  const doseMax = Math.max(...uppers);
+  const doseMin = Math.min(...uppers);
+
+  // 两节字数相加应与正文的合计一致
+  const wCold = numOf((doc.match(/15\.1 温里药\s*\d+\s*味\s*([\d,]+)\s*字/) || [])[1]);
+  const wHeat = numOf((doc.match(/16\.1 理气药\s*\d+\s*味\s*([\d,]+)\s*字/) || [])[1]);
+  const wordSum = wCold + wHeat;
+  const wordClaim = numOf((doc.match(/合计\s*\d+\s*味、([\d,]+)\s*汉字/) || [])[1]);
+  const liqiMeridians = f(/已填药一共落在\s*(\d+)\s*条经上/);
+  const gasCoverage = ((gasColdFill + gasHeatFill) / total) * 100;
+  const merCoverage = ((meridColdFill + meridHeatFill) / total) * 100;
+
+  return {
+    coldN,
+    heatN,
+    total,
+    gasColdFill,
+    gasHeatFill,
+    gasCoverage: Number(gasCoverage.toFixed(1)),
+    hotCold,
+    warmCold,
+    coldCold,
+    warmHeat,
+    flatHeat,
+    coldHeat,
+    heatTiers,
+    xinCold,
+    xinHeat,
+    meridColdFill,
+    meridHeatFill,
+    merCoverage: Number(merCoverage.toFixed(1)),
+    toxicN,
+    blankN,
+    blankRate: Number(((blankN / total) * 100).toFixed(1)),
+    vertical,
+    horizontal,
+    spleenBoth,
+    doseMin,
+    doseMax,
+    doseSpan: doseMax / doseMin,
+    wCold,
+    wHeat,
+    wordSum,
+    wordClaim,
+    wordMatch: wordSum === wordClaim,
+    liqiMeridians,
+    lines: [
+      '两节 ' + coldN + ' 味 + ' + heatN + ' 味 = ' + total + ' 味；四气填 ' + gasColdFill + ' + ' + gasHeatFill + ' = ' + (gasColdFill + gasHeatFill) + '（' + gasCoverage.toFixed(1) + '%），归经填 ' + (meridColdFill + meridHeatFill) + '（' + merCoverage.toFixed(1) + '%）',
+      '温里：热 ' + hotCold + '、温 ' + warmCold + '、寒 ' + coldCold + '；理气：温 ' + warmHeat + '、平 ' + flatHeat + '、寒 ' + coldHeat + ' —— 理气横跨 ' + heatTiers + ' 档',
+      '五味：辛在温里 ' + xinCold + '/' + gasColdFill + '，在理气 ' + xinHeat + '/' + gasHeatFill + '；两边都过半，共性不能当分界',
+      '归经：温里独有竖线 肾＋心 = ' + vertical + ' 条；理气独有旁支 大肠＋三焦胆膀胱小肠 = ' + horizontal + ' 条；脾在两节' + (spleenBoth ? '同满（各 ' + Number(spleen[1]) + ' 条）' : '不对称'),
+      '理气已填 ' + meridHeatFill + ' 味落在 ' + liqiMeridians + ' 条经上 —— 没有主经，只有分布',
+      '标毒 ' + toxicN + '/' + total + '；性味整栏空白 ' + blankN + '/' + total + ' = ' + ((blankN / total) * 100).toFixed(1) + '%（补值会把覆盖率顶到 100%，但那几条没有观测）',
+      '用法表 ' + use.rows.length + ' 味，剂量上界的跨度 ' + (doseMax / doseMin) + ' 倍',
+      '两节字数 ' + wCold.toLocaleString('en-US') + ' + ' + wHeat.toLocaleString('en-US') + ' = ' + wordSum.toLocaleString('en-US') + '，与正文合计 ' + (wordClaim || '—').toLocaleString('en-US') + (wordSum === wordClaim ? ' 相符' : ' 不符'),
+    ],
+  };
+}
+
+/* ── quiz：结构 + 接地 ──────────────────────────────────────────── */
+
+/** 正文里 4 字以上的连续汉字片段 */
+function grams(text, n = 4) {
+  const out = new Set();
+  for (const seg of String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+}
+
+function quizSummary(quiz, doc) {
+  const body = grams(doc);
+  const qs = Array.isArray(quiz.questions) ? quiz.questions : [];
+  const stage = { pre: 0, check: 0, post: 0 };
+  const items = qs.map((q, i) => {
+    if (stage[q.stage] !== undefined) stage[q.stage] += 1;
+    const opts = Array.isArray(q.options) ? q.options : [];
+    const right = String(opts[q.correct] || '');
+    const hit = [...grams(right)].filter((g) => body.has(g));
+    const why = q.explain || q.explanation || '';
+    return {
+      n: i + 1,
+      stage: q.stage,
+      options: opts.length,
+      correct: q.correct,
+      explainHanzi: hanzi(why),
+      grounded: hit.length,
+      sample: hit.slice(0, 3),
+    };
+  });
+  return {
+    total: qs.length,
+    stage,
+    items,
+    answers: qs.map((q) => q.correct),
+    distinctAnswers: new Set(qs.map((q) => q.correct)).size,
+    checkGrounded: items.filter((x) => x.stage === 'check' && x.grounded > 0).length,
+    minExplain: items.length ? Math.min(...items.map((x) => x.explainHanzi)) : 0,
+    allFourOptions: items.every((x) => x.options === 4),
+    badCorrect: items.filter((x) => !(Number.isInteger(x.correct) && x.correct >= 0 && x.correct < 4)).length,
+    stageComplete: ['pre', 'check', 'post'].every((s) => stage[s] > 0),
+  };
+}
+
+/* ── 汇总 ──────────────────────────────────────────────────────── */
+
+function analyze() {
+  const doc = readDoc();
+  const ts = tables(doc);
+  const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+  return {
+    docHanzi: hanzi(doc),
+    paragraphs: paragraphs(doc).length,
+    sections: sections(doc),
+    tables: ts.map((t) => ({ header: t.header, cols: t.cols, rows: t.rows.length })),
+    arith: chapterArithmetic(doc, ts),
+    quiz: quizSummary(quiz, doc),
+  };
+}
+
 function main() {
-  const c = counts();
-  console.log('== 第 5 章 · 温里药与理气药：寒与滞，两条互相垂直的轴 ==');
-  console.log(`教材章 ${NOS.join('+')}｜${c.chapters} 章 / ${c.secs} 节 / ${c.subs} 小节 / ${c.paras} 段 / ${c.chars} 字`);
-  console.log(`药物单元 ${group().length} 味`);
-
-  const pc = perChapter();
-  console.log('\n[1] 两组的体量与体温');
-  table(
-    ['教材章', '组', '药数', '字数', '热性均分', '辛', '苦', '甘', '毒性词', '剂量上限均值', '归经前四'],
-    NOS.map((no) => [
-      no, LABEL[no], String(pc[no].drugs), String(pc[no].chars), num(pc[no].qi),
-      `${pc[no].xin}/${pc[no].drugs}`, `${pc[no].ku}/${pc[no].drugs}`, `${pc[no].gan}/${pc[no].drugs}`,
-      String(pc[no].toxic), num(pc[no].capAvg, 1) + 'g',
-      pc[no].topGui.map(([g, n]) => `${g}${n}`).join('/'),
-    ]),
-  );
-
-  console.log('\n[2] 四气分布（19 味）');
-  const dist = qiDist(group());
-  for (const q of QI_ORDER) {
-    const n = dist.get(q) || 0;
-    if (!n) continue;
-    console.log(`  ${pad(q, 6)}${String(n).padStart(3)}  ${'█'.repeat(n)}`);
-  }
-
-  console.log('\n[3] 两条轴：温里往下走，理气往外走');
-  table(
-    ['教材章', '组', '纵向轴(肾+心)/药', '横向轴(肝+肺)/药', '差值(纵−横)'],
-    NOS.map((no) => [
-      no, LABEL[no], num(pc[no].v), num(pc[no].h), num(pc[no].v - pc[no].h),
-    ]),
-  );
-  console.log('  说明：纵向轴高＝药力更多落在下焦与心；横向轴高＝药力更多落在肝胆与肺。');
-
-  console.log('\n[4] 气的跨度：温里 8 味无一味低于「温」，理气 11 味从寒排到温');
-  for (const no of NOS) {
-    const list = group([no]);
-    const s = list.map((d) => QI_SCORE[d.nature.qi]).filter((x) => x != null);
-    const min = Math.min(...s);
-    const max = Math.max(...s);
-    const lo = list.filter((d) => QI_SCORE[d.nature.qi] === min).map((d) => d.name);
-    const hi = list.filter((d) => QI_SCORE[d.nature.qi] === max).map((d) => d.name);
-    console.log(`  ${LABEL[no]}：跨度 ${min} … ${max}（${lo.join('/')} → ${hi.join('/')}）`);
-  }
-
-  console.log('\n[5] 剂量上限最小的 5 味');
-  const caps = group()
-    .map((d) => ({ name: d.name, ch: d.chapter, cap: doseCap(d), toxic: isToxic(d) }))
-    .filter((x) => x.cap != null)
-    .sort((a, b) => a.cap - b.cap);
-  table(['药名', '教材章', '剂量上限', '原文标毒性'], caps.slice(0, 5).map((x) => [x.name, x.ch, `${x.cap}g`, x.toxic ? '是' : '否']));
-
-  console.log('\n[6] 归经残缺：原文没写归经的药');
-  const miss = group().filter((d) => !d.nature.guijing.length).map((d) => d.name);
-  console.log('  ' + (miss.length ? miss.join('、') + '（留空，不用药典补）' : '无'));
-
-  console.log('\n结论：温里治「寒」，靠辛热把体温与气机推回来；理气治「滞」，靠辛苦把堵住的气推开。');
-  console.log('      前者的重心在肾—脾—心这条纵线，后者的重心在肝—脾胃—肺这条横线；');
-  console.log('      教材把两章排在一起，是因为临床上「寒」与「滞」常常同时存在，不是因为两章可以互换。');
-  console.log('教学边界：本章数据来自教材结构化整理，仅用于教学演示与检索，不构成用药依据。');
+  const r = analyze();
+  console.log(`中药学 第 ${CHAPTER} 章 · ${TITLE}`);
+  console.log(`正文 ${r.docHanzi.toLocaleString('en-US')} 汉字 · ${r.paragraphs} 段 · 节 ${r.sections.length} 个`);
+  console.log('');
+  console.log('结构：');
+  for (const s of r.sections) console.log(`  ${s}`);
+  console.log('');
+  console.log(`表 ${r.tables.length} 张：`);
+  r.tables.forEach((t, i) => console.log(`  [${i + 1}] ${t.header.join(' / ')} —— ${t.cols} 列 × ${t.rows} 行`));
+  console.log('');
+  console.log('本章算术（全部从正文解析后计算）：');
+  for (const line of r.arith.lines) console.log(`  ${line}`);
+  console.log('');
+  console.log(`quiz ${r.quiz.total} 题（pre ${r.quiz.stage.pre} / check ${r.quiz.stage.check} / post ${r.quiz.stage.post}）· 答案 ${r.quiz.answers.join('/')}`);
+  console.log(`  check 题接地 ${r.quiz.checkGrounded} 道 · 答案落在 ${r.quiz.distinctAnswers} 个位置 · 最短解释 ${r.quiz.minExplain} 汉字`);
+  console.log('※ 以上数字由本章正文与 quiz 现算，改正文后重跑即可复核。');
+  console.log('※ 本章为教学材料，字段口径与统计均为课堂约定，不构成诊疗建议，也不替代执业医师的判断。');
 }
 
 if (require.main === module) main();
+
 module.exports = {
-  base, drugs, NOS, QI_ORDER, QI_SCORE, scope, counts, group, fullText,
-  isToxic, qiDist, qiScore, guijingCount, axes, doseCap, perChapter, main,
+  analyze,
+  readDoc,
+  sections,
+  paragraphs,
+  tables,
+  tableBy,
+  grams,
+  hanzi,
+  count,
+  nums,
+  numOf,
+  lead,
+  quizSummary,
+  CHAPTER,
+  SLUG,
+  TITLE,
+  DOC,
+  QUIZ,
 };

@@ -1,31 +1,116 @@
 {
   "chapter": "09-jizhuqu",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 22,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 7
+      "chars": 31
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 59
+      "chars": 32
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 12
+      "chars": 206
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 139
+      "chars": 137
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 375
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 232
+    },
+    {
+      "n": 7,
+      "segment": 5,
+      "chars": 354
+    },
+    {
+      "n": 8,
+      "segment": 5,
+      "chars": 108
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 416
+    },
+    {
+      "n": 10,
+      "segment": 6,
+      "chars": 329
+    },
+    {
+      "n": 11,
+      "segment": 6,
+      "chars": 109
+    },
+    {
+      "n": 12,
+      "segment": 7,
+      "chars": 316
+    },
+    {
+      "n": 13,
+      "segment": 7,
+      "chars": 236
+    },
+    {
+      "n": 14,
+      "segment": 7,
+      "chars": 371
+    },
+    {
+      "n": 15,
+      "segment": 7,
+      "chars": 400
+    },
+    {
+      "n": 16,
+      "segment": 7,
+      "chars": 92
+    },
+    {
+      "n": 17,
+      "segment": 8,
+      "chars": 287
+    },
+    {
+      "n": 18,
+      "segment": 8,
+      "chars": 330
+    },
+    {
+      "n": 19,
+      "segment": 8,
+      "chars": 266
+    },
+    {
+      "n": 20,
+      "segment": 8,
+      "chars": 181
+    },
+    {
+      "n": 21,
+      "segment": 9,
+      "chars": 310
+    },
+    {
+      "n": 22,
+      "segment": 10,
       "chars": 52
     }
   ]

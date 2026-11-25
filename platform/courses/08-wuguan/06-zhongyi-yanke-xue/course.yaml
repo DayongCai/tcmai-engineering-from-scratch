@@ -29,62 +29,61 @@ platform:
 
 chapters:
   - slug: 01-wulun-bakuo
-    title: 第1章 五轮八廓学说与眼的脏腑配属
-    segments: 9
+    title: 五轮八廓：一张比想象中更窄的映射表
     video: rendered
-    estimate_minutes: 3.17
-    measured_minutes: 2.98
+    estimate_minutes: 3.17      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 2.98      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-sizhen-shili
-    title: 第2章 眼科四诊与视力检查
-    segments: 5
+    title: 四诊：眼科最贵的那五分钟是问出来的
     video: rendered
-    estimate_minutes: 0.8
-    measured_minutes: 0.85
+    estimate_minutes: 0.80      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.85      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-waizhang-yanbing
-    title: 第3章 外障眼病：胞睑、两眦、白睛
-    segments: 5
+    title: 外障：五个字定方向，虚实定用药
     video: rendered
-    estimate_minutes: 0.87
-    measured_minutes: 0.92
+    estimate_minutes: 0.87      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-neizhang-yanbing
-    title: 第4章 内障眼病：瞳神与眼底
-    segments: 5
+    title: 内障：判据不在表面，所以必须往里找
     video: rendered
-    estimate_minutes: 0.83
-    measured_minutes: 0.87
+    estimate_minutes: 0.83      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.87      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-jinshi-pilao
-    title: 第5章 近视与视疲劳的中医干预
-    segments: 5
+    title: 近视与视疲劳：能防的是进展，不是「治愈」
     video: rendered
-    estimate_minutes: 0.83
-    measured_minutes: 0.86
+    estimate_minutes: 0.83      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.86      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-ganyan-jianbanxian
-    title: 第6章 干眼与睑板腺功能障碍
-    segments: 5
+    title: 干眼与睑板腺：三层泪膜里，坏的是哪一层
     video: rendered
-    estimate_minutes: 0.85
-    measured_minutes: 0.87
+    estimate_minutes: 0.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.87      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-qingguangyan-shishenjing
-    title: 第7章 青光眼与视神经病变
-    segments: 5
+    title: 绿风内障与视神经：唯一不能「先辨证再看看」的病
     video: rendered
-    estimate_minutes: 0.8
-    measured_minutes: 0.86
+    estimate_minutes: 0.80      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.86      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-dichuxue-tangwang
-    title: 第8章 眼底出血与糖网的中医治疗
-    segments: 5
+    title: 眼底出血与消渴目病：血还在不在流，决定先止血还是先化瘀
     video: rendered
-    estimate_minutes: 0.87
-    measured_minutes: 0.9
+    estimate_minutes: 0.87      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-waizhi-yonganquan
-    title: 第9章 眼科外治法与用药安全
-    segments: 5
+    title: 外治与用药安全：眼科是给药窗口最窄的科室
     video: rendered
-    estimate_minutes: 0.85
-    measured_minutes: 0.88
+    estimate_minutes: 0.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.88      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-liaoxiao-suifang
-    title: 第10章 眼科疗效评价与随访
-    segments: 5
+    title: 疗效评价与随访：先把「有效」写下来，再开始治
     video: rendered
-    estimate_minutes: 0.85
-    measured_minutes: 0.86
+    estimate_minutes: 0.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.86      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

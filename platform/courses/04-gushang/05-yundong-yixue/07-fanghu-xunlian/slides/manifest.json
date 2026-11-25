@@ -1,31 +1,81 @@
 {
   "chapter": "07-fanghu-xunlian",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 15,
+  "segmentCount": 11,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 13
+      "chars": 33
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 93
+      "chars": 26
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 19
+      "chars": 167
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 114
+      "chars": 165
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 379
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 77
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 404
+    },
+    {
+      "n": 8,
+      "segment": 7,
+      "chars": 365
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 72
+    },
+    {
+      "n": 10,
+      "segment": 8,
+      "chars": 388
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 151
+    },
+    {
+      "n": 12,
+      "segment": 9,
+      "chars": 370
+    },
+    {
+      "n": 13,
+      "segment": 9,
+      "chars": 147
+    },
+    {
+      "n": 14,
+      "segment": 10,
+      "chars": 401
+    },
+    {
+      "n": 15,
+      "segment": 11,
       "chars": 52
     }
   ]

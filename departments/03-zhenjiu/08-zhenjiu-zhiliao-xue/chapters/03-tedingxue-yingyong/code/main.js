@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 /**
- * 针灸治疗学 · 第 3 章 特定穴的临床应用：本章统计口径
- * 课程: departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/03-tedingxue-yingyong/docs/zh.md
- * 数据: standards/zhenjiu-zhiliao/units.json（472 单元层，每单元带三辨与四位面词频）
- * 取数: standards/zhenjiu-zhiliao/chapter-map.json（课程章 → 教材单元号）
- * 依赖: 仅 Node.js 标准库
+ * 针灸治疗学 · 第 3 章 特定穴是按条件检索的索引，不是「更重要的穴位」：正文与习题自检
+ * 课程: departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/03-tedingxue-yingyong
+ * 依赖: 仅 Node.js 标准库；只读 ../docs/zh.md 与 ../quiz.json，不读 standards/。
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 输出的三个数：正文字数、二级节数、习题接地数。接地数指 check 题的正确选项里
+ * 至少有一个 ≥4 字的词组真的出现在当章正文里 —— 习题必须与正文同源。
  */
 
 'use strict';
@@ -15,87 +13,54 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'zhenjiu-zhiliao', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DIR = __dirname;
+const DOC = path.join(DIR, '..', 'docs', 'zh.md');
+const QUIZ = path.join(DIR, '..', 'quiz.json');
+
+const doc = fs.readFileSync(DOC, 'utf8');
+const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+
+const CH = '3';
+const TITLE = '特定穴是按条件检索的索引，不是「更重要的穴位」';
+
+const hz = (s) => (s.match(/[\u4e00-\u9fff]/g) || []).length;
+const secs = (doc.match(/^## /gm) || []).length;
+
+/** 正文里的 4 字连续汉字片段集合 */
+function shingles(text, n = 4) {
+  const clean = String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ');
+  const out = new Set();
+  for (const seg of clean.split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
   }
-  throw new Error('没找到 standards/zhenjiu-zhiliao/units.json —— 章节目录是否已脱离仓库？');
+  return out;
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'zhenjiu-zhiliao', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'zhenjiu-zhiliao', 'chapter-map.json');
-const CHAPTER = '3';
-const SLUG = '03-tedingxue-yingyong';
+const body = shingles(doc);
+const grounded = (s) => {
+  const clean = String(s || '').replace(/[^\u4e00-\u9fff]/g, '');
+  for (let i = 0; i + 4 <= clean.length; i += 1) if (body.has(clean.slice(i, i + 4))) return true;
+  return false;
+};
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+const stages = { pre: 0, check: 0, post: 0 };
+for (const q of quiz.questions) stages[q.stage] = (stages[q.stage] || 0) + 1;
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+const why = (q) => q.explain || q.explanation || '';
+const checks = quiz.questions.filter((q) => q.stage === 'check');
+const hit = checks.filter((q) => grounded(q.options[q.correct])).length;
+const minExplain = Math.min(...quiz.questions.map((q) => hz(why(q))));
+const maxExplain = Math.max(...quiz.questions.map((q) => hz(why(q))));
+
+console.log(`第 ${CH} 章 · ${TITLE}`);
+console.log(`正文 ${hz(doc)} 汉字 · 二级节 ${secs}`);
+console.log(`习题 ${quiz.questions.length} 题 (pre ${stages.pre}/check ${stages.check}/post ${stages.post}) · 解释 ${minExplain}–${maxExplain} 汉字`);
+console.log(`接地 check 题 ${hit}/${checks.length}`);
+
+const ok = hz(doc) >= 2500 && secs >= 4 && quiz.questions.length >= 5
+  && stages.pre >= 1 && stages.check >= 2 && stages.post >= 1
+  && hit >= 2 && minExplain >= 40 && maxExplain <= 80;
+if (!ok) {
+  console.error('自检未通过');
+  process.exit(1);
 }
-
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
-}
-
-function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`针灸治疗学 · 第 ${CHAPTER} 章 ${cm.title}`);
-  console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
-  console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
-  console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/zhenjiu-zhiliao/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
-}
-
-if (require.main === module) main();
-
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };

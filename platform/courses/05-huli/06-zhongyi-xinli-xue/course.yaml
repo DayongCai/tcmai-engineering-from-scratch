@@ -29,50 +29,49 @@ platform:
 
 chapters:
   - slug: 01-lilun-kuangjia
-    title: 第1章 中医心理学的理论框架
-    segments: 5
+    title: 中医心理学的第一道判断，是分清形与神各自的证据
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.98
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.98      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-qiqing-zhizhi
-    title: 第2章 七情学说与情志致病
-    segments: 5
+    title: 情志致病的关键不在情绪有多强，而在气机往哪里去
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.99
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.99      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-wuzhi-zangfu
-    title: 第3章 五志与脏腑的关系
-    segments: 5
+    title: 同一种情绪落在不同脏腑，观察项与第一动作都不该一样
     video: rendered
-    estimate_minutes: 1.02
-    measured_minutes: 1.06
+    estimate_minutes: 1.02      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.06      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-qingzhibing-pinggu
-    title: 第4章 情志病的辨证与评估
-    segments: 5
+    title: 评估的功夫在提问，不在结论
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.98
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.98      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-shudao-xiangsheng
-    title: 第5章 心理疏导与情志相胜
-    segments: 5
+    title: 以情胜情是把情绪当药用，所以它比用药更危险
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 1.01
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.01      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-shenxin-ganyu
-    title: 第6章 身心疾病的中医干预
-    segments: 5
+    title: 心身疾病的干预，一半在治法，一半在把不确定说清
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1.01
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.01      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-liangbiao-juxian
-    title: 第7章 心理量表的使用与局限
-    segments: 5
+    title: 量表能给一个数字，给不了这个数字的意思
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 1.01
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.01      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-duizhao-sheji
-    title: 第8章 心理干预研究的对照设计
-    segments: 5
+    title: 要证明一个干预有效，先得说清它跟什么比
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 1
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

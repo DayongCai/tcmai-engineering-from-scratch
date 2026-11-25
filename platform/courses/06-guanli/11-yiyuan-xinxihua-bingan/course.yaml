@@ -29,50 +29,49 @@ platform:
 
 chapters:
   - slug: 01-z111
-    title: 第1章 医院信息系统的构成
-    segments: 5
+    title: 医院信息系统的构成：系统不是模块清单，是记录的分布图
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.91
+    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-z112
-    title: 第2章 标准、编码与互操作
-    segments: 5
+    title: 标准、编码与互操作：编码少一位，整组就匹配不上
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.93
+    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-z113
-    title: 第3章 电子病历与临床信息系统
-    segments: 5
+    title: 电子病历与临床信息系统：写得快不等于写得对，签了名才算写完
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.95
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-z114
-    title: 第4章 病案管理与首页数据
-    segments: 5
+    title: 病案首页与主诊断：一个诊断选错，整组都错
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.92
+    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-z115
-    title: 第5章 数据质量与统计上报
-    segments: 5
+    title: 数据质量与统计上报：同一个数，三个分母
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.93
+    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-z116
-    title: 第6章 信息安全与权限
-    segments: 5
+    title: 信息安全与权限：能登录的人越多，签名越不值钱
     video: rendered
-    estimate_minutes: 0.87
-    measured_minutes: 0.88
+    estimate_minutes: 0.87      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.88      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-z117
-    title: 第7章 项目实施与验收
-    segments: 5
+    title: 项目实施与验收：验收单上不能写「满足临床需要」
     video: rendered
-    estimate_minutes: 0.87
-    measured_minutes: 0.9
+    estimate_minutes: 0.87      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-z118
-    title: 第8章 智慧医院与规划
-    segments: 5
+    title: 智慧医院与规划：评级是体检报告，不是成绩单
     video: rendered
-    estimate_minutes: 0.87
-    measured_minutes: 0.88
+    estimate_minutes: 0.87      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.88      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

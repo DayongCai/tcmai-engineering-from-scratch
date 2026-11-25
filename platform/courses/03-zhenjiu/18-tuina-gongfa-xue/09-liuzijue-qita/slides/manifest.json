@@ -1,31 +1,91 @@
 {
   "chapter": "09-liuzijue-qita",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 17,
+  "segmentCount": 8,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 14
+      "chars": 26
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 55
+      "chars": 92
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 32
+      "chars": 235
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 103
+      "chars": 148
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 143
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 344
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 305
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 205
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 345
+    },
+    {
+      "n": 10,
+      "segment": 6,
+      "chars": 384
+    },
+    {
+      "n": 11,
+      "segment": 6,
+      "chars": 251
+    },
+    {
+      "n": 12,
+      "segment": 6,
+      "chars": 390
+    },
+    {
+      "n": 13,
+      "segment": 6,
+      "chars": 381
+    },
+    {
+      "n": 14,
+      "segment": 6,
+      "chars": 322
+    },
+    {
+      "n": 15,
+      "segment": 7,
+      "chars": 385
+    },
+    {
+      "n": 16,
+      "segment": 7,
+      "chars": 402
+    },
+    {
+      "n": 17,
+      "segment": 8,
       "chars": 52
     }
   ]

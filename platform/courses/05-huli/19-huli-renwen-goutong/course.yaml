@@ -29,86 +29,85 @@ platform:
 
 chapters:
   - slug: 01-gaishu
-    title: 第1章 护理人文修养概述
-    segments: 5
+    title: 人文修养的底子是「把人当人」的可核对动作
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.92
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-renwen-jingshen
-    title: 第2章 人文精神与职业价值观
-    segments: 5
+    title: 价值观不挂在墙上，挂在你如何处理一个难缠的人
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.96
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-wenhua-chayi
-    title: 第3章 文化与文化差异
-    segments: 5
+    title: 文化差异不在风俗清单，在谁有资格先开口
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.94
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-goutong-yuanli
-    title: 第4章 沟通的基本原理
-    segments: 5
+    title: 沟通的原理是控制信息的落差，不是把话说漂亮
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.95
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-huhuan-goutong
-    title: 第5章 护患沟通的环节与要求
-    segments: 5
+    title: 护患沟通的成败，一半在入院那十分钟就定了
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.95
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-teshu-qingjing
-    title: 第6章 特殊情境的沟通要求
-    segments: 5
+    title: 坏消息先说人话，冲突先降级再说理
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.97
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.97      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-tuandui-goutong
-    title: 第7章 团队沟通与协作
-    segments: 5
+    title: 团队沟通的成本不在开会，在交接的那三句话
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.98
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.98      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-liyi-xingxiang
-    title: 第8章 护理礼仪与职业形象
-    segments: 5
+    title: 礼仪不是微笑，是让对方不用猜你的下一步
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.95
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-tongli-zhichi
-    title: 第9章 同理心与情感支持
-    segments: 5
+    title: 同理心不是替人难过，是准确说出他难在哪里
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.96
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-renwen-shijian
-    title: 第10章 人文关怀的实践要求
-    segments: 5
+    title: 关怀要落到能被看见、能被记录的动作上
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.96
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 11-lunli-juece
-    title: 第11章 伦理与法律的修养、道德困境
-    segments: 5
+    title: 伦理困境不靠高尚解决，靠把选项摆全再排序
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1.01
+    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.01      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 12-jiaoyu-fansi
-    title: 第12章 人文素质教育与反思实践
-    segments: 5
+    title: 反思不是写感想，是把一次失误拆成可改的动作
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.98
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.98      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 13-zhiye-fazhan
-    title: 第13章 人文修养与职业发展
-    segments: 5
+    title: 人文修养是长期竞争力，因为它最难被替代
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.97
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.97      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 14-zhiliang-pingtai
-    title: 第14章 人文修养与护理质量、平台
-    segments: 5
+    title: 人文要被评价，先得变成可统计的记录字段
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.97
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.97      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

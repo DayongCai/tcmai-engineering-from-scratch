@@ -18,7 +18,7 @@
       "spoken": "第 2 章 · 汉字与词汇",
       "estimateSeconds": 3,
       "audio": "001.mp3",
-      "audioSeconds": 2.54
+      "audioSeconds": 2.544
     },
     {
       "n": 2,
@@ -28,7 +28,7 @@
       "spoken": "「《医古文·汉字与词汇》」——教材篇名级；课程章号对应教材第 3、4 章。本章要回答的是：读完汉字与词汇，能独立读懂一段未经标点的医经原文吗。",
       "estimateSeconds": 15,
       "audio": "002.mp3",
-      "audioSeconds": 14.38
+      "audioSeconds": 14.376
     },
     {
       "n": 3,
@@ -58,10 +58,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "005.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 60.74,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 1.0,
+    "measuredMinutes": 1.01,
+    "ratio": 1.012
+  }
 }

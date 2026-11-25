@@ -28,7 +28,7 @@
       "spoken": "「《中国药典·四部》」——本章讲 DNA 条形码，教材无篇名级引文；药典四部收载分子生物学检查法通则，篇名按此补足。本章要回答的是：DNA 条形码能替代性状鉴定吗。",
       "estimateSeconds": 17,
       "audio": "002.mp3",
-      "audioSeconds": 16.75
+      "audioSeconds": 16.752
     },
     {
       "n": 3,
@@ -38,7 +38,7 @@
       "spoken": "它只回答「是不是这个物种」，不回答「好不好、掺没掺、加工过没有」；而 DNA 在高温、硫熏、提取后还会降解，读不出就不等于假。",
       "estimateSeconds": 13,
       "audio": "003.mp3",
-      "audioSeconds": 12.26
+      "audioSeconds": 12.264
     },
     {
       "n": 4,
@@ -48,7 +48,7 @@
       "spoken": "环境逼迫（中药是混合物，任何一个「成分」都要先分出来才能说清楚）+ 知识积累（本章 4 单元 11,243 汉字；三辨主 检查方法 340；四位面（鉴定四法）主 理化 184；引书 5 部 15 次；数值类命中 0）",
       "estimateSeconds": 20,
       "audio": "004.mp3",
-      "audioSeconds": 21.26
+      "audioSeconds": 21.264
     },
     {
       "n": 5,
@@ -58,10 +58,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "005.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 65.42,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 1.07,
+    "measuredMinutes": 1.09,
+    "ratio": 1.022
+  }
 }

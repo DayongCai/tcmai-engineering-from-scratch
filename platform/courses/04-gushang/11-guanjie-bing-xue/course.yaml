@@ -29,62 +29,61 @@ platform:
 
 chapters:
   - slug: 01-gailun-bingyin
-    title: 第1章 骨病概论与病因病机
-    segments: 5
+    title: 关节病的第一个动作不是开药，是把病人放进正确的类别里
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1
+    estimate_minutes: 12.07      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.74      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-linchuang-zhencha
-    title: 第2章 骨病的临床诊查
-    segments: 5
+    title: 关节病的体征长得很慢，判据必须写在流程里
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.96
+    estimate_minutes: 13.43      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.19      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-zhiliao-fangfa
-    title: 第3章 骨病的治疗方法
-    segments: 5
+    title: 治疗不是选项的堆叠，是先分层、再分期、后选法
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.96
+    estimate_minutes: 14.53      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.35      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-huamou-guanjieyan
-    title: 第4章 化脓性骨髓炎与化脓性关节炎
-    segments: 5
+    title: 化脓性关节病的时间里没有「观察一下」这个选项
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 1.03
+    estimate_minutes: 13.53      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-gujiehe
-    title: 第5章 骨与关节结核
-    segments: 5
+    title: 骨结核最像的不是结核，是劳损
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.93
+    estimate_minutes: 13.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 6.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-guzhongliu
-    title: 第6章 骨肿瘤：识别与转诊
-    segments: 5
+    title: 骨肿瘤的第一个动作是拍片，不是解释
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 1
+    estimate_minutes: 12.17      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-gudaixie
-    title: 第7章 骨代谢性疾病
-    segments: 5
+    title: 骨量的流失是安静的，骨折是它第一次说话
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.98
+    estimate_minutes: 13.03      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 12.87      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-guhuaisi
-    title: 第8章 骨缺血性坏死
-    segments: 5
+    title: 骨坏死的窗口期，落在 X 线还看不见的那段时间里
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.93
+    estimate_minutes: 11.60      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.37      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-tuixing-mianyi
-    title: 第9章 骨关节退行性与免疫性疾病
-    segments: 5
+    title: 骨关节炎与类风湿的治疗方向是相反的
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 1.01
+    estimate_minutes: 14.68      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 14.65      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-jixing-kangfu
-    title: 第10章 骨畸形、骨软骨病与康复
-    segments: 5
+    title: 畸形不疼，所以它总在没人看着的时候长
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.98
+    estimate_minutes: 13.22      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 12.74      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

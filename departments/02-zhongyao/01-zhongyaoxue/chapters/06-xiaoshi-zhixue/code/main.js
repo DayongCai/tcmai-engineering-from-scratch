@@ -1,189 +1,276 @@
-'use strict';
+#!/usr/bin/env node
 /**
- * 第 6 章 · 消食药、驱虫药与止血药：有形之积与离经之血
+ * 中药学 · 第 6 章 消食、驱虫、止血共用一条判据：东西该不该留
  *
  *   node code/main.js
  *
- * 口径：
- *   - 规模与分布全部从 standards/zhongyao/{底本,drugs}.json 现算。
- *   - 「炮制词」在整条药的原文（来源段 + 功效段 + 用法段）里检索：生用 / 炒 / 炭。
- *     检索范围必须包含来源段，否则「地榆……炒炭止血」这类只写在性味段里的信息会漏掉。
- *   - 一味药同时出现「生用」与「炒或炭」，记为一对「双用法」——同一味药的两条力。
- *   - 「毒」只认原文「有毒 / 大毒 / 小毒」。
+ * 正文：chapters/06-xiaoshi-zhixue/docs/zh.md
+ * 习题：chapters/06-xiaoshi-zhixue/quiz.json
+ * 依赖：仅 Node.js 标准库
+ *
+ * 只读本章正文与本章 quiz，不读任何底本或标准表：正文改了，这里的数字跟着变。
+ *   · 规模：汉字、段、节标题、表格张数与每张表的列数／行数
+ *   · 本章算术：从正文表格与计数句里解析条目，再算覆盖率、集中度与派生量
+ *   · quiz：题量、三段分布、选项数、解释长度、答案位置是否打散、check 题能否在正文找到原词
+ * 任何一项对不上，说明正文、代码、习题三者已经不同源。
  */
 
-const fs = require('fs');
-const path = require('path');
+'use strict';
 
-const ROOT = path.join(__dirname, '..', '..', '..', '..', '..', '..');
-const STD = path.join(ROOT, 'standards', 'zhongyao');
-const base = JSON.parse(fs.readFileSync(path.join(STD, '底本.json'), 'utf8'));
-const drugs = JSON.parse(fs.readFileSync(path.join(STD, 'drugs.json'), 'utf8')).drugs;
+const fs = require('node:fs');
+const path = require('node:path');
 
-const NOS = ['17', '18', '19'];
-const LABEL = { 17: '消食', 18: '驱虫', 19: '止血' };
-const QI_ORDER = ['大寒', '寒', '微寒', '凉', '平', '微温', '温', '热', '大热'];
-const QI_SCORE = { 大寒: -4, 寒: -3, 微寒: -2, 凉: -1, 平: 0, 微温: 1, 温: 2, 热: 3, 大热: 4 };
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
-const dw = (s) => [...String(s)].reduce((n, ch) => n + (/[\u2e80-\u9fff\uff00-\uffef]/.test(ch) ? 2 : 1), 0);
-const pad = (s, n) => String(s) + ' '.repeat(Math.max(0, n - dw(s)));
-const num = (x, d = 2) => (x == null ? '—' : Number(x).toFixed(d));
+const CHAPTER = 6;
+const SLUG = '06-xiaoshi-zhixue';
+const TITLE = '消食、驱虫、止血共用一条判据：东西该不该留';
 
-function table(headers, rows) {
-  const w = headers.map((h, i) => Math.max(dw(h), ...rows.map((r) => dw(r[i]))));
-  const line = (cells) => cells.map((c, i) => pad(c, w[i])).join('  ');
-  console.log(line(headers));
-  console.log(w.map((x) => '-'.repeat(x)).join('  '));
-  for (const r of rows) console.log(line(r));
+/* ── 文本口径 ────────────────────────────────────────────────────── */
+
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+const count = (text, term) => String(text).split(term).length - 1;
+const nums = (s) => (String(s || '').match(/\d+(?:\.\d+)?/g) || []).map(Number);
+const numOf = (v) => Number(String(v == null ? '' : v).replace(/[,，\s%]/g, '')) || 0;
+/** 取单元格开头的数字（后面可能跟着括注） */
+const lead = (v) => Number((String(v == null ? '' : v).match(/^\d+(?:\.\d+)?/) || [0])[0]);
+const readDoc = () => fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+const docLines = (doc) => String(doc).split(/\r?\n/);
+
+/** 节标题：`## 一、…` */
+function sections(doc) {
+  return docLines(doc).filter((l) => /^##\s+/.test(l)).map((l) => l.replace(/^##\s+/, '').trim());
 }
 
-const scope = () => base.chapters.filter((c) => NOS.includes(String(c.no)));
+/** 段：非空，不以标题、引文、表格行、清单符号或编号起始 */
+function paragraphs(doc) {
+  return docLines(doc)
+    .map((l) => l.trim())
+    .filter((l) => l && !/^[#>|]/.test(l) && !/^[-*+]\s/.test(l) && !/^\d+[.、]/.test(l))
+    .filter((l) => !l.includes('|'));
+}
 
-function counts() {
-  let secs = 0;
-  let subs = 0;
-  let paras = 0;
-  let chars = 0;
-  const byCh = {};
-  for (const c of scope()) {
-    const p = { secs: (c.secs || []).length, subs: 0, paras: 0, chars: c.counts.chars };
-    for (const s of c.secs) {
-      for (const u of s.subs) {
-        p.subs += 1;
-        p.paras += (u.paras || []).length;
-      }
+/** markdown 表格：表头 + 去分隔行的数据行；围栏代码块里的竖线不算表 */
+function tables(doc) {
+  const ls = docLines(doc);
+  const cells = (l) => l.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map((c) => c.trim());
+  const out = [];
+  let i = 0;
+  let fenced = false;
+  while (i < ls.length) {
+    if (/^\s*```/.test(ls[i])) {
+      fenced = !fenced;
+      i += 1;
+      continue;
     }
-    byCh[c.no] = p;
-    secs += p.secs;
-    subs += p.subs;
-    paras += p.paras;
-    chars += p.chars;
-  }
-  return { chapters: scope().length, secs, subs, paras, chars, byCh };
-}
-
-const group = (nos = NOS) => drugs.filter((d) => nos.includes(String(d.chapter)));
-const fullText = (d) => [d.fields['来源与性味归经'], d.fields['功效与主治'], d.fields['用法用量与使用注意']].join(' ') + ' ' + (d.nature.raw || '');
-const isToxic = (d) => /有毒|大毒|小毒/.test(fullText(d));
-
-function qiDist(list) {
-  const m = new Map();
-  for (const d of list) m.set(d.nature.qi || '(空)', (m.get(d.nature.qi || '(空)') || 0) + 1);
-  return m;
-}
-
-function qiScore(list) {
-  const v = list.map((d) => QI_SCORE[d.nature.qi]).filter((x) => x != null);
-  return v.length ? v.reduce((a, b) => a + b, 0) / v.length : null;
-}
-
-function guijingCount(list) {
-  const m = new Map();
-  for (const d of list) for (const g of d.nature.guijing) m.set(g, (m.get(g) || 0) + 1);
-  return m;
-}
-
-/** 炮制词命中；kw 为单个词元（生用 / 炒 / 炭） */
-const hasProc = (d, kw) => fullText(d).includes(kw);
-
-/** 双用法：既有生用，又有炒或炭 */
-const dualUse = (d) => hasProc(d, '生用') && (hasProc(d, '炒') || hasProc(d, '炭'));
-
-function doseCap(d) {
-  const m = String(d.fields['用法用量与使用注意']).match(/(\d+(?:\.\d+)?)\s*[-~～]\s*(\d+(?:\.\d+)?)\s*g/);
-  return m ? parseFloat(m[2]) : null;
-}
-
-function perChapter() {
-  const out = {};
-  for (const no of NOS) {
-    const list = group([no]);
-    const caps = list.map(doseCap).filter((x) => x != null);
-    out[no] = {
-      drugs: list.length,
-      chars: base.chapters.find((c) => String(c.no) === no).counts.chars,
-      secs: (base.chapters.find((c) => String(c.no) === no).secs || []).length,
-      qi: qiScore(list),
-      ku: list.filter((d) => d.nature.wei.some((w) => w.includes('苦'))).length,
-      gan: list.filter((d) => d.nature.wei.includes('甘')).length,
-      se: list.filter((d) => d.nature.wei.includes('涩')).length,
-      toxic: list.filter(isToxic).length,
-      sheng: list.filter((d) => hasProc(d, '生用')).length,
-      chao: list.filter((d) => hasProc(d, '炒')).length,
-      tan: list.filter((d) => hasProc(d, '炭')).length,
-      dual: list.filter(dualUse).map((d) => d.name),
-      capAvg: caps.length ? caps.reduce((a, b) => a + b, 0) / caps.length : null,
-      capMin: caps.length ? Math.min(...caps) : null,
-      capMax: caps.length ? Math.max(...caps) : null,
-      topGui: [...guijingCount(list).entries()].sort((a, b) => b[1] - a[1]).slice(0, 4),
-    };
+    if (!fenced && /^\s*\|/.test(ls[i])) {
+      const block = [];
+      while (i < ls.length && /^\s*\|/.test(ls[i])) {
+        block.push(ls[i]);
+        i += 1;
+      }
+      const header = cells(block[0]);
+      const rows = block.slice(1).filter((l) => !/^\s*\|[\s:|-]+\|\s*$/.test(l)).map(cells);
+      out.push({ header, cols: header.length, rows });
+    } else {
+      i += 1;
+    }
   }
   return out;
 }
 
+const tableBy = (ts, kw) => ts.find((t) => t.header.join(' ').includes(kw));
+
+/* ── 本章算术（从正文解析，不写死结果） ─────────────────────────── */
+
+function chapterArithmetic(doc, ts) {
+  const chans = tableBy(ts, '失序形态');
+  const hemo = tableBy(ts, '机制');
+  const gas = tableBy(ts, '已填');
+  const mer = tableBy(ts, '一句话读法');
+  if (!chans || !hemo || !gas || !mer) throw new Error('正文的三章表／四节表／气分布表／归经表有缺');
+
+  const per = (re, s) => Number((String(s).match(re) || [])[1]);
+  const f = (re) => per(re, doc);
+
+  // 三章：味数与字数逐行相加，篇均由和去除
+  const chapterN = chans.rows.length;
+  const herbs = chans.rows.reduce((s, r) => s + numOf(r[2]), 0);
+  const chantotal = chans.rows.reduce((s, r) => s + numOf(r[3]), 0);
+  const mean = chantotal / herbs;
+  const bloodRow = chans.rows.find((r) => String(r[0]).includes('19'));
+  const bloodN = numOf(bloodRow[2]);
+  const bloodWords = numOf(bloodRow[3]);
+  const bloodShare = (bloodWords / chantotal) * 100;
+
+  // 止血四节：机制不是程度，四节味数相加应等于止血那一章
+  const secN = hemo.rows.length;
+  const secHerbs = hemo.rows.reduce((s, r) => s + numOf(r[1]), 0);
+
+  // 气分布：三组相加
+  const filled = gas.rows.reduce((s, r) => s + lead(r[1]), 0);
+  const wen = gas.rows.reduce((s, r) => s + lead(r[2]), 0);
+  const ping = gas.rows.reduce((s, r) => s + lead(r[3]), 0);
+  const han = gas.rows.reduce((s, r) => s + lead(r[4]), 0);
+  const liang = gas.rows.reduce((s, r) => s + lead(r[5]), 0);
+  const blank = gas.rows.reduce((s, r) => s + lead(r[6]), 0);
+  const coverage = (filled / herbs) * 100;
+  const flatShare = (ping / filled) * 100;
+
+  // 归经：肝与脾的差，正好是藏血与统血两条职责
+  const liver = numOf(mer.rows.find((r) => String(r[0]).startsWith('肝'))[1]);
+  const spleen = numOf(mer.rows.find((r) => String(r[0]).startsWith('脾'))[1]);
+
+  // 味与涩：涩是「留」的字面编码
+  const tasteLabels = f(/一共给出\s*(\d+)\s*个味标/);
+  const se = per(/辛\s*\d+、涩\s*(\d+)/, doc);
+
+  // 编号：locator 去重数与重号数
+  const locatorN = f(/\d+\s*味药只有\s*(\d+)\s*个不同的 locator/);
+  const dupN = f(/(\d+)\s*条记录与别人共用编号/);
+
+  // 剂量：上界之比写在正文里
+  const doseRatio = f(/上界相差\s*(\d+)\s*倍/);
+
+  return {
+    chapterN,
+    herbs,
+    chantotal,
+    mean: Number(mean.toFixed(1)),
+    bloodN,
+    bloodWords,
+    bloodShare: Number(bloodShare.toFixed(1)),
+    secN,
+    secHerbs,
+    filled,
+    wen,
+    ping,
+    han,
+    liang,
+    blank,
+    coverage: Number(coverage.toFixed(1)),
+    flatShare: Number(flatShare.toFixed(1)),
+    liver,
+    spleen,
+    gap: liver - spleen,
+    tasteLabels,
+    se,
+    locatorN,
+    dupN,
+    doseRatio,
+    lines: [
+      '三章 ' + chapterN + ' 章：味数 ' + herbs + '、汉字 ' + chantotal.toLocaleString('en-US') + '，篇均 ' + mean.toFixed(1) + ' 字',
+      '止血一章 ' + bloodN + ' 味、' + bloodWords.toLocaleString('en-US') + ' 字，占 ' + bloodShare.toFixed(1) + '%；另两章合计 ' + (100 - Number(bloodShare.toFixed(1))).toFixed(1) + '%',
+      '止血四节 ' + secN + ' 节、味数相加 ' + secHerbs + '（' + (secHerbs === bloodN ? '与止血章味数相符' : '与止血章味数不符') + '）——四节是四种机制，不是四种程度',
+      '气分布 温 ' + wen + '／平 ' + ping + '／寒 ' + han + '／凉 ' + liang + '，已填 ' + filled + '/' + herbs + ' = ' + coverage.toFixed(1) + '%；平占已填的 ' + flatShare.toFixed(1) + '%',
+      '味标 ' + tasteLabels + ' 个，其中涩 ' + se + ' 个，全部落在止血药里；归经 肝 ' + liver + ' 条、脾 ' + spleen + ' 条，差 ' + (liver - spleen) + ' 条（藏血与统血两条职责）',
+      '编号：' + locatorN + ' 个不同 locator 对 ' + (locatorN + dupN) + ' 条记录，' + dupN + ' 处重号 —— 裸编号不可回查',
+      '剂量上界相差 ' + doseRatio + ' 倍（研末冲服对大量种子仁），不能概括成一句常用量',
+    ],
+  };
+}
+
+/* ── quiz：结构 + 接地 ──────────────────────────────────────────── */
+
+/** 正文里 4 字以上的连续汉字片段 */
+function grams(text, n = 4) {
+  const out = new Set();
+  for (const seg of String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+}
+
+function quizSummary(quiz, doc) {
+  const body = grams(doc);
+  const qs = Array.isArray(quiz.questions) ? quiz.questions : [];
+  const stage = { pre: 0, check: 0, post: 0 };
+  const items = qs.map((q, i) => {
+    if (stage[q.stage] !== undefined) stage[q.stage] += 1;
+    const opts = Array.isArray(q.options) ? q.options : [];
+    const right = String(opts[q.correct] || '');
+    const hit = [...grams(right)].filter((g) => body.has(g));
+    const why = q.explain || q.explanation || '';
+    return {
+      n: i + 1,
+      stage: q.stage,
+      options: opts.length,
+      correct: q.correct,
+      explainHanzi: hanzi(why),
+      grounded: hit.length,
+      sample: hit.slice(0, 3),
+    };
+  });
+  return {
+    total: qs.length,
+    stage,
+    items,
+    answers: qs.map((q) => q.correct),
+    distinctAnswers: new Set(qs.map((q) => q.correct)).size,
+    checkGrounded: items.filter((x) => x.stage === 'check' && x.grounded > 0).length,
+    minExplain: items.length ? Math.min(...items.map((x) => x.explainHanzi)) : 0,
+    allFourOptions: items.every((x) => x.options === 4),
+    badCorrect: items.filter((x) => !(Number.isInteger(x.correct) && x.correct >= 0 && x.correct < 4)).length,
+    stageComplete: ['pre', 'check', 'post'].every((s) => stage[s] > 0),
+  };
+}
+
+/* ── 汇总 ──────────────────────────────────────────────────────── */
+
+function analyze() {
+  const doc = readDoc();
+  const ts = tables(doc);
+  const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+  return {
+    docHanzi: hanzi(doc),
+    paragraphs: paragraphs(doc).length,
+    sections: sections(doc),
+    tables: ts.map((t) => ({ header: t.header, cols: t.cols, rows: t.rows.length })),
+    arith: chapterArithmetic(doc, ts),
+    quiz: quizSummary(quiz, doc),
+  };
+}
+
 function main() {
-  const c = counts();
-  console.log('== 第 6 章 · 消食药、驱虫药与止血药：有形之积与离经之血 ==');
-  console.log(`教材章 ${NOS.join('+')}｜${c.chapters} 章 / ${c.secs} 节 / ${c.subs} 小节 / ${c.paras} 段 / ${c.chars} 字`);
-  console.log(`药物单元 ${group().length} 味`);
-
-  const pc = perChapter();
-  console.log('\n[1] 三组的体量、体温与炮制密度');
-  table(
-    ['教材章', '组', '节', '药数', '字数', '热性均分', '苦', '甘', '涩', '毒性词', '生用', '炒', '炭', '归经前四'],
-    NOS.map((no) => [
-      no, LABEL[no], String(pc[no].secs), String(pc[no].drugs), String(pc[no].chars), num(pc[no].qi),
-      `${pc[no].ku}/${pc[no].drugs}`, `${pc[no].gan}/${pc[no].drugs}`, `${pc[no].se}/${pc[no].drugs}`,
-      String(pc[no].toxic), String(pc[no].sheng), String(pc[no].chao), String(pc[no].tan),
-      pc[no].topGui.map(([g, n]) => `${g}${n}`).join('/'),
-    ]),
-  );
-
-  console.log('\n[2] 四气分布（24 味）');
-  const dist = qiDist(group());
-  for (const q of QI_ORDER) {
-    const n = dist.get(q) || 0;
-    if (!n) continue;
-    console.log(`  ${pad(q, 6)}${String(n).padStart(3)}  ${'█'.repeat(n)}`);
-  }
-
-  console.log('\n[3] 双用法：同一味药的两条力（既写「生用」又写「炒」「炭」）');
-  const dual = group().filter(dualUse);
-  table(
-    ['药名', '教材章', '生用', '炒', '炭'],
-    dual.map((d) => [d.name, d.chapter, hasProc(d, '生用') ? '✓' : '', hasProc(d, '炒') ? '✓' : '', hasProc(d, '炭') ? '✓' : '']),
-  );
-  console.log(`  共 ${dual.length} 味；占总药数 ${((dual.length / group().length) * 100).toFixed(0)}%。`);
-
-  console.log('\n[4] 剂量窗口：两端差多少倍');
-  const caps = group()
-    .map((d) => ({ name: d.name, ch: d.chapter, cap: doseCap(d), toxic: isToxic(d) }))
-    .filter((x) => x.cap != null)
-    .sort((a, b) => a.cap - b.cap);
-  table(['药名', '教材章', '剂量上限', '原文标毒性'], caps.slice(0, 4).map((x) => [x.name, x.ch, `${x.cap}g`, x.toxic ? '是' : '否']));
-  console.log('  …');
-  table(['药名', '教材章', '剂量上限', '原文标毒性'], caps.slice(-2).map((x) => [x.name, x.ch, `${x.cap}g`, x.toxic ? '是' : '否']));
-  const ratio = caps[caps.length - 1].cap / caps[0].cap;
-  console.log(`  最高上限 / 最低上限 = ${num(ratio, 0)} 倍（${caps[caps.length - 1].name} vs ${caps[0].name}）`);
-
-  console.log('\n[5] 归经：消食在脾胃，驱虫在胃肠，止血在肝');
-  for (const no of NOS) {
-    const g = [...guijingCount(group([no])).entries()].sort((a, b) => b[1] - a[1]);
-    console.log(`  ${LABEL[no]}：` + g.map(([x, n]) => `${x}${n}`).join(' · '));
-  }
-
-  console.log('\n[6] 止血药为什么最「苦」');
-  const t19 = group(['19']);
-  console.log(`  第 19 章 15 味中含苦 ${t19.filter((d) => d.nature.wei.some((w) => w.includes('苦'))).length} 味；`);
-  console.log('  苦能泄能燥能坚，止血要「敛」要「降」，所以苦味在这一章是主色；而消食药靠甘平，含苦 0 味。');
-
-  console.log('\n结论：消食治「有形之积」，驱虫治「虫」，止血治「离经之血」——三者都在处理「本该出去或本该留住的东西」。');
-  console.log('      而炮制（生用 / 炒 / 炭）是把同一味药掰成两条力的开关：炒炭收敛，生用散瘀，方向相反。');
-  console.log('教学边界：本章数据来自教材结构化整理，仅用于教学演示与检索，不构成用药依据。');
+  const r = analyze();
+  console.log(`中药学 第 ${CHAPTER} 章 · ${TITLE}`);
+  console.log(`正文 ${r.docHanzi.toLocaleString('en-US')} 汉字 · ${r.paragraphs} 段 · 节 ${r.sections.length} 个`);
+  console.log('');
+  console.log('结构：');
+  for (const s of r.sections) console.log(`  ${s}`);
+  console.log('');
+  console.log(`表 ${r.tables.length} 张：`);
+  r.tables.forEach((t, i) => console.log(`  [${i + 1}] ${t.header.join(' / ')} —— ${t.cols} 列 × ${t.rows} 行`));
+  console.log('');
+  console.log('本章算术（全部从正文解析后计算）：');
+  for (const line of r.arith.lines) console.log(`  ${line}`);
+  console.log('');
+  console.log(`quiz ${r.quiz.total} 题（pre ${r.quiz.stage.pre} / check ${r.quiz.stage.check} / post ${r.quiz.stage.post}）· 答案 ${r.quiz.answers.join('/')}`);
+  console.log(`  check 题接地 ${r.quiz.checkGrounded} 道 · 答案落在 ${r.quiz.distinctAnswers} 个位置 · 最短解释 ${r.quiz.minExplain} 汉字`);
+  console.log('※ 以上数字由本章正文与 quiz 现算，改正文后重跑即可复核。');
+  console.log('※ 本章为教学材料，字段口径与统计均为课堂约定，不构成诊疗建议，也不替代执业医师的判断。');
 }
 
 if (require.main === module) main();
+
 module.exports = {
-  base, drugs, NOS, QI_ORDER, QI_SCORE, scope, counts, group, fullText, isToxic,
-  qiDist, qiScore, guijingCount, hasProc, dualUse, doseCap, perChapter, main,
+  analyze,
+  readDoc,
+  sections,
+  paragraphs,
+  tables,
+  tableBy,
+  grams,
+  hanzi,
+  count,
+  nums,
+  numOf,
+  lead,
+  quizSummary,
+  CHAPTER,
+  SLUG,
+  TITLE,
+  DOC,
+  QUIZ,
 };

@@ -1,136 +1,181 @@
 {
   "chapter": "40-beta-lactam-antibiotics",
-  "slideCount": 26,
-  "segmentCount": 14,
+  "slideCount": 35,
+  "segmentCount": 12,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 22
+      "chars": 35
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 57
+      "chars": 32
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 180
+      "chars": 50
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 242
+      "chars": 85
     },
     {
       "n": 5,
       "segment": 5,
-      "chars": 404
+      "chars": 369
     },
     {
       "n": 6,
       "segment": 5,
-      "chars": 94
+      "chars": 389
     },
     {
       "n": 7,
       "segment": 6,
-      "chars": 420
+      "chars": 346
     },
     {
       "n": 8,
       "segment": 6,
-      "chars": 226
+      "chars": 184
     },
     {
       "n": 9,
       "segment": 7,
-      "chars": 253
+      "chars": 228
     },
     {
       "n": 10,
       "segment": 7,
-      "chars": 419
+      "chars": 402
     },
     {
       "n": 11,
       "segment": 7,
-      "chars": 333
+      "chars": 388
     },
     {
       "n": 12,
       "segment": 7,
-      "chars": 90
+      "chars": 158
     },
     {
       "n": 13,
       "segment": 8,
-      "chars": 383
+      "chars": 245
     },
     {
       "n": 14,
       "segment": 8,
-      "chars": 396
+      "chars": 370
     },
     {
       "n": 15,
-      "segment": 9,
-      "chars": 376
+      "segment": 8,
+      "chars": 123
     },
     {
       "n": 16,
       "segment": 9,
-      "chars": 381
+      "chars": 397
     },
     {
       "n": 17,
       "segment": 9,
-      "chars": 170
+      "chars": 248
     },
     {
       "n": 18,
-      "segment": 10,
-      "chars": 379
+      "segment": 9,
+      "chars": 373
     },
     {
       "n": 19,
       "segment": 10,
-      "chars": 392
+      "chars": 256
     },
     {
       "n": 20,
       "segment": 10,
-      "chars": 347
+      "chars": 189
     },
     {
       "n": 21,
-      "segment": 11,
-      "chars": 327
+      "segment": 10,
+      "chars": 419
     },
     {
       "n": 22,
-      "segment": 11,
-      "chars": 237
+      "segment": 10,
+      "chars": 398
     },
     {
       "n": 23,
-      "segment": 12,
-      "chars": 206
+      "segment": 10,
+      "chars": 345
     },
     {
       "n": 24,
-      "segment": 13,
-      "chars": 394
+      "segment": 10,
+      "chars": 291
     },
     {
       "n": 25,
-      "segment": 13,
-      "chars": 394
+      "segment": 10,
+      "chars": 346
     },
     {
       "n": 26,
-      "segment": 14,
+      "segment": 10,
+      "chars": 275
+    },
+    {
+      "n": 27,
+      "segment": 10,
+      "chars": 376
+    },
+    {
+      "n": 28,
+      "segment": 10,
+      "chars": 393
+    },
+    {
+      "n": 29,
+      "segment": 10,
+      "chars": 394
+    },
+    {
+      "n": 30,
+      "segment": 10,
+      "chars": 338
+    },
+    {
+      "n": 31,
+      "segment": 10,
+      "chars": 221
+    },
+    {
+      "n": 32,
+      "segment": 11,
+      "chars": 413
+    },
+    {
+      "n": 33,
+      "segment": 11,
+      "chars": 396
+    },
+    {
+      "n": 34,
+      "segment": 11,
+      "chars": 298
+    },
+    {
+      "n": 35,
+      "segment": 12,
       "chars": 52
     }
   ]

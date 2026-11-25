@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 /**
- * 中药新药研发 · 第 4 章 质量控制：标志物、指纹图谱与质量标准：本章统计口径
- * 课程: departments/02-zhongyao/15-zhongyao-xinyao-yanfa/chapters/04-zhiliang-biaozhiwu/docs/zh.md
- * 数据: standards/zhongyao-xinyao/units.json（8 单元层，每单元带三辨与四位面词频）
- * 取数: standards/zhongyao-xinyao/chapter-map.json（课程章 → 教材单元号）
+ * 中药新药研发 · 第 4 章：本章结构与判据统计
+ * 正文: departments/02-zhongyao/15-zhongyao-xinyao-yanfa/chapters/04-zhiliang-biaozhiwu/docs/zh.md
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 只读本章正文，不读任何外部表：汉字数、节数、表格行列、判据句、教学设定标注、
+ * 边界条目与本章关键条目数（三层标准、指标两条理由路径、图谱参数、放行与研发标准之分）全部从 docs/zh.md 现算。
+ * 手打的数字会在正文改版后静默过期。
  */
 
 'use strict';
@@ -15,87 +14,127 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'zhongyao-xinyao', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CJK = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+const SPEC = {
+  chapter: 4,
+  landmarks: [
+    { label: "三层标准", re: /^\|\s*真伪\s*\|/gm, note: "真伪／优劣／一致性" },
+    { label: "理由路径", re: /\*\*第[一二]条，/g, note: "指标选择理由" },
+    { label: "三类失效", re: /\*\*其[一二三]，/g, note: "失效模式" },
+  ],
+  keyTable: {"keyword":"缺了会漏掉什么","label":"三层标准表","col":0},
+};
+
+function readDoc(p) {
+  return fs.readFileSync(p || DOC, 'utf8').replace(/\r\n/g, '\n');
+}
+
+const hanzi = (s) => (String(s || '').match(CJK) || []).length;
+
+/** 按 # / ## / ### 切节，返回 [{level, title, body}] */
+function sections(md) {
+  const out = [];
+  let cur = { level: 0, title: '', body: [] };
+  for (const line of md.split('\n')) {
+    const m = line.match(/^(#{1,3})\s+(.+)$/);
+    if (m) {
+      out.push(cur);
+      cur = { level: m[1].length, title: m[2].trim(), body: [] };
+    } else cur.body.push(line);
   }
-  throw new Error('没找到 standards/zhongyao-xinyao/units.json —— 章节目录是否已脱离仓库？');
+  out.push(cur);
+  return out.filter((s) => s.title);
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'zhongyao-xinyao', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'zhongyao-xinyao', 'chapter-map.json');
-const CHAPTER = '4';
-const SLUG = '04-zhiliang-biaozhiwu';
+const cells = (line) => line.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map((c) => c.trim());
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
-}
-
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+/** 抽取所有 Markdown 表格：header + 数据行 */
+function tables(md) {
+  const lines = md.split('\n');
+  const out = [];
+  for (let i = 0; i < lines.length; i += 1) {
+    if (!/^\|/.test(lines[i])) continue;
+    if (!/^\|[\s:|-]+\|$/.test((lines[i + 1] || '').trim())) continue;
+    const header = cells(lines[i]);
+    const rows = [];
+    let j = i + 2;
+    while (j < lines.length && /^\|/.test(lines[j])) {
+      rows.push(cells(lines[j]));
+      j += 1;
+    }
+    out.push({ header, cols: header.length, rows });
+    i = j - 1;
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return out;
+}
+
+/** 正文里的加粗判据句（去重、去表格内加粗） */
+function judgments(md) {
+  const body = md.split('\n').filter((l) => !/^\|/.test(l)).join('\n');
+  const out = new Set();
+  for (const m of body.matchAll(/\*\*([^*\n]{4,60})\*\*/g)) {
+    const s = m[1].trim();
+    if (/[。？：]$/.test(s) || /，/.test(s)) out.add(s);
+  }
+  return [...out];
+}
+
+/** 「## 代价与边界」下的条目 */
+function boundaries(md) {
+  const sec = sections(md).find((s) => s.title.includes('代价与边界'));
+  if (!sec) return [];
+  return sec.body.filter((l) => /^-\s+/.test(l.trim())).map((l) => l.trim());
+}
+
+const count = (md, re) => (md.match(re) || []).length;
+
+function analyze(md) {
+  const text = String(md || readDoc()).replace(/\r\n/g, '\n');
+  const secs = sections(text);
+  const tabs = tables(text);
+  const key = tabs.find((t) => t.header.some((h) => h.includes(SPEC.keyTable.keyword))
+    || t.rows.some((r) => (r[0] || '').includes(SPEC.keyTable.keyword)));
+  return {
+    head: parseHead(text),
+    hanzi: hanzi(text),
+    sections: secs,
+    sectionCount: secs.filter((s) => s.level >= 2).length,
+    tables: tabs,
+    judgments: judgments(text),
+    boundaries: boundaries(text),
+    教学设定: count(text, /【教学设定】/g),
+    landmarks: SPEC.landmarks.map((l) => ({ label: l.label, note: l.note, n: count(text, l.re) })),
+    keyTable: key || null,
+  };
+}
+
+function parseHead(md) {
+  const h1 = (md.match(/^#\s+(.+)$/m) || [, ''])[1].trim();
+  const m = h1.match(/^第\s*(\d+)\s*章\s*[·・:：]\s*(.+)$/);
+  return m ? { n: Number(m[1]), title: m[2].trim() } : { n: SPEC.chapter, title: h1 };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const md = readDoc();
+  const a = analyze(md);
+  const kt = a.keyTable;
 
-  console.log(`中药新药研发 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`中药新药研发 · 第 ${a.head.n} 章 ${a.head.title}`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
-  console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  console.log(`本章 ${a.hanzi.toLocaleString('en-US')} 汉字 · ${a.sectionCount} 节 · ${a.tables.length} 张表`);
+  if (kt) {
+    const names = kt.rows.map((r) => r[0].replace(/\*\*/g, '')).filter(Boolean);
+    console.log(`${SPEC.keyTable.label} ${kt.rows.length} 行 ${kt.cols} 列：${names.join('／')}`);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(a.landmarks.map((l) => `${l.label} ${l.n}`).join(' · '));
+  console.log(`判据句 ${a.judgments.length} 条 · 【教学设定】${a.教学设定} 处 · 边界 ${a.boundaries.length} 条`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/zhongyao-xinyao/units.json 现算，不手打；改教材后重跑即可复现。');
+  console.log('※ 教学样例：数字由本章 docs/zh.md 现算，不手打；改正文后重跑即可复现。');
   console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  return a;
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { analyze, sections, tables, judgments, boundaries, parseHead, readDoc, hanzi, main, SPEC, DOC };

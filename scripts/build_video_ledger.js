@@ -38,6 +38,17 @@ const { findFfprobe } = require(path.join(ROOT, 'platform', 'pipeline', 'find_to
 const FFPROBE = findFfprobe();
 
 const CHECK = process.argv.includes('--check');
+// --deep：逐段 ffprobe 配音，比对「成片时长 vs 配音总时长」。
+// 默认的门只查六件齐不齐，查不出「成片 59 秒、配音 10 分钟」——这类片子四项全在，
+// 却在第 1 段之后就没声音了。deep 慢（每章 10 次 ffprobe），所以不进默认检查链，
+// 需要量化重渲范围时单独跑：node scripts/build_video_ledger.js --deep
+const DEEP = process.argv.includes('--deep');
+// --only=<dept>/<subject>：只扫一门。deep 模式逐段 ffprobe 要 20 分钟，
+// 反向测试（造一个缺陷看门红不红）必须能只跑一门，否则没法证明门有效。
+const ONLY = (() => {
+  const a = process.argv.find((x) => x.startsWith('--only='));
+  return a ? a.slice('--only='.length).replace(/^\/+|\/+$/g, '') : null;
+})();
 
 /** 极简 course.yaml 读取：只认顶层标量 + chapters 列表（该文件由 scripts/build_*_course_yaml.py 渲染） */
 function parseCourseYaml(text) {
@@ -99,6 +110,20 @@ function scanChapter(cdir, ch) {
   const mp4 = path.join(cdir, ch.slug, 'video', 'lesson.mp4');
   const mp4Bytes = fs.existsSync(mp4) ? fs.statSync(mp4).size : 0;
   const durationSec = probeDuration(mp4);
+  // deep：配音逐段实测，用来查「成片比配音短一截」这类六件齐但内容对不上的片子
+  let audioSec = null;
+  if (DEEP) {
+    const adir = path.join(narrDir, 'audio');
+    const files = fs.existsSync(adir) ? fs.readdirSync(adir).filter((f) => /\.mp3$/i.test(f)) : [];
+    let sum = 0;
+    let ok = true;
+    for (const f of files) {
+      const d = probeDuration(path.join(adir, f));
+      if (d == null) { ok = false; break; }
+      sum += d;
+    }
+    audioSec = ok && files.length ? Math.round(sum * 100) / 100 : null;
+  }
 
   const facts = {
     slug: ch.slug,
@@ -112,6 +137,7 @@ function scanChapter(cdir, ch) {
     mp4: mp4Bytes > 0,
     durationSec,
     bytes: mp4Bytes,
+    ...(DEEP ? { audioSec } : {}),
   };
   facts.status = facts.mp4 && facts.durationSec
     ? (facts.subtitles && facts.frames > 0 && facts.audio > 0 && facts.segments > 0 ? 'rendered' : 'partial')
@@ -134,6 +160,7 @@ function scan() {
         const cdir = path.join(deptDir, subject);
         const yamlPath = path.join(cdir, 'course.yaml');
         if (!fs.existsSync(yamlPath)) continue;
+        if (ONLY && `${dept}/${subject}` !== ONLY) continue;
         const meta = parseCourseYaml(fs.readFileSync(yamlPath, 'utf8'));
         const chapters = (meta.chapters || []).map((ch) => scanChapter(cdir, ch));
         const durationSec = chapters.reduce((n, c) => n + (c.durationSec || 0), 0);
@@ -225,7 +252,8 @@ function check(ledger) {
   } else {
     if (!committed) {
       problems.push('缺 data/video-artifacts.json —— 先跑 node scripts/build_video_ledger.js');
-    } else {
+    } else if (!ONLY) {
+      // --only 是子集扫描，和整份台账比 totals 没有意义（会必然不等）
       const key = (x) => JSON.stringify(x.totals);
       if (key(committed) !== key(ledger)) {
         problems.push(`台账 totals 与实测不符：台账 ${key(committed)} ≠ 实测 ${key(ledger)}（跑 node scripts/build_video_ledger.js 重算）`);
@@ -246,6 +274,11 @@ function check(ledger) {
         if (i.status !== 'rendered') {
           problems.push(`${c.id}/${i.slug}: course.yaml 声称 ${i.claimed}，实测 ${i.status}（mp4 ${i.mp4 ? '有' : '无'} · 时长 ${i.durationSec ?? '—'} · 字幕 ${i.subtitles ? '有' : '无'} · 帧 ${i.frames} · 配音 ${i.audio}）`);
         }
+        // 配音段数必须等于讲稿段数：少一段就有一段没声音，多一段是往期残留（拼接时会混进别的段）。
+        // 这条不需要 ffprobe，逐章数文件即可，所以进默认门。
+        if (i.status === 'rendered' && i.segments > 0 && i.audio !== i.segments) {
+          problems.push(`${c.id}/${i.slug}: audio/ 里有 ${i.audio} 个 mp3，讲稿记了 ${i.segments} 个文件`);
+        }
       }
       // 3) 台账里的时长与 course.yaml 的 measured_minutes 不一致（超过 0.5 分钟）→ 有一处过期
       for (const i of c.items) {
@@ -263,6 +296,28 @@ function check(ledger) {
     for (const p of problems.slice(0, 25)) console.error(`   - ${p}`);
     if (problems.length > 25) console.error(`   … 另有 ${problems.length - 25} 项`);
     return false;
+  }
+  if (DEEP) {
+    // 六件齐 ≠ 片子能用：成片比配音短一截时，画面之外的内容全丢，而默认门看不出来。
+    const off = [];
+    for (const c of ledger.courses) {
+      for (const i of c.items) {
+        if (i.status !== 'rendered' || !i.audioSec || !i.durationSec) continue;
+        const diff = i.audioSec - i.durationSec;
+        // 2%（且 >10 秒）就算对不上：正常成片与配音总时长差在 1 秒内。
+        // 原来定 10% 是为了放过编码器取整，结果把「12 段音频配 14 段旧成片」（+132s，8.7%）也放过了。
+        if (Math.abs(diff) > Math.max(10, i.audioSec * 0.02)) {
+          off.push(`${c.id}/${i.slug}: 成片 ${i.durationSec}s vs 配音 ${i.audioSec}s（差 ${diff.toFixed(0)}s）`);
+        }
+      }
+    }
+    if (off.length) {
+      console.error(`\n✗ 影音时长对不上：${off.length} 章（成片短于配音 → 后半段没声音/没画面）`);
+      for (const p of off.slice(0, 30)) console.error(`   - ${p}`);
+      if (off.length > 30) console.error(`   … 另有 ${off.length - 30} 章`);
+      return false;
+    }
+    console.log('   deep：成片时长与配音总时长逐章一致');
   }
   console.log('\n✅ 成片台账通过（声称 rendered 的章都有 mp4 + 实测时长 + 字幕 + 帧 + 配音）');
   return true;

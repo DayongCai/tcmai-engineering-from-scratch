@@ -1,31 +1,81 @@
 {
   "chapter": "04-zhendong-kouji",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 15,
+  "segmentCount": 8,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 13
+      "chars": 22
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 64
+      "chars": 104
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 48
+      "chars": 169
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 100
+      "chars": 133
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 142
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 382
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 365
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 328
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 329
+    },
+    {
+      "n": 10,
+      "segment": 6,
+      "chars": 348
+    },
+    {
+      "n": 11,
+      "segment": 6,
+      "chars": 336
+    },
+    {
+      "n": 12,
+      "segment": 6,
+      "chars": 373
+    },
+    {
+      "n": 13,
+      "segment": 7,
+      "chars": 413
+    },
+    {
+      "n": 14,
+      "segment": 7,
+      "chars": 204
+    },
+    {
+      "n": 15,
+      "segment": 8,
       "chars": 52
     }
   ]

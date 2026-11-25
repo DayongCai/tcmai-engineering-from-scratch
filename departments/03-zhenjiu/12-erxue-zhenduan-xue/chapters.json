@@ -4,7 +4,7 @@
   {
    "n": 1,
    "slug": "01-yuanliu-lilun",
-   "title": "耳穴诊治的源流与理论",
+   "title": "「宗脉所聚」把耳变成一张诊图，而不是一个器官",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -12,7 +12,7 @@
   {
    "n": 2,
    "slug": "02-jiepou-fenqu",
-   "title": "耳廓解剖与分区",
+   "title": "分区是在十三个结构上另划九张网，网眼比结构粗",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -20,7 +20,7 @@
   {
    "n": 3,
    "slug": "03-dingwei",
-   "title": "耳穴定位",
+   "title": "定位的分歧不在手稳，而在先认地形还是先记穴名",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -28,7 +28,7 @@
   {
    "n": 4,
    "slug": "04-zhenduan",
-   "title": "耳穴诊断",
+   "title": "望、压、电测查的是同一件事的三个通道，没有一条能单独定病名",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -36,7 +36,7 @@
   {
    "n": 5,
    "slug": "05-zhiliao-fangfa",
-   "title": "耳穴治疗方法",
+   "title": "耳穴治疗的差别不在针，而在把刺激送到耳廓的哪一层",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -44,7 +44,7 @@
   {
    "n": 6,
    "slug": "06-neike-yingyong",
-   "title": "耳穴在内科的应用",
+   "title": "内科应用的可复现性在辨经那一步，不在穴位表上",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -52,7 +52,7 @@
   {
    "n": 7,
    "slug": "07-fuer-wuguan",
-   "title": "耳穴在妇儿与五官的应用",
+   "title": "换人群先换禁忌，取穴反倒可以照搬",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -60,7 +60,7 @@
   {
    "n": 8,
    "slug": "08-anquan-guifan",
-   "title": "耳穴操作安全与规范",
+   "title": "耳穴的安全规范不在底本里，只能从四门技术的条款里取交集",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

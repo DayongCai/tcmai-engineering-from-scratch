@@ -1,31 +1,86 @@
 {
   "chapter": "04-huamou-guanjieyan",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 16,
+  "segmentCount": 11,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 17
+      "chars": 26
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 73
+      "chars": 28
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 16
+      "chars": 186
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 124
+      "chars": 216
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 288
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 247
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 307
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 334
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 361
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 232
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 386
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 189
+    },
+    {
+      "n": 13,
+      "segment": 9,
+      "chars": 403
+    },
+    {
+      "n": 14,
+      "segment": 9,
+      "chars": 117
+    },
+    {
+      "n": 15,
+      "segment": 10,
+      "chars": 398
+    },
+    {
+      "n": 16,
+      "segment": 11,
       "chars": 52
     }
   ]

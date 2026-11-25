@@ -1,0 +1,16 @@
+{
+  "$comment": "教材章由生成器整篇产出（而非 import_textbooks 逐字导入）的科目登记。单一事实来源：apply_rewrite_block.py 与 tests/test_rewrite_blocks.js 都读本文件，避免两边各有一份白名单。",
+  "rewriteBlocks": "true = 生成器出正文，但仍接受 REWRITE 判据块；false = 整篇由生成器重算，--check 逐字节比对，不得追加任何块。",
+  "subjects": {
+    "08-jingui-yaolue": {
+      "generator": "scripts/build_jingui_textbook.py",
+      "rewriteBlocks": false,
+      "why": "24 章由 build_jingui_textbook.py 按课程正文整篇重写产出，--check 逐字节比对；判断层已写在课程正文里，不再追加 REWRITE 块。"
+    },
+    "14-zhongyi-zhenghou-xue": {
+      "generator": "scripts/build_zhenghou_cidian.py",
+      "rewriteBlocks": false,
+      "why": "12 章由证候辞典整篇重算（含末尾验证段），--check 逐字节比对；追加 REWRITE 块必然判漂移。"
+    }
+  }
+}

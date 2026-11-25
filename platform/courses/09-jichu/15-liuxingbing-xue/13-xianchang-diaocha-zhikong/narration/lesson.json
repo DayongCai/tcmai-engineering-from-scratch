@@ -18,7 +18,7 @@
       "spoken": "第 13 章 · 现场调查的组织与质量控制",
       "estimateSeconds": 4,
       "audio": "001.mp3",
-      "audioSeconds": 4.22
+      "audioSeconds": 4.224
     },
     {
       "n": 2,
@@ -28,7 +28,7 @@
       "spoken": "「《流行病学·现场调查的组织与质量控制》」——教材第13章；章号一一对应。本章要回答的是：现场调查的组织与质量控制：这一章的判据是什么，什么算「看懂了」。",
       "estimateSeconds": 17,
       "audio": "002.mp3",
-      "audioSeconds": 15.34
+      "audioSeconds": 15.336
     },
     {
       "n": 3,
@@ -38,7 +38,7 @@
       "spoken": "现场调查的组织与质量控制：这一章的判据与边界。",
       "estimateSeconds": 5,
       "audio": "003.mp3",
-      "audioSeconds": 5.18
+      "audioSeconds": 5.184
     },
     {
       "n": 4,
@@ -48,7 +48,7 @@
       "spoken": "环境逼迫（流行病学的判据是「设计—测量—推断」三件套：说得清怎么选的样本、算的什么率、能不能下因果结论，才算会读一篇研究）+ 知识积累（本章 12 单元 17,632 汉字；三辨主 设计与方法 249；四位面（教材篇结构）主 下篇·研究设计与数据分析 17632；引书 0 部 0 次；数值类命中 0）",
       "estimateSeconds": 30,
       "audio": "004.mp3",
-      "audioSeconds": 30.53
+      "audioSeconds": 30.528
     },
     {
       "n": 5,
@@ -58,10 +58,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "005.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 66.58,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 1.12,
+    "measuredMinutes": 1.11,
+    "ratio": 0.994
+  }
 }

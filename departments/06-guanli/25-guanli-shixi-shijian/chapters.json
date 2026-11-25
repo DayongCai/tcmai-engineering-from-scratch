@@ -5,7 +5,7 @@
     {
       "n": 1,
       "slug": "01-yiwu-shixi",
-      "title": "医院职能部门实习（医务与质控）",
+      "title": "医务科实习的产出不是跟班印象，而是三张能被复核的表",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/01-yiwu-shixi/docs/zh.md",
@@ -14,7 +14,7 @@
     {
       "n": 2,
       "slug": "02-binggan-shixi",
-      "title": "病案与信息科实习",
+      "title": "信息科实习的成品是一份口径字典，不是一张好看的报表",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/02-binggan-shixi/docs/zh.md",
@@ -23,7 +23,7 @@
     {
       "n": 3,
       "slug": "03-yibao-jiesuan",
-      "title": "医保结算与费用结构分析",
+      "title": "费用结构分析的起点是把成本分对类，不是把账算快",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/03-yibao-jiesuan/docs/zh.md",
@@ -32,7 +32,7 @@
     {
       "n": 4,
       "slug": "04-zhengce-diaoyan",
-      "title": "中医药政策落地调研",
+      "title": "政策落地调研要查的不是「有没有发文」，而是钱、人、编哪一条断了",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/04-zhengce-diaoyan/docs/zh.md",
@@ -41,7 +41,7 @@
     {
       "n": 5,
       "slug": "05-pdca-gaijin",
-      "title": "管理改进项目（PDCA）",
+      "title": "PDCA 里最容易空转的是 C：没有基线的 D 检查不出任何东西",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/05-pdca-gaijin/docs/zh.md",
@@ -50,7 +50,7 @@
     {
       "n": 6,
       "slug": "06-shijian-baogao",
-      "title": "实践报告与答辩",
+      "title": "实践报告的可信度来自能被重跑，不来自写得厚",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/06-shijian-baogao/docs/zh.md",

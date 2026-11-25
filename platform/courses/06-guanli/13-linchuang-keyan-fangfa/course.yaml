@@ -29,50 +29,49 @@ platform:
 
 chapters:
   - slug: 01-z131
-    title: 第1章 从临床问题到可检验假设
-    segments: 5
+    title: 好问题不是「某方有效吗」，而是能说出什么结果会让你认输
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.96
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-z132
-    title: 第2章 研究设计与对照
-    segments: 5
+    title: 设计不是越严格越好，是能答你那个问题的那个
     video: rendered
-    estimate_minutes: 0.87
-    measured_minutes: 0.87
+    estimate_minutes: 0.87      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.87      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-z133
-    title: 第3章 抽样、样本量与测量
-    segments: 5
+    title: 样本量不是越多越好，是够看清你要看的那点差
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.93
+    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-z134
-    title: 第4章 偏倚与质量控制
-    segments: 5
+    title: 偏倚不是做错了，是把每一步都做对也还在
     video: rendered
-    estimate_minutes: 0.87
-    measured_minutes: 0.89
+    estimate_minutes: 0.87      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.89      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-z135
-    title: 第5章 统计检验的选择
-    segments: 5
+    title: 结局选错，检验再对也答错了题
     video: rendered
-    estimate_minutes: 0.87
-    measured_minutes: 0.89
+    estimate_minutes: 0.87      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.89      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-z136
-    title: 第6章 关联与回归模型
-    segments: 5
+    title: 回归不是「控制变量」，是把混杂摊在桌面上
     video: rendered
-    estimate_minutes: 0.87
-    measured_minutes: 0.91
+    estimate_minutes: 0.87      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-z137
-    title: 第7章 多重比较与可复现
-    segments: 5
+    title: 二十个指标里总有一个 p<0.05，这不是发现
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.9
+    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-z138
-    title: 第8章 数据管理与项目执行
-    segments: 5
+    title: 方案书写在收第一例之前，因为收完之后它什么都改不了
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.92
+    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

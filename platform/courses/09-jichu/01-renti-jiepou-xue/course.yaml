@@ -29,62 +29,61 @@ platform:
 
 chapters:
   - slug: 01-xulun
-    title: 第1章 绪论
-    segments: 5
+    title: 解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.95
+    estimate_minutes: 14.25      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.84      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-yundong-xitong
-    title: 第2章 运动系统
-    segments: 5
+    title: 运动系统不是「一堆骨头的名字」，而是一套受力与杠杆的分工
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.96
+    estimate_minutes: 14.68      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 12.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-xiaohua-xitong
-    title: 第3章 消化系统
-    segments: 5
+    title: 消化器官的位置不是背出来的，是被系膜与腹膜挂住的
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.93
+    estimate_minutes: 15.22      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 13.39      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-huxi-xitong
-    title: 第4章 呼吸系统
-    segments: 5
+    title: 呼吸系统的每一段都在回答同一个问题：气走多远、被什么包住
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.93
+    estimate_minutes: 14.07      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-miniao-xitong
-    title: 第5章 泌尿系统
-    segments: 5
+    title: 排尿通路的难点不在管子本身，而在三处狭窄与两性末段的分野
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.92
+    estimate_minutes: 15.25      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.59      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-shengzhi-xitong
-    title: 第6章 生殖系统
-    segments: 5
+    title: 生殖器官要按连续通路与同源对应来读，不能按名称逐个背诵
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.93
+    estimate_minutes: 15.48      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.80      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-xunhuan-xitong
-    title: 第7章 循环系统
-    segments: 5
+    title: 循环系统是两条首尾相接的环路，心的瓣膜决定血只能朝一个方向走
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.96
+    estimate_minutes: 16.50      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 13.70      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-neifenmi-xitong
-    title: 第8章 内分泌系统
-    segments: 5
+    title: 内分泌腺的形态差异，最后都落在「产物怎么进血」这一件事上
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 0.96
+    estimate_minutes: 17.10      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 14.01      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-ganjueqi
-    title: 第9章 感觉器
-    segments: 5
+    title: 感觉器把刺激收进神经通路，辅助装置决定它收得准不准
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.94
+    estimate_minutes: 17.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.27      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-shenjing-xitong
-    title: 第10章 神经系统
-    segments: 5
+    title: 神经系统的全部内容，是通路与联系在颅腔与椎管里的具体排布
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.94
+    estimate_minutes: 23.53      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 23.69      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

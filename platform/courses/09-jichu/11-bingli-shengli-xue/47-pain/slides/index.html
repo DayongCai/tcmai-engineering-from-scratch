@@ -26,7 +26,12 @@ blockquote.motto{font-family:var(--serif);font-size:clamp(20px,2.6vw,34px);line-
   text-transform:uppercase;margin-bottom:14px}
 .kicker.warn{color:var(--cinnabar)}
 p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var(--serif)}
-.compact{font-size:clamp(19px,1.75vw,27px);line-height:1.85;max-height:70vh;overflow:auto}
+.compact{font-size:clamp(19px,1.75vw,27px);line-height:1.85;max-height:70vh;overflow:hidden}
+.compact.dense{font-size:clamp(16px,1.42vw,22px);line-height:1.6;max-height:80vh}
+.compact.dense table{font-size:14px}
+.compact.denser{font-size:clamp(14px,1.22vw,18px);line-height:1.5;max-height:82vh}
+.compact.denser table{font-size:12px}
+.compact.denser pre{font-size:12px}
 .compact h2,.compact h3{font-family:var(--serif);margin:.6em 0 .3em;font-size:1.15em}
 .compact pre{background:var(--paper-2);border:1px solid var(--line);border-radius:8px;padding:12px;overflow:auto;font-size:15px}
 .compact code{background:var(--paper-2);border:1px solid var(--line);border-radius:4px;padding:1px 4px;font-family:var(--mono)}
@@ -55,181 +60,221 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <div id="deck">
 <section class="slide" data-i="0">
   <div class="slide-inner"><h1 class="big">第 47 章 · 疼痛：四环节、两级敏化与一条从症状到疾病的转弯</h1></div>
-  <div class="slide-foot"><span>1 / 30</span><span>title</span></div>
+  <div class="slide-foot"><span>1 / 28</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「疼痛的缺失比疼痛更危险」——补充·hermes-病理生理学讲义·第47章·47.1（《hermes-病理生理学讲义·第47章·47.1》）</blockquote></div>
-  <div class="slide-foot"><span>2 / 30</span><span>motto</span></div>
+  <div class="slide-inner"><blockquote class="motto">「风寒湿三气杂至，合而为痹也。」——《素问·痹论》</blockquote></div>
+  <div class="slide-foot"><span>2 / 28</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
   <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">疼痛这一章最容易被当成一张量表加一张药表：疼几分、给什么。这套读法在第一个真问题前就塌了——为什么同一种损伤，有人数日恢复，有人多年不减，检查却一再找不到新病灶？为什么揉一揉有用，而忍一忍会让事情变坏？为什么把疼痛彻底压掉不是治疗目标？要答这三问，得先把疼痛还原成一条四环节的链：转导、传导、整合、调控。链一立，敏化就有了位置——它不是疼得更厉害，而是这条链的增益被永久调高，于是疼痛从症状变成疾病状态。</p></div>
-  <div class="slide-foot"><span>3 / 30</span><span>problem</span></div>
+  <div class="slide-foot"><span>3 / 28</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
   <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（病房与讨论课上关于疼痛的追问几乎都落在两处：把检查未见异常读成疼痛不成立，或把疼痛程度直接换算成损伤程度。前者取消了当事人的体验，后者把强度当成病灶的度量；两种误读都不是知识缺口，而是把一条多环节的链压成了单点，于是增益、情绪与调控全部消失）+ 知识积累（本章 11 节、4082 个非空白字符，关键词频现算为「疼痛」45 次、「伤害」14 次、「功能」13 次、「敏化」9 次、「情绪」8 次、「中枢」8 次：疼痛一词占绝对多数，说明全章围绕这一体验展开；敏化与中枢各 8 至 9 次，恰好是后六节的笔墨重心——机制从外周走向中枢的那一段，就是本章真正要讲的东西。功能 13 次高于敏化，提示讲义在机制之外还留了评估与管理这条线）</p></div>
-  <div class="slide-foot"><span>4 / 30</span><span>roots</span></div>
+  <div class="slide-foot"><span>4 / 28</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
-  <div class="slide-inner"><div class="kicker">一、定义里的两个词：或潜在、不愉快</div>
-                <div class="compact"><p>47.1 用一句界定把疼痛从「损伤的读数」里拉了出来：</p>
+  <div class="slide-inner"><div class="kicker">四环节的前三段：转导、传导与一条背角（47.1–47.3）</div>
+                <div class="compact dense"><h3 id="定义里的两个词-或潜在-不愉快">定义里的两个词：或潜在、不愉快</h3>
+<p>47.1 用一句界定把疼痛从「损伤的读数」里拉了出来：</p>
 <blockquote><p>「与实际或潜在组织损伤相关的不愉快感觉与情绪体验」——补充·hermes-病理生理学讲义·第47章·47.1</p></blockquote>
 <p>两个词是这句的分量。「或潜在」承认疼痛可以在没有明显组织损伤时存在——这是 47.6 全部推理的前提，若疼痛必须有病灶才成立，中枢敏化造成的疼痛就成了伪命题。「不愉快」把情绪写进定义，删掉它，剩下的是感觉辨别任务，不是疼痛。讲义由此给出四个维度：感觉-辨别、情绪-动机、认知、社会；并用它解释单纯提高镇痛强度常不足以改善疼痛相关失能——恐惧、失眠与角色丧失未处理时，四维里只有第一维被压住。</p>
 <p>疼痛还是有保护价值的防御系统。讲义举的证据是先天性无痛症者反复骨折、关节破坏、烧伤无察觉，由此得出卷首那句判断，并把目标写成恢复功能而非彻底消除信号。两者在多数情形下同向，在慢性疼痛里却会分岔（47.8 会回到这一点）。</p></div></div>
-  <div class="slide-foot"><span>5 / 30</span><span>body</span></div>
+  <div class="slide-foot"><span>5 / 28</span><span>body</span></div>
 </section>
 <section class="slide" data-i="5">
-  <div class="slide-inner"><div class="kicker">二、转导：伤害感受器、炎症汤与沉默的那一群</div>
-                <div class="compact"><p>47.2 讲第一环：把机械、温度与化学刺激变成电信号。执行者是分布于皮肤、肌肉、关节、内脏与血管壁的游离神经末梢，关键分子是温度敏感的 TRP 通道、机械敏感通道与酸敏感离子通道。这一层是纯转导，尚未涉及疼不疼。</p>
+  <div class="slide-inner"><div class="kicker">四环节的前三段：转导、传导与一条背角（47.1–47.3）</div>
+                <div class="compact"><h3 id="转导-伤害感受器-炎症汤与沉默的那一群">转导：伤害感受器、炎症汤与沉默的那一群</h3>
+<p>47.2 讲第一环：把机械、温度与化学刺激变成电信号。执行者是分布于皮肤、肌肉、关节、内脏与血管壁的游离神经末梢，关键分子是温度敏感的 TRP 通道、机械敏感通道与酸敏感离子通道。这一层是纯转导，尚未涉及疼不疼。</p>
 <p>损伤后局面改变：损伤处释放的一组物质被讲义称作炎症汤——缓激肽、前列腺素、组胺、5-羟色胺、ATP、氢离子与神经生长因子。它们不直接引发冲动，而是降低阈值、增加自发电活，即外周敏化；临床表现是静息痛与局部压痛，原本不痛的刺激开始引起疼痛。沉默伤害感受器平时不响应、炎症时被招募，讲义用一句临床画面解释它：</p>
 <blockquote><p>「平时不痛的组织在炎症后一碰就痛」——补充·hermes-病理生理学讲义·第47章·47.2</p></blockquote></div></div>
-  <div class="slide-foot"><span>6 / 30</span><span>body</span></div>
+  <div class="slide-foot"><span>6 / 28</span><span>body</span></div>
 </section>
 <section class="slide" data-i="6">
-  <div class="slide-inner"><div class="kicker">二、转导：伤害感受器、炎症汤与沉默的那一群</div>
-                <div class="compact"><p>这句话说明阈值不是固定属性，而是可被局部化学环境临时改写的一组参数。神经源性炎症则把因果方向倒过来：C 纤维末梢释放 P 物质与降钙素基因相关肽引起血管扩张与水肿，疼痛系统本身也能制造炎症。本节末尾处理定位陷阱——内脏伤害感受器密度低、感受野大，其传入与躯体纤维在脊髓汇聚于同一投射神经元，大脑无法区分来源，形成牵涉痛：心肌缺血表现为左肩、左臂与下颌痛。疼痛的部位因此不等于病灶的部位。</p></div></div>
-  <div class="slide-foot"><span>7 / 30</span><span>body</span></div>
+  <div class="slide-inner"><div class="kicker">四环节的前三段：转导、传导与一条背角（47.1–47.3）</div>
+                <div class="compact"><p>这句话说明阈值不是固定属性，而是可被局部化学环境临时改写的一组参数。神经源性炎症则把因果方向倒过来：C 纤维末梢释放 P 物质与降钙素基因相关肽引起血管扩张与水肿，疼痛系统本身也能制造炎症。本节末尾处理定位陷阱——内脏伤害感受器密度低、感受野大，其传入与躯体纤维在脊髓汇聚于同一投射神经元，大脑无法区分来源，形成牵涉痛：心肌缺血表现为左肩、左臂与下颌痛。疼痛的部位因此不等于病灶的部位。</p>
+<h3 id="传导-两类纤维-一个背角-四条上行通路">传导：两类纤维、一个背角、四条上行通路</h3>
+<p>47.3 拆第二环。纤维分工写在传导速度上：Aδ 纤维有髓、传导快，产生尖锐定位明确的「第一痛」；C 纤维无髓、传导慢，产生钝而弥散的「第二痛」，并携带情绪色彩。这解释了一次损伤为何常有两种性质的痛前后相接。Aβ 纤维传导触觉与振动，正常情况下不引起疼痛——但在中枢敏化后被招募进痛通路。这是本章最重要的一处伏笔：轻触引起疼痛，靠的不是新通路，而是旧通路被改了用途。</p></div></div>
+  <div class="slide-foot"><span>7 / 28</span><span>body</span></div>
 </section>
 <section class="slide" data-i="7">
-  <div class="slide-inner"><div class="kicker">三、传导：两类纤维、一个背角、四条上行通路</div>
-                <div class="compact"><p>47.3 拆第二环。纤维分工写在传导速度上：Aδ 纤维有髓、传导快，产生尖锐定位明确的「第一痛」；C 纤维无髓、传导慢，产生钝而弥散的「第二痛」，并携带情绪色彩。这解释了一次损伤为何常有两种性质的痛前后相接。Aβ 纤维传导触觉与振动，正常情况下不引起疼痛——但在中枢敏化后被招募进痛通路。这是本章最重要的一处伏笔：轻触引起疼痛，靠的不是新通路，而是旧通路被改了用途。</p>
-<p>脊髓背角是第一整合站：C 与 Aδ 传入释放谷氨酸、P 物质与降钙素基因相关肽，一方面使投射神经元上行，一方面激活局部中间神经元形成环路。讲义另加一层近年才被重视的机制——持续输入激活胶质细胞，释放细胞因子与脑源性神经营养因子增强痛传递。胶质细胞本是免疫与支持细胞，它进入痛通路，说明这一环已不只是神经元的电活动。</p></div></div>
-  <div class="slide-foot"><span>8 / 30</span><span>body</span></div>
-</section>
-<section class="slide" data-i="8">
-  <div class="slide-inner"><div class="kicker">三、传导：两类纤维、一个背角、四条上行通路</div>
-                <div class="compact"><p>上行通路分四路：脊髓丘脑束管定位、性质与强度辨别；脊髓网状束管觉醒、注意力与自主反应；脊髓中脑束给情绪、自主与下行调控提供输入；脊髓颈束与后索管内脏与深部痛的双侧传递。四路并排读能看出一件事：信号不是一条专线，而是分头投递，这正是疼痛同时改变注意力、心率与情绪的原因。末段的解剖推论最值钱——痛温觉纤维在脊髓内交叉后上行，故脊髓半切产生</p>
+  <div class="slide-inner"><div class="kicker">四环节的前三段：转导、传导与一条背角（47.1–47.3）</div>
+                <div class="compact dense"><p>脊髓背角是第一整合站：C 与 Aδ 传入释放谷氨酸、P 物质与降钙素基因相关肽，一方面使投射神经元上行，一方面激活局部中间神经元形成环路。讲义另加一层近年才被重视的机制——持续输入激活胶质细胞，释放细胞因子与脑源性神经营养因子增强痛传递。胶质细胞本是免疫与支持细胞，它进入痛通路，说明这一环已不只是神经元的电活动。</p>
+<p>上行通路分四路：脊髓丘脑束管定位、性质与强度辨别；脊髓网状束管觉醒、注意力与自主反应；脊髓中脑束给情绪、自主与下行调控提供输入；脊髓颈束与后索管内脏与深部痛的双侧传递。四路并排读能看出一件事：信号不是一条专线，而是分头投递，这正是疼痛同时改变注意力、心率与情绪的原因。末段的解剖推论最值钱——痛温觉纤维在脊髓内交叉后上行，故脊髓半切产生</p>
 <blockquote><p>「对侧痛温觉丧失、同侧本体感觉与运动障碍」——补充·hermes-病理生理学讲义·第47章·47.3</p></blockquote>
 <p>的分离性感觉障碍。这是本章少数能由结构直接推出表现的例子。</p></div></div>
-  <div class="slide-foot"><span>9 / 30</span><span>body</span></div>
+  <div class="slide-foot"><span>8 / 28</span><span>body</span></div>
 </section>
-<section class="slide" data-i="9">
-  <div class="slide-inner"><div class="kicker">四、中枢整合：疼痛矩阵与强度、不愉快的分离</div>
-                <div class="compact"><p>47.4 处理第三环。丘脑是主要中继，但疼痛体验由一组结构共同构建：躯体感觉皮层负责定位、强度与性质；岛叶负责内感受、自主反应与身体状态整合；前扣带皮层负责不愉快感与回避动机；前额叶负责评价、意义赋予、注意调控与抑制；杏仁核负责恐惧、警觉与情绪记忆。</p>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">整合与敏化：矩阵、下行闸门与四级改变（47.4–47.6）</div>
+                <div class="compact"><h3 id="中枢整合-疼痛矩阵与强度-不愉快的分离">中枢整合：疼痛矩阵与强度、不愉快的分离</h3>
+<p>47.4 处理第三环。丘脑是主要中继，但疼痛体验由一组结构共同构建：躯体感觉皮层负责定位、强度与性质；岛叶负责内感受、自主反应与身体状态整合；前扣带皮层负责不愉快感与回避动机；前额叶负责评价、意义赋予、注意调控与抑制；杏仁核负责恐惧、警觉与情绪记忆。</p>
 <p>五个结构并列，指向一条关键结论：</p>
 <blockquote><p>「强度与不愉快由不同成分编码」——补充·hermes-病理生理学讲义·第47章·47.4</p></blockquote>
 <p>证据是临床观察：前额叶或扣带区受损者仍能准确报告位置与强度，却诉不再为此痛苦。这一个案同时否掉两种简化——疼痛不是单一强度轴上的一个点，痛苦也不是强度的同义词。反向证据同样成立：焦虑与灾难化思维放大不愉快成分，使同等强度造成更大失能。两句合起来得到本章最要紧的一次拆分：同一个强度值，配上不同的认知与情绪状态，可以是完全不同的生活处境。</p></div></div>
-  <div class="slide-foot"><span>10 / 30</span><span>body</span></div>
+  <div class="slide-foot"><span>9 / 28</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">整合与敏化：矩阵、下行闸门与四级改变（47.4–47.6）</div>
+                <div class="compact dense"><p>本节末尾把皮层与下行系统的关系定为双向：预期、注意力、情绪状态直接改变上行信号的增益。讲义由此给出很硬的评价——分心、解释、重建意义不是安慰性的空话，而是有生理基础的调制手段。这句话把心理干预从陪聊的位置挪到机制的位置。</p>
+<h3 id="内源性调控-一条下行通路与一道闸门">内源性调控：一条下行通路与一道闸门</h3>
+<p>47.5 讲第四环，全章唯一一处机体自己镇痛的机制。通路写得具体：中脑导水管周围灰质经延髓头端腹内侧区到脊髓背角，经去甲肾上腺素与 5-羟色胺下行纤维抑制传入；内阿片肽及其受体遍布这条通路。三段结构加两类递质，构成一套从脑干到背角的刹车。</p>
+<p>闸门控制学说给它一个更直观的模型：背角存在一个闸门，Aβ 触觉传入的激活可抑制 C 纤维传递，下行纤维亦可关闭闸门。三类日常经验由此得到解释——揉一揉、热敷、按摩能减轻疼痛；注意力集中于他事时疼痛减轻；焦虑、失眠与孤立时疼痛加重，因为下行抑制被削弱。第三类最易被误读：它不是说疼痛想出来的，而是说下行抑制是一项需要资源的生理功能，资源不足时刹车变弱。</p></div></div>
+  <div class="slide-foot"><span>10 / 28</span><span>body</span></div>
 </section>
 <section class="slide" data-i="10">
-  <div class="slide-inner"><div class="kicker">四、中枢整合：疼痛矩阵与强度、不愉快的分离</div>
-                <div class="compact"><p>本节末尾把皮层与下行系统的关系定为双向：预期、注意力、情绪状态直接改变上行信号的增益。讲义由此给出很硬的评价——分心、解释、重建意义不是安慰性的空话，而是有生理基础的调制手段。这句话把心理干预从陪聊的位置挪到机制的位置。</p></div></div>
-  <div class="slide-foot"><span>11 / 30</span><span>body</span></div>
+  <div class="slide-inner"><div class="kicker">整合与敏化：矩阵、下行闸门与四级改变（47.4–47.6）</div>
+                <div class="compact"><p>讲义另给两个临床证据：应激性镇痛与安慰剂效应，后者可被相应拮抗剂部分逆转。这一点使预期成为可被药理手段检验的生理变量，而不是一句态度评价。由此得到实践含义：</p>
+<blockquote><p>「疼痛管理的环境、沟通与预期，本身即为有效成分」——补充·hermes-病理生理学讲义·第47章·47.5</p></blockquote>
+<h3 id="敏化-四级改变与一次性质转换">敏化：四级改变与一次性质转换</h3>
+<p>47.6 是全章枢纽，把散落的敏化拼成四级。外周敏化：炎症介质降低阈值、增加自发电活，表现为静息痛、压痛、对刺激反应增强。中枢敏化：持续 C 纤维输入使背角神经元反应增强、感受野扩大、阈值下降，机制是 wind-up 与长时程增强样改变；两个词必须分清——痛觉过敏是对伤害性刺激反应过强，异常性疼痛是轻触、穿衣、微风即引起疼痛。去抑制：抑制性中间神经元丢失或 GABA 能功能下降，神经损伤后常见，刹车失灵。结构重塑：皮层代表区重组、下行调制失衡、HPA 轴与免疫改变、睡眠结构破坏。</p></div></div>
+  <div class="slide-foot"><span>11 / 28</span><span>body</span></div>
 </section>
 <section class="slide" data-i="11">
-  <div class="slide-inner"><div class="kicker">五、内源性调控：一条下行通路与一道闸门</div>
-                <div class="compact"><p>47.5 讲第四环，全章唯一一处机体自己镇痛的机制。通路写得具体：中脑导水管周围灰质经延髓头端腹内侧区到脊髓背角，经去甲肾上腺素与 5-羟色胺下行纤维抑制传入；内阿片肽及其受体遍布这条通路。三段结构加两类递质，构成一套从脑干到背角的刹车。</p>
-<p>闸门控制学说给它一个更直观的模型：背角存在一个闸门，Aβ 触觉传入的激活可抑制 C 纤维传递，下行纤维亦可关闭闸门。三类日常经验由此得到解释——揉一揉、热敷、按摩能减轻疼痛；注意力集中于他事时疼痛减轻；焦虑、失眠与孤立时疼痛加重，因为下行抑制被削弱。第三类最易被误读：它不是说疼痛想出来的，而是说下行抑制是一项需要资源的生理功能，资源不足时刹车变弱。</p>
-<p>讲义另给两个临床证据：应激性镇痛与安慰剂效应，后者可被相应拮抗剂部分逆转。这一点使预期成为可被药理手段检验的生理变量，而不是一句态度评价。由此得到实践含义：</p></div></div>
-  <div class="slide-foot"><span>12 / 30</span><span>body</span></div>
-</section>
-<section class="slide" data-i="12">
-  <div class="slide-inner"><div class="kicker">五、内源性调控：一条下行通路与一道闸门</div>
-                <div class="compact"><blockquote><p>「疼痛管理的环境、沟通与预期，本身即为有效成分」——补充·hermes-病理生理学讲义·第47章·47.5</p></blockquote></div></div>
-  <div class="slide-foot"><span>13 / 30</span><span>body</span></div>
-</section>
-<section class="slide" data-i="13">
-  <div class="slide-inner"><div class="kicker">六、敏化：四级改变与一次性质转换</div>
-                <div class="compact"><p>47.6 是全章枢纽，把散落的敏化拼成四级。外周敏化：炎症介质降低阈值、增加自发电活，表现为静息痛、压痛、对刺激反应增强。中枢敏化：持续 C 纤维输入使背角神经元反应增强、感受野扩大、阈值下降，机制是 wind-up 与长时程增强样改变；两个词必须分清——痛觉过敏是对伤害性刺激反应过强，异常性疼痛是轻触、穿衣、微风即引起疼痛。去抑制：抑制性中间神经元丢失或 GABA 能功能下降，神经损伤后常见，刹车失灵。结构重塑：皮层代表区重组、下行调制失衡、HPA 轴与免疫改变、睡眠结构破坏。</p>
-<p>四级排下来是一条完整的病理生理序列：从阈值下降到环路重组，从功能改变到结构改变。讲义由此给出核心命题——疼痛可以从症状转变为疾病状态。它的推论必须写准，否则极易被误读为疼痛是想象出来的：</p>
-<blockquote><p>「这不等于疼痛不存在，而是提示机制已从外周转移到中枢」——补充·hermes-病理生理学讲义·第47章·47.6</p></blockquote></div></div>
-  <div class="slide-foot"><span>14 / 30</span><span>body</span></div>
-</section>
-<section class="slide" data-i="14">
-  <div class="slide-inner"><div class="kicker">六、敏化：四级改变与一次性质转换</div>
-                <div class="compact"><p>方向变了，靶点也就变了：针对外周的干预在中枢敏化阶段可能收效有限，这不是干预无效，而是打在了错的一环上。讲义把本节的实践价值落在反面：理解这一点，是避免</p>
+  <div class="slide-inner"><div class="kicker">整合与敏化：矩阵、下行闸门与四级改变（47.4–47.6）</div>
+                <div class="compact"><p>四级排下来是一条完整的病理生理序列：从阈值下降到环路重组，从功能改变到结构改变。讲义由此给出核心命题——疼痛可以从症状转变为疾病状态。它的推论必须写准，否则极易被误读为疼痛是想象出来的：</p>
+<blockquote><p>「这不等于疼痛不存在，而是提示机制已从外周转移到中枢」——补充·hermes-病理生理学讲义·第47章·47.6</p></blockquote>
+<p>方向变了，靶点也就变了：针对外周的干预在中枢敏化阶段可能收效有限，这不是干预无效，而是打在了错的一环上。讲义把本节的实践价值落在反面：理解这一点，是避免</p>
 <blockquote><p>「反复检查、反复加量、反复失望」——补充·hermes-病理生理学讲义·第47章·47.6</p></blockquote>
 <p>这一医源性循环的前提。三个动作的顺序值得注意——先找病灶，再压强度，最后失望；三步建立在同一个假设上：疼痛强度应当与病灶成比例。假设一旦不成立，三步全部落空。</p></div></div>
-  <div class="slide-foot"><span>15 / 30</span><span>body</span></div>
+  <div class="slide-foot"><span>12 / 28</span><span>body</span></div>
 </section>
-<section class="slide" data-i="15">
-  <div class="slide-inner"><div class="kicker">七、机制分类：五类与两类被忽略的情形</div>
-                <div class="compact"><p>47.7 把四环机制折成一张按机制分类的表。这是全章最实用的一节，落点是选靶点而不是贴病名。</p>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">分类、评估与管理：五类、自述与按机制分层（47.7–47.11）</div>
+                <div class="compact dense"><h3 id="机制分类-五类与两类被忽略的情形">机制分类：五类与两类被忽略的情形</h3>
+<p>47.7 把四环机制折成一张按机制分类的表。这是全章最实用的一节，落点是选靶点而不是贴病名。</p>
 <div class="table-wrap"><table><thead><tr><th>类别</th><th>机制</th><th>临床特征</th><th>处理方向</th></tr></thead><tbody><tr><td>伤害性（躯体）</td><td>持续伤害性刺激激活完整通路</td><td>定位清晰、与损伤程度相称、活动时加重</td><td>减少伤害性输入、抗炎、制动</td></tr><tr><td>伤害性（内脏）</td><td>内脏感受器激活、汇聚-投射</td><td>定位模糊、伴恶心出汗、可牵涉</td><td>针对原发病，辅以调制</td></tr><tr><td>神经病理性</td><td>躯体感觉系统病变或疾病</td><td>烧灼、电击、针刺样，伴麻木、异常性疼痛、痛觉过敏</td><td>针对神经机制，常规镇痛药反应差</td></tr><tr><td>混合性</td><td>两类机制并存</td><td>癌痛、腰背痛常见</td><td>分层处理各成分</td></tr><tr><td>可塑性/中枢性</td><td>中枢敏化为核心，无明确外周损伤</td><td>广泛痛、疲劳、睡眠障碍、多部位压痛</td><td>功能恢复、运动、认知行为治疗</td></tr></tbody></table></div>
 <p>第四列是重点，讲义用一句话收口：</p>
 <blockquote><p>「同等强度的疼痛，机制不同，方向就不同」——补充·hermes-病理生理学讲义·第47章·47.7</p></blockquote></div></div>
-  <div class="slide-foot"><span>16 / 30</span><span>body</span></div>
+  <div class="slide-foot"><span>13 / 28</span><span>body</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">分类、评估与管理：五类、自述与按机制分层（47.7–47.11）</div>
+                <div class="compact dense"><p>表外另有两类情形被单独点出，因为它们最容易被漏掉或被污名化。心因性放大：讲义特意写明它真实存在，不是装病，而是中枢调制异常的结果——这一措辞把查不出原因从没有病改写为机制在上游。药物相关性疼痛：包括反跳痛与阿片诱导的痛觉过敏，即用于镇痛的干预本身可以加重疼痛敏感，这条必须留在鉴别清单上。</p>
+<h3 id="急性与慢性-一条关系是否仍然成立">急性与慢性：一条关系是否仍然成立</h3>
+<p>47.8 用一对比较把全章收在一处判断上。急性疼痛有明确损伤、有保护价值、随组织愈合而消退；机制以外周伤害感受器激活与外周敏化为主，伴交感激活与焦虑；处理目标是缓解疼痛、支持愈合、预防并发症——讲义举的例子很具体：术后因疼痛不敢咳嗽导致肺不张。慢性疼痛则在组织愈合所需时间之外仍持续（讲义以月计，明确不给具体界值），已失去保护价值；机制以中枢敏化、去抑制、皮层重组与神经免疫改变为主，常伴睡眠障碍、抑郁、疲劳与活动回避；目标转向功能恢复与自我管理。</p>
+<p>两者的分界不是时长，而是一条关系：</p></div></div>
+  <div class="slide-foot"><span>14 / 28</span><span>body</span></div>
+</section>
+<section class="slide" data-i="14">
+  <div class="slide-inner"><div class="kicker">分类、评估与管理：五类、自述与按机制分层（47.7–47.11）</div>
+                <div class="compact dense"><blockquote><p>「伤害性输入—疼痛强度」——补充·hermes-病理生理学讲义·第47章·47.8</p></blockquote>
+<p>的关系是否仍然成立。急性期紧密，慢性期被削弱。这个判据比任何时点都稳，因为它直接对准机制：关系削弱，说明链上某一环——多半是中枢——已经改了增益。</p>
+<p>由此推出两条要求。第一，慢性疼痛的评估必须包含功能（睡眠、行走、工作、社交）与心理社会因素，而不只是强度评分：强度在慢性期已不能代表病情。第二，把无痛作为唯一目标会反噬——讲义写得直接，那往往导致过度用药与功能进一步退化。这与 47.1 的恢复功能形成闭环：目标从来不是消掉信号，而是把功能拿回来。</p>
+<h3 id="评估-自述是金标准-记录要成闭环">评估：自述是金标准，记录要成闭环</h3>
+<p>47.9 只给一份清单，但每一行都对着一个具体的失败模式。第一行是自述：部位、性质、强度、时间模式、诱发与缓解因素、对功能的影响；工具包括数字评分、视觉模拟与面部表情量表，各有适用人群与局限。自述排第一的理由在定义里已经写明——删掉主观成分就不剩疼痛。</p></div></div>
+  <div class="slide-foot"><span>15 / 28</span><span>body</span></div>
+</section>
+<section class="slide" data-i="15">
+  <div class="slide-inner"><div class="kicker">分类、评估与管理：五类、自述与按机制分层（47.7–47.11）</div>
+                <div class="compact dense"><p>第二行处理无法自述者：婴幼儿、痴呆、镇静、语言障碍、危重患者。办法是行为观察（面部表情、保护性动作、呻吟、僵硬）、生理指标与照护者报告，用结构化工具并建立个体基线。这里有一条硬约束——单次生理指标不能作为疼痛证据：交感激活可被恐惧、发热、容量不足等无数原因触发，它不是疼痛的特异信号。第三行是神经病理性筛查：烧灼或电击样痛、麻木、异常性疼痛、痛觉过敏，用问卷辅助；它问的是机制特征，不是强度。第四行是功能与风险：睡眠、活动能力、情绪、工作与社交、抑郁与自杀风险、物质使用与用药风险——这一行最容易被简化掉，却是评估能否成立的关键。</p>
+<p>第五行给出记录的单位：</p>
+<blockquote><p>「疼痛—干预—再评估」——补充·hermes-病理生理学讲义·第47章·47.9</p></blockquote>
+<p>构成一个完整记录单元，孤立的强度数字没有临床意义。这句话在方法上等于一章的结论：评估的对象不是一次测量，而是一次干预前后的变化。</p>
+<h3 id="管理-按机制分层与五条原则">管理：按机制分层与五条原则</h3></div></div>
+  <div class="slide-foot"><span>16 / 28</span><span>body</span></div>
 </section>
 <section class="slide" data-i="16">
-  <div class="slide-inner"><div class="kicker">七、机制分类：五类与两类被忽略的情形</div>
-                <div class="compact"><p>表外另有两类情形被单独点出，因为它们最容易被漏掉或被污名化。心因性放大：讲义特意写明它真实存在，不是装病，而是中枢调制异常的结果——这一措辞把查不出原因从没有病改写为机制在上游。药物相关性疼痛：包括反跳痛与阿片诱导的痛觉过敏，即用于镇痛的干预本身可以加重疼痛敏感，这条必须留在鉴别清单上。</p></div></div>
-  <div class="slide-foot"><span>17 / 30</span><span>body</span></div>
-</section>
-<section class="slide" data-i="17">
-  <div class="slide-inner"><div class="kicker">八、急性与慢性：一条关系是否仍然成立</div>
-                <div class="compact"><p>47.8 用一对比较把全章收在一处判断上。急性疼痛有明确损伤、有保护价值、随组织愈合而消退；机制以外周伤害感受器激活与外周敏化为主，伴交感激活与焦虑；处理目标是缓解疼痛、支持愈合、预防并发症——讲义举的例子很具体：术后因疼痛不敢咳嗽导致肺不张。慢性疼痛则在组织愈合所需时间之外仍持续（讲义以月计，明确不给具体界值），已失去保护价值；机制以中枢敏化、去抑制、皮层重组与神经免疫改变为主，常伴睡眠障碍、抑郁、疲劳与活动回避；目标转向功能恢复与自我管理。</p>
-<p>两者的分界不是时长，而是一条关系：</p>
-<blockquote><p>「伤害性输入—疼痛强度」——补充·hermes-病理生理学讲义·第47章·47.8</p></blockquote>
-<p>的关系是否仍然成立。急性期紧密，慢性期被削弱。这个判据比任何时点都稳，因为它直接对准机制：关系削弱，说明链上某一环——多半是中枢——已经改了增益。</p></div></div>
-  <div class="slide-foot"><span>18 / 30</span><span>body</span></div>
-</section>
-<section class="slide" data-i="18">
-  <div class="slide-inner"><div class="kicker">八、急性与慢性：一条关系是否仍然成立</div>
-                <div class="compact"><p>由此推出两条要求。第一，慢性疼痛的评估必须包含功能（睡眠、行走、工作、社交）与心理社会因素，而不只是强度评分：强度在慢性期已不能代表病情。第二，把无痛作为唯一目标会反噬——讲义写得直接，那往往导致过度用药与功能进一步退化。这与 47.1 的恢复功能形成闭环：目标从来不是消掉信号，而是把功能拿回来。</p></div></div>
-  <div class="slide-foot"><span>19 / 30</span><span>body</span></div>
-</section>
-<section class="slide" data-i="19">
-  <div class="slide-inner"><div class="kicker">九、评估：自述是金标准，记录要成闭环</div>
-                <div class="compact"><p>47.9 只给一份清单，但每一行都对着一个具体的失败模式。第一行是自述：部位、性质、强度、时间模式、诱发与缓解因素、对功能的影响；工具包括数字评分、视觉模拟与面部表情量表，各有适用人群与局限。自述排第一的理由在定义里已经写明——删掉主观成分就不剩疼痛。</p>
-<p>第二行处理无法自述者：婴幼儿、痴呆、镇静、语言障碍、危重患者。办法是行为观察（面部表情、保护性动作、呻吟、僵硬）、生理指标与照护者报告，用结构化工具并建立个体基线。这里有一条硬约束——单次生理指标不能作为疼痛证据：交感激活可被恐惧、发热、容量不足等无数原因触发，它不是疼痛的特异信号。第三行是神经病理性筛查：烧灼或电击样痛、麻木、异常性疼痛、痛觉过敏，用问卷辅助；它问的是机制特征，不是强度。第四行是功能与风险：睡眠、活动能力、情绪、工作与社交、抑郁与自杀风险、物质使用与用药风险——这一行最容易被简化掉，却是评估能否成立的关键。</p>
-<p>第五行给出记录的单位：</p></div></div>
-  <div class="slide-foot"><span>20 / 30</span><span>body</span></div>
-</section>
-<section class="slide" data-i="20">
-  <div class="slide-inner"><div class="kicker">九、评估：自述是金标准，记录要成闭环</div>
-                <div class="compact"><blockquote><p>「疼痛—干预—再评估」——补充·hermes-病理生理学讲义·第47章·47.9</p></blockquote>
-<p>构成一个完整记录单元，孤立的强度数字没有临床意义。这句话在方法上等于一章的结论：评估的对象不是一次测量，而是一次干预前后的变化。</p></div></div>
-  <div class="slide-foot"><span>21 / 30</span><span>body</span></div>
-</section>
-<section class="slide" data-i="21">
-  <div class="slide-inner"><div class="kicker">十、管理：按机制分层与五条原则</div>
+  <div class="slide-inner"><div class="kicker">分类、评估与管理：五类、自述与按机制分层（47.7–47.11）</div>
                 <div class="compact"><p>47.10 把前面所有机制折成方向，而不是方案。伤害性成分减少伤害性输入（制动、冷热敷、抗炎、局部麻醉）与非阿片类镇痛；神经病理性成分作用于钙通道亚基、5-羟色胺与去甲肾上腺素再摄取、钠通道等靶点，以及局部外用制剂；中枢敏化成分以功能恢复为核心——分级运动与活动、睡眠管理、认知行为治疗、患者教育与信念重建；此外还有经皮电刺激、按摩、针灸、放松与正念训练、物理治疗、多学科疼痛门诊。</p>
 <p>分层的意义在于，它把加量这一默认动作替换成换层。若中枢成分占优，在同一靶点上继续加量只增加副作用，不增加疗效——这正是 47.6 那个医源性循环的机制解释。五条原则同样值得记住：多模式、按时而非按痛、以功能为目标、定期再评估、避免单一手段长期依赖。五条没有一条关于更强的药，全部关于结构。</p></div></div>
-  <div class="slide-foot"><span>22 / 30</span><span>body</span></div>
+  <div class="slide-foot"><span>17 / 28</span><span>body</span></div>
 </section>
-<section class="slide" data-i="22">
-  <div class="slide-inner"><div class="kicker">十、管理：按机制分层与五条原则</div>
+<section class="slide" data-i="17">
+  <div class="slide-inner"><div class="kicker">分类、评估与管理：五类、自述与按机制分层（47.7–47.11）</div>
                 <div class="compact"><p>安全方向讲义列了四类：阿片类的呼吸抑制、便秘、耐受与依赖风险；非甾体类的胃肠与肾损害；老年与肝肾功能不全者的代谢差异；以及疼痛缓解后活动量骤增造成的二次损伤。最后一条把疼痛被压住与组织已能承受负荷分开，与 47.1 的保护系统定位一致。讲义在此收口：</p>
 <blockquote><p>「本讲义不提供剂量与方案」——补充·hermes-病理生理学讲义·第47章·47.10</p></blockquote>
-<p>本页照录这条边界，不补充任何具体取值。</p></div></div>
-  <div class="slide-foot"><span>23 / 30</span><span>body</span></div>
+<p>本页照录这条边界，不补充任何具体取值。</p>
+<h3 id="生命周期与特殊人群-五处系统性偏差">生命周期与特殊人群：五处系统性偏差</h3>
+<p>47.11 按人群列偏差，五条有一个共同点——它们都不是机制的新版本，而是机制在不同人群里的表达与测量受到了干扰。</p></div></div>
+  <div class="slide-foot"><span>18 / 28</span><span>body</span></div>
+</section>
+<section class="slide" data-i="18">
+  <div class="slide-inner"><div class="kicker">分类、评估与管理：五类、自述与按机制分层（47.7–47.11）</div>
+                <div class="compact"><p>儿童：痛觉通路在发育早期即功能完整，新生儿甚至更敏感；表达能力有限，须依行为与家长报告；反复的疼痛性操作应做程序性镇痛，并注意远期影响（针头恐惧、痛觉敏化）。后一句把一次操作与长期敏化连起来，正是 47.6 四级改变在小年龄段的版本。老年：疾病负荷大而常少报疼痛，原因很实在——认为老了就该痛、怕被视为抱怨、担心药物副作用；认知障碍者评估困难；多种合并用药增加相互作用与跌倒风险。少报是系统性偏差：它让评估值系统性偏低，而不是随机波动。</p>
+<p>妊娠与哺乳：用药须权衡母婴双方风险，非药物手段优先，只给方向不给方案。文化与语言：表达方式、忍耐规范与求助行为差异大；讲义点出以表情平静判断无痛是最常见的评估错误之一——这与 47.4 的强度与不愉快分离互为印证：不愉快的表达受规范约束，强度却不能靠表情读出。临终与重症：舒适为优先目标；镇痛与镇静的边界、以及可能缩短生命的伦理顾虑，需团队与家属充分沟通。讲义在末句给出一个判断：</p></div></div>
+  <div class="slide-foot"><span>19 / 28</span><span>body</span></div>
+</section>
+<section class="slide" data-i="19">
+  <div class="slide-inner"><div class="kicker">分类、评估与管理：五类、自述与按机制分层（47.7–47.11）</div>
+                <div class="compact"><blockquote><p>「未被控制的疼痛本身就是痛苦的主要来源」——补充·hermes-病理生理学讲义·第47章·47.11</p></blockquote>
+<p>这句话把是否用药的讨论从抽象伦理拉回到具体的痛苦负担上。</p></div></div>
+  <div class="slide-foot"><span>20 / 28</span><span>body</span></div>
+</section>
+<section class="slide" data-i="20">
+  <div class="slide-inner"><div class="kicker">节级落位：讲义 47.1–47.11</div>
+                <div class="compact dense"><div class="table-wrap"><table><thead><tr><th>节号</th><th>一句话落位</th></tr></thead><tbody><tr><td>47.1 定义与多维性</td><td>或潜在解耦损伤，四维解释为何单靠镇痛不够；缺失比疼痛更危险</td></tr><tr><td>47.2 转导</td><td>伤害感受器与炎症汤；沉默感受器被招募；汇聚-投射造成牵涉痛</td></tr><tr><td>47.3 传导与上行通路</td><td>两类纤维两种痛；背角整合与胶质细胞；四条上行通路分工</td></tr><tr><td>47.4 中枢整合</td><td>五结构构成疼痛矩阵；强度与不愉快分离；皮层与下行双向</td></tr><tr><td>47.5 内源性调控</td><td>脑干到背角的下行刹车；闸门控制；预期是有效成分</td></tr><tr><td>47.6 敏化</td><td>四级改变；疼痛从症状变疾病状态；医源性循环的机制</td></tr><tr><td>47.7 机制分类</td><td>五类对照表；心因性放大非装病；药物相关性疼痛</td></tr><tr><td>47.8 急性与慢性</td><td>分界是输入与强度的关系是否成立；目标从无痛转功能</td></tr><tr><td>47.9 评估</td><td>自述为金标准；无法自述者的替代路径；记录成闭环</td></tr><tr><td>47.10 管理</td><td>按机制分层而非加量；五条原则；安全方向不给剂量</td></tr><tr><td>47.11 生命周期</td><td>五处系统性偏差：少报、表情、发育、权衡、伦理</td></tr></tbody></table></div></div></div>
+  <div class="slide-foot"><span>21 / 28</span><span>body</span></div>
+</section>
+<section class="slide" data-i="21">
+  <div class="slide-inner"><div class="kicker">节级落位：讲义 47.1–47.11</div>
+                <div class="compact"><p>十一节的次序是一条链的次序：47.1 定词与四维，47.2 到 47.5 走完四环节，47.6 让链改变性质，47.7 到 47.11 讲怎么按改变后的链去分类、评估与管理。若从 47.9 开始读，评估清单会变成一份要背的表；先读 47.6，才知道这份清单每一项在防什么。</p></div></div>
+  <div class="slide-foot"><span>22 / 28</span><span>body</span></div>
+</section>
+<section class="slide" data-i="22">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><ul><li><strong>引文只有一层。</strong> 本章引文格式统一为<code>补充·hermes-病理生理学讲义·第47章·N.M</code>，章号等于课程章号，节号逐条真实存在。讲义是本仓库原创的教学正文，不是任何外文教材的译本；引用它不等于引用外文教材原文。</li><li><strong>本章丢掉了什么：数值。</strong> 讲义这一章 4082 个非空白字符里，数字加计量单位的命中为零（<code>node code/main.js</code> 复算，不照抄声明）。讲义把可量化处改成方向与类别——降低、增加、增强、削弱、持续、消退。本书照录这一取舍：<strong>描述类别可以，给出取值不行。</strong></li><li><strong>不给强度刻度，也不给时长界值。</strong> 本章反复出现以月计的说法，但讲义明确不给具体界值；本页也不转写任何评分量表的刻度与切点。凡遇疼到几分算重、多久算慢性的追问，统一回本书不给值，另立数据层、另立来源与校验。</li><li><strong>不写药物与剂量，不作诊断与判定。</strong> 讲义按机制靶点分组并明说不涉及剂量，本页只保留分组与原则；</li></ul></div></div>
+  <div class="slide-foot"><span>23 / 28</span><span>boundary</span></div>
 </section>
 <section class="slide" data-i="23">
-  <div class="slide-inner"><div class="kicker">十一、生命周期与特殊人群：五处系统性偏差</div>
-                <div class="compact"><p>47.11 按人群列偏差，五条有一个共同点——它们都不是机制的新版本，而是机制在不同人群里的表达与测量受到了干扰。</p>
-<p>儿童：痛觉通路在发育早期即功能完整，新生儿甚至更敏感；表达能力有限，须依行为与家长报告；反复的疼痛性操作应做程序性镇痛，并注意远期影响（针头恐惧、痛觉敏化）。后一句把一次操作与长期敏化连起来，正是 47.6 四级改变在小年龄段的版本。老年：疾病负荷大而常少报疼痛，原因很实在——认为老了就该痛、怕被视为抱怨、担心药物副作用；认知障碍者评估困难；多种合并用药增加相互作用与跌倒风险。少报是系统性偏差：它让评估值系统性偏低，而不是随机波动。</p></div></div>
-  <div class="slide-foot"><span>24 / 30</span><span>body</span></div>
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><p>疼痛在本章只作状态与机制类别，心因性放大是机制描述，不是对当事人的评价。凡涉个体，一律中性表述、不贴标签、不作疗效断言。</p>
+<ul><li><strong>不把检查阴性读成疼痛不成立。</strong> 47.6 的整节推理都建立在这一点上：机制可以从外周转到中枢，检查阴性只说明当前检查没有找到结构性解释。</li><li><strong>边界声明</strong>：本章只解释讲义给出的疼痛机制环节与评估类别，<strong>不写数值与单位与正常值，不作正常与异常判定，不构成诊断、治疗或用药依据</strong>；任何个体的状态判断须由具备资质的人员依现行规范作出。</li></ul>
+<h3 id="运行与验证">运行与验证</h3>
+<div class="codeblock"><div class="codeblock-lang">bash</div><pre><code class="lang-bash"># 1) 现算讲义规模、节级分布、关键词频，并核本页的引文、引语、节覆盖、裸值与 quiz
+node code/main.js
+
+# 2) 单测：章号与标题 / 节数与节号区间 / 字数 / 引文逐字 / 节覆盖 / 裸值零容忍 / quiz 契约 / 边界句
+node --test code/main.test.js</code></pre></div></div></div>
+  <div class="slide-foot"><span>24 / 28</span><span>boundary</span></div>
 </section>
 <section class="slide" data-i="24">
-  <div class="slide-inner"><div class="kicker">十一、生命周期与特殊人群：五处系统性偏差</div>
-                <div class="compact"><p>妊娠与哺乳：用药须权衡母婴双方风险，非药物手段优先，只给方向不给方案。文化与语言：表达方式、忍耐规范与求助行为差异大；讲义点出以表情平静判断无痛是最常见的评估错误之一——这与 47.4 的强度与不愉快分离互为印证：不愉快的表达受规范约束，强度却不能靠表情读出。临终与重症：舒适为优先目标；镇痛与镇静的边界、以及可能缩短生命的伦理顾虑，需团队与家属充分沟通。讲义在末句给出一个判断：</p>
-<blockquote><p>「未被控制的疼痛本身就是痛苦的主要来源」——补充·hermes-病理生理学讲义·第47章·47.11</p></blockquote>
-<p>这句话把是否用药的讨论从抽象伦理拉回到具体的痛苦负担上。</p></div></div>
-  <div class="slide-foot"><span>25 / 30</span><span>body</span></div>
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><h1 id="3-章级门-全-53-章契约-只看自己负责的章是否全绿">3) 章级门（全 53 章契约，只看自己负责的章是否全绿）</h1>
+<p>cd /e/tcmai-engineering-from-scatch &amp;&amp; node tests/test_binglishengli_chapters.js</p>
+<div class="codeblock"><div class="codeblock-lang">text</div><pre><code class="lang-text">
+`node code/main.js` 的真实输出（节选；本页正文字数那一行故意不贴——把它抄进来会改变它自己读到的数）：
+
+```text
+═══ 疼痛（病理生理学 第47章 · 讲义 U12 单元）═══
+讲义规模: 47.1–47.11 · 11 节 · 4082 非空白字符 · 平均每节 371 字
+篇幅两极: 最短 47.4（317 字）／最长 47.3（482 字）
+
+关键词频（讲义本章正文，同一批词横向比）:
+  疼痛   45 次
+  伤害   14 次
+  功能   13 次
+  敏化    9 次
+  情绪    8 次
+  中枢    8 次
+  → 重心落在「疼痛」：本章给的是机制环节与评估类别，不是病名清单。</code></pre></div></div></div>
+  <div class="slide-foot"><span>25 / 28</span><span>boundary</span></div>
 </section>
 <section class="slide" data-i="25">
-  <div class="slide-inner"><div class="kicker">十二、节级落位：讲义 47.1–47.11</div>
-                <div class="compact"><div class="table-wrap"><table><thead><tr><th>节号</th><th>一句话落位</th></tr></thead><tbody><tr><td>47.1 定义与多维性</td><td>或潜在解耦损伤，四维解释为何单靠镇痛不够；缺失比疼痛更危险</td></tr><tr><td>47.2 转导</td><td>伤害感受器与炎症汤；沉默感受器被招募；汇聚-投射造成牵涉痛</td></tr><tr><td>47.3 传导与上行通路</td><td>两类纤维两种痛；背角整合与胶质细胞；四条上行通路分工</td></tr><tr><td>47.4 中枢整合</td><td>五结构构成疼痛矩阵；强度与不愉快分离；皮层与下行双向</td></tr><tr><td>47.5 内源性调控</td><td>脑干到背角的下行刹车；闸门控制；预期是有效成分</td></tr><tr><td>47.6 敏化</td><td>四级改变；疼痛从症状变疾病状态；医源性循环的机制</td></tr><tr><td>47.7 机制分类</td><td>五类对照表；心因性放大非装病；药物相关性疼痛</td></tr><tr><td>47.8 急性与慢性</td><td>分界是输入与强度的关系是否成立；目标从无痛转功能</td></tr><tr><td>47.9 评估</td><td>自述为金标准；无法自述者的替代路径；记录成闭环</td></tr><tr><td>47.10 管理</td><td>按机制分层而非加量；五条原则；安全方向不给剂量</td></tr><tr><td>47.11 生命周期</td><td>五处系统性偏差：少报、表情、发育、权衡、伦理</td></tr></tbody></table></div></div></div>
-  <div class="slide-foot"><span>26 / 30</span><span>body</span></div>
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><p>讲义引文: 13 条 · 指向第47章 11 个不同节
+引文错章: 0 条 · 节号不存在: 0 条
+引语逐字: 13 条，讲义里找不到的 0 条
+节覆盖: 11 / 11 → 每节都有落位
+正文裸值行: 0 行
+quiz: 6 题（pre 1 · check 3 · post 2）· 无题干键 0 题 · 无引证 0 题</p>
+<div class="codeblock"><div class="codeblock-lang">text</div><pre><code class="lang-text">
+`code/main.js` 的最后一行固定为下面这句，也是单测与章级门共同依赖的字符串：
+
+```text
+教学边界：本章只说明讲义给出的疼痛机制环节与评估类别，不写数值与单位与正常值，不构成诊断、治疗或用药依据</code></pre></div>
+<p><strong>免责声明：</strong>本章为病理生理学教学材料。文中所有概念、机制环节与评估类别，取自本仓库原创讲义第 47 章（47.1–47.11）与本仓库 <code>standards/binglishengli/supplements/jiangyi.json</code> 的机器可读层；数字为程序现算，规则已在文中写明。</p></div></div>
+  <div class="slide-foot"><span>26 / 28</span><span>boundary</span></div>
 </section>
 <section class="slide" data-i="26">
-  <div class="slide-inner"><div class="kicker">十二、节级落位：讲义 47.1–47.11</div>
-                <div class="compact"><p>十一节的次序是一条链的次序：47.1 定词与四维，47.2 到 47.5 走完四环节，47.6 让链改变性质，47.7 到 47.11 讲怎么按改变后的链去分类、评估与管理。若从 47.9 开始读，评估清单会变成一份要背的表；先读 47.6，才知道这份清单每一项在防什么。</p></div></div>
-  <div class="slide-foot"><span>27 / 30</span><span>body</span></div>
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><p>本章不提供任何诊断、治疗或用药建议，不给出正常值、参考范围与疼痛评分刻度，也不对任何个体的状态作出正常或异常的判断。文中出现的四环节、两级敏化、机制分类等均为概念层与机制层的说明，不能替代临床评估。若出现身体不适或急症，请立即就医。</p></div></div>
+  <div class="slide-foot"><span>27 / 28</span><span>boundary</span></div>
 </section>
 <section class="slide" data-i="27">
-  <div class="slide-inner"><div class="kicker">代价与边界</div>
-                <div class="compact"><ul><li><strong>引文只有一层。</strong> 本章引文格式统一为<code>补充·hermes-病理生理学讲义·第47章·N.M</code>，章号等于课程章号，节号逐条真实存在。讲义是本仓库原创的教学正文，不是任何外文教材的译本；引用它不等于引用外文教材原文。</li><li><strong>本章丢掉了什么：数值。</strong> 讲义这一章 4082 个非空白字符里，数字加计量单位的命中为零（<code>node code/main.js</code> 复算，不照抄声明）。讲义把可量化处改成方向与类别——降低、增加、增强、削弱、持续、消退。本书照录这一取舍：<strong>描述类别可以，给出取值不行。</strong></li><li><strong>不给强度刻度，也不给时长界值。</strong> 本章反复出现以月计的说法，但讲义明确不给具体界值；本页也不转写任何评分量表的刻度与切点。凡遇疼到几分算重、多久算慢性的追问，统一回本书不给值，另立数据层、另立来源与校验。</li><li><strong>不写药物与剂量，不作诊断与判定。</strong> 讲义按机制靶点分组并明说不涉及剂量，本页只保留分组与原则；</li></ul></div></div>
-  <div class="slide-foot"><span>28 / 30</span><span>boundary</span></div>
-</section>
-<section class="slide" data-i="28">
-  <div class="slide-inner"><div class="kicker">代价与边界</div>
-                <div class="compact"><p>疼痛在本章只作状态与机制类别，心因性放大是机制描述，不是对当事人的评价。凡涉个体，一律中性表述、不贴标签、不作疗效断言。</p>
-<ul><li><strong>不把检查阴性读成疼痛不成立。</strong> 47.6 的整节推理都建立在这一点上：机制可以从外周转到中枢，检查阴性只说明当前检查没有找到结构性解释。</li><li><strong>边界声明</strong>：本章只解释讲义给出的疼痛机制环节与评估类别，<strong>不写数值与单位与正常值，不作正常与异常判定，不构成诊断、治疗或用药依据</strong>；任何个体的状态判断须由具备资质的人员依现行规范作出。</li></ul></div></div>
-  <div class="slide-foot"><span>29 / 30</span><span>boundary</span></div>
-</section>
-<section class="slide" data-i="29">
   <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
-  <div class="slide-foot"><span>30 / 30</span><span>disclaimer</span></div>
+  <div class="slide-foot"><span>28 / 28</span><span>disclaimer</span></div>
 </section>
 </div>
 <div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>

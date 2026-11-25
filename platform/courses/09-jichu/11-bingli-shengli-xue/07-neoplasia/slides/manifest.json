@@ -1,7 +1,7 @@
 {
   "chapter": "07-neoplasia",
-  "slideCount": 26,
-  "segmentCount": 18,
+  "slideCount": 28,
+  "segmentCount": 11,
   "slides": [
     {
       "n": 1,
@@ -11,7 +11,7 @@
     {
       "n": 2,
       "segment": 2,
-      "chars": 73
+      "chars": 45
     },
     {
       "n": 3,
@@ -26,111 +26,121 @@
     {
       "n": 5,
       "segment": 5,
-      "chars": 403
+      "chars": 320
     },
     {
       "n": 6,
       "segment": 5,
-      "chars": 244
+      "chars": 414
     },
     {
       "n": 7,
-      "segment": 6,
-      "chars": 392
+      "segment": 5,
+      "chars": 401
     },
     {
       "n": 8,
-      "segment": 7,
-      "chars": 417
+      "segment": 5,
+      "chars": 389
     },
     {
       "n": 9,
-      "segment": 7,
-      "chars": 152
+      "segment": 5,
+      "chars": 399
     },
     {
       "n": 10,
-      "segment": 8,
-      "chars": 304
+      "segment": 5,
+      "chars": 404
     },
     {
       "n": 11,
-      "segment": 8,
-      "chars": 375
+      "segment": 5,
+      "chars": 45
     },
     {
       "n": 12,
+      "segment": 6,
+      "chars": 413
+    },
+    {
+      "n": 13,
+      "segment": 6,
+      "chars": 416
+    },
+    {
+      "n": 14,
+      "segment": 6,
+      "chars": 149
+    },
+    {
+      "n": 15,
+      "segment": 7,
+      "chars": 377
+    },
+    {
+      "n": 16,
+      "segment": 7,
+      "chars": 293
+    },
+    {
+      "n": 17,
+      "segment": 7,
+      "chars": 291
+    },
+    {
+      "n": 18,
+      "segment": 8,
+      "chars": 392
+    },
+    {
+      "n": 19,
+      "segment": 8,
+      "chars": 394
+    },
+    {
+      "n": 20,
+      "segment": 8,
+      "chars": 369
+    },
+    {
+      "n": 21,
       "segment": 9,
       "chars": 356
     },
     {
-      "n": 13,
-      "segment": 10,
-      "chars": 349
-    },
-    {
-      "n": 14,
-      "segment": 10,
-      "chars": 236
-    },
-    {
-      "n": 15,
-      "segment": 11,
-      "chars": 353
-    },
-    {
-      "n": 16,
-      "segment": 11,
-      "chars": 95
-    },
-    {
-      "n": 17,
-      "segment": 12,
-      "chars": 360
-    },
-    {
-      "n": 18,
-      "segment": 12,
-      "chars": 108
-    },
-    {
-      "n": 19,
-      "segment": 13,
-      "chars": 355
-    },
-    {
-      "n": 20,
-      "segment": 14,
-      "chars": 376
-    },
-    {
-      "n": 21,
-      "segment": 15,
-      "chars": 369
-    },
-    {
       "n": 22,
-      "segment": 16,
-      "chars": 356
-    },
-    {
-      "n": 23,
-      "segment": 16,
+      "segment": 9,
       "chars": 80
     },
     {
+      "n": 23,
+      "segment": 10,
+      "chars": 383
+    },
+    {
       "n": 24,
-      "segment": 17,
-      "chars": 402
+      "segment": 10,
+      "chars": 383
     },
     {
       "n": 25,
-      "segment": 17,
-      "chars": 329
+      "segment": 10,
+      "chars": 389
     },
     {
       "n": 26,
-      "segment": 18,
+      "segment": 10,
+      "chars": 407
+    },
+    {
+      "n": 27,
+      "segment": 10,
+      "chars": 119
+    },
+    {
+      "n": 28,
+      "segment": 11,
       "chars": 52
     }
   ]

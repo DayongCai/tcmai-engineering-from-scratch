@@ -1,31 +1,121 @@
 {
   "chapter": "08-penbu-huiyin",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 23,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 9
+      "chars": 30
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 63
+      "chars": 25
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 15
+      "chars": 242
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 139
+      "chars": 118
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 313
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 221
+    },
+    {
+      "n": 7,
+      "segment": 5,
+      "chars": 236
+    },
+    {
+      "n": 8,
+      "segment": 5,
+      "chars": 210
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 350
+    },
+    {
+      "n": 10,
+      "segment": 6,
+      "chars": 309
+    },
+    {
+      "n": 11,
+      "segment": 6,
+      "chars": 216
+    },
+    {
+      "n": 12,
+      "segment": 7,
+      "chars": 107
+    },
+    {
+      "n": 13,
+      "segment": 7,
+      "chars": 372
+    },
+    {
+      "n": 14,
+      "segment": 7,
+      "chars": 121
+    },
+    {
+      "n": 15,
+      "segment": 7,
+      "chars": 419
+    },
+    {
+      "n": 16,
+      "segment": 7,
+      "chars": 198
+    },
+    {
+      "n": 17,
+      "segment": 8,
+      "chars": 264
+    },
+    {
+      "n": 18,
+      "segment": 8,
+      "chars": 415
+    },
+    {
+      "n": 19,
+      "segment": 8,
+      "chars": 306
+    },
+    {
+      "n": 20,
+      "segment": 8,
+      "chars": 354
+    },
+    {
+      "n": 21,
+      "segment": 8,
+      "chars": 142
+    },
+    {
+      "n": 22,
+      "segment": 9,
+      "chars": 280
+    },
+    {
+      "n": 23,
+      "segment": 10,
       "chars": 52
     }
   ]

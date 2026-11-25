@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"/>
-<title>第 2 章 · 数据准备：病例、经穴坐标、刺激参数 · 幻灯片</title>
+<title>第 2 章 · 一份病例表的价值不在字段多，而在换个人能照着扎回同一个位置 · 幻灯片</title>
 <style>
 
 :root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
@@ -59,24 +59,81 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <body>
 <div id="deck">
 <section class="slide" data-i="0">
-  <div class="slide-inner"><h1 class="big">第 2 章 · 数据准备：病例、经穴坐标、刺激参数</h1></div>
-  <div class="slide-foot"><span>1 / 5</span><span>title</span></div>
+  <div class="slide-inner"><h1 class="big">第 2 章 · 一份病例表的价值不在字段多，而在换个人能照着扎回同一个位置</h1></div>
+  <div class="slide-foot"><span>1 / 14</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「《针灸推拿毕业设计与知识移交·第2章》」——派生课无本章原文篇名；台账锚点见 standards/biye/。本章要回答的是：数据准备：病例、经穴坐标、刺激参数这一环节的核心判据是什么。</blockquote></div>
-  <div class="slide-foot"><span>2 / 5</span><span>motto</span></div>
+  <div class="slide-inner"><blockquote class="motto">「灸时孔穴不正，无益于事，徒破好肉耳」——《备急千金要方·灸例》</blockquote></div>
+  <div class="slide-foot"><span>2 / 14</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
-  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">经络纵横关系 ＋ 概述：坐标与归属口径不统一，后面的统计全部作废。</p></div>
-  <div class="slide-foot"><span>3 / 5</span><span>problem</span></div>
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">本章单元层 13 节 24,091 汉字里，「经络」出现 228 次，「寸」40 次，而「骨度」0 次、「定位」6 次、「穴位」12 次。近一半篇幅（2.1–2.4 四节，11,972 字，占 49.7%）在讲根结、标本、气街、四海——讲的是经络怎么纵横联络，不是体表那几寸怎么记。而病例表的 10 行里有 4 行是位置（穴位与定位、坐标、进针参数、得气）。需要的和给的，正好错开。</p></div>
+  <div class="slide-foot"><span>3 / 14</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
-  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（针灸毕设的失败大多是「配穴方案没写成可检验的命题」：做完只剩经验）+ 知识积累（本章 13 单元 24,091 汉字；三辨主 <strong>实施与分析 29</strong>；四位面（毕设环节）主 <strong>实施与验证 23</strong>；引书 <strong>32 部 87 次</strong>；数值类命中 30）</p></div>
-  <div class="slide-foot"><span>4 / 5</span><span>roots</span></div>
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（一例一表一诊次，四个时点要记满；记漏一处，分析阶段补不回来，而毕设没有第二次入组的机会）+ 知识积累（骨度分寸是相对量、同身寸随人变，两个人各记&quot;1.5 寸&quot;，指的未必是同一个点；经络讲的是&quot;线&quot;的通路，帮不上&quot;点&quot;的精度——定位四法长在第一章 1.4–1.7 那 4,607 字里，本章不给）</p></div>
+  <div class="slide-foot"><span>4 / 14</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
+  <div class="slide-inner"><div class="kicker">一、三类最容易丢的数据，和十行模板的对照</div>
+                <div class="compact dense"><p>针灸的数据丢失有自己的形状。它不像药物试验那样丢在&quot;剂量&quot;上，而是丢在三个地方：扎在哪、扎多深多快、谁在评。三者缺一，组间差异就无法归因——到底是不对症、没扎准、量不够，还是评分漂移，四种解释在数据里长得一模一样。</p>
+<p>把底本的 10 行模板按这三类摊开：</p>
+<div class="table-wrap"><table><thead><tr><th>类</th><th>模板行</th><th>丢了会怎样</th></tr></thead><tbody><tr><td>身份</td><td>病例标识、诊断与证型</td><td>表与表对不上人；证型缺失则亚组无法回溯</td></tr><tr><td>位置（4 行）</td><td>穴位与定位、坐标、进针参数、得气</td><td>换人复现时位置偏移，刺激的组织不同</td></tr><tr><td>量（2 行）</td><td>刺激量、辅助理疗</td><td>频率与电流直接改变刺激量，组间差异说不清来源</td></tr><tr><td>评价（1 行）</td><td>评价者、量表、时点、一致性</td><td>评分漂移被当成疗效变化</td></tr><tr><td>去向（1 行）</td><td>脱落与偏离</td><td>删掉违背方案病例＝选择性报告</td></tr></tbody></table></div>
+<p>十行里位置占四行，是比例最高的一类，因为位置最容易被&quot;经验&quot;两个字糊过去。&quot;经验取穴&quot;四个字在表里出现一次，这一例的定位就永久不可复核。</p></div></div>
+  <div class="slide-foot"><span>5 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">二、定位写成第二个人能照做：四法各留什么字段</div>
+                <div class="compact dense"><p>底本第一章给了四种定位法，每一种在表里留下的痕迹不一样：</p>
+<div class="table-wrap"><table><thead><tr><th>定位法</th><th>表里必须出现的字段</th><th>复核时怎么用</th></tr></thead><tbody><tr><td>骨度分寸</td><td>折算规则、起点骨性标志、寸数、总骨度</td><td>换人重折一次，看是否落在同一区间</td></tr><tr><td>体表解剖标志</td><td>固定标志名（如&quot;两眉中间&quot;）或活动标志（如&quot;屈肘横纹外端&quot;）、体位</td><td>同体位下重摸标志，体位不同则位置不同</td></tr><tr><td>手指同身寸</td><td>用哪种（中指、拇指、横指）、以患者何手为据</td><td>只作辅助，不与骨度混用同一穴</td></tr><tr><td>简便取穴</td><td>动作描述（如&quot;垂手中指端&quot;）、执行动作的人</td><td>动作必须由患者做，不能由操作者代做</td></tr></tbody></table></div>
+<p>四条规则里最要紧的是第三条：同身寸是随人变的相对量，骨度分寸是随部位变的相对量。同一张表里两种口径混用，跨操作者比对就全部作废——不是&quot;稍微不准&quot;，是无法换算。所以项目开始前必须先定一个口径，写进表头，中途不改；要改，记版本变更。</p></div></div>
+  <div class="slide-foot"><span>6 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">二、定位写成第二个人能照做：四法各留什么字段</div>
+                <div class="compact"><p>坐标是给&quot;需要跨人比对&quot;的场景准备的，写法是相对坐标：以某个可触摸的骨性标志为原点，按骨度折算给出两维或三维的偏移量，并写明容差。容差不是可有可无的礼貌，它是判定&quot;这一例算不算做对&quot;的唯一依据。没有容差，复现验证时两个人各差半寸，谁对谁错说不清。</p>
+<p>底本给的定位精度，和本章表里要求的字段，是同一件事的两端。千金那句话说得比任何统计术语都直：孔穴不正，灸下去只是破了好肉。换句话说，定位错的时候，干预不是&quot;效果差一点&quot;，是&quot;没作用在目标上&quot;。这类数据在分析阶段无法补救，只能弃用——弃用的例数一多，样本量就不够了。</p></div></div>
+  <div class="slide-foot"><span>7 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">三、刺激量与得气：写可核对的数，不写"良好"</div>
+                <div class="compact dense"><p>刺激量是针灸研究里最容易写成文学的部分。&quot;手法适度&quot;&quot;得气良好&quot;&quot;留针适当&quot;——三句话都无法复核，也无法培训。</p>
+<p>可核对的写法有四组数：</p>
+<ul><li><strong>手法</strong>：捻转频率（次/分）、捻转幅度（转/次或度）、提插幅度（毫米）、持续时间</li><li><strong>电针</strong>：波形（连续波／疏密波）、频率（Hz，疏密波要写两档）、电流（mA）、极性接法</li><li><strong>留针</strong>：单次留针时长（分钟）、每次行针次数与间隔</li><li><strong>灸与罐</strong>：艾灸壮数与每壮时长、是否隔物（隔什么）、留罐时长与罐数</li></ul>
+<p>得气要改成固定描述词：有无、性质（酸／麻／胀／重，可多选）、是否循经感传、在第几诊出现。这四个字段都能被第二个人独立判断，而&quot;良好&quot;不能。底本在流程第 6 步特意写了这条要求，理由值得抄下来：无判据的话，既不能复核，也不能培训——带教时你说&quot;气到了&quot;，学生只能点头。</p></div></div>
+  <div class="slide-foot"><span>8 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">三、刺激量与得气：写可核对的数，不写"良好"</div>
+                <div class="compact"><p>辅助理疗也一样：温针灸、拔罐、耳穴压豆，凡与针刺同时使用的，都要记剂量与部位。中途改方案的，一律记方案偏离并注明第几诊——不记的后果是分析时把两种干预混成一组。</p></div></div>
+  <div class="slide-foot"><span>9 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">四、谁在评、什么时候评、谁没做完</div>
+                <div class="compact dense"><p>评价者固定一至两名，先培训再上岗。同一患者由两人各评一次，算一致性（连续型用 ICC，分类型用 Kappa），结果留存。阈值由导师与统计老师按现行规范定，本课不给具体数值——因为不同量表、不同人群的惯例不一样，本课给一个数反而会让你照抄一个不适用的门槛。低于所选阈值就重训，重训后重测，两次结果都留档。</p>
+<p>时点写进表头，四个：基线、疗程中（写明第几诊）、疗程末、随访（写明第几周）。时点一旦临时决定，就会出现&quot;某例因为没空，提前一周评&quot;的补记，而补记的时点与其他例不可比。</p>
+<p>脱落与偏离分开记，都不删：</p>
+<div class="table-wrap"><table><thead><tr><th>记什么</th><th>为什么单列</th></tr></thead><tbody><tr><td>脱落：原因、时间点、已完成诊次、是否愿接受末次评估</td><td>意向性分析要把全部随机例留在分母里</td></tr><tr><td>违背方案：哪一条、第几诊、谁发现</td><td>符合方案集要能从这里还原，删了就无法做敏感性分析</td></tr><tr><td>补录：哪一天补、补的是哪次访视</td><td>补录的数据与当场记录的可信度不同，分析时要能分开看</td></tr></tbody></table></div></div></div>
+  <div class="slide-foot"><span>10 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">四、谁在评、什么时候评、谁没做完</div>
+                <div class="compact"><p>版本管理最后落地成三行：表头版本号与生效日期、字段增删的变更记录、旧版表与旧数据的归档位置。导出文件必须注明用了哪一版表——否则半年后你自己也说不清某列是什么时候加的。</p></div></div>
+  <div class="slide-foot"><span>11 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><ul><li><strong>本课不给一致性阈值</strong>：ICC 与 Kappa 的门槛随量表与人群而变，由导师与统计老师按现行规范定；本课只要求&quot;先定阈值、后做检验、低于阈值重训&quot;，不给数。</li><li><strong>本课不给定位示意图</strong>：教材图号与示意图属出版方与编者，本课不复刻；表里的&quot;图号&quot;字段指向的是你自己的方案手册（见第六章）。</li><li><strong>本课不给真实病例</strong>：正文表格与字段说明都不含任何一例真实患者；编号规则、容差、脱落原因都要你在自己的科室里填。</li><li><strong>本章单元层讲的是经络，不是记录规范</strong>：24,091 字里「骨度」0 次，硬把这章当&quot;定位手册&quot;读会走错门——定位法在第一章 4,607 字，两章合起来才够一张表。</li><li><strong>10 行模板不是上限</strong>：字段可以加，但每加一列必须写理由并记版本变更；只加不改版本，半年后无人能还原。</li><li><strong>不替代专业判断</strong>：本章用于病例表设计与自查，不构成诊疗意见；取值区间、操作深度与角度一律按现行规范与所在机构制度执行。</li></ul></div></div>
+  <div class="slide-foot"><span>12 / 14</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><blockquote><p><strong>免责声明：</strong> 本章为毕业设计教学材料，不构成医学意见、诊断或治疗指导，也不替代伦理委员会与导师的决定。涉及人的研究须先取得伦理审批并在每一例入组前完成知情同意，未获批准或未签同意书者不得采集数据；病例号、身份证件、联系方式、影像与量表原件属个人信息与敏感健康信息，须按最小必要原则采集、去标识后分级存放，导出文件不得含可定位到个人的字段，保存期限与销毁方式按机构制度执行；数据的记录、修改与报告须遵守学术规范，补录与版本变更必须留痕，不得删改原始记录、不得选择性报告脱落与偏离。一切操作与判断以现行规范、所在机构制度与伦理批件为准。</p></blockquote></div></div>
+  <div class="slide-foot"><span>13 / 14</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="13">
   <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
-  <div class="slide-foot"><span>5 / 5</span><span>disclaimer</span></div>
+  <div class="slide-foot"><span>14 / 14</span><span>disclaimer</span></div>
 </section>
 </div>
 <div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>

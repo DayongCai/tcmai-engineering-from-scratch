@@ -5,7 +5,7 @@
     {
       "n": 1,
       "slug": "01-xuan-ti",
-      "title": "选题：从配穴方案到可检验命题",
+      "title": "选题不是挑一个病，而是把一句经验话逼成能被否证的句子",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/01-xuan-ti/docs/zh.md",
@@ -14,7 +14,7 @@
     {
       "n": 2,
       "slug": "02-shuju-zhunbei",
-      "title": "数据准备：病例、经穴坐标、刺激参数",
+      "title": "一份病例表的价值不在字段多，而在换个人能照着扎回同一个位置",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/02-shuju-zhunbei/docs/zh.md",
@@ -23,7 +23,7 @@
     {
       "n": 3,
       "slug": "03-fangfa-shixian",
-      "title": "方法与系统实现",
+      "title": "采集工具只做四件事，多做的每一件都要从招募窗口里扣时间",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/03-fangfa-shixian/docs/zh.md",
@@ -32,7 +32,7 @@
     {
       "n": 4,
       "slug": "04-liaoxiao-pingjia",
-      "title": "疗效评价与盲法设计",
+      "title": "针刺盲不了全部，把盲了几层写清比宣称双盲更值钱",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/04-liaoxiao-pingjia/docs/zh.md",
@@ -41,7 +41,7 @@
     {
       "n": 5,
       "slug": "05-lunwen-dabian",
-      "title": "论文写作与答辩",
+      "title": "论文的说服力来自十个能复算的数字，不来自十页漂亮的讨论",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/05-lunwen-dabian/docs/zh.md",
@@ -50,7 +50,7 @@
     {
       "n": 6,
       "slug": "06-zhishi-yijiao",
-      "title": "知识移交：方案手册与交接",
+      "title": "手册写得再全也移不走手感，移交完成的标志是别人照它做出来",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/06-zhishi-yijiao/docs/zh.md",

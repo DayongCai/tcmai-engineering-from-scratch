@@ -29,50 +29,49 @@ platform:
 
 chapters:
   - slug: 01-shechuanchuang
-    title: 第1章 蛇串疮（带状疱疹）
-    segments: 5
+    title: 蛇串疮：皮疹是过程，疼痛才是结局
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.95
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-shichuang
-    title: 第2章 湿疮（湿疹）
-    segments: 5
+    title: 湿疮：辨证辨得再准，剂型用错也白搭
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.9
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-yinzhen
-    title: 第3章 瘾疹（荨麻疹）
-    segments: 5
+    title: 瘾疹：几小时就消失的皮疹，说明战场不在皮肤上
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.92
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-baipi
-    title: 第4章 白疕（银屑病）
-    segments: 5
+    title: 白疕：越用力去治的那块皮，长得越厚
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.92
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-youfeng
-    title: 第5章 油风（脱发）
-    segments: 5
+    title: 油风：先确认毛囊还在，再谈补肝肾
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.9
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-fenci
-    title: 第6章 粉刺（痤疮）
-    segments: 5
+    title: 粉刺：会不会留疤，多半取决于谁在挤它
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.9
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-jiuzhabi
-    title: 第7章 酒齄鼻（玫瑰痤疮）
-    segments: 5
+    title: 酒齄鼻：一张遇热就红的脸，先改环境，再改方子
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.94
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-yaodu-jiechuang
-    title: 第8章 药毒与疥疮：鉴别与边界
-    segments: 5
+    title: 药毒与疥疮：这两件事的第一步处置，都不是开方
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

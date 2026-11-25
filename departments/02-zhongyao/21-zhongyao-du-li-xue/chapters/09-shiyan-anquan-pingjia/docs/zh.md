@@ -1,316 +1,118 @@
-# 第 9 章 · 毒理实验与安全评价：LD50、亚慢性、遗传毒性与 GLP
+# 第 9 章 · 试验的样本量，决定了结论能说到哪一步
 
-> **MOTTO:** 「《药物非临床研究质量管理规范·第一章 总则》」——本章为外源章，引文来自 OECD 试验准则与药监局毒理研究技术指导原则；GLP 属部门规章，篇名按其章次补足，**非本章教材原文**。本章要回答的是：教材说「有毒」，实验要回答「毒到什么剂量」——这一步只能靠外源标准。
+> **MOTTO:** 「勤求古训，博采众方。」——《伤寒杂病论·序》
 >
-> **PROBLEM:** 前八章的判据全部来自教材标注，没有一条是实验数据；LD50 与置信区间、90 天重复给药、遗传毒性三项、GLP 的数据可复核，这四样都不在《中药学》里。
+> **PROBLEM:** 底本给的三套样本量差着量级：急性毒性正式试验用 90 只小鼠（9 个剂量组、每组雌雄各 5 只），长期毒性 90 天以内每组至少 20 只（雌雄各 10）、超过 90 天每组 40 只（雌雄各 20），局部毒性皮肤试验家兔每组 4 只、豚鼠与大鼠每组 10 只。**分母不同，结论的可说范围就不同**：90 只小鼠能给出 LD50 与斜率，40 只大鼠能给出靶器官与可逆性，4 只家兔只能给出「有没有明显刺激」。而母本第 9 章的 20 个单元全是 OECD 指南与国内指导原则的条款，正文保留英文原文——**它给的是「怎么做」，不是「做出来说明什么」。**
 >
-> **双根因定位:** 环境逼迫（中药是混合物，任何一个「成分」都要先分出来才能说清楚）+ 知识积累（本章 20 单元 1,930 汉字；三辨主 **毒性表现 17**；四位面（靶器官）主 **生殖与遗传 6**；引书 **1 部 1 次**；数值类命中 12）
+> **双根因定位:** 环境逼迫（一门课要能回答「这个药能不能上临床」，而答案只能由一组预设了分母、剂量、观察期的试验给出；没有这些参数，任何「安全」都是空话）＋ 知识积累（要知道三类试验各自解决什么问题：急性定分级与靶器官线索，长期定蓄积与可逆性，特殊毒性定遗传与生殖风险；三者不能互相替代）
+>
+> **教材出处:** 母本 `standards/zhongyao-du-li/units.json` 第 9 章（20 个单元，1,930 汉字；其中 13 个来自 OECD 测试指南、7 个来自国内技术指导原则，OECD 部分的单元正文保留英文原文）；试验参数取自 `sources/du-li-ppt/08急性毒性试验8.txt`（1,107 行 / 14,457 汉字）、`09长期毒性试验8.txt`（1,226 行 / 18,041 汉字）、`10局毒试验.txt`（257 行 / 7,913 汉字）、`11致突变试验8.txt`（519 行 / 15,542 汉字）。
 
-**来源说明:** `F:/textbooks/standards/zhongyao-xue/units.json（派生母层）`（10 内容章 / 138 单元 / 19,787 汉字）；单元层 `standards/zhongyao-du-li/units.json`；本章取数见 `chapter-map.json`。
+## 一、急性：两级预试，一次正式
 
-## 课程信息
+底本把急性毒性试验的剂量设计拆成三步，每一步的分母都不同：
 
-| 项目 | 内容 |
+**第一步，初次预试验。** 用 10 倍稀释的药液设 5 个剂量组，每组雌雄各 1 只（共 10 只），目的是找到「无死亡的最高剂量」与「全部死亡的最低剂量」。底本给的实例是死亡范围 50–500 mg·kg⁻¹，再以两个剂量乘积的平方根估算预期毒性中值，得 158.1 mg·kg⁻¹。
+
+**第二步，再次预试验。** 在这个范围内用 2 倍稀释设 5 组，每组雌雄各 2 只（共 20 只），实例得死亡范围 39.5–316.2 mg·kg⁻¹，预期中值 111.8 mg·kg⁻¹。
+
+**第三步，正式试验。** 以上一步的两端比值（316.2 ÷ 39.5 ≈ 8，取整为 10）查表定组数与组距，本实例取 **k = 0.75、N = 9**；按 0.75 的剂量比设 9 组，**每组雌雄各 5 只、每组 10 只，共 90 只**，连续观察 14 天。
+
+**这三步的递进逻辑是「先粗后细」：10 倍稀释找范围（每组 2 只），2 倍稀释缩范围（每组 4 只），0.75 倍定曲线（每组 10 只）。** 底本还给了一个必须记住的几何约束：剂量水平以 LD50 为中心，高剂量最好小于 LD90、低剂量最好大于 LD20，**至少 3 个剂量落在 LD10–LD90 之间**；否则曲线中段没有数据点，斜率估计不稳。组距的取法也有依据：致死剂量范围窄（曲线瘦而高）的药取 0.85，范围宽（曲线胖而低）的取 0.65，公式是 k = (lgLD100 − lgLD0) ÷ (N − 1)。
+
+还有两条工程细节，直接决定结果可比性：
+
+- **等体积与等浓度两种给法，观察到的毒性效应不同。** 急性全身毒性宜用等体积（各组浓度不同、体积相同），以减少胃肠刺激对吸收的干扰；评价局部刺激强度也宜等体积。
+- **观察期从给药开始计 14 天，不超过 14 天**；给药 14 天以后的死亡，难以确定为药物中毒所致。底本说全过程共需 17 天（含适应与观察衔接），并强调**报告 LD50 时应同时注明观察时间**，否则不同试验之间无法比较。
+
+测不出致死性时有两级兜底：一是剂量限度（灌胃 5 g·kg⁻¹、注射 2 g·kg⁻¹），在此剂量下部分动物死亡即提示毒性低下，不必再往上做；二是最大耐受量（最大浓度、最大容积给药，小鼠至少 20 只，观察 7 天，以不产生死亡的最大剂量计）。**「测不出」与「无毒」的区别，就落在这两级兜底的定义里。**
+
+## 二、长期：剂量按 LD50 折算，分母按天数分档
+
+长期毒性试验的第一道设计题是「三个剂量怎么定」。底本一次给了五条路径：
+
+| 路径 | 三档剂量 |
 |---|---|
-| 学科 | 中药毒理学（中药系第 21 门 · 派生课） |
-| 章序号 | 9 / 8 |
-| 本章规模 | 20 单元 · 1,930 汉字 |
-| 本章重心 | 三辨主 **毒性表现 17**；靶器官主 **生殖与遗传 6**；数值 12 |
+| 半数致死量法 | 大鼠 3 个月：LD50 的 1/10、1/50、1/100（不同种属按等效剂量公式推算） |
+| 药代动力学法 | 按最大有效安全剂量（MCD）：1.0、3.3–6.6、10–20 倍 |
+| 最大耐受量法 | 按最大无症状剂量（MTD）：1、1/3、1/9 |
+| 临床拟用剂量法 | 临床剂量的 50–100 倍、25–50 倍、10–20 倍 |
 
-## 一、这一章的问题
+**四条路径的锚不同：一条锚在动物致死量，一条锚在有效量，一条锚在耐受量，一条锚在人用剂量。** 选哪条，取决于你手上已经有什么数据——有 LD50 就用第一条，有药代数据就用第二条，什么都没有就只能从临床拟用剂量倒推。这不是「哪条更准」的问题，是「哪条做得起」。
 
-教材说「有毒」，实验要回答「毒到什么剂量」——这一步只能靠外源标准——中药毒理学每一章都走同一条链：**成分 → 表现 → 干预**。结构决定它能溶于什么、显什么色，性质决定用什么溶剂、上什么柱，方法决定能不能把它拿到手、认出来。链上断一环，后面全散。
+第二道题是分母。底本给的分档很清楚：**90 天以内的长期毒性试验，啮齿类每组至少 20 只（雌雄各 10），非啮齿类每组 4–6 只（雌雄各 2–3）；超过 90 天的，啮齿类每组至少 40 只（雌雄各 20），非啮齿类 8–10 只（雌雄各 4–5）。** 同时要求两种以上动物、雌雄数目相等。
 
-## 二、三辨与四位面：本章的实测分布
+第三道题是观察。底本的观察体系分三层，每层的时点不同：
 
-| 三辨（毒性成分／毒性表现／减毒与救治） | 命中 | 占比 |
-|---|---:|---:|
-| 毒性成分 | 0 | 0.0% |
-| 毒性表现 | 17 | 100.0% |
-| 减毒与救治 | 0 | 0.0% |
+- **一般状态**：给药期与恢复期每天观察；无论有无异常，每周固定时间点全面观察一次（被毛、皮肤、眼、黏膜、孔道分泌物、呼吸、循环、活动、精神行为；粪便的量与色泽；摄食与饮水）；发现死亡立即剖检，器官在 10% 中性福尔马林固定 24 小时后做病理。
+- **血液学**：用药前（基线）、用药中期、用药末期、恢复期四个时点；模式是「细胞计数 + 分类 + 网织红细胞」（CBC + DC + RTC）；非啮齿类每 2 个月一次，啮齿类活杀时检测。
+- **骨髓细胞学**：同样四个时点；正常切片内 **M/E 比值 2–6 : 1**，肥大细胞 **11–24 个/cm²**，**原始细胞比例超过 30%** 通常被认为是急性白血病的主要诊断标准。
 
-| 四位面（靶器官） | 命中 | 占比 |
-|---|---:|---:|
-| 乙酸-丙二酸途径 | 0 | 0.0% |
-| 莽草酸途径 | 0 | 0.0% |
-| 甲戊二羟酸途径 | 0 | 0.0% |
-| 氨基酸途径 | 0 | 0.0% |
+**「恢复期」这一层是长期毒性区别于急性毒性的关键。** 它回答的是可逆性：停药后指标能不能回到基线。一个只在给药期异常、恢复期归位的改变，与一个恢复期仍不归位的改变，在风险评级上不是一回事。
 
-生源途径合计 6 次命中，重心落在 **生殖与遗传**。这一栏说明本章的化合物主要来自哪条生物合成路线，也是教材把它们放在一起讲的底层理由。
+## 三、局部：4 只家兔能说明什么，不能说明什么
 
-## 三、逐单元读
+底本把局部毒性拆成三种，每种的分母不同：
 
-### 9.1 OECD Test Guideline 420: Acu 第2条
+**皮肤急性毒性**：三个剂量组，组间剂距一般 0.45–0.65；**家兔每剂量组 4 只，豚鼠与大鼠每剂量组 10 只**；须设赋形剂或空白对照；若剂量超过有效浓度 20 倍以上仍未出现异常或死亡，可只设一个高剂量组。
 
-> 【原文】Traditionalmethodsforassessingacutetoxicityusedeathofanimalsasanendpoint....Theapproachavoidedusingdeathofanimalsasanendpoint,andreliedinsteadontheobservationofclearsignsoftoxicityatoneofaseriesoffixeddoselevels.【转述】传统的急性毒性评价以动物死亡为终点；固定…
->
-> 剂量法（FDP）不再以死亡为终点，改为观察某档固定剂量下的明确毒性体征。【要点】急性毒性的终点可以从「死」换成「明显中毒」——这是方法学的一次转向，不是操作细节。
+**皮肤长期毒性**：三个剂量组，组间剂距 0.65–0.85；**每个剂量组家兔 6 只，豚鼠与大鼠每组 10 只**，雌性须未产无孕；涂敷面积约占动物背部 10%，每日一次、每次至少接触 6 小时，**按临床用药疗程的 3 倍以上时间连续给药**；最高剂量应致毒性反应但不出现死亡，最低剂量不出现任何毒性反应但应超过人预期接受剂量。
 
-- 定位：`外源·OECD Test Guideline 420: Acute Oral Toxicity – Fixed Dose Procedure 第2条`
-- 规模：87 汉字；三辨主 毒性表现；靶器官主 肝；数值 0
-- 小节要点：急性毒性的终点可以从「死」换成「明显中毒」——这是方法学的一次转向，不是操作细节。
+**皮肤过敏（致敏）**：豚鼠按体重性别随机分三组，**每组 10 只（雌雄各半）**——给药组、空白对照（赋形剂）、阳性对照（2,4-二硝基氯代苯，1% 致敏浓度、0.1% 激发浓度）；致敏接触在第 0、7、14 天各一次、每次持续 6 小时，**末次致敏后 14 天**在另一侧激发，6 小时后去药，即刻观察并于 24、48、72 小时复看，按表评分。
 
-### 9.2 OECD Test Guideline 420: Acu 第8条
+**这三套分母的差别，直接对应结论强度的差别。** 4 只家兔的皮肤急性试验，只能说「在这个剂量下有没有明显刺激或死亡」，说不出发生率；10 只豚鼠的致敏试验，能给出致敏率（阳性动物数 ÷ 试验动物数），但样本量决定了它只能分粗档；6 只家兔的长期试验，能给出「安全剂量、中毒剂量、中毒表现、靶器官、可逆程度」五项，但每一项都是定性或半定量的。**分母写在方案里，结论的措辞就必须跟着它走。**
 
-> 【原文】Groupsofanimalsofasinglesexaredosedinastepwiseprocedureusingthefixeddosesof5,50,300and2000mg/kg(exceptionallyanadditionalfixeddoseof5000mg/kgmaybeconsidered,seeparagraph19).【转述】单一性别动物按序贯方式给药，固定剂量为5、50、300、2000mg/kg，特殊情况可加5000mg/kg一档。【要点…
+## 四、致突变：八种方法与四个菌株
 
-- 定位：`外源·OECD Test Guideline 420: Acute Oral Toxicity – Fixed Dose Procedure 第8条`
-- 规模：67 汉字；三辨主 毒性成分；靶器官主 肝；数值 4
-- 小节要点：四档固定剂量不是任意取的，它们与 GHS 分类的 LD50 切点对齐——剂量档与分类档是同一套刻度。
+底本说国际公认的短期致突变试验方法有 8 种（OECD 遗传毒理部分推荐），主要测四类终点：基因突变、染色体畸变、DNA 损伤、DNA 修复。其中最常用的是 Ames 试验：
 
-### 9.3 OECD Test Guideline 425: Acu 第2条
+- **原理**：组氨酸缺陷型鼠伤寒沙门氏菌在缺乏组氨酸的培养基上不能生长；致突变原使其回复突变为野生型、恢复合成组氨酸能力，长出菌落；**数菌落即可估算诱变性强弱**。
+- **菌株**：我国新药审批推荐 TA97、TA98、TA100、TA102。**TA97 与 TA98 检测移码突变，TA100 检测碱基置换，TA102 检测碱基置换与移码突变。**
+- **前提**：试验前必须做菌株基因型鉴定、自发回变数鉴定、对鉴别性致突变物的反应鉴定，合格后才能用。
 
-> 【原文】ThetestproceduredescribedinthisGuidelineisofvalueinminimizingthenumberofanimalsrequiredtoestimatetheacuteoraltoxicityofachemical.InadditiontotheestimationofLD50andconfidenceintervals,thetestallowstheobservationofsignsoftoxicity.【转述】本程序的…
->
-> 价值在于把估计急性经口毒性所需的动物数降到最少；除LD50与置信区间外，同时观察毒性体征。【要点】LD50不是一个点，是一个带置信区间的估计——报「LD50=x」而不报区间，信息量是不完整的。
-
-- 定位：`外源·OECD Test Guideline 425: Acute Oral Toxicity – Up-and-Down Procedure 第2条`
-- 规模：78 汉字；三辨主 毒性表现；靶器官主 肝；数值 0
-- 小节要点：LD50 不是一个点，是一个带置信区间的估计——报「LD50 = x」而不报区间，信息量是不完整的。
-
-### 9.4 OECD Test Guideline 407: Rep 第11条
-
-> 【原文】Thetestchemicalisorallyadministereddailyingraduateddosestoseveralgroupsofexperimentalanimals,onedoselevelpergroupforaperiodof28days....A28daystudyprovidesinformationontheeffectsofrepeatedoralexposureandcanindicatetheneedforfurtherlonger…
->
-> termstudies.【转述】受试物按梯度剂量每日经口给药，每组一个剂量，持续28天；28天试验提供重复暴露效应的信息，并可提示是否需要更长周期的试验。【要点】28天是「筛」，不是「替代90天」：它的产出之一是「要不要做更长期试验」这个判断。
-
-- 定位：`外源·OECD Test Guideline 407: Repeated Dose 28-day Oral Toxicity Study in Rodents 第11条`
-- 规模：86 汉字；三辨主 毒性成分；靶器官主 肝；数值 4
-- 小节要点：28 天是「筛」，不是「替代 90 天」：它的产出之一是「要不要做更长期试验」这个判断。
-
-### 9.5 OECD Test Guideline 408: Rep 第10条
-
-> 【原文】Thepreferredspeciesistherat,althoughotherrodentspecies(e.g.,themouse)maybeused....Thefemalesshouldbenulliparousandnon-pregnant.Dosingshouldbeginassoonaspossibleafterweaningand,inanycase,beforetheanimalsarenineweeksold.Atthecommencemento…
->
-> fthestudytheweightvariationofanimalsusedshouldbeminimalandnotexceed±20%ofthemeanweightofeachsex.【转述】首选大鼠；雌性须未产、未孕；给药应尽早开始，最迟不超过9周龄；试验开始时同性别动物体重偏离均值不得超过±20%。【要点】「90天」不只是天数：周龄上限、产次、体重离散度三条同时成立，结果才可比。
-
-- 定位：`外源·OECD Test Guideline 408: Repeated Dose 90-day Oral Toxicity Study in Rodents 第10条`
-- 规模：79 汉字；三辨主 毒性成分；靶器官主 肝；数值 4
-- 小节要点：「90 天」不只是天数：周龄上限、产次、体重离散度三条同时成立，结果才可比。
-
-### 9.6 OECD Test Guideline 471: Bac 第1条
-
-> 【原文】Thebacterialreversemutationtestusesamino-acidrequiringstrainsofSalmonellatyphimuriumandEscherichiacolitodetectpointmutations,whichinvolvesubstitution,additionordeletionofoneorafewDNAbasepairs(1)(2)(3).【转述】细菌回复突变试验用依赖氨基酸的沙门氏菌与大肠杆菌菌株，检测碱基…
-
-- 定位：`外源·OECD Test Guideline 471: Bacterial Reverse Mutation Test 第1条`
-- 规模：79 汉字；三辨主 毒性成分；靶器官主 肝；数值 0
-- 小节要点：它测的是点突变，不测染色体断裂——一个试验只回答一个问题，不能互相替代。
-
-### 9.7 OECD Test Guideline 473: In  第2条
-
-> 【原文】Thepurposeoftheinvitrochromosomalaberrationtestistoidentifysubstancesthatcausestructuralchromosomalaberrationsinculturedmammaliancells(2)(3)(4)....Thistestisnotdesignedtomeasureaneuploidy.Aninvitromicronucleustest(6)wouldberecommendedfo…
->
-> rthedetectionofaneuploidy.【转述】体外染色体畸变试验用于检出能在培养的哺乳动物细胞中引起结构染色体畸变（染色体型或染色单体型）的物质；本试验不用于检测非整倍体，检测数目异常应改用体外微核试验。【要点】畸变试验管「结构」、微核管「结构与数目」——两者不是重复，是分工；TG473自己写明「不测非整倍体」。
-
-- 定位：`外源·OECD Test Guideline 473: In Vitro Mammalian Chromosomal Aberration Test 第2条`
-- 规模：114 汉字；三辨主 毒性成分；靶器官主 生殖与遗传；数值 0
-- 小节要点：畸变试验管「结构」、微核管「结构与数目」——两者不是重复，是分工；TG 473 自己写明「不测非整倍体」。
-
-### 9.8 OECD Test Guideline 487: In  第7条
-
-> 【原文】ThemammaliancellMNvittestmayemployculturesofcelllinesorprimarycellcultures,ofhumanorrodentorigin....itisimportant,whenevaluatingchemicalhazardstoconsiderthep53status,genetic(karyotype)stability,DNArepaircapacityandorigin(rodentversushum…
->
-> an)ofthecellschosenfortesting.【转述】体外哺乳动物细胞微核试验可用人源或啮齿类细胞系或原代培养；选细胞时必须考虑p53状态、核型稳定性、DNA修复能力与人/鼠来源。【要点】同一个样品换一套细胞，结论可能不同——细胞不是容器，是变量。
-
-- 定位：`外源·OECD Test Guideline 487: In Vitro Mammalian Cell Micronucleus Test 第7条`
-- 规模：83 汉字；三辨主 毒性成分；靶器官主 生殖与遗传；数值 0
-- 小节要点：同一个样品换一套细胞，结论可能不同——细胞不是容器，是变量。
-
-### 9.9 Overview of the set of OECD  第14条
-
-> 【原文】Afullevaluationofachemical’sabilitytoinducethepossibletypesofgeneticdamageinvolvedinadversehumanhealthoutcomes...includesteststhatcandetectgenemutation,structuralchromosomaldamageandaneuploidy.Toadequatelycoverallthegeneticendpoints,one…
->
-> mustusemultipletests(i.e.atestbattery),becausenoindividualtestcanprovideinformationonallendpoints....theselectionof:1)whichteststouse,2)howtocombinethemintotestbatteries...isbeyondthepurviewoftheOECDTGsandthisdocument.【转述】完整评价遗传损伤要覆盖基因突变、结构染色体损伤与数目异常三类端点，必须用多个试验（即成组）；而「选哪些试验、怎么组合…
-
-- 定位：`外源·Overview of the set of OECD Genetic Toxicology Test Guidelines and updates performed in 2014-2015 第14条`
-- 规模：121 汉字；三辨主 毒性表现；靶器官主 生殖与遗传；数值 0
-- 小节要点：三端点必须成组，但「三项固定组合」不是 OECD 定的——**组合方式由监管机构定**，这一句是本轮最重要的更正。
-
-### 9.10 OECD Test Guideline 474: Mam 第2条
-
-> 【原文】Themammalianinvivomicronucleustestisespeciallyrelevantforassessinggenotoxicitybecause,althoughtheymayvaryamongspecies,factorsofinvivometabolism,pharmacokineticsandDNArepairprocessesareactiveandcontributetotheresponses.Aninvivoassayisals…
->
-> ousefulforfurtherinvestigationofgenotoxicitydetectedbyaninvitrosystem.【转述】体内微核试验之所以对评价遗传毒性特别相关，是因为体内的代谢、药动学与DNA修复过程都在起作用（虽有种属差异）；体内试验也用于对体外系统检出的遗传毒性做进一步追查。【要点】这一句就是「体外阳性之后怎么办」的标准答案：用体内试验追查——不是重复体外，是补上代谢、药动与修复这三件体外没有的事。
-
-- 定位：`外源·OECD Test Guideline 474: Mammalian Erythrocyte Micronucleus Test 第2条`
-- 规模：129 汉字；三辨主 毒性表现；靶器官主 生殖与遗传；数值 0
-- 小节要点：这一句就是「体外阳性之后怎么办」的标准答案：用体内试验追查——不是重复体外，是补上代谢、药动与修复这三件体外没有的事。
-
-### 9.11 OECD Test Guideline 474: Mam 第3条
-
-> 【原文】Themammalianinvivomicronucleustestisusedforthedetectionofdamageinducedbythetestchemicaltothechromosomesorthemitoticapparatusoferythroblasts.Thetestevaluatesmicronucleusformationinerythrocytessampledeitherinthebonemarroworperipheralblood…
->
-> cellsofanimals,usuallyrodents.【转述】体内微核用于检出受试物对成红细胞染色体或纺锤体（有丝分裂装置）造成的损伤；样品取自动物（通常啮齿类）的骨髓或外周血红细胞。【要点】取骨髓还是外周血是设计选择：骨髓反映近期暴露，外周血可重复采样——两条路的代价不同。
-
-- 定位：`外源·OECD Test Guideline 474: Mammalian Erythrocyte Micronucleus Test 第3条`
-- 规模：98 汉字；三辨主 毒性表现；靶器官主 肝；数值 0
-- 小节要点：取骨髓还是外周血是设计选择：骨髓反映近期暴露，外周血可重复采样——两条路的代价不同。
-
-### 9.12 OECD Test Guideline 470: Mam 第2条
-
-> 【原文】TheinvivoerythrocytePig-agenemutationassay(hereaftercalledthePig-aassay)usesanendogenousmammaliangene,thephosphatidylinositolglycanclassAgene(Pig-a),asareporterofsomatic-cellgenemutation....Forthesereasons,theinvivoPig-aassaycanbeusedto…
->
-> furtherinvestigategenotoxicpotentialdetectedbyinvitrosystems.【转述】体内红细胞Pig-a试验用内源基因（磷脂酰肌醇聚糖A类基因）作为体细胞基因突变的报告基因；正因体内吸收、分布、代谢与修复都参与反应，它可用于**追查体外检出的遗传毒性**。【要点】Pig-a与微核（TG474）分工：微核看**染色体**损伤，Pig-a看**基因**（点突变）——体内层同样要两类各一。
-
-- 定位：`外源·OECD Test Guideline 470: Mammalian Erythrocyte Pig-a Gene Mutation Assay 第2条`
-- 规模：104 汉字；三辨主 毒性表现；靶器官主 生殖与遗传；数值 0
-- 小节要点：Pig-a 与微核（TG 474）分工：微核看**染色体**损伤，Pig-a 看**基因**（点突变）——体内层同样要两类各一。
-
-### 9.13 OECD Test Guideline 470: Mam 第3条
-
-> 【原文】ThePig-aassaycanbeperformedwithcommonlyusedstrainsofratsormice(1)(seeparagraph28)andthetestcanbeconductedwithouteuthanizingtheanimals.ThesepropertiesfacilitateintegrationofthePig-aassayintomanyinvivorodenttestingprotocols(seeparagraphs8…
->
-> -9andAnnex2)(2)(3).【转述】Pig-a可用常用大鼠或小鼠品系，且**无需处死动物**即可进行；因此容易并入其他体内啮齿类试验方案。【要点】「不处死、可重复采样」是它与微核最大的操作差别——同一批动物可在重复给药试验里顺带取血，省一批动物。
-
-- 定位：`外源·OECD Test Guideline 470: Mammalian Erythrocyte Pig-a Gene Mutation Assay 第3条`
-- 规模：88 汉字；三辨主 毒性成分；靶器官主 肝；数值 0
-- 小节要点：「不处死、可重复采样」是它与微核最大的操作差别——同一批动物可在重复给药试验里顺带取血，省一批动物。
-
-### 9.14 古代经典名方中药复方制剂毒理学研究技术指导原则（征求意见 二（一）
-
-> 【原文】一般情况下，古代经典名方中药复方制剂的毒理学研究一般包括单次给药毒性试验、重复给药毒性试验。若毒理学试验中发现非预期毒性时，应考虑进行追加试验。【（本】（本条为中文原文，非转述）【要点】中药复方的毒理基线是「单次+重复」两项；出现非预期毒性才追加——这是按风险分层的思路，不是全套照做。
-
-- 定位：`外源·古代经典名方中药复方制剂毒理学研究技术指导原则（征求意见稿） 二（一）`
-- 规模：124 汉字；三辨主 毒性表现；靶器官主 肝；数值 0
-- 小节要点：中药复方的毒理基线是「单次 + 重复」两项；出现非预期毒性才追加——这是按风险分层的思路，不是全套照做。
-
-### 9.15 中药新药毒理研究用样品研究技术指导原则（试行）（2022 二（一）
-
-> 【原文】毒理研究用受试物质量应稳定、均一、可控，能体现临床试验用样品及申请上市样品的质量属性和安全性。【（本】（本条为中文原文，非转述）【要点】正式稿把「代表什么」写成了三个定语：临床试验样品、申请上市样品、质量属性与安全性——不是「有代表性」四个字就算。
-
-- 定位：`外源·中药新药毒理研究用样品研究技术指导原则（试行）（2022年第1号） 二（一）`
-- 规模：104 汉字；三辨主 毒性成分；靶器官主 肝；数值 0
-- 小节要点：正式稿把「代表什么」写成了三个定语：临床试验样品、申请上市样品、质量属性与安全性——不是「有代表性」四个字就算。
-
-### 9.16 中药新药毒理研究用样品研究技术指导原则（试行）（2022 二（二）
-
-> 【原文】在毒理研究过程中应加强对研究用样品的质量控制和过程管理，并有完整的原始记录，以保证研究用样品的质量可控和可追溯。【（本】（本条为中文原文，非转述）【要点】「可控」与「可追溯」是两件事：前者靠质量标准，后者靠原始记录，缺一条GLP就不成立。
-
-- 定位：`外源·中药新药毒理研究用样品研究技术指导原则（试行）（2022年第1号） 二（二）`
-- 规模：99 汉字；三辨主 毒性成分；靶器官主 肝；数值 0
-- 小节要点：「可控」与「可追溯」是两件事：前者靠质量标准，后者靠原始记录，缺一条 GLP 就不成立。
-
-### 9.17 中药新药毒理研究用样品研究技术指导原则（试行）（2022 三（一）1
-
-> 【原文】应以确定的处方、工艺制备受试物，受试物应为中试及以上规模的样品。【（本】（本条为中文原文，非转述）【要点】实验室小样不做毒理受试物——规模是硬条件，因为小试工艺与中试工艺常常不是同一条。
-
-- 定位：`外源·中药新药毒理研究用样品研究技术指导原则（试行）（2022年第1号） 三（一）1`
-- 规模：80 汉字；三辨主 毒性成分；靶器官主 肝；数值 0
-- 小节要点：实验室小样不做毒理受试物——规模是硬条件，因为小试工艺与中试工艺常常不是同一条。
-
-### 9.18 中药新药毒理研究用样品研究技术指导原则（试行）（2022 三（一）3
-
-> 【原文】受试物的稳定性研究结果应能保证受试物在毒理学试验给药期限内质量稳定。应明确受试物的贮藏条件、包装和有效期。【（本】（本条为中文原文，非转述）【要点】稳定性要覆盖的是「给药期限内」，不是「出厂时」——长周期试验里这条最容易漏。
-
-- 定位：`外源·中药新药毒理研究用样品研究技术指导原则（试行）（2022年第1号） 三（一）3`
-- 规模：95 汉字；三辨主 毒性成分；靶器官主 肝；数值 0
-- 小节要点：稳定性要覆盖的是「给药期限内」，不是「出厂时」——长周期试验里这条最容易漏。
-
-### 9.19 古代经典名方中药复方制剂毒理学研究技术指导原则（征求意见 二（二）
-
-> 【原文】古代经典名方中药复方制剂的毒理学试验应当在经过药物非临床研究质量管理规范认证的机构开展，并遵守《药物非临床研究质量管理规范》（GLP）。【（本】（本条为中文原文，非转述）【要点】GLP管的不是「有没有做」，是「做的过程能不能被复核」：机构资质、SOP、原始记录、档案保存。
-
-- 定位：`外源·古代经典名方中药复方制剂毒理学研究技术指导原则（征求意见稿） 二（二）`
-- 规模：105 汉字；三辨主 毒性成分；靶器官主 肝；数值 0
-- 小节要点：GLP 管的不是「有没有做」，是「做的过程能不能被复核」：机构资质、SOP、原始记录、档案保存。
-
-### 9.20 古代经典名方中药复方制剂毒理学研究技术指导原则（征求意见 三（一）
-
-> 【原文】受试物质量应稳定、均一、可控，应采用能充分代表上市样品质量属性和安全性的样品。应采用药学研究确定制剂生产工艺后的样品作为受试物。【（本】（本条为中文原文，非转述）【要点】受试物必须能代表上市样品——用实验室小样做出来的毒理数据，不能替商业化批次担保。
-
-- 定位：`外源·古代经典名方中药复方制剂毒理学研究技术指导原则（征求意见稿） 三（一）`
-- 规模：110 汉字；三辨主 毒性成分；靶器官主 肝；数值 0
-- 小节要点：受试物必须能代表上市样品——用实验室小样做出来的毒理数据，不能替商业化批次担保。
-
-## 四、章内可执行验证
-
-```bash
-cd departments/02-zhongyao/21-zhongyao-du-li-xue/chapters/09-shiyan-anquan-pingjia
-node code/main.js                # 单元数、三辨/生源重心、引书、数值
-node --test code/main.test.js    # 断言与 units.json 一致
-```
+另外两类在底本里出现频率很高：**微核试验**（检测染色体结构或数目损伤）与**染色体畸变试验**（光学显微镜直接观察）。底本给了一个判断原则：**3 种不同测试方法同时进行，结果更可靠**——任何单一试验都有假阳性与假阴性，Ames 的假阳性与假阴性各约 13%。
 
 ## 五、代价与边界
 
-**丢掉了什么。** 教材给的是「这类成分用什么溶剂、上什么柱、显什么色」，丢掉的是**实验室里的失败经验**：乳化怎么破、柱子为什么堵、重结晶为什么不出晶。这些不在书里，只在做过的人手上。
+- **本章不给任何试验的完整方案。** 参数引自底本的举例（尤其 158.1 与 111.8 mg·kg⁻¹ 这一组数），用于说明设计逻辑，不是可复制的模板。
+- **LD50 已不是唯一的急性毒性终点。** 底本提到 OECD 420（固定剂量法）与 425（上下法）的价值在于减少动物使用；本章第一节讲的三步法属于传统设计，二者不可混为一谈。
+- **长期毒性的剂量路径选哪条，本章不给推荐。** 四条路径的锚不同，选择取决于已有数据。
+- **局部毒性只讲皮肤三种，未覆盖眼刺激、注射部位刺激等。** 底本这一讲的标题是「局毒试验」，实际内容集中在皮肤。
+- **本章不含任何动物伦理审批流程的具体要求**，只声明试验须经伦理审查。
 
-**数字的边界。** 本课程数值类命中只有 15 处——教材的理化常数（熔点、Rf、λmax）多以范围或文字表述，**可数的值少，不等于实验不量化**；真正的量化在方法学（第 11 章的七项指标）里，那里不是靠数字多，是靠指标齐。
+> **免责声明：** 本章为中药毒理学的教学整理，讨论毒理试验的设计逻辑与判据边界，不含任何可直接执行的试验方案、剂量参数或给药操作。文中参数均为底本举例，动物试验须经所在机构实验动物伦理委员会审批并遵守相关法规；任何临床用药决定须由执业医师作出，并以现行药典、药品说明书与所在机构制度为准。
 
-**方法的边界。** 本章按小节号从单元层直读；横切章（总论/方法/药效/测定/网络）的生源词频不作类别判断依据。
+## 六、运行与验证
 
-**免责声明：** 本章为教学整理，内容不构成用药建议；中药毒理学成分的提取分离涉及有机溶剂与高压设备，须在合规实验室、由受训人员按安全规范操作，本章不提供任何实验操作指引。
-
-## 六、复算入口
+先看母本第 9 章的构成——这一章与其他九章不同，它的单元来自法规文本：
 
 ```bash
-python scripts/build_zhongyao_huaxue_text.py    # 教材 → 底本 + 单元层
-python scripts/scaffold_zhongyao_huaxue_chapter.py 09-shiyan-anquan-pingjia
-python scripts/_zhongyao_huaxue_docs_out.py 09-shiyan-anquan-pingjia
+node -e "const u=require('./standards/zhongyao-du-li/units.json');const a=u.units.filter(x=>String(x.chapter)==='9');const hz=s=>(s.match(/[\u4e00-\u9fff]/g)||[]).length;console.log('单元',a.length,'汉字',hz(a.map(x=>x.body).join('')),'| 标题含OECD',a.filter(x=>/OECD/.test(x.title)).length,'| 标题含指导原则',a.filter(x=>/指导原则/.test(x.title)).length,'| 正文含【原文】',a.filter(x=>/【原文】/.test(x.body)).length)"
 ```
 
-> 本章每个数（单元数、汉字数、词频、引书、数值命中）都能由上面命令重算；正文不保存独立于单元层的数字。
+实际打印：
 
-## 三基：四类试验与一条质量体系
+```text
+单元 20 汉字 1930 | 标题含OECD 13 | 标题含指导原则 7 | 正文含【原文】 20
+```
 
-前八章回答「教材里那些药凭什么算有毒」，证据全部来自《中药学》的标注。到这一章必须换证据：
-**教材没有一条实验数据**。本章落盘 **16 份**、引 **27 条**（本章用 20 条，其余在第 10 章），逐字校勘 **27/27 命中**。
+**20 个单元全部带「【原文】」标记：13 个是 OECD 指南条款（英文原文）、7 个是国内指导原则（中文原文）。** 也就是说，这一章的母本给的全是「标准怎么写」，没有一个字的实测数据——具体参数必须到课程底本里取，这就是本章大量引用四份讲义的原因。
 
-### 1. LD50：一个带区间的估计，不是一个数
+再看四份讲义的规模与关键词落点：
 
-- **固定剂量法（FDP）**不再以死亡为终点，改看某档固定剂量下的明确毒性体征——外源·OECD Test Guideline 420: Acute Oral Toxicity – Fixed Dose Procedure 第2条；
-- 四档剂量 5、50、300、2000 mg/kg（特殊可加 5000），**与 GHS 分类切点对齐**——外源·OECD Test Guideline 420: Acute Oral Toxicity – Fixed Dose Procedure 第8条；
-- **上下法（UDP）**把动物数压到最少，同时给 LD50 **与置信区间**——外源·OECD Test Guideline 425: Acute Oral Toxicity – Up-and-Down Procedure 第2条。
+```bash
+node -e "const fs=require('fs');const L=f=>fs.readFileSync('sources/du-li-ppt/'+f+'.txt','utf8').split('\n').filter(Boolean);const c=(a,k)=>a.filter(l=>l.includes(k)).length;for(const f of ['08急性毒性试验8','09长期毒性试验8','10局毒试验','11致突变试验8']){const t=L(f);console.log(f,t.length+'行',(fs.readFileSync('sources/du-li-ppt/'+f+'.txt','utf8').match(/[\u4e00-\u9fff]/g)||[]).length+'汉字',f.startsWith('10')?('皮肤'+c(t,'皮肤')+' 过敏'+c(t,'过敏')+' 刺激'+c(t,'刺激')):f.startsWith('11')?('Ames'+c(t,'Ames')+' 微核'+c(t,'微核')):('LD50 '+c(t,'LD50')+' 观察14天'+c(t,'观察14天')))}"
+```
 
-报「LD50 = 2000」而不报区间与方法，等于报了一个没有精度的测量值；报「>2000」与「=2000」在分类上是两件事。
+实际打印：
 
-### 2. 亚慢性：28 天是筛，90 天是判
+```text
+08急性毒性试验8 1107行 14457汉字 LD50 86 观察14天 6
+09长期毒性试验8 1226行 18041汉字 LD50 3 观察14天0
+10局毒试验 257行 7913汉字 皮肤43 过敏11 刺激40
+11致突变试验8 519行 15542汉字 Ames4 微核20
+```
 
-| 准则 | 周期 | 定位 | 引文 |
-|---|---|---|---|
-| TG 407 | 28 天 | **筛**：提示是否需要更长周期，也为长周期选剂量 | 外源·OECD Test Guideline 407: Repeated Dose 28-day Oral Toxicity Study in Rodents 第11条 |
-| TG 408 | 90 天 | **判**：种属、产次、周龄、体重离散度四条同时成立才可比 | 外源·OECD Test Guideline 408: Repeated Dose 90-day Oral Toxicity Study in Rodents 第10条 |
+**急性那一讲 1,107 行里「LD50」出现 86 次，长期那一讲 1,226 行里只有 3 次**——两讲几乎不共享关键词，这是它们各自成章的原因：一个是「怎么测出那个数」，一个是「测出来之后怎么观察器官」。局部与致突变两讲则各有自己的关键词重心（皮肤 43 次、微核 20 次）。本章四节的取材就落在这四条互不重叠的线上。
 
-慢性与致癌性在第 10 章单独成线，本章不混入。
-
-### 3. 遗传毒性：体外三个端点 + 体内两类
-
-**端点必须配齐**——外源·Overview of the set of OECD Genetic Toxicology Test Guidelines and updates performed in 2014-2015 第14条：
-
-| 层 | 端点 | 试验 | 引文 |
-|---|---|---|---|
-| 体外 | 基因突变 | 细菌回复突变（TG 471） | 外源·OECD Test Guideline 471: Bacterial Reverse Mutation Test 第1条 |
-| 体外 | 结构染色体损伤 | 体外染色体畸变（TG 473） | 外源·OECD Test Guideline 473: In Vitro Mammalian Chromosomal Aberration Test 第2条 |
-| 体外 | 结构与**数目**异常 | 体外微核（TG 487） | 外源·OECD Test Guideline 487: In Vitro Mammalian Cell Micronucleus Test 第7条 |
-| **体内** | **结构**染色体损伤 | 红细胞微核（TG 474） | 外源·OECD Test Guideline 474: Mammalian Erythrocyte Micronucleus Test 第2条、外源·OECD Test Guideline 474: Mammalian Erythrocyte Micronucleus Test 第3条 |
-| **体内** | **基因**突变 | 红细胞 Pig-a（TG 470） | 外源·OECD Test Guideline 470: Mammalian Erythrocyte Pig-a Gene Mutation Assay 第2条、外源·OECD Test Guideline 470: Mammalian Erythrocyte Pig-a Gene Mutation Assay 第3条 |
-
-**两个「一试验一问」**：
-TG 473 自己写明「不用于检测非整倍体，数目异常应改用微核」（E10 后半句）——体外畸变与微核是分工；
-体内同理，**微核看染色体、Pig-a 看基因**，两者也不能互相替代。
-
-**体内层还有一个操作差别**——外源·OECD Test Guideline 470: Mammalian Erythrocyte Pig-a Gene Mutation Assay 第3条：Pig-a **无需处死动物**即可取血，容易并进重复给药试验，一批动物顺带拿到基因突变数据；
-微核（E14）取骨髓则需处死。选哪个，先问「能不能复用同一批动物」。
-
-**组合仍由监管方定**：OECD 总览明确「选哪些试验、怎么组合」不在准则管辖内（E12）。**「三项固定组合」这个说法不准确。**
-
-### 4. 受试物与 GLP：正式稿把「代表性」写成了条件
-
-本节用 **2022 年正式发布的《中药新药毒理研究用样品研究技术指导原则（试行）》**，不再以 2021 年征求意见稿为准（后者留档作版本对照）。
-
-| 环节 | 正式稿要求 | 引文 |
-|---|---|---|
-| 受试物代表性 | 质量稳定、均一、可控，能体现临床试验样品与上市样品 | 外源·中药新药毒理研究用样品研究技术指导原则（试行）（2022年第1号） 二（一） |
-| 过程控制 | 完整原始记录，保证可控与可追溯 | 外源·中药新药毒理研究用样品研究技术指导原则（试行）（2022年第1号） 二（二） |
-| 制备规模 | 确定处方与工艺，**中试及以上规模** | 外源·中药新药毒理研究用样品研究技术指导原则（试行）（2022年第1号） 三（一）1 |
-| 稳定性 | 覆盖**给药期限内** | 外源·中药新药毒理研究用样品研究技术指导原则（试行）（2022年第1号） 三（一）3 |
-| 毒理基线 | 单次 + 重复，非预期毒性才追加 | 外源·古代经典名方中药复方制剂毒理学研究技术指导原则（征求意见稿） 二（一） |
-| 机构 | 通过 GLP 认证并遵守规范 | 外源·古代经典名方中药复方制剂毒理学研究技术指导原则（征求意见稿） 二（二） |
-
-GLP 四根柱子：**机构资质、SOP、原始记录、档案保存**。它不提高科学性，它保证别人能按同样记录重做一遍。
-
-### 5. 全课 27 条（逐字校勘结果）
-
-见 `补源登记.json`（16 份 PDF、27/27 命中）。
-校勘口径：去页眉页脚、断词连字符与全部空白后逐字回查；` ... ` 只表示句间省略。
-OECD 为英文原件，中文一栏是本库转述、标「转述」；国内指导原则为中文原件，直接引中文。
-
+> 本章所有数字（单元数、汉字数、关键词行数）都由上述命令从 `standards/zhongyao-du-li/units.json` 与 `sources/du-li-ppt/` 现算。

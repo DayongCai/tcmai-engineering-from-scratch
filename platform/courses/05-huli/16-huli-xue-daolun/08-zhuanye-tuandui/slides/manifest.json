@@ -1,31 +1,86 @@
 {
   "chapter": "08-zhuanye-tuandui",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 16,
+  "segmentCount": 11,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 13
+      "chars": 24
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 77
+      "chars": 21
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 47
+      "chars": 126
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 109
+      "chars": 136
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 245
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 201
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 307
+    },
+    {
+      "n": 8,
+      "segment": 7,
+      "chars": 302
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 233
+    },
+    {
+      "n": 10,
+      "segment": 8,
+      "chars": 340
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 281
+    },
+    {
+      "n": 12,
+      "segment": 9,
+      "chars": 390
+    },
+    {
+      "n": 13,
+      "segment": 9,
+      "chars": 194
+    },
+    {
+      "n": 14,
+      "segment": 10,
+      "chars": 347
+    },
+    {
+      "n": 15,
+      "segment": 10,
+      "chars": 215
+    },
+    {
+      "n": 16,
+      "segment": 11,
       "chars": 52
     }
   ]

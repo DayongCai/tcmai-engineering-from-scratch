@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"/>
-<title>第 12 章 · 腧穴定位的数字化与三维模型 · 幻灯片</title>
+<title>第 12 章 · 三维模型缺的不止深度：尺度、体位、深度三个量里缺了两个半 · 幻灯片</title>
 <style>
 
 :root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
@@ -59,24 +59,87 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <body>
 <div id="deck">
 <section class="slide" data-i="0">
-  <div class="slide-inner"><h1 class="big">第 12 章 · 腧穴定位的数字化与三维模型</h1></div>
-  <div class="slide-foot"><span>1 / 5</span><span>title</span></div>
+  <div class="slide-inner"><h1 class="big">第 12 章 · 三维模型缺的不止深度：尺度、体位、深度三个量里缺了两个半</h1></div>
+  <div class="slide-foot"><span>1 / 15</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「《灵枢·九针十二原》」——本章为现代主题（数字化与三维模型），无篇名级引文；此条为教学参照的经典出处，<strong>非本章原文</strong>。本章要回答的是：把穴位定位变成三维坐标，丢掉了什么。</blockquote></div>
-  <div class="slide-foot"><span>2 / 5</span><span>motto</span></div>
+  <div class="slide-inner"><blockquote class="motto">「若夫八尺之士，皮肉在此，外可度量切循而得之，其死可解剖而视之」——《灵枢·经水》</blockquote></div>
+  <div class="slide-foot"><span>2 / 15</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
-  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">数字化最小单元是「点」，而临床取穴是「面 + 手感」。</p></div>
-  <div class="slide-foot"><span>3 / 5</span><span>problem</span></div>
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">库内 270 穴，有定位文字的 196 个，平均 20.8 个汉字——最长的 73 字，最短的 7 字。这 196 条里，113 条含「寸」，83 条一个数字都没有，只能靠体表标志（凹陷 55 条、赤白肉际 13 条、两筋之间 7 条）。要把它变成三维坐标，需要三个量：尺度基准（这里的「寸」是骨度寸、指寸还是别的）、参考体位（仰卧还是坐位，第 1 肋间隙在两个体位下不在同一处）、进针深度。底本给这三个量的供给极不对称：明写「（指寸）」的只有 11 条，明写体位的只有 4 条，有深度文本的 87 条、没有的 109 条。也就是说，三维模型能站住的那条轴（x、y 平面）本身还悬在一个没写清的尺度上，而 z 轴有 55.6% 的穴是空的。本章要处理的就是这个不对称：<strong>能编译的部分怎么编译，不能编译的部分怎么在界面上标出来，而不是画成一个 0。</strong></p></div>
+  <div class="slide-foot"><span>3 / 15</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
-  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（取穴是在人身上完成的，位置差一线，疗效差一层）+ 知识积累（本章 2 单元 2,852 汉字；三辨主 <strong>操作 65</strong>；四位面（部位）主 <strong>四肢 21</strong>；引书 <strong>4 部</strong>；数值类命中 24）</p></div>
-  <div class="slide-foot"><span>4 / 5</span><span>roots</span></div>
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（取穴是在具体一个人的身上完成的：一夫之寸随身高而变，一肋之间随呼吸而变，所以定位文本从一开始就写成了「相对于某个骨性标志偏移多少」的形式，而不是绝对坐标；换成绝对坐标就必然错）+ 知识积累（腧穴定位的写法从《灵枢·骨度》的度量传统，经《甲乙经》的逐穴落实，到国标 GB/T 12346 的规范化，两千年里一直在往「可复述的句子」上收敛，从未往「可计算的坐标」上收敛——文本是为人口头传递优化的，不是为机器解析优化的）</p></div>
+  <div class="slide-foot"><span>4 / 15</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
+  <div class="slide-inner"><div class="kicker">一、196 条定位，83 条里没有一个数字</div>
+                <div class="compact dense"><p>先看这 196 条的文本形态。按句法特征分类：</p>
+<div class="table-wrap"><table><thead><tr><th>句法特征</th><th>条数</th><th>例</th></tr></thead><tbody><tr><td>含「旁开」</td><td>46</td><td>中府「前正中线旁开 6 寸」</td></tr><tr><td>含「第 N 胸椎棘突下」</td><td>24</td><td>肺俞「第 3 胸椎棘突下」</td></tr><tr><td>含「腕横纹上 N 寸」</td><td>15</td><td>内关「腕掌侧远端横纹上 2 寸」</td></tr><tr><td>含「踝尖上 N 寸」</td><td>7</td><td>三阴交「内踝尖上 3 寸」</td></tr><tr><td>含「凹陷」</td><td>55</td><td>尺泽「肱二头肌腱桡侧缘凹陷中」</td></tr><tr><td>含「赤白肉际」</td><td>13</td><td>鱼际「第 1 掌骨桡侧中点赤白肉际处」</td></tr><tr><td>含「两筋／肌腱之间」</td><td>7</td><td>内关「掌长肌腱与桡侧腕屈肌腱之间」</td></tr><tr><td>含「简便取穴」</td><td>2</td><td>列缺、阳溪</td></tr><tr><td>一个数字都没有</td><td>83</td><td>尺泽、太渊、三间、合谷一类</td></tr></tbody></table></div></div></div>
+  <div class="slide-foot"><span>5 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">一、196 条定位，83 条里没有一个数字</div>
+                <div class="compact"><p>83 条无数字，占 42.3%。这 42.3% 不是写得差，是写法的必然结果：腕以下那一段，骨性标志密集到不需要寸——「桡骨茎突与舟状骨之间」「第 2 掌骨桡侧的中点处」，这些句子比任何寸数都精确。<strong>「寸」是在没有标志物时才启用的近似单位，不是通用单位。</strong> 数字化系统若假定「所有定位最终都归到一个寸值」，会先在这 83 条上失信。</p>
+<p>再看尺度的口径。196 条定位里，含「寸」的 113 条，其中明写「（指寸）」的只有 11 条：少商、商阳、地仓、厉兑、隐白、少冲、少泽、关冲、足窍阴、大敦、十宣——全是井穴与指端穴。剩下 102 条写「寸」而不注明是哪一种寸；明写「骨度」的，0 条。也就是说，<strong>「这一寸是几厘米」这个问题，底本在 90% 的含寸条目上没有回答，因为它假设读者已经读过骨度分寸那一章。</strong></p>
+<p>这正是三维化第一个必须插进去的东西：一个外部尺度表。没有它，6 寸与 1.5 寸就是两个无量纲的数，画出来的胸背宽度与椎旁距离全是任意比例。</p></div></div>
+  <div class="slide-foot"><span>6 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">二、定位句是一个三元组：基准、方向、距离</div>
+                <div class="compact"><p>抛开寸的绝对值，196 条里有相当一部分可以机械地编译成三元组。中府是标准例：</p>
+<blockquote><p>在胸部，横平第 1 肋间隙，锁骨下窝外侧，前正中线旁开 6 寸。</p></blockquote>
+<p>拆开是：纵向基准＝第 1 肋间隙，横向基准＝前正中线，方向＝外侧，距离＝6 寸。四个槽位都有，只是写成了散文。同类可编译的还有「第 3 胸椎棘突下，后正中线旁开 1.5 寸」（肺俞）——纵坐标用椎骨序数，横坐标用后正中线旁开，与中府用的是两套纵轴（肋骨 vs 椎骨），却能落在同一个背／胸面上。<strong>俞穴与募穴之所以能配对，底层原因就在这里：两者都能被编译进同一套骨度坐标系。</strong></p>
+<p>这一步编译能覆盖多少？含「旁开」的 46 条（后正中线旁开 30、前正中线旁开 8，其余 8 条用「旁开」而无明确正中线）、含「棘突下」的 24 条、含「横纹上」的 15 条、含「踝尖上」的 7 条，加起来一百多条——<strong>这正是整套定位文本里最规整的那一部分，也恰好是躯干与四肢近端，也就是三维模型最想展示的部分。</strong></p></div></div>
+  <div class="slide-foot"><span>7 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">二、定位句是一个三元组：基准、方向、距离</div>
+                <div class="compact"><p>编译之前还有一道清洗。19 个穴的定位字段以职衔开头：合谷写成「原穴\n定位：在手背，第 2 掌骨桡侧的中点处」，通里、神门、腕骨、支正、大杼各以「为 X 穴：」起句，十个背俞（肺俞、厥阴俞、心俞、膈俞、肝俞、胆俞、脾俞、胃俞、三焦俞、小肠俞）写成「为 X 之背俞穴：在脊柱区…」，中脘写成「胃之募穴；八会穴之腑会」，膻中写成「心包之募穴；八会穴之气会」。<strong>这 19 条里，中脘与膻中两条根本没有位置，只有职衔。</strong> 直接喂给解析器，得到的是「中脘位于胃之募穴」，一句正确但无法落点的话。清洗规则很简单：先剥掉「为…穴：」前缀，再判有没有「在」；中脘、膻中两条剥完是空串，只能回落到教材正文，本课不给坐标。</p></div></div>
+  <div class="slide-foot"><span>8 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">三、z 轴：109 个穴没有深度文本</div>
+                <div class="compact dense"><p>平面能编译，深度不能。270 穴里有刺灸字段的 87 个，有定位的 196 个，两者相减——<strong>109 个穴有位置、没有深度。</strong> 按经分布：</p>
+<div class="table-wrap"><table><thead><tr><th>经</th><th>有定位无深度</th></tr></thead><tbody><tr><td>足太阳膀胱经</td><td>32（全经）</td></tr><tr><td>手太阳小肠经</td><td>19（全经）</td></tr><tr><td>任督二脉</td><td>18</td></tr><tr><td>经外奇穴</td><td>11</td></tr><tr><td>手少阴心经</td><td>9（全经）</td></tr><tr><td>手少阳三焦经</td><td>9</td></tr><tr><td>足厥阴肝经</td><td>5</td></tr><tr><td>手阳明大肠经</td><td>3</td></tr><tr><td>足少阴肾经</td><td>2</td></tr><tr><td>足少阳胆经</td><td>1</td></tr></tbody></table></div>
+<p>三条经整条没有深度文本：足太阳（库内 32 穴，全在背腰段）、手太阳、手少阴。这不是巧合——库内这三条经收的都是躯干与上肢的近端穴，而底本把深度写在「重点穴」条目下，非重点穴只给位置与主治。</p></div></div>
+  <div class="slide-foot"><span>9 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">三、z 轴：109 个穴没有深度文本</div>
+                <div class="compact"><p>于是三维模型落到一个具体的岔口上：这 109 个穴的 z 填什么？填 0，图上就是一个贴着皮肤的球，读起来像「此处不必进针」；填一个均值，就是发明了底本没有的数；留空，大多数三维渲染器会把空值当 0 处理。<strong>三种做法里只有第三种（显式留空并标注）在语义上诚实，而它恰恰是渲染器最不友好的那种。</strong> 工程上的解法是把「有深度」与「无深度」画成两种视觉状态（如实心与空心），让缺维可见——本章主张这一条，因为它是唯一不撒谎的做法。</p>
+<p>还有一层：87 条深度也不是标量。风池的 1.2 寸只在「向鼻尖」这个方向成立，承泣的 1.5 寸只在「沿眶缘」这条路径上成立。<strong>一个穴的 z 不是一条从皮肤往下的线段，而是一个以方向为自变量的区间。</strong> 三维模型若只画一条竖直的针，就等于把所有穴都当成「直刺」——而底本的刺灸里，含斜刺 16 条、含平刺 15 条、含点刺 12 条，直刺只有 67 条。</p></div></div>
+  <div class="slide-foot"><span>10 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">四、三处失真：点没有半径、深度不是标量、体位不是常量</div>
+                <div class="compact"><p>把腧穴画成球，是三维模型最普遍的做法，也是三处失真的源头。</p>
+<p><strong>一、点没有半径。</strong> 库内「一个穴」不总是一个点：四神聪一名四点，十宣一名十点，八邪八点，八风八点，四缝一手四点，腰痛点一手两点，夹脊一侧十七点。这几条在库里各是一个条目，编号一个。三维模型给它们画一个球，就把 53 个进针点画成了 7 个。半径也不是可以随便给的：底本给的是「百会前后左右各旁开 1 寸」这类距离，不是圆的直径。</p>
+<p><strong>二、深度不是标量。</strong> 见上一节。直刺 67、斜刺 16、平刺 15、点刺 12——四种方向，四套深度语义。把方向折叠掉，等于把四条不同的操作路线压成一条。</p></div></div>
+  <div class="slide-foot"><span>11 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">四、三处失真：点没有半径、深度不是标量、体位不是常量</div>
+                <div class="compact"><p><strong>三、体位不是常量。</strong> 196 条定位里提到体位的只有 4 条。而「横平第 1 肋间隙」在仰卧与坐位下不在同一处，「屈肘」与「伸肘」时肘横纹的形态也不同。三维模型必须选一个参考体位才能建 mesh，而底本没有指定——<strong>这个选择是建模者做的，不是底本做的。</strong> 界面若不写明「本模型取仰卧中立位」，用户会以为这是穴位的固有属性。</p>
+<p>三处失真叠加起来，会得到一个看起来很专业、但在每一条上都比底本说得更满的模型。<strong>三维的价值在于把「相对位置」变成「可旋转的直观」，不在于把「近似」升级成「精确」。</strong> 前者它做得到，后者它做不到。</p>
+<p>《灵枢·经水》那句话值得在这里重读一遍：「外可度量切循而得之，其死可解剖而视之。」——度量与切循是在活人身上做的，解剖是在死人身上做的。三维模型把两者混在一张图上：几何来自解剖（所以能算），定位文本来自切循（所以不能直接算）。<strong>这正是它必须标明哪一部分是算出来的、哪一部分是画出来的原因。</strong></p></div></div>
+  <div class="slide-foot"><span>12 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">五、代价与边界</div>
+                <div class="compact dense"><ol><li>196／270 是 <code>定位</code> 字段非空的计数，74 个穴没有任何定位文字（如关元、中极、合谷之外的若干任脉穴与三焦经穴）。这 74 个穴在本章的所有统计里都不出现，包括「无深度」的那一组。</li><li>本章没有真正建立三维模型，只做了文本侧的可行性核算：能编译成三元组的条数、缺尺度的条数、缺深度的条数。几何建模、mesh 配准、坐标系对齐一概未做，也无法在本课的条件下验证。</li><li>「寸」的绝对值本章一处也没给。骨度分寸的具体折算见第 2 章，本章只用它说明「尺度基准必须外挂」。指寸的 11 条按底本原文标为「（指寸）」，未与骨度寸互换。</li><li>与国标 GB/T 12346-2021 的定位原文本章未逐条核对。库内定位的措辞与国标可能有个别出入（如「远端横纹」与「横纹」的写法），本章按库内文本统计，不主张库内措辞即国标措辞。</li><li>本章不涉及任何取穴设备的精度、算法或临床验证，也不构成对现有三维腧穴产品的评价。凡涉及「这个模型能不能用于取穴」的判断，须由影像与临床数据回答，本章不具备这个条件。</li></ol></div></div>
+  <div class="slide-foot"><span>13 / 15</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">五、代价与边界</div>
+                <div class="compact"><blockquote><p><strong>免责声明：</strong> 本章为腧穴定位数字化与三维建模的教学整理，定位文字、深度与方向均转自课程底本与穴位库字段；文中的编译规则、缺失统计与失真分析是教学示例，不构成任何软件产品的技术规格，也不构成取穴或针刺操作依据。三维模型不能替代在人体上的触诊与度量，实际取穴须由执业医师完成。</p></blockquote></div></div>
+  <div class="slide-foot"><span>14 / 15</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="14">
   <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
-  <div class="slide-foot"><span>5 / 5</span><span>disclaimer</span></div>
+  <div class="slide-foot"><span>15 / 15</span><span>disclaimer</span></div>
 </section>
 </div>
 <div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>

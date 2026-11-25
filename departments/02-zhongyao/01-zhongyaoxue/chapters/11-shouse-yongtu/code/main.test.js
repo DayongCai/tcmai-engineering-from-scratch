@@ -1,114 +1,126 @@
-'use strict';
+#!/usr/bin/env node
 /**
- * 第 11 章（收涩药 / 涌吐药）章内单测
- *   node --test code/main.test.js
+ * 中药学 · 第 11 章 收涩与涌吐编在一起：同一根气机轴，14 味里只有 8 味带涩
+ * 确定性单元测试 —— 运行: node --test code/main.test.js
  *
- *   1. 规模       —— 两章各自计数与合计
- *   2. 结构       —— 四节名册、小节/段/药的对应
- *   3. 教材原文核对 —— 底本段落与 drugs.json 字段逐字相同
- *   4. 本仓库口径  —— 四气不压平、毒性只有文本标记
- *   5. 教学边界    —— main.js 最后一行必须是边界声明
+ * 断言钉的是本机实测值：正文、算术解析或 quiz 任一处改动，这里就应当变红。
+ * 数字不从 main.js 回读再自比（那样什么都测不出），而是写在断言里。
  */
-const assert = require('node:assert');
-const test = require('node:test');
-const { execFileSync } = require('node:child_process');
-const path = require('node:path');
 
+'use strict';
+
+const test = require('node:test');
+const assert = require('node:assert');
+const fs = require('node:fs');
+const path = require('node:path');
+const { spawnSync } = require('node:child_process');
+
+const MAIN = path.join(__dirname, 'main.js');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
 const m = require('./main.js');
 
-// ---------- 1. 规模 ----------
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
+const readQuiz = () => JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+const grams = (t, n = 4) => {
+  const out = new Set();
+  for (const seg of String(t || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+};
 
-test('规模：26 章 3/14/42/2523、27 章 1/3/9/460，合计 4 节 / 17 小节 / 51 段 / 2983 字', () => {
-  const s = m.scale();
-  const [a, b] = s.per;
-  assert.deepStrictEqual(
-    [a.secs, a.subs, a.paras, a.chars, a.drugs],
-    [3, 14, 42, 2523, 14],
-  );
-  assert.deepStrictEqual(
-    [b.secs, b.subs, b.paras, b.chars, b.drugs],
-    [1, 3, 9, 460, 3],
-  );
-  assert.deepStrictEqual([s.secs, s.subs, s.paras, s.chars, s.drugs], [4, 17, 51, 2983, 17]);
+test('正文规模与表格：汉字 3229 / 段 33 / 节 6；表 4 张 [7, 7, 3, 3] × [4, 2, 2, 9]', () => {
+  const r = m.analyze();
+  assert.strictEqual(r.docHanzi, 3229);
+  assert.strictEqual(r.paragraphs, 33);
+  assert.strictEqual(r.sections.length, 6);
+  assert.strictEqual(hanzi(readDoc()), 3229, '汉字口径必须与正文一致');
+  assert.deepStrictEqual(r.tables.map((t) => t.cols), [7, 7, 3, 3]);
+  assert.deepStrictEqual(r.tables.map((t) => t.rows), [4, 2, 2, 9]);
 });
 
-test('规模：段数 = 药味数 × 3（每味 3 段），合计 51 = 17 × 3', () => {
-  const s = m.scale();
-  assert.strictEqual(s.paras, s.drugs * 3);
-  assert.strictEqual(s.charsPerDrug, 175.5);
+test('本章算术：四节累加与两章反差', () => {
+  const a = m.analyze().arith;
+  assert.strictEqual(a.secN, 4, 'secN');
+  assert.strictEqual(a.herbs, 17, 'herbs');
+  assert.strictEqual(a.chantotal, 2217, 'chantotal');
+  assert.strictEqual(a.mean, 130.4, 'mean');
+  assert.strictEqual(a.seN, 14, 'seN');
+  assert.strictEqual(a.vuN, 3, 'vuN');
+  assert.strictEqual(a.wordsRatio, 5.5, 'wordsRatio');
 });
 
-// ---------- 2. 结构 ----------
-
-test('结构：四节为 固表止汗 2 / 敛肺涩肠 5 / 固精缩尿止带 7 / 涌吐 3', () => {
-  const secs = m.sections();
-  assert.deepStrictEqual(secs.map((s) => s.no), ['26.1', '26.2', '26.3', '27.1']);
-  assert.deepStrictEqual(secs.map((s) => s.drugs.length), [2, 5, 7, 3]);
-  assert.strictEqual(secs.reduce((n, s) => n + s.drugs.length, 0), 17);
+test('本章算术：收涩压中间、涌吐全寒', () => {
+  const a = m.analyze().arith;
+  assert.strictEqual(a.filled, 16, 'filled');
+  assert.strictEqual(a.flat, 7, 'flat');
+  assert.strictEqual(a.warm, 4, 'warm');
+  assert.strictEqual(a.cold, 4, 'cold');
+  assert.strictEqual(a.cool, 1, 'cool');
+  assert.strictEqual(a.blank, 1, 'blank');
+  assert.strictEqual(a.seFill, 13, 'seFill');
+  assert.strictEqual(a.warmFlatSide, 11, 'warmFlatSide');
+  assert.strictEqual(a.vuAllCold, true, 'vuAllCold');
 });
 
-test('结构：小节数等于药味数，段数等于小节数 × 3', () => {
-  for (const s of m.sections()) {
-    assert.strictEqual(s.subs, s.drugs.length, `${s.no} 小节与药味不等`);
-    assert.strictEqual(s.paras, s.subs * 3, `${s.no} 段数不等于小节 × 3`);
+test('本章算术：涩味分布与归经首位', () => {
+  const a = m.analyze().arith;
+  assert.strictEqual(a.seWithSe, 8, 'seWithSe');
+  assert.strictEqual(a.vuWithSe, 1, 'vuWithSe');
+  assert.strictEqual(a.noSeN, 6, 'noSeN');
+  assert.strictEqual(a.tags, 39, 'tags');
+  assert.strictEqual(a.kidney, 9, 'kidney');
+  assert.strictEqual(a.lung, 6, 'lung');
+});
+
+test('quiz 结构：6 题、三段齐、4 选项、下标合法、答案打散', () => {
+  const q = readQuiz();
+  assert.strictEqual(q.questions.length, 6);
+  assert.deepStrictEqual(q.questions.map((x) => x.correct), [1, 1, 2, 3, 0, 2]);
+  const distinct = [...new Set(q.questions.map((x) => x.correct))].sort((a, b) => a - b);
+  assert.ok(distinct.length >= 3, '答案位置只有 ' + distinct.length + ' 种');
+  assert.deepStrictEqual(distinct, [0, 1, 2, 3]);
+  const stages = new Set(q.questions.map((x) => x.stage));
+  for (const s of ['pre', 'check', 'post']) assert.strictEqual(stages.has(s), true, '缺 ' + s + ' 段');
+  for (const x of q.questions) {
+    assert.strictEqual(['pre', 'check', 'post'].includes(x.stage), true, 'stage: ' + x.stage);
+    assert.strictEqual(x.options.length, 4, x.question);
+    assert.strictEqual(Number.isInteger(x.correct) && x.correct >= 0 && x.correct < 4, true, 'correct 越界: ' + x.question);
+    assert.strictEqual(typeof x.explain === 'string' && x.explain.length > 0, true, '缺 explain: ' + x.question);
   }
 });
 
-// ---------- 3. 教材原文核对 ----------
-
-test('教材原文：26.2.1 五味子三段与 drugs.json 三个字段逐字相同', () => {
-  const ch = m.chapters()[0];
-  const sub = ch.secs.find((s) => s.no === '26.2').subs.find((u) => u.no === '26.2.1');
-  const d = m.drugs().find((x) => x.name === '五味子');
-  assert.strictEqual(sub.title, '五味子');
-  assert.strictEqual(sub.paras.length, 3);
-  assert.strictEqual(sub.paras[0], d.fields['来源与性味归经']);
-  assert.strictEqual(sub.paras[1], d.fields['功效与主治']);
-  assert.strictEqual(sub.paras[2], d.fields['用法用量与使用注意']);
-});
-
-test('教材原文：乌梅归四条经、常山首段含「有毒」', () => {
-  const wm = m.natureOf('乌梅');
-  assert.ok(wm.sentence.includes('性平，味酸、涩，归肝、脾、肺、大肠经'), wm.sentence);
-  assert.deepStrictEqual(wm.guijing, ['肝', '脾', '肺', '大肠']);
-  const cs = m.natureOf('常山');
-  assert.ok(/有毒/.test(cs.sentence), cs.sentence);
-  assert.strictEqual(cs.poison, true);
-});
-
-// ---------- 4. 本仓库口径 ----------
-
-test('口径：四气合计为 平7 / 凉1 / 温4 / 寒4 / 微温1，不补零项', () => {
-  const got = Object.fromEntries(m.byQi().map((x) => [x.qi, x.n]));
-  assert.deepStrictEqual(got, { 寒: 4, 凉: 1, 平: 7, 温: 4, 微温: 1 });
-  assert.ok(!('微寒' in got) && !('热' in got), '缺项不应出现');
-});
-
-test('口径：收涩 14 味无一标「有毒」，涌吐 3 味全部标「有毒」，且全部性寒', () => {
-  const [shou, tu] = m.direction();
-  assert.strictEqual(shou.drugs, 14);
-  assert.deepStrictEqual(shou.poison, []);
-  assert.strictEqual(tu.drugs, 3);
-  assert.deepStrictEqual(tu.poison, ['常山', '瓜蒂', '胆矾']);
-  assert.deepStrictEqual(tu.qi, [{ qi: '寒', n: 3 }]);
-});
-
-test('口径：收涩归肾最多（9 味），涌吐无一归肾', () => {
-  const [shou, tu] = m.direction();
-  assert.strictEqual(shou.topJing[0][0], '肾');
-  assert.strictEqual(shou.topJing[0][1], 9);
-  const tuJing = m.jingCount(m.drugs().filter((d) => d.chapter === '27')).map(([j]) => j);
-  assert.ok(!tuJing.includes('肾'), `涌吐药归经里出现了肾：${tuJing.join('、')}`);
-});
-
-// ---------- 5. 教学边界 ----------
-
-test('教学边界：main.js 最后一行含「教学边界」与「不构成用药依据」', () => {
-  const out = execFileSync('node', ['code/main.js'], {
-    cwd: path.join(__dirname, '..'),
-    encoding: 'utf8',
+test('quiz 接地与解释：check 接地 3 道，最短解释 56 汉字', () => {
+  const body = grams(readDoc());
+  const q = readQuiz();
+  const grounded = q.questions.filter((x) => {
+    if (x.stage !== 'check') return false;
+    const right = String(x.options[x.correct] || '');
+    return [...grams(right)].some((g) => body.has(g));
   });
-  const last = out.trim().split('\n').filter(Boolean).pop();
-  assert.ok(/教学边界/.test(last), last);
-  assert.ok(/不构成用药依据/.test(last), last);
+  assert.ok(grounded.length >= 2, '只接地 ' + grounded.length + ' 道');
+  assert.strictEqual(grounded.length, 3);
+  assert.strictEqual(m.analyze().quiz.checkGrounded, grounded.length, 'main.js 与测试口径必须一致');
+  const lens = q.questions.map((x) => hanzi(x.explain));
+  assert.deepStrictEqual(lens.filter((n) => n < 30), [], '有解释不足 30 汉字');
+  assert.strictEqual(Math.min(...lens), 56);
+  assert.strictEqual(m.analyze().quiz.minExplain, 56);
+});
+
+test('脚本可运行：退出码 0，输出带现算声明与边界声明', () => {
+  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
+  assert.strictEqual(r.status, 0, String(r.stderr));
+  const out = String(r.stdout || '');
+  assert.ok(out.length > 200, '输出过短');
+  assert.match(out, /现算/);
+  assert.match(out, /不构成诊疗建议/);
+  assert.match(out, /第 11 章/);
+  assert.match(out, /17/);
+});
+
+test('代码头部指向本章目录', () => {
+  const body = fs.readFileSync(MAIN, 'utf8');
+  assert.ok(body.includes('chapters/11-shouse-yongtu/docs/zh.md'), '头部注释未指向本章');
 });

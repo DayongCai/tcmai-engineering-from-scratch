@@ -1,31 +1,101 @@
 {
   "chapter": "02-xibao-yu-jiben-zuzhi",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 19,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 11
+      "chars": 28
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 67
+      "chars": 22
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 18
+      "chars": 101
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 133
+      "chars": 99
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 347
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 234
+    },
+    {
+      "n": 7,
+      "segment": 5,
+      "chars": 384
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 411
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 404
+    },
+    {
+      "n": 10,
+      "segment": 6,
+      "chars": 48
+    },
+    {
+      "n": 11,
+      "segment": 7,
+      "chars": 359
+    },
+    {
+      "n": 12,
+      "segment": 7,
+      "chars": 244
+    },
+    {
+      "n": 13,
+      "segment": 7,
+      "chars": 210
+    },
+    {
+      "n": 14,
+      "segment": 7,
+      "chars": 236
+    },
+    {
+      "n": 15,
+      "segment": 8,
+      "chars": 323
+    },
+    {
+      "n": 16,
+      "segment": 8,
+      "chars": 269
+    },
+    {
+      "n": 17,
+      "segment": 9,
+      "chars": 408
+    },
+    {
+      "n": 18,
+      "segment": 9,
+      "chars": 112
+    },
+    {
+      "n": 19,
+      "segment": 10,
       "chars": 52
     }
   ]

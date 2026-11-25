@@ -29,62 +29,61 @@ platform:
 
 chapters:
   - slug: 01-quanshu-dufa
-    title: 第1章 一部 1909 年的书为什么叫「衷中参西」
-    segments: 6
+    title: 书名不是纲领：「衷中参西」是一次排序，不是一次合并
     video: rendered
-    estimate_minutes: 2.67
-    measured_minutes: 2.64
+    estimate_minutes: 2.67      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 2.64      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-daqi-xiaxian
-    title: 第2章 大气下陷：一个被重新提出的证
-    segments: 6
+    title: 大气下陷：先有临床，后有名字
     video: rendered
-    estimate_minutes: 2.27
-    measured_minutes: 2.27
+    estimate_minutes: 2.27      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 2.27      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-shigao
-    title: 第3章 石膏：用量是这本书最容易被误读的地方
-    segments: 6
+    title: 石膏：被误读的不是剂量，是三个动作
     video: rendered
-    estimate_minutes: 2.13
-    measured_minutes: 2.12
+    estimate_minutes: 2.13      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 2.12      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-zheshi
-    title: 第4章 赭石与重镇：降逆的力学
-    segments: 6
+    title: 赭石的六条特长里，只有一条是「重」
     video: rendered
-    estimate_minutes: 2.08
-    measured_minutes: 2.15
+    estimate_minutes: 2.08      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 2.15      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-shanyao-shanyurou
-    title: 第5章 山药与山萸肉：平补与收敛的一对
-    segments: 6
+    title: 山药管「久」，山萸肉管「急」
     video: rendered
-    estimate_minutes: 2.05
-    measured_minutes: 2.05
+    estimate_minutes: 2.05      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 2.05      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-yinxu-laore
-    title: 第6章 阴虚劳热：资生汤与十全育真汤的方证结构
-    segments: 6
+    title: 资生汤与十全育真汤：不是轻重两档，是「纳」与「瘀」两条路
     video: rendered
-    estimate_minutes: 2.13
-    measured_minutes: 2.19
+    estimate_minutes: 2.13      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 2.19      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-tube-xuezheng
-    title: 第7章 吐衄血证：寒降、温降、清降是三条路，不是三张方
-    segments: 6
+    title: 吐衄不是三条路，是一个主轴加四个岔口
     video: rendered
-    estimate_minutes: 2.4
-    measured_minutes: 2.48
+    estimate_minutes: 2.40      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 2.48      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-naochongxue
-    title: 第8章 脑充血与脑贫血：全书参西最深的一章
-    segments: 6
+    title: 脑充血与脑贫血：参西最深的一处，也是证名最先失效的一处
     video: rendered
-    estimate_minutes: 2.2
-    measured_minutes: 2.17
+    estimate_minutes: 2.20      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 2.17      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-yian-dufa
-    title: 第9章 医案读法：病因—证候—诊断—处方—效果 五段式
-    segments: 6
+    title: 医案的五段式：一张能被反驳的表
     video: rendered
-    estimate_minutes: 1.88
-    measured_minutes: 1.9
+    estimate_minutes: 1.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-canxi-bianjie
-    title: 第10章 参西坐标的边界：哪里能用，哪里不能用
-    segments: 6
+    title: 参西的边界：能借病名与验证，不能借解释与因果
     video: rendered
-    estimate_minutes: 1.95
-    measured_minutes: 1.99
+    estimate_minutes: 1.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.99      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

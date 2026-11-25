@@ -26,7 +26,12 @@ blockquote.motto{font-family:var(--serif);font-size:clamp(20px,2.6vw,34px);line-
   text-transform:uppercase;margin-bottom:14px}
 .kicker.warn{color:var(--cinnabar)}
 p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var(--serif)}
-.compact{font-size:clamp(19px,1.75vw,27px);line-height:1.85;max-height:70vh;overflow:auto}
+.compact{font-size:clamp(19px,1.75vw,27px);line-height:1.85;max-height:70vh;overflow:hidden}
+.compact.dense{font-size:clamp(16px,1.42vw,22px);line-height:1.6;max-height:80vh}
+.compact.dense table{font-size:14px}
+.compact.denser{font-size:clamp(14px,1.22vw,18px);line-height:1.5;max-height:82vh}
+.compact.denser table{font-size:12px}
+.compact.denser pre{font-size:12px}
 .compact h2,.compact h3{font-family:var(--serif);margin:.6em 0 .3em;font-size:1.15em}
 .compact pre{background:var(--paper-2);border:1px solid var(--line);border-radius:8px;padding:12px;overflow:auto;font-size:15px}
 .compact code{background:var(--paper-2);border:1px solid var(--line);border-radius:4px;padding:1px 4px;font-family:var(--mono)}
@@ -55,254 +60,305 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <div id="deck">
 <section class="slide" data-i="0">
   <div class="slide-inner"><h1 class="big">第 26 章 · 肾脏功能：一条四环节的链，三组功能</h1></div>
-  <div class="slide-foot"><span>1 / 30</span><span>title</span></div>
+  <div class="slide-foot"><span>1 / 32</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「这条通路的阻力落在哪里，决定了后果落在哪里」——补充·hermes-病理生理学讲义·第26章·26.9（《hermes-病理生理学讲义·第26章·26.9》）</blockquote></div>
-  <div class="slide-foot"><span>2 / 30</span><span>motto</span></div>
+  <div class="slide-inner"><blockquote class="motto">「肾者，至阴也，至阴者，盛水也。」——《素问·水热穴论》</blockquote></div>
+  <div class="slide-foot"><span>2 / 32</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
   <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">肾脏这一章最容易学成一堆并列的名词：滤过膜、致密斑、逆流倍增、醛固酮、促红细胞生成素。名词记住之后仍然不会用，因为缺一条把它们串起来的链。讲义自己在第 26.9 节把这条链写出来了：<strong>滤过 → 重吸收与分泌 → 浓缩稀释 → 排出</strong>，四个环节任一环节出问题，都能用尿量、尿成分、尿渗透压三个维度去定位。本章要交的就是这条链：先知道每一步在做什么，再知道每一步在哪一段做，最后知道这一段坏了会在哪三个维度上露出来。</p></div>
-  <div class="slide-foot"><span>3 / 30</span><span>problem</span></div>
+  <div class="slide-foot"><span>3 / 32</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
   <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（「血肌酐正常，肾功能应该没问题」——这句话在老年人身上错得最系统：肌肉量少，肌酐生成少，滤过已经明显下降而读数仍落在参考范围内。讲义把这一条叫必须记住的陷阱。另一句同样常见：「用了止痛药之后肾功能突然变差，说不清为什么」——讲义在自身调节一节给了机制：前列腺素被抑制，原本靠血管张力维持的滤过压被打破）+ 知识积累（本章 11 节、6574 个非空白字的用词结构显示：滤过 35 次、梯度 14 次、重吸收 13 次、浓缩 12 次、激素 12 次、排出 5 次。滤过被反复提起，是因为它是整条链的入口，也是四类因素的共同落点；排出只有 5 次，因为讲义把它留给第 29 章，本章只交代到「送出去」）</p></div>
-  <div class="slide-foot"><span>4 / 30</span><span>roots</span></div>
+  <div class="slide-foot"><span>4 / 32</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
-  <div class="slide-inner"><div class="kicker">一、三组功能先分开记（26.1）</div>
-                <div class="compact"><p>讲义把肾脏的功能分成三组，并给了一条学习纪律：</p>
+  <div class="slide-inner"><div class="kicker">三组功能与滤过：三层膜、三个压力与自身调节（26.1–26.3）</div>
+                <div class="compact dense"><h3 id="三组功能先分开记-26-1">三组功能先分开记（26.1）</h3>
+<p>讲义把肾脏的功能分成三组，并给了一条学习纪律：</p>
 <blockquote><p>「后面每一章都在这三组里找位置」——补充·hermes-病理生理学讲义·第26章·26.1</p></blockquote>
 <p>三组是排泄（清除代谢终产物、外源物质与药物）、内环境调节（水与渗透压、电解质、酸碱、血压）、内分泌（肾素、促红细胞生成素、活性维生素 D、前列腺素与激肽）。分开记的理由很实际：同一句「肾功能不好」，落在排泄组是毒素蓄积，落在调节组是水电解质酸碱紊乱，落在内分泌组是贫血与骨病——三组各有各的后果，不能用一个词打包。</p>
 <p>结构那一半也值得先立住。肾单位由肾小体、近端小管、髓袢、远端小管、集合管依次构成，讲义对集合管的定位是：</p>
 <blockquote><p>「是激素调控水、钠、钾的最终关口」——补充·hermes-病理生理学讲义·第26章·26.1</p></blockquote>
 <p>而皮质与髓质的分区不是装饰：</p>
 <blockquote><p>「它是尿液能够被浓缩的结构前提」——补充·hermes-病理生理学讲义·第26章·26.1</p></blockquote></div></div>
-  <div class="slide-foot"><span>5 / 30</span><span>body</span></div>
+  <div class="slide-foot"><span>5 / 32</span><span>body</span></div>
 </section>
 <section class="slide" data-i="5">
-  <div class="slide-inner"><div class="kicker">一、三组功能先分开记（26.1）</div>
-                <div class="compact"><p>这一句要到第 26.6 节才兑现：髓袢深入髓质、两段透性相反，才使从皮质到乳头的间质渗透压逐级升高。<strong>先记住结构是功能的前提这句话，后面那套逆流机制才有落点。</strong></p>
-<p>肾单位还按位置分两类：皮质肾单位数量多、髓袢短，主要承担滤过与溶质排泄；近髓肾单位数量少、髓袢细长深入髓质，是建立髓质梯度、实现浓缩的关键。<strong>数量多的那类管量，数量少的那类管浓度</strong>——这一分工在第 26.6 节的浓缩机制里会再出现一次。</p></div></div>
-  <div class="slide-foot"><span>6 / 30</span><span>body</span></div>
+  <div class="slide-inner"><div class="kicker">三组功能与滤过：三层膜、三个压力与自身调节（26.1–26.3）</div>
+                <div class="compact dense"><p>这一句要到第 26.6 节才兑现：髓袢深入髓质、两段透性相反，才使从皮质到乳头的间质渗透压逐级升高。<strong>先记住结构是功能的前提这句话，后面那套逆流机制才有落点。</strong></p>
+<p>肾单位还按位置分两类：皮质肾单位数量多、髓袢短，主要承担滤过与溶质排泄；近髓肾单位数量少、髓袢细长深入髓质，是建立髓质梯度、实现浓缩的关键。<strong>数量多的那类管量，数量少的那类管浓度</strong>——这一分工在第 26.6 节的浓缩机制里会再出现一次。</p>
+<h3 id="滤过-三层膜-三个压力-四类因素-26-2">滤过：三层膜、三个压力、四类因素（26.2）</h3>
+<p>肾血流经过两级串联的毛细血管：入球小动脉、肾小球毛细血管、出球小动脉、管周毛细血管。前一段用于滤过，后一段用于重吸收与分泌的回流。这个串联结构解释了很多药物效应：作用于入球端与作用于出球端，对滤过压的影响方向不同。</p>
+<p>滤过膜三层，各有各的职责：毛细血管内皮有窗孔，挡住血细胞；肾小球基膜是致密网状结构：</p>
+<blockquote><p>「是限制大分子通过的主要屏障」——补充·hermes-病理生理学讲义·第26章·26.2</p></blockquote></div></div>
+  <div class="slide-foot"><span>6 / 32</span><span>body</span></div>
 </section>
 <section class="slide" data-i="6">
-  <div class="slide-inner"><div class="kicker">二、滤过：三层膜、三个压力、四类因素（26.2）</div>
-                <div class="compact"><p>肾血流经过两级串联的毛细血管：入球小动脉、肾小球毛细血管、出球小动脉、管周毛细血管。前一段用于滤过，后一段用于重吸收与分泌的回流。这个串联结构解释了很多药物效应：作用于入球端与作用于出球端，对滤过压的影响方向不同。</p>
-<p>滤过膜三层，各有各的职责：毛细血管内皮有窗孔，挡住血细胞；肾小球基膜是致密网状结构：</p>
-<blockquote><p>「是限制大分子通过的主要屏障」——补充·hermes-病理生理学讲义·第26章·26.2</p></blockquote>
-<p>足细胞裂孔膜由足突交错、裂孔连成筛状：</p>
+  <div class="slide-inner"><div class="kicker">三组功能与滤过：三层膜、三个压力与自身调节（26.1–26.3）</div>
+                <div class="compact dense"><p>足细胞裂孔膜由足突交错、裂孔连成筛状：</p>
 <blockquote><p>「是最后一道、也是最精细的一道关卡」——补充·hermes-病理生理学讲义·第26章·26.2</p></blockquote>
-<p>屏障有两种选择性：大小选择性使分子越大越难通过；电荷选择性来自基膜与足细胞表面的负电荷，使带负电的分子受到额外排斥。两种选择性叠加，解释了为什么白蛋白这类中等大小、带负电的蛋白被明显限制——<strong>不是因为它太大，而是因为它又大又带负电。</strong></p></div></div>
-  <div class="slide-foot"><span>7 / 30</span><span>body</span></div>
-</section>
-<section class="slide" data-i="7">
-  <div class="slide-inner"><div class="kicker">二、滤过：三层膜、三个压力、四类因素（26.2）</div>
-                <div class="compact"><p>净滤过压由三个压力代数相加：肾小球毛细血管静水压推动滤过，血浆胶体渗透压与鲍曼囊内压对抗滤过。</p>
+<p>屏障有两种选择性：大小选择性使分子越大越难通过；电荷选择性来自基膜与足细胞表面的负电荷，使带负电的分子受到额外排斥。两种选择性叠加，解释了为什么白蛋白这类中等大小、带负电的蛋白被明显限制——<strong>不是因为它太大，而是因为它又大又带负电。</strong></p>
+<p>净滤过压由三个压力代数相加：肾小球毛细血管静水压推动滤过，血浆胶体渗透压与鲍曼囊内压对抗滤过。</p>
 <blockquote><p>「三者代数和为正时才有滤过」——补充·hermes-病理生理学讲义·第26章·26.2</p></blockquote>
 <p>这句话把「滤过压」从一个术语变成了一个符号判断：三项一变号，滤过就停。滤过分数则是滤过率占肾血浆流量的比例，反映流经肾脏的血浆有多少被滤出。</p>
-<p>由此归纳出决定滤过率的四类因素：滤过膜的通透性与面积、净滤过压、肾血浆流量、滤过膜两侧的胶体渗透压差。</p>
-<blockquote><p>「临床上的肾功能下降，最终都落在这四类里的一项或几项上」——补充·hermes-病理生理学讲义·第26章·26.2</p></blockquote>
-<p>这句话是本章的分拣台：任何一个「肾功能下降」的命题，都要能说出它落在四类中的哪一类。说不出来，就是还没定位。</p></div></div>
-  <div class="slide-foot"><span>8 / 30</span><span>body</span></div>
+<p>由此归纳出决定滤过率的四类因素：滤过膜的通透性与面积、净滤过压、肾血浆流量、滤过膜两侧的胶体渗透压差。</p></div></div>
+  <div class="slide-foot"><span>7 / 32</span><span>body</span></div>
 </section>
-<section class="slide" data-i="8">
-  <div class="slide-inner"><div class="kicker">三、自身调节与它的两处失效（26.3）</div>
-                <div class="compact"><p>肾灌注压在某一范围内波动时，滤过率仍能保持相对稳定，这称为自身调节，依赖两个机制：肌源性反应（灌注压升高使入球小动脉被牵张、平滑肌收缩、阻力增加）与管球反馈（远端小管起始部的致密斑感受流经此处的氯化钠量，滤过过快则释放信号使入球小动脉收缩）。</p>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">三组功能与滤过：三层膜、三个压力与自身调节（26.1–26.3）</div>
+                <div class="compact dense"><blockquote><p>「临床上的肾功能下降，最终都落在这四类里的一项或几项上」——补充·hermes-病理生理学讲义·第26章·26.2</p></blockquote>
+<p>这句话是本章的分拣台：任何一个「肾功能下降」的命题，都要能说出它落在四类中的哪一类。说不出来，就是还没定位。</p>
+<h3 id="自身调节与它的两处失效-26-3">自身调节与它的两处失效（26.3）</h3>
+<p>肾灌注压在某一范围内波动时，滤过率仍能保持相对稳定，这称为自身调节，依赖两个机制：肌源性反应（灌注压升高使入球小动脉被牵张、平滑肌收缩、阻力增加）与管球反馈（远端小管起始部的致密斑感受流经此处的氯化钠量，滤过过快则释放信号使入球小动脉收缩）。</p>
 <p>自身调节的意义是保护肾小球：</p>
 <blockquote><p>「既避免高压灌注损伤毛细血管，也避免低压时滤过骤停」——补充·hermes-病理生理学讲义·第26章·26.3</p></blockquote>
 <p>它有两个限制，两个都直接对应临床。</p>
 <p>第一，超出可调节的灌注压范围后即失效。严重低血压、大出血、休克时：</p>
-<blockquote><p>「滤过随灌注压直线下降」——补充·hermes-病理生理学讲义·第26章·26.3</p></blockquote>
-<p>这是肾前性因素致肾功能恶化的基本机制——注意这里的因果：不是肾被损伤了，是压力不够，滤过跟着掉。<strong>肾前性的「前」字，说的就是问题在肾之前。</strong></p></div></div>
-  <div class="slide-foot"><span>9 / 30</span><span>body</span></div>
+<blockquote><p>「滤过随灌注压直线下降」——补充·hermes-病理生理学讲义·第26章·26.3</p></blockquote></div></div>
+  <div class="slide-foot"><span>8 / 32</span><span>body</span></div>
 </section>
-<section class="slide" data-i="9">
-  <div class="slide-inner"><div class="kicker">三、自身调节与它的两处失效（26.3）</div>
-                <div class="compact"><p>第二，调节依赖前列腺素等扩血管物质的缓冲。当前列腺素合成被抑制（如非甾体抗炎药）或出球小动脉被过度扩张（如血管紧张素转换酶抑制剂、血管紧张素受体拮抗剂）时：</p>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">三组功能与滤过：三层膜、三个压力与自身调节（26.1–26.3）</div>
+                <div class="compact"><p>这是肾前性因素致肾功能恶化的基本机制——注意这里的因果：不是肾被损伤了，是压力不够，滤过跟着掉。<strong>肾前性的「前」字，说的就是问题在肾之前。</strong></p>
+<p>第二，调节依赖前列腺素等扩血管物质的缓冲。当前列腺素合成被抑制（如非甾体抗炎药）或出球小动脉被过度扩张（如血管紧张素转换酶抑制剂、血管紧张素受体拮抗剂）时：</p>
 <blockquote><p>「原本靠血管张力维持的滤过压被打破」——补充·hermes-病理生理学讲义·第26章·26.3</p></blockquote>
 <p>滤过率可明显下降。讲义由此解释了「已有肾功能减退、容量不足者用这类药易发生肾功能恶化」——<strong>同一片药，在容量充足的健康人身上几乎无事，在依赖前列腺素缓冲的人身上就是一次打击。</strong> 这是本章最实用的一处药物机制。</p></div></div>
-  <div class="slide-foot"><span>10 / 30</span><span>body</span></div>
+  <div class="slide-foot"><span>9 / 32</span><span>body</span></div>
 </section>
-<section class="slide" data-i="10">
-  <div class="slide-inner"><div class="kicker">四、转运：两条途径、三种性质、一个极限（26.4）</div>
-                <div class="compact"><p>滤过只是第一步。讲义给了一个数量级的对比：</p>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">转运的四段：两条途径与三个部位（26.4–26.7）</div>
+                <div class="compact"><h3 id="转运-两条途径-三种性质-一个极限-26-4">转运：两条途径、三种性质、一个极限（26.4）</h3>
+<p>滤过只是第一步。讲义给了一个数量级的对比：</p>
 <blockquote><p>「每天滤出的原尿量远大于终尿量」——补充·hermes-病理生理学讲义·第26章·26.4</p></blockquote>
 <p>两者之差全靠肾小管重吸收回收，另有分泌把血液中的物质主动送入管腔。</p>
 <p>转运途径两条：跨细胞途径（穿过滤过面与基底侧两层膜，经通道、载体或泵）与细胞旁途径（经细胞间隙与紧密连接）。性质三种：原发性主动转运（直接耗能，如钠钾 ATP 酶）、继发性主动转运（借钠电化学梯度驱动，如葡萄糖与氨基酸的同向转运）、被动转运。</p>
 <p>一个关键概念是转运极限：</p>
-<blockquote><p>「载体数量有限」——补充·hermes-病理生理学讲义·第26章·26.4</p></blockquote>
-<p>滤过量超过载体能力时，多余部分不能被重吸收而出现在尿中。讲义用它解释「血糖升高到一定程度后出现尿糖」，并特意加了一句限定：只需要理解存在一个饱和点，不需要记住具体数值。<strong>这是本章唯一一处明确把「阈值」从知识点里摘出去的地方</strong>——机制要懂，数字不给。</p>
-<p>节段分工那张表可以用三句话记住：</p></div></div>
-  <div class="slide-foot"><span>11 / 30</span><span>body</span></div>
+<blockquote><p>「载体数量有限」——补充·hermes-病理生理学讲义·第26章·26.4</p></blockquote></div></div>
+  <div class="slide-foot"><span>10 / 32</span><span>body</span></div>
 </section>
-<section class="slide" data-i="11">
-  <div class="slide-inner"><div class="kicker">四、转运：两条途径、三种性质、一个极限（26.4）</div>
-                <div class="compact"><blockquote><p>「把绝大部分东西成批收回」——补充·hermes-病理生理学讲义·第26章·26.4</p></blockquote>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">转运的四段：两条途径与三个部位（26.4–26.7）</div>
+                <div class="compact dense"><p>滤过量超过载体能力时，多余部分不能被重吸收而出现在尿中。讲义用它解释「血糖升高到一定程度后出现尿糖」，并特意加了一句限定：只需要理解存在一个饱和点，不需要记住具体数值。<strong>这是本章唯一一处明确把「阈值」从知识点里摘出去的地方</strong>——机制要懂，数字不给。</p>
+<p>节段分工那张表可以用三句话记住：</p>
+<blockquote><p>「把绝大部分东西成批收回」——补充·hermes-病理生理学讲义·第26章·26.4</p></blockquote>
 <p>这是近端小管，量大而粗糙；髓袢：</p>
 <blockquote><p>「只调浓度不调量」——补充·hermes-病理生理学讲义·第26章·26.4</p></blockquote>
 <p>它负责造梯度；远端与集合管：</p>
 <blockquote><p>「量小但精细」——补充·hermes-病理生理学讲义·第26章·26.4</p></blockquote>
 <p>激素在这里下手。讲义对这张表的评价是：后面所有关于利尿剂、激素紊乱、肾小管损伤的讨论：</p>
-<blockquote><p>「都能挂到这根骨架上」——补充·hermes-病理生理学讲义·第26章·26.4</p></blockquote></div></div>
-  <div class="slide-foot"><span>12 / 30</span><span>body</span></div>
+<blockquote><p>「都能挂到这根骨架上」——补充·hermes-病理生理学讲义·第26章·26.4</p></blockquote>
+<h3 id="近端-等渗重吸收的主力-26-5">近端：等渗重吸收的主力（26.5）</h3>
+<p>近端小管回收滤过液中大部分的水与钠，且：</p></div></div>
+  <div class="slide-foot"><span>11 / 32</span><span>body</span></div>
 </section>
-<section class="slide" data-i="12">
-  <div class="slide-inner"><div class="kicker">五、近端：等渗重吸收的主力（26.5）</div>
-                <div class="compact"><p>近端小管回收滤过液中大部分的水与钠，且：</p>
-<blockquote><p>「水与溶质按比例回收」——补充·hermes-病理生理学讲义·第26章·26.5</p></blockquote>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">转运的四段：两条途径与三个部位（26.4–26.7）</div>
+                <div class="compact dense"><blockquote><p>「水与溶质按比例回收」——补充·hermes-病理生理学讲义·第26章·26.5</p></blockquote>
 <p>管内液始终保持与血浆相近的渗透压，故称等渗重吸收。动力来自基底侧的钠钾 ATP 酶：它把钠泵出细胞，造成细胞内低钠，从而在管腔侧形成钠的电化学梯度，驱动各种同向与反向转运。<strong>这个顺序值得记：泵在基底侧，梯度在管腔侧，转运靠梯度。</strong> 泵停了，整段的重吸收都停。</p>
 <p>碳酸氢盐的处理最容易被误解。管腔内的氢离子与碳酸氢根结合成碳酸，经管腔侧碳酸酐酶分解为二氧化碳与水，二氧化碳弥散入细胞后再生成碳酸氢根送回血中。所以：</p>
 <blockquote><p>「实质是以 CO₂ 形式回收后再合成」——补充·hermes-病理生理学讲义·第26章·26.5</p></blockquote>
 <p>并且：</p>
 <blockquote><p>「碳酸酐酶是限速环节」——补充·hermes-病理生理学讲义·第26章·26.5</p></blockquote>
 <p>这一句解释了为什么抑制碳酸酐酶会影响碳酸氢盐的回收，也把它与第 25 章肾的第三条防线接上了。</p></div></div>
-  <div class="slide-foot"><span>13 / 30</span><span>body</span></div>
+  <div class="slide-foot"><span>12 / 32</span><span>body</span></div>
 </section>
-<section class="slide" data-i="13">
-  <div class="slide-inner"><div class="kicker">五、近端：等渗重吸收的主力（26.5）</div>
-                <div class="compact"><p>近端小管还承担有机酸与有机碱的分泌，包括多种药物及其代谢物——这是肾脏排泄药物的重要途径，也是药物相互竞争、影响排泄的部位。讲义对损伤的定位很明确：</p>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">转运的四段：两条途径与三个部位（26.4–26.7）</div>
+                <div class="compact dense"><p>近端小管还承担有机酸与有机碱的分泌，包括多种药物及其代谢物——这是肾脏排泄药物的重要途径，也是药物相互竞争、影响排泄的部位。讲义对损伤的定位很明确：</p>
 <blockquote><p>「近端小管是缺血与肾毒性物质最易损伤的节段」——补充·hermes-病理生理学讲义·第26章·26.5</p></blockquote>
 <p>理由是代谢率高、耗氧大。损伤后最先出现的表现是：</p>
 <blockquote><p>「重吸收能力下降」——补充·hermes-病理生理学讲义·第26章·26.5</p></blockquote>
-<p>葡萄糖、氨基酸、磷酸盐、碳酸氢盐随尿丢失，可伴 Fanconi 综合征样表现，同时因钠水回收减少而出现多尿与容量不足。<strong>注意这个组合的顺序：先丢溶质，再多尿，再容量不足</strong>——与第 24 章的容量不足接得上。</p></div></div>
-  <div class="slide-foot"><span>14 / 30</span><span>body</span></div>
+<p>葡萄糖、氨基酸、磷酸盐、碳酸氢盐随尿丢失，可伴 Fanconi 综合征样表现，同时因钠水回收减少而出现多尿与容量不足。<strong>注意这个组合的顺序：先丢溶质，再多尿，再容量不足</strong>——与第 24 章的容量不足接得上。</p>
+<h3 id="髓袢-逆流倍增与浓缩稀释-26-6">髓袢：逆流倍增与浓缩稀释（26.6）</h3>
+<p>尿液能被浓缩到远高于血浆的渗透压，靠两件事：髓质渗透压梯度与抗利尿激素。梯度怎么来？靠髓袢的 U 形结构与两段相反的透性。</p></div></div>
+  <div class="slide-foot"><span>13 / 32</span><span>body</span></div>
 </section>
-<section class="slide" data-i="14">
-  <div class="slide-inner"><div class="kicker">六、髓袢：逆流倍增与浓缩稀释（26.6）</div>
-                <div class="compact"><p>尿液能被浓缩到远高于血浆的渗透压，靠两件事：髓质渗透压梯度与抗利尿激素。梯度怎么来？靠髓袢的 U 形结构与两段相反的透性。</p>
-<p>逆流倍增三步：升支粗段主动把氯化钠泵入间质而对水不通透，结果间质变咸、管内液变淡；降支细段对水通透、对溶质相对不通透，管内液在下降过程中因水外流而不断浓缩；两段流向相反，一处抽盐、一处失水：</p>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">转运的四段：两条途径与三个部位（26.4–26.7）</div>
+                <div class="compact"><p>逆流倍增三步：升支粗段主动把氯化钠泵入间质而对水不通透，结果间质变咸、管内液变淡；降支细段对水通透、对溶质相对不通透，管内液在下降过程中因水外流而不断浓缩；两段流向相反，一处抽盐、一处失水：</p>
 <blockquote><p>「两者的效应沿髓质深度叠加」——补充·hermes-病理生理学讲义·第26章·26.6</p></blockquote>
 <p>于是从皮质到乳头的间质渗透压逐级升高。逆流交换则由直小血管完成：下降支带走水、上升支带回溶质，使梯度不至于被血流冲散。</p>
 <blockquote><p>「若直小血管血流过快」——补充·hermes-病理生理学讲义·第26章·26.6</p></blockquote>
 <p>梯度被稀释，浓缩能力下降。这一条把「浓缩能力」与「髓质血流」绑在一起，也解释了为什么某些扩血管状态会削弱浓缩。</p></div></div>
-  <div class="slide-foot"><span>15 / 30</span><span>body</span></div>
+  <div class="slide-foot"><span>14 / 32</span><span>body</span></div>
 </section>
-<section class="slide" data-i="15">
-  <div class="slide-inner"><div class="kicker">六、髓袢：逆流倍增与浓缩稀释（26.6）</div>
-                <div class="compact"><p>梯度的用途在集合管兑现：抗利尿激素升高时，主细胞把水通道蛋白插入管腔膜，水顺梯度大量重吸收，尿量少、渗透压高；激素缺乏或作用不足时，集合管对水不通透，大量稀释尿排出。由此推出三类临床情形：中枢性尿崩（合成或释放不足）、肾性尿崩（对激素反应不足）、抗利尿激素不适当分泌（水潴留、稀释性低钠）。第三类与第 24 章的低钠直接对应——<strong>那里的等容量性低钠，这里的机制解释。</strong></p>
+<section class="slide" data-i="14">
+  <div class="slide-inner"><div class="kicker">转运的四段：两条途径与三个部位（26.4–26.7）</div>
+                <div class="compact dense"><p>梯度的用途在集合管兑现：抗利尿激素升高时，主细胞把水通道蛋白插入管腔膜，水顺梯度大量重吸收，尿量少、渗透压高；激素缺乏或作用不足时，集合管对水不通透，大量稀释尿排出。由此推出三类临床情形：中枢性尿崩（合成或释放不足）、肾性尿崩（对激素反应不足）、抗利尿激素不适当分泌（水潴留、稀释性低钠）。第三类与第 24 章的低钠直接对应——<strong>那里的等容量性低钠，这里的机制解释。</strong></p>
 <p>另有两处药物与渗透的机制：袢利尿剂抑制升支粗段的钠钾氯同向转运：</p>
 <blockquote><p>「等于拆掉了梯度的发动机」——补充·hermes-病理生理学讲义·第26章·26.6</p></blockquote>
 <p>故其利尿作用强而浓缩能力随之下降；渗透性利尿则是：</p>
 <blockquote><p>「管腔内不被重吸收的溶质」——补充·hermes-病理生理学讲义·第26章·26.6</p></blockquote>
-<p>拖住水，使水回收减少。两处都是「作用于梯度」而非「作用于泵」，这是本节与第 26.5 节的分界。</p></div></div>
-  <div class="slide-foot"><span>16 / 30</span><span>body</span></div>
+<p>拖住水，使水回收减少。两处都是「作用于梯度」而非「作用于泵」，这是本节与第 26.5 节的分界。</p>
+<h3 id="远端-量小但精细-26-7">远端：量小但精细（26.7）</h3></div></div>
+  <div class="slide-foot"><span>15 / 32</span><span>body</span></div>
 </section>
-<section class="slide" data-i="16">
-  <div class="slide-inner"><div class="kicker">七、远端：量小但精细（26.7）</div>
-                <div class="compact"><blockquote><p>「远曲小管与集合管处理的量小，但决定终尿的最终成分」——补充·hermes-病理生理学讲义·第26章·26.7</p></blockquote>
+<section class="slide" data-i="15">
+  <div class="slide-inner"><div class="kicker">转运的四段：两条途径与三个部位（26.4–26.7）</div>
+                <div class="compact dense"><blockquote><p>「远曲小管与集合管处理的量小，但决定终尿的最终成分」——补充·hermes-病理生理学讲义·第26章·26.7</p></blockquote>
 <p>钠与钾：远曲小管经钠氯同向转运回收钠；集合管主细胞经上皮钠通道回收钠，同时分泌钾。醛固酮作用于这两处，促进钠回收与钾排泌，其分泌受肾素-血管紧张素系统、血钾升高与促肾上腺皮质激素影响。钾的排泌还取决于远端小管的流速（流速快则排钾多）与酸碱状态：</p>
 <blockquote><p>「酸中毒时氢离子与钾竞争同一分泌机制」——补充·hermes-病理生理学讲义·第26章·26.7</p></blockquote>
 <p>排钾减少，易致高钾。这一句与第 25 章的酸中毒促钾外移是同一件事的两个位置：一个说分布，一个说排出，两处叠加才是完整解释。</p>
 <p>钙与磷：远曲小管与近端小管分别受甲状旁腺激素促进钙重吸收、抑制磷酸盐重吸收；活性维生素 D 促进肠道吸收与肾小管对钙磷的回收。</p>
 <p>酸碱调节三条途径：闰细胞主动排氢并回收碳酸氢盐；近端小管以谷氨酰胺为底物生成铵并由管腔排出，同时新生碳酸氢盐回血：</p></div></div>
-  <div class="slide-foot"><span>17 / 30</span><span>body</span></div>
+  <div class="slide-foot"><span>16 / 32</span><span>body</span></div>
 </section>
-<section class="slide" data-i="17">
-  <div class="slide-inner"><div class="kicker">七、远端：量小但精细（26.7）</div>
+<section class="slide" data-i="16">
+  <div class="slide-inner"><div class="kicker">转运的四段：两条途径与三个部位（26.4–26.7）</div>
                 <div class="compact"><blockquote><p>「这是慢性酸负荷下最重要的适应」——补充·hermes-病理生理学讲义·第26章·26.7</p></blockquote>
 <p>排出的氢离子被管腔内的磷酸盐缓冲，形成可滴定酸，减少自由氢造成的低 pH 损伤。</p>
 <p>方向性判断只有两句：排氢与产铵能力下降，血浆碳酸氢盐被消耗而补充不足，致代谢性酸中毒；排氢过多或回收过多，致代谢性碱中毒。慢性肾脏病时产铵不足是代谢性酸中毒持续存在的重要原因——这一句把第 25 章的第三道防线具体化了。</p></div></div>
-  <div class="slide-foot"><span>18 / 30</span><span>body</span></div>
+  <div class="slide-foot"><span>17 / 32</span><span>body</span></div>
 </section>
-<section class="slide" data-i="18">
-  <div class="slide-inner"><div class="kicker">八、内分泌四产物（26.8）</div>
-                <div class="compact"><blockquote><p>「也是内分泌器官」——补充·hermes-病理生理学讲义·第26章·26.8</p></blockquote>
+<section class="slide" data-i="17">
+  <div class="slide-inner"><div class="kicker">内分泌、排出与评估：四产物与方向（26.8–26.11）</div>
+                <div class="compact dense"><h3 id="内分泌四产物-26-8">内分泌四产物（26.8）</h3>
+<blockquote><p>「也是内分泌器官」——补充·hermes-病理生理学讲义·第26章·26.8</p></blockquote>
 <p>四个产物要分别记，因为它们的后果分别落在三个不同的系统上。</p>
 <p>肾素由入球小动脉壁的球旁细胞分泌，是肾素-血管紧张素-醛固酮系统的起点。三种刺激使其释放：肾灌注压下降、远端小管氯化钠减少（致密斑信号）、交感神经兴奋。血管紧张素收缩血管（对出球小动脉作用更强，故在低灌注时有助于维持滤过率）、刺激醛固酮分泌、促进渴觉与激素释放，整体效果是：</p>
 <blockquote><p>「保钠、保水、升压」——补充·hermes-病理生理学讲义·第26章·26.8</p></blockquote>
 <p>六个字把 RAAS 的全部作用收完，也与第 24 章的两套回路对上：它管的是钠与容量。</p>
-<p>促红细胞生成素由肾皮质与髓质外层的管周间质细胞产生，缺氧经 HIF 通路诱导其表达，作用于骨髓红系祖细胞。肾功能丧失则生成不足，出现正细胞正色素性贫血：</p>
-<blockquote><p>「这是慢性肾脏病最常见的并发症之一」——补充·hermes-病理生理学讲义·第26章·26.8</p></blockquote></div></div>
-  <div class="slide-foot"><span>19 / 30</span><span>body</span></div>
+<p>促红细胞生成素由肾皮质与髓质外层的管周间质细胞产生，缺氧经 HIF 通路诱导其表达，作用于骨髓红系祖细胞。肾功能丧失则生成不足，出现正细胞正色素性贫血：</p></div></div>
+  <div class="slide-foot"><span>18 / 32</span><span>body</span></div>
 </section>
-<section class="slide" data-i="19">
-  <div class="slide-inner"><div class="kicker">八、内分泌四产物（26.8）</div>
-                <div class="compact"><p>活性维生素 D 由近端小管细胞的羟化酶把肝来源的前体转化为活性形式，促进肠道钙磷吸收、促进骨矿化、负反馈抑制甲状旁腺激素。肾功能下降则活性不足，低钙、激素升高、继发性甲状旁腺功能亢进与肾性骨病；同时磷排泄减少造成的高磷血症进一步抑制羟化酶并刺激激素：</p>
+<section class="slide" data-i="18">
+  <div class="slide-inner"><div class="kicker">内分泌、排出与评估：四产物与方向（26.8–26.11）</div>
+                <div class="compact dense"><blockquote><p>「这是慢性肾脏病最常见的并发症之一」——补充·hermes-病理生理学讲义·第26章·26.8</p></blockquote>
+<p>活性维生素 D 由近端小管细胞的羟化酶把肝来源的前体转化为活性形式，促进肠道钙磷吸收、促进骨矿化、负反馈抑制甲状旁腺激素。肾功能下降则活性不足，低钙、激素升高、继发性甲状旁腺功能亢进与肾性骨病；同时磷排泄减少造成的高磷血症进一步抑制羟化酶并刺激激素：</p>
 <blockquote><p>「形成恶性循环」——补充·hermes-病理生理学讲义·第26章·26.8</p></blockquote>
 <p>前列腺素与激肽扩张入球小动脉、促进钠水排泄，在容量不足或交感兴奋时起刹车作用：</p>
 <blockquote><p>「保护肾灌注」——补充·hermes-病理生理学讲义·第26章·26.8</p></blockquote>
 <p>这一句与第 26.3 节的药物机制是同一处知识的两面：一面讲生理缓冲，一面讲缓冲被撤掉之后的后果。</p>
 <p>末段还有一条常被忽略的功能：肾脏是多种肽类激素的降解场所：</p>
-<blockquote><p>「故肾功能衰竭时这些激素的半衰期延长」——补充·hermes-病理生理学讲义·第26章·26.8</p></blockquote>
-<p>作用被放大。讲义在这里明确划界：具体调整属临床处方范畴，本讲义不涉及。这也是本章唯一一处主动点出「以下不讲」的地方。</p></div></div>
-  <div class="slide-foot"><span>20 / 30</span><span>body</span></div>
+<blockquote><p>「故肾功能衰竭时这些激素的半衰期延长」——补充·hermes-病理生理学讲义·第26章·26.8</p></blockquote></div></div>
+  <div class="slide-foot"><span>19 / 32</span><span>body</span></div>
 </section>
-<section class="slide" data-i="20">
-  <div class="slide-inner"><div class="kicker">九、排出与肾外环节（26.9）</div>
-                <div class="compact"><p>终尿离开集合管后进入肾小盏、肾盂，由输尿管的蠕动推送入膀胱。输尿管的推送能力有限：当结石、肿瘤或外部压迫造成梗阻时，梗阻以上的压力升高，可逆行传至肾盂与肾实质。</p>
+<section class="slide" data-i="19">
+  <div class="slide-inner"><div class="kicker">内分泌、排出与评估：四产物与方向（26.8–26.11）</div>
+                <div class="compact dense"><p>作用被放大。讲义在这里明确划界：具体调整属临床处方范畴，本讲义不涉及。这也是本章唯一一处主动点出「以下不讲」的地方。</p>
+<h3 id="排出与肾外环节-26-9">排出与肾外环节（26.9）</h3>
+<p>终尿离开集合管后进入肾小盏、肾盂，由输尿管的蠕动推送入膀胱。输尿管的推送能力有限：当结石、肿瘤或外部压迫造成梗阻时，梗阻以上的压力升高，可逆行传至肾盂与肾实质。</p>
 <p>讲义把这一节写成一条分界线：</p>
 <blockquote><p>「这条通路的阻力落在哪里，决定了后果落在哪里」——补充·hermes-病理生理学讲义·第26章·26.9</p></blockquote>
 <p>梗阻在上尿路（肾盂、输尿管），压力直接作用于肾实质，造成肾积水、肾实质萎缩、肾功能受损；梗阻在下尿路（膀胱出口、尿道），先表现为排尿困难与尿潴留，长期才通过双侧上尿路积水影响肾功能。<strong>同一句「梗阻」，位置不同，时间尺度与受累顺序都不同。</strong></p>
 <p>讲义在这里明确交代了本章的边界：</p>
-<blockquote><p>「把排尿期的调控与下尿路疾病留给第29章」——补充·hermes-病理生理学讲义·第26章·26.9</p></blockquote>
-<p>并把整章的图景收成一句：滤过、重吸收与分泌、浓缩稀释、排出：</p>
-<blockquote><p>「四个环节任一环节出问题」——补充·hermes-病理生理学讲义·第26章·26.9</p></blockquote></div></div>
-  <div class="slide-foot"><span>21 / 30</span><span>body</span></div>
+<blockquote><p>「把排尿期的调控与下尿路疾病留给第29章」——补充·hermes-病理生理学讲义·第26章·26.9</p></blockquote></div></div>
+  <div class="slide-foot"><span>20 / 32</span><span>body</span></div>
+</section>
+<section class="slide" data-i="20">
+  <div class="slide-inner"><div class="kicker">内分泌、排出与评估：四产物与方向（26.8–26.11）</div>
+                <div class="compact"><p>并把整章的图景收成一句：滤过、重吸收与分泌、浓缩稀释、排出：</p>
+<blockquote><p>「四个环节任一环节出问题」——补充·hermes-病理生理学讲义·第26章·26.9</p></blockquote>
+<p>都可以用尿量、尿成分、尿渗透压三个维度去定位。这三个维度是本章全部评估的坐标：量对应滤过与重吸收的总账，成分对应选择性，渗透压对应浓缩能力。</p>
+<h3 id="评估-方向比数值重要-26-10">评估：方向比数值重要（26.10）</h3>
+<p>讲义开头就给了一句方法论：</p>
+<blockquote><p>「评估肾功能不是背数字，而是理解每一类指标」——补充·hermes-病理生理学讲义·第26章·26.10</p></blockquote></div></div>
+  <div class="slide-foot"><span>21 / 32</span><span>body</span></div>
 </section>
 <section class="slide" data-i="21">
-  <div class="slide-inner"><div class="kicker">九、排出与肾外环节（26.9）</div>
-                <div class="compact"><p>都可以用尿量、尿成分、尿渗透压三个维度去定位。这三个维度是本章全部评估的坐标：量对应滤过与重吸收的总账，成分对应选择性，渗透压对应浓缩能力。</p></div></div>
-  <div class="slide-foot"><span>22 / 30</span><span>body</span></div>
+  <div class="slide-inner"><div class="kicker">内分泌、排出与评估：四产物与方向（26.8–26.11）</div>
+                <div class="compact dense"><p>每一类指标反映什么、什么时候失灵。表里七类：滤过率（滤过的总体能力）、血肌酐（肌肉代谢产物，经肾小球滤过排出）、血尿素氮（蛋白代谢终产物）、尿分析（比重与渗透压、酸碱度、蛋白、细胞、管型）、尿蛋白定量类、影像学、肾活检。每类都配了一条局限，其中两条最常被忽略：血肌酐受肌肉量、年龄、性别影响，滤过率明显下降前变化不敏感；血尿素氮受蛋白摄入、消化道出血、容量状态、分解代谢影响，特异性低。</p>
+<p>方向性判断比数值更重要，讲义列了四条：滤过率下降则血肌酐上升（非线性，晚期才显著）；滤过率下降则尿素氮上升但受多因素干扰；浓缩能力下降则夜尿增多、多尿、尿比重与渗透压降低；滤过屏障受损则尿蛋白增多，以白蛋白为主提示肾小球性，以小分子蛋白为主提示肾小管性。还有一条定位线索：</p>
+<blockquote><p>「这是定位的重要线索」——补充·hermes-病理生理学讲义·第26章·26.10</p></blockquote>
+<p>指的是尿中出现红细胞管型——红细胞在肾小管内被蛋白基质塑形，说明血尿来自肾小球。</p></div></div>
+  <div class="slide-foot"><span>22 / 32</span><span>body</span></div>
 </section>
 <section class="slide" data-i="22">
-  <div class="slide-inner"><div class="kicker">十、评估：方向比数值重要（26.10）</div>
-                <div class="compact"><p>讲义开头就给了一句方法论：</p>
-<blockquote><p>「评估肾功能不是背数字，而是理解每一类指标」——补充·hermes-病理生理学讲义·第26章·26.10</p></blockquote>
-<p>每一类指标反映什么、什么时候失灵。表里七类：滤过率（滤过的总体能力）、血肌酐（肌肉代谢产物，经肾小球滤过排出）、血尿素氮（蛋白代谢终产物）、尿分析（比重与渗透压、酸碱度、蛋白、细胞、管型）、尿蛋白定量类、影像学、肾活检。每类都配了一条局限，其中两条最常被忽略：血肌酐受肌肉量、年龄、性别影响，滤过率明显下降前变化不敏感；血尿素氮受蛋白摄入、消化道出血、容量状态、分解代谢影响，特异性低。</p>
-<p>方向性判断比数值更重要，讲义列了四条：滤过率下降则血肌酐上升（非线性，晚期才显著）；滤过率下降则尿素氮上升但受多因素干扰；浓缩能力下降则夜尿增多、多尿、尿比重与渗透压降低；滤过屏障受损则尿蛋白增多，以白蛋白为主提示肾小球性，以小分子蛋白为主提示肾小管性。还有一条定位线索：</p></div></div>
-  <div class="slide-foot"><span>23 / 30</span><span>body</span></div>
+  <div class="slide-inner"><div class="kicker">内分泌、排出与评估：四产物与方向（26.8–26.11）</div>
+                <div class="compact dense"><p>本节末句是全章最该记住的陷阱：</p>
+<blockquote><p>「即使 GFR 已明显下降，血肌酐仍可能落在参考范围内」——补充·hermes-病理生理学讲义·第26章·26.10</p></blockquote>
+<p>老年、消瘦、肌肉量少者尤甚。评估必须结合年龄、体型与临床背景。<strong>这句话的作用不是让你怀疑化验，而是让你不要用一个读数替代一次评估。</strong></p>
+<h3 id="生命周期-26-11">生命周期（26.11）</h3>
+<p>儿童：肾单位在出生后仍继续成熟，肾血流量与滤过能力逐步上升；婴幼儿的浓缩与稀释、排酸与保钠能力均低于成人，故在腹泻、发热、摄入不足时更易出现脱水、高钠或低钠血症，也更容易因容量波动出现水肿。讲义的要求是：</p>
+<blockquote><p>「不能照搬成人参考区间」——补充·hermes-病理生理学讲义·第26章·26.11</p></blockquote>
+<p>老年人：肾血流量与滤过率随年龄呈生理性下降，肾体积缩小、皮质变薄；浓缩与稀释、保钠与排钾的调节幅度均变窄，对脱水、过量输液、利尿剂与肾毒性药物的耐受性下降。同时肌肉量减少使血肌酐生成减少：</p></div></div>
+  <div class="slide-foot"><span>23 / 32</span><span>body</span></div>
 </section>
 <section class="slide" data-i="23">
-  <div class="slide-inner"><div class="kicker">十、评估：方向比数值重要（26.10）</div>
-                <div class="compact"><blockquote><p>「这是定位的重要线索」——补充·hermes-病理生理学讲义·第26章·26.10</p></blockquote>
-<p>指的是尿中出现红细胞管型——红细胞在肾小管内被蛋白基质塑形，说明血尿来自肾小球。</p>
-<p>本节末句是全章最该记住的陷阱：</p>
-<blockquote><p>「即使 GFR 已明显下降，血肌酐仍可能落在参考范围内」——补充·hermes-病理生理学讲义·第26章·26.10</p></blockquote>
-<p>老年、消瘦、肌肉量少者尤甚。评估必须结合年龄、体型与临床背景。<strong>这句话的作用不是让你怀疑化验，而是让你不要用一个读数替代一次评估。</strong></p></div></div>
-  <div class="slide-foot"><span>24 / 30</span><span>body</span></div>
-</section>
-<section class="slide" data-i="24">
-  <div class="slide-inner"><div class="kicker">十一、生命周期（26.11）</div>
-                <div class="compact"><p>儿童：肾单位在出生后仍继续成熟，肾血流量与滤过能力逐步上升；婴幼儿的浓缩与稀释、排酸与保钠能力均低于成人，故在腹泻、发热、摄入不足时更易出现脱水、高钠或低钠血症，也更容易因容量波动出现水肿。讲义的要求是：</p>
-<blockquote><p>「不能照搬成人参考区间」——补充·hermes-病理生理学讲义·第26章·26.11</p></blockquote>
-<p>老年人：肾血流量与滤过率随年龄呈生理性下降，肾体积缩小、皮质变薄；浓缩与稀释、保钠与排钾的调节幅度均变窄，对脱水、过量输液、利尿剂与肾毒性药物的耐受性下降。同时肌肉量减少使血肌酐生成减少：</p>
-<blockquote><p>「进一步掩盖 GFR 的下降」——补充·hermes-病理生理学讲义·第26章·26.11</p></blockquote>
+  <div class="slide-inner"><div class="kicker">内分泌、排出与评估：四产物与方向（26.8–26.11）</div>
+                <div class="compact"><blockquote><p>「进一步掩盖 GFR 的下降」——补充·hermes-病理生理学讲义·第26章·26.11</p></blockquote>
 <p>讲义由此给出一条用药纪律：</p>
 <blockquote><p>「先看肾功能，再定方案」——补充·hermes-病理生理学讲义·第26章·26.11</p></blockquote>
 <p>这句话与第 26.3 节的药物机制、第 26.10 节的肌酐陷阱是同一个结论的三次出现：<strong>在这门课里，年龄不是背景变量，它是机制变量。</strong></p></div></div>
-  <div class="slide-foot"><span>25 / 30</span><span>body</span></div>
+  <div class="slide-foot"><span>24 / 32</span><span>body</span></div>
+</section>
+<section class="slide" data-i="24">
+  <div class="slide-inner"><div class="kicker">讲义小节：逐条落位</div>
+                <div class="compact dense"><p>上面十一节按四环节重排过，这里按原节号逐条落位。</p>
+<div class="table-wrap"><table><thead><tr><th>节号</th><th>这一节问什么</th><th>答案落在哪一层</th></tr></thead><tbody><tr><td>26.1</td><td>肾有哪些功能、靠什么结构完成</td><td>结构层：三组功能（排泄 / 调节 / 内分泌）；皮质与髓质的分区是浓缩的结构前提；皮质与近髓肾单位分工</td></tr><tr><td>26.2</td><td>滤过靠什么、被什么决定</td><td>力学层：三层膜与两种选择性、三个压力的代数和、四类决定因素</td></tr><tr><td>26.3</td><td>压力波动时滤过为什么能稳住</td><td>调节层：肌源性反应与管球反馈；超出范围即失效，依赖前列腺素缓冲</td></tr><tr><td>26.4</td><td>滤过之后靠什么变成终尿</td><td>转运层：两条途径、三种性质、一个转运极限；三句话记住节段分工</td></tr><tr><td>26.5</td><td>近端为什么是主力</td><td>等渗层：水与溶质按比例回收；碳酸氢盐以二氧化碳形式回收再合成；最易受损</td></tr><tr><td>26.6</td><td>尿为什么能被浓缩</td><td>梯度层：逆流倍增造梯度、逆流交换护梯度、集合管兑现梯度；三类尿崩与两类利尿</td></tr><tr><td>26.7</td><td>远端为什么量小却关键</td></tr></tbody></table></div></div></div>
+  <div class="slide-foot"><span>25 / 32</span><span>body</span></div>
 </section>
 <section class="slide" data-i="25">
-  <div class="slide-inner"><div class="kicker">十二、讲义小节：逐条落位</div>
-                <div class="compact"><p>上面十一节按四环节重排过，这里按原节号逐条落位。</p>
-<div class="table-wrap"><table><thead><tr><th>节号</th><th>这一节问什么</th><th>答案落在哪一层</th></tr></thead><tbody><tr><td>26.1</td><td>肾有哪些功能、靠什么结构完成</td><td>结构层：三组功能（排泄 / 调节 / 内分泌）；皮质与髓质的分区是浓缩的结构前提；皮质与近髓肾单位分工</td></tr><tr><td>26.2</td><td>滤过靠什么、被什么决定</td><td>力学层：三层膜与两种选择性、三个压力的代数和、四类决定因素</td></tr><tr><td>26.3</td><td>压力波动时滤过为什么能稳住</td><td>调节层：肌源性反应与管球反馈；超出范围即失效，依赖前列腺素缓冲</td></tr><tr><td>26.4</td><td>滤过之后靠什么变成终尿</td><td>转运层：两条途径、三种性质、一个转运极限；三句话记住节段分工</td></tr><tr><td>26.5</td><td>近端为什么是主力</td><td>等渗层：水与溶质按比例回收；碳酸氢盐以二氧化碳形式回收再合成；最易受损</td></tr><tr><td>26.6</td><td>尿为什么能被浓缩</td><td>梯度层：逆流倍增造梯度、逆流交换护梯度、集合管兑现梯度；三类尿崩与两类利尿</td></tr><tr><td>26.7</td><td>远端为什么量小却关键</td></tr></tbody></table></div></div></div>
-  <div class="slide-foot"><span>26 / 30</span><span>body</span></div>
-</section>
-<section class="slide" data-i="26">
-  <div class="slide-inner"><div class="kicker">十二、讲义小节：逐条落位</div>
+  <div class="slide-inner"><div class="kicker">讲义小节：逐条落位</div>
                 <div class="compact"><p>产铵是最重要的慢性适应 |</p>
 <p>| 26.8 | 肾分泌什么、缺了会怎样 | 内分泌层：肾素保钠保水升压、促红细胞生成素致贫血、活性维生素 D 致骨病、前列腺素护灌注 |</p>
 <p>| 26.9 | 尿怎么送出去、堵在哪后果不同 | 通路层：上尿路梗阻伤实质、下尿路梗阻先致排尿困难；四环节与三个维度 |</p>
 <p>| 26.10 | 怎么评估、指标什么时候失灵 | 判读层：七类指标各有局限；方向比数值重要；血肌酐正常不等于肾功能正常 |</p>
 <p>| 26.11 | 年龄改变了什么 | 余量层：儿童未成熟、老年余量窄且肌酐被掩盖；先看肾功能再定方案 |</p>
 <p>三处要单独记：26.2 是入口（四类因素的分拣台），26.6 是本章唯一的「结构造功能」实例（梯度），26.10 是收口（方向比数值重要）。其余八节都是这三处的展开或延伸。</p></div></div>
-  <div class="slide-foot"><span>27 / 30</span><span>body</span></div>
+  <div class="slide-foot"><span>26 / 32</span><span>body</span></div>
+</section>
+<section class="slide" data-i="26">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><ul><li><strong>引文只有一层，且是讲义。</strong> 引用格式统一为<code>补充·hermes-病理生理学讲义·第N章·N.M</code>。讲义是本仓库原创的教学正文，不是任何外文教材的译本。本章不引代用底本——代用底本在这一章没有对应正文。</li><li><strong>本章丢掉了什么：数值。</strong> 讲义第 26 章 6574 个非空白字里，数字加计量单位的命中为 0 处（<code>node code/main.js</code> 复算）。更值得注意的是讲义主动声明了两处不给值：转运极限只需理解存在饱和点，不需要记住具体数值；激素降解延长后的用量调整属临床处方范畴。本书照此收口——<strong>机制要懂，数字不给。</strong></li><li><strong>本章不给滤过率、肌酐、尿素氮的任何参考范围与分期。</strong> 「肌酐盲区」「非线性上升」在本章只作方向判断，不用于给任何个体定性，也不构成分期依据。</li><li><strong>本章不作诊断，也不判读化验单与影像。</strong> 尿蛋白、红细胞管型、肾脏大小在本章只作定位线索的类别，不附判读流程。</li><li>**本章不写药物处置。</li></ul></div></div>
+  <div class="slide-foot"><span>27 / 32</span><span>boundary</span></div>
 </section>
 <section class="slide" data-i="27">
-  <div class="slide-inner"><div class="kicker">十三、代价与边界</div>
-                <div class="compact"><ul><li><strong>引文只有一层，且是讲义。</strong> 引用格式统一为<code>补充·hermes-病理生理学讲义·第N章·N.M</code>。讲义是本仓库原创的教学正文，不是任何外文教材的译本。本章不引代用底本——代用底本在这一章没有对应正文。</li><li><strong>本章丢掉了什么：数值。</strong> 讲义第 26 章 6574 个非空白字里，数字加计量单位的命中为 0 处（<code>node code/main.js</code> 复算）。更值得注意的是讲义主动声明了两处不给值：转运极限只需理解存在饱和点，不需要记住具体数值；激素降解延长后的用量调整属临床处方范畴。本书照此收口——<strong>机制要懂，数字不给。</strong></li><li><strong>本章不给滤过率、肌酐、尿素氮的任何参考范围与分期。</strong> 「肌酐盲区」「非线性上升」在本章只作方向判断，不用于给任何个体定性，也不构成分期依据。</li><li><strong>本章不作诊断，也不判读化验单与影像。</strong> 尿蛋白、红细胞管型、肾脏大小在本章只作定位线索的类别，不附判读流程。</li><li>**本章不写药物处置。</li></ul></div></div>
-  <div class="slide-foot"><span>28 / 30</span><span>boundary</span></div>
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><p>** 非甾体抗炎药、血管紧张素转换酶抑制剂、袢利尿剂在本章只作机制示例，说明它们作用在哪一段、撤掉了哪一层缓冲；剂量、适应证与替代方案一字不写。</p>
+<ul><li><strong>一处结构性缺口要写明。</strong> 讲义把排尿期的调控与下尿路疾病留给第 29 章，本章只到「送出去」。凡追问排尿功能与下尿路病变，一律回本章不覆盖。</li><li><strong>词频只描述写法，不描述难度。</strong> 滤过 35 次、梯度 14 次、重吸收 13 次，说明讲义把笔墨压在入口与梯度上；排出 5 次，说明它被有意留短，不说明排出不重要——梗阻落在上尿路还是下尿路，后果的顺序完全不同。</li><li><strong>边界声明</strong>：本章只解释讲义第 26 章的环节与类别，<strong>不写数值与单位与正常值，不作正常与异常判定，不构成诊断、治疗或用药依据</strong>；任何个体的状态判断须由具备资质的人员依现行规范作出。</li></ul>
+<h3 id="运行与验证">运行与验证</h3>
+<div class="codeblock"><div class="codeblock-lang">bash</div><pre><code class="lang-bash"># 1) 现算本章规模、用词重心、节内落位，以及四环节各落在哪几节
+node code/main.js</code></pre></div></div></div>
+  <div class="slide-foot"><span>28 / 32</span><span>boundary</span></div>
 </section>
 <section class="slide" data-i="28">
-  <div class="slide-inner"><div class="kicker">十三、代价与边界</div>
-                <div class="compact"><p>** 非甾体抗炎药、血管紧张素转换酶抑制剂、袢利尿剂在本章只作机制示例，说明它们作用在哪一段、撤掉了哪一层缓冲；剂量、适应证与替代方案一字不写。</p>
-<ul><li><strong>一处结构性缺口要写明。</strong> 讲义把排尿期的调控与下尿路疾病留给第 29 章，本章只到「送出去」。凡追问排尿功能与下尿路病变，一律回本章不覆盖。</li><li><strong>词频只描述写法，不描述难度。</strong> 滤过 35 次、梯度 14 次、重吸收 13 次，说明讲义把笔墨压在入口与梯度上；排出 5 次，说明它被有意留短，不说明排出不重要——梗阻落在上尿路还是下尿路，后果的顺序完全不同。</li><li><strong>边界声明</strong>：本章只解释讲义第 26 章的环节与类别，<strong>不写数值与单位与正常值，不作正常与异常判定，不构成诊断、治疗或用药依据</strong>；任何个体的状态判断须由具备资质的人员依现行规范作出。</li></ul></div></div>
-  <div class="slide-foot"><span>29 / 30</span><span>boundary</span></div>
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><h1 id="2-单测-节数-字数-四环节-内分泌四产物-引文与节覆盖-引语逐字-零裸值-quiz-边界句">2) 单测：节数 / 字数 / 四环节 / 内分泌四产物 / 引文与节覆盖 / 引语逐字 / 零裸值 / quiz / 边界句</h1>
+<p>node --test code/main.test.js</p>
+<h1 id="3-章级门-53-章契约-本机目前只有部分章-门会报其余章缺文件">3) 章级门（53 章契约；本机目前只有部分章，门会报其余章缺文件）</h1>
+<p>cd /e/tcmai-engineering-from-scatch &amp;&amp; node tests/test_binglishengli_chapters.js</p>
+<div class="codeblock"><div class="codeblock-lang">text</div><pre><code class="lang-text">
+`node code/main.js` 的真实输出（节选）：
+
+```text
+═══ 肾脏功能（病理生理学 第26章 · 讲义 U08）═══
+讲义规模: 11 节 · 6574 非空白字 · 4691 汉字 · 97 段 · 平均每节 598 字
+用词重心（讲义第 26 章全章计数）：
+  滤过　　  35 次
+  重吸收　  13 次
+  浓缩　　  12 次
+  梯度　　  14 次
+  激素　　  12 次
+  排出　　   5 次</code></pre></div></div></div>
+  <div class="slide-foot"><span>29 / 32</span><span>boundary</span></div>
 </section>
 <section class="slide" data-i="29">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><p>节内落位（节号 / 标题 / 非空白字），合计 11 节：
+  26.1 肾脏的功能总览与结构基础 · 713 字
+  26.2 肾血流量与肾小球滤过 · 631 字
+  26.3 肾血流的自身调节及其失效 · 545 字
+  …（其余八节略）</p>
+<div class="codeblock"><div class="codeblock-lang">text</div><pre><code class="lang-text">
+`code/main.js` 的最后一行固定为下面这句，也是单测与章级门共同依赖的字符串：
+
+```text
+教学边界：本章只说明讲义第 26 章肾功能环节的类别与关系，不写数值与单位与正常值，不构成诊断、治疗或用药依据</code></pre></div>
+<p><strong>免责声明：</strong>本章为病理生理学教学材料。文中所有概念、分类与关系，取自本仓库原创《hermes-病理生理学讲义》第 26 章与 <code>standards/binglishengli/supplements/jiangyi.json</code> 的机器可读层；数字为程序现算，规则已在文中写明。</p></div></div>
+  <div class="slide-foot"><span>30 / 32</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="30">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><p>本章不提供任何诊断、治疗或用药建议，不给出正常值、参考范围与分期，也不对任何个体的状态作出正常或异常的判断。文中出现的四环节、三组功能、梯度与自身调节，均为机制层的说明，不能替代临床评估与化验判读。若出现尿量骤减、水肿加重、严重乏力或意识改变，请立即就医。</p></div></div>
+  <div class="slide-foot"><span>31 / 32</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="31">
   <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
-  <div class="slide-foot"><span>30 / 30</span><span>disclaimer</span></div>
+  <div class="slide-foot"><span>32 / 32</span><span>disclaimer</span></div>
 </section>
 </div>
 <div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>

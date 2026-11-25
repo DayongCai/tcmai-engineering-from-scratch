@@ -29,50 +29,49 @@ platform:
 
 chapters:
   - slug: 01-kangfu-gailun
-    title: 第1章 康复医学概论
-    segments: 5
+    title: 康复的目标是功能而不是治愈，判据必须落在活动上
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.93
+    estimate_minutes: 13.07      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 12.59      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-gongneng-pingding
-    title: 第2章 功能评定
-    segments: 5
+    title: 评定不是打分，是把功能变化变成别人能复核的说法
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.89
+    estimate_minutes: 12.07      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.32      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-yundong-gongneng
-    title: 第3章 运动功能与训练
-    segments: 5
+    title: 训练不是加量，是在能承受的范围里换回可控的动作
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.95
+    estimate_minutes: 15.67      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.75      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-richeng-shenghuo
-    title: 第4章 日常生活活动与作业治疗
-    segments: 5
+    title: 自理能力是康复的终点，替他做得越多他恢复得越少
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.98
+    estimate_minutes: 14.27      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-yanyu-yinshi
-    title: 第5章 言语、吞咽与认知康复
-    segments: 5
+    title: 言语、吞咽与认知康复：三块里只有一块按秒计时
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.99
+    estimate_minutes: 14.23      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.11      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-kangfu-huli
-    title: 第6章 康复护理与并发症预防
-    segments: 5
+    title: 康复护理与并发症预防：同一个翻身动作，既是五种并发症的解药，也是引信
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.99
+    estimate_minutes: 13.08      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-shequ-changqi
-    title: 第7章 社区与长期照护
-    segments: 5
+    title: 社区与长期照护：断点不在家里，在从机构到家那一次交接
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.93
+    estimate_minutes: 13.42      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.57      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-tuandui-lunli
-    title: 第8章 康复团队与伦理
-    segments: 5
+    title: 康复团队与伦理：分工写在职责里，伦理写在两列里
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.9
+    estimate_minutes: 14.38      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.56      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

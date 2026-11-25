@@ -1,31 +1,96 @@
 {
   "chapter": "05-miniao-xitong",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 18,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 8
+      "chars": 32
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 61
+      "chars": 35
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 14
+      "chars": 208
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 127
+      "chars": 135
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 389
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 387
+    },
+    {
+      "n": 7,
+      "segment": 5,
+      "chars": 93
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 221
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 226
+    },
+    {
+      "n": 10,
+      "segment": 6,
+      "chars": 301
+    },
+    {
+      "n": 11,
+      "segment": 6,
+      "chars": 357
+    },
+    {
+      "n": 12,
+      "segment": 7,
+      "chars": 373
+    },
+    {
+      "n": 13,
+      "segment": 7,
+      "chars": 222
+    },
+    {
+      "n": 14,
+      "segment": 7,
+      "chars": 215
+    },
+    {
+      "n": 15,
+      "segment": 8,
+      "chars": 406
+    },
+    {
+      "n": 16,
+      "segment": 8,
+      "chars": 166
+    },
+    {
+      "n": 17,
+      "segment": 9,
+      "chars": 425
+    },
+    {
+      "n": 18,
+      "segment": 10,
       "chars": 52
     }
   ]

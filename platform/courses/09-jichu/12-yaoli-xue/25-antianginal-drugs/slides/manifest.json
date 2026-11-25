@@ -1,131 +1,156 @@
 {
   "chapter": "25-antianginal-drugs",
-  "slideCount": 25,
-  "segmentCount": 12,
+  "slideCount": 30,
+  "segmentCount": 11,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 19
+      "chars": 36
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 94
+      "chars": 18
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 149
+      "chars": 50
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 196
+      "chars": 85
     },
     {
       "n": 5,
       "segment": 5,
-      "chars": 326
+      "chars": 360
     },
     {
       "n": 6,
       "segment": 5,
-      "chars": 390
+      "chars": 301
     },
     {
       "n": 7,
-      "segment": 5,
-      "chars": 49
+      "segment": 6,
+      "chars": 307
     },
     {
       "n": 8,
       "segment": 6,
-      "chars": 353
+      "chars": 227
     },
     {
       "n": 9,
       "segment": 6,
-      "chars": 420
+      "chars": 415
     },
     {
       "n": 10,
       "segment": 6,
-      "chars": 395
+      "chars": 255
     },
     {
       "n": 11,
       "segment": 6,
-      "chars": 225
+      "chars": 210
     },
     {
       "n": 12,
       "segment": 7,
-      "chars": 408
+      "chars": 387
     },
     {
       "n": 13,
       "segment": 7,
-      "chars": 331
+      "chars": 348
     },
     {
       "n": 14,
       "segment": 7,
-      "chars": 418
+      "chars": 110
     },
     {
       "n": 15,
-      "segment": 7,
-      "chars": 262
+      "segment": 8,
+      "chars": 410
     },
     {
       "n": 16,
       "segment": 8,
-      "chars": 380
+      "chars": 304
     },
     {
       "n": 17,
       "segment": 8,
-      "chars": 388
+      "chars": 289
     },
     {
       "n": 18,
-      "segment": 8,
-      "chars": 119
+      "segment": 9,
+      "chars": 390
     },
     {
       "n": 19,
       "segment": 9,
-      "chars": 418
+      "chars": 384
     },
     {
       "n": 20,
       "segment": 9,
-      "chars": 419
+      "chars": 370
     },
     {
       "n": 21,
       "segment": 9,
-      "chars": 416
+      "chars": 415
     },
     {
       "n": 22,
       "segment": 9,
-      "chars": 90
+      "chars": 389
     },
     {
       "n": 23,
-      "segment": 10,
-      "chars": 288
+      "segment": 9,
+      "chars": 390
     },
     {
       "n": 24,
-      "segment": 11,
-      "chars": 450
+      "segment": 9,
+      "chars": 402
     },
     {
       "n": 25,
-      "segment": 12,
+      "segment": 9,
+      "chars": 364
+    },
+    {
+      "n": 26,
+      "segment": 9,
+      "chars": 316
+    },
+    {
+      "n": 27,
+      "segment": 10,
+      "chars": 418
+    },
+    {
+      "n": 28,
+      "segment": 10,
+      "chars": 395
+    },
+    {
+      "n": 29,
+      "segment": 10,
+      "chars": 172
+    },
+    {
+      "n": 30,
+      "segment": 11,
       "chars": 52
     }
   ]

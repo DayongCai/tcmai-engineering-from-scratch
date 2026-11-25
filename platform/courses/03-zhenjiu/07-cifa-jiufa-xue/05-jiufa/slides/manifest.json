@@ -1,31 +1,81 @@
 {
   "chapter": "05-jiufa",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 15,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 6
+      "chars": 30
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 58
+      "chars": 45
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 27
+      "chars": 230
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 127
+      "chars": 158
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 307
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 268
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 408
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 175
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 45
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 420
+    },
+    {
+      "n": 11,
+      "segment": 7,
+      "chars": 270
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 287
+    },
+    {
+      "n": 13,
+      "segment": 8,
+      "chars": 227
+    },
+    {
+      "n": 14,
+      "segment": 9,
+      "chars": 431
+    },
+    {
+      "n": 15,
+      "segment": 10,
       "chars": 52
     }
   ]

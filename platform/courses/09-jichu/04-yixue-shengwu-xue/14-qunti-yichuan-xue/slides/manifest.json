@@ -1,31 +1,76 @@
 {
   "chapter": "14-qunti-yichuan-xue",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 14,
+  "segmentCount": 12,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 10
+      "chars": 37
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 96
+      "chars": 23
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 24
+      "chars": 251
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 131
+      "chars": 115
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 393
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 271
+    },
+    {
+      "n": 7,
+      "segment": 7,
+      "chars": 311
+    },
+    {
+      "n": 8,
+      "segment": 7,
+      "chars": 319
+    },
+    {
+      "n": 9,
+      "segment": 8,
+      "chars": 307
+    },
+    {
+      "n": 10,
+      "segment": 9,
+      "chars": 221
+    },
+    {
+      "n": 11,
+      "segment": 10,
+      "chars": 273
+    },
+    {
+      "n": 12,
+      "segment": 10,
+      "chars": 185
+    },
+    {
+      "n": 13,
+      "segment": 11,
+      "chars": 397
+    },
+    {
+      "n": 14,
+      "segment": 12,
       "chars": 52
     }
   ]

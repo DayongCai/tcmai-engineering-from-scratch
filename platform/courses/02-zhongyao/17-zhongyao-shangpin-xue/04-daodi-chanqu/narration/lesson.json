@@ -18,7 +18,7 @@
       "spoken": "第 4 章 · 道地药材与产区",
       "estimateSeconds": 3,
       "audio": "001.mp3",
-      "audioSeconds": 3.02
+      "audioSeconds": 3.024
     },
     {
       "n": 2,
@@ -28,7 +28,7 @@
       "spoken": "「《本草经集注·序录》」——本章讲道地产区，教材无篇名级引文；「诸药所生，皆有境界」出于此篇，篇名按此补足，非本章原文篇名。本章要回答的是：道地性是可测的，还是只是名声。",
       "estimateSeconds": 18,
       "audio": "002.mp3",
-      "audioSeconds": 17.38
+      "audioSeconds": 17.376
     },
     {
       "n": 3,
@@ -38,7 +38,7 @@
       "spoken": "两者都有：产区气候土壤影响成分积累（可测），历史声誉影响溢价（不可测但真实存在）。",
       "estimateSeconds": 9,
       "audio": "003.mp3",
-      "audioSeconds": 8.62
+      "audioSeconds": 8.616
     },
     {
       "n": 4,
@@ -48,7 +48,7 @@
       "spoken": "环境逼迫（中药是混合物，任何一个「成分」都要先分出来才能说清楚）+ 知识积累（本章 1 单元 9,078 汉字；三辨主 商品属性 224；四位面（商品形态）主 产地与生产 232；引书 5 部 6 次；数值类命中 1）",
       "estimateSeconds": 21,
       "audio": "004.mp3",
-      "audioSeconds": 21.17
+      "audioSeconds": 21.168
     },
     {
       "n": 5,
@@ -58,10 +58,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "005.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 61.49,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 1.03,
+    "measuredMinutes": 1.02,
+    "ratio": 0.992
+  }
 }

@@ -1,111 +1,221 @@
 {
   "chapter": "38-antimicrobial-drugs-overview",
-  "slideCount": 21,
-  "segmentCount": 13,
+  "slideCount": 43,
+  "segmentCount": 12,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 26
+      "chars": 38
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 65
+      "chars": 21
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 184
+      "chars": 50
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 244
+      "chars": 85
     },
     {
       "n": 5,
       "segment": 5,
-      "chars": 417
+      "chars": 385
     },
     {
       "n": 6,
       "segment": 5,
-      "chars": 187
+      "chars": 386
     },
     {
       "n": 7,
-      "segment": 6,
-      "chars": 302
+      "segment": 5,
+      "chars": 264
     },
     {
       "n": 8,
       "segment": 6,
-      "chars": 119
+      "chars": 353
     },
     {
       "n": 9,
-      "segment": 7,
-      "chars": 366
+      "segment": 6,
+      "chars": 287
     },
     {
       "n": 10,
-      "segment": 7,
-      "chars": 380
+      "segment": 6,
+      "chars": 355
     },
     {
       "n": 11,
-      "segment": 7,
-      "chars": 147
+      "segment": 6,
+      "chars": 406
     },
     {
       "n": 12,
+      "segment": 6,
+      "chars": 352
+    },
+    {
+      "n": 13,
+      "segment": 6,
+      "chars": 309
+    },
+    {
+      "n": 14,
+      "segment": 7,
+      "chars": 323
+    },
+    {
+      "n": 15,
+      "segment": 7,
+      "chars": 395
+    },
+    {
+      "n": 16,
+      "segment": 7,
+      "chars": 282
+    },
+    {
+      "n": 17,
+      "segment": 7,
+      "chars": 293
+    },
+    {
+      "n": 18,
+      "segment": 7,
+      "chars": 229
+    },
+    {
+      "n": 19,
+      "segment": 8,
+      "chars": 333
+    },
+    {
+      "n": 20,
+      "segment": 8,
+      "chars": 182
+    },
+    {
+      "n": 21,
+      "segment": 8,
+      "chars": 412
+    },
+    {
+      "n": 22,
+      "segment": 8,
+      "chars": 403
+    },
+    {
+      "n": 23,
       "segment": 8,
       "chars": 402
     },
     {
-      "n": 13,
+      "n": 24,
       "segment": 8,
+      "chars": 203
+    },
+    {
+      "n": 25,
+      "segment": 9,
+      "chars": 416
+    },
+    {
+      "n": 26,
+      "segment": 9,
       "chars": 354
     },
     {
-      "n": 14,
+      "n": 27,
       "segment": 9,
-      "chars": 391
+      "chars": 412
     },
     {
-      "n": 15,
+      "n": 28,
       "segment": 9,
-      "chars": 165
+      "chars": 371
     },
     {
-      "n": 16,
+      "n": 29,
+      "segment": 9,
+      "chars": 382
+    },
+    {
+      "n": 30,
+      "segment": 9,
+      "chars": 399
+    },
+    {
+      "n": 31,
+      "segment": 9,
+      "chars": 284
+    },
+    {
+      "n": 32,
       "segment": 10,
-      "chars": 337
+      "chars": 409
     },
     {
-      "n": 17,
+      "n": 33,
       "segment": 10,
-      "chars": 128
+      "chars": 361
     },
     {
-      "n": 18,
+      "n": 34,
+      "segment": 10,
+      "chars": 308
+    },
+    {
+      "n": 35,
+      "segment": 10,
+      "chars": 278
+    },
+    {
+      "n": 36,
+      "segment": 10,
+      "chars": 234
+    },
+    {
+      "n": 37,
+      "segment": 10,
+      "chars": 418
+    },
+    {
+      "n": 38,
+      "segment": 10,
+      "chars": 354
+    },
+    {
+      "n": 39,
+      "segment": 10,
+      "chars": 373
+    },
+    {
+      "n": 40,
       "segment": 11,
-      "chars": 271
+      "chars": 361
     },
     {
-      "n": 19,
+      "n": 41,
+      "segment": 11,
+      "chars": 310
+    },
+    {
+      "n": 42,
+      "segment": 11,
+      "chars": 329
+    },
+    {
+      "n": 43,
       "segment": 12,
-      "chars": 400
-    },
-    {
-      "n": 20,
-      "segment": 12,
-      "chars": 211
-    },
-    {
-      "n": 21,
-      "segment": 13,
       "chars": 52
     }
   ]

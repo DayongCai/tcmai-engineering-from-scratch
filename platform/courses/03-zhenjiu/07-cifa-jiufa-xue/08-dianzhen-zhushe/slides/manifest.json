@@ -1,31 +1,91 @@
 {
   "chapter": "08-dianzhen-zhushe",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 17,
+  "segmentCount": 11,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 11
+      "chars": 32
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 68
+      "chars": 33
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 25
+      "chars": 167
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 124
+      "chars": 232
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 372
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 164
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 236
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 406
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 420
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 169
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 278
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 360
+    },
+    {
+      "n": 13,
+      "segment": 9,
+      "chars": 374
+    },
+    {
+      "n": 14,
+      "segment": 9,
+      "chars": 224
+    },
+    {
+      "n": 15,
+      "segment": 10,
+      "chars": 335
+    },
+    {
+      "n": 16,
+      "segment": 10,
+      "chars": 149
+    },
+    {
+      "n": 17,
+      "segment": 11,
       "chars": 52
     }
   ]

@@ -29,50 +29,49 @@ platform:
 
 chapters:
   - slug: 01-xulun
-    title: 第1章 绪论：医学史的问题与方法
-    segments: 5
+    title: 医学史不是年表：分期方案一换，同一批材料就讲出不同的故事
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.97
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.97      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-qiyuan-yu-zaoqi
-    title: 第2章 医药的起源与早期医药
-    segments: 5
+    title: 起源不是某个人的发明：四类证据各只答得上一半
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.94
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-chunqiu-qinhan
-    title: 第3章 春秋战国至秦汉：体系的奠基
-    segments: 5
+    title: 奠基不是几位圣人写成的：出土文献把「作者」换成了「层积」
     video: rendered
-    estimate_minutes: 1.02
-    measured_minutes: 1.05
+    estimate_minutes: 1.02      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.05      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-weijin-suitang
-    title: 第4章 魏晋南北朝至隋唐五代：分科与集成
-    segments: 5
+    title: 分科不是把病人切开：切的是可以独立传授的那部分知识
     video: rendered
-    estimate_minutes: 1.05
-    measured_minutes: 1.1
+    estimate_minutes: 1.05      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.10      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-songjinyuan
-    title: 第5章 宋金元：争鸣与建制
-    segments: 5
+    title: 争鸣不是意见多：一个新说要能被反驳，还得交出一条转化规则
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.95
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-mingqing
-    title: 第6章 明清：温病与考据
-    segments: 5
+    title: 温病不是一个人创立的：它的每一层推进都把上一层留着
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.94
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-jindai-dangdai
-    title: 第7章 近代与当代：转型与重建
-    segments: 5
+    title: 近代史最难的不是材料少，是材料都带着立场
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1.01
+    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.01      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-shaoshu-jiaoliu-shuzi
-    title: 第8章 少数民族医学、中外交流与数字化
-    segments: 5
+    title: 少数民族医学史最缺的不是材料，是自我记录
     video: rendered
-    estimate_minutes: 1.05
-    measured_minutes: 1.07
+    estimate_minutes: 1.05      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.07      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

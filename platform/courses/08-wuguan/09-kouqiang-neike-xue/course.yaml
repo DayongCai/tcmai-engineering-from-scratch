@@ -29,62 +29,61 @@ platform:
 
 chapters:
   - slug: 01-e91
-    title: 第1章 口腔内科的范围与检查方法
-    segments: 5
+    title: 口腔内科的边界不按器官划，按「能不能不动刀」划
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.96
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-e92
-    title: 第2章 口腔的中医解剖与生理
-    segments: 5
+    title: 齿属肾说的是来源，络属阳明说的是通路
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.93
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-e93
-    title: 第3章 病因病机：火、虚与齿龈
-    segments: 5
+    title: 「火」是一个字，装着三种治法相反的东西
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.96
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-e94
-    title: 第4章 辨证要点：从齿龈到脏腑
-    segments: 5
+    title: 证名是结论，不是起点
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.95
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-e95
-    title: 第5章 治法与外治的边界
-    segments: 5
+    title: 外治的边界，就是药液与器械能触到的边界
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.9
+    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-e96
-    title: 第6章 龋病与牙痛
-    segments: 5
+    title: 牙痛是一条按深度排列的阶梯上的某一点
     video: rendered
-    estimate_minutes: 0.87
-    measured_minutes: 0.85
+    estimate_minutes: 0.87      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.85      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-e97
-    title: 第7章 牙周病与牙龈出血
-    segments: 5
+    title: 牙周病是无声的：四个读数决定谁先动手
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.91
+    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-e98
-    title: 第8章 口腔黏膜病：口疮与糜烂
-    segments: 5
+    title: 黏膜病先分三层，再谈病名
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.95
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-e99
-    title: 第9章 口臭与口干
-    segments: 5
+    title: 口气与口干都要先定位，再谈清热与滋阴
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.87
+    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.87      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-e910
-    title: 第10章 口腔卫生、调护与预防
-    segments: 5
+    title: 「认真刷牙」不是一个方案
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.93
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

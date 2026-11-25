@@ -29,62 +29,61 @@ platform:
 
 chapters:
   - slug: 01-fenzhen-youxian
-    title: 第1章 分诊、优先级与团队协作
-    segments: 5
+    title: 分诊不是排队，是把有限的注意力按分钟重新分配
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1.01
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.01      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-fusu-chuchan
-    title: 第2章 心搏骤停与心肺复苏、除颤
-    segments: 5
+    title: 复苏的成败不在手法漂亮，而在中断的那几十秒
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.98
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.98      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-xiuke-fusu
-    title: 第3章 休克、严重过敏与液体复苏
-    segments: 5
+    title: 休克先看灌注够不够，再问血压低不低
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 1.01
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.01      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-huxishuai-tongqi
-    title: 第4章 呼吸急症、呼吸衰竭与通气支持
-    segments: 5
+    title: 呼吸急症先保氧合，病因留到气道通了再谈
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1.02
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.02      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-zhongdu-huli
-    title: 第5章 急性中毒与理化因素损伤
-    segments: 5
+    title: 中毒先问时间与途径，解毒从来不是第一动作
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-chuangshang-huli
-    title: 第6章 创伤与多发伤的重症护理
-    segments: 5
+    title: 多发伤的死有三个高峰，护理各守一段
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.97
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.97      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-jiance-jishu
-    title: 第7章 重症监测、常用技术与配合
-    segments: 5
+    title: 监护仪给的是数，护士要给的是趋势
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 1.02
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.02      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-zhentong-zhenwang
-    title: 第8章 意识障碍、抽搐与谵妄管理
-    segments: 5
+    title: 意识下降先当急症处理，别急着给它贴标签
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 1.02
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.02      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-zhuanyun-anquan
-    title: 第9章 特殊人群急症与转运安全
-    segments: 5
+    title: 转运是一次可控的病情恶化，不是一段路程
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1.02
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.02      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-lunli-juece
-    title: 第10章 抢救记录、质量与伦理决策
-    segments: 5
+    title: 抢救记录写的是可复核的时刻，不是事后的叙述
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 1
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

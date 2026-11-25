@@ -18,7 +18,7 @@
       "spoken": "第 10 章 · 参西坐标的边界：哪里能用，哪里不能用",
       "estimateSeconds": 5,
       "audio": "001.mp3",
-      "audioSeconds": 5.21
+      "audioSeconds": 5.208
     },
     {
       "n": 2,
@@ -28,7 +28,7 @@
       "spoken": "「伤寒治法以六经分篇，然手足各有六经，实则十二经也」——医学衷中参西录·三、医论·1．六经总论",
       "estimateSeconds": 10,
       "audio": "002.mp3",
-      "audioSeconds": 10.3
+      "audioSeconds": 10.296
     },
     {
       "n": 3,
@@ -38,7 +38,7 @@
       "spoken": "把「参西」当成先进性标签，于是凡带「西」字就照搬；结果把阶段性解释当成结论，反过来否定辨证。",
       "estimateSeconds": 10,
       "audio": "003.mp3",
-      "audioSeconds": 9.65
+      "audioSeconds": 9.648
     },
     {
       "n": 4,
@@ -48,7 +48,7 @@
       "spoken": "环境逼迫（医学衷中参西录选读在本仓库没有教材底本，唯一可引的是外源文字化本；不复算就只剩口号） + 知识积累（本章取 4 单元 3,426 字；实测药物频次、剂量命中 13 处、参西 0 次、引书 5 部）",
       "estimateSeconds": 20,
       "audio": "004.mp3",
-      "audioSeconds": 19.99
+      "audioSeconds": 19.992
     },
     {
       "n": 5,
@@ -59,7 +59,7 @@
       "spoken": "一、先量它有多宽：不是在全书均匀分布\n本库全量 534 单元里，「参西」词族命中 583 次，落在 203 个单元，占 38%。本章所选医话 4 单元 3,426 字，参西命中 0 次——医话几乎不参西，参西集中在药物与医论。\n二、三种用法，两种今天仍成立\n① 用化学/解剖解释药理与病位（阶段性解释，可替换）；② 用西医的观察方式补中医的四诊（方法层，仍成立）；③ 用西说否定辨证（越界，他自己也没这么做）。分清这三层，才不会把 1909 年的解释当结论。\n三、边界：参西不能替辨证下结论\n全书没有一个方是因「西说如此」而立；所有方证都落在脉证上。这就是边界——参西可以解释，可以补观察，不能替代判定。",
       "estimateSeconds": 61,
       "audio": "005.mp3",
-      "audioSeconds": 63.05
+      "audioSeconds": 63.048
     },
     {
       "n": 6,
@@ -69,10 +69,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "006.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 119.5,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 1.95,
+    "measuredMinutes": 1.99,
+    "ratio": 1.021
+  }
 }

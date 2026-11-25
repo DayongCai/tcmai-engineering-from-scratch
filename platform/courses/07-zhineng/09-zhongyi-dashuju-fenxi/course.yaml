@@ -29,50 +29,49 @@ platform:
 
 chapters:
   - slug: 01-s1
-    title: 第1章 数据的搜集、整理与图表
-    segments: 5
+    title: 数据不是捡来的，是签过字的
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.95
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-s2
-    title: 第2章 集中趋势、离散程度与正态分布
-    segments: 5
+    title: 平均数是一句没说完的话
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1
+    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-s3
-    title: 第3章 抽样误差、参数估计与假设检验
-    segments: 5
+    title: p 值不是有效性的判决书
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1
+    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-s4
-    title: 第4章 t 检验、方差分析与卡方检验
-    segments: 5
+    title: 三个检验的名字，不如它们假设的四句话
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.99
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.99      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-s5
-    title: 第5章 非参数检验与直线相关回归
-    segments: 5
+    title: 换成秩，你换掉的是「差多少」
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.96
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-s6
-    title: 第6章 多重回归与生存分析
-    segments: 5
+    title: 单因素显著、多因素消失，那不是数据变了
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.91
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-s7
-    title: 第7章 研究设计与诊断试验
-    segments: 5
+    title: 设计决定你能问什么问题
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.91
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-s8
-    title: 第8章 卫生统计、中医研究与智能分析
-    segments: 5
+    title: 聚类给出的是分组，不是证型
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 0.99
+    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.99      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

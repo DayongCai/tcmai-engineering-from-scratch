@@ -1,7 +1,7 @@
 {
   "chapter": "19-miniao-shengzhi-jibing",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 40,
+  "segmentCount": 13,
   "slides": [
     {
       "n": 1,
@@ -11,7 +11,7 @@
     {
       "n": 2,
       "segment": 2,
-      "chars": 67
+      "chars": 35
     },
     {
       "n": 3,
@@ -26,6 +26,181 @@
     {
       "n": 5,
       "segment": 5,
+      "chars": 375
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 411
+    },
+    {
+      "n": 7,
+      "segment": 7,
+      "chars": 377
+    },
+    {
+      "n": 8,
+      "segment": 7,
+      "chars": 307
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 365
+    },
+    {
+      "n": 10,
+      "segment": 8,
+      "chars": 367
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 113
+    },
+    {
+      "n": 12,
+      "segment": 9,
+      "chars": 349
+    },
+    {
+      "n": 13,
+      "segment": 10,
+      "chars": 385
+    },
+    {
+      "n": 14,
+      "segment": 10,
+      "chars": 357
+    },
+    {
+      "n": 15,
+      "segment": 10,
+      "chars": 365
+    },
+    {
+      "n": 16,
+      "segment": 10,
+      "chars": 399
+    },
+    {
+      "n": 17,
+      "segment": 10,
+      "chars": 369
+    },
+    {
+      "n": 18,
+      "segment": 10,
+      "chars": 230
+    },
+    {
+      "n": 19,
+      "segment": 11,
+      "chars": 403
+    },
+    {
+      "n": 20,
+      "segment": 11,
+      "chars": 319
+    },
+    {
+      "n": 21,
+      "segment": 11,
+      "chars": 310
+    },
+    {
+      "n": 22,
+      "segment": 11,
+      "chars": 283
+    },
+    {
+      "n": 23,
+      "segment": 11,
+      "chars": 288
+    },
+    {
+      "n": 24,
+      "segment": 11,
+      "chars": 301
+    },
+    {
+      "n": 25,
+      "segment": 11,
+      "chars": 291
+    },
+    {
+      "n": 26,
+      "segment": 11,
+      "chars": 302
+    },
+    {
+      "n": 27,
+      "segment": 11,
+      "chars": 289
+    },
+    {
+      "n": 28,
+      "segment": 11,
+      "chars": 310
+    },
+    {
+      "n": 29,
+      "segment": 11,
+      "chars": 309
+    },
+    {
+      "n": 30,
+      "segment": 11,
+      "chars": 284
+    },
+    {
+      "n": 31,
+      "segment": 12,
+      "chars": 411
+    },
+    {
+      "n": 32,
+      "segment": 12,
+      "chars": 317
+    },
+    {
+      "n": 33,
+      "segment": 12,
+      "chars": 365
+    },
+    {
+      "n": 34,
+      "segment": 12,
+      "chars": 209
+    },
+    {
+      "n": 35,
+      "segment": 12,
+      "chars": 395
+    },
+    {
+      "n": 36,
+      "segment": 12,
+      "chars": 411
+    },
+    {
+      "n": 37,
+      "segment": 12,
+      "chars": 401
+    },
+    {
+      "n": 38,
+      "segment": 12,
+      "chars": 31
+    },
+    {
+      "n": 39,
+      "segment": 12,
+      "chars": 422
+    },
+    {
+      "n": 40,
+      "segment": 13,
       "chars": 52
     }
   ]

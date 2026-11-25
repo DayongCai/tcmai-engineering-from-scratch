@@ -5,7 +5,7 @@
     {
       "n": 1,
       "slug": "01-menzhen-lunzhuan",
-      "title": "针灸科门诊轮转：颈肩腰腿痛的接诊与配穴",
+      "title": "门诊这一站，先学会停手，再学会配穴",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/01-menzhen-lunzhuan/docs/zh.md",
@@ -14,7 +14,7 @@
     {
       "n": 2,
       "slug": "02-zhongfeng-kangfu",
-      "title": "中风病康复轮转",
+      "title": "中风康复这一站，判据在功能，不在症状轻重",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/02-zhongfeng-kangfu/docs/zh.md",
@@ -23,7 +23,7 @@
     {
       "n": 3,
       "slug": "03-mian-tan",
-      "title": "面瘫与周围神经损伤轮转",
+      "title": "面瘫这一站先问窗口，窗口判错，手法方向就是反的",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/03-mian-tan/docs/zh.md",
@@ -32,7 +32,7 @@
     {
       "n": 4,
       "slug": "04-jiu-baguan",
-      "title": "灸法与拔罐的适应证与意外处置",
+      "title": "灸罐这一站先划边界，边界之内才轮到手感",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/04-jiu-baguan/docs/zh.md",
@@ -41,7 +41,7 @@
     {
       "n": 5,
       "slug": "05-tuina-lunzhuan",
-      "title": "推拿科轮转",
+      "title": "推拿这一站考的不是会不会做，是第十次还一样不一样",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/05-tuina-lunzhuan/docs/zh.md",
@@ -50,7 +50,7 @@
     {
       "n": 6,
       "slug": "06-chuke-kaohe",
-      "title": "出科考核与病例复盘",
+      "title": "出科考核要能指到环节，指不到环节的复盘等于没复盘",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/06-chuke-kaohe/docs/zh.md",

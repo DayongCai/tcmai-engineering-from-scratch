@@ -1,31 +1,91 @@
 {
   "chapter": "06-yaowu",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 17,
+  "segmentCount": 11,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 12
+      "chars": 24
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 86
+      "chars": 26
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 10
+      "chars": 225
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 122
+      "chars": 259
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 395
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 117
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 381
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 113
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 366
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 109
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 218
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 306
+    },
+    {
+      "n": 13,
+      "segment": 9,
+      "chars": 271
+    },
+    {
+      "n": 14,
+      "segment": 9,
+      "chars": 297
+    },
+    {
+      "n": 15,
+      "segment": 9,
+      "chars": 129
+    },
+    {
+      "n": 16,
+      "segment": 10,
+      "chars": 355
+    },
+    {
+      "n": 17,
+      "segment": 11,
       "chars": 52
     }
   ]

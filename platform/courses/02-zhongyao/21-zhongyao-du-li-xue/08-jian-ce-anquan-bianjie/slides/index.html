@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"/>
-<title>第 8 章 · 不良反应监测与安全边界 · 幻灯片</title>
+<title>第 8 章 · 监测不是等报告，是先定义什么算异常 · 幻灯片</title>
 <style>
 
 :root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
@@ -59,24 +59,74 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <body>
 <div id="deck">
 <section class="slide" data-i="0">
-  <div class="slide-inner"><h1 class="big">第 8 章 · 不良反应监测与安全边界</h1></div>
-  <div class="slide-foot"><span>1 / 5</span><span>title</span></div>
+  <div class="slide-inner"><h1 class="big">第 8 章 · 监测不是等报告，是先定义什么算异常</h1></div>
+  <div class="slide-foot"><span>1 / 13</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「《中国药典·四部》」——药典四部收载药品不良反应与说明书相关通则；篇名按此补足，<strong>非本章原文篇名</strong>。本章要回答的是：说明书上的「尚不明确」到底是什么意思。</blockquote></div>
-  <div class="slide-foot"><span>2 / 5</span><span>motto</span></div>
+  <div class="slide-inner"><blockquote class="motto">「是故圣人不治已病治未病，不治已乱治未乱。」——《素问·四气调神大论》</blockquote></div>
+  <div class="slide-foot"><span>2 / 13</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
-  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">意思是没做过、或没做成；它既不是「安全」也不是「有害」。教材的中药安全性内容受制于这条：能写的写出来，写不出的留在「尚不明确」里——本课也止步于此。</p></div>
-  <div class="slide-foot"><span>3 / 5</span><span>problem</span></div>
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">母本第 8 章 14 个单元里，12 个含「慎用」、1 个含「不宜」、0 个含「禁用」；没有一条给出「异常」的界值。而底本给的正常值定义是有刻度的：<strong>对照组内指标呈正态分布的合理取值范围，取中间 95% 的数据，以 mean ± 1.96 s 表示；80%、90%、99% 三档也可作为取值范围。</strong> 两句话放在一起，问题就摆明了——<strong>没有正常值定义，「不良反应」这个词就没有所指</strong>；而中药条目书不承担这件事。</p></div>
+  <div class="slide-foot"><span>3 / 13</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
-  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（中药是混合物，任何一个「成分」都要先分出来才能说清楚）+ 知识积累（本章 14 单元 1,952 汉字；三辨主 <strong>减毒与救治 46</strong>；四位面（靶器官）主 <strong>生殖与遗传 12</strong>；引书 <strong>1 部 1 次</strong>；数值类命中 13）</p></div>
-  <div class="slide-foot"><span>4 / 5</span><span>roots</span></div>
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（临床上判定「这药有没有出事」，靠的是一张化验单与一个参考区间；参考区间从哪来、怎么定、跨不跨种属，决定了结论能不能成立）＋ 知识积累（要知道正常值不是自然常数，它是从对照组算出来的统计量；也知道判断需要四类对照，缺一类就可能把「假阳性」当成「真毒性」）</p></div>
+  <div class="slide-foot"><span>4 / 13</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
+  <div class="slide-inner"><div class="kicker">一、正常值：为什么是 95%，以及另外三档</div>
+                <div class="compact"><p>底本把正常值写成一句话：<strong>对照组别内，观察指标数据呈正态分布的合理取值范围。</strong> 然后给了取法：以分布在中间区域的 95% 数据为正常值范围，以 mean ± 1.96 s 表示；分布在中间区域的 80%、90%、99% 数据也作为正常值范围。</p>
+<p><strong>这四档不是四个精度等级，是四种假阳性/假阴性配比。</strong> 取 95%，意味着在健康群体里约有 5% 的人会被判为「异常」；取 99%，误判降到 1%，但真异常也会漏掉更多。<strong>换档等于换判据，换判据等于换结论。</strong> 底本还补了一句极重要的限定：毒理学与其它生命科学一样，<strong>在没有统计学意义的时候，某些情况下具有显著的生物学意义</strong>——这句话的意思是，参考区间是筛子，不是判决。</p>
+<p>把这条落回中药：母本写「慎用」时，隐含的是一次判断（这个人能不能用）；而监测要做的是另一次判断（用了之后有没有出事）。<strong>两次判断用的是两套尺：前者是禁忌，后者是参考区间。</strong> 母本只有前者。</p></div></div>
+  <div class="slide-foot"><span>5 / 13</span><span>body</span></div>
+</section>
+<section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">二、对照：四类组别与基准转化</div>
+                <div class="compact"><p>底本对试验设计的表述比多数教材细，它把对照组拆成四类，每类回答一个不同的问题：</p>
+<div class="table-wrap"><table><thead><tr><th>组别</th><th>排除的是什么</th></tr></thead><tbody><tr><td>正常对照组</td><td>排除干扰因素的参照基准</td></tr><tr><td>模型对照组</td><td>造模处理本身的标线迁移</td></tr><tr><td>阴性对照组</td><td>排除假阳性</td></tr><tr><td>阳性对照组（可多组，a/b/c）</td><td>分别排除各机制类型的假阴性</td></tr></tbody></table></div>
+<p>后面还有「药毒剂量组」：最高剂量 D_max 与组间剂量比 k。底本对 k 的选择给了依据——<strong>在设计剂量范围内量效呈线性，提示机制相同或类似；不同剂量区间出现不同线性关系，说明机制不同，有 m 个线性区间就该考虑设 (m−1) 个剂量内部对照组群。</strong> 这句话把「剂量组设几个」从经验问题变成了机制问题。</p></div></div>
+  <div class="slide-foot"><span>6 / 13</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">二、对照：四类组别与基准转化</div>
+                <div class="compact"><p>底本还给了一个概念叫<strong>基准转化</strong>：多个「观察组别群」按逻辑链排列，前一群体是后一群体的对照，后一群体是设立前一群体的目的。<strong>这不是统计学名词，是设计逻辑：每一组的存在理由，都要由下一组来兑现。</strong> 一个试验如果某一组删掉之后结论不变，那这一组就是多余的；反过来，如果某一组的结论无法被下一组承接，链条就断了。</p>
+<p>中药试验里最容易断的是「模型对照」这一环。造模本身会改变一批指标（底本称之为「标线迁移」），如果不设模型对照，就把「造模造成的变化」记到了药物头上。<strong>所以模型对照组的作用不是「多一组数据」，而是把基线从「正常动物」搬到「病理动物」</strong>——同一个指标，在正常动物身上升高是毒性，在模型动物身上不升高反而可能是「没起作用」。这条判据没有对照就立不住，有了对照才谈得上方向。</p></div></div>
+  <div class="slide-foot"><span>7 / 13</span><span>body</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">三、分级与兜底：当测不出 LD50 时怎么办</div>
+                <div class="compact"><p>底本给了药物急性毒性分级的两条路：</p>
+<ul><li><strong>基础分级</strong>：按急性毒性强弱（LD50）与人类潜在危害，WHO 推荐五级标准（剧毒、高毒、中等毒、低毒、微毒），并按大鼠灌胃、大鼠 4 h 吸入、家兔皮肤吸收三条途径分别给界值；</li><li><strong>临床分级</strong>：把药理剧烈、极量与致死量接近、超过极量即可能中毒甚至致死的药称「毒药」，作用稍弱者称「剧药」；<strong>定量界限没有明确，以药物小鼠 LD50 作为参照值。</strong></li></ul>
+<p>底本还写了一句几乎是给中药量身定做的话：<strong>「所有药物只要给药量足够大，都会产生毒性」</strong>——灌胃急性毒性的剂量限度是 5 g·kg⁻¹，注射是 2 g·kg⁻¹；此剂量下部分动物出现死亡，提示该药毒性低下，实际工作不需要再往更高剂量做。测不出致死性时，改测<strong>最大耐受量</strong>：以最大浓度、最大容积给药，小鼠至少 20 只（雌雄各半），连续观察 7 天，以不产生死亡的最大剂量为最大耐受量。</p></div></div>
+  <div class="slide-foot"><span>8 / 13</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">三、分级与兜底：当测不出 LD50 时怎么办</div>
+                <div class="compact"><p><strong>这条兜底对中药特别重要。</strong> 大量中药品种在 5 g·kg⁻¹ 灌胃下测不出 LD50——这不是「无毒」，是「在这个剂量上限下测不到致死」。底本自己就区分了这一点：<strong>致死性反应只是毒效应的一个方面</strong>，有些动物可幸免于致死性毒效应，但可能出现不可逆损伤。<strong>「测不出 LD50」与「没有毒性」是两件事，中间隔着非致死性损害这一整类。</strong></p></div></div>
+  <div class="slide-foot"><span>9 / 13</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">四、监测的现实形态：母本的三句话</div>
+                <div class="compact"><p>母本第 8 章的 14 个单元，全部是药材条目与总论性说明，监测性语言只有三类：<strong>慎用</strong>（12 个单元）、<strong>不宜</strong>（1 个单元）、<strong>禁用</strong>（0 个单元）。逐条看，它们各自的落点是：</p>
+<ul><li>「慎用」落在人群属性上——阴虚者慎用、孕妇慎用、脾胃虚寒者慎用；</li><li>「不宜」落在用法上——不宜久服、不宜与某类同用；</li><li>「禁用」在这 14 个单元里没有出现。</li></ul>
+<p><strong>三类话都不含数值，也都不含监测指标。</strong> 这不是母本写得不好，药材条目书的功能是「告诉你怎么用」，不是「告诉你怎么测」。要补这一层，只能靠制度与试验：底本提到 1985 年卫生部《新药审批办法》规定新药必须研究一般毒性与特殊毒性，我国药物毒理学研究才逐步接近国际前沿——<strong>监测能力是制度建起来的，不是条目写出来的。</strong></p></div></div>
+  <div class="slide-foot"><span>10 / 13</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">四、监测的现实形态：母本的三句话</div>
+                <div class="compact"><p>底本还给了一句判断监测价值的话：核准新药上市时，「既需考虑该药对用药患者本人的利弊，更要洞察该药对人类素质整体的得失」。<strong>这句话把监测的尺度从个体拉到了群体</strong>——单个病例的肝酶升高可能只是噪声，群体层面的信号才是要抓的东西。这也解释了为什么不良反应监测必须以「对照」为骨架：<strong>没有对照，个体事件无法升级为群体信号。</strong></p></div></div>
+  <div class="slide-foot"><span>11 / 13</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">五、代价与边界</div>
+                <div class="compact dense"><ul><li><strong>本章不给任何化验指标的参考区间。</strong> 底本给的是定义（mean ± 1.96 s、95%）与方法，不是具体数值；不同实验室、不同仪器、不同种属的区间不同。</li><li><strong>本章不评价任何药材的「慎用」是否恰当。</strong> 母本原样引用，仅用于说明监测性语言的形态。</li><li><strong>最大耐受量不是安全剂量。</strong> 底本的定义是「不产生死亡的最大剂量」，它不含亚致死损伤的信息。</li><li><strong>正常值的四档不是精度选择，会改变结论。</strong> 选 99% 会漏、选 80% 会误判，本章不给推荐档位。</li><li><strong>本章不含不良反应上报流程与处置方案。</strong> 属机构制度与临床处置范畴。</li></ul>
+<blockquote><p><strong>免责声明：</strong> 本章为中药毒理学的教学整理，讨论正常值、对照设计与分级判据的方法学，不含任何化验参考区间、剂量推荐、不良反应处置或上报流程。文中药材的慎用、不宜等表述均照抄母本条目，不可据以用药。任何实际用药与安全性监测须由执业中医师与临床医师决定，并以现行药典、药品说明书与所在机构制度为准。</p></blockquote></div></div>
+  <div class="slide-foot"><span>12 / 13</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="12">
   <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
-  <div class="slide-foot"><span>5 / 5</span><span>disclaimer</span></div>
+  <div class="slide-foot"><span>13 / 13</span><span>disclaimer</span></div>
 </section>
 </div>
 <div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>

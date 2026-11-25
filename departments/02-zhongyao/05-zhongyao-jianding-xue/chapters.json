@@ -5,61 +5,61 @@
   {
    "n": 1,
    "slug": "01-jianding-yiju",
-   "title": "鉴定的依据：药典、标准与性状",
+   "title": "药典给的是最低线，经验给的是典型样",
    "status": "🚧"
   },
   {
    "n": 2,
    "slug": "02-laiyuan-jianding",
-   "title": "来源鉴定：基原与拉丁名核对",
+   "title": "学名错一个属，整批性状描述跟着作废",
    "status": "🚧"
   },
   {
    "n": 3,
    "slug": "03-xingzhuang-jianding",
-   "title": "性状鉴定：形色气味的大小与比例",
+   "title": "性状鉴定没有仪器，八项描述就是它的仪器",
    "status": "🚧"
   },
   {
    "n": 4,
    "slug": "04-xianwei-jianding",
-   "title": "显微鉴定：组织与粉末特征",
+   "title": "显微报告里没有标定值，就等于没有数字",
    "status": "🚧"
   },
   {
    "n": 5,
    "slug": "05-lihua-jianding",
-   "title": "理化鉴定：薄层与色谱指纹",
+   "title": "同一块板上的对照，比任何绝对数值都硬",
    "status": "🚧"
   },
   {
    "n": 6,
    "slug": "06-weipin-jianbie",
-   "title": "常见伪品与混淆品的鉴别",
+   "title": "伪品不是长得像，是把正品的判据一条条做掉",
    "status": "🚧"
   },
   {
    "n": 7,
    "slug": "07-guizhong-zhenwei",
-   "title": "贵重药材的真伪判定",
+   "title": "贵重药材的真伪，全押在几条能数出来的特征上",
    "status": "🚧"
   },
   {
    "n": 8,
    "slug": "08-dna-tiaoxingma",
-   "title": "DNA 条形码与分子鉴定",
+   "title": "条形码定名、图谱定成分、效价定活性，三样都定不了等级",
    "status": "🚧"
   },
   {
    "n": 9,
    "slug": "09-baogao-guifan",
-   "title": "鉴定报告的规范与可追溯",
+   "title": "报告的效力，藏在取样件数与留样倍数的算术里",
    "status": "🚧"
   },
   {
    "n": 10,
    "slug": "10-tuxiang-wupan",
-   "title": "图像识别在性状鉴定中的误判分析",
+   "title": "图像识别错得最有规律的地方，正是药材最相像的地方",
    "status": "🚧"
   }
  ]

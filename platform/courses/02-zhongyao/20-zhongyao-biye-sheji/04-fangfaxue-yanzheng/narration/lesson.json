@@ -28,7 +28,7 @@
       "spoken": "「《中药毕业设计与知识移交·第4章》」——派生课无本章原文篇名；台账锚点见 standards/biye/。本章要回答的是：质量一致性与方法学验证这一环节的核心判据是什么。",
       "estimateSeconds": 18,
       "audio": "002.mp3",
-      "audioSeconds": 16.01
+      "audioSeconds": 16.008
     },
     {
       "n": 3,
@@ -38,7 +38,7 @@
       "spoken": "方法学验证独立成章：专属性、精密度、回收率、线性，缺一项结论就不能用。",
       "estimateSeconds": 8,
       "audio": "003.mp3",
-      "audioSeconds": 8.06
+      "audioSeconds": 8.064
     },
     {
       "n": 4,
@@ -58,10 +58,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "005.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 63.82,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 1.07,
+    "measuredMinutes": 1.06,
+    "ratio": 0.997
+  }
 }

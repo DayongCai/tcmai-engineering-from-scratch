@@ -6,7 +6,7 @@
   {
    "n": 1,
    "slug": "01-gaishu-jibing-gainian",
-   "title": "疾病学基础概述与疾病概念",
+   "title": "疾病不是一张名录，而是一组可以追问的关系",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-sunshang-yu-shiying",
-   "title": "细胞与组织的损伤与适应",
+   "title": "损伤与适应是同一件事的两头，判据在「还能不能回去」",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -22,7 +22,7 @@
   {
    "n": 3,
    "slug": "03-yanzheng-yu-xiufu",
-   "title": "炎症与修复",
+   "title": "炎症不是一种病，是三样变化的配比",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -30,7 +30,7 @@
   {
    "n": 4,
    "slug": "04-xunhuan-zhangai",
-   "title": "血液循环障碍",
+   "title": "循环障碍不是六种病，是血在管里走错了地方",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -38,7 +38,7 @@
   {
    "n": 5,
    "slug": "05-shuidianjie-suojian-wenluan",
-   "title": "水电解质与酸碱平衡紊乱",
+   "title": "水、电解质与酸碱是三笔账，混着算就全错",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -46,7 +46,7 @@
   {
    "n": 6,
    "slug": "06-queyang-yu-fare",
-   "title": "缺氧与发热",
+   "title": "缺氧看断在哪一环，发热看调定点挪到哪",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -54,7 +54,7 @@
   {
    "n": 7,
    "slug": "07-xiuke-yu-yingji",
-   "title": "休克与应激",
+   "title": "休克的分期不取决于血压读数，而取决于代偿还剩多少余地",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -62,7 +62,7 @@
   {
    "n": 8,
    "slug": "08-zhongliu",
-   "title": "肿瘤",
+   "title": "良性与恶性的分界写在界面上，不写在体积上",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -70,7 +70,7 @@
   {
    "n": 9,
    "slug": "09-xinxueguan-jibing",
-   "title": "心血管系统疾病",
+   "title": "血管壁的改变以十年计，血压只是它最后被看见的那一面",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -78,7 +78,7 @@
   {
    "n": 10,
    "slug": "10-huxi-xitong-jibing",
-   "title": "呼吸系统疾病",
+   "title": "气流受限不是某种病的别名，而是结构与功能之间那道必须分开写的界",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -86,7 +86,7 @@
   {
    "n": 11,
    "slug": "11-xiaohua-miniao-jibing",
-   "title": "消化与泌尿系统疾病",
+   "title": "同一处病变有两本账：结构写一层，功能写一层，对不上才是常态",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -94,7 +94,7 @@
   {
    "n": 12,
    "slug": "12-mianyi-bingyuan-jibing",
-   "title": "免疫与病原相关疾病",
+   "title": "免疫应答的四个环节，比任何一型超敏反应的名字都更该记住",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -102,7 +102,7 @@
   {
    "n": 13,
    "slug": "13-yaowu-zuoyong-jichu",
-   "title": "药物作用基础",
+   "title": "药物作用不是一份用药清单，而是一条可追问的体内过程链",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -110,7 +110,7 @@
   {
    "n": 14,
    "slug": "14-kangganran-kangyan",
-   "title": "抗感染与抗炎治疗基础",
+   "title": "抗感染与抗炎的分界，不在药名，而在「针对什么、凭什么用、何时停」",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -118,7 +118,7 @@
   {
    "n": 15,
    "slug": "15-zhongliu-manxingbing-zhiliao",
-   "title": "肿瘤与慢性病治疗基础",
+   "title": "肿瘤与慢性病的治疗叙述，先从「不说有效」开始",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -126,7 +126,7 @@
   {
    "n": 16,
    "slug": "16-jibing-fangzhi-kangfu",
-   "title": "疾病防治与康复基础",
+   "title": "预防的成败不在口号，而在「谁、在什么时点、做什么」",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -134,7 +134,7 @@
   {
    "n": 17,
    "slug": "17-lunli-yu-goutong",
-   "title": "疾病学基础的伦理与沟通要求",
+   "title": "伦理不是附录条款，而是记录能不能摊开给当事人看的那条底线",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -142,7 +142,7 @@
   {
    "n": 18,
    "slug": "18-pingtai-lianjie",
-   "title": "疾病学基础与 tcmP 平台",
+   "title": "平台能不能用，取决于每条单元有没有「依据」和「边界」两列",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

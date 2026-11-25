@@ -28,7 +28,7 @@
       "spoken": "「《护理综合技能·第18章》」——教材第 18 章章目级引文；教材无篇名级引文，非本章原文篇名。本章要回答的是：护理综合技能与 tcmP 平台这一章的核心判据是什么。",
       "estimateSeconds": 17,
       "audio": "002.mp3",
-      "audioSeconds": 16.78
+      "audioSeconds": 16.776
     },
     {
       "n": 3,
@@ -48,7 +48,7 @@
       "spoken": "环境逼迫（技能训练的成果不在「会做」，在「考核时做得对、在真实场景里做得稳」）+ 知识积累（本章 1 单元 19,047 汉字；三辨主 技能操作 162；四位面（训练环节）主 综合情境 16；引书 1 部 1 次；数值类命中 0）",
       "estimateSeconds": 22,
       "audio": "004.mp3",
-      "audioSeconds": 21.98
+      "audioSeconds": 21.984
     },
     {
       "n": 5,
@@ -58,10 +58,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "005.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 64.22,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 1.07,
+    "measuredMinutes": 1.07,
+    "ratio": 1.004
+  }
 }

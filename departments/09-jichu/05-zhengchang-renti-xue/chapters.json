@@ -6,7 +6,7 @@
   {
    "n": 1,
    "slug": "01-gaishu-yu-cengci",
-   "title": "正常人体学概述与人体构造层次",
+   "title": "人体不是零件的堆叠，而是可逐层追问的构造体系",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-xibao-yu-jiben-zuzhi",
-   "title": "细胞与基本组织",
+   "title": "四类基本组织不是分类摆件，而是功能的四个前置条件",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -22,7 +22,7 @@
   {
    "n": 3,
    "slug": "03-fasheng-yu-fayu-gaishu",
-   "title": "人体发生与发育概述",
+   "title": "发育的每一个阶段都是下一阶段的前提，顺序本身就是知识",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -30,7 +30,7 @@
   {
    "n": 4,
    "slug": "04-yundong-xitong",
-   "title": "运动系统",
+   "title": "骨是支架、关节是许可、肌是动力，三者缺一动作就不成立",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -38,7 +38,7 @@
   {
    "n": 5,
    "slug": "05-xiaohua-xitong",
-   "title": "消化系统",
+   "title": "消化管是一条连续流水线，每一处褶皱都在为吸收记账",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -46,7 +46,7 @@
   {
    "n": 6,
    "slug": "06-huxi-xitong",
-   "title": "呼吸系统",
+   "title": "呼吸不是把气吸进来，而是把胸腔的一次形变换成一次交换",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -54,7 +54,7 @@
   {
    "n": 7,
    "slug": "07-miniao-xitong",
-   "title": "泌尿系统",
+   "title": "尿不是滤出来的，而是滤过之后被逐段改写的结果",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -62,7 +62,7 @@
   {
    "n": 8,
    "slug": "08-shengzhi-xitong",
-   "title": "生殖系统",
+   "title": "生殖系统的关键在于一条通路，而不在于器官清单",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -70,7 +70,7 @@
   {
    "n": 9,
    "slug": "09-maiguan-xitong",
-   "title": "脉管系统",
+   "title": "两条回路、四道瓣膜、一套传导：心既是泵，也是路由",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -78,7 +78,7 @@
   {
    "n": 10,
    "slug": "10-ganjue-qiguan",
-   "title": "感觉器官",
+   "title": "感觉器官要记的不是层数，而是刺激在哪一层变成信号",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -86,7 +86,7 @@
   {
    "n": 11,
    "slug": "11-shenjing-xitong",
-   "title": "神经系统",
+   "title": "神经系统的分层不是目录，而是信号必须逐级换手的地方",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -94,7 +94,7 @@
   {
    "n": 12,
    "slug": "12-neifenmi-xitong",
-   "title": "内分泌系统",
+   "title": "内分泌的层级不是官阶，而是一条能自己踩刹车的回路",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -102,7 +102,7 @@
   {
    "n": 13,
    "slug": "13-xueye-yu-neihuanjing",
-   "title": "血液与内环境稳态",
+   "title": "稳态不是「不变」，而是一条允许波动的容差带",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -110,7 +110,7 @@
   {
    "n": 14,
    "slug": "14-xunhuan-huxi-tiaojie",
-   "title": "血液循环与呼吸功能调节",
+   "title": "循环与呼吸不是两个系统，是一条链的两段",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -118,7 +118,7 @@
   {
    "n": 15,
    "slug": "15-xiaohua-nengliang-daixie",
-   "title": "消化吸收与能量代谢",
+   "title": "吸收的关键不是「吃进去」，而是面积与回流同时到位",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -126,7 +126,7 @@
   {
    "n": 16,
    "slug": "16-paixie-tiwen-tiye",
-   "title": "排泄与体温与体液调节",
+   "title": "排出有四条路，体温只靠四个散热点收尾",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -134,7 +134,7 @@
   {
    "n": 17,
    "slug": "17-zhengti-tiaojie-baohu",
-   "title": "人体功能的整体调节与保护要求",
+   "title": "三种调节的分界不在快慢，而在谁不需要被指挥",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -142,7 +142,7 @@
   {
    "n": 18,
    "slug": "18-pingtai-lianjie",
-   "title": "正常人体学与 tcmP 平台",
+   "title": "知识库的价值不在存了多少条，而在每条都写得出依据与边界",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

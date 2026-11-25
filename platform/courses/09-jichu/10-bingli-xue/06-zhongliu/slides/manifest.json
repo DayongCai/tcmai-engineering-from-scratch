@@ -1,7 +1,7 @@
 {
   "chapter": "06-zhongliu",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 42,
+  "segmentCount": 13,
   "slides": [
     {
       "n": 1,
@@ -11,7 +11,7 @@
     {
       "n": 2,
       "segment": 2,
-      "chars": 86
+      "chars": 29
     },
     {
       "n": 3,
@@ -26,6 +26,191 @@
     {
       "n": 5,
       "segment": 5,
+      "chars": 305
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 389
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 403
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 367
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 420
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 298
+    },
+    {
+      "n": 11,
+      "segment": 7,
+      "chars": 310
+    },
+    {
+      "n": 12,
+      "segment": 7,
+      "chars": 403
+    },
+    {
+      "n": 13,
+      "segment": 7,
+      "chars": 377
+    },
+    {
+      "n": 14,
+      "segment": 7,
+      "chars": 105
+    },
+    {
+      "n": 15,
+      "segment": 8,
+      "chars": 304
+    },
+    {
+      "n": 16,
+      "segment": 8,
+      "chars": 230
+    },
+    {
+      "n": 17,
+      "segment": 9,
+      "chars": 406
+    },
+    {
+      "n": 18,
+      "segment": 9,
+      "chars": 349
+    },
+    {
+      "n": 19,
+      "segment": 9,
+      "chars": 373
+    },
+    {
+      "n": 20,
+      "segment": 10,
+      "chars": 393
+    },
+    {
+      "n": 21,
+      "segment": 10,
+      "chars": 95
+    },
+    {
+      "n": 22,
+      "segment": 11,
+      "chars": 401
+    },
+    {
+      "n": 23,
+      "segment": 11,
+      "chars": 289
+    },
+    {
+      "n": 24,
+      "segment": 11,
+      "chars": 356
+    },
+    {
+      "n": 25,
+      "segment": 11,
+      "chars": 302
+    },
+    {
+      "n": 26,
+      "segment": 11,
+      "chars": 300
+    },
+    {
+      "n": 27,
+      "segment": 11,
+      "chars": 285
+    },
+    {
+      "n": 28,
+      "segment": 11,
+      "chars": 296
+    },
+    {
+      "n": 29,
+      "segment": 11,
+      "chars": 285
+    },
+    {
+      "n": 30,
+      "segment": 11,
+      "chars": 297
+    },
+    {
+      "n": 31,
+      "segment": 11,
+      "chars": 289
+    },
+    {
+      "n": 32,
+      "segment": 11,
+      "chars": 297
+    },
+    {
+      "n": 33,
+      "segment": 11,
+      "chars": 291
+    },
+    {
+      "n": 34,
+      "segment": 12,
+      "chars": 418
+    },
+    {
+      "n": 35,
+      "segment": 12,
+      "chars": 397
+    },
+    {
+      "n": 36,
+      "segment": 12,
+      "chars": 362
+    },
+    {
+      "n": 37,
+      "segment": 12,
+      "chars": 212
+    },
+    {
+      "n": 38,
+      "segment": 12,
+      "chars": 415
+    },
+    {
+      "n": 39,
+      "segment": 12,
+      "chars": 412
+    },
+    {
+      "n": 40,
+      "segment": 12,
+      "chars": 389
+    },
+    {
+      "n": 41,
+      "segment": 12,
+      "chars": 403
+    },
+    {
+      "n": 42,
+      "segment": 13,
       "chars": 52
     }
   ]

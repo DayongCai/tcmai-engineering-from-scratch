@@ -1,7 +1,7 @@
 {
   "chapter": "40-disorders-of-endocrine-function",
-  "slideCount": 31,
-  "segmentCount": 18,
+  "slideCount": 30,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
@@ -11,7 +11,7 @@
     {
       "n": 2,
       "segment": 2,
-      "chars": 75
+      "chars": 27
     },
     {
       "n": 3,
@@ -26,136 +26,131 @@
     {
       "n": 5,
       "segment": 5,
-      "chars": 419
+      "chars": 282
     },
     {
       "n": 6,
       "segment": 5,
-      "chars": 86
+      "chars": 402
     },
     {
       "n": 7,
-      "segment": 6,
-      "chars": 330
+      "segment": 5,
+      "chars": 363
     },
     {
       "n": 8,
-      "segment": 6,
-      "chars": 286
+      "segment": 5,
+      "chars": 283
     },
     {
       "n": 9,
-      "segment": 7,
-      "chars": 335
-    },
-    {
-      "n": 10,
-      "segment": 7,
-      "chars": 268
-    },
-    {
-      "n": 11,
-      "segment": 8,
+      "segment": 5,
       "chars": 357
     },
     {
-      "n": 12,
-      "segment": 8,
-      "chars": 88
+      "n": 10,
+      "segment": 5,
+      "chars": 368
     },
     {
-      "n": 13,
-      "segment": 9,
-      "chars": 398
-    },
-    {
-      "n": 14,
-      "segment": 9,
-      "chars": 148
-    },
-    {
-      "n": 15,
-      "segment": 10,
-      "chars": 398
-    },
-    {
-      "n": 16,
-      "segment": 10,
-      "chars": 202
-    },
-    {
-      "n": 17,
-      "segment": 11,
-      "chars": 369
-    },
-    {
-      "n": 18,
-      "segment": 11,
-      "chars": 158
-    },
-    {
-      "n": 19,
-      "segment": 12,
-      "chars": 385
-    },
-    {
-      "n": 20,
-      "segment": 12,
-      "chars": 272
-    },
-    {
-      "n": 21,
-      "segment": 13,
-      "chars": 377
-    },
-    {
-      "n": 22,
-      "segment": 13,
-      "chars": 70
-    },
-    {
-      "n": 23,
-      "segment": 14,
-      "chars": 381
-    },
-    {
-      "n": 24,
-      "segment": 14,
-      "chars": 193
-    },
-    {
-      "n": 25,
-      "segment": 15,
-      "chars": 404
-    },
-    {
-      "n": 26,
-      "segment": 15,
-      "chars": 84
-    },
-    {
-      "n": 27,
-      "segment": 16,
-      "chars": 384
-    },
-    {
-      "n": 28,
-      "segment": 16,
-      "chars": 123
-    },
-    {
-      "n": 29,
-      "segment": 17,
-      "chars": 409
-    },
-    {
-      "n": 30,
-      "segment": 17,
+      "n": 11,
+      "segment": 5,
       "chars": 181
     },
     {
-      "n": 31,
-      "segment": 18,
+      "n": 12,
+      "segment": 6,
+      "chars": 413
+    },
+    {
+      "n": 13,
+      "segment": 6,
+      "chars": 393
+    },
+    {
+      "n": 14,
+      "segment": 6,
+      "chars": 406
+    },
+    {
+      "n": 15,
+      "segment": 6,
+      "chars": 419
+    },
+    {
+      "n": 16,
+      "segment": 6,
+      "chars": 411
+    },
+    {
+      "n": 17,
+      "segment": 6,
+      "chars": 363
+    },
+    {
+      "n": 18,
+      "segment": 6,
+      "chars": 377
+    },
+    {
+      "n": 19,
+      "segment": 6,
+      "chars": 70
+    },
+    {
+      "n": 20,
+      "segment": 7,
+      "chars": 395
+    },
+    {
+      "n": 21,
+      "segment": 7,
+      "chars": 385
+    },
+    {
+      "n": 22,
+      "segment": 7,
+      "chars": 309
+    },
+    {
+      "n": 23,
+      "segment": 8,
+      "chars": 384
+    },
+    {
+      "n": 24,
+      "segment": 8,
+      "chars": 123
+    },
+    {
+      "n": 25,
+      "segment": 9,
+      "chars": 409
+    },
+    {
+      "n": 26,
+      "segment": 9,
+      "chars": 329
+    },
+    {
+      "n": 27,
+      "segment": 9,
+      "chars": 390
+    },
+    {
+      "n": 28,
+      "segment": 9,
+      "chars": 368
+    },
+    {
+      "n": 29,
+      "segment": 9,
+      "chars": 115
+    },
+    {
+      "n": 30,
+      "segment": 10,
       "chars": 52
     }
   ]

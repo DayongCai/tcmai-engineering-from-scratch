@@ -29,38 +29,37 @@ platform:
 
 chapters:
   - slug: 01-xuan-ti
-    title: 第1章 选题：从复位方案到可量化命题
-    segments: 5
+    title: 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题
     video: rendered
-    estimate_minutes: 1.1
-    measured_minutes: 1.12
+    estimate_minutes: 10.38      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.52      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-yingxiang-shuju
-    title: 第2章 影像与生物力学数据准备
-    segments: 5
+    title: 影像不是插图，是把「看得见」变成「量得出、量得一样」的那一步
     video: rendered
-    estimate_minutes: 1.07
-    measured_minutes: 1.06
+    estimate_minutes: 9.67      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 7.40      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-shoufa-zhiju
-    title: 第3章 手法与支具的系统实现
-    segments: 5
+    title: 把手法写成流程、把支具写成参数，才算做完；「手感」和「定制」都交不出去
     video: rendered
-    estimate_minutes: 1.07
-    measured_minutes: 1.06
+    estimate_minutes: 9.72      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 7.66      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-liaoxiao-pingjia
-    title: 第4章 疗效与并发症评价
-    segments: 5
+    title: 疗效不是「好转了」，是先在纸上写死「什么叫没好转」
     video: rendered
-    estimate_minutes: 1.03
-    measured_minutes: 1.02
+    estimate_minutes: 10.68      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.25      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-lunwen-dabian
-    title: 第5章 论文写作与答辩
-    segments: 5
+    title: 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1
+    estimate_minutes: 10.13      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.82      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-zhishi-yijiao
-    title: 第6章 知识移交：操作规范与交接
-    segments: 5
+    title: 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法
     video: rendered
-    estimate_minutes: 1.05
-    measured_minutes: 1.08
+    estimate_minutes: 9.40      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.02      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

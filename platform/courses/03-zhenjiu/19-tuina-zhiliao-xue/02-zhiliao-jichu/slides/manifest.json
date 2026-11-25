@@ -1,31 +1,101 @@
 {
   "chapter": "02-zhiliao-jichu",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 19,
+  "segmentCount": 11,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 10
+      "chars": 21
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 52
+      "chars": 15
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 42
+      "chars": 222
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 113
+      "chars": 137
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 419
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 246
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 373
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 402
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 75
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 352
+    },
+    {
+      "n": 11,
+      "segment": 7,
+      "chars": 159
+    },
+    {
+      "n": 12,
+      "segment": 7,
+      "chars": 297
+    },
+    {
+      "n": 13,
+      "segment": 8,
+      "chars": 309
+    },
+    {
+      "n": 14,
+      "segment": 8,
+      "chars": 301
+    },
+    {
+      "n": 15,
+      "segment": 9,
+      "chars": 359
+    },
+    {
+      "n": 16,
+      "segment": 9,
+      "chars": 215
+    },
+    {
+      "n": 17,
+      "segment": 10,
+      "chars": 355
+    },
+    {
+      "n": 18,
+      "segment": 10,
+      "chars": 215
+    },
+    {
+      "n": 19,
+      "segment": 11,
       "chars": 52
     }
   ]

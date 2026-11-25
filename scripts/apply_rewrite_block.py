@@ -38,6 +38,16 @@ import os
 import re
 import sys
 
+# 教材章由生成器整篇独占、不得追加 REWRITE 块的科目（subject 名）。
+# 单一事实来源：data/textbook-generators.json（tests/test_rewrite_blocks.js 也读它）。
+_GEN = {}
+_gp = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                   "data", "textbook-generators.json")
+if os.path.exists(_gp):
+    with open(_gp, encoding="utf-8") as f:
+        _GEN = json.load(f).get("subjects", {})
+OWNED_BY_GENERATOR = {k for k, v in _GEN.items() if not v.get("rewriteBlocks", True)}
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 HANZI = re.compile(r"[\u4e00-\u9fff]")
 BLOCK_RE = re.compile(r"\n?<!-- REWRITE:BEGIN -->[\s\S]*?<!-- REWRITE:END -->\n?", re.M)
@@ -116,6 +126,13 @@ def apply_one(slug, check=False):
     sd = os.path.join(ROOT, "standards", slug)
     cfg = read_json(os.path.join(sd, "rewrite-plan.json"))
     subj = cfg.get("subject", slug)
+    # 辞典派生教材章由 build_zhenghou_cidian.py 独占生成（整篇逐字重算，含末尾验证段）。
+    # 在这里追加 REWRITE 块会让 `build_zhenghou_cidian.py --check` 判 DRIFT，
+    # 而 check 链先跑辞典门，于是每轮 rebuild:all 都制造一次假红。让路。
+    if subj in OWNED_BY_GENERATOR:
+        gen = (_GEN.get(subj) or {}).get("generator", "生成器")
+        print(f"· 跳过 {subj}：该教材由 {gen} 独占生成，不注入 REWRITE 块")
+        return 0
     tb_dir = os.path.join(ROOT, "textbooks", cfg["dept"], subj)
     if not os.path.isdir(tb_dir):
         print(f"✗ 教材目录不存在：textbooks/{cfg['dept']}/{subj}")

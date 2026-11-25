@@ -29,38 +29,37 @@ platform:
 
 chapters:
   - slug: 01-neike-huli
-    title: 第1章 内科护理轮转
-    segments: 5
+    title: 内科轮转的前三天，决定这一站还能学到什么
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.95
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-waike-huli
-    title: 第2章 外科护理轮转
-    segments: 5
+    title: 外科轮转的核心在术前那一天与术后那几个窗口
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.95
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-fuer-huli
-    title: 第3章 妇儿护理轮转
-    segments: 5
+    title: 妇儿轮转要写两个人的记录，一份也不能省
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.95
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-jiwei-huli
-    title: 第4章 急危重症护理轮转
-    segments: 5
+    title: 急危重症轮转先学排序：谁先看，比看得多快更重要
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.99
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.99      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-zhongyi-huli-jishu
-    title: 第5章 中医护理技术临床应用轮转
-    segments: 5
+    title: 中医技术轮转的门槛是辨证用技，不是把手法练熟
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.97
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.97      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-chuke-kaohe
-    title: 第6章 出科考核与护理个案复盘
-    segments: 5
+    title: 出科考的是一例能不能讲透，不是做过多少项
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

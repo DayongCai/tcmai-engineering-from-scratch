@@ -18,7 +18,7 @@
       "spoken": "第 10 章 · 动物模型与证候模型的争议",
       "estimateSeconds": 4,
       "audio": "001.mp3",
-      "audioSeconds": 4.03
+      "audioSeconds": 4.032
     },
     {
       "n": 2,
@@ -28,7 +28,7 @@
       "spoken": "「《素问·五常政大论》」——教材·第3章·3.2.2。本章要回答的是：证候动物模型为什么一直有争议。",
       "estimateSeconds": 11,
       "audio": "002.mp3",
-      "audioSeconds": 10.61
+      "audioSeconds": 10.608
     },
     {
       "n": 3,
@@ -48,7 +48,7 @@
       "spoken": "环境逼迫（中药是混合物，任何一个「成分」都要先分出来才能说清楚）+ 知识积累（本章 2 单元 5,307 汉字；三辨主 实验证据 77；四位面（药物类别）主 消化与代谢 32；引书 4 部 6 次；数值类命中 0）",
       "estimateSeconds": 20,
       "audio": "004.mp3",
-      "audioSeconds": 20.45
+      "audioSeconds": 20.448
     },
     {
       "n": 5,
@@ -58,10 +58,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "005.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 55.75,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 0.93,
+    "measuredMinutes": 0.93,
+    "ratio": 0.996
+  }
 }

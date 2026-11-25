@@ -29,62 +29,61 @@ platform:
 
 chapters:
   - slug: 01-du-xing-gainian
-    title: 第1章 毒理学的对象：剂量、分级与安全窗
-    segments: 5
+    title: 毒性不是标签，是三个剂量与一条曲线共同决定的区间
     video: rendered
-    estimate_minutes: 1.08
-    measured_minutes: 1.09
+    estimate_minutes: 11.43      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.44      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-du-xing-wuzhi
-    title: 第2章 毒性物质基础：成分类型与矿物药
-    segments: 5
+    title: 决定毒性的是代谢产物与靶分子的反应，不是药材的名字
     video: rendered
-    estimate_minutes: 1.05
-    measured_minutes: 1.06
+    estimate_minutes: 10.82      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.18      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-gan-du-xing
-    title: 第3章 肝毒性：为什么肝最先受损
-    segments: 5
+    title: 肝不是被药毒死的，是被自己的代谢酶改造出的产物毒死的
     video: rendered
-    estimate_minutes: 1.07
-    measured_minutes: 1.06
+    estimate_minutes: 9.12      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 6.80      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-shen-du-xing
-    title: 第4章 肾毒性：马兜铃酸的教训
-    segments: 5
+    title: 肾不是被毒物泡坏的，是被浓缩机制放大的
     video: rendered
-    estimate_minutes: 1.05
-    measured_minutes: 1.05
+    estimate_minutes: 9.17      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 6.61      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-xin-shen-jing-du-xing
-    title: 第5章 心与神经毒性：乌头碱的半小时
-    segments: 5
+    title: 心与神经的毒性，按分钟计，而标签按剂计
     video: rendered
-    estimate_minutes: 1.07
-    measured_minutes: 1.07
+    estimate_minutes: 8.80      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 6.60      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-shengzhi-du-xing
-    title: 第6章 生殖与遗传毒性：妊娠禁忌的分级
-    segments: 5
+    title: 致畸的窗口不是九个月，是器官形成的那十几天
     video: rendered
-    estimate_minutes: 1.17
-    measured_minutes: 1.13
+    estimate_minutes: 9.35      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 7.66      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-peiwu-paozhi-jian-du
-    title: 第7章 配伍与炮制减毒：十八反十九畏怎么读
-    segments: 5
+    title: 减毒不是把毒药变没毒，是把暴露曲线往左推
     video: rendered
-    estimate_minutes: 1.17
-    measured_minutes: 1.16
+    estimate_minutes: 10.55      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 7.83      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-jian-ce-anquan-bianjie
-    title: 第8章 不良反应监测与安全边界
-    segments: 5
+    title: 监测不是等报告，是先定义什么算异常
     video: rendered
-    estimate_minutes: 1.13
-    measured_minutes: 1.11
+    estimate_minutes: 9.55      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 7.65      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-shiyan-anquan-pingjia
-    title: 第9章 毒理实验与安全评价：LD50、亚慢性、遗传毒性与 GLP
-    segments: 5
+    title: 试验的样本量，决定了结论能说到哪一步
     video: rendered
-    estimate_minutes: 1.37
-    measured_minutes: 1.34
+    estimate_minutes: 12.53      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-zhiyanxing-changqi
-    title: 第10章 致癌性与长期暴露：从「中毒」到「肿瘤」的终点
-    segments: 5
+    title: 致癌的门槛不是剂量，是潜伏期
     video: rendered
-    estimate_minutes: 1.28
-    measured_minutes: 1.24
+    estimate_minutes: 10.52      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.28      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

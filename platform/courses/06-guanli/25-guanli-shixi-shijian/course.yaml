@@ -29,38 +29,37 @@ platform:
 
 chapters:
   - slug: 01-yiwu-shixi
-    title: 第1章 医院职能部门实习（医务与质控）
-    segments: 5
+    title: 医务科实习的产出不是跟班印象，而是三张能被复核的表
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 0.97
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.97      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-binggan-shixi
-    title: 第2章 病案与信息科实习
-    segments: 5
+    title: 信息科实习的成品是一份口径字典，不是一张好看的报表
     video: rendered
-    estimate_minutes: 0.87
-    measured_minutes: 0.89
+    estimate_minutes: 0.87      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.89      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-yibao-jiesuan
-    title: 第3章 医保结算与费用结构分析
-    segments: 5
+    title: 费用结构分析的起点是把成本分对类，不是把账算快
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.94
+    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-zhengce-diaoyan
-    title: 第4章 中医药政策落地调研
-    segments: 5
+    title: 政策落地调研要查的不是「有没有发文」，而是钱、人、编哪一条断了
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.9
+    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-pdca-gaijin
-    title: 第5章 管理改进项目（PDCA）
-    segments: 5
+    title: PDCA 里最容易空转的是 C：没有基线的 D 检查不出任何东西
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.93
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-shijian-baogao
-    title: 第6章 实践报告与答辩
-    segments: 5
+    title: 实践报告的可信度来自能被重跑，不来自写得厚
     video: rendered
-    estimate_minutes: 0.87
-    measured_minutes: 0.86
+    estimate_minutes: 0.87      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.86      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

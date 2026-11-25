@@ -1,190 +1,284 @@
-'use strict';
+#!/usr/bin/env node
 /**
- * 补虚药（教材第 25 章）：四节 × 四气 × 归经 的教材统计
+ * 中药学 · 第 10 章 补虚药的分类：四节按功效切，寒温表反推不出节名
  *
  *   node code/main.js
  *
- * 口径：
- *   - 一切数字现算，不抄讲义：章级规模取自 底本.json 的 counts，
- *     药味与性味归经取自 drugs.json（与教材同源，字段逐字来自各药首段）。
- *   - 四气保留「微温 / 微寒」这两级，不压平成「温 / 寒」。
- *     压平会让人误以为全章只有四档，而实际分布是六档（见 byQi 输出）。
- *   - 归经按十二经逐条计数，一味药可计多条，所以分项之和大于药味数。
+ * 正文：chapters/10-buxuyao-fenlei/docs/zh.md
+ * 习题：chapters/10-buxuyao-fenlei/quiz.json
+ * 依赖：仅 Node.js 标准库
  *
- * 本文件想证明的一件事：
- *   四节（补气 / 补阳 / 补血 / 补阴）是**功效轴**，不是寒温轴。
- *   补气 9 味横跨凉、平、温、微温四种气，补血 6 味也横跨微寒到微温；
- *   只有「阴 / 阳」这一刀与四气同向（补阴 0 温、补阳 0 寒凉）。
+ * 只读本章正文与本章 quiz，不读任何底本或标准表：正文改了，这里的数字跟着变。
+ *   · 规模：汉字、段、节标题、表格张数与每张表的列数／行数
+ *   · 本章算术：从正文表格与计数句里解析条目，再算覆盖率、集中度与派生量
+ *   · quiz：题量、三段分布、选项数、解释长度、答案位置是否打散、check 题能否在正文找到原词
+ * 任何一项对不上，说明正文、代码、习题三者已经不同源。
  */
+
+'use strict';
 
 const fs = require('node:fs');
 const path = require('node:path');
 
-/** 向上找 standards/zhongyao：章节目录深度以后可能调整，不写死层级 */
-function findStandards(start) {
-  let dir = start;
-  for (;;) {
-    const cand = path.join(dir, 'standards', 'zhongyao');
-    if (fs.existsSync(path.join(cand, '底本.json'))) return cand;
-    const up = path.dirname(dir);
-    if (up === dir) throw new Error('找不到 standards/zhongyao');
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
+
+const CHAPTER = 10;
+const SLUG = '10-buxuyao-fenlei';
+const TITLE = '补虚药的分类：四节按功效切，寒温表反推不出节名';
+
+/* ── 文本口径 ────────────────────────────────────────────────────── */
+
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+const count = (text, term) => String(text).split(term).length - 1;
+const nums = (s) => (String(s || '').match(/\d+(?:\.\d+)?/g) || []).map(Number);
+const numOf = (v) => Number(String(v == null ? '' : v).replace(/[,，\s%]/g, '')) || 0;
+/** 取单元格开头的数字（后面可能跟着括注） */
+const lead = (v) => Number((String(v == null ? '' : v).match(/^\d+(?:\.\d+)?/) || [0])[0]);
+const readDoc = () => fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+const docLines = (doc) => String(doc).split(/\r?\n/);
+
+/** 节标题：`## 一、…` */
+function sections(doc) {
+  return docLines(doc).filter((l) => /^##\s+/.test(l)).map((l) => l.replace(/^##\s+/, '').trim());
+}
+
+/** 段：非空，不以标题、引文、表格行、清单符号或编号起始 */
+function paragraphs(doc) {
+  return docLines(doc)
+    .map((l) => l.trim())
+    .filter((l) => l && !/^[#>|]/.test(l) && !/^[-*+]\s/.test(l) && !/^\d+[.、]/.test(l))
+    .filter((l) => !l.includes('|'));
+}
+
+/** markdown 表格：表头 + 去分隔行的数据行；围栏代码块里的竖线不算表 */
+function tables(doc) {
+  const ls = docLines(doc);
+  const cells = (l) => l.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map((c) => c.trim());
+  const out = [];
+  let i = 0;
+  let fenced = false;
+  while (i < ls.length) {
+    if (/^\s*```/.test(ls[i])) {
+      fenced = !fenced;
+      i += 1;
+      continue;
+    }
+    if (!fenced && /^\s*\|/.test(ls[i])) {
+      const block = [];
+      while (i < ls.length && /^\s*\|/.test(ls[i])) {
+        block.push(ls[i]);
+        i += 1;
+      }
+      const header = cells(block[0]);
+      const rows = block.slice(1).filter((l) => !/^\s*\|[\s:|-]+\|\s*$/.test(l)).map(cells);
+      out.push({ header, cols: header.length, rows });
+    } else {
+      i += 1;
+    }
   }
+  return out;
 }
-const STD = findStandards(__dirname);
-const readJson = (f) => JSON.parse(fs.readFileSync(path.join(STD, f), 'utf8'));
-const BASE = readJson('底本.json');
-const DRUGS = readJson('drugs.json').drugs;
 
-const CH = '25';
-/** 四气按寒→热的顺序排，缺项不补零，避免把「没有」读成「0 也是一档」 */
-const QI_ORDER = ['寒', '微寒', '凉', '平', '温', '微温', '热'];
+const tableBy = (ts, kw) => ts.find((t) => t.header.join(' ').includes(kw));
 
-const chapter = () => BASE.chapters.find((c) => c.no === CH);
-const drugs = () => DRUGS.filter((d) => d.chapter === CH);
+/* ── 本章算术（从正文解析，不写死结果） ─────────────────────────── */
 
-/** 章级规模：节 / 小节 / 段 / 字 全部取自 counts，再用结构复核一遍 */
-function scale() {
-  const c = chapter();
-  const subs = c.secs.reduce((n, s) => n + s.subs.length, 0);
-  const paras = c.secs.reduce((n, s) => n + s.subs.reduce((m, u) => m + u.paras.length, 0), 0);
+function chapterArithmetic(doc, ts) {
+  const sec = tableBy(ts, '有气值');
+  const blank = tableBy(ts, '正文原句');
+  const mer = tableBy(ts, '占比');
+  const dose = tableBy(ts, '用法用量');
+  if (!sec || !blank || !mer || !dose) throw new Error('正文的四节表／空栏表／归经表／剂型表有缺');
+
+  const per = (re, s) => Number((String(s).match(re) || [])[1]);
+  const f = (re) => per(re, doc);
+
+  // 四节：味数、字数、有气值逐列相加
+  const secN = sec.rows.length;
+  const herbs = sec.rows.reduce((s, r) => s + numOf(r[2]), 0);
+  const chantotal = sec.rows.reduce((s, r) => s + numOf(r[3]), 0);
+  const mean = chantotal / herbs;
+  const widths = sec.rows.map((r) => numOf(r[2]));
+  const filled = sec.rows.reduce((s, r) => s + numOf(r[5]), 0);
+  const covRate = (filled / herbs) * 100;
+
+  // 空栏表：按正文原句分「微温」「微寒」两类
+  const blankN = blank.rows.length;
+  const weiWen = blank.rows.filter((r) => String(r[1]).includes('微温')).length;
+  const weiHan = blank.rows.filter((r) => String(r[1]).includes('微寒')).length;
+
+  // 补阴一节：13 味里有气值 5 条
+  const yinRow = sec.rows.find((r) => String(r[1]).includes('补阴'));
+  const yinN = numOf(yinRow[2]);
+  const yinFilled = numOf(yinRow[5]);
+  const yinCov = (yinFilled / yinN) * 100;
+
+  // 归经：肾居首，补阳 11 味全归肾
+  const tags = mer.rows.reduce((s, r) => s + lead(r[1]), 0);
+  const kidney = lead(mer.rows.find((r) => String(r[0]) === '肾')[1]);
+  const spleen = lead(mer.rows.find((r) => String(r[0]) === '脾')[1]);
+  const kidneyGap = kidney - spleen;
+  const yangN = numOf(sec.rows.find((r) => String(r[1]).includes('补阳'))[2]);
+
+  // 平性占比：只算有值的那几条
+  const flat = f(/平\s*(\d+) 条占\s*\d+%/) || f(/平性\s*(\d+) 条/);
+  const flatShare = (flat / filled) * 100;
+
+  // 剂量：逐条抽「低–高」，取极值
+  const pairs = [];
+  for (const r of dose.rows) {
+    const re = /([\d.]+)\s*[–-]\s*([\d.]+)\s*g/g;
+    let mm;
+    while ((mm = re.exec(String(r[1])))) pairs.push({ low: Number(mm[1]), high: Number(mm[2]) });
+  }
+  const maxHigh = Math.max(...pairs.map((p) => p.high));
+  const minLow = Math.min(...pairs.map((p) => p.low));
+
+  // 归经覆盖率与十八反的位次
+  const merFilled = f(/归经这一栏是本课覆盖率最高的一栏：(\d+) 条全有值/);
+  const tabooPos = f(/十八反十九条里，补虚药占了\s*(\d+)\s*个位置/);
+  const noToxic = f(/39 味里没有一味标「有毒」/) || 0;
+
   return {
-    secs: c.secs.length,
-    subs,
-    paras,
-    chars: c.counts.chars,
-    drugs: drugs().length,
-    charsPerDrug: +(c.counts.chars / drugs().length).toFixed(1),
+    secN,
+    herbs,
+    chantotal,
+    mean: Number(mean.toFixed(1)),
+    widths,
+    filled,
+    covRate: Number(covRate.toFixed(1)),
+    blankN,
+    weiWen,
+    weiHan,
+    yinN,
+    yinFilled,
+    yinCov: Number(yinCov.toFixed(1)),
+    tags,
+    kidney,
+    spleen,
+    kidneyGap,
+    yangN,
+    flat,
+    flatShare: Number(flatShare.toFixed(1)),
+    doseRows: pairs.length,
+    maxHigh,
+    minLow,
+    doseRatio: Math.round(maxHigh / minLow),
+    merFilled,
+    tabooPos,
+    lines: [
+      '四节 ' + secN + ' 节：味数 ' + herbs + '（' + widths.join(' : ') + '）、汉字 ' + chantotal.toLocaleString('en-US') + '，篇均 ' + mean.toFixed(1) + ' 字',
+      '气有值 ' + filled + '/' + herbs + ' = ' + covRate.toFixed(1) + '%；空栏 ' + blankN + ' 条，其中「性微温」' + weiWen + ' 条、「性微寒」' + weiHan + ' 条',
+      '补阴一节 ' + yinN + ' 味里只有 ' + yinFilled + ' 条有气值 = ' + yinCov.toFixed(1) + '% —— 缺口压在典型药上',
+      '平性 ' + flat + ' 条占 ' + flatShare.toFixed(1) + '%（只算有值的 ' + filled + ' 条）',
+      '归经 ' + tags + ' 个经标：肾 ' + kidney + '、脾 ' + spleen + '，差 ' + kidneyGap + ' 条；补阳 ' + yangN + ' 味全归肾',
+      '剂量表 ' + pairs.length + ' 组：两端相差 ' + Math.round(maxHigh / minLow) + ' 倍',
+      '归经 ' + (merFilled || herbs) + ' 条全有值；十八反里补虚药占 ' + tabooPos + ' 个位置，是各章最密的一组',
+    ],
   };
 }
 
-/** 四节名册：每节的药名按教材小节顺序排 */
-function sections() {
-  return chapter().secs.map((s) => ({
-    no: s.no,
-    title: s.title,
-    subs: s.subs.length,
-    paras: s.subs.reduce((n, u) => n + u.paras.length, 0),
-    drugs: drugs().filter((d) => d.sec === s.no).map((d) => d.name),
-  }));
+/* ── quiz：结构 + 接地 ──────────────────────────────────────────── */
+
+/** 正文里 4 字以上的连续汉字片段 */
+function grams(text, n = 4) {
+  const out = new Set();
+  for (const seg of String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
 }
 
-/** 四气分布，按 QI_ORDER 输出，零项剔除 */
-function byQi(list = drugs()) {
-  return QI_ORDER.map((qi) => ({ qi, n: list.filter((d) => d.nature.qi === qi).length }))
-    .filter((x) => x.n > 0);
-}
-
-/** 四节 × 四气 交叉表 */
-function crossTab() {
-  return sections().map((s) => ({
-    sec: s.no,
-    title: s.title,
-    n: s.drugs.length,
-    qi: byQi(drugs().filter((d) => d.sec === s.no)),
-  }));
-}
-
-/** 归经计数，降序；同数按经名排序，保证输出稳定 */
-function jingCount(list = drugs()) {
-  const m = new Map();
-  for (const d of list) for (const j of d.nature.guijing || []) m.set(j, (m.get(j) || 0) + 1);
-  return [...m.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'zh'));
-}
-
-/** 某味药的性味归经 + 教材原句（原句现从 fields 里切，不另行改写） */
-function natureOf(name) {
-  const d = drugs().find((x) => x.name === name);
-  if (!d) throw new Error(`第 ${CH} 章没有这味药: ${name}`);
-  const raw = d.fields['来源与性味归经'] || '';
-  const m = raw.match(/性[^。]*?经。/);
+function quizSummary(quiz, doc) {
+  const body = grams(doc);
+  const qs = Array.isArray(quiz.questions) ? quiz.questions : [];
+  const stage = { pre: 0, check: 0, post: 0 };
+  const items = qs.map((q, i) => {
+    if (stage[q.stage] !== undefined) stage[q.stage] += 1;
+    const opts = Array.isArray(q.options) ? q.options : [];
+    const right = String(opts[q.correct] || '');
+    const hit = [...grams(right)].filter((g) => body.has(g));
+    const why = q.explain || q.explanation || '';
+    return {
+      n: i + 1,
+      stage: q.stage,
+      options: opts.length,
+      correct: q.correct,
+      explainHanzi: hanzi(why),
+      grounded: hit.length,
+      sample: hit.slice(0, 3),
+    };
+  });
   return {
-    name: d.name,
-    sec: d.sec,
-    qi: d.nature.qi,
-    qiIsGraded: /^微/.test(d.nature.qi),
-    wei: d.nature.wei,
-    guijing: d.nature.guijing,
-    sentence: m ? m[0] : null,
-    hasPoisonFlag: /有毒/.test(raw),
+    total: qs.length,
+    stage,
+    items,
+    answers: qs.map((q) => q.correct),
+    distinctAnswers: new Set(qs.map((q) => q.correct)).size,
+    checkGrounded: items.filter((x) => x.stage === 'check' && x.grounded > 0).length,
+    minExplain: items.length ? Math.min(...items.map((x) => x.explainHanzi)) : 0,
+    allFourOptions: items.every((x) => x.options === 4),
+    badCorrect: items.filter((x) => !(Number.isInteger(x.correct) && x.correct >= 0 && x.correct < 4)).length,
+    stageComplete: ['pre', 'check', 'post'].every((s) => stage[s] > 0),
   };
 }
 
-/** 全角字符按 2 列算，输出才对得齐 */
-const dw = (s) => [...String(s)].reduce((n, ch) => n + (/[\u2E80-\uFFEF]/.test(ch) ? 2 : 1), 0);
-const pad = (s, w) => String(s) + ' '.repeat(Math.max(0, w - dw(s)));
-const padl = (s, w) => ' '.repeat(Math.max(0, w - dw(s))) + String(s);
+/* ── 汇总 ──────────────────────────────────────────────────────── */
 
-function table(head, rows) {
-  const widths = head.map((h, i) => Math.max(dw(h), ...rows.map((r) => dw(r[i]))));
-  const line = (cells) => cells.map((c, i) => (i ? '' : '') + pad(c, widths[i])).join('  ').trimEnd();
-  return [line(head), widths.map((w) => '-'.repeat(w)).join('  '), ...rows.map(line)].join('\n');
+function analyze() {
+  const doc = readDoc();
+  const ts = tables(doc);
+  const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+  return {
+    docHanzi: hanzi(doc),
+    paragraphs: paragraphs(doc).length,
+    sections: sections(doc),
+    tables: ts.map((t) => ({ header: t.header, cols: t.cols, rows: t.rows.length })),
+    arith: chapterArithmetic(doc, ts),
+    quiz: quizSummary(quiz, doc),
+  };
 }
 
 function main() {
-  const s = scale();
-  console.log('教材·第25章·补虚药 —— 四节分类的教材统计');
+  const r = analyze();
+  console.log(`中药学 第 ${CHAPTER} 章 · ${TITLE}`);
+  console.log(`正文 ${r.docHanzi.toLocaleString('en-US')} 汉字 · ${r.paragraphs} 段 · 节 ${r.sections.length} 个`);
   console.log('');
-  console.log(table(
-    ['规模项', '数值'],
-    [
-      ['节', s.secs],
-      ['小节', s.subs],
-      ['段', s.paras],
-      ['教材字数', s.chars],
-      ['药物单元', s.drugs],
-      ['平均每味字', s.charsPerDrug],
-    ],
-  ));
-
-  console.log('\n一、四节名册（药名按教材小节顺序）');
-  for (const sec of sections()) {
-    console.log(`${sec.no} ${sec.title}｜${sec.subs} 小节 / ${sec.paras} 段 / ${sec.drugs.length} 味`);
-    console.log(`  ${sec.drugs.join('、')}`);
-  }
-
-  console.log('\n二、四节 × 四气（保留微温、微寒两级）');
-  console.log(table(
-    ['节', '节名', '药数', ...QI_ORDER],
-    crossTab().map((r) => {
-      const cells = QI_ORDER.map((q) => {
-        const hit = r.qi.find((x) => x.qi === q);
-        return hit ? hit.n : '-';
-      });
-      return [r.sec, r.title, r.n, ...cells];
-    }),
-  ));
-
-  console.log('\n三、章内四气合计');
-  console.log(byQi().map((x) => `${x.qi} ${x.n}`).join('｜'));
-
-  console.log('\n四、四节各自的归经前三（分项之和大于药味数：一味药可归多经）');
-  for (const sec of sections()) {
-    const top = jingCount(drugs().filter((d) => d.sec === sec.no)).slice(0, 3);
-    console.log(`${sec.no} ${sec.title}｜${top.map(([j, n]) => `${j}${n}`).join(' ')}`);
-  }
-
-  console.log('\n五、单味药查询（性味归经取自教材各药首段）');
-  for (const name of ['人参', '黄芪', '麦冬']) {
-    const n = natureOf(name);
-    console.log(
-      `${n.name}（${n.sec}）｜气 ${n.qi}${n.qiIsGraded ? '（带程度词）' : ''}｜味 ${n.wei.join('、')}｜归 ${n.guijing.join('、')}经`,
-    );
-    console.log(`  教材原句：${n.sentence}`);
-  }
-
-  console.log('\n六、这组数字能读出什么');
-  const ct = crossTab();
-  for (const r of ct) {
-    const hasWarm = r.qi.some((x) => x.qi === '温' || x.qi === '微温');
-    const hasCold = r.qi.some((x) => x.qi === '寒' || x.qi === '微寒' || x.qi === '凉');
-    console.log(`${r.sec} ${r.title}：温档 ${hasWarm ? '有' : '无'}｜寒凉档 ${hasCold ? '有' : '无'}｜气档数 ${r.qi.length}`);
-  }
-  console.log('读法：补气与补血都同时出现温档与寒凉档，四气分不开这两节；');
-  console.log('     补阳全在温档、补阴全在寒凉与平档，四气只在「阴 / 阳」这一刀上与分类同向。');
-
-  console.log('\n教学边界：本输出为课程统计与检索练习，不构成用药依据。');
+  console.log('结构：');
+  for (const s of r.sections) console.log(`  ${s}`);
+  console.log('');
+  console.log(`表 ${r.tables.length} 张：`);
+  r.tables.forEach((t, i) => console.log(`  [${i + 1}] ${t.header.join(' / ')} —— ${t.cols} 列 × ${t.rows} 行`));
+  console.log('');
+  console.log('本章算术（全部从正文解析后计算）：');
+  for (const line of r.arith.lines) console.log(`  ${line}`);
+  console.log('');
+  console.log(`quiz ${r.quiz.total} 题（pre ${r.quiz.stage.pre} / check ${r.quiz.stage.check} / post ${r.quiz.stage.post}）· 答案 ${r.quiz.answers.join('/')}`);
+  console.log(`  check 题接地 ${r.quiz.checkGrounded} 道 · 答案落在 ${r.quiz.distinctAnswers} 个位置 · 最短解释 ${r.quiz.minExplain} 汉字`);
+  console.log('※ 以上数字由本章正文与 quiz 现算，改正文后重跑即可复核。');
+  console.log('※ 本章为教学材料，字段口径与统计均为课堂约定，不构成诊疗建议，也不替代执业医师的判断。');
 }
 
 if (require.main === module) main();
-module.exports = { CH, QI_ORDER, chapter, drugs, scale, sections, byQi, crossTab, jingCount, natureOf };
+
+module.exports = {
+  analyze,
+  readDoc,
+  sections,
+  paragraphs,
+  tables,
+  tableBy,
+  grams,
+  hanzi,
+  count,
+  nums,
+  numOf,
+  lead,
+  quizSummary,
+  CHAPTER,
+  SLUG,
+  TITLE,
+  DOC,
+  QUIZ,
+};

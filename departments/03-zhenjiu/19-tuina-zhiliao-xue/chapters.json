@@ -5,73 +5,73 @@
   {
    "n": 1,
    "slug": "01-gaishu-tixi",
-   "title": "推拿治疗学概论",
+   "title": "推拿治疗学不是手法目录，是从辨证到疗效评定的一条链",
    "status": "🚧"
   },
   {
    "n": 2,
    "slug": "02-zhiliao-jichu",
-   "title": "推拿治疗基础",
+   "title": "处方里最虚的一格不是穴位，是刺激量",
    "status": "🚧"
   },
   {
    "n": 3,
    "slug": "03-jizhu-bingzheng",
-   "title": "脊柱病证推拿治疗",
+   "title": "脊柱推拿的分水岭不在手法，在分型与禁忌",
    "status": "🚧"
   },
   {
    "n": 4,
    "slug": "04-guguanjie-jinshang",
-   "title": "骨关节与筋伤病证推拿治疗",
+   "title": "关节与筋伤靠分期，不靠一次扳到位",
    "status": "🚧"
   },
   {
    "n": 5,
    "slug": "05-neike-bingzheng",
-   "title": "内科病证推拿治疗",
+   "title": "内科推拿卖的是症状缓解，不是治愈承诺",
    "status": "🚧"
   },
   {
    "n": 6,
    "slug": "06-fuke-bingzheng",
-   "title": "妇科病证推拿治疗",
+   "title": "妇科推拿的第一道工序不是通，是排除妊娠",
    "status": "🚧"
   },
   {
    "n": 7,
    "slug": "07-erke-bingzheng",
-   "title": "儿科病证推拿治疗",
+   "title": "小儿的剂量按次数给，成人的时长表搬不过来",
    "status": "🚧"
   },
   {
    "n": 8,
    "slug": "08-wuguan-qita",
-   "title": "五官与其他病证推拿治疗",
+   "title": "五官三病，推拿只够得到功能那一层",
    "status": "🚧"
   },
   {
    "n": 9,
    "slug": "09-yundong-kangfu",
-   "title": "运动损伤与康复推拿",
+   "title": "运动损伤的手法表只有一张，日期表有四张",
    "status": "🚧"
   },
   {
    "n": 10,
    "slug": "10-anquan-yichang",
-   "title": "推拿治疗安全与异常处理",
+   "title": "推拿的安全事故几乎都不是手法问题，而是诊断问题",
    "status": "🚧"
   },
   {
    "n": 11,
    "slug": "11-xiandai-yanzheng",
-   "title": "推拿治疗现代研究与循证",
+   "title": "证据等级不决定推拿有没有效，只决定这句话能说多响",
    "status": "🚧"
   },
   {
    "n": 12,
    "slug": "12-shuzihua-ai",
-   "title": "推拿治疗数字化与AI时代",
+   "title": "设备能把手法变成数字，不能把数字变成判断",
    "status": "🚧"
   }
  ]

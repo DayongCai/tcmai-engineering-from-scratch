@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"/>
-<title>第 20 章 · 基因表达调控 · 幻灯片</title>
+<title>第 20 章 · 原核用一套操纵子省能量，真核用五层关卡换精细 · 幻灯片</title>
 <style>
 
 :root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
@@ -59,24 +59,96 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <body>
 <div id="deck">
 <section class="slide" data-i="0">
-  <div class="slide-inner"><h1 class="big">第 20 章 · 基因表达调控</h1></div>
-  <div class="slide-foot"><span>1 / 5</span><span>title</span></div>
+  <div class="slide-inner"><h1 class="big">第 20 章 · 原核用一套操纵子省能量，真核用五层关卡换精细</h1></div>
+  <div class="slide-foot"><span>1 / 17</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「《生物化学·基因表达调控》」——教材第20章；章号一一对应。本章要回答的是：基因表达调控：这一章的判据是什么，什么算「看懂了」。</blockquote></div>
-  <div class="slide-foot"><span>2 / 5</span><span>motto</span></div>
+  <div class="slide-inner"><blockquote class="motto">「出入废则神机化灭，升降息则气立孤危。」——《素问·六微旨大论》</blockquote></div>
+  <div class="slide-foot"><span>2 / 17</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
-  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">基因表达调控：原核与真核。</p></div>
-  <div class="slide-foot"><span>3 / 5</span><span>problem</span></div>
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">大肠杆菌的基因组按常引口径约有四千余个基因，人的基因组约有兩万个编码蛋白质的基因，而一个细胞在任何时刻表达的只是其中一部分（教学设定在一到两成之间）。若全部基因同时表达，蛋白总量会远超细胞的容纳能力，代谢也会互相抵消。<strong>所以「表达」从来不是「有基因就开」，而是「在给定的基因总数里选一个子集」。</strong> 选子集的成本差别很大：原核的乳糖操纵子用「三个结构基因 + 一个阻遏蛋白 + 一段操纵基因」就实现了诱导前后差异达千倍量级的开关（常引口径），调控成本极低；真核生物没有采用这套办法，而是在染色质、转录、转录后、翻译、翻译后五个层次上各设关卡。<strong>为什么不学那个便宜的办法？因为便宜的办法只能回答「开或关」，回答不了「开多少、开在哪一群细胞、开多久、开完怎么收」。</strong> 精细是有代价的，代价是关卡多、响应慢、可出错的环节多。</p></div>
+  <div class="slide-foot"><span>3 / 17</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
-  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（生物化学的判据是「底物—酶—产物—能量」四件套：这一步谁催化、能量怎么走，说不清就是没懂）+ 知识积累（本章 12 单元 21,106 汉字；三辨主 <strong>信息传递与调控 756</strong>；四位面（教材篇结构）主 <strong>下篇·医学生化专题与遗传信息 21106</strong>；引书 <strong>0 部 0 次</strong>；数值类命中 0）</p></div>
-  <div class="slide-foot"><span>4 / 5</span><span>roots</span></div>
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（原核生物靠「快速切换碳源」生存，切换必须在一代之内完成，因此调控必须短、必须省；真核生物是多细胞体，同一套基因组要在几百种细胞里扮演不同角色，调控必须能「记住状态」并「只在特定细胞里开」，于是不得不动用染色质这一层结构）+ 知识积累（负调控与正调控的差别、顺式元件与反式因子的配对、操纵子的三个部件、真核五个层次各自的作用点、以及「为什么原核不这么做」的比较，五件事合起来才能解释调控的「成本—精度」权衡；缺一件就只能背操纵子的部件图）</p></div>
+  <div class="slide-foot"><span>4 / 17</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
+  <div class="slide-inner"><div class="kicker">一、表达的基线不是零：组成性、诱导与阻遏</div>
+                <div class="compact dense"><p>基因表达按「是否可调」分成两类：</p>
+<ul><li><strong>组成性表达</strong>：一直在表达，水平相对稳定。这类基因编码的是「细胞一直要用」的蛋白质，如核糖体蛋白、代谢主干通路的酶。它们不是「不受调控」，而是「调控的结果是恒定」。</li><li><strong>可调表达</strong>：按需要开启或关闭，又分诱导（有信号才开）与阻遏（有信号才关）两种方向。</li></ul>
+<p>这个分类的教学价值在于：<strong>它把「调控」从「开关」扩展成了「设定一个工作点」。</strong> 组成性表达的基因也有强弱之分，强与弱由启动子的结构决定；可调表达的基因也有「关不严」的情形，本底表达（漏表达）始终存在。<strong>任何开关都有漏电流</strong>，这一点在后面讲操纵子时还会用到。</p>
+<p>再往下一层，调控可以按「谁控制谁」分：</p>
+<ul><li><strong>负调控</strong>：调节蛋白抑制转录。阻遏蛋白结合操纵基因，挡住聚合酶。</li><li><strong>正调控</strong>：调节蛋白促进转录。激活蛋白帮助聚合酶结合启动子。</li></ul></div></div>
+  <div class="slide-foot"><span>5 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">一、表达的基线不是零：组成性、诱导与阻遏</div>
+                <div class="compact"><p>负调控与正调控不是两种「风格」，而是两种逻辑：负调控适合「默认开、需要时关」，正调控适合「默认关、需要时开」。<strong>同一个操纵子可以同时受两种控制</strong>，乳糖操纵子就是典型（第三节）。</p></div></div>
+  <div class="slide-foot"><span>6 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">二、操纵子：一个开关管三个基因，省的是调控成本</div>
+                <div class="compact"><p>操纵子是原核生物把「功能相关的一组基因」串在一起、共用一套调控元件的结构。它由四个部件组成：</p>
+<div class="table-wrap"><table><thead><tr><th>部件</th><th>作用</th></tr></thead><tbody><tr><td>结构基因</td><td>编码功能蛋白（如 lacZ、lacY、lacA）</td></tr><tr><td>启动子</td><td>聚合酶结合与起始转录的位置</td></tr><tr><td>操纵基因</td><td>阻遏蛋白结合的位置，位于启动子附近</td></tr><tr><td>调节基因</td><td>编码阻遏蛋白或激活蛋白，可位于操纵子之外</td></tr></tbody></table></div>
+<p>操纵子的经济学很清楚：<strong>一条 mRNA 带三个基因，一次转录解决三个蛋白，一次调控解决三个基因。</strong> 若三个基因各自有启动子，细胞要付三份调控成本、三次转录起始。对于「总是要一起用」的功能组（同一个代谢通路的三步），合并是划算的。</p></div></div>
+  <div class="slide-foot"><span>7 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">二、操纵子：一个开关管三个基因，省的是调控成本</div>
+                <div class="compact"><p>但要看清这套结构的<strong>前提</strong>：只有当这组基因「确实总是一起用」时，合并才划算。若其中一个基因有时需要单独开，操纵子反而成了束缚——<strong>共用开关意味着放弃独立调节的自由</strong>。这就是为什么操纵子在原核中普遍、在真核中罕见：真核的基因大多需要「在某种细胞、某个时刻单独开」，共用开关的收益抵不上失去的灵活性。</p>
+<p>操纵子还带来一个副作用：<strong>极性效应</strong>。若操纵子中的一个基因发生无义突变，转录可能提前终止，下游的基因也跟着不表达。<strong>共用一条 mRNA，就共用一份风险。</strong> 这是「省成本」必须付的另一半代价。</p></div></div>
+  <div class="slide-foot"><span>8 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">三、乳糖操纵子的双重控制：诱导 + 分解代谢物阻遏</div>
+                <div class="compact dense"><p>乳糖操纵子是「负调控 + 正调控」叠加的经典模型，两个信号各管一件事：</p>
+<ul><li><strong>负调控（阻遏）</strong>：没有乳糖时，调节基因产物（阻遏蛋白）结合操纵基因，聚合酶不能前进，操纵子关闭。乳糖存在时，其代谢物结合阻遏蛋白，使其构象改变、脱离操纵基因，操纵子打开。<strong>这个信号回答的是「底物在不在」。</strong></li><li><strong>正调控（CAP- cAMP）</strong>：葡萄糖缺乏时，细胞内 cAMP 升高，cAMP 与 CAP 结合，CAP 结合到启动子上游，帮助聚合酶结合，转录效率提高。葡萄糖充足时，cAMP 低，CAP 不结合，转录效率低。<strong>这个信号回答的是「有没有更好的碳源」。</strong></li></ul>
+<p>两个信号叠加，得到四种组合，其中只有一种情形下操纵子高效表达：<strong>有乳糖、无葡萄糖。</strong> 这个设计的逻辑是：<strong>先吃葡萄糖，葡萄糖没了再动用乳糖。</strong> 若只有乳糖而无葡萄糖，细胞必须全力开动乳糖代谢；若有葡萄糖，即使有乳糖也不值得浪费产能去开这套酶。</p>
+<p>这个模型的教学价值不在记住四种组合，而在理解三件事：</p></div></div>
+  <div class="slide-foot"><span>9 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">三、乳糖操纵子的双重控制：诱导 + 分解代谢物阻遏</div>
+                <div class="compact"><ol><li><strong>同一个操纵子可以同时被两个信号控制，两个信号作用于不同的分子（阻遏蛋白 vs CAP），因此可以「与」逻辑组合。</strong></li><li><strong>正调控与负调控不是互斥的</strong>，同时存在时，最终输出是两者相乘（在本底表达的基础上）。</li><li><strong>调控的「逻辑门」是可以从分子相互作用推出来的</strong>，不需要背表。<strong>能从部件推出真值表，才算读懂了调控。</strong></li></ol></div></div>
+  <div class="slide-foot"><span>10 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">四、真核的五层关卡：从染色质到翻译后</div>
+                <div class="compact"><p>真核的调控分布在五个层次，层次越靠前，影响面越大、成本越高：</p></div></div>
+  <div class="slide-foot"><span>11 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">四、真核的五层关卡：从染色质到翻译后</div>
+                <div class="compact dense"><ol><li><strong>染色质水平</strong>：DNA 缠在组蛋白上，紧密包装的区域转录机器进不去。调控手段包括染色质重塑（移动、 eject 核小体）、组蛋白修饰（乙酰化通常与开放相关，甲基化视位点而定）、DNA 甲基化（通常与沉默相关）。<strong>这一层决定「这段 DNA 能不能被碰到」，是总闸。</strong></li><li><strong>转录水平</strong>：转录因子结合增强子或启动子，中介复合体把信号传给聚合酶Ⅱ。增强子可以在很远的位置、以任意方向起作用，靠的是空间上的接触（染色质环化）。<strong>这一层决定「开多强」。</strong></li><li><strong>转录后水平</strong>：选择性剪接决定「哪几个外显子被拼进去」，加帽加尾决定稳定性，RNA 编辑改变个别碱基，微小 RNA 与RNA 结合蛋白决定降解速率。<strong>这一层决定「这份抄本能用多久、用成什么样」。</strong></li><li><strong>翻译水平</strong>：起始因子的磷酸化、mRNA 二级结构、上游开放读框等调节翻译效率。<strong>这一层决定「这份抄本被读多少次」。</strong></li><li><strong>翻译后水平</strong>：修饰、切割、靶向、降解。<strong>这一层决定「造出来的蛋白活不活、去哪、留多久」。</strong></li></ol></div></div>
+  <div class="slide-foot"><span>12 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">四、真核的五层关卡：从染色质到翻译后</div>
+                <div class="compact"><p>五个层次的关系不是并列，而是<strong>串联放大</strong>：一个染色质层面的开关可以决定整群基因的命运；一个剪接决定可以改变一个蛋白的结构；一个翻译后修饰可以瞬间关闭一个已存在的酶。<strong>越靠前的层次影响面越大、响应越慢；越靠后的层次影响面越小、响应越快。</strong> 这个「面的宽窄与速度成反比」的规律，与第十三章「快调与慢调」是同一个道理，只是换到了基因表达这一层。</p></div></div>
+  <div class="slide-foot"><span>13 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">五、比较：为什么真核不采用操纵子</div>
+                <div class="compact dense"><p>把原核与真核并排看，可以列出一张对照表：</p>
+<div class="table-wrap"><table><thead><tr><th>比较项</th><th>原核</th><th>真核</th></tr></thead><tbody><tr><td>基因组组织</td><td>功能相关的基因常成簇</td><td>基因多为独立转录单位，少有操纵子</td></tr><tr><td>主要调控层次</td><td>转录起始（操纵子）</td><td>染色质 + 转录起始 + 转录后 + 翻译 + 翻译后</td></tr><tr><td>转录与翻译</td><td>同时同地（无核膜）</td><td>分开（核内转录，胞质翻译）</td></tr><tr><td>调控的「记忆」</td><td>弱，随底物即时变化</td><td>强，染色质修饰可跨细胞分裂传递</td></tr><tr><td>响应速度</td><td>分钟级</td><td>小时级</td></tr><tr><td>调控成本</td><td>低</td><td>高</td></tr></tbody></table></div>
+<p>这张表的核心结论是：<strong>原核的调控是「经济型」，真核的调控是「精细型」，二者的差别不是水平高低，而是需求不同。</strong> 单细胞生物的需求是「在一代之内切换碳源」，多细胞生物的需求是「让同一套基因组在几百种细胞里长期扮演不同角色」。后者要求「记住状态」，而记忆必须写在结构上（染色质修饰），因此必须付出「染色质这一层」的成本。</p></div></div>
+  <div class="slide-foot"><span>14 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="14">
+  <div class="slide-inner"><div class="kicker">五、比较：为什么真核不采用操纵子</div>
+                <div class="compact"><p>这条比较还解释了一个常见的误解：<strong>「真核调控更复杂」不等于「真核调控更先进」。</strong> 复杂度是被需求逼出来的，不是进化主动选择的「更高级」。若把真核的调控系统装进大肠杆菌，它只会让切换碳源变慢，毫无好处。<strong>评价一套调控系统，只能对着它的需求评价，不能脱离需求谈先进。</strong></p></div></div>
+  <div class="slide-foot"><span>15 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="15">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><ul><li>本章的「大肠杆菌约四千余个基因」「人类约两万个编码蛋白质基因」「乳糖操纵子诱导前后差异达千倍量级」「任一时刻表达一到两成」均为常引口径或教学设定；不同教材与不同测定方法数值有出入，不作为判读依据。</li><li>操纵子的部件划分是教学简化：真实的操纵子还有辅助元件，调节基因的位置也不固定；把它说成四个部件的组合，是为了先建立结构。</li><li>乳糖操纵子的「四种组合」是逻辑模型；实际表达水平还受本底漏表达、cAMP 水平波动、细胞状态等影响，不能当作精确的开关表。</li><li>染色质修饰与 DNA 甲基化的「通常与开放/沉默相关」是统计性描述，存在大量例外；本章不写具体的修饰位点与判读标准。</li><li>引用古籍只到书名与篇名，取其问题意识（「出入废则神机化灭」用以说明开合有度是生命活动的前提），不表示古文献已含现代基因调控理论。</li></ul></div></div>
+  <div class="slide-foot"><span>16 / 17</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="16">
   <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
-  <div class="slide-foot"><span>5 / 5</span><span>disclaimer</span></div>
+  <div class="slide-foot"><span>17 / 17</span><span>disclaimer</span></div>
 </section>
 </div>
 <div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>

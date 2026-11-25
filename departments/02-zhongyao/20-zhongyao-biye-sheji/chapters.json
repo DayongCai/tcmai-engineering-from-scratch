@@ -5,7 +5,7 @@
     {
       "n": 1,
       "slug": "01-xuan-ti",
-      "title": "选题：从质量标志物到可验证假设",
+      "title": "选题的成败取决于假设能否被一批样品证伪",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/01-xuan-ti/docs/zh.md",
@@ -14,7 +14,7 @@
     {
       "n": 2,
       "slug": "02-yangpin-zhunbei",
-      "title": "样品与数据准备（批次、指纹图谱）",
+      "title": "样品不代表性，图谱再精密也只是自证",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/02-yangpin-zhunbei/docs/zh.md",
@@ -23,7 +23,7 @@
     {
       "n": 3,
       "slug": "03-shiyan-shixian",
-      "title": "实验与建模实现",
+      "title": "实验能否被重跑，取决于参数表而不是图谱",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/03-shiyan-shixian/docs/zh.md",
@@ -32,7 +32,7 @@
     {
       "n": 4,
       "slug": "04-fangfaxue-yanzheng",
-      "title": "质量一致性与方法学验证",
+      "title": "方法学验证是结论的准生证，不是附录里的形式",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/04-fangfaxue-yanzheng/docs/zh.md",
@@ -41,7 +41,7 @@
     {
       "n": 5,
       "slug": "05-lunwen-dabian",
-      "title": "论文写作与答辩",
+      "title": "论文的说服力在绪论就定了，答辩只是把它念一遍",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/05-lunwen-dabian/docs/zh.md",
@@ -50,7 +50,7 @@
     {
       "n": 6,
       "slug": "06-zhishi-yijiao",
-      "title": "知识移交：实验记录与交接",
+      "title": "记录不完整的实验等于没做过，交接不清的成果等于没留下",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/06-zhishi-yijiao/docs/zh.md",

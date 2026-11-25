@@ -29,110 +29,109 @@ platform:
 
 chapters:
   - slug: 01-k1
-    title: 第1章 医院会计与财务管理概论
-    segments: 5
+    title: 医院没有利润，只有结余：把医院当企业算，第一页就错了
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.91
+    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-k2
-    title: 第2章 医院财务管理的制度环境
-    segments: 5
+    title: 一台设备要过三本账：制度环境决定了医院财务的算法
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.9
+    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-k3
-    title: 第3章 医院会计基础
-    segments: 5
+    title: 一笔业务两张凭证：平行记账不是繁琐，是把两种真相同时留住
     video: rendered
-    estimate_minutes: 0.82
-    measured_minutes: 0.84
+    estimate_minutes: 0.82      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.84      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-k4
-    title: 第4章 医院财务报告与财务分析
-    segments: 5
+    title: 三张表要一起读：单看一张，结论必然被它骗
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.92
+    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-k5
-    title: 第5章 医院资产的核算与管理
-    segments: 5
+    title: 两笔最贵的资产都不显眼：库房里的周转与账上的年限
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.88
+    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.88      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-k6
-    title: 第6章 医院负债与净资产的核算与管理
-    segments: 5
+    title: 家底分两半：借来的与攒下的，混着看就会把负债能力当实力
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.95
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-k7
-    title: 第7章 医院收入、费用与结余的核算
-    segments: 5
+    title: 收入的确认与钱的到账，永远差一个结算周期
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.95
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-k8
-    title: 第8章 医院成本核算
-    segments: 5
+    title: 成本核算的本质是分摊：每一次分摊都是一次归因假设
     video: rendered
-    estimate_minutes: 0.83
-    measured_minutes: 0.85
+    estimate_minutes: 0.83      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.85      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-k9
-    title: 第9章 医院成本分析与成本管控
-    segments: 5
+    title: 多做不一定多赚：支付标准固定之后，成本—量—本全反过来了
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.92
+    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-k10
-    title: 第10章 医院预算管理
-    segments: 5
+    title: 预算不是预测：一份签了字的承诺，和 4,420 万元的编制分歧
     video: rendered
-    estimate_minutes: 0.85
-    measured_minutes: 0.84
+    estimate_minutes: 0.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.84      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 11-k11
-    title: 第11章 医院资金管理与筹资投资
-    segments: 5
+    title: 账上有钱，账上没钱：结余是意见，现金流是事实
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.93
+    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 12-k12
-    title: 第12章 医院内部控制与财务风险管理
-    segments: 5
+    title: 内控不是多一道签字：让不该由同一个人做的事，真的分开
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.95
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 13-k13
-    title: 第13章 医院绩效管理与成本效益分析
-    segments: 5
+    title: 权重就是政策：排名翻转只需要改一个百分数
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.96
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 14-k14
-    title: 第14章 医院财务监督与内部审计
-    segments: 5
+    title: 整改率 61.6%：审计报告不是终点，闭环才是
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.93
+    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 15-k15
-    title: 第15章 医院财务信息化与智能财务
-    segments: 5
+    title: 六条提示里五条是白看的：智能财务的边界在原始凭据
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.95
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 16-k16
-    title: 第16章 医院财务数据治理与决策支持
-    segments: 5
+    title: 一个数三个答案：床位使用率的 75.7%、71.9% 与 71.4%
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.97
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.97      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 17-k17
-    title: 第17章 医院财务管理的改革与发展
-    segments: 5
+    title: 一笔 800 万元的设备：财务账上结余 720 万元，预算账上结余 0 元
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.93
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 18-k18
-    title: 第18章 医院会计与财务管理与 tcmP 平台
-    segments: 5
+    title: 门禁查得出形式，查不出判断：课程与平台的接口是可复算
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 1
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

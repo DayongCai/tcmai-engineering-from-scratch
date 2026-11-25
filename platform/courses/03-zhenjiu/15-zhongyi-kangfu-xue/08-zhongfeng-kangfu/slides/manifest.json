@@ -1,31 +1,91 @@
 {
   "chapter": "08-zhongfeng-kangfu",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 17,
+  "segmentCount": 8,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 8
+      "chars": 28
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 73
+      "chars": 138
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 13
+      "chars": 240
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 104
+      "chars": 154
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 144
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 336
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 347
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 286
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 311
+    },
+    {
+      "n": 10,
+      "segment": 6,
+      "chars": 418
+    },
+    {
+      "n": 11,
+      "segment": 6,
+      "chars": 399
+    },
+    {
+      "n": 12,
+      "segment": 6,
+      "chars": 361
+    },
+    {
+      "n": 13,
+      "segment": 6,
+      "chars": 339
+    },
+    {
+      "n": 14,
+      "segment": 6,
+      "chars": 186
+    },
+    {
+      "n": 15,
+      "segment": 7,
+      "chars": 464
+    },
+    {
+      "n": 16,
+      "segment": 7,
+      "chars": 228
+    },
+    {
+      "n": 17,
+      "segment": 8,
       "chars": 52
     }
   ]

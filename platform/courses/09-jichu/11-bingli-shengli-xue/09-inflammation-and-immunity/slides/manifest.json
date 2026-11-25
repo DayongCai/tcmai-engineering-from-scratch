@@ -1,7 +1,7 @@
 {
   "chapter": "09-inflammation-and-immunity",
   "slideCount": 30,
-  "segmentCount": 18,
+  "segmentCount": 11,
   "slides": [
     {
       "n": 1,
@@ -11,7 +11,7 @@
     {
       "n": 2,
       "segment": 2,
-      "chars": 88
+      "chars": 34
     },
     {
       "n": 3,
@@ -26,131 +26,131 @@
     {
       "n": 5,
       "segment": 5,
-      "chars": 397
+      "chars": 414
     },
     {
       "n": 6,
       "segment": 5,
-      "chars": 124
+      "chars": 317
     },
     {
       "n": 7,
-      "segment": 6,
-      "chars": 417
+      "segment": 5,
+      "chars": 303
     },
     {
       "n": 8,
-      "segment": 6,
-      "chars": 269
+      "segment": 5,
+      "chars": 294
     },
     {
       "n": 9,
-      "segment": 7,
-      "chars": 314
+      "segment": 5,
+      "chars": 405
     },
     {
       "n": 10,
-      "segment": 7,
-      "chars": 276
+      "segment": 5,
+      "chars": 126
     },
     {
       "n": 11,
-      "segment": 8,
-      "chars": 373
+      "segment": 6,
+      "chars": 412
     },
     {
       "n": 12,
-      "segment": 9,
+      "segment": 6,
       "chars": 415
     },
     {
       "n": 13,
-      "segment": 9,
-      "chars": 88
+      "segment": 6,
+      "chars": 366
     },
     {
       "n": 14,
-      "segment": 10,
-      "chars": 350
+      "segment": 6,
+      "chars": 324
     },
     {
       "n": 15,
-      "segment": 10,
-      "chars": 235
+      "segment": 7,
+      "chars": 353
     },
     {
       "n": 16,
-      "segment": 11,
-      "chars": 335
+      "segment": 7,
+      "chars": 404
     },
     {
       "n": 17,
-      "segment": 11,
-      "chars": 109
+      "segment": 7,
+      "chars": 368
     },
     {
       "n": 18,
-      "segment": 12,
-      "chars": 348
+      "segment": 7,
+      "chars": 417
     },
     {
       "n": 19,
-      "segment": 12,
-      "chars": 81
+      "segment": 7,
+      "chars": 407
     },
     {
       "n": 20,
-      "segment": 13,
-      "chars": 337
+      "segment": 7,
+      "chars": 63
     },
     {
       "n": 21,
-      "segment": 13,
-      "chars": 153
+      "segment": 8,
+      "chars": 409
     },
     {
       "n": 22,
-      "segment": 14,
-      "chars": 412
-    },
-    {
-      "n": 23,
-      "segment": 14,
-      "chars": 151
-    },
-    {
-      "n": 24,
-      "segment": 15,
-      "chars": 385
-    },
-    {
-      "n": 25,
-      "segment": 15,
+      "segment": 8,
       "chars": 236
     },
     {
-      "n": 26,
-      "segment": 16,
+      "n": 23,
+      "segment": 9,
       "chars": 406
     },
     {
-      "n": 27,
-      "segment": 16,
+      "n": 24,
+      "segment": 9,
       "chars": 98
     },
     {
+      "n": 25,
+      "segment": 10,
+      "chars": 420
+    },
+    {
+      "n": 26,
+      "segment": 10,
+      "chars": 378
+    },
+    {
+      "n": 27,
+      "segment": 10,
+      "chars": 407
+    },
+    {
       "n": 28,
-      "segment": 17,
-      "chars": 393
+      "segment": 10,
+      "chars": 316
     },
     {
       "n": 29,
-      "segment": 17,
-      "chars": 260
+      "segment": 10,
+      "chars": 120
     },
     {
       "n": 30,
-      "segment": 18,
+      "segment": 11,
       "chars": 52
     }
   ]

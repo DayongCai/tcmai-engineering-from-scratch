@@ -26,7 +26,12 @@ blockquote.motto{font-family:var(--serif);font-size:clamp(20px,2.6vw,34px);line-
   text-transform:uppercase;margin-bottom:14px}
 .kicker.warn{color:var(--cinnabar)}
 p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var(--serif)}
-.compact{font-size:clamp(19px,1.75vw,27px);line-height:1.85;max-height:70vh;overflow:auto}
+.compact{font-size:clamp(19px,1.75vw,27px);line-height:1.85;max-height:70vh;overflow:hidden}
+.compact.dense{font-size:clamp(16px,1.42vw,22px);line-height:1.6;max-height:80vh}
+.compact.dense table{font-size:14px}
+.compact.denser{font-size:clamp(14px,1.22vw,18px);line-height:1.5;max-height:82vh}
+.compact.denser table{font-size:12px}
+.compact.denser pre{font-size:12px}
 .compact h2,.compact h3{font-family:var(--serif);margin:.6em 0 .3em;font-size:1.15em}
 .compact pre{background:var(--paper-2);border:1px solid var(--line);border-radius:8px;padding:12px;overflow:auto;font-size:15px}
 .compact code{background:var(--paper-2);border:1px solid var(--line);border-radius:4px;padding:1px 4px;font-family:var(--mono)}
@@ -55,154 +60,148 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <div id="deck">
 <section class="slide" data-i="0">
   <div class="slide-inner"><h1 class="big">第 15 章 · 血流异常：一个压差、两套阻力与一条时间窗</h1></div>
-  <div class="slide-foot"><span>1 / 28</span><span>title</span></div>
+  <div class="slide-foot"><span>1 / 26</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「半径的微小变化带来阻力的巨大变化」——补充·hermes-病理生理学讲义·第15章·15.1（《hermes-病理生理学讲义·第15章·15.1》）</blockquote></div>
-  <div class="slide-foot"><span>2 / 28</span><span>motto</span></div>
+  <div class="slide-inner"><blockquote class="motto">「血和则经脉流行，营复阴阳，筋骨劲强。」——《灵枢·本脏》</blockquote></div>
+  <div class="slide-foot"><span>2 / 26</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
   <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">血流异常看起来最像「管道工程」：堵了、漏了、涨了、淤了。可真正让人判断出错的地方不在管道，而在<strong>压差</strong>——同一支动脉闭塞，有人只是走路时小腿酸胀，有人直接坏疽；同样一条腿肿起来，有人是静脉回不去，有人是动脉灌不进，两者的处置方向几乎相反。讲义把这件事压成一句话：缺血与淤血的分界不在「血多血少」，而在毛细血管内的压力往哪一边偏。这一章要交的不是一长串病名，而是一套<strong>从压力与阻力推出体征方向</strong>的推演方法：看到苍白发凉，往压差小的那一侧想；看到发绀肿胀，往压力高的那一侧想。</p></div>
-  <div class="slide-foot"><span>3 / 28</span><span>problem</span></div>
+  <div class="slide-foot"><span>3 / 26</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
   <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（床旁遇到一条颜色不对、温度不对、肿胀不对称的肢体，被要求说出「这是灌不进还是回不去」，而这个判断决定了抬高还是平放、保暖还是降温——两类处置方向相反，选错的代价立刻出现）+ 知识积累（讲义本章 10 节、3006 汉字、4029 非空白字的用词重心显示：缺血 21 次、血栓 17 次、淤血 15 次、栓塞 12 次、水肿 11 次、梗死 9 次、侧支 7 次。笔墨压在「缺血—血栓」这条主干上，侧支只出现 7 次却决定梗死范围；认不清这条主干的顺序，就会把「腿肿」当成起点，而它往往只是中途的一个标记）</p></div>
-  <div class="slide-foot"><span>4 / 28</span><span>roots</span></div>
+  <div class="slide-foot"><span>4 / 26</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
-  <div class="slide-inner"><div class="kicker">一、先把血流拆成三个量（15.1）</div>
-                <div class="compact"><p>15.1 给的是一条可以反复套用的关系，而不是一张病名表：</p>
+  <div class="slide-inner"><div class="kicker">先拆三个量：压差、阻力与两极（15.1–15.3）</div>
+                <div class="compact"><h3 id="先把血流拆成三个量-15-1">先把血流拆成三个量（15.1）</h3>
+<p>15.1 给的是一条可以反复套用的关系，而不是一张病名表：</p>
 <blockquote><p>「血流量由三个量决定：灌注压差（ΔP）、血管阻力（R）、血液黏度（η）」——补充·hermes-病理生理学讲义·第15章·15.1</p></blockquote>
 <p>流量与压差成正比、与阻力成反比，这是第一层。第二层更狠：对单根血管，阻力与半径的<strong>四次方</strong>成反比。四次方这个幂次带来两个推论，两个推论各自都能单独解释一批临床现象。</p>
 <p>其一，<strong>半径是杠杆</strong>。讲义写得很直：「半径减少一半，阻力增大十余倍」。由此点出小动脉为什么被叫作「阻力血管」，也点出机体为什么把调节血压的主要杠杆放在小动脉而不是大动脉上——同样的口径变化，放在半径小的地方能换来阻力的大幅变化，放在弹性血管上只能换来缓冲能力的改变。</p></div></div>
-  <div class="slide-foot"><span>5 / 28</span><span>body</span></div>
+  <div class="slide-foot"><span>5 / 26</span><span>body</span></div>
 </section>
 <section class="slide" data-i="5">
-  <div class="slide-inner"><div class="kicker">一、先把血流拆成三个量（15.1）</div>
-                <div class="compact"><p>其二，<strong>黏度不是常数</strong>。红细胞增多、纤维蛋白原升高、脱水都会推高黏度，阻力随之升高，血流减少，心脏做功增加。讲义在这里留了一个很值得记住的反转：慢性缺氧时代偿性红细胞增多，短期改善了携氧，长期却因黏度上升增加了血栓与心脏负荷的风险。<strong>代偿与代价在同一个变量上兑现</strong>，这是后面各章反复出现的结构。</p>
-<p>第三层是全身层面的乘式：血压近似等于心输出量乘以外周阻力；心输出量等于心率乘以每搏量；每搏量取决于前负荷、后负荷与收缩力。讲义明说这条式子在第 16 章还要再用一次。本章只用它的一个方向：<strong>血压异常的所有机制最终都要落回这个乘式里的某一项</strong>，反过来，某一项被改动也会在这条链上留下痕迹。</p></div></div>
-  <div class="slide-foot"><span>6 / 28</span><span>body</span></div>
+  <div class="slide-inner"><div class="kicker">先拆三个量：压差、阻力与两极（15.1–15.3）</div>
+                <div class="compact dense"><p>其二，<strong>黏度不是常数</strong>。红细胞增多、纤维蛋白原升高、脱水都会推高黏度，阻力随之升高，血流减少，心脏做功增加。讲义在这里留了一个很值得记住的反转：慢性缺氧时代偿性红细胞增多，短期改善了携氧，长期却因黏度上升增加了血栓与心脏负荷的风险。<strong>代偿与代价在同一个变量上兑现</strong>，这是后面各章反复出现的结构。</p>
+<p>第三层是全身层面的乘式：血压近似等于心输出量乘以外周阻力；心输出量等于心率乘以每搏量；每搏量取决于前负荷、后负荷与收缩力。讲义明说这条式子在第 16 章还要再用一次。本章只用它的一个方向：<strong>血压异常的所有机制最终都要落回这个乘式里的某一项</strong>，反过来，某一项被改动也会在这条链上留下痕迹。</p>
+<h3 id="局部血流不是被动的-15-2">局部血流不是被动的（15.2）</h3>
+<p>如果血流只由压力决定，那么压力一降，组织就只能挨着。生理不是这样：</p>
+<blockquote><p>「局部血流不是被动地由压力决定，而是四套机制同时调节的结果」——补充·hermes-病理生理学讲义·第15章·15.2</p></blockquote></div></div>
+  <div class="slide-foot"><span>6 / 26</span><span>body</span></div>
 </section>
 <section class="slide" data-i="6">
-  <div class="slide-inner"><div class="kicker">二、局部血流不是被动的（15.2）</div>
-                <div class="compact"><p>如果血流只由压力决定，那么压力一降，组织就只能挨着。生理不是这样：</p>
-<blockquote><p>「局部血流不是被动地由压力决定，而是四套机制同时调节的结果」——补充·hermes-病理生理学讲义·第15章·15.2</p></blockquote>
-<p>四套机制各自负责一件事。<strong>肌源性调节</strong>是血管平滑肌对牵张的固有反应：压力升高则收缩，压力降低则舒张，作用是把毛细血管压力稳在一个区间内，避免高压冲破毛细血管、低压导致塌陷。<strong>代谢性调节</strong>是代谢产物与低氧本身使血管舒张，这是「充血」的生理基础，也是最接近按需分配的一层。<strong>内皮性调节</strong>把内皮当作一个会感受剪切力并把它翻译成血管张力的器官：一氧化氮与前列环素舒张，内皮素收缩。<strong>神经体液调节</strong>提供全身性的指令：交感缩血管纤维、骨骼肌的交感舒血管纤维、循环中的儿茶酚胺、血管紧张素与血管加压素。</p>
-<p>四套机制之外还有一件结构性的东西：侧支循环。讲义对它的表述很克制，但分量很重：</p></div></div>
-  <div class="slide-foot"><span>7 / 28</span><span>body</span></div>
+  <div class="slide-inner"><div class="kicker">先拆三个量：压差、阻力与两极（15.1–15.3）</div>
+                <div class="compact"><p>四套机制各自负责一件事。<strong>肌源性调节</strong>是血管平滑肌对牵张的固有反应：压力升高则收缩，压力降低则舒张，作用是把毛细血管压力稳在一个区间内，避免高压冲破毛细血管、低压导致塌陷。<strong>代谢性调节</strong>是代谢产物与低氧本身使血管舒张，这是「充血」的生理基础，也是最接近按需分配的一层。<strong>内皮性调节</strong>把内皮当作一个会感受剪切力并把它翻译成血管张力的器官：一氧化氮与前列环素舒张，内皮素收缩。<strong>神经体液调节</strong>提供全身性的指令：交感缩血管纤维、骨骼肌的交感舒血管纤维、循环中的儿茶酚胺、血管紧张素与血管加压素。</p>
+<p>四套机制之外还有一件结构性的东西：侧支循环。讲义对它的表述很克制，但分量很重：</p>
+<blockquote><p>「慢性缺血时原有侧支开放、并逐渐新生，决定梗死的最终范围」——补充·hermes-病理生理学讲义·第15章·15.2</p></blockquote></div></div>
+  <div class="slide-foot"><span>7 / 26</span><span>body</span></div>
 </section>
 <section class="slide" data-i="7">
-  <div class="slide-inner"><div class="kicker">二、局部血流不是被动的（15.2）</div>
-                <div class="compact"><blockquote><p>「慢性缺血时原有侧支开放、并逐渐新生，决定梗死的最终范围」——补充·hermes-病理生理学讲义·第15章·15.2</p></blockquote>
-<p>这一句解释了那个常见的困惑。讲义给的原例是「同样一支动脉闭塞，有人只表现为间歇性跛行，有人直接坏疽」，差别常在侧支建立的多少与快慢，而不在闭塞本身。它同时提示一件写作纪律——<strong>讨论缺血时必须同时交代侧支状态</strong>，只写「某动脉闭塞」等于只写了一半条件。</p>
-<p>自动调节是上述机制的集成结果：灌注压在某个区间内波动时，心、脑、肾仍能维持血流相对恒定；一旦越出这个区间，血流就随压力被动变化。讲义用这一条把两类看似无关的损伤接在一起：压力过高、灌注过多致水肿，压力过低、灌注不足致缺血。<strong>同一个机制的上下两侧各有一种坏法</strong>，这是本章第一个阈值模型。</p></div></div>
-  <div class="slide-foot"><span>8 / 28</span><span>body</span></div>
+  <div class="slide-inner"><div class="kicker">先拆三个量：压差、阻力与两极（15.1–15.3）</div>
+                <div class="compact dense"><p>这一句解释了那个常见的困惑。讲义给的原例是「同样一支动脉闭塞，有人只表现为间歇性跛行，有人直接坏疽」，差别常在侧支建立的多少与快慢，而不在闭塞本身。它同时提示一件写作纪律——<strong>讨论缺血时必须同时交代侧支状态</strong>，只写「某动脉闭塞」等于只写了一半条件。</p>
+<p>自动调节是上述机制的集成结果：灌注压在某个区间内波动时，心、脑、肾仍能维持血流相对恒定；一旦越出这个区间，血流就随压力被动变化。讲义用这一条把两类看似无关的损伤接在一起：压力过高、灌注过多致水肿，压力过低、灌注不足致缺血。<strong>同一个机制的上下两侧各有一种坏法</strong>，这是本章第一个阈值模型。</p>
+<h3 id="两极-缺血与淤血-15-3">两极：缺血与淤血（15.3）</h3>
+<p>血流异常的第一层分类只有两极，外加一个容易被混进来的第三项。缺血是动脉供血不足，组织得不到足够的氧与营养。充血是动脉扩张导致的局部血流增多，分生理性与病理性，通常有保护意义。淤血是静脉回流受阻，血液在毛细血管床淤积，分急性与慢性、局部与全身。</p></div></div>
+  <div class="slide-foot"><span>8 / 26</span><span>body</span></div>
 </section>
 <section class="slide" data-i="8">
-  <div class="slide-inner"><div class="kicker">三、两极：缺血与淤血（15.3）</div>
-                <div class="compact"><p>血流异常的第一层分类只有两极，外加一个容易被混进来的第三项。缺血是动脉供血不足，组织得不到足够的氧与营养。充血是动脉扩张导致的局部血流增多，分生理性与病理性，通常有保护意义。淤血是静脉回流受阻，血液在毛细血管床淤积，分急性与慢性、局部与全身。</p>
-<p>讲义把两极的分界放在一个很具体的位置上：不是「来得少」与「回不去」这两种说法，而是毛细血管内压力的方向。缺血时压力下降，淤血时压力升高。这一条差别带来两个完全不同的后果方向：</p>
+  <div class="slide-inner"><div class="kicker">先拆三个量：压差、阻力与两极（15.1–15.3）</div>
+                <div class="compact"><p>讲义把两极的分界放在一个很具体的位置上：不是「来得少」与「回不去」这两种说法，而是毛细血管内压力的方向。缺血时压力下降，淤血时压力升高。这一条差别带来两个完全不同的后果方向：</p>
 <blockquote><p>「缺血的主要问题是细胞缺氧与营养不足，淤血的主要问题是水肿与出血」——补充·hermes-病理生理学讲义·第15章·15.3</p></blockquote>
-<p>顺下来就是体征方向相反：「缺血肢端苍白、发凉、干瘪；淤血肢端发绀、肿胀、温度可升高」。请注意「温度可升高」这一处——它和「发凉」并不是同一个纬度的反义词，而是提醒：淤血局部的温度取决于血流带来的热量与炎症，不能用一个方向去套所有病例。</p></div></div>
-  <div class="slide-foot"><span>9 / 28</span><span>body</span></div>
+<p>顺下来就是体征方向相反：「缺血肢端苍白、发凉、干瘪；淤血肢端发绀、肿胀、温度可升高」。请注意「温度可升高」这一处——它和「发凉」并不是同一个纬度的反义词，而是提醒：淤血局部的温度取决于血流带来的热量与炎症，不能用一个方向去套所有病例。</p>
+<p>这一节最实用的产出是一张两列对照：把颜色、温度、肿胀、疼痛与体位的关系各归一侧。后面第十节的床旁五项观察，就是这张对照表的操作化版本。</p></div></div>
+  <div class="slide-foot"><span>9 / 26</span><span>body</span></div>
 </section>
 <section class="slide" data-i="9">
-  <div class="slide-inner"><div class="kicker">三、两极：缺血与淤血（15.3）</div>
-                <div class="compact"><p>这一节最实用的产出是一张两列对照：把颜色、温度、肿胀、疼痛与体位的关系各归一侧。后面第十节的床旁五项观察，就是这张对照表的操作化版本。</p></div></div>
-  <div class="slide-foot"><span>10 / 28</span><span>body</span></div>
-</section>
-<section class="slide" data-i="10">
-  <div class="slide-inner"><div class="kicker">四、缺血：四条来路与四级后果（15.4）</div>
-                <div class="compact"><p>缺血的原因被整理成四类。动脉管腔狭窄或闭塞是最常见的一类，其中动脉粥样硬化排在最前，血栓形成与栓塞紧随。动脉痉挛单独一类，包括血管痉挛、药物诱发的收缩与雷诺现象。外部压迫一类常被漏掉：肿瘤、止血带、石膏、疝嵌顿、骨筋膜室综合征——它们的共同点是血管本身没有病变，只是被外面压住了。第四类是全身性低灌注：休克与心力衰竭时灌注压不足，虽然不存在某一支血管堵塞，但组织同样缺血。</p>
+  <div class="slide-inner"><div class="kicker">一条脱落路径：缺血、淤血、血栓与梗死（15.4–15.7）</div>
+                <div class="compact dense"><h3 id="缺血-四条来路与四级后果-15-4">缺血：四条来路与四级后果（15.4）</h3>
+<p>缺血的原因被整理成四类。动脉管腔狭窄或闭塞是最常见的一类，其中动脉粥样硬化排在最前，血栓形成与栓塞紧随。动脉痉挛单独一类，包括血管痉挛、药物诱发的收缩与雷诺现象。外部压迫一类常被漏掉：肿瘤、止血带、石膏、疝嵌顿、骨筋膜室综合征——它们的共同点是血管本身没有病变，只是被外面压住了。第四类是全身性低灌注：休克与心力衰竭时灌注压不足，虽然不存在某一支血管堵塞，但组织同样缺血。</p>
 <p>第四类的存在有方法论意义：<strong>缺血的判据是组织拿不到足够的氧，而不是血管里有没有东西堵着</strong>。只按「堵没堵」找原因，会在休克与心衰面前失手。</p>
 <p>后果由轻到重分四级：功能性（血流恢复即恢复，如心绞痛发作）、可逆性损伤（细胞水肿、脂肪变）、梗死（不可逆坏死）、坏疽（末端缺血合并感染或腐败）。四级之间不是四个病，而是同一条时间轴上的四段。</p>
 <p>为什么同样缺血、后果悬殊？讲义给的钥匙是组织耐受性：</p></div></div>
-  <div class="slide-foot"><span>11 / 28</span><span>body</span></div>
+  <div class="slide-foot"><span>10 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">一条脱落路径：缺血、淤血、血栓与梗死（15.4–15.7）</div>
+                <div class="compact dense"><blockquote><p>「脑与心肌对缺血最敏感，骨骼肌、皮肤、纤维组织相对耐受」——补充·hermes-病理生理学讲义·第15章·15.4</p></blockquote>
+<p>耐受性差异决定了处置的优先次序：主动脉手术要优先保护肾与脊髓，四肢缺血可以争取更长的处理时间。这条推论不是临床建议，而是<strong>器官敏感性排序在时间分配上的直接投影</strong>，本章只写到这一层。</p>
+<h3 id="淤血-三个后果对应三个机制-15-5">淤血：三个后果对应三个机制（15.5）</h3>
+<p>急性淤血来得直接：静脉突然受阻，局部肿胀、发绀、温度下降、毛细血管充盈变慢。慢性淤血是本章更值得花笔墨的一段，因为它把三个后果与三个机制一一对上。</p>
+<p>水肿的机制是毛细血管流体静压升高，液体外渗到组织间隙。出血与含铁血黄素沉积的机制是毛细血管缺氧导致通透性升高，红细胞外漏后被巨噬细胞吞噬，形成含铁血黄素——肺内的这类细胞有一个专门的名字，讲义写作「心衰细胞」。纤维化与器官硬化的机制是长期缺氧与组织损伤刺激成纤维细胞，于是出现肺褐色硬化、肝「槟榔肝」、下肢皮肤色素沉着与溃疡。</p></div></div>
+  <div class="slide-foot"><span>11 / 26</span><span>body</span></div>
 </section>
 <section class="slide" data-i="11">
-  <div class="slide-inner"><div class="kicker">四、缺血：四条来路与四级后果（15.4）</div>
-                <div class="compact"><blockquote><p>「脑与心肌对缺血最敏感，骨骼肌、皮肤、纤维组织相对耐受」——补充·hermes-病理生理学讲义·第15章·15.4</p></blockquote>
-<p>耐受性差异决定了处置的优先次序：主动脉手术要优先保护肾与脊髓，四肢缺血可以争取更长的处理时间。这条推论不是临床建议，而是<strong>器官敏感性排序在时间分配上的直接投影</strong>，本章只写到这一层。</p></div></div>
-  <div class="slide-foot"><span>12 / 28</span><span>body</span></div>
+  <div class="slide-inner"><div class="kicker">一条脱落路径：缺血、淤血、血栓与梗死（15.4–15.7）</div>
+                <div class="compact"><blockquote><p>「右心衰者下肢水肿、皮肤色素沉着、活动后气促（肺淤血）」——补充·hermes-病理生理学讲义·第15章·15.5</p></blockquote>
+<p>这一句是本章最有操作性的一句。它说的不是三个症状，而是<strong>三个后果在同一个患者身上同时出现</strong>。由此得出一条评估纪律：「看到其中一个，要主动去找另外两个」。这条纪律把「淤血」从一个描述词变成了一组必须成套收集的观察项。</p>
+<p>「槟榔肝」这个说法值得停一下：淤血区与脂肪变区相间呈红黄相间的花纹。名字是形态学的，机制是本章的——静脉压升高造成的淤血与缺氧造成的脂肪变在同一个器官里交替分布。记住机制，名字才挂得住。</p>
+<h3 id="血栓与栓塞-一条脱落路径-15-6">血栓与栓塞：一条脱落路径（15.6）</h3>
+<p>血栓是活体内血液凝固形成的固体质块，与死后血凝块的区别有三处：有头体尾的结构、与血管壁粘连、质地较脆。按部位与成分分三类，三类的起病条件与后果都不同。</p></div></div>
+  <div class="slide-foot"><span>12 / 26</span><span>body</span></div>
 </section>
 <section class="slide" data-i="12">
-  <div class="slide-inner"><div class="kicker">五、淤血：三个后果对应三个机制（15.5）</div>
-                <div class="compact"><p>急性淤血来得直接：静脉突然受阻，局部肿胀、发绀、温度下降、毛细血管充盈变慢。慢性淤血是本章更值得花笔墨的一段，因为它把三个后果与三个机制一一对上。</p>
-<p>水肿的机制是毛细血管流体静压升高，液体外渗到组织间隙。出血与含铁血黄素沉积的机制是毛细血管缺氧导致通透性升高，红细胞外漏后被巨噬细胞吞噬，形成含铁血黄素——肺内的这类细胞有一个专门的名字，讲义写作「心衰细胞」。纤维化与器官硬化的机制是长期缺氧与组织损伤刺激成纤维细胞，于是出现肺褐色硬化、肝「槟榔肝」、下肢皮肤色素沉着与溃疡。</p>
-<blockquote><p>「右心衰者下肢水肿、皮肤色素沉着、活动后气促（肺淤血）」——补充·hermes-病理生理学讲义·第15章·15.5</p></blockquote>
-<p>这一句是本章最有操作性的一句。它说的不是三个症状，而是<strong>三个后果在同一个患者身上同时出现</strong>。由此得出一条评估纪律：「看到其中一个，要主动去找另外两个」。这条纪律把「淤血」从一个描述词变成了一组必须成套收集的观察项。</p></div></div>
-  <div class="slide-foot"><span>13 / 28</span><span>body</span></div>
+  <div class="slide-inner"><div class="kicker">一条脱落路径：缺血、淤血、血栓与梗死（15.4–15.7）</div>
+                <div class="compact"><p>动脉血栓多由内皮损伤加高剪切力起病，成分以血小板为主，也就是白色血栓，后果是缺血与梗死。静脉血栓多由淤滞加高凝起病，成分以纤维蛋白与红细胞为主，也就是红色血栓，后果是脱落栓塞。微血管血栓见于弥散性血管内凝血与血栓性微血管病，后果是器官功能障碍与消耗性出血。</p>
+<p>三类的对照说明一件事：<strong>血栓的「成分」是被起病条件决定的</strong>，而成分又决定了后果的方向。所以问这是什么血栓，等于同时问了三件事：在哪里起病、什么条件促成、会往哪里去。</p>
+<p>栓塞是异物随血流运行并阻塞远处血管。类型包括血栓栓塞（最常见，下肢深静脉到肺动脉）、脂肪栓塞、空气栓塞、羊水栓塞、粥样斑块栓塞、肿瘤栓塞与异物栓塞。讲义对深静脉血栓的处理很见功力：</p>
+<blockquote><p>「真正的危险不是腿肿，而是脱落造成肺动脉栓塞」——补充·hermes-病理生理学讲义·第15章·15.6</p></blockquote></div></div>
+  <div class="slide-foot"><span>13 / 26</span><span>body</span></div>
 </section>
 <section class="slide" data-i="13">
-  <div class="slide-inner"><div class="kicker">五、淤血：三个后果对应三个机制（15.5）</div>
-                <div class="compact"><p>「槟榔肝」这个说法值得停一下：淤血区与脂肪变区相间呈红黄相间的花纹。名字是形态学的，机制是本章的——静脉压升高造成的淤血与缺氧造成的脂肪变在同一个器官里交替分布。记住机制，名字才挂得住。</p></div></div>
-  <div class="slide-foot"><span>14 / 28</span><span>body</span></div>
+  <div class="slide-inner"><div class="kicker">一条脱落路径：缺血、淤血、血栓与梗死（15.4–15.7）</div>
+                <div class="compact dense"><p>它还补了一句容易被忽略的事实：「相当一部分可以没有明显症状」。于是「腿肿」的评估重点不在腿，而在有没有肺栓塞的征兆——突发呼吸困难、胸痛、低氧、心率增快，严重时右心负荷骤增。<strong>症状的所在位置与危险的所在位置不一致</strong>，这是本章第二个需要记住的结构。</p>
+<h3 id="梗死-颜色-形态与时间窗-15-7">梗死：颜色、形态与时间窗（15.7）</h3>
+<p>梗死是缺血导致的组织坏死。按色泽分两类：贫血性梗死（白色梗死）发生于实质器官，动脉阻塞且侧支少，坏死区苍白；出血性梗死（红色梗死）发生于疏松组织或有双重血供的器官，坏死区因血流从侧支或吻合支涌入而出血。按坏死形态分两类：凝固性坏死以蛋白变性为主，组织结构轮廓在一定时间内保留；液化性坏死是组织被酶消化成液体，典型部位是脑。</p>
+<p>两种分类维度不能互相替代：色泽说的是<strong>血液在坏死区里的状态</strong>，形态说的是<strong>组织被处理的方式</strong>。同一个梗死可以同时有颜色与形态两个标签，两个标签回答的是不同的问题。</p>
+<p>梗死范围由四件事决定：</p></div></div>
+  <div class="slide-foot"><span>14 / 26</span><span>body</span></div>
 </section>
 <section class="slide" data-i="14">
-  <div class="slide-inner"><div class="kicker">六、血栓与栓塞：一条脱落路径（15.6）</div>
-                <div class="compact"><p>血栓是活体内血液凝固形成的固体质块，与死后血凝块的区别有三处：有头体尾的结构、与血管壁粘连、质地较脆。按部位与成分分三类，三类的起病条件与后果都不同。</p>
-<p>动脉血栓多由内皮损伤加高剪切力起病，成分以血小板为主，也就是白色血栓，后果是缺血与梗死。静脉血栓多由淤滞加高凝起病，成分以纤维蛋白与红细胞为主，也就是红色血栓，后果是脱落栓塞。微血管血栓见于弥散性血管内凝血与血栓性微血管病，后果是器官功能障碍与消耗性出血。</p>
-<p>三类的对照说明一件事：<strong>血栓的「成分」是被起病条件决定的</strong>，而成分又决定了后果的方向。所以问这是什么血栓，等于同时问了三件事：在哪里起病、什么条件促成、会往哪里去。</p>
-<p>栓塞是异物随血流运行并阻塞远处血管。类型包括血栓栓塞（最常见，下肢深静脉到肺动脉）、脂肪栓塞、空气栓塞、羊水栓塞、粥样斑块栓塞、肿瘤栓塞与异物栓塞。讲义对深静脉血栓的处理很见功力：</p></div></div>
-  <div class="slide-foot"><span>15 / 28</span><span>body</span></div>
+  <div class="slide-inner"><div class="kicker">一条脱落路径：缺血、淤血、血栓与梗死（15.4–15.7）</div>
+                <div class="compact"><blockquote><p>「影响梗死范围的四件事：血管阻塞的部位与程度、侧支循环的多少、组织的耐受性、是否为双重血供」——补充·hermes-病理生理学讲义·第15章·15.7</p></blockquote>
+<p>四件事里没有一件是「病名」。这正是本章的方法论：范围是四个条件的函数，不是一个诊断名词的属性。由此才引出时间窗的概念——尽早恢复血流可以挽救「缺血但尚未坏死」的组织，「超过时间窗则坏死不可逆」，再通反而可能带来再灌注损伤。时间窗不是一条固定的线，它是四条条件共同决定的<strong>阈值带</strong>：条件越好，可挽救的窗口越长。</p></div></div>
+  <div class="slide-foot"><span>15 / 26</span><span>body</span></div>
 </section>
 <section class="slide" data-i="15">
-  <div class="slide-inner"><div class="kicker">六、血栓与栓塞：一条脱落路径（15.6）</div>
-                <div class="compact"><blockquote><p>「真正的危险不是腿肿，而是脱落造成肺动脉栓塞」——补充·hermes-病理生理学讲义·第15章·15.6</p></blockquote>
-<p>它还补了一句容易被忽略的事实：「相当一部分可以没有明显症状」。于是「腿肿」的评估重点不在腿，而在有没有肺栓塞的征兆——突发呼吸困难、胸痛、低氧、心率增快，严重时右心负荷骤增。<strong>症状的所在位置与危险的所在位置不一致</strong>，这是本章第二个需要记住的结构。</p></div></div>
-  <div class="slide-foot"><span>16 / 28</span><span>body</span></div>
-</section>
-<section class="slide" data-i="16">
-  <div class="slide-inner"><div class="kicker">七、梗死：颜色、形态与时间窗（15.7）</div>
-                <div class="compact"><p>梗死是缺血导致的组织坏死。按色泽分两类：贫血性梗死（白色梗死）发生于实质器官，动脉阻塞且侧支少，坏死区苍白；出血性梗死（红色梗死）发生于疏松组织或有双重血供的器官，坏死区因血流从侧支或吻合支涌入而出血。按坏死形态分两类：凝固性坏死以蛋白变性为主，组织结构轮廓在一定时间内保留；液化性坏死是组织被酶消化成液体，典型部位是脑。</p>
-<p>两种分类维度不能互相替代：色泽说的是<strong>血液在坏死区里的状态</strong>，形态说的是<strong>组织被处理的方式</strong>。同一个梗死可以同时有颜色与形态两个标签，两个标签回答的是不同的问题。</p>
-<p>梗死范围由四件事决定：</p>
-<blockquote><p>「影响梗死范围的四件事：血管阻塞的部位与程度、侧支循环的多少、组织的耐受性、是否为双重血供」——补充·hermes-病理生理学讲义·第15章·15.7</p></blockquote></div></div>
-  <div class="slide-foot"><span>17 / 28</span><span>body</span></div>
-</section>
-<section class="slide" data-i="17">
-  <div class="slide-inner"><div class="kicker">七、梗死：颜色、形态与时间窗（15.7）</div>
-                <div class="compact"><p>四件事里没有一件是「病名」。这正是本章的方法论：范围是四个条件的函数，不是一个诊断名词的属性。由此才引出时间窗的概念——尽早恢复血流可以挽救「缺血但尚未坏死」的组织，「超过时间窗则坏死不可逆」，再通反而可能带来再灌注损伤。时间窗不是一条固定的线，它是四条条件共同决定的<strong>阈值带</strong>：条件越好，可挽救的窗口越长。</p></div></div>
-  <div class="slide-foot"><span>18 / 28</span><span>body</span></div>
-</section>
-<section class="slide" data-i="18">
-  <div class="slide-inner"><div class="kicker">八、水肿：四个环节任一处失衡（15.8）</div>
-                <div class="compact"><p>毛细血管的液体交换由 Starling 力决定，四个力分成两组：毛细血管流体静压与组织液胶体渗透压把液体推向组织；血浆胶体渗透压与组织流体静压把液体拉回血管。四个环节任一失衡都可致水肿，讲义逐条给了对应病类。</p>
+  <div class="slide-inner"><div class="kicker">水肿、管道与床旁：四个环节与两条相反方向（15.8–15.10）</div>
+                <div class="compact"><h3 id="水肿-四个环节任一处失衡-15-8">水肿：四个环节任一处失衡（15.8）</h3>
+<p>毛细血管的液体交换由 Starling 力决定，四个力分成两组：毛细血管流体静压与组织液胶体渗透压把液体推向组织；血浆胶体渗透压与组织流体静压把液体拉回血管。四个环节任一失衡都可致水肿，讲义逐条给了对应病类。</p>
 <p>流体静压升高：心力衰竭、静脉血栓、妊娠子宫压迫、长期站立。胶体渗透压降低：低白蛋白血症，见于肾病综合征、肝硬化、营养不良、蛋白丢失性肠病。毛细血管通透性升高：炎症、过敏、烧伤、脓毒症、某些毒物。淋巴回流受阻：丝虫病、淋巴结清扫术后、肿瘤压迫、放疗后纤维化。</p>
 <p>四个环节的价值在于<strong>它们给出四种不同的分布</strong>：</p>
 <blockquote><p>「心源性多从低垂部位（踝部、骶部）开始、对称、下午加重」——补充·hermes-病理生理学讲义·第15章·15.8</p></blockquote></div></div>
-  <div class="slide-foot"><span>19 / 28</span><span>body</span></div>
+  <div class="slide-foot"><span>16 / 26</span><span>body</span></div>
 </section>
-<section class="slide" data-i="19">
-  <div class="slide-inner"><div class="kicker">八、水肿：四个环节任一处失衡（15.8）</div>
-                <div class="compact"><p>肾源性多先见眼睑与颜面、晨起明显；肝源性伴腹水与下肢水肿；局部非对称水肿提示局部静脉或淋巴问题；单侧下肢水肿要先排除深静脉血栓。分布是机制的投影，读分布等于反推机制。这条反推路线与第三节的体征对照表是同一条思路的延伸：<strong>先定方向，再找环节</strong>。</p></div></div>
-  <div class="slide-foot"><span>20 / 28</span><span>body</span></div>
-</section>
-<section class="slide" data-i="20">
-  <div class="slide-inner"><div class="kicker">九、管道本身：四种结构异常（15.9）</div>
-                <div class="compact"><p>前面八节谈的多是「血流的状态」，这一节谈「管道的形状」。动脉瘤是血管壁中膜结构破坏导致的局部永久性扩张，危险在破裂与瘤内血栓形成，常见于动脉粥样硬化、高血压、感染与遗传性结缔组织病。主动脉夹层是内膜撕裂、血液进入中膜形成假腔，表现为突发撕裂样胸背痛、双侧脉搏或血压不对称、可累及分支血管造成器官缺血。血管痉挛包括雷诺现象与冠状动脉痉挛。静脉瓣功能不全导致下肢静脉曲张、慢性静脉功能不全、淤积性皮炎与溃疡。</p>
+<section class="slide" data-i="16">
+  <div class="slide-inner"><div class="kicker">水肿、管道与床旁：四个环节与两条相反方向（15.8–15.10）</div>
+                <div class="compact dense"><p>肾源性多先见眼睑与颜面、晨起明显；肝源性伴腹水与下肢水肿；局部非对称水肿提示局部静脉或淋巴问题；单侧下肢水肿要先排除深静脉血栓。分布是机制的投影，读分布等于反推机制。这条反推路线与第三节的体征对照表是同一条思路的延伸：<strong>先定方向，再找环节</strong>。</p>
+<h3 id="管道本身-四种结构异常-15-9">管道本身：四种结构异常（15.9）</h3>
+<p>前面八节谈的多是「血流的状态」，这一节谈「管道的形状」。动脉瘤是血管壁中膜结构破坏导致的局部永久性扩张，危险在破裂与瘤内血栓形成，常见于动脉粥样硬化、高血压、感染与遗传性结缔组织病。主动脉夹层是内膜撕裂、血液进入中膜形成假腔，表现为突发撕裂样胸背痛、双侧脉搏或血压不对称、可累及分支血管造成器官缺血。血管痉挛包括雷诺现象与冠状动脉痉挛。静脉瓣功能不全导致下肢静脉曲张、慢性静脉功能不全、淤积性皮炎与溃疡。</p>
 <p>四者的共同点，讲义写得很清楚：</p>
-<blockquote><p>「它们都属于「管道本身」的问题」——补充·hermes-病理生理学讲义·第15章·15.9</p></blockquote>
-<p>它们的后果都通过同一条路径实现：改变局部灌注压差或阻力。所以把它们归到血流异常而不是心脏异常，判据不是长在哪个器官，而是<strong>后果从哪条路径出来</strong>。这一条归类原则在下一章（血压异常）与第 17 章（心脏功能）之间同样适用：先看路径，再看器官。</p></div></div>
-  <div class="slide-foot"><span>21 / 28</span><span>body</span></div>
+<blockquote><p>「它们都属于「管道本身」的问题」——补充·hermes-病理生理学讲义·第15章·15.9</p></blockquote></div></div>
+  <div class="slide-foot"><span>17 / 26</span><span>body</span></div>
 </section>
-<section class="slide" data-i="21">
-  <div class="slide-inner"><div class="kicker">十、床旁：五项观察与两条相反的处理方向（15.10）</div>
-                <div class="compact"><blockquote><p>「五项基本观察，不需要任何设备」——补充·hermes-病理生理学讲义·第15章·15.10</p></blockquote>
-<p>颜色、温度、毛细血管充盈、脉搏、水肿。五项各自对应一个方向：苍白指向动脉缺血，发绀指向淤血或缺氧，红斑指向充血或炎症，色素沉着指向慢性静脉功能不全；温度要与对侧比较；毛细血管充盈分快慢；脉搏看强弱、节律与双侧是否对称，不对称提示局部动脉问题或夹层累及分支；水肿看部位、是否凹陷、是否对称。</p>
-<p>补充线索把方向钉得更死：疼痛与体位的关系——抬高患肢加重提示动脉性缺血，下垂加重提示静脉性淤血；溃疡位置——动脉性多在趾端与骨突处、边缘整齐、基底干、痛明显，静脉性多在内踝、渗液多、周边色素沉着；毛发与指甲——慢性缺血致脱毛、指甲增厚变脆。</p></div></div>
-  <div class="slide-foot"><span>22 / 28</span><span>body</span></div>
+<section class="slide" data-i="17">
+  <div class="slide-inner"><div class="kicker">水肿、管道与床旁：四个环节与两条相反方向（15.8–15.10）</div>
+                <div class="compact"><p>它们的后果都通过同一条路径实现：改变局部灌注压差或阻力。所以把它们归到血流异常而不是心脏异常，判据不是长在哪个器官，而是<strong>后果从哪条路径出来</strong>。这一条归类原则在下一章（血压异常）与第 17 章（心脏功能）之间同样适用：先看路径，再看器官。</p>
+<h3 id="床旁-五项观察与两条相反的处理方向-15-10">床旁：五项观察与两条相反的处理方向（15.10）</h3>
+<blockquote><p>「五项基本观察，不需要任何设备」——补充·hermes-病理生理学讲义·第15章·15.10</p></blockquote>
+<p>颜色、温度、毛细血管充盈、脉搏、水肿。五项各自对应一个方向：苍白指向动脉缺血，发绀指向淤血或缺氧，红斑指向充血或炎症，色素沉着指向慢性静脉功能不全；温度要与对侧比较；毛细血管充盈分快慢；脉搏看强弱、节律与双侧是否对称，不对称提示局部动脉问题或夹层累及分支；水肿看部位、是否凹陷、是否对称。</p></div></div>
+  <div class="slide-foot"><span>18 / 26</span><span>body</span></div>
 </section>
-<section class="slide" data-i="22">
-  <div class="slide-inner"><div class="kicker">十、床旁：五项观察与两条相反的处理方向（15.10）</div>
-                <div class="compact"><p>护理要点是本章唯一给出「相反动作」的地方：动脉缺血者避免抬高患肢，因为「抬高进一步降低灌注压」；避免热敷，因为提高组织代谢需求会加重缺氧；保暖但不用热水袋。静脉淤血者则抬高患肢、避免久站久坐、必要时用压迫治疗。<strong>同一个「腿的问题」，两个相反的动作</strong>——这正是第三节那个压力方向的落地。</p>
+<section class="slide" data-i="18">
+  <div class="slide-inner"><div class="kicker">水肿、管道与床旁：四个环节与两条相反方向（15.8–15.10）</div>
+                <div class="compact"><p>补充线索把方向钉得更死：疼痛与体位的关系——抬高患肢加重提示动脉性缺血，下垂加重提示静脉性淤血；溃疡位置——动脉性多在趾端与骨突处、边缘整齐、基底干、痛明显，静脉性多在内踝、渗液多、周边色素沉着；毛发与指甲——慢性缺血致脱毛、指甲增厚变脆。</p>
+<p>护理要点是本章唯一给出「相反动作」的地方：动脉缺血者避免抬高患肢，因为「抬高进一步降低灌注压」；避免热敷，因为提高组织代谢需求会加重缺氧；保暖但不用热水袋。静脉淤血者则抬高患肢、避免久站久坐、必要时用压迫治疗。<strong>同一个「腿的问题」，两个相反的动作</strong>——这正是第三节那个压力方向的落地。</p>
 <p>最后一条是纪律性的：</p>
 <blockquote><p>「任何新发的肢体疼痛、颜色改变或感觉异常，都应按急症处理并立即报告」——补充·hermes-病理生理学讲义·第15章·15.10</p></blockquote></div></div>
-  <div class="slide-foot"><span>23 / 28</span><span>body</span></div>
+  <div class="slide-foot"><span>19 / 26</span><span>body</span></div>
 </section>
-<section class="slide" data-i="23">
-  <div class="slide-inner"><div class="kicker">十一、把十节压成一条状态机</div>
-                <div class="compact"><div class="codeblock"><div class="codeblock-lang">text</div><pre><code class="lang-text">压差 × 半径（四次方） × 黏度           ← 15.1 三个量
+<section class="slide" data-i="19">
+  <div class="slide-inner"><div class="kicker">把十节压成一条状态机</div>
+                <div class="compact dense"><div class="codeblock"><div class="codeblock-lang">text</div><pre><code class="lang-text">压差 × 半径（四次方） × 黏度           ← 15.1 三个量
         │
         ├── 正常：肌源 / 代谢 / 内皮 / 神经体液 四套调节 + 侧支 + 自动调节   ← 15.2
         │
@@ -212,27 +211,56 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
         └── 回流↓ → 淤血（毛细血管压↑）→ 水肿 / 出血 / 纤维化              ← 15.3、15.5、15.8
                  └── 血栓（静脉：淤滞 + 高凝）→ 脱落 → 肺动脉栓塞            ← 15.6</code></pre></div>
 <p>这张图的读法是：<strong>每一格都只问一件事——压差往哪边偏</strong>。压差小，往缺血那一列走；回流受阻，往淤血那一列走。两列在血栓这一格会合——动脉侧的血栓造成缺血，静脉侧的血栓造成栓塞，同一个词在两个方向上后果完全不同。</p></div></div>
-  <div class="slide-foot"><span>24 / 28</span><span>body</span></div>
+  <div class="slide-foot"><span>20 / 26</span><span>body</span></div>
 </section>
-<section class="slide" data-i="24">
-  <div class="slide-inner"><div class="kicker">十一、把十节压成一条状态机</div>
+<section class="slide" data-i="20">
+  <div class="slide-inner"><div class="kicker">把十节压成一条状态机</div>
                 <div class="compact"><p>状态机的三个阈值值得单独标出：自动调节的上下界（越界后血流随压力被动变化）、组织耐受性的排序（决定谁先坏）、时间窗（决定可逆与不可逆的分界）。三个阈值都不是数值，而是<strong>方向性的临界条件</strong>，这正好是本书不写数值却仍然能推演的原因。</p></div></div>
-  <div class="slide-foot"><span>25 / 28</span><span>body</span></div>
+  <div class="slide-foot"><span>21 / 26</span><span>body</span></div>
 </section>
-<section class="slide" data-i="25">
+<section class="slide" data-i="21">
   <div class="slide-inner"><div class="kicker">代价与边界</div>
                 <div class="compact"><ul><li><strong>引文只认讲义。</strong> 本章引文格式统一为<code>补充·hermes-病理生理学讲义·第15章·N.M</code>，节号必须在 15.1–15.10 之间。讲义是本仓库原创的教学正文，不是任何外文教材的译本；本章不引代用底本，因此不存在「两层折算」的问题，也不存在把讲义写成教材的空间。</li><li><strong>本章丢掉了什么：数值。</strong> 讲义这一章讲的是压力、阻力、黏度与幂次，几乎每一句都能接一个数字：压差多少、半径缩小多少、黏度升高多少。本章一个都不给。理由不是讲义没有，而是<strong>数值一旦写进教材正文就会静默过期</strong>：口径、人群、测量方法一改，正文里那句话就变成错的，而读者无从察觉。需要数值的场景（读监护、判读化验、看趋势图）必须另立数据层，另立来源、版本与校验，并标注「不从本书推」。</li><li><strong>本章不写正常值，也不做换算。</strong> 不写血压、黏度、管径、时间窗的任何取值，不把「十余倍」这类相对表述折算成绝对数，也不把「时间窗」说成几小时。</li></ul></div></div>
-  <div class="slide-foot"><span>26 / 28</span><span>boundary</span></div>
+  <div class="slide-foot"><span>22 / 26</span><span>boundary</span></div>
 </section>
-<section class="slide" data-i="26">
+<section class="slide" data-i="22">
   <div class="slide-inner"><div class="kicker">代价与边界</div>
-                <div class="compact"><p>凡遇「多少算窄」「多久算超时」的追问，统一回「本书不给值」。</p>
-<ul><li><strong>不做诊断，不做分级。</strong> 缺血四级、梗死两类、水肿四环节都是<strong>机制类别</strong>，不是诊断标准，也不是严重程度分级。文中出现的「急症」「立即报告」是讲义原文的处置纪律，不构成本书的处置建议。</li><li><strong>代偿与代价同源。</strong> 红细胞增多、侧支开放、自动调节三处都同时写着好处与坏处。本章把它们并列写出，是为了防止把代偿读成身体在做对的事——代偿只是在当下把系统推回可行区间，代价往往延后兑现。</li><li><strong>边界声明</strong>：本章只解释讲义给出的机制类别与关系，<strong>不写数值与单位与正常值，不作正常与异常判定，不构成诊断、治疗或用药依据</strong>；任何个体的状态判断与处置须由具备资质的人员依现行规范作出。</li></ul></div></div>
-  <div class="slide-foot"><span>27 / 28</span><span>boundary</span></div>
+                <div class="compact dense"><p>凡遇「多少算窄」「多久算超时」的追问，统一回「本书不给值」。</p>
+<ul><li><strong>不做诊断，不做分级。</strong> 缺血四级、梗死两类、水肿四环节都是<strong>机制类别</strong>，不是诊断标准，也不是严重程度分级。文中出现的「急症」「立即报告」是讲义原文的处置纪律，不构成本书的处置建议。</li><li><strong>代偿与代价同源。</strong> 红细胞增多、侧支开放、自动调节三处都同时写着好处与坏处。本章把它们并列写出，是为了防止把代偿读成身体在做对的事——代偿只是在当下把系统推回可行区间，代价往往延后兑现。</li><li><strong>边界声明</strong>：本章只解释讲义给出的机制类别与关系，<strong>不写数值与单位与正常值，不作正常与异常判定，不构成诊断、治疗或用药依据</strong>；任何个体的状态判断与处置须由具备资质的人员依现行规范作出。</li></ul>
+<h3 id="运行与验证">运行与验证</h3>
+<div class="codeblock"><div class="codeblock-lang">bash</div><pre><code class="lang-bash"># 1) 现算本章讲义规模、关键词重心、节覆盖、引文逐字与裸数值
+node code/main.js</code></pre></div></div></div>
+  <div class="slide-foot"><span>23 / 26</span><span>boundary</span></div>
 </section>
-<section class="slide" data-i="27">
+<section class="slide" data-i="23">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><h1 id="2-单测-节数-字数-节号格式-引文-3-docs-节覆盖-裸数值零容忍-边界句">2) 单测：节数 / 字数 / 节号格式 / 引文≥3 / docs 节覆盖 / 裸数值零容忍 / 边界句</h1>
+<p>node --test code/main.test.js</p>
+<h1 id="3-章级门-六文件-引文逐字-quiz-契约-教学边界-节覆盖">3) 章级门（六文件 + 引文逐字 + quiz 契约 + 教学边界 + 节覆盖）</h1>
+<p>cd /e/tcmai-engineering-from-scatch &amp;&amp; node tests/test_binglishengli_chapters.js</p>
+<div class="codeblock"><div class="codeblock-lang">text</div><pre><code class="lang-text">
+`node code/main.js` 的真实输出（节选）：
+
+```text
+讲义规模: 第 15 章 · 10 节 · 3006 汉字 · 4029 非空白字 · 平均每节 301 汉字
+关键词重心: 缺血 21 · 血栓 17 · 淤血 15 · 栓塞 12 · 水肿 11 · 梗死 9 · 侧支 7
+节覆盖: 10 / 10 节在 docs 里出现
+引文: 13 条 · 引串章号 0 条 · 节号不存在 0 条 · 引到 10 个节
+引语逐字: 8 条 ≥6 字的「」在正文里，全部可在讲义原文中找到
+裸数值: 正文非引用行 0 处「数字+单位」</code></pre></div></div></div>
+  <div class="slide-foot"><span>24 / 26</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="24">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><p><code>code/main.js</code> 的最后一行固定为下面这句，也是单测与章级门共同依赖的字符串：</p>
+<div class="codeblock"><div class="codeblock-lang">text</div><pre><code class="lang-text">教学边界：本章只说明讲义给出的机制与类别，不写数值与单位与正常值，不构成诊断、治疗或用药依据</code></pre></div>
+<p><strong>免责声明：</strong>本章为病理生理学教学材料。文中所有概念、分类与关系，取自本仓库原创《hermes-病理生理学讲义》第 15 章（10 节），引文格式为<code>补充·hermes-病理生理学讲义·第15章·N.M</code>；统计数字由 <code>code/main.js</code> 读讲义现算，规则已在文中写明。</p>
+<p>本章不提供任何诊断、治疗或用药建议，不给出正常值与参考范围，也不对任何个体的状态作出正常或异常的判断。文中出现的「阻力血管」「侧支」「时间窗」「心衰细胞」等均为概念层与机制层的说明，不能替代临床评估。若出现突发的肢体疼痛、颜色改变、感觉异常或呼吸困难，请立即就医。</p></div></div>
+  <div class="slide-foot"><span>25 / 26</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="25">
   <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
-  <div class="slide-foot"><span>28 / 28</span><span>disclaimer</span></div>
+  <div class="slide-foot"><span>26 / 26</span><span>disclaimer</span></div>
 </section>
 </div>
 <div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>

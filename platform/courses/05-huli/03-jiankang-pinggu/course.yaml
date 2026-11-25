@@ -29,50 +29,49 @@ platform:
 
 chapters:
   - slug: 01-sishiying-kuangjia
-    title: 第1章 四域适应框架与「从容长寿」基线
-    segments: 5
+    title: 健康不是「有没有病」，而是四域是否同时留在各自的合适区间
     video: rendered
-    estimate_minutes: 1.03
-    measured_minutes: 1.04
+    estimate_minutes: 1.03      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.04      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-shengli-shiying
-    title: 第2章 生理适应能力：生命体征与一般状态的判读
-    segments: 5
+    title: 生命体征的价值不在读数，而在它与本人基线之间的那段距离
     video: rendered
-    estimate_minutes: 1.07
-    measured_minutes: 1.08
+    estimate_minutes: 1.07      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.08      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-xinli-shiying
-    title: 第3章 心理适应能力：尊严、自主与情绪的判读
-    segments: 5
+    title: 情绪可以问出来，尊严和自主只能被让出来
     video: rendered
-    estimate_minutes: 1.08
-    measured_minutes: 1.08
+    estimate_minutes: 1.08      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.08      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-shehui-shiying
-    title: 第4章 社会适应能力：角色、家庭与支持的判读
-    segments: 5
+    title: 支持不是「有人陪」，是「出事时谁能在今晚到场」
     video: rendered
-    estimate_minutes: 1.05
-    measured_minutes: 1.07
+    estimate_minutes: 1.05      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.07      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-huanjing-shiying
-    title: 第5章 环境生态适应能力：场所、季节与可达性的判读
-    segments: 5
+    title: 环境不是背景，它决定了一件小事要做几步
     video: rendered
-    estimate_minutes: 1.02
-    measured_minutes: 1.07
+    estimate_minutes: 1.02      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.07      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-zonghe-panduan
-    title: 第6章 四域整合判断与量表的使用
-    segments: 5
+    title: 四域不能相加，只能排序：先定急缓，再定主次
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1.04
+    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.04      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-jilu-goutong
-    title: 第7章 评估结果的记录与沟通
-    segments: 5
+    title: 记录是写给下一个人的，沟通是留给这个人的
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.98
+    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.98      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-piancha-zhili
-    title: 第8章 评估偏差、过度检查与质量治理
-    segments: 5
+    title: 偏差不在仪器上，在「这次只看这一次」的习惯里
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1
+    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

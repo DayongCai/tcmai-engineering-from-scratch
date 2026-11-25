@@ -5,7 +5,7 @@
   {
    "n": 1,
    "slug": "01-du-xing-gainian",
-   "title": "毒理学的对象：剂量、分级与安全窗",
+   "title": "毒性不是标签，是三个剂量与一条曲线共同决定的区间",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/01-du-xing-gainian/docs/zh.md",
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-du-xing-wuzhi",
-   "title": "毒性物质基础：成分类型与矿物药",
+   "title": "决定毒性的是代谢产物与靶分子的反应，不是药材的名字",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/02-du-xing-wuzhi/docs/zh.md",
@@ -23,7 +23,7 @@
   {
    "n": 3,
    "slug": "03-gan-du-xing",
-   "title": "肝毒性：为什么肝最先受损",
+   "title": "肝不是被药毒死的，是被自己的代谢酶改造出的产物毒死的",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/03-gan-du-xing/docs/zh.md",
@@ -32,7 +32,7 @@
   {
    "n": 4,
    "slug": "04-shen-du-xing",
-   "title": "肾毒性：马兜铃酸的教训",
+   "title": "肾不是被毒物泡坏的，是被浓缩机制放大的",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/04-shen-du-xing/docs/zh.md",
@@ -41,7 +41,7 @@
   {
    "n": 5,
    "slug": "05-xin-shen-jing-du-xing",
-   "title": "心与神经毒性：乌头碱的半小时",
+   "title": "心与神经的毒性，按分钟计，而标签按剂计",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/05-xin-shen-jing-du-xing/docs/zh.md",
@@ -50,7 +50,7 @@
   {
    "n": 6,
    "slug": "06-shengzhi-du-xing",
-   "title": "生殖与遗传毒性：妊娠禁忌的分级",
+   "title": "致畸的窗口不是九个月，是器官形成的那十几天",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/06-shengzhi-du-xing/docs/zh.md",
@@ -59,7 +59,7 @@
   {
    "n": 7,
    "slug": "07-peiwu-paozhi-jian-du",
-   "title": "配伍与炮制减毒：十八反十九畏怎么读",
+   "title": "减毒不是把毒药变没毒，是把暴露曲线往左推",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/07-peiwu-paozhi-jian-du/docs/zh.md",
@@ -68,7 +68,7 @@
   {
    "n": 8,
    "slug": "08-jian-ce-anquan-bianjie",
-   "title": "不良反应监测与安全边界",
+   "title": "监测不是等报告，是先定义什么算异常",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/08-jian-ce-anquan-bianjie/docs/zh.md",
@@ -77,7 +77,7 @@
   {
    "n": 9,
    "slug": "09-shiyan-anquan-pingjia",
-   "title": "毒理实验与安全评价：LD50、亚慢性、遗传毒性与 GLP",
+   "title": "试验的样本量，决定了结论能说到哪一步",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/09-shiyan-anquan-pingjia/docs/zh.md",
@@ -86,7 +86,7 @@
   {
    "n": 10,
    "slug": "10-zhiyanxing-changqi",
-   "title": "致癌性与长期暴露：从「中毒」到「肿瘤」的终点",
+   "title": "致癌的门槛不是剂量，是潜伏期",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/10-zhiyanxing-changqi/docs/zh.md",

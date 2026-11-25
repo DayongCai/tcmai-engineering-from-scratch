@@ -1,31 +1,96 @@
 {
   "chapter": "10-zhuanxiang-gongli",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 18,
+  "segmentCount": 8,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 11
+      "chars": 31
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 60
+      "chars": 112
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 42
+      "chars": 161
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 102
+      "chars": 146
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 141
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 336
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 400
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 40
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 433
+    },
+    {
+      "n": 10,
+      "segment": 6,
+      "chars": 400
+    },
+    {
+      "n": 11,
+      "segment": 6,
+      "chars": 366
+    },
+    {
+      "n": 12,
+      "segment": 6,
+      "chars": 394
+    },
+    {
+      "n": 13,
+      "segment": 6,
+      "chars": 283
+    },
+    {
+      "n": 14,
+      "segment": 6,
+      "chars": 343
+    },
+    {
+      "n": 15,
+      "segment": 6,
+      "chars": 359
+    },
+    {
+      "n": 16,
+      "segment": 7,
+      "chars": 391
+    },
+    {
+      "n": 17,
+      "segment": 7,
+      "chars": 373
+    },
+    {
+      "n": 18,
+      "segment": 8,
       "chars": 52
     }
   ]

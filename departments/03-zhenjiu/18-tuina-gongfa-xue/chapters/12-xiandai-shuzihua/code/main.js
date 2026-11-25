@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 /**
- * 推拿功法学 · 第 12 章 推拿功法与现代科学·数字化AI时代：本章统计口径
+ * 推拿功法学 · 第 12 章 正文与习题自检
  * 课程: departments/03-zhenjiu/18-tuina-gongfa-xue/chapters/12-xiandai-shuzihua/docs/zh.md
- * 数据: standards/gongfa/units.json（56 单元层，每单元带三辨=调身/调息/调心 与 四位面=功法体系 词频）
- * 取数: standards/gongfa/chapter-map.json（课程章 → 教材单元号）
- * 依赖: 仅 Node.js 标准库
+ * 依赖: 仅 Node.js 标准库；只读 ../docs/zh.md 与 ../quiz.json，不读 standards/。
  *
- * 数字全部现算：正文引用的每个规模、重心、引书数，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 输出四组数：正文字数、二级节数、题量与解释长度、习题接地数。接地数指 check 题的
+ * 正确选项里至少有一段 >=6 汉字的原文真的出现在当章正文里 —— 习题必须与正文同源。
+ * 任一项不达标，退出码为 1（可当作习题层的回归测试跑）。
  */
 
 'use strict';
@@ -15,107 +14,117 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'gongfa', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/gongfa/units.json —— 章节目录是否已脱离仓库？');
-}
+const DIR = __dirname;
+const ROOT = path.resolve(DIR, '..');
+const DOC = path.join(ROOT, 'docs', 'zh.md');
+const QUIZ = path.join(ROOT, 'quiz.json');
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'gongfa', 'units.json');
-const CHAPTER = '12';
-const KEYS = ['12.1.1', '12.2.1', '12.2.2'];
+const SLUG = path.basename(ROOT);
+const CHAPTER = String(Number(SLUG.slice(0, 2)));
 
-const load = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
+const doc = fs.readFileSync(DOC, 'utf8');
+const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
 
-function chapterUnits(units) {
-  return units.units
-    .filter((u) => KEYS.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
+const hz = (s) => (String(s || '').match(/[\u4e00-\u9fff]/g) || []).length;
+const secs = (text) => (String(text || '').match(/^## /gm) || []).length;
 
-const sum = (d) => Object.values(d).reduce((a, b) => a + b, 0);
+const TITLE = ((doc.match(/^#[^\n]*/m) || [''])[0])
+  .replace(/^#\s*/, '')
+  .replace(/^第\s*\d+\s*章\s*·\s*/, '')
+  .trim();
 
-function merge(list, field) {
-  const out = {};
-  for (const u of list) {
-    const src = (u.measure && u.measure[field]) || {};
-    for (const [k, v] of Object.entries(src)) out[k] = (out[k] || 0) + v;
+/** 正文里 n 字连续汉字片段集合 */
+function shingles(text, n = 4) {
+  const clean = String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ');
+  const out = new Set();
+  for (const seg of clean.split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
   }
   return out;
 }
 
-function rank(dict) {
-  const tot = sum(dict);
-  return Object.entries(dict)
-    .map(([key, count]) => ({ key, count, share: tot ? count / tot : 0 }))
-    .sort((a, b) => b.count - a.count);
-}
+const N = 6;
+const BODY = shingles(doc, N);
 
-function byBookSection(list) {
-  const out = new Map();
-  for (const u of list) {
-    const key = `教材第${u.chapter}章`;
-    const it = out.get(key) || { sec: key, units: 0, hanzi: 0 };
-    it.units += 1;
-    it.hanzi += u.hanzi;
-    out.set(key, it);
+/** 接地：选项里有一段 >=N 汉字的连续原文 */
+function grounded(option) {
+  const clean = String(option || '').replace(/[^\u4e00-\u9fff]/g, ' ');
+  for (const seg of clean.split(/\s+/)) {
+    for (let i = 0; i + N <= seg.length; i += 1) if (BODY.has(seg.slice(i, i + N))) return true;
   }
-  return [...out.values()];
+  return false;
 }
 
-function citations(list) {
-  const counter = new Map();
-  for (const u of list) {
-    for (const m of u.prose.matchAll(/《([^》]+)》/g)) counter.set(m[1], (counter.get(m[1]) || 0) + 1);
+const why = (q) => q.explain || q.explanation || '';
+
+/** 本章的单元：二级节各算一个，hanzi 是该节汉字数 */
+function chapterUnits(text = doc) {
+  const units = [];
+  for (const line of String(text).split(/\r?\n/)) {
+    const m = line.match(/^##\s+(.+?)\s*$/);
+    if (m) units.push({ key: 'h2-' + (units.length + 1), title: m[1], hanzi: 0 });
+    else if (units.length) units[units.length - 1].hanzi += hz(line);
   }
-  const ranked = [...counter.entries()].sort((a, b) => b[1] - a[1]);
-  return { books: counter.size, total: sum(Object.fromEntries(counter)), top: ranked.slice(0, 3) };
+  return units;
 }
 
-function shape(list) {
-  const hanzi = list.reduce((a, u) => a + u.hanzi, 0);
+function chapterKeys(text = doc) {
+  return chapterUnits(text).map((u) => u.key);
+}
+
+/** 习题层体检：题量、分段、选项、解释长度、接地 */
+function summarize(q = quiz) {
+  const list = Array.isArray(q.questions) ? q.questions : [];
+  const stages = { pre: 0, check: 0, post: 0 };
+  for (const it of list) stages[it.stage] = (stages[it.stage] || 0) + 1;
+  const checks = list.filter((it) => it.stage === 'check');
+  const lens = list.map((it) => hz(why(it)));
+  const hit = checks.filter((it) => grounded((it.options || [])[it.correct])).length;
+  const minExplain = lens.length ? Math.min.apply(null, lens) : 0;
+  const maxExplain = lens.length ? Math.max.apply(null, lens) : 0;
+  const four = list.every((it) => (it.options || []).length === 4);
+  const idx = list.every((it) => Number.isInteger(it.correct)
+    && it.correct >= 0 && it.correct < (it.options || []).length);
   return {
-    units: list.length,
-    hanzi,
-    mean: list.length ? Math.round(hanzi / list.length) : 0,
-    valueLike: list.reduce((a, u) => a + u.measure.valueLike, 0),
-    digits: list.reduce((a, u) => a + u.measure.digits, 0),
+    total: list.length,
+    stages: stages,
+    checks: checks.length,
+    grounded: hit,
+    minExplain: minExplain,
+    maxExplain: maxExplain,
+    four: four,
+    idx: idx,
+    ok: list.length === 6 && stages.pre === 1 && stages.check === 3 && stages.post === 2
+      && four && idx && hit === checks.length && hit >= 3
+      && minExplain >= 40 && maxExplain <= 80,
   };
 }
 
-/** 取穴与刺灸的操作词：本章正文里出现多少处「定位／分寸／直刺／灸」类的可执行指令 */
-function hands(list) {
-  const WORDS = ['定位', '骨度', '分寸', '同身寸', '直刺', '斜刺', '平刺', '艾灸', '温针灸', '留针', '禁针', '禁灸'];
-  const pairs = WORDS.map((w) => [w, list.reduce((a, u) => a + u.prose.split(w).length - 1, 0)]);
-  return Object.fromEntries(pairs).constructor === Object
-    ? pairs.filter(([, c]) => c).sort((a, b) => b[1] - a[1])
-    : pairs;
+function audit() {
+  return { hanzi: hz(doc), secs: secs(doc), units: chapterUnits().length, quiz: summarize() };
 }
 
-module.exports = { CHAPTER, KEYS, load, chapterUnits, merge, rank, byBookSection, citations, shape, hands, sum };
-
-if (require.main === module) {
-  const data = load();
-  const list = chapterUnits(data);
-  const s = shape(list);
-  console.log('═══ 推拿功法学 · 第 12 章 推拿功法与现代科学·数字化AI时代 ═══');
-  console.log(`单元 ${s.units} · 汉字 ${s.hanzi} · 平均 ${s.mean} 字/单元`);
-  console.log(`数值类命中 ${s.valueLike} · 数字字符 ${s.digits}`);
-  console.log('\n按教材章：');
-  for (const sec of byBookSection(list)) console.log(`  ${sec.sec}  ${sec.units} 单元 · ${sec.hanzi} 字`);
-  console.log('\n三辨重心：');
-  for (const v of rank(merge(list, 'views'))) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
-  console.log('\n四位面覆盖：');
-  for (const v of rank(merge(list, 'levels'))) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
-  const c = citations(list);
-  console.log(`\n引书 ${c.books} 部 · 引用 ${c.total} 次 · 前三：${c.top.map(([n, k]) => `${n}(${k})`).join('、')}`);
-  console.log('\n操作词命中：' + hands(list).map(([w, k]) => `${w}×${k}`).join('  '));
-  for (const u of list) console.log(`  ${u.sub}\t${u.title}\t${u.hanzi}字`);
-  console.log('※ 教学样例：数字由 standards/gongfa/units.json 现算，不构成诊疗建议，不能替代医师面诊。');
+function main() {
+  const a = audit();
+  console.log('═══ 推拿功法学 · 第 ' + CHAPTER + ' 章 ' + TITLE + ' ═══');
+  console.log('slug ' + SLUG + ' · 正文 ' + a.hanzi + ' 汉字 · 二级节 ' + a.secs);
+  console.log('习题 ' + a.quiz.total + ' 题 (pre ' + a.quiz.stages.pre + '/check '
+    + a.quiz.stages.check + '/post ' + a.quiz.stages.post + ') · 解释 '
+    + a.quiz.minExplain + '-' + a.quiz.maxExplain + ' 汉字');
+  console.log('接地 check 题 ' + a.quiz.grounded + '/' + a.quiz.checks);
+  for (const u of chapterUnits()) console.log('  ' + u.key + '\t' + u.title + '\t' + u.hanzi + '字');
+  const ok = a.hanzi >= 2500 && a.secs >= 4 && a.units >= 4 && a.quiz.ok;
+  if (!ok) {
+    console.error('自检未通过');
+    process.exit(1);
+  }
+  console.log('※ 教学样例：习题只读本章正文与 quiz.json，不构成诊疗建议，也不能替代带教与规范化培训。');
 }
+
+if (require.main === module) main();
+
+module.exports = {
+  CHAPTER, SLUG, TITLE, DOC, QUIZ, doc, quiz,
+  hz, secs, shingles, grounded, why,
+  chapterKeys, chapterUnits, summarize, audit, main,
+};

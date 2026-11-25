@@ -29,110 +29,109 @@ platform:
 
 chapters:
   - slug: 01-j1
-    title: 第1章 中医健康管理导论
-    segments: 5
+    title: 健康管理卖的不是道理，是一个能被复评的闭环
     video: rendered
-    estimate_minutes: 0.85
-    measured_minutes: 0.86
+    estimate_minutes: 0.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.86      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-j2
-    title: 第2章 中医健康管理的理论基础
-    segments: 5
+    title: 理论不能生成分层，就只是修辞
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.9
+    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-j3
-    title: 第3章 健康状态辨识与评估
-    segments: 5
+    title: 辨识能不能用，取决于两个人会不会得出同一个结论
     video: rendered
-    estimate_minutes: 0.85
-    measured_minutes: 0.89
+    estimate_minutes: 0.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.89      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-j4
-    title: 第4章 健康档案与信息管理
-    segments: 5
+    title: 档案的价值不在记得多，在换个人也能接着用
     video: rendered
-    estimate_minutes: 0.85
-    measured_minutes: 0.89
+    estimate_minutes: 0.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.89      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-j5
-    title: 第5章 中医健康干预原则与策略
-    segments: 5
+    title: 干预方案不是最优解，是这个人做得到的那一版
     video: rendered
-    estimate_minutes: 0.87
-    measured_minutes: 0.89
+    estimate_minutes: 0.87      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.89      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-j6
-    title: 第6章 饮食与药膳食养管理
-    segments: 5
+    title: 食养不看你懂多少，看这套吃法能不能吃满一年
     video: rendered
-    estimate_minutes: 0.83
-    measured_minutes: 0.87
+    estimate_minutes: 0.83      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.87      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-j7
-    title: 第7章 运动导引与经络调养
-    segments: 5
+    title: 运动调养的难点在量，风险在禁忌
     video: rendered
-    estimate_minutes: 0.83
-    measured_minutes: 0.88
+    estimate_minutes: 0.83      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.88      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-j8
-    title: 第8章 情志调摄与睡眠管理
-    segments: 5
+    title: 这一个领域，红线要比方法先讲
     video: rendered
-    estimate_minutes: 0.83
-    measured_minutes: 0.88
+    estimate_minutes: 0.83      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.88      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 09-j9
-    title: 第9章 起居与四时养生管理
-    segments: 5
+    title: 起居是最便宜的干预，也是最难维持的干预
     video: rendered
-    estimate_minutes: 0.83
-    measured_minutes: 0.87
+    estimate_minutes: 0.83      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.87      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 10-j10
-    title: 第10章 常见健康问题的中医健康管理
-    segments: 5
+    title: 常见健康问题管理的难点不在病种多，在分段
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.93
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 11-j11
-    title: 第11章 中医健康管理服务流程
-    segments: 5
+    title: 流程的价值不在每步留痕，在下一步不必重新问一遍
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.91
+    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 12-j12
-    title: 第12章 健康教育与健康促进
-    segments: 5
+    title: 科普的完成，不是讲清楚了，是回去改了一处
     video: rendered
-    estimate_minutes: 0.87
-    measured_minutes: 0.91
+    estimate_minutes: 0.87      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 13-j13
-    title: 第13章 中医健康管理服务管理
-    segments: 5
+    title: 服务质量不是管出来的态度，是被制度固定的下限
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.91
+    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 14-j14
-    title: 第14章 健康管理与多学科协作
-    segments: 5
+    title: 协作的难点不是请不到专家，是没人对整个的人负责
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.92
+    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 15-j15
-    title: 第15章 健康管理与健康产业
-    segments: 5
+    title: 产业的问题不是需求不足，是没人愿为「没发生的事」付钱
     video: rendered
-    estimate_minutes: 0.87
-    measured_minutes: 0.9
+    estimate_minutes: 0.87      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 16-j16
-    title: 第16章 智慧健康管理与数字技术
-    segments: 5
+    title: 设备测的是信号，管理要的是判断，中间那一步没有自动化
     video: rendered
-    estimate_minutes: 0.88
-    measured_minutes: 0.94
+    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 17-j17
-    title: 第17章 中医健康管理的研究与实践
-    segments: 5
+    title: 数据能告诉你发生了什么，不能告诉你是不是你干的
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.93
+    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 18-j18
-    title: 第18章 中医健康管理与 tcmP 平台
-    segments: 5
+    title: 平台的价值不在功能多，在换个人接手时口径不变
     video: rendered
-    estimate_minutes: 0.93
-    measured_minutes: 0.97
+    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.97      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

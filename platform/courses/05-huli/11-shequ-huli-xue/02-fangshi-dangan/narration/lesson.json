@@ -18,7 +18,7 @@
       "spoken": "第 2 章 · 家庭访视与健康档案",
       "estimateSeconds": 3,
       "audio": "001.mp3",
-      "audioSeconds": 3.46
+      "audioSeconds": 3.456
     },
     {
       "n": 2,
@@ -48,7 +48,7 @@
       "spoken": "环境逼迫（社区护理的对象是人群不是个案，服务要按「谁最需要、怎么找到他」来设计）+ 知识积累（本章 2 单元 38,193 汉字；三辨主 管理与随访 324；四位面（服务内容）主 家庭 399；引书 0 部 0 次；数值类命中 0）",
       "estimateSeconds": 22,
       "audio": "004.mp3",
-      "audioSeconds": 22.87
+      "audioSeconds": 22.872
     },
     {
       "n": 5,
@@ -58,10 +58,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "005.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 58.63,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 0.95,
+    "measuredMinutes": 0.98,
+    "ratio": 1.029
+  }
 }

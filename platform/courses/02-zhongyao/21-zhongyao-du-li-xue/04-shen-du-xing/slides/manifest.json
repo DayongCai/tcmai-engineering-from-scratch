@@ -1,31 +1,76 @@
 {
   "chapter": "04-shen-du-xing",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 14,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 15
+      "chars": 23
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 82
+      "chars": 35
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 56
+      "chars": 187
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 103
+      "chars": 131
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 327
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 266
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 315
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 169
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 313
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 124
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 375
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 124
+    },
+    {
+      "n": 13,
+      "segment": 9,
+      "chars": 374
+    },
+    {
+      "n": 14,
+      "segment": 10,
       "chars": 52
     }
   ]

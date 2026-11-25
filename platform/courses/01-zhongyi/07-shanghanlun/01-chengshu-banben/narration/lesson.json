@@ -28,7 +28,7 @@
       "spoken": "「撰用《素问》《九卷》《八十一难》《阴阳大论》……为《伤寒杂病论》合十六卷。」——《伤寒论·自序》",
       "estimateSeconds": 11,
       "audio": "002.mp3",
-      "audioSeconds": 8.59
+      "audioSeconds": 8.592
     },
     {
       "n": 3,
@@ -38,7 +38,7 @@
       "spoken": "你听说《伤寒论》有 398 条，随口引用「第 35 条麻黄汤」，却不知道这个条号来自宋本编次；换一个底本，同一条可能编在第 72 条，你的引用立刻失效。",
       "estimateSeconds": 15,
       "audio": "003.mp3",
-      "audioSeconds": 14.69
+      "audioSeconds": 14.688
     },
     {
       "n": 4,
@@ -48,7 +48,7 @@
       "spoken": "环境逼迫(临床带教与论文都要报条号，报错等于没依据) + 知识积累(版本与编次实测 × 声明数与实测数分离 = 一套换底本也不会错位的引用方式)",
       "estimateSeconds": 14,
       "audio": "004.mp3",
-      "audioSeconds": 14.14
+      "audioSeconds": 14.136
     },
     {
       "n": 5,
@@ -59,7 +59,7 @@
       "spoken": "说清「宋本 398 条」与「本仓库底本 1760 条」为什么不同：前者是宋人校定编次，后者是刻本篇内连续编次\n用实测数字描述底本的骨架：27 篇 · 9 域 · 1760 条 · 71,496 字\n解释「声明条数」与「实测条数」为什么要分两列存，并举出本底本里不一致的篇\n写一个引用器：给定底本、篇名与篇内条号，返回条文原文；不给条号就拒绝",
       "estimateSeconds": 33,
       "audio": "005.mp3",
-      "audioSeconds": 34.99
+      "audioSeconds": 34.992
     },
     {
       "n": 6,
@@ -70,7 +70,7 @@
       "spoken": "底本的骨架（本仓库实测）\nstandards/shanghan/底本.json（源：识典古籍刻本 version 6，三级对象：篇 obj 27 · 章 obj · 条 obj）：\n两个反直觉之处：其一，最大的域不是太阳病而是「汗吐下诸可不可」（587 条，9 篇）——那是按治法编的专题汇编，不是按病编；其二，厥阴病只有 30 条、1 篇，是全书最小的域，却被后世当作辨证的最后一环。\n398 与 1760：条号是版本属性\n宋本 398 条是宋人校定后的通行编号，跨篇连续；本底本是刻本，条号在篇内连续。同一个条文的「第 N 条」在两个体系里必然不同。\n所以合格的引用不是「第 35 条」，而是《伤寒论·辨太阳病脉证并治中》篇内第 72 条（本底本）——篇名稳定，条号随底本走。这与内经「篇名锚定、序号不稳」是同一条原则。\n声明数与实测数必须分开存\n底本文件里每篇同时记 declared（源表声称的条数与字数）与 actual（逐条解析后的实测值）。实测结果：27 篇里有 18 篇两者不一致，其中 3 篇条数差 1（如某篇声明 79 条、实测 78 条），其余是字数差几十字（标点与夹注口径）。\n这不是数据脏，而是必须留下的证据：如果只存一个数，你永远不知道当年是谁算错的。分两列存，差异就变成了可核对的对象。",
       "estimateSeconds": 112,
       "audio": "006.mp3",
-      "audioSeconds": 105.5
+      "audioSeconds": 105.504
     },
     {
       "n": 7,
@@ -81,7 +81,7 @@
       "spoken": "这一段以代码实现为主，请看画面上的代码块。",
       "estimateSeconds": 5,
       "audio": "007.mp3",
-      "audioSeconds": 4.51
+      "audioSeconds": 4.512
     },
     {
       "n": 8,
@@ -92,7 +92,7 @@
       "spoken": "预期：domains() 输出 9 域 27 篇 1760 条 71,496 字；drift() 列出 18 篇并给出差值；tiao('辨太阳病脉证并治中', 72) 返回「太阳与阳明合病者，必自下利，葛根汤主之」。",
       "estimateSeconds": 20,
       "audio": "008.mp3",
-      "audioSeconds": 18.43
+      "audioSeconds": 18.432
     },
     {
       "n": 9,
@@ -102,10 +102,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "009.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 220.08,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 3.8,
+    "measuredMinutes": 3.67,
+    "ratio": 0.965
+  }
 }

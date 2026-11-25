@@ -4,7 +4,7 @@
   {
    "n": 1,
    "slug": "01-adme-gailun",
-   "title": "中药药代动力学概论",
+   "title": "药代动力学先问成分能不能被追到",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -12,7 +12,7 @@
   {
    "n": 2,
    "slug": "02-tinei-guocheng",
-   "title": "体内过程与生物利用度",
+   "title": "生物利用度是剂型与工艺的最终判决",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -20,7 +20,7 @@
   {
    "n": 3,
    "slug": "03-canshu-moxing",
-   "title": "药动学参数与房室模型",
+   "title": "参数不是数据，是可比较性的契约",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -28,7 +28,7 @@
   {
    "n": 4,
    "slug": "04-chengfen-zhuanyun",
-   "title": "成分吸收与转运",
+   "title": "进了血的成分是被转运体挑过的",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -36,7 +36,7 @@
   {
    "n": 5,
    "slug": "05-daixie-daixiewu",
-   "title": "代谢与代谢物",
+   "title": "代谢不是减活，是把外来物改成能排出去的形状",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -44,7 +44,7 @@
   {
    "n": 6,
    "slug": "06-xianghu-zuoyong",
-   "title": "药物相互作用与酶",
+   "title": "相互作用的证据差一级，结论就差一个量级",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -52,7 +52,7 @@
   {
    "n": 7,
    "slug": "07-fufang-tedian",
-   "title": "中药复方药动学特点",
+   "title": "复方的暴露是一条谱，不是一个点",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -60,7 +60,7 @@
   {
    "n": 8,
    "slug": "08-fangfaxue-guifan",
-   "title": "方法学与研究规范",
+   "title": "方法学的门槛不在仪器，在于别人能不能重做一遍",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

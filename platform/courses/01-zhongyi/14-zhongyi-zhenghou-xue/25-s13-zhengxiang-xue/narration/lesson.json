@@ -28,7 +28,7 @@
       "spoken": "天地阴阳者，不以数推，以象之谓也（《素问·五运行大论》）",
       "estimateSeconds": 6,
       "audio": "002.mp3",
-      "audioSeconds": 5.59
+      "audioSeconds": 5.592
     },
     {
       "n": 3,
@@ -38,7 +38,7 @@
       "spoken": "「证象」这个词在概论里只占三段，剩下的全靠读者自己想。于是两种极端：一种把它当症状的别名，一种把它当不可操作的玄学。两种都用不上。",
       "estimateSeconds": 14,
       "audio": "003.mp3",
-      "audioSeconds": 14.5
+      "audioSeconds": 14.496
     },
     {
       "n": 4,
@@ -48,7 +48,7 @@
       "spoken": "环境逼迫（1815 条【证象组合】要能被机器拆开，否则辞典只是一本书）＋知识积累（附录一 72 格、语素表 108 态已经在库里，缺的是把它们连成一套可判读的规则）",
       "estimateSeconds": 17,
       "audio": "004.mp3",
-      "audioSeconds": 16.58
+      "audioSeconds": 16.584
     },
     {
       "n": 5,
@@ -58,10 +58,14 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "005.mp3",
-      "audioSeconds": 11.3
+      "audioSeconds": 11.304
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 53.86,
-  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+  "estimateVsActual": {
+    "estimateMinutes": 0.88,
+    "measuredMinutes": 0.9,
+    "ratio": 1.016
+  }
 }

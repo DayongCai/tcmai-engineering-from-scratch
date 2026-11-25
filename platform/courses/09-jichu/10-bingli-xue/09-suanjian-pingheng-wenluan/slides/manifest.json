@@ -1,7 +1,7 @@
 {
   "chapter": "09-suanjian-pingheng-wenluan",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 43,
+  "segmentCount": 13,
   "slides": [
     {
       "n": 1,
@@ -11,7 +11,7 @@
     {
       "n": 2,
       "segment": 2,
-      "chars": 69
+      "chars": 24
     },
     {
       "n": 3,
@@ -26,6 +26,196 @@
     {
       "n": 5,
       "segment": 5,
+      "chars": 341
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 239
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 367
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 259
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 399
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 346
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 251
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 250
+    },
+    {
+      "n": 13,
+      "segment": 9,
+      "chars": 260
+    },
+    {
+      "n": 14,
+      "segment": 9,
+      "chars": 417
+    },
+    {
+      "n": 15,
+      "segment": 9,
+      "chars": 339
+    },
+    {
+      "n": 16,
+      "segment": 10,
+      "chars": 369
+    },
+    {
+      "n": 17,
+      "segment": 10,
+      "chars": 354
+    },
+    {
+      "n": 18,
+      "segment": 10,
+      "chars": 404
+    },
+    {
+      "n": 19,
+      "segment": 10,
+      "chars": 322
+    },
+    {
+      "n": 20,
+      "segment": 10,
+      "chars": 389
+    },
+    {
+      "n": 21,
+      "segment": 10,
+      "chars": 95
+    },
+    {
+      "n": 22,
+      "segment": 11,
+      "chars": 418
+    },
+    {
+      "n": 23,
+      "segment": 11,
+      "chars": 325
+    },
+    {
+      "n": 24,
+      "segment": 11,
+      "chars": 305
+    },
+    {
+      "n": 25,
+      "segment": 11,
+      "chars": 314
+    },
+    {
+      "n": 26,
+      "segment": 11,
+      "chars": 305
+    },
+    {
+      "n": 27,
+      "segment": 11,
+      "chars": 310
+    },
+    {
+      "n": 28,
+      "segment": 11,
+      "chars": 326
+    },
+    {
+      "n": 29,
+      "segment": 11,
+      "chars": 320
+    },
+    {
+      "n": 30,
+      "segment": 11,
+      "chars": 317
+    },
+    {
+      "n": 31,
+      "segment": 11,
+      "chars": 324
+    },
+    {
+      "n": 32,
+      "segment": 11,
+      "chars": 305
+    },
+    {
+      "n": 33,
+      "segment": 11,
+      "chars": 317
+    },
+    {
+      "n": 34,
+      "segment": 12,
+      "chars": 407
+    },
+    {
+      "n": 35,
+      "segment": 12,
+      "chars": 333
+    },
+    {
+      "n": 36,
+      "segment": 12,
+      "chars": 366
+    },
+    {
+      "n": 37,
+      "segment": 12,
+      "chars": 209
+    },
+    {
+      "n": 38,
+      "segment": 12,
+      "chars": 386
+    },
+    {
+      "n": 39,
+      "segment": 12,
+      "chars": 36
+    },
+    {
+      "n": 40,
+      "segment": 12,
+      "chars": 419
+    },
+    {
+      "n": 41,
+      "segment": 12,
+      "chars": 399
+    },
+    {
+      "n": 42,
+      "segment": 12,
+      "chars": 415
+    },
+    {
+      "n": 43,
+      "segment": 13,
       "chars": 52
     }
   ]

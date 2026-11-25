@@ -1,31 +1,71 @@
 {
   "chapter": "08-jian-ce-anquan-bianjie",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 13,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 15
+      "chars": 21
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 80
+      "chars": 35
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 74
+      "chars": 192
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 107
+      "chars": 130
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 391
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 286
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 341
+    },
+    {
+      "n": 8,
+      "segment": 7,
+      "chars": 377
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 165
+    },
+    {
+      "n": 10,
+      "segment": 8,
+      "chars": 324
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 162
+    },
+    {
+      "n": 12,
+      "segment": 9,
+      "chars": 402
+    },
+    {
+      "n": 13,
+      "segment": 10,
       "chars": 52
     }
   ]

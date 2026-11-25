@@ -4,10 +4,10 @@
   "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
   "cueCount": 5,
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
-  "audioTotalSeconds": 62.08,
+  "audioTotalSeconds": 62.088,
   "estimatedCues": 0,
   "videoSeconds": 62.118667,
-  "videoMinusNarrationSeconds": 0.039,
+  "videoMinusNarrationSeconds": 0.031,
   "textMatchesNarration": true,
   "mismatches": [],
   "cues": [
@@ -15,8 +15,8 @@
       "n": 1,
       "role": "title",
       "start": 0,
-      "end": 3.74,
-      "seconds": 3.74,
+      "end": 3.744,
+      "seconds": 3.744,
       "estimated": false,
       "text": "第 8 章 · 手少阴心经及其腧穴",
       "audio": "001.mp3"
@@ -24,9 +24,9 @@
     {
       "n": 2,
       "role": "motto",
-      "start": 3.74,
+      "start": 3.744,
       "end": 20.04,
-      "seconds": 16.3,
+      "seconds": 16.296,
       "estimated": false,
       "text": "「《针灸学·手少阴心经及其腧穴》」——教材第8章；课程章号与教材章号一一对应。本章要回答的是：手少阴心经及其腧穴这一章，要能用一句话说清它解决什么问题。",
       "audio": "002.mp3"
@@ -45,8 +45,8 @@
       "n": 4,
       "role": "roots",
       "start": 24.72,
-      "end": 50.78,
-      "seconds": 26.06,
+      "end": 50.784,
+      "seconds": 26.064,
       "estimated": false,
       "text": "环境逼迫（针灸学是全科的合订本：经络、腧穴、手法、治疗四块必须能互相对上，不能各背一段）+ 知识积累（本章 3 单元 5,536 汉字；三辨主 临床治疗 73；四位面（教材四板块）主 经络腧穴各论 5536；引书 3 部 8 次；数值类命中 28）",
       "audio": "004.mp3"
@@ -54,9 +54,9 @@
     {
       "n": 5,
       "role": "disclaimer",
-      "start": 50.78,
-      "end": 62.08,
-      "seconds": 11.3,
+      "start": 50.784,
+      "end": 62.088,
+      "seconds": 11.304,
       "estimated": false,
       "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "audio": "005.mp3"

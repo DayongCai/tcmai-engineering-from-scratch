@@ -1,31 +1,91 @@
 {
   "chapter": "01-xulun",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 17,
+  "segmentCount": 11,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 6
+      "chars": 30
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 57
+      "chars": 42
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 21
+      "chars": 210
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 131
+      "chars": 168
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 241
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 211
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 418
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 274
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 419
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 241
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 282
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 385
+    },
+    {
+      "n": 13,
+      "segment": 9,
+      "chars": 339
+    },
+    {
+      "n": 14,
+      "segment": 9,
+      "chars": 322
+    },
+    {
+      "n": 15,
+      "segment": 10,
+      "chars": 374
+    },
+    {
+      "n": 16,
+      "segment": 10,
+      "chars": 178
+    },
+    {
+      "n": 17,
+      "segment": 11,
       "chars": 52
     }
   ]

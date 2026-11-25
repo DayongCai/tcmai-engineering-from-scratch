@@ -1,31 +1,81 @@
 {
   "chapter": "01-wuli-gailun",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 15,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 10
+      "chars": 35
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 81
+      "chars": 37
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 22
+      "chars": 313
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 106
+      "chars": 205
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 319
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 419
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 399
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 278
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 292
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 389
+    },
+    {
+      "n": 11,
+      "segment": 7,
+      "chars": 103
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 378
+    },
+    {
+      "n": 13,
+      "segment": 8,
+      "chars": 234
+    },
+    {
+      "n": 14,
+      "segment": 9,
+      "chars": 433
+    },
+    {
+      "n": 15,
+      "segment": 10,
       "chars": 52
     }
   ]

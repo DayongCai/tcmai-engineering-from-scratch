@@ -29,38 +29,37 @@ platform:
 
 chapters:
   - slug: 01-xuan-ti
-    title: 第1章 选题：从中医问题到可复现实验
-    segments: 5
+    title: 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验
     video: rendered
-    estimate_minutes: 1
-    measured_minutes: 1
+    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 1.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-shujuji-biaozhu
-    title: 第2章 数据集与标注规范
-    segments: 5
+    title: 标注规范不是给数据打标签，是把「谁说了算」写进文件
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.91
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-fangfa-xiaorong
-    title: 第3章 方法实现与消融实验
-    segments: 5
+    title: 消融不是删模块看掉多少分，是回答「哪一步在替我说话」
     video: rendered
-    estimate_minutes: 0.92
-    measured_minutes: 0.94
+    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-wucha-fenxi
-    title: 第4章 误差分析与临床可解释性
-    segments: 5
+    title: 误差分析不是算准确率，是找出「它错在谁身上」
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.97
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.97      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-lunwen-dabian
-    title: 第5章 论文写作与答辩
-    segments: 5
+    title: 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来
     video: rendered
-    estimate_minutes: 0.9
-    measured_minutes: 0.69
+    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.69      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-zhishi-yijiao
-    title: 第6章 知识移交：模型卡与交接
-    segments: 5
+    title: 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.97
+    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 0.97      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

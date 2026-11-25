@@ -29,50 +29,49 @@ platform:
 
 chapters:
   - slug: 01-jijiu-gailun
-    title: 第1章 创伤急救总论与评估
-    segments: 5
+    title: 急救的第一分钟不救任何人，只做判断
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 1.02
+    estimate_minutes: 11.13      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.79      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-xianchang-huli
-    title: 第2章 现场救护与搬运固定
-    segments: 5
+    title: 搬运不是把人抬走，是把断端抬走
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.99
+    estimate_minutes: 11.32      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.85      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-chuxue-shuke
-    title: 第3章 出血与休克
-    segments: 5
+    title: 止住看得见的血，盯住看不见的血
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.95
+    estimate_minutes: 11.42      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.80      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-lunao-jizhu
-    title: 第4章 颅脑与脊柱损伤
-    segments: 5
+    title: 颅脑伤救的是"不再加重"，脊柱伤救的是"不再移动"
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.95
+    estimate_minutes: 11.68      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.74      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-xiongfu
-    title: 第5章 胸部与腹部创伤
-    segments: 5
+    title: 胸腹伤的死因，多半在体表看不见
     video: rendered
-    estimate_minutes: 0.97
-    measured_minutes: 0.96
+    estimate_minutes: 11.33      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 7.86      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-sizhi-guzhe-tuowei
-    title: 第6章 四肢骨折与脱位的急救
-    segments: 5
+    title: 四肢急救的成败，落在"末梢"两个字上
     video: rendered
-    estimate_minutes: 0.98
-    measured_minutes: 0.99
+    estimate_minutes: 11.38      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.83      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 07-shaoshang-jishang
-    title: 第7章 烧伤、挤压伤与多发伤
-    segments: 5
+    title: 挤压伤的危险，在松开的瞬间
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.97
+    estimate_minutes: 12.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.32      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 08-zainan-zhuanyun
-    title: 第8章 灾难救援与转运
-    segments: 5
+    title: 灾难现场最稀缺的不是技术，是"谁先走"的决定
     video: rendered
-    estimate_minutes: 0.95
-    measured_minutes: 0.97
+    estimate_minutes: 12.12      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.70      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

@@ -1,31 +1,101 @@
 {
   "chapter": "10-anquan-shuzihua",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 19,
+  "segmentCount": 11,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 13
+      "chars": 25
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 74
+      "chars": 22
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 28
+      "chars": 392
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 127
+      "chars": 282
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 414
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 367
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 325
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 315
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 153
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 302
+    },
+    {
+      "n": 11,
+      "segment": 7,
+      "chars": 154
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 278
+    },
+    {
+      "n": 13,
+      "segment": 8,
+      "chars": 191
+    },
+    {
+      "n": 14,
+      "segment": 9,
+      "chars": 217
+    },
+    {
+      "n": 15,
+      "segment": 9,
+      "chars": 234
+    },
+    {
+      "n": 16,
+      "segment": 9,
+      "chars": 407
+    },
+    {
+      "n": 17,
+      "segment": 10,
+      "chars": 351
+    },
+    {
+      "n": 18,
+      "segment": 10,
+      "chars": 197
+    },
+    {
+      "n": 19,
+      "segment": 11,
       "chars": 52
     }
   ]

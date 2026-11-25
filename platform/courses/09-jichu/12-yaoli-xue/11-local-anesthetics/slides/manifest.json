@@ -1,27 +1,27 @@
 {
   "chapter": "11-local-anesthetics",
-  "slideCount": 27,
-  "segmentCount": 15,
+  "slideCount": 37,
+  "segmentCount": 12,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 30
+      "chars": 39
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 91
+      "chars": 26
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 216
+      "chars": 50
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 142
+      "chars": 85
     },
     {
       "n": 5,
@@ -86,56 +86,106 @@
     {
       "n": 17,
       "segment": 10,
-      "chars": 383
+      "chars": 406
     },
     {
       "n": 18,
-      "segment": 11,
+      "segment": 10,
       "chars": 392
     },
     {
       "n": 19,
-      "segment": 11,
-      "chars": 113
+      "segment": 10,
+      "chars": 330
     },
     {
       "n": 20,
-      "segment": 12,
+      "segment": 10,
       "chars": 344
     },
     {
       "n": 21,
-      "segment": 12,
-      "chars": 327
+      "segment": 10,
+      "chars": 232
     },
     {
       "n": 22,
-      "segment": 13,
-      "chars": 79
-    },
-    {
-      "n": 23,
-      "segment": 13,
+      "segment": 10,
       "chars": 353
     },
     {
+      "n": 23,
+      "segment": 10,
+      "chars": 412
+    },
+    {
       "n": 24,
-      "segment": 13,
-      "chars": 309
+      "segment": 10,
+      "chars": 393
     },
     {
       "n": 25,
-      "segment": 14,
-      "chars": 420
+      "segment": 10,
+      "chars": 405
     },
     {
       "n": 26,
-      "segment": 14,
-      "chars": 208
+      "segment": 10,
+      "chars": 251
     },
     {
       "n": 27,
-      "segment": 15,
+      "segment": 10,
+      "chars": 229
+    },
+    {
+      "n": 28,
+      "segment": 10,
+      "chars": 409
+    },
+    {
+      "n": 29,
+      "segment": 10,
+      "chars": 250
+    },
+    {
+      "n": 30,
+      "segment": 10,
+      "chars": 234
+    },
+    {
+      "n": 31,
+      "segment": 10,
+      "chars": 207
+    },
+    {
+      "n": 32,
+      "segment": 10,
+      "chars": 225
+    },
+    {
+      "n": 33,
+      "segment": 11,
+      "chars": 401
+    },
+    {
+      "n": 34,
+      "segment": 11,
+      "chars": 396
+    },
+    {
+      "n": 35,
+      "segment": 11,
+      "chars": 367
+    },
+    {
+      "n": 36,
+      "segment": 11,
+      "chars": 292
+    },
+    {
+      "n": 37,
+      "segment": 12,
       "chars": 52
     }
   ]
