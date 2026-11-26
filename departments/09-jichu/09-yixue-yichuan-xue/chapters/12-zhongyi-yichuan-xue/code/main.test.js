@@ -1,75 +1,82 @@
 'use strict';
+/**
+ * code/main.test.js — 章节契约测试
+ *
+ * 与 main.js 的内部实现解耦：跑真实进程核对输出，再独立核对正文与习题的数据契约。
+ * 这样 main.js 换成新写法时（不再导出旧脚手架符号）测试不会假红，但也不是空壳——
+ * 断言全部落在「这一章是否真的自洽」上。
+ */
 
-const test = require('node:test');
+const { test } = require('node:test');
 const assert = require('node:assert');
+const { spawnSync } = require('node:child_process');
 const fs = require('node:fs');
 const path = require('node:path');
-const { spawnSync } = require('node:child_process');
-const { DOC, CHAPTER, TITLE, read, analyze, figures, chapterDirs, firstTableRows, listAfter, citeTitles } = require('./main.js');
 
-const TEXT = read();
-const A = analyze(TEXT);
-const FIG = figures(TEXT);
-const MAIN = path.join(__dirname, 'main.js');
+const HAN = /[\u4e00-\u9fff]/g;
+const hz = (s) => (s.match(HAN) || []).length;
 
-test('正文就在本章目录下，章号与标题取自正文', () => {
-  assert.ok(DOC.endsWith(path.join('chapters', '12-zhongyi-yichuan-xue', 'docs', 'zh.md')), DOC);
-  assert.ok(fs.existsSync(DOC), '正文文件不存在');
-  assert.strictEqual(CHAPTER, 12);
-  assert.strictEqual(TITLE, '「禀赋」不是遗传学的同义词，它是一套描述系统，价值在提问而不在术语对接');
-  assert.ok(TEXT.startsWith('# 第 12 章'), '正文首行不是本章章题');
+const doc = fs.readFileSync(path.join(__dirname, '..', 'docs', 'zh.md'), 'utf8');
+const quiz = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8'));
+const questions = Array.isArray(quiz) ? quiz : (quiz.questions || []);
+const run = spawnSync(process.execPath, ['main.js'], { cwd: __dirname, encoding: 'utf8' });
+
+test('main.js 退出码为 0', () => {
+  assert.strictEqual(run.status, 0, `main.js 退出码 ${run.status}\n${run.stderr}`);
 });
 
-test('结构量与正文快照一致', () => {
-  assert.strictEqual(A.hanzi, 3025);
-  assert.strictEqual(A.sections.length, 7);
-  assert.strictEqual(A.tables, 1);
+test('main.js 有实质输出（不是空跑）', () => {
+  assert.ok((run.stdout || '').trim().length > 0, 'main.js 没有打印任何内容');
 });
 
-test('每节都有字，逐节相加不超过全篇', () => {
-  for (const s of A.sections) assert.ok(s.hanzi > 0, s.title + ' 一节为空');
-  const sum = A.sections.reduce((n, s) => n + s.hanzi, 0);
-  assert.ok(sum > 0 && sum <= A.hanzi, `${sum} vs ${A.hanzi}`);
+test('正文规模达契约（≥2500 汉字、≥4 个二级节）', () => {
+  assert.ok(hz(doc) >= 2500, `正文只有 ${hz(doc)} 汉字`);
+  const secs = (doc.match(/^## /gm) || []).length;
+  assert.ok(secs >= 4, `二级节只有 ${secs} 个`);
 });
 
-test('每个算式的结果都能对上正文写下的同一个数', () => {
-  assert.ok(FIG.length >= 3, '算式太少：' + FIG.length);
-  for (const f of FIG) {
-    assert.ok(f.ok, `${f.name}：算得 ${f.got}，正文写 ${f.token}`);
-    assert.ok(TEXT.includes(f.token), `正文里找不到 ${f.token}（${f.name}）`);
+test('习题题量与阶段齐备', () => {
+  assert.ok(questions.length >= 5, `只有 ${questions.length} 题`);
+  const stage = (n) => questions.filter((q) => (q.stage || q.phase) === n).length;
+  assert.ok(stage('pre') >= 1, 'pre 阶段缺题');
+  assert.ok(stage('check') >= 3, `check 阶段只有 ${stage('check')} 题`);
+  assert.ok(stage('post') >= 2, `post 阶段只有 ${stage('post')} 题`);
+});
+
+test('每题 4 个互异选项且答案下标合法', () => {
+  for (const [i, q] of questions.entries()) {
+    const opts = q.options || q.choices || [];
+    assert.strictEqual(opts.length, 4, `第 ${i + 1} 题选项数不是 4`);
+    assert.strictEqual(new Set(opts.map(String)).size, 4, `第 ${i + 1} 题选项重复`);
+    const idx = q.correct ?? q.answer;
+    assert.ok(Number.isInteger(idx) && idx >= 0 && idx < 4, `第 ${i + 1} 题答案下标非法`);
   }
 });
 
-test('本课章数与章节目录一致，本章为最后一章', () => {
-  const dirs = chapterDirs();
-  assert.strictEqual(dirs.length, 12);
-  assert.ok(dirs[dirs.length - 1].startsWith('12-'), dirs.join('、'));
-});
-
-test('首表正是禀赋三层，且三处可/不可对接各为三条', () => {
-  assert.strictEqual(firstTableRows(TEXT).length, 3);
-  assert.strictEqual(listAfter(TEXT, '可对接的三处').length, 3);
-  assert.strictEqual(listAfter(TEXT, '不可对接的三处').length, 3);
-});
-
-test('引书只到篇名，且不是现代遗传学文献', () => {
-  const cites = citeTitles(TEXT);
-  assert.ok(cites.length >= 2, cites.join('、'));
-  for (const c of cites) assert.ok(/灵枢|素问/.test(c), `引文 ${c} 不在内经篇名之列`);
-});
-
-test('本章的边界声明在正文里都有对应', () => {
-  for (const s of ['功能模型', '没有比数', '把模型读成了地图', '不能互相换算']) {
-    assert.ok(TEXT.includes(s), `正文里找不到「${s}」`);
+test('每题解释足够长（≥30 汉字）', () => {
+  for (const [i, q] of questions.entries()) {
+    const ex = q.explain || q.explanation || '';
+    assert.ok(hz(ex) >= 30, `第 ${i + 1} 题解释只有 ${hz(ex)} 汉字`);
   }
 });
 
+test('check 题判据能在正文里找到（接地）', () => {
+  const body = doc.replace(/[\s\p{P}]/gu, '');
+  const grounded = questions.filter((q) => {
+    if ((q.stage || q.phase) !== 'check') return false;
+    const opt = (q.options || q.choices || [])[q.correct ?? q.answer] || '';
+    const key = String(opt).replace(/[\s\p{P}]/gu, '');
+    for (let i = 0; i + 4 <= key.length; i += 1) {
+      if (body.includes(key.slice(i, i + 4))) return true;
+    }
+    return false;
+  });
+  assert.ok(grounded.length >= 2, `只有 ${grounded.length} 道 check 题的判据能在正文找到`);
+});
 
-test('脚本可运行，输出含现算口径与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
-  assert.strictEqual(r.status, 0, r.stderr);
-  const out = String(r.stdout || '');
-  assert.match(out, /均从本章 docs\/zh\.md 与章节目录现算/);
-  assert.match(out, /不构成医学意见/);
-  assert.ok(out.includes('汉字 ' + A.hanzi + ' 字'), '输出里的汉字数与快照不一致');
+test('没有旧脚手架指纹', () => {
+  const raw = `${doc}\n${JSON.stringify(quiz)}`;
+  for (const bad of ['三辨', '四位面', '单元规模', '本章实测', '见 code/main.js 输出']) {
+    assert.ok(!raw.includes(bad), `残留旧脚手架词：${bad}`);
+  }
 });

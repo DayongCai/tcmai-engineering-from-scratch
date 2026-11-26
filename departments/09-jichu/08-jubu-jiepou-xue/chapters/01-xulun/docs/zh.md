@@ -63,6 +63,15 @@
 
 ## 运行与验证
 
+本章的正文与习题契约由脚本现算，可当场复核：
+
+```bash
+node code/main.js
+```
+
+脚本打印的是本章正文的规模、习题的阶段分布与接地情况；退出码为 0 表示各项契约满足，非 0 表示有不满足的项，输出里会逐条写明。
+
+
 ```bash
 # 1) 现算本章规模、层次类别词频与主导类别（读 standards/jubu-jiepou-xue/units.json）
 node departments/09-jichu/08-jubu-jiepou-xue/chapters/01-xulun/code/main.js

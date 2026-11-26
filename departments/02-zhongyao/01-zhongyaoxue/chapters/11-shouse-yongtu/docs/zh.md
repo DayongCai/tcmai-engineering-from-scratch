@@ -105,6 +105,15 @@
 
 ## 六、运行与验证
 
+本章的正文与习题契约由脚本现算，可当场复核：
+
+```bash
+node code/main.js
+```
+
+脚本打印的是本章正文的规模、习题的阶段分布与接地情况；退出码为 0 表示各项契约满足，非 0 表示有不满足的项，输出里会逐条写明。
+
+
 ```bash
 node -e "const D=require('./standards/zhongyao-xue/药物库.json').drugs.filter(x=>[26,27].includes(x.章));const q={},w={},j={};D.forEach(x=>{if(x.气)q[x.气]=(q[x.气]||0)+1;if(x.味)x.味.split('／').forEach(m=>{m=m.trim();if(m)w[m]=(w[m]||0)+1});if(x.归经)x.归经.split('、').forEach(m=>{m=m.trim();if(m)j[m]=(j[m]||0)+1});});console.log('n='+D.length+' 字='+D.reduce((a,x)=>a+x.hanzi,0)+' 气填='+D.filter(x=>x.气).length+' 味填='+D.filter(x=>x.味).length+' 经填='+D.filter(x=>x.归经).length);console.log('气='+JSON.stringify(q));console.log('味='+JSON.stringify(w));console.log('经='+JSON.stringify(j)+' 标='+Object.values(j).reduce((a,b)=>a+b,0));console.log('涩='+D.filter(x=>/涩/.test(x.味)).map(x=>x.药名).join('、'));console.log('无毒标='+D.filter(x=>!/毒/.test(x.使用注意)).map(x=>x.药名).join('、'));"
 ```

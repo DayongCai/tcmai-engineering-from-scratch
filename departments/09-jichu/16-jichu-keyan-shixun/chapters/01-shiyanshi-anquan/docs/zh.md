@@ -79,6 +79,15 @@
 
 ## 运行与验证
 
+本章的正文与习题契约由脚本现算，可当场复核：
+
+```bash
+node code/main.js
+```
+
+脚本打印的是本章正文的规模、习题的阶段分布与接地情况；退出码为 0 表示各项契约满足，非 0 表示有不满足的项，输出里会逐条写明。
+
+
 ```bash
 # 1) 现算本章规模与三类词频（记录与报告 146 / 设计与对照 84 / 准备与安全 45）
 node departments/09-jichu/16-jichu-keyan-shixun/chapters/01-shiyanshi-anquan/code/main.js

@@ -91,6 +91,15 @@
 
 ## 八、运行与验证
 
+本章的正文与习题契约由脚本现算，可当场复核：
+
+```bash
+node code/main.js
+```
+
+脚本打印的是本章正文的规模、习题的阶段分布与接地情况；退出码为 0 表示各项契约满足，非 0 表示有不满足的项，输出里会逐条写明。
+
+
 ```bash
 node -e "const u=require('./standards/zhongyao-shangpin/units.json');const a=u.units.filter(x=>x.chapter==='17');const t=a.map(x=>x.body).join('');const c=re=>(t.match(re)||[]).length;console.log('单元',a.length,'汉字',(t.match(/[\u4e00-\u9fff]/g)||[]).length,'追溯',c(/追溯/g),'风险',c(/风险/g),'掺伪',c(/掺伪/g),'控制点',c(/控制点/g),'召回',c(/召回/g),'快检',c(/快检/g),'编码',c(/编码/g))"
 ```

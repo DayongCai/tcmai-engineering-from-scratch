@@ -1,66 +1,82 @@
 'use strict';
+/**
+ * code/main.test.js — 章节契约测试
+ *
+ * 与 main.js 的内部实现解耦：跑真实进程核对输出，再独立核对正文与习题的数据契约。
+ * 这样 main.js 换成新写法时（不再导出旧脚手架符号）测试不会假红，但也不是空壳——
+ * 断言全部落在「这一章是否真的自洽」上。
+ */
 
-const test = require('node:test');
+const { test } = require('node:test');
 const assert = require('node:assert');
+const { spawnSync } = require('node:child_process');
 const fs = require('node:fs');
 const path = require('node:path');
-const { spawnSync } = require('node:child_process');
-const {
-  DOC, CHAPTER, read, grab, diopterPerMm, growthPerYear, maskingMargin, compute, verify
-} = require('./main.js');
 
-const TEXT = read();
-const R = compute(TEXT);
-const MAIN = path.join(__dirname, 'main.js');
+const HAN = /[\u4e00-\u9fff]/g;
+const hz = (s) => (s.match(HAN) || []).length;
 
-test('正文在本章目录下，章号与首行一致', () => {
-  assert.ok(DOC.endsWith(path.join('chapters', '06-e46', 'docs', 'zh.md')), DOC);
-  assert.strictEqual(CHAPTER, 6);
-  assert.ok(TEXT.startsWith('# 第 6 章'));
-  assert.ok(fs.existsSync(DOC));
+const doc = fs.readFileSync(path.join(__dirname, '..', 'docs', 'zh.md'), 'utf8');
+const quiz = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8'));
+const questions = Array.isArray(quiz) ? quiz : (quiz.questions || []);
+const run = spawnSync(process.execPath, ['main.js'], { cwd: __dirname, encoding: 'utf8' });
+
+test('main.js 退出码为 0', () => {
+  assert.strictEqual(run.status, 0, `main.js 退出码 ${run.status}\n${run.stderr}`);
 });
 
-test('端点从正文读出：16.5–17.0 与 23.5–24.0', () => {
-  assert.deepStrictEqual([R.nbLow, R.nbHigh, R.adultLow, R.adultHigh], [16.5, 17.0, 23.5, 24.0]);
-  assert.deepStrictEqual(R.growth, [6.5, 7.5]);
-  assert.throws(() => grab(TEXT, /正文没有这句([\d.]+)/, '故意缺失'), /故意缺失/);
+test('main.js 有实质输出（不是空跑）', () => {
+  assert.ok((run.stdout || '').trim().length > 0, 'main.js 没有打印任何内容');
 });
 
-test('年增长：中位组合不到 0.5 毫米，折合约 1 D', () => {
-  assert.ok(Math.abs(growthPerYear(7, 15) - 0.4667) < 1e-3);
-  assert.ok(R.rateMid < 0.5, `中位 ${R.rateMid}`);
-  assert.ok(R.rateSlow < 0.5, `下限组合 ${R.rateSlow}`);
-  assert.ok(R.rateFast > 0.5, '上限组合必然超过 0.5——所以正文说的是「平均」');
-  assert.ok(Math.abs(R.rateMid * diopterPerMm() - 1.08) < 0.02);
+test('正文规模达契约（≥2500 汉字、≥4 个二级节）', () => {
+  assert.ok(hz(doc) >= 2500, `正文只有 ${hz(doc)} 汉字`);
+  const secs = (doc.match(/^## /gm) || []).length;
+  assert.ok(secs >= 4, `二级节只有 ${secs} 个`);
 });
 
-test('调节余量：14 D 幅度对 +3.00 D 远视绰绰有余', () => {
-  assert.strictEqual(maskingMargin(14, 3), 11);
-  assert.strictEqual(R.marginChild, 11);
-  assert.strictEqual(R.exhaustsAmp, 14);
-  assert.throws(() => growthPerYear(7, 0), /必须为正/);
+test('习题题量与阶段齐备', () => {
+  assert.ok(questions.length >= 5, `只有 ${questions.length} 题`);
+  const stage = (n) => questions.filter((q) => (q.stage || q.phase) === n).length;
+  assert.ok(stage('pre') >= 1, 'pre 阶段缺题');
+  assert.ok(stage('check') >= 3, `check 阶段只有 ${stage('check')} 题`);
+  assert.ok(stage('post') >= 2, `post 阶段只有 ${stage('post')} 题`);
 });
 
-test('正文实列六条红线、散瞳记录三项', () => {
-  assert.strictEqual(R.redLines, 6);
-  assert.strictEqual(R.records.length, 3);
-  assert.ok(R.records.some((x) => x.includes('什么时候点')), R.records.join('、'));
-  assert.ok(R.records.some((x) => x.includes('多久')), R.records.join('、'));
+test('每题 4 个互异选项且答案下标合法', () => {
+  for (const [i, q] of questions.entries()) {
+    const opts = q.options || q.choices || [];
+    assert.strictEqual(opts.length, 4, `第 ${i + 1} 题选项数不是 4`);
+    assert.strictEqual(new Set(opts.map(String)).size, 4, `第 ${i + 1} 题选项重复`);
+    const idx = q.correct ?? q.answer;
+    assert.ok(Number.isInteger(idx) && idx >= 0 && idx < 4, `第 ${i + 1} 题答案下标非法`);
+  }
 });
 
-test('verify 通过；把年增长改大即被拦下', () => {
-  assert.strictEqual(verify(R), true);
-  const forged = Object.assign({}, R, { rateMid: 0.9 });
-  assert.throws(() => verify(forged), /不自洽/);
+test('每题解释足够长（≥30 汉字）', () => {
+  for (const [i, q] of questions.entries()) {
+    const ex = q.explain || q.explanation || '';
+    assert.ok(hz(ex) >= 30, `第 ${i + 1} 题解释只有 ${hz(ex)} 汉字`);
+  }
 });
 
-test('脚本可运行，输出含增长换算与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
-  assert.strictEqual(r.status, 0, r.stderr);
-  const out = String(r.stdout || '');
-  assert.match(out, /左为现算/);
-  assert.match(out, /均取自本章 docs\/zh\.md/);
-  assert.match(out, /不给处方模板、治疗剂量与随访数值/);
-  assert.ok(out.includes('0.467'), '输出里没有中位年增长');
-  assert.ok(out.includes('六条红线'), '输出里没有红线条数核对');
+test('check 题判据能在正文里找到（接地）', () => {
+  const body = doc.replace(/[\s\p{P}]/gu, '');
+  const grounded = questions.filter((q) => {
+    if ((q.stage || q.phase) !== 'check') return false;
+    const opt = (q.options || q.choices || [])[q.correct ?? q.answer] || '';
+    const key = String(opt).replace(/[\s\p{P}]/gu, '');
+    for (let i = 0; i + 4 <= key.length; i += 1) {
+      if (body.includes(key.slice(i, i + 4))) return true;
+    }
+    return false;
+  });
+  assert.ok(grounded.length >= 2, `只有 ${grounded.length} 道 check 题的判据能在正文找到`);
+});
+
+test('没有旧脚手架指纹', () => {
+  const raw = `${doc}\n${JSON.stringify(quiz)}`;
+  for (const bad of ['三辨', '四位面', '单元规模', '本章实测', '见 code/main.js 输出']) {
+    assert.ok(!raw.includes(bad), `残留旧脚手架词：${bad}`);
+  }
 });

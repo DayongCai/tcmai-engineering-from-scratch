@@ -96,6 +96,15 @@
 
 ## 运行与验证
 
+本章的正文与习题契约由脚本现算，可当场复核：
+
+```bash
+node code/main.js
+```
+
+脚本打印的是本章正文的规模、习题的阶段分布与接地情况；退出码为 0 表示各项契约满足，非 0 表示有不满足的项，输出里会逐条写明。
+
+
 ```bash
 # 1) 口径自检：模板残留 0 / 汉字 ≥2,500 / H1 观点式 / MOTTO 篇名级 / 代价与边界 / 免责 / 二级小节 4–8
 node scripts/audit_course_docs.js --dept=09-jichu --subject=02-zuzhi-peitai-xue

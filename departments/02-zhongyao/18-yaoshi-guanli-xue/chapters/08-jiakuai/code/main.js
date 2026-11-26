@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 /**
- * 药事管理学 · 第 8 章 加快通道：突破性治疗、附条件批准、优先审评：本章统计口径
+ * 药事管理学 · 第 8 章 加快通道：突破性治疗、附条件批准、优先审评：正文与习题自检
  * 课程: departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/08-jiakuai/docs/zh.md
- * 数据: standards/yaoshi-guanli/units.json（28 单元层，每单元带三辨与四位面词频）
- * 取数: standards/yaoshi-guanli/chapter-map.json（课程章 → 教材单元号）
+ * 数据: standards/yaoshi-guanli/units.json（单元层原文）、standards/yaoshi-guanli/chapter-map.json（章 → 单元）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本章的数字全部现算：单元数、单元层汉字、引文次数来自 units.json；
+ * 正文规模、二级节数、习题题量与接地数由本脚本读出 ../docs/zh.md 与 ../quiz.json。
+ * 接地指 check 题的正确选项里至少有一段 6 个汉字的连续片段逐字出现在正文里 —— 习题必须与正文同源。
  */
 
 'use strict';
@@ -29,26 +29,32 @@ function findRoot(start) {
 const ROOT = findRoot(__dirname);
 const UNITS = path.join(ROOT, 'standards', 'yaoshi-guanli', 'units.json');
 const MAP = path.join(ROOT, 'standards', 'yaoshi-guanli', 'chapter-map.json');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
+
 const CHAPTER = '8';
 const SLUG = '08-jiakuai';
+const TITLE = '加快通道：突破性治疗、附条件批准、优先审评';
 
 const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
 const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
 
+/** 本章在章映射里对应的单元号 */
 function chapterKeys() {
   const cm = loadMap().chapters;
   if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
   return cm[SLUG].units.slice();
 }
 
+/** 单元层里本章的单元（按单元号自然序） */
 function chapterUnits() {
   const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
+  return loadAll().units
     .filter((u) => keys.includes(u.sub))
     .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
 }
 
+/** 本章在单元层上的统计：汉字、引文、数值命中、三组词群的频次 */
 function summarize(units) {
   const views = {};
   const levels = {};
@@ -67,35 +73,68 @@ function summarize(units) {
   return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
 }
 
+const hz = (s) => (String(s || '').match(/[\u4e00-\u9fff]/g) || []).length;
+
+/** 正文里 n 字连续汉字片段集合 */
+function grams(text, n = 6) {
+  const out = new Set();
+  for (const seg of String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+}
+
+/** 选项里是否有 n 字连续片段逐字出现在正文里 */
+function grounded(option, body, n = 6) {
+  const clean = String(option || '').replace(/[^\u4e00-\u9fff]/g, '');
+  for (let i = 0; i + n <= clean.length; i += 1) if (body.has(clean.slice(i, i + n))) return true;
+  return false;
+}
+
+/** 正文与习题的自检读数 */
+function inspect(doc, quiz) {
+  const body = grams(doc, 6);
+  const questions = Array.isArray(quiz) ? quiz : (quiz.questions || []);
+  const stages = { pre: 0, check: 0, post: 0 };
+  for (const q of questions) stages[q.stage] = (stages[q.stage] || 0) + 1;
+  const checks = questions.filter((q) => q.stage === 'check');
+  const hit = checks.filter((q) => grounded((q.options || [])[q.correct], body)).length;
+  const minExplain = questions.length ? Math.min(...questions.map((q) => hz(q.explain || q.explanation))) : 0;
+  return { hanzi: hz(doc), secs: (doc.match(/^## /gm) || []).length, questions, stages, checks, hit, minExplain };
+}
+
 function main() {
   const units = chapterUnits();
   const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const doc = fs.readFileSync(DOC, 'utf8');
+  const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+  const m = loadMap().chapters[SLUG];
+  const q = inspect(doc, quiz);
 
-  console.log(`药事管理学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`药事管理学 · 第 ${CHAPTER} 章 ${m.title}`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`单元 ${units.map((u) => u.sub).join('、')} · 单元层 ${s.hanzi.toLocaleString('en-US')} 汉字 · 引文 ${s.cites} 次（${s.books} 部文件）`);
+  console.log(`正文 ${q.hanzi.toLocaleString('en-US')} 汉字 · 二级节 ${q.secs} 个`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  console.log('词群频次（单元层 measure 求和，只作定位参考）：');
+  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) console.log(`  ${k}：${v}`);
+  console.log(`  → 最密一组：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log('');
+  console.log(`习题 ${q.questions.length} 题：pre ${q.stages.pre} / check ${q.stages.check} / post ${q.stages.post} · 最短解释 ${q.minExplain} 汉字`);
+  console.log(`接地 check 题 ${q.hit}/${q.checks.length}（正确选项的 6 字片段能在正文找到）`);
+  console.log('');
+
+  const ok = q.hanzi >= 2500 && q.secs >= 4
+    && q.questions.length === 6 && q.stages.pre === 1 && q.stages.check === 3 && q.stages.post === 2
+    && q.hit === q.checks.length && q.minExplain >= 40;
+  if (!ok) {
+    console.error('自检未通过：正文规模、题量分布或接地数不达标');
+    process.exit(1);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
-  console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/yaoshi-guanli/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 教学样例：数字由 standards/yaoshi-guanli/units.json 与当章正文现算，不手打。');
+  console.log('※ 本章为教学材料，不构成法规解读与合规结论。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { chapterKeys, chapterUnits, summarize, inspect, grounded, CHAPTER, SLUG, TITLE };

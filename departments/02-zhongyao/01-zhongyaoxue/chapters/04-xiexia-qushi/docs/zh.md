@@ -114,6 +114,15 @@
 
 ## 七、运行与验证
 
+本章的正文与习题契约由脚本现算，可当场复核：
+
+```bash
+node code/main.js
+```
+
+脚本打印的是本章正文的规模、习题的阶段分布与接地情况；退出码为 0 表示各项契约满足，非 0 表示有不满足的项，输出里会逐条写明。
+
+
 ```bash
 node -e "const a=require('./standards/zhongyao-xue/药物库.json').drugs.filter(x=>x.章>=11&&x.章<=14&&!/^\d/.test(x.药名));const dm=a.map(x=>[x.药名,(String(x.用法用量).match(/(\d+(?:\.\d+)?)\s*[-–]\s*(\d+(?:\.\d+)?)\s*g/)||[]).slice(1).map(Number)]).filter(v=>v[1].length);dm.sort((p,q)=>q[1][1]-p[1][1]);console.log('n='+a.length,'毒='+a.filter(x=>/毒/.test(x.性味归经)).length,'上界max='+dm[0][0]+dm[0][1][0]+'-'+dm[0][1][1],'上界min='+dm[dm.length-1][0]+dm[dm.length-1][1][0]+'-'+dm[dm.length-1][1][1],'有数='+dm.length)"
 ```

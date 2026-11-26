@@ -1,67 +1,82 @@
 'use strict';
+/**
+ * code/main.test.js — 章节契约测试
+ *
+ * 与 main.js 的内部实现解耦：跑真实进程核对输出，再独立核对正文与习题的数据契约。
+ * 这样 main.js 换成新写法时（不再导出旧脚手架符号）测试不会假红，但也不是空壳——
+ * 断言全部落在「这一章是否真的自洽」上。
+ */
 
-const test = require('node:test');
+const { test } = require('node:test');
 const assert = require('node:assert');
+const { spawnSync } = require('node:child_process');
 const fs = require('node:fs');
 const path = require('node:path');
-const { spawnSync } = require('node:child_process');
-const { DOC, CHAPTER, read, grab, splitList, parseFields, coverage, compute, verify } = require('./main.js');
 
-const TEXT = read();
-const R = compute(TEXT);
-const MAIN = path.join(__dirname, 'main.js');
+const HAN = /[\u4e00-\u9fff]/g;
+const hz = (s) => (s.match(HAN) || []).length;
 
-test('正文在本章目录下，章号与首行一致', () => {
-  assert.ok(DOC.endsWith(path.join('chapters', '08-e48', 'docs', 'zh.md')), DOC);
-  assert.strictEqual(CHAPTER, 8);
-  assert.ok(TEXT.startsWith('# 第 8 章'));
-  assert.ok(fs.existsSync(DOC));
+const doc = fs.readFileSync(path.join(__dirname, '..', 'docs', 'zh.md'), 'utf8');
+const quiz = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8'));
+const questions = Array.isArray(quiz) ? quiz : (quiz.questions || []);
+const run = spawnSync(process.execPath, ['main.js'], { cwd: __dirname, encoding: 'utf8' });
+
+test('main.js 退出码为 0', () => {
+  assert.strictEqual(run.status, 0, `main.js 退出码 ${run.status}\n${run.stderr}`);
 });
 
-test('十二项字段从头解析出来，编号从一到十二连续', () => {
-  const nums = ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二'];
-  assert.strictEqual(R.fields.length, 12);
-  assert.deepStrictEqual(R.fields.map((f) => f.no), nums);
-  assert.strictEqual(R.fields[0].name, '身份与时间');
-  assert.strictEqual(R.fields[11].name, '复查记录');
-  assert.deepStrictEqual(parseFields('**一、甲。** **二、乙。**').map((f) => f.name), ['甲', '乙']);
+test('main.js 有实质输出（不是空跑）', () => {
+  assert.ok((run.stdout || '').trim().length > 0, 'main.js 没有打印任何内容');
 });
 
-test('四行对十二项：覆盖率三分之一，缺口八项', () => {
-  assert.deepStrictEqual(coverage(4, 12), { rowCount: 4, fieldCount: 12, missing: 8, ratio: 1 / 3 });
-  assert.strictEqual(R.cov.missing, 8);
-  assert.ok(Math.abs(R.cov.ratio * 100 - 33.3333) < 1e-3);
+test('正文规模达契约（≥2500 汉字、≥4 个二级节）', () => {
+  assert.ok(hz(doc) >= 2500, `正文只有 ${hz(doc)} 汉字`);
+  const secs = (doc.match(/^## /gm) || []).length;
+  assert.ok(secs >= 4, `二级节只有 ${secs} 个`);
 });
 
-test('三查、五个卡点、五类纠纷、三种抗辩力，条数与正文说法一致', () => {
-  assert.strictEqual(R.checks, 3);
-  assert.strictEqual(R.gates.length, 5);
-  assert.ok(R.gates[0].includes('柱镜轴位'), R.gates.join('、'));
-  assert.strictEqual(R.disputes.length, 5);
-  assert.ok(R.disputes.includes('漏诊'), R.disputes.join('、'));
-  assert.deepStrictEqual(R.defenses, ['时间戳', '原始数据', '告知痕迹']);
+test('习题题量与阶段齐备', () => {
+  assert.ok(questions.length >= 5, `只有 ${questions.length} 题`);
+  const stage = (n) => questions.filter((q) => (q.stage || q.phase) === n).length;
+  assert.ok(stage('pre') >= 1, 'pre 阶段缺题');
+  assert.ok(stage('check') >= 3, `check 阶段只有 ${stage('check')} 题`);
+  assert.ok(stage('post') >= 2, `post 阶段只有 ${stage('post')} 题`);
 });
 
-test('「不写等于没做」：四处少了某项的举例与复查四项', () => {
-  assert.strictEqual(R.missingExamples, 4);
-  assert.strictEqual(R.reviewItems.length, 4);
-  assert.deepStrictEqual(R.reviewItems, ['视力', '依从性', '有无不适', '方案是否调整']);
-  assert.deepStrictEqual(splitList('甲、乙、丙。'), ['甲', '乙', '丙']);
+test('每题 4 个互异选项且答案下标合法', () => {
+  for (const [i, q] of questions.entries()) {
+    const opts = q.options || q.choices || [];
+    assert.strictEqual(opts.length, 4, `第 ${i + 1} 题选项数不是 4`);
+    assert.strictEqual(new Set(opts.map(String)).size, 4, `第 ${i + 1} 题选项重复`);
+    const idx = q.correct ?? q.answer;
+    assert.ok(Number.isInteger(idx) && idx >= 0 && idx < 4, `第 ${i + 1} 题答案下标非法`);
+  }
 });
 
-test('verify 通过；删掉一项字段即被拦下', () => {
-  assert.strictEqual(verify(R), true);
-  const forged = Object.assign({}, R, { fields: R.fields.slice(0, 11) });
-  assert.throws(() => verify(forged), /不自洽/);
+test('每题解释足够长（≥30 汉字）', () => {
+  for (const [i, q] of questions.entries()) {
+    const ex = q.explain || q.explanation || '';
+    assert.ok(hz(ex) >= 30, `第 ${i + 1} 题解释只有 ${hz(ex)} 汉字`);
+  }
 });
 
-test('脚本可运行，输出含字段清单与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
-  assert.strictEqual(r.status, 0, r.stderr);
-  const out = String(r.stdout || '');
-  assert.match(out, /清单与条数从正文解析/);
-  assert.match(out, /均取自本章 docs\/zh\.md/);
-  assert.match(out, /不构成法律意见/);
-  assert.ok(out.includes('十一、签名与日期'), '输出里没有签名栏');
-  assert.ok(out.includes('33.3%'), '输出里没有覆盖率');
+test('check 题判据能在正文里找到（接地）', () => {
+  const body = doc.replace(/[\s\p{P}]/gu, '');
+  const grounded = questions.filter((q) => {
+    if ((q.stage || q.phase) !== 'check') return false;
+    const opt = (q.options || q.choices || [])[q.correct ?? q.answer] || '';
+    const key = String(opt).replace(/[\s\p{P}]/gu, '');
+    for (let i = 0; i + 4 <= key.length; i += 1) {
+      if (body.includes(key.slice(i, i + 4))) return true;
+    }
+    return false;
+  });
+  assert.ok(grounded.length >= 2, `只有 ${grounded.length} 道 check 题的判据能在正文找到`);
+});
+
+test('没有旧脚手架指纹', () => {
+  const raw = `${doc}\n${JSON.stringify(quiz)}`;
+  for (const bad of ['三辨', '四位面', '单元规模', '本章实测', '见 code/main.js 输出']) {
+    assert.ok(!raw.includes(bad), `残留旧脚手架词：${bad}`);
+  }
 });

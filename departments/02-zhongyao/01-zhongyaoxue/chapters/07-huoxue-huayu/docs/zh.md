@@ -127,6 +127,15 @@
 
 ## 七、运行与验证
 
+本章的正文与习题契约由脚本现算，可当场复核：
+
+```bash
+node code/main.js
+```
+
+脚本打印的是本章正文的规模、习题的阶段分布与接地情况；退出码为 0 表示各项契约满足，非 0 表示有不满足的项，输出里会逐条写明。
+
+
 ```bash
 node -e "const U=Object.values(require('./standards/zhongyao-xue/units.json').units);const D=require('./standards/zhongyao-xue/药物库.json').drugs.filter(x=>x.章===20);const q={};D.forEach(x=>x.气&&(q[x.气]=(q[x.气]||0)+1));console.log('n='+D.length+' 气填='+D.filter(x=>x.气).length+' 肝经='+D.filter(x=>x.归经.includes('肝')).length);console.log('气='+JSON.stringify(q));console.log('locator去重='+new Set(D.map(x=>x.locator)).size+'/'+D.length);D.filter(x=>!x.气).forEach(x=>console.log('空 '+x.药名+' 「'+U.find(y=>y.chapter==='20'&&y.title===x.药名).rawBody.match(/性微?[寒温凉热]|性平/)[0]+'」'));"
 ```

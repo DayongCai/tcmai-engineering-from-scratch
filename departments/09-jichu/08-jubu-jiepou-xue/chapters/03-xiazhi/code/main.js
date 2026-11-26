@@ -1,13 +1,15 @@
 #!/usr/bin/env node
 /**
- * 局部解剖学 · 第 3 章 下肢：本章统计口径
+ * 局部解剖学 · 第 3 章 下肢的难点不在记血管，而在同一个区里叠着两套通道
  * 课程: departments/09-jichu/08-jubu-jiepou-xue/chapters/03-xiazhi/docs/zh.md
- * 数据: standards/jubu-jiepou-xue/units.json（108 单元层，每单元带三辨与四位面词频）
- * 取数: standards/jubu-jiepou-xue/chapter-map.json（课程章 → 教材单元号）
- * 依赖: 仅 Node.js 标准库
+ * 依赖: 仅 Node.js 标准库；只读 ../docs/zh.md 与 ../quiz.json，不读 standards/。
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本章代码把「习题是否与正文同源」算成可复算的数：正文汉字、二级节、题量与解释长度、
+ * check 题接地数。接地数指 check 题的正确选项里，至少有一段 >=6 汉字的原文真的出现在
+ * 当章正文里 —— 习题必须与正文同源，不能问正文里没有的名目。
+ *
+ * 另附本章的结构词命中（臀区／股三角／收肌管／腘窝）：一个局部章节讲不讲得动，看它有没有把
+ * 层次、间隙、毗邻、血管神经这类可指认的结构词落到句子里。
  */
 
 'use strict';
@@ -15,87 +17,137 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'jubu-jiepou-xue', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/jubu-jiepou-xue/units.json —— 章节目录是否已脱离仓库？');
-}
-
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'jubu-jiepou-xue', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'jubu-jiepou-xue', 'chapter-map.json');
-const CHAPTER = '3';
 const SLUG = '03-xiazhi';
+const CHAPTER = 3;
+const DIR = __dirname;
+const DOC = path.join(DIR, '..', 'docs', 'zh.md');
+const QUIZ = path.join(DIR, '..', 'quiz.json');
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+const WORDS = ["臀区","股三角","收肌管","腘窝","踝管","神经","血管","筋膜"];
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+const hz = (s) => (String(s || '').match(/[\u4e00-\u9fff]/g) || []).length;
+
+function shingleSet(text, n) {
+  const clean = String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ');
+  const out = new Set();
+  for (const seg of clean.split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
 }
 
+const load = () => ({
+  doc: fs.readFileSync(DOC, 'utf8'),
+  quiz: JSON.parse(fs.readFileSync(QUIZ, 'utf8')),
+});
+
+const data = load();
+const doc = data.doc;
+const quiz = data.quiz;
+
+/** 本章的小节键：二级标题里以汉字序号开头者的序号（一、二、…），用作跨章引用与检索的地址 */
+function chapterKeys() {
+  return chapterUnits()
+    .filter((u) => u.sec && /^[一二三四五六七八九十]+、/.test(u.title))
+    .map((u) => u.title.split('、')[0]);
+}
+
+/** 正文按二级标题切节：卷首算第 0 单元 */
 function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+  return doc
+    .split(/\n(?=## )/)
+    .map((blk, i) => {
+      const isSec = /^## /.test(blk);
+      const title = isSec ? (blk.match(/^## (.+)$/m) || [null, ''])[1].trim() : '卷首';
+      return { sub: String(i + 1), title, sec: isSec, text: blk, hanzi: hz(blk) };
+    });
+}
+
+function terms(text) {
+  const out = {};
+  for (const w of WORDS) {
+    const n = String(text || '').split(w).length - 1;
+    if (n) out[w] = n;
+  }
+  return out;
 }
 
 function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+  const hanzi = units.reduce((a, u) => a + u.hanzi, 0);
+  const sized = doc.match(/\d+(?:\.\d+)?\s*(?:%|年|月|日|次|项|种|个|部|条|级|章|节|度|天|小时|分钟|厘米|毫米|寸|支|块|层)/g) || [];
+  const term = {};
+  for (const u of units) for (const [k, v] of Object.entries(terms(u.text))) term[k] = (term[k] || 0) + v;
+  return {
+    units: units.length,
+    hanzi,
+    mean: units.length ? Math.round(hanzi / units.length) : 0,
+    valueLike: sized.length,
+    digits: (doc.match(/\d/g) || []).length,
+    term,
+    top: Object.entries(term).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'zh'))[0] || null,
+  };
+}
+
+/* ---- 习题自检 ---- */
+
+const N = 6;
+const BODY = shingleSet(doc, N);
+
+function grounded(option) {
+  const clean = String(option || '').replace(/[^\u4e00-\u9fff]/g, ' ');
+  for (const seg of clean.split(/\s+/)) {
+    for (let i = 0; i + N <= seg.length; i += 1) if (BODY.has(seg.slice(i, i + N))) return true;
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return false;
+}
+
+const why = (q) => q.explain || q.explanation || '';
+
+function audit() {
+  const stages = { pre: 0, check: 0, post: 0 };
+  for (const q of quiz.questions) stages[q.stage] = (stages[q.stage] || 0) + 1;
+  const checks = quiz.questions.filter((q) => q.stage === 'check');
+  const lens = quiz.questions.map((q) => hz(why(q)));
+  return {
+    hanzi: hz(doc),
+    secs: (doc.match(/^## /gm) || []).length,
+    total: quiz.questions.length,
+    stages,
+    checkCount: checks.length,
+    hit: checks.filter((q) => grounded(q.options[q.correct])).length,
+    minExplain: Math.min(...lens),
+    maxExplain: Math.max(...lens),
+  };
 }
 
 function main() {
+  const a = audit();
   const units = chapterUnits();
   const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  console.log('第 ' + CHAPTER + ' 章 · ' + quiz.title);
+  console.log('正文 ' + a.hanzi + ' 汉字 · 二级节 ' + a.secs + ' · 平均 ' + s.mean + ' 字/节');
+  console.log('小节键 ' + (chapterKeys().length ? chapterKeys().join('、') : '（本章未解析出）'));
+  console.log('习题 ' + a.total + ' 题 (pre ' + a.stages.pre + '/check ' + a.stages.check + '/post ' + a.stages.post
+    + ') · 解释 ' + a.minExplain + '-' + a.maxExplain + ' 汉字');
+  console.log('接地 check 题 ' + a.hit + '/' + a.checkCount + '（正确选项含 >=6 汉字原文）');
+  console.log('结构词命中：' + Object.entries(s.term).sort((x, y) => y[1] - x[1]).map(([w, k]) => w + '×' + k).join('  '));
+  console.log('带单位的数 ' + s.valueLike + ' 处 · 数字字符 ' + s.digits + ' 个');
+  console.log('');
+  for (const u of units) console.log('  ' + String(u.sub).padStart(2) + '. ' + u.title + '  ' + u.hanzi + ' 字');
 
-  console.log(`局部解剖学 · 第 ${CHAPTER} 章 ${cm.title}`);
-  console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
-  console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  const ok = a.hanzi >= 2500 && a.secs >= 4 && a.total === 6
+    && a.stages.pre === 1 && a.stages.check === 3 && a.stages.post === 2
+    && a.hit === 3 && a.minExplain >= 40 && a.maxExplain <= 80;
+  if (!ok) {
+    console.error('自检未通过：' + JSON.stringify(a));
+    process.exit(1);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
-  console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/jubu-jiepou-xue/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 教学样例：数字由本章 docs/zh.md 与 quiz.json 现算，不构成临床判断依据，不能替代医师面诊。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  CHAPTER, SLUG, DOC, QUIZ, WORDS, load, chapterKeys, chapterUnits, summarize, terms,
+  hz, grounded, why, audit, doc, quiz,
+};

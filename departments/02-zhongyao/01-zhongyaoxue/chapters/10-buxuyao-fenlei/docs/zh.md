@@ -111,6 +111,15 @@
 
 ## 六、运行与验证
 
+本章的正文与习题契约由脚本现算，可当场复核：
+
+```bash
+node code/main.js
+```
+
+脚本打印的是本章正文的规模、习题的阶段分布与接地情况；退出码为 0 表示各项契约满足，非 0 表示有不满足的项，输出里会逐条写明。
+
+
 ```bash
 node -e "const U=require('./standards/zhongyao-xue/units.json').units;const D=require('./standards/zhongyao-xue/药物库.json').drugs.filter(x=>x.章===25);const q={};D.forEach(x=>x.气&&(q[x.气]=(q[x.气]||0)+1));const j={};D.forEach(x=>x.归经&&x.归经.split('、').forEach(k=>j[k]=(j[k]||0)+1));console.log('n='+D.length+' 字='+D.reduce((a,x)=>a+x.hanzi,0)+' 气填='+D.filter(x=>x.气).length+' 经填='+D.filter(x=>x.归经).length);console.log('气='+JSON.stringify(q));console.log('经='+JSON.stringify(j)+' 标='+Object.values(j).reduce((a,b)=>a+b,0));D.filter(x=>!x.气).forEach(x=>{const u=U.find(y=>y.chapter==='25'&&y.title===x.药名);console.log('空 '+x.药名+' 「'+(u.rawBody.match(/性[^，。]{0,6}/)||[''])[0]+'」');});"
 ```

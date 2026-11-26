@@ -1,19 +1,28 @@
 #!/usr/bin/env node
 /**
- * 中药化学 · 第 8 章 多糖与鞣质：本章统计口径
- * 课程: departments/02-zhongyao/06-zhongyao-huaxue/chapters/08-duotang-rouzhi/docs/zh.md
- * 数据: standards/zhongyao-huaxue/units.json（55 单元层，每单元带三辨=结构特征/理化性质/提分与检识 与 四位面=生源途径 词频）
- * 取数: standards/zhongyao-huaxue/chapter-map.json（课程章 → 教材单元号）
- * 依赖: 仅 Node.js 标准库
+ * 中药化学 · 第 8 章 多糖与鞣质：分子量一过大，显色反应就换了主人：单元层、正文与习题的三方对账
  *
- * 数字全部现算：正文引用的每个规模、重心、引书数，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ *   node code/main.js
+ *
+ * 正文：chapters/08-duotang-rouzhi/docs/zh.md
+ * 习题：chapters/08-duotang-rouzhi/quiz.json
+ * 单元：standards/zhongyao-huaxue/units.json（本章取材的小节号见 KEYS）
+ * 依赖：仅 Node.js 标准库
+ *
+ * 输出三段，任一自检不过即退出码 1：
+ *   · 规模：取材单元的字数、平均字数、按教材章归属、引书与操作词
+ *   · 词频：单元层的三栏（结构特征／理化性质／提分与检识）与生源途径四路
+ *   · 习题：6 题、pre 1 题 / check 3 题 / post 2 题、四选项互异、check 正确项逐字出自正文
+ * 数字全部现算：正文引用的规模数由单元层复算，习题与正文是否同源由本脚本判定。
  */
 
 'use strict';
 
 const fs = require('node:fs');
 const path = require('node:path');
+
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 function findRoot(start) {
   let dir = start;
@@ -41,6 +50,7 @@ function chapterUnits(units) {
 
 const sum = (d) => Object.values(d).reduce((a, b) => a + b, 0);
 
+/** 把本章各单元在某一栏上的词频相加：一张表里同一个词可能拆在多个单元 */
 function merge(list, field) {
   const out = {};
   for (const u of list) {
@@ -50,6 +60,7 @@ function merge(list, field) {
   return out;
 }
 
+/** 词频降序，附占比：占比用来看「重心」，计数用来看「量」 */
 function rank(dict) {
   const tot = sum(dict);
   return Object.entries(dict)
@@ -89,33 +100,90 @@ function shape(list) {
   };
 }
 
-/** 取穴与刺灸的操作词：本章正文里出现多少处「定位／分寸／直刺／灸」类的可执行指令 */
+/** 本章的操作词命中：用来判断正文落在「怎么做」还是「怎么说」上 */
+const WORDS = ['提取', '分离', '检识', '色谱', '溶剂', '水解', '氧化', '萃取', '蒸馏', '重结晶'];
+
 function hands(list) {
-  const WORDS = ['定位', '骨度', '分寸', '同身寸', '直刺', '斜刺', '平刺', '艾灸', '温针灸', '留针', '禁针', '禁灸'];
-  const pairs = WORDS.map((w) => [w, list.reduce((a, u) => a + u.prose.split(w).length - 1, 0)]);
-  return Object.fromEntries(pairs).constructor === Object
-    ? pairs.filter(([, c]) => c).sort((a, b) => b[1] - a[1])
-    : pairs;
+  return WORDS
+    .map((w) => [w, list.reduce((a, u) => a + u.prose.split(w).length - 1, 0)])
+    .filter(([, c]) => c)
+    .sort((a, b) => b[1] - a[1]);
 }
 
-module.exports = { CHAPTER, KEYS, load, chapterUnits, merge, rank, byBookSection, citations, shape, hands, sum };
+/* ── 正文与习题：同一章的两份文件互相校验 ───────────────────────── */
+
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+
+/** 正文里全部 6 字连续片段（去标点后按段切），用来判「逐字接地」 */
+function docGrams(text, n = 6) {
+  const clean = String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ');
+  const out = new Set();
+  for (const seg of clean.split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+}
+
+const docSections = (doc) => (String(doc).match(/^## /gm) || []).length;
+
+/** 习题自检：6 题、三段、四选项互异、解释 40–80 汉字、check 正确项逐字出自正文 */
+function quizCheck() {
+  const q = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+  const doc = fs.readFileSync(DOC, 'utf8');
+  const body = docGrams(doc, 6);
+  const issues = [];
+  const qs = Array.isArray(q.questions) ? q.questions : [];
+  if (qs.length !== 6) issues.push(`题数 ${qs.length} ≠ 6`);
+  const stage = (s) => qs.filter((x) => x.stage === s).length;
+  if (stage('pre') !== 1 || stage('check') !== 3 || stage('post') !== 2) {
+    issues.push(`pre/check/post = ${stage('pre')}/${stage('check')}/${stage('post')}`);
+  }
+  let grounded = 0;
+  qs.forEach((it, i) => {
+    const opts = Array.isArray(it.options) ? it.options : [];
+    if (opts.length !== 4) issues.push(`第 ${i + 1} 题选项 ${opts.length} 个`);
+    if (new Set(opts.map((o) => String(o).trim())).size !== opts.length) issues.push(`第 ${i + 1} 题选项重复`);
+    if (!(Number.isInteger(it.correct) && it.correct >= 0 && it.correct < opts.length)) {
+      issues.push(`第 ${i + 1} 题 correct 越界`);
+    }
+    const h = hanzi(it.explain || it.explanation || '');
+    if (h < 40 || h > 80) issues.push(`第 ${i + 1} 题解释 ${h} 字`);
+    if (it.stage === 'check') {
+      const hit = [...docGrams(String(opts[it.correct] || ''), 6)].some((g) => body.has(g));
+      if (hit) grounded += 1;
+      else issues.push(`第 ${i + 1} 题 check 正确项未逐字出自正文`);
+    }
+  });
+  if (grounded < 3) issues.push(`接地 ${grounded}/3`);
+  return { ok: !issues.length, issues, stats: { questions: qs.length, grounded, sections: docSections(doc) } };
+}
+
+module.exports = { CHAPTER, KEYS, load, chapterUnits, merge, rank, byBookSection, citations, shape, hands, sum, quizCheck, docSections };
 
 if (require.main === module) {
   const data = load();
   const list = chapterUnits(data);
   const s = shape(list);
-  console.log('═══ 中药化学 · 第 8 章 多糖与鞣质 ═══');
+  console.log('═══ 中药化学 · 第 8 章 多糖与鞣质：分子量一过大，显色反应就换了主人 ═══');
   console.log(`单元 ${s.units} · 汉字 ${s.hanzi} · 平均 ${s.mean} 字/单元`);
   console.log(`数值类命中 ${s.valueLike} · 数字字符 ${s.digits}`);
   console.log('\n按教材章：');
   for (const sec of byBookSection(list)) console.log(`  ${sec.sec}  ${sec.units} 单元 · ${sec.hanzi} 字`);
-  console.log('\n三辨重心：');
+  console.log('\n结构／性质／方法三栏词频：');
   for (const v of rank(merge(list, 'views'))) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
-  console.log('\n四位面覆盖：');
+  console.log('\n生源途径四路词频：');
   for (const v of rank(merge(list, 'levels'))) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
   const c = citations(list);
   console.log(`\n引书 ${c.books} 部 · 引用 ${c.total} 次 · 前三：${c.top.map(([n, k]) => `${n}(${k})`).join('、')}`);
-  console.log('\n操作词命中：' + hands(list).map(([w, k]) => `${w}×${k}`).join('  '));
+  console.log('\n操作词命中：' + (hands(list).map(([w, k]) => `${w}×${k}`).join('  ') || '（无）'));
   for (const u of list) console.log(`  ${u.sub}\t${u.title}\t${u.hanzi}字`);
+
+  const q = quizCheck();
+  console.log(`\n习题：${q.stats.questions} 题 · check 接地 ${q.stats.grounded}/3 · 正文二级小节 ${q.stats.sections}`);
+  if (!q.ok) {
+    for (const msg of q.issues) console.error('  ✗ ' + msg);
+    console.error('※ 习题与正文不同源，退出码 1。');
+    process.exitCode = 1;
+  }
   console.log('※ 教学样例：数字由 standards/zhongyao-huaxue/units.json 现算，不构成诊疗建议，不能替代医师面诊。');
 }

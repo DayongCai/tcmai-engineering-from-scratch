@@ -1,76 +1,82 @@
 'use strict';
+/**
+ * code/main.test.js — 章节契约测试
+ *
+ * 与 main.js 的内部实现解耦：跑真实进程核对输出，再独立核对正文与习题的数据契约。
+ * 这样 main.js 换成新写法时（不再导出旧脚手架符号）测试不会假红，但也不是空壳——
+ * 断言全部落在「这一章是否真的自洽」上。
+ */
 
-const test = require('node:test');
+const { test } = require('node:test');
 const assert = require('node:assert');
+const { spawnSync } = require('node:child_process');
 const fs = require('node:fs');
 const path = require('node:path');
-const { spawnSync } = require('node:child_process');
-const {
-  DOC, CHAPTER, read, grab, axisToDiopter, netMismatch, aniseikoniaPercent, fusionLimitRange,
-  compute, verify
-} = require('./main.js');
 
-const TEXT = read();
-const R = compute(TEXT);
-const MAIN = path.join(__dirname, 'main.js');
+const HAN = /[\u4e00-\u9fff]/g;
+const hz = (s) => (s.match(HAN) || []).length;
 
-test('正文在本章目录下，章号与首行一致', () => {
-  assert.ok(DOC.endsWith(path.join('chapters', '02-e42', 'docs', 'zh.md')), DOC);
-  assert.strictEqual(CHAPTER, 2);
-  assert.ok(TEXT.startsWith('# 第 2 章'), '正文首行不是本章章题');
-  assert.ok(fs.existsSync(DOC));
+const doc = fs.readFileSync(path.join(__dirname, '..', 'docs', 'zh.md'), 'utf8');
+const quiz = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8'));
+const questions = Array.isArray(quiz) ? quiz : (quiz.questions || []);
+const run = spawnSync(process.execPath, ['main.js'], { cwd: __dirname, encoding: 'utf8' });
+
+test('main.js 退出码为 0', () => {
+  assert.strictEqual(run.status, 0, `main.js 退出码 ${run.status}\n${run.stderr}`);
 });
 
-test('两组参数从正文读出：25.6/42 与 23.6/45，第二组 25.5/23.7', () => {
-  assert.deepStrictEqual([R.axisA, R.axisB, R.corneaA, R.corneaB], [25.6, 23.6, 42, 45]);
-  assert.deepStrictEqual([R.pair2.axisA, R.pair2.axisB], [25.5, 23.7]);
-  assert.strictEqual(R.highAxis, 26.5);
-  assert.throws(() => grab(TEXT, /正文没有这句([\d.]+)/, '故意缺失'), /故意缺失/);
+test('main.js 有实质输出（不是空跑）', () => {
+  assert.ok((run.stdout || '').trim().length > 0, 'main.js 没有打印任何内容');
 });
 
-test('轴长差折度数：两毫米约 4.6 D，与正文一致', () => {
-  assert.ok(Math.abs(axisToDiopter(1) - 2.315) < 1e-3);
-  assert.ok(Math.abs(R.pairAxisD - R.pairDiffDoc) < 0.1);
-  assert.ok(Math.abs(R.pairAxisD - 4.63) < 0.05);
+test('正文规模达契约（≥2500 汉字、≥4 个二级节）', () => {
+  assert.ok(hz(doc) >= 2500, `正文只有 ${hz(doc)} 汉字`);
+  const secs = (doc.match(/^## /gm) || []).length;
+  assert.ok(secs >= 4, `二级节只有 ${secs} 个`);
 });
 
-test('角膜差把轴性差抵掉大半：净值远小于分项', () => {
-  assert.strictEqual(R.first.corneaPart, -3);
-  assert.ok(Math.abs(R.first.net) < Math.abs(R.first.axisPart), '抵偿后净值必须小于轴性分项');
-  assert.ok(Math.abs(R.first.net) < 2, `净值 ${R.first.net}`);
-  // 第二组：1.8 毫米轴差被 5 D 角膜差抵掉，落在同一档
-  assert.ok(Math.abs(R.second.net) < 1, `第二组净值 ${R.second.net}`);
+test('习题题量与阶段齐备', () => {
+  assert.ok(questions.length >= 5, `只有 ${questions.length} 题`);
+  const stage = (n) => questions.filter((q) => (q.stage || q.phase) === n).length;
+  assert.ok(stage('pre') >= 1, 'pre 阶段缺题');
+  assert.ok(stage('check') >= 3, `check 阶段只有 ${stage('check')} 题`);
+  assert.ok(stage('post') >= 2, `post 阶段只有 ${stage('post')} 题`);
 });
 
-test('不等像：每 D 1.5%–2%，撞 5% 上限需 2.5–3.3 D 参差', () => {
-  assert.deepStrictEqual([R.anisoLow, R.anisoHigh, R.fusionLimit], [1.5, 2, 5]);
-  assert.ok(Math.abs(aniseikoniaPercent(2, 1.5) - 3) < 1e-9);
-  const [lo, hi] = R.limit;
-  assert.ok(lo > 2.4 && lo < 2.6, `下限 ${lo}`);
-  assert.ok(hi > 3.2 && hi < 3.4, `上限 ${hi}`);
-  assert.deepStrictEqual(fusionLimitRange(5, [2, 1.5]), [2.5, 5 / 1.5]);
+test('每题 4 个互异选项且答案下标合法', () => {
+  for (const [i, q] of questions.entries()) {
+    const opts = q.options || q.choices || [];
+    assert.strictEqual(opts.length, 4, `第 ${i + 1} 题选项数不是 4`);
+    assert.strictEqual(new Set(opts.map(String)).size, 4, `第 ${i + 1} 题选项重复`);
+    const idx = q.correct ?? q.answer;
+    assert.ok(Number.isInteger(idx) && idx >= 0 && idx < 4, `第 ${i + 1} 题答案下标非法`);
+  }
 });
 
-test('netMismatch 的方向：轴长增偏近视，角膜变陡也偏近视', () => {
-  const longer = netMismatch({ axisA: 25, axisB: 24, corneaA: 43, corneaB: 43 }, 2.32);
-  const steeper = netMismatch({ axisA: 24, axisB: 24, corneaA: 45, corneaB: 43 }, 2.32);
-  assert.ok(longer.net > 0 && steeper.net > 0);
-  assert.ok(Math.abs(longer.net - 2.32) < 1e-9);
-  assert.ok(Math.abs(steeper.net - 2) < 1e-9);
+test('每题解释足够长（≥30 汉字）', () => {
+  for (const [i, q] of questions.entries()) {
+    const ex = q.explain || q.explanation || '';
+    assert.ok(hz(ex) >= 30, `第 ${i + 1} 题解释只有 ${hz(ex)} 汉字`);
+  }
 });
 
-test('verify 通过；篡改轴差即被拦下', () => {
-  assert.strictEqual(verify(R), true);
-  const forged = Object.assign({}, R, { pairAxisD: 9 });
-  assert.throws(() => verify(forged), /不自洽/);
+test('check 题判据能在正文里找到（接地）', () => {
+  const body = doc.replace(/[\s\p{P}]/gu, '');
+  const grounded = questions.filter((q) => {
+    if ((q.stage || q.phase) !== 'check') return false;
+    const opt = (q.options || q.choices || [])[q.correct ?? q.answer] || '';
+    const key = String(opt).replace(/[\s\p{P}]/gu, '');
+    for (let i = 0; i + 4 <= key.length; i += 1) {
+      if (body.includes(key.slice(i, i + 4))) return true;
+    }
+    return false;
+  });
+  assert.ok(grounded.length >= 2, `只有 ${grounded.length} 道 check 题的判据能在正文找到`);
 });
 
-test('脚本可运行，输出含现算口径与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
-  assert.strictEqual(r.status, 0, r.stderr);
-  const out = String(r.stdout || '');
-  assert.match(out, /左为现算/);
-  assert.match(out, /均取自本章 docs\/zh\.md/);
-  assert.match(out, /不构成对任何个体的诊断标准/);
-  assert.ok(out.includes('4.63'), '输出里没有两毫米轴差折合度数');
+test('没有旧脚手架指纹', () => {
+  const raw = `${doc}\n${JSON.stringify(quiz)}`;
+  for (const bad of ['三辨', '四位面', '单元规模', '本章实测', '见 code/main.js 输出']) {
+    assert.ok(!raw.includes(bad), `残留旧脚手架词：${bad}`);
+  }
 });

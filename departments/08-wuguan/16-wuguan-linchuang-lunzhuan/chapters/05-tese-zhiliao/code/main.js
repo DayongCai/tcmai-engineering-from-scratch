@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 /**
- * 五官临床轮转 · 第 5 章 中医五官特色治疗轮转：本章统计口径
+ * 第 5 章 特色治疗的本事，在该转的转得快，而不是能治的都自己治
+ *
  * 课程: departments/08-wuguan/16-wuguan-linchuang-lunzhuan/chapters/05-tese-zhiliao/docs/zh.md
- * 数据: standards/wuguan-linchuang-lunzhuan/units.json（72 单元层，每单元带三辨与四位面词频）
- * 取数: standards/wuguan-linchuang-lunzhuan/chapter-map.json（课程章 → 教材单元号）
+ * 数据: standards/wuguan-linchuang-lunzhuan/units.json（单元层：单元号、节号、汉字数）
+ *       standards/wuguan-linchuang-lunzhuan/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 数字全部现算：章节规模、单元映射、正文结构与表格、quiz 结构与接地，都从本仓文件读出，
+ * 不写死任何一个计数 —— 正文、单元层或 quiz 一变，输出就跟着变。
  */
 
 'use strict';
@@ -27,75 +28,188 @@ function findRoot(start) {
 }
 
 const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'wuguan-linchuang-lunzhuan', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'wuguan-linchuang-lunzhuan', 'chapter-map.json');
-const CHAPTER = '5';
-const SLUG = '05-tese-zhiliao';
+const SUBJECT = 'wuguan-linchuang-lunzhuan';
+const UNITS = path.join(ROOT, 'standards', SUBJECT, 'units.json');
+const MAP = path.join(ROOT, 'standards', SUBJECT, 'chapter-map.json');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+const CHAPTER = 5;
+const SLUG = '05-tese-zhiliao';
+const TITLE = '特色治疗的本事，在该转的转得快，而不是能治的都自己治';
+
+const readJson = (p) => JSON.parse(fs.readFileSync(p, 'utf8'));
+const readDoc = () => fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+
+/* ── 单元层：课程章 → 教材单元 ─────────────────────────────────── */
 
 function chapterKeys() {
-  const cm = loadMap().chapters;
+  const cm = readJson(MAP).chapters;
   if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
   return cm[SLUG].units.slice();
 }
 
 function chapterUnits() {
   const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
+  return readJson(UNITS).units
     .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+    .sort((a, b) => String(a.sub).localeCompare(String(b.sub), 'en', { numeric: true }));
 }
 
 function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+  const hanziSum = units.reduce((a, u) => a + (u.hanzi || 0), 0);
+  const secs = [...new Set(units.map((u) => u.secNo || String(u.sub).split('.').slice(0, 2).join('.')))];
+  return {
+    units: units.length,
+    hanzi: hanziSum,
+    perUnit: units.length ? Math.round(hanziSum / units.length) : 0,
+    secs: secs.sort((a, b) => String(a).localeCompare(String(b), 'en', { numeric: true })),
+  };
+}
+
+/* ── 正文结构 ─────────────────────────────────────────────────── */
+
+function sections(doc) {
+  return String(doc).split('\n').filter((l) => /^##\s+/.test(l)).map((l) => l.replace(/^##\s+/, '').trim());
+}
+
+function paragraphs(doc) {
+  return String(doc).split('\n')
+    .map((l) => l.trim())
+    .filter((l) => l && !/^[#>|]/.test(l) && !/^[-*+]\s/.test(l) && !/^\d+[.、]/.test(l) && !l.includes('|'));
+}
+
+function tables(doc) {
+  const ls = String(doc).split('\n');
+  const cells = (l) => l.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map((c) => c.trim());
+  const out = [];
+  let i = 0;
+  while (i < ls.length) {
+    if (/^\s*\|/.test(ls[i])) {
+      const block = [];
+      while (i < ls.length && /^\s*\|/.test(ls[i])) { block.push(ls[i]); i += 1; }
+      const header = cells(block[0]);
+      const rows = block.slice(1).filter((l) => !/^\s*\|[\s:|-]+\|\s*$/.test(l));
+      out.push({ header, cols: header.length, rows: rows.length });
+    } else { i += 1; }
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return out;
+}
+
+/* ── quiz：结构 + 接地 ───────────────────────────────────────── */
+
+/** text 里出现在 option 中的最长连续汉字片段（接地强度的度量） */
+function longestRun(option, text) {
+  const body = String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ');
+  const segs = String(option || '').split(/[^\u4e00-\u9fff]+/).filter(Boolean);
+  let best = 0;
+  let sample = '';
+  for (const seg of segs) {
+    for (let i = 0; i < seg.length; i += 1) {
+      for (let j = seg.length; j - i > best; j -= 1) {
+        const t = seg.slice(i, j);
+        if (body.includes(t)) { best = t.length; sample = t; break; }
+      }
+    }
+  }
+  return { best, sample };
+}
+
+function quizSummary(quiz, doc) {
+  const qs = Array.isArray(quiz.questions) ? quiz.questions : [];
+  const stage = { pre: 0, check: 0, post: 0 };
+  const items = qs.map((q, i) => {
+    if (stage[q.stage] !== undefined) stage[q.stage] += 1;
+    const opts = Array.isArray(q.options) ? q.options : [];
+    const right = String(opts[q.correct] || '');
+    const hit = q.stage === 'check' ? longestRun(right, doc) : { best: 0, sample: '' };
+    return {
+      n: i + 1,
+      stage: q.stage,
+      options: opts.length,
+      correct: q.correct,
+      explainHanzi: hanzi(q.explain || q.explanation || ''),
+      ground: hit.best,
+      sample: hit.sample,
+    };
+  });
+  return {
+    total: qs.length,
+    stage,
+    items,
+    answers: qs.map((q) => q.correct).join('/'),
+    distinctAnswers: new Set(qs.map((q) => q.correct)).size,
+    checkGrounded: items.filter((x) => x.stage === 'check' && x.ground >= 8).length,
+    minGround: items.filter((x) => x.stage === 'check').reduce((m, x) => Math.min(m, x.ground), 99),
+    minExplain: items.length ? Math.min(...items.map((x) => x.explainHanzi)) : 0,
+    maxExplain: items.length ? Math.max(...items.map((x) => x.explainHanzi)) : 0,
+    stageComplete: ['pre', 'check', 'post'].every((s) => stage[s] > 0),
+  };
+}
+
+/* ── 汇总 ─────────────────────────────────────────────────────── */
+
+function analyze() {
+  const doc = readDoc();
+  const quiz = readJson(QUIZ);
+  const units = chapterUnits();
+  return {
+    docHanzi: hanzi(doc),
+    paragraphs: paragraphs(doc).length,
+    sections: sections(doc),
+    tables: tables(doc),
+    units,
+    unit: summarize(units),
+    quiz: quizSummary(quiz, doc),
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`五官临床轮转 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const r = analyze();
+  console.log('第 ' + CHAPTER + ' 章 ' + TITLE);
+  console.log('课程目录 departments/08-wuguan/16-wuguan-linchuang-lunzhuan/chapters/' + SLUG);
+  console.log('正文 ' + r.docHanzi.toLocaleString('en-US') + ' 汉字 · ' + r.paragraphs + ' 段 · 二级节 ' + r.sections.length + ' 个 · 表 ' + r.tables.length + ' 张');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log('单元映射 ' + r.unit.units + ' 个（教材 ' + r.unit.secs.join('、') + '，' + r.unit.secs.length + ' 节）· 单元层 ' + r.unit.hanzi.toLocaleString('en-US') + ' 汉字 · 每单元平均 ' + r.unit.perUnit + ' 汉字');
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  console.log('正文结构：');
+  for (const s of r.sections) console.log('  ' + s);
+  if (r.tables.length) {
+    console.log('');
+    r.tables.forEach((t, i) => console.log('  表[' + (i + 1) + '] ' + t.header.join(' / ') + ' —— ' + t.cols + ' 列 × ' + t.rows + ' 行'));
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log('quiz ' + r.quiz.total + ' 题（pre ' + r.quiz.stage.pre + ' / check ' + r.quiz.stage.check + ' / post ' + r.quiz.stage.post + '）· 答案 ' + r.quiz.answers + ' · 落在 ' + r.quiz.distinctAnswers + ' 个位置');
+  console.log('  check 题接地 ' + r.quiz.checkGrounded + '/' + r.quiz.stage.check + ' 道 · 最短原文连续片段 ' + (r.quiz.minGround === 99 ? 0 : r.quiz.minGround) + ' 汉字 · 解释 ' + r.quiz.minExplain + '–' + r.quiz.maxExplain + ' 汉字');
+  r.quiz.items.forEach((it) => {
+    console.log('  第' + it.n + '题 [' + it.stage + '] 选项 ' + it.options + ' · 答案 ' + it.correct + ' · 解释 ' + it.explainHanzi + ' 汉字' + (it.stage === 'check' ? ' · 正文原句 ' + it.ground + ' 字（' + it.sample + '）' : ''));
+  });
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/wuguan-linchuang-lunzhuan/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 以上数字由本章正文、单元层与 quiz 现算，改任一份材料后重跑即可复核。');
+  console.log('※ 本章为教学材料，判读与分档均为课堂约定，不构成诊断或治疗依据，也不替代具备资质人员的判断。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  chapterKeys,
+  chapterUnits,
+  summarize,
+  analyze,
+  readDoc,
+  sections,
+  paragraphs,
+  tables,
+  longestRun,
+  hanzi,
+  quizSummary,
+  CHAPTER,
+  SLUG,
+  TITLE,
+  SUBJECT,
+  DOC,
+  QUIZ,
+  UNITS,
+  MAP,
+};

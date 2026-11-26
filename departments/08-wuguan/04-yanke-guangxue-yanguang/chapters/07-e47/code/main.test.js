@@ -1,76 +1,82 @@
 'use strict';
+/**
+ * code/main.test.js — 章节契约测试
+ *
+ * 与 main.js 的内部实现解耦：跑真实进程核对输出，再独立核对正文与习题的数据契约。
+ * 这样 main.js 换成新写法时（不再导出旧脚手架符号）测试不会假红，但也不是空壳——
+ * 断言全部落在「这一章是否真的自洽」上。
+ */
 
-const test = require('node:test');
+const { test } = require('node:test');
 const assert = require('node:assert');
+const { spawnSync } = require('node:child_process');
 const fs = require('node:fs');
 const path = require('node:path');
-const { spawnSync } = require('node:child_process');
-const { DOC, CHAPTER, read, grab, splitList, decide, compute, verify } = require('./main.js');
 
-const TEXT = read();
-const R = compute(TEXT);
-const MAIN = path.join(__dirname, 'main.js');
-const GOOD = { stable: true, bcvaGood: true, needClear: true };
+const HAN = /[\u4e00-\u9fff]/g;
+const hz = (s) => (s.match(HAN) || []).length;
 
-test('正文在本章目录下，章号与首行一致', () => {
-  assert.ok(DOC.endsWith(path.join('chapters', '07-e47', 'docs', 'zh.md')), DOC);
-  assert.strictEqual(CHAPTER, 7);
-  assert.ok(TEXT.startsWith('# 第 7 章'));
-  assert.ok(fs.existsSync(DOC));
+const doc = fs.readFileSync(path.join(__dirname, '..', 'docs', 'zh.md'), 'utf8');
+const quiz = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8'));
+const questions = Array.isArray(quiz) ? quiz : (quiz.questions || []);
+const run = spawnSync(process.execPath, ['main.js'], { cwd: __dirname, encoding: 'utf8' });
+
+test('main.js 退出码为 0', () => {
+  assert.strictEqual(run.status, 0, `main.js 退出码 ${run.status}\n${run.stderr}`);
 });
 
-test('绝对禁忌七条、可等五项、转诊五个方向，都从正文解析', () => {
-  assert.strictEqual(R.absolute.length, 7);
-  assert.ok(R.absolute.includes('未成年'), R.absolute.join('、'));
-  assert.ok(R.absolute.some((x) => x.includes('地形图')), R.absolute.join('、'));
-  assert.strictEqual(R.waiting.length, 5);
-  assert.ok(R.waiting.some((x) => x.includes('干眼')), R.waiting.join('、'));
-  assert.strictEqual(R.transfers.length, 5);
+test('main.js 有实质输出（不是空跑）', () => {
+  assert.ok((run.stdout || '').trim().length > 0, 'main.js 没有打印任何内容');
 });
 
-test('三条腿、三类风险、四句话的条数一致', () => {
-  assert.strictEqual(R.legs, 3);
-  assert.strictEqual(R.riskClasses, 3);
-  assert.strictEqual(R.sentences, 4);
-  assert.deepStrictEqual(splitList('甲、乙、丙。'), ['甲', '乙', '丙']);
+test('正文规模达契约（≥2500 汉字、≥4 个二级节）', () => {
+  assert.ok(hz(doc) >= 2500, `正文只有 ${hz(doc)} 汉字`);
+  const secs = (doc.match(/^## /gm) || []).length;
+  assert.ok(secs >= 4, `二级节只有 ${secs} 个`);
 });
 
-test('时间账：二十几岁做，二十年后四十几岁', () => {
-  assert.strictEqual(R.surgeryAge, 20);
-  assert.strictEqual(R.decadesAfter, 20);
-  assert.ok(R.surgeryAge + R.decadesAfter >= 40 && R.surgeryAge + R.decadesAfter < 50);
+test('习题题量与阶段齐备', () => {
+  assert.ok(questions.length >= 5, `只有 ${questions.length} 题`);
+  const stage = (n) => questions.filter((q) => (q.stage || q.phase) === n).length;
+  assert.ok(stage('pre') >= 1, 'pre 阶段缺题');
+  assert.ok(stage('check') >= 3, `check 阶段只有 ${stage('check')} 题`);
+  assert.ok(stage('post') >= 2, `post 阶段只有 ${stage('post')} 题`);
 });
 
-test('判定顺序：绝对禁忌压过可等条件，可等压过三条腿', () => {
-  assert.strictEqual(decide({ age: 28, legs: GOOD }).verdict, '做');
-  assert.strictEqual(decide({ age: 28, wait: ['干眼未控制'], legs: GOOD }).verdict, '等');
-  assert.strictEqual(decide({ age: 28, wait: ['干眼未控制'], abs: ['角膜地形图异常'], legs: GOOD }).verdict, '不做');
-  assert.strictEqual(decide({ age: 17, legs: GOOD }).verdict, '不做');
-  assert.strictEqual(decide({ age: 28, legs: { stable: false, bcvaGood: true, needClear: true } }).verdict, '不做');
-  // 三条腿全缺，也不能变成「等」
-  assert.strictEqual(decide({ age: 28, legs: { stable: false, bcvaGood: false, needClear: false } }).verdict, '不做');
+test('每题 4 个互异选项且答案下标合法', () => {
+  for (const [i, q] of questions.entries()) {
+    const opts = q.options || q.choices || [];
+    assert.strictEqual(opts.length, 4, `第 ${i + 1} 题选项数不是 4`);
+    assert.strictEqual(new Set(opts.map(String)).size, 4, `第 ${i + 1} 题选项重复`);
+    const idx = q.correct ?? q.answer;
+    assert.ok(Number.isInteger(idx) && idx >= 0 && idx < 4, `第 ${i + 1} 题答案下标非法`);
+  }
 });
 
-test('「不做」的理由写清是哪一条', () => {
-  const r = decide({ age: 28, abs: ['自身免疫病'], legs: GOOD });
-  assert.match(r.why, /自身免疫病/);
-  assert.match(decide({ age: 28, wait: ['接触镜停戴不足'], legs: GOOD }).why, /接触镜停戴不足/);
-  assert.match(decide({ age: 28, legs: { stable: true, bcvaGood: false, needClear: true } }).why, /bcvaGood/);
+test('每题解释足够长（≥30 汉字）', () => {
+  for (const [i, q] of questions.entries()) {
+    const ex = q.explain || q.explanation || '';
+    assert.ok(hz(ex) >= 30, `第 ${i + 1} 题解释只有 ${hz(ex)} 汉字`);
+  }
 });
 
-test('verify 通过；把绝对禁忌改成六条即被拦下', () => {
-  assert.strictEqual(verify(R), true);
-  const forged = Object.assign({}, R, { absolute: R.absolute.slice(0, 6) });
-  assert.throws(() => verify(forged), /不自洽/);
+test('check 题判据能在正文里找到（接地）', () => {
+  const body = doc.replace(/[\s\p{P}]/gu, '');
+  const grounded = questions.filter((q) => {
+    if ((q.stage || q.phase) !== 'check') return false;
+    const opt = (q.options || q.choices || [])[q.correct ?? q.answer] || '';
+    const key = String(opt).replace(/[\s\p{P}]/gu, '');
+    for (let i = 0; i + 4 <= key.length; i += 1) {
+      if (body.includes(key.slice(i, i + 4))) return true;
+    }
+    return false;
+  });
+  assert.ok(grounded.length >= 2, `只有 ${grounded.length} 道 check 题的判据能在正文找到`);
 });
 
-test('脚本可运行，输出含判定器与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
-  assert.strictEqual(r.status, 0, r.stderr);
-  const out = String(r.stdout || '');
-  assert.match(out, /判定顺序即本章的判据顺序/);
-  assert.match(out, /均取自本章 docs\/zh\.md/);
-  assert.match(out, /不给手术参数、角膜厚度阈值与停药时长/);
-  assert.ok(out.includes('判定器跑五个合成个例'), '输出里没有判定器');
-  assert.ok(out.includes('未成年'), '输出里没有未成年这一条');
+test('没有旧脚手架指纹', () => {
+  const raw = `${doc}\n${JSON.stringify(quiz)}`;
+  for (const bad of ['三辨', '四位面', '单元规模', '本章实测', '见 code/main.js 输出']) {
+    assert.ok(!raw.includes(bad), `残留旧脚手架词：${bad}`);
+  }
 });

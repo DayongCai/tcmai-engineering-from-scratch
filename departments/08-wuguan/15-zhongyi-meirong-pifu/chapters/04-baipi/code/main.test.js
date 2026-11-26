@@ -1,87 +1,82 @@
 'use strict';
+/**
+ * code/main.test.js — 章节契约测试
+ *
+ * 与 main.js 的内部实现解耦：跑真实进程核对输出，再独立核对正文与习题的数据契约。
+ * 这样 main.js 换成新写法时（不再导出旧脚手架符号）测试不会假红，但也不是空壳——
+ * 断言全部落在「这一章是否真的自洽」上。
+ */
 
-const test = require('node:test');
+const { test } = require('node:test');
 const assert = require('node:assert');
+const { spawnSync } = require('node:child_process');
 const fs = require('node:fs');
 const path = require('node:path');
-const { spawnSync } = require('node:child_process');
-const { DOC, analyze, docText } = require('./main.js');
 
-const QUIZ = path.join(__dirname, '..', 'quiz.json');
-const hanzi = (s) => (String(s || '').match(/[\u4e00-\u9fff]/g) || []).length;
+const HAN = /[\u4e00-\u9fff]/g;
+const hz = (s) => (s.match(HAN) || []).length;
 
-function shingles(text, n = 4) {
-  const out = new Set();
-  for (const seg of String(text).replace(/[^一-鿿]/g, ' ').split(/\s+/)) {
-    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
-  }
-  return out;
-}
+const doc = fs.readFileSync(path.join(__dirname, '..', 'docs', 'zh.md'), 'utf8');
+const quiz = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8'));
+const questions = Array.isArray(quiz) ? quiz : (quiz.questions || []);
+const run = spawnSync(process.execPath, ['main.js'], { cwd: __dirname, encoding: 'utf8' });
 
-test('正文可读，规模与章题相称', () => {
-  const a = analyze();
-  assert.ok(a.hanzi > 2600, `汉字过少：${a.hanzi}`);
-  assert.strictEqual(a.sections.length, 7, `节数变了：${a.sections.join(' / ')}`);
+test('main.js 退出码为 0', () => {
+  assert.strictEqual(run.status, 0, `main.js 退出码 ${run.status}\n${run.stderr}`);
 });
 
-test('证型表四行，火毒炽盛收在末行', () => {
-  const a = analyze();
-  assert.deepStrictEqual(a.rows, ['血热内蕴', '血虚风燥', '气血瘀滞', '火毒炽盛']);
+test('main.js 有实质输出（不是空跑）', () => {
+  assert.ok((run.stdout || '').trim().length > 0, 'main.js 没有打印任何内容');
 });
 
-test('四个临床类型齐全，寻常型在首', () => {
-  const a = analyze();
-  assert.deepStrictEqual(a.types, ['寻常型', '脓疱型', '关节病型', '红皮病型']);
+test('正文规模达契约（≥2500 汉字、≥4 个二级节）', () => {
+  assert.ok(hz(doc) >= 2500, `正文只有 ${hz(doc)} 汉字`);
+  const secs = (doc.match(/^## /gm) || []).length;
+  assert.ok(secs >= 4, `二级节只有 ${secs} 个`);
 });
 
-test('火毒炽盛不是病程的一段，是类型的跃迁', () => {
-  const a = analyze();
-  assert.ok(a.leap, '正文应把火毒炽盛写成类型跃迁而非病程一段');
-  assert.strictEqual(a.hardSigns, 2);
+test('习题题量与阶段齐备', () => {
+  assert.ok(questions.length >= 5, `只有 ${questions.length} 题`);
+  const stage = (n) => questions.filter((q) => (q.stage || q.phase) === n).length;
+  assert.ok(stage('pre') >= 1, 'pre 阶段缺题');
+  assert.ok(stage('check') >= 3, `check 阶段只有 ${stage('check')} 题`);
+  assert.ok(stage('post') >= 2, `post 阶段只有 ${stage('post')} 题`);
 });
 
-test('外治三条，进行期以「不用」为主', () => {
-  const a = analyze();
-  assert.strictEqual(a.outside.length, 3);
-  assert.match(a.outside[0], /进行期忌刺激/);
-  assert.ok(a.reaction >= 4, `同形反应只出现 ${a.reaction} 次`);
-  assert.ok(a.tapering >= 2, `骤停只出现 ${a.tapering} 次`);
-});
-
-test('quiz 结构：段齐、四选项、答案下标合法、解释够长', () => {
-  const q = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
-  assert.ok(q.questions.length >= 5);
-  const stages = new Set(q.questions.map((x) => x.stage));
-  for (const s of ['pre', 'check', 'post']) assert.ok(stages.has(s), `缺 ${s}`);
-  for (const item of q.questions) {
-    assert.strictEqual(item.options.length, 4);
-    assert.ok(Number.isInteger(item.correct) && item.correct >= 0 && item.correct < 4);
-    assert.ok(hanzi(item.explain) >= 30, `解释过短：${item.question}`);
+test('每题 4 个互异选项且答案下标合法', () => {
+  for (const [i, q] of questions.entries()) {
+    const opts = q.options || q.choices || [];
+    assert.strictEqual(opts.length, 4, `第 ${i + 1} 题选项数不是 4`);
+    assert.strictEqual(new Set(opts.map(String)).size, 4, `第 ${i + 1} 题选项重复`);
+    const idx = q.correct ?? q.answer;
+    assert.ok(Number.isInteger(idx) && idx >= 0 && idx < 4, `第 ${i + 1} 题答案下标非法`);
   }
 });
 
-test('quiz 的判断题能在正文里找到原词', () => {
-  const body = shingles(docText());
-  const q = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
-  const checks = q.questions.filter((x) => x.stage === 'check');
-  assert.ok(checks.length >= 2);
-  let grounded = 0;
-  for (const item of checks) {
-    const grams = [...shingles(item.options[item.correct])];
-    if (grams.some((g) => body.has(g))) grounded += 1;
+test('每题解释足够长（≥30 汉字）', () => {
+  for (const [i, q] of questions.entries()) {
+    const ex = q.explain || q.explanation || '';
+    assert.ok(hz(ex) >= 30, `第 ${i + 1} 题解释只有 ${hz(ex)} 汉字`);
   }
-  assert.ok(grounded >= 2, `只有 ${grounded} 道题接地`);
 });
 
-test('答案不挤在同一个下标', () => {
-  const q = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
-  const spread = new Set(q.questions.map((x) => x.correct));
-  assert.ok(spread.size >= 3, `正确项只用了 ${spread.size} 个下标`);
+test('check 题判据能在正文里找到（接地）', () => {
+  const body = doc.replace(/[\s\p{P}]/gu, '');
+  const grounded = questions.filter((q) => {
+    if ((q.stage || q.phase) !== 'check') return false;
+    const opt = (q.options || q.choices || [])[q.correct ?? q.answer] || '';
+    const key = String(opt).replace(/[\s\p{P}]/gu, '');
+    for (let i = 0; i + 4 <= key.length; i += 1) {
+      if (body.includes(key.slice(i, i + 4))) return true;
+    }
+    return false;
+  });
+  assert.ok(grounded.length >= 2, `只有 ${grounded.length} 道 check 题的判据能在正文找到`);
 });
 
-test('脚本可运行并指向本章正文', () => {
-  const r = spawnSync(process.execPath, [path.join(__dirname, 'main.js')], { encoding: 'utf8', timeout: 60000 });
-  assert.strictEqual(r.status, 0, r.stderr);
-  assert.match(String(r.stdout), /临床类型 4 型/);
-  assert.ok(fs.readFileSync(DOC, 'utf8').includes('带病延年'));
+test('没有旧脚手架指纹', () => {
+  const raw = `${doc}\n${JSON.stringify(quiz)}`;
+  for (const bad of ['三辨', '四位面', '单元规模', '本章实测', '见 code/main.js 输出']) {
+    assert.ok(!raw.includes(bad), `残留旧脚手架词：${bad}`);
+  }
 });

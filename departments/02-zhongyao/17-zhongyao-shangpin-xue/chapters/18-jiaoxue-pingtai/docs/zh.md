@@ -93,6 +93,15 @@ T02 那一条的价值最容易被低估。**同名异物与同物异名是中�
 
 ## 七、运行与验证
 
+本章的正文与习题契约由脚本现算，可当场复核：
+
+```bash
+node code/main.js
+```
+
+脚本打印的是本章正文的规模、习题的阶段分布与接地情况；退出码为 0 表示各项契约满足，非 0 表示有不满足的项，输出里会逐条写明。
+
+
 ```bash
 node -e "const u=require('./standards/zhongyao-shangpin/units.json');const a=u.units.filter(x=>x.chapter==='18');const t=a.map(x=>x.body).join('');const c=re=>(t.match(re)||[]).length;console.log('单元',a.length,'汉字',(t.match(/[\u4e00-\u9fff]/g)||[]).length,'编码',c(/编码/g),'单元库',c(/单元库/g),'智能',c(/智能/g),'复核',c(/复核/g),'留痕',c(/留痕/g),'门禁',c(/门禁/g))"
 ```

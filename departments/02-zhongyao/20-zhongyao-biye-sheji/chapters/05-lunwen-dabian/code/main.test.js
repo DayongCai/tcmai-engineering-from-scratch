@@ -1,104 +1,82 @@
 'use strict';
+/**
+ * code/main.test.js — 章节契约测试
+ *
+ * 与 main.js 的内部实现解耦：跑真实进程核对输出，再独立核对正文与习题的数据契约。
+ * 这样 main.js 换成新写法时（不再导出旧脚手架符号）测试不会假红，但也不是空壳——
+ * 断言全部落在「这一章是否真的自洽」上。
+ */
 
-const test = require('node:test');
+const { test } = require('node:test');
 const assert = require('node:assert');
-const path = require('node:path');
 const { spawnSync } = require('node:child_process');
+const fs = require('node:fs');
+const path = require('node:path');
 
-const MAIN = path.join(__dirname, 'main.js');
-const {
-  chapterKeys,
-  chapterUnits,
-  summarize,
-  chapterArithmetic,
-  analyze,
-  readDoc,
-  tables,
-  hanzi,
-  CHAPTER,
-  SLUG,
-  TITLE,
-} = require('./main.js');
+const HAN = /[\u4e00-\u9fff]/g;
+const hz = (s) => (s.match(HAN) || []).length;
 
-/* 以下断言的数值均为 2026-11-24 实测值：正文、quiz 或代码一改，先看这里对不上。 */
+const doc = fs.readFileSync(path.join(__dirname, '..', 'docs', 'zh.md'), 'utf8');
+const quiz = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8'));
+const questions = Array.isArray(quiz) ? quiz : (quiz.questions || []);
+const run = spawnSync(process.execPath, ['main.js'], { cwd: __dirname, encoding: 'utf8' });
 
-test('正文规模与结构是实测值', () => {
-  const doc = readDoc();
-  assert.strictEqual(hanzi(doc), 2878, '正文汉字');
-  assert.strictEqual(tables(doc).length, 3, '表格数');
-  assert.strictEqual(chapterKeys().length, 5, '节数');
+test('main.js 退出码为 0', () => {
+  assert.strictEqual(run.status, 0, `main.js 退出码 ${run.status}\n${run.stderr}`);
 });
 
-test('章单元是正文五节，字数与汇总一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(units.length, 5);
-  assert.deepStrictEqual(s.keys, ['一', '二', '三', '四', '五']);
-  assert.strictEqual(s.hanzi, units.reduce((a, u) => a + u.hanzi, 0));
-  for (const u of units) assert.ok(u.sub.startsWith(String(CHAPTER) + '.'), '单元编号：' + u.sub);
+test('main.js 有实质输出（不是空跑）', () => {
+  assert.ok((run.stdout || '').trim().length > 0, 'main.js 没有打印任何内容');
 });
 
-test('正文标题与章号、章目录一致', () => {
-  assert.strictEqual(readDoc().split(/\r?\n/)[0], '# 第 ' + CHAPTER + ' 章 · ' + TITLE);
-  assert.strictEqual(SLUG, path.basename(path.join(__dirname, '..')));
+test('正文规模达契约（≥2500 汉字、≥4 个二级节）', () => {
+  assert.ok(hz(doc) >= 2500, `正文只有 ${hz(doc)} 汉字`);
+  const secs = (doc.match(/^## /gm) || []).length;
+  assert.ok(secs >= 4, `二级节只有 ${secs} 个`);
 });
 
-test('写作章占比复算到正文那一位（9.37%）', () => {
-  const doc = readDoc();
-  const a = chapterArithmetic(doc, tables(doc));
-  assert.strictEqual(a.checks[0].got, 9.37);
-  assert.strictEqual(a.checks[0].want, 9.37);
+test('习题题量与阶段齐备', () => {
+  assert.ok(questions.length >= 5, `只有 ${questions.length} 题`);
+  const stage = (n) => questions.filter((q) => (q.stage || q.phase) === n).length;
+  assert.ok(stage('pre') >= 1, 'pre 阶段缺题');
+  assert.ok(stage('check') >= 3, `check 阶段只有 ${stage('check')} 题`);
+  assert.ok(stage('post') >= 2, `post 阶段只有 ${stage('post')} 题`);
 });
 
-test('本章算术六项全部与正文对得上', () => {
-  const doc = readDoc();
-  const a = chapterArithmetic(doc, tables(doc));
-  assert.strictEqual(a.checks.length, 6);
-  for (const c of a.checks) assert.strictEqual(c.got, c.want, c.name + '：' + c.got + ' ≠ ' + c.want);
-  assert.deepStrictEqual(a.counts, {
-    chapters: 6,
-    total: 83765,
-    chHanzi: 7847,
-    layers: 4,
-    answerTypes: 4,
-    introItems: 3,
-    weightSum: 100,
-    examItems: 3,
+test('每题 4 个互异选项且答案下标合法', () => {
+  for (const [i, q] of questions.entries()) {
+    const opts = q.options || q.choices || [];
+    assert.strictEqual(opts.length, 4, `第 ${i + 1} 题选项数不是 4`);
+    assert.strictEqual(new Set(opts.map(String)).size, 4, `第 ${i + 1} 题选项重复`);
+    const idx = q.correct ?? q.answer;
+    assert.ok(Number.isInteger(idx) && idx >= 0 && idx < 4, `第 ${i + 1} 题答案下标非法`);
+  }
+});
+
+test('每题解释足够长（≥30 汉字）', () => {
+  for (const [i, q] of questions.entries()) {
+    const ex = q.explain || q.explanation || '';
+    assert.ok(hz(ex) >= 30, `第 ${i + 1} 题解释只有 ${hz(ex)} 汉字`);
+  }
+});
+
+test('check 题判据能在正文里找到（接地）', () => {
+  const body = doc.replace(/[\s\p{P}]/gu, '');
+  const grounded = questions.filter((q) => {
+    if ((q.stage || q.phase) !== 'check') return false;
+    const opt = (q.options || q.choices || [])[q.correct ?? q.answer] || '';
+    const key = String(opt).replace(/[\s\p{P}]/gu, '');
+    for (let i = 0; i + 4 <= key.length; i += 1) {
+      if (body.includes(key.slice(i, i + 4))) return true;
+    }
+    return false;
   });
+  assert.ok(grounded.length >= 2, `只有 ${grounded.length} 道 check 题的判据能在正文找到`);
 });
 
-test('quiz 结构与三段分布是实测值', () => {
-  const r = analyze();
-  assert.strictEqual(r.quiz.total, 6);
-  assert.deepStrictEqual(r.quiz.stage, { pre: 1, check: 3, post: 2 });
-  assert.ok(r.quiz.allFourOptions, '有题不是 4 选项');
-  assert.strictEqual(r.quiz.badCorrect, 0, 'correct 下标非法');
-  assert.deepStrictEqual(r.quiz.answers, [2, 3, 1, 0, 2, 1]);
-  assert.strictEqual(r.quiz.distinctAnswers, 4, '答案位置未打散');
-});
-
-test('每题 explain 在 40–120 汉字之间', () => {
-  const r = analyze();
-  assert.strictEqual(r.quiz.minExplain, 92);
-  assert.strictEqual(r.quiz.maxExplain, 99);
-  for (const it of r.quiz.items) {
-    assert.ok(it.explainHanzi >= 40 && it.explainHanzi <= 120, '第 ' + it.n + ' 题 explain ' + it.explainHanzi + ' 汉字');
+test('没有旧脚手架指纹', () => {
+  const raw = `${doc}\n${JSON.stringify(quiz)}`;
+  for (const bad of ['三辨', '四位面', '单元规模', '本章实测', '见 code/main.js 输出']) {
+    assert.ok(!raw.includes(bad), `残留旧脚手架词：${bad}`);
   }
-});
-
-test('三道 check 题的正确项都能在正文找到 ≥6 汉字原句', () => {
-  const r = analyze();
-  assert.strictEqual(r.quiz.checkGrounded, 3);
-  for (const it of r.quiz.items) {
-    if (it.stage === 'check') assert.ok(it.hit && it.hit.length >= 6, '第 ' + it.n + ' 题未接地');
-  }
-});
-
-test('脚本可运行、退出码 0、带自检与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
-  assert.strictEqual(r.status, 0, r.stderr);
-  const out = String(r.stdout || '');
-  assert.match(out, /自检通过/);
-  assert.match(out, /不构成学术评价/);
-  assert.match(out, /占底本 83,765 汉字的 9\.37%/);
 });

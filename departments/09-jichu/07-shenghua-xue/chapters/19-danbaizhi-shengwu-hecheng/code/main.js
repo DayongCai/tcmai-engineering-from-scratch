@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 /**
- * 生物化学 · 第 19 章 蛋白质的生物合成：本章统计口径
+ * 生物化学 · 第 19 章 翻译的准确不靠一条规则，而靠两次校对与四次高能键的预付 —— 正文与习题自检
  * 课程: departments/09-jichu/07-shenghua-xue/chapters/19-danbaizhi-shengwu-hecheng/docs/zh.md
- * 数据: standards/shenghua-xue/units.json（252 单元层，每单元带三辨与四位面词频）
- * 取数: standards/shenghua-xue/chapter-map.json（课程章 → 教材单元号）
- * 依赖: 仅 Node.js 标准库
+ * 依赖: 仅 Node.js 标准库；只读 ../docs/zh.md 与 ../quiz.json，不读 standards/。
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本章的「单元」就是正文的二级节：每一节各管一件事，节标题即单元名。
+ * 输出的四个数：正文字数、单元数、题量与解释长度、习题接地数。接地数指 check 题的
+ * 正确选项里至少有一段 >=6 汉字的原文真的出现在当章正文里 —— 习题必须与正文同源。
  */
 
 'use strict';
@@ -15,87 +14,142 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'shenghua-xue', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/shenghua-xue/units.json —— 章节目录是否已脱离仓库？');
-}
+const DIR = __dirname;
+const DOC = path.join(DIR, '..', 'docs', 'zh.md');
+const QUIZ = path.join(DIR, '..', 'quiz.json');
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'shenghua-xue', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'shenghua-xue', 'chapter-map.json');
-const CHAPTER = '19';
+const doc = fs.readFileSync(DOC, 'utf8');
+const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+
+const CHAPTER = 19;
 const SLUG = '19-danbaizhi-shengwu-hecheng';
+const TITLE = ((doc.match(/^#[^\n]*/m) || [''])[0])
+  .replace(/^#\s*/, '')
+  .replace(/^第\s*\d+\s*章\s*·\s*/, '')
+  .trim();
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+const hanzi = (s) => (String(s || '').match(/[\u4e00-\u9fff]/g) || []).length;
 
+/** 正文主体：从第一个二级节起，去掉标题行（章题、引文块不计入单元） */
+function bodyText() {
+  const lines = String(doc).split(/\r?\n/);
+  const start = lines.findIndex((l) => /^##\s+/.test(l));
+  if (start < 0) return '';
+  return lines.slice(start).filter((l) => !/^#/.test(l)).join('\n');
+}
+
+/** 二级节 = 本章的一个单元 */
 function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+  return String(doc).split(/\r?\n/)
+    .filter((l) => /^##\s+/.test(l))
+    .map((l) => l.replace(/^##\s+/, '').trim());
 }
 
+/** 每个单元的规模：汉字、段数、首句 */
 function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+  const blocks = [];
+  let cur = null;
+  for (const line of String(doc).split(/\r?\n/)) {
+    if (/^##\s+/.test(line)) {
+      if (cur) blocks.push(cur);
+      cur = { title: line.replace(/^##\s+/, '').trim(), lines: [] };
+    } else if (cur) {
+      cur.lines.push(line);
+    }
+  }
+  if (cur) blocks.push(cur);
+  return blocks.map((b, i) => {
+    const body = b.lines.join('\n');
+    const paras = b.lines.map((l) => l.trim())
+      .filter((l) => l && !/^[#>|]/.test(l) && !/^[-*+]\s/.test(l) && !/^\d+[.、]/.test(l) && !l.includes('|'));
+    return {
+      index: i + 1,
+      title: b.title,
+      hanzi: hanzi(body),
+      paragraphs: paras.length,
+      lead: (paras[0] || '').slice(0, 24),
+    };
+  });
 }
 
+/** 汇总：单元数、总字数、最长与最短一节 */
 function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+  if (!Array.isArray(units)) throw new TypeError('summarize 需要 chapterUnits() 的返回数组');
+  const total = units.reduce((a, u) => a + u.hanzi, 0);
+  const longest = units.reduce((a, u) => (u.hanzi > a.hanzi ? u : a), units[0] || { hanzi: 0, title: '—' });
+  const shortest = units.reduce((a, u) => (u.hanzi < a.hanzi ? u : a), units[0] || { hanzi: 0, title: '—' });
+  return {
+    units: units.length,
+    hanzi: total,
+    mean: units.length ? Math.round(total / units.length) : 0,
+    longest: { title: longest.title, hanzi: longest.hanzi },
+    shortest: { title: shortest.title, hanzi: shortest.hanzi },
+  };
+}
+
+/** 正文里 n 字连续汉字片段 */
+function shingles(text, n = 4) {
+  const clean = String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ');
+  const out = new Set();
+  for (const seg of clean.split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return out;
+}
+
+/** 接地判据：正确选项里最长的一段连续原文 */
+const N = 6;
+const BODY = shingles(doc, N);
+
+function grounded(option) {
+  const clean = String(option || '').replace(/[^\u4e00-\u9fff]/g, ' ');
+  for (const seg of clean.split(/\s+/)) {
+    for (let i = 0; i + N <= seg.length; i += 1) if (BODY.has(seg.slice(i, i + N))) return true;
+  }
+  return false;
+}
+
+const why = (q) => q.explain || q.explanation || '';
+
+function audit() {
+  const units = chapterUnits();
+  const s = summarize(units);
+  const stages = { pre: 0, check: 0, post: 0 };
+  for (const q of quiz.questions) stages[q.stage] = (stages[q.stage] || 0) + 1;
+  const checks = quiz.questions.filter((q) => q.stage === 'check');
+  const lens = quiz.questions.map((q) => hanzi(why(q)));
+  return {
+    hanzi: hanzi(doc),
+    units: units.length,
+    sum: s,
+    total: quiz.questions.length,
+    stages,
+    checkCount: checks.length,
+    hit: checks.filter((q) => grounded(q.options[q.correct])).length,
+    minExplain: Math.min(...lens),
+    maxExplain: Math.max(...lens),
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const a = audit();
+  console.log('生物化学 第 ' + CHAPTER + ' 章 · ' + TITLE);
+  console.log('正文 ' + a.hanzi + ' 汉字 · 单元（二级节） ' + a.units + ' 个 · 平均 ' + a.sum.mean + ' 字/节');
+  console.log('最长一节：' + a.sum.longest.title + '（' + a.sum.longest.hanzi + ' 字）· 最短一节：' + a.sum.shortest.title + '（' + a.sum.shortest.hanzi + ' 字）');
+  console.log('习题 ' + a.total + ' 题 (pre ' + a.stages.pre + '/check ' + a.stages.check + '/post ' + a.stages.post + ')'
+    + ' · 解释 ' + a.minExplain + '-' + a.maxExplain + ' 汉字');
+  console.log('接地 check 题 ' + a.hit + '/' + a.checkCount);
 
-  console.log(`生物化学 · 第 ${CHAPTER} 章 ${cm.title}`);
-  console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
-  console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  const ok = a.hanzi >= 2500 && a.units >= 4 && a.total >= 6
+    && a.stages.pre >= 1 && a.stages.check >= 3 && a.stages.post >= 2
+    && a.hit >= 3 && a.minExplain >= 40 && a.maxExplain <= 80;
+  if (!ok) {
+    console.error('自检未通过');
+    process.exit(1);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
-  console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/shenghua-xue/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 本章为教学材料，示例为教学设定，不构成诊断、用药或检验结果解释的依据。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { chapterKeys, chapterUnits, summarize, audit, grounded, shingles, hanzi, why, bodyText, CHAPTER, SLUG, TITLE, DOC, QUIZ, doc, quiz };
