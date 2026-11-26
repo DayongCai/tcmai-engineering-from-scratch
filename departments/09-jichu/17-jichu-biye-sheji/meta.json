@@ -13,6 +13,11 @@
   "bridge": "机制假设→可检验实验 / 记录→原始数据 / 结论→可重复协议",
   "chaptersTarget": 6,
   "chapters": [],
+  "standards": {
+    "own": "standards/jichu-biye-sheji",
+    "shared": "standards/biye",
+    "why": "本课 6 章 72 单元按 standards/jichu-biye-sheji/units.json 现算（scripts/_derive_jichu_biye.py 派生，108,466 汉字）；standards/biye 是八院系毕设共享库，本课只由 毕设对接.md / 缺口登记.md 对位读取，不复制数据（见 缺口登记.md 第三节）"
+  },
   "platform": {
     "id": "tcmP",
     "coursePath": "platform/courses/09-jichu/17-jichu-biye-sheji",
