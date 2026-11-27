@@ -6,14 +6,14 @@
     "kind": "web-page",
     "url": "https://weread.qq.com/web/reader/83d32cc0813ab756cg018e7fkecc32f3013eccbc87e4b62e",
     "file": "standards/materials/chenruchun-shanghan/sources/陈瑞春伤寒实践论-weread.html",
-    "fetchedAt": "2026-11-23T06:05:18.921Z",
+    "fetchedAt": "2026-11-27T17:34:45.588Z",
     "sha256": "60d86b1e63a4a8a1036bb77eba62d39cfc808e5fbd5faa50a3f3ff118dfd1fce",
     "bytes": 282672,
     "note": "目录不在 DOM 中，而在页面内联 __INITIAL_STATE__.reader.chapterInfos；正文仅试读。"
   },
   "shape": {
     "tree": "78 章 + 220 anchors（level 1–4）",
-    "deliverable": "..\\C:\\Users\\user\\AppData\\Local\\Temp\\tcmai-chenruchun-1216\\伤寒论临床应用.xlsx",
+    "deliverable": "..\\C:\\Users\\user\\AppData\\Local\\Temp\\tcmai-chenruchun-46296\\伤寒论临床应用.xlsx",
     "deliverableSheets": [
       "00目录",
       "01学习方法",
