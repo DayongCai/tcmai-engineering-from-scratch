@@ -4253,8 +4253,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 方法学的门槛不在仪器，在于别人能不能重做一遍 · 提示词 | — | 868 | [`prompt-08-fangfaxue-guifan.md`](../departments/02-zhongyao/11-zhongyao-yaodai-donglixue/chapters/08-fangfaxue-guifan/outputs/prompt-08-fangfaxue-guifan.md) |
-| skill | 方法学的门槛不在仪器，在于别人能不能重做一遍 | 方法学的门槛不在仪器，在于别人能不能重做一遍——按「一项药代研究必须回答的四个问题 → 生物样品分析的七项验证参数 → 采样设计与模型选择：两件常被混为一谈的事 → 报告的最小信息集」走一遍本章判据 | 763 | [`skill-fangfaxue-guifan.md`](../departments/02-zhongyao/11-zhongyao-yaodai-donglixue/chapters/08-fangfaxue-guifan/outputs/skill-fangfaxue-guifan.md) |
+| prompt | 方法学的门槛不在仪器，在于别人能不能重做一遍 · 提示词 | — | 894 | [`prompt-08-fangfaxue-guifan.md`](../departments/02-zhongyao/11-zhongyao-yaodai-donglixue/chapters/08-fangfaxue-guifan/outputs/prompt-08-fangfaxue-guifan.md) |
+| skill | 方法学的门槛不在仪器，在于别人能不能重做一遍 | 方法学的门槛不在仪器，在于别人能不能重做一遍——按「一项药代研究必须回答的四个问题 → 生物样品分析的七项验证参数 → 采样设计与模型选择：两件常被混为一谈的事 → 报告的最小信息集」走一遍本章判据 | 789 | [`skill-fangfaxue-guifan.md`](../departments/02-zhongyao/11-zhongyao-yaodai-donglixue/chapters/08-fangfaxue-guifan/outputs/skill-fangfaxue-guifan.md) |
 
 ### 道地药材与产地加工
 

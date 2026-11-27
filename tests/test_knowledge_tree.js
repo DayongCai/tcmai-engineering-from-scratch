@@ -82,7 +82,11 @@ test('zip 中央目录可解析，且 OOXML 必需条目都在', () => {
 console.log('\n[2] 教材稿形状');
 
 // 章号允许三位：外源古籍学科章数过百（100-第100章…），写死 \d{2} 会把它们漏在书外
-const chapterFiles = fs.readdirSync(TB).filter((f) => /^\d{2,}-.*\.md$/.test(f)).sort((a, b) => parseInt(a, 10) - parseInt(b, 10) || a.localeCompare(b, 'zh'));
+// 四级编码目录（00-目录-四级编码.md）是后加的派生文件，不属于「前言 + 10 章」，
+// 数文件时排除，否则这条断言会随着派生文件增加而失效（2026-11-27 实测 11 → 12）。
+const chapterFiles = fs.readdirSync(TB)
+  .filter((f) => /^\d{2,}-.*\.md$/.test(f) && !/目录-四级编码/.test(f))
+  .sort((a, b) => parseInt(a, 10) - parseInt(b, 10) || a.localeCompare(b, 'zh'));
 const sourceMap = JSON.parse(fs.readFileSync(path.join(STD, 'source-map.json'), 'utf8'));
 
 test('生成 11 个文件（00-前言 + 10 章）', () => {
