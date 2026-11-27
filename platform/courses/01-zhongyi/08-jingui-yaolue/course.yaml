@@ -29,145 +29,170 @@ platform:
 
 chapters:
   - slug: 01-chengshu-zabing
-    title: 《金匮要略》不是「杂病方书」，是一部 402 条的筛选器
+    title: 第1章 《金匮要略》不是「杂病方书」，是一部 402 条的筛选器
+    unit: 主题章（框架与病类）
     video: rendered
-    estimate_minutes: 7.12      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 6.98      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
-
+    segments: 10
+    estimate_minutes: 7.12
+    measured_minutes: 6.98
   - slug: 02-zangfu-chuanbian
-    title: 十七句话，把「治病」改成「预判」
+    title: 第2章 十七句话，把「治病」改成「预判」
+    unit: 主题章（框架与病类）
     video: rendered
-    estimate_minutes: 20.05      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 19.63      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
-
+    segments: 11
+    estimate_minutes: 20.05
+    measured_minutes: 19.63
   - slug: 03-jing-shi-ye
-    title: 痉湿暍：外邪入体后的三条错路，和一份 9 条的误治清单
+    title: 第3章 痉湿暍：外邪入体后的三条错路，和一份 9 条的误治清单
+    unit: 主题章（框架与病类）
     video: rendered
-    estimate_minutes: 20.30      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 20.78      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
-
+    segments: 10
+    estimate_minutes: 20.30
+    measured_minutes: 20.78
   - slug: 04-baihe-huhuo
-    title: 少见病不是罕见病，是必须先排除才敢下诊断的病
+    title: 第4章 少见病不是罕见病，是必须先排除才敢下诊断的病
+    unit: 主题章（框架与病类）
     video: rendered
-    estimate_minutes: 20.42      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 20.22      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
-
+    segments: 14
+    estimate_minutes: 20.42
+    measured_minutes: 20.22
   - slug: 05-nueb-zhongfeng
-    title: 疟的节律与中风的痹阻：两篇「判据极短」的病
+    title: 第5章 疟的节律与中风的痹阻：两篇「判据极短」的病
+    unit: 主题章（框架与病类）
     video: rendered
-    estimate_minutes: 20.97      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 21.62      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
-
+    segments: 10
+    estimate_minutes: 20.97
+    measured_minutes: 21.62
   - slug: 06-pibai-xulao
-    title: 血痹虚劳：虚损不是一种病，是五个深度
+    title: 第6章 血痹虚劳：虚损不是一种病，是五个深度
+    unit: 主题章（框架与病类）
     video: rendered
-    estimate_minutes: 18.25      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 18.49      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
-
+    segments: 10
+    estimate_minutes: 18.25
+    measured_minutes: 18.49
   - slug: 07-tanyin-kesou
-    title: 痰饮咳嗽：水液代谢的失效
+    title: 第7章 痰饮咳嗽：水液代谢的失效
+    unit: 主题章（框架与病类）
     video: rendered
-    estimate_minutes: 20.95      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 21.82      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
-
+    segments: 10
+    estimate_minutes: 20.95
+    measured_minutes: 21.82
   - slug: 08-xiaoke-linbing
-    title: 消渴与淋病：把「喝进去的」与「排出来的」对上账
+    title: 第8章 消渴与淋病：把「喝进去的」与「排出来的」对上账
+    unit: 主题章（框架与病类）
     video: rendered
-    estimate_minutes: 13.97      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 13.49      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
-
+    segments: 10
+    estimate_minutes: 13.97
+    measured_minutes: 13.49
   - slug: 09-furen-sanpian
-    title: 妇人病三篇：不是「妇科专章」，是把经带胎产拆成三段
+    title: 第9章 妇人病三篇：不是「妇科专章」，是把经带胎产拆成三段
+    unit: 主题章（框架与病类）
     video: rendered
-    estimate_minutes: 28.75      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 29.66      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
-
+    segments: 10
+    estimate_minutes: 28.75
+    measured_minutes: 29.66
   - slug: 10-zabing-peiwu
-    title: 174 个方里，只有 165 个能算配伍
+    title: 第10章 174 个方里，只有 165 个能算配伍
+    unit: 主题章（框架与病类）
     video: rendered
-    estimate_minutes: 20.53      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 20.07      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
-
+    segments: 10
+    estimate_minutes: 20.53
+    measured_minutes: 20.07
   - slug: 11-pian7-feiwei-feiyong
-    title: 肺痿与肺痈的分界不在症状堆叠，而在脉的一虚一实
+    title: 第11章 肺痿与肺痈的分界不在症状堆叠，而在脉的一虚一实
+    unit: 篇目精读（按篇通读）
     video: rendered
-    estimate_minutes: 11.67      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 12.40      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
-
+    segments: 10
+    estimate_minutes: 11.67
+    measured_minutes: 12.40
   - slug: 12-pian8-bentun
-    title: 同一个「气从少腹上冲」，三首方靠来路分开而不是靠冲劲分开
+    title: 第12章 同一个「气从少腹上冲」，三首方靠来路分开而不是靠冲劲分开
+    unit: 篇目精读（按篇通读）
     video: rendered
-    estimate_minutes: 6.23      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 6.34      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
-
+    segments: 10
+    estimate_minutes: 6.23
+    measured_minutes: 6.34
   - slug: 13-pian9-xiongbi
-    title: 胸痹的方条比是 1.00，但这个 1 是两个口径相互抵消出来的
+    title: 第13章 胸痹的方条比是 1.00，但这个 1 是两个口径相互抵消出来的
+    unit: 篇目精读（按篇通读）
     video: rendered
-    estimate_minutes: 7.88      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 8.41      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
-
+    segments: 10
+    estimate_minutes: 7.88
+    measured_minutes: 8.41
   - slug: 14-pian10-fuman-shanjia
-    title: 腹满篇前八条不出方，先用八条判据把「温、下、吐」三条路分开
+    title: 第14章 腹满篇前八条不出方，先用八条判据把「温、下、吐」三条路分开
+    unit: 篇目精读（按篇通读）
     video: rendered
-    estimate_minutes: 12.00      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 12.81      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
-
+    segments: 10
+    estimate_minutes: 12.00
+    measured_minutes: 12.81
   - slug: 15-pian11-zangfu-jiju
-    title: 二十条只出三方，这一篇交付的是五脏定位表而不是方剂
+    title: 第15章 二十条只出三方，这一篇交付的是五脏定位表而不是方剂
+    unit: 篇目精读（按篇通读）
     video: rendered
-    estimate_minutes: 8.98      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 9.25      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
-
+    segments: 10
+    estimate_minutes: 8.98
+    measured_minutes: 9.25
   - slug: 16-pian14-shuiqi
-    title: 全书最长的一篇水气，用四套分类切同一批病而不互相替代
+    title: 第16章 全书最长的一篇水气，用四套分类切同一批病而不互相替代
+    unit: 篇目精读（按篇通读）
     video: rendered
-    estimate_minutes: 15.67      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 16.84      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
-
+    segments: 10
+    estimate_minutes: 15.67
+    measured_minutes: 16.84
   - slug: 17-pian15-huangdan
-    title: 黄疸先分三个入口，再谈利小便——入口错了，利小便就是空话
+    title: 第17章 黄疸先分三个入口，再谈利小便——入口错了，利小便就是空话
+    unit: 篇目精读（按篇通读）
     video: rendered
-    estimate_minutes: 9.33      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 9.88      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
-
+    segments: 10
+    estimate_minutes: 9.33
+    measured_minutes: 9.88
   - slug: 18-pian16-jingji-tunv
-    title: 十七条里十条在辨「这是不是血的问题」，方只留给后六条
+    title: 第18章 十七条里十条在辨「这是不是血的问题」，方只留给后六条
+    unit: 篇目精读（按篇通读）
     video: rendered
-    estimate_minutes: 7.38      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 7.79      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
-
+    segments: 10
+    estimate_minutes: 7.38
+    measured_minutes: 7.79
   - slug: 19-pian17-outu-yueli
-    title: 四十七条切成呕哕与下利两半，两半的节奏完全不同
+    title: 第19章 四十七条切成呕哕与下利两半，两半的节奏完全不同
+    unit: 篇目精读（按篇通读）
     video: rendered
-    estimate_minutes: 14.05      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 15.55      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
-
+    segments: 10
+    estimate_minutes: 14.05
+    measured_minutes: 15.55
   - slug: 20-pian18-chuangyong
-    title: 八条里出现六个方名，而「方数」只算三个——三层差在哪里
+    title: 第20章 八条里出现六个方名，而「方数」只算三个——三层差在哪里
+    unit: 篇目精读（按篇通读）
     video: rendered
-    estimate_minutes: 6.70      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 7.05      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
-
+    segments: 10
+    estimate_minutes: 6.70
+    measured_minutes: 7.05
   - slug: 21-pian19-fujue-shanchong
-    title: 八个互不相关的小病串成一篇，每个病自带一条治法
+    title: 第21章 八个互不相关的小病串成一篇，每个病自带一条治法
+    unit: 篇目精读（按篇通读）
     video: rendered
-    estimate_minutes: 6.33      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 6.57      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
-
+    segments: 10
+    estimate_minutes: 6.33
+    measured_minutes: 6.57
   - slug: 22-pian23-zaliaofang
-    title: 底本只给一条，四十六段里藏着十七首方——附篇的单位是方不是条
+    title: 第22章 底本只给一条，四十六段里藏着十七首方——附篇的单位是方不是条
+    unit: 篇目精读（按篇通读）
     video: rendered
-    estimate_minutes: 11.03      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 11.52      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
-
+    segments: 10
+    estimate_minutes: 11.03
+    measured_minutes: 11.52
   - slug: 23-pian24-qinshou-jinji
-    title: 一百三十三段禁忌不是清单，是一张「禁什么—中了什么症—用什么解」的三栏表
+    title: 第23章 一百三十三段禁忌不是清单，是一张「禁什么—中了什么症—用什么解」的三栏表
+    unit: 篇目精读（按篇通读）
     video: rendered
-    estimate_minutes: 14.07      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 15.20      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
-
+    segments: 10
+    estimate_minutes: 14.07
+    measured_minutes: 15.20
   - slug: 24-pian25-guoshi-jinji
-    title: 本篇没有总论，总论在上一篇开头；它的框由别人给的两端撑着
+    title: 第24章 本篇没有总论，总论在上一篇开头；它的框由别人给的两端撑着
+    unit: 篇目精读（按篇通读）
     video: rendered
-    estimate_minutes: 11.12      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 11.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    segments: 10
+    estimate_minutes: 11.12
+    measured_minutes: 11.94

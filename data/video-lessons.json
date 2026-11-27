@@ -3,11 +3,11 @@
  "generated": "scripts/build_video_lessons.js",
  "totals": {
   "subjects": 189,
-  "withVideo": 55,
-  "none": 134,
-  "lectures": 916,
+  "withVideo": 57,
+  "none": 132,
+  "lectures": 945,
   "cues": 177254,
-  "durationSec": 882334.4280000001
+  "durationSec": 923085.7379999998
  },
  "subjects": [
   {
@@ -2047,168 +2047,168 @@
      "path": "platform/courses/01-zhongyi/08-jingui-yaolue",
      "rows": [
       {
-       "title": "《金匮要略》不是「杂病方书」，是一部 402 条的筛选器",
+       "title": "第1章 《金匮要略》不是「杂病方书」，是一部 402 条的筛选器",
        "durationSec": 419,
        "status": "rendered",
        "no": 1,
        "cues": 0
       },
       {
-       "title": "十七句话，把「治病」改成「预判」",
+       "title": "第2章 十七句话，把「治病」改成「预判」",
        "durationSec": 1178,
        "status": "rendered",
        "no": 2,
        "cues": 0
       },
       {
-       "title": "痉湿暍：外邪入体后的三条错路，和一份 9 条的误治清单",
+       "title": "第3章 痉湿暍：外邪入体后的三条错路，和一份 9 条的误治清单",
        "durationSec": 1247,
        "status": "rendered",
        "no": 3,
        "cues": 0
       },
       {
-       "title": "少见病不是罕见病，是必须先排除才敢下诊断的病",
+       "title": "第4章 少见病不是罕见病，是必须先排除才敢下诊断的病",
        "durationSec": 1213,
        "status": "rendered",
        "no": 4,
        "cues": 0
       },
       {
-       "title": "疟的节律与中风的痹阻：两篇「判据极短」的病",
+       "title": "第5章 疟的节律与中风的痹阻：两篇「判据极短」的病",
        "durationSec": 1297,
        "status": "rendered",
        "no": 5,
        "cues": 0
       },
       {
-       "title": "血痹虚劳：虚损不是一种病，是五个深度",
+       "title": "第6章 血痹虚劳：虚损不是一种病，是五个深度",
        "durationSec": 1109,
        "status": "rendered",
        "no": 6,
        "cues": 0
       },
       {
-       "title": "痰饮咳嗽：水液代谢的失效",
+       "title": "第7章 痰饮咳嗽：水液代谢的失效",
        "durationSec": 1309,
        "status": "rendered",
        "no": 7,
        "cues": 0
       },
       {
-       "title": "消渴与淋病：把「喝进去的」与「排出来的」对上账",
+       "title": "第8章 消渴与淋病：把「喝进去的」与「排出来的」对上账",
        "durationSec": 809,
        "status": "rendered",
        "no": 8,
        "cues": 0
       },
       {
-       "title": "妇人病三篇：不是「妇科专章」，是把经带胎产拆成三段",
+       "title": "第9章 妇人病三篇：不是「妇科专章」，是把经带胎产拆成三段",
        "durationSec": 1780,
        "status": "rendered",
        "no": 9,
        "cues": 0
       },
       {
-       "title": "174 个方里，只有 165 个能算配伍",
+       "title": "第10章 174 个方里，只有 165 个能算配伍",
        "durationSec": 1204,
        "status": "rendered",
        "no": 10,
        "cues": 0
       },
       {
-       "title": "肺痿与肺痈的分界不在症状堆叠，而在脉的一虚一实",
+       "title": "第11章 肺痿与肺痈的分界不在症状堆叠，而在脉的一虚一实",
        "durationSec": 744,
        "status": "rendered",
        "no": 11,
        "cues": 0
       },
       {
-       "title": "同一个「气从少腹上冲」，三首方靠来路分开而不是靠冲劲分开",
+       "title": "第12章 同一个「气从少腹上冲」，三首方靠来路分开而不是靠冲劲分开",
        "durationSec": 380,
        "status": "rendered",
        "no": 12,
        "cues": 0
       },
       {
-       "title": "胸痹的方条比是 1.00，但这个 1 是两个口径相互抵消出来的",
+       "title": "第13章 胸痹的方条比是 1.00，但这个 1 是两个口径相互抵消出来的",
        "durationSec": 505,
        "status": "rendered",
        "no": 13,
        "cues": 0
       },
       {
-       "title": "腹满篇前八条不出方，先用八条判据把「温、下、吐」三条路分开",
+       "title": "第14章 腹满篇前八条不出方，先用八条判据把「温、下、吐」三条路分开",
        "durationSec": 769,
        "status": "rendered",
        "no": 14,
        "cues": 0
       },
       {
-       "title": "二十条只出三方，这一篇交付的是五脏定位表而不是方剂",
+       "title": "第15章 二十条只出三方，这一篇交付的是五脏定位表而不是方剂",
        "durationSec": 555,
        "status": "rendered",
        "no": 15,
        "cues": 0
       },
       {
-       "title": "全书最长的一篇水气，用四套分类切同一批病而不互相替代",
+       "title": "第16章 全书最长的一篇水气，用四套分类切同一批病而不互相替代",
        "durationSec": 1010,
        "status": "rendered",
        "no": 16,
        "cues": 0
       },
       {
-       "title": "黄疸先分三个入口，再谈利小便——入口错了，利小便就是空话",
+       "title": "第17章 黄疸先分三个入口，再谈利小便——入口错了，利小便就是空话",
        "durationSec": 593,
        "status": "rendered",
        "no": 17,
        "cues": 0
       },
       {
-       "title": "十七条里十条在辨「这是不是血的问题」，方只留给后六条",
+       "title": "第18章 十七条里十条在辨「这是不是血的问题」，方只留给后六条",
        "durationSec": 467,
        "status": "rendered",
        "no": 18,
        "cues": 0
       },
       {
-       "title": "四十七条切成呕哕与下利两半，两半的节奏完全不同",
+       "title": "第19章 四十七条切成呕哕与下利两半，两半的节奏完全不同",
        "durationSec": 933,
        "status": "rendered",
        "no": 19,
        "cues": 0
       },
       {
-       "title": "八条里出现六个方名，而「方数」只算三个——三层差在哪里",
+       "title": "第20章 八条里出现六个方名，而「方数」只算三个——三层差在哪里",
        "durationSec": 423,
        "status": "rendered",
        "no": 20,
        "cues": 0
       },
       {
-       "title": "八个互不相关的小病串成一篇，每个病自带一条治法",
+       "title": "第21章 八个互不相关的小病串成一篇，每个病自带一条治法",
        "durationSec": 394,
        "status": "rendered",
        "no": 21,
        "cues": 0
       },
       {
-       "title": "底本只给一条，四十六段里藏着十七首方——附篇的单位是方不是条",
+       "title": "第22章 底本只给一条，四十六段里藏着十七首方——附篇的单位是方不是条",
        "durationSec": 691,
        "status": "rendered",
        "no": 22,
        "cues": 0
       },
       {
-       "title": "一百三十三段禁忌不是清单，是一张「禁什么—中了什么症—用什么解」的三栏表",
+       "title": "第23章 一百三十三段禁忌不是清单，是一张「禁什么—中了什么症—用什么解」的三栏表",
        "durationSec": 912,
        "status": "rendered",
        "no": 23,
        "cues": 0
       },
       {
-       "title": "本篇没有总论，总论在上一篇开头；它的框由别人给的两端撑着",
+       "title": "第24章 本篇没有总论，总论在上一篇开头；它的框由别人给的两端撑着",
        "durationSec": 716,
        "status": "rendered",
        "no": 24,
@@ -2835,7 +2835,7 @@
      "label": "本仓自建视频课（HLS）",
      "kind": "platform",
      "lectures": 10,
-     "durationSec": 4617.094,
+     "durationSec": 4766.449,
      "path": "platform/courses/02-zhongyao/21-zhongyao-du-li-xue",
      "rows": [
       {
@@ -2913,7 +2913,7 @@
    ],
    "lectures": 10,
    "cues": 0,
-   "durationSec": 4617.094,
+   "durationSec": 4766.449,
    "plan": "departments/02-zhongyao/21-zhongyao-du-li-xue/video/教案.md"
   },
   {
@@ -5157,7 +5157,7 @@
      "label": "本仓自建视频课（HLS）",
      "kind": "platform",
      "lectures": 10,
-     "durationSec": 6126.646,
+     "durationSec": 6351.054,
      "path": "platform/courses/04-gushang/02-yao-shang-jiepou",
      "rows": [
       {
@@ -5235,7 +5235,7 @@
    ],
    "lectures": 10,
    "cues": 0,
-   "durationSec": 6126.646,
+   "durationSec": 6351.054,
    "plan": "departments/04-gushang/02-yao-shang-jiepou/video/教案.md"
   },
   {
@@ -5252,7 +5252,7 @@
      "label": "本仓自建视频课（HLS）",
      "kind": "platform",
      "lectures": 10,
-     "durationSec": 6219.184,
+     "durationSec": 6547.406,
      "path": "platform/courses/04-gushang/03-gushang-kexue-jichu",
      "rows": [
       {
@@ -5330,7 +5330,7 @@
    ],
    "lectures": 10,
    "cues": 0,
-   "durationSec": 6219.184,
+   "durationSec": 6547.406,
    "plan": "departments/04-gushang/03-gushang-kexue-jichu/video/教案.md"
   },
   {
@@ -5428,7 +5428,7 @@
      "label": "本仓自建视频课（HLS）",
      "kind": "platform",
      "lectures": 8,
-     "durationSec": 3865.41,
+     "durationSec": 4236.662,
      "path": "platform/courses/04-gushang/05-yundong-yixue",
      "rows": [
       {
@@ -5492,7 +5492,7 @@
    ],
    "lectures": 8,
    "cues": 0,
-   "durationSec": 3865.41,
+   "durationSec": 4236.662,
    "plan": "departments/04-gushang/05-yundong-yixue/video/教案.md"
   },
   {
@@ -5509,7 +5509,7 @@
      "label": "本仓自建视频课（HLS）",
      "kind": "platform",
      "lectures": 12,
-     "durationSec": 6429.21,
+     "durationSec": 6702.938,
      "path": "platform/courses/04-gushang/06-zhongyi-zhenggu-xue",
      "rows": [
       {
@@ -5601,7 +5601,7 @@
    ],
    "lectures": 12,
    "cues": 0,
-   "durationSec": 6429.21,
+   "durationSec": 6702.938,
    "plan": "departments/04-gushang/06-zhongyi-zhenggu-xue/video/教案.md"
   },
   {
@@ -5713,7 +5713,7 @@
      "label": "本仓自建视频课（HLS）",
      "kind": "platform",
      "lectures": 10,
-     "durationSec": 5599.874,
+     "durationSec": 5924.808,
      "path": "platform/courses/04-gushang/08-gushang-shoufa-zhiliao",
      "rows": [
       {
@@ -5791,7 +5791,7 @@
    ],
    "lectures": 10,
    "cues": 0,
-   "durationSec": 5599.874,
+   "durationSec": 5924.808,
    "plan": "departments/04-gushang/08-gushang-shoufa-zhiliao/video/教案.md"
   },
   {
@@ -5808,7 +5808,7 @@
      "label": "本仓自建视频课（HLS）",
      "kind": "platform",
      "lectures": 10,
-     "durationSec": 5640.17,
+     "durationSec": 6423.66,
      "path": "platform/courses/04-gushang/09-guke-yingxiang-zhenduan",
      "rows": [
       {
@@ -5886,7 +5886,7 @@
    ],
    "lectures": 10,
    "cues": 0,
-   "durationSec": 5640.17,
+   "durationSec": 6423.66,
    "plan": "departments/04-gushang/09-guke-yingxiang-zhenduan/video/教案.md"
   },
   {
@@ -5903,7 +5903,7 @@
      "label": "本仓自建视频课（HLS）",
      "kind": "platform",
      "lectures": 10,
-     "durationSec": 4899.018,
+     "durationSec": 5947.842,
      "path": "platform/courses/04-gushang/10-jizhu-bing-xue",
      "rows": [
       {
@@ -5981,7 +5981,7 @@
    ],
    "lectures": 10,
    "cues": 0,
-   "durationSec": 4899.018,
+   "durationSec": 5947.842,
    "plan": "departments/04-gushang/10-jizhu-bing-xue/video/教案.md"
   },
   {
@@ -5998,7 +5998,7 @@
      "label": "本仓自建视频课（HLS）",
      "kind": "platform",
      "lectures": 10,
-     "durationSec": 5890.898,
+     "durationSec": 6882.242,
      "path": "platform/courses/04-gushang/11-guanjie-bing-xue",
      "rows": [
       {
@@ -6076,7 +6076,7 @@
    ],
    "lectures": 10,
    "cues": 0,
-   "durationSec": 5890.898,
+   "durationSec": 6882.242,
    "plan": "departments/04-gushang/11-guanjie-bing-xue/video/教案.md"
   },
   {
@@ -6093,7 +6093,7 @@
      "label": "本仓自建视频课（HLS）",
      "kind": "platform",
      "lectures": 8,
-     "durationSec": 4313.738,
+     "durationSec": 5099.598,
      "path": "platform/courses/04-gushang/12-guzhishusong-tuibian",
      "rows": [
       {
@@ -6157,7 +6157,7 @@
    ],
    "lectures": 8,
    "cues": 0,
-   "durationSec": 4313.738,
+   "durationSec": 5099.598,
    "plan": "departments/04-gushang/12-guzhishusong-tuibian/video/教案.md"
   },
   {
@@ -6167,12 +6167,79 @@
    "deptTitle": "骨伤系",
    "semester": 7,
    "chapters": 8,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 8,
+     "durationSec": 5375.28,
+     "path": "platform/courses/04-gushang/13-zhongyi-zhengji-xue",
+     "rows": [
+      {
+       "title": "整脊的第一道门槛不是手法，是「什么算有效」",
+       "durationSec": 703,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "脊柱的稳定不是骨头撑住的，是三种组织在互相欠账",
+       "durationSec": 710,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "影像的用法是排除禁忌，不是找病因",
+       "durationSec": 656,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "手法分三层，风险也分三层，两层必须一一对上",
+       "durationSec": 629,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "颈椎不是一段，是两段，风险也在两段之间分",
+       "durationSec": 747,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "胸腰段的手法失误，多半不是瘫，是折",
+       "durationSec": 650,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "骨盆是地基，但「地基歪了」是最容易被滥用的一句话",
+       "durationSec": 640,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "不良事件不是意外，是可以分类的事件",
+       "durationSec": 640,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 8,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 5375.28,
+   "plan": "departments/04-gushang/13-zhongyi-zhengji-xue/video/教案.md"
   },
   {
    "slug": "14-kangfu-gongcheng-zhiju",
@@ -6417,7 +6484,7 @@
      "label": "本仓自建视频课（HLS）",
      "kind": "platform",
      "lectures": 6,
-     "durationSec": 2832.77,
+     "durationSec": 3040.556,
      "path": "platform/courses/04-gushang/17-gushang-biye-sheji",
      "rows": [
       {
@@ -6467,7 +6534,7 @@
    ],
    "lectures": 6,
    "cues": 0,
-   "durationSec": 2832.77,
+   "durationSec": 3040.556,
    "plan": "departments/04-gushang/17-gushang-biye-sheji/video/教案.md"
   },
   {
@@ -7956,7 +8023,7 @@
      "label": "本仓自建视频课（HLS）",
      "kind": "platform",
      "lectures": 10,
-     "durationSec": 7689.5,
+     "durationSec": 8108.853,
      "path": "platform/courses/09-jichu/01-renti-jiepou-xue",
      "rows": [
       {
@@ -8034,7 +8101,7 @@
    ],
    "lectures": 10,
    "cues": 0,
-   "durationSec": 7689.5,
+   "durationSec": 8108.853,
    "plan": "departments/09-jichu/01-renti-jiepou-xue/video/教案.md"
   },
   {
@@ -8051,7 +8118,7 @@
      "label": "本仓自建视频课（HLS）",
      "kind": "platform",
      "lectures": 20,
-     "durationSec": 13872.364,
+     "durationSec": 14438.904,
      "path": "platform/courses/09-jichu/02-zuzhi-peitai-xue",
      "rows": [
       {
@@ -8199,7 +8266,7 @@
    ],
    "lectures": 20,
    "cues": 0,
-   "durationSec": 13872.364,
+   "durationSec": 14438.904,
    "plan": "departments/09-jichu/02-zuzhi-peitai-xue/video/教案.md"
   },
   {
@@ -8216,7 +8283,7 @@
      "label": "本仓自建视频课（HLS）",
      "kind": "platform",
      "lectures": 12,
-     "durationSec": 5850.954,
+     "durationSec": 5851.026,
      "path": "platform/courses/09-jichu/03-yixue-xibao-shengwu-xue",
      "rows": [
       {
@@ -8308,7 +8375,7 @@
    ],
    "lectures": 12,
    "cues": 0,
-   "durationSec": 5850.954,
+   "durationSec": 5851.026,
    "plan": "departments/09-jichu/03-yixue-xibao-shengwu-xue/video/教案.md"
   },
   {
@@ -8325,7 +8392,7 @@
      "label": "本仓自建视频课（HLS）",
      "kind": "platform",
      "lectures": 16,
-     "durationSec": 7729.366,
+     "durationSec": 8181.374,
      "path": "platform/courses/09-jichu/04-yixue-shengwu-xue",
      "rows": [
       {
@@ -8445,7 +8512,7 @@
    ],
    "lectures": 16,
    "cues": 0,
-   "durationSec": 7729.366,
+   "durationSec": 8181.374,
    "plan": "departments/09-jichu/04-yixue-shengwu-xue/video/教案.md"
   },
   {
@@ -8462,7 +8529,7 @@
      "label": "本仓自建视频课（HLS）",
      "kind": "platform",
      "lectures": 18,
-     "durationSec": 10303.26,
+     "durationSec": 11014.37,
      "path": "platform/courses/09-jichu/05-zhengchang-renti-xue",
      "rows": [
       {
@@ -8596,7 +8663,7 @@
    ],
    "lectures": 18,
    "cues": 0,
-   "durationSec": 10303.26,
+   "durationSec": 11014.37,
    "plan": "departments/09-jichu/05-zhengchang-renti-xue/video/教案.md"
   },
   {
@@ -8613,7 +8680,7 @@
      "label": "本仓自建视频课（HLS）",
      "kind": "platform",
      "lectures": 11,
-     "durationSec": 5304.965,
+     "durationSec": 20553.631,
      "path": "platform/courses/09-jichu/06-shengli-xue",
      "rows": [
       {
@@ -8698,7 +8765,7 @@
    ],
    "lectures": 11,
    "cues": 0,
-   "durationSec": 5304.965,
+   "durationSec": 20553.631,
    "plan": "departments/09-jichu/06-shengli-xue/video/教案.md"
   },
   {
@@ -8708,12 +8775,170 @@
    "deptTitle": "基础医学院",
    "semester": 2,
    "chapters": 21,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 21,
+     "durationSec": 11531.515,
+     "path": "platform/courses/09-jichu/07-shenghua-xue",
+     "rows": [
+      {
+       "title": "生物化学不背物质清单，它追问的是分子之间那条因果链",
+       "durationSec": 508,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "糖的身份由羟基的朝向决定，甜不甜与认不认得是两件事",
+       "durationSec": 497,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "脂质不溶于水不是缺陷，是它被选来做膜与储能的原因",
+       "durationSec": 448,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "蛋白质的功能写在序列里，但要等折叠完成才读得出来",
+       "durationSec": 541,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "碱基配对只有一种几何解，核酸才能同时做储存与复制",
+       "durationSec": 521,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "酶的高效来自降低活化能，专一来自形状互补",
+       "durationSec": 485,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "维生素本身不供能，它的价值在辅酶那一半",
+       "durationSec": 510,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "呼吸链不是管道，是按氧化还原电位排好的一组能量台阶",
+       "durationSec": 551,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      },
+      {
+       "title": "血糖稳住不靠某一步强，靠三条去路与两条来路互相顶着",
+       "durationSec": 565,
+       "status": "rendered",
+       "no": 9,
+       "cues": 0
+      },
+      {
+       "title": "脂肪是能量的仓库，但仓门由激素与载脂蛋白两把钥匙管着",
+       "durationSec": 560,
+       "status": "rendered",
+       "no": 10,
+       "cues": 0
+      },
+      {
+       "title": "氨基酸的氮比碳难处理，所以身体把它转成尿素排掉",
+       "durationSec": 667,
+       "status": "rendered",
+       "no": 11,
+       "cues": 0
+      },
+      {
+       "title": "碱基环能否被打开，决定了核苷酸代谢的两条终点与两套药理",
+       "durationSec": 572,
+       "status": "rendered",
+       "no": 12,
+       "cues": 0
+      },
+      {
+       "title": "代谢调节的要害不在开关，而在多条途径争夺同一个中间产物池",
+       "durationSec": 650,
+       "status": "rendered",
+       "no": 13,
+       "cues": 0
+      },
+      {
+       "title": "血液把全身代谢摊进一管样本，判读靠的是成分之间的比值",
+       "durationSec": 587,
+       "status": "rendered",
+       "no": 14,
+       "cues": 0
+      },
+      {
+       "title": "肝脏把不溶于水的东西改造成溶于水，代价是中间产物可能更毒",
+       "durationSec": 616,
+       "status": "rendered",
+       "no": 15,
+       "cues": 0
+      },
+      {
+       "title": "酸碱紊乱的判据不是 pH 落没落在区间里，而是代偿有没有到位",
+       "durationSec": 538,
+       "status": "rendered",
+       "no": 16,
+       "cues": 0
+      },
+      {
+       "title": "DNA 复制的一切别扭，都是聚合酶只会朝一个方向延长逼出来的",
+       "durationSec": 455,
+       "status": "rendered",
+       "no": 17,
+       "cues": 0
+      },
+      {
+       "title": "转录的全部调控空间在起点、终点与剪接，抄写本身没有选择余地",
+       "durationSec": 518,
+       "status": "rendered",
+       "no": 18,
+       "cues": 0
+      },
+      {
+       "title": "翻译的准确不靠一条规则，而靠两次校对与四次高能键的预付",
+       "durationSec": 674,
+       "status": "rendered",
+       "no": 19,
+       "cues": 0
+      },
+      {
+       "title": "原核用一套操纵子省能量，真核用五层关卡换精细",
+       "durationSec": 509,
+       "status": "rendered",
+       "no": 20,
+       "cues": 0
+      },
+      {
+       "title": "分子技术的选择不看好坏，只看它那个致命假设你的样本能不能满足",
+       "durationSec": 560,
+       "status": "rendered",
+       "no": 21,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 21,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 11531.515,
+   "plan": "departments/09-jichu/07-shenghua-xue/video/教案.md"
   },
   {
    "slug": "08-jubu-jiepou-xue",
@@ -8729,7 +8954,7 @@
      "label": "本仓自建视频课（HLS）",
      "kind": "platform",
      "lectures": 9,
-     "durationSec": 7034.371,
+     "durationSec": 7771.103,
      "path": "platform/courses/09-jichu/08-jubu-jiepou-xue",
      "rows": [
       {
@@ -8800,7 +9025,7 @@
    ],
    "lectures": 9,
    "cues": 0,
-   "durationSec": 7034.371,
+   "durationSec": 7771.103,
    "plan": "departments/09-jichu/08-jubu-jiepou-xue/video/教案.md"
   },
   {
@@ -8817,7 +9042,7 @@
      "label": "本仓自建视频课（HLS）",
      "kind": "platform",
      "lectures": 12,
-     "durationSec": 6415.634,
+     "durationSec": 6636.465,
      "path": "platform/courses/09-jichu/09-yixue-yichuan-xue",
      "rows": [
       {
@@ -8909,7 +9134,7 @@
    ],
    "lectures": 12,
    "cues": 0,
-   "durationSec": 6415.634,
+   "durationSec": 6636.465,
    "plan": "departments/09-jichu/09-yixue-yichuan-xue/video/教案.md"
   },
   {

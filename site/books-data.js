@@ -4,8 +4,8 @@ window.TCMAI_BOOKS = {
   "series": "中医药 · 从零工程",
   "totals": {
     "volumes": 5,
-    "chapters": 2153,
-    "words": 36629970,
+    "chapters": 2161,
+    "words": 37381368,
     "epub": 5,
     "epubOnDisk": 5,
     "pdfOnDisk": 5
@@ -24,26 +24,26 @@ window.TCMAI_BOOKS = {
       ],
       "audience": "中医药专业低年级学生 + 有编程基础想入门中医者",
       "focus": "阴阳五行藏象的诊断学翻译，从八纲到四诊的形式化",
-      "chapters": 806,
-      "words": 13429044,
+      "chapters": 814,
+      "words": 13740897,
       "epub": {
         "path": "textbooks/build/volume-1-sheng.epub",
-        "bytes": 15514923,
+        "bytes": 16231859,
         "ok": true
       },
       "pdf": {
         "path": "textbooks/build/volume-1-sheng.pdf",
-        "bytes": 32302596,
+        "bytes": 33652934,
         "ok": true
       },
       "html": {
         "path": "textbooks/build/volume-1-sheng.html",
-        "bytes": 47433552,
+        "bytes": 48696304,
         "ok": true
       },
       "md": {
         "path": "textbooks/build/volume-1-sheng.md",
-        "bytes": 39993608,
+        "bytes": 41132249,
         "ok": true
       },
       "release": [
@@ -73,25 +73,25 @@ window.TCMAI_BOOKS = {
       "audience": "已能读写基础代码的中医药学生",
       "focus": "伤寒金匮温病的状态建模、中药方剂的嵌入表示、专科辨证",
       "chapters": 808,
-      "words": 11938331,
+      "words": 12206397,
       "epub": {
         "path": "textbooks/build/volume-2-zhang.epub",
-        "bytes": 13766565,
+        "bytes": 14268134,
         "ok": true
       },
       "pdf": {
         "path": "textbooks/build/volume-2-zhang.pdf",
-        "bytes": 28893348,
+        "bytes": 29937237,
         "ok": true
       },
       "html": {
         "path": "textbooks/build/volume-2-zhang.html",
-        "bytes": 37725240,
+        "bytes": 39306231,
         "ok": true
       },
       "md": {
         "path": "textbooks/build/volume-2-zhang.md",
-        "bytes": 35140586,
+        "bytes": 36405764,
         "ok": true
       },
       "release": [
@@ -121,25 +121,25 @@ window.TCMAI_BOOKS = {
       "audience": "具备完整工程能力的四年级学生",
       "focus": "大模型与智能体、多模态融合、知识图谱、设备与机器人、治理与伦理",
       "chapters": 409,
-      "words": 11026235,
+      "words": 11197714,
       "epub": {
         "path": "textbooks/build/volume-3-zhuang.epub",
-        "bytes": 12605836,
+        "bytes": 12925152,
         "ok": true
       },
       "pdf": {
         "path": "textbooks/build/volume-3-zhuang.pdf",
-        "bytes": 27768511,
+        "bytes": 28435736,
         "ok": true
       },
       "html": {
         "path": "textbooks/build/volume-3-zhuang.html",
-        "bytes": 36261588,
+        "bytes": 37280893,
         "ok": true
       },
       "md": {
         "path": "textbooks/build/volume-3-zhuang.md",
-        "bytes": 32604291,
+        "bytes": 33424365,
         "ok": true
       },
       "release": [
@@ -171,22 +171,22 @@ window.TCMAI_BOOKS = {
       "words": 101841,
       "epub": {
         "path": "textbooks/build/volume-4-lao.epub",
-        "bytes": 326945,
+        "bytes": 338827,
         "ok": true
       },
       "pdf": {
         "path": "textbooks/build/volume-4-lao.pdf",
-        "bytes": 651748,
+        "bytes": 668806,
         "ok": true
       },
       "html": {
         "path": "textbooks/build/volume-4-lao.html",
-        "bytes": 383254,
+        "bytes": 401106,
         "ok": true
       },
       "md": {
         "path": "textbooks/build/volume-4-lao.md",
-        "bytes": 300901,
+        "bytes": 311750,
         "ok": true
       },
       "release": [
@@ -218,22 +218,22 @@ window.TCMAI_BOOKS = {
       "words": 134519,
       "epub": {
         "path": "textbooks/build/volume-5-yi.epub",
-        "bytes": 391410,
+        "bytes": 404954,
         "ok": true
       },
       "pdf": {
         "path": "textbooks/build/volume-5-yi.pdf",
-        "bytes": 712501,
+        "bytes": 729960,
         "ok": true
       },
       "html": {
         "path": "textbooks/build/volume-5-yi.html",
-        "bytes": 504457,
+        "bytes": 526309,
         "ok": true
       },
       "md": {
         "path": "textbooks/build/volume-5-yi.md",
-        "bytes": 391573,
+        "bytes": 405503,
         "ok": true
       },
       "release": [

@@ -3,10 +3,10 @@
  "derivedFrom": "data/video-lessons.json（scripts/build_video_lessons.js）",
  "note": "讲 → 教学章 → 教材章 三线挂接。needs-segmentation 表示讲数多于教学章数，未强行分配（不许平摊冒充挂接）；no-textbook 表示该课没有教材稿。",
  "totals": {
-  "courses": 55,
-  "lectures": 916,
-  "linkedCourses": 25,
-  "linkedLectures": 666,
+  "courses": 57,
+  "lectures": 945,
+  "linkedCourses": 26,
+  "linkedLectures": 687,
   "needsSegmentation": [
    "07-shanghanlun"
   ],
@@ -24,6 +24,7 @@
    "10-jizhu-bing-xue",
    "11-guanjie-bing-xue",
    "12-guzhishusong-tuibian",
+   "13-zhongyi-zhengji-xue",
    "14-kangfu-gongcheng-zhiju",
    "15-gushang-kangfu-pingding",
    "09-yixue-yichuan-xue"
@@ -4575,7 +4576,7 @@
    "rows": [
     {
      "lectureNo": 1,
-     "title": "《金匮要略》不是「杂病方书」，是一部 402 条的筛选器",
+     "title": "第1章 《金匮要略》不是「杂病方书」，是一部 402 条的筛选器",
      "durationSec": 419,
      "cues": 0,
      "source": "platform",
@@ -4596,7 +4597,7 @@
     },
     {
      "lectureNo": 2,
-     "title": "十七句话，把「治病」改成「预判」",
+     "title": "第2章 十七句话，把「治病」改成「预判」",
      "durationSec": 1178,
      "cues": 0,
      "source": "platform",
@@ -4617,7 +4618,7 @@
     },
     {
      "lectureNo": 3,
-     "title": "痉湿暍：外邪入体后的三条错路，和一份 9 条的误治清单",
+     "title": "第3章 痉湿暍：外邪入体后的三条错路，和一份 9 条的误治清单",
      "durationSec": 1247,
      "cues": 0,
      "source": "platform",
@@ -4638,7 +4639,7 @@
     },
     {
      "lectureNo": 4,
-     "title": "少见病不是罕见病，是必须先排除才敢下诊断的病",
+     "title": "第4章 少见病不是罕见病，是必须先排除才敢下诊断的病",
      "durationSec": 1213,
      "cues": 0,
      "source": "platform",
@@ -4659,7 +4660,7 @@
     },
     {
      "lectureNo": 5,
-     "title": "疟的节律与中风的痹阻：两篇「判据极短」的病",
+     "title": "第5章 疟的节律与中风的痹阻：两篇「判据极短」的病",
      "durationSec": 1297,
      "cues": 0,
      "source": "platform",
@@ -4680,7 +4681,7 @@
     },
     {
      "lectureNo": 6,
-     "title": "血痹虚劳：虚损不是一种病，是五个深度",
+     "title": "第6章 血痹虚劳：虚损不是一种病，是五个深度",
      "durationSec": 1109,
      "cues": 0,
      "source": "platform",
@@ -4701,7 +4702,7 @@
     },
     {
      "lectureNo": 7,
-     "title": "痰饮咳嗽：水液代谢的失效",
+     "title": "第7章 痰饮咳嗽：水液代谢的失效",
      "durationSec": 1309,
      "cues": 0,
      "source": "platform",
@@ -4722,7 +4723,7 @@
     },
     {
      "lectureNo": 8,
-     "title": "消渴与淋病：把「喝进去的」与「排出来的」对上账",
+     "title": "第8章 消渴与淋病：把「喝进去的」与「排出来的」对上账",
      "durationSec": 809,
      "cues": 0,
      "source": "platform",
@@ -4743,7 +4744,7 @@
     },
     {
      "lectureNo": 9,
-     "title": "妇人病三篇：不是「妇科专章」，是把经带胎产拆成三段",
+     "title": "第9章 妇人病三篇：不是「妇科专章」，是把经带胎产拆成三段",
      "durationSec": 1780,
      "cues": 0,
      "source": "platform",
@@ -4764,7 +4765,7 @@
     },
     {
      "lectureNo": 10,
-     "title": "174 个方里，只有 165 个能算配伍",
+     "title": "第10章 174 个方里，只有 165 个能算配伍",
      "durationSec": 1204,
      "cues": 0,
      "source": "platform",
@@ -4785,7 +4786,7 @@
     },
     {
      "lectureNo": 11,
-     "title": "肺痿与肺痈的分界不在症状堆叠，而在脉的一虚一实",
+     "title": "第11章 肺痿与肺痈的分界不在症状堆叠，而在脉的一虚一实",
      "durationSec": 744,
      "cues": 0,
      "source": "platform",
@@ -4806,7 +4807,7 @@
     },
     {
      "lectureNo": 12,
-     "title": "同一个「气从少腹上冲」，三首方靠来路分开而不是靠冲劲分开",
+     "title": "第12章 同一个「气从少腹上冲」，三首方靠来路分开而不是靠冲劲分开",
      "durationSec": 380,
      "cues": 0,
      "source": "platform",
@@ -4827,7 +4828,7 @@
     },
     {
      "lectureNo": 13,
-     "title": "胸痹的方条比是 1.00，但这个 1 是两个口径相互抵消出来的",
+     "title": "第13章 胸痹的方条比是 1.00，但这个 1 是两个口径相互抵消出来的",
      "durationSec": 505,
      "cues": 0,
      "source": "platform",
@@ -4848,7 +4849,7 @@
     },
     {
      "lectureNo": 14,
-     "title": "腹满篇前八条不出方，先用八条判据把「温、下、吐」三条路分开",
+     "title": "第14章 腹满篇前八条不出方，先用八条判据把「温、下、吐」三条路分开",
      "durationSec": 769,
      "cues": 0,
      "source": "platform",
@@ -4869,7 +4870,7 @@
     },
     {
      "lectureNo": 15,
-     "title": "二十条只出三方，这一篇交付的是五脏定位表而不是方剂",
+     "title": "第15章 二十条只出三方，这一篇交付的是五脏定位表而不是方剂",
      "durationSec": 555,
      "cues": 0,
      "source": "platform",
@@ -4890,7 +4891,7 @@
     },
     {
      "lectureNo": 16,
-     "title": "全书最长的一篇水气，用四套分类切同一批病而不互相替代",
+     "title": "第16章 全书最长的一篇水气，用四套分类切同一批病而不互相替代",
      "durationSec": 1010,
      "cues": 0,
      "source": "platform",
@@ -4911,7 +4912,7 @@
     },
     {
      "lectureNo": 17,
-     "title": "黄疸先分三个入口，再谈利小便——入口错了，利小便就是空话",
+     "title": "第17章 黄疸先分三个入口，再谈利小便——入口错了，利小便就是空话",
      "durationSec": 593,
      "cues": 0,
      "source": "platform",
@@ -4932,7 +4933,7 @@
     },
     {
      "lectureNo": 18,
-     "title": "十七条里十条在辨「这是不是血的问题」，方只留给后六条",
+     "title": "第18章 十七条里十条在辨「这是不是血的问题」，方只留给后六条",
      "durationSec": 467,
      "cues": 0,
      "source": "platform",
@@ -4953,7 +4954,7 @@
     },
     {
      "lectureNo": 19,
-     "title": "四十七条切成呕哕与下利两半，两半的节奏完全不同",
+     "title": "第19章 四十七条切成呕哕与下利两半，两半的节奏完全不同",
      "durationSec": 933,
      "cues": 0,
      "source": "platform",
@@ -4974,7 +4975,7 @@
     },
     {
      "lectureNo": 20,
-     "title": "八条里出现六个方名，而「方数」只算三个——三层差在哪里",
+     "title": "第20章 八条里出现六个方名，而「方数」只算三个——三层差在哪里",
      "durationSec": 423,
      "cues": 0,
      "source": "platform",
@@ -4995,7 +4996,7 @@
     },
     {
      "lectureNo": 21,
-     "title": "八个互不相关的小病串成一篇，每个病自带一条治法",
+     "title": "第21章 八个互不相关的小病串成一篇，每个病自带一条治法",
      "durationSec": 394,
      "cues": 0,
      "source": "platform",
@@ -5016,7 +5017,7 @@
     },
     {
      "lectureNo": 22,
-     "title": "底本只给一条，四十六段里藏着十七首方——附篇的单位是方不是条",
+     "title": "第22章 底本只给一条，四十六段里藏着十七首方——附篇的单位是方不是条",
      "durationSec": 691,
      "cues": 0,
      "source": "platform",
@@ -5037,7 +5038,7 @@
     },
     {
      "lectureNo": 23,
-     "title": "一百三十三段禁忌不是清单，是一张「禁什么—中了什么症—用什么解」的三栏表",
+     "title": "第23章 一百三十三段禁忌不是清单，是一张「禁什么—中了什么症—用什么解」的三栏表",
      "durationSec": 912,
      "cues": 0,
      "source": "platform",
@@ -5058,7 +5059,7 @@
     },
     {
      "lectureNo": 24,
-     "title": "本篇没有总论，总论在上一篇开头；它的框由别人给的两端撑着",
+     "title": "第24章 本篇没有总论，总论在上一篇开头；它的框由别人给的两端撑着",
      "durationSec": 716,
      "cues": 0,
      "source": "platform",
@@ -12435,6 +12436,142 @@
   },
   {
    "dept": "04-gushang",
+   "slug": "13-zhongyi-zhengji-xue",
+   "title": "中医整脊学",
+   "semester": 7,
+   "videoStatus": "platform",
+   "lectures": 8,
+   "teachingChapters": 8,
+   "textbookChapters": 0,
+   "mappedBy": null,
+   "status": "no-textbook",
+   "linkedLectures": 0,
+   "unlinkedLectures": 8,
+   "rows": [
+    {
+     "lectureNo": 1,
+     "title": "整脊的第一道门槛不是手法，是「什么算有效」",
+     "durationSec": 703,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 1,
+      "title": "整脊的第一道门槛不是手法，是「什么算有效」"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 2,
+     "title": "脊柱的稳定不是骨头撑住的，是三种组织在互相欠账",
+     "durationSec": 710,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 2,
+      "title": "脊柱的稳定不是骨头撑住的，是三种组织在互相欠账"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 3,
+     "title": "影像的用法是排除禁忌，不是找病因",
+     "durationSec": 656,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 3,
+      "title": "影像的用法是排除禁忌，不是找病因"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 4,
+     "title": "手法分三层，风险也分三层，两层必须一一对上",
+     "durationSec": 629,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 4,
+      "title": "手法分三层，风险也分三层，两层必须一一对上"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 5,
+     "title": "颈椎不是一段，是两段，风险也在两段之间分",
+     "durationSec": 747,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 5,
+      "title": "颈椎不是一段，是两段，风险也在两段之间分"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 6,
+     "title": "胸腰段的手法失误，多半不是瘫，是折",
+     "durationSec": 650,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 6,
+      "title": "胸腰段的手法失误，多半不是瘫，是折"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 7,
+     "title": "骨盆是地基，但「地基歪了」是最容易被滥用的一句话",
+     "durationSec": 640,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 7,
+      "title": "骨盆是地基，但「地基歪了」是最容易被滥用的一句话"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 8,
+     "title": "不良事件不是意外，是可以分类的事件",
+     "durationSec": 640,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 8,
+      "title": "不良事件不是意外，是可以分类的事件"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    }
+   ]
+  },
+  {
+   "dept": "04-gushang",
    "slug": "14-kangfu-gongcheng-zhiju",
    "title": "康复工程与支具学",
    "semester": 8,
@@ -15304,6 +15441,463 @@
        "no": 11,
        "title": "感觉器官",
        "file": "textbooks/09-jichu/06-shengli-xue/11-第11章-感觉器官.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    }
+   ]
+  },
+  {
+   "dept": "09-jichu",
+   "slug": "07-shenghua-xue",
+   "title": "生物化学",
+   "semester": 2,
+   "videoStatus": "platform",
+   "lectures": 21,
+   "teachingChapters": 21,
+   "textbookChapters": 21,
+   "mappedBy": "teaching=textbook 序号",
+   "status": "linked",
+   "linkedLectures": 21,
+   "unlinkedLectures": 0,
+   "rows": [
+    {
+     "lectureNo": 1,
+     "title": "生物化学不背物质清单，它追问的是分子之间那条因果链",
+     "durationSec": 508,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 1,
+      "title": "生物化学不背物质清单，它追问的是分子之间那条因果链"
+     },
+     "textbook": [
+      {
+       "no": 1,
+       "title": "绪论",
+       "file": "textbooks/09-jichu/07-shenghua-xue/01-第1章-绪论.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 2,
+     "title": "糖的身份由羟基的朝向决定，甜不甜与认不认得是两件事",
+     "durationSec": 497,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 2,
+      "title": "糖的身份由羟基的朝向决定，甜不甜与认不认得是两件事"
+     },
+     "textbook": [
+      {
+       "no": 2,
+       "title": "糖化学",
+       "file": "textbooks/09-jichu/07-shenghua-xue/02-第2章-糖化学.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 3,
+     "title": "脂质不溶于水不是缺陷，是它被选来做膜与储能的原因",
+     "durationSec": 448,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 3,
+      "title": "脂质不溶于水不是缺陷，是它被选来做膜与储能的原因"
+     },
+     "textbook": [
+      {
+       "no": 3,
+       "title": "脂质化学",
+       "file": "textbooks/09-jichu/07-shenghua-xue/03-第3章-脂质化学.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 4,
+     "title": "蛋白质的功能写在序列里，但要等折叠完成才读得出来",
+     "durationSec": 541,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 4,
+      "title": "蛋白质的功能写在序列里，但要等折叠完成才读得出来"
+     },
+     "textbook": [
+      {
+       "no": 4,
+       "title": "蛋白质化学",
+       "file": "textbooks/09-jichu/07-shenghua-xue/04-第4章-蛋白质化学.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 5,
+     "title": "碱基配对只有一种几何解，核酸才能同时做储存与复制",
+     "durationSec": 521,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 5,
+      "title": "碱基配对只有一种几何解，核酸才能同时做储存与复制"
+     },
+     "textbook": [
+      {
+       "no": 5,
+       "title": "核酸化学",
+       "file": "textbooks/09-jichu/07-shenghua-xue/05-第5章-核酸化学.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 6,
+     "title": "酶的高效来自降低活化能，专一来自形状互补",
+     "durationSec": 485,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 6,
+      "title": "酶的高效来自降低活化能，专一来自形状互补"
+     },
+     "textbook": [
+      {
+       "no": 6,
+       "title": "酶",
+       "file": "textbooks/09-jichu/07-shenghua-xue/06-第6章-酶.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 7,
+     "title": "维生素本身不供能，它的价值在辅酶那一半",
+     "durationSec": 510,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 7,
+      "title": "维生素本身不供能，它的价值在辅酶那一半"
+     },
+     "textbook": [
+      {
+       "no": 7,
+       "title": "维生素和微量元素",
+       "file": "textbooks/09-jichu/07-shenghua-xue/07-第7章-维生素和微量元素.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 8,
+     "title": "呼吸链不是管道，是按氧化还原电位排好的一组能量台阶",
+     "durationSec": 551,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 8,
+      "title": "呼吸链不是管道，是按氧化还原电位排好的一组能量台阶"
+     },
+     "textbook": [
+      {
+       "no": 8,
+       "title": "生物氧化与能量代谢",
+       "file": "textbooks/09-jichu/07-shenghua-xue/08-第8章-生物氧化与能量代谢.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 9,
+     "title": "血糖稳住不靠某一步强，靠三条去路与两条来路互相顶着",
+     "durationSec": 565,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 9,
+      "title": "血糖稳住不靠某一步强，靠三条去路与两条来路互相顶着"
+     },
+     "textbook": [
+      {
+       "no": 9,
+       "title": "糖代谢",
+       "file": "textbooks/09-jichu/07-shenghua-xue/09-第9章-糖代谢.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 10,
+     "title": "脂肪是能量的仓库，但仓门由激素与载脂蛋白两把钥匙管着",
+     "durationSec": 560,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 10,
+      "title": "脂肪是能量的仓库，但仓门由激素与载脂蛋白两把钥匙管着"
+     },
+     "textbook": [
+      {
+       "no": 10,
+       "title": "脂质代谢",
+       "file": "textbooks/09-jichu/07-shenghua-xue/10-第10章-脂质代谢.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 11,
+     "title": "氨基酸的氮比碳难处理，所以身体把它转成尿素排掉",
+     "durationSec": 667,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 11,
+      "title": "氨基酸的氮比碳难处理，所以身体把它转成尿素排掉"
+     },
+     "textbook": [
+      {
+       "no": 11,
+       "title": "氨基酸代谢",
+       "file": "textbooks/09-jichu/07-shenghua-xue/11-第11章-氨基酸代谢.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 12,
+     "title": "碱基环能否被打开，决定了核苷酸代谢的两条终点与两套药理",
+     "durationSec": 572,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 12,
+      "title": "碱基环能否被打开，决定了核苷酸代谢的两条终点与两套药理"
+     },
+     "textbook": [
+      {
+       "no": 12,
+       "title": "核苷酸代谢",
+       "file": "textbooks/09-jichu/07-shenghua-xue/12-第12章-核苷酸代谢.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 13,
+     "title": "代谢调节的要害不在开关，而在多条途径争夺同一个中间产物池",
+     "durationSec": 650,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 13,
+      "title": "代谢调节的要害不在开关，而在多条途径争夺同一个中间产物池"
+     },
+     "textbook": [
+      {
+       "no": 13,
+       "title": "代谢调节",
+       "file": "textbooks/09-jichu/07-shenghua-xue/13-第13章-代谢调节.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 14,
+     "title": "血液把全身代谢摊进一管样本，判读靠的是成分之间的比值",
+     "durationSec": 587,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 14,
+      "title": "血液把全身代谢摊进一管样本，判读靠的是成分之间的比值"
+     },
+     "textbook": [
+      {
+       "no": 14,
+       "title": "血液生化",
+       "file": "textbooks/09-jichu/07-shenghua-xue/14-第14章-血液生化.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 15,
+     "title": "肝脏把不溶于水的东西改造成溶于水，代价是中间产物可能更毒",
+     "durationSec": 616,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 15,
+      "title": "肝脏把不溶于水的东西改造成溶于水，代价是中间产物可能更毒"
+     },
+     "textbook": [
+      {
+       "no": 15,
+       "title": "肝胆生化",
+       "file": "textbooks/09-jichu/07-shenghua-xue/15-第15章-肝胆生化.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 16,
+     "title": "酸碱紊乱的判据不是 pH 落没落在区间里，而是代偿有没有到位",
+     "durationSec": 538,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 16,
+      "title": "酸碱紊乱的判据不是 pH 落没落在区间里，而是代偿有没有到位"
+     },
+     "textbook": [
+      {
+       "no": 16,
+       "title": "水盐代谢和酸碱平衡",
+       "file": "textbooks/09-jichu/07-shenghua-xue/16-第16章-水盐代谢和酸碱平衡.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 17,
+     "title": "DNA 复制的一切别扭，都是聚合酶只会朝一个方向延长逼出来的",
+     "durationSec": 455,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 17,
+      "title": "DNA 复制的一切别扭，都是聚合酶只会朝一个方向延长逼出来的"
+     },
+     "textbook": [
+      {
+       "no": 17,
+       "title": "DNA的生物合成",
+       "file": "textbooks/09-jichu/07-shenghua-xue/17-第17章-DNA的生物合成.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 18,
+     "title": "转录的全部调控空间在起点、终点与剪接，抄写本身没有选择余地",
+     "durationSec": 518,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 18,
+      "title": "转录的全部调控空间在起点、终点与剪接，抄写本身没有选择余地"
+     },
+     "textbook": [
+      {
+       "no": 18,
+       "title": "RNA的生物合成",
+       "file": "textbooks/09-jichu/07-shenghua-xue/18-第18章-RNA的生物合成.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 19,
+     "title": "翻译的准确不靠一条规则，而靠两次校对与四次高能键的预付",
+     "durationSec": 674,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 19,
+      "title": "翻译的准确不靠一条规则，而靠两次校对与四次高能键的预付"
+     },
+     "textbook": [
+      {
+       "no": 19,
+       "title": "蛋白质的生物合成",
+       "file": "textbooks/09-jichu/07-shenghua-xue/19-第19章-蛋白质的生物合成.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 20,
+     "title": "原核用一套操纵子省能量，真核用五层关卡换精细",
+     "durationSec": 509,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 20,
+      "title": "原核用一套操纵子省能量，真核用五层关卡换精细"
+     },
+     "textbook": [
+      {
+       "no": 20,
+       "title": "基因表达调控",
+       "file": "textbooks/09-jichu/07-shenghua-xue/20-第20章-基因表达调控.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 21,
+     "title": "分子技术的选择不看好坏，只看它那个致命假设你的样本能不能满足",
+     "durationSec": 560,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 21,
+      "title": "分子技术的选择不看好坏，只看它那个致命假设你的样本能不能满足"
+     },
+     "textbook": [
+      {
+       "no": 21,
+       "title": "生物化学与分子生物学常用技术",
+       "file": "textbooks/09-jichu/07-shenghua-xue/21-第21章-生物化学与分子生物学常用技术.md"
       }
      ],
      "linkedBy": "order",
