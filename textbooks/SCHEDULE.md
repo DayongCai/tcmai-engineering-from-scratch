@@ -1,7 +1,7 @@
 # 院系内课程教学进度（[textbooks] 教材 × [curriculum] 排课）
 
 > 本文件由 `node scripts/build_textbook_board.js` 生成，**勿手改**。
-> 生成日期 2026-11-27 · 口径：18 教学周（16 讲授 + 1 复习 + 1 考核）· 周学时 = 学时 ÷ 18。
+> 生成日期 2026-11-28 · 口径：18 教学周（16 讲授 + 1 复习 + 1 考核）· 周学时 = 学时 ÷ 18。
 
 ## 排课规则（先立规则，再排表）
 
@@ -392,13 +392,13 @@
 
 ## 缺口清单（教材出版线未接；不等于没写）
 
-本节 46 门课里，**46 门已在教学章写了正文**（404 章 / 159.5 万字），
+本节 46 门课里，**46 门已在教学章写了正文**（404 章 / 159.6 万字），
 只是没进 `textbooks/` 出版流水线（无底本逐章对应、无改写层、不进五卷）；真正「源表无正文」的 0 门。
 
 | 判定 | 门数 | 含义 |
 |---|--:|---|
 | 教材线已接 | 143 | `textbooks/` 有章，进五卷与看板章数 |
-| 有正文、未接出版线 | 46 | 教学章 404 章 / 159.5 万字，可直接改写成教材稿 |
+| 有正文、未接出版线 | 46 | 教学章 404 章 / 159.6 万字，可直接改写成教材稿 |
 | 源表无正文 | 0 | 只有大纲表，得先补底本 |
 
 ### ☯️ 中医系 · 缺 1 门
@@ -420,7 +420,7 @@
 
 | 学科 | 类型 | 学期 | 学时 | 原因 |
 |------|------|------|------|------|
-| 康复医学基础 `09-kangfu-yixue-jichu` | 核心 | 5 | 54 | 教学章已有正文（8 章 / 4.2 万字），未接教材出版线 |
+| 康复医学基础 `09-kangfu-yixue-jichu` | 核心 | 5 | 54 | 教学章已有正文（8 章 / 4.3 万字），未接教材出版线 |
 | 物理治疗与运动康复 `11-wuli-zhiliao` | 工程 | 6 | 54 | 教学章已有正文（8 章 / 4.3 万字），未接教材出版线 |
 | 耳穴诊治学 `12-erxue-zhenduan-xue` | 工程 | 6 | 54 | 教学章已有正文（8 章 / 3.8 万字），未接教材出版线 |
 | 针刀医学 `13-zhendao-yixue` | 临床 | 7 | 54 | 教学章已有正文（8 章 / 4.4 万字），未接教材出版线 |
@@ -496,26 +496,13 @@
 
 | 学科 | 标记 | 说明 |
 |------|------|------|
-| 中医基础理论 `01-zhongyi/01-zhongyi-jichu-lilun` | `registry-disk-chapters`, `registry-meta-chars` | 源表 12 章 → 磁盘 13 章（+1）；源表 51,091 字 → meta 61,245 字（+10,154） |
-| 伤寒论 `01-zhongyi/07-shanghanlun` | `registry-disk-chapters`, `registry-meta-chars` | 源表 10 章 → 磁盘 12 章（+2）；源表 118,973 字 → meta 129,165 字（+10,192） |
-| 中医内科学 `01-zhongyi/10-zhongyi-neike-xue` | `registry-disk-chapters`, `registry-meta-chars` | 源表 12 章 → 磁盘 14 章（+2）；源表 405,580 字 → meta 421,791 字（+16,211） |
+| 中医基础理论 `01-zhongyi/01-zhongyi-jichu-lilun` | `meta-disk-mismatch`, `registry-disk-chapters` | 源表 12 章 → 磁盘 13 章（+1）；meta 12 章 ≠ 磁盘 13 章 |
+| 伤寒论 `01-zhongyi/07-shanghanlun` | `meta-disk-mismatch`, `registry-disk-chapters` | 源表 10 章 → 磁盘 12 章（+2）；meta 10 章 ≠ 磁盘 12 章 |
+| 中医内科学 `01-zhongyi/10-zhongyi-neike-xue` | `meta-disk-mismatch`, `registry-disk-chapters` | 源表 12 章 → 磁盘 14 章（+2）；meta 12 章 ≠ 磁盘 14 章 |
 | 中医证候学 `01-zhongyi/14-zhongyi-zhenghou-xue` | `chapters-short` | 教材 12 章 < 教学计划 27 章 |
-| 方剂学 `02-zhongyao/03-fangjixue` | `registry-meta-chars` | 源表 435,341 字 → meta 474,732 字（+39,391） |
-| 中药鉴定学 `02-zhongyao/05-zhongyao-jianding-xue` | `registry-meta-chars` | 源表 186,359 字 → meta 203,942 字（+17,583） |
-| 中药化学 `02-zhongyao/06-zhongyao-huaxue` | `registry-meta-chars` | 源表 233,962 字 → meta 252,828 字（+18,866） |
-| 中药药理学 `02-zhongyao/07-zhongyao-yaoli-xue` | `registry-meta-chars` | 源表 232,861 字 → meta 250,487 字（+17,626） |
-| 中药炮制学 `02-zhongyao/08-zhongyao-paozhi-xue` | `registry-meta-chars` | 源表 174,240 字 → meta 192,488 字（+18,248） |
-| 中药分析学 `02-zhongyao/10-zhongyao-fenxi-xue` | `registry-meta-chars` | 源表 176,143 字 → meta 194,531 字（+18,388） |
 | 药事管理学 `02-zhongyao/18-yaoshi-guanli-xue` | `chapters-short-decided` | 教材 20 章 < 教学计划 28 章：已决口径（2026-11-15 决议，两套切分轴并存） |
-| 针灸医籍选 `03-zhenjiu/03-zhenjiu-yiji-xuan` | `registry-meta-chars` | 源表 208,975 字 → meta 228,808 字（+19,833） |
-| 刺法灸法学 `03-zhenjiu/07-cifa-jiufa-xue` | `registry-meta-chars` | 源表 234,469 字 → meta 258,468 字（+23,999） |
-| 推拿功法学 `03-zhenjiu/18-tuina-gongfa-xue` | `registry-meta-chars` | 源表 111,893 字 → meta 130,912 字（+19,019） |
-| 中医骨伤科学基础 `04-gushang/03-gushang-kexue-jichu` | `registry-meta-chars` | 源表 370,455 字 → meta 395,106 字（+24,651） |
 | 医学人工智能导论 `07-zhineng/01-yixue-rengong-zhineng-daolun` | `meta-disk-mismatch`, `registry-disk-chapters` | 源表 0 章 → 磁盘 8 章（+8）；meta 0 章 ≠ 磁盘 8 章 |
-| 中医知识树 `07-zhineng/05-zhongyi-zhishi-tupu` | `registry-meta-chars`, `manual-source` | 源表 11,351 字 → meta 13,167 字（+1,816）；registry status=manual：人工整理层，非纯抽取 |
-| 人体解剖学 `09-jichu/01-renti-jiepou-xue` | `registry-meta-chars` | 源表 228,077 字 → meta 247,558 字（+19,481） |
-| 生理学 `09-jichu/06-shengli-xue` | `registry-meta-chars` | 源表 252,809 字 → meta 274,755 字（+21,946） |
-| 局部解剖学 `09-jichu/08-jubu-jiepou-xue` | `registry-meta-chars` | 源表 212,583 字 → meta 230,130 字（+17,547） |
+| 中医知识树 `07-zhineng/05-zhongyi-zhishi-tupu` | `manual-source` | registry status=manual：人工整理层，非纯抽取 |
 
 ## 复核
 

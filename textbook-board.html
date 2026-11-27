@@ -57,7 +57,7 @@
   .note b{color:var(--ink);font-weight:400}
 </style></head><body><div class="wrap">
 <h1>tcmai · 教材看板</h1>
-<div class="sub">9 院系 × 169 学科 × [textbooks] 教材落盘实况 · 由 <code>node scripts/build_textbook_board.js</code> 从 <code>curriculum.json</code> / <code>standards/materials/textbooks-batch/registry.json</code> / 文件系统 / <code>departments/&#42;&#42;/meta.json</code> 生成 · 2026-11-27 · 数据 <code>data/textbook-board.json</code></div>
+<div class="sub">9 院系 × 169 学科 × [textbooks] 教材落盘实况 · 由 <code>node scripts/build_textbook_board.js</code> 从 <code>curriculum.json</code> / <code>standards/materials/textbooks-batch/registry.json</code> / 文件系统 / <code>departments/&#42;&#42;/meta.json</code> 生成 · 2026-11-28 · 数据 <code>data/textbook-board.json</code></div>
 <h2>规模与覆盖</h2>
 <div class="kpis">
 <div class="kpi"><div class="k">院系 / 学科</div><div class="v">9 / 189</div><div class="n">必修 171 · 选修 18</div></div>
@@ -82,7 +82,7 @@
 <tr><td>正文汉字</td><td>上述文件 `[\u4e00-\u9fa5]` 字符数（纯汉字，不含标点）</td><td>`textbooks/**`（磁盘实算）</td><td class="num">30,984,014</td></tr>
 <tr><td>正文规模</td><td>上述文件去掉空白的字符数（与 `textbooks/README.md` 的「万字」同口径）</td><td>`textbooks/**`（磁盘实算）</td><td class="num">37,385,734</td></tr>
 <tr><td>源表字数</td><td>`registry.json` 每条的 `chars` 求和（解析源工作簿所得，含标点）</td><td>`standards/materials/textbooks-batch/registry.json`</td><td class="num">28,596,788</td></tr>
-<tr><td>meta.words</td><td>`departments/**/meta.json` 的 `textbook.words` 求和（导入时写死）</td><td>`meta.json`</td><td class="num">34,189,496</td></tr>
+<tr><td>meta.words</td><td>`departments/**/meta.json` 的 `textbook.words` 求和（导入时写死）</td><td>`meta.json`</td><td class="num">33,874,545</td></tr>
 <tr><td>源工作簿份数</td><td>`registry.json` 中 `file` 去重计数（经络腧穴学一份源件拆两门）</td><td>`registry.json` · `sourceDir`</td><td class="num">100</td></tr>
 <tr><td>学科映射条目</td><td>`registry.json` 中带 `subject` 的条目数</td><td>`registry.json`</td><td class="num">101</td></tr>
 <tr><td>源表章表数</td><td>同一批条目 `chapters` 求和（手工整理/合并章节会与磁盘不等）</td><td>`registry.json`</td><td class="num">1,621</td></tr>
@@ -295,7 +295,7 @@
 <div class="gap-item"><span>中成药与临床用药 <span class="pill s-plan">临床·7</span></span><span class="why">教学章已有正文（10 章 / 3.9 万字），未接教材出版线</span></div>
 <div class="gap-item"><span>中药配伍与禁忌 <span class="pill s-plan">工程·7</span></span><span class="why">教学章已有正文（8 章 / 3.4 万字），未接教材出版线</span></div>
 <h3>🪡 针灸系 · 缺 6</h3>
-<div class="gap-item"><span>康复医学基础 <span class="pill s-plan">核心·5</span></span><span class="why">教学章已有正文（8 章 / 4.2 万字），未接教材出版线</span></div>
+<div class="gap-item"><span>康复医学基础 <span class="pill s-plan">核心·5</span></span><span class="why">教学章已有正文（8 章 / 4.3 万字），未接教材出版线</span></div>
 <div class="gap-item"><span>物理治疗与运动康复 <span class="pill s-plan">工程·6</span></span><span class="why">教学章已有正文（8 章 / 4.3 万字），未接教材出版线</span></div>
 <div class="gap-item"><span>耳穴诊治学 <span class="pill s-plan">工程·6</span></span><span class="why">教学章已有正文（8 章 / 3.8 万字），未接教材出版线</span></div>
 <div class="gap-item"><span>针刀医学 <span class="pill s-plan">临床·7</span></span><span class="why">教学章已有正文（8 章 / 4.4 万字），未接教材出版线</span></div>
@@ -357,26 +357,13 @@
 </ul></div></div>
 <h2>对账例外（教材 ≠ 源表）</h2>
 <table><thead><tr><th>学科</th><th>标记</th><th>说明</th></tr></thead><tbody>
-<tr><td>中医基础理论<br><span class="meta">`01-zhongyi/01-zhongyi-jichu-lilun`</span></td><td><span class="pill s-wip">registry-disk-chapters</span> <span class="pill s-wip">registry-meta-chars</span></td><td>源表 12 章 → 磁盘 13 章（+1）；源表 51,091 字 → meta 61,245 字（+10,154）</td></tr>
-<tr><td>伤寒论<br><span class="meta">`01-zhongyi/07-shanghanlun`</span></td><td><span class="pill s-wip">registry-disk-chapters</span> <span class="pill s-wip">registry-meta-chars</span></td><td>源表 10 章 → 磁盘 12 章（+2）；源表 118,973 字 → meta 129,165 字（+10,192）</td></tr>
-<tr><td>中医内科学<br><span class="meta">`01-zhongyi/10-zhongyi-neike-xue`</span></td><td><span class="pill s-wip">registry-disk-chapters</span> <span class="pill s-wip">registry-meta-chars</span></td><td>源表 12 章 → 磁盘 14 章（+2）；源表 405,580 字 → meta 421,791 字（+16,211）</td></tr>
+<tr><td>中医基础理论<br><span class="meta">`01-zhongyi/01-zhongyi-jichu-lilun`</span></td><td><span class="pill s-wip">meta-disk-mismatch</span> <span class="pill s-wip">registry-disk-chapters</span></td><td>源表 12 章 → 磁盘 13 章（+1）；meta 12 章 ≠ 磁盘 13 章</td></tr>
+<tr><td>伤寒论<br><span class="meta">`01-zhongyi/07-shanghanlun`</span></td><td><span class="pill s-wip">meta-disk-mismatch</span> <span class="pill s-wip">registry-disk-chapters</span></td><td>源表 10 章 → 磁盘 12 章（+2）；meta 10 章 ≠ 磁盘 12 章</td></tr>
+<tr><td>中医内科学<br><span class="meta">`01-zhongyi/10-zhongyi-neike-xue`</span></td><td><span class="pill s-wip">meta-disk-mismatch</span> <span class="pill s-wip">registry-disk-chapters</span></td><td>源表 12 章 → 磁盘 14 章（+2）；meta 12 章 ≠ 磁盘 14 章</td></tr>
 <tr><td>中医证候学<br><span class="meta">`01-zhongyi/14-zhongyi-zhenghou-xue`</span></td><td><span class="pill s-wip">chapters-short</span></td><td>教材 12 章 &lt; 教学计划 27 章</td></tr>
-<tr><td>方剂学<br><span class="meta">`02-zhongyao/03-fangjixue`</span></td><td><span class="pill s-wip">registry-meta-chars</span></td><td>源表 435,341 字 → meta 474,732 字（+39,391）</td></tr>
-<tr><td>中药鉴定学<br><span class="meta">`02-zhongyao/05-zhongyao-jianding-xue`</span></td><td><span class="pill s-wip">registry-meta-chars</span></td><td>源表 186,359 字 → meta 203,942 字（+17,583）</td></tr>
-<tr><td>中药化学<br><span class="meta">`02-zhongyao/06-zhongyao-huaxue`</span></td><td><span class="pill s-wip">registry-meta-chars</span></td><td>源表 233,962 字 → meta 252,828 字（+18,866）</td></tr>
-<tr><td>中药药理学<br><span class="meta">`02-zhongyao/07-zhongyao-yaoli-xue`</span></td><td><span class="pill s-wip">registry-meta-chars</span></td><td>源表 232,861 字 → meta 250,487 字（+17,626）</td></tr>
-<tr><td>中药炮制学<br><span class="meta">`02-zhongyao/08-zhongyao-paozhi-xue`</span></td><td><span class="pill s-wip">registry-meta-chars</span></td><td>源表 174,240 字 → meta 192,488 字（+18,248）</td></tr>
-<tr><td>中药分析学<br><span class="meta">`02-zhongyao/10-zhongyao-fenxi-xue`</span></td><td><span class="pill s-wip">registry-meta-chars</span></td><td>源表 176,143 字 → meta 194,531 字（+18,388）</td></tr>
 <tr><td>药事管理学<br><span class="meta">`02-zhongyao/18-yaoshi-guanli-xue`</span></td><td><span class="pill s-wip">chapters-short-decided</span></td><td>教材 20 章 &lt; 教学计划 28 章：已决口径（2026-11-15 决议，两套切分轴并存）</td></tr>
-<tr><td>针灸医籍选<br><span class="meta">`03-zhenjiu/03-zhenjiu-yiji-xuan`</span></td><td><span class="pill s-wip">registry-meta-chars</span></td><td>源表 208,975 字 → meta 228,808 字（+19,833）</td></tr>
-<tr><td>刺法灸法学<br><span class="meta">`03-zhenjiu/07-cifa-jiufa-xue`</span></td><td><span class="pill s-wip">registry-meta-chars</span></td><td>源表 234,469 字 → meta 258,468 字（+23,999）</td></tr>
-<tr><td>推拿功法学<br><span class="meta">`03-zhenjiu/18-tuina-gongfa-xue`</span></td><td><span class="pill s-wip">registry-meta-chars</span></td><td>源表 111,893 字 → meta 130,912 字（+19,019）</td></tr>
-<tr><td>中医骨伤科学基础<br><span class="meta">`04-gushang/03-gushang-kexue-jichu`</span></td><td><span class="pill s-wip">registry-meta-chars</span></td><td>源表 370,455 字 → meta 395,106 字（+24,651）</td></tr>
 <tr><td>医学人工智能导论<br><span class="meta">`07-zhineng/01-yixue-rengong-zhineng-daolun`</span></td><td><span class="pill s-wip">meta-disk-mismatch</span> <span class="pill s-wip">registry-disk-chapters</span></td><td>源表 0 章 → 磁盘 8 章（+8）；meta 0 章 ≠ 磁盘 8 章</td></tr>
-<tr><td>中医知识树<br><span class="meta">`07-zhineng/05-zhongyi-zhishi-tupu`</span></td><td><span class="pill s-wip">registry-meta-chars</span> <span class="pill s-wip">manual-source</span></td><td>源表 11,351 字 → meta 13,167 字（+1,816）；registry status=manual：人工整理层，非纯抽取</td></tr>
-<tr><td>人体解剖学<br><span class="meta">`09-jichu/01-renti-jiepou-xue`</span></td><td><span class="pill s-wip">registry-meta-chars</span></td><td>源表 228,077 字 → meta 247,558 字（+19,481）</td></tr>
-<tr><td>生理学<br><span class="meta">`09-jichu/06-shengli-xue`</span></td><td><span class="pill s-wip">registry-meta-chars</span></td><td>源表 252,809 字 → meta 274,755 字（+21,946）</td></tr>
-<tr><td>局部解剖学<br><span class="meta">`09-jichu/08-jubu-jiepou-xue`</span></td><td><span class="pill s-wip">registry-meta-chars</span></td><td>源表 212,583 字 → meta 230,130 字（+17,547）</td></tr>
+<tr><td>中医知识树<br><span class="meta">`07-zhineng/05-zhongyi-zhishi-tupu`</span></td><td><span class="pill s-wip">manual-source</span></td><td>registry status=manual：人工整理层，非纯抽取</td></tr>
 </tbody></table>
 <footer>
 <b>复核命令</b><br>

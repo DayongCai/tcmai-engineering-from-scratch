@@ -116,7 +116,7 @@
     "subjectsWip": 0,
     "subjectsPlanned": 0,
     "videos": 2169,
-    "textbookChapters": 2163
+    "textbookChapters": 2158
   },
   "semesterPlan": [
     {
@@ -7200,12 +7200,12 @@
           "textbook": {
             "id": "textbooks",
             "path": "textbooks/01-zhongyi/01-zhongyi-jichu-lilun",
-            "chaptersWritten": 13,
-            "words": 61245,
+            "chaptersWritten": 12,
+            "words": 51091,
             "status": "wip",
             "layer": "rewrite",
             "source": "standards/materials/textbooks-batch/registry.json#中医基础理论",
-            "extractedAt": "2026-10-21"
+            "extractedAt": "2026-11-28"
           }
         },
         {
@@ -7422,8 +7422,8 @@
           "textbook": {
             "id": "textbooks",
             "path": "textbooks/01-zhongyi/07-shanghanlun",
-            "chaptersWritten": 12,
-            "words": 129165,
+            "chaptersWritten": 10,
+            "words": 118973,
             "status": "wip",
             "layer": "source-body",
             "source": "standards/materials/textbooks-batch/registry.json#伤寒论讲义",
@@ -7554,8 +7554,8 @@
           "textbook": {
             "id": "textbooks",
             "path": "textbooks/01-zhongyi/10-zhongyi-neike-xue",
-            "chaptersWritten": 14,
-            "words": 421791,
+            "chaptersWritten": 12,
+            "words": 405580,
             "status": "wip",
             "layer": "source-body",
             "source": "standards/materials/textbooks-batch/registry.json#中医内科学",
@@ -8183,12 +8183,12 @@
             "id": "textbooks",
             "path": "textbooks/02-zhongyao/03-fangjixue",
             "chaptersWritten": 24,
-            "words": 474732,
+            "words": 435341,
             "status": "wip",
             "layer": "source+rewrite",
             "source": "standards/materials/textbooks-batch/registry.json#方剂学",
             "extractedAt": "2026-10-21",
-            "note": "24 章 / 387,691 汉字。24 章；正文为源正文层，判断层见章末 REWRITE 块；第 24 章含 AI 平台层，本方药判断不越界。"
+            "note": "24 章 / 435,341 汉字。24 章；正文为源正文层，判断层见章末 REWRITE 块；第 24 章含 AI 平台层，本方药判断不越界。"
           }
         },
         {
@@ -8259,12 +8259,12 @@
             "id": "textbooks",
             "path": "textbooks/02-zhongyao/05-zhongyao-jianding-xue",
             "chaptersWritten": 12,
-            "words": 203942,
+            "words": 186359,
             "status": "wip",
             "layer": "source+rewrite",
             "source": "standards/materials/textbooks-batch/registry.json#中药鉴定学",
             "extractedAt": "2026-10-21",
-            "note": "12 章 / 168,990 汉字。正文为源正文层，判断层见章末 REWRITE 块（N.1–N.5 + 免责 + 思考题）。"
+            "note": "12 章 / 186,359 汉字。正文为源正文层，判断层见章末 REWRITE 块（N.1–N.5 + 免责 + 思考题）。"
           }
         },
         {
@@ -8297,12 +8297,12 @@
             "id": "textbooks",
             "path": "textbooks/02-zhongyao/06-zhongyao-huaxue",
             "chaptersWritten": 12,
-            "words": 252828,
+            "words": 233962,
             "status": "wip",
             "layer": "source+rewrite",
             "source": "standards/materials/textbooks-batch/registry.json#中药化学",
             "extractedAt": "2026-10-21",
-            "note": "12 章 / 206,959 汉字。12 章；正文为源正文层（import_textbooks 逐字抽取），判断层见章末 REWRITE 块（N.1–N.5 + 免责 + 思考题）。"
+            "note": "12 章 / 233,962 汉字。12 章；正文为源正文层（import_textbooks 逐字抽取），判断层见章末 REWRITE 块（N.1–N.5 + 免责 + 思考题）。"
           }
         },
         {
@@ -8336,12 +8336,12 @@
             "id": "textbooks",
             "path": "textbooks/02-zhongyao/07-zhongyao-yaoli-xue",
             "chaptersWritten": 12,
-            "words": 250487,
+            "words": 232861,
             "status": "wip",
             "layer": "source+rewrite",
             "source": "standards/materials/textbooks-batch/registry.json#中药药理学",
             "extractedAt": "2026-10-21",
-            "note": "12 章 / 211,245 汉字。正文为源正文层，判断层见章末 REWRITE 块（N.1–N.5 + 免责 + 思考题）。"
+            "note": "12 章 / 232,861 汉字。正文为源正文层，判断层见章末 REWRITE 块（N.1–N.5 + 免责 + 思考题）。"
           }
         },
         {
@@ -8375,12 +8375,12 @@
             "id": "textbooks",
             "path": "textbooks/02-zhongyao/08-zhongyao-paozhi-xue",
             "chaptersWritten": 12,
-            "words": 192488,
+            "words": 174240,
             "status": "wip",
             "layer": "source+rewrite",
             "source": "standards/materials/textbooks-batch/registry.json#中药炮制学",
             "extractedAt": "2026-10-21",
-            "note": "12 章 / 162,741 汉字。正文为源正文层，判断层见章末 REWRITE 块（N.1–N.5 + 免责 + 思考题）。"
+            "note": "12 章 / 174,240 汉字。正文为源正文层，判断层见章末 REWRITE 块（N.1–N.5 + 免责 + 思考题）。"
           }
         },
         {
@@ -8451,12 +8451,12 @@
             "id": "textbooks",
             "path": "textbooks/02-zhongyao/10-zhongyao-fenxi-xue",
             "chaptersWritten": 12,
-            "words": 194531,
+            "words": 176143,
             "status": "wip",
             "layer": "source+rewrite",
             "source": "standards/materials/textbooks-batch/registry.json#中药分析",
             "extractedAt": "2026-10-21",
-            "note": "12 章 / 162,415 汉字。正文为源正文层，判断层见章末 REWRITE 块（N.1–N.5 + 免责 + 思考题）。"
+            "note": "12 章 / 176,143 汉字。正文为源正文层，判断层见章末 REWRITE 块（N.1–N.5 + 免责 + 思考题）。"
           }
         },
         {
@@ -8981,12 +8981,12 @@
             "id": "textbooks",
             "path": "textbooks/03-zhenjiu/03-zhenjiu-yiji-xuan",
             "chaptersWritten": 10,
-            "words": 228808,
+            "words": 208975,
             "status": "wip",
             "layer": "source+rewrite",
             "source": "standards/materials/textbooks-batch/registry.json#针灸医籍选读",
             "extractedAt": "2026-10-21",
-            "note": "10 章 / 185,275 汉字。正文为源正文层，判断层见章末 REWRITE 块（N.1–N.5 + 免责 + 思考题）。"
+            "note": "10 章 / 208,975 汉字。正文为源正文层，判断层见章末 REWRITE 块（N.1–N.5 + 免责 + 思考题）。"
           }
         },
         {
@@ -9131,12 +9131,12 @@
             "id": "textbooks",
             "path": "textbooks/03-zhenjiu/07-cifa-jiufa-xue",
             "chaptersWritten": 12,
-            "words": 258468,
+            "words": 234469,
             "status": "wip",
             "layer": "source+rewrite",
             "source": "standards/materials/textbooks-batch/registry.json#针法灸法学",
             "extractedAt": "2026-10-21",
-            "note": "12 章 / 216,348 汉字。正文为源正文层，判断层见章末 REWRITE 块（N.1–N.5 + 免责 + 思考题）。"
+            "note": "12 章 / 234,469 汉字。正文为源正文层，判断层见章末 REWRITE 块（N.1–N.5 + 免责 + 思考题）。"
           }
         },
         {
@@ -9530,12 +9530,12 @@
             "id": "textbooks",
             "path": "textbooks/03-zhenjiu/18-tuina-gongfa-xue",
             "chaptersWritten": 12,
-            "words": 130912,
+            "words": 111893,
             "status": "wip",
             "layer": "source+rewrite",
             "source": "standards/materials/textbooks-batch/registry.json#推拿功法学",
             "extractedAt": "2026-10-21",
-            "note": "12 章 / 108,366 汉字。正文为源正文层，判断层见章末 REWRITE 块（N.1–N.5 + 免责 + 思考题）。"
+            "note": "12 章 / 111,893 汉字。正文为源正文层，判断层见章末 REWRITE 块（N.1–N.5 + 免责 + 思考题）。"
           }
         },
         {
@@ -9807,12 +9807,12 @@
             "id": "textbooks",
             "path": "textbooks/04-gushang/03-gushang-kexue-jichu",
             "chaptersWritten": 11,
-            "words": 395106,
+            "words": 370455,
             "status": "wip",
             "layer": "source+rewrite",
             "source": "standards/materials/textbooks-batch/registry.json#中医骨伤科学",
             "extractedAt": "2026-10-21",
-            "note": "11 章 / 327,500 汉字。正文为源正文层，判断层见章末 REWRITE 块（N.1–N.5 + 免责 + 思考题）。"
+            "note": "11 章 / 370,455 汉字。正文为源正文层，判断层见章末 REWRITE 块（N.1–N.5 + 免责 + 思考题）。"
           }
         },
         {
@@ -12484,11 +12484,11 @@
             "id": "textbooks",
             "path": "textbooks/07-zhineng/05-zhongyi-zhishi-tupu",
             "chaptersWritten": 10,
-            "words": 13167,
+            "words": 11351,
             "status": "wip",
             "layer": "manual-rewrite",
             "source": "standards/materials/textbooks-batch/registry.json#中医知识树",
-            "extractedAt": "2026-10-21"
+            "extractedAt": "2026-11-28"
           }
         },
         {
@@ -13747,12 +13747,12 @@
             "id": "textbooks",
             "path": "textbooks/09-jichu/01-renti-jiepou-xue",
             "chaptersWritten": 10,
-            "words": 247558,
+            "words": 228077,
             "status": "wip",
             "layer": "source+rewrite",
             "source": "standards/materials/textbooks-batch/registry.json#人体解剖学",
             "extractedAt": "2026-10-21",
-            "note": "10 章 / 224,457 汉字。正文为源正文层，判断层见章末 REWRITE 块（N.1–N.5 + 免责 + 思考题）。"
+            "note": "10 章 / 228,077 汉字。正文为源正文层，判断层见章末 REWRITE 块（N.1–N.5 + 免责 + 思考题）。"
           }
         },
         {
@@ -13931,12 +13931,12 @@
             "id": "textbooks",
             "path": "textbooks/09-jichu/06-shengli-xue",
             "chaptersWritten": 11,
-            "words": 274755,
+            "words": 252809,
             "status": "wip",
             "layer": "source+rewrite",
             "source": "standards/materials/textbooks-batch/registry.json#生理学",
             "extractedAt": "2026-10-21",
-            "note": "11 章 / 251,977 汉字。正文为源正文层，判断层见章末 REWRITE 块（N.1–N.5 + 免责 + 思考题）。"
+            "note": "11 章 / 252,809 汉字。正文为源正文层，判断层见章末 REWRITE 块（N.1–N.5 + 免责 + 思考题）。"
           }
         },
         {
@@ -14007,12 +14007,12 @@
             "id": "textbooks",
             "path": "textbooks/09-jichu/08-jubu-jiepou-xue",
             "chaptersWritten": 9,
-            "words": 230130,
+            "words": 212583,
             "status": "wip",
             "layer": "source+rewrite",
             "source": "standards/materials/textbooks-batch/registry.json#局部解剖学",
             "extractedAt": "2026-10-21",
-            "note": "9 章 / 206,436 汉字。正文为源正文层，判断层见章末 REWRITE 块（N.1–N.5 + 免责 + 思考题）。"
+            "note": "9 章 / 212,583 汉字。正文为源正文层，判断层见章末 REWRITE 块（N.1–N.5 + 免责 + 思考题）。"
           }
         },
         {

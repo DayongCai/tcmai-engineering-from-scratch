@@ -273,16 +273,16 @@
 
 | # | 学科 | 学期 | 类型 | 学时 | 章节 | 视频 [tcmP] | 教材 [textbooks] | 状态 |
 |---|---|------|------|------|------|-----------|---------------|------|
-| 01 | [中医基础理论](departments/01-zhongyi/01-zhongyi-jichu-lilun/) | 1 | Core | 72 | 10/10 | 0 | 61245 字 | ✅ |
+| 01 | [中医基础理论](departments/01-zhongyi/01-zhongyi-jichu-lilun/) | 1 | Core | 72 | 10/10 | 0 | 51091 字 | ✅ |
 | 02 | [医古文](departments/01-zhongyi/02-yi-gu-wen/) | 1 | Core | 54 | 8/8 | 0 | 172023 字 | ✅ |
 | 03 | [中国医学史](departments/01-zhongyi/03-zhongguo-yixue-shi/) | 1 | Reference | 36 | 8/8 | 0 | 113628 字 | ✅ |
 | 04 | [中医体质学](departments/01-zhongyi/04-zhongyi-tizhi-xue/) | 4 | Core | 54 | 8/8 | 0 | 25293 字 | ✅ |
 | 05 | [中医诊断学](departments/01-zhongyi/05-zhongyi-zhen-duan-xue/) | 3 | Core | 90 | 12/12 | 0 | 27465 字 | ✅ |
 | 06 | [内经选读](departments/01-zhongyi/06-neijing-xuandu/) | 3 | Core | 72 | 10/10 | 0 | 214136 字 | ✅ |
-| 07 | [伤寒论](departments/01-zhongyi/07-shanghanlun/) | 4 | Core | 90 | 12/12 | 0 | 129165 字 | ✅ |
+| 07 | [伤寒论](departments/01-zhongyi/07-shanghanlun/) | 4 | Core | 90 | 12/12 | 0 | 118973 字 | ✅ |
 | 08 | [金匮要略](departments/01-zhongyi/08-jingui-yaolue/) | 5 | Core | 72 | 24/24 | 24 | 704250 字 | ✅ |
 | 09 | [温病学](departments/01-zhongyi/09-wenbing-xue/) | 5 | Core | 72 | 10/10 | 0 | 231982 字 | ✅ |
-| 10 | [中医内科学](departments/01-zhongyi/10-zhongyi-neike-xue/) | 5 | Clinic | 108 | 14/14 | 0 | 421791 字 | ✅ |
+| 10 | [中医内科学](departments/01-zhongyi/10-zhongyi-neike-xue/) | 5 | Clinic | 108 | 14/14 | 0 | 405580 字 | ✅ |
 | 11 | [中医外科学](departments/01-zhongyi/11-zhongyi-waike-xue/) | 6 | Clinic | 72 | 13/13 | 0 | 298235 字 | ✅ |
 | 12 | [中医妇科学](departments/01-zhongyi/12-zhongyi-fuke-xue/) | 6 | Clinic | 72 | 13/13 | 0 | 288344 字 | ✅ |
 | 13 | [中医儿科学](departments/01-zhongyi/13-zhongyi-erke-xue/) | 6 | Clinic | 72 | 14/14 | 0 | 275093 字 | ✅ |
@@ -303,14 +303,14 @@
 |---|---|------|------|------|------|-----------|---------------|------|
 | 01 | [中药学](departments/02-zhongyao/01-zhongyaoxue/) | 2 | Core | 90 | 14/14 | 0 | 76577 字 | ✅ |
 | 02 | [药用植物学](departments/02-zhongyao/02-yaoyong-zhiwu-xue/) | 2 | Core | 54 | 9/9 | 0 | 216378 字 | ✅ |
-| 03 | [方剂学](departments/02-zhongyao/03-fangjixue/) | 3 | Core | 90 | 15/15 | 0 | 474732 字 | ✅ |
+| 03 | [方剂学](departments/02-zhongyao/03-fangjixue/) | 3 | Core | 90 | 15/15 | 0 | 435341 字 | ✅ |
 | 04 | [中药资源学](departments/02-zhongyao/04-zhongyao-ziyuan-xue/) | 3 | Reference | 54 | 8/8 | 0 | 180284 字 | ✅ |
-| 05 | [中药鉴定学](departments/02-zhongyao/05-zhongyao-jianding-xue/) | 4 | Build | 72 | 10/10 | 0 | 203942 字 | ✅ |
-| 06 | [中药化学](departments/02-zhongyao/06-zhongyao-huaxue/) | 4 | Core | 90 | 12/12 | 0 | 252828 字 | ✅ |
-| 07 | [中药药理学](departments/02-zhongyao/07-zhongyao-yaoli-xue/) | 5 | Core | 72 | 11/11 | 0 | 250487 字 | ✅ |
-| 08 | [中药炮制学](departments/02-zhongyao/08-zhongyao-paozhi-xue/) | 5 | Build | 54 | 9/9 | 0 | 192488 字 | ✅ |
+| 05 | [中药鉴定学](departments/02-zhongyao/05-zhongyao-jianding-xue/) | 4 | Build | 72 | 10/10 | 0 | 186359 字 | ✅ |
+| 06 | [中药化学](departments/02-zhongyao/06-zhongyao-huaxue/) | 4 | Core | 90 | 12/12 | 0 | 233962 字 | ✅ |
+| 07 | [中药药理学](departments/02-zhongyao/07-zhongyao-yaoli-xue/) | 5 | Core | 72 | 11/11 | 0 | 232861 字 | ✅ |
+| 08 | [中药炮制学](departments/02-zhongyao/08-zhongyao-paozhi-xue/) | 5 | Build | 54 | 9/9 | 0 | 174240 字 | ✅ |
 | 09 | [中药药剂学](departments/02-zhongyao/09-zhongyao-yaoji-xue/) | 5 | Core | 72 | 10/10 | 0 | 237388 字 | ✅ |
-| 10 | [中药分析学](departments/02-zhongyao/10-zhongyao-fenxi-xue/) | 6 | Build | 72 | 12/12 | 0 | 194531 字 | ✅ |
+| 10 | [中药分析学](departments/02-zhongyao/10-zhongyao-fenxi-xue/) | 6 | Build | 72 | 12/12 | 0 | 176143 字 | ✅ |
 | 11 | [中药药代动力学](departments/02-zhongyao/11-zhongyao-yaodai-donglixue/) | 6 | Build | 54 | 8/8 | 0 | 0 字 | ✅ |
 | 12 | [道地药材与产地加工](departments/02-zhongyao/12-daodi-yaocai/) | 6 | Reference | 54 | 8/8 | 0 | 0 字 | ✅ |
 | 13 | [中成药与临床用药](departments/02-zhongyao/13-zhongchengyao-linchuang/) | 7 | Clinic | 72 | 10/10 | 0 | 0 字 | ✅ |
@@ -329,11 +329,11 @@
 |---|---|------|------|------|------|-----------|---------------|------|
 | 01 | [经络学](departments/03-zhenjiu/01-jingluo-xue/) | 2 | Core | 72 | 10/10 | 0 | 137091 字 | ✅ |
 | 02 | [腧穴学](departments/03-zhenjiu/02-shuxue-xue/) | 3 | Core | 90 | 12/12 | 0 | 129572 字 | ✅ |
-| 03 | [针灸医籍选](departments/03-zhenjiu/03-zhenjiu-yiji-xuan/) | 3 | Reference | 54 | 8/8 | 0 | 228808 字 | ✅ |
+| 03 | [针灸医籍选](departments/03-zhenjiu/03-zhenjiu-yiji-xuan/) | 3 | Reference | 54 | 8/8 | 0 | 208975 字 | ✅ |
 | 04 | [中医气功学](departments/03-zhenjiu/04-qigong-xue/) | 3 | Reference | 36 | 7/7 | 0 | 234816 字 | ✅ |
 | 05 | [推拿学](departments/03-zhenjiu/05-tuina-xue/) | 4 | Clinic | 72 | 10/10 | 0 | 236476 字 | ✅ |
 | 06 | [推拿手法学](departments/03-zhenjiu/06-tuina-shoufa-xue/) | 4 | Build | 54 | 8/8 | 0 | 294823 字 | ✅ |
-| 07 | [刺法灸法学](departments/03-zhenjiu/07-cifa-jiufa-xue/) | 4 | Core | 72 | 10/10 | 0 | 258468 字 | ✅ |
+| 07 | [刺法灸法学](departments/03-zhenjiu/07-cifa-jiufa-xue/) | 4 | Core | 72 | 10/10 | 0 | 234469 字 | ✅ |
 | 08 | [针灸治疗学](departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/) | 5 | Clinic | 90 | 12/12 | 0 | 187992 字 | ✅ |
 | 09 | [康复医学基础](departments/03-zhenjiu/09-kangfu-yixue-jichu/) | 5 | Core | 54 | 8/8 | 0 | 0 字 | ✅ |
 | 10 | [实验针灸学](departments/03-zhenjiu/10-shiyan-zhenjiu-xue/) | 6 | Build | 72 | 11/11 | 0 | 229401 字 | ✅ |
@@ -344,7 +344,7 @@
 | 15 | [中医康复学](departments/03-zhenjiu/15-zhongyi-kangfu-xue/) | 7 | Clinic | 72 | 10/10 | 0 | 0 字 | ✅ |
 | 16 | [针灸学](departments/03-zhenjiu/16-zhenjiu-xue/) | 5 | Core | 72 | 30/30 | 0 | 342303 字 | ✅ |
 | 17 | [各家针灸学说](departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/) | 6 | Reference | 36 | 12/12 | 0 | 167166 字 | ✅ |
-| 18 | [推拿功法学](departments/03-zhenjiu/18-tuina-gongfa-xue/) | 4 | Build | 54 | 12/12 | 0 | 130912 字 | ✅ |
+| 18 | [推拿功法学](departments/03-zhenjiu/18-tuina-gongfa-xue/) | 4 | Build | 54 | 12/12 | 0 | 111893 字 | ✅ |
 | 19 | [推拿治疗学](departments/03-zhenjiu/19-tuina-zhiliao-xue/) | 7 | Clinic | 54 | 12/12 | 0 | 176070 字 | ✅ |
 | 20 | [小儿推拿学](departments/03-zhenjiu/20-xiaoer-tuina-xue/) | 8 | Clinic | 36 | 12/12 | 0 | 173455 字 | ✅ |
 | 21 | [针灸临床轮转](departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/) | 9 | Clinic | 108 | 6/6 | 0 | 8503 字 | ✅ |
@@ -356,7 +356,7 @@
 |---|---|------|------|------|------|-----------|---------------|------|
 | 01 | [中医运动学](departments/04-gushang/01-zhongyi-yundong-xue/) | 4 | Core | 54 | 8/8 | 0 | 0 字 | ✅ |
 | 02 | [骨伤解剖学](departments/04-gushang/02-yao-shang-jiepou/) | 4 | Core | 72 | 10/10 | 0 | 0 字 | ✅ |
-| 03 | [中医骨伤科学基础](departments/04-gushang/03-gushang-kexue-jichu/) | 5 | Core | 72 | 10/10 | 0 | 395106 字 | ✅ |
+| 03 | [中医骨伤科学基础](departments/04-gushang/03-gushang-kexue-jichu/) | 5 | Core | 72 | 10/10 | 0 | 370455 字 | ✅ |
 | 04 | [创伤急救学](departments/04-gushang/04-chuangshang-jijiu-xue/) | 5 | Clinic | 54 | 8/8 | 0 | 0 字 | ✅ |
 | 05 | [运动医学与损伤防护](departments/04-gushang/05-yundong-yixue/) | 5 | Build | 54 | 8/8 | 0 | 0 字 | ✅ |
 | 06 | [中医正骨学](departments/04-gushang/06-zhongyi-zhenggu-xue/) | 6 | Clinic | 90 | 12/12 | 0 | 271237 字 | ✅ |
@@ -443,7 +443,7 @@
 | 02 | [中医软件架构学](departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/) | 4 | Build | 72 | 10/10 | 0 | 0 字 | ✅ |
 | 03 | [中医智能设备与可穿戴设备](departments/07-zhineng/03-zhongyi-zhineng-shebei/) | 4 | Build | 72 | 6/6 | 0 | 12224 字 | ✅ |
 | 04 | [中医自然语言处理](departments/07-zhineng/04-zhongyi-ziran-yuyan-chuli/) | 5 | Build | 72 | 10/10 | 0 | 0 字 | ✅ |
-| 05 | [中医知识树](departments/07-zhineng/05-zhongyi-zhishi-tupu/) | 5 | Build | 72 | 6/6 | 0 | 13167 字 | ✅ |
+| 05 | [中医知识树](departments/07-zhineng/05-zhongyi-zhishi-tupu/) | 5 | Build | 72 | 6/6 | 0 | 11351 字 | ✅ |
 | 06 | [中医智能辨证系统](departments/07-zhineng/06-zhongyi-zhineng-bianzheng/) | 6 | Build | 72 | 10/10 | 0 | 0 字 | ✅ |
 | 07 | [医学图像处理与舌诊客观化](departments/07-zhineng/07-yixue-tuxiang-shezhen/) | 6 | Build | 72 | 10/10 | 0 | 0 字 | ✅ |
 | 08 | [脉诊客观化与信号处理](departments/07-zhineng/08-maizhen-keguanhua/) | 6 | Build | 72 | 10/10 | 0 | 0 字 | ✅ |
@@ -485,14 +485,14 @@
 
 | # | 学科 | 学期 | 类型 | 学时 | 章节 | 视频 [tcmP] | 教材 [textbooks] | 状态 |
 |---|---|------|------|------|------|-----------|---------------|------|
-| 01 | [人体解剖学](departments/09-jichu/01-renti-jiepou-xue/) | 1 | Core | 72 | 10/10 | 0 | 247558 字 | ✅ |
+| 01 | [人体解剖学](departments/09-jichu/01-renti-jiepou-xue/) | 1 | Core | 72 | 10/10 | 0 | 228077 字 | ✅ |
 | 02 | [组织学与胚胎学](departments/09-jichu/02-zuzhi-peitai-xue/) | 1 | Core | 54 | 20/20 | 0 | 454084 字 | ✅ |
 | 03 | [医学细胞生物学](departments/09-jichu/03-yixue-xibao-shengwu-xue/) | 1 | Core | 36 | 12/12 | 0 | 205699 字 | ✅ |
 | 04 | [医学生物学](departments/09-jichu/04-yixue-shengwu-xue/) | 2 | Core | 36 | 16/16 | 0 | 365868 字 | ✅ |
 | 05 | [正常人体学](departments/09-jichu/05-zhengchang-renti-xue/) | 2 | Core | 72 | 18/18 | 0 | 406942 字 | ✅ |
-| 06 | [生理学](departments/09-jichu/06-shengli-xue/) | 2 | Core | 72 | 11/11 | 0 | 274755 字 | ✅ |
+| 06 | [生理学](departments/09-jichu/06-shengli-xue/) | 2 | Core | 72 | 11/11 | 0 | 252809 字 | ✅ |
 | 07 | [生物化学](departments/09-jichu/07-shenghua-xue/) | 2 | Core | 72 | 21/21 | 0 | 478262 字 | ✅ |
-| 08 | [局部解剖学](departments/09-jichu/08-jubu-jiepou-xue/) | 3 | Core | 54 | 9/9 | 0 | 230130 字 | ✅ |
+| 08 | [局部解剖学](departments/09-jichu/08-jubu-jiepou-xue/) | 3 | Core | 54 | 9/9 | 0 | 212583 字 | ✅ |
 | 09 | [医学遗传学](departments/09-jichu/09-yixue-yichuan-xue/) | 3 | Core | 36 | 12/12 | 0 | 0 字 | ✅ |
 | 10 | [病理学](departments/09-jichu/10-bingli-xue/) | 3 | Core | 72 | 21/21 | 0 | 477254 字 | ✅ |
 | 11 | [病理生理学](departments/09-jichu/11-bingli-shengli-xue/) | 4 | Core | 54 | 53/53 | 0 | 416461 字 | ✅ |
