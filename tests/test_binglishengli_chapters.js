@@ -163,7 +163,7 @@ for (const c of want) {
   const quiz = JSON.parse(fs.readFileSync(path.join(dir, 'quiz.json'), 'utf8'));
   const qs = quiz.questions || [];
   quizStats.total += qs.length;
-  const cited = qs.filter((q) => /(依据|口径见|前提|算见)/.test(q.explanation || ''));
+  const cited = qs.filter((q) => /(依据|口径见|前提|算见)/.test((q.explain || q.explanation) || ''));
   quizStats.cited += cited.length;
   if (qs.length !== 6) issue.push(`quiz ${qs.length} 题 ≠ 6`);
   const stages = qs.map((q) => q.stage).join(' ');

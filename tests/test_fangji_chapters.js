@@ -121,7 +121,7 @@ test('5. quiz 契约：6 题 pre/check×3/post×2', () => {
     for (const x of qs) {
       assert.strictEqual((x.options || []).length, 4, `${c.slug} 选项数`);
       assert.ok(Number.isInteger(x.correct) && x.correct >= 0 && x.correct <= 3, `${c.slug} correct`);
-      assert.ok((x.explanation || '').length >= 10, `${c.slug} explanation 太短`);
+      assert.ok(((x.explain || x.explanation) || '').length >= 10, `${c.slug} explanation 太短`);
     }
   }
 });

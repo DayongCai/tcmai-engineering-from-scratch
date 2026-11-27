@@ -136,7 +136,7 @@ test('quiz 恰好 6 题，stage 顺序 pre/check×3/post×2，correct 在 0–3'
     for (const x of q.questions) {
       assert.strictEqual(x.options.length, 4, `${c.slug} 选项数`);
       assert.ok(Number.isInteger(x.correct) && x.correct >= 0 && x.correct <= 3, `${c.slug} correct 越界`);
-      assert.ok(x.explanation && x.explanation.length > 8, `${c.slug} 缺解释`);
+      assert.ok((x.explain || x.explanation || '').length > 8, `${c.slug} 缺解释`);
     }
   }
 });

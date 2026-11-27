@@ -130,7 +130,7 @@ test('quiz 恰好 6 题：pre 1 / check 3 / post 2，correct 在 0–3，每题 
     for (const x of q.questions) {
       assert.strictEqual(x.options.length, 4, `${s} 选项数`);
       assert.ok(x.correct >= 0 && x.correct <= 3, `${s} correct 越界`);
-      assert.ok(x.explanation && x.explanation.length >= 10, `${s} 缺解释`);
+      assert.ok((x.explain || x.explanation || '').length >= 10, `${s} 缺解释`);
     }
   }
 });

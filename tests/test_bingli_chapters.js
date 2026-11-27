@@ -105,7 +105,7 @@ test('5. quiz 契约（题干键必须是 question）', () => {
       assert.ok(x.question && String(x.question).length >= 6, `${c.slug} quiz#${i + 1} 缺 question`);
       assert.strictEqual((x.options || []).length, 4, `${c.slug} quiz#${i + 1} 选项数`);
       assert.ok(Number.isInteger(x.correct) && x.correct >= 0 && x.correct <= 3, `${c.slug} quiz#${i + 1} correct`);
-      assert.ok((x.explanation || '').length >= 10, `${c.slug} quiz#${i + 1} explanation`);
+      assert.ok(((x.explain || x.explanation) || '').length >= 10, `${c.slug} quiz#${i + 1} explanation`);
     }
   }
 });
