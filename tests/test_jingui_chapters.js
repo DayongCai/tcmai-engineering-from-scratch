@@ -26,6 +26,10 @@ const SUBJ = path.join(ROOT, 'departments/01-zhongyi/08-jingui-yaolue');
 const BOOK = JSON.parse(fs.readFileSync(path.join(ROOT, 'standards/jingui/底本.json'), 'utf8'));
 
 const norm = (s) => s.replace(/[\s，。；：、？！…「」『』（）()《》〈〉\-—·＝=*`/＋+→]/g, '');
+// 异体字折叠：底本保留「著」，正文按通行字写「着」（同一字的两种写法）。
+// 不折叠会把正确引文判成编造——这不是放宽「逐字」，是把比较单位从「字形」回到「字」。
+const FOLD = { 著: '着', 裏: '里', 祗: '只', 嚮: '向', 歎: '叹' };
+const normFold = (s) => norm(s).replace(/[著裏祗嚮歎]/g, (c) => FOLD[c] || c);
 // 底本池要含「校注」：有些引文引的是雙行夾注（如「一云腹中冷，苦痛者死」），
 // 它在 notes[] 里而不在正文，漏掉会把正确引用判成编造。
 const POOL = norm(BOOK.pian
@@ -69,10 +73,11 @@ test('引文保真：每处「」原文样引文都能在底本里逐字找到',
     for (const m of md.matchAll(/「([^」]{10,140})」/g)) {
       const q = m[1];
       if (!QUOTEISH.test(q)) continue;           // 「刚痉无汗、柔痉有汗」这类概念短语不算引文
-      const frags = q.split(/……|…/).map(norm).filter((p) => p.length >= 6);
+      const frags = q.split(/……|…/).map(normFold).filter((p) => p.length >= 6);
       if (!frags.length) continue;
       checked += 1;
-      const miss = frags.filter((p) => !POOL.includes(p));
+      const POOLF = normFold(BOOK.pian.flatMap((p) => p.articles.flatMap((a) => [a.zhHans, a.zhHant, ...(a.notes || [])])).join(''));
+      const miss = frags.filter((p) => !POOLF.includes(p));
       if (miss.length) bad.push(`${c.slug}: ${q.slice(0, 40)}… → 缺「${miss[0].slice(0, 20)}」`);
     }
   }
