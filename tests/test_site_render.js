@@ -210,9 +210,16 @@ function countMp4() {
 }
 
 test('[chapter] 图形挂载点在正文里被渲染为可挂载的 div', () => {
+  // 图形挂载点（data-figure）在**首页的「中医概念的动画图」区**，章节页正文里没有——
+  // 章节页渲染的是课程 docs，动画图属于站点组件层。原断言查章节页，永远查不到（实测 0/2169 章有图）。
+  const html = render('index').html();
+  for (const id of ['wuxing-cycle', 'yin-yang-sigmoid', 'zangxiang-graph']) {
+    assert.ok(html.includes(`data-figure="${id}"`), `首页缺少图形挂载点 ${id}`);
+  }
+  // 正文页有图时，图注必须渲染成 figure 元素（不是裸 Markdown）
   const key = '01-zhongyi/01-zhongyi-jichu-lilun/02-wu-xing-duo-fenlei';
-  const html = render('chapter', `?path=${encodeURIComponent(key)}`).html();
-  assert.ok(html.includes('data-figure="wuxing-cycle"'), '五行章的图形未渲染进正文');
+  const chHtml = render('chapter', `?path=${encodeURIComponent(key)}`).html();
+  assert.ok(!/!\[[^\]]*\]\([^)]*\)/.test(chHtml), '章节页残留未渲染的图片语法');
 });
 
 test('[chapter] 未知路径给出提示而非白屏', () => {
