@@ -31,18 +31,18 @@ const grams = (t, n = 4) => {
   return out;
 };
 
-test('正文规模：汉字 2846 / 段 21 / 节 6', () => {
+test('正文规模：汉字 3302 / 段 25 / 节 7', () => {
   const r = m.analyze();
-  assert.strictEqual(r.docHanzi, 2846);
-  assert.strictEqual(r.paragraphs, 21);
-  assert.strictEqual(r.sections.length, 6);
-  assert.strictEqual(hanzi(readDoc()), 2846, '汉字口径必须与正文一致');
+  assert.strictEqual(r.docHanzi, 3302);
+  assert.strictEqual(r.paragraphs, 25);
+  assert.strictEqual(r.sections.length, 7);
+  assert.strictEqual(hanzi(readDoc()), 3302, '汉字口径必须与正文一致');
 });
 
-test('表格：2 张，行数 [4,7]', () => {
+test('表格：4 张，行数 [4,7,12,8]', () => {
   const r = m.analyze();
-  assert.deepStrictEqual(r.tables.map((t) => t.rows), [4,7]);
-  assert.deepStrictEqual(r.tables.map((t) => t.cols), [4,3]);
+  assert.deepStrictEqual(r.tables.map((t) => t.rows), [4,7,12,8]);
+  assert.deepStrictEqual(r.tables.map((t) => t.cols), [4,3,3,3]);
 });
 
 test('本章算术：解析出的数与派生量', () => {
