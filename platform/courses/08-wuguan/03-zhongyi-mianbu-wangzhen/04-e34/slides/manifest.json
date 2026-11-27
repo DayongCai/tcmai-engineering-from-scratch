@@ -1,7 +1,7 @@
 {
   "chapter": "04-e34",
   "slideCount": 15,
-  "segmentCount": 13,
+  "segmentCount": 12,
   "slides": [
     {
       "n": 1,
@@ -61,21 +61,21 @@
     {
       "n": 12,
       "segment": 10,
-      "chars": 277
+      "chars": 351
     },
     {
       "n": 13,
-      "segment": 11,
-      "chars": 387
+      "segment": 10,
+      "chars": 349
     },
     {
       "n": 14,
-      "segment": 12,
+      "segment": 11,
       "chars": 336
     },
     {
       "n": 15,
-      "segment": 13,
+      "segment": 12,
       "chars": 52
     }
   ]

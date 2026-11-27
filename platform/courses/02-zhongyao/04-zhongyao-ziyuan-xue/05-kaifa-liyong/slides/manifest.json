@@ -1,7 +1,7 @@
 {
   "chapter": "05-kaifa-liyong",
   "slideCount": 18,
-  "segmentCount": 13,
+  "segmentCount": 12,
   "slides": [
     {
       "n": 1,
@@ -81,16 +81,16 @@
     {
       "n": 16,
       "segment": 11,
-      "chars": 221
+      "chars": 347
     },
     {
       "n": 17,
-      "segment": 12,
-      "chars": 354
+      "segment": 11,
+      "chars": 242
     },
     {
       "n": 18,
-      "segment": 13,
+      "segment": 12,
       "chars": 52
     }
   ]

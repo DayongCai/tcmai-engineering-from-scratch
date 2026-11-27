@@ -44,13 +44,13 @@ chapters:
     title: 目：古籍底本的作者，亲手否掉了五轮
     video: rendered
     estimate_minutes: 10.90      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 6.99      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    measured_minutes: 8.52      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 04-e34
     title: 明堂之鼻：一张正面照，只拿得到四成的判据
     video: rendered
-    estimate_minutes: 11.05      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 9.02      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 11.17      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.97      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 05-e35
     title: 唇：最饱和的那块颜色，恰恰不该拿来测
@@ -62,7 +62,7 @@ chapters:
     title: 咽喉：一百零一篇里，唯一没有专章的部位
     video: rendered
     estimate_minutes: 11.88      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 9.27      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    measured_minutes: 9.84      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 07-e37
     title: 舌：五法已经把特征分好了，烂的是数据

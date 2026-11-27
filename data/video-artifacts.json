@@ -8,8 +8,8 @@
     "rendered": 2169,
     "partial": 0,
     "missing": 0,
-    "durationSec": 913883.77,
-    "bytes": 24445846345
+    "durationSec": 914259.92,
+    "bytes": 24455026781
   },
   "courses": [
     {
@@ -4991,8 +4991,8 @@
       "rendered": 8,
       "partial": 0,
       "missing": 0,
-      "durationSec": 4572.48,
-      "bytes": 123227298,
+      "durationSec": 4767.67,
+      "bytes": 127846051,
       "items": [
         {
           "slug": "01-fenbu-quhua",
@@ -5055,13 +5055,13 @@
           "title": "开发不是把药材换成产品，而是把年允收量换算成产品线的上限",
           "claimed": "rendered",
           "claimedMinutes": null,
-          "segments": 13,
+          "segments": 12,
           "frames": 18,
-          "audio": 13,
+          "audio": 12,
           "subtitles": true,
           "mp4": true,
-          "durationSec": 682,
-          "bytes": 18853953,
+          "durationSec": 778.12,
+          "bytes": 20926446,
           "status": "rendered"
         },
         {
@@ -5097,13 +5097,13 @@
           "title": "药材价格的大起大落，来自供给曲线在短期近乎垂直",
           "claimed": "rendered",
           "claimedMinutes": null,
-          "segments": 13,
+          "segments": 12,
           "frames": 17,
-          "audio": 13,
+          "audio": 12,
           "subtitles": true,
           "mp4": true,
-          "durationSec": 660.6,
-          "bytes": 17630292,
+          "durationSec": 759.67,
+          "bytes": 20176552,
           "status": "rendered"
         }
       ]
@@ -26383,8 +26383,8 @@
       "rendered": 8,
       "partial": 0,
       "missing": 0,
-      "durationSec": 4351.54,
-      "bytes": 115701961,
+      "durationSec": 4468.22,
+      "bytes": 118607050,
       "items": [
         {
           "slug": "01-e31",
@@ -26433,13 +26433,13 @@
           "title": "明堂之鼻：一张正面照，只拿得到四成的判据",
           "claimed": "rendered",
           "claimedMinutes": null,
-          "segments": 13,
+          "segments": 12,
           "frames": 15,
-          "audio": 13,
+          "audio": 12,
           "subtitles": true,
           "mp4": true,
-          "durationSec": 541.31,
-          "bytes": 14311508,
+          "durationSec": 657.99,
+          "bytes": 17216597,
           "status": "rendered"
         },
         {
@@ -29015,8 +29015,8 @@
       "rendered": 16,
       "partial": 0,
       "missing": 0,
-      "durationSec": 8181.36,
-      "bytes": 216223938,
+      "durationSec": 8245.64,
+      "bytes": 217880532,
       "items": [
         {
           "slug": "01-xulun",
@@ -29093,13 +29093,13 @@
           "title": "核的全部本事，是让两米长的信息住进一间六微米的屋子还找得到",
           "claimed": "rendered",
           "claimedMinutes": null,
-          "segments": 13,
+          "segments": 12,
           "frames": 14,
-          "audio": 13,
+          "audio": 12,
           "subtitles": true,
           "mp4": true,
-          "durationSec": 558.81,
-          "bytes": 15195308,
+          "durationSec": 623.09,
+          "bytes": 16851902,
           "status": "rendered"
         },
         {

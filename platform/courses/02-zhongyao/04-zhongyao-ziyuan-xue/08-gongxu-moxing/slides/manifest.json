@@ -1,7 +1,7 @@
 {
   "chapter": "08-gongxu-moxing",
   "slideCount": 17,
-  "segmentCount": 13,
+  "segmentCount": 12,
   "slides": [
     {
       "n": 1,
@@ -76,16 +76,16 @@
     {
       "n": 15,
       "segment": 11,
-      "chars": 200
+      "chars": 324
     },
     {
       "n": 16,
-      "segment": 12,
-      "chars": 368
+      "segment": 11,
+      "chars": 258
     },
     {
       "n": 17,
-      "segment": 13,
+      "segment": 12,
       "chars": 52
     }
   ]

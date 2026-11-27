@@ -61,8 +61,8 @@ chapters:
   - slug: 06-xibao-he
     title: 核的全部本事，是让两米长的信息住进一间六微米的屋子还找得到
     video: rendered
-    estimate_minutes: 10.67      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 9.31      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 10.8      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.38      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 07-zengzhi-fenhua-shuailao-siwang
     title: 增殖、分化、衰老、死亡不是四件事，是同一个开关的四个位置

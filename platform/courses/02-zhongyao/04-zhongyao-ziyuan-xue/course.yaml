@@ -55,8 +55,8 @@ chapters:
   - slug: 05-kaifa-liyong
     title: 开发不是把药材换成产品，而是把年允收量换算成产品线的上限
     video: rendered
-    estimate_minutes: 13.02      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 11.37      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 13.07      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 12.97      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 06-binwei-baohu
     title: 保护不是把物种围起来，而是把采挖压力从野生种群上挪走
@@ -74,4 +74,4 @@ chapters:
     title: 药材价格的大起大落，来自供给曲线在短期近乎垂直
     video: rendered
     estimate_minutes: 12.70      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 11.01      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    measured_minutes: 12.66      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

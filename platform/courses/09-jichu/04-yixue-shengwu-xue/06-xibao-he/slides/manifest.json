@@ -1,7 +1,7 @@
 {
   "chapter": "06-xibao-he",
   "slideCount": 14,
-  "segmentCount": 13,
+  "segmentCount": 12,
   "slides": [
     {
       "n": 1,
@@ -51,26 +51,26 @@
     {
       "n": 10,
       "segment": 10,
-      "chars": 394
+      "chars": 414
     },
     {
       "n": 11,
       "segment": 10,
-      "chars": 78
+      "chars": 327
     },
     {
       "n": 12,
-      "segment": 11,
-      "chars": 334
+      "segment": 10,
+      "chars": 108
     },
     {
       "n": 13,
-      "segment": 12,
-      "chars": 401
+      "segment": 11,
+      "chars": 281
     },
     {
       "n": 14,
-      "segment": 13,
+      "segment": 12,
       "chars": 52
     }
   ]

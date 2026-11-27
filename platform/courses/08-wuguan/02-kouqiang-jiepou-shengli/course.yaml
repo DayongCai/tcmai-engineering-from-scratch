@@ -74,4 +74,4 @@ chapters:
     title: 检查不是看一遍，是五个动作各答一问
     video: rendered
     estimate_minutes: 13.10      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 8.81      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    measured_minutes: 9.29      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

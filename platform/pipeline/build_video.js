@@ -132,6 +132,15 @@ for (const ch of chapters) {
 
   fs.mkdirSync(videoDir, { recursive: true });
   const listPath = path.join(cdir, 'concat.txt');
+  // 先清掉上一轮的分片：讲稿段数变少时（如 14 段 → 12 段），多出来的 part-013/014
+  // 会留在目录里——成片只拼前 12 段，看着正常，但「分片数 = 段数」的门会判红，
+  // 而且下次别人按目录内容排查会以为成片有 14 段。
+  {
+    const stale = fs.readdirSync(videoDir).filter((f) => /^part-\d{3}\.mp4$/.test(f));
+    for (const f of stale) {
+      try { fs.unlinkSync(path.join(videoDir, f)); } catch { /* 占用就留着，下面按段数重建 */ }
+    }
+  }
   const lines = [];
   let withAudio = 0;
 

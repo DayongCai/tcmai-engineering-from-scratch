@@ -10,8 +10,8 @@
 | 成片齐（rendered） | **2169** |
 | 部分（partial） | 0 |
 | 无（missing） | 0 |
-| 实测时长合计 | 253:51（253.9 小时） |
-| 成片字节合计 | 22.77 GB |
+| 实测时长合计 | 253:58（254.0 小时） |
+| 成片字节合计 | 22.78 GB |
 
 ## 逐课
 
@@ -43,7 +43,7 @@
 | 中药学 `02-zhongyao/01-zhongyaoxue` | 02-zhongyao | 2 | 14 | 14 | 0 | 0 | 2:02 | 180 MB |
 | 药用植物学 `02-zhongyao/02-yaoyong-zhiwu-xue` | 02-zhongyao | 2 | 9 | 9 | 0 | 0 | 1:24 | 128 MB |
 | 方剂学 `02-zhongyao/03-fangjixue` | 02-zhongyao | 3 | 15 | 15 | 0 | 0 | 2:45 | 247 MB |
-| 中药资源学 `02-zhongyao/04-zhongyao-ziyuan-xue` | 02-zhongyao | 3 | 8 | 8 | 0 | 0 | 1:16 | 118 MB |
+| 中药资源学 `02-zhongyao/04-zhongyao-ziyuan-xue` | 02-zhongyao | 3 | 8 | 8 | 0 | 0 | 1:19 | 122 MB |
 | 中药鉴定学 `02-zhongyao/05-zhongyao-jianding-xue` | 02-zhongyao | 4 | 10 | 10 | 0 | 0 | 1:29 | 137 MB |
 | 中药化学 `02-zhongyao/06-zhongyao-huaxue` | 02-zhongyao | 4 | 12 | 12 | 0 | 0 | 2:11 | 204 MB |
 | 中药药理学 `02-zhongyao/07-zhongyao-yaoli-xue` | 02-zhongyao | 5 | 11 | 11 | 0 | 0 | 1:59 | 191 MB |
@@ -174,7 +174,7 @@
 | 智能系毕业设计与知识移交 `07-zhineng/19-zhineng-biye-sheji` | 07-zhineng | 10 | 6 | 6 | 0 | 0 | 0:05 | 6 MB |
 | 耳鼻喉解剖生理学 `08-wuguan/01-erbihou-jiepou-shengli` | 08-wuguan | 4 | 8 | 8 | 0 | 0 | 1:48 | 170 MB |
 | 口腔解剖生理学 `08-wuguan/02-kouqiang-jiepou-shengli` | 08-wuguan | 4 | 8 | 8 | 0 | 0 | 1:28 | 136 MB |
-| 中医面部望诊学 `08-wuguan/03-zhongyi-mianbu-wangzhen` | 08-wuguan | 5 | 8 | 8 | 0 | 0 | 1:13 | 110 MB |
+| 中医面部望诊学 `08-wuguan/03-zhongyi-mianbu-wangzhen` | 08-wuguan | 5 | 8 | 8 | 0 | 0 | 1:14 | 113 MB |
 | 眼科光学与验光 `08-wuguan/04-yanke-guangxue-yanguang` | 08-wuguan | 5 | 8 | 8 | 0 | 0 | 1:10 | 112 MB |
 | 中医五官科经典选读 `08-wuguan/05-zhongyi-wuguan-jingdian` | 08-wuguan | 5 | 6 | 6 | 0 | 0 | 0:53 | 82 MB |
 | 中医眼科学 `08-wuguan/06-zhongyi-yanke-xue` | 08-wuguan | 6 | 10 | 10 | 0 | 0 | 1:19 | 121 MB |
@@ -192,7 +192,7 @@
 | 人体解剖学 `09-jichu/01-renti-jiepou-xue` | 09-jichu | 1 | 10 | 10 | 0 | 0 | 2:15 | 219 MB |
 | 组织学与胚胎学 `09-jichu/02-zuzhi-peitai-xue` | 09-jichu | 1 | 20 | 20 | 0 | 0 | 4:01 | 398 MB |
 | 医学细胞生物学 `09-jichu/03-yixue-xibao-shengwu-xue` | 09-jichu | 1 | 12 | 12 | 0 | 0 | 1:38 | 149 MB |
-| 医学生物学 `09-jichu/04-yixue-shengwu-xue` | 09-jichu | 2 | 16 | 16 | 0 | 0 | 2:16 | 206 MB |
+| 医学生物学 `09-jichu/04-yixue-shengwu-xue` | 09-jichu | 2 | 16 | 16 | 0 | 0 | 2:17 | 208 MB |
 | 正常人体学 `09-jichu/05-zhengchang-renti-xue` | 09-jichu | 2 | 18 | 18 | 0 | 0 | 3:04 | 296 MB |
 | 生理学 `09-jichu/06-shengli-xue` | 09-jichu | 2 | 11 | 11 | 0 | 0 | 5:43 | 552 MB |
 | 生物化学 `09-jichu/07-shenghua-xue` | 09-jichu | 2 | 21 | 21 | 0 | 0 | 3:12 | 305 MB |
