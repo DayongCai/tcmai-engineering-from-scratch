@@ -1,9 +1,9 @@
 {
   "schema": "tcm-media-bundle/1",
-  "generatedAt": "2026-11-16T08:13:24.668Z",
+  "generatedAt": "2026-11-27T06:38:15.980Z",
   "partMaxBytes": 1717986918.4,
-  "totalChapters": 150,
-  "totalBytes": 7840747520,
+  "totalChapters": 667,
+  "totalBytes": 21076019200,
   "bundles": [
     {
       "course": "01-zhongyi/01-zhongyi-jichu-lilun",
@@ -85,7 +85,7 @@
         }
       ],
       "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
-      "packedAt": "2026-11-16T08:11:12.081Z"
+      "packedAt": "2026-11-27T06:35:36.814Z"
     },
     {
       "course": "01-zhongyi/08-jingui-yaolue",
@@ -251,7 +251,7 @@
         }
       ],
       "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
-      "packedAt": "2026-11-16T08:12:35.303Z"
+      "packedAt": "2026-11-27T06:35:42.117Z"
     },
     {
       "course": "01-zhongyi/10-zhongyi-neike-xue",
@@ -357,15 +357,4195 @@
         }
       ],
       "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
-      "packedAt": "2026-11-16T08:12:40.037Z"
+      "packedAt": "2026-11-27T06:35:46.722Z"
+    },
+    {
+      "course": "02-zhongyao/21-zhongyao-du-li-xue",
+      "title": "中药毒理学",
+      "version": "v1",
+      "chapterCount": 10,
+      "totalDurationSec": 4766.449,
+      "totalBytes": 193338668,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "21-zhongyao-du-li-xue-v1-part-01.tar",
+          "bytes": 195082240,
+          "sha256": "9d16d677c37e1013d7c57809c570380996edec0207eaae3eacc912ef4489c6f4",
+          "chapters": [
+            {
+              "slug": "01-du-xing-gainian",
+              "title": "毒性不是标签，是三个剂量与一条曲线共同决定的区间",
+              "bytes": 25660053,
+              "durationSec": 655.99
+            },
+            {
+              "slug": "02-du-xing-wuzhi",
+              "title": "第2章 毒性物质基础：成分类型与矿物药",
+              "bytes": 20306408,
+              "durationSec": 490.795
+            },
+            {
+              "slug": "03-gan-du-xing",
+              "title": "第3章 肝毒性：为什么肝最先受损",
+              "bytes": 16320179,
+              "durationSec": 407.971
+            },
+            {
+              "slug": "04-shen-du-xing",
+              "title": "第4章 肾毒性：马兜铃酸的教训",
+              "bytes": 16033396,
+              "durationSec": 396.559
+            },
+            {
+              "slug": "05-xin-shen-jing-du-xing",
+              "title": "第5章 心与神经毒性：乌头碱的半小时",
+              "bytes": 16040515,
+              "durationSec": 396.143
+            },
+            {
+              "slug": "06-shengzhi-du-xing",
+              "title": "第6章 生殖与遗传毒性：妊娠禁忌的分级",
+              "bytes": 18659215,
+              "durationSec": 459.635
+            },
+            {
+              "slug": "07-peiwu-paozhi-jian-du",
+              "title": "第7章 配伍与炮制减毒：十八反十九畏怎么读",
+              "bytes": 19162658,
+              "durationSec": 469.483
+            },
+            {
+              "slug": "08-jian-ce-anquan-bianjie",
+              "title": "第8章 不良反应监测与安全边界",
+              "bytes": 18912166,
+              "durationSec": 459.071
+            },
+            {
+              "slug": "09-shiyan-anquan-pingjia",
+              "title": "第9章 毒理实验与安全评价：LD50、亚慢性、遗传毒性与 GLP",
+              "bytes": 21440415,
+              "durationSec": 534.113
+            },
+            {
+              "slug": "10-zhiyanxing-changqi",
+              "title": "第10章 致癌性与长期暴露：从「中毒」到「肿瘤」的终点",
+              "bytes": 20803663,
+              "durationSec": 496.689
+            }
+          ],
+          "sourceBytes": 193338668
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:35:51.723Z"
+    },
+    {
+      "course": "03-zhenjiu/01-jingluo-xue",
+      "title": "经络学",
+      "version": "v1",
+      "chapterCount": 10,
+      "totalDurationSec": 7985.215,
+      "totalBytes": 335926379,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "01-jingluo-xue-v1-part-01.tar",
+          "bytes": 338780160,
+          "sha256": "c7b451cf1106cd316399ad6ef34fcea4c61009fe46e3634af630bbf0300f8264",
+          "chapters": [
+            {
+              "slug": "01-zucheng-mingming",
+              "title": "经络不是血管的别名，而是一套分层的通道系统",
+              "bytes": 31344088,
+              "durationSec": 743.499
+            },
+            {
+              "slug": "02-shier-jingmai",
+              "title": "十二经的走向不是路线图，而是十二处交接点上的传递规则",
+              "bytes": 26004806,
+              "durationSec": 637.776
+            },
+            {
+              "slug": "03-qijing-bamai",
+              "title": "奇经八脉不是十二经的备用线，而是气血的蓄水池",
+              "bytes": 37118806,
+              "durationSec": 878.627
+            },
+            {
+              "slug": "04-jingbie-jinjing",
+              "title": "经别经筋皮部只是配件，四街四海才是经气的纵横坐标",
+              "bytes": 38859238,
+              "durationSec": 906.816
+            },
+            {
+              "slug": "05-biaoli-peishu",
+              "title": "表里配属写在属络上，却只能从取穴路径上验出来",
+              "bytes": 25216469,
+              "durationSec": 624.12
+            },
+            {
+              "slug": "06-bingli-fanying",
+              "title": "病候是一张定位表，不是一份症状清单",
+              "bytes": 36534195,
+              "durationSec": 843.411
+            },
+            {
+              "slug": "07-jingluo-kongjian",
+              "title": "经络图不是一张画，而是一套可折量的坐标系",
+              "bytes": 35187229,
+              "durationSec": 838.6
+            },
+            {
+              "slug": "08-liuzhu-shijian",
+              "title": "流注是一个闭环，时辰表是后人往环上刻的刻度",
+              "bytes": 32660802,
+              "durationSec": 773.155
+            },
+            {
+              "slug": "09-jiepou-zhengyi",
+              "title": "「找不到对应结构」是一个研究状态，不是一句结论",
+              "bytes": 35226809,
+              "durationSec": 836.651
+            },
+            {
+              "slug": "10-tupu-jianku",
+              "title": "建库的最小单元不是一条经脉，而是一个三元组",
+              "bytes": 37773937,
+              "durationSec": 902.56
+            }
+          ],
+          "sourceBytes": 335926379
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:35:55.432Z"
+    },
+    {
+      "course": "03-zhenjiu/02-shuxue-xue",
+      "title": "腧穴学",
+      "version": "v1",
+      "chapterCount": 12,
+      "totalDurationSec": 6950.119,
+      "totalBytes": 281659880,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "02-shuxue-xue-v1-part-01.tar",
+          "bytes": 284190720,
+          "sha256": "33d7112f3687d29bb236fb98ac8434328284a6727bc8f5f4c9325de227d2fb0d",
+          "chapters": [
+            {
+              "slug": "01-fenlei-dingwei",
+              "title": "穴名、归经与定位是三套索引，没有一套能单独指认一个穴",
+              "bytes": 19341797,
+              "durationSec": 465.6
+            },
+            {
+              "slug": "02-gudu-fencun",
+              "title": "骨度分寸量的是比例不是长度，换个人身上的「一寸」就该换",
+              "bytes": 24917427,
+              "durationSec": 611.899
+            },
+            {
+              "slug": "03-shou-san-yin",
+              "title": "手三阴二十九穴的进针深度由解剖层次决定，从胸到指相差十五倍",
+              "bytes": 19950645,
+              "durationSec": 504.587
+            },
+            {
+              "slug": "04-shou-san-yang",
+              "title": "手三阳六十二穴的深度在肩线封顶，再往上一律改用方向",
+              "bytes": 23617364,
+              "durationSec": 586.35
+            },
+            {
+              "slug": "05-zu-san-yang",
+              "title": "足三阳九十一穴的深度按脊柱节段分档，不按肌肉厚薄",
+              "bytes": 26252411,
+              "durationSec": 651.427
+            },
+            {
+              "slug": "06-zu-san-yin",
+              "title": "足三阴四十五穴的最深处在小腿，越朝躯干反而越浅",
+              "bytes": 25655912,
+              "durationSec": 638.25
+            },
+            {
+              "slug": "07-ren-du-xue",
+              "title": "任督二十五穴共用一条正中线，深度让位给针尖的朝向",
+              "bytes": 25313117,
+              "durationSec": 626.307
+            },
+            {
+              "slug": "08-jingwai-qixue",
+              "title": "经外奇穴十八条编号背后是五十多个进针点",
+              "bytes": 21967197,
+              "durationSec": 558.203
+            },
+            {
+              "slug": "09-teding-xue",
+              "title": "特定穴是同一批穴上越挂越多的牌子，不是六类并列的穴",
+              "bytes": 26967940,
+              "durationSec": 676.939
+            },
+            {
+              "slug": "10-zhuzhi-guilv",
+              "title": "主治规律是「穴在哪一段」与「病在哪一段」之间的一条接线规则",
+              "bytes": 28571995,
+              "durationSec": 711.21
+            },
+            {
+              "slug": "11-weixian-shendu",
+              "title": "「不可深刺」是三种不同的禁令，混成一个深度上限就会在最危险处失灵",
+              "bytes": 8394681,
+              "durationSec": 190.848
+            },
+            {
+              "slug": "12-dingwei-sanwei",
+              "title": "三维模型缺的不止深度：尺度、体位、深度三个量里缺了两个半",
+              "bytes": 30709394,
+              "durationSec": 728.499
+            }
+          ],
+          "sourceBytes": 281659880
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:35:57.363Z"
+    },
+    {
+      "course": "03-zhenjiu/03-zhenjiu-yiji-xuan",
+      "title": "针灸医籍选",
+      "version": "v1",
+      "chapterCount": 8,
+      "totalDurationSec": 6467.883,
+      "totalBytes": 274876629,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "03-zhenjiu-yiji-xuan-v1-part-01.tar",
+          "bytes": 277196800,
+          "sha256": "980a0058e2b27bb87ddf6693a5516e035d4353c41346b5ce04a01e8926bd7ddc",
+          "chapters": [
+            {
+              "slug": "01-lingshu-xuandu",
+              "title": "《灵枢》不是针法手册，而是针道的总纲",
+              "bytes": 27696182,
+              "durationSec": 656.04
+            },
+            {
+              "slug": "02-suwen-nanjing",
+              "title": "《素问》立治则，《难经》把治则算成补泻公式",
+              "bytes": 29753040,
+              "durationSec": 714.771
+            },
+            {
+              "slug": "03-jia-yi-jing-suitang",
+              "title": "《甲乙经》把穴编成目录，隋唐把针灸写进方书与医德",
+              "bytes": 37932029,
+              "durationSec": 893.832
+            },
+            {
+              "slug": "04-songjinyuan",
+              "title": "宋金元把针灸变成国家标准、时间表和一家之言",
+              "bytes": 38606183,
+              "durationSec": 899.664
+            },
+            {
+              "slug": "05-mingqing",
+              "title": "明清针灸的份量不在新穴新法，而在把经验编成可教的体例",
+              "bytes": 36853506,
+              "durationSec": 857.304
+            },
+            {
+              "slug": "06-gefu",
+              "title": "歌赋用押韵换来了记得住，代价是把异文压成一个说法",
+              "bytes": 35199922,
+              "durationSec": 817.224
+            },
+            {
+              "slug": "07-yian",
+              "title": "医案留下的是一条决策链，不是一个成功率",
+              "bytes": 34781076,
+              "durationSec": 830.424
+            },
+            {
+              "slug": "08-shuzihua-yuedu",
+              "title": "检索能把找不到变成找得到太多，判断仍要回到原文",
+              "bytes": 34054691,
+              "durationSec": 798.624
+            }
+          ],
+          "sourceBytes": 274876629
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:35:59.546Z"
+    },
+    {
+      "course": "03-zhenjiu/04-qigong-xue",
+      "title": "中医气功学",
+      "version": "v1",
+      "chapterCount": 7,
+      "totalDurationSec": 5652.526,
+      "totalBytes": 235552420,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "04-qigong-xue-v1-part-01.tar",
+          "bytes": 237578240,
+          "sha256": "696718cfbbb2cafd836348c26af064a1a0aae180773a9bb76e60c46ab650b375",
+          "chapters": [
+            {
+              "slug": "01-gaishu-yuanyuan",
+              "title": "名是新的，实是旧的，气功在《内经》里已经排进治法",
+              "bytes": 38743967,
+              "durationSec": 907.459
+            },
+            {
+              "slug": "02-lilun-jichu",
+              "title": "调息写得最多，不等于调息最要紧",
+              "bytes": 35654063,
+              "durationSec": 846.139
+            },
+            {
+              "slug": "03-fanying-piancha",
+              "title": "反应与偏差的分界不在感觉强弱，在能不能自己缓过来",
+              "bytes": 38513066,
+              "durationSec": 920.63
+            },
+            {
+              "slug": "04-jinggong-donggong",
+              "title": "静功与动功的分界不在动不动，在由谁主导",
+              "bytes": 35391315,
+              "durationSec": 807.019
+            },
+            {
+              "slug": "05-taiji-jianshen",
+              "title": "太极拳是调身为主的动功：把动作放慢不叫练气功，把三调参数写出来才算",
+              "bytes": 28415614,
+              "durationSec": 721.15
+            },
+            {
+              "slug": "06-bianzheng-shigong",
+              "title": "辨证施功的落点是参数：同一张「放松功」的方子，四个证候要四种练法",
+              "bytes": 26875357,
+              "durationSec": 666.499
+            },
+            {
+              "slug": "07-yanjiu-zhiweibing",
+              "title": "气功研究只敢说「可能」，治未病的建议却必须具体到今天练什么",
+              "bytes": 31959038,
+              "durationSec": 783.63
+            }
+          ],
+          "sourceBytes": 235552420
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:36:01.359Z"
+    },
+    {
+      "course": "03-zhenjiu/05-tuina-xue",
+      "title": "推拿学",
+      "version": "v1",
+      "chapterCount": 10,
+      "totalDurationSec": 7357.277,
+      "totalBytes": 311803309,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "05-tuina-xue-v1-part-01.tar",
+          "bytes": 314439680,
+          "sha256": "11c2e051cf7aee3aa6910931bedb68011afebbbb3ef5514e3763f10e4f06eb58",
+          "chapters": [
+            {
+              "slug": "01-yuanliu-yuanli",
+              "title": "推拿的疗效有通路，源流只是它的来路",
+              "bytes": 31773275,
+              "durationSec": 739.227
+            },
+            {
+              "slug": "02-shiyingzheng-fengxian",
+              "title": "推拿能治什么，取决于它的作用落在哪一层",
+              "bytes": 24974557,
+              "durationSec": 583.715
+            },
+            {
+              "slug": "03-chengren-buwei",
+              "title": "手法的名字记着力面，处方的效力记在顺序上",
+              "bytes": 34017314,
+              "durationSec": 777.552
+            },
+            {
+              "slug": "04-xiaoer-tuina",
+              "title": "小儿推拿换掉的不是穴位尺寸，是补泻的计量单位",
+              "bytes": 35236047,
+              "durationSec": 819.12
+            },
+            {
+              "slug": "05-jizhu-tuina",
+              "title": "脊柱手法的技术含量，一半在决定不做哪一手",
+              "bytes": 42040009,
+              "durationSec": 990.019
+            },
+            {
+              "slug": "06-jingjian-yaotui",
+              "title": "病名换了九个，处方的骨架只有一套",
+              "bytes": 42066361,
+              "durationSec": 962.832
+            },
+            {
+              "slug": "07-neike-fuke",
+              "title": "内科妇科推拿的差别不在手法而在时程",
+              "bytes": 28384361,
+              "durationSec": 700.523
+            },
+            {
+              "slug": "08-lixue-celiang",
+              "title": "手法剂量里频率可抄，力度只能自己校准",
+              "bytes": 25022912,
+              "durationSec": 610.011
+            },
+            {
+              "slug": "09-liaoxiao-pingjia",
+              "title": "手法不能设盲，疗效判据只能外置",
+              "bytes": 21876267,
+              "durationSec": 542.771
+            },
+            {
+              "slug": "10-chufang-jilu",
+              "title": "一份可复现的处方只由可判定字段构成",
+              "bytes": 26412206,
+              "durationSec": 631.507
+            }
+          ],
+          "sourceBytes": 311803309
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:36:03.413Z"
+    },
+    {
+      "course": "03-zhenjiu/06-tuina-shoufa-xue",
+      "title": "推拿手法学",
+      "version": "v1",
+      "chapterCount": 8,
+      "totalDurationSec": 3165.885,
+      "totalBytes": 128520229,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "06-tuina-shoufa-xue-v1-part-01.tar",
+          "bytes": 129710080,
+          "sha256": "1fbb1194ec2f2b1eae3dbaaf1c0406781d57ced9aa95d032eb442b1c7fbf16ee",
+          "chapters": [
+            {
+              "slug": "01-fenlei-yaoqiu",
+              "title": "分类给的是坐标，手法给的是动作",
+              "bytes": 26348202,
+              "durationSec": 660.744
+            },
+            {
+              "slug": "02-baidong-yizhichan",
+              "title": "同属摆动类，一指禅与㨰法仍不能互替",
+              "bytes": 26503599,
+              "durationSec": 657.227
+            },
+            {
+              "slug": "03-moca-jiya",
+              "title": "同一个「推」字，在两类手法里是两个动作",
+              "bytes": 1694764,
+              "durationSec": 56.147
+            },
+            {
+              "slug": "04-zhendong-kouji",
+              "title": "振动求透，叩击求响，两套节律两套判据",
+              "bytes": 32379161,
+              "durationSec": 767.987
+            },
+            {
+              "slug": "05-yundong-guanjie",
+              "title": "关节的极限写在解剖里，不写在手感里",
+              "bytes": 1660096,
+              "durationSec": 55.011
+            },
+            {
+              "slug": "06-lixue-canshu",
+              "title": "手法可测的只有力、频、时，剩下的交给手感",
+              "bytes": 1670473,
+              "durationSec": 56.531
+            },
+            {
+              "slug": "07-xunlian-pingjia",
+              "title": "合格线由训练史画出，不由当场表现画出",
+              "bytes": 36557585,
+              "durationSec": 855.563
+            },
+            {
+              "slug": "08-biaozhun-guifan",
+              "title": "规范能统一动作，统一不了「这一例该不该动手」",
+              "bytes": 1706349,
+              "durationSec": 56.675
+            }
+          ],
+          "sourceBytes": 128520229
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:36:04.380Z"
+    },
+    {
+      "course": "03-zhenjiu/07-cifa-jiufa-xue",
+      "title": "刺法灸法学",
+      "version": "v1",
+      "chapterCount": 10,
+      "totalDurationSec": 6171.79,
+      "totalBytes": 262511695,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "07-cifa-jiufa-xue-v1-part-01.tar",
+          "bytes": 264755200,
+          "sha256": "46814aa755400b91e6b15f496792ee93d0659641c67386e9f11f572984b432d2",
+          "chapters": [
+            {
+              "slug": "01-gaishu-yuanliu",
+              "title": "针与灸不是两门手艺，而是同一套刺激量学的两种实现",
+              "bytes": 24156531,
+              "durationSec": 565.63
+            },
+            {
+              "slug": "02-haozhen-cifa",
+              "title": "毫针的功夫不在「扎进去」，而在四个能被人复核的动作上",
+              "bytes": 20703235,
+              "durationSec": 503.011
+            },
+            {
+              "slug": "03-neijing-nanjing",
+              "title": "读经典不是背条文，是把一句话还原成一组能做的动作",
+              "bytes": 19920370,
+              "durationSec": 477.667
+            },
+            {
+              "slug": "04-jinzhenfu-dacheng",
+              "title": "复式手法不是玄学，是把四个基本动作按层次与次数叠起来",
+              "bytes": 19805033,
+              "durationSec": 477.71
+            },
+            {
+              "slug": "05-jiufa",
+              "title": "灸的功夫不在点火，而在把「量」变成别人能复核的壮与炷",
+              "bytes": 22398156,
+              "durationSec": 536.931
+            },
+            {
+              "slug": "06-tezhong-zhenfa",
+              "title": "换一种针形，就换一整套适应证和一整套禁忌",
+              "bytes": 33971340,
+              "durationSec": 780.87
+            },
+            {
+              "slug": "07-weizhen-xitong",
+              "title": "三套微针各把身体投影一次，投影规则不同，边界也不同",
+              "bytes": 30039363,
+              "durationSec": 687.235
+            },
+            {
+              "slug": "08-dianzhen-zhushe",
+              "title": "电与药接上针之后，失手的性质就从「疼一下」变成「不可逆」",
+              "bytes": 27240011,
+              "durationSec": 641.85
+            },
+            {
+              "slug": "09-mailiao-ciliao",
+              "title": "三种「让刺激留得久」的技术里，只有一种把东西留在了体内",
+              "bytes": 33443883,
+              "durationSec": 768.443
+            },
+            {
+              "slug": "10-anquan-shuzihua",
+              "title": "要害是解剖事实，不是风险清单上的最后一行",
+              "bytes": 30833773,
+              "durationSec": 732.443
+            }
+          ],
+          "sourceBytes": 262511695
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:36:06.338Z"
+    },
+    {
+      "course": "03-zhenjiu/08-zhenjiu-zhiliao-xue",
+      "title": "针灸治疗学",
+      "version": "v1",
+      "chapterCount": 12,
+      "totalDurationSec": 7776.243,
+      "totalBytes": 319884087,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "08-zhenjiu-zhiliao-xue-v1-part-01.tar",
+          "bytes": 322703360,
+          "sha256": "5ee19b0fcd8d031fb6486f138b17a545174cf0c60af8d7130647e6cb3c67e0a2",
+          "chapters": [
+            {
+              "slug": "01-zhiliao-yuanze",
+              "title": "五条治疗原则不是五句口号，而是五次「能不能下针」的判定",
+              "bytes": 40769634,
+              "durationSec": 993.65
+            },
+            {
+              "slug": "02-zhenzhi-tedian-chufang",
+              "title": "处方不是穴名清单，而是「辨经—选穴—刺灸法」三列必须自洽",
+              "bytes": 28749073,
+              "durationSec": 693.47
+            },
+            {
+              "slug": "03-tedingxue-yingyong",
+              "title": "特定穴是按条件检索的索引，不是「更重要的穴位」",
+              "bytes": 24216679,
+              "durationSec": 595.419
+            },
+            {
+              "slug": "04-toumina-tongzheng",
+              "title": "痛证处方的骨架是「局部穴 ＋ 一条经的远端 ＋ 一个动作」",
+              "bytes": 23012950,
+              "durationSec": 552.86
+            },
+            {
+              "slug": "05-neike-yi",
+              "title": "内科前二十一个病证，先问「病在神还是病在形」",
+              "bytes": 29633232,
+              "durationSec": 721.15
+            },
+            {
+              "slug": "06-neike-er",
+              "title": "内科后二十一个病证，处方的主干是「募穴＋下合穴」",
+              "bytes": 25286370,
+              "durationSec": 635.38
+            },
+            {
+              "slug": "07-fuerke",
+              "title": "妇儿科二十二证，一半在调周期，一半在调发育",
+              "bytes": 23902233,
+              "durationSec": 588.011
+            },
+            {
+              "slug": "08-piwaike",
+              "title": "皮外骨伤二十二证，先分清病在血分、在局部，还是在经筋",
+              "bytes": 24320700,
+              "durationSec": 579.79
+            },
+            {
+              "slug": "09-wuguan",
+              "title": "五官十六证，先取最近的那个穴，再用一条远端经把火引下去",
+              "bytes": 24396734,
+              "durationSec": 586.77
+            },
+            {
+              "slug": "10-jizheng-qita",
+              "title": "急症先保命再取穴，其他病证先问这一针在治什么",
+              "bytes": 26128741,
+              "durationSec": 627.46
+            },
+            {
+              "slug": "11-zhiwuliu-zhu",
+              "title": "时间针法算得出坐标，算不出疗效",
+              "bytes": 26108217,
+              "durationSec": 633.563
+            },
+            {
+              "slug": "12-yanjiu-jinzhan",
+              "title": "研究进展给的是地图，不是证据表",
+              "bytes": 23359524,
+              "durationSec": 568.72
+            }
+          ],
+          "sourceBytes": 319884087
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:36:08.888Z"
+    },
+    {
+      "course": "03-zhenjiu/09-kangfu-yixue-jichu",
+      "title": "康复医学基础",
+      "version": "v1",
+      "chapterCount": 8,
+      "totalDurationSec": 5205.491,
+      "totalBytes": 221389443,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "09-kangfu-yixue-jichu-v1-part-01.tar",
+          "bytes": 223283200,
+          "sha256": "7e4c430c3438b2e292e5168bafe1dce655f7553c8d4bc373f4558fa0126410c8",
+          "chapters": [
+            {
+              "slug": "01-kangfu-gailun",
+              "title": "康复的目标是功能而不是治愈，判据必须落在活动上",
+              "bytes": 32355255,
+              "durationSec": 755.499
+            },
+            {
+              "slug": "02-gongneng-pingding",
+              "title": "评定不是打分，是把功能变化变成别人能复核的说法",
+              "bytes": 23158990,
+              "durationSec": 559.379
+            },
+            {
+              "slug": "03-yundong-gongneng",
+              "title": "训练不是加量，是在能承受的范围里换回可控的动作",
+              "bytes": 30935807,
+              "durationSec": 705.267
+            },
+            {
+              "slug": "04-richeng-shenghuo",
+              "title": "自理能力是康复的终点，替他做得越多他恢复得越少",
+              "bytes": 28198159,
+              "durationSec": 656.667
+            },
+            {
+              "slug": "05-yanyu-yinshi",
+              "title": "言语、吞咽与认知康复：三块里只有一块按秒计时",
+              "bytes": 28001988,
+              "durationSec": 666.33
+            },
+            {
+              "slug": "06-kangfu-huli",
+              "title": "康复护理与并发症预防：同一个翻身动作，既是五种并发症的解药，也是引信",
+              "bytes": 25297588,
+              "durationSec": 594.63
+            },
+            {
+              "slug": "07-shequ-changqi",
+              "title": "社区与长期照护：断点不在家里，在从机构到家那一次交接",
+              "bytes": 26565413,
+              "durationSec": 634.219
+            },
+            {
+              "slug": "08-tuandui-lunli",
+              "title": "康复团队与伦理：分工写在职责里，伦理写在两列里",
+              "bytes": 26876243,
+              "durationSec": 633.5
+            }
+          ],
+          "sourceBytes": 221389443
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:36:10.774Z"
+    },
+    {
+      "course": "03-zhenjiu/10-shiyan-zhenjiu-xue",
+      "title": "实验针灸学",
+      "version": "v1",
+      "chapterCount": 11,
+      "totalDurationSec": 8008.301,
+      "totalBytes": 346651201,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "10-shiyan-zhenjiu-xue-v1-part-01.tar",
+          "bytes": 349521920,
+          "sha256": "6ddfb7640eaaf9916f35c63094fe3b30c376ce0dc4b9774c9d24e59020fafebb",
+          "chapters": [
+            {
+              "slug": "01-xulun-dingwei",
+              "title": "实验针灸学的分水岭不是技术，而是敢不敢把结论降级",
+              "bytes": 20565764,
+              "durationSec": 498.94
+            },
+            {
+              "slug": "02-shuxue-xingtai",
+              "title": "穴位不是皮上的一个点，而是贯穿六层的立体接口",
+              "bytes": 31970705,
+              "durationSec": 724.315
+            },
+            {
+              "slug": "03-jingluo-xianxiang",
+              "title": "经络研究缺的不是现象，而是能把现象判死的对照",
+              "bytes": 32912496,
+              "durationSec": 747.843
+            },
+            {
+              "slug": "04-xiaoying-tedian",
+              "title": "针灸的效应不是一条线，而是一族随状态漂移的曲线",
+              "bytes": 33018454,
+              "durationSec": 773.61
+            },
+            {
+              "slug": "05-zhentong-jizhi",
+              "title": "证据最厚的镇痛方向，恰恰最需要一套降级规则",
+              "bytes": 34218584,
+              "durationSec": 791.19
+            },
+            {
+              "slug": "06-shenjing-tiaojie",
+              "title": "神经系统研究最难的一步，是把「激活了」读成「起效了」",
+              "bytes": 34149365,
+              "durationSec": 786.6
+            },
+            {
+              "slug": "07-neifen-mianyi",
+              "title": "四个单元写得一样长，四块证据的分量却差着量级",
+              "bytes": 29624889,
+              "durationSec": 688.955
+            },
+            {
+              "slug": "08-xunhuan-huxi-xiaohua",
+              "title": "三个系统共用一条判读纪律，比各自记住一串指标更有用",
+              "bytes": 35926582,
+              "durationSec": 807.84
+            },
+            {
+              "slug": "09-miniao-shengzhi-yundong",
+              "title": "四个系统篇幅几乎相等，证据厚薄却分成四档",
+              "bytes": 33504867,
+              "durationSec": 767.259
+            },
+            {
+              "slug": "10-fangfa-moxing",
+              "title": "技术章的价值不在会做，而在知道它会在哪里骗你",
+              "bytes": 36327785,
+              "durationSec": 821.69
+            },
+            {
+              "slug": "11-xunzheng-qianyan",
+              "title": "收口的不是知识清单，而是说清每句话能撑多重的证据",
+              "bytes": 24431710,
+              "durationSec": 600.059
+            }
+          ],
+          "sourceBytes": 346651201
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:36:13.295Z"
+    },
+    {
+      "course": "03-zhenjiu/11-wuli-zhiliao",
+      "title": "物理治疗与运动康复",
+      "version": "v1",
+      "chapterCount": 8,
+      "totalDurationSec": 5181.192,
+      "totalBytes": 217921530,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "11-wuli-zhiliao-v1-part-01.tar",
+          "bytes": 219801600,
+          "sha256": "7524f6a607cb7f66df44bd5164f6c6af839de0dd51caf3f7c5dce347d374ec7b",
+          "chapters": [
+            {
+              "slug": "01-wuli-gailun",
+              "title": "物理治疗的门槛不在选哪一种因子，而在能不能给这个因子配出四个量",
+              "bytes": 24503033,
+              "durationSec": 583.83
+            },
+            {
+              "slug": "02-dianliao",
+              "title": "电针的杀伤力主要不来自参数，而来自那一对电极接在哪",
+              "bytes": 30049638,
+              "durationSec": 711.411
+            },
+            {
+              "slug": "03-reliao-guangliao",
+              "title": "热疗的剂量藏在壮数与灸时里，光疗在本章只剩一条安全红线",
+              "bytes": 29366029,
+              "durationSec": 670.23
+            },
+            {
+              "slug": "04-lengliao-chaosheng",
+              "title": "冷与超声是章名上的两个空位，能执行的只有牵引的力与它的禁区",
+              "bytes": 31612961,
+              "durationSec": 734.04
+            },
+            {
+              "slug": "05-yundong-jichu",
+              "title": "运动疗法的基础不是动作清单，而是评、练、报的分工",
+              "bytes": 26024758,
+              "durationSec": 622.267
+            },
+            {
+              "slug": "06-guanjie-jili",
+              "title": "松得开不等于有力，被动手替不了主动练",
+              "bytes": 25300117,
+              "durationSec": 610.115
+            },
+            {
+              "slug": "07-pingheng-butai",
+              "title": "平衡的判据不是站得稳，是晃了还能把身体拉回来",
+              "bytes": 24451230,
+              "durationSec": 604.139
+            },
+            {
+              "slug": "08-fangan-fengxian",
+              "title": "方案的分量在告知，风险的分量在记录",
+              "bytes": 26613764,
+              "durationSec": 645.16
+            }
+          ],
+          "sourceBytes": 217921530
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:36:14.829Z"
+    },
+    {
+      "course": "03-zhenjiu/12-erxue-zhenduan-xue",
+      "title": "耳穴诊治学",
+      "version": "v1",
+      "chapterCount": 8,
+      "totalDurationSec": 4396.927,
+      "totalBytes": 183486924,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "12-erxue-zhenduan-xue-v1-part-01.tar",
+          "bytes": 185098240,
+          "sha256": "e3f53b1308a619711337e95146955822a605bb531039dc8d544a7460fc25f1cd",
+          "chapters": [
+            {
+              "slug": "01-yuanliu-lilun",
+              "title": "「宗脉所聚」把耳变成一张诊图，而不是一个器官",
+              "bytes": 27348422,
+              "durationSec": 654.915
+            },
+            {
+              "slug": "02-jiepou-fenqu",
+              "title": "分区是在十三个结构上另划九张网，网眼比结构粗",
+              "bytes": 20558227,
+              "durationSec": 495.38
+            },
+            {
+              "slug": "03-dingwei",
+              "title": "定位的分歧不在手稳，而在先认地形还是先记穴名",
+              "bytes": 21793911,
+              "durationSec": 541.78
+            },
+            {
+              "slug": "04-zhenduan",
+              "title": "望、压、电测查的是同一件事的三个通道，没有一条能单独定病名",
+              "bytes": 26028658,
+              "durationSec": 626.68
+            },
+            {
+              "slug": "05-zhiliao-fangfa",
+              "title": "耳穴治疗的差别不在针，而在把刺激送到耳廓的哪一层",
+              "bytes": 16124564,
+              "durationSec": 384.883
+            },
+            {
+              "slug": "06-neike-yingyong",
+              "title": "内科应用的可复现性在辨经那一步，不在穴位表上",
+              "bytes": 27101822,
+              "durationSec": 639.57
+            },
+            {
+              "slug": "07-fuer-wuguan",
+              "title": "换人群先换禁忌，取穴反倒可以照搬",
+              "bytes": 22959372,
+              "durationSec": 539.619
+            },
+            {
+              "slug": "08-anquan-guifan",
+              "title": "耳穴的安全规范不在底本里，只能从四门技术的条款里取交集",
+              "bytes": 21571948,
+              "durationSec": 514.1
+            }
+          ],
+          "sourceBytes": 183486924
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:36:16.426Z"
+    },
+    {
+      "course": "03-zhenjiu/13-zhendao-yixue",
+      "title": "针刀医学",
+      "version": "v1",
+      "chapterCount": 8,
+      "totalDurationSec": 1927.832,
+      "totalBytes": 85404469,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "13-zhendao-yixue-v1-part-01.tar",
+          "bytes": 86190080,
+          "sha256": "d4b886f271f86eda5c05f55ba1e161e7961791a0d2fbaaf27b955eedb50197da",
+          "chapters": [
+            {
+              "slug": "01-zhendao-gailun",
+              "title": "「针」与「刀」本是两件器械，合成一件就是把两种权限绑在一起",
+              "bytes": 11492711,
+              "durationSec": 260.731
+            },
+            {
+              "slug": "02-qixie-guifan",
+              "title": "刀口方向是第一条纪律，因为深度错了能退，方向错了切的是另一个结构",
+              "bytes": 11116272,
+              "durationSec": 258.883
+            },
+            {
+              "slug": "03-ruanzuzhi-bingli",
+              "title": "粘连、瘢痕、挛缩不是三种病，是同一条修复链上的三个时相",
+              "bytes": 10805910,
+              "durationSec": 241.523
+            },
+            {
+              "slug": "04-jingjian-yaotui",
+              "title": "颈肩腰腿痛是针刀最主要的适应证群，因为这一群里痛的位置最常不是病灶的位置",
+              "bytes": 10943365,
+              "durationSec": 241.371
+            },
+            {
+              "slug": "05-guanjie-jianqiao",
+              "title": "这一章叫关节与腱鞘，而腱鞘在正文里只以一个检查手法的名字出现",
+              "bytes": 10557196,
+              "durationSec": 233.067
+            },
+            {
+              "slug": "06-shenjing-kaya",
+              "title": "这一章叫神经卡压，而「卡压」二字在 11,230 字正文里一次都没出现",
+              "bytes": 10121060,
+              "durationSec": 238.275
+            },
+            {
+              "slug": "07-anquan-jinji",
+              "title": "这一章讲的全是针灸的禁忌，针刀那几条底本一个字也没写",
+              "bytes": 10244822,
+              "durationSec": 229.419
+            },
+            {
+              "slug": "08-liaoxiao-zhengju",
+              "title": "这一章讲的全是针灸的证据，针刀的证据一条也没有",
+              "bytes": 10123133,
+              "durationSec": 224.563
+            }
+          ],
+          "sourceBytes": 85404469
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:36:17.163Z"
+    },
+    {
+      "course": "03-zhenjiu/14-zhenjiu-zhentong-mazui",
+      "title": "针灸镇痛与麻醉",
+      "version": "v1",
+      "chapterCount": 8,
+      "totalDurationSec": 4563.42,
+      "totalBytes": 193487073,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "14-zhenjiu-zhentong-mazui-v1-part-01.tar",
+          "bytes": 195164160,
+          "sha256": "179d2223af40d00b7608e7e48c9fd66fd82cb813dd474b2222b0985680d77bc6",
+          "chapters": [
+            {
+              "slug": "01-tengtong-shengli",
+              "title": "痛的层次决定评估指标，指标决定针能不能进场",
+              "bytes": 24445777,
+              "durationSec": 583.899
+            },
+            {
+              "slug": "02-zhentong-jizhi",
+              "title": "机制的用处不在解释痛，而在规定什么算证据",
+              "bytes": 29405024,
+              "durationSec": 694.48
+            },
+            {
+              "slug": "03-dianzhen-canshu",
+              "title": "电针真正可调的只有两个把手，其余都是刻度换算",
+              "bytes": 27951978,
+              "durationSec": 638.491
+            },
+            {
+              "slug": "04-jixing-tong",
+              "title": "急性痛是唯一能在二十四小时内被证伪的场景",
+              "bytes": 23717384,
+              "durationSec": 546.38
+            },
+            {
+              "slug": "05-manxing-tong",
+              "title": "慢性痛的分水岭不在痛了多久，而在性质与失能是否已经改写",
+              "bytes": 21722004,
+              "durationSec": 521.79
+            },
+            {
+              "slug": "06-zhenci-mazui",
+              "title": "针麻能减的是药量，减不掉的是麻醉医师的判断",
+              "bytes": 21351676,
+              "durationSec": 505.947
+            },
+            {
+              "slug": "07-weishouqi",
+              "title": "围手术期的针刺，价值在三个时间窗而不在一套手法",
+              "bytes": 23620333,
+              "durationSec": 559.483
+            },
+            {
+              "slug": "08-anquan-zhengju",
+              "title": "「有效」与「证据充分」是两列，并成一列就会说谎",
+              "bytes": 21272897,
+              "durationSec": 512.95
+            }
+          ],
+          "sourceBytes": 193487073
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:36:18.676Z"
+    },
+    {
+      "course": "03-zhenjiu/15-zhongyi-kangfu-xue",
+      "title": "中医康复学",
+      "version": "v1",
+      "chapterCount": 10,
+      "totalDurationSec": 7002.945,
+      "totalBytes": 291881896,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "15-zhongyi-kangfu-xue-v1-part-01.tar",
+          "bytes": 294410240,
+          "sha256": "20f03078e1e0b10cd610fac3b609eb86243b1cc08bc65030f3582370aeceebb3",
+          "chapters": [
+            {
+              "slug": "01-zhongyi-kangfu-gailun",
+              "title": "中医康复借了养生的方法，没借它的对象",
+              "bytes": 32968303,
+              "durationSec": 767.971
+            },
+            {
+              "slug": "02-bianzheng-pingding",
+              "title": "证候与功能是两张纸，缺一张就交不了班",
+              "bytes": 26091752,
+              "durationSec": 645.47
+            },
+            {
+              "slug": "03-zhongyao-kangfu",
+              "title": "中药康复只有一条路铺到底：内服",
+              "bytes": 26123662,
+              "durationSec": 625.003
+            },
+            {
+              "slug": "04-zhenjiu-kangfu",
+              "title": "名为针灸康复，底本里「灸」是「针」的十一倍",
+              "bytes": 29456805,
+              "durationSec": 704.81
+            },
+            {
+              "slug": "05-tuina-kangfu",
+              "title": "推拿康复的处方是六件事的顺序，不是六个手法",
+              "bytes": 30408249,
+              "durationSec": 725.779
+            },
+            {
+              "slug": "06-qigong-kangfu",
+              "title": "气功康复教的是把呼吸调慢，不是把气送到某处",
+              "bytes": 28092249,
+              "durationSec": 680.98
+            },
+            {
+              "slug": "07-yinshi-qingzhi",
+              "title": "饮食与情志康复的处方开在饭桌和床头，不在药罐里",
+              "bytes": 30223535,
+              "durationSec": 729.163
+            },
+            {
+              "slug": "08-zhongfeng-kangfu",
+              "title": "中风康复的底本只有一根针，它把急救写在了康复前面",
+              "bytes": 29346619,
+              "durationSec": 708.39
+            },
+            {
+              "slug": "09-gushang-manbing",
+              "title": "骨伤与慢病康复的底本只收了颈、腰和落枕三个病",
+              "bytes": 31295356,
+              "durationSec": 738.96
+            },
+            {
+              "slug": "10-shequ-jiating",
+              "title": "社区与家庭康复这一章，底本里一个中医词都没有",
+              "bytes": 27875366,
+              "durationSec": 676.419
+            }
+          ],
+          "sourceBytes": 291881896
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:36:20.873Z"
+    },
+    {
+      "course": "03-zhenjiu/16-zhenjiu-xue",
+      "title": "针灸学",
+      "version": "v1",
+      "chapterCount": 30,
+      "totalDurationSec": 5945.576,
+      "totalBytes": 230135731,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "16-zhenjiu-xue-v1-part-01.tar",
+          "bytes": 232560640,
+          "sha256": "87bb49c7cc5058179ca8cd0442b2b00ab7c4d4bf74943cbffacebef5a2739851",
+          "chapters": [
+            {
+              "slug": "01-xulun",
+              "title": "绪论不是开场白：它划定针灸学的边界、来路与读法",
+              "bytes": 27295594,
+              "durationSec": 648
+            },
+            {
+              "slug": "02-jingluo-zonglun",
+              "title": "经络不是线路图，是把脏腑与肢节接成闭环的规则",
+              "bytes": 38035522,
+              "durationSec": 906.744
+            },
+            {
+              "slug": "03-shuxue-zonglun",
+              "title": "腧穴的数目是历代校订出来的，不是一次定死的",
+              "bytes": 32764877,
+              "durationSec": 785.472
+            },
+            {
+              "slug": "04-shoutaiyin-feijing",
+              "title": "肺经十一穴：一条从胸走到拇指的经，先定属络再定穴",
+              "bytes": 29485929,
+              "durationSec": 704.904
+            },
+            {
+              "slug": "05-shouyangming-dachangjing",
+              "title": "大肠经二十穴：把面口与肠腑拴在同一条经上的长线",
+              "bytes": 29206745,
+              "durationSec": 731.088
+            },
+            {
+              "slug": "06-zuyangming-weijing",
+              "title": "胃经的重量不在四十五穴，而在十四组可操作条目",
+              "bytes": 27420620,
+              "durationSec": 689.059
+            },
+            {
+              "slug": "07-zutaiyin-pijing",
+              "title": "脾经全部关键压在一个八寸的交叉点上",
+              "bytes": 1954639,
+              "durationSec": 63.051
+            },
+            {
+              "slug": "08-shoushaoyin-xinjing",
+              "title": "心经九穴全在手臂上，病候却全在胸咽目",
+              "bytes": 1937817,
+              "durationSec": 62.115
+            },
+            {
+              "slug": "09-shoutaiyang-xiaochangjing",
+              "title": "小肠经十九穴有七穴挤在肩胛区，主治的头一条却是耳",
+              "bytes": 1972835,
+              "durationSec": 63.12
+            },
+            {
+              "slug": "10-zutaiyang-pangguangjing",
+              "title": "六十七穴不是清单，是两条平行侧线加一张背俞索引",
+              "bytes": 2002286,
+              "durationSec": 63.803
+            },
+            {
+              "slug": "11-zushaoyin-shenjing",
+              "title": "二十七穴里只有十穴配得上独立条目",
+              "bytes": 1951800,
+              "durationSec": 62.691
+            },
+            {
+              "slug": "12-shoujueyin-xinbaojing",
+              "title": "九穴共用一条肌腱缝，红线却有八条",
+              "bytes": 1969883,
+              "durationSec": 63.131
+            },
+            {
+              "slug": "13-shoushaoyang-sanjiaojing",
+              "title": "二十三穴没有一条定位标记，只能顺着一条线读",
+              "bytes": 1981676,
+              "durationSec": 63.771
+            },
+            {
+              "slug": "14-zushaoyang-danjing",
+              "title": "四十四穴的取舍不在穴数，在五个身份",
+              "bytes": 1999151,
+              "durationSec": 64.403
+            },
+            {
+              "slug": "15-zujueyin-ganjing",
+              "title": "十四穴七个有身份，另七个只占一行",
+              "bytes": 1951854,
+              "durationSec": 62.331
+            },
+            {
+              "slug": "16-dumai",
+              "title": "督脉的效力与风险同出一处，都在棘突下那一道凹陷",
+              "bytes": 1885739,
+              "durationSec": 60.755
+            },
+            {
+              "slug": "17-renmai",
+              "title": "任脉二十四穴全靠软组织兜底，没有一块骨头替你挡针",
+              "bytes": 1888988,
+              "durationSec": 60.995
+            },
+            {
+              "slug": "18-jingwai-qixue",
+              "title": "经外奇穴的密度是全课最高，四十二个穴名只摊到五千字",
+              "bytes": 1823867,
+              "durationSec": 59.123
+            },
+            {
+              "slug": "19-cijiufa-zonglun",
+              "title": "刺灸法总论的产物不是穴位表，而是一张能不能扎的清单",
+              "bytes": 1857429,
+              "durationSec": 60.099
+            },
+            {
+              "slug": "20-haozhen-cifa",
+              "title": "毫针的风险不在扎错穴，在扎对了却扎过头",
+              "bytes": 1901782,
+              "durationSec": 61.459
+            },
+            {
+              "slug": "21-jiufa",
+              "title": "灸法真正要记的不是几壮，而是以何为度",
+              "bytes": 1780134,
+              "durationSec": 57.699
+            },
+            {
+              "slug": "22-baguan-qita-cifa",
+              "title": "这一章的主语不是穴位，而是器具的可调参数",
+              "bytes": 1996507,
+              "durationSec": 64.643
+            },
+            {
+              "slug": "23-zhiliao-zonglun",
+              "title": "这一章不给穴位，只给把穴位连成方子的规则",
+              "bytes": 1914217,
+              "durationSec": 61.875
+            },
+            {
+              "slug": "24-tongzheng",
+              "title": "八个痛证是同一张处方的八次填空",
+              "bytes": 1925712,
+              "durationSec": 62.411
+            },
+            {
+              "slug": "25-neike-bingzheng",
+              "title": "九十个证型压在二万二千字里，平均二百四十九字一个",
+              "bytes": 1879009,
+              "durationSec": 60.819
+            },
+            {
+              "slug": "26-fuer-bingzheng",
+              "title": "妇儿科不按「科」分，按周期、胎位、发育三条轴分",
+              "bytes": 1828932,
+              "durationSec": 59.179
+            },
+            {
+              "slug": "27-piwai-bingzheng",
+              "title": "皮肤外科九病：皮损看得见，局部取穴就压过了循经",
+              "bytes": 1848607,
+              "durationSec": 59.907
+            },
+            {
+              "slug": "28-wuguan-bingzheng",
+              "title": "五官五病共用一条路径：局部开窍、远端引火下行，代价是引文全部悬空",
+              "bytes": 1821645,
+              "durationSec": 59.131
+            },
+            {
+              "slug": "29-jizheng-qita",
+              "title": "急症八证写得最省：八张方共用内关，最薄的一节给了高热",
+              "bytes": 1892885,
+              "durationSec": 61.019
+            },
+            {
+              "slug": "30-xiandai-yanjiu",
+              "title": "现代研究章靠数字立论：75 个数字串，三条古籍只作背书",
+              "bytes": 1959050,
+              "durationSec": 62.779
+            }
+          ],
+          "sourceBytes": 230135731
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:36:22.682Z"
+    },
+    {
+      "course": "03-zhenjiu/17-gejia-zhenjiu-xueshuo",
+      "title": "各家针灸学说",
+      "version": "v1",
+      "chapterCount": 12,
+      "totalDurationSec": 9386.539,
+      "totalBytes": 397928159,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "17-gejia-zhenjiu-xueshuo-v1-part-01.tar",
+          "bytes": 401264640,
+          "sha256": "271ee10a9b8d0a6f8298de7148596daf9e3e860296861173d388f84ec1b4bff2",
+          "chapters": [
+            {
+              "slug": "01-gaishu-yanbian",
+              "title": "各家针灸学说考的是一套判据，不是一张人名表",
+              "bytes": 23594880,
+              "durationSec": 572.435
+            },
+            {
+              "slug": "02-liupai-xingcheng",
+              "title": "流派的判据是三根柱子，不是一张分类表",
+              "bytes": 31441735,
+              "durationSec": 738.939
+            },
+            {
+              "slug": "03-neijing-sixiang",
+              "title": "《内经》的针道是一条次序，不是一堆刺法",
+              "bytes": 38511198,
+              "durationSec": 893.435
+            },
+            {
+              "slug": "04-nanjing-shanghan",
+              "title": "《难经》给穴立规矩，《伤寒论》给用针立次序",
+              "bytes": 35414632,
+              "durationSec": 826.41
+            },
+            {
+              "slug": "05-jintang-yijia",
+              "title": "晋唐的功劳在编书：体例、尺度与存佚",
+              "bytes": 35062038,
+              "durationSec": 833.891
+            },
+            {
+              "slug": "06-songjinyuan-yijia",
+              "title": "宋金元把穴定成标准，把时间算成取穴依据",
+              "bytes": 36366521,
+              "durationSec": 868.48
+            },
+            {
+              "slug": "07-mingdai-yijia",
+              "title": "明代七家编的不是七种学说，是七种全书体例",
+              "bytes": 14172116,
+              "durationSec": 334.979
+            },
+            {
+              "slug": "08-qingdai-yijia",
+              "title": "清代把针灸写成可查的书，也把手法排在认穴之前",
+              "bytes": 37829826,
+              "durationSec": 900.659
+            },
+            {
+              "slug": "09-jindai-yijia",
+              "title": "近代把针灸搬进学校，也把它译成西医的语言",
+              "bytes": 36152283,
+              "durationSec": 866.67
+            },
+            {
+              "slug": "10-dangdai-liupai",
+              "title": "当代六家各把手法的某一个参数做成了可教的东西",
+              "bytes": 36408048,
+              "durationSec": 844.987
+            },
+            {
+              "slug": "11-linchuang-chuancheng",
+              "title": "轴心从人换成法，手法一旦离人就丢了适应证",
+              "bytes": 37048976,
+              "durationSec": 853.811
+            },
+            {
+              "slug": "12-shuzihua-ai",
+              "title": "谈数据的一章，引书最少，可计量的数值为零",
+              "bytes": 35925906,
+              "durationSec": 851.843
+            }
+          ],
+          "sourceBytes": 397928159
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:36:25.590Z"
+    },
+    {
+      "course": "03-zhenjiu/18-tuina-gongfa-xue",
+      "title": "推拿功法学",
+      "version": "v1",
+      "chapterCount": 12,
+      "totalDurationSec": 9643.024,
+      "totalBytes": 412067147,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "18-tuina-gongfa-xue-v1-part-01.tar",
+          "bytes": 415508480,
+          "sha256": "6fe84ee20fe1afdbcbb326264b1ad5d5e876c555be242c35806dfa9424da7c40",
+          "chapters": [
+            {
+              "slug": "01-gaishu-yanbian",
+              "title": "功法的历史是把身体写成规矩的历史，写进去的只有规矩",
+              "bytes": 28158061,
+              "durationSec": 671.467
+            },
+            {
+              "slug": "02-lilun-jichu",
+              "title": "理论给的是练功的说法，不是练功的做法",
+              "bytes": 32964604,
+              "durationSec": 780.131
+            },
+            {
+              "slug": "03-jiben-neirong",
+              "title": "三调是一个环，不是一道先后工序",
+              "bytes": 34986904,
+              "durationSec": 823.53
+            },
+            {
+              "slug": "04-gongli-guanxi",
+              "title": "功力不是力气大，是力能一直落在同一个点上",
+              "bytes": 32616548,
+              "durationSec": 770.219
+            },
+            {
+              "slug": "05-yijinjing",
+              "title": "十二势分的是筋的走向，不是动作的花样",
+              "bytes": 36728211,
+              "durationSec": 852.883
+            },
+            {
+              "slug": "06-shaolin-neigong",
+              "title": "少林内功把「力从足起」写成了一份可检查的姿势清单",
+              "bytes": 33232510,
+              "durationSec": 797.315
+            },
+            {
+              "slug": "07-wuqinxi",
+              "title": "五禽戏的剂量写在一个「汗」字上，不写在分钟数上",
+              "bytes": 33936386,
+              "durationSec": 789.619
+            },
+            {
+              "slug": "08-baduanjin",
+              "title": "八段锦的八句歌诀各给一个功效，没有一句给剂量",
+              "bytes": 32736617,
+              "durationSec": 770.507
+            },
+            {
+              "slug": "09-liuzijue-qita",
+              "title": "六字诀把剂量数成三十六次呼吸，而不是多少分钟",
+              "bytes": 35697124,
+              "durationSec": 827.491
+            },
+            {
+              "slug": "10-zhuanxiang-gongli",
+              "title": "全书七成的带单位数值压在这一章，因为它练的是器物规格",
+              "bytes": 36290715,
+              "durationSec": 834.04
+            },
+            {
+              "slug": "11-linchuang-yingyong",
+              "title": "临床处方章的剂量最密，却一个阿拉伯数字也不用",
+              "bytes": 36883945,
+              "durationSec": 855.147
+            },
+            {
+              "slug": "12-xiandai-shuzihua",
+              "title": "数字化先量出角度与力，最后才轮到那个「意」",
+              "bytes": 37835522,
+              "durationSec": 870.675
+            }
+          ],
+          "sourceBytes": 412067147
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:36:28.684Z"
+    },
+    {
+      "course": "03-zhenjiu/19-tuina-zhiliao-xue",
+      "title": "推拿治疗学",
+      "version": "v1",
+      "chapterCount": 12,
+      "totalDurationSec": 7630.381,
+      "totalBytes": 329744952,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "19-tuina-zhiliao-xue-v1-part-01.tar",
+          "bytes": 332523520,
+          "sha256": "e39a55abda4d9a0f5c7e1a95c47ed7cea12cee403d6c763b8f66d5b6d36556a0",
+          "chapters": [
+            {
+              "slug": "01-gaishu-tixi",
+              "title": "推拿治疗学不是手法目录，是从辨证到疗效评定的一条链",
+              "bytes": 26094040,
+              "durationSec": 613.12
+            },
+            {
+              "slug": "02-zhiliao-jichu",
+              "title": "处方里最虚的一格不是穴位，是刺激量",
+              "bytes": 33887746,
+              "durationSec": 787.635
+            },
+            {
+              "slug": "03-jizhu-bingzheng",
+              "title": "脊柱推拿的分水岭不在手法，在分型与禁忌",
+              "bytes": 28636773,
+              "durationSec": 657.51
+            },
+            {
+              "slug": "04-guguanjie-jinshang",
+              "title": "关节与筋伤靠分期，不靠一次扳到位",
+              "bytes": 24458838,
+              "durationSec": 574.259
+            },
+            {
+              "slug": "05-neike-bingzheng",
+              "title": "内科推拿卖的是症状缓解，不是治愈承诺",
+              "bytes": 32930319,
+              "durationSec": 731.28
+            },
+            {
+              "slug": "06-fuke-bingzheng",
+              "title": "妇科推拿的第一道工序不是通，是排除妊娠",
+              "bytes": 30331354,
+              "durationSec": 714.02
+            },
+            {
+              "slug": "07-erke-bingzheng",
+              "title": "小儿的剂量按次数给，成人的时长表搬不过来",
+              "bytes": 25085070,
+              "durationSec": 593.427
+            },
+            {
+              "slug": "08-wuguan-qita",
+              "title": "五官三病，推拿只够得到功能那一层",
+              "bytes": 24203081,
+              "durationSec": 571.65
+            },
+            {
+              "slug": "09-yundong-kangfu",
+              "title": "运动损伤的手法表只有一张，日期表有四张",
+              "bytes": 25985769,
+              "durationSec": 595.427
+            },
+            {
+              "slug": "10-anquan-yichang",
+              "title": "推拿的安全事故几乎都不是手法问题，而是诊断问题",
+              "bytes": 25278135,
+              "durationSec": 582.003
+            },
+            {
+              "slug": "11-xiandai-yanzheng",
+              "title": "证据等级不决定推拿有没有效，只决定这句话能说多响",
+              "bytes": 22960220,
+              "durationSec": 535.27
+            },
+            {
+              "slug": "12-shuzihua-ai",
+              "title": "设备能把手法变成数字，不能把数字变成判断",
+              "bytes": 29893607,
+              "durationSec": 674.78
+            }
+          ],
+          "sourceBytes": 329744952
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:36:31.216Z"
+    },
+    {
+      "course": "03-zhenjiu/20-xiaoer-tuina-xue",
+      "title": "小儿推拿学",
+      "version": "v1",
+      "chapterCount": 12,
+      "totalDurationSec": 5590.621,
+      "totalBytes": 234287105,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "20-xiaoer-tuina-xue-v1-part-01.tar",
+          "bytes": 236359680,
+          "sha256": "dc9bc1970732b7f57f57d4ee4ce4c51fd93c8bbad0291721a3538d22370ad453",
+          "chapters": [
+            {
+              "slug": "01-fazhan-jianshi",
+              "title": "小儿推拿的独立，不靠手法成熟，靠「儿科」先成为一门学问",
+              "bytes": 29471286,
+              "durationSec": 699.603
+            },
+            {
+              "slug": "02-jichu-zhishi",
+              "title": "小儿的生理决定手法上限，病理决定干预窗口",
+              "bytes": 33743523,
+              "durationSec": 801.027
+            },
+            {
+              "slug": "03-zhiliao-gaiyao",
+              "title": "「轻快柔和」不是形容词，是一组可以交给学生的参数",
+              "bytes": 28113937,
+              "durationSec": 706.619
+            },
+            {
+              "slug": "04-changyong-shoufa",
+              "title": "八法的分界不在动作，而在「吸定点是否带动皮下」",
+              "bytes": 29546292,
+              "durationSec": 720.515
+            },
+            {
+              "slug": "05-teding-xue",
+              "title": "特定穴的权威不来自引文，来自可复现的定位与次数",
+              "bytes": 26995180,
+              "durationSec": 663.65
+            },
+            {
+              "slug": "06-feixi-bingzheng",
+              "title": "肺系四病共用一个处方骨架，差别在「什么时候停」",
+              "bytes": 37844169,
+              "durationSec": 893.395
+            },
+            {
+              "slug": "07-pixi-bingzheng",
+              "title": "脾系六病是同一副脾胃的六个出口，补泻只差一个方向",
+              "bytes": 8314367,
+              "durationSec": 180.043
+            },
+            {
+              "slug": "08-xinganxi-bingzheng",
+              "title": "心肝系三病先排除再辨证，抽搐是唯一不能等的信号",
+              "bytes": 7903889,
+              "durationSec": 181.339
+            },
+            {
+              "slug": "09-shenxi-wuguan",
+              "title": "肾系与五官六病都卡在时间上，判的是到点没到点",
+              "bytes": 8003290,
+              "durationSec": 176.955
+            },
+            {
+              "slug": "10-xinshenger-zabing",
+              "title": "新生儿不是小一号的小儿，这一层先讲禁再讲法",
+              "bytes": 8197054,
+              "durationSec": 191.52
+            },
+            {
+              "slug": "11-baojian-tuina",
+              "title": "保健推拿不辨证，它判的是今天能不能做",
+              "bytes": 8328599,
+              "durationSec": 195.36
+            },
+            {
+              "slug": "12-anquan-shuzihua",
+              "title": "安全章一个次数都不给，它给的是红线与复核",
+              "bytes": 7825519,
+              "durationSec": 180.595
+            }
+          ],
+          "sourceBytes": 234287105
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:36:32.901Z"
+    },
+    {
+      "course": "03-zhenjiu/21-zhenjiu-linchuang-lunzhuan",
+      "title": "针灸临床轮转",
+      "version": "v1",
+      "chapterCount": 6,
+      "totalDurationSec": 3352.512,
+      "totalBytes": 139123879,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "21-zhenjiu-linchuang-lunzhuan-v1-part-01.tar",
+          "bytes": 140369920,
+          "sha256": "f2caff2892355297bfb8152d8b8115058c45d1583258ae2f323cd77f5114c6b3",
+          "chapters": [
+            {
+              "slug": "01-menzhen-lunzhuan",
+              "title": "门诊这一站，先学会停手，再学会配穴",
+              "bytes": 25043167,
+              "durationSec": 585.395
+            },
+            {
+              "slug": "02-zhongfeng-kangfu",
+              "title": "中风康复这一站，判据在功能，不在症状轻重",
+              "bytes": 27348798,
+              "durationSec": 643.107
+            },
+            {
+              "slug": "03-mian-tan",
+              "title": "面瘫这一站先问窗口，窗口判错，手法方向就是反的",
+              "bytes": 22513185,
+              "durationSec": 550.02
+            },
+            {
+              "slug": "04-jiu-baguan",
+              "title": "灸罐这一站先划边界，边界之内才轮到手感",
+              "bytes": 20780361,
+              "durationSec": 509.219
+            },
+            {
+              "slug": "05-tuina-lunzhuan",
+              "title": "推拿这一站考的不是会不会做，是第十次还一样不一样",
+              "bytes": 21394035,
+              "durationSec": 528.48
+            },
+            {
+              "slug": "06-chuke-kaohe",
+              "title": "出科考核要能指到环节，指不到环节的复盘等于没复盘",
+              "bytes": 22044333,
+              "durationSec": 536.291
+            }
+          ],
+          "sourceBytes": 139123879
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:36:33.919Z"
+    },
+    {
+      "course": "03-zhenjiu/22-zhenjiu-biye-sheji",
+      "title": "针灸毕业设计与知识移交",
+      "version": "v1",
+      "chapterCount": 6,
+      "totalDurationSec": 2499.857,
+      "totalBytes": 99640757,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "22-zhenjiu-biye-sheji-v1-part-01.tar",
+          "bytes": 100587520,
+          "sha256": "d055382397bce2aac4acb0ef86926aa0b2905b6de7dff79bced5ac474f857ea9",
+          "chapters": [
+            {
+              "slug": "01-xuan-ti",
+              "title": "选题不是挑一个病，而是把一句经验话逼成能被否证的句子",
+              "bytes": 18612902,
+              "durationSec": 458.963
+            },
+            {
+              "slug": "02-shuju-zhunbei",
+              "title": "一份病例表的价值不在字段多，而在换个人能照着扎回同一个位置",
+              "bytes": 17563149,
+              "durationSec": 449.315
+            },
+            {
+              "slug": "03-fangfa-shixian",
+              "title": "采集工具只做四件事，多做的每一件都要从招募窗口里扣时间",
+              "bytes": 17106895,
+              "durationSec": 426.603
+            },
+            {
+              "slug": "04-liaoxiao-pingjia",
+              "title": "针刺盲不了全部，把盲了几层写清比宣称双盲更值钱",
+              "bytes": 15543130,
+              "durationSec": 389.923
+            },
+            {
+              "slug": "05-lunwen-dabian",
+              "title": "论文的说服力来自十个能复算的数字，不来自十页漂亮的讨论",
+              "bytes": 15287336,
+              "durationSec": 386.443
+            },
+            {
+              "slug": "06-zhishi-yijiao",
+              "title": "手册写得再全也移不走手感，移交完成的标志是别人照它做出来",
+              "bytes": 15527345,
+              "durationSec": 388.61
+            }
+          ],
+          "sourceBytes": 99640757
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:36:34.848Z"
+    },
+    {
+      "course": "04-gushang/01-zhongyi-yundong-xue",
+      "title": "中医运动学",
+      "version": "v1",
+      "chapterCount": 8,
+      "totalDurationSec": 4289.668,
+      "totalBytes": 175577842,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "01-zhongyi-yundong-xue-v1-part-01.tar",
+          "bytes": 177162240,
+          "sha256": "099a2f7d7a3854428ce5f4de86bca567be12f99c9383f413be121411a76ff38d",
+          "chapters": [
+            {
+              "slug": "01-gailun-yuanliu",
+              "title": "第1章 中医运动学概论与源流",
+              "bytes": 18068200,
+              "durationSec": 446.875
+            },
+            {
+              "slug": "02-lilun-jichu",
+              "title": "第2章 运动的中医理论基础",
+              "bytes": 20856543,
+              "durationSec": 510.519
+            },
+            {
+              "slug": "03-gongneng-suzhi",
+              "title": "第3章 运动功能与体能要素",
+              "bytes": 22862063,
+              "durationSec": 564.009
+            },
+            {
+              "slug": "04-daoyin-chufang",
+              "title": "第4章 导引功法与运动处方",
+              "bytes": 21191771,
+              "durationSec": 511.525
+            },
+            {
+              "slug": "05-guanjie-jianrou",
+              "title": "第5章 关节活动与柔韧训练",
+              "bytes": 20325571,
+              "durationSec": 497.141
+            },
+            {
+              "slug": "06-jili-naili",
+              "title": "第6章 肌力与耐力训练",
+              "bytes": 25381818,
+              "durationSec": 602.195
+            },
+            {
+              "slug": "07-pingheng-diedao",
+              "title": "第7章 平衡、协调与跌倒预防",
+              "bytes": 21665076,
+              "durationSec": 531.741
+            },
+            {
+              "slug": "08-shanghai-yufang",
+              "title": "第8章 运动损伤的预防与康复",
+              "bytes": 25226800,
+              "durationSec": 625.663
+            }
+          ],
+          "sourceBytes": 175577842
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:36:36.245Z"
+    },
+    {
+      "course": "04-gushang/02-yao-shang-jiepou",
+      "title": "骨伤解剖学",
+      "version": "v1",
+      "chapterCount": 10,
+      "totalDurationSec": 6351.054,
+      "totalBytes": 260772739,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "02-yao-shang-jiepou-v1-part-01.tar",
+          "bytes": 263024640,
+          "sha256": "3e089f7b71d4369508c87a12f749b94090442f3d6a569c4b675bb17d6f513815",
+          "chapters": [
+            {
+              "slug": "01-gu-jiegou",
+              "title": "第1章 骨的形态与构造",
+              "bytes": 28885987,
+              "durationSec": 693.001
+            },
+            {
+              "slug": "02-gu-fayu",
+              "title": "第2章 骨的发生、生长与骨化",
+              "bytes": 28106157,
+              "durationSec": 672.737
+            },
+            {
+              "slug": "03-guanjie",
+              "title": "第3章 关节结构与运动学",
+              "bytes": 24964471,
+              "durationSec": 601.755
+            },
+            {
+              "slug": "04-ji-jinmo",
+              "title": "第4章 肌、肌腱与筋膜",
+              "bytes": 26003933,
+              "durationSec": 617.331
+            },
+            {
+              "slug": "05-shenjing-xueguan",
+              "title": "第5章 神经与血管走行",
+              "bytes": 25856339,
+              "durationSec": 616.861
+            },
+            {
+              "slug": "06-jizhu-jiepou",
+              "title": "第6章 脊柱解剖",
+              "bytes": 23300006,
+              "durationSec": 564.839
+            },
+            {
+              "slug": "07-shangzhi",
+              "title": "第7章 上肢解剖",
+              "bytes": 28496819,
+              "durationSec": 662.353
+            },
+            {
+              "slug": "08-xiazhi",
+              "title": "第8章 下肢解剖",
+              "bytes": 24244735,
+              "durationSec": 574.583
+            },
+            {
+              "slug": "09-biaozhi",
+              "title": "第9章 体表标志与定位",
+              "bytes": 24388320,
+              "durationSec": 601.695
+            },
+            {
+              "slug": "10-yingxiang-jiepou",
+              "title": "同一个结构，在三种影像上是三个样子",
+              "bytes": 26525972,
+              "durationSec": 745.899
+            }
+          ],
+          "sourceBytes": 260772739
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:36:38.176Z"
+    },
+    {
+      "course": "04-gushang/03-gushang-kexue-jichu",
+      "title": "中医骨伤科学基础",
+      "version": "v1",
+      "chapterCount": 10,
+      "totalDurationSec": 6547.406,
+      "totalBytes": 265477117,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "03-gushang-kexue-jichu-v1-part-01.tar",
+          "bytes": 267765760,
+          "sha256": "d2d0b02ffceb8ada0ae2105f16b6105f74747e831eedb7969fd31ce2e56022ac",
+          "chapters": [
+            {
+              "slug": "01-jianshi-bingyin",
+              "title": "第1章 发展简史与病因病机",
+              "bytes": 28327952,
+              "durationSec": 668.323
+            },
+            {
+              "slug": "02-linchuang-zhencha",
+              "title": "第2章 骨伤病的临床诊查",
+              "bytes": 22519202,
+              "durationSec": 551.579
+            },
+            {
+              "slug": "03-zhiliao-fangfa",
+              "title": "第3章 骨伤病的治疗方法",
+              "bytes": 25502328,
+              "durationSec": 621.249
+            },
+            {
+              "slug": "04-chuangshang-jijiu",
+              "title": "第4章 创伤急救",
+              "bytes": 25764759,
+              "durationSec": 612.407
+            },
+            {
+              "slug": "05-guzhe-yi",
+              "title": "第5章 骨折（一）：总论与上肢",
+              "bytes": 24750384,
+              "durationSec": 581.029
+            },
+            {
+              "slug": "06-guzhe-er",
+              "title": "第6章 骨折（二）：下肢与躯干",
+              "bytes": 25262205,
+              "durationSec": 603.019
+            },
+            {
+              "slug": "07-tuowei",
+              "title": "第7章 脱位",
+              "bytes": 28399439,
+              "durationSec": 652.911
+            },
+            {
+              "slug": "08-jinshang",
+              "title": "筋伤的病人大多不需要手术，但都需要诊断",
+              "bytes": 31197939,
+              "durationSec": 772.331
+            },
+            {
+              "slug": "09-neishang-gubing",
+              "title": "内伤看不见伤口，骨病不总是外伤",
+              "bytes": 25832278,
+              "durationSec": 714.851
+            },
+            {
+              "slug": "10-kangfu-shuzihua",
+              "title": "康复不是治疗之后，是治疗的一部分",
+              "bytes": 27920631,
+              "durationSec": 769.707
+            }
+          ],
+          "sourceBytes": 265477117
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:36:40.150Z"
+    },
+    {
+      "course": "04-gushang/04-chuangshang-jijiu-xue",
+      "title": "创伤急救学",
+      "version": "v1",
+      "chapterCount": 8,
+      "totalDurationSec": 4553.152,
+      "totalBytes": 186735686,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "04-chuangshang-jijiu-xue-v1-part-01.tar",
+          "bytes": 188395520,
+          "sha256": "7646572c1bb4e8824a3b9076585cd58f0e517f612094d73a2bdd60e5d9ab2839",
+          "chapters": [
+            {
+              "slug": "01-jijiu-gailun",
+              "title": "第1章 创伤急救总论与评估",
+              "bytes": 21260146,
+              "durationSec": 527.623
+            },
+            {
+              "slug": "02-xianchang-huli",
+              "title": "第2章 现场救护与搬运固定",
+              "bytes": 23561030,
+              "durationSec": 590.733
+            },
+            {
+              "slug": "03-chuxue-shuke",
+              "title": "第3章 出血与休克",
+              "bytes": 24222168,
+              "durationSec": 587.999
+            },
+            {
+              "slug": "04-lunao-jizhu",
+              "title": "第4章 颅脑与脊柱损伤",
+              "bytes": 24237705,
+              "durationSec": 584.285
+            },
+            {
+              "slug": "05-xiongfu",
+              "title": "第5章 胸部与腹部创伤",
+              "bytes": 19838209,
+              "durationSec": 471.809
+            },
+            {
+              "slug": "06-sizhi-guzhe-tuowei",
+              "title": "第6章 四肢骨折与脱位的急救",
+              "bytes": 24426821,
+              "durationSec": 589.807
+            },
+            {
+              "slug": "07-shaoshang-jishang",
+              "title": "第7章 烧伤、挤压伤与多发伤",
+              "bytes": 25470459,
+              "durationSec": 618.975
+            },
+            {
+              "slug": "08-zainan-zhuanyun",
+              "title": "第8章 灾难救援与转运",
+              "bytes": 23719148,
+              "durationSec": 581.921
+            }
+          ],
+          "sourceBytes": 186735686
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:36:41.823Z"
+    },
+    {
+      "course": "04-gushang/05-yundong-yixue",
+      "title": "运动医学与损伤防护",
+      "version": "v1",
+      "chapterCount": 8,
+      "totalDurationSec": 4236.662,
+      "totalBytes": 170480726,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "05-yundong-yixue-v1-part-01.tar",
+          "bytes": 171980800,
+          "sha256": "d8a172c0d87910f5f032f75c1a615f114065ffb96e45170c5320c4dfa00a1b17",
+          "chapters": [
+            {
+              "slug": "01-gailun",
+              "title": "运动医学的终点不是不疼，是这个人还能不能做回原来那个动作",
+              "bytes": 19713466,
+              "durationSec": 546.251
+            },
+            {
+              "slug": "02-sunshang-jizhi",
+              "title": "分类的价值不在名字起得准，在这一刀切下去处理方案会跟着变",
+              "bytes": 18004874,
+              "durationSec": 489.027
+            },
+            {
+              "slug": "03-pinggu-yingxiang",
+              "title": "第3章 损伤评估与影像",
+              "bytes": 23955424,
+              "durationSec": 567.729
+            },
+            {
+              "slug": "04-jixing-chuli",
+              "title": "第4章 急性损伤处理与康复分期",
+              "bytes": 19215556,
+              "durationSec": 469.629
+            },
+            {
+              "slug": "05-sizhi-sunshang",
+              "title": "第5章 上肢与下肢常见损伤",
+              "bytes": 23713954,
+              "durationSec": 559.779
+            },
+            {
+              "slug": "06-qugan-guoyong",
+              "title": "第6章 躯干损伤与过用性损伤",
+              "bytes": 22127509,
+              "durationSec": 540.455
+            },
+            {
+              "slug": "07-fanghu-xunlian",
+              "title": "第7章 运动防护与体能训练",
+              "bytes": 21021314,
+              "durationSec": 512.161
+            },
+            {
+              "slug": "08-chongfan-yundong",
+              "title": "第8章 重返运动与复发预防",
+              "bytes": 22728629,
+              "durationSec": 551.631
+            }
+          ],
+          "sourceBytes": 170480726
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:36:43.076Z"
+    },
+    {
+      "course": "04-gushang/06-zhongyi-zhenggu-xue",
+      "title": "中医正骨学",
+      "version": "v1",
+      "chapterCount": 12,
+      "totalDurationSec": 6702.938,
+      "totalBytes": 280241150,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "06-zhongyi-zhenggu-xue-v1-part-01.tar",
+          "bytes": 282654720,
+          "sha256": "35d56d82ef6f9ab05ea5d1b863e3f19d34eee0cef09a1e103c962eac7df900dd",
+          "chapters": [
+            {
+              "slug": "01-xulun-lilun",
+              "title": "正骨是一门判断的学问，不是一套手法的目录",
+              "bytes": 25793440,
+              "durationSec": 690.283
+            },
+            {
+              "slug": "02-shoufa-gailun",
+              "title": "第2章 正骨手法概论",
+              "bytes": 17241961,
+              "durationSec": 404.103
+            },
+            {
+              "slug": "03-zhenggu-bafa",
+              "title": "第3章 正骨八法与常用手法",
+              "bytes": 24400190,
+              "durationSec": 570.391
+            },
+            {
+              "slug": "04-guzhe-zonglun",
+              "title": "第4章 骨折总论",
+              "bytes": 27087865,
+              "durationSec": 644.987
+            },
+            {
+              "slug": "05-shangzhi-guzhe",
+              "title": "第5章 上肢骨折",
+              "bytes": 26634346,
+              "durationSec": 625.439
+            },
+            {
+              "slug": "06-xiazhi-guzhe",
+              "title": "第6章 下肢骨折",
+              "bytes": 23658524,
+              "durationSec": 553.859
+            },
+            {
+              "slug": "07-qugan-guzhe",
+              "title": "第7章 躯干与骨盆骨折",
+              "bytes": 22838506,
+              "durationSec": 539.383
+            },
+            {
+              "slug": "08-guanjie-tuowei",
+              "title": "第8章 关节脱位",
+              "bytes": 23525885,
+              "durationSec": 557.679
+            },
+            {
+              "slug": "09-jinshang-zonglun",
+              "title": "第9章 筋伤总论",
+              "bytes": 23102283,
+              "durationSec": 544.453
+            },
+            {
+              "slug": "10-jingjian-yaotui",
+              "title": "第10章 颈肩腰腿筋伤",
+              "bytes": 22464260,
+              "durationSec": 523.553
+            },
+            {
+              "slug": "11-sizhi-xiaoer",
+              "title": "第11章 四肢关节筋伤与小儿骨伤",
+              "bytes": 21402306,
+              "durationSec": 515.193
+            },
+            {
+              "slug": "12-gubing-kangfu",
+              "title": "第12章 骨病与康复",
+              "bytes": 22091584,
+              "durationSec": 533.615
+            }
+          ],
+          "sourceBytes": 280241150
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:36:45.178Z"
+    },
+    {
+      "course": "04-gushang/07-zhongyi-jinshang-xue",
+      "title": "中医筋伤学",
+      "version": "v1",
+      "chapterCount": 10,
+      "totalDurationSec": 6186.066,
+      "totalBytes": 256718598,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "07-zhongyi-jinshang-xue-v1-part-01.tar",
+          "bytes": 258969600,
+          "sha256": "15734b578f7ed06f7e219e194a3a20368e2838e5e10705e8b62513becb0bbe6c",
+          "chapters": [
+            {
+              "slug": "01-jinshang-zonglun",
+              "title": "第1章 筋伤总论",
+              "bytes": 27169711,
+              "durationSec": 657.805
+            },
+            {
+              "slug": "02-bingli-fenqi",
+              "title": "第2章 筋伤的病理与分期",
+              "bytes": 22289906,
+              "durationSec": 543.003
+            },
+            {
+              "slug": "03-zhencha",
+              "title": "第3章 筋伤的诊查",
+              "bytes": 19861563,
+              "durationSec": 500.275
+            },
+            {
+              "slug": "04-shoufa-guding",
+              "title": "第4章 理筋手法与固定",
+              "bytes": 21068168,
+              "durationSec": 536.113
+            },
+            {
+              "slug": "05-jingbu",
+              "title": "第5章 颈部筋伤",
+              "bytes": 32366441,
+              "durationSec": 780.929
+            },
+            {
+              "slug": "06-jianbu",
+              "title": "第6章 肩部筋伤",
+              "bytes": 27346155,
+              "durationSec": 670.279
+            },
+            {
+              "slug": "07-yaobei",
+              "title": "第7章 腰背部筋伤",
+              "bytes": 28009584,
+              "durationSec": 665.509
+            },
+            {
+              "slug": "08-xihuai",
+              "title": "第8章 膝、踝部筋伤",
+              "bytes": 31298328,
+              "durationSec": 728.033
+            },
+            {
+              "slug": "09-qita",
+              "title": "第9章 其他部位筋伤",
+              "bytes": 24685853,
+              "durationSec": 571.231
+            },
+            {
+              "slug": "10-kangfu",
+              "title": "第10章 筋伤的康复与预防",
+              "bytes": 22622889,
+              "durationSec": 532.889
+            }
+          ],
+          "sourceBytes": 256718598
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:36:47.244Z"
+    },
+    {
+      "course": "04-gushang/08-gushang-shoufa-zhiliao",
+      "title": "骨伤科手法治疗学",
+      "version": "v1",
+      "chapterCount": 10,
+      "totalDurationSec": 5924.808,
+      "totalBytes": 239303798,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "08-gushang-shoufa-zhiliao-v1-part-01.tar",
+          "bytes": 241428480,
+          "sha256": "e728dd847d2c075b853663a8df16c9b3e8c04a482d5fe847e2eeb0495037979e",
+          "chapters": [
+            {
+              "slug": "01-shoufa-jichu",
+              "title": "第1章 手法治疗的基础",
+              "bytes": 26596638,
+              "durationSec": 644.419
+            },
+            {
+              "slug": "02-zhenggu-bafa",
+              "title": "第2章 正骨八法与常用手法",
+              "bytes": 29759962,
+              "durationSec": 725.183
+            },
+            {
+              "slug": "03-ruanzuzhi-shoufa",
+              "title": "第3章 软组织手法",
+              "bytes": 23145404,
+              "durationSec": 558.391
+            },
+            {
+              "slug": "04-zhenggu-shoufa",
+              "title": "第4章 整复类手法",
+              "bytes": 23051532,
+              "durationSec": 565.805
+            },
+            {
+              "slug": "05-jingjian",
+              "title": "第5章 颈肩部手法",
+              "bytes": 25522656,
+              "durationSec": 633.473
+            },
+            {
+              "slug": "06-yaotui",
+              "title": "第6章 腰腿部手法",
+              "bytes": 22268152,
+              "durationSec": 560.971
+            },
+            {
+              "slug": "07-guanjie-songdong",
+              "title": "第7章 关节松动手法",
+              "bytes": 21965272,
+              "durationSec": 532.665
+            },
+            {
+              "slug": "08-xiaoer-shoufa",
+              "title": "第8章 小儿骨伤手法",
+              "bytes": 24730631,
+              "durationSec": 593.699
+            },
+            {
+              "slug": "09-fengxian-jinji",
+              "title": "第9章 风险、禁忌与意外处理",
+              "bytes": 21239217,
+              "durationSec": 532.159
+            },
+            {
+              "slug": "10-pingjia",
+              "title": "「好多了」不是结论：没有时点的疗效，等于没有疗效",
+              "bytes": 21024334,
+              "durationSec": 578.043
+            }
+          ],
+          "sourceBytes": 239303798
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:36:49.097Z"
+    },
+    {
+      "course": "04-gushang/09-guke-yingxiang-zhenduan",
+      "title": "骨科影像诊断学",
+      "version": "v1",
+      "chapterCount": 10,
+      "totalDurationSec": 6423.66,
+      "totalBytes": 246563042,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "09-guke-yingxiang-zhenduan-v1-part-01.tar",
+          "bytes": 248698880,
+          "sha256": "554d1fabe0163218a954f381f144ce123b8e912711155c999c1affafe7ca40f5",
+          "chapters": [
+            {
+              "slug": "01-xulun-jishu",
+              "title": "先问要回答什么，再决定拍什么",
+              "bytes": 25809560,
+              "durationSec": 703.891
+            },
+            {
+              "slug": "02-zhengchang-jiepou",
+              "title": "正常不是\"没有异常\"，是知道什么算正常",
+              "bytes": 24068412,
+              "durationSec": 647.891
+            },
+            {
+              "slug": "03-jiben-bingbian",
+              "title": "病变不是病名，是几种基本变化的组合",
+              "bytes": 24254294,
+              "durationSec": 663.251
+            },
+            {
+              "slug": "04-guzhe-tuowei",
+              "title": "骨折的片子，先看片子，再看骨头",
+              "bytes": 26234457,
+              "durationSec": 723.963
+            },
+            {
+              "slug": "05-guanjie-chuangshang",
+              "title": "关节的伤，看不见的那一半才是麻烦",
+              "bytes": 24257870,
+              "durationSec": 656.531
+            },
+            {
+              "slug": "06-jizhu-sunshang",
+              "title": "脊柱的片子，最危险的不是那条骨折线",
+              "bytes": 24850473,
+              "durationSec": 643.467
+            },
+            {
+              "slug": "07-jizhu-tuibian",
+              "title": "退变是年龄写在片子上的字，痛是另一回事",
+              "bytes": 25058298,
+              "durationSec": 667.307
+            },
+            {
+              "slug": "08-ganran-yanxing",
+              "title": "第8章 感染与炎性疾病",
+              "bytes": 24946076,
+              "durationSec": 591.859
+            },
+            {
+              "slug": "09-guhuaisi-daixie",
+              "title": "第9章 骨坏死与代谢性骨病",
+              "bytes": 23766622,
+              "durationSec": 569.169
+            },
+            {
+              "slug": "10-zhongliu-ertong-jieru",
+              "title": "第10章 肿瘤、儿童与介入",
+              "bytes": 23316980,
+              "durationSec": 556.331
+            }
+          ],
+          "sourceBytes": 246563042
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:36:51.133Z"
+    },
+    {
+      "course": "04-gushang/10-jizhu-bing-xue",
+      "title": "脊柱病学",
+      "version": "v1",
+      "chapterCount": 10,
+      "totalDurationSec": 5947.842,
+      "totalBytes": 232805054,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "10-jizhu-bing-xue-v1-part-01.tar",
+          "bytes": 234772480,
+          "sha256": "c7a4a87a875875684c93780aea2c7f7aff1c5c4491a81c16c377699df635a3b1",
+          "chapters": [
+            {
+              "slug": "01-jiepou-lixue",
+              "title": "脊柱不是一根柱子，而是一组会互相代偿的关节",
+              "bytes": 25548066,
+              "durationSec": 636.907
+            },
+            {
+              "slug": "02-yingxiang-zhenduan",
+              "title": "第2章 脊柱影像诊断",
+              "bytes": 23843496,
+              "durationSec": 555.209
+            },
+            {
+              "slug": "03-jingzhuibing",
+              "title": "第3章 颈椎病",
+              "bytes": 21189784,
+              "durationSec": 502.177
+            },
+            {
+              "slug": "04-jingzhu-sunshang",
+              "title": "第4章 颈椎损伤",
+              "bytes": 22681443,
+              "durationSec": 525.991
+            },
+            {
+              "slug": "05-yaojianpan",
+              "title": "第5章 腰椎间盘突出症",
+              "bytes": 22267577,
+              "durationSec": 523.839
+            },
+            {
+              "slug": "06-yaozhuiguan-xiazhai",
+              "title": "走不远的人：狭窄与滑脱，先分清是管窄还是骨错位",
+              "bytes": 23471269,
+              "durationSec": 636.651
+            },
+            {
+              "slug": "07-cewan",
+              "title": "侧弯不是姿势问题：谁在长，谁在弯，谁在代偿",
+              "bytes": 23449787,
+              "durationSec": 642.499
+            },
+            {
+              "slug": "08-guzhishusong-guzhe",
+              "title": "一次椎体压缩骨折，是下一次骨折的预告",
+              "bytes": 23574745,
+              "durationSec": 645.123
+            },
+            {
+              "slug": "09-shoufa-shoushu",
+              "title": "手法与手术之间，隔着的不是勇气，是判据",
+              "bytes": 23216785,
+              "durationSec": 629.027
+            },
+            {
+              "slug": "10-kangfu",
+              "title": "把「治好」换成「能过」：脊柱的长期管理",
+              "bytes": 23562102,
+              "durationSec": 650.419
+            }
+          ],
+          "sourceBytes": 232805054
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:36:52.937Z"
+    },
+    {
+      "course": "04-gushang/11-guanjie-bing-xue",
+      "title": "关节病学",
+      "version": "v1",
+      "chapterCount": 10,
+      "totalDurationSec": 6882.242,
+      "totalBytes": 269378147,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "11-guanjie-bing-xue-v1-part-01.tar",
+          "bytes": 271636480,
+          "sha256": "236d39808f98c9babef69a96f4a159c0f1e8e655f388020eb1285a9d3159ff8e",
+          "chapters": [
+            {
+              "slug": "01-gailun-bingyin",
+              "title": "关节病的第一个动作不是开药，是把病人放进正确的类别里",
+              "bytes": 27482409,
+              "durationSec": 704.427
+            },
+            {
+              "slug": "02-linchuang-zhencha",
+              "title": "第2章 骨病的临床诊查",
+              "bytes": 25471513,
+              "durationSec": 611.383
+            },
+            {
+              "slug": "03-zhiliao-fangfa",
+              "title": "第3章 骨病的治疗方法",
+              "bytes": 29326494,
+              "durationSec": 680.865
+            },
+            {
+              "slug": "04-huamou-guanjieyan",
+              "title": "第4章 化脓性骨髓炎与化脓性关节炎",
+              "bytes": 28011436,
+              "durationSec": 655.389
+            },
+            {
+              "slug": "05-gujiehe",
+              "title": "第5章 骨与关节结核",
+              "bytes": 17902295,
+              "durationSec": 416.443
+            },
+            {
+              "slug": "06-guzhongliu",
+              "title": "骨肿瘤的第一个动作是拍片，不是解释",
+              "bytes": 26602570,
+              "durationSec": 716.035
+            },
+            {
+              "slug": "07-gudaixie",
+              "title": "骨量的流失是安静的，骨折是它第一次说话",
+              "bytes": 28923526,
+              "durationSec": 771.955
+            },
+            {
+              "slug": "08-guhuaisi",
+              "title": "骨坏死的窗口期，落在 X 线还看不见的那段时间里",
+              "bytes": 24881763,
+              "durationSec": 682.059
+            },
+            {
+              "slug": "09-tuixing-mianyi",
+              "title": "骨关节炎与类风湿的治疗方向是相反的",
+              "bytes": 32451930,
+              "durationSec": 879.187
+            },
+            {
+              "slug": "10-jixing-kangfu",
+              "title": "畸形不疼，所以它总在没人看着的时候长",
+              "bytes": 28324211,
+              "durationSec": 764.499
+            }
+          ],
+          "sourceBytes": 269378147
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:36:55.100Z"
+    },
+    {
+      "course": "04-gushang/12-guzhishusong-tuibian",
+      "title": "骨质疏松与退行性疾病",
+      "version": "v1",
+      "chapterCount": 8,
+      "totalDurationSec": 5099.598,
+      "totalBytes": 199266085,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "12-guzhishusong-tuibian-v1-part-01.tar",
+          "bytes": 200949760,
+          "sha256": "0de1fcf36512b06aac5c98bfb537b2a0acf0528bb466034ca7c0a9486be3469f",
+          "chapters": [
+            {
+              "slug": "01-gudaixie-jichu",
+              "title": "第1章 骨代谢基础",
+              "bytes": 24564858,
+              "durationSec": 570.249
+            },
+            {
+              "slug": "02-zhenduan-pinggu",
+              "title": "第2章 诊断与骨折风险评估",
+              "bytes": 26082680,
+              "durationSec": 606.175
+            },
+            {
+              "slug": "03-guzhishusong",
+              "title": "第3章 骨质疏松症",
+              "bytes": 25232648,
+              "durationSec": 597.299
+            },
+            {
+              "slug": "04-guguanjieyan",
+              "title": "第4章 骨关节炎",
+              "bytes": 15887974,
+              "durationSec": 379.143
+            },
+            {
+              "slug": "05-tuibian-yingxiang",
+              "title": "报告上的「退变」，有一半是年龄",
+              "bytes": 26281646,
+              "durationSec": 711.971
+            },
+            {
+              "slug": "06-yaowu",
+              "title": "抗骨质疏松药不改「骨头的年龄」，只改斜率",
+              "bytes": 27326469,
+              "durationSec": 754.331
+            },
+            {
+              "slug": "07-kangfu-diedao",
+              "title": "跌倒不是意外，是一串可以被算出来的事件",
+              "bytes": 25080592,
+              "durationSec": 690.835
+            },
+            {
+              "slug": "08-changqi-guanli",
+              "title": "骨质疏松的治疗，多半输在第二年",
+              "bytes": 28809218,
+              "durationSec": 789.595
+            }
+          ],
+          "sourceBytes": 199266085
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:36:56.683Z"
+    },
+    {
+      "course": "04-gushang/13-zhongyi-zhengji-xue",
+      "title": "中医整脊学",
+      "version": "v1",
+      "chapterCount": 8,
+      "totalDurationSec": 5375.28,
+      "totalBytes": 204572497,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "13-zhongyi-zhengji-xue-v1-part-01.tar",
+          "bytes": 206356480,
+          "sha256": "44d44eb9a4bad4d11c9f7dbf5d31037ed3e653f5faaba1ddb130dfa495f7bb33",
+          "chapters": [
+            {
+              "slug": "01-yuanliu-lilun",
+              "title": "整脊的第一道门槛不是手法，是「什么算有效」",
+              "bytes": 25260478,
+              "durationSec": 702.643
+            },
+            {
+              "slug": "02-jiepou-lixue",
+              "title": "脊柱的稳定不是骨头撑住的，是三种组织在互相欠账",
+              "bytes": 25827512,
+              "durationSec": 710.347
+            },
+            {
+              "slug": "03-yingxiang-pinggu",
+              "title": "影像的用法是排除禁忌，不是找病因",
+              "bytes": 23746561,
+              "durationSec": 656.267
+            },
+            {
+              "slug": "04-shoufa-tixi",
+              "title": "手法分三层，风险也分三层，两层必须一一对上",
+              "bytes": 22675542,
+              "durationSec": 629.627
+            },
+            {
+              "slug": "05-jingzhui",
+              "title": "颈椎不是一段，是两段，风险也在两段之间分",
+              "bytes": 27941908,
+              "durationSec": 747.251
+            },
+            {
+              "slug": "06-xiongyaozhui",
+              "title": "胸腰段的手法失误，多半不是瘫，是折",
+              "bytes": 26972167,
+              "durationSec": 649.555
+            },
+            {
+              "slug": "07-gupen-xiayao",
+              "title": "骨盆是地基，但「地基歪了」是最容易被滥用的一句话",
+              "bytes": 26658228,
+              "durationSec": 639.323
+            },
+            {
+              "slug": "08-fengxian-liaoxiao",
+              "title": "不良事件不是意外，是可以分类的事件",
+              "bytes": 25490101,
+              "durationSec": 640.267
+            }
+          ],
+          "sourceBytes": 204572497
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:36:58.539Z"
+    },
+    {
+      "course": "04-gushang/14-kangfu-gongcheng-zhiju",
+      "title": "康复工程与支具学",
+      "version": "v1",
+      "chapterCount": 8,
+      "totalDurationSec": 4655.526,
+      "totalBytes": 190859786,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "14-kangfu-gongcheng-zhiju-v1-part-01.tar",
+          "bytes": 192573440,
+          "sha256": "3b47555ad78260c605e74e1ccae11248c6a11dfedacbaa7c6b23f40d52aa03b5",
+          "chapters": [
+            {
+              "slug": "01-gailun",
+              "title": "第1章 康复工程概论",
+              "bytes": 25495597,
+              "durationSec": 624.399
+            },
+            {
+              "slug": "02-fenlei-cailiao",
+              "title": "第2章 支具分类与材料",
+              "bytes": 22051625,
+              "durationSec": 544.875
+            },
+            {
+              "slug": "03-jizhu-zhiju",
+              "title": "第3章 脊柱支具",
+              "bytes": 22995963,
+              "durationSec": 570.899
+            },
+            {
+              "slug": "04-shangzhi-zhiju",
+              "title": "第4章 上肢支具",
+              "bytes": 24421137,
+              "durationSec": 583.337
+            },
+            {
+              "slug": "05-xiazhi-zhiju",
+              "title": "第5章 下肢支具",
+              "bytes": 25305646,
+              "durationSec": 609.283
+            },
+            {
+              "slug": "06-zuxie-yali",
+              "title": "第6章 矫形鞋与压力治疗",
+              "bytes": 25069881,
+              "durationSec": 595.333
+            },
+            {
+              "slug": "07-zhuxing-fuzhu",
+              "title": "第7章 助行器、轮椅与转移辅具",
+              "bytes": 22390737,
+              "durationSec": 554.939
+            },
+            {
+              "slug": "08-pinggu-suifang",
+              "title": "第8章 适配评估与随访",
+              "bytes": 23129200,
+              "durationSec": 572.461
+            }
+          ],
+          "sourceBytes": 190859786
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:37:00.130Z"
+    },
+    {
+      "course": "04-gushang/15-gushang-kangfu-pingding",
+      "title": "骨伤康复评定",
+      "version": "v1",
+      "chapterCount": 8,
+      "totalDurationSec": 4137.582,
+      "totalBytes": 170574655,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "15-gushang-kangfu-pingding-v1-part-01.tar",
+          "bytes": 172103680,
+          "sha256": "dfcd2dcdba1ddd042673db8649b3268a7425bb74d6dbed600cf695ac94db677f",
+          "chapters": [
+            {
+              "slug": "01-pingding-gailun",
+              "title": "第1章 康复评定概论",
+              "bytes": 16882704,
+              "durationSec": 417.931
+            },
+            {
+              "slug": "02-guanjie-jili",
+              "title": "第2章 关节活动度与肌力评定",
+              "bytes": 22776033,
+              "durationSec": 553.299
+            },
+            {
+              "slug": "03-pingheng-butai",
+              "title": "第3章 平衡与步态评定",
+              "bytes": 20468848,
+              "durationSec": 496.229
+            },
+            {
+              "slug": "04-adl-shenghuo",
+              "title": "第4章 日常生活活动与生活质量",
+              "bytes": 21590902,
+              "durationSec": 519.927
+            },
+            {
+              "slug": "05-tengtong-xinli",
+              "title": "第5章 疼痛与心理评定",
+              "bytes": 22436477,
+              "durationSec": 537.149
+            },
+            {
+              "slug": "06-yingxiang-gongneng",
+              "title": "第6章 影像与功能的对应",
+              "bytes": 21474087,
+              "durationSec": 520.059
+            },
+            {
+              "slug": "07-liangbiao",
+              "title": "第7章 评定量表的选择与信效度",
+              "bytes": 22334058,
+              "durationSec": 541.235
+            },
+            {
+              "slug": "08-baogao-suifang",
+              "title": "第8章 评定报告与随访",
+              "bytes": 22611546,
+              "durationSec": 551.753
+            }
+          ],
+          "sourceBytes": 170574655
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:37:01.453Z"
+    },
+    {
+      "course": "04-gushang/16-gushang-linchuang-lunzhuan",
+      "title": "骨伤临床轮转",
+      "version": "v1",
+      "chapterCount": 6,
+      "totalDurationSec": 2307.874,
+      "totalBytes": 88521090,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "16-gushang-linchuang-lunzhuan-v1-part-01.tar",
+          "bytes": 89395200,
+          "sha256": "d1d66fe775194ba7df5cccca1097ed589fb20ca3c15e07510e623e2bd5977e94",
+          "chapters": [
+            {
+              "slug": "01-zhenggu-lunzhuan",
+              "title": "第1章 正骨科轮转：骨折复位与固定",
+              "bytes": 17592324,
+              "durationSec": 447.979
+            },
+            {
+              "slug": "02-jinshang-lunzhuan",
+              "title": "第2章 筋伤科轮转：软组织损伤",
+              "bytes": 12182945,
+              "durationSec": 317.755
+            },
+            {
+              "slug": "03-jizhu-lunzhuan",
+              "title": "第3章 脊柱科轮转",
+              "bytes": 14158567,
+              "durationSec": 371.655
+            },
+            {
+              "slug": "04-guanjie-lunzhuan",
+              "title": "第4章 关节科轮转",
+              "bytes": 15728585,
+              "durationSec": 406.129
+            },
+            {
+              "slug": "05-jizhen-chuangshang",
+              "title": "第5章 急诊创伤与院前处置",
+              "bytes": 11686888,
+              "durationSec": 312.339
+            },
+            {
+              "slug": "06-chuke-kaohe",
+              "title": "第6章 出科考核与病例复盘",
+              "bytes": 17171781,
+              "durationSec": 452.017
+            }
+          ],
+          "sourceBytes": 88521090
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:37:02.170Z"
+    },
+    {
+      "course": "04-gushang/17-gushang-biye-sheji",
+      "title": "骨伤毕业设计与知识移交",
+      "version": "v1",
+      "chapterCount": 6,
+      "totalDurationSec": 3040.556,
+      "totalBytes": 104459378,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "17-gushang-biye-sheji-v1-part-01.tar",
+          "bytes": 105246720,
+          "sha256": "328e7fe7e63345cec5bb98f794d8914ead7ee5fd3132cd770f9ba816118e0c65",
+          "chapters": [
+            {
+              "slug": "01-xuan-ti",
+              "title": "第1章 选题：从复位方案到可量化命题",
+              "bytes": 17631908,
+              "durationSec": 511.435
+            },
+            {
+              "slug": "02-yingxiang-shuju",
+              "title": "第2章 影像与生物力学数据准备",
+              "bytes": 15084212,
+              "durationSec": 443.939
+            },
+            {
+              "slug": "03-shoufa-zhiju",
+              "title": "第3章 手法与支具的系统实现",
+              "bytes": 16033351,
+              "durationSec": 459.819
+            },
+            {
+              "slug": "04-liaoxiao-pingjia",
+              "title": "第4章 疗效与并发症评价",
+              "bytes": 17512142,
+              "durationSec": 494.933
+            },
+            {
+              "slug": "05-lunwen-dabian",
+              "title": "论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好",
+              "bytes": 20045329,
+              "durationSec": 589.363
+            },
+            {
+              "slug": "06-zhishi-yijiao",
+              "title": "移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法",
+              "bytes": 18152436,
+              "durationSec": 541.067
+            }
+          ],
+          "sourceBytes": 104459378
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:37:02.952Z"
+    },
+    {
+      "course": "09-jichu/01-renti-jiepou-xue",
+      "title": "人体解剖学",
+      "version": "v1",
+      "chapterCount": 10,
+      "totalDurationSec": 8108.853,
+      "totalBytes": 345266967,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "01-renti-jiepou-xue-v1-part-01.tar",
+          "bytes": 348088320,
+          "sha256": "6a44175dd48253a1e1c99356edcbbd9387e2ee133d368076a8cf4a1808c7f8b2",
+          "chapters": [
+            {
+              "slug": "01-xulun",
+              "title": "解剖学先把话说准：说清「在哪一层、与谁相邻」才算认得",
+              "bytes": 31125200,
+              "durationSec": 710.3
+            },
+            {
+              "slug": "02-yundong-xitong",
+              "title": "运动系统不是「一堆骨头的名字」，而是一套受力与杠杆的分工",
+              "bytes": 33772207,
+              "durationSec": 773.87
+            },
+            {
+              "slug": "03-xiaohua-xitong",
+              "title": "消化器官的位置不是背出来的，是被系膜与腹膜挂住的",
+              "bytes": 33913281,
+              "durationSec": 803.459
+            },
+            {
+              "slug": "04-huxi-xitong",
+              "title": "呼吸系统的每一段都在回答同一个问题：气走多远、被什么包住",
+              "bytes": 28909183,
+              "durationSec": 657.499
+            },
+            {
+              "slug": "05-miniao-xitong",
+              "title": "排尿通路的难点不在管子本身，而在三处狭窄与两性末段的分野",
+              "bytes": 29849433,
+              "durationSec": 695.211
+            },
+            {
+              "slug": "06-shengzhi-xitong",
+              "title": "生殖器官要按连续通路与同源对应来读，不能按名称逐个背诵",
+              "bytes": 30145629,
+              "durationSec": 708.19
+            },
+            {
+              "slug": "07-xunhuan-xitong",
+              "title": "循环系统是两条首尾相接的环路，心的瓣膜决定血只能朝一个方向走",
+              "bytes": 34577289,
+              "durationSec": 822.163
+            },
+            {
+              "slug": "08-neifenmi-xitong",
+              "title": "内分泌腺的形态差异，最后都落在「产物怎么进血」这一件事上",
+              "bytes": 36770894,
+              "durationSec": 840.62
+            },
+            {
+              "slug": "09-ganjueqi",
+              "title": "感觉器把刺激收进神经通路，辅助装置决定它收得准不准",
+              "bytes": 29571631,
+              "durationSec": 675.97
+            },
+            {
+              "slug": "10-shenjing-xitong",
+              "title": "神经系统的全部内容，是通路与联系在颅腔与椎管里的具体排布",
+              "bytes": 56632220,
+              "durationSec": 1421.571
+            }
+          ],
+          "sourceBytes": 345266967
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:37:05.808Z"
+    },
+    {
+      "course": "09-jichu/02-zuzhi-peitai-xue",
+      "title": "组织学与胚胎学",
+      "version": "v1",
+      "chapterCount": 20,
+      "totalDurationSec": 14438.904,
+      "totalBytes": 614207779,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "02-zuzhi-peitai-xue-v1-part-01.tar",
+          "bytes": 619356160,
+          "sha256": "9d4578d356becacc8a0c71c57f613d19d15e63cb696653dbdac278128c17a5a2",
+          "chapters": [
+            {
+              "slug": "01-zuzhixue-xulun",
+              "title": "组织学的功夫在「位置」上，不在名词上",
+              "bytes": 28825632,
+              "durationSec": 680.051
+            },
+            {
+              "slug": "02-shangpi-zuzhi",
+              "title": "上皮的极性一看出，功能就已经说出一半",
+              "bytes": 33259731,
+              "durationSec": 762.003
+            },
+            {
+              "slug": "03-jiedi-zuzhi",
+              "title": "结缔组织不是填充物，而是把全身连成一个力学系统的介质",
+              "bytes": 31612423,
+              "durationSec": 715.58
+            },
+            {
+              "slug": "04-ji-zuzhi",
+              "title": "三型肌组织是同一台滑行机制的三次不同装配",
+              "bytes": 27603686,
+              "durationSec": 617.75
+            },
+            {
+              "slug": "05-shenjing-zuzhi",
+              "title": "神经元的形态差异，是它在回路里位置不同的证据",
+              "bytes": 30285957,
+              "durationSec": 654.42
+            },
+            {
+              "slug": "06-shenjing-xitong",
+              "title": "中枢的构筑只有两条原则：胞体聚成层或团，纤维走成束",
+              "bytes": 29068138,
+              "durationSec": 665.78
+            },
+            {
+              "slug": "07-xunhuan-xitong",
+              "title": "管壁三层的厚薄比例，就是一段血管的功能简历",
+              "bytes": 32537335,
+              "durationSec": 734.93
+            },
+            {
+              "slug": "08-mianyi-xitong",
+              "title": "免疫系统的判读靠分区：同一个细胞，位置不同任务就不同",
+              "bytes": 30034757,
+              "durationSec": 687.61
+            },
+            {
+              "slug": "09-xiaohua-xitong",
+              "title": "消化管是同一套四层结构被逐段改装的结果",
+              "bytes": 33040875,
+              "durationSec": 761.71
+            },
+            {
+              "slug": "10-huxi-xitong",
+              "title": "呼吸道是一条逐级减配、逐级变薄的管道",
+              "bytes": 31637927,
+              "durationSec": 711.11
+            },
+            {
+              "slug": "11-miniao-xitong",
+              "title": "肾的两套毛细血管网，让同一份血在一个器官里过两遍",
+              "bytes": 29512104,
+              "durationSec": 692.15
+            },
+            {
+              "slug": "12-pifu",
+              "title": "皮肤的屏障由已经没有细胞器的细胞撑着，活细胞只负责在下面补货",
+              "bytes": 36477953,
+              "durationSec": 957.54
+            },
+            {
+              "slug": "13-yan-he-er",
+              "title": "眼与耳的共同骨架，是把换能细胞关进腔隙再用中继链送上皮质",
+              "bytes": 35915630,
+              "durationSec": 952.69
+            },
+            {
+              "slug": "14-neifenmi-xitong",
+              "title": "内分泌腺没有导管，于是结构只剩一件事：把腺细胞排到毛细血管边上",
+              "bytes": 36581326,
+              "durationSec": 943.803
+            },
+            {
+              "slug": "15-nanxing-shengzhi-xitong",
+              "title": "血睾屏障把一条小管分成两个世界，免疫隔离是它为有序减数分裂付的账",
+              "bytes": 18281761,
+              "durationSec": 413.883
+            },
+            {
+              "slug": "16-nvxing-shengzhi-xitong",
+              "title": "子宫内膜每月拆掉重建一次，施工令由卵巢的卵泡与黄体轮流签发",
+              "bytes": 28460581,
+              "durationSec": 667.69
+            },
+            {
+              "slug": "17-peitaixue-xulun",
+              "title": "没有人看过自己的发生，胚胎学的时间线是拼接出来的",
+              "bytes": 25882612,
+              "durationSec": 621.043
+            },
+            {
+              "slug": "18-zaoqi-fasheng",
+              "title": "早期发生只做了一件事：反复把一分成两半",
+              "bytes": 27800062,
+              "durationSec": 657.627
+            },
+            {
+              "slug": "19-qiguan-fasheng",
+              "title": "器官不是新建的，是三胚层用出芽折叠融合分隔这四招改出来的",
+              "bytes": 38308251,
+              "durationSec": 860.179
+            },
+            {
+              "slug": "20-xiantianxing-jixing",
+              "title": "畸形的后果由时相决定，而时相偏偏是本章唯一不许写数值的变量",
+              "bytes": 29081038,
+              "durationSec": 681.355
+            }
+          ],
+          "sourceBytes": 614207779
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:37:10.539Z"
+    },
+    {
+      "course": "09-jichu/03-yixue-xibao-shengwu-xue",
+      "title": "医学细胞生物学",
+      "version": "v1",
+      "chapterCount": 12,
+      "totalDurationSec": 5851.026,
+      "totalBytes": 241709018,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "03-yixue-xibao-shengwu-xue-v1-part-01.tar",
+          "bytes": 244019200,
+          "sha256": "d5c39d0ce674d7264a971d2051f597a42dc5a8a839051e8345d9b2e3e613d60e",
+          "chapters": [
+            {
+              "slug": "01-xibao-shengwuxue-gailun",
+              "title": "细胞学说真正的断言不是「小」，是「一切账都记在膜内」",
+              "bytes": 19782313,
+              "durationSec": 487.32
+            },
+            {
+              "slug": "02-xibaomo-yu-kuamo-yunshu",
+              "title": "膜的本事不是「挡住」，是「让该过的过得快，让不该过的过得慢」",
+              "bytes": 20382968,
+              "durationSec": 485.779
+            },
+            {
+              "slug": "03-xibao-lianjie-yu-nianfu",
+              "title": "连接不是把细胞粘住，是把「这一层」变成一个可以调控的整体",
+              "bytes": 19134018,
+              "durationSec": 453.38
+            },
+            {
+              "slug": "04-xibao-waijizhi",
+              "title": "基质不是填充物，是细胞每天在读的一份说明书",
+              "bytes": 23024204,
+              "durationSec": 552.87
+            },
+            {
+              "slug": "05-xibao-gujia-yu-yundong",
+              "title": "骨架不是骨头，是一套会自己拆了重装的轨道",
+              "bytes": 25073116,
+              "durationSec": 589.443
+            },
+            {
+              "slug": "06-shenjingyuan-xinxi-chuandi",
+              "title": "信号不是一路跑到底，是每一小段都重新发一次",
+              "bytes": 21774197,
+              "durationSec": 534.091
+            },
+            {
+              "slug": "07-xibaohe-yu-ransezhi",
+              "title": "染色质不是打包好的档案，是一份随时被翻开的活页",
+              "bytes": 19764827,
+              "durationSec": 480.19
+            },
+            {
+              "slug": "08-jiyin-biaoda-tiaokong",
+              "title": "调控的答案不在「开或关」，在「多少、何时、在哪」",
+              "bytes": 24081333,
+              "durationSec": 584.95
+            },
+            {
+              "slug": "09-xibao-zhouqi-yu-dna-fuzhi",
+              "title": "细胞周期不是四个阶段，是三道闸门加一套计时器",
+              "bytes": 15762933,
+              "durationSec": 378.21
+            },
+            {
+              "slug": "10-danbaizhi-hecheng-yu-xibao-gongneng",
+              "title": "蛋白不是「造出来」的，是「按图纸装配，再一路过安检」",
+              "bytes": 16890022,
+              "durationSec": 425.843
+            },
+            {
+              "slug": "11-xibao-fenhua-yu-qiguan-fasheng",
+              "title": "分化不是学会新本事，是把已有的本事关掉大部分",
+              "bytes": 21263927,
+              "durationSec": 520.13
+            },
+            {
+              "slug": "12-xibao-yu-fenzi-jishu",
+              "title": "方法的可信度不由仪器决定，由对照决定",
+              "bytes": 14775160,
+              "durationSec": 358.82
+            }
+          ],
+          "sourceBytes": 241709018
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:37:12.565Z"
+    },
+    {
+      "course": "09-jichu/04-yixue-shengwu-xue",
+      "title": "医学生物学",
+      "version": "v1",
+      "chapterCount": 16,
+      "totalDurationSec": 8181.374,
+      "totalBytes": 330888152,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "04-yixue-shengwu-xue-v1-part-01.tar",
+          "bytes": 333824000,
+          "sha256": "0e3184c608530a437ed4f74576304963631c876f7a49248ccb36179e3e231f11",
+          "chapters": [
+            {
+              "slug": "01-xulun",
+              "title": "这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链",
+              "bytes": 20091777,
+              "durationSec": 488.691
+            },
+            {
+              "slug": "02-yixue-xibao-shengwuxue-gailun",
+              "title": "这门学科划的不是「细胞」这条线，是「可测的细胞状态」这条线",
+              "bytes": 25255471,
+              "durationSec": 633.42
+            },
+            {
+              "slug": "03-xibao-gaishu",
+              "title": "细胞的大小不是自由选择，是表面积与体积算出来的一道硬账",
+              "bytes": 20874303,
+              "durationSec": 505.987
+            },
+            {
+              "slug": "04-xibaomo",
+              "title": "膜的本事不是「挡住」，是「让不该过的过得慢，让该过的过得快」",
+              "bytes": 26137705,
+              "durationSec": 660.57
+            },
+            {
+              "slug": "05-xibao-zhi",
+              "title": "细胞质不是一锅汤，是一条有方向、有分区、要收费的流水线",
+              "bytes": 20992800,
+              "durationSec": 511.691
+            },
+            {
+              "slug": "06-xibao-he",
+              "title": "核的全部本事，是让两米长的信息住进一间六微米的屋子还找得到",
+              "bytes": 23277408,
+              "durationSec": 558.811
+            },
+            {
+              "slug": "07-zengzhi-fenhua-shuailao-siwang",
+              "title": "增殖、分化、衰老、死亡不是四件事，是同一个开关的四个位置",
+              "bytes": 22278555,
+              "durationSec": 537.475
+            },
+            {
+              "slug": "08-ganxibao-yu-xibao-gongcheng",
+              "title": "干细胞的门槛不是「什么都能变」，是「变了还能变回来」",
+              "bytes": 18820952,
+              "durationSec": 464.09
+            },
+            {
+              "slug": "09-yixue-yichuanxue-gailun",
+              "title": "遗传学研究的不是「病」，是「差异怎么传下去」",
+              "bytes": 16523671,
+              "durationSec": 407.683
+            },
+            {
+              "slug": "10-jiyin-ji-jiyin-tubian",
+              "title": "基因不是一段密码，是一段带标点、带批注、还会被剪接的文本",
+              "bytes": 19194506,
+              "durationSec": 479.14
+            },
+            {
+              "slug": "11-dan-jiyin-yichuan",
+              "title": "3∶1 不是疾病的规律，是配子随机结合的算术",
+              "bytes": 15600173,
+              "durationSec": 392.9
+            },
+            {
+              "slug": "12-duo-jiyin-yichuan",
+              "title": "多基因病的遗传不是「传下去」，是「分布的一端被推过了线」",
+              "bytes": 21551422,
+              "durationSec": 531.23
+            },
+            {
+              "slug": "13-renlei-ranse-ti-yu-ranse-ti-bing",
+              "title": "核型分析做的事，是把一条连续的信息流切成四十六段可数的实物",
+              "bytes": 22454713,
+              "durationSec": 583.41
+            },
+            {
+              "slug": "14-qunti-yichuan-xue",
+              "title": "群体遗传学算的不是「谁会病」，是「这个变异在这个人群里能待多久」",
+              "bytes": 17268518,
+              "durationSec": 426.443
+            },
+            {
+              "slug": "15-linchuang-yichuan-xue",
+              "title": "临床遗传学最难的环节不是测出变异，是把变异说成人话",
+              "bytes": 20101136,
+              "durationSec": 506.11
+            },
+            {
+              "slug": "16-zhongyi-yichuan-xue",
+              "title": "中医讲「禀赋」，讲的不是基因，是「一个人从父母那里带来的起点与限度」",
+              "bytes": 20465042,
+              "durationSec": 493.723
+            }
+          ],
+          "sourceBytes": 330888152
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:37:15.364Z"
+    },
+    {
+      "course": "09-jichu/05-zhengchang-renti-xue",
+      "title": "正常人体学",
+      "version": "v1",
+      "chapterCount": 18,
+      "totalDurationSec": 11014.37,
+      "totalBytes": 464113862,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "05-zhengchang-renti-xue-v1-part-01.tar",
+          "bytes": 468019200,
+          "sha256": "54be5122f3efb2baf318a77c0e951b7284f731b951212073d71e794e40a066a1",
+          "chapters": [
+            {
+              "slug": "01-gaishu-yu-cengci",
+              "title": "第1章 正常人体学概述与人体构造层次",
+              "bytes": 34664041,
+              "durationSec": 790.647
+            },
+            {
+              "slug": "02-xibao-yu-jiben-zuzhi",
+              "title": "第2章 细胞与基本组织",
+              "bytes": 31306186,
+              "durationSec": 721.289
+            },
+            {
+              "slug": "03-fasheng-yu-fayu-gaishu",
+              "title": "第3章 人体发生与发育概述",
+              "bytes": 21566142,
+              "durationSec": 505.429
+            },
+            {
+              "slug": "04-yundong-xitong",
+              "title": "第4章 运动系统",
+              "bytes": 29125840,
+              "durationSec": 684.125
+            },
+            {
+              "slug": "05-xiaohua-xitong",
+              "title": "第5章 消化系统",
+              "bytes": 22805667,
+              "durationSec": 522.761
+            },
+            {
+              "slug": "06-huxi-xitong",
+              "title": "第6章 呼吸系统",
+              "bytes": 23479162,
+              "durationSec": 567.853
+            },
+            {
+              "slug": "07-miniao-xitong",
+              "title": "第7章 泌尿系统",
+              "bytes": 26464648,
+              "durationSec": 618.145
+            },
+            {
+              "slug": "08-shengzhi-xitong",
+              "title": "第8章 生殖系统",
+              "bytes": 22550818,
+              "durationSec": 526.445
+            },
+            {
+              "slug": "09-maiguan-xitong",
+              "title": "第9章 脉管系统",
+              "bytes": 20605673,
+              "durationSec": 491.419
+            },
+            {
+              "slug": "10-ganjue-qiguan",
+              "title": "第10章 感觉器官",
+              "bytes": 20265085,
+              "durationSec": 477.211
+            },
+            {
+              "slug": "11-shenjing-xitong",
+              "title": "第11章 神经系统",
+              "bytes": 24660501,
+              "durationSec": 575.903
+            },
+            {
+              "slug": "12-neifenmi-xitong",
+              "title": "第12章 内分泌系统",
+              "bytes": 21446557,
+              "durationSec": 499.899
+            },
+            {
+              "slug": "13-xueye-yu-neihuanjing",
+              "title": "第13章 血液与内环境稳态",
+              "bytes": 20150649,
+              "durationSec": 482.923
+            },
+            {
+              "slug": "14-xunhuan-huxi-tiaojie",
+              "title": "第14章 血液循环与呼吸功能调节",
+              "bytes": 28270840,
+              "durationSec": 651.851
+            },
+            {
+              "slug": "15-xiaohua-nengliang-daixie",
+              "title": "吸收的关键不是「吃进去」，而是面积与回流同时到位",
+              "bytes": 28958461,
+              "durationSec": 755.211
+            },
+            {
+              "slug": "16-paixie-tiwen-tiye",
+              "title": "排出有四条路，体温只靠四个散热点收尾",
+              "bytes": 35160962,
+              "durationSec": 913.547
+            },
+            {
+              "slug": "17-zhengti-tiaojie-baohu",
+              "title": "第17章 人体功能的整体调节与保护要求",
+              "bytes": 22499331,
+              "durationSec": 536.937
+            },
+            {
+              "slug": "18-pingtai-lianjie",
+              "title": "第18章 正常人体学与 tcmP 平台",
+              "bytes": 30133299,
+              "durationSec": 692.775
+            }
+          ],
+          "sourceBytes": 464113862
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:37:19.102Z"
+    },
+    {
+      "course": "09-jichu/06-shengli-xue",
+      "title": "生理学",
+      "version": "v1",
+      "chapterCount": 11,
+      "totalDurationSec": 20553.631,
+      "totalBytes": 775197398,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "06-shengli-xue-v1-part-01.tar",
+          "bytes": 780308480,
+          "sha256": "7689a48a10411c146e8470a25018b8c2bcb72752f0096fc11b699813996bf630",
+          "chapters": [
+            {
+              "slug": "01-xulun",
+              "title": "第1章 绪论：生理学研究的对象与三个水平",
+              "bytes": 24601194,
+              "durationSec": 575.023
+            },
+            {
+              "slug": "02-xibao-jiben-gongneng",
+              "title": "细胞的基本功能：一条从膜到肌丝的链",
+              "bytes": 69062416,
+              "durationSec": 1885.243
+            },
+            {
+              "slug": "03-xueye",
+              "title": "血液：用三张图替掉一张数字表",
+              "bytes": 76772337,
+              "durationSec": 2091.451
+            },
+            {
+              "slug": "04-xueye-xunhuan",
+              "title": "血液循环：泵血·血管·调节·器官循环",
+              "bytes": 97147407,
+              "durationSec": 2620.243
+            },
+            {
+              "slug": "05-huxi",
+              "title": "呼吸：通气·换气·气体运输·呼吸调节",
+              "bytes": 98593831,
+              "durationSec": 2622.859
+            },
+            {
+              "slug": "06-xiaohua-xishou",
+              "title": "消化和吸收：分泌·运动·吸收与调节",
+              "bytes": 108280474,
+              "durationSec": 2904.355
+            },
+            {
+              "slug": "07-nengliang-tiwen",
+              "title": "能量代谢与体温：产与散的两本账",
+              "bytes": 80876747,
+              "durationSec": 2172.619
+            },
+            {
+              "slug": "08-shenzang-paixie",
+              "title": "肾脏的排泄功能：一条流水线，三个方向",
+              "bytes": 81731143,
+              "durationSec": 2205.499
+            },
+            {
+              "slug": "09-neifenmi",
+              "title": "内分泌：谁作用于谁，而不是多少",
+              "bytes": 80078397,
+              "durationSec": 2152.963
+            },
+            {
+              "slug": "10-shenjing-xitong",
+              "title": "第10章 神经系统：神经元·突触·感觉运动·高级功能",
+              "bytes": 29990275,
+              "durationSec": 680.453
+            },
+            {
+              "slug": "11-ganjue-qiguan",
+              "title": "第11章 感觉器官：感受器的一般特性与各感官功能",
+              "bytes": 28063177,
+              "durationSec": 642.923
+            }
+          ],
+          "sourceBytes": 775197398
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:37:25.784Z"
+    },
+    {
+      "course": "09-jichu/07-shenghua-xue",
+      "title": "生物化学",
+      "version": "v1",
+      "chapterCount": 21,
+      "totalDurationSec": 11531.515,
+      "totalBytes": 488814426,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "07-shenghua-xue-v1-part-01.tar",
+          "bytes": 493025280,
+          "sha256": "6581aa6bea1a422b7ba7c1662ba273c635ae536ae2b894368c440dc174099fee",
+          "chapters": [
+            {
+              "slug": "01-xulun",
+              "title": "生物化学不背物质清单，它追问的是分子之间那条因果链",
+              "bytes": 22501611,
+              "durationSec": 507.965
+            },
+            {
+              "slug": "02-tang-huaxue",
+              "title": "糖的身份由羟基的朝向决定，甜不甜与认不认得是两件事",
+              "bytes": 20805019,
+              "durationSec": 497.365
+            },
+            {
+              "slug": "03-zhizhi-huaxue",
+              "title": "脂质不溶于水不是缺陷，是它被选来做膜与储能的原因",
+              "bytes": 19042344,
+              "durationSec": 448.259
+            },
+            {
+              "slug": "04-danbaizhi-huaxue",
+              "title": "蛋白质的功能写在序列里，但要等折叠完成才读得出来",
+              "bytes": 24156000,
+              "durationSec": 541.055
+            },
+            {
+              "slug": "05-hesuan-huaxue",
+              "title": "碱基配对只有一种几何解，核酸才能同时做储存与复制",
+              "bytes": 22556263,
+              "durationSec": 521.285
+            },
+            {
+              "slug": "06-mei",
+              "title": "酶的高效来自降低活化能，专一来自形状互补",
+              "bytes": 20732833,
+              "durationSec": 485.083
+            },
+            {
+              "slug": "07-weishengsu-yu-weiliang-yuansu",
+              "title": "维生素本身不供能，它的价值在辅酶那一半",
+              "bytes": 22017071,
+              "durationSec": 509.695
+            },
+            {
+              "slug": "08-shengwu-yanghua-yu-nengliang",
+              "title": "呼吸链不是管道，是按氧化还原电位排好的一组能量台阶",
+              "bytes": 22999932,
+              "durationSec": 551.081
+            },
+            {
+              "slug": "09-tang-daixie",
+              "title": "血糖稳住不靠某一步强，靠三条去路与两条来路互相顶着",
+              "bytes": 24069040,
+              "durationSec": 564.585
+            },
+            {
+              "slug": "10-zhizhi-daixie",
+              "title": "脂肪是能量的仓库，但仓门由激素与载脂蛋白两把钥匙管着",
+              "bytes": 24782929,
+              "durationSec": 560.009
+            },
+            {
+              "slug": "11-anjisuan-daixie",
+              "title": "氨基酸的氮比碳难处理，所以身体把它转成尿素排掉",
+              "bytes": 28537940,
+              "durationSec": 666.691
+            },
+            {
+              "slug": "12-hegansuan-daixie",
+              "title": "碱基环能否被打开，决定了核苷酸代谢的两条终点与两套药理",
+              "bytes": 24613512,
+              "durationSec": 572.231
+            },
+            {
+              "slug": "13-daixie-tiaojie",
+              "title": "代谢调节的要害不在开关，而在多条途径争夺同一个中间产物池",
+              "bytes": 27709570,
+              "durationSec": 649.817
+            },
+            {
+              "slug": "14-xueye-shenghua",
+              "title": "血液把全身代谢摊进一管样本，判读靠的是成分之间的比值",
+              "bytes": 24709534,
+              "durationSec": 586.985
+            },
+            {
+              "slug": "15-gandan-shenghua",
+              "title": "肝脏把不溶于水的东西改造成溶于水，代价是中间产物可能更毒",
+              "bytes": 25607617,
+              "durationSec": 615.529
+            },
+            {
+              "slug": "16-shuiyan-yu-suanjian-pingheng",
+              "title": "酸碱紊乱的判据不是 pH 落没落在区间里，而是代偿有没有到位",
+              "bytes": 21807523,
+              "durationSec": 537.379
+            },
+            {
+              "slug": "17-dna-shengwu-hecheng",
+              "title": "DNA 复制的一切别扭，都是聚合酶只会朝一个方向延长逼出来的",
+              "bytes": 18867474,
+              "durationSec": 454.659
+            },
+            {
+              "slug": "18-rna-shengwu-hecheng",
+              "title": "转录的全部调控空间在起点、终点与剪接，抄写本身没有选择余地",
+              "bytes": 21594822,
+              "durationSec": 517.593
+            },
+            {
+              "slug": "19-danbaizhi-shengwu-hecheng",
+              "title": "翻译的准确不靠一条规则，而靠两次校对与四次高能键的预付",
+              "bytes": 28402905,
+              "durationSec": 674.107
+            },
+            {
+              "slug": "20-jiyin-biaoda-tiaokong",
+              "title": "原核用一套操纵子省能量，真核用五层关卡换精细",
+              "bytes": 20592513,
+              "durationSec": 509.571
+            },
+            {
+              "slug": "21-changyong-jishu",
+              "title": "分子技术的选择不看好坏，只看它那个致命假设你的样本能不能满足",
+              "bytes": 22707974,
+              "durationSec": 560.571
+            }
+          ],
+          "sourceBytes": 488814426
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:37:29.772Z"
+    },
+    {
+      "course": "09-jichu/08-jubu-jiepou-xue",
+      "title": "局部解剖学",
+      "version": "v1",
+      "chapterCount": 9,
+      "totalDurationSec": 7771.103,
+      "totalBytes": 326260517,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "08-jubu-jiepou-xue-v1-part-01.tar",
+          "bytes": 328919040,
+          "sha256": "6e7c59218d1a3f3ec5f2f4c9f8ce9e2893c65b13b66076a7ea88bcb304214597",
+          "chapters": [
+            {
+              "slug": "01-xulun",
+              "title": "第1章 绪论",
+              "bytes": 28444395,
+              "durationSec": 660.149
+            },
+            {
+              "slug": "02-shangzhi",
+              "title": "第2章 上肢",
+              "bytes": 35965406,
+              "durationSec": 840.629
+            },
+            {
+              "slug": "03-xiazhi",
+              "title": "第3章 下肢",
+              "bytes": 33223604,
+              "durationSec": 741.021
+            },
+            {
+              "slug": "04-toubu",
+              "title": "第4章 头部",
+              "bytes": 35911691,
+              "durationSec": 833.495
+            },
+            {
+              "slug": "05-jingbu",
+              "title": "第5章 颈部",
+              "bytes": 32037036,
+              "durationSec": 726.089
+            },
+            {
+              "slug": "06-xiongbu",
+              "title": "第6章 胸部",
+              "bytes": 38591282,
+              "durationSec": 885.899
+            },
+            {
+              "slug": "07-fubu",
+              "title": "第7章 腹部",
+              "bytes": 38046095,
+              "durationSec": 891.335
+            },
+            {
+              "slug": "08-penbu-huiyin",
+              "title": "骨盆下口靠两个膈封闭，会阴的层次得先说清从哪个方向数",
+              "bytes": 42346383,
+              "durationSec": 1112.291
+            },
+            {
+              "slug": "09-jizhuqu",
+              "title": "脊柱区的所有层次都在为一条管让路，所以答案总在「壁上」",
+              "bytes": 41694625,
+              "durationSec": 1080.195
+            }
+          ],
+          "sourceBytes": 326260517
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:37:32.283Z"
+    },
+    {
+      "course": "09-jichu/09-yixue-yichuan-xue",
+      "title": "医学遗传学",
+      "version": "v1",
+      "chapterCount": 12,
+      "totalDurationSec": 6636.465,
+      "totalBytes": 267101350,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "09-yixue-yichuan-xue-v1-part-01.tar",
+          "bytes": 269516800,
+          "sha256": "8a7eba16f81a75bf42c3017b3d14c2c543d21e029e38c5131518ddee4bed0f5c",
+          "chapters": [
+            {
+              "slug": "01-yichuanxue-gailun",
+              "title": "遗传学的医学价值不在「找到那个基因」，在「把个体风险从人群平均里拆出来」",
+              "bytes": 24846342,
+              "durationSec": 587.23
+            },
+            {
+              "slug": "02-jiyin-de-jiegou-zuzhi",
+              "title": "基因不是「一段编码」，是一套带开关的坐标系",
+              "bytes": 17966126,
+              "durationSec": 444.683
+            },
+            {
+              "slug": "03-jiyin-tubian-yu-xiaoying",
+              "title": "突变的后果不取决于它多大，取决于它落在哪一格、以及阅读框还在不在",
+              "bytes": 19579666,
+              "durationSec": 473.987
+            },
+            {
+              "slug": "04-xipu-yu-chuandi-fangshi",
+              "title": "系谱不是「看图猜病」，是一台把家族史折成概率的机器",
+              "bytes": 21353322,
+              "durationSec": 546.77
+            },
+            {
+              "slug": "05-dan-jiyin-yichuanbing",
+              "title": "单基因病的「单」，说的是传递单位，不是病因的单一性",
+              "bytes": 21089865,
+              "durationSec": 512.291
+            },
+            {
+              "slug": "06-duo-jiyin-yuzhi-moxing",
+              "title": "多基因病不在某一条染色体上，在「易患性的分布」里",
+              "bytes": 21590093,
+              "durationSec": 532.7
+            },
+            {
+              "slug": "07-yiganxing-yu-zaifa-fengxian",
+              "title": "再发风险不是一个数字，是一个随每条新信息改动的后验",
+              "bytes": 22674016,
+              "durationSec": 568.883
+            },
+            {
+              "slug": "08-heti-yu-ranse-ti-jibian",
+              "title": "核型是一条「分辨率就是判据」的技术",
+              "bytes": 23516409,
+              "durationSec": 607.715
+            },
+            {
+              "slug": "09-changjian-ranse-ti-bing",
+              "title": "染色体病的表型不是「某个基因坏了」，是「一整批基因的剂量偏了」",
+              "bytes": 26420607,
+              "durationSec": 689.39
+            },
+            {
+              "slug": "10-qunti-yichuan-xue",
+              "title": "遗传平衡不是自然界的常态，是一把用来量「什么力在起作用」的尺子",
+              "bytes": 20494469,
+              "durationSec": 505.403
+            },
+            {
+              "slug": "11-linchuang-yichuan-xue",
+              "title": "遗传咨询的产出不是「一个风险数字」，是一份能在几个选项里做决定的框架",
+              "bytes": 22850858,
+              "durationSec": 571.45
+            },
+            {
+              "slug": "12-zhongyi-yichuan-xue",
+              "title": "「禀赋」不是遗传学的同义词，它是一套描述系统，价值在提问而不在术语对接",
+              "bytes": 24719577,
+              "durationSec": 595.963
+            }
+          ],
+          "sourceBytes": 267101350
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-27T06:37:34.718Z"
     },
     {
       "course": "09-jichu/11-bingli-shengli-xue",
       "title": "病理生理学",
       "version": "v1",
       "chapterCount": 53,
-      "totalDurationSec": 81283.011,
-      "totalBytes": 3474960429,
+      "totalDurationSec": 86659.934,
+      "totalBytes": 3599657977,
       "partMaxBytes": 1717986918.4,
       "parts": [
         {
@@ -376,162 +4556,156 @@
           "chapters": [
             {
               "slug": "01-introduction-to-pathophysiology",
-              "title": "第 1 章 · 病理生理学导论",
-              "bytes": 73374539,
-              "durationSec": 1741.27
+              "title": "病理生理学导论：四个问题与一套不判定的口径",
+              "bytes": 76177077,
+              "durationSec": 1844.219
             },
             {
               "slug": "02-homeostasis-allostasis-and-adaptive-responses-to-stressors",
-              "title": "第 2 章 · 稳态、异稳态与对应激源的适应性反应",
-              "bytes": 68518169,
-              "durationSec": 1607.1
+              "title": "稳态、异稳态与对应激源的适应性反应：设定点是可以被移动的",
+              "bytes": 68974426,
+              "durationSec": 1713.523
             },
             {
               "slug": "03-cell-structure-and-function",
-              "title": "第 3 章 · 细胞结构与功能",
-              "bytes": 53713942,
-              "durationSec": 1269.99
+              "title": "细胞结构与功能：结构是损伤的受力点清单",
+              "bytes": 55758456,
+              "durationSec": 1359.747
             },
             {
               "slug": "04-cell-injury-aging-and-death",
-              "title": "第 4 章 · 细胞损伤、衰老与死亡",
-              "bytes": 59050819,
-              "durationSec": 1416.02
+              "title": "细胞损伤、衰老与死亡：一条线、两种死法、一个例外",
+              "bytes": 61518372,
+              "durationSec": 1504.37
             },
             {
               "slug": "05-genome-structure-regulation-and-tissue-differentiation",
-              "title": "第 5 章 · 基因组结构、调控与组织分化",
-              "bytes": 49482704,
-              "durationSec": 1190.5
+              "title": "基因组结构、调控与组织分化：同一份底稿的十种读法",
+              "bytes": 49069482,
+              "durationSec": 1271.683
             },
             {
               "slug": "06-genetic-and-developmental-disorders",
-              "title": "第 6 章 · 遗传与发育性疾病",
-              "bytes": 62012888,
-              "durationSec": 1475.93
+              "title": "遗传与发育性疾病：读的是传递的形状，不是概率表",
+              "bytes": 62439794,
+              "durationSec": 1558.459
             },
             {
               "slug": "07-neoplasia",
-              "title": "第 7 章 · 肿瘤",
-              "bytes": 57544228,
-              "durationSec": 1357.54
+              "title": "肿瘤：一串约束被逐条突破的累积",
+              "bytes": 60472353,
+              "durationSec": 1472.603
             },
             {
               "slug": "08-infectious-processes",
-              "title": "第 8 章 · 感染过程",
-              "bytes": 60652496,
-              "durationSec": 1416.57
+              "title": "感染过程：从定植到器官功能障碍的一条连续谱",
+              "bytes": 63241485,
+              "durationSec": 1531.243
             },
             {
               "slug": "09-inflammation-and-immunity",
-              "title": "第 9 章 · 炎症与免疫",
-              "bytes": 62862771,
-              "durationSec": 1486.59
+              "title": "炎症与免疫：两套系统、三条判据与一个交汇点",
+              "bytes": 63282335,
+              "durationSec": 1603.387
             },
             {
               "slug": "10-alterations-in-immune-function",
-              "title": "第 10 章 · 免疫功能异常",
-              "bytes": 65157225,
-              "durationSec": 1517.33
+              "title": "免疫功能异常：三条约束、四型判据与一个「谁在执行」",
+              "bytes": 68852468,
+              "durationSec": 1643.587
             },
             {
               "slug": "11-malignant-disorders-of-white-blood-cells",
-              "title": "第 11 章 · 白细胞恶性肿瘤",
-              "bytes": 59091319,
-              "durationSec": 1415.26
+              "title": "白细胞恶性肿瘤：四条机制收十个节",
+              "bytes": 61144818,
+              "durationSec": 1526.611
             },
             {
               "slug": "12-hiv-disease-and-aids",
-              "title": "第 12 章 · HIV感染与艾滋病",
-              "bytes": 61488851,
-              "durationSec": 1442.39
+              "title": "HIV 感染与艾滋病：一个受体决定了整条病程",
+              "bytes": 64733083,
+              "durationSec": 1551.54
             },
             {
               "slug": "13-alterations-in-oxygen-transport",
-              "title": "第 13 章 · 氧运输异常",
-              "bytes": 69173095,
-              "durationSec": 1604.88
+              "title": "氧运输异常：先定哪一段断，再谈缺氧",
+              "bytes": 71919948,
+              "durationSec": 1723.299
             },
             {
               "slug": "14-alterations-in-hemostasis-and-blood-coagulation",
-              "title": "第 14 章 · 止血与凝血异常",
-              "bytes": 71067721,
-              "durationSec": 1658.49
+              "title": "止血与凝血异常：三条线，两种形态，一个终末通路",
+              "bytes": 73861894,
+              "durationSec": 1771.95
             },
             {
               "slug": "15-alterations-in-blood-flow",
-              "title": "第 15 章 · 血流异常",
-              "bytes": 59547463,
-              "durationSec": 1399.99
+              "title": "血流异常：一个压差、两套阻力与一条时间窗",
+              "bytes": 63339716,
+              "durationSec": 1496.947
             },
             {
               "slug": "16-alterations-in-blood-pressure",
-              "title": "第 16 章 · 血压异常",
-              "bytes": 59253537,
-              "durationSec": 1375.37
+              "title": "血压异常：一个讲数字的章节，为何一个数字都不给",
+              "bytes": 61642174,
+              "durationSec": 1471.363
             },
             {
               "slug": "17-cardiac-function",
-              "title": "第 17 章 · 心脏功能",
-              "bytes": 68217211,
-              "durationSec": 1586.46
+              "title": "心脏功能：四个旋钮与一条钙的链条",
+              "bytes": 71964735,
+              "durationSec": 1688.443
             },
             {
               "slug": "18-alterations-in-cardiac-function",
-              "title": "第 18 章 · 心脏功能异常",
-              "bytes": 60475999,
-              "durationSec": 1410.96
+              "title": "心脏功能异常：四类失衡与一张正反馈网络",
+              "bytes": 64412361,
+              "durationSec": 1520.54
             },
             {
               "slug": "19-heart-failure-and-dysrhythmias",
-              "title": "第 19 章 · 心力衰竭与心律失常",
-              "bytes": 64953986,
-              "durationSec": 1522.55
+              "title": "心力衰竭与心律失常",
+              "bytes": 68720472,
+              "durationSec": 1644.12
             },
             {
               "slug": "20-shock",
-              "title": "第 20 章 · 休克",
-              "bytes": 61523647,
-              "durationSec": 1452.91
+              "title": "休克是灌注问题，血压还撑得住并不等于组织没有缺血",
+              "bytes": 61850828,
+              "durationSec": 1575.187
             },
             {
               "slug": "21-respiratory-function-and-alterations-in-gas-exchange",
-              "title": "第 21 章 · 呼吸功能与气体交换异常",
-              "bytes": 74049369,
-              "durationSec": 1731.57
+              "title": "呼吸功能与气体交换异常",
+              "bytes": 76975809,
+              "durationSec": 1848.987
             },
             {
               "slug": "22-obstructive-pulmonary-disorders",
-              "title": "第 22 章 · 阻塞性肺疾病",
-              "bytes": 72481634,
-              "durationSec": 1718.27
+              "title": "阻塞性肺疾病：气流受限总在呼气相暴露，喘鸣消失不是好转",
+              "bytes": 75798313,
+              "durationSec": 1845.563
             },
             {
               "slug": "23-restrictive-pulmonary-disorders",
-              "title": "第 23 章 · 限制性肺疾病",
-              "bytes": 63874780,
-              "durationSec": 1490.38
+              "title": "限制性肺疾病：装不下的六个位置",
+              "bytes": 66095932,
+              "durationSec": 1573.451
             },
             {
               "slug": "24-fluid-and-electrolyte-homeostasis-and-imbalances",
-              "title": "第 24 章 · 水电解质稳态与失衡",
-              "bytes": 74514599,
-              "durationSec": 1723.88
+              "title": "水电解质稳态与失衡：两个轴，一条出口",
+              "bytes": 76636564,
+              "durationSec": 1826.02
             },
             {
               "slug": "25-acid-base-homeostasis-and-imbalances",
-              "title": "第 25 章 · 酸碱平衡与失衡",
-              "bytes": 63742533,
-              "durationSec": 1517.651
-            },
-            {
-              "slug": "26-renal-function",
-              "title": "第 26 章 · 肾脏功能",
-              "bytes": 74507102,
-              "durationSec": 1745.4
+              "title": "酸碱平衡与失衡：三道防线与一条方向判据",
+              "bytes": 66272461,
+              "durationSec": 1611.155
             }
           ],
-          "sourceBytes": 1670332627
+          "sourceBytes": 1655155356
         },
         {
           "part": 2,
@@ -540,157 +4714,157 @@
           "sha256": "42057fc7aea8548f72d7b91c493a2c3b4cc9d1c476fe1baa3bc32702accd0988",
           "chapters": [
             {
+              "slug": "26-renal-function",
+              "title": "肾脏功能：一条四环节的链，三组功能",
+              "bytes": 76382033,
+              "durationSec": 1841.795
+            },
+            {
               "slug": "27-intrarenal-disorders",
-              "title": "第 27 章 · 肾内疾病",
-              "bytes": 54809771,
-              "durationSec": 1290.55
+              "title": "肾内疾病：先定部位，再定性质",
+              "bytes": 57967697,
+              "durationSec": 1380.4
             },
             {
               "slug": "28-acute-kidney-injury-and-chronic-kidney-disease",
-              "title": "第 28 章 · 急性肾损伤与慢性肾脏病",
-              "bytes": 58628485,
-              "durationSec": 1368.67
+              "title": "急性肾损伤与慢性肾脏病：一条主线，两条时间轴",
+              "bytes": 58127899,
+              "durationSec": 1457.227
             },
             {
               "slug": "29-disorders-of-the-lower-urinary-tract",
-              "title": "第 29 章 · 下尿路疾病",
-              "bytes": 60694787,
-              "durationSec": 1410.24
+              "title": "下尿路疾病：一条分界线，三组症状",
+              "bytes": 60216013,
+              "durationSec": 1509.395
             },
             {
               "slug": "30-male-genital-and-reproductive-function",
-              "title": "第 30 章 · 男性生殖功能",
-              "bytes": 65310046,
-              "durationSec": 1495.63
+              "title": "男性生殖功能：一套解剖，三层调控",
+              "bytes": 66336051,
+              "durationSec": 1578.995
             },
             {
               "slug": "31-alterations-in-male-genital-and-reproductive-function",
-              "title": "第 31 章 · 男性生殖功能异常",
-              "bytes": 54329811,
-              "durationSec": 1299.04
+              "title": "男性生殖功能异常：先把表现放回六个类别",
+              "bytes": 58534187,
+              "durationSec": 1385.53
             },
             {
               "slug": "32-female-genital-and-reproductive-function",
-              "title": "第 32 章 · 女性生殖功能",
-              "bytes": 56499090,
-              "durationSec": 1311.52
+              "title": "女性生殖功能：一条周期性轴与它的读出器",
+              "bytes": 59540356,
+              "durationSec": 1411.451
             },
             {
               "slug": "33-alterations-in-female-genital-and-reproductive-function",
-              "title": "第 33 章 · 女性生殖功能异常",
-              "bytes": 63390834,
-              "durationSec": 1494.5
+              "title": "女性生殖功能异常：五层排查、三源激素与一条因果环",
+              "bytes": 68123254,
+              "durationSec": 1587.147
             },
             {
               "slug": "34-sexually-transmitted-infections",
-              "title": "第 34 章 · 性传播感染",
-              "bytes": 59650739,
-              "durationSec": 1371.14
+              "title": "性传播感染：四层屏障、一条上行链与六类防控",
+              "bytes": 63667927,
+              "durationSec": 1472.515
             },
             {
               "slug": "35-gastrointestinal-function",
-              "title": "第 35 章 · 胃肠功能",
-              "bytes": 56864770,
-              "durationSec": 1320.01
+              "title": "胃肠功能：四类功能、一条调控链与从症状反推环节",
+              "bytes": 59050310,
+              "durationSec": 1408.491
             },
             {
               "slug": "36-gastrointestinal-disorders",
-              "title": "第 36 章 · 胃肠疾病",
-              "bytes": 66699419,
-              "durationSec": 1561.66
+              "title": "胃肠疾病：三类机制、一个深度对应与四种分型",
+              "bytes": 69811837,
+              "durationSec": 1665.771
             },
             {
               "slug": "37-alterations-in-function-of-the-gallbladder-and-exocrine-pancreas",
-              "title": "第 37 章 · 胆囊与外分泌胰腺功能异常",
-              "bytes": 53758744,
-              "durationSec": 1269.18
+              "title": "胆囊与外分泌胰腺功能异常：一个三环节通则、三道保险与一处定位",
+              "bytes": 53652454,
+              "durationSec": 1360.675
             },
             {
               "slug": "38-liver-diseases",
-              "title": "第 38 章 · 肝脏疾病",
-              "bytes": 61015895,
-              "durationSec": 1434.55
+              "title": "肝脏疾病：四条主线、两条后果线与一个可逆窗口",
+              "bytes": 58928503,
+              "durationSec": 1535.187
             },
             {
               "slug": "39-endocrine-physiology-and-mechanisms-of-hypothalamic-pituitary-regulation",
-              "title": "第 39 章 · 内分泌生理与下丘脑-垂体调控机制",
-              "bytes": 69966518,
-              "durationSec": 1634.25
+              "title": "内分泌生理与下丘脑-垂体调控机制：两层整合、三级轴与五种读法",
+              "bytes": 74500708,
+              "durationSec": 1736.46
             },
             {
               "slug": "40-disorders-of-endocrine-function",
-              "title": "第 40 章 · 内分泌功能紊乱",
-              "bytes": 67335999,
-              "durationSec": 1567.08
+              "title": "内分泌功能紊乱：四种型态、一张定位表与五种急症",
+              "bytes": 70121962,
+              "durationSec": 1661.03
             },
             {
               "slug": "41-diabetes-mellitus",
-              "title": "第 41 章 · 糖尿病",
-              "bytes": 74790252,
-              "durationSec": 1739.3
+              "title": "糖尿病：一个不对称结构、三条环节与两类血管",
+              "bytes": 75584397,
+              "durationSec": 1840.251
             },
             {
               "slug": "42-alterations-in-metabolism-and-nutrition",
-              "title": "第 42 章 · 代谢与营养异常",
-              "bytes": 72724507,
-              "durationSec": 1701.34
+              "title": "代谢与营养异常：一个调定点、两种代谢模式与一条再喂养链",
+              "bytes": 76544724,
+              "durationSec": 1802.227
             },
             {
               "slug": "43-structure-and-function-of-the-nervous-system",
-              "title": "第 43 章 · 神经系统结构与功能",
-              "bytes": 59883834,
-              "durationSec": 1389.99
+              "title": "神经系统结构与功能：一张由缺损反推部位的定位图",
+              "bytes": 60481016,
+              "durationSec": 1470.955
             },
             {
               "slug": "44-acute-disorders-of-brain-function",
-              "title": "第 44 章 · 脑功能急性疾病",
-              "bytes": 63508840,
-              "durationSec": 1490.26
+              "title": "脑功能急性疾病：一条链，四个干预点",
+              "bytes": 64971568,
+              "durationSec": 1572.907
             },
             {
               "slug": "45-chronic-disorders-of-neurologic-function",
-              "title": "第 45 章 · 慢性神经功能障碍",
-              "bytes": 63602021,
-              "durationSec": 1471.757
+              "title": "慢性神经功能障碍：部位与储备，而不是时间与压力",
+              "bytes": 64097344,
+              "durationSec": 1549.019
             },
             {
               "slug": "46-alterations-in-special-sensory-function",
-              "title": "第 46 章 · 特殊感觉功能异常",
-              "bytes": 61926301,
-              "durationSec": 1452.93
+              "title": "特殊感觉功能异常：缺损的形状就是定位器",
+              "bytes": 63845855,
+              "durationSec": 1542.059
             },
             {
               "slug": "47-pain",
-              "title": "第 47 章 · 疼痛",
-              "bytes": 60859765,
-              "durationSec": 1425.09
+              "title": "疼痛：四环节、两级敏化与一条从症状到疾病的转弯",
+              "bytes": 65181499,
+              "durationSec": 1530.43
             },
             {
               "slug": "48-mental-health-disorders",
-              "title": "第 48 章 · 精神心理健康障碍",
-              "bytes": 97478331,
-              "durationSec": 2258.91
+              "title": "精神心理健康障碍：三层整合、五个维度与一条去污名化的边界",
+              "bytes": 97950356,
+              "durationSec": 2397.043
             },
             {
               "slug": "49-structure-and-function-of-the-musculoskeletal-system",
-              "title": "第 49 章 · 骨骼肌肉系统结构与功能",
-              "bytes": 76555715,
-              "durationSec": 1763.12
+              "title": "骨骼肌肉系统结构与功能：六项功能、一条耦联与三处结构弱点",
+              "bytes": 80396257,
+              "durationSec": 1866.027
             },
             {
               "slug": "50-alterations-in-musculoskeletal-function-trauma-infection-and-disease",
-              "title": "第 50 章 · 骨骼肌肉功能异常：创伤、感染与疾病",
-              "bytes": 86023085,
-              "durationSec": 1957.45
-            },
-            {
-              "slug": "51-alterations-in-musculoskeletal-function-rheumatic-disorders",
-              "title": "第 51 章 · 骨骼肌肉功能异常：风湿性疾病",
-              "bytes": 79696397,
-              "durationSec": 1830.753
+              "title": "骨骼肌肉功能异常：力学环境、两个恶性循环与一条废用链",
+              "bytes": 90687778,
+              "durationSec": 2071.899
             }
           ],
-          "sourceBytes": 1646003956
+          "sourceBytes": 1694701985
         },
         {
           "part": 3,
@@ -699,31 +4873,37 @@
           "sha256": "e9505092daee20ad7c657306c1c3dc981ff3411403cbb9f524119ba680126b25",
           "chapters": [
             {
+              "slug": "51-alterations-in-musculoskeletal-function-rheumatic-disorders",
+              "title": "风湿性疾病：两种范式、一条损伤链与全身代价",
+              "bytes": 81397551,
+              "durationSec": 1931.931
+            },
+            {
               "slug": "52-alterations-in-the-integumentary-system",
-              "title": "第 52 章 · 皮肤系统异常",
-              "bytes": 78975825,
-              "durationSec": 1851.5
+              "title": "皮肤系统异常：五件组件的屏障与四条后果",
+              "bytes": 84747342,
+              "durationSec": 1954.65
             },
             {
               "slug": "53-burn-injuries",
-              "title": "第 53 章 · 烧伤",
-              "bytes": 79648021,
-              "durationSec": 1847.34
+              "title": "烧伤：局部三道带、四路全身反应与一条把两者接起来的链",
+              "bytes": 83655743,
+              "durationSec": 1960.47
             }
           ],
-          "sourceBytes": 158623846
+          "sourceBytes": 249800636
         }
       ],
       "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
-      "packedAt": "2026-11-16T08:13:05.692Z"
+      "packedAt": "2026-11-27T06:37:57.693Z"
     },
     {
       "course": "09-jichu/12-yaoli-xue",
       "title": "药理学",
       "version": "v1",
       "chapterCount": 49,
-      "totalDurationSec": 64694.356,
-      "totalBytes": 2778874780,
+      "totalDurationSec": 68816.929,
+      "totalBytes": 2910295831,
       "partMaxBytes": 1717986918.4,
       "parts": [
         {
@@ -734,186 +4914,204 @@
           "chapters": [
             {
               "slug": "01-introduction",
-              "title": "第1章 绪论",
-              "bytes": 55298752,
-              "durationSec": 1285.11
+              "title": "药理学先立的是提问方式，药物改机体与机体处置药物的两个方向决定全书分工",
+              "bytes": 49127473,
+              "durationSec": 1160.12
             },
             {
               "slug": "02-pharmacodynamics",
-              "title": "第2章 药物效应动力学——药效学",
-              "bytes": 78169967,
-              "durationSec": 1789.37
+              "title": "药物作用与药理效应分属分子事件与整体表现，两套语言混用就说不清机制",
+              "bytes": 75738661,
+              "durationSec": 1778.07
             },
             {
               "slug": "03-pharmacokinetics",
-              "title": "第3章 药物代谢动力学——药动学",
-              "bytes": 45487784,
-              "durationSec": 1084.75
+              "title": "房室模型只是拟合曲线的工具，拟合得上不等于机制成立",
+              "bytes": 39912188,
+              "durationSec": 942.72
             },
             {
               "slug": "04-factors-affecting-drug-response",
-              "title": "第4章 影响药物效应的因素",
-              "bytes": 48328852,
-              "durationSec": 1131.215
+              "title": "效应差异先问落在过程端还是反应性端，答不出就等于还没有分析",
+              "bytes": 49164472,
+              "durationSec": 1131.21
             },
             {
               "slug": "05-autonomic-nervous-system-overview",
-              "title": "第5章 传出神经系统药理概论",
-              "bytes": 47813752,
-              "durationSec": 1107.233
+              "title": "以受体为主纲不是编排习惯，而是解剖、递质与临床应用共同给出的答案",
+              "bytes": 47800145,
+              "durationSec": 1107.235
             },
             {
               "slug": "06-cholinergic-agonists",
-              "title": "第6章 拟胆碱药",
-              "bytes": 48743564,
-              "durationSec": 1141.18
+              "title": "抗胆碱酯酶药不碰受体，它的效应完全依赖已被释放的乙酰胆碱",
+              "bytes": 47576730,
+              "durationSec": 1129.88
             },
             {
               "slug": "07-organophosphates-and-cholinesterase-reactivating-agents",
-              "title": "第7章 有机磷酸酯类及胆碱酯酶复活药",
-              "bytes": 53850208,
-              "durationSec": 1244.84
+              "title": "磷酰化写定了中毒的时间表，老化一旦发生，复活药就失去作用位点",
+              "bytes": 51259304,
+              "durationSec": 1233.54
             },
             {
               "slug": "08-cholinergic-antagonists",
-              "title": "第8章 抗胆碱药",
-              "bytes": 45568198,
-              "durationSec": 1095.99
+              "title": "抗胆碱药本身不产生效应，它显示的只是原有张力的对比",
+              "bytes": 41472046,
+              "durationSec": 978.891
             },
             {
               "slug": "09-adrenergic-agonists",
-              "title": "第9章 拟肾上腺素药",
-              "bytes": 48621106,
-              "durationSec": 1124.31
+              "title": "拟肾上腺素药的作用来自受体在组织中的分布，而不是药物自身的独特性质",
+              "bytes": 42152563,
+              "durationSec": 1012.64
             },
             {
               "slug": "10-adrenergic-antagonists",
-              "title": "第10章 抗肾上腺素药",
-              "bytes": 48954695,
-              "durationSec": 1163.81
+              "title": "阻断药只取消一层驱动，α1 与 α2 的效应方向相反不是强弱之分",
+              "bytes": 45151047,
+              "durationSec": 1054.45
             },
             {
               "slug": "11-local-anesthetics",
-              "title": "第11章 局部麻醉药",
-              "bytes": 60426184,
-              "durationSec": 1398.55
+              "title": "碱基型负责穿膜、阳离子型负责结合，感觉先于运动的顺序决定了观察表分栏",
+              "bytes": 47895246,
+              "durationSec": 1182.77
             },
             {
               "slug": "12-general-anesthetics",
-              "title": "第12章 全身麻醉药",
-              "bytes": 60978302,
-              "durationSec": 1395.63
+              "title": "全身麻醉药的分类只给坐标不给名次，机制是网络而不是一把锁",
+              "bytes": 46335525,
+              "durationSec": 1142.82
             },
             {
               "slug": "13-sedative-hypnotics",
-              "title": "第13章 镇静催眠药",
-              "bytes": 58191239,
-              "durationSec": 1375.66
+              "title": "镇静与催眠是同一机制上的剂量档位，不是一个管入睡、一个管维持",
+              "bytes": 46178973,
+              "durationSec": 1155.34
             },
             {
               "slug": "14-antiepileptic-and-anticonvulsant-drugs",
-              "title": "第14章 抗癫痫药与抗惊厥药",
-              "bytes": 64600606,
-              "durationSec": 1492.59
+              "title": "抗癫痫药的全部难点在选择性：压低异常放电，又不许压掉正常神经功能",
+              "bytes": 51926278,
+              "durationSec": 1264.79
             },
             {
               "slug": "15-antipsychotic-drugs",
-              "title": "第15章 抗精神失常药",
-              "bytes": 53650448,
-              "durationSec": 1235.273
+              "title": "抗精神病药的治疗作用与不良反应出自同一条受体通路，分开讲就讲不通",
+              "bytes": 44514092,
+              "durationSec": 1104.147
             },
             {
               "slug": "16-drugs-for-neurodegenerative-diseases",
-              "title": "第16章 治疗中枢神经系统退行性疾病药",
-              "bytes": 65235435,
-              "durationSec": 1499.481
+              "title": "现有药物只补偿递质、不阻止神经元丢失，效应的上限由残存神经元决定",
+              "bytes": 56284381,
+              "durationSec": 1376.307
             },
             {
               "slug": "17-antipyretic-analgesic-and-anti-inflammatory-drugs",
-              "title": "第17章 解热镇痛抗炎药与抗痛风药",
-              "bytes": 65989944,
-              "durationSec": 1530.05
+              "title": "解热、镇痛、抗炎不是三套机制，而是同一条前列腺素线在三处的分配",
+              "bytes": 57690789,
+              "durationSec": 1404.58
             },
             {
               "slug": "18-opioid-analgesics",
-              "title": "第18章 镇痛药",
-              "bytes": 60022644,
-              "durationSec": 1380.65
+              "title": "镇痛药的选择性在于保住意识，它与解热镇痛药、局麻药分处三个环节",
+              "bytes": 51761050,
+              "durationSec": 1245.58
             },
             {
               "slug": "19-central-nervous-system-stimulants",
-              "title": "第19章 中枢兴奋药",
-              "bytes": 57445046,
-              "durationSec": 1330.73
+              "title": "中枢兴奋药的危险不在兴奋不足，而在脊髓层被削弱的抑制",
+              "bytes": 40471723,
+              "durationSec": 971.94
             },
             {
               "slug": "20-histamine-and-antihistamines",
-              "title": "第20章 组胺及抗组胺药",
-              "bytes": 55160001,
-              "durationSec": 1294.99
+              "title": "两代 H1 抗组胺药的分野不在强弱，而在能不能进入中枢",
+              "bytes": 44203633,
+              "durationSec": 1077.515
             },
             {
               "slug": "21-other-autacoid-drugs",
-              "title": "第21章 其他影响自体活性物质的药物",
-              "bytes": 53631806,
-              "durationSec": 1268.79
+              "title": "同一自体活性物质能给出相反效应，差别在受体亚型分布而不在物质本身",
+              "bytes": 45171602,
+              "durationSec": 1064.37
             },
             {
               "slug": "22-drugs-acting-on-cardiovascular-ion-channels",
-              "title": "第22章 作用于心血管系统离子通道的药物",
-              "bytes": 54209531,
-              "durationSec": 1258.23
+              "title": "离子通道药的效应取决于通道处于什么状态，而不只取决于阻滞哪种离子",
+              "bytes": 45261320,
+              "durationSec": 1080.899
             },
             {
               "slug": "23-drugs-for-chronic-heart-failure",
-              "title": "第23章 治疗慢性心功能不全的药物",
-              "bytes": 63384405,
-              "durationSec": 1500.89
+              "title": "慢性心衰的中心环节是重构与神经内分泌激活，不是「泵弱了」这一个直觉",
+              "bytes": 64223720,
+              "durationSec": 1489.59
             },
             {
               "slug": "24-antihypertensive-drugs",
-              "title": "第24章 抗高血压药",
-              "bytes": 57343580,
-              "durationSec": 1372.92
+              "title": "降压的终点不是把数字降下来，而是让覆盖撑过整个给药间隔",
+              "bytes": 58827248,
+              "durationSec": 1361.62
             },
             {
               "slug": "25-antianginal-drugs",
-              "title": "第25章 抗心绞痛药",
-              "bytes": 61815833,
-              "durationSec": 1478.07
+              "title": "抗心绞痛药争的是耗氧与灌注的平衡，β 阻断药不扩血管也算一种解法",
+              "bytes": 61005200,
+              "durationSec": 1466.811
             },
             {
               "slug": "26-antiarrhythmic-drugs",
-              "title": "第26章 抗心律失常药",
-              "bytes": 71032688,
-              "durationSec": 1586.98
+              "title": "抗心律失常药既能治心律失常也能致心律失常，因为动的是同一台电生理机器",
+              "bytes": 66359349,
+              "durationSec": 1575.68
             },
             {
               "slug": "27-antiatherosclerotic-drugs",
-              "title": "第27章 抗动脉粥样硬化药",
-              "bytes": 51966976,
-              "durationSec": 1243.4
+              "title": "抗动脉粥样硬化药分四类靠的是卡在事件链的哪一步，不是药效强弱",
+              "bytes": 45866660,
+              "durationSec": 1087.83
             },
             {
               "slug": "28-diuretics-and-dehydrating-agents",
-              "title": "第28章 利尿药与脱水药",
-              "bytes": 57675105,
-              "durationSec": 1352.27
+              "title": "利尿药动的是管腔侧转运体，脱水药靠的是血管侧渗透压，两者不在同一侧发力",
+              "bytes": 49863031,
+              "durationSec": 1187.47
             },
             {
               "slug": "29-gastrointestinal-drugs",
-              "title": "第29章 消化系统药",
-              "bytes": 45378659,
-              "durationSec": 1072.7
+              "title": "抗溃疡药的三条路径互相制约，所以分类不能按化学结构切",
+              "bytes": 37841073,
+              "durationSec": 899.71
             },
             {
               "slug": "30-respiratory-system-drugs",
-              "title": "第30章 呼吸系统药",
-              "bytes": 44616143,
-              "durationSec": 1046.67
+              "title": "呼吸系统药的分节依据是症状出现的时相，不是化学结构或作用强弱",
+              "bytes": 42477503,
+              "durationSec": 1035.37
+            },
+            {
+              "slug": "31-uterine-stimulants",
+              "title": "子宫兴奋药的选择性越低，需要跟上的观察密度就越高",
+              "bytes": 56118817,
+              "durationSec": 1411.74
+            },
+            {
+              "slug": "32-antianemic-drugs",
+              "title": "抗贫血药补的是三个不同层次，血象恢复的先后次序本身就是观察项目",
+              "bytes": 59119957,
+              "durationSec": 1449.89
+            },
+            {
+              "slug": "33-drugs-affecting-coagulation",
+              "title": "抗凝与溶栓不是强弱两档，而是一个管「不再长」、一个管「已经长的」",
+              "bytes": 55448823,
+              "durationSec": 1360.05
             }
           ],
-          "sourceBytes": 1683591453
+          "sourceBytes": 1664200622
         },
         {
           "part": 2,
@@ -922,125 +5120,107 @@
           "sha256": "f794e2dde87c617851a5e9bdd5489f0c5d217708cd03aa1838d654acc3a8262d",
           "chapters": [
             {
-              "slug": "31-uterine-stimulants",
-              "title": "第31章 子宫兴奋药",
-              "bytes": 66356798,
-              "durationSec": 1537.14
-            },
-            {
-              "slug": "32-antianemic-drugs",
-              "title": "第32章 抗贫血药",
-              "bytes": 68725946,
-              "durationSec": 1581.93
-            },
-            {
-              "slug": "33-drugs-affecting-coagulation",
-              "title": "第33章 作用于凝血系统药物",
-              "bytes": 64765583,
-              "durationSec": 1486.67
-            },
-            {
               "slug": "34-adrenocortical-hormones",
-              "title": "第34章 肾上腺皮质激素类药",
-              "bytes": 72267095,
-              "durationSec": 1648.87
+              "title": "糖皮质激素的一个受体给出两套效应，剂量与疗程因此是分类的一列而非附注",
+              "bytes": 61166759,
+              "durationSec": 1516.59
             },
             {
               "slug": "35-thyroid-hormones-and-antithyroid-drugs",
-              "title": "第35章 甲状腺激素与抗甲状腺药",
-              "bytes": 44067698,
+              "title": "T3 与 T4 的差别是一个碘原子，含量多少不等于活性强弱",
+              "bytes": 44076939,
               "durationSec": 1077.715
             },
             {
               "slug": "36-antihyperglycemic-drugs",
-              "title": "第36章 降血糖药",
-              "bytes": 40373809,
-              "durationSec": 975.84
+              "title": "降血糖药先按途径分两支、再按环节分组，化学结构排不进第一层",
+              "bytes": 41243474,
+              "durationSec": 964.54
             },
             {
               "slug": "37-sex-hormones-and-contraceptives",
-              "title": "第37章 性激素类药及避孕药",
-              "bytes": 38287753,
-              "durationSec": 924.12
+              "title": "性激素类药的结构先决定它能不能口服，首过效应比活性强弱更早一步筛药",
+              "bytes": 122248914,
+              "durationSec": 2734.635
             },
             {
               "slug": "38-antimicrobial-drugs-overview",
-              "title": "第38章 抗病原微生物药物概论",
-              "bytes": 39606537,
-              "durationSec": 957.53
+              "title": "抗微生物治疗的地基是选择性毒性，离开「只伤病原体」这一步就没有化疗",
+              "bytes": 39890107,
+              "durationSec": 946.23
             },
             {
               "slug": "39-synthetic-antibacterial-drugs",
-              "title": "第39章 人工合成抗菌药",
-              "bytes": 59126022,
-              "durationSec": 1376.78
+              "title": "人工合成抗菌药的共同点只在出身，四条靶点线彼此并不通用",
+              "bytes": 44419329,
+              "durationSec": 1012.26
             },
             {
               "slug": "40-beta-lactam-antibiotics",
-              "title": "第40章 β-内酰胺类抗生素",
-              "bytes": 65738388,
-              "durationSec": 1481.74
+              "title": "β-内酰胺类的共同点只是那个四元环，环在不在决定药还有没有效",
+              "bytes": 55674209,
+              "durationSec": 1315.3
             },
             {
               "slug": "41-macrolides-lincosamides-and-polypeptide-antibiotics",
-              "title": "第41章 大环内酯类、林可霉素类及多肽类抗生素",
-              "bytes": 59313916,
-              "durationSec": 1397.75
+              "title": "同一个五十S 靶点上的药未必能合用，位点重叠反而会互相抢位",
+              "bytes": 51239091,
+              "durationSec": 1212.42
             },
             {
               "slug": "42-aminoglycoside-antibiotics",
-              "title": "第42章 氨基糖苷类抗生素",
-              "bytes": 66017150,
-              "durationSec": 1496.97
+              "title": "氨基糖苷类的抗菌谱由转运决定，毒性则由药物蓄积在哪一处决定",
+              "bytes": 55288136,
+              "durationSec": 1322.939
             },
             {
               "slug": "43-tetracyclines-and-chloramphenicol",
-              "title": "第43章 四环素类与氯霉素类",
-              "bytes": 50386459,
-              "durationSec": 1188.02
+              "title": "四环素类与氯霉素类编在一章不是因为同构，而是同一种「宽谱的代价」",
+              "bytes": 97462294,
+              "durationSec": 2240.315
             },
             {
               "slug": "44-antifungal-and-antiviral-drugs",
-              "title": "第44章 抗真菌药与抗病毒药",
-              "bytes": 44260675,
-              "durationSec": 1042.47
+              "title": "抗真菌药的选择性只剩一步之差，靶点长在「真菌有、人没有」处才成立",
+              "bytes": 117016801,
+              "durationSec": 2646.851
             },
             {
               "slug": "45-antituberculosis-and-antileprosy-drugs",
-              "title": "第45章 抗结核病药及抗麻风病药",
-              "bytes": 45216290,
-              "durationSec": 1053.16
+              "title": "结核菌群不同步，一种药治到底在机制上就不可能覆盖全部菌群",
+              "bytes": 84114268,
+              "durationSec": 1968.059
             },
             {
               "slug": "46-antiparasitic-drugs",
-              "title": "第46章 抗寄生虫药",
-              "bytes": 59714850,
-              "durationSec": 1379.81
+              "title": "抗寄生虫药的共同点不是「杀虫」，而是在生活史的某一阶段找到宿主与虫体的差别",
+              "bytes": 89675551,
+              "durationSec": 2104.291
             },
             {
               "slug": "47-anticancer-drugs",
-              "title": "第47章 抗恶性肿瘤药",
-              "bytes": 63704752,
-              "durationSec": 1445.4
+              "title": "抗肿瘤药的选择性只能是相对的，给药间隔要靠动力学算而不是靠经验",
+              "bytes": 111674159,
+              "durationSec": 2549.971
             },
             {
               "slug": "48-immunosuppressants",
-              "title": "第48章 免疫抑制药",
-              "bytes": 74365531,
-              "durationSec": 1680.859
+              "title": "免疫抑制药作用在哪一环，就欠哪一方面的防御，抑制越广欠账越多",
+              "bytes": 114427573,
+              "durationSec": 2589.843
             },
             {
               "slug": "49-immunostimulants",
-              "title": "第49章 免疫增强药",
-              "bytes": 72988075,
-              "durationSec": 1679.25
+              "title": "免疫增强药与抑制药方向相反但道理相同，佐剂离开抗原就只剩局部炎症",
+              "bytes": 116477605,
+              "durationSec": 2689.395
             }
           ],
-          "sourceBytes": 1095283327
+          "sourceBytes": 1246095209
         }
       ],
       "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
-      "packedAt": "2026-11-16T08:13:24.667Z"
+      "packedAt": "2026-11-27T06:38:15.980Z"
     }
   ],
   "uploadHint": "GitHub: gh release upload media-v1 <file>；或 rclone copy 到对象存储的 /v1/offline/ 前缀。"

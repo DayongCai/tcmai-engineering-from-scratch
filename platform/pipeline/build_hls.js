@@ -108,6 +108,14 @@ function dirBytes(dir) {
 /** 单档打包：返回该档的真实带宽与分片数 */
 function packageRendition(src, outDir, l) {
   fs.mkdirSync(outDir, { recursive: true });
+  // 清残档：上一版更长的成片会留下多余 seg_*.m4s，而清单若按「文件数」统计就会把它算进去。
+  // 实测 540p：playlist 113 条 EXTINF、目录里 114 个 .m4s（旧编码残留），交付门 #2 报
+  // 「清单写 114 片，实际 113 片」——重打一次也不消失，因为目录从不清空。
+  for (const f of fs.readdirSync(outDir)) {
+    if (/^seg_\d+\.m4s$/.test(f) || f === 'init.mp4') {
+      fs.rmSync(path.join(outDir, f), { force: true });
+    }
+  }
   const playlist = path.join(outDir, 'index.m3u8');
   const vArgs = l.copyVideo
     // copy 档不重编视频，但必须显式忽略字幕流，否则 hls 会把 mov_text 拖成 vtt 档
@@ -131,11 +139,13 @@ function packageRendition(src, outDir, l) {
   const segs = fs.readdirSync(outDir).filter((f) => f.endsWith('.m4s'));
   let bytes = 0;
   for (const f of segs) bytes += fs.statSync(path.join(outDir, f)).size;
+  // 分片数以**播放列表**为准（单一真源）：文件数只是副产品，历史上正是它把残档算进了清单。
+  const listed = (fs.readFileSync(playlist, 'utf8').match(/^#EXTINF/gm) || []).length;
   const dur = Number((sh('ffprobe', ['-v', 'error', '-show_entries', 'format=duration',
     '-of', 'csv=p=0', fp(playlist)]).trim()) || 0);
   const seconds = dur > 0 ? dur : 1;
   const avg = Math.round((bytes * 8) / seconds);
-  return { segments: segs.length, bytes, avgBandwidth: avg, peakBandwidth: Math.round(avg * 1.3) };
+  return { segments: listed || segs.length, bytes, avgBandwidth: avg, peakBandwidth: Math.round(avg * 1.3) };
 }
 
 function buildChapter(courseRel, slug, title, outRoot, courseId) {
