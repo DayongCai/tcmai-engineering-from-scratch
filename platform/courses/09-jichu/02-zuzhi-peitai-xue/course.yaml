@@ -103,8 +103,8 @@ chapters:
   - slug: 13-yan-he-er
     title: 眼与耳的共同骨架，是把换能细胞关进腔隙再用中继链送上皮质
     video: rendered
-    estimate_minutes: 16.02      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 15.88      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 15.87      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 15.72      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 14-neifenmi-xitong
     title: 内分泌腺没有导管，于是结构只剩一件事：把腺细胞排到毛细血管边上

@@ -190,7 +190,7 @@
 | 五官口腔临床轮转 `08-wuguan/16-wuguan-linchuang-lunzhuan` | 08-wuguan | 9 | 6 | 6 | 0 | 0 | 1:01 | 92 MB |
 | 五官口腔毕业设计与知识移交 `08-wuguan/17-wuguan-biye-sheji` | 08-wuguan | 10 | 6 | 6 | 0 | 0 | 0:49 | 73 MB |
 | 人体解剖学 `09-jichu/01-renti-jiepou-xue` | 09-jichu | 1 | 10 | 10 | 0 | 0 | 2:15 | 219 MB |
-| 组织学与胚胎学 `09-jichu/02-zuzhi-peitai-xue` | 09-jichu | 1 | 20 | 20 | 0 | 0 | 4:01 | 398 MB |
+| 组织学与胚胎学 `09-jichu/02-zuzhi-peitai-xue` | 09-jichu | 1 | 20 | 20 | 0 | 0 | 4:00 | 397 MB |
 | 医学细胞生物学 `09-jichu/03-yixue-xibao-shengwu-xue` | 09-jichu | 1 | 12 | 12 | 0 | 0 | 1:38 | 149 MB |
 | 医学生物学 `09-jichu/04-yixue-shengwu-xue` | 09-jichu | 2 | 16 | 16 | 0 | 0 | 2:17 | 208 MB |
 | 正常人体学 `09-jichu/05-zhengchang-renti-xue` | 09-jichu | 2 | 18 | 18 | 0 | 0 | 3:04 | 296 MB |

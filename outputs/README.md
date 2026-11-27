@@ -18969,8 +18969,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 眼与耳的共同骨架，是把换能细胞关进腔隙再用中继链送上皮质 · 提示词 | — | 1009 | [`prompt-yan-he-er.md`](../departments/09-jichu/02-zuzhi-peitai-xue/chapters/13-yan-he-er/outputs/prompt-yan-he-er.md) |
-| skill | 眼与耳的共同骨架，是把换能细胞关进腔隙再用中继链送上皮质 | 眼与耳的共同骨架，是把换能细胞关进腔隙再用中继链送上皮质——按「三层眼壁各管一件事：力学、营养、信号 → 视网膜是一张画在分层上的电路图 → 内容物是屈光装置的三段接力 → 耳的三段：收集、传导、换能」走一遍本章判据 | 890 | [`skill-yan-he-er.md`](../departments/09-jichu/02-zuzhi-peitai-xue/chapters/13-yan-he-er/outputs/skill-yan-he-er.md) |
+| prompt | 眼与耳的共同骨架，是把换能细胞关进腔隙再用中继链送上皮质 · 提示词 | — | 963 | [`prompt-yan-he-er.md`](../departments/09-jichu/02-zuzhi-peitai-xue/chapters/13-yan-he-er/outputs/prompt-yan-he-er.md) |
+| skill | 眼与耳的共同骨架，是把换能细胞关进腔隙再用中继链送上皮质 | 眼与耳的共同骨架，是把换能细胞关进腔隙再用中继链送上皮质——按「三层眼壁各管一件事：力学、营养、信号 → 视网膜是一张画在分层上的电路图 → 内容物是屈光装置的三段接力 → 耳的三段：收集、传导、换能」走一遍本章判据 | 844 | [`skill-yan-he-er.md`](../departments/09-jichu/02-zuzhi-peitai-xue/chapters/13-yan-he-er/outputs/skill-yan-he-er.md) |
 
 #### 第 14 章 · 内分泌腺没有导管，于是结构只剩一件事：把腺细胞排到毛细血管边上
 

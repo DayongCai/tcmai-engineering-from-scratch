@@ -8,8 +8,8 @@
     "rendered": 2169,
     "partial": 0,
     "missing": 0,
-    "durationSec": 914259.92,
-    "bytes": 24455026781
+    "durationSec": 914250.32,
+    "bytes": 24454816842
   },
   "courses": [
     {
@@ -28539,8 +28539,8 @@
       "rendered": 20,
       "partial": 0,
       "missing": 0,
-      "durationSec": 14438.89,
-      "bytes": 416895647,
+      "durationSec": 14429.29,
+      "bytes": 416685708,
       "items": [
         {
           "slug": "01-zuzhixue-xulun",
@@ -28720,8 +28720,8 @@
           "audio": 11,
           "subtitles": true,
           "mp4": true,
-          "durationSec": 952.69,
-          "bytes": 27017516,
+          "durationSec": 943.09,
+          "bytes": 26807577,
           "status": "rendered"
         },
         {
