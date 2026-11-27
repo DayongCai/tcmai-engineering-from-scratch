@@ -1,6 +1,6 @@
 {
  "$generated": "node scripts/build_content_board.js",
- "generatedAt": "2026-11-27",
+ "generatedAt": "2026-11-28",
  "rules": {
   "structure": "catalog.json（SSOT）",
   "chapters": "catalog.chaptersBuilt + 盘上 departments/*/*/chapters/* 目录核对",

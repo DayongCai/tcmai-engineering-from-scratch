@@ -29,7 +29,10 @@ function extractFormulas() {
       const p = path.join(d, e.name);
       if (e.isDirectory()) { walk(p); continue; }
       if (e.name !== 'zh.md') continue;
-      const body = fs.readFileSync(p, 'utf8');
+      const raw = fs.readFileSync(p, 'utf8');
+      // 代码块里的 $ 不是公式：shell 变量、正则、模板串都会出现成对的 $，
+      // 原样抽出来会把 `node -e "...const u=..."` 当成 LaTeX（实测出现未知命令 u）。
+      const body = raw.replace(/```[\s\S]*?```/g, '').replace(/`[^`\n]*`/g, '');
       for (const m of body.matchAll(/\$\$([^$]+)\$\$/g)) out.push({ file: p, src: m[1] });
       for (const m of body.matchAll(/(?<!\$)\$([^$\n]+)\$(?!\$)/g)) out.push({ file: p, src: m[1] });
     }

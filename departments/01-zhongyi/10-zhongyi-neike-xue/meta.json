@@ -29,8 +29,8 @@
   "textbook": {
     "id": "textbooks",
     "path": "textbooks/01-zhongyi/10-zhongyi-neike-xue",
-    "chaptersWritten": 14,
-    "words": 421791,
+    "chaptersWritten": 12,
+    "words": 405580,
     "status": "wip",
     "layer": "source-body",
     "source": "standards/materials/textbooks-batch/registry.json#中医内科学",

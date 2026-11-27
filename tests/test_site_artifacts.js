@@ -68,7 +68,10 @@ test('content.js 里每个章节都带齐 html / code / quiz / outputs', () => {
     const c = w.TCMAI_CONTENT[k];
     assert.ok(c.html && c.html.length > 500, `${k} 的正文 HTML 过短`);
     assert.ok(c.quiz && Array.isArray(c.quiz.questions), `${k} 缺 quiz`);
-    assert.strictEqual(c.quiz.questions.length, 6, `${k} quiz 题数不是 6`);
+    // 习题契约是「下限 1/3/1 + 总数 ≤10」（见 audit_curriculum 与 check_chapter_exercises），
+    // 不是「恰好 6 题」——写死 6 会把 7–10 题的合法章判红。
+    assert.ok(c.quiz.questions.length >= 5 && c.quiz.questions.length <= 10,
+      `${k} quiz 题数越界（${c.quiz.questions.length}，契约 5–10）`);
     assert.ok(Object.keys(c.code).length > 0, `${k} 没有代码文件`);
     assert.ok(Array.isArray(c.outputs), `${k} 缺 outputs`);
     assert.ok(c.motto && c.problem, `${k} 未抽取出 MOTTO/PROBLEM`);

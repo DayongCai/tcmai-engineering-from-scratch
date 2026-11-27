@@ -1,6 +1,6 @@
 {
   "$generated": "node scripts/build_textbook_board.js",
-  "generatedAt": "2026-11-27",
+  "generatedAt": "2026-11-28",
   "rules": {
     "weeks": 18,
     "teachWeeks": 16,
@@ -45,7 +45,7 @@
     "chapters": 2161,
     "hanzi": 30984014,
     "nonWs": 37385734,
-    "metaWords": 34189496,
+    "metaWords": 33874545,
     "registryChapters": 1621,
     "registryChars": 28596788,
     "registryFiles": 100,
@@ -197,8 +197,8 @@
             "chapters": 13,
             "hanzi": 68364,
             "nonWs": 95748,
-            "metaChapters": 13,
-            "metaWords": 61245,
+            "metaChapters": 12,
+            "metaWords": 51091,
             "status": "wip",
             "layer": "rewrite",
             "origin": "base",
@@ -223,8 +223,8 @@
             "order": 1
           },
           "flags": [
-            "registry-disk-chapters",
-            "registry-meta-chars"
+            "meta-disk-mismatch",
+            "registry-disk-chapters"
           ]
         },
         {
@@ -487,8 +487,8 @@
             "chapters": 12,
             "hanzi": 99829,
             "nonWs": 129165,
-            "metaChapters": 12,
-            "metaWords": 129165,
+            "metaChapters": 10,
+            "metaWords": 118973,
             "status": "wip",
             "layer": "source-body",
             "origin": "base",
@@ -517,8 +517,8 @@
             "order": 7
           },
           "flags": [
-            "registry-disk-chapters",
-            "registry-meta-chars"
+            "meta-disk-mismatch",
+            "registry-disk-chapters"
           ]
         },
         {
@@ -635,8 +635,8 @@
             "chapters": 14,
             "hanzi": 339542,
             "nonWs": 421791,
-            "metaChapters": 14,
-            "metaWords": 421791,
+            "metaChapters": 12,
+            "metaWords": 405580,
             "status": "wip",
             "layer": "source-body",
             "origin": "base",
@@ -666,8 +666,8 @@
             "order": 11
           },
           "flags": [
-            "registry-disk-chapters",
-            "registry-meta-chars"
+            "meta-disk-mismatch",
+            "registry-disk-chapters"
           ]
         },
         {
@@ -1340,8 +1340,8 @@
             "chapters": 13,
             "hanzi": 68364,
             "nonWs": 95748,
-            "metaChapters": 13,
-            "metaWords": 61245,
+            "metaChapters": 12,
+            "metaWords": 51091,
             "status": "wip",
             "layer": "rewrite",
             "origin": "base",
@@ -1366,8 +1366,8 @@
             "order": 1
           },
           "flags": [
-            "registry-disk-chapters",
-            "registry-meta-chars"
+            "meta-disk-mismatch",
+            "registry-disk-chapters"
           ]
         },
         {
@@ -1638,8 +1638,8 @@
             "chapters": 12,
             "hanzi": 99829,
             "nonWs": 129165,
-            "metaChapters": 12,
-            "metaWords": 129165,
+            "metaChapters": 10,
+            "metaWords": 118973,
             "status": "wip",
             "layer": "source-body",
             "origin": "base",
@@ -1668,8 +1668,8 @@
             "order": 7
           },
           "flags": [
-            "registry-disk-chapters",
-            "registry-meta-chars"
+            "meta-disk-mismatch",
+            "registry-disk-chapters"
           ]
         },
         {
@@ -1830,8 +1830,8 @@
             "chapters": 14,
             "hanzi": 339542,
             "nonWs": 421791,
-            "metaChapters": 14,
-            "metaWords": 421791,
+            "metaChapters": 12,
+            "metaWords": 405580,
             "status": "wip",
             "layer": "source-body",
             "origin": "base",
@@ -1861,8 +1861,8 @@
             "order": 11
           },
           "flags": [
-            "registry-disk-chapters",
-            "registry-meta-chars"
+            "meta-disk-mismatch",
+            "registry-disk-chapters"
           ]
         },
         {
@@ -3152,7 +3152,7 @@
             "hanzi": 387691,
             "nonWs": 474732,
             "metaChapters": 24,
-            "metaWords": 474732,
+            "metaWords": 435341,
             "status": "wip",
             "layer": "source+rewrite",
             "origin": "base",
@@ -3179,9 +3179,7 @@
             "depth": 2,
             "order": 4
           },
-          "flags": [
-            "registry-meta-chars"
-          ]
+          "flags": []
         },
         {
           "dept": "02-zhongyao",
@@ -3253,7 +3251,7 @@
             "hanzi": 168990,
             "nonWs": 203942,
             "metaChapters": 12,
-            "metaWords": 203942,
+            "metaWords": 186359,
             "status": "wip",
             "layer": "source+rewrite",
             "origin": "base",
@@ -3280,9 +3278,7 @@
             "depth": 2,
             "order": 6
           },
-          "flags": [
-            "registry-meta-chars"
-          ]
+          "flags": []
         },
         {
           "dept": "02-zhongyao",
@@ -3305,7 +3301,7 @@
             "hanzi": 206959,
             "nonWs": 252828,
             "metaChapters": 12,
-            "metaWords": 252828,
+            "metaWords": 233962,
             "status": "wip",
             "layer": "source+rewrite",
             "origin": "base",
@@ -3331,9 +3327,7 @@
             "depth": 2,
             "order": 5
           },
-          "flags": [
-            "registry-meta-chars"
-          ]
+          "flags": []
         },
         {
           "dept": "02-zhongyao",
@@ -3356,7 +3350,7 @@
             "hanzi": 211245,
             "nonWs": 250487,
             "metaChapters": 12,
-            "metaWords": 250487,
+            "metaWords": 232861,
             "status": "wip",
             "layer": "source+rewrite",
             "origin": "base",
@@ -3383,9 +3377,7 @@
             "depth": 4,
             "order": 9
           },
-          "flags": [
-            "registry-meta-chars"
-          ]
+          "flags": []
         },
         {
           "dept": "02-zhongyao",
@@ -3408,7 +3400,7 @@
             "hanzi": 162741,
             "nonWs": 192488,
             "metaChapters": 12,
-            "metaWords": 192488,
+            "metaWords": 174240,
             "status": "wip",
             "layer": "source+rewrite",
             "origin": "base",
@@ -3435,9 +3427,7 @@
             "depth": 3,
             "order": 8
           },
-          "flags": [
-            "registry-meta-chars"
-          ]
+          "flags": []
         },
         {
           "dept": "02-zhongyao",
@@ -3509,7 +3499,7 @@
             "hanzi": 162415,
             "nonWs": 194531,
             "metaChapters": 12,
-            "metaWords": 194531,
+            "metaWords": 176143,
             "status": "wip",
             "layer": "source+rewrite",
             "origin": "base",
@@ -3536,9 +3526,7 @@
             "depth": 4,
             "order": 11
           },
-          "flags": [
-            "registry-meta-chars"
-          ]
+          "flags": []
         },
         {
           "dept": "02-zhongyao",
@@ -4234,7 +4222,7 @@
             "hanzi": 387691,
             "nonWs": 474732,
             "metaChapters": 24,
-            "metaWords": 474732,
+            "metaWords": 435341,
             "status": "wip",
             "layer": "source+rewrite",
             "origin": "base",
@@ -4261,9 +4249,7 @@
             "depth": 2,
             "order": 4
           },
-          "flags": [
-            "registry-meta-chars"
-          ]
+          "flags": []
         },
         {
           "dept": "02-zhongyao",
@@ -4286,7 +4272,7 @@
             "hanzi": 206959,
             "nonWs": 252828,
             "metaChapters": 12,
-            "metaWords": 252828,
+            "metaWords": 233962,
             "status": "wip",
             "layer": "source+rewrite",
             "origin": "base",
@@ -4312,9 +4298,7 @@
             "depth": 2,
             "order": 5
           },
-          "flags": [
-            "registry-meta-chars"
-          ]
+          "flags": []
         },
         {
           "dept": "02-zhongyao",
@@ -4337,7 +4321,7 @@
             "hanzi": 168990,
             "nonWs": 203942,
             "metaChapters": 12,
-            "metaWords": 203942,
+            "metaWords": 186359,
             "status": "wip",
             "layer": "source+rewrite",
             "origin": "base",
@@ -4364,9 +4348,7 @@
             "depth": 2,
             "order": 6
           },
-          "flags": [
-            "registry-meta-chars"
-          ]
+          "flags": []
         },
         {
           "dept": "02-zhongyao",
@@ -4438,7 +4420,7 @@
             "hanzi": 162741,
             "nonWs": 192488,
             "metaChapters": 12,
-            "metaWords": 192488,
+            "metaWords": 174240,
             "status": "wip",
             "layer": "source+rewrite",
             "origin": "base",
@@ -4465,9 +4447,7 @@
             "depth": 3,
             "order": 8
           },
-          "flags": [
-            "registry-meta-chars"
-          ]
+          "flags": []
         },
         {
           "dept": "02-zhongyao",
@@ -4490,7 +4470,7 @@
             "hanzi": 211245,
             "nonWs": 250487,
             "metaChapters": 12,
-            "metaWords": 250487,
+            "metaWords": 232861,
             "status": "wip",
             "layer": "source+rewrite",
             "origin": "base",
@@ -4517,9 +4497,7 @@
             "depth": 4,
             "order": 9
           },
-          "flags": [
-            "registry-meta-chars"
-          ]
+          "flags": []
         },
         {
           "dept": "02-zhongyao",
@@ -4588,7 +4566,7 @@
             "hanzi": 162415,
             "nonWs": 194531,
             "metaChapters": 12,
-            "metaWords": 194531,
+            "metaWords": 176143,
             "status": "wip",
             "layer": "source+rewrite",
             "origin": "base",
@@ -4615,9 +4593,7 @@
             "depth": 4,
             "order": 11
           },
-          "flags": [
-            "registry-meta-chars"
-          ]
+          "flags": []
         },
         {
           "dept": "02-zhongyao",
@@ -5735,7 +5711,7 @@
             "hanzi": 185275,
             "nonWs": 228816,
             "metaChapters": 10,
-            "metaWords": 228808,
+            "metaWords": 208975,
             "status": "wip",
             "layer": "source+rewrite",
             "origin": "base",
@@ -5761,9 +5737,7 @@
             "depth": 1,
             "order": 2
           },
-          "flags": [
-            "registry-meta-chars"
-          ]
+          "flags": []
         },
         {
           "dept": "03-zhenjiu",
@@ -5937,7 +5911,7 @@
             "hanzi": 216348,
             "nonWs": 258468,
             "metaChapters": 12,
-            "metaWords": 258468,
+            "metaWords": 234469,
             "status": "wip",
             "layer": "source+rewrite",
             "origin": "base",
@@ -5963,9 +5937,7 @@
             "depth": 3,
             "order": 7
           },
-          "flags": [
-            "registry-meta-chars"
-          ]
+          "flags": []
         },
         {
           "dept": "03-zhenjiu",
@@ -6466,7 +6438,7 @@
             "hanzi": 108366,
             "nonWs": 130912,
             "metaChapters": 12,
-            "metaWords": 130912,
+            "metaWords": 111893,
             "status": "wip",
             "layer": "source+rewrite",
             "origin": "base",
@@ -6492,9 +6464,7 @@
             "depth": 2,
             "order": 5
           },
-          "flags": [
-            "registry-meta-chars"
-          ]
+          "flags": []
         },
         {
           "dept": "03-zhenjiu",
@@ -6759,7 +6729,7 @@
             "hanzi": 185275,
             "nonWs": 228816,
             "metaChapters": 10,
-            "metaWords": 228808,
+            "metaWords": 208975,
             "status": "wip",
             "layer": "source+rewrite",
             "origin": "base",
@@ -6785,9 +6755,7 @@
             "depth": 1,
             "order": 2
           },
-          "flags": [
-            "registry-meta-chars"
-          ]
+          "flags": []
         },
         {
           "dept": "03-zhenjiu",
@@ -6912,7 +6880,7 @@
             "hanzi": 108366,
             "nonWs": 130912,
             "metaChapters": 12,
-            "metaWords": 130912,
+            "metaWords": 111893,
             "status": "wip",
             "layer": "source+rewrite",
             "origin": "base",
@@ -6938,9 +6906,7 @@
             "depth": 2,
             "order": 5
           },
-          "flags": [
-            "registry-meta-chars"
-          ]
+          "flags": []
         },
         {
           "dept": "03-zhenjiu",
@@ -7012,7 +6978,7 @@
             "hanzi": 216348,
             "nonWs": 258468,
             "metaChapters": 12,
-            "metaWords": 258468,
+            "metaWords": 234469,
             "status": "wip",
             "layer": "source+rewrite",
             "origin": "base",
@@ -7038,9 +7004,7 @@
             "depth": 3,
             "order": 7
           },
-          "flags": [
-            "registry-meta-chars"
-          ]
+          "flags": []
         },
         {
           "dept": "03-zhenjiu",
@@ -8406,7 +8370,7 @@
             "hanzi": 327500,
             "nonWs": 395106,
             "metaChapters": 11,
-            "metaWords": 395106,
+            "metaWords": 370455,
             "status": "wip",
             "layer": "source+rewrite",
             "origin": "base",
@@ -8433,9 +8397,7 @@
             "depth": 2,
             "order": 3
           },
-          "flags": [
-            "registry-meta-chars"
-          ]
+          "flags": []
         },
         {
           "dept": "04-gushang",
@@ -9209,7 +9171,7 @@
             "hanzi": 327500,
             "nonWs": 395106,
             "metaChapters": 11,
-            "metaWords": 395106,
+            "metaWords": 370455,
             "status": "wip",
             "layer": "source+rewrite",
             "origin": "base",
@@ -9236,9 +9198,7 @@
             "depth": 2,
             "order": 3
           },
-          "flags": [
-            "registry-meta-chars"
-          ]
+          "flags": []
         },
         {
           "dept": "04-gushang",
@@ -16903,7 +16863,7 @@
             "hanzi": 6358,
             "nonWs": 13167,
             "metaChapters": 10,
-            "metaWords": 13167,
+            "metaWords": 11351,
             "status": "wip",
             "layer": "manual-rewrite",
             "origin": "base",
@@ -16931,7 +16891,6 @@
             "order": 6
           },
           "flags": [
-            "registry-meta-chars",
             "manual-source"
           ]
         },
@@ -17845,7 +17804,7 @@
             "hanzi": 6358,
             "nonWs": 13167,
             "metaChapters": 10,
-            "metaWords": 13167,
+            "metaWords": 11351,
             "status": "wip",
             "layer": "manual-rewrite",
             "origin": "base",
@@ -17873,7 +17832,6 @@
             "order": 6
           },
           "flags": [
-            "registry-meta-chars",
             "manual-source"
           ]
         },
@@ -20972,7 +20930,7 @@
             "hanzi": 224457,
             "nonWs": 247558,
             "metaChapters": 10,
-            "metaWords": 247558,
+            "metaWords": 228077,
             "status": "wip",
             "layer": "source+rewrite",
             "origin": "base",
@@ -20996,9 +20954,7 @@
             "depth": 0,
             "order": 3
           },
-          "flags": [
-            "registry-meta-chars"
-          ]
+          "flags": []
         },
         {
           "dept": "09-jichu",
@@ -21214,7 +21170,7 @@
             "hanzi": 251977,
             "nonWs": 274755,
             "metaChapters": 11,
-            "metaWords": 274755,
+            "metaWords": 252809,
             "status": "wip",
             "layer": "source+rewrite",
             "origin": "base",
@@ -21241,9 +21197,7 @@
             "depth": 1,
             "order": 7
           },
-          "flags": [
-            "registry-meta-chars"
-          ]
+          "flags": []
         },
         {
           "dept": "09-jichu",
@@ -21315,7 +21269,7 @@
             "hanzi": 206436,
             "nonWs": 230130,
             "metaChapters": 9,
-            "metaWords": 230130,
+            "metaWords": 212583,
             "status": "wip",
             "layer": "source+rewrite",
             "origin": "base",
@@ -21342,9 +21296,7 @@
             "depth": 2,
             "order": 10
           },
-          "flags": [
-            "registry-meta-chars"
-          ]
+          "flags": []
         },
         {
           "dept": "09-jichu",
@@ -21895,7 +21847,7 @@
             "hanzi": 224457,
             "nonWs": 247558,
             "metaChapters": 10,
-            "metaWords": 247558,
+            "metaWords": 228077,
             "status": "wip",
             "layer": "source+rewrite",
             "origin": "base",
@@ -21919,9 +21871,7 @@
             "depth": 0,
             "order": 3
           },
-          "flags": [
-            "registry-meta-chars"
-          ]
+          "flags": []
         },
         {
           "dept": "09-jichu",
@@ -22095,7 +22045,7 @@
             "hanzi": 251977,
             "nonWs": 274755,
             "metaChapters": 11,
-            "metaWords": 274755,
+            "metaWords": 252809,
             "status": "wip",
             "layer": "source+rewrite",
             "origin": "base",
@@ -22122,9 +22072,7 @@
             "depth": 1,
             "order": 7
           },
-          "flags": [
-            "registry-meta-chars"
-          ]
+          "flags": []
         },
         {
           "dept": "09-jichu",
@@ -22247,7 +22195,7 @@
             "hanzi": 206436,
             "nonWs": 230130,
             "metaChapters": 9,
-            "metaWords": 230130,
+            "metaWords": 212583,
             "status": "wip",
             "layer": "source+rewrite",
             "origin": "base",
@@ -22274,9 +22222,7 @@
             "depth": 2,
             "order": 10
           },
-          "flags": [
-            "registry-meta-chars"
-          ]
+          "flags": []
         },
         {
           "dept": "09-jichu",
@@ -23655,28 +23601,28 @@
       "slug": "01-zhongyi/01-zhongyi-jichu-lilun",
       "title": "中医基础理论",
       "flags": [
-        "registry-disk-chapters",
-        "registry-meta-chars"
+        "meta-disk-mismatch",
+        "registry-disk-chapters"
       ],
-      "detail": "源表 12 章 → 磁盘 13 章（+1）；源表 51,091 字 → meta 61,245 字（+10,154）"
+      "detail": "源表 12 章 → 磁盘 13 章（+1）；meta 12 章 ≠ 磁盘 13 章"
     },
     {
       "slug": "01-zhongyi/07-shanghanlun",
       "title": "伤寒论",
       "flags": [
-        "registry-disk-chapters",
-        "registry-meta-chars"
+        "meta-disk-mismatch",
+        "registry-disk-chapters"
       ],
-      "detail": "源表 10 章 → 磁盘 12 章（+2）；源表 118,973 字 → meta 129,165 字（+10,192）"
+      "detail": "源表 10 章 → 磁盘 12 章（+2）；meta 10 章 ≠ 磁盘 12 章"
     },
     {
       "slug": "01-zhongyi/10-zhongyi-neike-xue",
       "title": "中医内科学",
       "flags": [
-        "registry-disk-chapters",
-        "registry-meta-chars"
+        "meta-disk-mismatch",
+        "registry-disk-chapters"
       ],
-      "detail": "源表 12 章 → 磁盘 14 章（+2）；源表 405,580 字 → meta 421,791 字（+16,211）"
+      "detail": "源表 12 章 → 磁盘 14 章（+2）；meta 12 章 ≠ 磁盘 14 章"
     },
     {
       "slug": "01-zhongyi/14-zhongyi-zhenghou-xue",
@@ -23687,92 +23633,12 @@
       "detail": "教材 12 章 < 教学计划 27 章"
     },
     {
-      "slug": "02-zhongyao/03-fangjixue",
-      "title": "方剂学",
-      "flags": [
-        "registry-meta-chars"
-      ],
-      "detail": "源表 435,341 字 → meta 474,732 字（+39,391）"
-    },
-    {
-      "slug": "02-zhongyao/05-zhongyao-jianding-xue",
-      "title": "中药鉴定学",
-      "flags": [
-        "registry-meta-chars"
-      ],
-      "detail": "源表 186,359 字 → meta 203,942 字（+17,583）"
-    },
-    {
-      "slug": "02-zhongyao/06-zhongyao-huaxue",
-      "title": "中药化学",
-      "flags": [
-        "registry-meta-chars"
-      ],
-      "detail": "源表 233,962 字 → meta 252,828 字（+18,866）"
-    },
-    {
-      "slug": "02-zhongyao/07-zhongyao-yaoli-xue",
-      "title": "中药药理学",
-      "flags": [
-        "registry-meta-chars"
-      ],
-      "detail": "源表 232,861 字 → meta 250,487 字（+17,626）"
-    },
-    {
-      "slug": "02-zhongyao/08-zhongyao-paozhi-xue",
-      "title": "中药炮制学",
-      "flags": [
-        "registry-meta-chars"
-      ],
-      "detail": "源表 174,240 字 → meta 192,488 字（+18,248）"
-    },
-    {
-      "slug": "02-zhongyao/10-zhongyao-fenxi-xue",
-      "title": "中药分析学",
-      "flags": [
-        "registry-meta-chars"
-      ],
-      "detail": "源表 176,143 字 → meta 194,531 字（+18,388）"
-    },
-    {
       "slug": "02-zhongyao/18-yaoshi-guanli-xue",
       "title": "药事管理学",
       "flags": [
         "chapters-short-decided"
       ],
       "detail": "教材 20 章 < 教学计划 28 章：已决口径（2026-11-15 决议，两套切分轴并存）"
-    },
-    {
-      "slug": "03-zhenjiu/03-zhenjiu-yiji-xuan",
-      "title": "针灸医籍选",
-      "flags": [
-        "registry-meta-chars"
-      ],
-      "detail": "源表 208,975 字 → meta 228,808 字（+19,833）"
-    },
-    {
-      "slug": "03-zhenjiu/07-cifa-jiufa-xue",
-      "title": "刺法灸法学",
-      "flags": [
-        "registry-meta-chars"
-      ],
-      "detail": "源表 234,469 字 → meta 258,468 字（+23,999）"
-    },
-    {
-      "slug": "03-zhenjiu/18-tuina-gongfa-xue",
-      "title": "推拿功法学",
-      "flags": [
-        "registry-meta-chars"
-      ],
-      "detail": "源表 111,893 字 → meta 130,912 字（+19,019）"
-    },
-    {
-      "slug": "04-gushang/03-gushang-kexue-jichu",
-      "title": "中医骨伤科学基础",
-      "flags": [
-        "registry-meta-chars"
-      ],
-      "detail": "源表 370,455 字 → meta 395,106 字（+24,651）"
     },
     {
       "slug": "07-zhineng/01-yixue-rengong-zhineng-daolun",
@@ -23787,34 +23653,9 @@
       "slug": "07-zhineng/05-zhongyi-zhishi-tupu",
       "title": "中医知识树",
       "flags": [
-        "registry-meta-chars",
         "manual-source"
       ],
-      "detail": "源表 11,351 字 → meta 13,167 字（+1,816）；registry status=manual：人工整理层，非纯抽取"
-    },
-    {
-      "slug": "09-jichu/01-renti-jiepou-xue",
-      "title": "人体解剖学",
-      "flags": [
-        "registry-meta-chars"
-      ],
-      "detail": "源表 228,077 字 → meta 247,558 字（+19,481）"
-    },
-    {
-      "slug": "09-jichu/06-shengli-xue",
-      "title": "生理学",
-      "flags": [
-        "registry-meta-chars"
-      ],
-      "detail": "源表 252,809 字 → meta 274,755 字（+21,946）"
-    },
-    {
-      "slug": "09-jichu/08-jubu-jiepou-xue",
-      "title": "局部解剖学",
-      "flags": [
-        "registry-meta-chars"
-      ],
-      "detail": "源表 212,583 字 → meta 230,130 字（+17,547）"
+      "detail": "registry status=manual：人工整理层，非纯抽取"
     }
   ],
   "checks": {

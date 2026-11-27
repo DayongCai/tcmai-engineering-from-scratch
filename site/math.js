@@ -40,7 +40,19 @@ const SYMBOLS = {
   forall: '∀', exists: '∃', neg: '¬', land: '∧', lor: '∨',
   to: '→', rightarrow: '→', leftarrow: '←', Rightarrow: '⇒', leftrightarrow: '↔',
   mapsto: '↦', implies: '⟹', iff: '⟺',
-  ldots: '…', cdots: '⋯', vdots: '⋮', ddots: '⋱',
+  ldots: '…', cdots: '⋯', vdots: '⋮', ddots: '⋱', dots: '…',
+  ell: 'ℓ', Longrightarrow: '⟹', longrightarrow: '⟶',
+  lVert: '‖', rVert: '‖', lvert: '|', rvert: '|',
+  gtrsim: '≳', lesssim: '≲', gtrless: '≷', approxeq: '≊',
+  angle: '∠', perp: '⊥', parallel: '∥', circ: '∘', bullet: '•', degree: '°',
+  mid: '∣', odot: '⊙', succeq: '⪰', simeq: '≃', tilde: '˜', varnothing: '∅',
+  wedge: '∧', vee: '∨', oplus: '⊕', otimes: '⊗', setminus: '∖',
+  emptyset: '∅', therefore: '∴', because: '∵', prime: '′', ast: '∗', star: '⋆',
+  langle: '⟨', rangle: '⟩', lfloor: '⌊', rfloor: '⌋', lceil: '⌈', rceil: '⌉',
+  // 转义字符：\% \_ \[ \] 等在正文里出现频率不低，漏了会被当成「未知命令」
+  '%': '%', '_': '_', '#': '#', '&': '&', '$': '$', '{': '{', '}': '}',
+  '[': '[', ']': ']',
+
   // 范数记号 \|x\| —— LaTeX 里 \| 就是双竖线。漏掉它不会报错，
   // 只会让 \|a\| 渲染成「去掉反斜杠的竖线」，看起来"差不多对"但其实是错的排版。
   '|': '‖',
@@ -52,7 +64,7 @@ const SYMBOLS = {
 const FUNCTION_NAMES = new Set([
   'cos', 'sin', 'tan', 'cot', 'sec', 'csc', 'arccos', 'arcsin', 'arctan',
   'log', 'ln', 'lg', 'exp', 'max', 'min', 'argmax', 'argmin', 'sup', 'inf',
-  'lim', 'det', 'dim', 'ker', 'deg', 'gcd', 'mod', 'Pr', 'sgn',
+  'lim', 'det', 'dim', 'ker', 'deg', 'gcd', 'mod', 'Pr', 'sgn', 'arg', 'tr',
 ]);
 
 /** 排版命令：吃掉参数，保留内容并施加样式 */
@@ -66,6 +78,13 @@ const WRAPPERS = {
   mathtt: (x) => `<code>${x}</code>`,
   text: (x) => `<span class="math-text">${x}</span>`,
   textrm: (x) => `<span class="math-text">${x}</span>`,
+  boldsymbol: (x) => `<b>${x}</b>`,
+  bm: (x) => `<b>${x}</b>`,
+  mathfrak: (x) => `<span class="math-frak">${x}</span>`,
+  dot: (x) => `<span class="math-hat"><span class="math-accent">˙</span>${x}</span>`,
+  ddot: (x) => `<span class="math-hat"><span class="math-accent">¨</span>${x}</span>`,
+  overrightarrow: (x) => `<span class="math-line">${x}</span>`,
+  overbrace: (x) => `<span class="math-line">${x}</span>`,
   operatorname: (x) => `<span class="math-op">${x}</span>`,
   overline: (x) => `<span class="math-line">${x}</span>`,
   bar: (x) => `<span class="math-line">${x}</span>`,
@@ -113,12 +132,11 @@ function readArg(s, i) {
   return [s[i], i + 1];
 }
 
-/** \frac{a}{b} → 上下堆叠 */
+/** \frac{a}{b} → 上下堆叠；也接受无花括号写法 \frac12（教材式排版常见） */
 function readFrac(s, i) {
-  const a = readGroup(s, i);
-  if (!a) return null;
-  const b = readGroup(s, a[1]);
-  if (!b) return null;
+  const a = readArg(s, i);
+  const b = readArg(s, a[1]);
+  if (!a[0] || !b[0]) return null;
   // 分式内部继续递归处理，所以嵌套分式也成立
   return [
     `<span class="frac"><span class="frac-num">${convert(a[0])}</span>`
@@ -178,6 +196,37 @@ function convert(latex) {
         const a = readArg(s, j);
         out += `<span class="math-sqrt">√</span><span class="math-line">${convert(a[0])}</span>`;
         i = a[1];
+        continue;
+      }
+      if (name === 'binom' || name === 'dbinom' || name === 'tbinom') {
+        const a = readGroup(s, j);
+        const b = a && readGroup(s, a[1]);
+        if (a && b) {
+          out += `<span class="binom">(<span class="frac"><span class="frac-num">${convert(a[0])}</span>`
+            + `<span class="frac-den">${convert(b[0])}</span></span>)</span>`;
+          i = b[1];
+          continue;
+        }
+      }
+      // \begin{cases} … \end{cases} 之类的环境：不排成矩阵，按行拆开逐行渲染。
+      // 排成真表格需要列对齐信息，而子集渲染器的定位是「读得懂」，不是「印得美」。
+      if (name === 'begin') {
+        const env = readGroup(s, j);
+        const close = env ? `\\end{${env[0]}}` : '';
+        const k = env ? s.indexOf(close, env[1]) : -1;
+        if (env && k >= 0) {
+          const rows = s.slice(env[1], k).split(/\\\\/).map((r) => r.trim()).filter(Boolean);
+          const inner = rows
+            .map((r) => `<span class="math-env-row">${convert(r.replace(/&/g, '  '))}</span>`)
+            .join('');
+          out += `<span class="math-env math-env-${env[0]}">${inner}</span>`;
+          i = k + close.length;
+          continue;
+        }
+      }
+      if (name === 'end') {
+        const env = readGroup(s, j);
+        i = env ? env[1] : j;
         continue;
       }
       if (name in WRAPPERS) {

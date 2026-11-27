@@ -1,33 +1,33 @@
 {
- "slug": "08-jubu-jiepou-xue",
- "title": "局部解剖学",
- "en": "Regional Anatomy",
- "deptSlug": "09-jichu",
- "deptTitle": "基础医学院",
- "globalN": 128,
- "type": "Core",
- "semester": 3,
- "stage": "sheng",
- "stageTitle": "生",
- "hours": 54,
- "bridge": "层次毗邻→空间索引 / 术区→三维重建",
- "chaptersTarget": 9,
- "chapters": [],
- "platform": {
-  "id": "tcmP",
-  "coursePath": "platform/courses/09-jichu/08-jubu-jiepou-xue",
-  "videosPublished": 0,
-  "status": "planned"
- },
- "textbook": {
-  "id": "textbooks",
-  "path": "textbooks/09-jichu/08-jubu-jiepou-xue",
-  "chaptersWritten": 9,
-  "words": 230130,
-  "status": "wip",
-  "layer": "source+rewrite",
-  "source": "standards/materials/textbooks-batch/registry.json#局部解剖学",
-  "extractedAt": "2026-10-21",
-  "note": "9 章 / 206,436 汉字。正文为源正文层，判断层见章末 REWRITE 块（N.1–N.5 + 免责 + 思考题）。"
- }
+  "slug": "08-jubu-jiepou-xue",
+  "title": "局部解剖学",
+  "en": "Regional Anatomy",
+  "deptSlug": "09-jichu",
+  "deptTitle": "基础医学院",
+  "globalN": 128,
+  "type": "Core",
+  "semester": 3,
+  "stage": "sheng",
+  "stageTitle": "生",
+  "hours": 54,
+  "bridge": "层次毗邻→空间索引 / 术区→三维重建",
+  "chaptersTarget": 9,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/09-jichu/08-jubu-jiepou-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/09-jichu/08-jubu-jiepou-xue",
+    "chaptersWritten": 9,
+    "words": 212583,
+    "status": "wip",
+    "layer": "source+rewrite",
+    "source": "standards/materials/textbooks-batch/registry.json#局部解剖学",
+    "extractedAt": "2026-10-21",
+    "note": "9 章 / 212,583 汉字。正文为源正文层，判断层见章末 REWRITE 块（N.1–N.5 + 免责 + 思考题）。"
+  }
 }

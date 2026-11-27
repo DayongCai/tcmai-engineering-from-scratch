@@ -23,10 +23,10 @@
     "id": "textbooks",
     "path": "textbooks/07-zhineng/05-zhongyi-zhishi-tupu",
     "chaptersWritten": 10,
-    "words": 13167,
+    "words": 11351,
     "status": "wip",
     "layer": "manual-rewrite",
     "source": "standards/materials/textbooks-batch/registry.json#中医知识树",
-    "extractedAt": "2026-10-21"
+    "extractedAt": "2026-11-28"
   }
 }

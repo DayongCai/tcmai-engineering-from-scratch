@@ -66,7 +66,7 @@
     <div class="kpi"><div class="k">视频成片</div><div class="v">2169</div></div>
     <div class="kpi"><div class="k">产出物</div><div class="v">4338<small>undefined 章</small></div></div>
     <div class="kpi"><div class="k">测试套件</div><div class="v">105</div></div>
-    <div class="kpi"><div class="k">扫描 md</div><div class="v">11689<small>0 断链</small></div></div>
+    <div class="kpi"><div class="k">扫描 md</div><div class="v">11756<small>0 断链</small></div></div>
     <div class="kpi"><div class="k">版本</div><div class="v">1.44.0</div></div>
   </div>
 
@@ -87,7 +87,7 @@
     <tr><td>[tcmP] 平台 · 站点</td><td><span class="pill s-done">已完成</span></td>
         <td>site/ 11 个页面 · data/content/semtensor-spec/manifest/stats 生成于构建<div class="why">静态站 + 单文件离线快照；Range 请求与路径穿越防护已测</div></td></tr>
     <tr><td>[tcmP] 平台 · 视频流水线</td><td><span class="pill s-done">已完成</span></td>
-        <td>2169 成片 · 12587 配音 · 14159 帧 · 4338 幻灯片/讲稿件<div class="why">TTS 降级链 edge-tts → Windows SAPI → 人工；时长用实测配音时长；字幕对视音差逐章实测（毫秒级）</div></td></tr>
+        <td>2169 成片 · 17398 配音 · 26418 帧 · 4338 幻灯片/讲稿件<div class="why">TTS 降级链 edge-tts → Windows SAPI → 人工；时长用实测配音时长；字幕对视音差逐章实测（毫秒级）</div></td></tr>
     <tr><td>[textbooks] 教材 · 内容</td><td><span class="pill s-active">进行中</span></td>
         <td>5 卷 · 已写 1893 章（底本）+ 138 章（外源）+ 130 章（手册）· 构建产物 43 件<div class="why">教材正文 = 章节 docx 的 docs/zh.md 汇总；同时出单文件书 HTML（不需要 pandoc）</div></td></tr>
     <tr><td>课程骨架 · 学科/章节</td><td><span class="pill s-active">进行中</span></td>
@@ -99,7 +99,7 @@
     <tr><td>ICD-11 客户端（规格 ⑦）</td><td><span class="pill s-active">进行中</span></td>
         <td>本地库 13960 实体（MMS 2025-01）· 仓库 7 个编码 7/7 解析<div class="why">WHO API 通道需凭据（无凭据一律 401，本机未配置）；中文标题通道**未验证**</div></td></tr>
     <tr><td>质量门 · 审计与测试</td><td><span class="pill s-done">已完成</span></td>
-        <td>审计 L0–L3 · 105 个测试套件（112 个测试文件）· 链接扫描 11689 个 md（0 断链） · npm run check 四道门<div class="why">L3 内容层实测抓到 2 处契约违约；文档事实核对测试已 4 次抓到过期数字</div></td></tr>
+        <td>审计 L0–L3 · 105 个测试套件（112 个测试文件）· 链接扫描 11756 个 md（0 断链） · npm run check 四道门<div class="why">L3 内容层实测抓到 2 处契约违约；文档事实核对测试已 4 次抓到过期数字</div></td></tr>
     </tbody>
   </table>
 
@@ -141,18 +141,18 @@
 
   <h2>最近提交</h2>
   <div class="card git">
-    <div>3104f9ef <b> feat(content): 护理学院收官 27 门/348 章（正文 103.7 万字 + 习题三层 + 两门假长课重写）</b></div>
-    <div>1af1774a <b> feat(content): 护理学院首批 8 门/132 章补实（正文 39.0 万字 + 习题 1,384 断言 + 产出 264 份）</b></div>
-    <div>cb0788ba <b> fix(content): 12 处正文数值错误（每处回溯数据源后改，非只看句子自洽）</b></div>
-    <div>409dce5a <b> feat(outputs): 79 门 778 章 prompt/skill 按正文重做（1,556 份）+ 新门入链</b></div>
-    <div>f745a597 <b> fix(quiz/site): 解释字段双兼容 + 三处「恰好 6 题」硬编码改契约 + CHANGELOG</b></div>
-    <div>12784e66 <b> feat(exercises): 第十批 11 门 108 章习题与代码重做 — 79/79 门全部完成</b></div>
-    <div>c8c2fc59 <b> fix(quiz): 习题契约由「恰好 1/3/2」改为「下限 1/3/1 + 总题数 ≤10」</b></div>
-    <div>b2fe0fdb <b> feat(exercises): 第九批 8 门 68 章习题与代码重做（累计 68 门 670 章）</b></div>
-    <div>9dff06a9 <b> feat(exercises): 第八批 8 门 128 章习题与代码重做（累计 60 门 602 章）</b></div>
-    <div>240d9e92 <b> feat(exercises): 第七批 8 门 74 章习题与代码重做（累计 52 门 474 章）</b></div>
-    <div>d7f12582 <b> feat(exercises): 第六批 8 门 72 章习题与代码重做（累计 44 门 400 章）</b></div>
-    <div>dad8e7a1 <b> feat(exercises): 第五批 8 门 68 章习题与代码重做（累计 36 门 328 章）</b></div>
+    <div>b6254cba <b> fix(jichu): 4 章补「外源补录」节（44 条，照抄补源台账）+ 逐章重钉实测值</b></div>
+    <div>4a3dae30 <b> fix(jingui): 一处跨句拼接引文改回逐字原句 + 引文比较折异体字</b></div>
+    <div>dd67c83b <b> fix(content): 40 章免责声明补「不构成」+ 知识树套件排除派生目录 + 测试失败清单</b></div>
+    <div>d304ddb5 <b> docs(zhongyao): 14 章补教材章字数（底本口径），并记下两处口径冲突</b></div>
+    <div>88dc3f34 <b> fix(zhongyao): 章号区间引用 + 14 章补「教学边界」措辞</b></div>
+    <div>cfb798dd <b> test(schema): 解析字段双读 explain||explanation（8 个套件）</b></div>
+    <div>242aef25 <b> fix(content): 讲稿念出 Markdown 粗体 + 中药学第 1 章缺教材定位</b></div>
+    <div>3caf421c <b> docs(changelog): 补第五、六类影音陈旧（讲稿旧于正文 4 章 / 旧分片残留 4 章）</b></div>
+    <div>8aa65f35 <b> fix(media): 4 章讲稿重抽重渲 + build_video 渲染前清旧分片</b></div>
+    <div>0836c455 <b> fix(content): 三章二级小节 9→8（合并末两节为上层节 + 两个子节）</b></div>
+    <div>56fbf2d1 <b> chore(media): 补 03-针灸 22 份 video/教案.md 与 FORKING.md 链接数</b></div>
+    <div>593417fd <b> feat(media): 02-中药/08-五官/09-基础 影音层重渲入库（357 章补齐 + 181 章账面回填）</b></div>
   </div>
 
   <footer>

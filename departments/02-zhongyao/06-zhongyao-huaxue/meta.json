@@ -1,33 +1,33 @@
 {
- "slug": "06-zhongyao-huaxue",
- "title": "中药化学",
- "en": "Phytochemistry of TCM",
- "deptSlug": "02-zhongyao",
- "deptTitle": "中药系",
- "globalN": 21,
- "type": "Core",
- "semester": 4,
- "stage": "sheng",
- "stageTitle": "生",
- "hours": 90,
- "bridge": "成分结构→分子指纹 / 活性预测→QSAR 回归",
- "chaptersTarget": 12,
- "chapters": [],
- "platform": {
-  "id": "tcmP",
-  "coursePath": "platform/courses/02-zhongyao/06-zhongyao-huaxue",
-  "videosPublished": 0,
-  "status": "planned"
- },
- "textbook": {
-  "id": "textbooks",
-  "path": "textbooks/02-zhongyao/06-zhongyao-huaxue",
-  "chaptersWritten": 12,
-  "words": 252828,
-  "status": "wip",
-  "layer": "source+rewrite",
-  "source": "standards/materials/textbooks-batch/registry.json#中药化学",
-  "extractedAt": "2026-10-21",
-  "note": "12 章 / 206,959 汉字。12 章；正文为源正文层（import_textbooks 逐字抽取），判断层见章末 REWRITE 块（N.1–N.5 + 免责 + 思考题）。"
- }
+  "slug": "06-zhongyao-huaxue",
+  "title": "中药化学",
+  "en": "Phytochemistry of TCM",
+  "deptSlug": "02-zhongyao",
+  "deptTitle": "中药系",
+  "globalN": 21,
+  "type": "Core",
+  "semester": 4,
+  "stage": "sheng",
+  "stageTitle": "生",
+  "hours": 90,
+  "bridge": "成分结构→分子指纹 / 活性预测→QSAR 回归",
+  "chaptersTarget": 12,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/02-zhongyao/06-zhongyao-huaxue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/02-zhongyao/06-zhongyao-huaxue",
+    "chaptersWritten": 12,
+    "words": 233962,
+    "status": "wip",
+    "layer": "source+rewrite",
+    "source": "standards/materials/textbooks-batch/registry.json#中药化学",
+    "extractedAt": "2026-10-21",
+    "note": "12 章 / 233,962 汉字。12 章；正文为源正文层（import_textbooks 逐字抽取），判断层见章末 REWRITE 块（N.1–N.5 + 免责 + 思考题）。"
+  }
 }

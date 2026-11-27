@@ -1,39 +1,39 @@
 {
- "slug": "07-zhongyao-yaoli-xue",
- "title": "中药药理学",
- "en": "TCM Pharmacology",
- "deptSlug": "02-zhongyao",
- "deptTitle": "中药系",
- "globalN": 22,
- "type": "Core",
- "semester": 5,
- "stage": "zhang",
- "stageTitle": "长",
- "hours": 72,
- "bridge": "药效实验→剂量-反应拟合 / 网络药理→图算法",
- "chaptersTarget": 11,
- "chapters": [],
- "platform": {
-  "id": "tcmP",
-  "coursePath": "platform/courses/02-zhongyao/07-zhongyao-yaoli-xue",
-  "videosPublished": 0,
-  "status": "planned"
- },
- "textbook": {
-  "id": "textbooks",
-  "path": "textbooks/02-zhongyao/07-zhongyao-yaoli-xue",
-  "chaptersWritten": 12,
-  "words": 250487,
-  "status": "wip",
-  "layer": "source+rewrite",
-  "source": "standards/materials/textbooks-batch/registry.json#中药药理学",
-  "extractedAt": "2026-10-21",
-  "note": "12 章 / 211,245 汉字。正文为源正文层，判断层见章末 REWRITE 块（N.1–N.5 + 免责 + 思考题）。"
- },
- "底本": {
-  "kind": "教材",
-  "from": "F:/textbooks/qhzy-中药药理学.xlsx",
-  "dir": "standards/zhongyao-yaoli",
-  "note": "12 内容章 / 47 单元 / 197,962 汉字；课程 11 章按「范式—方法—类别—评价」重组"
- }
+  "slug": "07-zhongyao-yaoli-xue",
+  "title": "中药药理学",
+  "en": "TCM Pharmacology",
+  "deptSlug": "02-zhongyao",
+  "deptTitle": "中药系",
+  "globalN": 22,
+  "type": "Core",
+  "semester": 5,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 72,
+  "bridge": "药效实验→剂量-反应拟合 / 网络药理→图算法",
+  "chaptersTarget": 11,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/02-zhongyao/07-zhongyao-yaoli-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/02-zhongyao/07-zhongyao-yaoli-xue",
+    "chaptersWritten": 12,
+    "words": 232861,
+    "status": "wip",
+    "layer": "source+rewrite",
+    "source": "standards/materials/textbooks-batch/registry.json#中药药理学",
+    "extractedAt": "2026-10-21",
+    "note": "12 章 / 232,861 汉字。正文为源正文层，判断层见章末 REWRITE 块（N.1–N.5 + 免责 + 思考题）。"
+  },
+  "底本": {
+    "kind": "教材",
+    "from": "F:/textbooks/qhzy-中药药理学.xlsx",
+    "dir": "standards/zhongyao-yaoli",
+    "note": "12 内容章 / 47 单元 / 197,962 汉字；课程 11 章按「范式—方法—类别—评价」重组"
+  }
 }

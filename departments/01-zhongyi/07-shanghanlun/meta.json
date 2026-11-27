@@ -22,8 +22,8 @@
   "textbook": {
     "id": "textbooks",
     "path": "textbooks/01-zhongyi/07-shanghanlun",
-    "chaptersWritten": 12,
-    "words": 129165,
+    "chaptersWritten": 10,
+    "words": 118973,
     "status": "wip",
     "layer": "source-body",
     "source": "standards/materials/textbooks-batch/registry.json#伤寒论讲义",
