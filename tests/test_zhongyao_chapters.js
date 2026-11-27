@@ -72,7 +72,7 @@ test('2. 教材引文逐字保真（只核标了教材出处的行）', () => {
   for (const c of chaptersJson().chapters) {
     const doc = read(path.join(DIR, c.slug, 'docs', 'zh.md'));
     for (const line of doc.split('\n')) {
-      if (!/教材·第\d+章|《中药学·第\d+章/.test(line)) continue;
+      if (!/教材·第\d+(?:[–—-]\d+)?章|《中药学·第\d+(?:[–—-]\d+)?章/.test(line)) continue;
       for (const m of line.matchAll(/「([^」]{6,})」/g)) {
         checked += 1;
         const q = fold(m[1]);
@@ -90,7 +90,7 @@ test('3. 引用格式与禁用词', () => {
     const files = [path.join(DIR, c.slug, 'docs', 'zh.md')];
     for (const f of files) {
       const t = read(f);
-      assert.ok(/教材·第\d+章/.test(t), `${c.slug}/docs 没有「教材·第N章」级引用`);
+      assert.ok(/教材·第\d+(?:[–—-]\d+)?章/.test(t), `${c.slug}/docs 没有「教材·第N章」级引用`);
       assert.ok(!/「?底本·[^」"]{2,}」?/.test(t), `${c.slug}/docs 出现「底本·」式引用`);
     }
     assert.ok(fs.existsSync(path.join(DIR, c.slug, `outputs/prompt-${slug}.md`)));
