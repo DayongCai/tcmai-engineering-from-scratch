@@ -34,7 +34,7 @@ test('正文就在本章目录下，章号与标题与正文一致', () => {
 });
 
 test('汉字数与正文现算一致', () => {
-  assert.strictEqual(A.hanzi, 3044);
+  assert.strictEqual(A.hanzi, 3089);
   assert.ok(A.hanzi > 1500, `汉字过少：${A.hanzi}`);
 });
 

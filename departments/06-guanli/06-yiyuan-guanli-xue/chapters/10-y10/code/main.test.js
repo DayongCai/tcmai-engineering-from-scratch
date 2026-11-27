@@ -31,7 +31,7 @@ test('章号与标题取自本章正文', () => {
 });
 
 test('正文统计可复算：汉字、节、加粗判断、引文', () => {
-  assert.strictEqual(A.hanzi, 3022);
+  assert.strictEqual(A.hanzi, 3067);
   assert.strictEqual(A.sections.length, 7);
   assert.strictEqual(A.claims, 34);
   assert.strictEqual(A.quotes.length, 1);

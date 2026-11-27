@@ -19,7 +19,7 @@ test('正文就在本章目录下，章号与标题取自正文', () => {
 });
 
 test('规模与正文快照一致', () => {
-  assert.strictEqual(A.hanzi, 2822);
+  assert.strictEqual(A.hanzi, 2867);
   assert.strictEqual(A.sections.length, 7);
   assert.strictEqual(A.citeCount, 4);
 });
@@ -54,6 +54,6 @@ test('脚本可运行，输出含现算口径与边界声明', () => {
   const out = String(r.stdout || '');
   assert.match(out, /均从本章 docs\/zh\.md 现算/);
   assert.match(out, /以所在机构规范为准/);
-  assert.ok(out.includes('汉字 2822 字'));
+  assert.ok(out.includes('汉字 2867 字'));
   assert.ok(out.includes('四个「不做」'));
 });

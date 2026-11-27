@@ -23,7 +23,7 @@ test('章号与标题取自本章正文', () => {
 });
 
 test('汉字数与正文快照一致', () => {
-  assert.strictEqual(A.hanzi, 2875);
+  assert.strictEqual(A.hanzi, 2920);
 });
 
 test('节数、表格数、引文条数与正文快照一致', () => {

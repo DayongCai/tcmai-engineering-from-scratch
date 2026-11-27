@@ -16,7 +16,7 @@
     "gapSubjects": 46,
     "gapWithBody": 46,
     "gapWithBodyChapters": 404,
-    "gapWithBodyChars": 1595789,
+    "gapWithBodyChars": 1628867,
     "gapNoBody": 0
   },
   "totals": {
@@ -36,15 +36,15 @@
     "baseChapters": 1893,
     "extChapters": 138,
     "hbChapters": 130,
-    "baseNonWs": 36935222,
+    "baseNonWs": 36936110,
     "extNonWs": 214152,
     "hbNonWs": 236360,
     "coverageBaseHours": 62,
     "coverageBaseSubjects": 65.1,
     "textbookHours": 8865,
     "chapters": 2161,
-    "hanzi": 30984014,
-    "nonWs": 37385734,
+    "hanzi": 30984374,
+    "nonWs": 37386622,
     "metaWords": 33874545,
     "registryChapters": 1621,
     "registryChars": 28596788,
@@ -342,8 +342,8 @@
             "dir": "textbooks/01-zhongyi/04-zhongyi-tizhi-xue",
             "exists": true,
             "chapters": 8,
-            "hanzi": 30596,
-            "nonWs": 43969,
+            "hanzi": 30956,
+            "nonWs": 44857,
             "metaChapters": 8,
             "metaWords": 25293,
             "status": "wip",
@@ -1690,8 +1690,8 @@
             "dir": "textbooks/01-zhongyi/04-zhongyi-tizhi-xue",
             "exists": true,
             "chapters": 8,
-            "hanzi": 30596,
-            "nonWs": 43969,
+            "hanzi": 30956,
+            "nonWs": 44857,
             "metaChapters": 8,
             "metaWords": 25293,
             "status": "wip",
@@ -3012,14 +3012,14 @@
         "baseChapters": 274,
         "extChapters": 0,
         "hbChapters": 34,
-        "baseNonWs": 8016602,
+        "baseNonWs": 8017490,
         "extNonWs": 0,
         "hbNonWs": 53873,
         "coverageBaseHours": 85.2,
         "textbookHours": 1422,
         "chapters": 308,
-        "hanzi": 5958872,
-        "nonWs": 8070475,
+        "hanzi": 5959232,
+        "nonWs": 8071363,
         "coverageSubjects": 95.7,
         "coverageHours": 97.5,
         "semesterSpan": "1–10",
@@ -22993,9 +22993,9 @@
           "hours": 36,
           "body": {
             "chapters": 10,
-            "chars": 45220
+            "chars": 46330
           },
-          "note": "教学章已有正文（10 章 / 4.5 万字），未接教材出版线"
+          "note": "教学章已有正文（10 章 / 4.6 万字），未接教材出版线"
         }
       ]
     },
@@ -23146,9 +23146,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 28220
+            "chars": 29108
           },
-          "note": "教学章已有正文（8 章 / 2.8 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 2.9 万字），未接教材出版线"
         },
         {
           "slug": "02-yao-shang-jiepou",
@@ -23158,9 +23158,9 @@
           "hours": 72,
           "body": {
             "chapters": 10,
-            "chars": 37835
+            "chars": 38945
           },
-          "note": "教学章已有正文（10 章 / 3.8 万字），未接教材出版线"
+          "note": "教学章已有正文（10 章 / 3.9 万字），未接教材出版线"
         },
         {
           "slug": "04-chuangshang-jijiu-xue",
@@ -23170,9 +23170,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 29039
+            "chars": 29927
           },
-          "note": "教学章已有正文（8 章 / 2.9 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 3.0 万字），未接教材出版线"
         },
         {
           "slug": "05-yundong-yixue",
@@ -23182,9 +23182,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 26253
+            "chars": 27141
           },
-          "note": "教学章已有正文（8 章 / 2.6 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 2.7 万字），未接教材出版线"
         },
         {
           "slug": "10-jizhu-bing-xue",
@@ -23194,9 +23194,9 @@
           "hours": 72,
           "body": {
             "chapters": 10,
-            "chars": 31847
+            "chars": 32957
           },
-          "note": "教学章已有正文（10 章 / 3.2 万字），未接教材出版线"
+          "note": "教学章已有正文（10 章 / 3.3 万字），未接教材出版线"
         },
         {
           "slug": "11-guanjie-bing-xue",
@@ -23206,9 +23206,9 @@
           "hours": 72,
           "body": {
             "chapters": 10,
-            "chars": 37747
+            "chars": 38857
           },
-          "note": "教学章已有正文（10 章 / 3.8 万字），未接教材出版线"
+          "note": "教学章已有正文（10 章 / 3.9 万字），未接教材出版线"
         },
         {
           "slug": "12-guzhishusong-tuibian",
@@ -23218,9 +23218,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 29322
+            "chars": 30210
           },
-          "note": "教学章已有正文（8 章 / 2.9 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 3.0 万字），未接教材出版线"
         },
         {
           "slug": "13-zhongyi-zhengji-xue",
@@ -23230,9 +23230,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 28373
+            "chars": 29261
           },
-          "note": "教学章已有正文（8 章 / 2.8 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 2.9 万字），未接教材出版线"
         },
         {
           "slug": "14-kangfu-gongcheng-zhiju",
@@ -23242,9 +23242,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 29421
+            "chars": 30309
           },
-          "note": "教学章已有正文（8 章 / 2.9 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 3.0 万字），未接教材出版线"
         },
         {
           "slug": "15-gushang-kangfu-pingding",
@@ -23254,7 +23254,7 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 25576
+            "chars": 26464
           },
           "note": "教学章已有正文（8 章 / 2.6 万字），未接教材出版线"
         }
@@ -23273,9 +23273,9 @@
           "hours": 72,
           "body": {
             "chapters": 14,
-            "chars": 53428
+            "chars": 54982
           },
-          "note": "教学章已有正文（14 章 / 5.3 万字），未接教材出版线"
+          "note": "教学章已有正文（14 章 / 5.5 万字），未接教材出版线"
         },
         {
           "slug": "12-jiwei-zhengzheng-huli",
@@ -23285,9 +23285,9 @@
           "hours": 72,
           "body": {
             "chapters": 10,
-            "chars": 38144
+            "chars": 39254
           },
-          "note": "教学章已有正文（10 章 / 3.8 万字），未接教材出版线"
+          "note": "教学章已有正文（10 章 / 3.9 万字），未接教材出版线"
         }
       ]
     },
@@ -23304,9 +23304,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 29806
+            "chars": 30694
           },
-          "note": "教学章已有正文（8 章 / 3.0 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 3.1 万字），未接教材出版线"
         },
         {
           "slug": "03-zhongyi-guanli-xue",
@@ -23316,9 +23316,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 25627
+            "chars": 26515
           },
-          "note": "教学章已有正文（8 章 / 2.6 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 2.7 万字），未接教材出版线"
         },
         {
           "slug": "05-zhongyi-wenhua-chuanbo",
@@ -23328,7 +23328,7 @@
           "hours": 36,
           "body": {
             "chapters": 6,
-            "chars": 20798
+            "chars": 21464
           },
           "note": "教学章已有正文（6 章 / 2.1 万字），未接教材出版线"
         },
@@ -23340,9 +23340,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 28443
+            "chars": 29331
           },
-          "note": "教学章已有正文（8 章 / 2.8 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 2.9 万字），未接教材出版线"
         },
         {
           "slug": "08-jiankang-fuwu-guanli",
@@ -23352,9 +23352,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 25866
+            "chars": 26754
           },
-          "note": "教学章已有正文（8 章 / 2.6 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 2.7 万字），未接教材出版线"
         },
         {
           "slug": "11-yiyuan-xinxihua-bingan",
@@ -23364,9 +23364,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 28409
+            "chars": 29297
           },
-          "note": "教学章已有正文（8 章 / 2.8 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 2.9 万字），未接教材出版线"
         },
         {
           "slug": "12-zhongyiyao-biaozhunhua",
@@ -23376,7 +23376,7 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 26558
+            "chars": 27446
           },
           "note": "教学章已有正文（8 章 / 2.7 万字），未接教材出版线"
         },
@@ -23388,9 +23388,9 @@
           "hours": 36,
           "body": {
             "chapters": 6,
-            "chars": 22973
+            "chars": 23639
           },
-          "note": "教学章已有正文（6 章 / 2.3 万字），未接教材出版线"
+          "note": "教学章已有正文（6 章 / 2.4 万字），未接教材出版线"
         },
         {
           "slug": "15-zhongyi-guojijiaoyu",
@@ -23400,9 +23400,9 @@
           "hours": 36,
           "body": {
             "chapters": 6,
-            "chars": 21998
+            "chars": 22664
           },
-          "note": "教学章已有正文（6 章 / 2.2 万字），未接教材出版线"
+          "note": "教学章已有正文（6 章 / 2.3 万字），未接教材出版线"
         }
       ]
     },
@@ -23419,9 +23419,9 @@
           "hours": 72,
           "body": {
             "chapters": 10,
-            "chars": 35255
+            "chars": 36365
           },
-          "note": "教学章已有正文（10 章 / 3.5 万字），未接教材出版线"
+          "note": "教学章已有正文（10 章 / 3.6 万字），未接教材出版线"
         },
         {
           "slug": "04-zhongyi-ziran-yuyan-chuli",
@@ -23431,9 +23431,9 @@
           "hours": 72,
           "body": {
             "chapters": 10,
-            "chars": 37799
+            "chars": 38909
           },
-          "note": "教学章已有正文（10 章 / 3.8 万字），未接教材出版线"
+          "note": "教学章已有正文（10 章 / 3.9 万字），未接教材出版线"
         },
         {
           "slug": "06-zhongyi-zhineng-bianzheng",
@@ -23443,9 +23443,9 @@
           "hours": 72,
           "body": {
             "chapters": 10,
-            "chars": 36850
+            "chars": 37960
           },
-          "note": "教学章已有正文（10 章 / 3.7 万字），未接教材出版线"
+          "note": "教学章已有正文（10 章 / 3.8 万字），未接教材出版线"
         },
         {
           "slug": "07-yixue-tuxiang-shezhen",
@@ -23455,9 +23455,9 @@
           "hours": 72,
           "body": {
             "chapters": 10,
-            "chars": 40618
+            "chars": 41728
           },
-          "note": "教学章已有正文（10 章 / 4.1 万字），未接教材出版线"
+          "note": "教学章已有正文（10 章 / 4.2 万字），未接教材出版线"
         },
         {
           "slug": "08-maizhen-keguanhua",
@@ -23467,9 +23467,9 @@
           "hours": 72,
           "body": {
             "chapters": 10,
-            "chars": 42222
+            "chars": 43332
           },
-          "note": "教学章已有正文（10 章 / 4.2 万字），未接教材出版线"
+          "note": "教学章已有正文（10 章 / 4.3 万字），未接教材出版线"
         },
         {
           "slug": "09-zhongyi-dashuju-fenxi",
@@ -23479,7 +23479,7 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 34550
+            "chars": 35438
           },
           "note": "教学章已有正文（8 章 / 3.5 万字），未接教材出版线"
         },
@@ -23491,9 +23491,9 @@
           "hours": 90,
           "body": {
             "chapters": 12,
-            "chars": 44655
+            "chars": 45987
           },
-          "note": "教学章已有正文（12 章 / 4.5 万字），未接教材出版线"
+          "note": "教学章已有正文（12 章 / 4.6 万字），未接教材出版线"
         },
         {
           "slug": "11-zhongyi-jiqiren-xue",
@@ -23503,9 +23503,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 30274
+            "chars": 31162
           },
-          "note": "教学章已有正文（8 章 / 3.0 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 3.1 万字），未接教材出版线"
         },
         {
           "slug": "12-shuzi-renti-xuni-fangzhen",
@@ -23515,7 +23515,7 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 30511
+            "chars": 31399
           },
           "note": "教学章已有正文（8 章 / 3.1 万字），未接教材出版线"
         },
@@ -23527,9 +23527,9 @@
           "hours": 72,
           "body": {
             "chapters": 10,
-            "chars": 37505
+            "chars": 38615
           },
-          "note": "教学章已有正文（10 章 / 3.8 万字），未接教材出版线"
+          "note": "教学章已有正文（10 章 / 3.9 万字），未接教材出版线"
         },
         {
           "slug": "14-yixue-shuju-anquan-yinsi",
@@ -23539,9 +23539,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 34198
+            "chars": 35086
           },
-          "note": "教学章已有正文（8 章 / 3.4 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 3.5 万字），未接教材出版线"
         },
         {
           "slug": "15-zhongyi-ai-lunli-zhili",
@@ -23551,9 +23551,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 26918
+            "chars": 27806
           },
-          "note": "教学章已有正文（8 章 / 2.7 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 2.8 万字），未接教材出版线"
         }
       ]
     },
@@ -23662,7 +23662,7 @@
     "curriculumSubjects": 189,
     "curriculumHours": 11547,
     "diskChapters": 2161,
-    "diskHanzi": 30984014,
+    "diskHanzi": 30984374,
     "registryFiles": 100,
     "subjectsWithoutTextbook": 46,
     "unmatchedRegistrySubjects": []

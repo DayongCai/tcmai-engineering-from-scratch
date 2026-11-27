@@ -18,7 +18,7 @@ test('正文就在本章目录下，且是第 3 章', () => {
 });
 
 test('结构快照与正文一致（汉字、节、表格、加粗判断、引书）', () => {
-  assert.strictEqual(A.hanzi, 2701);
+  assert.strictEqual(A.hanzi, 2746);
   assert.strictEqual(A.sections.length, 6);
   assert.strictEqual(A.tables, 2);
   assert.strictEqual(A.claims, 31);

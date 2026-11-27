@@ -38,7 +38,7 @@ window.TCMAI_BOOKS = {
       },
       "html": {
         "path": "textbooks/build/volume-1-sheng.html",
-        "bytes": 48696304,
+        "bytes": 48696389,
         "ok": true
       },
       "md": {

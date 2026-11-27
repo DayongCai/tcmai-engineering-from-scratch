@@ -25,7 +25,7 @@ test('章号、标题与正文一级标题一致', () => {
 test('汉字数是现算的，与正文逐字重数一致', () => {
   const recount = (TEXT.match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
   assert.strictEqual(A.hanzi, recount);
-  assert.strictEqual(A.hanzi, 3628);
+  assert.strictEqual(A.hanzi, 3673);
 });
 
 test('节、表格、引文数量与正文快照一致', () => {

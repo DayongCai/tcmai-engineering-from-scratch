@@ -31,7 +31,7 @@ test('正文在本章目录下，章号与标题与正文首行一致', () => {
 });
 
 test('规模与正文快照一致', () => {
-  assert.strictEqual(A.hanzi, 2952);
+  assert.strictEqual(A.hanzi, 2997);
   assert.strictEqual(A.sections.length, 6);
   assert.strictEqual(A.tables, 2);
 });

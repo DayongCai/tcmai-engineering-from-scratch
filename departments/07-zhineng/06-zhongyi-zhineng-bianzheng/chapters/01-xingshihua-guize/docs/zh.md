@@ -107,6 +107,7 @@
 ```
 
 这段结构里，`required` 与 `scored` 分开、`excluded_by` 独立成字段、`evidence_state` 允许 `insufficient`——三处都是为了保住判据的句法，不让它被压成一个分数。
+本章可直接验证：`node code/main.js` 打印结构清点与判据清单（数字从 `docs/zh.md` 现算），`node --test code/main.test.js` 跑本章单测；两条命令只读正文与代码，不写任何文件。
 
 ## 六、代价与边界
 

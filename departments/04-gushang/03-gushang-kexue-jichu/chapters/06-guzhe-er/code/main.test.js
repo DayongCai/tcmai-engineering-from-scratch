@@ -19,7 +19,7 @@ test('正文就在本章目录下，章号与标题取自正文', () => {
 });
 
 test('规模与正文快照一致', () => {
-  assert.strictEqual(A.hanzi, 2807);
+  assert.strictEqual(A.hanzi, 2852);
   assert.strictEqual(A.sections.length, 6);
   assert.strictEqual(A.citeCount, 2);
 });
@@ -48,7 +48,7 @@ test('脚本可运行，输出含现算口径与边界声明', () => {
   const out = String(r.stdout || '');
   assert.match(out, /均从本章 docs\/zh\.md 现算/);
   assert.match(out, /创伤救治流程/);
-  assert.ok(out.includes('汉字 2807 字'));
+  assert.ok(out.includes('汉字 2852 字'));
   assert.ok(out.includes('先算血，再算骨：次序成立'));
   assert.ok(out.includes('跟骨三查'));
 });

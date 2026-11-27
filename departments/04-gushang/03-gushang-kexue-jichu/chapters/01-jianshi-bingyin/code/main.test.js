@@ -19,7 +19,7 @@ test('正文就在本章目录下，章号与标题取自正文', () => {
 });
 
 test('规模与正文快照一致', () => {
-  assert.strictEqual(A.hanzi, 3180);
+  assert.strictEqual(A.hanzi, 3225);
   assert.strictEqual(A.sections.length, 6);
   assert.strictEqual(A.citeCount, 20);
   assert.strictEqual(new Set(A.cites).size, 15);
@@ -56,6 +56,6 @@ test('脚本可运行，输出含现算口径与边界声明', () => {
   const out = String(r.stdout || '');
   assert.match(out, /均从本章 docs\/zh\.md 现算/);
   assert.match(out, /不构成诊疗意见/);
-  assert.ok(out.includes('汉字 3180 字'), '输出里的汉字数与快照不一致');
+  assert.ok(out.includes('汉字 3225 字'), '输出里的汉字数与快照不一致');
   assert.ok(out.includes('次序成立'), '输出没有给出程序链次序结论');
 });

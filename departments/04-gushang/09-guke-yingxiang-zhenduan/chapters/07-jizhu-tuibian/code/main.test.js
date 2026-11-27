@@ -23,7 +23,7 @@ test('正文就在本章目录下，章号与标题取自正文', () => {
 });
 
 test('汉字数与正文快照一致，且不是占位稿', () => {
-  assert.strictEqual(A.hanzi, 2630);
+  assert.strictEqual(A.hanzi, 2675);
   assert.ok(A.hanzi > 2000, '本章正文过短：' + A.hanzi);
 });
 
@@ -61,7 +61,7 @@ test('脚本可运行，输出含现算口径与边界声明', () => {
   const out = String(r.stdout || '');
   assert.ok(out.includes('均从本章 docs/zh.md 现算'), '缺少现算口径声明');
   assert.ok(out.includes('不构成诊断或治疗意见'), '缺少边界声明');
-  assert.ok(out.includes('汉字 2630 字'), '输出里的汉字数与快照不一致');
+  assert.ok(out.includes('汉字 2675 字'), '输出里的汉字数与快照不一致');
   assert.ok(out.includes('节 6 节'), '输出里的节数与快照不一致');
   assert.ok(out.includes('代价与边界 5 条'), '输出里的边界条数与快照不一致');
   assert.ok(out.includes('命中最多的词'), '输出里没有判据词汇总');
