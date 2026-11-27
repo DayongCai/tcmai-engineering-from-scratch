@@ -12,7 +12,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
-const TITLE = '量性研究与设计类型';
+const TITLE = '设计类型不是等级表，是你要替哪种错误付账';
 
 function docText() {
   return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');

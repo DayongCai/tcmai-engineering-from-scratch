@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = 18;
 const SLUG = '18-pingtai';
-const TITLE = '中医临床护理学与教学平台';
+const TITLE = '中医临床护理的教学，考动作不如考判据';
 
 function readDoc() {
   return fs.readFileSync(DOC, 'utf8');

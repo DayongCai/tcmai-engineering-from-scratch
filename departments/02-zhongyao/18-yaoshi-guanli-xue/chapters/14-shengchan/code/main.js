@@ -34,7 +34,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = '14';
 const SLUG = '14-shengchan';
-const TITLE = '药品生产：许可与 GMP';
+const TITLE = '批检验合格只证明这一批，工艺记录才证明下一批';
 
 const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
 const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));

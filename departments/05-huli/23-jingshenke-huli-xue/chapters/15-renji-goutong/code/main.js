@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = 15;
 const SLUG = '15-renji-goutong';
-const TITLE = '精神科的人际关系与沟通';
+const TITLE = '在精神科，少说一句比多说一句更难，也更有用';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

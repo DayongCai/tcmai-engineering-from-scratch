@@ -25,7 +25,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 2;
 const SLUG = '02-tinei-guocheng';
-const TITLE = '体内过程与生物利用度';
+const TITLE = '生物利用度是剂型与工艺的最终判决';
 
 const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 const count = (text, term) => String(text).split(term).length - 1;

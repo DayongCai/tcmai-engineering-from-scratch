@@ -25,7 +25,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 7;
 const SLUG = '07-fuzhi-fa';
-const TITLE = '复制法与特殊炮制';
+const TITLE = '复制法不是多洗几遍，是用辅料一步步改写药性';
 
 const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 const count = (text, term) => String(text).split(term).length - 1;

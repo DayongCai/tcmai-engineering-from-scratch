@@ -37,7 +37,7 @@ const UNITS = path.join(ROOT, 'standards', 'zhenjiu-gejia', 'units.json');
 
 const CHAPTER = '1';
 const SLUG = '01-gaishu-yanbian';
-const TITLE = '各家针灸学说概述';
+const TITLE = '各家针灸学说考的是一套判据，不是一张人名表';
 
 const load = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
 

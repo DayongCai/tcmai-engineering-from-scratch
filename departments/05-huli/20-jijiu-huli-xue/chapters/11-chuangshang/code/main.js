@@ -26,7 +26,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 11;
 const SLUG = '11-chuangshang';
-const TITLE = '创伤急救护理';
+const TITLE = '创伤的次序比手法重要：先止住能止住的';
 
 /** 本章反复用来判读的词：正文靠它们做论证，就核它们 */
 const KEY_TERMS = ['次序', '固定', '机制', '远端', '教学设定'];

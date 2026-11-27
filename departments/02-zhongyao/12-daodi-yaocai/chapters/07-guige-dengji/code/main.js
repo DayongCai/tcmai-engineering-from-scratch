@@ -25,7 +25,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 7;
 const SLUG = '07-guige-dengji';
-const TITLE = '规格等级与商品';
+const TITLE = '等级是商品的语言，不是药效的刻度';
 
 const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 const count = (text, term) => String(text).split(term).length - 1;

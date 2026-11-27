@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '25';
 const SLUG = '25-antianginal-drugs';
-const TITLE = '抗心绞痛药：耗氧与灌注的平衡';
+const TITLE = '抗心绞痛药争的是耗氧与灌注的平衡，β 阻断药不扩血管也算一种解法';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

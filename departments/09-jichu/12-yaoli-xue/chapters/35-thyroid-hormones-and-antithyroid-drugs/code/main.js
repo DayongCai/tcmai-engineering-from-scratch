@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '35';
 const SLUG = '35-thyroid-hormones-and-antithyroid-drugs';
-const TITLE = '甲状腺激素与抗甲状腺药：环节决定起效';
+const TITLE = 'T3 与 T4 的差别是一个碘原子，含量多少不等于活性强弱';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

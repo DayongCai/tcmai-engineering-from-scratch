@@ -12,7 +12,7 @@ const path = require('node:path');
 
 const CHAPTER = 5;
 const SLUG = '05-yingyang';
-const TITLE = '营养障碍性疾病的护理';
+const TITLE = '喂养够不够，写在孩子身上，不写在奶瓶刻度上';
 const FOCUS = ["喂养前","含接","三条线","排泄线"];
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 

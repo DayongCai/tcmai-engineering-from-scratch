@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '30';
 const SLUG = '30-respiratory-system-drugs';
-const TITLE = '呼吸系统药：分节依据是症状的时相';
+const TITLE = '呼吸系统药的分节依据是症状出现的时相，不是化学结构或作用强弱';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

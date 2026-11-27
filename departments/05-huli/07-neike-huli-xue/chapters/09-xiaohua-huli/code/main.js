@@ -18,7 +18,7 @@ const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');
 const CHAPTER = 9;
 const SLUG = '09-xiaohua-huli';
-const TITLE = '消化系统疾病护理';
+const TITLE = '消化道先看进出对不对得上，再看疼在哪里';
 
 /** 本章自己反复使用的词：次数由正文现算，不手填 */
 const TERMS = ["进食","排便","腹痛","呕吐","体重"];

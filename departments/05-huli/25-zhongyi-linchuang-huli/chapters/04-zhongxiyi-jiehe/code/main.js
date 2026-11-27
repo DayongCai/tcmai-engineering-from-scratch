@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = 4;
 const SLUG = '04-zhongxiyi-jiehe';
-const TITLE = '中西医结合护理的思路与方法';
+const TITLE = '中西医结合护理的难点，是两套语言在同一张记录上对账';
 
 function readDoc() {
   return fs.readFileSync(DOC, 'utf8');

@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '42';
 const SLUG = '42-aminoglycoside-antibiotics';
-const TITLE = '氨基糖苷类抗生素：谱由转运决定，毒性由蓄积部位决定';
+const TITLE = '氨基糖苷类的抗菌谱由转运决定，毒性则由药物蓄积在哪一处决定';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

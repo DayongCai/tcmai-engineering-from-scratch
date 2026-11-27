@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = '8';
 const SLUG = '08-renzhi-zhangai';
-const TITLE = '认知障碍与失智症照护';
+const TITLE = '失智照护的第一原则，是承认他现在的世界是真的';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 
 /** 本章要求学生能指着正文说清楚的判据（必须真出现在正文里，测试会核对） */

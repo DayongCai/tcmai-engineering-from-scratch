@@ -15,7 +15,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
-const TITLE = '第 8 章 儿科与老年病证的辨证施护';
+const TITLE = '儿科与老年科是同一件事的两端：都不会准确说出自己哪里不舒服';
 const KEYWORDS = ["家属","安全","代诉","观察","跌倒","误吸"];
 
 const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;

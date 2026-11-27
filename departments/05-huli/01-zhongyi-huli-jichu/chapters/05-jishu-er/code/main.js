@@ -16,7 +16,7 @@ const path = require('node:path');
 
 const CHAPTER = '5';
 const SLUG = '05-jishu-er';
-const TITLE = '常用中医护理技术（二）';
+const TITLE = '外治的效力与风险同源，差的只是边界清不清';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 
 // 样例记录取自本章正文的写法示例，逐条过规则，看它落在哪一类。

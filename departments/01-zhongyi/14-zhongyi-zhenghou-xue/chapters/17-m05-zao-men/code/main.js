@@ -15,7 +15,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const CHAPTER = 17;
-const TITLE = '燥证门（M05）';
+const TITLE = '燥证门：判据是干涩，苔干与脉涩比口干可靠';
 const SLUG = '17-m05-zao-men';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 

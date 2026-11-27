@@ -25,7 +25,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 4;
 const SLUG = '04-jiyuan-pinzhong';
-const TITLE = '基原、品种与种质';
+const TITLE = '基原错了，后面所有鉴定都只是在给错的东西作证';
 
 const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 const count = (text, term) => String(text).split(term).length - 1;

@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = 3;
 const SLUG = '03-jishu-anquan';
-const TITLE = '临床护理常用技术应用与安全';
+const TITLE = '中医护理技术的安全线画在施术前，不在出事之后';
 
 function readDoc() {
   return fs.readFileSync(DOC, 'utf8');

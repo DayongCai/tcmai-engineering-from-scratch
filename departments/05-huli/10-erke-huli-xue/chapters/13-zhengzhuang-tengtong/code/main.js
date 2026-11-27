@@ -12,7 +12,7 @@ const path = require('node:path');
 
 const CHAPTER = 13;
 const SLUG = '13-zhengzhuang-tengtong';
-const TITLE = '儿童常见症状与疼痛的护理';
+const TITLE = '疼痛要问孩子，不能只问那个替他回答的人';
 const FOCUS = ["行为观察","自我报告","复评","非药物"];
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 

@@ -17,7 +17,7 @@ const path = require('node:path');
 const { ROOT, analyze } = require(path.join(__dirname, '..', '..', '_corpus.js'));
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
-const TITLE = '九种体质是九把尺子';
+const TITLE = '九种体质是九把尺子，量的是倾向不是病名';
 
 module.exports = { DOC, TITLE, ROOT, analyze };
 

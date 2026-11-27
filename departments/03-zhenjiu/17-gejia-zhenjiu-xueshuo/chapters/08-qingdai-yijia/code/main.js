@@ -37,7 +37,7 @@ const UNITS = path.join(ROOT, 'standards', 'zhenjiu-gejia', 'units.json');
 
 const CHAPTER = '8';
 const SLUG = '08-qingdai-yijia';
-const TITLE = '清代针灸医家学术思想';
+const TITLE = '清代把针灸写成可查的书，也把手法排在认穴之前';
 
 const load = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
 

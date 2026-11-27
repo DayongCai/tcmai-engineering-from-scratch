@@ -16,7 +16,7 @@ const path = require('node:path');
 
 const CHAPTER = 12;
 const SLUG = '12-ch12';
-const TITLE = '特殊情境中的心理护理';
+const TITLE = '隔离病房里，最先塌掉的不是体力，是时间感';
 const TERMS = ['时间', '定向', '下一步', '解释权'];
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');

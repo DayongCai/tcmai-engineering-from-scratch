@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = 13;
 const SLUG = '13-kangfu-huli';
-const TITLE = '精神障碍病人的康复护理';
+const TITLE = '康复的指标不是症状消失，是这个人重新有了日程';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

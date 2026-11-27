@@ -22,7 +22,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 10;
 const SLUG = '10-piaobai';
-const TITLE = '牙齿漂白：着色类型、适应证、方法与风险';
+const TITLE = '漂白是可控的化学损伤，知道它伤什么才敢给谁做';
 
 const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 const docLines = (doc) => String(doc).replace(/\r\n/g, '\n').split('\n');

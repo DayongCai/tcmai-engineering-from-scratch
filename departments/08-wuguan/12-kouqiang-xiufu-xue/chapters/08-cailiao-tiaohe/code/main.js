@@ -22,7 +22,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 8;
 const SLUG = '08-cailiao-tiaohe';
-const TITLE = '材料调和与粘接工艺链：水门汀、酸蚀、硅烷、固化';
+const TITLE = '粘接失败多半不在粘接剂，而在调和与表面处理那几分钟';
 
 const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 const docLines = (doc) => String(doc).replace(/\r\n/g, '\n').split('\n');

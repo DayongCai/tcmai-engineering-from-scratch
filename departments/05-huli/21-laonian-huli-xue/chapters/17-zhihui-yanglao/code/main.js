@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = '17';
 const SLUG = '17-zhihui-yanglao';
-const TITLE = '智慧养老与老年护理信息化';
+const TITLE = '设备的价值不在报警那一刻，在报警之后谁去';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 
 /** 本章要求学生能指着正文说清楚的判据（必须真出现在正文里，测试会核对） */

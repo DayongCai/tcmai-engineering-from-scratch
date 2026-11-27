@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = 14;
 const SLUG = '14-wuguan-jizhong';
-const TITLE = '五官科与急危重症临床护理';
+const TITLE = '急危重症的护理价值，全在最初的几个动作里';
 
 function readDoc() {
   return fs.readFileSync(DOC, 'utf8');

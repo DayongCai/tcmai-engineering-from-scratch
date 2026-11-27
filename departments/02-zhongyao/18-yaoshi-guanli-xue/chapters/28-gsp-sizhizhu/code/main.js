@@ -34,7 +34,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = '28';
 const SLUG = '28-gsp-sizhizhu';
-const TITLE = 'GSP 的四个支点：验收、储存、记录、冷链';
+const TITLE = '经营环节的质量不是造出来的，是四个支点各防一种错';
 
 const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
 const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));

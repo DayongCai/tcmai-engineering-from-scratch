@@ -16,7 +16,7 @@ const path = require('node:path');
 
 const CHAPTER = '3';
 const SLUG = '03-sizhen-bianzheng';
-const TITLE = '四诊与辨证方法基础';
+const TITLE = '四诊的分量在互相对得上，不在看得多';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 
 // 样例记录取自本章正文的写法示例，逐条过规则，看它落在哪一类。

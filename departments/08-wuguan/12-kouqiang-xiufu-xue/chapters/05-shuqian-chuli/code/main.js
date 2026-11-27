@@ -22,7 +22,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 5;
 const SLUG = '05-shuqian-chuli';
-const TITLE = '修复前处理、健康宣教与形式选择';
+const TITLE = '修复体的寿命上限，在前三段处理时就定死了';
 
 const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 const docLines = (doc) => String(doc).replace(/\r\n/g, '\n').split('\n');

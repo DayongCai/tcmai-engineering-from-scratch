@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '2';
 const SLUG = '02-pharmacodynamics';
-const TITLE = '药物效应动力学：作用、机制、受体与表述的四级台阶';
+const TITLE = '药物作用与药理效应分属分子事件与整体表现，两套语言混用就说不清机制';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

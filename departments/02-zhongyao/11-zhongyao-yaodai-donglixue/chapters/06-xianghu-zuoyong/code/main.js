@@ -25,7 +25,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 6;
 const SLUG = '06-xianghu-zuoyong';
-const TITLE = '药物相互作用与酶';
+const TITLE = '相互作用的证据差一级，结论就差一个量级';
 
 const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 const count = (text, term) => String(text).split(term).length - 1;

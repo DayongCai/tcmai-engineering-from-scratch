@@ -16,7 +16,7 @@ const path = require('node:path');
 
 const CHAPTER = 3;
 const SLUG = '03-ch03';
-const TITLE = '心理评估与心理护理记录基础';
+const TITLE = '心理护理记录不是留痕，是让下一个人接得住';
 const TERMS = ['自陈', '他评', '观察', '六列'];
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');

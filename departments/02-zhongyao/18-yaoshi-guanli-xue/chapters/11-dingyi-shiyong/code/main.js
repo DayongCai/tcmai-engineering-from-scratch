@@ -34,7 +34,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = '11';
 const SLUG = '11-dingyi-shiyong';
-const TITLE = '药品的定义与适用范围';
+const TITLE = '管辖判断在合规动作之前，定错管辖则后面全部白做';
 
 const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
 const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));

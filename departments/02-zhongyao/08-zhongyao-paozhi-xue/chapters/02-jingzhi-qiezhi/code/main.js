@@ -25,7 +25,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 2;
 const SLUG = '02-jingzhi-qiezhi';
-const TITLE = '净制与切制：炮制的前处理';
+const TITLE = '净制的难点不是去杂，而是判断哪一部分才算药';
 
 const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 const count = (text, term) => String(text).split(term).length - 1;

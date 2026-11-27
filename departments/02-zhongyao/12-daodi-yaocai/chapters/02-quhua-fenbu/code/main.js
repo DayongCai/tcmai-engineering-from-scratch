@@ -25,7 +25,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 2;
 const SLUG = '02-quhua-fenbu';
-const TITLE = '产区分布与区划';
+const TITLE = '产区不是地图上的一个点，而是三条地带性叠加出来的一条带';
 
 const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 const count = (text, term) => String(text).split(term).length - 1;

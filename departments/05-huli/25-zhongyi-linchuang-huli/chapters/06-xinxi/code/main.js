@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = 6;
 const SLUG = '06-xinxi';
-const TITLE = '心系病证临床护理';
+const TITLE = '心系护理的分界，在「悸」有没有伴随失代偿的信号';
 
 function readDoc() {
   return fs.readFileSync(DOC, 'utf8');

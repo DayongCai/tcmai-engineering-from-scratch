@@ -14,7 +14,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
-const TITLE = '肺病科轮转：咳嗽与喘证的辨证接诊';
+const TITLE = '咳与喘在书上分两节，在病人身上常是一件事的两头';
 const TERMS = [
   "咳嗽",
   "喘证",

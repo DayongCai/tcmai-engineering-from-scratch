@@ -18,7 +18,7 @@ const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');
 const CHAPTER = 12;
 const SLUG = '12-neifenmi-huli';
-const TITLE = '内分泌与代谢性疾病护理';
+const TITLE = '内分泌的观察要跨过「今天」：一次测量说明不了一件事';
 
 /** 本章自己反复使用的词：次数由正文现算，不手填 */
 const TERMS = ["体重","尿量","足部","方向","宣教"];

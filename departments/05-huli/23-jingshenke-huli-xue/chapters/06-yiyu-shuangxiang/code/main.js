@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = 6;
 const SLUG = '06-yiyu-shuangxiang';
-const TITLE = '抑郁与双相障碍的护理';
+const TITLE = '抑郁最危险的时刻，常常是"看起来好起来"的那几天';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '31';
 const SLUG = '31-uterine-stimulants';
-const TITLE = '子宫兴奋药：选择性越低，观察密度越高';
+const TITLE = '子宫兴奋药的选择性越低，需要跟上的观察密度就越高';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

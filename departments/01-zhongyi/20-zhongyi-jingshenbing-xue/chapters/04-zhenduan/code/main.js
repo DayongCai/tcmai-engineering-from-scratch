@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = 4;
 const SLUG = '04-zhenduan';
-const TITLE = '诊断：精神检查是主证据，量表是辅证';
+const TITLE = '精神检查是主证，量表只是刻度，不是尺子本身';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

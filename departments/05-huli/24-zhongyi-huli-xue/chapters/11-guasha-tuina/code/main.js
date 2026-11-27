@@ -15,7 +15,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
-const TITLE = '第 11 章 刮痧、推拿与穴位技术';
+const TITLE = '刮痧出痧不是疗效指标，是皮肤反应的读数';
 const KEYWORDS = ["皮肤","禁忌","核对","报告","刮痧","推拿","穴位"];
 
 const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;

@@ -16,7 +16,7 @@ const path = require('node:path');
 
 const CHAPTER = 9;
 const SLUG = '09-ch09';
-const TITLE = '慢性病与肿瘤患者的心理护理';
+const TITLE = '长期照护里最耗人的不是病，是每次复诊都要重新解释自己';
 const TERMS = ['阶段', '照护者', '复述', '角色'];
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');

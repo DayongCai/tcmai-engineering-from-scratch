@@ -34,7 +34,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = '24';
 const SLUG = '24-geren-xinhao-fengxian';
-const TITLE = '从个例报告到风险控制：时限、信号与定期报告';
+const TITLE = '药物警戒的效率由时钟决定，判断再准也补不回迟到';
 
 const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
 const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));

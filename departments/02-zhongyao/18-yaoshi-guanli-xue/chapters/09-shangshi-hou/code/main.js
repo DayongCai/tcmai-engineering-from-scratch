@@ -34,7 +34,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = '9';
 const SLUG = '09-shangshi-hou';
-const TITLE = '上市后变更与再注册';
+const TITLE = '批准只是起点，变更与再注册才是持有人真正的日常';
 
 const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
 const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));

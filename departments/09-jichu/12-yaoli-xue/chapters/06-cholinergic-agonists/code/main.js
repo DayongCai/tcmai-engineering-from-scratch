@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '6';
 const SLUG = '06-cholinergic-agonists';
-const TITLE = '拟胆碱药：两条路通往同一个效应，判据在「依赖什么」';
+const TITLE = '抗胆碱酯酶药不碰受体，它的效应完全依赖已被释放的乙酰胆碱';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

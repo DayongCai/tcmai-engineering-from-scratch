@@ -15,7 +15,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
-const TITLE = '第 10 章 灸法与拔罐技术';
+const TITLE = '灸与罐的第一道关不是手法，是这个人此刻能不能做';
 const KEYWORDS = ["禁忌","报告","观察","皮肤","灸","拔罐"];
 
 const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;

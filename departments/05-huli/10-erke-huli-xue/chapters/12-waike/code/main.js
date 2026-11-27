@@ -12,7 +12,7 @@ const path = require('node:path');
 
 const CHAPTER = 12;
 const SLUG = '12-waike';
-const TITLE = '儿童外科疾病的护理';
+const TITLE = '术前要谈的不是「别怕」，是「你会经历什么」';
 const FOCUS = ["知情同意","核对","禁食","管路"];
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 

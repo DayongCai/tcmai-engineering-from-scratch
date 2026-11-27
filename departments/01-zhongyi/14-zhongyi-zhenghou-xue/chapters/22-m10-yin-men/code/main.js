@@ -15,7 +15,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const CHAPTER = 22;
-const TITLE = '饮证门（M10）';
+const TITLE = '饮证门：判据是清稀与振水声，水饮一家而聚散不同';
 const SLUG = '22-m10-yin-men';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 

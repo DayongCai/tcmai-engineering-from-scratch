@@ -18,7 +18,7 @@ const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');
 const CHAPTER = 4;
 const SLUG = '04-zhengzhuang-huli';
-const TITLE = '内科常见症状的护理';
+const TITLE = '症状是同一个词，背后却是五条互不通用的观察线';
 
 /** 本章自己反复使用的词：次数由正文现算，不手填 */
 const TERMS = ["症状","观察","功能","疼痛","记录"];

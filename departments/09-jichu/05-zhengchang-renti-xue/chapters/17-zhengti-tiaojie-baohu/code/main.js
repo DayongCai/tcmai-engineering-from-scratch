@@ -20,7 +20,7 @@ const path = require('node:path');
 
 const CHAPTER = 17;
 const SLUG = '17-zhengti-tiaojie-baohu';
-const TITLE = '人体功能的整体调节与保护要求';
+const TITLE = '三种调节的分界不在快慢，而在谁不需要被指挥';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

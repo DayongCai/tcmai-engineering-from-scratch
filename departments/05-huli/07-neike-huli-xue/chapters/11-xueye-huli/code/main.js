@@ -18,7 +18,7 @@ const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');
 const CHAPTER = 11;
 const SLUG = '11-xueye-huli';
-const TITLE = '血液系统疾病护理';
+const TITLE = '血液科的危险不在出血本身，在「看起来还好」的那几个小时';
 
 /** 本章自己反复使用的词：次数由正文现算，不手填 */
 const TERMS = ["出血","感染","观察","报告","核对"];

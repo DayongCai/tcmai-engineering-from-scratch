@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = 8;
 const SLUG = '08-shenxi-qixue';
-const TITLE = '肾系与气血津液病证临床护理';
+const TITLE = '水肿与血证的护理，量的是出量，不是感觉';
 
 function readDoc() {
   return fs.readFileSync(DOC, 'utf8');

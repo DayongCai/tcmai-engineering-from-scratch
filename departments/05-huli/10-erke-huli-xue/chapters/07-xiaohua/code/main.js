@@ -12,7 +12,7 @@ const path = require('node:path');
 
 const CHAPTER = 7;
 const SLUG = '07-xiaohua';
-const TITLE = '消化系统疾病的护理';
+const TITLE = '脱水不看哭不哭，要把五项体征放在一起称一次';
 const FOCUS = ["精神状态","眼窝","皮肤弹性","末梢循环"];
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 

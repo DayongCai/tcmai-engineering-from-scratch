@@ -25,7 +25,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 5;
 const SLUG = '05-duanfa';
-const TITLE = '煅法与煅淬';
+const TITLE = '煅法的全部难点，是把看不见的变化写成看得见的终点';
 
 const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 const count = (text, term) => String(text).split(term).length - 1;

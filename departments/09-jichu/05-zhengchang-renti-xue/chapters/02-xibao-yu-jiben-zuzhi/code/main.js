@@ -20,7 +20,7 @@ const path = require('node:path');
 
 const CHAPTER = 2;
 const SLUG = '02-xibao-yu-jiben-zuzhi';
-const TITLE = '细胞与基本组织';
+const TITLE = '四类基本组织不是分类摆件，而是功能的四个前置条件';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

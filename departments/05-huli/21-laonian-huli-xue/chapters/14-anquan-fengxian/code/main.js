@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = '14';
 const SLUG = '14-anquan-fengxian';
-const TITLE = '老年安全与风险管理';
+const TITLE = '安全管理的水平，看的是上报之后发生了什么';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 
 /** 本章要求学生能指着正文说清楚的判据（必须真出现在正文里，测试会核对） */

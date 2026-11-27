@@ -22,7 +22,7 @@ const DOC = path.join(DIR, '..', 'docs', 'zh.md');
 const QUIZ = path.join(DIR, '..', 'quiz.json');
 
 const CH = '23';
-const TITLE = '治疗总论：把穴连成方的规则';
+const TITLE = '这一章不给穴位，只给把穴位连成方子的规则';
 const KEYS = ["治则","配穴","特定穴"];
 
 const doc = fs.readFileSync(DOC, 'utf8');

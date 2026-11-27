@@ -37,7 +37,7 @@ const UNITS = path.join(ROOT, 'standards', 'zhenjiu-gejia', 'units.json');
 
 const CHAPTER = '10';
 const SLUG = '10-dangdai-liupai';
-const TITLE = '当代针灸学术流派';
+const TITLE = '当代六家各把手法的某一个参数做成了可教的东西';
 
 const load = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
 

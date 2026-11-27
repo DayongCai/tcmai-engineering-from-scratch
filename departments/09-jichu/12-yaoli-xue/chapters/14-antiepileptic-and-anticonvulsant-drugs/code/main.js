@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '14';
 const SLUG = '14-antiepileptic-and-anticonvulsant-drugs';
-const TITLE = '抗癫痫药与抗惊厥药：同源而不同用';
+const TITLE = '抗癫痫药的全部难点在选择性：压低异常放电，又不许压掉正常神经功能';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

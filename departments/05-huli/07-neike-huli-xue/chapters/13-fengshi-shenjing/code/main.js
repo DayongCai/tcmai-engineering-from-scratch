@@ -18,7 +18,7 @@ const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');
 const CHAPTER = 13;
 const SLUG = '13-fengshi-shenjing';
-const TITLE = '风湿免疫与神经系统疾病护理';
+const TITLE = '风湿与神经合成一章，因为两者的失能都比疼痛更早发生';
 
 /** 本章自己反复使用的词：次数由正文现算，不手填 */
 const TERMS = ["功能","关节","吞咽","感觉","双侧"];

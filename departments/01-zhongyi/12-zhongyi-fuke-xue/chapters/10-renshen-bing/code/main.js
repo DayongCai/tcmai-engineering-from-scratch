@@ -16,7 +16,7 @@ const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = 10;
-const TITLE = '妊娠病：一条胎的安全线与一个例外';
+const TITLE = '妊娠病有一条「胎」的安全线，和一个必须破的例外';
 
 /** 本章正文里反复出现、且分属不同层的六个词 */
 const TERMS = ["胎漏", "胎动不安", "滑胎", "异位妊娠", "安胎", "子痫"];

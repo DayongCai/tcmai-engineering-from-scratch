@@ -12,7 +12,7 @@ const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = 6;
-const TITLE = '心脑急症：时间窗比辨证更硬';
+const TITLE = '心脑急症里，时间窗比证型更硬';
 
 const readDoc = (file = DOC) => fs.readFileSync(file, 'utf8');
 const hanzi = (s) => (String(s).match(/[\u4e00-\u9fff]/g) || []).length;

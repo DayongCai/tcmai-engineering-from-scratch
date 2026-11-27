@@ -16,7 +16,7 @@ const path = require('node:path');
 
 const CHAPTER = '9';
 const SLUG = '09-zhengzhuang-huli';
-const TITLE = '常见症状的中医护理';
+const TITLE = '症状护理的第一步是把症状问成可比较的量';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 
 // 样例记录取自本章正文的写法示例，逐条过规则，看它落在哪一类。

@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '16';
 const SLUG = '16-drugs-for-neurodegenerative-diseases';
-const TITLE = '抗神经退行性疾病药：补递质，不阻止丢失';
+const TITLE = '现有药物只补偿递质、不阻止神经元丢失，效应的上限由残存神经元决定';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

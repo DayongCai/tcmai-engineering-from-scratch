@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = 9;
 const SLUG = '09-naoxi-shenzhi';
-const TITLE = '脑系与神志病证临床护理';
+const TITLE = '脑系护理的每次交接，都要能回答「比上一班好还是坏」';
 
 function readDoc() {
   return fs.readFileSync(DOC, 'utf8');

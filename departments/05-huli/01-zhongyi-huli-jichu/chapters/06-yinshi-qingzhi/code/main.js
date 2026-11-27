@@ -16,7 +16,7 @@ const path = require('node:path');
 
 const CHAPTER = '6';
 const SLUG = '06-yinshi-qingzhi';
-const TITLE = '饮食起居与情志护理';
+const TITLE = '日常调护的量在节律，不在「吃点好的」';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 
 // 样例记录取自本章正文的写法示例，逐条过规则，看它落在哪一类。

@@ -16,7 +16,7 @@ const path = require('node:path');
 
 const CHAPTER = '2';
 const SLUG = '02-lilun-yingyong';
-const TITLE = '中医基础理论在护理中的应用';
+const TITLE = '基础理论给的不是证名，是「哪一头偏了」的方向';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 
 // 样例记录取自本章正文的写法示例，逐条过规则，看它落在哪一类。

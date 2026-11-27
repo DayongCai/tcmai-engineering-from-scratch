@@ -20,7 +20,7 @@ const path = require('node:path');
 
 const CHAPTER = 7;
 const SLUG = '07-miniao-xitong';
-const TITLE = '泌尿系统';
+const TITLE = '尿不是滤出来的，而是滤过之后被逐段改写的结果';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

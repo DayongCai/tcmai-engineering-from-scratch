@@ -25,7 +25,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 1;
 const SLUG = '01-daodi-gainian';
-const TITLE = '道地药材的概念与源流';
+const TITLE = '道地不是产地标签，而是「产区—品种—工艺」三证合一';
 
 const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 const count = (text, term) => String(text).split(term).length - 1;

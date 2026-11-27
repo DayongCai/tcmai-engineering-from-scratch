@@ -22,7 +22,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 6;
 const SLUG = '06-quankou-yinmo';
-const TITLE = '全口义齿的印模与模型：初印模、个别托盘、终印模';
+const TITLE = '全口义齿的固位，一半在印模室里就已经决定';
 
 const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 const docLines = (doc) => String(doc).replace(/\r\n/g, '\n').split('\n');

@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '34';
 const SLUG = '34-adrenocortical-hormones';
-const TITLE = '肾上腺皮质激素类药：一个受体，两套效应';
+const TITLE = '糖皮质激素的一个受体给出两套效应，剂量与疗程因此是分类的一列而非附注';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

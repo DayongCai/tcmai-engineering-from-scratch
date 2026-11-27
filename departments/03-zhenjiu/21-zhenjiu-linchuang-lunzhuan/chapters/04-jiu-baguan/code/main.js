@@ -21,7 +21,7 @@ const QUIZ = path.join(DIR, '..', 'quiz.json');
 
 const CHAPTER = '4';
 const SLUG = '04-jiu-baguan';
-const TITLE = '灸法与拔罐的适应证与意外处置';
+const TITLE = '灸罐这一站先划边界，边界之内才轮到手感';
 
 const hz = (s) => (String(s || '').match(/[\u4e00-\u9fff]/g) || []).length;
 

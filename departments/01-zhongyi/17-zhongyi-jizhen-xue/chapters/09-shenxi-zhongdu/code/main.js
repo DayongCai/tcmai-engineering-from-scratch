@@ -12,7 +12,7 @@ const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = 9;
-const TITLE = '肾系与中毒急症：闭与毒';
+const TITLE = '闭与毒：一个算尿量，一个算时间';
 
 const readDoc = (file = DOC) => fs.readFileSync(file, 'utf8');
 const hanzi = (s) => (String(s).match(/[\u4e00-\u9fff]/g) || []).length;

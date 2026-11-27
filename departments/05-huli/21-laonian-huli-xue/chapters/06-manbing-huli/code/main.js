@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = '6';
 const SLUG = '06-manbing-huli';
-const TITLE = '老年常见慢性病的护理基础';
+const TITLE = '慢病护理的目标不是把指标压到正常，是让功能不掉';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 
 /** 本章要求学生能指着正文说清楚的判据（必须真出现在正文里，测试会核对） */

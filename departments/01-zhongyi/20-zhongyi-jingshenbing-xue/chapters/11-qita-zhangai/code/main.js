@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = 11;
 const SLUG = '11-qita-zhangai';
-const TITLE = '其他精神障碍：酒、儿童、围产期';
+const TITLE = '酒、儿童、产妇：三类人各有不能照搬的方';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

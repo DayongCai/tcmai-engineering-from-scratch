@@ -20,7 +20,7 @@ const path = require('node:path');
 
 const CHAPTER = 13;
 const SLUG = '13-xueye-yu-neihuanjing';
-const TITLE = '血液与内环境稳态';
+const TITLE = '稳态不是「不变」，而是一条允许波动的容差带';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

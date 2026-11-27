@@ -15,7 +15,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const CHAPTER = 13;
-const TITLE = '风证门（M01）';
+const TITLE = '风证门：判据词是「动」，定处之痛不算风';
 const SLUG = '13-m01-feng-men';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 

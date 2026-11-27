@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '26';
 const SLUG = '26-antiarrhythmic-drugs';
-const TITLE = '抗心律失常药：治与致同源';
+const TITLE = '抗心律失常药既能治心律失常也能致心律失常，因为动的是同一台电生理机器';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

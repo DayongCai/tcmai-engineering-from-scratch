@@ -15,7 +15,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const CHAPTER = 24;
-const TITLE = '虚证门（M12）';
+const TITLE = '虚证门：证最多的一门，虚必兼滞或兼脱';
 const SLUG = '24-m12-xu-men';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 

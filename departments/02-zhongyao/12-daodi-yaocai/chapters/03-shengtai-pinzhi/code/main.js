@@ -25,7 +25,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 3;
 const SLUG = '03-shengtai-pinzhi';
-const TITLE = '生态因子与品质形成';
+const TITLE = '品质差异一半写在地里，一半写在采收与加工那几天';
 
 const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 const count = (text, term) => String(text).split(term).length - 1;

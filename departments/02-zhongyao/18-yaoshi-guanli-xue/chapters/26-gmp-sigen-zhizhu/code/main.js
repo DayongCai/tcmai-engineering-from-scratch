@@ -34,7 +34,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = '26';
 const SLUG = '26-gmp-sigen-zhizhu';
-const TITLE = 'GMP 的四根支柱：验证、变更、偏差、回顾';
+const TITLE = '一次合格证明不了下一次，合格要靠四根支柱咬合';
 
 const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
 const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));

@@ -12,7 +12,7 @@ const path = require('node:path');
 
 const CHAPTER = 9;
 const SLUG = '09-miniao-shenjing';
-const TITLE = '泌尿与神经系统疾病的护理';
+const TITLE = '神经观察先问「和昨天比变了没有」，再问「现在几分」';
 const FOCUS = ["基线","瞳孔","抽搐","袖带"];
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 

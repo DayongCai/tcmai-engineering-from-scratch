@@ -20,7 +20,7 @@ const path = require('node:path');
 
 const CHAPTER = 4;
 const SLUG = '04-liaoxiao-anquan';
-const TITLE = '疗效与安全性评价';
+const TITLE = '疗效评价的诚实度，取决于安全指标有没有和疗效指标一起报';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

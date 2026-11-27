@@ -34,7 +34,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = '27';
 const SLUG = '27-gsp-zuzhi';
-const TITLE = 'GSP 的组织条件：体系、人员与设施';
+const TITLE = 'GSP 的组织条件要随规模同步长，只扩仓库不扩人';
 
 const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
 const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));

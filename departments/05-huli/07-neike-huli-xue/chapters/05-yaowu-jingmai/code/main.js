@@ -18,7 +18,7 @@ const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');
 const CHAPTER = 5;
 const SLUG = '05-yaowu-jingmai';
-const TITLE = '药物治疗与静脉治疗的护理安全';
+const TITLE = '给药的错很少错在没对上，多错在对上之后再没有人看那一眼';
 
 /** 本章自己反复使用的词：次数由正文现算，不手填 */
 const TERMS = ["核对","观察","处置","标本","回看"];

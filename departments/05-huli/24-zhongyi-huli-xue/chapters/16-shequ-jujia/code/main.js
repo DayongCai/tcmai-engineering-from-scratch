@@ -15,7 +15,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
-const TITLE = '第 16 章 社区与居家中医护理';
+const TITLE = '居家护理把观察权交给了不会写记录的家属';
 const KEYWORDS = ["随访","社区","居家","家属","红线","转介"];
 
 const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;

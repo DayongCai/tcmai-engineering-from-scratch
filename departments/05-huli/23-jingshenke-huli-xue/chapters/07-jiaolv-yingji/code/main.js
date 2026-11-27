@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = 7;
 const SLUG = '07-jiaolv-yingji';
-const TITLE = '焦虑与应激相关障碍的护理';
+const TITLE = '焦虑病人的"我没事"，多数时候是"我说不出来"而不是"真的没事"';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

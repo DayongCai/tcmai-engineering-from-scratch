@@ -34,7 +34,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = '2';
 const SLUG = '02-shenqingren';
-const TITLE = '申请人资格与法律责任';
+const TITLE = '申请人资格是责任锚点：担不起责的主体不该出现在申报书上';
 
 const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
 const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));

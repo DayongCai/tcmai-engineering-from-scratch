@@ -25,7 +25,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 3;
 const SLUG = '03-chaofa';
-const TITLE = '炒法：清炒与加辅料炒';
+const TITLE = '炒法考的是终点，不是火候：火候只是通往终点的一段路';
 
 const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 const count = (text, term) => String(text).split(term).length - 1;

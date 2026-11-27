@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '43';
 const SLUG = '43-tetracyclines-and-chloramphenicol';
-const TITLE = '四环素类与氯霉素类：宽谱的代价';
+const TITLE = '四环素类与氯霉素类编在一章不是因为同构，而是同一种「宽谱的代价」';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

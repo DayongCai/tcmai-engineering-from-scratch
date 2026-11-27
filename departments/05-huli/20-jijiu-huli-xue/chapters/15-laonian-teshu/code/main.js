@@ -26,7 +26,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 15;
 const SLUG = '15-laonian-teshu';
-const TITLE = '老年与特殊人群急症的急救护理';
+const TITLE = '老年急症的危险在于「看起来不重」';
 
 /** 本章反复用来判读的词：正文靠它们做论证，就核它们 */
 const KEY_TERMS = ['基线', '新发谵妄', '功能退步', '用药清单', '教学设定'];

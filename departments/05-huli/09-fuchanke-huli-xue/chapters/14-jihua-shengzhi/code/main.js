@@ -14,7 +14,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
-const TITLE = '第 14 章 计划生育护理';
+const TITLE = '计划生育护理的立场只有一条：决定权在当事人手里';
 const KEYWORDS = ["意愿","告知","避孕","咨询","回述","记录","隐私"];
 
 const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;

@@ -12,7 +12,7 @@ const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = 3;
-const TITLE = '急诊常见症状的鉴别：五个入口';
+const TITLE = '鉴别的功夫不在排病名，在给每个入口配一条出口';
 
 const readDoc = (file = DOC) => fs.readFileSync(file, 'utf8');
 const hanzi = (s) => (String(s).match(/[\u4e00-\u9fff]/g) || []).length;

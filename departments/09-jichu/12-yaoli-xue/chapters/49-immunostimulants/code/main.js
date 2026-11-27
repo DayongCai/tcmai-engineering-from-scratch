@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '49';
 const SLUG = '49-immunostimulants';
-const TITLE = '免疫增强药：方向相反，道理相同';
+const TITLE = '免疫增强药与抑制药方向相反但道理相同，佐剂离开抗原就只剩局部炎症';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

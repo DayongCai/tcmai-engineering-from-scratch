@@ -21,7 +21,7 @@ const doc = fs.readFileSync(DOC, 'utf8');
 const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
 
 const CH = '6';
-const TITLE = '经络的病理反应与诊断意义';
+const TITLE = '病候是一张定位表，不是一份症状清单';
 
 const hz = (s) => (s.match(/[\u4e00-\u9fff]/g) || []).length;
 const secs = (doc.match(/^## /gm) || []).length;

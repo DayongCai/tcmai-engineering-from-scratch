@@ -15,7 +15,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
-const TITLE = '第 2 章 中医护理的理论基础';
+const TITLE = '阴阳五行不是哲学装饰，是护理观察里最省事的两把尺';
 const KEYWORDS = ["阴阳","虚实","观察","五行","藏象","经络","病因"];
 
 const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;

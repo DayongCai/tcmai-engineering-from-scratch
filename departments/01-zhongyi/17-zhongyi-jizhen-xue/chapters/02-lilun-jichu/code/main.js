@@ -12,7 +12,7 @@ const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = 2;
-const TITLE = '理论基础：邪盛正衰与气机逆乱';
+const TITLE = '邪盛正衰不是一句断言，是一条能读出方向的轴';
 
 const readDoc = (file = DOC) => fs.readFileSync(file, 'utf8');
 const hanzi = (s) => (String(s).match(/[\u4e00-\u9fff]/g) || []).length;

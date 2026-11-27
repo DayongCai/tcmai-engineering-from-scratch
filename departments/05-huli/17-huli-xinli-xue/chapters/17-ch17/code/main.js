@@ -16,7 +16,7 @@ const path = require('node:path');
 
 const CHAPTER = 17;
 const SLUG = '17-ch17';
-const TITLE = '社区与家庭心理护理';
+const TITLE = '社区随访的一半工时，注定要交给家属去用';
 const TERMS = ['随访', '照护者', '失访', '转介'];
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');

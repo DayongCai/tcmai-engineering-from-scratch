@@ -12,7 +12,7 @@ const path = require('node:path');
 
 const CHAPTER = 6;
 const SLUG = '06-huxi';
-const TITLE = '呼吸系统疾病的护理';
+const TITLE = '呼吸变快是孩子最先付的代价，也最晚被看见';
 const FOCUS = ["鼻翼扇动","三凹征","呼气呻吟","吸吮中断"];
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 

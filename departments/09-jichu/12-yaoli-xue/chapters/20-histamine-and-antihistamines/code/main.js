@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '20';
 const SLUG = '20-histamine-and-antihistamines';
-const TITLE = '组胺与抗组胺药：两代的分野在能否进入中枢';
+const TITLE = '两代 H1 抗组胺药的分野不在强弱，而在能不能进入中枢';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

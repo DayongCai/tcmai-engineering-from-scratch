@@ -34,7 +34,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = '22';
 const SLUG = '22-shishitiao-zengliang';
-const TITLE = '实施条例的增量：委托、网络、免责与激励';
+const TITLE = '条例的增量写在三处：不能做、可以不罚、做了有奖';
 
 const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
 const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));

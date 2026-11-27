@@ -20,7 +20,7 @@ const path = require('node:path');
 
 const CHAPTER = 3;
 const SLUG = '03-fangfa-shixian';
-const TITLE = '方法与系统实现';
+const TITLE = '系统上线前要能回答一句：这条建议错了，谁负责';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

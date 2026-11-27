@@ -16,7 +16,7 @@ const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = 8;
-const TITLE = '月经病（二）：闭经、崩漏与十二个经行病';
+const TITLE = '两个大病在「血」，十二个小病在「周期与全身」';
 
 /** 本章正文里反复出现、且分属不同层的六个词 */
 const TERMS = ["闭经", "崩漏", "塞流", "澄源", "复旧", "血枯"];

@@ -15,7 +15,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
-const TITLE = '第 14 章 中医护理文书与记录';
+const TITLE = '护理文书不是事后补记，是当时就能被复核的判断';
 const KEYWORDS = ["记录","交接","观察","签名","去标识化","最小必要"];
 
 const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;

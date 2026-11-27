@@ -14,7 +14,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
-const TITLE = '心病科轮转：胸痹与心悸的辨证接诊';
+const TITLE = '心病科的第一道分水岭是「胸痹」还是「心悸」';
 const TERMS = [
   "胸痹",
   "心悸",

@@ -21,7 +21,7 @@ const QUIZ = path.join(DIR, '..', 'quiz.json');
 
 const CHAPTER = '5';
 const SLUG = '05-tuina-lunzhuan';
-const TITLE = '推拿科轮转';
+const TITLE = '推拿这一站考的不是会不会做，是第十次还一样不一样';
 
 const hz = (s) => (String(s || '').match(/[\u4e00-\u9fff]/g) || []).length;
 

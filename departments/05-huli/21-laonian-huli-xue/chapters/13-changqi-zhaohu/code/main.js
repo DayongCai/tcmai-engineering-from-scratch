@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = '13';
 const SLUG = '13-changqi-zhaohu';
-const TITLE = '老年长期照护与居家照护';
+const TITLE = '长期照护的关键不是照护强度，是照护能持续多久';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 
 /** 本章要求学生能指着正文说清楚的判据（必须真出现在正文里，测试会核对） */

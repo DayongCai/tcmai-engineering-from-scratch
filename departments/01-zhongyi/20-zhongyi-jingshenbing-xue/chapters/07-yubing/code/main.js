@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = 7;
 const SLUG = '07-yubing';
-const TITLE = '郁病：气郁为始，虚损为终';
+const TITLE = '郁病的终点不在肝，在肾——疏肝只解开头一段';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

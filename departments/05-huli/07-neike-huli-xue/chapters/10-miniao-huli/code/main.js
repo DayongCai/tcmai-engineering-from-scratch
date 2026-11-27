@@ -18,7 +18,7 @@ const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');
 const CHAPTER = 10;
 const SLUG = '10-miniao-huli';
-const TITLE = '泌尿系统疾病护理';
+const TITLE = '尿量是内科最诚实的一项指标，前提是有人按同一个口径记';
 
 /** 本章自己反复使用的词：次数由正文现算，不手填 */
 const TERMS = ["尿量","体重","出入量","水肿","口径"];

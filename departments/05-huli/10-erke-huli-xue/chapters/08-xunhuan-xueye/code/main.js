@@ -12,7 +12,7 @@ const path = require('node:path');
 
 const CHAPTER = 8;
 const SLUG = '08-xunhuan-xueye';
-const TITLE = '循环与血液系统疾病的护理';
+const TITLE = '贫血的脸不会说话，会说话的是活动耐量和生长速度';
 const FOCUS = ["活动耐量","生长速度","灌注","毛细血管再充盈"];
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 

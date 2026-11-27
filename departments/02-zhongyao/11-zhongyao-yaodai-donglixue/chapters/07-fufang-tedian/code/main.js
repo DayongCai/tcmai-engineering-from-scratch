@@ -25,7 +25,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 7;
 const SLUG = '07-fufang-tedian';
-const TITLE = '中药复方药动学特点';
+const TITLE = '复方的暴露是一条谱，不是一个点';
 
 const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 const count = (text, term) => String(text).split(term).length - 1;

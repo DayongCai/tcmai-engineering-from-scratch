@@ -26,7 +26,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 5;
 const SLUG = '05-xinbo-junting';
-const TITLE = '心搏骤停与心肺复苏的护理配合';
+const TITLE = '复苏的胜负在按压中断的秒数里';
 
 /** 本章反复用来判读的词：正文靠它们做论证，就核它们 */
 const KEY_TERMS = ['按压中断', '换人', '记录位', '终止', '教学设定'];

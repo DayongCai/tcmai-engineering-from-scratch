@@ -15,7 +15,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
-const TITLE = '第 7 章 外科与妇科病证的辨证施护';
+const TITLE = '外科看皮肤，妇科看隐私，两条线都不能靠「忍一忍」过去';
 const KEYWORDS = ["皮肤","体位","禁忌","隐私","观察","坐浴"];
 
 const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;

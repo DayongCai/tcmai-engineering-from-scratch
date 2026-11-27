@@ -15,7 +15,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
-const TITLE = '第 1 章 中医护理学概述';
+const TITLE = '中医护理的第一步不是操作，是把证说清楚';
 const KEYWORDS = ["护理","辨证","记录","施护","四诊","外治","禁忌"];
 
 const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;

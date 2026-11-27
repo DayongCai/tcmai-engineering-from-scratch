@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '22';
 const SLUG = '22-drugs-acting-on-cardiovascular-ion-channels';
-const TITLE = '离子通道药：效应取决于通道状态';
+const TITLE = '离子通道药的效应取决于通道处于什么状态，而不只取决于阻滞哪种离子';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

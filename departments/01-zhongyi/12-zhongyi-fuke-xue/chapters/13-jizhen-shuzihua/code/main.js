@@ -16,7 +16,7 @@ const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = 13;
-const TITLE = '急症与数字化：四类急症，一条可算的链';
+const TITLE = '四类急症，一条可算的链';
 
 /** 本章正文里反复出现、且分属不同层的六个词 */
 const TERMS = ["异位妊娠", "四联征", "编码", "知识图谱", "病证单元", "急症"];

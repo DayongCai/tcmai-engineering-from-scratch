@@ -20,7 +20,7 @@ const path = require('node:path');
 
 const CHAPTER = 14;
 const SLUG = '14-xunhuan-huxi-tiaojie';
-const TITLE = '血液循环与呼吸功能调节';
+const TITLE = '循环与呼吸不是两个系统，是一条链的两段';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

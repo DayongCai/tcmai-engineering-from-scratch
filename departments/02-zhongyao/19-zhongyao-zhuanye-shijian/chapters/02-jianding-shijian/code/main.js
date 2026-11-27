@@ -17,7 +17,7 @@ const path = require('node:path');
 
 const CHAPTER = '2';
 const SLUG = '02-jianding-shijian';
-const TITLE = '鉴定实验室实践：性状与显微鉴定';
+const TITLE = '眼睛先看，显微镜只回答眼睛答不了的那一问';
 
 function findRoot(start) {
   let dir = start;

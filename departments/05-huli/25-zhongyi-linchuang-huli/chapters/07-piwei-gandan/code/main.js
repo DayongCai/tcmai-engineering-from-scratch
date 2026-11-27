@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = 7;
 const SLUG = '07-piwei-gandan';
-const TITLE = '脾胃与肝胆病证临床护理';
+const TITLE = '脾胃肝胆的护理窗口在二便与腹痛，不在胃口好坏';
 
 function readDoc() {
   return fs.readFileSync(DOC, 'utf8');

@@ -21,7 +21,7 @@ const doc = fs.readFileSync(DOC, 'utf8');
 const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
 
 const CH = '3';
-const TITLE = '奇经八脉的循行与功能';
+const TITLE = '奇经八脉不是十二经的备用线，而是气血的蓄水池';
 
 const hz = (s) => (s.match(/[\u4e00-\u9fff]/g) || []).length;
 const secs = (doc.match(/^## /gm) || []).length;

@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '28';
 const SLUG = '28-diuretics-and-dehydrating-agents';
-const TITLE = '利尿药与脱水药：不在同一侧发力';
+const TITLE = '利尿药动的是管腔侧转运体，脱水药靠的是血管侧渗透压，两者不在同一侧发力';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

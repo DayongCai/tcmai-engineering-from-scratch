@@ -19,7 +19,7 @@ const DOC = path.join(DIR, '..', 'docs', 'zh.md');
 const QUIZ = path.join(DIR, '..', 'quiz.json');
 
 const CH = '6';
-const TITLE = '神经卡压';
+const TITLE = '这一章叫神经卡压，而「卡压」二字在 11,230 字正文里一次都没出现';
 
 const doc = fs.readFileSync(DOC, 'utf8');
 const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));

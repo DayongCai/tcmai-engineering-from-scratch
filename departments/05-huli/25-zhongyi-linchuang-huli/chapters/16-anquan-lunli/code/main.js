@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = 16;
 const SLUG = '16-anquan-lunli';
-const TITLE = '临床护理安全、伦理与质量管理';
+const TITLE = '护理安全的成本，永远低于一次补救';
 
 function readDoc() {
   return fs.readFileSync(DOC, 'utf8');

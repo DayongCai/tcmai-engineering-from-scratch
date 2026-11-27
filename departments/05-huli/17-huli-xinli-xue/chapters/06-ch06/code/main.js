@@ -16,7 +16,7 @@ const path = require('node:path');
 
 const CHAPTER = 6;
 const SLUG = '06-ch06';
-const TITLE = '心理支持与心理疏导的要求';
+const TITLE = '支持不是让他别难过，是让他不必一个人难过';
 const TERMS = ['陪伴', '形态', '缺口', '条件'];
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');

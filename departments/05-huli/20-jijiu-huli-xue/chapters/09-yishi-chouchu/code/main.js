@@ -26,7 +26,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 9;
 const SLUG = '09-yishi-chouchu';
-const TITLE = '意识障碍与抽搐的急救护理';
+const TITLE = '抽搐的护理全在「不做什么」上';
 
 /** 本章反复用来判读的词：正文靠它们做论证，就核它们 */
 const KEY_TERMS = ['发作后', '首次发作', '不按压', '计时', '教学设定'];

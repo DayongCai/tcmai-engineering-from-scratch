@@ -22,7 +22,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 7;
 const SLUG = '07-yipang-cadcam';
-const TITLE = '椅旁 CAD/CAM 固定义齿：适应证、预备与后处理';
+const TITLE = '椅旁修复把加工厂搬进诊室，也把全部误差留在同一天';
 
 const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 const docLines = (doc) => String(doc).replace(/\r\n/g, '\n').split('\n');

@@ -20,7 +20,7 @@ const path = require('node:path');
 
 const CHAPTER = 15;
 const SLUG = '15-xiaohua-nengliang-daixie';
-const TITLE = '消化吸收与能量代谢';
+const TITLE = '吸收的关键不是「吃进去」，而是面积与回流同时到位';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

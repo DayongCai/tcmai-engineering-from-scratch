@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '33';
 const SLUG = '33-drugs-affecting-coagulation';
-const TITLE = '影响凝血的药物：一条线上的四段';
+const TITLE = '抗凝与溶栓不是强弱两档，而是一个管「不再长」、一个管「已经长的」';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

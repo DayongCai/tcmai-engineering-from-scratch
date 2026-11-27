@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '13';
 const SLUG = '13-sedative-hypnotics';
-const TITLE = '镇静催眠药：同一机制上的剂量档位';
+const TITLE = '镇静与催眠是同一机制上的剂量档位，不是一个管入睡、一个管维持';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

@@ -16,7 +16,7 @@ const path = require('node:path');
 
 const CHAPTER = '7';
 const SLUG = '07-chengxu';
-const TITLE = '护理程序与中医护理';
+const TITLE = '护理程序把「我看出来了」变成「别人能接上」';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 
 // 样例记录取自本章正文的写法示例，逐条过规则，看它落在哪一类。

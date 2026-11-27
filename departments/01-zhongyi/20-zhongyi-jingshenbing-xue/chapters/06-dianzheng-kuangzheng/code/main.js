@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = 6;
 const SLUG = '06-dianzheng-kuangzheng';
-const TITLE = '癫证与狂证：一阴一阳，一静一躁';
+const TITLE = '癫与狂不是两种病，是同一个「痰」的两种温度';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

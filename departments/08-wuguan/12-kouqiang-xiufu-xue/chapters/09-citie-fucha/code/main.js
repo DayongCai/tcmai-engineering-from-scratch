@@ -22,7 +22,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 9;
 const SLUG = '09-citie-fucha';
-const TITLE = '瓷贴面的复查与并发症：功能、美学、生物学三条线';
+const TITLE = '复查不是看一眼，三条线各自抓到不同的失败';
 
 const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 const docLines = (doc) => String(doc).replace(/\r\n/g, '\n').split('\n');

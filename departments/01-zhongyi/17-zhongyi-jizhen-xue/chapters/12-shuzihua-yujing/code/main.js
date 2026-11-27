@@ -12,7 +12,7 @@ const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = 12;
-const TITLE = '中医急诊数字化与智能预警：早半小时';
+const TITLE = '预警的价值不在早报，在少报错——早半小时要用误报率换';
 
 const readDoc = (file = DOC) => fs.readFileSync(file, 'utf8');
 const hanzi = (s) => (String(s).match(/[\u4e00-\u9fff]/g) || []).length;

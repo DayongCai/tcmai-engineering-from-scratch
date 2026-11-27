@@ -12,7 +12,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
-const TITLE = '护理研究的选题与问题化';
+const TITLE = '好选题不是灵感，是把一句抱怨压成一个能算的缺口';
 
 function docText() {
   return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');

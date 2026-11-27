@@ -19,7 +19,7 @@ const DOC = path.join(DIR, '..', 'docs', 'zh.md');
 const QUIZ = path.join(DIR, '..', 'quiz.json');
 
 const CH = '3';
-const TITLE = '软组织解剖与病理';
+const TITLE = '粘连、瘢痕、挛缩不是三种病，是同一条修复链上的三个时相';
 
 const doc = fs.readFileSync(DOC, 'utf8');
 const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));

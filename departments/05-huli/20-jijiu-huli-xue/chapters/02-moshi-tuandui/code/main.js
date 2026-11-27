@@ -26,7 +26,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 2;
 const SLUG = '02-moshi-tuandui';
-const TITLE = '急救护理的工作模式与团队协作';
+const TITLE = '分工是提前写好的，现场只做确认';
 
 /** 本章反复用来判读的词：正文靠它们做论证，就核它们 */
 const KEY_TERMS = ['移交动作', '闭合环', '位置先定', '复述', '未做及原因', '教学设定'];

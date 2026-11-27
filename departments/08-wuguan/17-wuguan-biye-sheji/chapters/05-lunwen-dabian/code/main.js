@@ -20,7 +20,7 @@ const path = require('node:path');
 
 const CHAPTER = 5;
 const SLUG = '05-lunwen-dabian';
-const TITLE = '论文写作与答辩';
+const TITLE = '综述里每一句「历代认为」，都要能落到一本具体的书';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

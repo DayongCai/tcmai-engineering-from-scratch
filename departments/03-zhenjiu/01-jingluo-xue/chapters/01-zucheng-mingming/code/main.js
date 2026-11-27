@@ -21,7 +21,7 @@ const doc = fs.readFileSync(DOC, 'utf8');
 const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
 
 const CH = '1';
-const TITLE = '经络系统的组成与命名';
+const TITLE = '经络不是血管的别名，而是一套分层的通道系统';
 
 const hz = (s) => (s.match(/[\u4e00-\u9fff]/g) || []).length;
 const secs = (doc.match(/^## /gm) || []).length;

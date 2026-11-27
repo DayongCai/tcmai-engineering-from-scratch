@@ -25,7 +25,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 8;
 const SLUG = '08-fangfaxue-guifan';
-const TITLE = '方法学与研究规范';
+const TITLE = '方法学的门槛不在仪器，在于别人能不能重做一遍';
 
 const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 const count = (text, term) => String(text).split(term).length - 1;

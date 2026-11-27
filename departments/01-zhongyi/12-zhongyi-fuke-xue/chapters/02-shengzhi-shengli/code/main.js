@@ -16,7 +16,7 @@ const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = 2;
-const TITLE = '生理：一台四段换挡的发动机';
+const TITLE = '月经不是每月一次出血，而是一台四段换挡的发动机';
 
 /** 本章正文里反复出现、且分属不同层的六个词 */
 const TERMS = ["藏泻", "胞宫", "天癸", "冲任", "氤氲", "带下"];

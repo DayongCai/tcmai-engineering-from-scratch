@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = 5;
 const SLUG = '05-feixi';
-const TITLE = '肺系病证临床护理';
+const TITLE = '肺系护理的第一件事不是止咳，是分清痰在哪一头、气还剩多少';
 
 function readDoc() {
   return fs.readFileSync(DOC, 'utf8');

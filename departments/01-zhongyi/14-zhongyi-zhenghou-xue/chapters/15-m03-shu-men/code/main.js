@@ -15,7 +15,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const CHAPTER = 15;
-const TITLE = '暑证门（M03）';
+const TITLE = '暑证门：门最小，季节性最强，湿与热的分量最难分';
 const SLUG = '15-m03-shu-men';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 

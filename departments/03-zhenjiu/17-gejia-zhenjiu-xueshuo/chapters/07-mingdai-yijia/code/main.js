@@ -37,7 +37,7 @@ const UNITS = path.join(ROOT, 'standards', 'zhenjiu-gejia', 'units.json');
 
 const CHAPTER = '7';
 const SLUG = '07-mingdai-yijia';
-const TITLE = '明代针灸医家学术思想';
+const TITLE = '明代七家编的不是七种学说，是七种全书体例';
 
 const load = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
 

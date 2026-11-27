@@ -12,7 +12,7 @@ const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = 7;
-const TITLE = '肺系急症：喘的三级与血的一口';
+const TITLE = '喘要分三级，咯血要数口数——肺急症的判断都落在「量」上';
 
 const readDoc = (file = DOC) => fs.readFileSync(file, 'utf8');
 const hanzi = (s) => (String(s).match(/[\u4e00-\u9fff]/g) || []).length;

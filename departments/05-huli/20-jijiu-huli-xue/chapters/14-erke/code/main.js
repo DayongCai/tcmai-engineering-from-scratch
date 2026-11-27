@@ -26,7 +26,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 14;
 const SLUG = '14-erke';
-const TITLE = '儿科急症的急救护理';
+const TITLE = '儿科急救的判据要换算，不能照搬成人';
 
 /** 本章反复用来判读的词：正文靠它们做论证，就核它们 */
 const KEY_TERMS = ['互动性', '体重来源', '日龄', '上抬', '教学设定'];

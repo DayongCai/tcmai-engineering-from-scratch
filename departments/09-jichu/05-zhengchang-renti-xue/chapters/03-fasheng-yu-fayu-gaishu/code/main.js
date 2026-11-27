@@ -20,7 +20,7 @@ const path = require('node:path');
 
 const CHAPTER = 3;
 const SLUG = '03-fasheng-yu-fayu-gaishu';
-const TITLE = '人体发生与发育概述';
+const TITLE = '发育的每一个阶段都是下一阶段的前提，顺序本身就是知识';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

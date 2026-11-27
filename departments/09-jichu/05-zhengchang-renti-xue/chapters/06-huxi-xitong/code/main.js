@@ -20,7 +20,7 @@ const path = require('node:path');
 
 const CHAPTER = 6;
 const SLUG = '06-huxi-xitong';
-const TITLE = '呼吸系统';
+const TITLE = '呼吸不是把气吸进来，而是把胸腔的一次形变换成一次交换';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

@@ -16,7 +16,7 @@ const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = 7;
-const TITLE = '月经病（一）：期、量、时间的三种异常';
+const TITLE = '八个病名，其实只动了四栏里的两个';
 
 /** 本章正文里反复出现、且分属不同层的六个词 */
 const TERMS = ["先期", "后期", "过多", "过少", "痛经", "经间期出血"];

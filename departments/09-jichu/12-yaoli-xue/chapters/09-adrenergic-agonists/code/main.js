@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '9';
 const SLUG = '09-adrenergic-agonists';
-const TITLE = '拟肾上腺素药：效应来自受体分布，不来自药名';
+const TITLE = '拟肾上腺素药的作用来自受体在组织中的分布，而不是药物自身的独特性质';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

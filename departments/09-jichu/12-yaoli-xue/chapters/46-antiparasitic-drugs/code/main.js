@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '46';
 const SLUG = '46-antiparasitic-drugs';
-const TITLE = '抗寄生虫药：在生活史的某一阶段找差别';
+const TITLE = '抗寄生虫药的共同点不是「杀虫」，而是在生活史的某一阶段找到宿主与虫体的差别';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

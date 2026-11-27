@@ -19,7 +19,7 @@ const DOC = path.join(DIR, '..', 'docs', 'zh.md');
 const QUIZ = path.join(DIR, '..', 'quiz.json');
 
 const CH = '7';
-const TITLE = '安全性：禁忌与并发症';
+const TITLE = '这一章讲的全是针灸的禁忌，针刀那几条底本一个字也没写';
 
 const doc = fs.readFileSync(DOC, 'utf8');
 const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));

@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = 16;
 const SLUG = '16-falv-lunli';
-const TITLE = '精神科护理的法律与伦理实践';
+const TITLE = '知情同意不是一张签过字的纸，是一条随时可以撤回的路';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

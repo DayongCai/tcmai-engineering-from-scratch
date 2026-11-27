@@ -12,7 +12,7 @@ const path = require('node:path');
 
 const CHAPTER = 2;
 const SLUG = '02-pinggu-jiankang';
-const TITLE = '儿科护理评估与健康指导';
+const TITLE = '评估难在分清「看到了什么」和「这是什么病」';
 const FOCUS = ["决定项","背景项","随访项","回述"];
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 

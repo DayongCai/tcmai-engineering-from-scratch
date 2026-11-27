@@ -12,7 +12,7 @@ const path = require('node:path');
 
 const CHAPTER = 15;
 const SLUG = '15-baohu-zhiliang';
-const TITLE = '儿童保护、质量风险与平台';
+const TITLE = '报告可疑伤害不是越权，是制度交给护理的第一个动作';
 const FOCUS = ["报告","复盘","临界差错","去标识化"];
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 

@@ -25,7 +25,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 4;
 const SLUG = '04-chengfen-zhuanyun';
-const TITLE = '成分吸收与转运';
+const TITLE = '进了血的成分是被转运体挑过的';
 
 const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 const count = (text, term) => String(text).split(term).length - 1;

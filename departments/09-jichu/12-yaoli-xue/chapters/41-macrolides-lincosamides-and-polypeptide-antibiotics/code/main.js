@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '41';
 const SLUG = '41-macrolides-lincosamides-and-polypeptide-antibiotics';
-const TITLE = '大环内酯类、林可霉素类与多肽类：同靶点不等于能合用';
+const TITLE = '同一个五十S 靶点上的药未必能合用，位点重叠反而会互相抢位';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

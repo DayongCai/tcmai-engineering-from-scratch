@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = 2;
 const SLUG = '02-pinggu-chengxu';
-const TITLE = '临床护理评估与护理程序';
+const TITLE = '护理评估的价值在于把「说不清」变成可复核的记录';
 
 function readDoc() {
   return fs.readFileSync(DOC, 'utf8');

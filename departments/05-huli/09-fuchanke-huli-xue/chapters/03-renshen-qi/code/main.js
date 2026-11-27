@@ -14,7 +14,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
-const TITLE = '第 3 章 孕期随访';
+const TITLE = '孕期随访筛的不是"有没有病"，而是"谁在什么时候必须被叫回来"';
 const KEYWORDS = ["孕期","胎动","预约","信号","记录","宣教","随访"];
 
 const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;

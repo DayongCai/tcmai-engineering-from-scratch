@@ -20,7 +20,7 @@ const path = require('node:path');
 
 const CHAPTER = 16;
 const SLUG = '16-paixie-tiwen-tiye';
-const TITLE = '排泄与体温与体液调节';
+const TITLE = '排出有四条路，体温只靠四个散热点收尾';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

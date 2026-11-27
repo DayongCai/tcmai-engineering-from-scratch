@@ -16,7 +16,7 @@ const path = require('node:path');
 
 const CHAPTER = 13;
 const SLUG = '13-ch13';
-const TITLE = '护士职业心理与压力管理';
+const TITLE = '护士的耗竭不是抗压失败，是长期支出超过收入';
 const TERMS = ['耗竭', '情感劳动', '上报', '支持'];
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');

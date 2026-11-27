@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = '7';
 const SLUG = '07-laonian-zonghezheng';
-const TITLE = '老年综合征护理';
+const TITLE = '老年综合征不是一串小毛病，是同一个底子上的连锁反应';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 
 /** 本章要求学生能指着正文说清楚的判据（必须真出现在正文里，测试会核对） */

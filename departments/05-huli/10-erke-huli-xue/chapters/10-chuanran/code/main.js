@@ -12,7 +12,7 @@ const path = require('node:path');
 
 const CHAPTER = 10;
 const SLUG = '10-chuanran';
-const TITLE = '儿童传染性疾病与感染防控的护理';
+const TITLE = '隔离的第一道屏障不是口罩，是问诊时多问的那一句';
 const FOCUS = ["问三句","分流","空间","手卫生"];
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 

@@ -37,7 +37,7 @@ const UNITS = path.join(ROOT, 'standards', 'zhenjiu-gejia', 'units.json');
 
 const CHAPTER = '5';
 const SLUG = '05-jintang-yijia';
-const TITLE = '晋唐针灸医家学术思想';
+const TITLE = '晋唐的功劳在编书：体例、尺度与存佚';
 
 const load = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
 

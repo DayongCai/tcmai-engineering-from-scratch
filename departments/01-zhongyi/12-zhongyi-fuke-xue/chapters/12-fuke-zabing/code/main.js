@@ -16,7 +16,7 @@ const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = 12;
-const TITLE = '妇科杂病：六个病，六条判据线';
+const TITLE = '六个「不属于经带胎产」的病，各有一条自己的判据线';
 
 /** 本章正文里反复出现、且分属不同层的六个词 */
 const TERMS = ["癥瘕", "不孕", "阴痒", "阴挺", "脏躁", "妇人腹痛"];

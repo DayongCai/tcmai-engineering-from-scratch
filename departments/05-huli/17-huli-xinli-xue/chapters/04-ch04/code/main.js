@@ -16,7 +16,7 @@ const path = require('node:path');
 
 const CHAPTER = 4;
 const SLUG = '04-ch04';
-const TITLE = '护理对象的心理反应与心理需求';
+const TITLE = '同一句「我没事」，在四个年龄段说的是四件不同的事';
 const TERMS = ['阶段', '控制感', '需求', '家属'];
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');

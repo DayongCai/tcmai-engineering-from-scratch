@@ -37,7 +37,7 @@ const UNITS = path.join(ROOT, 'standards', 'zhenjiu-gejia', 'units.json');
 
 const CHAPTER = '4';
 const SLUG = '04-nanjing-shanghan';
-const TITLE = '《难经》与《伤寒杂病论》针灸学术思想';
+const TITLE = '《难经》给穴立规矩，《伤寒论》给用针立次序';
 
 const load = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
 

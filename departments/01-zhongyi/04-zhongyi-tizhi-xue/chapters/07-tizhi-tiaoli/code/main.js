@@ -25,7 +25,7 @@ const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');
 const CHAPTER = 7;
 const SLUG = '07-tizhi-tiaoli';
-const TITLE = '体质调理与治未病：以平为期';
+const TITLE = '调体质的目标是把偏拉回来，不是把人调成标准件';
 
 /** 本章的判据术语：正文靠它们把「目标可测、可停」立住 */
 const TERMS = [

@@ -16,7 +16,7 @@ const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = 5;
-const TITLE = '治疗：六组动作加一个按段换挡';
+const TITLE = '治法不是九个方子，是六组动作加一个「按段换挡」';
 
 /** 本章正文里反复出现、且分属不同层的六个词 */
 const TERMS = ["内治法", "外治法", "调周", "活血化瘀", "补肾", "疏肝"];

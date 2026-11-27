@@ -16,7 +16,7 @@ const path = require('node:path');
 
 const CHAPTER = 18;
 const SLUG = '18-ch18';
-const TITLE = '护理心理学与 tcmP 平台';
+const TITLE = '平台能帮你找到那句话，替不了你说出那句话';
 const TERMS = ['单元', '边界', '依据', '去标识化'];
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');

@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '19';
 const SLUG = '19-central-nervous-system-stimulants';
-const TITLE = '中枢兴奋药：危险在抑制被削弱';
+const TITLE = '中枢兴奋药的危险不在兴奋不足，而在脊髓层被削弱的抑制';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

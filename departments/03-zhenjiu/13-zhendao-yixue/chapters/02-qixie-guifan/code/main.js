@@ -19,7 +19,7 @@ const DOC = path.join(DIR, '..', 'docs', 'zh.md');
 const QUIZ = path.join(DIR, '..', 'quiz.json');
 
 const CH = '2';
-const TITLE = '器械、进针与操作规范';
+const TITLE = '刀口方向是第一条纪律，因为深度错了能退，方向错了切的是另一个结构';
 
 const doc = fs.readFileSync(DOC, 'utf8');
 const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));

@@ -37,7 +37,7 @@ const UNITS = path.join(ROOT, 'standards', 'zhenjiu-gejia', 'units.json');
 
 const CHAPTER = '3';
 const SLUG = '03-neijing-sixiang';
-const TITLE = '《内经》针灸学术思想';
+const TITLE = '《内经》的针道是一条次序，不是一堆刺法';
 
 const load = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
 

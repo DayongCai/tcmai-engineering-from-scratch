@@ -18,7 +18,7 @@ const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');
 const CHAPTER = 14;
 const SLUG = '14-chuanran-zhiliang';
-const TITLE = '传染病护理、质量风险与平台';
+const TITLE = '传染、质量、平台三件事，共用一条「先防住、再留痕」的次序';
 
 /** 本章自己反复使用的词：次数由正文现算，不手填 */
 const TERMS = ["报告","隔离","追踪","记录","风险"];

@@ -34,7 +34,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = '1';
 const SLUG = '01-dingyi-fenlei';
-const TITLE = '药品注册的定义与分类管理';
+const TITLE = '注册不是递材料等批文，而是拿证据换结论的双向程序';
 
 const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
 const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));

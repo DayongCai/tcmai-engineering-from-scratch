@@ -34,7 +34,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = '5';
 const SLUG = '05-anquan-biangeng';
-const TITLE = '试验期间的安全报告与变更控制';
+const TITLE = '试验期间的变化必须留下同步记录，否则数据一律被当作来路不明';
 
 const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
 const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));

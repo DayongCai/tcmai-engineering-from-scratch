@@ -18,7 +18,7 @@ const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');
 const CHAPTER = 7;
 const SLUG = '07-huxi-huli';
-const TITLE = '呼吸系统疾病护理';
+const TITLE = '呼吸的恶化很少是突然的，多半是「再观察一下」攒出来的';
 
 /** 本章自己反复使用的词：次数由正文现算，不手填 */
 const TERMS = ["呼吸","痰","气促","观察","报告"];

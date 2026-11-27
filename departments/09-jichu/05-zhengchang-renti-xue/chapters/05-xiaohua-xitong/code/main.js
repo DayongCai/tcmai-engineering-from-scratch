@@ -20,7 +20,7 @@ const path = require('node:path');
 
 const CHAPTER = 5;
 const SLUG = '05-xiaohua-xitong';
-const TITLE = '消化系统';
+const TITLE = '消化管是一条连续流水线，每一处褶皱都在为吸收记账';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

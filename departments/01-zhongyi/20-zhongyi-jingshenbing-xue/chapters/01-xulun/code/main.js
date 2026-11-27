@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = 1;
 const SLUG = '01-xulun';
-const TITLE = '绪论：精神病学研究的是「神」，不是「脑」';
+const TITLE = '神志病没有化验单，判据只能从「看和问」里长出来';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

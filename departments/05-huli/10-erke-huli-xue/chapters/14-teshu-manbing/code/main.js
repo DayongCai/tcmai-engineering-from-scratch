@@ -12,7 +12,7 @@ const path = require('node:path');
 
 const CHAPTER = 14;
 const SLUG = '14-teshu-manbing';
-const TITLE = '特殊儿童与慢病儿童的护理';
+const TITLE = '慢病照护的目标不是治好，是让日常过得下去';
 const FOCUS = ["一日流程表","依从性","执行人","过渡"];
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 

@@ -34,7 +34,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = '6';
 const SLUG = '06-shenping';
-const TITLE = '审评与审批：结论怎么形成';
+const TITLE = '审评结论要能被换一组人复核，做不到多半是推理链没写出来';
 
 const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
 const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));

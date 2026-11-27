@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = 15;
 const SLUG = '15-wenshu-xinxi';
-const TITLE = '临床护理文书与信息管理';
+const TITLE = '护理文书的效力，取决于它写的是事实还是结论';
 
 function readDoc() {
   return fs.readFileSync(DOC, 'utf8');

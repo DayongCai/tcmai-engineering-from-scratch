@@ -15,7 +15,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const CHAPTER = 20;
-const TITLE = '瘀证门（M08）';
+const TITLE = '瘀证门：判据是定处、色紫、脉涩，三者缺一即疑';
 const SLUG = '20-m08-yu-men';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 

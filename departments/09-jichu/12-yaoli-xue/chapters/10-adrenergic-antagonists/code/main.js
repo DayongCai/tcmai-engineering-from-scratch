@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '10';
 const SLUG = '10-adrenergic-antagonists';
-const TITLE = '抗肾上腺素药：削减驱动的一层';
+const TITLE = '阻断药只取消一层驱动，α1 与 α2 的效应方向相反不是强弱之分';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

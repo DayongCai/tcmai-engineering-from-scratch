@@ -34,7 +34,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = '23';
 const SLUG = '23-yaojing-tixi';
-const TITLE = '药物警戒体系：谁负责、谁执行、靠什么运转';
+const TITLE = '药物警戒靠体系运转，不靠某个人的责任心';
 
 const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
 const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));

@@ -34,7 +34,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = '3';
 const SLUG = '03-shangshi-qian';
-const TITLE = '上市前研究：药学、药理毒理与临床';
+const TITLE = '上市前的四组证据必须同版，否则每份都对、合起来互不支持';
 
 const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
 const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));

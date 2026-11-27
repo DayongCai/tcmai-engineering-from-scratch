@@ -34,7 +34,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = '15';
 const SLUG = '15-jingying';
-const TITLE = '药品经营：许可与 GSP';
+const TITLE = '经营的责任不是把药送到，是送到时它还是原来那批药';
 
 const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
 const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));

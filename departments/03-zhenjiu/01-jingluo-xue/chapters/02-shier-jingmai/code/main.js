@@ -21,7 +21,7 @@ const doc = fs.readFileSync(DOC, 'utf8');
 const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
 
 const CH = '2';
-const TITLE = '十二经脉的走向与交接';
+const TITLE = '十二经的走向不是路线图，而是十二处交接点上的传递规则';
 
 const hz = (s) => (s.match(/[\u4e00-\u9fff]/g) || []).length;
 const secs = (doc.match(/^## /gm) || []).length;

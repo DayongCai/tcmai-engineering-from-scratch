@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = '2';
 const SLUG = '02-shengli-xinli';
-const TITLE = '老年人的生理与心理社会特点';
+const TITLE = '老化不是一条下坡路，而是几条坡度不同的坡';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 
 /** 本章要求学生能指着正文说清楚的判据（必须真出现在正文里，测试会核对） */

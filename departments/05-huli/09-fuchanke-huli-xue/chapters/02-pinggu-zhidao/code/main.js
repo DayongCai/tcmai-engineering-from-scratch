@@ -14,7 +14,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
-const TITLE = '第 2 章 妇产科护理评估';
+const TITLE = '评估的价值不在问了多少项，而在同一件事问第二遍还一致';
 const KEYWORDS = ["评估","单独访谈","回述","一致性","口径","记录","转介"];
 
 const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;

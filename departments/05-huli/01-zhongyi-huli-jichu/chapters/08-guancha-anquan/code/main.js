@@ -16,7 +16,7 @@ const path = require('node:path');
 
 const CHAPTER = '8';
 const SLUG = '08-guancha-anquan';
-const TITLE = '病情观察与安全防护';
+const TITLE = '观察的产出是一条可交接的变化，不是「看了一眼」';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 
 // 样例记录取自本章正文的写法示例，逐条过规则，看它落在哪一类。

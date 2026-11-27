@@ -18,7 +18,7 @@ const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');
 const CHAPTER = 2;
 const SLUG = '02-pinggu-guancha';
-const TITLE = '内科护理评估与病情观察';
+const TITLE = '评估的价值不在第一次问全，而在第二次问得比第一次少';
 
 /** 本章自己反复使用的词：次数由正文现算，不手填 */
 const TERMS = ["评估","复评","记录","趋势","基线"];

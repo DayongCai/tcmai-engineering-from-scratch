@@ -26,7 +26,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 4;
 const SLUG = '04-jishu-peihe';
-const TITLE = '急救常用技术与配合';
+const TITLE = '配合的本事在递对东西，不在做得更多';
 
 /** 本章反复用来判读的词：正文靠它们做论证，就核它们 */
 const KEY_TERMS = ['递错', '递慢', '递多', '让位', '一步四十五度', '教学设定'];

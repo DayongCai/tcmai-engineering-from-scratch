@@ -34,7 +34,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = '12';
 const SLUG = '12-chiyouren';
-const TITLE = '上市许可持有人制度：一个人对全生命周期负责';
+const TITLE = '责任可以外包作业，不能外包给受托人';
 
 const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
 const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));

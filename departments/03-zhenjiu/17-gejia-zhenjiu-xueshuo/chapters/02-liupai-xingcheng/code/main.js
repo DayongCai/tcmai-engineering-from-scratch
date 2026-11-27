@@ -37,7 +37,7 @@ const UNITS = path.join(ROOT, 'standards', 'zhenjiu-gejia', 'units.json');
 
 const CHAPTER = '2';
 const SLUG = '02-liupai-xingcheng';
-const TITLE = '针灸学术流派的形成与分类';
+const TITLE = '流派的判据是三根柱子，不是一张分类表';
 
 const load = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
 

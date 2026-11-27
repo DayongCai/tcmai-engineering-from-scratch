@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '7';
 const SLUG = '07-organophosphates-and-cholinesterase-reactivating-agents';
-const TITLE = '有机磷酸酯类及胆碱酯酶复活药：一个共价键，与它被拆开的时间窗';
+const TITLE = '磷酰化写定了中毒的时间表，老化一旦发生，复活药就失去作用位点';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

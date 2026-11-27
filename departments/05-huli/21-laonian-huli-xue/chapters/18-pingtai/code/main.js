@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = '18';
 const SLUG = '18-pingtai';
-const TITLE = '老年护理学与教学平台';
+const TITLE = '学老年护理，学的不是知识清单，是在信息不全时作判断';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 
 /** 本章要求学生能指着正文说清楚的判据（必须真出现在正文里，测试会核对） */

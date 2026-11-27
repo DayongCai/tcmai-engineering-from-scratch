@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = '10';
 const SLUG = '10-kangfu-huli';
-const TITLE = '老年康复护理';
+const TITLE = '康复不是把力气练回来，是把剩下的能力用到极限';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 
 /** 本章要求学生能指着正文说清楚的判据（必须真出现在正文里，测试会核对） */

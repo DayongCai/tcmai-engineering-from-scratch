@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '1';
 const SLUG = '01-introduction';
-const TITLE = '绪论：一门学科先给提问方式，再给药名';
+const TITLE = '药理学先立的是提问方式，药物改机体与机体处置药物的两个方向决定全书分工';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

@@ -16,7 +16,7 @@ const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = 3;
-const TITLE = '病因病机：四个入口，三条通路';
+const TITLE = '妇科病因不是一张清单，是四个入口接三条通路';
 
 /** 本章正文里反复出现、且分属不同层的六个词 */
 const TERMS = ["入口", "通路", "冲任", "胞宫", "气随血脱", "病机"];

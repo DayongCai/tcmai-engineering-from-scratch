@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = 9;
 const SLUG = '09-qizhi-laonian';
-const TITLE = '器质性与老年精神障碍的护理';
+const TITLE = '老年精神症状的第一鉴别永远是谵妄，而不是抑郁';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

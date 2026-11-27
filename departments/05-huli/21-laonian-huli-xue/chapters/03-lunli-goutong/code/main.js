@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = '3';
 const SLUG = '03-lunli-goutong';
-const TITLE = '老年护理伦理与沟通';
+const TITLE = '知情同意不是签字，是把选择权交回本人';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 
 /** 本章要求学生能指着正文说清楚的判据（必须真出现在正文里，测试会核对） */

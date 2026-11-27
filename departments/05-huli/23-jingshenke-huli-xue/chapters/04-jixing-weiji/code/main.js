@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = 4;
 const SLUG = '04-jixing-weiji';
-const TITLE = '急性期与危机状态的护理';
+const TITLE = '危机处置的第一分钟，用的不是技术而是距离';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

@@ -20,7 +20,7 @@ const path = require('node:path');
 
 const CHAPTER = 6;
 const SLUG = '06-zhishi-yijiao';
-const TITLE = '知识移交：诊疗路径与交接';
+const TITLE = '移交的不是结论，是「哪条解剖标志对应哪条经」的对照表';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

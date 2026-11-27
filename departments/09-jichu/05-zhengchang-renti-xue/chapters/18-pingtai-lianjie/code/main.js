@@ -20,7 +20,7 @@ const path = require('node:path');
 
 const CHAPTER = 18;
 const SLUG = '18-pingtai-lianjie';
-const TITLE = '正常人体学与 tcmP 平台';
+const TITLE = '知识库的价值不在存了多少条，而在每条都写得出依据与边界';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

@@ -22,7 +22,7 @@ const DOC = path.join(DIR, '..', 'docs', 'zh.md');
 const QUIZ = path.join(DIR, '..', 'quiz.json');
 
 const CH = '28';
-const TITLE = '五官科病证：局部开窍加远端引经';
+const TITLE = '五官五病共用一条路径：局部开窍、远端引火下行，代价是引文全部悬空';
 const KEYS = ["引文","按语","风池"];
 
 const doc = fs.readFileSync(DOC, 'utf8');

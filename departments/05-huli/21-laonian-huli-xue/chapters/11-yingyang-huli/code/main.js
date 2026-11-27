@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = '11';
 const SLUG = '11-yingyang-huli';
-const TITLE = '老年营养与饮食护理';
+const TITLE = '老年营养的入口不在食谱，在牙齿和吞咽';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 
 /** 本章要求学生能指着正文说清楚的判据（必须真出现在正文里，测试会核对） */

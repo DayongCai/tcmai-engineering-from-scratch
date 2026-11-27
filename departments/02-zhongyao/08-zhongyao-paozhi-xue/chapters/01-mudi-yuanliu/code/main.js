@@ -25,7 +25,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 1;
 const SLUG = '01-mudi-yuanliu';
-const TITLE = '炮制的目的与历史源流';
+const TITLE = '炮制不是一道加工工序，而是药材变成药的那一步';
 
 const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 const count = (text, term) => String(text).split(term).length - 1;

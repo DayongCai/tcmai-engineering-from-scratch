@@ -26,7 +26,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 8;
 const SLUG = '08-xiongton-futong';
-const TITLE = '胸痛与急性腹痛的急救护理';
+const TITLE = '胸腹痛的分水岭是时间轴，不是疼痛程度';
 
 /** 本章反复用来判读的词：正文靠它们做论证，就核它们 */
 const KEY_TERMS = ['时间轴', '必问项', '禁食', '鉴别', '教学设定'];

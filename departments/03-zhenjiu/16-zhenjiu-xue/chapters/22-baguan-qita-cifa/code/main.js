@@ -22,7 +22,7 @@ const DOC = path.join(DIR, '..', 'docs', 'zh.md');
 const QUIZ = path.join(DIR, '..', 'quiz.json');
 
 const CH = '22';
-const TITLE = '拔罐及其他刺法：主语是器具的可调参数';
+const TITLE = '这一章的主语不是穴位，而是器具的可调参数';
 const KEYS = ["留针","皮内针","禁止电流回路通过心脏"];
 
 const doc = fs.readFileSync(DOC, 'utf8');

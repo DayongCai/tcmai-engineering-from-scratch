@@ -12,7 +12,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
-const TITLE = '护理研究中的伦理审查';
+const TITLE = '伦理审查不是盖章，是替不能到场的人提问';
 
 function docText() {
   return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');

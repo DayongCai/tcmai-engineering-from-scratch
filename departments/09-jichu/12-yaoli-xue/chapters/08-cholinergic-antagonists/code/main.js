@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '8';
 const SLUG = '08-cholinergic-antagonists';
-const TITLE = '抗胆碱药：阻断只削掉一层张力';
+const TITLE = '抗胆碱药本身不产生效应，它显示的只是原有张力的对比';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

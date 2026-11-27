@@ -20,7 +20,7 @@ const path = require('node:path');
 
 const CHAPTER = 11;
 const SLUG = '11-shenjing-xitong';
-const TITLE = '神经系统';
+const TITLE = '神经系统的分层不是目录，而是信号必须逐级换手的地方';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

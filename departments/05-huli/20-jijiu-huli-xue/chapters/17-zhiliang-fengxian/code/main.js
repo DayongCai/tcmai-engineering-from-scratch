@@ -26,7 +26,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 17;
 const SLUG = '17-zhiliang-fengxian';
-const TITLE = '急救护理质量与风险管理';
+const TITLE = '质量指标的价值在口径，不在排名';
 
 /** 本章反复用来判读的词：正文靠它们做论证，就核它们 */
 const KEY_TERMS = ['口径', '漏报', '系统原因', '时限', '教学设定'];

@@ -15,7 +15,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const CHAPTER = 23;
-const TITLE = '食证门（M11）';
+const TITLE = '食证门：证最少的一门，判据是恶食与酸腐';
 const SLUG = '23-m11-shiji-men';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 

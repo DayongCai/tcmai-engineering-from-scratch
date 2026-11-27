@@ -20,7 +20,7 @@ const path = require('node:path');
 
 const CHAPTER = 1;
 const SLUG = '01-gaishu-yu-cengci';
-const TITLE = '正常人体学概述与人体构造层次';
+const TITLE = '人体不是零件的堆叠，而是可逐层追问的构造体系';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

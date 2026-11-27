@@ -16,7 +16,7 @@ const path = require('node:path');
 
 const CHAPTER = 11;
 const SLUG = '11-ch11';
-const TITLE = '老年与临终患者的心理护理';
+const TITLE = '临终照护最难的，是把「还能做什么」说到最后一刻';
 const TERMS = ['基线', '孤独', '意愿', '临终'];
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');

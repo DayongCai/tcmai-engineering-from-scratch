@@ -34,7 +34,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = '10';
 const SLUG = '10-zhongyao-tese';
-const TITLE = '中药注册的特殊性';
+const TITLE = '中药注册的特殊性不在放宽标准，而在证据形态不同';
 
 const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
 const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));

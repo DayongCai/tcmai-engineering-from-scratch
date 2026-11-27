@@ -18,7 +18,7 @@ const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');
 const CHAPTER = 1;
 const SLUG = '01-gaishu-lilun';
-const TITLE = '内科护理概述与理论基础';
+const TITLE = '不诊断不等于不判断：内科护理的分寸全在观察的颗粒度上';
 
 /** 本章自己反复使用的词：次数由正文现算，不手填 */
 const TERMS = ["观察","报告","记录","复评","基线"];

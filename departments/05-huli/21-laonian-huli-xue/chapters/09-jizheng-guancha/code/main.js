@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = '9';
 const SLUG = '09-jizheng-guancha';
-const TITLE = '老年常见急症与病情观察';
+const TITLE = '老年急症的第一信号常常不是主诉，是功能突然掉下来';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 
 /** 本章要求学生能指着正文说清楚的判据（必须真出现在正文里，测试会核对） */

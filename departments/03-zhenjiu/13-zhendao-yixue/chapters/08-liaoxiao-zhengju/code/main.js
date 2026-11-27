@@ -19,7 +19,7 @@ const DOC = path.join(DIR, '..', 'docs', 'zh.md');
 const QUIZ = path.join(DIR, '..', 'quiz.json');
 
 const CH = '8';
-const TITLE = '疗效评价与循证';
+const TITLE = '这一章讲的全是针灸的证据，针刀的证据一条也没有';
 
 const doc = fs.readFileSync(DOC, 'utf8');
 const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));

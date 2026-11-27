@@ -21,7 +21,7 @@ const QUIZ = path.join(DIR, '..', 'quiz.json');
 
 const CHAPTER = '3';
 const SLUG = '03-mian-tan';
-const TITLE = '面瘫与周围神经损伤轮转';
+const TITLE = '面瘫这一站先问窗口，窗口判错，手法方向就是反的';
 
 const hz = (s) => (String(s || '').match(/[\u4e00-\u9fff]/g) || []).length;
 

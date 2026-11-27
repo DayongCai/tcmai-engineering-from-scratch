@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = 10;
 const SLUG = '10-waike';
-const TITLE = '外科病证临床护理';
+const TITLE = '外科护理的分寸，在画出红肿的边界、看清脓的性状';
 
 function readDoc() {
   return fs.readFileSync(DOC, 'utf8');

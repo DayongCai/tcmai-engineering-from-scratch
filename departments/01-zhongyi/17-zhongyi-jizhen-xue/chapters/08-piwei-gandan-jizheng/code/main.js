@@ -12,7 +12,7 @@ const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = 8;
-const TITLE = '脾胃肝胆急症：吐泻、急腹症、急黄';
+const TITLE = '吐泻看脱水，腹痛看能不能开刀，急黄看神志';
 
 const readDoc = (file = DOC) => fs.readFileSync(file, 'utf8');
 const hanzi = (s) => (String(s).match(/[\u4e00-\u9fff]/g) || []).length;

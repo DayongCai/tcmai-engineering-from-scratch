@@ -12,7 +12,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
-const TITLE = '文献检索与系统评价';
+const TITLE = '检索式写不出来的那一块，就是你没想清的那一块';
 
 function docText() {
   return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');

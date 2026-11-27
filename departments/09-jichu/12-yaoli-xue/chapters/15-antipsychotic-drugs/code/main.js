@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '15';
 const SLUG = '15-antipsychotic-drugs';
-const TITLE = '抗精神病药：治疗与不良反应同源';
+const TITLE = '抗精神病药的治疗作用与不良反应出自同一条受体通路，分开讲就讲不通';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

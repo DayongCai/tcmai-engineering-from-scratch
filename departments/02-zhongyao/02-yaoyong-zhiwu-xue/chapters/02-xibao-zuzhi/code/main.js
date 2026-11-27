@@ -14,7 +14,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const CH = 2;
-const TITLE = '把显微镜下的空腔读成层序、细胞与内容物';
+const TITLE = '显微鉴定看的不是细胞，是细胞壁与后含物留下的证据';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');
 

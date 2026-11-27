@@ -15,7 +15,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const CHAPTER = 14;
-const TITLE = '寒证门（M02）';
+const TITLE = '寒证门：判据是收引与澄彻，厥得越深越要查真假';
 const SLUG = '14-m02-han-men';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 

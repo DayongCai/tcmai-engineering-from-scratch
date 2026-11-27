@@ -25,7 +25,7 @@ const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');
 const CHAPTER = 6;
 const SLUG = '06-tizhi-liuxing';
-const TITLE = '体质与疾病易感性：横向数据只能看共现';
+const TITLE = '证候表能算出共现，算不出谁会得病';
 
 /** 本章的判据术语：正文靠它们把「横向数据只能看共现」立住 */
 const TERMS = [

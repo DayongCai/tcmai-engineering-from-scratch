@@ -20,7 +20,7 @@ const path = require('node:path');
 
 const CHAPTER = 4;
 const SLUG = '04-yundong-xitong';
-const TITLE = '运动系统';
+const TITLE = '骨是支架、关节是许可、肌是动力，三者缺一动作就不成立';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

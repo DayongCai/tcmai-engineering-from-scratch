@@ -16,7 +16,7 @@ const path = require('node:path');
 
 const CHAPTER = '12';
 const SLUG = '12-jiankang-jiaoyu-zhiliang';
-const TITLE = '健康教育、康复与质量管理';
+const TITLE = '健康教育的成果是患者做对，不是我们讲过';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 
 // 样例记录取自本章正文的写法示例，逐条过规则，看它落在哪一类。

@@ -20,7 +20,7 @@ const path = require('node:path');
 
 const CHAPTER = 1;
 const SLUG = '01-xuan-ti';
-const TITLE = '选题：从专科问题到可验证命题';
+const TITLE = '选题不是挑一个病名，是把一句主诉压到可测的指标上';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

@@ -22,7 +22,7 @@ const DOC = path.join(DIR, '..', 'docs', 'zh.md');
 const QUIZ = path.join(DIR, '..', 'quiz.json');
 
 const CH = '26';
-const TITLE = '妇儿科病证：三条轴，不是两个科';
+const TITLE = '妇儿科不按「科」分，按周期、胎位、发育三条轴分';
 const KEYS = ["辨证","三阴交","至阴"];
 
 const doc = fs.readFileSync(DOC, 'utf8');

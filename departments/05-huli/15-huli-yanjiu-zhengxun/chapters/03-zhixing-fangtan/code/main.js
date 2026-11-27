@@ -12,7 +12,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
-const TITLE = '质性研究与访谈分析';
+const TITLE = '质性研究不是聊天，是把重复说的话听成结构';
 
 function docText() {
   return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');

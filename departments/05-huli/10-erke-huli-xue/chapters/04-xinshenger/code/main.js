@@ -12,7 +12,7 @@ const path = require('node:path');
 
 const CHAPTER = 4;
 const SLUG = '04-xinshenger';
-const TITLE = '新生儿与早产儿的护理';
+const TITLE = '新生儿的「不对劲」只差半度，靠的是他自己那条基线';
 const FOCUS = ["基线","矫正月龄","呼吸做功","黄疸"];
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 

@@ -17,7 +17,7 @@ const path = require('node:path');
 
 const CHAPTER = '5';
 const SLUG = '05-yaofang-suifang';
-const TITLE = '药房与临床用药随访';
+const TITLE = '随访问不出"怎么煎的、怎么吃的"，疗效与不良反应都无从归因';
 
 function findRoot(start) {
   let dir = start;

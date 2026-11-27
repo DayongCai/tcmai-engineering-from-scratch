@@ -34,7 +34,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = '16';
 const SLUG = '16-fenlei-wangluo-guanggao';
-const TITLE = '处方药分类、网络销售与广告管制';
+const TITLE = '线上不创造新的豁免，只把信息不对称搬到了屏幕这一侧';
 
 const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
 const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));

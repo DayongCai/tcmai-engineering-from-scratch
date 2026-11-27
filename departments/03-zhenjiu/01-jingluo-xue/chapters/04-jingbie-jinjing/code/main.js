@@ -21,7 +21,7 @@ const doc = fs.readFileSync(DOC, 'utf8');
 const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
 
 const CH = '4';
-const TITLE = '经别、经筋与皮部，以及经气的纵横坐标';
+const TITLE = '经别经筋皮部只是配件，四街四海才是经气的纵横坐标';
 
 const hz = (s) => (s.match(/[\u4e00-\u9fff]/g) || []).length;
 const secs = (doc.match(/^## /gm) || []).length;

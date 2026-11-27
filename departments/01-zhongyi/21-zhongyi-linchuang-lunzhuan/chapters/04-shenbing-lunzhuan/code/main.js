@@ -14,7 +14,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
-const TITLE = '肾病科轮转：水肿与淋证的辨证接诊';
+const TITLE = '水肿与淋证都关于水，虚实一分治法就分道';
 const TERMS = [
   "水肿",
   "淋证",

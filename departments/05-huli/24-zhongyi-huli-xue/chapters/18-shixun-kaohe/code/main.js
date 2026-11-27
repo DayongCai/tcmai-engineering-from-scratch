@@ -15,7 +15,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
-const TITLE = '第 18 章 中医护理技术实训与考核导引';
+const TITLE = '考核考的不是做对一次，是知道什么时候不该做';
 const KEYWORDS = ["安全","记录","评价","告知","中止","评分"];
 
 const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;

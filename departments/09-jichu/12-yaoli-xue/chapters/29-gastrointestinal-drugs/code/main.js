@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '29';
 const SLUG = '29-gastrointestinal-drugs';
-const TITLE = '消化系统药：三条路径互相制约';
+const TITLE = '抗溃疡药的三条路径互相制约，所以分类不能按化学结构切';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

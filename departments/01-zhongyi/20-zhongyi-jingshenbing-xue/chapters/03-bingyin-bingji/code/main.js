@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = 3;
 const SLUG = '03-bingyin-bingji';
-const TITLE = '病因病机：七情、痰火、瘀虚';
+const TITLE = '七情不是「想不开」，是气机停在了某个方向';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

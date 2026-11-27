@@ -22,7 +22,7 @@ const DOC = path.join(DIR, '..', 'docs', 'zh.md');
 const QUIZ = path.join(DIR, '..', 'quiz.json');
 
 const CH = '30';
-const TITLE = '针灸现代研究与数字化：靠数字立论';
+const TITLE = '现代研究章靠数字立论：75 个数字串，三条古籍只作背书';
 const KEYS = ["数字","标准","引文"];
 
 const doc = fs.readFileSync(DOC, 'utf8');

@@ -19,7 +19,7 @@ const DOC = path.join(DIR, '..', 'docs', 'zh.md');
 const QUIZ = path.join(DIR, '..', 'quiz.json');
 
 const CH = '4';
-const TITLE = '颈肩腰腿痛';
+const TITLE = '颈肩腰腿痛是针刀最主要的适应证群，因为这一群里痛的位置最常不是病灶的位置';
 
 const doc = fs.readFileSync(DOC, 'utf8');
 const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));

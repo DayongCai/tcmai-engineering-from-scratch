@@ -26,7 +26,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 10;
 const SLUG = '10-zhongdu-yiwai';
-const TITLE = '急性中毒与意外伤害的急救护理';
+const TITLE = '中毒现场的第一件事是别让自己成为第二个患者';
 
 /** 本章反复用来判读的词：正文靠它们做论证，就核它们 */
 const KEY_TERMS = ['现场信息', '途径', '去污', '两人同行', '教学设定'];

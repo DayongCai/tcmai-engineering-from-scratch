@@ -16,7 +16,7 @@ const path = require('node:path');
 
 const CHAPTER = 15;
 const SLUG = '15-ch15';
-const TITLE = '护理团队沟通与协作心理';
+const TITLE = '交接漏掉的那句话，通常是最难开口的那句';
 const TERMS = ['交接', '心理安全', '复述', '待办'];
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');

@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = 5;
 const SLUG = '05-jingshen-fenlie';
-const TITLE = '精神分裂症及相关障碍的护理';
+const TITLE = '和幻觉争辩一次，等于替那个声音做了一次免费宣传';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

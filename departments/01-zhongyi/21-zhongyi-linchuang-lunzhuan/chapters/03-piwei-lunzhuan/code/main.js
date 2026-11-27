@@ -14,7 +14,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
-const TITLE = '脾胃病科轮转：胃痞与泄泻的辨证接诊';
+const TITLE = '胃痞与泄泻同属脾胃，升降反作时只能先救一头';
 const TERMS = [
   "胃痞",
   "泄泻",

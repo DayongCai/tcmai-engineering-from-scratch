@@ -14,7 +14,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const CH = 5;
-const TITLE = '花程式与果型：一句话读出一朵花，一层关系定一个果';
+const TITLE = '果实错判的根子都在花部：子房位置定果型，果型定药材名';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');
 

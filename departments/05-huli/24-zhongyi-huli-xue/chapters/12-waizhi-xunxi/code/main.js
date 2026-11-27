@@ -15,7 +15,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
-const TITLE = '第 12 章 中药外治与熏洗技术';
+const TITLE = '外治的边界在皮肤：药力越强，越要先问皮能不能受';
 const KEYWORDS = ["外治","熏洗","敷","禁忌","报告","皮肤"];
 
 const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;

@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '4';
 const SLUG = '04-factors-affecting-drug-response';
-const TITLE = '影响药物效应的因素：三组因素、两端框架、一条记录链';
+const TITLE = '效应差异先问落在过程端还是反应性端，答不出就等于还没有分析';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

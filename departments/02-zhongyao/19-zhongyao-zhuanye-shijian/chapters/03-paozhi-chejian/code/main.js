@@ -17,7 +17,7 @@ const path = require('node:path');
 
 const CHAPTER = '3';
 const SLUG = '03-paozhi-chejian';
-const TITLE = '炮制车间实践：工艺与质控点';
+const TITLE = '车间里没有「炒熟了」，只有炒到哪一步必须停';
 
 function findRoot(start) {
   let dir = start;

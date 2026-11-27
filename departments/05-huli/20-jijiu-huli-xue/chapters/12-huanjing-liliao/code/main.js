@@ -26,7 +26,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 12;
 const SLUG = '12-huanjing-liliao';
-const TITLE = '环境与理化因素所致急症的急救护理';
+const TITLE = '环境急症的第一处置是改变环境，不是改变人';
 
 /** 本章反复用来判读的词：正文靠它们做论证，就核它们 */
 const KEY_TERMS = ['切断来源', '皮肤四项', '环境位', '起始时刻', '教学设定'];

@@ -34,7 +34,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = '18';
 const SLUG = '18-shangshihou-jiancha';
-const TITLE = '上市后管理与不良反应监测';
+const TITLE = '监测的成果不是报表数量，是它改过哪一个用药决定';
 
 const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
 const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));

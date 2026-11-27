@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = 3;
 const SLUG = '03-jiben-jineng';
-const TITLE = '基本技能与治疗配合';
+const TITLE = '治疗配合的核心不是把药送进嘴，是让病人知道自己在吃什么';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

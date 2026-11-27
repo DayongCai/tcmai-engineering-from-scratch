@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '12';
 const SLUG = '12-general-anesthetics';
-const TITLE = '全身麻醉药：分类只给坐标，不给名次';
+const TITLE = '全身麻醉药的分类只给坐标不给名次，机制是网络而不是一把锁';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

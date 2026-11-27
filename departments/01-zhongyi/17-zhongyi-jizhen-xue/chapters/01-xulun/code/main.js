@@ -12,7 +12,7 @@ const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = 1;
-const TITLE = '绪论：急诊学研究的不是病，是「正在恶化的人」';
+const TITLE = '急诊学的对象不是病，是那条还在下坠的曲线';
 
 const readDoc = (file = DOC) => fs.readFileSync(file, 'utf8');
 const hanzi = (s) => (String(s).match(/[\u4e00-\u9fff]/g) || []).length;

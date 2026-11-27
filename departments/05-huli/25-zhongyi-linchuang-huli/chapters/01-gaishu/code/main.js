@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = 1;
 const SLUG = '01-gaishu';
-const TITLE = '中医临床护理学概述';
+const TITLE = '中医临床护理的分水岭在辨清寒热虚实之后，不在手法熟练';
 
 function readDoc() {
   return fs.readFileSync(DOC, 'utf8');

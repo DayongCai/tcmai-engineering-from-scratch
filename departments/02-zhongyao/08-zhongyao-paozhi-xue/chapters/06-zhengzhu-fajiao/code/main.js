@@ -25,7 +25,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 6;
 const SLUG = '06-zhengzhu-fajiao';
-const TITLE = '蒸煮燀与发酵';
+const TITLE = '水火共制是两道题：水进不进得去，酶死没死';
 
 const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 const count = (text, term) => String(text).split(term).length - 1;

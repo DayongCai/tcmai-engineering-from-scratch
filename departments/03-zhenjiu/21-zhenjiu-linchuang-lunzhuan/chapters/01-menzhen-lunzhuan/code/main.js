@@ -21,7 +21,7 @@ const QUIZ = path.join(DIR, '..', 'quiz.json');
 
 const CHAPTER = '1';
 const SLUG = '01-menzhen-lunzhuan';
-const TITLE = '针灸科门诊轮转：颈肩腰腿痛的接诊与配穴';
+const TITLE = '门诊这一站，先学会停手，再学会配穴';
 
 const hz = (s) => (String(s || '').match(/[\u4e00-\u9fff]/g) || []).length;
 

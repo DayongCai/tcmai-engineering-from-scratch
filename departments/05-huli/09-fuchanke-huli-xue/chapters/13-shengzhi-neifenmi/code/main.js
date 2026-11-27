@@ -14,7 +14,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
-const TITLE = '第 13 章 生殖内分泌护理';
+const TITLE = '内分泌护理的第一课是"周期会说话"，第二课是"别替她定时间"';
 const KEYWORDS = ["周期","不孕","生育","时点","记录","宣教","转介"];
 
 const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;

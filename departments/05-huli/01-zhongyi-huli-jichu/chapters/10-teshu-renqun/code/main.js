@@ -16,7 +16,7 @@ const path = require('node:path');
 
 const CHAPTER = '10';
 const SLUG = '10-teshu-renqun';
-const TITLE = '老年、小儿与孕产妇护理基础';
+const TITLE = '特殊人群的差别在「同一动作要改哪几处」';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 
 // 样例记录取自本章正文的写法示例，逐条过规则，看它落在哪一类。

@@ -22,7 +22,7 @@ const DOC = path.join(DIR, '..', 'docs', 'zh.md');
 const QUIZ = path.join(DIR, '..', 'quiz.json');
 
 const CH = '29';
-const TITLE = '急症及其他病证：八证写得最省';
+const TITLE = '急症八证写得最省：八张方共用内关，最薄的一节给了高热';
 const KEYS = ["内关","按语","急症"];
 
 const doc = fs.readFileSync(DOC, 'utf8');

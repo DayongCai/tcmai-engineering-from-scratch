@@ -21,7 +21,7 @@ const QUIZ = path.join(DIR, '..', 'quiz.json');
 
 const CHAPTER = '6';
 const SLUG = '06-chuke-kaohe';
-const TITLE = '出科考核与病例复盘';
+const TITLE = '出科考核要能指到环节，指不到环节的复盘等于没复盘';
 
 const hz = (s) => (String(s || '').match(/[\u4e00-\u9fff]/g) || []).length;
 

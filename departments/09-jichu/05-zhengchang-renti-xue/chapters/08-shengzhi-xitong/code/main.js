@@ -20,7 +20,7 @@ const path = require('node:path');
 
 const CHAPTER = 8;
 const SLUG = '08-shengzhi-xitong';
-const TITLE = '生殖系统';
+const TITLE = '生殖系统的关键在于一条通路，而不在于器官清单';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

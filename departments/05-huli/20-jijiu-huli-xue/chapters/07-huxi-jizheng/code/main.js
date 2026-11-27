@@ -26,7 +26,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 7;
 const SLUG = '07-huxi-jizheng';
-const TITLE = '呼吸急症的急救护理';
+const TITLE = '呼吸急症的判断全在「说不出整句话」上';
 
 /** 本章反复用来判读的词：正文靠它们做论证，就核它们 */
 const KEY_TERMS = ['语言台阶', '呼吸做功', '复检', '声音改变', '教学设定'];

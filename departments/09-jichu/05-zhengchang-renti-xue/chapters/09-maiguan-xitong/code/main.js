@@ -20,7 +20,7 @@ const path = require('node:path');
 
 const CHAPTER = 9;
 const SLUG = '09-maiguan-xitong';
-const TITLE = '脉管系统';
+const TITLE = '两条回路、四道瓣膜、一套传导：心既是泵，也是路由';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

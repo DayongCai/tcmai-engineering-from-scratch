@@ -37,7 +37,7 @@ const UNITS = path.join(ROOT, 'standards', 'zhenjiu-gejia', 'units.json');
 
 const CHAPTER = '6';
 const SLUG = '06-songjinyuan-yijia';
-const TITLE = '宋金元针灸医家学术思想';
+const TITLE = '宋金元把穴定成标准，把时间算成取穴依据';
 
 const load = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
 

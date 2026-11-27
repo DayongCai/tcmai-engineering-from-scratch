@@ -26,7 +26,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 1;
 const SLUG = '01-gaishu';
-const TITLE = '急救护理学概述';
+const TITLE = '急救护理学的起点是把不可逆点往前推';
 
 /** 本章反复用来判读的词：正文靠它们做论证，就核它们 */
 const KEY_TERMS = ['复检间隔', '过度分诊', '漏诊', '记录位', '完成标志', '教学设定'];

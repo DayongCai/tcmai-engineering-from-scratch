@@ -16,7 +16,7 @@ const path = require('node:path');
 
 const CHAPTER = 7;
 const SLUG = '07-ch07';
-const TITLE = '心理危机的识别与转介';
+const TITLE = '危机靠问出来，不靠看出来';
 const TERMS = ['四问', '信号', '陪伴', '转介'];
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');

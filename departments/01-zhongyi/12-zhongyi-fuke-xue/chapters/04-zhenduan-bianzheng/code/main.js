@@ -16,7 +16,7 @@ const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = 4;
-const TITLE = '诊断与辨证：把「期量色质」填进四栏';
+const TITLE = '四诊不是四个动作，是把「期量色质」填进四栏';
 
 /** 本章正文里反复出现、且分属不同层的六个词 */
 const TERMS = ["四栏", "三审", "舌质", "舌苔", "癥瘕", "辨证"];

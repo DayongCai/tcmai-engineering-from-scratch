@@ -15,7 +15,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
-const TITLE = '第 15 章 中医护理安全与质量';
+const TITLE = '安全事件的根因多半在交接，不在操作';
 const KEYWORDS = ["报告","安全","核对","交接","未遂","指标"];
 
 const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;

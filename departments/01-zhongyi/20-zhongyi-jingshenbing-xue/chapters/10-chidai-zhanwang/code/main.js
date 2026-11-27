@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = 10;
 const SLUG = '10-chidai-zhanwang';
-const TITLE = '痴呆与谵妄：慢的与急的两种「神乱」';
+const TITLE = '一个慢一个急：痴呆要缓图，谵妄要先查因';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

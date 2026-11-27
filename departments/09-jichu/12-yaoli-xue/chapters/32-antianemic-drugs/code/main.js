@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '32';
 const SLUG = '32-antianemic-drugs';
-const TITLE = '抗贫血药：补的是三个层次';
+const TITLE = '抗贫血药补的是三个不同层次，血象恢复的先后次序本身就是观察项目';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

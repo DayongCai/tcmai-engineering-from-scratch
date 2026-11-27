@@ -16,7 +16,7 @@ const path = require('node:path');
 
 const CHAPTER = '11';
 const SLUG = '11-wenshu-lunli';
-const TITLE = '护理文书、伦理与依法执业';
+const TITLE = '记录既是照护的痕迹，也是执业的证据';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 
 // 样例记录取自本章正文的写法示例，逐条过规则，看它落在哪一类。

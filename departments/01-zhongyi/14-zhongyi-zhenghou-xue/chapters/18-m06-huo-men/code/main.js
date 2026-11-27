@@ -15,7 +15,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const CHAPTER = 18;
-const TITLE = '火证门（M06）';
+const TITLE = '火证门：门最大，判据是急迫，不是热';
 const SLUG = '18-m06-huo-men';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 

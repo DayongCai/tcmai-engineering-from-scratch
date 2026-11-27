@@ -16,7 +16,7 @@ const { readDoc, grab, auditQuiz, banner, finish } = require(path.join(__dirname
 
 const SLUG = '01-tongyong-liucheng';
 const NO = 1;
-const TITLE = '通用流程与基本要求';
+const TITLE = '毕业设计的硬标准是别人能重跑，不是结论漂亮';
 const doc = readDoc(SLUG).text;
 
 const total = grab(doc, /PROBLEM:\*\*\s*(\d+)\s*个案例里/, '案例总数');

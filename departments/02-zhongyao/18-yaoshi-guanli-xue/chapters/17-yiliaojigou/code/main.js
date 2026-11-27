@@ -34,7 +34,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = '17';
 const SLUG = '17-yiliaojigou';
-const TITLE = '医疗机构药事管理';
+const TITLE = '审方的价值不在改处方，在给药之前发现不该发生的错误';
 
 const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
 const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));

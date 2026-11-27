@@ -14,7 +14,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
-const TITLE = '第 7 章 分娩并发症';
+const TITLE = '产后出血不是"看出血"，是"算出变化"';
 const KEYWORDS = ["出血","速率","宫底","记录","呼救","判断","趋势"];
 
 const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;

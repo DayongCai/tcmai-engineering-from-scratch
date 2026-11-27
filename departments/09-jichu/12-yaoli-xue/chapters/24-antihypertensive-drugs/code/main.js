@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '24';
 const SLUG = '24-antihypertensive-drugs';
-const TITLE = '抗高血压药：终点是覆盖整个给药间隔';
+const TITLE = '降压的终点不是把数字降下来，而是让覆盖撑过整个给药间隔';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

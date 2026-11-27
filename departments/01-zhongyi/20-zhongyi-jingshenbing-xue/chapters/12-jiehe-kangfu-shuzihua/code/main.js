@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = 12;
 const SLUG = '12-jiehe-kangfu-shuzihua';
-const TITLE = '中西医结合、康复与数字化：边界写清楚才算合作';
+const TITLE = '合作的边界写在纸面上，才算合作';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

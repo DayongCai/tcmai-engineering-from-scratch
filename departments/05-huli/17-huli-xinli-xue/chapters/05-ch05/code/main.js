@@ -16,7 +16,7 @@ const path = require('node:path');
 
 const CHAPTER = 5;
 const SLUG = '05-ch05';
-const TITLE = '护患关系与治疗性沟通';
+const TITLE = '信任不靠态度好，靠可预测';
 const TERMS = ['信任', '可预测', '边界', '兑现'];
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');

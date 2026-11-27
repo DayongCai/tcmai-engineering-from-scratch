@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = 12;
 const SLUG = '12-fuchanke';
-const TITLE = '妇产科病证临床护理';
+const TITLE = '妇产护理要先分清「该来多少」与「来得太快」';
 
 function readDoc() {
   return fs.readFileSync(DOC, 'utf8');

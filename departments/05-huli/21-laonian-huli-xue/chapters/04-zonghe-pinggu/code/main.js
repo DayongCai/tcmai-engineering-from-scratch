@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = '4';
 const SLUG = '04-zonghe-pinggu';
-const TITLE = '老年综合评估基础';
+const TITLE = '评估不是把项目做全，是把可干预的挑出来';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 
 /** 本章要求学生能指着正文说清楚的判据（必须真出现在正文里，测试会核对） */

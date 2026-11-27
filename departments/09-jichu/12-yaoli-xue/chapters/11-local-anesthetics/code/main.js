@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '11';
 const SLUG = '11-local-anesthetics';
-const TITLE = '局部麻醉药：穿膜与结合是两件事';
+const TITLE = '碱基型负责穿膜、阳离子型负责结合，感觉先于运动的顺序决定了观察表分栏';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

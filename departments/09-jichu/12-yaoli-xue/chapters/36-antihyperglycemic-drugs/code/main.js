@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '36';
 const SLUG = '36-antihyperglycemic-drugs';
-const TITLE = '降血糖药：先按途径，再按环节';
+const TITLE = '降血糖药先按途径分两支、再按环节分组，化学结构排不进第一层';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

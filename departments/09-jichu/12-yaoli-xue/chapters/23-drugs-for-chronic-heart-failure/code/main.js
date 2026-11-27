@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '23';
 const SLUG = '23-drugs-for-chronic-heart-failure';
-const TITLE = '抗慢性心功能不全药：中心环节不是泵弱了';
+const TITLE = '慢性心衰的中心环节是重构与神经内分泌激活，不是「泵弱了」这一个直觉';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

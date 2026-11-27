@@ -15,7 +15,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
-const TITLE = '第 3 章 中医护理的评估方法';
+const TITLE = '四诊的价值不在全，在于每一诊都能落成一个能被复核的字段';
 const KEYWORDS = ["问诊","记录","评估","望诊","闻诊","切诊","复核"];
 
 const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;

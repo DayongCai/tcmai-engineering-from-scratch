@@ -26,7 +26,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 14;
 const SLUG = '14-jibing-jiance-gongwei';
-const TITLE = '监测不是「报表越多越好」，而是同一口径下的连续追问';
+const TITLE = '监测不是"报表越多越好"，而是同一口径下的连续追问';
 
 /* ── 文本口径 ─────────────────────────────────────────────────────── */
 

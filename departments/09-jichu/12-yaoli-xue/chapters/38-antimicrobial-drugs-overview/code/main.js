@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '38';
 const SLUG = '38-antimicrobial-drugs-overview';
-const TITLE = '抗微生物药物概论：地基是选择性毒性';
+const TITLE = '抗微生物治疗的地基是选择性毒性，离开「只伤病原体」这一步就没有化疗';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = '16';
 const SLUG = '16-zhiliang-tuandui';
-const TITLE = '老年护理质量管理与团队协作';
+const TITLE = '质量不是查出来的，是流程里长出来的';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 
 /** 本章要求学生能指着正文说清楚的判据（必须真出现在正文里，测试会核对） */

@@ -20,7 +20,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = '1';
 const SLUG = '01-e11';
-const TITLE = '四区不是四个器官，是四个入口';
+const TITLE = '四区不是四个器官，是四个入口：一本书凭什么装得下耳鼻咽喉口齿';
 
 /** 各表格的期望数据行数（不含表头与分隔行），按出现顺序：位置表、脏腑归属表、三栏表 */
 const TABLE_ROWS = [4, 8, 3];

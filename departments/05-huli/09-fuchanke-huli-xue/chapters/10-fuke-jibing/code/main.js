@@ -14,7 +14,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
-const TITLE = '第 10 章 妇科疾病护理';
+const TITLE = '妇科护理最难的一步，是把"说不出口"问成一句可用的话';
 const KEYWORDS = ["主诉","隐私","冲洗","转介","疼痛","记录","宣教"];
 
 const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;

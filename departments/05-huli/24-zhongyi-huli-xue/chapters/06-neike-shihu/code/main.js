@@ -15,7 +15,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
-const TITLE = '第 6 章 内科常见病证的辨证施护';
+const TITLE = '内科护理的分水岭不在病名，在同一个病名下的三个证';
 const KEYWORDS = ["报告","观察","安全","禁忌","评价","急变"];
 
 const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;

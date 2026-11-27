@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = 8;
 const SLUG = '08-qiangpo-tixing';
-const TITLE = '强迫与躯体形式相关障碍的护理';
+const TITLE = '不要替病人完成仪式，也不要在他做仪式时打断';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

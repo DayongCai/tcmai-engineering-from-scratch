@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '45';
 const SLUG = '45-antituberculosis-and-antileprosy-drugs';
-const TITLE = '抗结核病药与抗麻风病药：菌群不同步';
+const TITLE = '结核菌群不同步，一种药治到底在机制上就不可能覆盖全部菌群';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

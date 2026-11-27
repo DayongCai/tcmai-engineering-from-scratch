@@ -25,7 +25,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 5;
 const SLUG = '05-daixie-daixiewu';
-const TITLE = '代谢与代谢物';
+const TITLE = '代谢不是减活，是把外来物改成能排出去的形状';
 
 const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 const count = (text, term) => String(text).split(term).length - 1;

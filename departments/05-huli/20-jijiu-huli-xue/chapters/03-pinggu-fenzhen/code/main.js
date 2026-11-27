@@ -26,7 +26,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 3;
 const SLUG = '03-pinggu-fenzhen';
-const TITLE = '急救评估与预检分诊';
+const TITLE = '分诊的准确率不是算出来的，是复检出来的';
 
 /** 本章反复用来判读的词：正文靠它们做论证，就核它们 */
 const KEY_TERMS = ['复检间隔', '判据来源', '改级', '过度分诊', '教学设定'];

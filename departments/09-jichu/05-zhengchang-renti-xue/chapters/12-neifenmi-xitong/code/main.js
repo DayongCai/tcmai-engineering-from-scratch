@@ -20,7 +20,7 @@ const path = require('node:path');
 
 const CHAPTER = 12;
 const SLUG = '12-neifenmi-xitong';
-const TITLE = '内分泌系统';
+const TITLE = '内分泌的层级不是官阶，而是一条能自己踩刹车的回路';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

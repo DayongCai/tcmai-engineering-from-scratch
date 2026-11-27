@@ -22,7 +22,7 @@ const DOC = path.join(DIR, '..', 'docs', 'zh.md');
 const QUIZ = path.join(DIR, '..', 'quiz.json');
 
 const CH = '25';
-const TITLE = '内科病证：证型是一张查找表';
+const TITLE = '九十个证型压在二万二千字里，平均二百四十九字一个';
 const KEYS = ["证型","俞募","临床红线"];
 
 const doc = fs.readFileSync(DOC, 'utf8');

@@ -25,7 +25,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 9;
 const SLUG = '09-gongyi-biaozhun';
-const TITLE = '炮制工艺的标准化与质控';
+const TITLE = '标准化的上限是参数，下限是性状';
 
 const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 const count = (text, term) => String(text).split(term).length - 1;

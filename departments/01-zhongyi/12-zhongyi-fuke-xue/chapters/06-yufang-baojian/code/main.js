@@ -16,7 +16,7 @@ const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = 6;
-const TITLE = '预防与保健：五个阶段与「别做什么」';
+const TITLE = '保健的核心不是「做什么」，是每个阶段「不许做什么」';
 
 /** 本章正文里反复出现、且分属不同层的六个词 */
 const TERMS = ["经期", "孕期", "产褥期", "哺乳期", "绝经期", "红线"];

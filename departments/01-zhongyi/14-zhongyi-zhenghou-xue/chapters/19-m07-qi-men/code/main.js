@@ -15,7 +15,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const CHAPTER = 19;
-const TITLE = '气证门（M07）';
+const TITLE = '气证门：判据是走窜与得泄则松，胀而拒按不属气';
 const SLUG = '19-m07-qi-men';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 

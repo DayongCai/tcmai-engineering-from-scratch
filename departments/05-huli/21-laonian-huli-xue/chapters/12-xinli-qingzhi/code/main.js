@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = '12';
 const SLUG = '12-xinli-qingzhi';
-const TITLE = '老年心理与情志护理';
+const TITLE = '老年人的情绪问题常以身体不适出场';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 
 /** 本章要求学生能指着正文说清楚的判据（必须真出现在正文里，测试会核对） */

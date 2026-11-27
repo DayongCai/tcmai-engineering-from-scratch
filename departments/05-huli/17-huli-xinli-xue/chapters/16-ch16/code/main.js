@@ -16,7 +16,7 @@ const path = require('node:path');
 
 const CHAPTER = 16;
 const SLUG = '16-ch16';
-const TITLE = '护理心理护理质量与安全管理';
+const TITLE = '心理护理的质量，卡在「做了没有」而不是「做得好不好」';
 const TERMS = ['过程', '指标', '原话', '失真'];
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');

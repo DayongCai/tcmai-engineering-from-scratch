@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '18';
 const SLUG = '18-opioid-analgesics';
-const TITLE = '阿片类镇痛药：选择性在于保住意识';
+const TITLE = '镇痛药的选择性在于保住意识，它与解热镇痛药、局麻药分处三个环节';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

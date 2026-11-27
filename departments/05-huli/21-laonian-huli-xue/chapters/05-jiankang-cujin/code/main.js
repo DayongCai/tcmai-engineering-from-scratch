@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = '5';
 const SLUG = '05-jiankang-cujin';
-const TITLE = '老年人健康促进与疾病预防';
+const TITLE = '老年期的预防不是做加法，是保住已有的余量';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 
 /** 本章要求学生能指着正文说清楚的判据（必须真出现在正文里，测试会核对） */

@@ -16,7 +16,7 @@ const path = require('node:path');
 
 const CHAPTER = 2;
 const SLUG = '02-ch02';
-const TITLE = '心理现象与心理过程基础';
+const TITLE = '患者记住的不是宣教重点，而是被对待的方式';
 const TERMS = ['复述', '三条', '框架', '归因'];
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');

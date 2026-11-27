@@ -34,7 +34,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = '25';
 const SLUG = '25-gmp-tixi-rendyuan';
-const TITLE = 'GMP 的体系要求与关键人员';
+const TITLE = 'GMP 要的是一个能说不的组织，不是一套齐备的文件';
 
 const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
 const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));

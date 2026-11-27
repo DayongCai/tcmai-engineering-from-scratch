@@ -25,7 +25,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 6;
 const SLUG = '06-chandi-jiagong';
-const TITLE = '产地加工';
+const TITLE = '产地加工是把「植物」定成「药材」的那道工序';
 
 const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 const count = (text, term) => String(text).split(term).length - 1;

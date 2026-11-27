@@ -26,7 +26,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 13;
 const SLUG = '13-fuchanke';
-const TITLE = '妇产科急症的急救护理';
+const TITLE = '产科急救的计时单位是两条命，不是一个人';
 
 /** 本章反复用来判读的词：正文靠它们做论证，就核它们 */
 const KEY_TERMS = ['两条命', '时间戳', '无条件', '胎动', '教学设定'];

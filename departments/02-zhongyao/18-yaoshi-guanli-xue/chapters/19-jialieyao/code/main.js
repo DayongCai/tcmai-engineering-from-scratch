@@ -34,7 +34,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = '19';
 const SLUG = '19-jialieyao';
-const TITLE = '假药与劣药的认定';
+const TITLE = '假药问它是不是那个东西，劣药问它够不够格';
 
 const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
 const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));

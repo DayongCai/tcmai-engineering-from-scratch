@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = '1';
 const SLUG = '01-gaishu';
-const TITLE = '老年护理学概述';
+const TITLE = '老年护理的边界由功能决定，不由年龄决定';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 
 /** 本章要求学生能指着正文说清楚的判据（必须真出现在正文里，测试会核对） */

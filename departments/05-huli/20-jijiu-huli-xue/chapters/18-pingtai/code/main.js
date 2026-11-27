@@ -26,7 +26,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 18;
 const SLUG = '18-pingtai';
-const TITLE = '急救护理学与教学平台';
+const TITLE = '平台的价值是让判断可复核，不是替人判断';
 
 /** 本章反复用来判读的词：正文靠它们做论证，就核它们 */
 const KEY_TERMS = ['版本', '留空', '去标识化', '人工确认', '教学设定'];

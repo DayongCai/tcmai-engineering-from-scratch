@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = 17;
 const SLUG = '17-shequ-jingshen';
-const TITLE = '精神卫生服务与社区精神科护理';
+const TITLE = '社区精神科护理的成败，常常取决于病人失约之后你打了几个电话';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

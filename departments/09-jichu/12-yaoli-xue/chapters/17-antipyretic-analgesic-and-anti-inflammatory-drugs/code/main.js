@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '17';
 const SLUG = '17-antipyretic-analgesic-and-anti-inflammatory-drugs';
-const TITLE = '解热镇痛抗炎药：一条前列腺素线的三处分配';
+const TITLE = '解热、镇痛、抗炎不是三套机制，而是同一条前列腺素线在三处的分配';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

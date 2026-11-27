@@ -17,7 +17,7 @@ const path = require('node:path');
 
 const CHAPTER = '4';
 const SLUG = '04-zhiji-zhongshi';
-const TITLE = '制剂中试：处方—工艺—质量';
+const TITLE = '中试不是把小试放大十倍，是证明同一处方在两套设备上做出同一个产品';
 
 function findRoot(start) {
   let dir = start;

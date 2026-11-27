@@ -16,7 +16,7 @@ const path = require('node:path');
 
 const CHAPTER = 1;
 const SLUG = '01-ch01';
-const TITLE = '护理心理学概述与基本理论';
+const TITLE = '心理护理的专业性，首先体现在它克制地不做什么';
 const TERMS = ['识别', '支持', '记录', '转介'];
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');

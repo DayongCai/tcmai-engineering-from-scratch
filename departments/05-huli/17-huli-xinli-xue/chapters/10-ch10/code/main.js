@@ -16,7 +16,7 @@ const path = require('node:path');
 
 const CHAPTER = 10;
 const SLUG = '10-ch10';
-const TITLE = '孕产妇与儿童青少年的心理护理';
+const TITLE = '产房里的支持，先给的不是鼓励，是「你做得到」的确认';
 const TERMS = ['预告', '确认', '游戏', '隐私'];
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');

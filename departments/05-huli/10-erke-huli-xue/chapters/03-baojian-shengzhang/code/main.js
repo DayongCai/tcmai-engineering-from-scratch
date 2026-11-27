@@ -12,7 +12,7 @@ const path = require('node:path');
 
 const CHAPTER = 3;
 const SLUG = '03-baojian-shengzhang';
-const TITLE = '儿童保健与生长发育的护理';
+const TITLE = '生长曲线不是及格线，是看这个孩子自己往哪走';
 const FOCUS = ["一点存疑","两点定向","三点定速","预警征"];
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 

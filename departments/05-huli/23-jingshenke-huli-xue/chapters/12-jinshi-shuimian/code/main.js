@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = 12;
 const SLUG = '12-jinshi-shuimian';
-const TITLE = '进食与睡眠障碍的护理';
+const TITLE = '体重不是一个数字，是一条需要被共同盯住的趋势';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

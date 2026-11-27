@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '21';
 const SLUG = '21-other-autacoid-drugs';
-const TITLE = '其他自体活性物质药：同一物质的两张面孔';
+const TITLE = '同一自体活性物质能给出相反效应，差别在受体亚型分布而不在物质本身';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

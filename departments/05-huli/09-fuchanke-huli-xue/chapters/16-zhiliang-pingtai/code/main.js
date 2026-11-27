@@ -14,7 +14,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
-const TITLE = '第 16 章 质量指标与平台';
+const TITLE = '指标能证明流程跑过，证明不了病人有没有被接住';
 const KEYWORDS = ["指标","报告","漏报","改进","分级","口径","反馈"];
 
 const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;

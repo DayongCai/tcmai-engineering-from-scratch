@@ -14,7 +14,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
-const TITLE = '第 9 章 产科手术护理';
+const TITLE = '产科手术的核对不是走流程，是把"两个人"同时对上台';
 const KEYWORDS = ["核对","清点","手术","体位","交接","留痕","告知"];
 
 const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;

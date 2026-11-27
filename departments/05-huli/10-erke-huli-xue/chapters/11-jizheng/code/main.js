@@ -12,7 +12,7 @@ const path = require('node:path');
 
 const CHAPTER = 11;
 const SLUG = '11-jizheng';
-const TITLE = '儿童急症与意外伤害的护理';
+const TITLE = '抢救的顺序不按重要性排，按「几分钟内会死」排';
 const FOCUS = ["指挥","按压","气道","角色"];
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 

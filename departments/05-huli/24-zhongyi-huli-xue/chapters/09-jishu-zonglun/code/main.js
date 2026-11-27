@@ -15,7 +15,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
-const TITLE = '第 9 章 中医护理技术总论';
+const TITLE = '技术总论只回答三个问题：谁不能做、做的过程看什么、做完记什么';
 const KEYWORDS = ["禁忌","报告","核对","评估","留观","出痧"];
 
 const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;

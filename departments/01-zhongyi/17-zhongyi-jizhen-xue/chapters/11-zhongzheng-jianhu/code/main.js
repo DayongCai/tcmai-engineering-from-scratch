@@ -12,7 +12,7 @@ const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = 11;
-const TITLE = '急危重症与重症监护协同：分清谁能做';
+const TITLE = '分清谁能做：重症协同不是把中医搬进监护室，是把判断做在床旁';
 
 const readDoc = (file = DOC) => fs.readFileSync(file, 'utf8');
 const hanzi = (s) => (String(s).match(/[\u4e00-\u9fff]/g) || []).length;

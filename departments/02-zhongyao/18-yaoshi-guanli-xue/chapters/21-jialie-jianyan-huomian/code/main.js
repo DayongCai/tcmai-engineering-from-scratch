@@ -34,7 +34,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = '21';
 const SLUG = '21-jialie-jianyan-huomian';
-const TITLE = '假劣药的检验与豁免';
+const TITLE = '假劣药的认定靠证据链，检验只是链上的一环';
 
 const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
 const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));

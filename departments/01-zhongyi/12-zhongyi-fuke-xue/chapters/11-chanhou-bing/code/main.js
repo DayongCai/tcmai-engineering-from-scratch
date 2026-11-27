@@ -16,7 +16,7 @@ const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = 11;
-const TITLE = '产后病：一条轴心加十个出口';
+const TITLE = '产后的所有病，都从「多虚多瘀」这一条轴上分出去';
 
 /** 本章正文里反复出现、且分属不同层的六个词 */
 const TERMS = ["多虚多瘀", "恶露", "三审", "三病", "三冲", "缺乳"];

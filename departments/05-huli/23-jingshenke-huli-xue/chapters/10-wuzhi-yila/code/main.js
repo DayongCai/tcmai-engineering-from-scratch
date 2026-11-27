@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = 10;
 const SLUG = '10-wuzhi-yila';
-const TITLE = '精神活性物质相关障碍的护理';
+const TITLE = '戒断期最该被测量的是身体，不是意志';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

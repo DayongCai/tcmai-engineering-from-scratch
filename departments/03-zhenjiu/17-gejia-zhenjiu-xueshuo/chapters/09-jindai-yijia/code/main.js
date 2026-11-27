@@ -37,7 +37,7 @@ const UNITS = path.join(ROOT, 'standards', 'zhenjiu-gejia', 'units.json');
 
 const CHAPTER = '9';
 const SLUG = '09-jindai-yijia';
-const TITLE = '近代针灸医家学术思想';
+const TITLE = '近代把针灸搬进学校，也把它译成西医的语言';
 
 const load = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
 

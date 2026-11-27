@@ -16,7 +16,7 @@ const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = 9;
-const TITLE = '带下病：多与少，两种方向';
+const TITLE = '带下病只有一个病名，却有两个相反的方向';
 
 /** 本章正文里反复出现、且分属不同层的六个词 */
 const TERMS = ["带下过多", "带下过少", "湿热", "脾虚", "白浊", "白淫"];

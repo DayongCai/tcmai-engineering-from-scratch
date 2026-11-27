@@ -14,7 +14,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
-const TITLE = '脑病科轮转：眩晕与中风的辨证接诊';
+const TITLE = '眩晕与中风共用一套风证坐标，差在一个时间窗';
 const TERMS = [
   "眩晕",
   "中风",

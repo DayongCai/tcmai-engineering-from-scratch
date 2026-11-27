@@ -15,7 +15,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const CHAPTER = 16;
-const TITLE = '湿证门（M04）';
+const TITLE = '湿证门：判据是重着与腻，湿热一类占门内六成';
 const SLUG = '16-m04-shi-men';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 

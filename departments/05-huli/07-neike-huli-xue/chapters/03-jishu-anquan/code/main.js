@@ -18,7 +18,7 @@ const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');
 const CHAPTER = 3;
 const SLUG = '03-jishu-anquan';
-const TITLE = '内科常用护理技术与安全';
+const TITLE = '技术安全的关口不在禁忌表上，在开做前那三个必须核对的动作里';
 
 /** 本章自己反复使用的词：次数由正文现算，不手填 */
 const TERMS = ["核对","禁忌","耐受","报告","记录"];

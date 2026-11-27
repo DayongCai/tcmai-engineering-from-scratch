@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = 1;
 const SLUG = '01-gaishu';
-const TITLE = '精神科护理学概述';
+const TITLE = '精神科护理的第一产品是安全，第二产品才是症状缓解';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

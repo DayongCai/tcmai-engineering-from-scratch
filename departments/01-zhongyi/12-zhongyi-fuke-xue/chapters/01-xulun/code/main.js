@@ -16,7 +16,7 @@ const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = 1;
-const TITLE = '绪论：一条链、四类病与八条红线';
+const TITLE = '妇科的门槛不是病名多，而是把「经带胎产」压成一条链、四类事';
 
 /** 本章正文里反复出现、且分属不同层的六个词 */
 const TERMS = ["病机", "病因", "证候表现", "天癸", "冲任", "胞宫"];

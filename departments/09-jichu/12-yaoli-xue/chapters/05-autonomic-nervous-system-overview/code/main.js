@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '5';
 const SLUG = '05-autonomic-nervous-system-overview';
-const TITLE = '传出神经系统药理概论：三层框架与六类主干';
+const TITLE = '以受体为主纲不是编排习惯，而是解剖、递质与临床应用共同给出的答案';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

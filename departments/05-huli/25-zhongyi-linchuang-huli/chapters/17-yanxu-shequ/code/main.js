@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = 17;
 const SLUG = '17-yanxu-shequ';
-const TITLE = '延续护理与社区康复护理';
+const TITLE = '出院宣教不落地，等于把护理做完又退回原处';
 
 function readDoc() {
   return fs.readFileSync(DOC, 'utf8');

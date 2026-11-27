@@ -26,7 +26,7 @@ const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');
 const CHAPTER = 8;
 const SLUG = '08-tizhi-wucha';
-const TITLE = '可重复性与测量误差：四域各自计量，再谈结论';
+const TITLE = '同一个人测出两个体质，先查尺子再查人';
 
 /** 本章的判据术语：正文靠它们把「先查尺子再查人」立住 */
 const TERMS = [

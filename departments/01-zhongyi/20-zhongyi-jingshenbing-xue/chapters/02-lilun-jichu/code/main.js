@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = 2;
 const SLUG = '02-lilun-jichu';
-const TITLE = '理论基础：脑主神明与心主神明，谁说了算';
+const TITLE = '心与脑争了两千年，争的其实是「谁主事」与「谁供血」';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

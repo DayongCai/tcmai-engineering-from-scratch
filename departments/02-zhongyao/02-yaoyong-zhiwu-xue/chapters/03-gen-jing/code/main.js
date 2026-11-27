@@ -14,7 +14,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const CH = 3;
-const TITLE = '根与茎的分界不在土里，在芽与节上';
+const TITLE = '根与茎的分界只有一条：节、叶与芽长在谁身上';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');
 

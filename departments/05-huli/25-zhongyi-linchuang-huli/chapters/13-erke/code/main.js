@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = 13;
 const SLUG = '13-erke';
-const TITLE = '儿科病证临床护理';
+const TITLE = '儿科护理靠看「变没变」，不靠听「说不说」';
 
 function readDoc() {
   return fs.readFileSync(DOC, 'utf8');

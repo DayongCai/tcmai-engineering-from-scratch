@@ -34,7 +34,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = '4';
 const SLUG = '04-linchuang-shiji';
-const TITLE = '药物临床试验：分期、伦理与备案';
+const TITLE = '跳期不是加速，是让某一类问题永远没有答案';
 
 const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
 const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));

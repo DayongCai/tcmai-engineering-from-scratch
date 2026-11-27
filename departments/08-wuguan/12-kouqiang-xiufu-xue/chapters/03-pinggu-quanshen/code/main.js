@@ -22,7 +22,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 3;
 const SLUG = '03-pinggu-quanshen';
-const TITLE = '修复前全身评估：疾病、用药与口腔治疗史';
+const TITLE = '修复的第一道门不在口内，在病史里';
 
 const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 const docLines = (doc) => String(doc).replace(/\r\n/g, '\n').split('\n');

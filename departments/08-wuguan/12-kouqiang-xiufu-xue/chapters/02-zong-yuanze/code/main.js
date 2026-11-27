@@ -22,7 +22,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 2;
 const SLUG = '02-zong-yuanze';
-const TITLE = '修复总原则：安全、有效、微创、健康、知情同意、姑息';
+const TITLE = '六条原则不是口号，每一条都在削减一种具体的失败';
 
 const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 const docLines = (doc) => String(doc).replace(/\r\n/g, '\n').split('\n');

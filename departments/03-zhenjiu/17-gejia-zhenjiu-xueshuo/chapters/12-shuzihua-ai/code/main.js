@@ -37,7 +37,7 @@ const UNITS = path.join(ROOT, 'standards', 'zhenjiu-gejia', 'units.json');
 
 const CHAPTER = '12';
 const SLUG = '12-shuzihua-ai';
-const TITLE = '各家针灸学说与数字化AI时代';
+const TITLE = '谈数据的一章，引书最少，可计量的数值为零';
 
 const load = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
 

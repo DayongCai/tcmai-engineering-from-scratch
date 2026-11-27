@@ -16,7 +16,7 @@ const path = require('node:path');
 
 const CHAPTER = 8;
 const SLUG = '08-ch08';
-const TITLE = '手术与创伤患者的心理护理';
+const TITLE = '术前最该处理的不是恐惧，是不知道自己在等什么';
 const TERMS = ['等待期', '疼痛', '陪伴', '时间点'];
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');

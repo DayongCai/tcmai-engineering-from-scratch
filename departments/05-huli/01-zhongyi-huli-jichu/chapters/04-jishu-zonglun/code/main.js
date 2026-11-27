@@ -16,7 +16,7 @@ const path = require('node:path');
 
 const CHAPTER = '4';
 const SLUG = '04-jishu-zonglun';
-const TITLE = '中医护理技术总论与常用技术（一）';
+const TITLE = '技术的第一道关是禁忌，不是手法';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 
 // 样例记录取自本章正文的写法示例，逐条过规则，看它落在哪一类。

@@ -25,7 +25,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 3;
 const SLUG = '03-canshu-moxing';
-const TITLE = '药动学参数与房室模型';
+const TITLE = '参数不是数据，是可比较性的契约';
 
 const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 const count = (text, term) => String(text).split(term).length - 1;

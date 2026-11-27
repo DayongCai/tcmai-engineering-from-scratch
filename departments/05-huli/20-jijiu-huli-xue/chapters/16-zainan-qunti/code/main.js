@@ -26,7 +26,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 16;
 const SLUG = '16-zainan-qunti';
-const TITLE = '灾难与群体伤害的急救护理';
+const TITLE = '群体伤害的分诊不是选重的，是选能救的';
 
 /** 本章反复用来判读的词：正文靠它们做论证，就核它们 */
 const KEY_TERMS = ['检伤分类', '复判', '红区', '对账', '教学设定'];

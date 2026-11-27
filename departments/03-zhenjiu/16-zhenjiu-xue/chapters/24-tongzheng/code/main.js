@@ -22,7 +22,7 @@ const DOC = path.join(DIR, '..', 'docs', 'zh.md');
 const QUIZ = path.join(DIR, '..', 'quiz.json');
 
 const CH = '24';
-const TITLE = '痛证：八病共用一套辨经模板';
+const TITLE = '八个痛证是同一张处方的八次填空';
 const KEYS = ["辨经","临床红线","痹证"];
 
 const doc = fs.readFileSync(DOC, 'utf8');

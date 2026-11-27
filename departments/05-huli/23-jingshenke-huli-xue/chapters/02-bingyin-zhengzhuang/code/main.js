@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = 2;
 const SLUG = '02-bingyin-zhengzhuang';
-const TITLE = '精神障碍的病因与症状学基础';
+const TITLE = '症状学的全部工作，是把一句主诉拆成别人也能看见的行为';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = 18;
 const SLUG = '18-pingtai';
-const TITLE = '精神科护理学与教学平台';
+const TITLE = '把临床判断写成可复算的条目，才配得上叫教学材料';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

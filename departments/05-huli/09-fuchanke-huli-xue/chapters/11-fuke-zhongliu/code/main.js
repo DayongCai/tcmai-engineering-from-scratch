@@ -14,7 +14,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
-const TITLE = '第 11 章 妇科肿瘤护理';
+const TITLE = '肿瘤护理的目标不是"治愈"，是把治疗变成一段能过下去的日子';
 const KEYWORDS = ["治疗","发热","报告","生育","宣教","记录","随访"];
 
 const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;

@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '44';
 const SLUG = '44-antifungal-and-antiviral-drugs';
-const TITLE = '抗真菌药与抗病毒药：选择性只剩一步之差';
+const TITLE = '抗真菌药的选择性只剩一步之差，靶点长在「真菌有、人没有」处才成立';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = '15';
 const SLUG = '15-anning-liaohu';
-const TITLE = '安宁疗护与临终关怀基础';
+const TITLE = '临终照护的目标不是延长时间，是不让这段时间难熬';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 
 /** 本章要求学生能指着正文说清楚的判据（必须真出现在正文里，测试会核对） */

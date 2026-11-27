@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = 5;
 const SLUG = '05-zhiliao-yuanze';
-const TITLE = '治疗原则：调神、开窍，先安全后辨证';
+const TITLE = '治神志病的第一味药不是方子，是「先安全，后辨证」';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

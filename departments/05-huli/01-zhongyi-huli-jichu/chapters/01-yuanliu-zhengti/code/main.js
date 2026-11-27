@@ -16,7 +16,7 @@ const path = require('node:path');
 
 const CHAPTER = '1';
 const SLUG = '01-yuanliu-zhengti';
-const TITLE = '中医护理的源流与整体护理观';
+const TITLE = '中医护理的起点是「先看人、再动手」的顺序';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 
 // 样例记录取自本章正文的写法示例，逐条过规则，看它落在哪一类。

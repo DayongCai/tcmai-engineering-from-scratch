@@ -15,7 +15,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
-const TITLE = '第 13 章 饮食与情志护理';
+const TITLE = '忌口不是一张清单，是按证加减的一句判断';
 const KEYWORDS = ["饮食","情志","转介","脾胃","宣教","忌口"];
 
 const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;

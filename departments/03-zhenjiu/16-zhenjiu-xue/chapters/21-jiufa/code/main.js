@@ -22,7 +22,7 @@ const DOC = path.join(DIR, '..', 'docs', 'zh.md');
 const QUIZ = path.join(DIR, '..', 'quiz.json');
 
 const CH = '21';
-const TITLE = '灸法：以何为度，不以壮数为凭';
+const TITLE = '灸法真正要记的不是几壮，而是以何为度';
 const KEYS = ["为度","不拘壮数","隔物灸"];
 
 const doc = fs.readFileSync(DOC, 'utf8');

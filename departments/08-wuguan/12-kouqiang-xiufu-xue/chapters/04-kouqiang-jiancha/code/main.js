@@ -22,7 +22,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 4;
 const SLUG = '04-kouqiang-jiancha';
-const TITLE = '修复前口腔检查与影像：七项增龄变化与片子的选择';
+const TITLE = '老年的「正常」和年轻人不是同一套标准';
 
 const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 const docLines = (doc) => String(doc).replace(/\r\n/g, '\n').split('\n');

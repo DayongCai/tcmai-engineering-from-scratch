@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '39';
 const SLUG = '39-synthetic-antibacterial-drugs';
-const TITLE = '人工合成抗菌药：四条靶点线互不通用';
+const TITLE = '人工合成抗菌药的共同点只在出身，四条靶点线彼此并不通用';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

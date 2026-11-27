@@ -18,7 +18,7 @@ const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');
 const CHAPTER = 6;
 const SLUG = '06-yingyang-huli';
-const TITLE = '内科营养支持与饮食护理';
+const TITLE = '「吃不下」不是一句主诉，而是一笔当场就能算出来的缺口';
 
 /** 本章自己反复使用的词：次数由正文现算，不手填 */
 const TERMS = ["摄入","体重","进食","体位","宣教"];

@@ -17,7 +17,7 @@ const path = require('node:path');
 
 const CHAPTER = '1';
 const SLUG = '01-changdi-diaoyan';
-const TITLE = '药材市场与产地调研：道地性与商品规格';
+const TITLE = '道地是历史给的信用，规格是当天能核的价';
 
 function findRoot(start) {
   let dir = start;

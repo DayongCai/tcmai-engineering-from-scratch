@@ -26,7 +26,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 16;
 const SLUG = '16-xunzheng-yixue';
-const TITLE = '证据分级管的是「能回答哪类问题」，不是「哪个结论更权威」';
+const TITLE = '证据分级管的是"能回答哪类问题"，不是"哪个结论更权威"';
 
 /* ── 文本口径 ─────────────────────────────────────────────────────── */
 

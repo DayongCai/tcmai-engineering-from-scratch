@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = 8;
 const SLUG = '08-bumian-jiaolv';
-const TITLE = '不寐与焦虑障碍：睡不好是「神不守舍」';
+const TITLE = '睡不好先看早醒，早醒先看情绪底色';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

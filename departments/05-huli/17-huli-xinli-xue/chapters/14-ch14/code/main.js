@@ -16,7 +16,7 @@ const path = require('node:path');
 
 const CHAPTER = 14;
 const SLUG = '14-ch14';
-const TITLE = '护士心理健康与支持体系';
+const TITLE = '支持体系的价值不在「有人可找」，在「找了不会更糟」';
 const TERMS = ['支持', '保密', '复盘', '转介'];
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');

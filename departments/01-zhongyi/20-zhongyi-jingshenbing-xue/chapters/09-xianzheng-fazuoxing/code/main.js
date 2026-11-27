@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = 9;
 const SLUG = '09-xianzheng-fazuoxing';
-const TITLE = '痫证与发作性障碍：发作的那几分钟';
+const TITLE = '发作的那几分钟，决定后面所有的用药纪律';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

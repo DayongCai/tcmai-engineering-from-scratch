@@ -26,7 +26,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 6;
 const SLUG = '06-xiuke-guomin';
-const TITLE = '休克与严重过敏反应的急救护理';
+const TITLE = '休克最早露出的是灌注，不是血压';
 
 /** 本章反复用来判读的词：正文靠它们做论证，就核它们 */
 const KEY_TERMS = ['灌注', '趋势', '诱因', '就高', '教学设定'];

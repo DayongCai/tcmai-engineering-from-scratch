@@ -12,7 +12,7 @@ const path = require('node:path');
 
 const CHAPTER = 1;
 const SLUG = '01-gaishu-moshi';
-const TITLE = '儿科护理概述与工作模式';
+const TITLE = '儿童不替自己说话，每条观察都要能被第二个人复核';
 const FOCUS = ["时点","条件","表现","来源"];
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 

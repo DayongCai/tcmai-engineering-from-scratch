@@ -15,7 +15,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
-const TITLE = '第 17 章 中医护理学与 tcmP 平台';
+const TITLE = '平台能替你检索与归纳，不能替你签字';
 const KEYWORDS = ["脱敏","核对","编码","单元","门禁","依据"];
 
 const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;

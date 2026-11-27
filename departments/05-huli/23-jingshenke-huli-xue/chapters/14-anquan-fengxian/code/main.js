@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = 14;
 const SLUG = '14-anquan-fengxian';
-const TITLE = '精神科护理安全与风险管理';
+const TITLE = '风险管理的成品不是一张清单，是一条能被追溯的时间线';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

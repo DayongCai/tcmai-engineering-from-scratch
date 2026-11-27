@@ -25,7 +25,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 8;
 const SLUG = '08-chengfen-yingxiang';
-const TITLE = '炮制对成分与药效的影响';
+const TITLE = '成分变了不等于疗效更好，中间隔着一条证据链';
 
 const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 const count = (text, term) => String(text).split(term).length - 1;

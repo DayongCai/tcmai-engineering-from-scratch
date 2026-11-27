@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '3';
 const SLUG = '03-pharmacokinetics';
-const TITLE = '药物代谢动力学：一条曲线、两类模型、三种消除';
+const TITLE = '房室模型只是拟合曲线的工具，拟合得上不等于机制成立';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

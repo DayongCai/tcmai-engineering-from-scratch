@@ -20,7 +20,7 @@ const path = require('node:path');
 
 const CHAPTER = 2;
 const SLUG = '02-jiancha-shuju';
-const TITLE = '影像与功能检查数据准备';
+const TITLE = '数据准备的第一件事，是给「轮位」定一套不打架的编码';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

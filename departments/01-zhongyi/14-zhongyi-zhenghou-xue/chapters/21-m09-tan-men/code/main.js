@@ -15,7 +15,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const CHAPTER = 21;
-const TITLE = '痰证门（M09）';
+const TITLE = '痰证门：判据是有形可征，怪病多痰不等于一切怪病都是痰';
 const SLUG = '21-m09-tan-men';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 

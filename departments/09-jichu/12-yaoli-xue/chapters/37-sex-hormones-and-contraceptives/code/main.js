@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '37';
 const SLUG = '37-sex-hormones-and-contraceptives';
-const TITLE = '性激素类药与避孕药：结构先决定能否口服';
+const TITLE = '性激素类药的结构先决定它能不能口服，首过效应比活性强弱更早一步筛药';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

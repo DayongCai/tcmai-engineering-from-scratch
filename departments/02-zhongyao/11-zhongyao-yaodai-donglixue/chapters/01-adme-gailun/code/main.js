@@ -25,7 +25,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 1;
 const SLUG = '01-adme-gailun';
-const TITLE = '中药药代动力学概论';
+const TITLE = '药代动力学先问成分能不能被追到';
 
 const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 const count = (text, term) => String(text).split(term).length - 1;

@@ -22,7 +22,7 @@ const DOC = path.join(DIR, '..', 'docs', 'zh.md');
 const QUIZ = path.join(DIR, '..', 'quiz.json');
 
 const CH = '27';
-const TITLE = '皮肤外科病证：皮损看得见，局部压过循经';
+const TITLE = '皮肤外科九病：皮损看得见，局部取穴就压过了循经';
 const KEYS = ["阿是穴","按语","扭伤"];
 
 const doc = fs.readFileSync(DOC, 'utf8');

@@ -20,7 +20,7 @@ const path = require('node:path');
 
 const CHAPTER = 10;
 const SLUG = '10-ganjue-qiguan';
-const TITLE = '感觉器官';
+const TITLE = '感觉器官要记的不是层数，而是刺激在哪一层变成信号';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

@@ -34,7 +34,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = '7';
 const SLUG = '07-hecha-jianyan';
-const TITLE = '注册核查与注册检验';
+const TITLE = '核查与检验的价值不在补充材料，而在让纸面证据可被推翻';
 
 const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
 const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));

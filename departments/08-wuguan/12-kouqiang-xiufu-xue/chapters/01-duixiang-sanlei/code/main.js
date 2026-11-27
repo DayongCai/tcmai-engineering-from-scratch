@@ -22,7 +22,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 1;
 const SLUG = '01-duixiang-sanlei';
-const TITLE = '修复学的对象：三类缺损与老年患者';
+const TITLE = '修复学的第一个动作是分类，不是选材料';
 
 const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 const docLines = (doc) => String(doc).replace(/\r\n/g, '\n').split('\n');

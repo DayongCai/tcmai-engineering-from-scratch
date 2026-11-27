@@ -14,7 +14,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const CH = 4;
-const TITLE = '一片叶要分两级读：外形定大类，结构定科属';
+const TITLE = '一片叶能定的只有大类，定到科要靠叶背那层看不见的结构';
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');
 

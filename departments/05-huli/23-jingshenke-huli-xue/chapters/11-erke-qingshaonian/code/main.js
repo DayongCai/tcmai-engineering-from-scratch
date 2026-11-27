@@ -15,7 +15,7 @@ const path = require('node:path');
 
 const CHAPTER = 11;
 const SLUG = '11-erke-qingshaonian';
-const TITLE = '儿童与青少年精神障碍的护理';
+const TITLE = '孩子的症状常常写在大人身上，也常常被大人写坏';
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');

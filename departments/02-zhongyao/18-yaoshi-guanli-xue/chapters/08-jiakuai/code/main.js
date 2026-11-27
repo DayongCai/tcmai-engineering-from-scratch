@@ -34,7 +34,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = '8';
 const SLUG = '08-jiakuai';
-const TITLE = '加快通道：突破性治疗、附条件批准、优先审评';
+const TITLE = '加快通道换的是证据的时间表，不是证据的门槛';
 
 const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
 const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));

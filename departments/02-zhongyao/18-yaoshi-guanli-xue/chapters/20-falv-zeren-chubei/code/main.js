@@ -34,7 +34,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = '20';
 const SLUG = '20-falv-zeren-chubei';
-const TITLE = '法律责任与药品储备供应';
+const TITLE = '一端罚到人，一端不许缺，两头合起来才叫药事管理';
 
 const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
 const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));

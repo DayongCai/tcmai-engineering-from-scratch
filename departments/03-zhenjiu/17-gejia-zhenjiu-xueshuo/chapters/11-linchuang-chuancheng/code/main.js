@@ -37,7 +37,7 @@ const UNITS = path.join(ROOT, 'standards', 'zhenjiu-gejia', 'units.json');
 
 const CHAPTER = '11';
 const SLUG = '11-linchuang-chuancheng';
-const TITLE = '针灸各家学说的临床应用与传承';
+const TITLE = '轴心从人换成法，手法一旦离人就丢了适应证';
 
 const load = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
 

@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '27';
 const SLUG = '27-antiatherosclerotic-drugs';
-const TITLE = '抗动脉粥样硬化药：按事件链上的位点分类';
+const TITLE = '抗动脉粥样硬化药分四类靠的是卡在事件链的哪一步，不是药效强弱';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

@@ -14,7 +14,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
-const TITLE = '第 6 章 高危妊娠管理';
+const TITLE = '高危妊娠管的不是"高危"这个标签，是标签背后的随访密度';
 const KEYWORDS = ["分层","随访","专案","改档","撤档","宣教","标签"];
 
 const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;

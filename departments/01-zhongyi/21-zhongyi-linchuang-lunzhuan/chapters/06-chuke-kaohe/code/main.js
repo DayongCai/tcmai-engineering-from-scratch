@@ -14,7 +14,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
-const TITLE = '出科考核与病例复盘（含结构化病历）';
+const TITLE = '出科考核考的不是记得多少，是判断留没留下痕迹';
 const TERMS = [
   "病历",
   "复盘",

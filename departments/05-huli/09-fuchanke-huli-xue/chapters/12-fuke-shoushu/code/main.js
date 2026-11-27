@@ -14,7 +14,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
-const TITLE = '第 12 章 妇科手术护理';
+const TITLE = '妇科手术的成败有一半不在台上，而在术后第一次下床之前';
 const KEYWORDS = ["管路","下床","疼痛","引流","宣教","记录","术式"];
 
 const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;

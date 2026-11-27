@@ -25,7 +25,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 5;
 const SLUG = '05-zaipei-caishou';
-const TITLE = '栽培与采收';
+const TITLE = '栽培把「找到好药」换成了「每年都做出好药」';
 
 const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 const count = (text, term) => String(text).split(term).length - 1;

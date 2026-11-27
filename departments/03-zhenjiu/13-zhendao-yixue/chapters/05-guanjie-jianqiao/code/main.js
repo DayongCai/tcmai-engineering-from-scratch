@@ -19,7 +19,7 @@ const DOC = path.join(DIR, '..', 'docs', 'zh.md');
 const QUIZ = path.join(DIR, '..', 'quiz.json');
 
 const CH = '5';
-const TITLE = '关节与腱鞘疾病';
+const TITLE = '这一章叫关节与腱鞘，而腱鞘在正文里只以一个检查手法的名字出现';
 
 const doc = fs.readFileSync(DOC, 'utf8');
 const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));

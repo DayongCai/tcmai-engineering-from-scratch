@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '48';
 const SLUG = '48-immunosuppressants';
-const TITLE = '免疫抑制药：作用在哪一环，就欠哪一方面';
+const TITLE = '免疫抑制药作用在哪一环，就欠哪一方面的防御，抑制越广欠账越多';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

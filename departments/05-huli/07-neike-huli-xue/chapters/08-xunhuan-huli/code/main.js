@@ -18,7 +18,7 @@ const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');
 const CHAPTER = 8;
 const SLUG = '08-xunhuan-huli';
-const TITLE = '循环系统疾病护理';
+const TITLE = '循环的账要按天算：体重与出入量比一次听诊更早开口';
 
 /** 本章自己反复使用的词：次数由正文现算，不手填 */
 const TERMS = ["体重","出入量","活动","门槛","水肿"];

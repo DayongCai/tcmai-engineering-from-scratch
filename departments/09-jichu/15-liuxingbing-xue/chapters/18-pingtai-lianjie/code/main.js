@@ -26,7 +26,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 18;
 const SLUG = '18-pingtai-lianjie';
-const TITLE = '视频课不是「把正文念一遍」，是让每一段旁白都能指回一个判据';
+const TITLE = '视频课不是"把正文念一遍"，是让每一段旁白都能指回一个判据';
 
 /* ── 文本口径 ─────────────────────────────────────────────────────── */
 

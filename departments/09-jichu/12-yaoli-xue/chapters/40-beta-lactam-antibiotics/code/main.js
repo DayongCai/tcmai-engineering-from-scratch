@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '40';
 const SLUG = '40-beta-lactam-antibiotics';
-const TITLE = 'β-内酰胺类抗生素：四元环与侧链';
+const TITLE = 'β-内酰胺类的共同点只是那个四元环，环在不在决定药还有没有效';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

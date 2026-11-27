@@ -34,7 +34,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = '13';
 const SLUG = '13-zhuisu';
-const TITLE = '药品追溯制度';
+const TITLE = '追溯的判据不是上了系统，是能从患者倒走回投料批';
 
 const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
 const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));

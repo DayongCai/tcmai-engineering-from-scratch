@@ -15,7 +15,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
-const TITLE = '第 4 章 辨体质与施护';
+const TITLE = '体质不是标签，是给同一条医嘱加减的系数';
 const KEYWORDS = ["饮食","环境","起居","情志","体质","判据"];
 
 const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;

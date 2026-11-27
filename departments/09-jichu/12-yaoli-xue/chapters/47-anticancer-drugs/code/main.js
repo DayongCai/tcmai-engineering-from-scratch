@@ -16,7 +16,7 @@ const path = require('node:path');
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '47';
 const SLUG = '47-anticancer-drugs';
-const TITLE = '抗恶性肿瘤药：选择性只能是相对的';
+const TITLE = '抗肿瘤药的选择性只能是相对的，给药间隔要靠动力学算而不是靠经验';
 
 /** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
 function docTitle(file) {

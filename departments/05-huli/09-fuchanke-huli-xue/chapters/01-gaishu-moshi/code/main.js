@@ -14,7 +14,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
-const TITLE = '第 1 章 妇产科护理的分界';
+const TITLE = '妇产科护理的分界不在病种，而在一次照护里有两个人';
 const KEYWORDS = ["护理","产房","上报","转诊","核对","宣教","记录","场景"];
 
 const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;

@@ -25,7 +25,7 @@ const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 const CHAPTER = 8;
 const SLUG = '08-pingjia-zhuisu';
-const TITLE = '品质评价与追溯';
+const TITLE = '合格是最低线，评价是另一件事';
 
 const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 const count = (text, term) => String(text).split(term).length - 1;

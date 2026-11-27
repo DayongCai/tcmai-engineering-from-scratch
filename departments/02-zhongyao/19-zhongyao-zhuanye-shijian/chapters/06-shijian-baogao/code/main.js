@@ -17,7 +17,7 @@ const path = require('node:path');
 
 const CHAPTER = '6';
 const SLUG = '06-shijian-baogao';
-const TITLE = '实践报告与出站考核';
+const TITLE = '报告不是把做过的事写一遍，是让没去过现场的人能重算一遍';
 
 function findRoot(start) {
   let dir = start;
