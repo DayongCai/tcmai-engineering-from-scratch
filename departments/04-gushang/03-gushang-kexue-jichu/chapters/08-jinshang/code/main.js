@@ -91,3 +91,12 @@ function main() {
 if (require.main === module) main();
 
 module.exports = { DOC, CHAPTER, TITLE, MECHANISMS, PATHO, STAGES, STEPS, RED_FLAGS, read, analyze };
+
+// 教学边界：口径只在正文维护一份，这里直接摘正文里含「不构成」的那一行。
+try {
+  const _zh = require('node:fs').readFileSync(require('node:path').join(__dirname, '..', 'docs', 'zh.md'), 'utf8');
+  const _bound = (_zh.match(/[^\n]*不构成[^\n]*/) || [])[0];
+  if (_bound) {
+    console.log(`\n教学边界：${_bound.replace(/^[>\s*#-]+/, '').trim().slice(0, 120)}`);
+  }
+} catch { /* 读不到正文就不打，不编一句 */ }
