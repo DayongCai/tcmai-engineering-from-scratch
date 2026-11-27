@@ -1,0 +1,188 @@
+{
+ "schema": "subject-alias/v1",
+ "note": "课程 slug → standards 目录。判据是章题重合 ≥2，evidence 记命中的章题；只在「自有目录不存在」时使用，自有目录优先。",
+ "generatedBy": "scripts/build_subject_alias.py",
+ "subjects": {
+  "01-zhongyi-jichu-lilun": {
+   "units": "jichu",
+   "evidence": "书名「中医基础理论」对课程名「中医基础理论」"
+  },
+  "05-zhongyi-zhen-duan-xue": {
+   "units": "zhenduan",
+   "evidence": "书名「中医诊断学」对课程名「中医诊断学」"
+  },
+  "10-zhongyi-neike-xue": {
+   "units": "neike",
+   "evidence": "书名「中医内科学」对课程名「中医内科学」"
+  },
+  "11-zhongyi-waike-xue": {
+   "units": "waike",
+   "evidence": "书名「中医外科学」对课程名「中医外科学」"
+  },
+  "12-zhongyi-fuke-xue": {
+   "units": "fuke",
+   "evidence": "书名「中医妇科学」对课程名「中医妇科学」"
+  },
+  "13-zhongyi-erke-xue": {
+   "units": "erke",
+   "evidence": "书名「中医儿科学」对课程名「中医儿科学」"
+  },
+  "17-zhongyi-jizhen-xue": {
+   "units": "jizhen",
+   "evidence": "书名「中医急诊学」对课程名「中医急诊学」"
+  },
+  "18-zhongyi-gubing-xue": {
+   "units": "gubing",
+   "evidence": "书名「中医骨病学」对课程名「中医骨病学」"
+  },
+  "19-zhongyi-laonianbing-xue": {
+   "units": "laonian",
+   "evidence": "书名「中医老年病学」对课程名「中医老年病学」"
+  },
+  "20-zhongyi-jingshenbing-xue": {
+   "units": "jingshen",
+   "evidence": "书名「中医精神病学」对课程名「中医精神病学」"
+  },
+  "01-zhongyaoxue": {
+   "units": "linchuang-zhongyao",
+   "evidence": "书名「临床中药学」对课程名「中药学」"
+  },
+  "04-zhongyao-ziyuan-xue": {
+   "units": "zhongyao-ziyuan",
+   "evidence": "书名「中药资源学」对课程名「中药资源学」"
+  },
+  "05-zhongyao-jianding-xue": {
+   "units": "zhongyao-jianding",
+   "evidence": "书名「中药鉴定学」对课程名「中药鉴定学」"
+  },
+  "07-zhongyao-yaoli-xue": {
+   "units": "zhongyao-yaoli",
+   "evidence": "书名「中药药理学」对课程名「中药药理学」"
+  },
+  "08-zhongyao-paozhi-xue": {
+   "units": "zhongyao-paozhi",
+   "evidence": "书名「中药炮制学」对课程名「中药炮制学」"
+  },
+  "09-zhongyao-yaoji-xue": {
+   "units": "zhongyao-yaoji",
+   "evidence": "书名「中药药剂学」对课程名「中药药剂学」"
+  },
+  "10-zhongyao-fenxi-xue": {
+   "units": "zhongyao-fenxi",
+   "evidence": "书名「中药分析」对课程名「中药分析学」"
+  },
+  "16-linchuang-zhongyaoxue": {
+   "units": "linchuang-zhongyao",
+   "evidence": "书名「临床中药学」对课程名「临床中药学」"
+  },
+  "17-zhongyao-shangpin-xue": {
+   "units": "zhongyao-shangpin",
+   "evidence": "书名「中药商品学」对课程名「中药商品学」"
+  },
+  "02-shuxue-xue": {
+   "units": "jingluo",
+   "evidence": "书名「经络腧穴学」对课程名「腧穴学」"
+  },
+  "03-zhenjiu-yiji-xuan": {
+   "units": "zhenjiu-yiji",
+   "evidence": "书名「针灸医籍选读」对课程名「针灸医籍选」"
+  },
+  "04-qigong-xue": {
+   "units": "qigong",
+   "evidence": "书名「中医气功学」对课程名「中医气功学」"
+  },
+  "05-tuina-xue": {
+   "units": "xiaoer-tuina",
+   "evidence": "书名「小儿推拿学」对课程名「推拿学」"
+  },
+  "06-tuina-shoufa-xue": {
+   "units": "shoufa",
+   "evidence": "书名「推拿手法学」对课程名「推拿手法学」"
+  },
+  "08-zhenjiu-zhiliao-xue": {
+   "units": "zhenjiu-zhiliao",
+   "evidence": "书名「针灸治疗学」对课程名「针灸治疗学」"
+  },
+  "10-shiyan-zhenjiu-xue": {
+   "units": "shiyan-zhenjiu",
+   "evidence": "书名「实验针灸学」对课程名「实验针灸学」"
+  },
+  "17-gejia-zhenjiu-xueshuo": {
+   "units": "zhenjiu-gejia",
+   "evidence": "书名「各家针灸学说」对课程名「各家针灸学说」"
+  },
+  "18-tuina-gongfa-xue": {
+   "units": "gongfa",
+   "evidence": "书名「推拿功法学」对课程名「推拿功法学」"
+  },
+  "19-tuina-zhiliao-xue": {
+   "units": "zhiliao",
+   "evidence": "书名「推拿治疗学」对课程名「推拿治疗学」"
+  },
+  "20-xiaoer-tuina-xue": {
+   "units": "xiaoer-tuina",
+   "evidence": "书名「小儿推拿学」对课程名「小儿推拿学」"
+  },
+  "03-gushang-kexue-jichu": {
+   "units": "gushang-jichu",
+   "evidence": "书名「中医骨伤科学」对课程名「中医骨伤科学基础」"
+  },
+  "06-zhongyi-zhenggu-xue": {
+   "units": "zhenggu",
+   "evidence": "书名「中医正骨学」对课程名「中医正骨学」"
+  },
+  "07-neike-huli-xue": {
+   "units": "neike-huli",
+   "evidence": "书名「内科护理学」对课程名「内科护理学」"
+  },
+  "08-waike-huli-xue": {
+   "units": "waike-huli",
+   "evidence": "书名「外科护理学」对课程名「外科护理学」"
+  },
+  "09-fuchanke-huli-xue": {
+   "units": "fuchanke-huli",
+   "evidence": "书名「妇产科护理学」对课程名「妇产科护理学」"
+  },
+  "10-erke-huli-xue": {
+   "units": "erke-huli",
+   "evidence": "书名「儿科护理学」对课程名「儿科护理学」"
+  },
+  "16-huli-xue-daolun": {
+   "units": "huli-daolun",
+   "evidence": "书名「护理学导论」对课程名「护理学导论」"
+  },
+  "20-jijiu-huli-xue": {
+   "units": "jijiu-huli",
+   "evidence": "书名「急救护理学」对课程名「急救护理学」"
+  },
+  "21-laonian-huli-xue": {
+   "units": "laonian-huli",
+   "evidence": "书名「老年护理学」对课程名「老年护理学」"
+  },
+  "22-kangfu-huli-xue": {
+   "units": "kangfu-huli",
+   "evidence": "书名「康复护理学」对课程名「康复护理学」"
+  },
+  "24-zhongyi-huli-xue": {
+   "units": "zhongyi-huli-jichu",
+   "evidence": "书名「中医护理学基础」对课程名「中医护理学」"
+  },
+  "25-zhongyi-linchuang-huli": {
+   "units": "zhongyi-linchuang",
+   "evidence": "书名「中医临床护理学」对课程名「中医临床护理学」"
+  },
+  "05-zhongyi-zhishi-tupu": {
+   "units": "zhongyi-zhishishu",
+   "evidence": "书名「中医知识树」对课程名「中医知识树」"
+  },
+  "12-yaoli-xue": {
+   "units": "zhongyao-yaoli",
+   "evidence": "书名「中药药理学」对课程名「药理学」"
+  }
+ },
+ "stats": {
+  "alias": 44,
+  "unmatched": 45,
+  "own": 100
+ }
+}

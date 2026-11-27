@@ -31,12 +31,12 @@ const grams = (t, n = 4) => {
   return out;
 };
 
-test('正文规模：汉字 3302 / 段 25 / 节 7', () => {
+test('正文规模：汉字 3322 / 段 25 / 节 7', () => {
   const r = m.analyze();
-  assert.strictEqual(r.docHanzi, 3302);
+  assert.strictEqual(r.docHanzi, 3322);
   assert.strictEqual(r.paragraphs, 25);
   assert.strictEqual(r.sections.length, 7);
-  assert.strictEqual(hanzi(readDoc()), 3302, '汉字口径必须与正文一致');
+  assert.strictEqual(hanzi(readDoc()), 3322, '汉字口径必须与正文一致');
 });
 
 test('表格：4 张，行数 [4,7,12,8]', () => {

@@ -1,0 +1,80 @@
+{
+  "subject": "01-zhongyi/01-zhongyi-jichu-lilun",
+  "source": {
+    "citation": "各章 docs/zh.md 的「教材出处」行",
+    "chars": "standards/jichu/底本.json"
+  },
+  "note": "允许一对多/多对一：同一教材章可被多个课程章引用；字数为所引各章 counts.chars 之和。",
+  "chapters": [
+    {
+      "chapter": "01-yin-yang-er-fenlei",
+      "textbookChapters": [
+        2
+      ],
+      "chars": 2631
+    },
+    {
+      "chapter": "02-wu-xing-duo-fenlei",
+      "textbookChapters": [
+        2
+      ],
+      "chars": 2631
+    },
+    {
+      "chapter": "03-zang-xiang-tupu",
+      "textbookChapters": [
+        3
+      ],
+      "chars": 3335
+    },
+    {
+      "chapter": "04-xulun",
+      "textbookChapters": [
+        1
+      ],
+      "chars": 2435
+    },
+    {
+      "chapter": "05-qi-xue-jin-ye",
+      "textbookChapters": [
+        4
+      ],
+      "chars": 3788
+    },
+    {
+      "chapter": "06-jingluo-tuxing",
+      "textbookChapters": [
+        5
+      ],
+      "chars": 3476
+    },
+    {
+      "chapter": "07-bingyin-bingji",
+      "textbookChapters": [
+        7
+      ],
+      "chars": 5761
+    },
+    {
+      "chapter": "08-fangzhi-yuanze",
+      "textbookChapters": [
+        10
+      ],
+      "chars": 3544
+    },
+    {
+      "chapter": "09-tizhi-fabing",
+      "textbookChapters": [
+        12
+      ],
+      "chars": 1443
+    },
+    {
+      "chapter": "10-siwei-fangfa",
+      "textbookChapters": [
+        3
+      ],
+      "chars": 3335
+    }
+  ]
+}

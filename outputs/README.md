@@ -223,8 +223,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 阴阳不是两个筐，而是一条能反向追问的偏向轴 · 提示词 | — | 891 | [`prompt-yin-yang-er-fenlei.md`](../departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/01-yin-yang-er-fenlei/outputs/prompt-yin-yang-er-fenlei.md) |
-| skill | 阴阳不是两个筐，而是一条能反向追问的偏向轴 | 阴阳不是两个筐，而是一条能反向追问的偏向轴——按「定义与采集项：把「阴阳」拆成六项可记的东西 → 成组判据与「不成立」的四种情形 → 落到临床：三个动作与三条边界 → 记录字段与四类失效」走一遍本章判据 | 790 | [`skill-yin-yang-er-fenlei.md`](../departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/01-yin-yang-er-fenlei/outputs/skill-yin-yang-er-fenlei.md) |
+| prompt | 阴阳不是两个筐，而是一条能反向追问的偏向轴 · 提示词 | — | 912 | [`prompt-yin-yang-er-fenlei.md`](../departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/01-yin-yang-er-fenlei/outputs/prompt-yin-yang-er-fenlei.md) |
+| skill | 阴阳不是两个筐，而是一条能反向追问的偏向轴 | 阴阳不是两个筐，而是一条能反向追问的偏向轴——按「定义与采集项：把「阴阳」拆成六项可记的东西 → 成组判据与「不成立」的四种情形 → 落到临床：三个动作与三条边界 → 记录字段与四类失效」走一遍本章判据 | 807 | [`skill-yin-yang-er-fenlei.md`](../departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/01-yin-yang-er-fenlei/outputs/skill-yin-yang-er-fenlei.md) |
 
 #### 第 2 章 · 五行是一张十根边的约束网，不是一个分成五份的筐
 
@@ -232,8 +232,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 五行是一张十根边的约束网，不是一个分成五份的筐 · 提示词 | — | 849 | [`prompt-wu-xing-duo-fenlei.md`](../departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/02-wu-xing-duo-fenlei/outputs/prompt-wu-xing-duo-fenlei.md) |
-| skill | 五行是一张十根边的约束网，不是一个分成五份的筐 | 五行是一张十根边的约束网，不是一个分成五份的筐——按「定义与采集项：五行的两个入口与三条核验 → 成组判据与「不成立」的四种情形 → 落到临床：三个动作与三条边界 → 记录字段与四类失效」走一遍本章判据 | 746 | [`skill-wu-xing-duo-fenlei.md`](../departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/02-wu-xing-duo-fenlei/outputs/skill-wu-xing-duo-fenlei.md) |
+| prompt | 五行是一张十根边的约束网，不是一个分成五份的筐 · 提示词 | — | 870 | [`prompt-wu-xing-duo-fenlei.md`](../departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/02-wu-xing-duo-fenlei/outputs/prompt-wu-xing-duo-fenlei.md) |
+| skill | 五行是一张十根边的约束网，不是一个分成五份的筐 | 五行是一张十根边的约束网，不是一个分成五份的筐——按「定义与采集项：五行的两个入口与三条核验 → 成组判据与「不成立」的四种情形 → 落到临床：三个动作与三条边界 → 记录字段与四类失效」走一遍本章判据 | 763 | [`skill-wu-xing-duo-fenlei.md`](../departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/02-wu-xing-duo-fenlei/outputs/skill-wu-xing-duo-fenlei.md) |
 
 #### 第 3 章 · 藏象是一张「黑箱—输出」对照表，解剖实体只解释了它的一半
 
@@ -241,8 +241,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 藏象是一张「黑箱—输出」对照表，解剖实体只解释了它的一半 · 提示词 | — | 851 | [`prompt-zang-xiang-tupu.md`](../departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/03-zang-xiang-tupu/outputs/prompt-zang-xiang-tupu.md) |
-| skill | 藏象是一张「黑箱—输出」对照表，解剖实体只解释了它的一半 | 藏象是一张「黑箱—输出」对照表，解剖实体只解释了它的一半——按「定义与采集项：「藏」与「象」各采什么 → 成组判据与「不成立」的四种情形 → 落到临床：三个动作与三条边界 → 记录字段与四类失效」走一遍本章判据 | 740 | [`skill-zang-xiang-tupu.md`](../departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/03-zang-xiang-tupu/outputs/skill-zang-xiang-tupu.md) |
+| prompt | 藏象是一张「黑箱—输出」对照表，解剖实体只解释了它的一半 · 提示词 | — | 872 | [`prompt-zang-xiang-tupu.md`](../departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/03-zang-xiang-tupu/outputs/prompt-zang-xiang-tupu.md) |
+| skill | 藏象是一张「黑箱—输出」对照表，解剖实体只解释了它的一半 | 藏象是一张「黑箱—输出」对照表，解剖实体只解释了它的一半——按「定义与采集项：「藏」与「象」各采什么 → 成组判据与「不成立」的四种情形 → 落到临床：三个动作与三条边界 → 记录字段与四类失效」走一遍本章判据 | 757 | [`skill-zang-xiang-tupu.md`](../departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/03-zang-xiang-tupu/outputs/skill-zang-xiang-tupu.md) |
 
 #### 第 4 章 · 中基的「基础」不是简单，是替所有临床科目背下了同一套定义
 
@@ -250,8 +250,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 中基的「基础」不是简单，是替所有临床科目背下了同一套定义 · 提示词 | — | 801 | [`prompt-xulun.md`](../departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/04-xulun/outputs/prompt-xulun.md) |
-| skill | 中基的「基础」不是简单，是替所有临床科目背下了同一套定义 | 中基的「基础」不是简单，是替所有临床科目背下了同一套定义——按「学科对象：一句话定义，四项采集 → 成组判据与「不成立」的四种情形 → 落到临床：三个动作与三条边界 → 记录字段与四类失效」走一遍本章判据 | 680 | [`skill-xulun.md`](../departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/04-xulun/outputs/skill-xulun.md) |
+| prompt | 中基的「基础」不是简单，是替所有临床科目背下了同一套定义 · 提示词 | — | 822 | [`prompt-xulun.md`](../departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/04-xulun/outputs/prompt-xulun.md) |
+| skill | 中基的「基础」不是简单，是替所有临床科目背下了同一套定义 | 中基的「基础」不是简单，是替所有临床科目背下了同一套定义——按「学科对象：一句话定义，四项采集 → 成组判据与「不成立」的四种情形 → 落到临床：三个动作与三条边界 → 记录字段与四类失效」走一遍本章判据 | 697 | [`skill-xulun.md`](../departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/04-xulun/outputs/skill-xulun.md) |
 
 #### 第 5 章 · 气血津液给的是方向，不是配额，所以它不能当化验单读
 
@@ -259,8 +259,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 气血津液给的是方向，不是配额，所以它不能当化验单读 · 提示词 | — | 826 | [`prompt-qi-xue-jin-ye.md`](../departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/05-qi-xue-jin-ye/outputs/prompt-qi-xue-jin-ye.md) |
-| skill | 气血津液给的是方向，不是配额，所以它不能当化验单读 | 气血津液给的是方向，不是配额，所以它不能当化验单读——按「定义与采集项：五个物质各自的判定特征 → 成组判据与「不成立」的四种情形 → 落到临床：三个动作与三条边界 → 记录字段与四类失效」走一遍本章判据 | 716 | [`skill-qi-xue-jin-ye.md`](../departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/05-qi-xue-jin-ye/outputs/skill-qi-xue-jin-ye.md) |
+| prompt | 气血津液给的是方向，不是配额，所以它不能当化验单读 · 提示词 | — | 847 | [`prompt-qi-xue-jin-ye.md`](../departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/05-qi-xue-jin-ye/outputs/prompt-qi-xue-jin-ye.md) |
+| skill | 气血津液给的是方向，不是配额，所以它不能当化验单读 | 气血津液给的是方向，不是配额，所以它不能当化验单读——按「定义与采集项：五个物质各自的判定特征 → 成组判据与「不成立」的四种情形 → 落到临床：三个动作与三条边界 → 记录字段与四类失效」走一遍本章判据 | 733 | [`skill-qi-xue-jin-ye.md`](../departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/05-qi-xue-jin-ye/outputs/skill-qi-xue-jin-ye.md) |
 
 #### 第 6 章 · 十二经是一条闭合的环，环上的接点比穴名更值得先记住
 
@@ -268,8 +268,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 十二经是一条闭合的环，环上的接点比穴名更值得先记住 · 提示词 | — | 879 | [`prompt-jingluo-tuxing.md`](../departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/06-jingluo-tuxing/outputs/prompt-jingluo-tuxing.md) |
-| skill | 十二经是一条闭合的环，环上的接点比穴名更值得先记住 | 十二经是一条闭合的环，环上的接点比穴名更值得先记住——按「定义与采集项：两个层次与四要素 → 成组判据与「不成立」的四种情形 → 落到临床：三个动作与三条边界 → 记录字段与四类失效」走一遍本章判据 | 770 | [`skill-jingluo-tuxing.md`](../departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/06-jingluo-tuxing/outputs/skill-jingluo-tuxing.md) |
+| prompt | 十二经是一条闭合的环，环上的接点比穴名更值得先记住 · 提示词 | — | 900 | [`prompt-jingluo-tuxing.md`](../departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/06-jingluo-tuxing/outputs/prompt-jingluo-tuxing.md) |
+| skill | 十二经是一条闭合的环，环上的接点比穴名更值得先记住 | 十二经是一条闭合的环，环上的接点比穴名更值得先记住——按「定义与采集项：两个层次与四要素 → 成组判据与「不成立」的四种情形 → 落到临床：三个动作与三条边界 → 记录字段与四类失效」走一遍本章判据 | 787 | [`skill-jingluo-tuxing.md`](../departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/06-jingluo-tuxing/outputs/skill-jingluo-tuxing.md) |
 
 #### 第 7 章 · 病因不是一份清单，而是一台从症状倒推的反向机器
 
@@ -277,8 +277,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 病因不是一份清单，而是一台从症状倒推的反向机器 · 提示词 | — | 819 | [`prompt-bingyin-bingji.md`](../departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/07-bingyin-bingji/outputs/prompt-bingyin-bingji.md) |
-| skill | 病因不是一份清单，而是一台从症状倒推的反向机器 | 病因不是一份清单，而是一台从症状倒推的反向机器——按「定义与采集项：三类病因，两种求因方向 → 成组判据与「不成立」的四种情形 → 落到临床：三个动作与三条边界 → 记录字段与四类失效」走一遍本章判据 | 712 | [`skill-bingyin-bingji.md`](../departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/07-bingyin-bingji/outputs/skill-bingyin-bingji.md) |
+| prompt | 病因不是一份清单，而是一台从症状倒推的反向机器 · 提示词 | — | 840 | [`prompt-bingyin-bingji.md`](../departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/07-bingyin-bingji/outputs/prompt-bingyin-bingji.md) |
+| skill | 病因不是一份清单，而是一台从症状倒推的反向机器 | 病因不是一份清单，而是一台从症状倒推的反向机器——按「定义与采集项：三类病因，两种求因方向 → 成组判据与「不成立」的四种情形 → 落到临床：三个动作与三条边界 → 记录字段与四类失效」走一遍本章判据 | 729 | [`skill-bingyin-bingji.md`](../departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/07-bingyin-bingji/outputs/skill-bingyin-bingji.md) |
 
 #### 第 8 章 · 治则不是八个字的目录，是八条各带「何时不能用」的判据
 
@@ -286,8 +286,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 治则不是八个字的目录，是八条各带「何时不能用」的判据 · 提示词 | — | 824 | [`prompt-fangzhi-yuanze.md`](../departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/08-fangzhi-yuanze/outputs/prompt-fangzhi-yuanze.md) |
-| skill | 治则不是八个字的目录，是八条各带「何时不能用」的判据 | 治则不是八个字的目录，是八条各带「何时不能用」的判据——按「定义与采集项：三层结构，四项采集 → 成组判据与「不成立」的四种情形 → 落到临床：三个动作与三条边界 → 记录字段与四类失效」走一遍本章判据 | 714 | [`skill-fangzhi-yuanze.md`](../departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/08-fangzhi-yuanze/outputs/skill-fangzhi-yuanze.md) |
+| prompt | 治则不是八个字的目录，是八条各带「何时不能用」的判据 · 提示词 | — | 846 | [`prompt-fangzhi-yuanze.md`](../departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/08-fangzhi-yuanze/outputs/prompt-fangzhi-yuanze.md) |
+| skill | 治则不是八个字的目录，是八条各带「何时不能用」的判据 | 治则不是八个字的目录，是八条各带「何时不能用」的判据——按「定义与采集项：三层结构，四项采集 → 成组判据与「不成立」的四种情形 → 落到临床：三个动作与三条边界 → 记录字段与四类失效」走一遍本章判据 | 732 | [`skill-fangzhi-yuanze.md`](../departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/08-fangzhi-yuanze/outputs/skill-fangzhi-yuanze.md) |
 
 #### 第 9 章 · 体质决定的是「从化方向」，不是「一定会得什么病」
 
@@ -295,8 +295,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 体质决定的是「从化方向」，不是「一定会得什么病」 · 提示词 | — | 821 | [`prompt-tizhi-fabing.md`](../departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/09-tizhi-fabing/outputs/prompt-tizhi-fabing.md) |
-| skill | 体质决定的是「从化方向」，不是「一定会得什么病」 | 体质决定的是「从化方向」，不是「一定会得什么病」——按「定义与采集项：一个定义，四项观察 → 成组判据与「不成立」的四种情形 → 落到临床：三个动作与三条边界 → 记录字段与四类失效」走一遍本章判据 | 711 | [`skill-tizhi-fabing.md`](../departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/09-tizhi-fabing/outputs/skill-tizhi-fabing.md) |
+| prompt | 体质决定的是「从化方向」，不是「一定会得什么病」 · 提示词 | — | 843 | [`prompt-tizhi-fabing.md`](../departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/09-tizhi-fabing/outputs/prompt-tizhi-fabing.md) |
+| skill | 体质决定的是「从化方向」，不是「一定会得什么病」 | 体质决定的是「从化方向」，不是「一定会得什么病」——按「定义与采集项：一个定义，四项观察 → 成组判据与「不成立」的四种情形 → 落到临床：三个动作与三条边界 → 记录字段与四类失效」走一遍本章判据 | 729 | [`skill-tizhi-fabing.md`](../departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/09-tizhi-fabing/outputs/skill-tizhi-fabing.md) |
 
 #### 第 10 章 · 象思维的第一步不是联想，是说清这个象排除了哪些解释
 
@@ -304,8 +304,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 象思维的第一步不是联想，是说清这个象排除了哪些解释 · 提示词 | — | 821 | [`prompt-siwei-fangfa.md`](../departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/10-siwei-fangfa/outputs/prompt-siwei-fangfa.md) |
-| skill | 象思维的第一步不是联想，是说清这个象排除了哪些解释 | 象思维的第一步不是联想，是说清这个象排除了哪些解释——按「定义与采集项：取象、比类、排他、可验 → 成组判据与「不成立」的四种情形 → 落到临床：三个动作与三条边界 → 记录字段与四类失效」走一遍本章判据 | 709 | [`skill-siwei-fangfa.md`](../departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/10-siwei-fangfa/outputs/skill-siwei-fangfa.md) |
+| prompt | 象思维的第一步不是联想，是说清这个象排除了哪些解释 · 提示词 | — | 842 | [`prompt-siwei-fangfa.md`](../departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/10-siwei-fangfa/outputs/prompt-siwei-fangfa.md) |
+| skill | 象思维的第一步不是联想，是说清这个象排除了哪些解释 | 象思维的第一步不是联想，是说清这个象排除了哪些解释——按「定义与采集项：取象、比类、排他、可验 → 成组判据与「不成立」的四种情形 → 落到临床：三个动作与三条边界 → 记录字段与四类失效」走一遍本章判据 | 726 | [`skill-siwei-fangfa.md`](../departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/10-siwei-fangfa/outputs/skill-siwei-fangfa.md) |
 
 ### 医古文
 
@@ -575,8 +575,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 四诊总论：教材把「闻」写成最薄的一诊 · 提示词 | — | 794 | [`prompt-sizhen-zonglun.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/01-sizhen-zonglun/outputs/prompt-sizhen-zonglun.md) |
-| skill | 四诊总论：教材把「闻」写成最薄的一诊 | 四诊总论：教材把「闻」写成最薄的一诊——按「采集：四诊是一条流水线，不是四件并列的事 → 成组判据：一条征象不算证据 → 记录字段：四诊记录写哪几列 → 动作与边界：什么时候必须转、必须复诊」走一遍本章判据 | 693 | [`skill-sizhen-zonglun.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/01-sizhen-zonglun/outputs/skill-sizhen-zonglun.md) |
+| prompt | 四诊总论：教材把「闻」写成最薄的一诊 · 提示词 | — | 887 | [`prompt-sizhen-zonglun.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/01-sizhen-zonglun/outputs/prompt-sizhen-zonglun.md) |
+| skill | 四诊总论：教材把「闻」写成最薄的一诊 | 四诊总论：教材把「闻」写成最薄的一诊——按「采集：四诊是一条流水线，不是四件并列的事 → 成组判据：一条征象不算证据 → 记录字段：四诊记录写哪几列 → 动作与边界：什么时候必须转、必须复诊」走一遍本章判据 | 780 | [`skill-sizhen-zonglun.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/01-sizhen-zonglun/outputs/skill-sizhen-zonglun.md) |
 
 #### 第 2 章 · 望诊：2,812 字里 1,249 字在舌上
 
@@ -584,8 +584,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 望诊：2,812 字里 1,249 字在舌上 · 提示词 | — | 803 | [`prompt-wangzhen-shense.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/02-wangzhen-shense/outputs/prompt-wangzhen-shense.md) |
-| skill | 望诊：2,812 字里 1,249 字在舌上 | 望诊：2,812 字里 1,249 字在舌上——按「采集：一条固定路线，五段二十余处 → 成组判据：每一类要凑齐几项才算数 → 记录字段：望诊记录写哪几列 → 动作与边界：什么时候必须转」走一遍本章判据 | 702 | [`skill-wangzhen-shense.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/02-wangzhen-shense/outputs/skill-wangzhen-shense.md) |
+| prompt | 望诊：2,812 字里 1,249 字在舌上 · 提示词 | — | 898 | [`prompt-wangzhen-shense.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/02-wangzhen-shense/outputs/prompt-wangzhen-shense.md) |
+| skill | 望诊：2,812 字里 1,249 字在舌上 | 望诊：2,812 字里 1,249 字在舌上——按「采集：一条固定路线，五段二十余处 → 成组判据：每一类要凑齐几项才算数 → 记录字段：望诊记录写哪几列 → 动作与边界：什么时候必须转」走一遍本章判据 | 791 | [`skill-wangzhen-shense.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/02-wangzhen-shense/outputs/skill-wangzhen-shense.md) |
 
 #### 第 3 章 · 舌诊：27 个特征词，是望诊里唯一能拆成「离散取值」的部分
 
@@ -593,8 +593,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 舌诊：27 个特征词，是望诊里唯一能拆成「离散取值」的部分 · 提示词 | — | 823 | [`prompt-shezhen-tese.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/03-shezhen-tese/outputs/prompt-shezhen-tese.md) |
-| skill | 舌诊：27 个特征词，是望诊里唯一能拆成「离散取值」的部分 | 舌诊：27 个特征词，是望诊里唯一能拆成「离散取值」的部分——按「采集：五步，每步一个可失效的动作 → 离散取值：五组 27 词，两组单选三组多选 → 成组判据：舌质答一问，舌苔答一问 → 记录字段与边界：十一列，两栏不能合」走一遍本章判据 | 710 | [`skill-shezhen-tese.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/03-shezhen-tese/outputs/skill-shezhen-tese.md) |
+| prompt | 舌诊：27 个特征词，是望诊里唯一能拆成「离散取值」的部分 · 提示词 | — | 905 | [`prompt-shezhen-tese.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/03-shezhen-tese/outputs/prompt-shezhen-tese.md) |
+| skill | 舌诊：27 个特征词，是望诊里唯一能拆成「离散取值」的部分 | 舌诊：27 个特征词，是望诊里唯一能拆成「离散取值」的部分——按「采集：五步，每步一个可失效的动作 → 离散取值：五组 27 词，两组单选三组多选 → 成组判据：舌质答一问，舌苔答一问 → 记录字段与边界：十一列，两栏不能合」走一遍本章判据 | 786 | [`skill-shezhen-tese.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/03-shezhen-tese/outputs/skill-shezhen-tese.md) |
 
 #### 第 4 章 · 闻诊：一半内容（嗅）没有量表，所以它只有 855 字
 
@@ -602,8 +602,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 闻诊：一半内容（嗅）没有量表，所以它只有 855 字 · 提示词 | — | 792 | [`prompt-wenzhen-shengyin.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/04-wenzhen-shengyin/outputs/prompt-wenzhen-shengyin.md) |
-| skill | 闻诊：一半内容（嗅）没有量表，所以它只有 855 字 | 闻诊：一半内容（嗅）没有量表，所以它只有 855 字——按「采集：八项，声先气后 → 成组判据：成对的才判，单个的只记 → 记录字段：一栏专记「未采」 → 动作与边界：三条硬线」走一遍本章判据 | 687 | [`skill-wenzhen-shengyin.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/04-wenzhen-shengyin/outputs/skill-wenzhen-shengyin.md) |
+| prompt | 闻诊：一半内容（嗅）没有量表，所以它只有 855 字 · 提示词 | — | 858 | [`prompt-wenzhen-shengyin.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/04-wenzhen-shengyin/outputs/prompt-wenzhen-shengyin.md) |
+| skill | 闻诊：一半内容（嗅）没有量表，所以它只有 855 字 | 闻诊：一半内容（嗅）没有量表，所以它只有 855 字——按「采集：八项，声先气后 → 成组判据：成对的才判，单个的只记 → 记录字段：一栏专记「未采」 → 动作与边界：三条硬线」走一遍本章判据 | 747 | [`skill-wenzhen-shengyin.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/04-wenzhen-shengyin/outputs/skill-wenzhen-shengyin.md) |
 
 #### 第 5 章 · 问诊：标题写「十问歌」，实际只列了八节
 
@@ -611,8 +611,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 问诊：标题写「十问歌」，实际只列了八节 · 提示词 | — | 784 | [`prompt-wenzhen-wenjuan.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/05-wenzhen-wenjuan/outputs/prompt-wenzhen-wenjuan.md) |
-| skill | 问诊：标题写「十问歌」，实际只列了八节 | 问诊：标题写「十问歌」，实际只列了八节——按「采集：三段式加八节，歌诀与节次并表 → 成组判据：每一问都要问成一组 → 记录字段：时间轴与「未问」都要有位置 → 动作与边界：问出来的危险信号」走一遍本章判据 | 683 | [`skill-wenzhen-wenjuan.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/05-wenzhen-wenjuan/outputs/skill-wenzhen-wenjuan.md) |
+| prompt | 问诊：标题写「十问歌」，实际只列了八节 · 提示词 | — | 873 | [`prompt-wenzhen-wenjuan.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/05-wenzhen-wenjuan/outputs/prompt-wenzhen-wenjuan.md) |
+| skill | 问诊：标题写「十问歌」，实际只列了八节 | 问诊：标题写「十问歌」，实际只列了八节——按「采集：三段式加八节，歌诀与节次并表 → 成组判据：每一问都要问成一组 → 记录字段：时间轴与「未问」都要有位置 → 动作与边界：问出来的危险信号」走一遍本章判据 | 766 | [`skill-wenzhen-wenjuan.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/05-wenzhen-wenjuan/outputs/skill-wenzhen-wenjuan.md) |
 
 #### 第 6 章 · 切诊：给了「28 脉」的名号，标题只拼得出 27 个脉名
 
@@ -620,8 +620,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 切诊：给了「28 脉」的名号，标题只拼得出 27 个脉名 · 提示词 | — | 835 | [`prompt-qiezhen-maixiang.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/06-qiezhen-maixiang/outputs/prompt-qiezhen-maixiang.md) |
-| skill | 切诊：给了「28 脉」的名号，标题只拼得出 27 个脉名 | 切诊：给了「28 脉」的名号，标题只拼得出 27 个脉名——按「采集：脉六步，按四步 → 成组判据：四维同取，相兼并记 → 记录字段：脉记十列，按诊六列 → 动作与边界：脉是最容易被单独当结论的一诊」走一遍本章判据 | 729 | [`skill-qiezhen-maixiang.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/06-qiezhen-maixiang/outputs/skill-qiezhen-maixiang.md) |
+| prompt | 切诊：给了「28 脉」的名号，标题只拼得出 27 个脉名 · 提示词 | — | 943 | [`prompt-qiezhen-maixiang.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/06-qiezhen-maixiang/outputs/prompt-qiezhen-maixiang.md) |
+| skill | 切诊：给了「28 脉」的名号，标题只拼得出 27 个脉名 | 切诊：给了「28 脉」的名号，标题只拼得出 27 个脉名——按「采集：脉六步，按四步 → 成组判据：四维同取，相兼并记 → 记录字段：脉记十列，按诊六列 → 动作与边界：脉是最容易被单独当结论的一诊」走一遍本章判据 | 831 | [`skill-qiezhen-maixiang.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/06-qiezhen-maixiang/outputs/skill-qiezhen-maixiang.md) |
 
 #### 第 7 章 · 八纲辨证：四对轴 8 纲，16 格组合只点名 2 格
 
@@ -629,8 +629,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 八纲辨证：四对轴 8 纲，16 格组合只点名 2 格 · 提示词 | — | 791 | [`prompt-bagang-bianzheng.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/07-bagang-bianzheng/outputs/prompt-bagang-bianzheng.md) |
-| skill | 八纲辨证：四对轴 8 纲，16 格组合只点名 2 格 | 八纲辨证：四对轴 8 纲，16 格组合只点名 2 格——按「采集：四轴逐轴判，每轴给支持项与反证项 → 成组判据：每轴两条独立证据，8 格自己填 → 记录字段：四轴四行，另加依据与未定原因 → 动作与边界：两条即刻、三条失效」走一遍本章判据 | 689 | [`skill-bagang-bianzheng.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/07-bagang-bianzheng/outputs/skill-bagang-bianzheng.md) |
+| prompt | 八纲辨证：四对轴 8 纲，16 格组合只点名 2 格 · 提示词 | — | 891 | [`prompt-bagang-bianzheng.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/07-bagang-bianzheng/outputs/prompt-bagang-bianzheng.md) |
+| skill | 八纲辨证：四对轴 8 纲，16 格组合只点名 2 格 | 八纲辨证：四对轴 8 纲，16 格组合只点名 2 格——按「采集：四轴逐轴判，每轴给支持项与反证项 → 成组判据：每轴两条独立证据，8 格自己填 → 记录字段：四轴四行，另加依据与未定原因 → 动作与边界：两条即刻、三条失效」走一遍本章判据 | 783 | [`skill-bagang-bianzheng.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/07-bagang-bianzheng/outputs/skill-bagang-bianzheng.md) |
 
 #### 第 8 章 · 脏腑辨证 → 规则表与权重：把「肝气郁结」写成可复核的打分
 
@@ -638,8 +638,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 脏腑辨证 → 规则表与权重：把「肝气郁结」写成可复核的打分 · 提示词 | — | 808 | [`prompt-zangfu-bianzheng.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/08-zangfu-bianzheng/outputs/prompt-zangfu-bianzheng.md) |
-| skill | 脏腑辨证 → 规则表与权重：把「肝气郁结」写成可复核的打分 | 脏腑辨证 → 规则表与权重：把「肝气郁结」写成可复核的打分——按「采集：定位五步，先定脏后定证 → 成组判据：定位项必具，定性项计分 → 记录字段：九个栏位，两个必填反证 → 动作与边界：脏腑辨证也有一条即刻线」走一遍本章判据 | 700 | [`skill-zangfu-bianzheng.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/08-zangfu-bianzheng/outputs/skill-zangfu-bianzheng.md) |
+| prompt | 脏腑辨证 → 规则表与权重：把「肝气郁结」写成可复核的打分 · 提示词 | — | 920 | [`prompt-zangfu-bianzheng.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/08-zangfu-bianzheng/outputs/prompt-zangfu-bianzheng.md) |
+| skill | 脏腑辨证 → 规则表与权重：把「肝气郁结」写成可复核的打分 | 脏腑辨证 → 规则表与权重：把「肝气郁结」写成可复核的打分——按「采集：定位五步，先定脏后定证 → 成组判据：定位项必具，定性项计分 → 记录字段：九个栏位，两个必填反证 → 动作与边界：脏腑辨证也有一条即刻线」走一遍本章判据 | 806 | [`skill-zangfu-bianzheng.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/08-zangfu-bianzheng/outputs/skill-zangfu-bianzheng.md) |
 
 #### 第 9 章 · 气血津液辨证：770 字的气血，和只有 175 字的七情
 
@@ -647,8 +647,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 气血津液辨证：770 字的气血，和只有 175 字的七情 · 提示词 | — | 782 | [`prompt-qixue-bianzheng.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/09-qixue-bianzheng/outputs/prompt-qixue-bianzheng.md) |
-| skill | 气血津液辨证：770 字的气血，和只有 175 字的七情 | 气血津液辨证：770 字的气血，和只有 175 字的七情——按「采集：三列四行，先把病因问在前面 → 成组判据：三列各有必具项，气血同病单列 → 记录字段：病因行与本体列都要有位置 → 动作与边界：气随血脱是即刻线」走一遍本章判据 | 675 | [`skill-qixue-bianzheng.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/09-qixue-bianzheng/outputs/skill-qixue-bianzheng.md) |
+| prompt | 气血津液辨证：770 字的气血，和只有 175 字的七情 · 提示词 | — | 864 | [`prompt-qixue-bianzheng.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/09-qixue-bianzheng/outputs/prompt-qixue-bianzheng.md) |
+| skill | 气血津液辨证：770 字的气血，和只有 175 字的七情 | 气血津液辨证：770 字的气血，和只有 175 字的七情——按「采集：三列四行，先把病因问在前面 → 成组判据：三列各有必具项，气血同病单列 → 记录字段：病因行与本体列都要有位置 → 动作与边界：气随血脱是即刻线」走一遍本章判据 | 751 | [`skill-qixue-bianzheng.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/09-qixue-bianzheng/outputs/skill-qixue-bianzheng.md) |
 
 #### 第 10 章 · 六经与卫气营血：三套坐标，13 个节点，1,767 字
 
@@ -656,8 +656,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 六经与卫气营血：三套坐标，13 个节点，1,767 字 · 提示词 | — | 732 | [`prompt-liujing-weifen.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/10-liujing-weifen/outputs/prompt-liujing-weifen.md) |
-| skill | 六经与卫气营血：三套坐标，13 个节点，1,767 字 | 六经与卫气营血：三套坐标，13 个节点，1,767 字——按「采集：先落主坐标，再补副坐标 → 成组判据：提纲项必具，传变方向可判 → 记录字段：三栏坐标，一栏方向 → 动作与边界：逆传与危候」走一遍本章判据 | 623 | [`skill-liujing-weifen.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/10-liujing-weifen/outputs/skill-liujing-weifen.md) |
+| prompt | 六经与卫气营血：三套坐标，13 个节点，1,767 字 · 提示词 | — | 833 | [`prompt-liujing-weifen.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/10-liujing-weifen/outputs/prompt-liujing-weifen.md) |
+| skill | 六经与卫气营血：三套坐标，13 个节点，1,767 字 | 六经与卫气营血：三套坐标，13 个节点，1,767 字——按「采集：先落主坐标，再补副坐标 → 成组判据：提纲项必具，传变方向可判 → 记录字段：三栏坐标，一栏方向 → 动作与边界：逆传与危候」走一遍本章判据 | 718 | [`skill-liujing-weifen.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/10-liujing-weifen/outputs/skill-liujing-weifen.md) |
 
 #### 第 11 章 · 证候规范化：38 条命名里，只有 18 条真挂上了 ICD-11
 
@@ -665,8 +665,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 证候规范化：38 条命名里，只有 18 条真挂上了 ICD-11 · 提示词 | — | 869 | [`prompt-zhenghou-guifan.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/11-zhenghou-guifan/outputs/prompt-zhenghou-guifan.md) |
-| skill | 证候规范化：38 条命名里，只有 18 条真挂上了 ICD-11 | 证候规范化：38 条命名里，只有 18 条真挂上了 ICD-11——按「采集：病案要写全的十二项 → 成组判据：一个名字要成立，得同时满足三条 → 记录字段：三列命名，另加两列校验 → 动作与边界：命名错在哪一步就停在哪一步」走一遍本章判据 | 758 | [`skill-zhenghou-guifan.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/11-zhenghou-guifan/outputs/skill-zhenghou-guifan.md) |
+| prompt | 证候规范化：38 条命名里，只有 18 条真挂上了 ICD-11 · 提示词 | — | 974 | [`prompt-zhenghou-guifan.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/11-zhenghou-guifan/outputs/prompt-zhenghou-guifan.md) |
+| skill | 证候规范化：38 条命名里，只有 18 条真挂上了 ICD-11 | 证候规范化：38 条命名里，只有 18 条真挂上了 ICD-11——按「采集：病案要写全的十二项 → 成组判据：一个名字要成立，得同时满足三条 → 记录字段：三列命名，另加两列校验 → 动作与边界：命名错在哪一步就停在哪一步」走一遍本章判据 | 857 | [`skill-zhenghou-guifan.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/11-zhenghou-guifan/outputs/skill-zhenghou-guifan.md) |
 
 #### 第 12 章 · 诊断推理的误差来源：教材给了四条来源，没给一个百分比
 
@@ -674,8 +674,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 诊断推理的误差来源：教材给了四条来源，没给一个百分比 · 提示词 | — | 789 | [`prompt-zhenduan-wucha.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/12-zhenduan-wucha/outputs/prompt-zhenduan-wucha.md) |
-| skill | 诊断推理的误差来源：教材给了四条来源，没给一个百分比 | 诊断推理的误差来源：教材给了四条来源，没给一个百分比——按「四条来源：每条都在讲别的事 → 成组判据：误差可指认的三条 → 记录字段：一张八项检查表 → 动作与边界：三条硬线，三条失效」走一遍本章判据 | 679 | [`skill-zhenduan-wucha.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/12-zhenduan-wucha/outputs/skill-zhenduan-wucha.md) |
+| prompt | 诊断推理的误差来源：教材给了四条来源，没给一个百分比 · 提示词 | — | 906 | [`prompt-zhenduan-wucha.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/12-zhenduan-wucha/outputs/prompt-zhenduan-wucha.md) |
+| skill | 诊断推理的误差来源：教材给了四条来源，没给一个百分比 | 诊断推理的误差来源：教材给了四条来源，没给一个百分比——按「四条来源：每条都在讲别的事 → 成组判据：误差可指认的三条 → 记录字段：一张八项检查表 → 动作与边界：三条硬线，三条失效」走一遍本章判据 | 790 | [`skill-zhenduan-wucha.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/12-zhenduan-wucha/outputs/skill-zhenduan-wucha.md) |
 
 ### 内经选读
 
@@ -3160,8 +3160,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 性能五要素是总论的共用语法，不是任何一味药的取值 · 提示词 | — | 874 | [`prompt-xingneng-siqi.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/01-xingneng-siqi/outputs/prompt-xingneng-siqi.md) |
-| skill | 性能五要素是总论的共用语法，不是任何一味药的取值 | 性能五要素是总论的共用语法，不是任何一味药的取值——按「辨药采集项：先把六栏立起来，再谈填什么值 → 成组判据：三类数据类型不能混成一张表 → 用药动作与边界 → 记录字段与失效模式」走一遍本章判据 | 768 | [`skill-xingneng-siqi.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/01-xingneng-siqi/outputs/skill-xingneng-siqi.md) |
+| prompt | 性能五要素是总论的共用语法，不是任何一味药的取值 · 提示词 | — | 895 | [`prompt-xingneng-siqi.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/01-xingneng-siqi/outputs/prompt-xingneng-siqi.md) |
+| skill | 性能五要素是总论的共用语法，不是任何一味药的取值 | 性能五要素是总论的共用语法，不是任何一味药的取值——按「辨药采集项：先把六栏立起来，再谈填什么值 → 成组判据：三类数据类型不能混成一张表 → 用药动作与边界 → 记录字段与失效模式」走一遍本章判据 | 785 | [`skill-xingneng-siqi.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/01-xingneng-siqi/outputs/skill-xingneng-siqi.md) |
 
 #### 第 2 章 · 解表药两节的分界是四气，不是「辛能散」
 
@@ -3169,8 +3169,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 解表药两节的分界是四气，不是「辛能散」 · 提示词 | — | 863 | [`prompt-jiebiaoyao-fengh.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/02-jiebiaoyao-fengh/outputs/prompt-jiebiaoyao-fengh.md) |
-| skill | 解表药两节的分界是四气，不是「辛能散」 | 解表药两节的分界是四气，不是「辛能散」——按「21 味的四栏覆盖 → 辛为什么分不开两节 → 四气：干净的一刀，代价是 7 个空格 → 剂量与规格：药名不带后缀就只是个读音」走一遍本章判据 | 765 | [`skill-jiebiaoyao-fengh.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/02-jiebiaoyao-fengh/outputs/skill-jiebiaoyao-fengh.md) |
+| prompt | 解表药两节的分界是四气，不是「辛能散」 · 提示词 | — | 884 | [`prompt-jiebiaoyao-fengh.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/02-jiebiaoyao-fengh/outputs/prompt-jiebiaoyao-fengh.md) |
+| skill | 解表药两节的分界是四气，不是「辛能散」 | 解表药两节的分界是四气，不是「辛能散」——按「21 味的四栏覆盖 → 辛为什么分不开两节 → 四气：干净的一刀，代价是 7 个空格 → 剂量与规格：药名不带后缀就只是个读音」走一遍本章判据 | 782 | [`skill-jiebiaoyao-fengh.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/02-jiebiaoyao-fengh/outputs/skill-jiebiaoyao-fengh.md) |
 
 #### 第 3 章 · 清热药的分节依据在功效首词，四气在这里只剩一个值
 
@@ -3178,8 +3178,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 清热药的分节依据在功效首词，四气在这里只剩一个值 · 提示词 | — | 894 | [`prompt-qingreyao-fenlei.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/03-qingreyao-fenlei/outputs/prompt-qingreyao-fenlei.md) |
-| skill | 清热药的分节依据在功效首词，四气在这里只剩一个值 | 清热药的分节依据在功效首词，四气在这里只剩一个值——按「五节的体量与覆盖 → 四气：26 条记录只有一个值 → 功效首词：33/36 命中节名 → 五味与归经：苦是共性，归经给的是部位」走一遍本章判据 | 791 | [`skill-qingreyao-fenlei.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/03-qingreyao-fenlei/outputs/skill-qingreyao-fenlei.md) |
+| prompt | 清热药的分节依据在功效首词，四气在这里只剩一个值 · 提示词 | — | 916 | [`prompt-qingreyao-fenlei.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/03-qingreyao-fenlei/outputs/prompt-qingreyao-fenlei.md) |
+| skill | 清热药的分节依据在功效首词，四气在这里只剩一个值 | 清热药的分节依据在功效首词，四气在这里只剩一个值——按「五节的体量与覆盖 → 四气：26 条记录只有一个值 → 功效首词：33/36 命中节名 → 五味与归经：苦是共性，归经给的是部位」走一遍本章判据 | 809 | [`skill-qingreyao-fenlei.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/03-qingreyao-fenlei/outputs/skill-qingreyao-fenlei.md) |
 
 #### 第 4 章 · 泻下与祛湿共用「出口」二字，剂量却差六百倍
 
@@ -3187,8 +3187,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 泻下与祛湿共用「出口」二字，剂量却差六百倍 · 提示词 | — | 882 | [`prompt-xiexia-qushi.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/04-xiexia-qushi/outputs/prompt-xiexia-qushi.md) |
-| skill | 泻下与祛湿共用「出口」二字，剂量却差六百倍 | 泻下与祛湿共用「出口」二字，剂量却差六百倍——按「四章十节的结构 → 三条出口：大肠、膀胱、脾 → 毒性跟着「峻猛」走，不跟着「湿」走 → 剂量：0.1g 到 60g，六百倍」走一遍本章判据 | 778 | [`skill-xiexia-qushi.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/04-xiexia-qushi/outputs/skill-xiexia-qushi.md) |
+| prompt | 泻下与祛湿共用「出口」二字，剂量却差六百倍 · 提示词 | — | 913 | [`prompt-xiexia-qushi.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/04-xiexia-qushi/outputs/prompt-xiexia-qushi.md) |
+| skill | 泻下与祛湿共用「出口」二字，剂量却差六百倍 | 泻下与祛湿共用「出口」二字，剂量却差六百倍——按「四章十节的结构 → 三条出口：大肠、膀胱、脾 → 毒性跟着「峻猛」走，不跟着「湿」走 → 剂量：0.1g 到 60g，六百倍」走一遍本章判据 | 805 | [`skill-xiexia-qushi.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/04-xiexia-qushi/outputs/skill-xiexia-qushi.md) |
 
 #### 第 5 章 · 温里往下走、理气横着走，十九条记录里有一条自相矛盾
 
@@ -3196,8 +3196,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 温里往下走、理气横着走，十九条记录里有一条自相矛盾 · 提示词 | — | 872 | [`prompt-wenli-liqi.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/05-wenli-liqi/outputs/prompt-wenli-liqi.md) |
-| skill | 温里往下走、理气横着走，十九条记录里有一条自相矛盾 | 温里往下走、理气横着走，十九条记录里有一条自相矛盾——按「两章的结构：8 + 11 → 气：温里在热侧，理气横跨温平寒 → 归经：一条向下，一条横着走 → 一条自相矛盾的记录，和四味空栏」走一遍本章判据 | 762 | [`skill-wenli-liqi.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/05-wenli-liqi/outputs/skill-wenli-liqi.md) |
+| prompt | 温里往下走、理气横着走，十九条记录里有一条自相矛盾 · 提示词 | — | 897 | [`prompt-wenli-liqi.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/05-wenli-liqi/outputs/prompt-wenli-liqi.md) |
+| skill | 温里往下走、理气横着走，十九条记录里有一条自相矛盾 | 温里往下走、理气横着走，十九条记录里有一条自相矛盾——按「两章的结构：8 + 11 → 气：温里在热侧，理气横跨温平寒 → 归经：一条向下，一条横着走 → 一条自相矛盾的记录，和四味空栏」走一遍本章判据 | 783 | [`skill-wenli-liqi.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/05-wenli-liqi/outputs/skill-wenli-liqi.md) |
 
 #### 第 6 章 · 消食、驱虫、止血共用一条判据：东西该不该留
 
@@ -3205,8 +3205,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 消食、驱虫、止血共用一条判据：东西该不该留 · 提示词 | — | 995 | [`prompt-xiaoshi-zhixue.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/06-xiaoshi-zhixue/outputs/prompt-xiaoshi-zhixue.md) |
-| skill | 消食、驱虫、止血共用一条判据：东西该不该留 | 消食、驱虫、止血共用一条判据：东西该不该留——按「24 味、6 节、2,956 字：分界线不在药，在「该不该留」 → 气：温 7、平 7，两组药共用「平」这一档 → 味与归经：甘苦并列，肝 15 条压过脾 11 → 四处空栏、9 处重号：底本的两类缺陷」走一遍本章判据 | 893 | [`skill-xiaoshi-zhixue.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/06-xiaoshi-zhixue/outputs/skill-xiaoshi-zhixue.md) |
+| prompt | 消食、驱虫、止血共用一条判据：东西该不该留 · 提示词 | — | 1023 | [`prompt-xiaoshi-zhixue.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/06-xiaoshi-zhixue/outputs/prompt-xiaoshi-zhixue.md) |
+| skill | 消食、驱虫、止血共用一条判据：东西该不该留 | 消食、驱虫、止血共用一条判据：东西该不该留——按「24 味、6 节、2,956 字：分界线不在药，在「该不该留」 → 气：温 7、平 7，两组药共用「平」这一档 → 味与归经：甘苦并列，肝 15 条压过脾 11 → 四处空栏、9 处重号：底本的两类缺陷」走一遍本章判据 | 917 | [`skill-xiaoshi-zhixue.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/06-xiaoshi-zhixue/outputs/skill-xiaoshi-zhixue.md) |
 
 #### 第 7 章 · 活血化瘀的位置编码在节内，肝经 23 味无一处例外
 
@@ -3214,8 +3214,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 活血化瘀的位置编码在节内，肝经 23 味无一处例外 · 提示词 | — | 926 | [`prompt-huoxue-huayu.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/07-huoxue-huayu/outputs/prompt-huoxue-huayu.md) |
-| skill | 活血化瘀的位置编码在节内，肝经 23 味无一处例外 | 活血化瘀的位置编码在节内，肝经 23 味无一处例外——按「23 味、4 节：编号编在节内，节序就是强度序 → 肝经 23 味无一处例外：全书最集中的一栏 → 气与味：温 10、辛 11，寒只有 2 味 → 剂量与毒：0.03g 到 30g，四味标毒全在后两节」走一遍本章判据 | 820 | [`skill-huoxue-huayu.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/07-huoxue-huayu/outputs/skill-huoxue-huayu.md) |
+| prompt | 活血化瘀的位置编码在节内，肝经 23 味无一处例外 · 提示词 | — | 948 | [`prompt-huoxue-huayu.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/07-huoxue-huayu/outputs/prompt-huoxue-huayu.md) |
+| skill | 活血化瘀的位置编码在节内，肝经 23 味无一处例外 | 活血化瘀的位置编码在节内，肝经 23 味无一处例外——按「23 味、4 节：编号编在节内，节序就是强度序 → 肝经 23 味无一处例外：全书最集中的一栏 → 气与味：温 10、辛 11，寒只有 2 味 → 剂量与毒：0.03g 到 30g，四味标毒全在后两节」走一遍本章判据 | 838 | [`skill-huoxue-huayu.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/07-huoxue-huayu/outputs/skill-huoxue-huayu.md) |
 
 #### 第 8 章 · 化痰与止咳是两套轴：温寒对半，平性只剩两味
 
@@ -3223,8 +3223,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 化痰与止咳是两套轴：温寒对半，平性只剩两味 · 提示词 | — | 935 | [`prompt-huatan-kesou.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/08-huatan-kesou/outputs/prompt-huatan-kesou.md) |
-| skill | 化痰与止咳是两套轴：温寒对半，平性只剩两味 | 化痰与止咳是两套轴：温寒对半，平性只剩两味——按「25 味、3 节：一套按痰分，一套按咳分 → 温 7 寒 7：治痰的轴是对半开的，平性被挤到边上 → 归经：17 条里 13 条落肺，8 条空栏全写「归肺经」 → 词表缺口：9 味无气、8 味无归经」走一遍本章判据 | 831 | [`skill-huatan-kesou.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/08-huatan-kesou/outputs/skill-huatan-kesou.md) |
+| prompt | 化痰与止咳是两套轴：温寒对半，平性只剩两味 · 提示词 | — | 957 | [`prompt-huatan-kesou.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/08-huatan-kesou/outputs/prompt-huatan-kesou.md) |
+| skill | 化痰与止咳是两套轴：温寒对半，平性只剩两味 | 化痰与止咳是两套轴：温寒对半，平性只剩两味——按「25 味、3 节：一套按痰分，一套按咳分 → 温 7 寒 7：治痰的轴是对半开的，平性被挤到边上 → 归经：17 条里 13 条落肺，8 条空栏全写「归肺经」 → 词表缺口：9 味无气、8 味无归经」走一遍本章判据 | 849 | [`skill-huatan-kesou.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/08-huatan-kesou/outputs/skill-huatan-kesou.md) |
 
 #### 第 9 章 · 安神、平肝、开窍：26 味药只落在心与肝两条经上
 
@@ -3232,8 +3232,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 安神、平肝、开窍：26 味药只落在心与肝两条经上 · 提示词 | — | 919 | [`prompt-anshen-pinggan.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/09-anshen-pinggan/outputs/prompt-anshen-pinggan.md) |
-| skill | 安神、平肝、开窍：26 味药只落在心与肝两条经上 | 安神、平肝、开窍：26 味药只落在心与肝两条经上——按「26 味、5 节：三个靶，两条经 → 气：平 9 条占四成，安神药 8 条有值里 6 条平 → 归经：心 15、肝 13，两脏吃掉 28/50 个经标 → 剂量与剂型：0.03g 到 30g，六味走丸散」走一遍本章判据 | 815 | [`skill-anshen-pinggan.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/09-anshen-pinggan/outputs/skill-anshen-pinggan.md) |
+| prompt | 安神、平肝、开窍：26 味药只落在心与肝两条经上 · 提示词 | — | 947 | [`prompt-anshen-pinggan.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/09-anshen-pinggan/outputs/prompt-anshen-pinggan.md) |
+| skill | 安神、平肝、开窍：26 味药只落在心与肝两条经上 | 安神、平肝、开窍：26 味药只落在心与肝两条经上——按「26 味、5 节：三个靶，两条经 → 气：平 9 条占四成，安神药 8 条有值里 6 条平 → 归经：心 15、肝 13，两脏吃掉 28/50 个经标 → 剂量与剂型：0.03g 到 30g，六味走丸散」走一遍本章判据 | 839 | [`skill-anshen-pinggan.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/09-anshen-pinggan/outputs/skill-anshen-pinggan.md) |
 
 #### 第 10 章 · 补虚药的分类：四节按功效切，寒温表反推不出节名
 
@@ -3241,8 +3241,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 补虚药的分类：四节按功效切，寒温表反推不出节名 · 提示词 | — | 1039 | [`prompt-buxuyao-fenlei.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/10-buxuyao-fenlei/outputs/prompt-buxuyao-fenlei.md) |
-| skill | 补虚药的分类：四节按功效切，寒温表反推不出节名 | 补虚药的分类：四节按功效切，寒温表反推不出节名——按「39 味、4 节：分节的轴是功效，不是寒温 → 14 条空栏：气缺了三分之一，缺口压在补阴 → 味与归经：甘 22/25，肾 25/39，补阳 11 味全归肾 → 剂量与剂型：1g 到 120g，四味不走常规煎剂」走一遍本章判据 | 934 | [`skill-buxuyao-fenlei.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/10-buxuyao-fenlei/outputs/skill-buxuyao-fenlei.md) |
+| prompt | 补虚药的分类：四节按功效切，寒温表反推不出节名 · 提示词 | — | 1061 | [`prompt-buxuyao-fenlei.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/10-buxuyao-fenlei/outputs/prompt-buxuyao-fenlei.md) |
+| skill | 补虚药的分类：四节按功效切，寒温表反推不出节名 | 补虚药的分类：四节按功效切，寒温表反推不出节名——按「39 味、4 节：分节的轴是功效，不是寒温 → 14 条空栏：气缺了三分之一，缺口压在补阴 → 味与归经：甘 22/25，肾 25/39，补阳 11 味全归肾 → 剂量与剂型：1g 到 120g，四味不走常规煎剂」走一遍本章判据 | 952 | [`skill-buxuyao-fenlei.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/10-buxuyao-fenlei/outputs/skill-buxuyao-fenlei.md) |
 
 #### 第 11 章 · 收涩与涌吐编在一起：同一根气机轴，14 味里只有 8 味带涩
 
@@ -3250,8 +3250,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 收涩与涌吐编在一起：同一根气机轴，14 味里只有 8 味带涩 · 提示词 | — | 967 | [`prompt-shouse-yongtu.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/11-shouse-yongtu/outputs/prompt-shouse-yongtu.md) |
-| skill | 收涩与涌吐编在一起：同一根气机轴，14 味里只有 8 味带涩 | 收涩与涌吐编在一起：同一根气机轴，14 味里只有 8 味带涩——按「17 味、4 节、2,217 字：编在一起的理由不在功效 → 气：收涩几乎全在温平侧，涌吐 3 味全寒 → 味：涩 9 条占全库近半，但 6 味收涩药不带涩 → 归经与三处空栏：肾 9、肺 6、大肠 5」走一遍本章判据 | 857 | [`skill-shouse-yongtu.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/11-shouse-yongtu/outputs/skill-shouse-yongtu.md) |
+| prompt | 收涩与涌吐编在一起：同一根气机轴，14 味里只有 8 味带涩 · 提示词 | — | 992 | [`prompt-shouse-yongtu.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/11-shouse-yongtu/outputs/prompt-shouse-yongtu.md) |
+| skill | 收涩与涌吐编在一起：同一根气机轴，14 味里只有 8 味带涩 | 收涩与涌吐编在一起：同一根气机轴，14 味里只有 8 味带涩——按「17 味、4 节、2,217 字：编在一起的理由不在功效 → 气：收涩几乎全在温平侧，涌吐 3 味全寒 → 味：涩 9 条占全库近半，但 6 味收涩药不带涩 → 归经与三处空栏：肾 9、肺 6、大肠 5」走一遍本章判据 | 878 | [`skill-shouse-yongtu.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/11-shouse-yongtu/outputs/skill-shouse-yongtu.md) |
 
 #### 第 12 章 · 性味归经编成 21 维：余弦排得出描述邻近，排不出可以替换
 
@@ -3259,8 +3259,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 性味归经编成 21 维：余弦排得出描述邻近，排不出可以替换 · 提示词 | — | 1010 | [`prompt-xingneng-bianma.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/12-xingneng-bianma/outputs/prompt-xingneng-bianma.md) |
-| skill | 性味归经编成 21 维：余弦排得出描述邻近，排不出可以替换 | 性味归经编成 21 维：余弦排得出描述邻近，排不出可以替换——按「21 维的构造：气 1 维、味 8 维、归经 12 维 → 287 味的真实分布：肝 139 居首，气分九档 → 余弦的四个读法：人参像人参，当归不像白芍 → 21 维里没有的三件事：剂量、炮制、配伍」走一遍本章判据 | 902 | [`skill-xingneng-bianma.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/12-xingneng-bianma/outputs/skill-xingneng-bianma.md) |
+| prompt | 性味归经编成 21 维：余弦排得出描述邻近，排不出可以替换 · 提示词 | — | 1037 | [`prompt-xingneng-bianma.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/12-xingneng-bianma/outputs/prompt-xingneng-bianma.md) |
+| skill | 性味归经编成 21 维：余弦排得出描述邻近，排不出可以替换 | 性味归经编成 21 维：余弦排得出描述邻近，排不出可以替换——按「21 维的构造：气 1 维、味 8 维、归经 12 维 → 287 味的真实分布：肝 139 居首，气分九档 → 余弦的四个读法：人参像人参，当归不像白芍 → 21 维里没有的三件事：剂量、炮制、配伍」走一遍本章判据 | 925 | [`skill-xingneng-bianma.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/12-xingneng-bianma/outputs/skill-xingneng-bianma.md) |
 
 #### 第 13 章 · 五道闸算出 3.341 分：四道是常数，只有炮制在动
 
@@ -3268,8 +3268,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 五道闸算出 3.341 分：四道是常数，只有炮制在动 · 提示词 | — | 1014 | [`prompt-caiyao-zhijian.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/13-caiyao-zhijian/outputs/prompt-caiyao-zhijian.md) |
-| skill | 五道闸算出 3.341 分：四道是常数，只有炮制在动 | 五道闸算出 3.341 分：四道是常数，只有炮制在动——按「五章 26 节 4,266 字：五道闸都写在「类」上，不写在「味」上 → 五道闸的通过率：0.0%、36.6%、99.3%、99.3%、99.0% → 341 分不是「67% 完成度」：280 味的得分就是「3 加炮制闸」 → 剂量：26 个上界档、0.004g 到 120g，而 76.3% 落在 6–15g」走一遍本章判据 | 908 | [`skill-caiyao-zhijian.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/13-caiyao-zhijian/outputs/skill-caiyao-zhijian.md) |
+| prompt | 五道闸算出 3.341 分：四道是常数，只有炮制在动 · 提示词 | — | 1035 | [`prompt-caiyao-zhijian.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/13-caiyao-zhijian/outputs/prompt-caiyao-zhijian.md) |
+| skill | 五道闸算出 3.341 分：四道是常数，只有炮制在动 | 五道闸算出 3.341 分：四道是常数，只有炮制在动——按「五章 26 节 4,266 字：五道闸都写在「类」上，不写在「味」上 → 五道闸的通过率：0.0%、36.6%、99.3%、99.3%、99.0% → 341 分不是「67% 完成度」：280 味的得分就是「3 加炮制闸」 → 剂量：26 个上界档、0.004g 到 120g，而 76.3% 落在 6–15g」走一遍本章判据 | 925 | [`skill-caiyao-zhijian.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/13-caiyao-zhijian/outputs/skill-caiyao-zhijian.md) |
 
 #### 第 14 章 · 12 味毒药的分界不在毒性等级，在给药途径
 
@@ -3277,8 +3277,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 12 味毒药的分界不在毒性等级，在给药途径 · 提示词 | — | 1003 | [`prompt-gongdu-badu.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/14-gongdu-badu/outputs/prompt-gongdu-badu.md) |
-| skill | 12 味毒药的分界不在毒性等级，在给药途径 | 12 味毒药的分界不在毒性等级，在给药途径——按「12 味、2 章、1,683 字：两章各只有一节 → 气：温 5、热 2、寒 2，全库九档这里只用五档 → 味与归经：辛 7/11，大肠与小肠合占 22.7% → 剂型三分：3 味只外用、8 味丸散、1 味煎服」走一遍本章判据 | 898 | [`skill-gongdu-badu.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/14-gongdu-badu/outputs/skill-gongdu-badu.md) |
+| prompt | 12 味毒药的分界不在毒性等级，在给药途径 · 提示词 | — | 1028 | [`prompt-gongdu-badu.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/14-gongdu-badu/outputs/prompt-gongdu-badu.md) |
+| skill | 12 味毒药的分界不在毒性等级，在给药途径 | 12 味毒药的分界不在毒性等级，在给药途径——按「12 味、2 章、1,683 字：两章各只有一节 → 气：温 5、热 2、寒 2，全库九档这里只用五档 → 味与归经：辛 7/11，大肠与小肠合占 22.7% → 剂型三分：3 味只外用、8 味丸散、1 味煎服」走一遍本章判据 | 919 | [`skill-gongdu-badu.md`](../departments/02-zhongyao/01-zhongyaoxue/chapters/14-gongdu-badu/outputs/skill-gongdu-badu.md) |
 
 ### 药用植物学
 

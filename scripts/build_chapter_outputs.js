@@ -131,7 +131,7 @@ function quizCount(p) {
   }
 }
 
-function buildPrompt({ course, n, title, chain, secs, hanzi, judg, bound, disc, qn }) {
+function buildPrompt({ course, n, title, chain, secs, hanzi, judg, bound, disc, qn, scale }) {
   const L = [];
   L.push(`# ${title} · 提示词`);
   L.push('');
@@ -144,6 +144,10 @@ function buildPrompt({ course, n, title, chain, secs, hanzi, judg, bound, disc, 
   L.push('');
   L.push('```');
   L.push(`我在学《${course}》第 ${n} 章「${title}」，本章 ${secs.length} 节 / ${hanzi.toLocaleString('en-US')} 汉字，习题 ${qn} 道。`);
+  if (scale) {
+    const src = scale.text ? `正文声明：${scale.text}` : `教材第 ${scale.chapters.join('–')} 章`;
+    L.push(scale.text ? `教材规模（${src}）。` : `教材规模：${src}，合计 ${scale.chars.toLocaleString('en-US')} 汉字。`);
+  }
   L.push('正文见本章 `docs/zh.md`，关键数字由 `node code/main.js` 从正文现算。');
   L.push('');
   L.push('请按以下顺序带我走：');
@@ -172,7 +176,7 @@ function buildPrompt({ course, n, title, chain, secs, hanzi, judg, bound, disc, 
   return L.join('\n');
 }
 
-function buildSkill({ n, title, chain, judg, bound, disc, qn, slug }) {
+function buildSkill({ n, title, chain, judg, bound, disc, qn, slug, scale }) {
   const L = [];
   L.push('---');
   L.push(`name: ${slug}`);
@@ -182,6 +186,10 @@ function buildSkill({ n, title, chain, judg, bound, disc, qn, slug }) {
   L.push('');
   L.push(`# ${title}`);
   L.push('');
+  if (scale) {
+    L.push(`> 教材规模：${scale.text || `${scale.chapters ? `第 ${scale.chapters.join('–')} 章 · ` : ''}${scale.chars.toLocaleString('en-US')} 汉字`}`);
+    L.push('');
+  }
   L.push('## 什么时候用');
   L.push('');
   L.push('需要把本章的判断讲清、或检验自己是否讲清时。');
@@ -234,6 +242,13 @@ function main() {
       drift.push(`${r.dept}/${r.subject}: 缺 chapters/`);
       continue;
     }
+    // 教材规模（可选）：学科目录里有 chapter-map.json 就用它，没有就不写——
+    // 不能凭「大概几章」估，那正是口径分叉的来源。
+    let scaleMap = null;
+    try {
+      const mp = JSON.parse(fs.readFileSync(path.join(sdir, 'chapter-map.json'), 'utf8'));
+      scaleMap = new Map(mp.chapters.map((x) => [x.chapter, x]));
+    } catch { /* 无映射：产物不写教材规模 */ }
     for (const c of fs.readdirSync(cdirs).sort()) {
       const docs = path.join(cdirs, c, 'docs', 'zh.md');
       const quiz = path.join(cdirs, c, 'quiz.json');
@@ -243,7 +258,17 @@ function main() {
       const head = parseHead(md);
       const secs = sections(md);
       const chain = (secs.slice(0, 4).map((s) => s.title).filter(Boolean).join(' → ') || head.title);
+      // 正文若自己声明了教材规模（如「教材·第2章·2.3（舌诊四小节，1,249 字）」），
+      // 产物复述正文那个数——正文是唯一真源，映射只用于没有声明时兜底。
+      // 正文若写了「本章口径」行，产物照抄整条——它可能同时给出两章的规模
+      // （如「第13章（1,307 字）与第14章（2,139 字）」），只取第一个数就会漏。
+      const declaredLine = (/^\*\*本章口径：\*\*(.+)$/m.exec(md) || [])[1];
+      const declared = declaredLine && /[\d,]{3,}\s*字/.test(declaredLine) ? declaredLine.trim() : null;
+      const scale = declared
+        ? { text: declared, chapters: null }
+        : (scaleMap ? scaleMap.get(c) : null);
       const base = { course, n: head.n ?? '?', title: head.title, chain, secs, hanzi: hz(md),
+        scale: scale ? { chars: scale.chars || null, text: scale.text || null, chapters: scale.textbookChapters || null } : null,
         judg: judgments(md), bound: boundary(md), disc: disclaimer(md), qn: quizCount(quiz) };
       const slug = c.replace(/^\d+-/, '');
       // outputs 的文件名有两种历史约定：skill-<slug>.md 与 skill-<NN-slug>.md。
