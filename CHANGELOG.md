@@ -24,6 +24,8 @@
 | 配音段数 ≠ 讲稿段数 | **10 章** | 3 章缺段、7 章有往期残留 mp3（13 个 / 11 段） | 清空 audio/ 重合成再渲 |
 | 帧/分片/字幕与段数不齐 | **51 章** | 讲稿段数变过，中间产物按旧段数生成（`15-中医康复学 01` 更极端：配音 0 个却判 rendered） | 按需重配音 + 重造幻灯片/帧/字幕/成片 |
 | 账面时长过期 | **144 章** | `estimate_minutes` 停在 2 段讲稿时代（写 1.08，实为 9.8） | `sync_lesson_audio.py`（mp3→lesson.json）+ `sync_measured_minutes.py`（lesson.json→course.yaml） |
+| 讲稿旧于正文 | **4 章** | 正文改过（合并二级小节）但没重抽讲稿，视频讲的是旧结构 | `extract_narration` → 重合成 → 重造幻灯片/帧/字幕/成片；`scratch/find_stale_narration.js` 按 mtime 全量扫 |
+| 旧分片残留 | **4 章** | 讲稿段数 14→12 后 `part-013/014` 留在目录，成片只拼前 12 段 | `build_video.js` 渲染前先删 `video/part-*.mp4` |
 
 **三、门级修补（每一条都有反向测试）**
 
