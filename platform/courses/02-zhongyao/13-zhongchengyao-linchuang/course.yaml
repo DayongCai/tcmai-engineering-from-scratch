@@ -31,59 +31,59 @@ chapters:
   - slug: 01-gailun-fenlei
     title: 剂型是把用法固定在药里的那一步
     video: rendered
-    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 10.65      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.50      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 02-jixing-gongyi
     title: 剂型决定药怎么出来，工艺决定每一批是不是同一批
     video: rendered
-    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 12.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.73      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 03-zhiliang-biaozhun
     title: 标准不替好药背书，它只替不合格的药划线
     video: rendered
-    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 11.13      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.37      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 04-zhusheji
     title: 注射剂拿掉了胃肠这道屏障，就得把每一项要求补回来
     video: rendered
-    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 12.05      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.62      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 05-neike-yongyao
     title: 选药的入口是证候，不是药名里的那两个字
     video: rendered
-    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 11.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.70      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 06-fuke-erke
     title: 人群一变，剂量、疗程、禁忌三样一起变
     video: rendered
-    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 11.75      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.38      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 07-gushang-pifu
     title: 外用不是内服的降级版，它换了一条吸收路径
     video: rendered
-    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 11.43      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.81      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 08-lianhe-yongyao
     title: 联用不是加法，是把两条作用曲线叠在同一张图上
     video: rendered
-    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 11.30      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.80      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 09-buliang-fanying
     title: 监测的对象不是药，是药、人和用法组成的三元组
     video: rendered
-    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.89      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 12.25      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.01      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 10-heli-yongyao
     title: 合理用药的最后一公里，是一张能被打勾的核对表
     video: rendered
-    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 11.17      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.13      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

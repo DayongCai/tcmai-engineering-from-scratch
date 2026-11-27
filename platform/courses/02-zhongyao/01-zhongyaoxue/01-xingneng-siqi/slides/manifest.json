@@ -1,31 +1,86 @@
 {
   "chapter": "01-xingneng-siqi",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 16,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 20
+      "chars": 28
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 53
+      "chars": 33
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 201
+      "chars": 253
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 180
+      "chars": 301
     },
     {
       "n": 5,
+      "segment": 4,
+      "chars": 321
+    },
+    {
+      "n": 6,
       "segment": 5,
+      "chars": 361
+    },
+    {
+      "n": 7,
+      "segment": 5,
+      "chars": 372
+    },
+    {
+      "n": 8,
+      "segment": 5,
+      "chars": 292
+    },
+    {
+      "n": 9,
+      "segment": 5,
+      "chars": 153
+    },
+    {
+      "n": 10,
+      "segment": 6,
+      "chars": 291
+    },
+    {
+      "n": 11,
+      "segment": 6,
+      "chars": 212
+    },
+    {
+      "n": 12,
+      "segment": 7,
+      "chars": 322
+    },
+    {
+      "n": 13,
+      "segment": 7,
+      "chars": 409
+    },
+    {
+      "n": 14,
+      "segment": 8,
+      "chars": 211
+    },
+    {
+      "n": 15,
+      "segment": 9,
+      "chars": 393
+    },
+    {
+      "n": 16,
+      "segment": 10,
       "chars": 52
     }
   ]

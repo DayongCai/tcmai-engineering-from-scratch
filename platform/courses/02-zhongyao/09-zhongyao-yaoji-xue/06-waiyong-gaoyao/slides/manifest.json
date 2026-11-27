@@ -1,31 +1,101 @@
 {
   "chapter": "06-waiyong-gaoyao",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 19,
+  "segmentCount": 11,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 17
+      "chars": 25
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 62
+      "chars": 35
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 52
+      "chars": 211
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 106
+      "chars": 151
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 334
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 104
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 210
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 379
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 359
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 354
+    },
+    {
+      "n": 11,
+      "segment": 7,
+      "chars": 277
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 365
+    },
+    {
+      "n": 13,
+      "segment": 8,
+      "chars": 286
+    },
+    {
+      "n": 14,
+      "segment": 9,
+      "chars": 54
+    },
+    {
+      "n": 15,
+      "segment": 9,
+      "chars": 429
+    },
+    {
+      "n": 16,
+      "segment": 9,
+      "chars": 237
+    },
+    {
+      "n": 17,
+      "segment": 10,
+      "chars": 346
+    },
+    {
+      "n": 18,
+      "segment": 10,
+      "chars": 142
+    },
+    {
+      "n": 19,
+      "segment": 11,
       "chars": 52
     }
   ]

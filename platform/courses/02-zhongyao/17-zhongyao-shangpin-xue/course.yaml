@@ -31,107 +31,107 @@ chapters:
   - slug: 01-daolun
     title: 中药商品学管的是价值怎么形成，不是药能治什么病
     video: rendered
-    estimate_minutes: 1.07      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.08      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 9.22      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 7.36      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 02-lishi-liutong
     title: 药市不是被设计出来的，是被「产地分散、需求广泛、运输慢」逼出来的
     video: rendered
-    estimate_minutes: 1.02      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.03      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 16.23      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 12.52      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 03-fenlei-mingming
     title: 分类是给管理留位置，命名是给争议留证据
     video: rendered
-    estimate_minutes: 1.03      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.06      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 15.12      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 12.16      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 04-daodi-chanqu
     title: 道地是「产区＋种质＋工艺」的共同署名，不是一枚产地印章
     video: rendered
-    estimate_minutes: 1.03      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.02      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 14.75      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 12.39      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 05-zhiliang-biaozhun
     title: 标准不是一张合格证，是一串「谁说了算、说到哪一步」的效力排序
     video: rendered
-    estimate_minutes: 1.02      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.04      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 16.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 13.71      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 06-jianding-fangfa
     title: 鉴定的第一步不是看药，是把「一批货」变成「一份能代表它的样」
     video: rendered
-    estimate_minutes: 1.03      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.05      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 19.13      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 14.86      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 07-guige-dengji
     title: 规格分级给的是可比的级差，不是质量的判决
     video: rendered
-    estimate_minutes: 1.02      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.03      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 9.45      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 7.53      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 08-yinpian
     title: 饮片的规格是切出来的，药性是炮出来的，责任是批号绑住的
     video: rendered
-    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.02      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 10.33      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.81      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 09-zhongchengyao
     title: 中成药卖的是可复现的处方，不是一堆药材
     video: rendered
-    estimate_minutes: 1.03      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.04      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 9.20      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 6.66      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 10-baozhuang-chucang
     title: 变质不是意外，是四项环境因素各自找到了入口
     video: rendered
-    estimate_minutes: 1.03      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.05      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 8.78      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 7.17      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 11-jingying-zhiliang
     title: 经营质量的全部证据，是一条能倒着走的记录链
     video: rendered
-    estimate_minutes: 1.10      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.12      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 9.77      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 7.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 12-jiage-shichang
     title: 药材价格对产量的敏感，远高于对需求的敏感
     video: rendered
-    estimate_minutes: 1.03      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.07      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 10.28      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.42      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 13-pinpai-zhishi
     title: 品牌护住的是来源的名声，护不住这一批药的质量
     video: rendered
-    estimate_minutes: 1.05      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.06      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 17.93      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 15.20      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 14-teshu-guanli
     title: 特殊管理管的不是等级，是每一笔货的来去
     video: rendered
-    estimate_minutes: 1.05      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.06      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 15.08      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.30      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 15-guomao-maoyi
     title: 出口卖的不是好药，是那个市场认得的商品
     video: rendered
-    estimate_minutes: 1.08      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.10      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 15.13      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 12.80      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 16-jianguan-hegui
     title: 监管划的是底线，合规做的是把底线变成流程
     video: rendered
-    estimate_minutes: 1.02      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.02      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 19.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 16.98      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 17-fengxian-zhuisu
     title: 追溯不解决质量问题，它只解决「出了问题找谁」
     video: rendered
-    estimate_minutes: 1.12      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.11      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 13.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 18-jiaoxue-pingtai
     title: 编码不是排版，是把「哪一句」变成「哪一个地址」
     video: rendered
-    estimate_minutes: 1.08      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.11      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 15.30      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 12.68      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

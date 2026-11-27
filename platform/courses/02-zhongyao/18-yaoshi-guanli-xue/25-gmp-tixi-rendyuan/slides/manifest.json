@@ -1,31 +1,96 @@
 {
   "chapter": "25-gmp-tixi-rendyuan",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 18,
+  "segmentCount": 12,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 18
+      "chars": 29
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 108
+      "chars": 29
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 34
+      "chars": 165
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 114
+      "chars": 175
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 335
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 325
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 406
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 356
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 77
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 252
+    },
+    {
+      "n": 11,
+      "segment": 7,
+      "chars": 316
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 406
+    },
+    {
+      "n": 13,
+      "segment": 8,
+      "chars": 276
+    },
+    {
+      "n": 14,
+      "segment": 9,
+      "chars": 353
+    },
+    {
+      "n": 15,
+      "segment": 9,
+      "chars": 322
+    },
+    {
+      "n": 16,
+      "segment": 10,
+      "chars": 245
+    },
+    {
+      "n": 17,
+      "segment": 11,
+      "chars": 289
+    },
+    {
+      "n": 18,
+      "segment": 12,
       "chars": 52
     }
   ]

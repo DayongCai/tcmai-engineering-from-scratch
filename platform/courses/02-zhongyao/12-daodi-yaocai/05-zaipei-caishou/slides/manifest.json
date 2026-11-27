@@ -1,31 +1,91 @@
 {
   "chapter": "05-zaipei-caishou",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 17,
+  "segmentCount": 11,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 9
+      "chars": 25
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 79
+      "chars": 95
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 13
+      "chars": 151
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 111
+      "chars": 126
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 292
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 238
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 375
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 139
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 278
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 264
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 335
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 225
+    },
+    {
+      "n": 13,
+      "segment": 9,
+      "chars": 407
+    },
+    {
+      "n": 14,
+      "segment": 9,
+      "chars": 91
+    },
+    {
+      "n": 15,
+      "segment": 10,
+      "chars": 348
+    },
+    {
+      "n": 16,
+      "segment": 10,
+      "chars": 148
+    },
+    {
+      "n": 17,
+      "segment": 11,
       "chars": 52
     }
   ]

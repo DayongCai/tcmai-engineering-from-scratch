@@ -1,31 +1,81 @@
 {
   "chapter": "07-zhuce-ziliao",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 15,
+  "segmentCount": 9,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 23
+      "chars": 31
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 82
+      "chars": 209
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 34
+      "chars": 118
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 122
+      "chars": 103
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 144
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 303
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 285
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 302
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 409
+    },
+    {
+      "n": 10,
+      "segment": 6,
+      "chars": 367
+    },
+    {
+      "n": 11,
+      "segment": 6,
+      "chars": 418
+    },
+    {
+      "n": 12,
+      "segment": 6,
+      "chars": 196
+    },
+    {
+      "n": 13,
+      "segment": 7,
+      "chars": 282
+    },
+    {
+      "n": 14,
+      "segment": 8,
+      "chars": 390
+    },
+    {
+      "n": 15,
+      "segment": 9,
       "chars": 52
     }
   ]

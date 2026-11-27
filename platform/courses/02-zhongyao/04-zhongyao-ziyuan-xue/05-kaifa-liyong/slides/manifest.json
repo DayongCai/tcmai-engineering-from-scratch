@@ -1,31 +1,96 @@
 {
   "chapter": "05-kaifa-liyong",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 18,
+  "segmentCount": 13,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 15
+      "chars": 32
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 47
+      "chars": 33
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 39
+      "chars": 116
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 109
+      "chars": 100
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 298
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 129
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 355
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 348
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 335
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 290
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 370
+    },
+    {
+      "n": 12,
+      "segment": 9,
+      "chars": 397
+    },
+    {
+      "n": 13,
+      "segment": 9,
+      "chars": 173
+    },
+    {
+      "n": 14,
+      "segment": 10,
+      "chars": 217
+    },
+    {
+      "n": 15,
+      "segment": 10,
+      "chars": 229
+    },
+    {
+      "n": 16,
+      "segment": 11,
+      "chars": 221
+    },
+    {
+      "n": 17,
+      "segment": 12,
+      "chars": 354
+    },
+    {
+      "n": 18,
+      "segment": 13,
       "chars": 52
     }
   ]

@@ -1,31 +1,96 @@
 {
   "chapter": "11-anquan-pingjia",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 18,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 17
+      "chars": 29
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 52
+      "chars": 94
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 44
+      "chars": 178
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 107
+      "chars": 135
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 281
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 330
+    },
+    {
+      "n": 7,
+      "segment": 5,
+      "chars": 302
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 419
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 317
+    },
+    {
+      "n": 10,
+      "segment": 6,
+      "chars": 197
+    },
+    {
+      "n": 11,
+      "segment": 7,
+      "chars": 241
+    },
+    {
+      "n": 12,
+      "segment": 7,
+      "chars": 399
+    },
+    {
+      "n": 13,
+      "segment": 7,
+      "chars": 407
+    },
+    {
+      "n": 14,
+      "segment": 8,
+      "chars": 247
+    },
+    {
+      "n": 15,
+      "segment": 8,
+      "chars": 215
+    },
+    {
+      "n": 16,
+      "segment": 8,
+      "chars": 312
+    },
+    {
+      "n": 17,
+      "segment": 9,
+      "chars": 415
+    },
+    {
+      "n": 18,
+      "segment": 10,
       "chars": 52
     }
   ]

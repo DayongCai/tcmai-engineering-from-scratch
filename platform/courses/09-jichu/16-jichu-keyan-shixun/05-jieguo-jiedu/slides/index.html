@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"/>
-<title>第 5 章 · 结果解读与可重复性 · 幻灯片</title>
+<title>第 5 章 · 解读结果靠的是机制判断，不是看偏离明不明显 · 幻灯片</title>
 <style>
 
 :root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
@@ -59,24 +59,92 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <body>
 <div id="deck">
 <section class="slide" data-i="0">
-  <div class="slide-inner"><h1 class="big">第 5 章 · 结果解读与可重复性</h1></div>
-  <div class="slide-foot"><span>1 / 5</span><span>title</span></div>
+  <div class="slide-inner"><h1 class="big">第 5 章 · 解读结果靠的是机制判断，不是看偏离明不明显</h1></div>
+  <div class="slide-foot"><span>1 / 16</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「〔派生〕结果解读与可重复性」——材料：流行病学第12章。本章要回答的是：结果解读与可重复性：这一站要交什么、怎么算过关。</blockquote></div>
-  <div class="slide-foot"><span>2 / 5</span><span>motto</span></div>
+  <div class="slide-inner"><blockquote class="motto">「所以不十全者，精神不专，志意不理，外内相失，故时疑殆。」——《素问·徵四失论》</blockquote></div>
+  <div class="slide-foot"><span>2 / 16</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
-  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">结果解读与可重复性：实训第 5 站，材料取自流行病学第12章。</p></div>
-  <div class="slide-foot"><span>3 / 5</span><span>problem</span></div>
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">教材第 5 章 12 单元 17,535 汉字，「设计与对照」一类命中 297 次、「记录与报告」182 次。这一章叫「结果解读与可重复性」，但教材没给一张「怎么解读」的清单，给的是三套机制：选择偏倚、信息偏倚、混杂。原因是教材自己写下的那句判词——「判断结果的可靠性不能只看偏离是否明显，还应当考察各种可能的偏倚机制是否存在，以及它们可能影响的方向，这是一种基于机制的判断，而不是基于结果表象的判断。」学生的习惯恰好相反：先看 p 值，再回头找理由；而混合偏倚恰恰会在两种机制方向相反时<strong>互相抵消</strong>，让结果看起来毫无异常。</p></div>
+  <div class="slide-foot"><span>3 / 16</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
-  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（实训课的判据是「做得到—记得下—复得了」三件套：动手规范、记录完整、结果可重复）+ 知识积累（本章 12 单元 17,535 汉字；三辨主 <strong>设计与对照 297</strong>；四位面（实训站）主 <strong>数据与结果 17535</strong>；引书 <strong>0 部 0 次</strong>；数值类命中 0）</p></div>
-  <div class="slide-foot"><span>4 / 5</span><span>roots</span></div>
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（同行评议与复现失败时被追问的都不是「显不显著」，而是「谁能进这个样本」「暴露是怎么问出来的」「调整了哪些变量、为什么」——机制答不上，结果就不可用） + 知识积累（把偏倚读成「误差的一种」，还是读成「有方向、有来源、不随样本量消失的系统机制」——前者让你想加大样本，后者让你回去改设计）</p></div>
+  <div class="slide-foot"><span>4 / 16</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
+  <div class="slide-inner"><div class="kicker">一、偏倚不是误差，它不会因为样本变大而消失</div>
+                <div class="compact"><p>教材先把两个词分开：<strong>随机误差</strong>来源于抽样波动与测量的偶然变异，随样本量增大而减小；<strong>偏倚</strong>来自系统性的机制，不会因增加样本量而消除。这一句是全章的支点，它带来一个反直觉的推论：<strong>当结果出现系统偏离时，加大样本量只会把偏得更准。</strong></p>
+<p>偏倚的定义也值得逐字读：在研究的设计、实施、分析与报告过程中，由于系统性因素使研究结果与真实情况之间出现<strong>方向性</strong>偏离的现象。两个词是关键——「系统性」说明它来自机制而非偶然，「方向性」说明它可以被判为高估或低估，而不只是「不准」。</p>
+<p>按产生的环节与机制，常分三类：选择偏倚、信息偏倚、混杂；此外还有一类由多种机制交织形成的<strong>混合偏倚</strong>。三类之所以按环节分，是因为环节决定了可用的对策：选取环节的问题要在选取时防，测量环节的问题要在测量时防，分析环节能做的只有部分调整。</p></div></div>
+  <div class="slide-foot"><span>5 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">一、偏倚不是误差，它不会因为样本变大而消失</div>
+                <div class="compact"><p>偏倚的方向通常分高估与低估两类：使效应被高估的偏倚，会把较弱的关联看成较强的关联，或把本不存在的关联看成存在；使效应被低估的偏倚则相反。方向的用途是判断结论的<strong>保守程度</strong>——明显高估的关联解释时应更谨慎，明显低估的关联可能掩盖了真实存在的效应。但教材立刻加了一句限制：<strong>方向并不总是可以事先判断</strong>，因为影响方向的机制可能复杂，多种机制可能并存、相互抵消，故方向的判断应当谨慎，不能绝对化。</p>
+<p>这一节还给出了一条策略上的硬话：与混杂不同，选择偏倚与信息偏倚<strong>即使在分析阶段被发现，也常常难以通过统计方法完全校正</strong>，因为缺乏用于校正的可靠信息或参照标准。所以控制的重点只能前置。</p></div></div>
+  <div class="slide-foot"><span>6 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">二、两类偏倚：一个在「谁进来了」，一个在「怎么说的」</div>
+                <div class="compact"><p><strong>选择偏倚</strong>指研究样本不能代表目标人群，或各比较组在除研究因素之外的其他因素上不可比，从而使效应估计出现方向性偏离。它主要产生于研究对象的<strong>选取与分组</strong>环节：人选、对照选取、应答与随访退出。常见类别有六：入院率偏倚、现患-新发病例偏倚、无应答偏倚、失访偏倚、易感性偏倚、检出偏倚。</p>
+<p>六类可以归成两组来理解。一组与「进不进来」有关：无应答偏倚（不应答者与应答者在关键特征上系统不同）、失访偏倚（退出者与留下者不同）、易感性偏倚（因某种共有的易感状态而被同时纳入，造成虚假关联）。另一组与「从哪个人群里选」有关：入院率偏倚（住院人群不等于一般人群，因为住院本身受多种因素影响）、现患-新发病例偏倚（现患病例是「发病且存活至今」的人，病程短或致死性高的病例被系统排除）、检出偏倚（被检出的机会在组间不对等）。三组的共同点是：<strong>偏倚发生在「样本」这个词被写下之前</strong>，等数据到手，样本已经定型。</p></div></div>
+  <div class="slide-foot"><span>7 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">二、两类偏倚：一个在「谁进来了」，一个在「怎么说的」</div>
+                <div class="compact"><p><strong>信息偏倚</strong>指对暴露、结局或其他变量的测量或记录不准确，且这种不准确在比较组之间<strong>系统性地不同</strong>。注意最后半句：单组内的测量不准是误差，组间不同才是偏倚。常见三类：</p>
+<ul><li><strong>回忆偏倚</strong>：研究对象对既往暴露的回忆在准确性或完整性上存在系统差异，常见于以自我报告获取暴露信息的病例对照研究。产生环节在暴露信息的采集——病例因患病而反复思考可能的病因，回忆往往比对照更细致，或更倾向报告某些经历，使两组回忆质量不对等。识别要点：比较两组是否使用<strong>相同的提问方式、相同的回忆时限、相同的辅助手段</strong>；回忆条件不对等，结果就可能受影响。</li><li><strong>报告偏倚</strong>：研究对象报告信息时受主观因素影响，倾向隐瞒或夸大，且这种倾向在组间可能不同。典型形式是社会期望偏倚——涉及隐私、社会评价或行为习惯的信息，被访者给出与社会期望相符的回答。</li><li><strong>测量偏倚</strong>：测量工具、操作者或条件在组间不一致所致。</li></ul></div></div>
+  <div class="slide-foot"><span>8 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">二、两类偏倚：一个在「谁进来了」，一个在「怎么说的」</div>
+                <div class="compact"><p>两类偏倚的识别方法因此不一样：选择偏倚问「谁进来了」，信息偏倚问「话是怎么问出来的」。教材给的识别思路统一为一句：<strong>考察产生环节，比较组间的条件是否对等。</strong> 不对等，就有偏倚的空间。</p>
+<p><strong>混合偏倚</strong>是本章最该重视的一节。它指两种或两种以上偏倚同时存在并相互作用，使偏离难以归因于某一单一机制。教材举的例子极具体：失访既可能使样本的选择发生变化，又可能使暴露信息的采集质量发生改变，两种机制叠加，其总影响<strong>不能简单相加</strong>。</p>
+<p>难就难在方向：各种机制的影响方向可能一致，也可能相反——方向一致时偏离被放大；方向相反时各种影响可能<strong>部分抵消，使表面上看不出明显的偏离</strong>。这就是开头那个问题的答案：结果看起来干净，不等于没有偏倚；它可能只是两种偏倚刚好对冲。所以判断必须基于机制的存在与方向，而不是基于结果表象。</p></div></div>
+  <div class="slide-foot"><span>9 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">三、混杂的三个条件：第三条最常被判错</div>
+                <div class="compact"><p>混杂指研究因素与结局之间的关联，部分或全部地由于一个或多个第三因素与两者的关系而产生，从而使观察到的关联偏离真实效应。混杂因素（混杂变量）指<strong>既与暴露有关联、又与结局有关联，并且在因果路径上不是暴露与结局之间中间环节</strong>的因素。</p>
+<p>三个条件依次是：</p>
+<ol><li><strong>与暴露有关</strong>：暴露组与对照组在该因素上的分布存在差异。若无关，它在两组间不会因暴露而系统变化，即使与结局有关，也只是在两组中同等地起作用，难以制造虚假关联。</li><li><strong>与结局有关</strong>：在未暴露人群或对照人群中，该因素与结局存在关联。若无关，它即使与暴露有关，也不会通过影响结局造成组间偏离。</li><li><strong>不是中间环节</strong>：它不处于暴露作用于结局的路径之中。</li></ol></div></div>
+  <div class="slide-foot"><span>10 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">三、混杂的三个条件：第三条最常被判错</div>
+                <div class="compact"><p>第三条最常被判错，后果也最重。若某变量处于路径之中（暴露导致该变量变化、该变量再影响结局），它是<strong>中间变量</strong>而不是混杂因素；对中间变量作调整会<strong>阻断暴露对结局的部分作用，从而低估暴露的总效应</strong>。教材的措辞是「把中间变量误作混杂因素加以控制，是……」——这句话的后半段留给读者，但方向已经明确：这不是保守，是错。</p>
+<p>三个条件合起来有一个隐含要求：判断混杂必须<strong>先画出因果结构</strong>（谁在谁的上游、谁在路径中间），而不是拿一堆变量做「调整」。没有因果结构的调整，只是把相关性当成了理由。</p></div></div>
+  <div class="slide-foot"><span>11 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">三、混杂的三个条件：第三条最常被判错</div>
+                <div class="compact"><p>控制分两个阶段。<strong>设计阶段</strong>的控制手段包括限制（把研究对象限定在某一水平）、配比（使组间在配比变量上可比）、随机分配（使已知与未知的混杂在组间趋于均衡）；<strong>分析阶段</strong>的控制包括分层与多因素分析。两阶段的代价不同：设计阶段的控制更彻底，但会限制外推性、增加实施难度、且只能处理已知的混杂；分析阶段的控制更灵活，但依赖测量是否准确、模型是否设定正确，且无法处理未测量的混杂。教材要求把这一权衡写进方案——<strong>「控制了什么、没控制什么、为什么」是可复核的一部分</strong>。</p></div></div>
+  <div class="slide-foot"><span>12 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">四、交互：相加与相乘不是一回事，判断要两把尺</div>
+                <div class="compact"><p>交互作用指暴露的效应在不同层（不同水平的第三因素）之间不同。它和混杂的区别是方向性的：混杂是「要除掉的东西」，交互是「要报告的东西」——前者是偏离，后者是真实存在的效应差异。</p>
+<p>教材要求区分<strong>相加交互</strong>与<strong>相乘交互</strong>：相加交互看的是效应之差（绝对尺度上是否超出两部分之和），相乘交互看的是效应之比（相对尺度上是否超出两部分之积）。<strong>同一组数据在相加尺度上可能有交互而在相乘尺度上没有</strong>，反之亦然。所以「有没有交互」这个问句本身不完整，必须补一句「在哪个尺度上」。</p>
+<p>判断交互须同时具备两个依据：<strong>统计学依据</strong>（数据上是否支持层间不同）与<strong>专业依据</strong>（机制上是否讲得通）。只有统计学依据，等于在数据里捞出一个模式；只有专业依据，等于拿理论去套数据。教材把两条并列写成要求，用意是防止任何一边单独成立。</p></div></div>
+  <div class="slide-foot"><span>13 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">四、交互：相加与相乘不是一回事，判断要两把尺</div>
+                <div class="compact"><p>交互还有公共卫生意义这一层：同样的效应差异，在绝对尺度上的意义与相对尺度上的意义不同——相对风险翻倍在小基线风险下可能微不足道，在绝对尺度上却可能很小；反之亦然。所以报告交互时要说清尺度，而不是只说「存在交互」。</p>
+<p>偏倚控制与质量评价最后收在「如实报告」上。质量评价的维度是可比性、测量的准确性、失访与缺失的处理、偏倚的可能来源与方向、分析的恰当性；报告的要求是把这些连同「偏离方案之处」一并写出。<strong>可重复性的最低条件，是别人能按你写的步骤重走一遍并知道你哪里没做到。</strong></p></div></div>
+  <div class="slide-foot"><span>14 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="14">
+  <div class="slide-inner"><div class="kicker">五、代价与边界</div>
+                <div class="compact"><ul><li><strong>机制讲清了，方向不总能定。</strong> 本章能说清偏倚从哪来、往哪偏，但教材明确「方向并不总是可以事先判断」，多种机制并存时尤其如此；凡把方向说成确定的，都超出了材料。</li><li><strong>分析阶段补不回来。</strong> 选择偏倚与信息偏倚在分析阶段常难以完全校正，因为缺乏可靠信息或参照标准；本章因此把重点放在前置控制，而不是事后补救。</li><li><strong>混杂只讲三个条件，不讲变量清单。</strong> 哪些变量该调整，取决于这一项研究的因果结构，属方案层面的专业判断，本章不提供通用清单。</li><li><strong>交互只讲两把尺，不讲阈值。</strong> 相加与相乘的区别是概念性的；具体判断需要统计方法与专业论证，本章不给数值与检验流程。</li><li><strong>动手操作须在有资质人员监督下。</strong> 涉及真实研究的设计、分析与报告，须在具备资质人员的监督与机构制度之下进行；涉及人体数据者须先经伦理审查与知情同意。</li></ul></div></div>
+  <div class="slide-foot"><span>15 / 16</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="15">
   <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
-  <div class="slide-foot"><span>5 / 5</span><span>disclaimer</span></div>
+  <div class="slide-foot"><span>16 / 16</span><span>disclaimer</span></div>
 </section>
 </div>
 <div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>

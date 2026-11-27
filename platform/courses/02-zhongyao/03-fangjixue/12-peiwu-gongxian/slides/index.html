@@ -60,28 +60,151 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <div id="deck">
 <section class="slide" data-i="0">
   <div class="slide-inner"><h1 class="big">第 12 章 · 方剂配伍的数据化：药物共现网络</h1></div>
-  <div class="slide-foot"><span>1 / 6</span><span>title</span></div>
+  <div class="slide-foot"><span>1 / 24</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「方剂知识图谱的关系边必须以组方逻辑为约束，而不能是文献中词频共现的统计网络」——教材·第24章·24.2.1（《方剂学·第24章·24.2》）</blockquote></div>
-  <div class="slide-foot"><span>2 / 6</span><span>motto</span></div>
+  <div class="slide-inner"><blockquote class="motto">「君一臣二，制之小也；君一臣三佐五，制之中也；君一臣三佐九，制之大也」——《素问·至真要大论》。方有大小，药有位次；本章把 114 首方的药位摊成一张共现网络，看的正是这张网能不能保住「位次」这件事。</blockquote></div>
+  <div class="slide-foot"><span>2 / 24</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
   <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">本章一开场就有一个陷阱。把 114 首方的组成摊开，甘草出现在 61 首方里、加权度 454，两项都稳居第一。于是讲义上很自然会写一句&quot;甘草是方剂配伍的核心药&quot;——数据无可挑剔，方剂学上却是错的。更麻烦的是上一版这份数据：六一散、生脉散、当归补血汤各只抽到 1 味药，四神丸抽成 0 味，消风散抓到的是《局方》的同名方。错误不在教材，在抽取层；而先发现它的，是这一章要算的度分布。</p></div>
-  <div class="slide-foot"><span>3 / 6</span><span>problem</span></div>
+  <div class="slide-foot"><span>3 / 24</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
   <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫(要交一张&quot;方剂知识图谱&quot;的图，得有节点、有边、有权重，下游一算度分布就撞上&quot;某首方只有 1 味&quot;这种不可能的记录) + 知识积累(完全图投影 × 度中心性 × 君臣佐使角色 × 一致性校验 = 知道一张网络图能说什么、不能说什么，也知道异常该往上游查而不是就地修补)</p></div>
-  <div class="slide-foot"><span>4 / 6</span><span>roots</span></div>
+  <div class="slide-foot"><span>4 / 24</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
   <div class="slide-inner"><div class="kicker">学习目标</div>
                 <div class="compact"><ul><li>说清 114 首方、836 个药位、246 味药、52 首归八法这四个数字各自怎么来的</li><li>解释&quot;修复前 821 药位 → 修复后 836 药位&quot;这 15 个药位的差额落在哪五首方上，以及为什么药味数反而从 266 降到 246</li><li>把&quot;每首方内部药味两两相连&quot;写成完全图投影，算出 2,364 对不同药、3,341 次共现、密度 7.84%，并解释它丢掉了什么</li><li>用&quot;入方数 / 加权度 / 角色足迹&quot;三列读出甘草 61 首里 28 次任使、只有 1 次任君，从而拒绝&quot;度数最高即核心药&quot;的推论</li><li>判断一张共现网络图能支撑什么结论、不能支撑什么结论，并说清药名层剩下的 86 味词表外药名属于哪一类缺陷</li></ul></div></div>
-  <div class="slide-foot"><span>5 / 6</span><span>objectives</span></div>
+  <div class="slide-foot"><span>5 / 24</span><span>objectives</span></div>
 </section>
 <section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">正文一：836 不是"821 加 15"，是五处缺陷被修好了</div>
+                <div class="compact dense"><p>本章的全部计算只依赖一份文件：<code>standards/fangji/formulas.json</code>。它的规模是四个数：</p>
+<div class="table-wrap"><table><thead><tr><th>数</th><th>含义</th><th>怎么来的</th></tr></thead><tbody><tr><td><strong>114</strong></td><td>方数</td><td>教材第 5–23 章各论的方剂条数，逐条计</td></tr><tr><td><strong>836</strong></td><td>药位</td><td>一方一药位；同一味药出现在十首方里就计 10 个药位</td></tr><tr><td><strong>246</strong></td><td>去重药味</td><td>836 个药位去重后的药名数</td></tr><tr><td><strong>52</strong></td><td>归八法的方数</td><td>按章/节名判：汗 8、吐 1、下 6、和 5、温 5、清 13、消 3、补 11</td></tr></tbody></table></div>
+<p>平均 836 ÷ 114 = <strong>7.33 药位/方</strong>。这个平均数对任何一首具体的方都不成立：最短的一首 2 味（六一散、当归补血汤、瓜蒂散），最长的一首 24 味（清暑益气汤）；从 2 味到 15 味每一个整数都有方，再往上是 17 味一首、24 味一首。<strong>平均数在这里只用来报规模，不用来描述任何一首方。</strong></p></div></div>
+  <div class="slide-foot"><span>6 / 24</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">正文一：836 不是"821 加 15"，是五处缺陷被修好了</div>
+                <div class="compact dense"><p>如果这一章写于上一版数据，上面第一张表会是 821 药位、266 味药、111 味不在《中药学》词表。三个数字现在全部作废，替换关系如下：</p>
+<div class="table-wrap"><table><thead><tr><th>指标</th><th>修复前</th><th>修复后</th><th>差额</th><th>备注</th></tr></thead><tbody><tr><td>药位</td><td>821</td><td><strong>836</strong></td><td>+15</td><td>五首方的组成补全后，逐味计入</td></tr><tr><td>去重药味</td><td>266</td><td><strong>246</strong></td><td>−20</td><td>补全只新增约 7 个药名，净减来自假药名被剔除</td></tr><tr><td>有组成的方</td><td>113/114</td><td><strong>114/114</strong></td><td>+1</td><td>四神丸从 0 味补到 4 味</td></tr><tr><td>有君药的方</td><td>99</td><td><strong>105</strong></td><td>+6</td><td>组成补全后角色层才抽得到</td></tr><tr><td>三角色以上</td><td>77</td><td><strong>80</strong></td><td>+3</td><td>同上</td></tr><tr><td>四角色齐</td><td>17</td><td><strong>18</strong></td><td>+1</td><td>同上</td></tr><tr><td>不在《中药学》词表</td><td>111</td><td><strong>86</strong></td><td>−25</td><td>假药名随补全被剔除</td></tr></tbody></table></div></div></div>
+  <div class="slide-foot"><span>7 / 24</span><span>body</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">正文一：836 不是"821 加 15"，是五处缺陷被修好了</div>
+                <div class="compact"><p><strong>这 15 个药位不是&quot;又数了一遍数出来的&quot;，是五首方逐条修出来的。</strong> 修复清单在 <code>CHANGELOG.md</code> 与 <code>standards/fangji/README.md</code> §8 留了账：</p>
+<div class="table-wrap"><table><thead><tr><th>方</th><th>初版</th><th>修正后</th><th>原因</th></tr></thead><tbody><tr><td>六一散</td><td>甘草 1 味</td><td>滑石、甘草</td><td>&quot;原方组成为：&quot;不在关键词表</td></tr><tr><td>生脉散</td><td>麦冬 1 味</td><td>人参、麦冬、五味子</td><td>&quot;组成与用量极简：&quot;不匹配；<code>五味</code> 误伤 <code>五味子</code></td></tr><tr><td>当归补血汤</td><td>当归 1 味</td><td>黄芪、当归</td><td>&quot;原方组成极简，仅两味：&quot;</td></tr><tr><td>四神丸</td><td>0 味</td><td>补骨脂、肉豆蔻、五味子、吴茱萸</td><td>无&quot;组成&quot;二字，只有&quot;原方用量为：&quot;</td></tr><tr><td>消风散</td><td>19 token（9 个非药串）</td><td>13 味</td><td>同段先讲《局方》同名方，初版抓到别人的方</td></tr></tbody></table></div></div></div>
+  <div class="slide-foot"><span>8 / 24</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">正文一：836 不是"821 加 15"，是五处缺陷被修好了</div>
+                <div class="compact"><p>三首&quot;各只抽到 1 味&quot;的方现在是 2 / 3 / 2 味；四神丸 4 味；消风散 13 味。同一次重生成还把&quot;桂府腻白滑石&quot;这类词尾修饰语按词表归到&quot;滑石&quot;，并把同段多次出现的&quot;组成&quot;取最后一次——<strong>教材把正方写在后面，取第一次就会抓到引用别人的那一句。</strong></p>
+<p>这条修法在教材里有对应的规章制度，不是工程直觉：「第四步人工复核：由编写与审稿团队抽检抽取结果，纠正错分、漏抽与误判」——教材·第24章·24.2.1（《方剂学·第24章·24.2》）。教材把复核写成流程的第四步，而不是最后一步的救火，意思正是：抽错是常态，抽错而不被抽检发现才是事故。紧随其后的第六步更直接：「第六步一致性校验：核对药味数、用量单位、用法项目是否齐全」——教材·第24章·24.2.1（《方剂学·第24章·24.2》）。本章第二节要算的度分布，就是&quot;药味数校验&quot;的一个下游探针：一首 2 味以上的方在数据里只剩 1 味，这一条在结构上就说不通，不需要读懂方义也能发现。</p></div></div>
+  <div class="slide-foot"><span>9 / 24</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">正文一：836 不是"821 加 15"，是五处缺陷被修好了</div>
+                <div class="compact"><p><strong>所以这一章的教学价值不在&quot;算出 836&quot;，而在&quot;算出 1 味&quot;。</strong> 一个只报平均数的流水线永远不会报错；一个连每首方的最小组成都看的流水线，会在第一时间喊停。这条教训已经写进 <code>standards/fangji/README.md</code> §8：下游算出&quot;某首方只有 1 味&quot;时，先怀疑上游抽取，不要先怀疑教材。</p>
+<p>本版数据的回执是：114/114 首有组成，0 首空组成，最短 2 味，最长 24 味。上一版那句&quot;821 是下限&quot;因此作废——<strong>821 是历史读数，836 是当前读数，两者都不是&quot;方剂世界的常数&quot;。</strong></p></div></div>
+  <div class="slide-foot"><span>10 / 24</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">正文二：一张图能说什么</div>
+                <div class="compact dense"><h3 id="2-1-完全图投影-一行代码一张图">2.1 完全图投影，一行代码一张图</h3>
+<p>做法只有一句：<strong>把每首方的组成药味看成一个完全图</strong>——n 味药两两相连，产生 n(n−1)/2 对。</p>
+<div class="codeblock"><div class="codeblock-lang">text</div><pre><code class="lang-text">麻黄汤：麻黄、桂枝、杏仁、甘草     → C(4,2)  = 6 对
+独活寄生汤：15 味                  → C(15,2) = 105 对
+清暑益气汤：24 味                  → C(24,2) = 276 对</code></pre></div>
+<p>对 114 首方全部投影并累加，得到 <strong>3,341 次共现</strong>（同一对药在不同方中重复出现则边权 +1），落在 <strong>2,364 对不同药</strong>上。246 个节点之间最多可能有 246×245/2 = <strong>30,135</strong> 条边，实际出现 2,364 对，<strong>密度 7.84%</strong>。平均每方 3,341 ÷ 114 = <strong>29.31 次共现</strong>——比&quot;平均 7.33 味&quot;看起来热闹近四倍，因为边数按药味数的平方增长：24 味的清暑益气汤一首就贡献 276 次共现，而 2 味的六一散只贡献 1 次。</p></div></div>
+  <div class="slide-foot"><span>11 / 24</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">正文二：一张图能说什么</div>
+                <div class="compact"><p>这也是本章第一个必须说在前面的性质：<strong>完全图投影把&quot;药味多&quot;自动翻译成&quot;关系多&quot;。</strong> 它把麻黄与甘草连在一起，也把麻黄与杏仁连在一起，而这三味在方中的地位完全不同。图里没有剂量、没有炮制、没有君臣佐使，只有共现。</p>
+<p>这张图要能用，边就必须带台账：「且须在数据中记录来源与强度，使每一条边都可被审阅、被质疑、被修正」——教材·第24章·24.2.1（《方剂学·第24章·24.2》）。本章的边权（共现几次）就是强度，边的两端（哪两味药）加边权即可反查来源方——这是它唯一具备的&quot;可审阅&quot;性质。要判断&quot;这条边在方剂学上成不成立&quot;，必须回原文，图本身给不出。</p>
+<h3 id="2-2-度最高的药-不是主药">2.2 度最高的药，不是主药</h3>
+<p>按&quot;入方数&quot;排（同一味药出现在多少首方里），前六名是：</p></div></div>
+  <div class="slide-foot"><span>12 / 24</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">正文二：一张图能说什么</div>
+                <div class="compact dense"><div class="table-wrap"><table><thead><tr><th>药</th><th>入方数</th><th>加权度（边权之和）</th><th>加权度 ÷ 入方数</th></tr></thead><tbody><tr><td>甘草</td><td>61</td><td>454</td><td>7.44</td></tr><tr><td>当归</td><td>30</td><td>254</td><td>8.47</td></tr><tr><td>茯苓</td><td>27</td><td>187</td><td>6.93</td></tr><tr><td>人参</td><td>24</td><td>198</td><td>8.25</td></tr><tr><td>半夏</td><td>21</td><td>140</td><td>6.67</td></tr><tr><td>白术</td><td>19</td><td>162</td><td>8.53</td></tr></tbody></table></div>
+<p>表里有两处值得停下来看。</p>
+<p><strong>第一，两列的次序不一样。</strong> 按入方数是甘草、当归、茯苓、人参；按加权度是人参升到第三、茯苓退到第四。人参入方 24 首比茯苓少 3 首，加权度却高 11——因为它每进一首方，所处的那首方更大（平均每方 8.25 次共现，茯苓 6.93）。度与加权度量的不是同一件事：一个数&quot;进了多少方&quot;，一个数&quot;在这些方里连着多少味药&quot;。</p></div></div>
+  <div class="slide-foot"><span>13 / 24</span><span>body</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">正文二：一张图能说什么</div>
+                <div class="compact"><p><strong>第二，加权度 ÷ 入方数几乎是一条平线。</strong> 六味药全在 6.67 到 8.53 之间，最大最小相差 1.28 倍；而入方数从 61 到 19，相差 3.2 倍。<strong>头部药的差距几乎全部来自&quot;进了多少首方&quot;，不来自&quot;每首方里连了多少药&quot;。</strong> 这才是&quot;广谱&quot;的准确含义：甘草不是靠在大方里当枢纽取胜，而是靠在 61 首方里各出现一次取胜。而这恰恰意味着它没有鉴别力——一条&quot;含甘草即归某类&quot;的规则能覆盖 53.5% 的方，等于什么也没分。</p></div></div>
+  <div class="slide-foot"><span>14 / 24</span><span>body</span></div>
+</section>
+<section class="slide" data-i="14">
+  <div class="slide-inner"><div class="kicker">正文二：一张图能说什么</div>
+                <div class="compact"><p>教材对按共现强度连边的后果说得很不客气：「词频共现只能反映“常一同出现”，却无法区分主次、君臣佐使与因果关系」——教材·第24章·24.2.1（《方剂学·第24章·24.2》）。照共现强度连边，必然导出「凡含黄芪之方即列为补气剂」——教材·第24章·24.2.1（《方剂学·第24章·24.2》）这类以偏概全的结论：黄芪确实出现在多首补气方里，但含黄芪的方也有当归补血汤这种以黄芪为君、却以&quot;补气生血&quot;立方的方，把它一律读成&quot;补气剂&quot;，就把方义压成了一个标签。</p>
+<p>药对前五（含并列）：</p>
+<div class="table-wrap"><table><thead><tr><th>药对</th><th>共现方数</th></tr></thead><tbody><tr><td>人参+甘草</td><td>20</td></tr><tr><td>当归+甘草</td><td>20</td></tr><tr><td>半夏+甘草</td><td>14</td></tr><tr><td>甘草+白术</td><td>14</td></tr><tr><td>甘草+茯苓</td><td>14</td></tr></tbody></table></div></div></div>
+  <div class="slide-foot"><span>15 / 24</span><span>body</span></div>
+</section>
+<section class="slide" data-i="15">
+  <div class="slide-inner"><div class="kicker">正文二：一张图能说什么</div>
+                <div class="compact dense"><p>前三名之后三对并列 14，次序由药名码点决定，没有医学含义。前 10 名里有 8 对含甘草——<strong>甘草是把各章方剂&quot;焊&quot;在一起的横向节点，不是任何一首方的主攻方向。</strong> 长尾也支持这个读法：246 味药里有 <strong>138 味只在一首方中出现（56.1%）</strong>，网络的主体是一条极长的尾巴，头部那几个高连接度节点是&quot;通用辅药&quot;。</p>
+<h3 id="2-3-把角色叠回去-从-61-到-28">2.3 把角色叠回去，从 61 到 28</h3>
+<p>度数只数&quot;进了多少方&quot;，角色足迹才看得见&quot;在方里站哪&quot;。把君臣佐使叠回网络：</p>
+<div class="table-wrap"><table><thead><tr><th>角色</th><th>有抽取结果的方数</th><th>占 114 首</th></tr></thead><tbody><tr><td>君</td><td>105</td><td>92.1%</td></tr><tr><td>臣</td><td>79</td><td>69.3%</td></tr><tr><td>佐</td><td>96</td><td>84.2%</td></tr><tr><td>使</td><td>40</td><td>35.1%</td></tr></tbody></table></div>
+<p>三角色以上的 80 首，四角色齐的 18 首。使药覆盖率最低（35.1%），这不是&quot;教材少写使药&quot;，而是本层抽不到——使药在很多方里由甘草兼任，教材往往只写&quot;甘草调和诸药&quot;而不单列。</p></div></div>
+  <div class="slide-foot"><span>16 / 24</span><span>body</span></div>
+</section>
+<section class="slide" data-i="16">
+  <div class="slide-inner"><div class="kicker">正文二：一张图能说什么</div>
+                <div class="compact"><p>现在把甘草这一味药单独摊开：它入 61 首方，其中 <strong>28 次任使、6 次任佐、1 次任君、0 次任臣，27 首未标角色</strong>（有一首方它一味兼两角，故四项之和为 62，略大于 61）。</p>
+<p><strong>28 次任使，占全部 40 首有使药方的 70%。</strong> 一个节点在图里连接最广，而它在图外的角色是&quot;调和诸药&quot;——两件事放在一起，&quot;甘草度数最高&quot;就有了完全不同的解释：它连接得最多，是因为它承担的是横向通用的角色，而不是纵向核心的角色。反过来，<strong>61 首里只有 1 次任君</strong>，这就是&quot;度 ≠ 主药&quot;最硬的一条证据：如果度数能代表主药地位，甘草应该在 61 首里当 61 次君。</p>
+<p>27 首&quot;未标角色&quot;也要算进来：它们不是&quot;甘草在这些方里不重要&quot;，而是角色层没抽到。本章把它单列而不并入&quot;佐&quot;，是因为把缺失当值是最常见的统计污染。</p></div></div>
+  <div class="slide-foot"><span>17 / 24</span><span>body</span></div>
+</section>
+<section class="slide" data-i="17">
+  <div class="slide-inner"><div class="kicker">正文三：八法的边界与未修完的那一层</div>
+                <div class="compact dense"><h3 id="3-1-八法-52-首-另外-62-首不属八法">3.1 八法 52 首，另外 62 首不属八法</h3>
+<div class="table-wrap"><table><thead><tr><th>法</th><th>方数</th><th>代表方</th></tr></thead><tbody><tr><td>汗</td><td>8</td><td>麻黄汤、桂枝汤、银翘散</td></tr><tr><td>吐</td><td>1</td><td>瓜蒂散</td></tr><tr><td>下</td><td>6</td><td>大承气汤、麻子仁丸</td></tr><tr><td>和</td><td>5</td><td>小柴胡汤、半夏泻心汤</td></tr><tr><td>温</td><td>5</td><td>理中丸、四逆汤</td></tr><tr><td>清</td><td>13</td><td>白虎汤、龙胆泻肝汤</td></tr><tr><td>消</td><td>3</td><td>保和丸、健脾丸</td></tr><tr><td>补</td><td>11</td><td>四君子汤、六味地黄丸</td></tr><tr><td><strong>合计</strong></td><td><strong>52</strong></td><td>另 62 首不属八法</td></tr></tbody></table></div>
+<p>114 首方里只有 52 首能归入八法，另 62 首（祛暑、表里双解、固涩、安神开窍、理气、理血、治风、治燥、祛湿、祛痰、驱虫、治痈疡）不入八法。把八法当&quot;所有方的分类法&quot;是常见的过度概括；八法是治法的一个骨架，不是穷举。</p>
+<p>分布不均匀也不是发现，而是教材结构的直接投影：教材按治法分章，所以&quot;清法 13 首最多&quot;只说明清热剂那一章收了 13 首方。<strong>数据的形状，一半来自方剂世界，一半来自教材的编排。</strong> 分不清这两半，就会把编排当规律。</p>
+<h3 id="3-2-还没修完的那一层-86-味词表外药名">3.2 还没修完的那一层——86 味词表外药名</h3></div></div>
+  <div class="slide-foot"><span>18 / 24</span><span>body</span></div>
+</section>
+<section class="slide" data-i="18">
+  <div class="slide-inner"><div class="kicker">正文三：八法的边界与未修完的那一层</div>
+                <div class="compact"><p>组成层修好了，不等于药名层干净了。246 味药里有 <strong>86 味不在《中药学》287 味正名词表内</strong>（修复前是 111 味）。这 86 味可以再分两类：</p>
+<div class="table-wrap"><table><thead><tr><th>类</th><th>例子</th><th>性质</th></tr></thead><tbody><tr><td>别名/异名，语义真实</td><td>芍药（13 首）、杏仁（10 首）、竹叶、粳米、贝母</td><td>词表用的是正名（白芍/赤芍、苦杏仁），未归并而已</td></tr><tr><td>散文残串，几乎必是误切</td><td>于清暑益气之外、宜于元气本虚、伤于暑湿者、本方则纯用甘寒、重在养阴生津、宜于暑热伤津耗</td><td>长度 ≥5 字或含虚词，不可能是药名</td></tr></tbody></table></div>
+<p>按&quot;长度 ≥5 字或含虚词&quot;这条粗糙判据筛，86 味里有 <strong>16 条</strong>落在第二类。清暑益气汤的 24 味里就有 6 条是这种残串——它是&quot;最多味方&quot;这个称号的一部分来源，去掉残串后约 18 味，仍是最多（次多是防风通圣散 17 味），但&quot;24 味&quot;这个数字本身要打折扣报出。</p></div></div>
+  <div class="slide-foot"><span>19 / 24</span><span>body</span></div>
+</section>
+<section class="slide" data-i="19">
+  <div class="slide-inner"><div class="kicker">正文三：八法的边界与未修完的那一层</div>
+                <div class="compact"><p><strong>这是三种不同层次的缺陷，修复只覆盖了第一层。</strong> 第一层是&quot;整首方漏抽&quot;，一条记录就错得离谱，下游一算就暴露；第二层是&quot;药名层误切&quot;，错得局部，只有对着词表才看得出来；第三层是&quot;别名未归一&quot;，数据本身没错，只是检索对不上。教材对第三层的要求是&quot;统一以正名加别名列表的形式收录&quot;，本章没有做——<strong>这是缺口，不是设计。</strong></p>
+<p>把这三层分开，也就知道本章的任何规模数该信到什么程度：方数 114 可信；药位 836 可信；去重药味 246 里含 16 条残串，<strong>真实药名约 230</strong>。凡是需要对&quot;药味数&quot;做精确断言的场合（比如&quot;某方比某方多几味&quot;），都要先扣掉这一层。</p></div></div>
+  <div class="slide-foot"><span>20 / 24</span><span>body</span></div>
+</section>
+<section class="slide" data-i="20">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><ul><li><strong>完全图投影假设&quot;同方即相关&quot;</strong>，丢掉剂量、炮制、煎服法与君臣佐使；同一对药在君药位与使药位上被等同对待。白虎汤的石膏一斤与粳米六合，在图里是同权的两个节点。</li><li><strong>药位 836 是这份数据的读数，不是方剂世界的常数</strong>。上一版是 821，本章开头已经把差额逐首交代过；上游若再改，836 也会变。<strong>821 不再是&quot;下限&quot;，它是历史读数</strong>——两者的区别在于：下限意味着&quot;真值只会更大&quot;，读数意味着&quot;这就是当前这份文件算出来的&quot;。</li><li><strong>共现不是配伍</strong>。本章的边只说明&quot;同方出现&quot;，不说明相须相使、更不说明疗效。要判断一条边在方剂学上成不成立，须回原文。</li><li><strong>药名层还有残渣</strong>。86 味不在《中药学》词表，其中 16 条是散文残串（见正文六），跨课程合并会失真；</li></ul></div></div>
+  <div class="slide-foot"><span>21 / 24</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="21">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><p>本章只统计、不修补，也不据以推断原文未载的内容——「抽取所得数据不得用于推断原书未载的内容，如据方名反推组成、据主治反推用量」——教材·第24章·24.2.1（《方剂学·第24章·24.2》）。</p>
+<ul><li><strong>八法按章/节名判定，一方只归一法</strong>；62 首不属八法不是遗漏，是判据的边界。同一首方在两种治法之间时，本章取章名所属的那一法，不做多标签。</li><li><strong>角色层是抽取结果，不是教材原文</strong>。使药只覆盖 40 首（35.1%），27 首含甘草的方未标角色；把缺失当值会系统性地低估使药。</li><li><strong>度中心性只是结构指标</strong>，不构成&quot;某药重要/某方有效&quot;的证据。加权度 ÷ 入方数几乎是一条平线（6.67–8.53），说明头部药的差别在&quot;覆盖广度&quot;而非&quot;枢纽强度&quot;。</li><li><strong>可复算性有边界</strong>。</li></ul></div></div>
+  <div class="slide-foot"><span>22 / 24</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="22">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><p>本章所有数字都能由同一份 JSON 重跑得出，但&quot;重跑得出同一个数&quot;只证明脚本稳定，不证明数据正确——「重跑一致性与可复现性」——教材·第24章·24.2.1（《方剂学·第24章·24.2》）是必要条件，不是充分条件；本次五处缺陷正是&quot;重跑一致地错&quot;了三版才被下游发现。</p>
+<ul><li><strong>边界声明</strong>：本章数据是教材结构化整理的教学副本，非临床数据集；所有统计限于描述性，<strong>不构成诊断或用药依据</strong>。凡引用本章数字的讲义与作业，须同时给出&quot;数据版本 + 脚本入口&quot;，脱离版本的数字不能引用——「凡是通篇肯定而无条件说明者应视为可疑」——教材·第24章·24.3.2（《方剂学·第24章·24.3》）。</li></ul></div></div>
+  <div class="slide-foot"><span>23 / 24</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="23">
   <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
-  <div class="slide-foot"><span>6 / 6</span><span>disclaimer</span></div>
+  <div class="slide-foot"><span>24 / 24</span><span>disclaimer</span></div>
 </section>
 </div>
 <div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>

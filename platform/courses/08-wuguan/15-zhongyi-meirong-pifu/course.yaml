@@ -31,47 +31,47 @@ chapters:
   - slug: 01-shechuanchuang
     title: 蛇串疮：皮疹是过程，疼痛才是结局
     video: rendered
-    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 12.27      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.02      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 02-shichuang
     title: 湿疮：辨证辨得再准，剂型用错也白搭
     video: rendered
-    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 12.83      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.33      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 03-yinzhen
     title: 瘾疹：几小时就消失的皮疹，说明战场不在皮肤上
     video: rendered
-    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 12.33      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.54      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 04-baipi
     title: 白疕：越用力去治的那块皮，长得越厚
     video: rendered
-    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 13.07      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.36      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 05-youfeng
     title: 油风：先确认毛囊还在，再谈补肝肾
     video: rendered
-    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 14.12      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.09      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 06-fenci
     title: 粉刺：会不会留疤，多半取决于谁在挤它
     video: rendered
-    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 15.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.59      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 07-jiuzhabi
     title: 酒齄鼻：一张遇热就红的脸，先改环境，再改方子
     video: rendered
-    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 13.80      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.48      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 08-yaodu-jiechuang
     title: 药毒与疥疮：这两件事的第一步处置，都不是开方
     video: rendered
-    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 16.30      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 14.04      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

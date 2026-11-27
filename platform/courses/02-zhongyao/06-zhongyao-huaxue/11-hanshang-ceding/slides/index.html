@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"/>
-<title>第 11 章 · 成分含量测定与方法学验证 · 幻灯片</title>
+<title>第 11 章 · 含量测定的数字，先由方法定义，再由样品证明 · 幻灯片</title>
 <style>
 
 :root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
@@ -59,24 +59,106 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <body>
 <div id="deck">
 <section class="slide" data-i="0">
-  <div class="slide-inner"><h1 class="big">第 11 章 · 成分含量测定与方法学验证</h1></div>
-  <div class="slide-foot"><span>1 / 5</span><span>title</span></div>
+  <div class="slide-inner"><h1 class="big">第 11 章 · 含量测定的数字，先由方法定义，再由样品证明</h1></div>
+  <div class="slide-foot"><span>1 / 18</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「《中药化学》」——教材·第2章·2.2.2（教材此章只引书名）。本章要回答的是：《中国药典·四部》。</blockquote></div>
-  <div class="slide-foot"><span>2 / 5</span><span>motto</span></div>
+  <div class="slide-inner"><blockquote class="motto">「名不正则言不顺，言不顺则事不成」——《论语·子路》。一份报告写「含量 2.3%」，先要问清这 2.3% 指的是什么、以什么计、用什么方法测、限度是多少。这四件事没定义清楚，后面的计算越精确，离结论越远。</blockquote></div>
+  <div class="slide-foot"><span>2 / 18</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
-  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">教材此章只写《中国药典》；方法学通则与指导原则在「四部」，篇名按此补足。</p></div>
-  <div class="slide-foot"><span>3 / 5</span><span>problem</span></div>
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">这一章取材 3 个单元、8,560 汉字：教材第 2 章的 2.2.2「色谱分离方法」2,837 字与 2.3.1「理化鉴定」2,849 字，第 11 章的 11.1.2「提取分离与药效」2,874 字。三节把「怎么测」讲得很细——硅胶与聚酰胺的吸附机理、反相 C18 的流出顺序、梯度洗脱、薄层 Rf 值、外标法与内标法，一个不缺。可「测得准不准」这一层，全章没有落点：没有一处给出回收率、精密度、线性的判据。更刺眼的是数字的分布——8,560 汉字里，数字字符只有 62 个，可数的值 0 处。<strong>一门最讲究数字的学问，正文自己几乎不给数字</strong>，因为判据不在教材正文，在《中国药典》通则里。</p></div>
+  <div class="slide-foot"><span>3 / 18</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
-  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（中药是混合物，任何一个「成分」都要先分出来才能说清楚）+ 知识积累（本章 3 单元 8,560 汉字；三辨主 <strong>提分与检识 257</strong>；四位面（生源途径）主 <strong>莽草酸途径 21</strong>；引书 <strong>2 部 4 次</strong>；数值类命中 0）</p></div>
-  <div class="slide-foot"><span>4 / 5</span><span>roots</span></div>
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（中药样品是基质极复杂的混合物：同一份提取液里，目标成分可能只占千分之几，共流出物、色素、糖类、无机盐占绝大多数。检测器读到的信号是「目标成分＋干扰」的叠加，前处理的每一道都在决定这个叠加里目标占多少。方法学验证不是形式，它是唯一能把「测得准」与「测到了别的东西」分开的手段）+ 知识积累（色谱从分离技术变成定量技术，靠的是一整套统计学语言：线性、精密度、回收率、检出限。这套语言是从化学计量学与分析化学搬过来的，中药的特殊性在于「对照品难得、基质不可控、批次差异大」，于是同一套指标在中药上要打折扣执行，一测多评、替代对照品法都是在这个折扣上做的补救）</p></div>
+  <div class="slide-foot"><span>4 / 18</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
+  <div class="slide-inner"><div class="kicker">一、先把「含量」定义清楚</div>
+                <div class="compact"><p>含量测定报告里最短的一句话，藏着最多的约定。「本品含某某不得少于 2.3%」这一句，至少要拆成四层。</p>
+<p><strong>测的是哪个成分。</strong> 黄连「以小檗碱计」，是把测到的信号折算成小檗碱，不是声称药材里只有小檗碱。同一株黄连还含黄连碱、巴马汀、药根碱，折算只取一个代表。<strong>「以某某计」是一句换算声明，不是成分清单。</strong></p>
+<p><strong>用什么做基准。</strong> 三条路：外标法（用已知浓度的对照品建标准曲线，样品峰面积代入）、内标法（在样品中加入已知量的内标物，用面积比消除进样量波动）、面积归一化法（假定所有成分都出峰且响应因子相同，直接用面积百分比）。第三条最省事，也最危险：<strong>归一化法的前提是「全部成分都被检出」，而这个前提在中药提取物上几乎不成立</strong>——不挥发的、不电离的、在检测波长下无吸收的，全部被算成了零。</p></div></div>
+  <div class="slide-foot"><span>5 / 18</span><span>body</span></div>
+</section>
+<section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">一、先把「含量」定义清楚</div>
+                <div class="compact"><p><strong>对照品是什么级别。</strong> 化学对照品、对照药材是检识与含量测定的基准物质，其标定、使用与保存均须符合药典规定。对照品不纯，标准曲线整条偏移，而偏移是系统性的，重复测一百次也发现不了。</p>
+<p><strong>限度是多少、判合格还是判优劣。</strong> 限度是可接受的下限或区间，不是最优值。达到限度只说明合格。</p>
+<p>四层都写清楚，这个百分比才有意义；缺一层，它就只是一个数。</p></div></div>
+  <div class="slide-foot"><span>6 / 18</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">二、前处理决定数字的上限</div>
+                <div class="compact"><p>色谱再先进，也救不回一个提不全的样品。<strong>提取不完全造成的偏差，是方法学里最隐蔽的一类</strong>：它不表现为峰形异常，只表现为「含量偏低」，而偏低会被误读成「这批药材质量差」。</p>
+<p>提取溶剂的选择有原理可循。教材 2.2.2 把吸附色谱的极性逻辑讲透了：硅胶是极性吸附剂，对含羟基、羧基、氨基的成分吸附强，极性大者后流出；氧化铝偏碱，适合生物碱，但酸性成分吸附过牢且可能引起异构化；活性炭非极性，用于脱色；聚酰胺靠氢键吸附酚羟基，是黄酮与鞣质的经典材料。<strong>这套「极性匹配」的逻辑同样适用于选溶剂：相似相溶，且要避开会让目标成分变性的条件。</strong></p></div></div>
+  <div class="slide-foot"><span>7 / 18</span><span>body</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">二、前处理决定数字的上限</div>
+                <div class="compact"><p>教材 11.1.2 给了一个完整的例子。鞣质常以游离态或与金属离子结合存在于植物组织中，一般用极性溶剂提取——水、含水乙醇、含水丙酮，渗漉、浸渍或回流均可。但鞣质易氧化、易水解，所以<strong>提取过程宜在较低温度下快速进行并注意避光</strong>。三条约束（温度、时间、光照）不是操作习惯，是化学稳定性决定的：多酚在高温与有氧条件下聚合，在光下氧化，颜色加深、活性下降。</p>
+<p>这里还藏着含量测定的第一个口径分歧。<strong>鞣质的「含量」至少有两种测法</strong>：皮粉法或干酪素法，靠鞣质与蛋白结合的性质，由沉淀前后的总酚差值算；总酚法则直接测全部酚羟基。前者测的是「能结合蛋白的那部分酚」，后者测的是「所有酚」。<strong>两个口径的数值不可互换</strong>，文献里只写一个百分比而不写方法的鞣质含量，基本无法比较。</p></div></div>
+  <div class="slide-foot"><span>8 / 18</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">二、前处理决定数字的上限</div>
+                <div class="compact"><p>同样的道理适用于含苷类、含挥发油、含生物碱的药材：水解型成分久泡会部分水解，挥发油在浓缩时随溶剂跑掉，生物碱在碱性下游离、在酸性下成盐——<strong>前处理不是「把东西弄进瓶子」，是一场关于平衡的控制。</strong></p></div></div>
+  <div class="slide-foot"><span>9 / 18</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">三、色谱条件是可复现的前提</div>
+                <div class="compact"><p>定量结果能不能被别人重复，取决于色谱条件写得够不够细。</p>
+<p>教材把色谱按原理分了四类，每一类的「条件」含义不同：<strong>吸附色谱</strong>（硅胶、氧化铝、活性炭、聚酰胺）看吸附剂活度与洗脱剂极性梯度；<strong>分配色谱</strong>看固定相与流动相的两相性质，反相以十八烷基键合硅胶（ODS）为固定相、水-甲醇或水-乙腈为流动相，<strong>极性大者先流出</strong>，重现性好，是现代主流；<strong>离子交换色谱</strong>看树脂类型、交换容量与洗脱液的 pH 与盐浓度；<strong>凝胶过滤色谱</strong>看交联度决定的排阻极限，大分子先出、小分子后出，G-10 至 G-200 各有分离范围。</p>
+<p>薄层色谱在定量工作里的角色是<strong>预试</strong>，这一点常被低估。用小量样品在几组溶剂系统（石油醚-乙酸乙酯、氯仿-甲醇的不同配比）里展开，看斑点数目、Rf 与分离度，选出分离良好的系统，再按比例放大到柱色谱。<strong>这一步省下的不只是溶剂，还有「上柱之后才发现分不开」的时间。</strong></p></div></div>
+  <div class="slide-foot"><span>10 / 18</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">三、色谱条件是可复现的前提</div>
+                <div class="compact"><p>Rf 值要能重现，需要三个条件同时成立：<strong>点样量适中、展开缸内展开剂蒸气饱和、温度恒定</strong>。三条里任何一条不满足，同一块板上的 Rf 就会漂，而 Rf 是定性判据——漂了就会把「不是同一个成分」判成「是」，或者反过来。</p>
+<p>制备环节还有一条与纯度有关的判据：制备分离所得馏分浓缩后，须以分析型 HPLC 检查纯度（面积归一化法），<strong>纯度达标者方可作为结构鉴定与含量测定用样品</strong>。也就是说，用来做对照品的东西，自己先要过一遍定量。</p></div></div>
+  <div class="slide-foot"><span>11 / 18</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">四、方法学验证：八项指标各自防一种错</div>
+                <div class="compact dense"><p>方法学验证要回答的是：这个方法在什么范围内、以多大把握、给出可信的数字。常见的归纳是八项，每一项对应一类具体的失效。</p>
+<div class="table-wrap"><table><thead><tr><th>项目</th><th>要回答的问题</th><th>防的是什么错</th></tr></thead><tbody><tr><td>专属性</td><td>测到的信号是否只来自目标成分</td><td>把共流出物、降解产物当成目标</td></tr><tr><td>线性与范围</td><td>浓度与响应在哪个区间成正比</td><td>超出线性区外推，高浓度低估</td></tr><tr><td>精密度</td><td>同一样品多次测定的离散程度</td><td>进样、配液、仪器波动</td></tr><tr><td>重复性</td><td>不同人、不同天、不同柱的结果是否一致</td><td>方法与操作的稳健性不足</td></tr><tr><td>溶液稳定性</td><td>供试品在放置期内是否降解</td><td>排队等待期间样品变了</td></tr><tr><td>准确度（回收率）</td><td>加入已知量能否定量收回</td><td>提取不完全、吸附损失、基质抑制</td></tr><tr><td>检测限与定量限</td><td>最低能「看到」与最低能「定量」</td><td>把噪声当峰、把痕量当含量</td></tr><tr><td>耐用性</td><td>条件微变（pH、柱温、流速）时结果是否稳定</td><td>方法只在某一台仪器上成立</td></tr></tbody></table></div></div></div>
+  <div class="slide-foot"><span>12 / 18</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">四、方法学验证：八项指标各自防一种错</div>
+                <div class="compact"><p>这八项里，<strong>最容易被跳过的是回收率，最不该跳过的是专属性</strong>。回收率低的典型原因是提取不完全与器壁吸附，它使结果系统性偏低；专属性不足的典型原因是基质效应——共流出物在离子源里抑制目标离子的电离，峰面积掉了，而浓度没变。<strong>这两类错都不会让峰形变丑，只会让数字变小或变大。</strong></p>
+<p>多指标同时测定时，还有一条实用的补救：<strong>一测多评</strong>。用一个对照品测定多个成分，其余成分用相对校正因子换算，解决对照品难得、多指标测不起的问题。它的代价是校正因子本身的准确性——<strong>校正因子错了，所有换算出来的含量一起错，而且错得整齐，看不出异常。</strong></p>
+<p>对照品与标准品的问题在中药里格外突出：许多成分买不到、买得到也不便宜。这解释了一测多评、替代对照品法为什么会在中药质控里长出来——它们不是学术趣味，是成本约束下的工程解。</p></div></div>
+  <div class="slide-foot"><span>13 / 18</span><span>body</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">五、常见失效模式：五种「看起来正常」的错误</div>
+                <div class="compact dense"><p>把上面的指标换成现场语言，就是五种最常见的失效。</p>
+<p><strong>峰形拖尾。</strong> 硅胶柱上的碱性成分拖尾，多半是硅醇基的残留酸性位点与氨基作用。拖尾使积分边界模糊，面积偏大，含量偏高。<strong>换柱子或加扫尾剂能改善，但改善本身就是方法变更，须重新验证。</strong></p>
+<p><strong>基质效应。</strong> 液质联用在中药提取物上最容易撞上。同样的浓度，纯溶剂里响应高、基质里响应低，标准曲线是用纯溶剂配的，样品却活在基质里。<strong>解法是基质匹配标准曲线或同位素内标，不是把曲线做得更漂亮。</strong></p>
+<p><strong>对照品纯度不足。</strong> 对照品含量按 100% 折算，实际只有 92%，所有结果同比偏高 8%。<strong>这个错误没有任何征兆</strong>——峰形好、线性好、精密度好，只是数值整体偏了一个固定比例。</p>
+<p><strong>Rf 与保留时间的漂移。</strong> 薄层靠 Rf，液相靠保留时间，两者都对环境敏感：湿度、温度、流动相配比、柱的老化。<strong>保留时间漂 0.1 分钟就足以让「同一成分」的判定失效。</strong></p></div></div>
+  <div class="slide-foot"><span>14 / 18</span><span>body</span></div>
+</section>
+<section class="slide" data-i="14">
+  <div class="slide-inner"><div class="kicker">五、常见失效模式：五种「看起来正常」的错误</div>
+                <div class="compact"><p><strong>提取不完全。</strong> 最隐蔽的一类。它不报警、不变形，只让所有结果一起偏低。<strong>判据只有一个：换一种更剧烈的前处理（加时间、加溶剂、加辅助手段）再测一遍，看数值是否上升。</strong> 上升了，说明第一次没提全。</p></div></div>
+  <div class="slide-foot"><span>15 / 18</span><span>body</span></div>
+</section>
+<section class="slide" data-i="15">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><ul><li><strong>方法学验证保证的是「这个方法在这个范围内可信」，不是「这个成分是有效的」。</strong> 两件事分属分析化学与药理学，不能互推。含量做得再准，指标选错了，结论仍然是错的。</li><li><strong>限度不是最优值。</strong> 「符合规定」只说明落在可接受区间内。同一品种含量相差数倍而都判合格，是常态而非漏洞。</li><li><strong>口径不可混用。</strong> 以某某计、外标与内标、归一化与对照品法、皮粉法与总酚法，四组口径任意混用都会产出不可比的数字。<strong>读文献里的百分比，先找方法学那一段。</strong></li><li><strong>八项是常见归纳，不是唯一分法。</strong> 不同教材与不同版本的通则对项目划分有出入（有的把精密度拆成重复性、中间精密度、重现性三项，有的把耐用性单列），<strong>具体项目、接受标准与检验方法，一律以现行《中国药典》通则及各品种项下规定为准</strong>，本章不复制限度值。</li><li>**数字口径。</li></ul></div></div>
+  <div class="slide-foot"><span>16 / 18</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="16">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><p>** 本章的 3 个单元、8,560 汉字（第 2 章 2 单元 5,686 字、第 11 章 1 单元 2,874 字），以及数字字符 62、可数值 0 处的统计，均由 <code>standards/zhongyao-huaxue/units.json</code> 现算；鞣质的两种测法、色谱填料的粒径与压力、G-10 至 G-200 的分离范围，为教材通行表述。</p>
+<ul><li><strong>边界声明：</strong> 本章讲的是「数字怎么才算可信」，<strong>不是检验操作规程，不构成任何质量标准或检验报告</strong>。有机溶剂、酸碱、高压输液系统与液质联用仪的操作，须在合规实验室由受训人员按安全规程与仪器说明书执行；废液、含重金属沉淀剂须按规定处置。</li></ul></div></div>
+  <div class="slide-foot"><span>17 / 18</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="17">
   <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
-  <div class="slide-foot"><span>5 / 5</span><span>disclaimer</span></div>
+  <div class="slide-foot"><span>18 / 18</span><span>disclaimer</span></div>
 </section>
 </div>
 <div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>

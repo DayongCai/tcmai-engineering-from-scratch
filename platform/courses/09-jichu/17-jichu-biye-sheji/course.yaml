@@ -37,29 +37,29 @@ chapters:
   - slug: 02-fangan-lunli
     title: 方案经不起偏倚追问，伦理批件就过不了
     video: rendered
-    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.04      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 11.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.25      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 03-shiyan-shishi
     title: 原始记录的分量在于别人能照着重做出同一结果
     video: rendered
-    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.05      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 9.45      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 6.67      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 04-shuju-fenxi
     title: 分析方法没有高级低级，只有配不配这批数据
     video: rendered
-    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 11.02      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.43      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 05-lunwen-dabian
     title: 论文与答辩输在口径不一致，不输在口才
     video: rendered
-    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.02      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 11.05      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.24      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 06-zhishi-yijiao
     title: 移交不是交钥匙，是把判断的依据一并交出去
     video: rendered
-    estimate_minutes: 1.05      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.09      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 9.35      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 7.81      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

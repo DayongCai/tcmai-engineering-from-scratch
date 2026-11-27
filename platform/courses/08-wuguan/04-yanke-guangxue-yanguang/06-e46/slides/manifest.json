@@ -1,31 +1,76 @@
 {
   "chapter": "06-e46",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 14,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 11
+      "chars": 30
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 62
+      "chars": 28
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 14
+      "chars": 184
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 104
+      "chars": 111
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 415
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 163
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 350
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 260
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 353
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 262
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 323
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 250
+    },
+    {
+      "n": 13,
+      "segment": 9,
+      "chars": 393
+    },
+    {
+      "n": 14,
+      "segment": 10,
       "chars": 52
     }
   ]

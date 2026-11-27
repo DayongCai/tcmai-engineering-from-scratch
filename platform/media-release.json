@@ -1,6 +1,6 @@
 {
   "schema": "tcm-media-index/1",
-  "generatedAt": "2026-11-23T19:57:24.091Z",
+  "generatedAt": "2026-11-25T20:41:53.173Z",
   "note": "APP 只读这一份：每门课、每章的 HLS 地址 / 时长 / 封面 / 字幕。播放用 HLS，支持 EXT-X-MEDIA 字幕组。",
   "segmentSeconds": 6,
   "ladder": [
@@ -15,8 +15,8 @@
       "height": 540
     }
   ],
-  "totalDurationSec": 332908.776,
-  "totalBytes": 13640381835,
+  "totalDurationSec": 474269.828,
+  "totalBytes": 19543930937,
   "courses": [
     {
       "id": "01-zhongyi/01-zhongyi-jichu-lilun",
@@ -49,6 +49,182 @@
       "totalDurationSec": 4617.094,
       "totalBytes": 188219570,
       "publishJson": "02-zhongyao/21-zhongyao-du-li-xue/publish.json"
+    },
+    {
+      "id": "03-zhenjiu/01-jingluo-xue",
+      "title": "经络学",
+      "chapterCount": 10,
+      "totalDurationSec": 7985.215,
+      "totalBytes": 335926379,
+      "publishJson": "03-zhenjiu/01-jingluo-xue/publish.json"
+    },
+    {
+      "id": "03-zhenjiu/02-shuxue-xue",
+      "title": "腧穴学",
+      "chapterCount": 12,
+      "totalDurationSec": 6950.119,
+      "totalBytes": 281659880,
+      "publishJson": "03-zhenjiu/02-shuxue-xue/publish.json"
+    },
+    {
+      "id": "03-zhenjiu/03-zhenjiu-yiji-xuan",
+      "title": "针灸医籍选",
+      "chapterCount": 8,
+      "totalDurationSec": 6467.883,
+      "totalBytes": 274876629,
+      "publishJson": "03-zhenjiu/03-zhenjiu-yiji-xuan/publish.json"
+    },
+    {
+      "id": "03-zhenjiu/04-qigong-xue",
+      "title": "中医气功学",
+      "chapterCount": 7,
+      "totalDurationSec": 5652.526,
+      "totalBytes": 235552420,
+      "publishJson": "03-zhenjiu/04-qigong-xue/publish.json"
+    },
+    {
+      "id": "03-zhenjiu/05-tuina-xue",
+      "title": "推拿学",
+      "chapterCount": 10,
+      "totalDurationSec": 7357.277,
+      "totalBytes": 311803309,
+      "publishJson": "03-zhenjiu/05-tuina-xue/publish.json"
+    },
+    {
+      "id": "03-zhenjiu/06-tuina-shoufa-xue",
+      "title": "推拿手法学",
+      "chapterCount": 8,
+      "totalDurationSec": 3165.885,
+      "totalBytes": 128520229,
+      "publishJson": "03-zhenjiu/06-tuina-shoufa-xue/publish.json"
+    },
+    {
+      "id": "03-zhenjiu/07-cifa-jiufa-xue",
+      "title": "刺法灸法学",
+      "chapterCount": 10,
+      "totalDurationSec": 6171.79,
+      "totalBytes": 262511695,
+      "publishJson": "03-zhenjiu/07-cifa-jiufa-xue/publish.json"
+    },
+    {
+      "id": "03-zhenjiu/08-zhenjiu-zhiliao-xue",
+      "title": "针灸治疗学",
+      "chapterCount": 12,
+      "totalDurationSec": 7776.243,
+      "totalBytes": 319884087,
+      "publishJson": "03-zhenjiu/08-zhenjiu-zhiliao-xue/publish.json"
+    },
+    {
+      "id": "03-zhenjiu/09-kangfu-yixue-jichu",
+      "title": "康复医学基础",
+      "chapterCount": 8,
+      "totalDurationSec": 5205.491,
+      "totalBytes": 221389443,
+      "publishJson": "03-zhenjiu/09-kangfu-yixue-jichu/publish.json"
+    },
+    {
+      "id": "03-zhenjiu/10-shiyan-zhenjiu-xue",
+      "title": "实验针灸学",
+      "chapterCount": 11,
+      "totalDurationSec": 8008.301,
+      "totalBytes": 346651201,
+      "publishJson": "03-zhenjiu/10-shiyan-zhenjiu-xue/publish.json"
+    },
+    {
+      "id": "03-zhenjiu/11-wuli-zhiliao",
+      "title": "物理治疗与运动康复",
+      "chapterCount": 8,
+      "totalDurationSec": 5181.192,
+      "totalBytes": 217921530,
+      "publishJson": "03-zhenjiu/11-wuli-zhiliao/publish.json"
+    },
+    {
+      "id": "03-zhenjiu/12-erxue-zhenduan-xue",
+      "title": "耳穴诊治学",
+      "chapterCount": 8,
+      "totalDurationSec": 4396.927,
+      "totalBytes": 183486924,
+      "publishJson": "03-zhenjiu/12-erxue-zhenduan-xue/publish.json"
+    },
+    {
+      "id": "03-zhenjiu/13-zhendao-yixue",
+      "title": "针刀医学",
+      "chapterCount": 8,
+      "totalDurationSec": 1927.832,
+      "totalBytes": 85404469,
+      "publishJson": "03-zhenjiu/13-zhendao-yixue/publish.json"
+    },
+    {
+      "id": "03-zhenjiu/14-zhenjiu-zhentong-mazui",
+      "title": "针灸镇痛与麻醉",
+      "chapterCount": 8,
+      "totalDurationSec": 4563.42,
+      "totalBytes": 193487073,
+      "publishJson": "03-zhenjiu/14-zhenjiu-zhentong-mazui/publish.json"
+    },
+    {
+      "id": "03-zhenjiu/15-zhongyi-kangfu-xue",
+      "title": "中医康复学",
+      "chapterCount": 10,
+      "totalDurationSec": 7002.945,
+      "totalBytes": 291881896,
+      "publishJson": "03-zhenjiu/15-zhongyi-kangfu-xue/publish.json"
+    },
+    {
+      "id": "03-zhenjiu/16-zhenjiu-xue",
+      "title": "针灸学",
+      "chapterCount": 30,
+      "totalDurationSec": 5945.576,
+      "totalBytes": 230135731,
+      "publishJson": "03-zhenjiu/16-zhenjiu-xue/publish.json"
+    },
+    {
+      "id": "03-zhenjiu/17-gejia-zhenjiu-xueshuo",
+      "title": "各家针灸学说",
+      "chapterCount": 12,
+      "totalDurationSec": 9386.539,
+      "totalBytes": 397928159,
+      "publishJson": "03-zhenjiu/17-gejia-zhenjiu-xueshuo/publish.json"
+    },
+    {
+      "id": "03-zhenjiu/18-tuina-gongfa-xue",
+      "title": "推拿功法学",
+      "chapterCount": 12,
+      "totalDurationSec": 9643.024,
+      "totalBytes": 412067147,
+      "publishJson": "03-zhenjiu/18-tuina-gongfa-xue/publish.json"
+    },
+    {
+      "id": "03-zhenjiu/19-tuina-zhiliao-xue",
+      "title": "推拿治疗学",
+      "chapterCount": 12,
+      "totalDurationSec": 7630.381,
+      "totalBytes": 329744952,
+      "publishJson": "03-zhenjiu/19-tuina-zhiliao-xue/publish.json"
+    },
+    {
+      "id": "03-zhenjiu/20-xiaoer-tuina-xue",
+      "title": "小儿推拿学",
+      "chapterCount": 12,
+      "totalDurationSec": 5590.621,
+      "totalBytes": 234287105,
+      "publishJson": "03-zhenjiu/20-xiaoer-tuina-xue/publish.json"
+    },
+    {
+      "id": "03-zhenjiu/21-zhenjiu-linchuang-lunzhuan",
+      "title": "针灸临床轮转",
+      "chapterCount": 6,
+      "totalDurationSec": 3352.512,
+      "totalBytes": 139123879,
+      "publishJson": "03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/publish.json"
+    },
+    {
+      "id": "03-zhenjiu/22-zhenjiu-biye-sheji",
+      "title": "针灸毕业设计与知识移交",
+      "chapterCount": 6,
+      "totalDurationSec": 2499.857,
+      "totalBytes": 99640757,
+      "publishJson": "03-zhenjiu/22-zhenjiu-biye-sheji/publish.json"
     },
     {
       "id": "04-gushang/01-zhongyi-yundong-xue",
@@ -246,24 +422,24 @@
       "id": "09-jichu/11-bingli-shengli-xue",
       "title": "病理生理学",
       "chapterCount": 53,
-      "totalDurationSec": 81283.011,
-      "totalBytes": 3474960429,
+      "totalDurationSec": 86659.934,
+      "totalBytes": 3599657977,
       "publishJson": "09-jichu/11-bingli-shengli-xue/publish.json"
     },
     {
       "id": "09-jichu/12-yaoli-xue",
       "title": "药理学",
       "chapterCount": 49,
-      "totalDurationSec": 64694.356,
-      "totalBytes": 2778874780,
+      "totalDurationSec": 68816.929,
+      "totalBytes": 3023841440,
       "publishJson": "09-jichu/12-yaoli-xue/publish.json"
     }
   ],
   "repoRecord": "platform/media-release.json",
   "regenerate": "npm run media:hls:index",
   "previous": {
-    "generatedAt": "2026-11-23T18:57:50.954Z",
-    "totalBytes": 13452162265,
-    "courses": 29
+    "generatedAt": "2026-11-25T19:27:16.365Z",
+    "totalBytes": 19298964277,
+    "courses": 52
   }
 }

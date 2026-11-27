@@ -1,7 +1,7 @@
 {
   "chapter": "07-guse-anshen",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 19,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
@@ -11,7 +11,7 @@
     {
       "n": 2,
       "segment": 2,
-      "chars": 44
+      "chars": 61
     },
     {
       "n": 3,
@@ -26,6 +26,76 @@
     {
       "n": 5,
       "segment": 5,
+      "chars": 390
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 391
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 261
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 205
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 216
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 251
+    },
+    {
+      "n": 11,
+      "segment": 7,
+      "chars": 256
+    },
+    {
+      "n": 12,
+      "segment": 7,
+      "chars": 323
+    },
+    {
+      "n": 13,
+      "segment": 7,
+      "chars": 111
+    },
+    {
+      "n": 14,
+      "segment": 8,
+      "chars": 307
+    },
+    {
+      "n": 15,
+      "segment": 8,
+      "chars": 232
+    },
+    {
+      "n": 16,
+      "segment": 8,
+      "chars": 387
+    },
+    {
+      "n": 17,
+      "segment": 8,
+      "chars": 204
+    },
+    {
+      "n": 18,
+      "segment": 9,
+      "chars": 497
+    },
+    {
+      "n": 19,
+      "segment": 10,
       "chars": 52
     }
   ]

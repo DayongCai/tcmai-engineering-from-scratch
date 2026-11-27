@@ -1,31 +1,81 @@
 {
   "chapter": "09-yaodai-peiwu",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 15,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 14
+      "chars": 27
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 49
+      "chars": 100
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 66
+      "chars": 138
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 109
+      "chars": 111
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 272
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 341
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 408
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 223
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 344
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 239
+    },
+    {
+      "n": 11,
+      "segment": 7,
+      "chars": 202
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 273
+    },
+    {
+      "n": 13,
+      "segment": 8,
+      "chars": 415
+    },
+    {
+      "n": 14,
+      "segment": 9,
+      "chars": 505
+    },
+    {
+      "n": 15,
+      "segment": 10,
       "chars": 52
     }
   ]

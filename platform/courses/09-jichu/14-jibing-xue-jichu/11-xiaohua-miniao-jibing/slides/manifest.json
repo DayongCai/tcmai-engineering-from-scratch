@@ -1,31 +1,71 @@
 {
   "chapter": "11-xiaohua-miniao-jibing",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 13,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 14
+      "chars": 34
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 72
+      "chars": 58
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 20
+      "chars": 120
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 139
+      "chars": 90
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 343
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 313
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 307
+    },
+    {
+      "n": 8,
+      "segment": 7,
+      "chars": 413
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 270
+    },
+    {
+      "n": 10,
+      "segment": 8,
+      "chars": 337
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 288
+    },
+    {
+      "n": 12,
+      "segment": 9,
+      "chars": 411
+    },
+    {
+      "n": 13,
+      "segment": 10,
       "chars": 52
     }
   ]

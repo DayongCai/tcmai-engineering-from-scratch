@@ -1,46 +1,86 @@
 {
   "chapter": "07-huoxue-huayu",
-  "slideCount": 8,
-  "segmentCount": 8,
+  "slideCount": 16,
+  "segmentCount": 11,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 25
+      "chars": 27
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 33
+      "chars": 25
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 135
+      "chars": 248
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 122
+      "chars": 179
     },
     {
       "n": 5,
       "segment": 5,
-      "chars": 151
+      "chars": 404
     },
     {
       "n": 6,
-      "segment": 6,
-      "chars": 1469
+      "segment": 5,
+      "chars": 413
     },
     {
       "n": 7,
-      "segment": 7,
-      "chars": 398
+      "segment": 6,
+      "chars": 331
     },
     {
       "n": 8,
+      "segment": 6,
+      "chars": 377
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 414
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 239
+    },
+    {
+      "n": 11,
       "segment": 8,
+      "chars": 317
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 361
+    },
+    {
+      "n": 13,
+      "segment": 9,
+      "chars": 309
+    },
+    {
+      "n": 14,
+      "segment": 9,
+      "chars": 169
+    },
+    {
+      "n": 15,
+      "segment": 10,
+      "chars": 488
+    },
+    {
+      "n": 16,
+      "segment": 11,
       "chars": 52
     }
   ]

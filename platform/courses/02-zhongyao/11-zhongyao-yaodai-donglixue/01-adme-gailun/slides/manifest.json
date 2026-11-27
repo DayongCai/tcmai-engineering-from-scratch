@@ -1,31 +1,76 @@
 {
   "chapter": "01-adme-gailun",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 14,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 13
+      "chars": 19
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 85
+      "chars": 100
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 16
+      "chars": 119
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 108
+      "chars": 92
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 340
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 271
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 400
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 185
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 419
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 119
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 399
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 142
+    },
+    {
+      "n": 13,
+      "segment": 9,
+      "chars": 451
+    },
+    {
+      "n": 14,
+      "segment": 10,
       "chars": 52
     }
   ]

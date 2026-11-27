@@ -1,12 +1,12 @@
 {
   "chapter": "12-xingneng-bianma",
-  "slideCount": 9,
-  "segmentCount": 9,
+  "slideCount": 20,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 21
+      "chars": 32
     },
     {
       "n": 2,
@@ -16,36 +16,91 @@
     {
       "n": 3,
       "segment": 3,
-      "chars": 65
+      "chars": 256
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 57
+      "chars": 167
     },
     {
       "n": 5,
       "segment": 5,
-      "chars": 130
+      "chars": 296
     },
     {
       "n": 6,
-      "segment": 6,
-      "chars": 525
+      "segment": 5,
+      "chars": 356
     },
     {
       "n": 7,
-      "segment": 7,
-      "chars": 587
+      "segment": 5,
+      "chars": 157
     },
     {
       "n": 8,
-      "segment": 8,
-      "chars": 326
+      "segment": 6,
+      "chars": 285
     },
     {
       "n": 9,
+      "segment": 6,
+      "chars": 317
+    },
+    {
+      "n": 10,
+      "segment": 6,
+      "chars": 416
+    },
+    {
+      "n": 11,
+      "segment": 6,
+      "chars": 156
+    },
+    {
+      "n": 12,
+      "segment": 7,
+      "chars": 233
+    },
+    {
+      "n": 13,
+      "segment": 7,
+      "chars": 246
+    },
+    {
+      "n": 14,
+      "segment": 7,
+      "chars": 372
+    },
+    {
+      "n": 15,
+      "segment": 7,
+      "chars": 245
+    },
+    {
+      "n": 16,
+      "segment": 8,
+      "chars": 283
+    },
+    {
+      "n": 17,
+      "segment": 8,
+      "chars": 259
+    },
+    {
+      "n": 18,
+      "segment": 8,
+      "chars": 178
+    },
+    {
+      "n": 19,
       "segment": 9,
+      "chars": 503
+    },
+    {
+      "n": 20,
+      "segment": 10,
       "chars": 52
     }
   ]

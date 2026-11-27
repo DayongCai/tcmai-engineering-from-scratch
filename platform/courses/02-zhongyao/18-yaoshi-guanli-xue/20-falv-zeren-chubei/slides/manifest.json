@@ -1,31 +1,71 @@
 {
   "chapter": "20-falv-zeren-chubei",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 13,
+  "segmentCount": 11,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 16
+      "chars": 28
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 112
+      "chars": 35
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 27
+      "chars": 158
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 113
+      "chars": 176
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 374
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 83
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 369
+    },
+    {
+      "n": 8,
+      "segment": 7,
+      "chars": 406
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 85
+    },
+    {
+      "n": 10,
+      "segment": 8,
+      "chars": 373
+    },
+    {
+      "n": 11,
+      "segment": 9,
+      "chars": 348
+    },
+    {
+      "n": 12,
+      "segment": 10,
+      "chars": 288
+    },
+    {
+      "n": 13,
+      "segment": 11,
       "chars": 52
     }
   ]

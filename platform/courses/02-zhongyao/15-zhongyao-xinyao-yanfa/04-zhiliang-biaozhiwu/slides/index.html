@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"/>
-<title>第 4 章 · 质量控制：标志物、指纹图谱与质量标准 · 幻灯片</title>
+<title>第 4 章 · 标准成熟的标志是别人拿它去检别的批次，结论和你一致 · 幻灯片</title>
 <style>
 
 :root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
@@ -59,24 +59,100 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <body>
 <div id="deck">
 <section class="slide" data-i="0">
-  <div class="slide-inner"><h1 class="big">第 4 章 · 质量控制：标志物、指纹图谱与质量标准</h1></div>
-  <div class="slide-foot"><span>1 / 5</span><span>title</span></div>
+  <div class="slide-inner"><h1 class="big">第 4 章 · 标准成熟的标志是别人拿它去检别的批次，结论和你一致</h1></div>
+  <div class="slide-foot"><span>1 / 15</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「《中药新药研发·第4章》」——外源课无教材篇名，引外源条文；<strong>非教材原文篇名</strong>。本章要回答的是：质量控制：标志物、指纹图谱与质量标准这一段的核心判据是什么。</blockquote></div>
-  <div class="slide-foot"><span>2 / 5</span><span>motto</span></div>
+  <div class="slide-inner"><blockquote class="motto">「Requirements and methods for quality control of finished herbal products, particularly for combining/mixing herbal products, are far more complex than for chemical drugs.」——《WHO 草药生产质量管理规范指南·第2条》（W02，本库译：成品草药的质量控制要求与方法比化学药复杂得多，尤其是多味配伍的产品）。&quot;更复杂&quot;三个字不是抱怨，是任务书：复杂在哪里，标准就得补在哪里。</blockquote></div>
+  <div class="slide-foot"><span>2 / 15</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
-  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">质量这一段回答一个问题：凭什么说这批和那批一样。</p></div>
-  <div class="slide-foot"><span>3 / 5</span><span>problem</span></div>
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">指纹图谱相似度 0.92，判合格；换一批 0.88，也判合格——因为阈值定的是 0.85。问阈值怎么来的，答&quot;经验&quot;。这份标准看起来比谁都严，实际上藏着一个只有起草人自己知道的判断。<strong>标准里只要有一处判断不能交给别人复现，它就不算标准。</strong></p></div>
+  <div class="slide-foot"><span>3 / 15</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
-  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（中药新药的失败大多不是「做不出来」，而是「证不明」：源头、批间、监测任一段缺口，整条链就断）+ 知识积累（本章 1 单元 1,048 汉字；三辨主 <strong>质量与标准 33</strong>；四位面（证据链段）主 <strong>质量 29</strong>；引书 <strong>0 部 0 次</strong>；数值类命中 0）</p></div>
-  <div class="slide-foot"><span>4 / 5</span><span>roots</span></div>
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（中药是多成分体系，同一味药不同产地、不同采收期、不同炮制法的成分谱都不同，一个含量说不到&quot;是不是同一个东西&quot;）+ 知识积累（三层标准——真伪、优劣、一致性——各配各自的判据；阈值必须有分布依据，图谱只用于&quot;比&quot;不用于&quot;判&quot;）</p></div>
+  <div class="slide-foot"><span>4 / 15</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
+  <div class="slide-inner"><div class="kicker">学习目标</div>
+                <div class="compact"><ul><li>能把中药质量标准拆成真伪、优劣、一致性三层，并说出每层缺了会漏掉什么</li><li>能为任一指标写出&quot;选它的理由&quot;，区分功效相关性与专属性两条理由路径</li><li>能说明指纹图谱为什么只用于&quot;比&quot;不用于&quot;判&quot;，并写出相似度阈值的分布依据要求</li><li>能区分&quot;不该有的东西&quot;与&quot;该有多少的东西&quot;，解释为何前者用限度、后者用含量</li><li>能判断一份标准是放行标准还是研发标准，指出缺哪一类数据</li></ul></div></div>
+  <div class="slide-foot"><span>5 / 15</span><span>objectives</span></div>
+</section>
+<section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">正文</div>
+                <div class="compact"><h3 id="4-1-三层结构-真伪-优劣-一致性">4.1 三层结构：真伪、优劣、一致性</h3>
+<p>一份完整的中药质量标准由三层构成，三层各自回答不同的问题，缺一层就漏掉一类风险。</p>
+<div class="table-wrap"><table><thead><tr><th>层</th><th>回答的问题</th><th>典型手段</th><th>缺了会漏掉什么</th></tr></thead><tbody><tr><td>真伪</td><td>是不是这个药</td><td>基原鉴定、性状、显微、薄层鉴别、特征图谱</td><td>假药、掺伪、品种混用</td></tr><tr><td>优劣</td><td>够不够好</td><td>指标成分含量、浸出物、指纹图谱相似度</td><td>劣质药材、提取不足、工艺偷工</td></tr><tr><td>一致性</td><td>批与批是否可比</td><td>连续批次含量分布、图谱相似度分布、工艺参数波动区间</td><td>批间漂移、放大失败、换源后产品变了</td></tr></tbody></table></div>
+<p>三层的顺序不能颠倒，因为它们的证据成本差别很大：真伪最便宜，一致性最贵。只做真伪，等于只防假药；只做一个含量，等于只看一个点；三层齐全，标准才算完整。</p></div></div>
+  <div class="slide-foot"><span>6 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">正文</div>
+                <div class="compact dense"><p>中药的特殊困难在第三层。化学药可以指着单一成分说&quot;就是这个&quot;，中药是多成分体系：同一味药不同产地、不同采收期、不同炮制法的成分谱都不同，配伍之后成分之间还可能相互作用。所以中药的质量控制不能靠&quot;一个含量&quot;，而要靠&quot;一组指标 + 一个可比的图谱&quot;。这不是为了标准好看，而是因为单一指标无法区分&quot;成分谱一致&quot;与&quot;某一成分恰好达标&quot;。</p>
+<h3 id="4-2-指标怎么选-先问理由-再问数量">4.2 指标怎么选：先问理由，再问数量</h3>
+<p>指标的选择有两条理由路径，优先级不同。</p>
+<p><strong>第一条，功效相关。</strong> 选与临床疗效有机制或文献关联的成分。这是最强的一条理由，因为它把质量控制与有效性证据接上了：指标稳定，疗效才有物质基础。</p>
+<p><strong>第二条，专属性。</strong> 当功效相关性说不清时，退而选专属性强的成分——它可能没有直接的药效证据，但能区分本品与伪品、区分不同工艺路线。走这条路，必须在标准正文里写明&quot;为什么选它&quot;：是因为它是特征性成分、是工艺标志物、还是毒性成分的指示物。</p></div></div>
+  <div class="slide-foot"><span>7 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">正文</div>
+                <div class="compact dense"><p><strong>指标不是越多越好。</strong> 堆指标而不说明理由，是把标准写成清单；清单的执行成本高，判定力却没有提高。判据很实用：<strong>每一个指标都要能回答&quot;它不合格时，说明出了什么问题&quot;。</strong> 答不出来的指标，要么删掉，要么补上理由。</p>
+<p>还有一类指标需要单列：<strong>与安全性直接相关的成分</strong>（已知毒性成分、需要控制的伴生成分）。这类指标的定位不是&quot;评价优劣&quot;，而是&quot;划红线&quot;，写法与限度检查相同，见 4.4。</p>
+<h3 id="4-3-指纹图谱是-比-不是-判">4.3 指纹图谱是&quot;比&quot;不是&quot;判&quot;</h3>
+<p>指纹图谱的价值在于把多批次放在同一坐标系里看差异。它本身不产生合格判定——判定要靠两个参数：<strong>共有峰的归属</strong>与<strong>相似度的阈值</strong>。这两个参数都不是图上长出来的，是数据定出来的。</p>
+<p><strong>共有峰归属。</strong> 先要确定哪些峰是&quot;共有&quot;的：取足量批次，把出现频率高的峰定义为共有峰，逐峰归属到已知成分或至少标记为特征峰。归属不做的图谱，只是好看的折线，无法比对。</p></div></div>
+  <div class="slide-foot"><span>8 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">正文</div>
+                <div class="compact"><p><strong>相似度阈值的定法。</strong> 这一步最容易被&quot;经验&quot;两个字糊过去。可行做法只有一种：取足够批次的相似度值，看正常批的分布区间，再看已知异常批（换产地、换工艺、掺伪）落在哪里，把阈值定在两者之间，并在标准里写明&quot;低于此值视为异常&quot;的理由与依据批次量。</p>
+<p>【教学设定】本章用 0.85、0.92、0.88 三个数说明&quot;阈值必须有分布依据&quot;这一判据，它们不是任何品种的实际阈值；实际阈值须由本品种的批次分布与异常样本位置确定。</p>
+<p><strong>没有分布的阈值，等于没有阈值。</strong> 因为阈值一旦变成&quot;经验值&quot;，它就无法被第二个人复核，标准也就退回到&quot;只有起草人会用&quot;的状态。</p>
+<h3 id="4-4-不该有的东西用限度-不是含量">4.4 不该有的东西用限度，不是含量</h3>
+<p>质量标准里有两类项目，写法必须分开。</p>
+<p><strong>该有多少的东西</strong>（指标成分、浸出物）：用含量测定，给出范围或下限，允许在范围内波动。</p></div></div>
+  <div class="slide-foot"><span>9 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">正文</div>
+                <div class="compact"><p><strong>不该有的东西</strong>（重金属与有害元素、农药残留、真菌毒素、微生物）：用限度检查，超过即不合格，没有&quot;好一点&quot;的余地。WHO 的质量评价文件把常用的测定方法系统整理过（Q01），并指出草药在生长过程中可能吸收重金属（Q05）——后一句的意义是：这类项目的来源不只在加工，也在种植，所以限度检查必须与源头记录配合，单靠终检拦不住。</p>
+<p>两类项目的判定逻辑不同，混写会造成实质误判：把重金属写成&quot;含量越低越好&quot;的评分项，等于允许在某一批里&quot;用别的指标换&quot;。限度检查没有这种交换空间。</p>
+<p><strong>对照物管理</strong>是这一节另一个常被忽略的环节。中药标准里常同时使用对照药材（整体比对）与对照品（单体定量），两者都要有来源、批号、有效期与标定记录。对照品用错批号，是含量数据不可复现的常见原因，而且这类错误在数据上不留痕迹——数值照样出，只是不可比。</p>
+<h3 id="4-5-批间研究与三类失效模式">4.5 批间研究与三类失效模式</h3></div></div>
+  <div class="slide-foot"><span>10 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">正文</div>
+                <div class="compact"><p>一致性这一层最容易被跳过：很多资料能证明&quot;这一批合格&quot;，却证明不了&quot;批与批之间可比&quot;。判据很具体：<strong>至少连续若干批的图谱相似度、含量范围，以及关键工艺参数的波动区间。</strong> 三者缺一，一致性结论就没有着落。</p>
+<p><strong>没有批间数据的质量标准，只能用于放行，不能用于研发结论。</strong> 这句话把两类标准的用途分开了：放行标准回答&quot;这批能不能卖&quot;，研发标准回答&quot;这个产品是否可复现&quot;。前者看单批，后者看分布。</p>
+<p>三类失效模式，各有最早信号。</p>
+<p><strong>其一，指标与功效脱钩。</strong> 选了一个好测但与临床无关的成分。最早信号：标准正文里指标项下没有&quot;选择理由&quot;一栏，或理由只写&quot;文献常用&quot;。处置是补一条机制或文献依据，补不出就换指标。</p>
+<p><strong>其二，图谱只有图没有参数。</strong> 没有共有峰归属、没有相似度阈值的图谱，不能用于判定。最早信号：图谱项下只有&quot;应与对照图谱相似&quot;，没有阈值数值与依据批次量。</p></div></div>
+  <div class="slide-foot"><span>11 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">正文</div>
+                <div class="compact"><p><strong>其三，只做放行不做批间。</strong> 一两批合格就宣布一致。最早信号：一致性论述里出现的批次数少于三，且没有覆盖产地或季节变化。处置不是补一句&quot;批间稳定&quot;，而是补分布图。</p>
+<p>三类失效的共同点是：标准在字面上齐全，在判定上不可移交。<strong>一份标准是否成熟，只需一个测试：把它交给没参与起草的人，让他检一批，看他给出的结论与你是否一致。</strong> 不一致的地方，就是标准里还藏着的私人判断。</p></div></div>
+  <div class="slide-foot"><span>12 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">考核与自检</div>
+                <div class="compact"><ol><li>为某模拟品种写三层标准框架，每层至少两项，并指出哪一项最难在注册资料里说清、为什么。</li><li>为三个候选指标各写一条选择理由，区分&quot;功效相关&quot;与&quot;专属性&quot;两条路径；对无法给出理由的指标，说明处置办法。</li><li>给定一组模拟相似度数据（正常批与异常批各若干），定出阈值并写出依据；说明若把阈值定在&quot;经验值&quot;上，会在哪两种情形下失效。</li><li>判断下列项目的写法是否正确并改正：&quot;重金属含量应尽可能低&quot;&quot;沙门菌不得检出&quot;&quot;含量应为 0.8%–1.2%&quot;，逐条说明依据。</li></ol>
+<p>配套工具是<strong>标准—方法对照表</strong>，四列：标准项目、检验方法、方法学验证内容、验证结论。它的验收标准是四列逐行对齐，任一行缺格即为缺项——这张表在下一章与注册资料章会再次用到。</p></div></div>
+  <div class="slide-foot"><span>13 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><ul><li><strong>WHO 文件不是国家药典。</strong> 本章的层次与判据是通用技术逻辑；具体品种的鉴别、检查与含量限度以现行药典与品种标准为准，据本章数值直接执行属于误用。</li><li><strong>不给限度与阈值。</strong> 本章不写任何品种的重金属限度、农残限量、相似度阈值——它们必须由品种数据与现行标准确定。</li><li><strong>数字是教学情境。</strong> 文中的相似度数值与含量范围只用于说明判据方向，不是实测数据，也不对应任何真实品种。</li><li><strong>一处结构性局限。</strong> 底本只有 4 份 WHO 文件，方法学验证的具体参数（专属性、线性、精密度、准确度、耐用性）与中药多成分定量的校正因子问题在底本里没有对应条文。本章只在&quot;标准结构&quot;这一层展开，再往下的方法学细节会变成无据推断。</li></ul>
+<p><strong>免责声明：</strong> 本章为教学材料，不构成医学意见、诊断或用药指导，也不构成质量标准起草与检验的合规依据。任何在研品种的标准、方法与限度，须由具备资质的专业人员依现行药典、技术指导原则与机构质量体系决定。</p></div></div>
+  <div class="slide-foot"><span>14 / 15</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="14">
   <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
-  <div class="slide-foot"><span>5 / 5</span><span>disclaimer</span></div>
+  <div class="slide-foot"><span>15 / 15</span><span>disclaimer</span></div>
 </section>
 </div>
 <div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>

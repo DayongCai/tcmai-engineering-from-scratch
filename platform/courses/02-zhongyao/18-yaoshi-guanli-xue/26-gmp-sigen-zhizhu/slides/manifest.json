@@ -1,31 +1,101 @@
 {
   "chapter": "26-gmp-sigen-zhizhu",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 19,
+  "segmentCount": 12,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 25
+      "chars": 27
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 123
+      "chars": 23
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 29
+      "chars": 162
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 116
+      "chars": 175
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 408
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 317
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 198
+    },
+    {
+      "n": 8,
+      "segment": 7,
+      "chars": 419
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 121
+    },
+    {
+      "n": 10,
+      "segment": 8,
+      "chars": 319
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 132
+    },
+    {
+      "n": 12,
+      "segment": 9,
+      "chars": 364
+    },
+    {
+      "n": 13,
+      "segment": 9,
+      "chars": 259
+    },
+    {
+      "n": 14,
+      "segment": 9,
+      "chars": 395
+    },
+    {
+      "n": 15,
+      "segment": 9,
+      "chars": 97
+    },
+    {
+      "n": 16,
+      "segment": 10,
+      "chars": 394
+    },
+    {
+      "n": 17,
+      "segment": 10,
+      "chars": 53
+    },
+    {
+      "n": 18,
+      "segment": 11,
+      "chars": 328
+    },
+    {
+      "n": 19,
+      "segment": 12,
       "chars": 52
     }
   ]

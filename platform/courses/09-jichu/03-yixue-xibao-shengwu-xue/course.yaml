@@ -31,71 +31,71 @@ chapters:
   - slug: 01-xibao-shengwuxue-gailun
     title: 细胞学说真正的断言不是「小」，是「一切账都记在膜内」
     video: rendered
-    estimate_minutes: 10.72      # = lesson.json estimateTotalSeconds ÷ 60
+    estimate_minutes: 10.28      # = lesson.json estimateTotalSeconds ÷ 60
     measured_minutes: 8.12      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 02-xibaomo-yu-kuamo-yunshu
     title: 膜的本事不是「挡住」，是「让该过的过得快，让不该过的过得慢」
     video: rendered
-    estimate_minutes: 11.50      # = lesson.json estimateTotalSeconds ÷ 60
+    estimate_minutes: 11.10      # = lesson.json estimateTotalSeconds ÷ 60
     measured_minutes: 8.10      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 03-xibao-lianjie-yu-nianfu
     title: 连接不是把细胞粘住，是把「这一层」变成一个可以调控的整体
     video: rendered
-    estimate_minutes: 9.72      # = lesson.json estimateTotalSeconds ÷ 60
+    estimate_minutes: 9.33      # = lesson.json estimateTotalSeconds ÷ 60
     measured_minutes: 7.56      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 04-xibao-waijizhi
     title: 基质不是填充物，是细胞每天在读的一份说明书
     video: rendered
-    estimate_minutes: 11.17      # = lesson.json estimateTotalSeconds ÷ 60
+    estimate_minutes: 10.78      # = lesson.json estimateTotalSeconds ÷ 60
     measured_minutes: 9.21      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 05-xibao-gujia-yu-yundong
     title: 骨架不是骨头，是一套会自己拆了重装的轨道
     video: rendered
-    estimate_minutes: 11.53      # = lesson.json estimateTotalSeconds ÷ 60
+    estimate_minutes: 11.12      # = lesson.json estimateTotalSeconds ÷ 60
     measured_minutes: 9.82      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 06-shenjingyuan-xinxi-chuandi
     title: 信号不是一路跑到底，是每一小段都重新发一次
     video: rendered
-    estimate_minutes: 10.57      # = lesson.json estimateTotalSeconds ÷ 60
+    estimate_minutes: 10.18      # = lesson.json estimateTotalSeconds ÷ 60
     measured_minutes: 8.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 07-xibaohe-yu-ransezhi
     title: 染色质不是打包好的档案，是一份随时被翻开的活页
     video: rendered
-    estimate_minutes: 10.70      # = lesson.json estimateTotalSeconds ÷ 60
+    estimate_minutes: 10.33      # = lesson.json estimateTotalSeconds ÷ 60
     measured_minutes: 8.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 08-jiyin-biaoda-tiaokong
     title: 调控的答案不在「开或关」，在「多少、何时、在哪」
     video: rendered
-    estimate_minutes: 11.75      # = lesson.json estimateTotalSeconds ÷ 60
+    estimate_minutes: 11.35      # = lesson.json estimateTotalSeconds ÷ 60
     measured_minutes: 9.75      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 09-xibao-zhouqi-yu-dna-fuzhi
     title: 细胞周期不是四个阶段，是三道闸门加一套计时器
     video: rendered
-    estimate_minutes: 9.97      # = lesson.json estimateTotalSeconds ÷ 60
+    estimate_minutes: 9.60      # = lesson.json estimateTotalSeconds ÷ 60
     measured_minutes: 6.30      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 10-danbaizhi-hecheng-yu-xibao-gongneng
     title: 蛋白不是「造出来」的，是「按图纸装配，再一路过安检」
     video: rendered
-    estimate_minutes: 10.63      # = lesson.json estimateTotalSeconds ÷ 60
+    estimate_minutes: 10.25      # = lesson.json estimateTotalSeconds ÷ 60
     measured_minutes: 7.10      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 11-xibao-fenhua-yu-qiguan-fasheng
     title: 分化不是学会新本事，是把已有的本事关掉大部分
     video: rendered
-    estimate_minutes: 11.63      # = lesson.json estimateTotalSeconds ÷ 60
+    estimate_minutes: 11.18      # = lesson.json estimateTotalSeconds ÷ 60
     measured_minutes: 8.67      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 12-xibao-yu-fenzi-jishu
     title: 方法的可信度不由仪器决定，由对照决定
     video: rendered
-    estimate_minutes: 9.25      # = lesson.json estimateTotalSeconds ÷ 60
+    estimate_minutes: 8.83      # = lesson.json estimateTotalSeconds ÷ 60
     measured_minutes: 5.98      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

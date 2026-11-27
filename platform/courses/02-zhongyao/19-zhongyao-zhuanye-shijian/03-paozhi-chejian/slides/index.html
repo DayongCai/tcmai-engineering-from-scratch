@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"/>
-<title>第 3 章 · 炮制车间实践：工艺与质控点 · 幻灯片</title>
+<title>第 3 章 · 车间里没有「炒熟了」，只有炒到哪一步必须停 · 幻灯片</title>
 <style>
 
 :root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
@@ -59,24 +59,115 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <body>
 <div id="deck">
 <section class="slide" data-i="0">
-  <div class="slide-inner"><h1 class="big">第 3 章 · 炮制车间实践：工艺与质控点</h1></div>
-  <div class="slide-foot"><span>1 / 5</span><span>title</span></div>
+  <div class="slide-inner"><h1 class="big">第 3 章 · 车间里没有「炒熟了」，只有炒到哪一步必须停</h1></div>
+  <div class="slide-foot"><span>1 / 20</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「《中药专业实践·第3章》」——派生课无本章原文篇名；量值锚点见 README。本章要回答的是：炮制车间实践：工艺与质控点这一站的核心判据是什么。</blockquote></div>
-  <div class="slide-foot"><span>2 / 5</span><span>motto</span></div>
+  <div class="slide-inner"><blockquote class="motto">「凡药制造，贵在适中，不及则功效难求，太过则气味反失」——《本草蒙筌·制造资水火》。陈嘉谟这句话把炮制的全部难点压进「适中」两个字：不及与太过都是错，而「适中」不是一个可以凭感觉到达的位置，它必须被写成一个能停下来的点。</blockquote></div>
+  <div class="slide-foot"><span>2 / 20</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
-  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">质量要求与贮藏 ＋ 炒法：车间里真正要盯的是「每个工序的质控点」。</p></div>
-  <div class="slide-foot"><span>3 / 5</span><span>problem</span></div>
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">本章取底本 8 个单元、28,026 个汉字，平均每单元 3,503 字。厚薄极不匀：讲炒黄、炒焦、炒炭的那一条 6,019 字，讲土炒、砂炒、滑石粉炒、蛤粉炒的那一条 5,867 字，两条占了全章四成篇幅；而「饮片质量检验」与「质量标准制定」两条加起来只有 6,587 字，且写的是「看什么」，不是「什么时候停」。车间里学生真正要做的判断只有一个——<strong>这一锅现在该不该出锅</strong>——而底本把这个判断拆在两处：炒法章给程度描述，检验章给性状项目，中间缺一张把两者对上的表。</p></div>
+  <div class="slide-foot"><span>3 / 20</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
-  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（中药专业实践的失败大多是「只在实验室做过，没在产地和车间做过」：同一批药材，产地与车间看到的是两回事）+ 知识积累（本章 8 单元 28,026 汉字；三辨主 <strong>实践与操作 83</strong>；四位面（实践场景）主 <strong>工艺与制剂 256</strong>；引书 <strong>6 部 15 次</strong>；数值类命中 0）</p></div>
-  <div class="slide-foot"><span>4 / 5</span><span>roots</span></div>
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（一锅药从投料到出锅往往只有几分钟，判断与记录必须在同一段时间里完成；车间按批量与工时报工，带教最省事的安排是「跟着师傅看成品」，学生看到的是出锅后的样子，看不到「差三十秒」的样子）+ 知识积累（炮制学的写法是「一法一条」，每条自带辅料用量、火力、成品标准，十几条并列读下来，学到的是十几套标准，而不是一套跨法通用的停点判据）。</p></div>
+  <div class="slide-foot"><span>4 / 20</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
+  <div class="slide-inner"><div class="kicker">一、进车间先认三张纸，认不全就不要动手</div>
+                <div class="compact dense"><p>炮制车间的规矩不是「先学炒法」，是「先认纸」。三张纸各管一段，缺任何一张，某个判断就没有落点：</p>
+<div class="table-wrap"><table><thead><tr><th>纸</th><th>管什么</th><th>缺了会怎样</th></tr></thead><tbody><tr><td>工艺规程</td><td>这一个品种用什么辅料、多少比例、什么火力、炒到什么程度</td><td>只能照师傅的手感做，换一个人就做不成同一批</td></tr><tr><td>批记录</td><td>这一批实际投了多少料、实测温度多少、几点出锅、谁操作</td><td>出了问题查不到是哪一步偏了，复盘只能靠回忆</td></tr><tr><td>中间产品质量标准</td><td>这一批凭什么算合格（性状、水分、灰分、浸出物、指标成分）</td><td>「看着差不多」成为唯一判据，争议时无据可依</td></tr></tbody></table></div>
+<p>三张纸之间的顺序不能颠倒：<strong>工艺规程是「应该怎样」，批记录是「实际怎样」，质量标准是「差多少还算同一种东西」</strong>。学生在车间最容易犯的错，是拿质量标准去替代工艺规程——质量标准写「表面微黄、断面浅黄、有香气」，这句话读完仍然不知道锅该烧多热、该翻多快、该在第几分钟停。质量标准是<strong>验收语言</strong>，工艺规程才是<strong>操作语言</strong>。</p></div></div>
+  <div class="slide-foot"><span>5 / 20</span><span>body</span></div>
+</section>
+<section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">一、进车间先认三张纸，认不全就不要动手</div>
+                <div class="compact"><p>认纸还有一个副产品：它会逼你提前想清楚「这一批的停点写在哪」。批记录上如果只有「出锅时间」一栏，而没有「出锅依据」一栏，那么这一批的程度判断就永远是事后追认的——事后追认的判断，第二批复制不了。</p></div></div>
+  <div class="slide-foot"><span>6 / 20</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">二、一个工序的质控点只有三类</div>
+                <div class="compact"><p>车间里的「质控点」听起来很多，归纳下来只有三类，认清这三类，任何一道工序都能自己找点：</p>
+<p><strong>第一类，停点——程度到了没有。</strong> 炒黄的停点是「表面微黄或较原色加深、种子鼓起爆裂、断面浅黄、透出固有香气」；炒焦是「表面焦黄或焦褐、断面深黄或棕褐、透出焦香气」；炒炭是「表面焦黑、断面棕褐、质地酥脆、存性而不得灰化」。三档的区别不在火力大小，而在<strong>停在哪一步</strong>：微黄即出、焦而不炭即出、存性即出。</p>
+<p><strong>第二类，限点——越过就不合格，且不可逆。</strong> 焦糊、灰化、辅料结块、挂土过厚，这四项一旦发生，返工也救不回来（灰化的炭药已经失去「存性」，只能报废）。限点与停点的区别是：停点判断「够不够」，限点判断「过没过」；停点可以有经验误差，限点没有。</p></div></div>
+  <div class="slide-foot"><span>7 / 20</span><span>body</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">二、一个工序的质控点只有三类</div>
+                <div class="compact"><p><strong>第三类，数点——能写进批记录、能被第二个人复算的数。</strong> 辅料比例（每 100kg 药物用麦麸 10kg、用灶心土 25kg）、投料量、实测锅温、翻动间隔、出锅时刻、摊晾厚度与时长、水分测定值。数点的作用不是替代感官判断，而是<strong>给感官判断留一条可回溯的痕迹</strong>：同一批里出现「颜色合格但气味偏焦」，回头查数点，往往能发现是翻动间隔太长或出锅迟了几十秒。</p>
+<p>三类点找齐，一张批记录就成立了。找不齐，那张纸只是「我做过」的证明，不是「这样做能重复」的证明。</p></div></div>
+  <div class="slide-foot"><span>8 / 20</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">三、清炒：停点靠断面判，不靠表面</div>
+                <div class="compact dense"><p>初学炒法的人几乎都把眼睛放在表面上，这是最容易出错的地方。表面颜色受锅温、翻动、光线三重影响，同一批药在不同位置可以差出两个色阶；<strong>断面颜色反映的是内部受热程度</strong>，它比表面慢、比表面稳。底本给的经验是「断面较表面浅一至二色阶」——这一句是清炒判定的核心：断面比表面浅，说明火候进到了表层而尚未透心；断面与表面同黑，多半已经炭化过度，此时「存性」已经不存在了。</p>
+<p>三档的火力与手法也不同：</p>
+<div class="table-wrap"><table><thead><tr><th>档</th><th>火力</th><th>手法要点</th><th>停点</th><th>越界形态</th></tr></thead><tbody><tr><td>炒黄</td><td>文火，个别质坚需爆裂者用中火</td><td>勤翻快炒，出锅立即摊开晾凉</td><td>表面微黄、鼓起爆裂、断面浅黄、固有香气出</td><td>焦化、生熟不匀</td></tr><tr><td>炒焦</td><td>中火，翻动加快</td><td>见焦褐即出，不可等「更香」</td><td>表面焦黄或焦褐、断面深黄或棕褐、焦香气</td><td>炭化、焦糊气</td></tr><tr><td>炒炭</td><td>武火，短时快炒</td><td>见火星立即喷水，出锅摊凉</td><td>表面焦黑、断面棕褐、质酥脆、存性</td><td>灰化（断面与表面同黑）</td></tr></tbody></table></div></div></div>
+  <div class="slide-foot"><span>9 / 20</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">三、清炒：停点靠断面判，不靠表面</div>
+                <div class="compact"><p>「看火色、闻香气、听爆声、掂轻重」这四句老话，对应的是四个不同的信息通道：火色看程度，香气看成分转化（种子类油脂氧化、挥发油散失、苷类因酶灭活而保留），爆声看种皮是否破裂（王不留行炒至爆开白花即是），轻重看水分（同体积变轻说明水分在走）。四通道并用的意义是<strong>互相纠错</strong>：只看颜色会把「锅温高、时间短」误判成「火候到了」；只听爆声会把「受潮爆裂」误判成「已炒透」。</p>
+<p>炒黄的四项目的——增效（质酥便于煎出与粉碎）、缓和药性（减寒性、滑肠之弊）、杀酶保苷（防止苷类在贮存与煎煮中被酶解）、矫臭矫味——在车间里对应四种不同的「够不够」：为了煎出，看的是破碎程度；为了缓和药性，看的是色泽加深的程度；为了保苷，看的是「是否达到灭活温度并迅速出锅」。同一个「炒黄」，目的不同，停点其实略有先后，这一点底本没有分列，需要带教时点明。</p></div></div>
+  <div class="slide-foot"><span>10 / 20</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">四、加辅料炒：辅料既是传热介质，也是剂量</div>
+                <div class="compact"><p>清炒只动火，加辅料炒多了一个变量：辅料。这个变量有两重身份，混起来就会出错。</p>
+<p><strong>第一重身份是传热介质。</strong> 砂、土、滑石粉、蛤粉都是固体颗粒，它们把热均匀地送到药物表面，避免直接接触锅底造成的局部过热。所以判断「辅料够不够热」的标准不是温度读数，而是<strong>流动性</strong>：灶心土炒到「轻松滑利、翻动自如」才投药；砂炒马钱子、骨碎补要求砂温均匀，成品「质地酥脆」正是均匀受热的证据。投药过早，辅料尚未炒透，药物受热不足、挂不上；投药过迟，辅料过热，药物表面先焦。</p></div></div>
+  <div class="slide-foot"><span>11 / 20</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">四、加辅料炒：辅料既是传热介质，也是剂量</div>
+                <div class="compact dense"><p><strong>第二重身份是药剂。</strong> 这一点最容易被当成附带效果。麦麸性平味甘，同炒「借谷气助脾」，所以麸炒枳壳、麸炒苍术、麸炒白术的功效变化是<strong>辅料本身参与</strong>的结果，不只是「加热变缓」；灶心土性温，能温中燥湿、涩肠止泻，所以土炒白术、土炒山药「温中止泻力胜」，与麸炒的「健脾和中力胜」不是同一件事。<strong>辅料用量的意义因此是剂量，不是成本</strong>：麸 10kg/100kg、灶心土 25kg/100kg 是通行用量，辅料少了，药性走向就变了；辅料陈腐、霉变，等于往药里加了一批污染物。</p>
+<p>两重身份带来两条操作纪律：</p>
+<ol><li><strong>辅料必须先处理再入锅</strong>（灶心土去表层煤灰、取中层黄土、研细过筛、晒干；麦麸须新鲜干燥），辅料的状态直接进成品；</li><li><strong>出锅必须筛净</strong>（筛去焦麸、筛净土粉），挂土以「药面薄挂一层、断面不见土色」为度——挂厚了碍胃，挂薄了失土炒之义。这一条同时是停点（挂土程度）与限点（不得带明显麸灰、不得有焦麸）。</li></ol></div></div>
+  <div class="slide-foot"><span>12 / 20</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">四、加辅料炒：辅料既是传热介质，也是剂量</div>
+                <div class="compact"><p>三者还有一个常被问到的分辨：生白术、麸炒白术、土炒白术，同一味药三个规格，功效分别是健脾燥湿利水、健脾益气而燥性缓和、温中止泻力胜。车间里若把三者混为「炒白术」，临床就分不出该用哪一个。规格不是等级，<strong>规格是「哪一种东西」，等级才是「哪一档」</strong>。</p></div></div>
+  <div class="slide-foot"><span>13 / 20</span><span>body</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">五、质控点不止在锅里：从车间到库房</div>
+                <div class="compact"><p>炮制的成果很容易在库房里丢掉。底本第3章有两条专讲贮藏与养护，它们与炒法是同一条链上的两段：锅里定的是「成分形态」，库里定的是「这个形态能保持多久」。</p>
+<p><strong>库房条件是可核的数</strong>：相对湿度一般控制在 70% 以下；库温一般不超过 30℃；人工烘烤干燥温度一般不超过 60℃（芳香类、花类宜阴干，曝晒会变色失香）；检查一般每月一次，霉雨与高温季节加密；出入库遵循先进先出。这些数不是教条，是「为什么」的压缩：湿度高则吸潮霉变、虫蛀、泛油；温度高则挥发油散失、脂肪氧化、成分分解；光促花叶类变色。</p></div></div>
+  <div class="slide-foot"><span>14 / 20</span><span>body</span></div>
+</section>
+<section class="slide" data-i="14">
+  <div class="slide-inner"><div class="kicker">五、质控点不止在锅里：从车间到库房</div>
+                <div class="compact"><p><strong>分类存放是同一条原则的分叉</strong>：含淀粉糖类多的（山药、薏苡仁、党参、大枣）防虫防霉；含挥发油的（薄荷、荆芥、藿香、丁香、木香）密闭阴凉；含油脂的（苦杏仁、桃仁、柏子仁）低温防泛油；贵细（人参、鹿茸、麝香、牛黄）专柜专账；毒性饮片（生川乌、生草乌、马钱子、斑蝥、巴豆）专库或专柜、双人双锁、与普通饮片分开；盐炙蜜炙品吸湿性强，密闭防潮。十八反、十九畏所列药物不宜同贮同放，防的是混淆误配——同贮在这里不是化学问题，是<strong>取错</strong>的问题。</p></div></div>
+  <div class="slide-foot"><span>15 / 20</span><span>body</span></div>
+</section>
+<section class="slide" data-i="15">
+  <div class="slide-inner"><div class="kicker">五、质控点不止在锅里：从车间到库房</div>
+                <div class="compact"><p>养护方法的价值与边界也要说清：干燥、密封（石灰缸、谷糠埋藏）、对抗同贮（花椒与动物药、牡丹皮与泽泻、大蒜、白酒蒸气）、低温，这四类都是「防」；硫黄熏蒸虽能杀虫防霉、使药材洁白，但会造成二氧化硫残留，现已严格限制，饮片二氧化硫残留量须符合药典规定。传统养护的长处是就地取材、简便实用，短处是依赖经验、标准化程度低，部分方法（烟熏、硫黄）安全性欠佳——<strong>能防的尽量防，不能防的不要用「传统」两个字替它背书</strong>。</p></div></div>
+  <div class="slide-foot"><span>16 / 20</span><span>body</span></div>
+</section>
+<section class="slide" data-i="16">
+  <div class="slide-inner"><div class="kicker">六、失效模式与本章考核</div>
+                <div class="compact"><p><strong>失效模式一：只看表面不看断面。</strong> 判断依据只有颜色，且是在市场灯光或车间强光下看的。后果是同一锅里上层与下层判成两档。识别：批记录里若没有断面描述，即为只看表面。</p>
+<p><strong>失效模式二：把「差不多」写进记录。</strong> 记录写「色泽良好、气味正常」，这两句无法复核，也无法交接。识别：任何一条描述里找不到可数的项（时间、温度、比例、厚度），即为「差不多」。</p>
+<p><strong>失效模式三：辅料当耗材。</strong> 辅料不称量、不复检、不筛净，或把用过的土粉、焦麸反复使用而不看色泽质地。识别：批记录缺辅料用量与实际投料量。</p>
+<p><strong>失效模式四：越权判定。</strong> 在车间对成品下「合格」结论，而判定权在质量管理部门与法定标准。识别：记录里出现结论性用语而记录人无授权。</p>
+<p><strong>考核项（本章）：</strong></p></div></div>
+  <div class="slide-foot"><span>17 / 20</span><span>body</span></div>
+</section>
+<section class="slide" data-i="17">
+  <div class="slide-inner"><div class="kicker">六、失效模式与本章考核</div>
+                <div class="compact"><ol><li>对同一品种的炒黄、炒焦、炒炭三个规格，各写出停点与越界形态，并说明为什么断面比表面更可靠；</li><li>指出麸炒与土炒在「治脾虚」上的分工，并用辅料的两重身份解释这个分工；</li><li>给出一张单批炮制批记录，参数四项（火力或温度、投料量、辅料比例、时间）与停点依据齐备，且至少一处写明偏差与处置；</li><li>说出库房三个数（湿度、温度、烘烤温度）各自的来历，以及超限后最先出现的哪种变质；</li><li>复算本章单元数与汉字数，说明「厚薄不匀」这件事为什么会影响学习顺序。</li></ol></div></div>
+  <div class="slide-foot"><span>18 / 20</span><span>body</span></div>
+</section>
+<section class="slide" data-i="18">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><ol><li><strong>本章给的是判据框架，不是工艺参数表。</strong> 具体品种的火力档、时间、辅料用量以现行药典炮制通则、省级炮制规范与本单位工艺规程为准；本章引用的 10kg/100kg、25kg/100kg 是通行用量，不是唯一用量。</li><li><strong>停点是有分布的经验判断，不是绝对值。</strong> 断面浅一至二色阶这类描述本身就是区间语言；教学上要求写反证（判它到位，要说明为何不是「仅表面变色」），而不是要求背一个精确色号。</li><li><strong>底本厚薄不匀是事实，要照实说。</strong> 炒法与加辅料炒两条占全章四成，检验、标准、贮藏、养护四条合起来不足四成；这意味着底本对「怎么炒」的支撑强于对「怎么判合格」的支撑。本章补的是后者，但补的是框架，不是检验方法学。</li><li><strong>不可外推。</strong> 本章不涉及炙法（酒、醋、蜜、盐、姜汁）与煅法、蒸煮燀法的具体参数，也不涉及毒性饮片炮制后成分测定的方法细节；这些分属炮制学与中药分析学两门课。</li><li><strong>免责声明：</strong> 本章为教学材料，不构成药品质量判定、工艺放行或诊疗意见；一切炮制工艺参数、质量判定与放行决定，以现行法定标准、本单位工艺规程与具备资质人员的判断为准。</li></ol></div></div>
+  <div class="slide-foot"><span>19 / 20</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="19">
   <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
-  <div class="slide-foot"><span>5 / 5</span><span>disclaimer</span></div>
+  <div class="slide-foot"><span>20 / 20</span><span>disclaimer</span></div>
 </section>
 </div>
 <div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>

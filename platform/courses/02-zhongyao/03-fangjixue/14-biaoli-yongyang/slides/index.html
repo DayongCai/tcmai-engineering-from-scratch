@@ -60,28 +60,142 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <div id="deck">
 <section class="slide" data-i="0">
   <div class="slide-inner"><h1 class="big">第 14 章 · 表里双解与治痈疡：六首方的两个方向</h1></div>
-  <div class="slide-foot"><span>1 / 6</span><span>title</span></div>
+  <div class="slide-foot"><span>1 / 25</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「非一法所能尽除」——教材·第11章·11.1.2（《方剂学·第11章·11.1》）。风热火邪充斥表里三焦，一法清不尽、一法下不完，于是有了第一个方向：把相反的两法放进同一首方。痈疡一病，阳证要清、阴证要温，于是有了第二个方向：同一个病名底下，治则朝两个相反的方向走。</blockquote></div>
-  <div class="slide-foot"><span>2 / 6</span><span>motto</span></div>
+  <div class="slide-inner"><blockquote class="motto">「营气不从，逆于肉理，乃生痈肿」——《素问·生气通天论》。表里双解，是把相反的两法放进同一首方；治痈疡，是同一个病名朝两个相反的方向走。两个方向，一个共同点：一法不能尽除，所以本章要问的是「凭什么能合」。</blockquote></div>
+  <div class="slide-foot"><span>2 / 25</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
   <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">学完八法，人很容易得到一张干净的分类表：汗、吐、下、和、温、清、消、补，一方归一法，114 首方各就各位。这张表在两个地方会当场失效。第一处是表里双解剂：大柴胡汤的功用写着「和解少阳，内泻热结」，防风通圣散写着「疏风解表，泻热通便」——一首方里同时有「往外散」和「往下推」，两个方向相反的动作被要求同时发生。第二处是治痈疡剂：仙方活命饮清热解毒、阳和汤温阳散寒，两首方治的都叫「痈疡」，方向却是一寒一热。更麻烦的是数据的形状：这六首方在 114 首方里 <strong>fa 字段全空</strong>，八法一章也收不进它们——八法 52 首、不属八法 62 首，本章六方正落在后面那 62 首里。教材把这两章放在最后，不是补充，是提示：<strong>八法盖不住全部方。</strong></p></div>
-  <div class="slide-foot"><span>3 / 6</span><span>problem</span></div>
+  <div class="slide-foot"><span>3 / 25</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
   <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（要做一张「一方一法」的分类表交付，八法只有八个格子，遇到一首方横跨两法、或遇到一个病名横跨两性，格子就不够用；不处理这个缺口，分类表会把教材里最见功力的六首方判成「无法归类」）+ 知识积累（表里双解的「下中之和」、外科内治的消/托/补三法、痈疽阴阳辨证 = 知道一首方为什么可以同时汗与下、知道同一个病名为什么可以一清一温，也知道「归不进八法」是分类法的边界而不是方的缺陷）</p></div>
-  <div class="slide-foot"><span>4 / 6</span><span>roots</span></div>
+  <div class="slide-foot"><span>4 / 25</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
   <div class="slide-inner"><div class="kicker">学习目标</div>
                 <div class="compact"><ul><li>说清本章「15,030 字 / 6 方」这个规模数怎么来：两章各自的节、小节、段、字数，以及为什么合成一章</li><li>解释一首方里「汗」与「下」为什么能共存：大柴胡汤的「下中之和」与防风通圣散的「四法并用」，各自的约束条件是什么</li><li>用「功用 → 法向」的文本判定法算出六方各含 2 个法向（合计 12 个，11 个在八法内、1 个在外），并据此说明它们为什么压不进八法</li><li>说明治痈疡剂内部为什么一清一温：阳证与阴证的判据（红肿焮痛 vs 漫肿无头、皮色不变、酸痛无热），以及消/托/补三法与八法的错位</li><li>指出本章数据里君臣佐使的缺口：教材 11 处「成组标注」的角色位，数据层每角色只留 1 味；阳和汤君位只剩鹿角胶、防风通圣散君位只剩薄荷</li></ul></div></div>
-  <div class="slide-foot"><span>5 / 6</span><span>objectives</span></div>
+  <div class="slide-foot"><span>5 / 25</span><span>objectives</span></div>
 </section>
 <section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">正文一：两章为什么合成一章——先看结构，再看方</div>
+                <div class="compact dense"><p>把两章并成一章，不是为了凑数，而是因为这两章在结构上是同一种现象的两个样本。教材给它们的规模是：</p>
+<div class="table-wrap"><table><thead><tr><th>教材章</th><th>节</th><th>小节</th><th>段</th><th>字数</th><th>方数</th></tr></thead><tbody><tr><td>第11章 表里双解剂</td><td>1</td><td>2</td><td>12</td><td>5,504</td><td>2</td></tr><tr><td>第23章 治痈疡剂</td><td>2</td><td>4</td><td>24</td><td>9,526</td><td>4</td></tr><tr><td><strong>合计</strong></td><td><strong>3</strong></td><td><strong>6</strong></td><td><strong>36</strong></td><td><strong>15,030</strong></td><td><strong>6</strong></td></tr></tbody></table></div>
+<p>六首方的组成规模是另一组数：大柴胡汤 8 味、防风通圣散 17 味、仙方活命饮 13 味、五味消毒饮 5 味、透脓散 5 味、阳和汤 7 味，合计 <strong>55 个药位</strong>，去重 <strong>42 味药</strong>，平均 <strong>9.17 药位/方</strong>。这个平均数在 114 首方的全表里偏高（全表平均 7.33），因为本章收了两首大方：防风通圣散 17 味、仙方活命饮 13 味，一首是「汗下清利四法」的容器，一首是「清、行气、活血、化痰、透脓」诸法并施的容器。<strong>方越大，越可能是多法同方；多法同方，就越难被归进单一法。</strong></p></div></div>
+  <div class="slide-foot"><span>6 / 25</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">正文一：两章为什么合成一章——先看结构，再看方</div>
+                <div class="compact"><p>本章内部还有一条不显眼但很好用的线索：42 味药里只有 <strong>11 味</strong>出现在两首以上的方中（当归、甘草各 3 首；大黄、川芎、皂角刺、穿山甲、芍药、金银花、防风、麻黄、黄芩各 2 首），其余 <strong>31 味只出现一次</strong>。也就是说，这六首方彼此之间并不靠一张共享药网连成一片——它们被放在一起，靠的不是药，是<strong>方向</strong>。</p></div></div>
+  <div class="slide-foot"><span>7 / 25</span><span>body</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">正文二：表里双解——同一首方里，汗与下凭什么共存</div>
+                <div class="compact"><p>先把问题摆正。「汗」是往外散，「下」是往下推，两者在同一具身体上同时进行，最朴素的反驳是：散则伤表，下则伤里，一散一下，正气往哪边走？教材的回答不是「可以」，而是给了一个有条件的「必须」：</p>
+<p><strong>条件一：表证未解，里实已成。</strong> 大柴胡汤治少阳阳明合病，少阳未解而阳明已实。教材把这条治则的两难写得很直：「少阳固不可下，然兼阳明腑实则当下」——教材·第11章·11.1.1（《方剂学·第11章·11.1》）。少阳病本当禁下，但里实已成又不得不下，于是只能在「和解」的框架里放一点「下」，把下法降格使用。</p></div></div>
+  <div class="slide-foot"><span>8 / 25</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">正文二：表里双解——同一首方里，汗与下凭什么共存</div>
+                <div class="compact"><p><strong>条件二：下的剂量要轻到不成为主角。</strong> 教材对大柴胡汤的配伍抓得很准：「和解为主、通下为辅」——教材·第11章·11.1.1（《方剂学·第11章·11.1》）。结构证据在数据里：大柴胡汤 8 味药，组成表里大黄排在末位；教材原方大黄只用二两，是全方用量最轻的一味，却在方后自注「若不加大黄，恐不为大柴胡汤也」。这就是全章第一个值得记住的结论：<strong>「下」在这首方里不是力度，是身份。</strong> 它轻到不会把人推空，重到足以把「和解剂」变成「表里双解剂」。教材给这种配伍起了一个精确的名字：「虽云下之，亦下中之和剂也」——教材·第11章·11.1.1（《方剂学·第11章·11.1》）。</p></div></div>
+  <div class="slide-foot"><span>9 / 25</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">正文二：表里双解——同一首方里，汗与下凭什么共存</div>
+                <div class="compact"><p><strong>条件三：当四法同时进场时，必须给出「各走各路」的出口。</strong> 防风通圣散是极端样本：17 味药，功用只写「疏风解表，泻热通便」，而方解写的是「汗、下、清、利四法并用，表里、气血、三焦同治」——教材·第11章·11.1.2（《方剂学·第11章·11.1》）。四法并用的前提，是每一法都有自己的出路：表邪从汗走、里实从大便走、三焦之热从小便走、上中二焦之热从清解走。教材把结果压成八个字：「汗不伤表，下不伤里」——教材·第11章·11.1.2（《方剂学·第11章·11.1》）。</p>
+<p>把三条条件放在一起，就能回答「凭什么共存」：<strong>不是相反的两法可以随便同方，而是相反的两法各有各的出口、各有各的剂量层级、且共同服务于一个未解的表证与一个已成的里实。</strong> 缺任何一条，同方即相害。教材对为什么要多法的说法同样干脆：「非一法所能尽除」——教材·第11章·11.1.2（《方剂学·第11章·11.1》）。</p></div></div>
+  <div class="slide-foot"><span>10 / 25</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">正文二：表里双解——同一首方里，汗与下凭什么共存</div>
+                <div class="compact dense"><p>这里有一个必须诚实交代的落差。本章的脚本用「功用」文本判法向，大柴胡汤判出「下＋和」两个、防风通圣散判出「汗＋下」两个；而教材方解给防风通圣散的是<strong>四法</strong>。这不是脚本算错，而是<strong>标签层比方解窄</strong>：功用是一句压缩过的摘要，方解才是立法说明。凡是拿「功用」当分类依据的系统，都会系统性地低估一首方的法数——本章把这个落差写在正文里，而不是把它抹平。</p>
+<h3 id="2-1-治痈疡-同一个病名-四个方向">2.1 治痈疡——同一个病名，四个方向</h3>
+<p>第23章四首方治的都叫痈疡，方向却有四个。先把数据摆出来（法向由各方「功用」文本判定）：</p>
+<div class="table-wrap"><table><thead><tr><th>方</th><th>章位</th><th>药味</th><th>功用</th><th>法向</th></tr></thead><tbody><tr><td>仙方活命饮</td><td>23.1.1</td><td>13</td><td>清热解毒，消肿溃坚，活血止痛</td><td>清＋消</td></tr><tr><td>五味消毒饮</td><td>23.1.2</td><td>5</td><td>清热解毒，消散疔疮</td><td>清＋消</td></tr><tr><td>透脓散</td><td>23.2.1</td><td>5</td><td>补气养血，托毒溃脓</td><td>补＋托</td></tr><tr><td>阳和汤</td><td>23.2.2</td><td>7</td><td>温阳补血，散寒通滞</td><td>温＋补</td></tr></tbody></table></div></div></div>
+  <div class="slide-foot"><span>11 / 25</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">正文二：表里双解——同一首方里，汗与下凭什么共存</div>
+                <div class="compact"><p><strong>阳证一路（清＋消）。</strong> 仙方活命饮治阳证痈疡初起，教材把它的一句话立论写成了全章最好用的判据：「治一切疮疡，未成者即散，已成者即溃，又止痛消毒之良剂也」——教材·第23章·23.1.1（《方剂学·第23章·23.1》）。「未成者即散，已成者即溃」这十个字，等于把外科内治的「消」拆成了两个时点：脓未成要消，脓已成要溃。方里 13 味药的分工正是照这句写的。五味消毒饮是同向的极简版：五味全是清热解毒之品，功用「清热解毒，消散疔疮」，教材说它「清解之力较本方为优」，专治疔疮「疮形如粟，坚硬根深，状如铁钉」——教材·第23章·23.1.2（《方剂学·第23章·23.1》）。<strong>同向不等于同方</strong>：一个广、一个专；一个能消能溃、一个只清只散。</p></div></div>
+  <div class="slide-foot"><span>12 / 25</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">正文二：表里双解——同一首方里，汗与下凭什么共存</div>
+                <div class="compact"><p><strong>托法一路（补＋托）。</strong> 透脓散 5 味：黄芪、川芎、当归、皂角刺、穿山甲，功用「补气养血，托毒溃脓」。它治的不是热毒壅盛，而是<strong>正虚不能托毒外透</strong>：疮形平塌、根盘散漫、脓成难溃，或溃后脓水清稀。教材把这条治则的要害写成一句因果：「使正气充而脓毒外泄」——教材·第23章·23.2.1（《方剂学·第23章·23.2》）。补不是目的，补是给「透」提供动力；所以方里补药（黄芪、当归、川芎）与溃坚药（皂角刺、穿山甲）必须同时在场，教材概括为「以补为体、以透为用」。这也是外科「托法」与「消法」的分界：消法是替正气把邪打掉，托法是帮正气把邪推出去。</p></div></div>
+  <div class="slide-foot"><span>13 / 25</span><span>body</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">正文二：表里双解——同一首方里，汗与下凭什么共存</div>
+                <div class="compact"><p><strong>温通一路（温＋补）。</strong> 阳和汤 7 味：熟地黄、鹿角胶、白芥子、肉桂、甘草、干姜、麻黄，功用「温阳补血，散寒通滞」。它治阴疽：患处「漫肿无头，皮色不变，酸痛无热」——教材·第23章·23.2.2（《方剂学·第23章·23.2》）。方名本身就是治则：「阳和一转，阴霾自散」——教材·第23章·23.2.2（《方剂学·第23章·23.2》）。配伍上它做了一件看似矛盾的事：熟地黄重用至一两，而肉桂、麻黄、炮姜只用几分——<strong>大剂滋补之中放极小剂辛散</strong>，滋补得辛通则不滞，辛散得滋补则不伤。这与正文二的「轻用大黄」是同一种手法：<strong>方向靠配伍比例表达，不靠药味数量表达。</strong></p></div></div>
+  <div class="slide-foot"><span>14 / 25</span><span>body</span></div>
+</section>
+<section class="slide" data-i="14">
+  <div class="slide-inner"><div class="kicker">正文二：表里双解——同一首方里，汗与下凭什么共存</div>
+                <div class="compact"><p>四个方向合起来，就是教材第23章的两节分工：23.1 散结消痈（阳证，清与消）、23.2 托毒透脓与温通阴疽（正虚，补与托；阴证，温与补）。一个病名底下同时容纳「清热解毒」与「温阳散寒」，靠的不是教材自相矛盾，而是<strong>辨阴阳</strong>这道前置判断。教材在阳和汤的使用注意里把误用的后果写得毫不含糊：「阳证痈肿严禁温通」——教材·第23章·23.2.2（《方剂学·第23章·23.2》）。反过来，阴疽误用寒凉清解，只会「阳气愈伤、寒凝愈甚」。</p></div></div>
+  <div class="slide-foot"><span>15 / 25</span><span>body</span></div>
+</section>
+<section class="slide" data-i="15">
+  <div class="slide-inner"><div class="kicker">正文三：数据层能说与不能说</div>
+                <div class="compact"><h3 id="3-1-六首方为什么不进八法-五条构造证据">3.1 六首方为什么不进八法——五条构造证据</h3>
+<p>这一节是本章的教学价值所在。八法 52 首、不属八法 62 首，本章六方在 62 首里，而且不是「暂时没归类」，是<strong>结构上归不进</strong>。证据五条，全部可由数据复算：</p>
+<p><strong>① fa 字段全空。</strong> <code>formulas.json</code> 里每首方都有 <code>fa</code> 字段，本章六方 6/6 为空。这不是漏填：八法归属按教材章名判定（第5章解表→汗、第6章泻下→下……），本章两章（第11、23章）不在那八个章名里，字段自然是空。</p>
+<p><strong>② 两章不在八法章集合内。</strong> 反查 52 首方所在的章，得到的集合是 {5, 6, 7, 8, 10, 12, 21, 22}——恰好八个章、每章一法。第11章与第23章不在其中，交集为 0。八法的章映射是「一章一法」，而表里双解与治痈疡这两章，从章名上就不是一法。</p></div></div>
+  <div class="slide-foot"><span>16 / 25</span><span>body</span></div>
+</section>
+<section class="slide" data-i="16">
+  <div class="slide-inner"><div class="kicker">正文三：数据层能说与不能说</div>
+                <div class="compact"><p><strong>③ 每首方都含 2 个法向。</strong> 用「功用」文本判：大柴胡汤「下＋和」、防风通圣散「汗＋下」、仙方活命饮「清＋消」、五味消毒饮「清＋消」、透脓散「补＋托」、阳和汤「温＋补」——6/6 都是 2 个，合计 12 个法向。八法的口径是「一方只归一法」，12 个法向压成 6 个标签，必然丢掉一半信息。<strong>这不是分类器不够聪明，是标签体系的分辨率不够。</strong></p>
+<p><strong>④ 12 个法向里有 1 个不是八法。</strong> 透脓散的「托」不在汗吐下和温清消补之内。外科内治讲消、托、补三法，八法只盖住消与补两头，中间那个「托」——把已成之脓托出来的那一法——八法里没有位置。一个治法体系缺了一整类外科手法，就不该被当成穷举表使用。</p></div></div>
+  <div class="slide-foot"><span>17 / 25</span><span>body</span></div>
+</section>
+<section class="slide" data-i="17">
+  <div class="slide-inner"><div class="kicker">正文三：数据层能说与不能说</div>
+                <div class="compact"><p><strong>⑤ 两章两轴。</strong> 第11章的法向并集是 {汗, 下, 和}，两首方都含「下」，也就是同一首方之内并存相反方向；第23章的法向并集是 {清, 消, 补, 温, 托}，四首方在同一病名之下并存清与温两个相反方向。<strong>第11章把相反方向压进一首方，第23章把相反方向摊在一个病名下。</strong> 八法是一维的，两个方向都要求二维。</p>
+<p>把这五条合起来读：62 首不属八法不是「还没归完」，而是八法作为分类法的边界。教材自己在八法之外还写了祛暑、固涩、安神开窍、理气、理血、治风、治燥、祛湿、祛痰、驱虫、治痈疡——<strong>八法是骨架，不是穷举</strong>。本章六方正好是这条边界上最硬的一块：它们不是边缘案例，是教材用整整两章、15,030 字讲清的代表方。</p>
+<h3 id="3-2-君臣佐使是抽取-不是教材标注">3.2 君臣佐使是抽取，不是教材标注</h3>
+<p>本章六方在数据层有一个共同的缺口，值得单列一节，因为它直接影响怎么读上面那些表。</p></div></div>
+  <div class="slide-foot"><span>18 / 25</span><span>body</span></div>
+</section>
+<section class="slide" data-i="18">
+  <div class="slide-inner"><div class="kicker">正文三：数据层能说与不能说</div>
+                <div class="compact"><p>教材标君臣佐使有三种写法：「君药：某」的清单式、「故为君药」的句式、以及「共为君药」的成组式。本章六方里，<strong>11 处角色位是成组标注</strong>的——防风通圣散君、臣、佐三处，仙方活命饮臣、使两处，五味消毒饮臣、佐两处，阳和汤君、使两处，大柴胡汤佐一处，透脓散佐一处。而成组标注的意思是：<strong>这个角色位上的药不止一味。</strong></p>
+<p>数据层每方每角色只留 1 味（抽取规则：每角色取第一条命中）。于是出现两个必须点名的缺口：</p>
+<ul><li><strong>阳和汤的君位。</strong> 教材原文是熟地黄与鹿角胶「二药合用，温阳补血，共为君药」，数据层君位只剩<strong>鹿角胶</strong>。只看数据，会得出「阳和汤以鹿角胶为君、熟地黄不参与君位」的错误结论；而教材的立法重心恰恰在熟地黄一两的滋补上。</li><li><strong>防风通圣散的君位。</strong> 教材原文是麻黄、防风、荆芥、薄荷四味「共为君药」，数据层君位只剩<strong>薄荷</strong>。四味解表药被压成一味，且被留下的那一味不是用量最重的那味。</li></ul></div></div>
+  <div class="slide-foot"><span>19 / 25</span><span>body</span></div>
+</section>
+<section class="slide" data-i="19">
+  <div class="slide-inner"><div class="kicker">正文三：数据层能说与不能说</div>
+                <div class="compact"><p>角色深度也照此读：六方的角色位数分别是 3、3、4、3、2、3，只有仙方活命饮四角色齐；透脓散只有 2 个（君、佐），臣位为空——不是透脓散没有臣药（教材明写当归、川芎「共为臣药」），是本层没抽到。<strong>把缺失当值，是最常见的统计污染。</strong> 本章的做法是：缺口单列、写明「本层抽不到」，不并入任何角色，也不据此推断君臣配置。</p>
+<h3 id="3-3-两个方向的分界与三条禁令">3.3 两个方向的分界与三条禁令</h3>
+<p>把两章并读，最有临床意义的部分不是「能同方」，而是「什么时候绝对不能同方」。</p></div></div>
+  <div class="slide-foot"><span>20 / 25</span><span>body</span></div>
+</section>
+<section class="slide" data-i="20">
+  <div class="slide-inner"><div class="kicker">正文三：数据层能说与不能说</div>
+                <div class="compact dense"><ul><li><strong>表里双解的前提是「表未解、里已成」。</strong> 表证已解而里实未成、或纯属里实而无表证，都不该用双解之剂；体虚者与孕妇尤当慎用。教材对防风通圣散的断语是「药力较峻，中病即止，不宜久服」。</li><li><strong>阴证忌寒凉，阳证忌温通。</strong> 这是一对对称的禁令。阳证痈疡（红肿焮痛、发热口渴、脉数有力）误投阳和汤，是以火济火；阴疽（漫肿无头、皮色不变、酸痛无热、脉沉细）误投仙方活命饮或五味消毒饮，是阳气愈伤、寒凝愈甚。教材对阳和汤的禁令写得比一般使用注意更重：「阳证痈肿严禁温通」。</li><li><strong>穿山甲已禁用。</strong> 本章六方里有 <strong>2 首</strong>含穿山甲（仙方活命饮、透脓散），两首都在第23章。教材明确交代：穿山甲为国家一级保护野生动物，其鳞片已不再收载于《中国药典》药用标准，禁止药用与贸易；今多以皂角刺加量，或加王不留行、路路通、醋鳖甲代之。<strong>这是一条会随法规变化而变化的方剂学内容</strong>——数据里药名还在，临床上已经不能再用，凡以此二方做教学或系统实现，都必须把这条替换规则一并带上。</li></ul></div></div>
+  <div class="slide-foot"><span>21 / 25</span><span>body</span></div>
+</section>
+<section class="slide" data-i="21">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><ul><li><strong>法向是文本标签，不是教材的治法归类。</strong> 本章把「功用」拆成法向，靠的是关键词表（解表/疏风→汗，泻热/通便→下，清热/解毒→清……）。这套表能把六方分开，但它读的是摘要句，不是方解。防风通圣散被判为 2 个法向，而教材方解写的是四法——<strong>标签层永远比方解窄</strong>，凡引用本章法向数，须同时给出判定口径。</li><li><strong>一方 2 法向是本章六方的读数，不是通则。</strong> 全表 114 首方若同法处理，多数方只会命中 1 个法向（补益剂、清热剂尤其明显）。2 个法向之所以在这六方上稳定出现，是因为教材选它们正是为了展示多法同方；把它当成「所有方都跨两法」是过度概括。</li><li><strong>君臣佐使是抽取结果，不是教材标注。</strong> 六方 11 处成组标注的角色位，数据层每角色只留 1 味；阳和汤君位缺熟地黄、防风通圣散君位缺麻黄防风荆芥、透脓散臣位为空。凡需要「某方君药是哪几味」的场合，一律回教材方解，不用数据层断言。</li><li>**药名做了归并，不是教材原文用字。</li></ul></div></div>
+  <div class="slide-foot"><span>22 / 25</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="22">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><p>** 野菊花→菊花、生黄芪→黄芪、炮姜炭→干姜、当归尾→当归、甘草节→甘草、荆芥穗→荆芥、赤芍药→赤芍。归并有据，但拿药名做逐字比对时会与教材对不上。</p>
+<ul><li><strong>穿山甲在数据里仍在，在临床上已禁用。</strong> 这是数据滞后于法规的典型情形。本章如实报出「2 首方含穿山甲」，同时报出教材的禁用与替代说明，不因为「数据里有」就当它可用。</li><li><strong>教材字数 15,030 是章级计数，不是本章正文的字数。</strong> 它是 5,504 与 9,526 之和，来自教材的章级统计；本章正文另有自己的篇幅。两个数不可混用。</li><li><strong>可复算性有边界。</strong> 本章所有数字都能由 <code>formulas.json</code> 与 <code>底本.json</code> 重跑得出，「重跑得出同一个数」只证明脚本稳定，不证明口径正确。口径写在上面的每一条边界里。</li><li><strong>边界声明</strong>：本章是教材两章的结构对照与文本标签统计，不是临床辨证资料；六方的用法、用量、禁忌一律以教材与执业医师的判断为准，<strong>不构成诊断或用药依据</strong>。</li></ul></div></div>
+  <div class="slide-foot"><span>23 / 25</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="23">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><p>凡引用本章数字，须同时给出「数据文件 + 脚本入口 + 判定口径」，三者缺一不可引用。</p></div></div>
+  <div class="slide-foot"><span>24 / 25</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="24">
   <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
-  <div class="slide-foot"><span>6 / 6</span><span>disclaimer</span></div>
+  <div class="slide-foot"><span>25 / 25</span><span>disclaimer</span></div>
 </section>
 </div>
 <div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>

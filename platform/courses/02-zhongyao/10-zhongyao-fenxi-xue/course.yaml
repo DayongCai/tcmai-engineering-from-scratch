@@ -31,71 +31,71 @@ chapters:
   - slug: 01-fangfa-yanzheng
     title: 方法验证不是打勾表，是八个各自会失败的边界
     video: rendered
-    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.98      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 12.52      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.33      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 02-yangpin-qianchuli
     title: 取样定上限，前处理定下限，两者都不能靠事后补
     video: rendered
-    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 14.72      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 12.64      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 03-jianding
     title: 四类鉴别不是替代关系，是四种不同的覆盖面
     video: rendered
-    estimate_minutes: 1.05      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.09      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 12.32      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.40      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 04-jiancha
     title: 检查项写的是上限，因为它管的是不该进来的东西
     video: rendered
-    estimate_minutes: 1.08      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.12      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 14.20      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 12.24      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 05-tlc-hplc
     title: 分离度不足 1.5 时，峰面积再整齐也不叫含量
     video: rendered
-    estimate_minutes: 1.05      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.06      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 11.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.40      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 06-gc-ms
     title: 联用给的是身份，不是含量；把身份当含量是这一章最贵的错
     video: rendered
-    estimate_minutes: 1.03      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.06      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 12.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.89      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 07-zhiwen-tupu
     title: 相似度 0.90 判的是像不像，不是好不好
     video: rendered
-    estimate_minutes: 1.07      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.06      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 12.28      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.78      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 08-duochengfen-dingliang
     title: 一测多评省的是对照品，赌的是校正因子
     video: rendered
-    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 12.50      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.40      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 09-zhiji-fenxi
     title: 制剂分析的难点在"把药拿出来"，不在"把数测出来"
     video: rendered
-    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 12.42      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.55      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 10-biaozhun-wuzhi
     title: 标准里写的每一个数，都得有一批样品替它作证
     video: rendered
-    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 14.87      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.85      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 11-anquan-pingjia
     title: 限量合格说的是"不超过上限"，不是"吃下去安全"
     video: rendered
-    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 16.13      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 12-shuju-xin-jishu
     title: 模型在训练集上再漂亮，也只是一句未被验证的话
     video: rendered
-    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 13.47      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.41      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

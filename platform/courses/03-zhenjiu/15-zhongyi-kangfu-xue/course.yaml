@@ -32,12 +32,12 @@ chapters:
     title: 中医康复借了养生的方法，没借它的对象
     video: rendered
     estimate_minutes: 13.48      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 12.8      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    measured_minutes: 12.80      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 02-bianzheng-pingding
     title: 证候与功能是两张纸，缺一张就交不了班
     video: rendered
-    estimate_minutes: 11.1      # = lesson.json estimateTotalSeconds ÷ 60
+    estimate_minutes: 11.10      # = lesson.json estimateTotalSeconds ÷ 60
     measured_minutes: 10.76      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 03-zhongyao-kangfu
@@ -49,14 +49,14 @@ chapters:
   - slug: 04-zhenjiu-kangfu
     title: 名为针灸康复，底本里「灸」是「针」的十一倍
     video: rendered
-    estimate_minutes: 13.4      # = lesson.json estimateTotalSeconds ÷ 60
+    estimate_minutes: 13.40      # = lesson.json estimateTotalSeconds ÷ 60
     measured_minutes: 11.75      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 05-tuina-kangfu
     title: 推拿康复的处方是六件事的顺序，不是六个手法
     video: rendered
     estimate_minutes: 13.88      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 12.1      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    measured_minutes: 12.10      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 06-qigong-kangfu
     title: 气功康复教的是把呼吸调慢，不是把气送到某处
@@ -85,5 +85,5 @@ chapters:
   - slug: 10-shequ-jiating
     title: 社区与家庭康复这一章，底本里一个中医词都没有
     video: rendered
-    estimate_minutes: 13.4      # = lesson.json estimateTotalSeconds ÷ 60
+    estimate_minutes: 13.40      # = lesson.json estimateTotalSeconds ÷ 60
     measured_minutes: 11.27      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

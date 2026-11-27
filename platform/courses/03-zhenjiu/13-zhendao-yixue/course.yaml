@@ -55,7 +55,7 @@ chapters:
   - slug: 05-guanjie-jianqiao
     title: 这一章叫关节与腱鞘，而腱鞘在正文里只以一个检查手法的名字出现
     video: rendered
-    estimate_minutes: 15.1      # = lesson.json estimateTotalSeconds ÷ 60
+    estimate_minutes: 15.10      # = lesson.json estimateTotalSeconds ÷ 60
     measured_minutes: 3.88      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 06-shenjing-kaya
@@ -73,5 +73,5 @@ chapters:
   - slug: 08-liaoxiao-zhengju
     title: 这一章讲的全是针灸的证据，针刀的证据一条也没有
     video: rendered
-    estimate_minutes: 13.2      # = lesson.json estimateTotalSeconds ÷ 60
+    estimate_minutes: 13.20      # = lesson.json estimateTotalSeconds ÷ 60
     measured_minutes: 3.74      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

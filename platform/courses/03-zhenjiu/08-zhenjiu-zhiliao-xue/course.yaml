@@ -55,7 +55,7 @@ chapters:
   - slug: 05-neike-yi
     title: 内科前二十一个病证，先问「病在神还是病在形」
     video: rendered
-    estimate_minutes: 14.0      # = lesson.json estimateTotalSeconds ÷ 60
+    estimate_minutes: 14.00      # = lesson.json estimateTotalSeconds ÷ 60
     measured_minutes: 12.02      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 06-neike-er
@@ -67,8 +67,8 @@ chapters:
   - slug: 07-fuerke
     title: 妇儿科二十二证，一半在调周期，一半在调发育
     video: rendered
-    estimate_minutes: 12.5      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 9.8      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 12.50      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.80      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 08-piwaike
     title: 皮外骨伤二十二证，先分清病在血分、在局部，还是在经筋
@@ -85,7 +85,7 @@ chapters:
   - slug: 10-jizheng-qita
     title: 急症先保命再取穴，其他病证先问这一针在治什么
     video: rendered
-    estimate_minutes: 13.1      # = lesson.json estimateTotalSeconds ÷ 60
+    estimate_minutes: 13.10      # = lesson.json estimateTotalSeconds ÷ 60
     measured_minutes: 10.46      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 11-zhiwuliu-zhu

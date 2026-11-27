@@ -1,31 +1,76 @@
 {
   "chapter": "06-queyang-yu-fare",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 14,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 9
+      "chars": 22
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 63
+      "chars": 38
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 16
+      "chars": 154
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 140
+      "chars": 104
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 415
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 90
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 370
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 243
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 356
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 84
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 357
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 84
+    },
+    {
+      "n": 13,
+      "segment": 9,
+      "chars": 359
+    },
+    {
+      "n": 14,
+      "segment": 10,
       "chars": 52
     }
   ]

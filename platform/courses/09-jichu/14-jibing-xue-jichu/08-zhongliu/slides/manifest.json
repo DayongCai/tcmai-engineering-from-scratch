@@ -1,31 +1,76 @@
 {
   "chapter": "08-zhongliu",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 14,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 6
+      "chars": 24
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 57
+      "chars": 43
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 13
+      "chars": 132
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 139
+      "chars": 96
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 414
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 331
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 315
+    },
+    {
+      "n": 8,
+      "segment": 7,
+      "chars": 365
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 364
+    },
+    {
+      "n": 10,
+      "segment": 8,
+      "chars": 274
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 318
+    },
+    {
+      "n": 12,
+      "segment": 9,
+      "chars": 278
+    },
+    {
+      "n": 13,
+      "segment": 9,
+      "chars": 168
+    },
+    {
+      "n": 14,
+      "segment": 10,
       "chars": 52
     }
   ]

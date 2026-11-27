@@ -1,31 +1,81 @@
 {
   "chapter": "04-zhiliang-biaozhiwu",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 15,
+  "segmentCount": 9,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 22
+      "chars": 29
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 81
+      "chars": 250
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 24
+      "chars": 118
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 122
+      "chars": 116
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 174
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 317
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 394
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 386
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 352
+    },
+    {
+      "n": 10,
+      "segment": 6,
+      "chars": 378
+    },
+    {
+      "n": 11,
+      "segment": 6,
+      "chars": 376
+    },
+    {
+      "n": 12,
+      "segment": 6,
+      "chars": 183
+    },
+    {
+      "n": 13,
+      "segment": 7,
+      "chars": 312
+    },
+    {
+      "n": 14,
+      "segment": 8,
+      "chars": 401
+    },
+    {
+      "n": 15,
+      "segment": 9,
       "chars": 52
     }
   ]

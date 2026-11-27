@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"/>
-<title>第 1 章 · 中药学的研究对象与性能：四气五味 · 幻灯片</title>
+<title>第 1 章 · 性能五要素是总论的共用语法，不是任何一味药的取值 · 幻灯片</title>
 <style>
 
 :root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
@@ -59,24 +59,99 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <body>
 <div id="deck">
 <section class="slide" data-i="0">
-  <div class="slide-inner"><h1 class="big">第 1 章 · 中药学的研究对象与性能：四气五味</h1></div>
-  <div class="slide-foot"><span>1 / 5</span><span>title</span></div>
+  <div class="slide-inner"><h1 class="big">第 1 章 · 性能五要素是总论的共用语法，不是任何一味药的取值</h1></div>
+  <div class="slide-foot"><span>1 / 16</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「四气（四性）指药物寒、热、温、凉四种药性（另有平性，实际仍偏于温凉）」——《中药学·第5章·5.1.1》</blockquote></div>
-  <div class="slide-foot"><span>2 / 5</span><span>motto</span></div>
+  <div class="slide-inner"><blockquote class="motto">「药有酸咸甘苦辛五味，又有寒热温凉四气。」——《神农本草经·序录》</blockquote></div>
+  <div class="slide-foot"><span>2 / 16</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
-  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">要建一张「性味归经表」，第一反应是打开总论第 5 章——四气、五味、升降浮沉、归经、毒性，五个词全在这一章被定义。可这一章 2,126 字、20 段里，<strong>一味药的性味归经字段也没有</strong>：它点了 54 味药的名字、共 94 处，全是举例（「辛能散能行（发散表邪、行气活血——薄荷、川芎）」这种句式），不是数据行。于是「第 5 章能不能当数据源」这个问题只能回答：不能——本章立目 0 条，全书 287 味药目全在第 9–29 章各论里。</p></div>
-  <div class="slide-foot"><span>3 / 5</span><span>problem</span></div>
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">学中药学的第一个动作是背「麻黄辛、微苦，温，归肺、膀胱经」。这句话里的五个词，在教材里被拆到五个互不相邻的节去定义：四气、五味、升降浮沉、归经、毒性，各两小节。第 5 章共 <strong>1,678 汉字、20 段</strong>，五节分别为 327、330、358、338、325 字——极差 33 字，只占均字 335.6 的 9.8%。教材用一条几乎等长的排版带把五个要素并列起来，却没有随章附上任何一味药的骨架卡：第 1–5 章合计 <strong>5,716 汉字、16 节、34 小节、68 段</strong>，而立目药数 <strong>0</strong>。全书 287 味的性味归经，一条都不在这五章里。</p></div>
+  <div class="slide-foot"><span>3 / 16</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
-  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（第 5 章是全书唯一集中定义五要素的地方，入学第一个月就考它；任何按性能检索的工程都必须先把「四气/五味/升降浮沉/归经/毒性」的口径钉死，否则各论 287 味药的四气字段无法对齐、无法聚合成分布）＋ 知识积累（五节写成同一套模板：每节 2 小节 × 2 段，共 20 段；模板越整齐，越容易误以为五个要素在教材里等重——而字数与词频显示，五味被写得最重、四气只有 399 字）</p></div>
-  <div class="slide-foot"><span>4 / 5</span><span>roots</span></div>
+  <div class="slide-inner"><div class="kicker">一、辨药采集项：先把六栏立起来，再谈填什么值</div>
+                <div class="compact"><p>一味药进入药库，第一件事不是写功效，而是把可采集的栏位摆出来。教材总论确实给了定义，但定义不等于取值。逐栏核对：</p>
+<div class="table-wrap"><table><thead><tr><th>栏位</th><th>总论给的判据（节）</th><th>底本可填</th><th>覆盖</th></tr></thead><tbody><tr><td>气</td><td>5.1 立「寒、热、温、凉」，另设平性</td><td>287 / 287</td><td>100%</td></tr><tr><td>味</td><td>5.2 立「辛、甘、酸、苦、咸」，兼淡、涩</td><td>285 / 287</td><td>99.3%</td></tr><tr><td>归经</td><td>5.4「病在某经，即用某经之药」</td><td>284 / 287</td><td>99.0%</td></tr><tr><td>毒性</td><td>5.5 立大毒／有毒／小毒三级</td><td>44 / 287 标毒</td><td>15.3%</td></tr><tr><td>升降浮沉</td><td>5.3「诸花皆升，旋覆独降」</td><td>0 / 287</td><td>0%</td></tr><tr><td>形色气味</td><td>散见各论「以……为佳」句</td><td>283 / 287</td><td>98.6%</td></tr></tbody></table></div></div></div>
+  <div class="slide-foot"><span>4 / 16</span><span>body</span></div>
 </section>
 <section class="slide" data-i="4">
+  <div class="slide-inner"><div class="kicker">一、辨药采集项：先把六栏立起来，再谈填什么值</div>
+                <div class="compact"><p>这张表里最容易被忽略的是第五栏。5.3 讲升降浮沉讲得并不少（358 字，五节里最长），还给了「诸花皆升，诸子皆降」这类可记的口诀，但底本 287 条记录里<strong>没有一条</strong>设了这个字段。它不是写得少，是<strong>根本没有这一栏</strong>。第六栏反过来：总论没给它立节，各论却 283 味都写了性状，例如麻黄「茎粗、色淡黄绿、内心色红棕、手拉不脱节者为佳」，苍耳子「炒后去刺用」。定义在哪一节，和数据在哪一栏，是两件毫不相干的事。</p>
+<p>采集顺序应当是：形色气味（认药）→ 产地与炮制状态（这味药此刻是什么规格）→ 气、味、归经（性能标签）→ 毒性级。前三步都指向「这味药是哪一个实物」，第四步才开始贴标签。跳过前三步直接记标签，就是把一批同名异物、生制不分的药材压成同一个字符串。</p></div></div>
+  <div class="slide-foot"><span>5 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">二、成组判据：三类数据类型不能混成一张表</div>
+                <div class="compact dense"><p>【教学设定】把 287 味按「性能卡」分组检索，先要声明每栏的数据类型，否则任何一个「按相似度归组」的判据都会在心里悄悄换掉度量。</p>
+<div class="table-wrap"><table><thead><tr><th>栏位</th><th>数据类型</th><th>实际分布</th><th>可做的运算</th></tr></thead><tbody><tr><td>气</td><td>有序 9 档</td><td>大寒 2／寒 72／微寒 41／凉 12／平 52／微温 20／温 77／热 8／大热 3</td><td>排序、差值、阈值切分</td></tr><tr><td>味</td><td>名义 8 类（多值）</td><td>苦 126／辛 116／甘 115／咸 31／涩 19／酸 19／微苦 13／淡 6，合计 445 个标签</td><td>集合交并、计数</td></tr><tr><td>归经</td><td>名义 12 类（多值）</td><td>肝 139／肺 110／脾 90／胃 90／肾 82／心 69／大肠 46／膀胱 28／胆 19／小肠 11／心包 5／三焦 3，合计 692 条，均值 2.44</td><td>集合交并、共现</td></tr><tr><td>毒性</td><td>有序 4 级（含未标）</td><td>大毒／有毒／小毒共 44，未标 243</td><td>阈值、白名单</td></tr></tbody></table></div>
+<p>「不成立」条件要写死三条：</p></div></div>
+  <div class="slide-foot"><span>6 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">二、成组判据：三类数据类型不能混成一张表</div>
+                <div class="compact"><ol><li><strong>气不能 one-hot。</strong> 一旦把九档拆成九个互斥列，温与寒的距离就等于温与热的距离，冷热方向当场消失。反过来说，味也不能当序数：445 个多值标签没有「大小」，相加得不出任何东西。</li><li><strong>「未标毒」不能读成「无毒」。</strong> 287 味里只有 44 味写了毒性，占 15.3%；把剩下 243 味默认安全，等于把 84.7% 的空白当成结论。底本对毒性是「写了才有」，不是「没写就没有」。</li><li><strong>平性药不给方向。</strong> 52 味记「平」，占 18.1%。它们在「寒者热之、热者寒之」这条治则上给出零信息，不能拿来推寒热，只能按其他栏定位。</li></ol>
+<p>这三条合起来是一个更一般的结论：<strong>同一张表里的栏位，数据类型不同，就不能共用一个距离函数</strong>。性能表看着像一张表，实际是四种表被排版拼在了一起。</p>
+<p>毒性栏的分布值得单独看一遍，因为它不像气、味那样铺满每一味药，而是集中在几个大类里：</p></div></div>
+  <div class="slide-foot"><span>7 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">二、成组判据：三类数据类型不能混成一张表</div>
+                <div class="compact dense"><div class="table-wrap"><table><thead><tr><th>大类</th><th>标毒 / 味数</th><th>说明</th></tr></thead><tbody><tr><td>祛湿与泻下（教材 11–14 章）</td><td>10 / 45</td><td>峻下逐水药、川乌、雷公藤一类</td></tr><tr><td>攻毒杀虫与拔毒化腐</td><td>9 / 12</td><td>全书标毒率最高的一类</td></tr><tr><td>化痰止咳平喘</td><td>5 / 25</td><td>半夏、天南星、白附子、苦杏仁、白果</td></tr><tr><td>活血化瘀</td><td>4 / 23</td><td>马钱子、斑蝥、水蛭、土鳖虫</td></tr><tr><td>安神、平肝息风与开窍</td><td>4 / 26</td><td>朱砂、全蝎、蜈蚣、刺蒺藜</td></tr><tr><td>温里与理气</td><td>4 / 19</td><td>附子、吴茱萸、花椒、川楝子</td></tr><tr><td>收涩与涌吐</td><td>3 / 17</td><td>常山、瓜蒂、胆矾</td></tr><tr><td>解表</td><td>2 / 21</td><td>细辛、苍耳子</td></tr><tr><td>消食、驱虫与止血</td><td>2 / 24</td><td>苦楝皮、艾叶</td></tr><tr><td>清热</td><td>1 / 36</td><td>贯众</td></tr><tr><td>补虚</td><td>0 / 39</td><td>全类无一味标毒</td></tr></tbody></table></div></div></div>
+  <div class="slide-foot"><span>8 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">二、成组判据：三类数据类型不能混成一张表</div>
+                <div class="compact"><p>把这张表和「毒性只有 15.3% 覆盖率」放在一起读，会得到一个很有用的对照：标毒率不是随机漏记，而是跟着大类走的。补虚药 39 味一味不标，攻毒杀虫药 12 味里 9 味标了。这说明「未标」在多数情况下确实对应「教材不把它归入毒药」，但<strong>这是大类的统计倾向，不是逐味的结论</strong>——用它做筛查可以，用它替代逐条核对不行。</p></div></div>
+  <div class="slide-foot"><span>9 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">三、用药动作与边界</div>
+                <div class="compact"><p>学完这一章，手上应当有三个动作，且每个动作都带一条禁用条件。</p>
+<p><strong>动作一：取卡。</strong> 拿到一味药，先填形色气味、产地、炮制状态，再填气、味、归经、毒性。缺哪栏就写「缺」，不写推测值。底本里雷公藤缺味、缺归经，龙骨缺味、缺归经，丁香缺归经——这三味就是「缺栏标缺」的样本，不能替它们补。</p>
+<p><strong>动作二：定位。</strong> 归经回答的是「作用落在哪一脏腑经络」，它是定位轴，不是分类轴。全书归经均值 2.44 条/味，说明绝大多数药同时落在两三处；把归经当唯一分类依据，等于承认一批药无处安放。</p>
+<p><strong>动作三：判方向。</strong> 只有气是有序轴，方向判断（寒证用温药、热证用凉药）只能用气，且只对非平性药成立。</p>
+<p>边界三条：</p></div></div>
+  <div class="slide-foot"><span>10 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">三、用药动作与边界</div>
+                <div class="compact"><ul><li><strong>寒热错杂时，单药的气不代表方剂的方向。</strong> 上热下寒、外寒内热是常见的复合格局，单味药的九档标签描述不了整方的走向。</li><li><strong>毒性栏不能用于安全性推断以外的事。</strong> 它只标「这味药有没有被教材明写为毒」，不标剂量、不标解毒方法、不标可否外用。</li><li><strong>升降浮沉这一栏在本课数据里是空的。</strong> 遇到需要判断药力趋向的问题，只能回答「底本未设此栏」，不能凭「花叶升散、金石沉降」的常识替 287 味药补值——那是把一句口诀当成 287 条观测。</li></ul></div></div>
+  <div class="slide-foot"><span>11 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">四、记录字段与失效模式</div>
+                <div class="compact"><p>一条合格的药物记录，字段至少是这九项：</p>
+<div class="codeblock"><div class="codeblock-lang">text</div><pre><code class="lang-text">药名（含炮制后缀） | 基原与药用部位 | 产地 | 形色气味 | 气（1/9 档）
+| 味（0–3 值） | 归经（0–5 值） | 毒性（4 级） | 出处（第 X 章·第 Y 节）</code></pre></div>
+<p>四类失效模式，每一类都能在这份底本里找到实例：</p>
+<p><strong>同名异物。</strong> 药名相同、基原不同，性能随之不同。木通有几种基原，防己分汉、广，底本只有在写了基原的条目里才能分辨。字段里必须有「基原与药用部位」，否则药名只是个读音。</p>
+<p><strong>生制不分。</strong> 生麻黄与蜜炙麻黄同名气不同力，教材原文明写「生用发汗力强，炙用缓和」。底本 21 味解表药里有 8 味带炮制状态描述，其余 13 味没写——没写不等于没有生制品，只等于这一条没记。药名后缀不带炮制，检索就会把两个规格当成一味。</p></div></div>
+  <div class="slide-foot"><span>12 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">四、记录字段与失效模式</div>
+                <div class="compact dense"><p><strong>以效代性。</strong> 从「能清热」反推「性寒」是循环论证：功效句本身就是按性味写的。反例摆在这里——雷公藤记「凉」，功效句却是祛风除湿、活血通络、消肿止痛，没有「清热」二字。用功效反推性味，遇到这类条目必然出错。</p>
+<p><strong>单凭一味断证。</strong> 见恶寒就投辛温解表，见发热就投苦寒清热，是把标签当证候。表证、里证、寒热真假都须四诊合参，单味药的性味不足以定证，更不能定方。</p>
+<p>字段表最后一项「出处」只到「第 X 章·第 Y 节」，不到页码。理由很实际：页码随版次变动，而「第 9 章·9.1.2」这样的定位在换版后仍然指得到同一条目，复核时不必重找。凡是引用教材原句的地方，都按这个粒度标；引不出节号的说法，一律不写成本课的结论。</p>
+<p>还有一条记录纪律：<strong>同一条记录里不许出现两个来源</strong>。性能栏取自教材条目，就不再把药典或别的书目数字混进同一行；要补外部来源，另起一栏并标明「外源」。混源的行看起来更完整，实际无法复核——出了错，不知道是哪一本写错了。</p></div></div>
+  <div class="slide-foot"><span>13 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">五、考核项</div>
+                <div class="compact"><p>以下五题都可判定对错，不靠印象打分：</p>
+<ol><li>给出三味药（含一味缺归经、一味缺味），要求填满九字段表，缺栏必须写「缺」，写推测值即错。</li><li>判断命题「底本未标毒性的 243 味药即为无毒」是否正确，并给出错误理由。</li><li>说明为何「辛」不能用来区分风寒药与风热药，须给出一个可复算的计数作为依据。</li><li>指出五要素中哪一栏在底本里覆盖率为 0，并说明它为什么不能由常识补值。</li><li>用一句话写出「气是有序轴、味与归经是名义轴」对算法选择的直接影响。</li></ol></div></div>
+  <div class="slide-foot"><span>14 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="14">
+  <div class="slide-inner"><div class="kicker">六、代价与边界</div>
+                <div class="compact dense"><ul><li><strong>五节等长不等于五要素等重。</strong> 327–358 字的排版带只说明教材照固定长度写，不说明哪个要素更重要。要判断轻重，得回到每节内部数判据条数。</li><li><strong>词频是写法指纹，不是内容量。</strong> 第 5 章里「五味」出现 12 次、「四气」只有 3 次，差别来自起句习惯（讲五味时反复用它作主语，讲四气时改用「寒、热、温、凉」本体词），不是讲四气讲得少。</li><li><strong>本章统计的是结构与字段，不评价任何一味药的疗效与安全性。</strong> 44 味标毒只表示教材写明了毒性级别，不表示其余药可以随意使用。</li><li><strong>覆盖率是这一版底本的性质。</strong> 产地 0%、升降浮沉 0%、味 99.3%、归经 99.0%，都是对 <code>standards/zhongyao/drugs.json</code> 这一份数据的清点结果；换一份底本，数字会变，结论的检查方法不变。</li><li><strong>本章不提供选药、配伍与用量结论。</strong> 性能标签只是选药的前置条件，证候判断与用药决策须由执业中医师完成。</li></ul></div></div>
+  <div class="slide-foot"><span>15 / 16</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="15">
   <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
-  <div class="slide-foot"><span>5 / 5</span><span>disclaimer</span></div>
+  <div class="slide-foot"><span>16 / 16</span><span>disclaimer</span></div>
 </section>
 </div>
 <div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>

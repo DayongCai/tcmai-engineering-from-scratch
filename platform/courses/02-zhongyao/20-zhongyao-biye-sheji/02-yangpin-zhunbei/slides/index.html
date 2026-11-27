@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"/>
-<title>第 2 章 · 样品与数据准备（批次、指纹图谱） · 幻灯片</title>
+<title>第 2 章 · 样品不代表性，图谱再精密也只是自证 · 幻灯片</title>
 <style>
 
 :root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
@@ -59,24 +59,96 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <body>
 <div id="deck">
 <section class="slide" data-i="0">
-  <div class="slide-inner"><h1 class="big">第 2 章 · 样品与数据准备（批次、指纹图谱）</h1></div>
-  <div class="slide-foot"><span>1 / 5</span><span>title</span></div>
+  <div class="slide-inner"><h1 class="big">第 2 章 · 样品不代表性，图谱再精密也只是自证</h1></div>
+  <div class="slide-foot"><span>1 / 17</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「《中药毕业设计与知识移交·第2章》」——派生课无本章原文篇名；台账锚点见 standards/biye/。本章要回答的是：样品与数据准备（批次、指纹图谱）这一环节的核心判据是什么。</blockquote></div>
-  <div class="slide-foot"><span>2 / 5</span><span>motto</span></div>
+  <div class="slide-inner"><blockquote class="motto">「天下无粹白之狐，而有粹白之裘，取之众白也。」——《吕氏春秋·用众》</blockquote></div>
+  <div class="slide-foot"><span>2 / 17</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
-  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">取样程序 ＋ 指纹图谱：代表性由取样决定，可比性由图谱决定。</p></div>
-  <div class="slide-foot"><span>3 / 5</span><span>problem</span></div>
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">底本第 2 章 10 单元 21,618 汉字，其中取样原则与样品登记留样两个单元合计 3,583 汉字（16.6%），指纹图谱五个单元合计 11,507 汉字——取样篇幅只有图谱的 31.1%。而可比性恰恰先由取样决定：批号不真、产地不明、留样不全，图谱做得再规范，相似度也只是同一批样品在互相印证。</p></div>
+  <div class="slide-foot"><span>3 / 17</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
-  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（中药毕设的失败大多是「指标先定、样品不代表性」：做了一年，结论只对那批样成立）+ 知识积累（本章 10 单元 21,618 汉字；三辨主 <strong>实施与分析 364</strong>；四位面（毕设环节）主 <strong>实施与验证 267</strong>；引书 <strong>7 部 19 次</strong>；数值类命中 1）</p></div>
-  <div class="slide-foot"><span>4 / 5</span><span>roots</span></div>
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（一学年周期内只能拿到合作单位当年愿意给的批次，产地与采收期不由学生选）+ 知识积累（指纹图谱有成熟软件、有相似度算法、有对照图谱库，取样没有软件可买，只能靠一张登记表和事前约定）。</p></div>
+  <div class="slide-foot"><span>4 / 17</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
+  <div class="slide-inner"><div class="kicker">一、代表性是取样问题，不是统计问题</div>
+                <div class="compact"><p>一个常见的误解是把「代表性」当成统计学的任务：以为样品够多就有代表性。实际上批次数再多，只要所有批都来自同一个产地、同一个采收期、同一种加工方式，它们代表的就是那一个产地、那一个时段的药材，而不是这个品种。样本量能压住随机误差，压不住系统性的偏。</p>
+<p>底本把分析程序描述为一条链：取样 → 供试品制备 → 鉴别 → 检查 → 含量测定 → 记录与报告。链的第一环是取样，前面没有别的环节替它兜底。指纹图谱相似度算得再准，算的是「我这些样品彼此像不像」；如果这些样品本来就出自同一批货，相似度高只证明了一件与质量无关的事——同一批货是同一批货。</p>
+<p>因此在毕设里，「代表性」要落成一个具体动作：<strong>在取样之前，先把「批」的定义写下来。</strong> 是同一产地同一采收期的一批，还是同一产地不同采收期的几批，还是不同产地的同名药材？三种定义对应三种结论，不能混着用。定义写在开题报告里，取样按定义执行，图谱按批分组计算——这三步的顺序不能倒。</p></div></div>
+  <div class="slide-foot"><span>5 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">二、批次矩阵：用哪几个维度切开「批」</div>
+                <div class="compact dense"><p>中药样品的「批」至少有三个维度：空间（产地／道地产区与非道地产区）、时间（采收期、贮藏期）、工艺（初加工与炮制方式）。毕设的批次通常不够三个维度全开，于是必须选维度，并把没选的维度写成限制条件。</p>
+<div class="table-wrap"><table><thead><tr><th>维度</th><th>切法</th><th>需要几批才立得住</th><th>不选的后果</th></tr></thead><tbody><tr><td>产地</td><td>道地产区 + 主产区 + 一个非道地产区</td><td>至少 3 个产地，每产地不少于 2 批</td><td>结论只能对该产地成立，不能谈「道地」</td></tr><tr><td>采收期</td><td>同一产地按采收月份分组</td><td>至少 2 个采收期</td><td>无法讨论采收对指标的影响</td></tr><tr><td>工艺</td><td>鲜切／干燥／蒸制／炮制</td><td>至少 2 种工艺</td><td>无法讨论加工对指标的影响</td></tr></tbody></table></div>
+<p>上表的批次数是结构性的下限（用于说明「至少要有几个格子」），不是质量判据，也不是任何标准的规定值。实际取样数量由课题规模、检测成本与样品可得性共同决定，并在开题报告里写明。</p></div></div>
+  <div class="slide-foot"><span>6 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">二、批次矩阵：用哪几个维度切开「批」</div>
+                <div class="compact"><p>底本讲取样原则时强调两条：代表性、均匀性。落到批次矩阵上，代表性问题由「产地／时间／工艺」三个维度回答，均匀性问题由「同一批内怎么取」回答。同一批内取样要注意部位一致（根类药材的粗细、饮片的厚薄）、包装层次一致（上中下、内外层）、以及粉碎与分样的一致性——这几条不写下，同批样品的重复性差会被误读成方法不稳定。</p>
+<p>还有一条容易被忽略：<strong>留样是取样的一部分，不是取样之后的附加动作。</strong> 底本单列了样品登记与留样一节，理由很实在——中期发现某批数据异常时，唯一能救的办法是把留样重新测一遍；没有留样，就只能把那一批整段删掉，而删掉之后批次矩阵就缺角，结论的范围要跟着缩小。</p></div></div>
+  <div class="slide-foot"><span>7 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">二、批次矩阵：用哪几个维度切开「批」</div>
+                <div class="compact"><p>分样的操作细节同样影响代表性。药材打成粉末后要过筛混匀再分样，否则细粉与粗粉的指标成分含量会分层；饮片取样要避开明显霉变、虫蛀的个体，但也不能只挑品相最好的——只挑好的，测出来的是「精选样品」的质量，不是这批货的质量。取样记录里应写明「是否剔除异常个体、剔除理由」，这一句往往决定了别人能否复现你的结论。</p></div></div>
+  <div class="slide-foot"><span>8 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">三、样品登记与留样：台账十字段</div>
+                <div class="compact dense"><p>台账不是给检查看的，是给自己三个月后看的。三个月后的你记不住哪一瓶是哪个产地，正如接手的人记不住你为什么把某一批排除。因此字段的设计标准是：<strong>任何一个字段缺失，都会让某个结论无法复核。</strong></p>
+<div class="table-wrap"><table><thead><tr><th>字段</th><th>填写要求</th><th>缺失的后果</th></tr></thead><tbody><tr><td>样品编号</td><td>唯一、不复用，与图谱文件名一致</td><td>图谱与样品对不上号</td></tr><tr><td>基原</td><td>科名、学名、药用部位</td><td>品种存疑，全篇结论失效</td></tr><tr><td>产地</td><td>到县或产区，不写「南方」</td><td>无法讨论道地性</td></tr><tr><td>采收时间</td><td>年月，必要时到旬</td><td>无法讨论采收期影响</td></tr><tr><td>加工／炮制方式</td><td>具体方式，不写「常规加工」</td><td>工艺维度无法成立</td></tr><tr><td>批号或收购凭证</td><td>可追溯到供货方</td><td>批次真伪无法核</td></tr><tr><td>收样数量与分样量</td><td>克数，含留样量</td><td>复测时无样可用</td></tr><tr><td>存放条件</td><td>温度区间、避光与否、包装</td><td>稳定性讨论无依据</td></tr><tr><td>检测项目与日期</td><td>逐项列出</td><td>报告无法回溯</td></tr><tr><td>登记人与复核人</td><td>双签</td><td>责任不清</td></tr></tbody></table></div></div></div>
+  <div class="slide-foot"><span>9 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">三、样品登记与留样：台账十字段</div>
+                <div class="compact"><p>十个字段里，最常被写坏的是「批号或收购凭证」与「加工方式」。前者被写成「市场采购」，后者被写成「按常规」。这两处一旦含糊，中期核查时无法判断样品是否混批，只能整批降级为「来源不明样品」——而来源不明的样品不能用于任何跨批比较。</p>
+<p>留样还有两条操作性要求。一是留样量：至少留够一次完整复测的量，并单独封装、单独标识，不与正在使用的样品混放。二是留样期限：不少于答辩结束后的一段保存期，具体期限以所在院系与实验室制度为准；涉及争议数据时，留样应在结论确认前保持封存状态。</p></div></div>
+  <div class="slide-foot"><span>10 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">四、中期节点：数据可用性判定</div>
+                <div class="compact"><p>中期检查最容易走过场：PPT 上放着几张图谱，说「进展顺利」。真正该在中期回答的是一个二元问题——<strong>手上的数据，够不够支撑开题时定下的判据？</strong></p>
+<p>判定分三档，档位与处置动作配套：</p>
+<div class="table-wrap"><table><thead><tr><th>档位</th><th>判据（可观察）</th><th>处置</th></tr></thead><tbody><tr><td>可用</td><td>批次矩阵的格子已填满，每格至少 2 批，图谱与含量数据齐全</td><td>进入方法学验证</td></tr><tr><td>部分可用</td><td>主要维度已填满，缺 1 个维度或缺个别批次</td><td>缩减结论范围，在论文中明确写出未覆盖的维度</td></tr><tr><td>不可用</td><td>缺 2 个以上维度，或存在混批、无留样、图谱与样品对不上</td><td>停止扩样，先补取样与登记，再谈分析</td></tr></tbody></table></div>
+<p>【教学设定】三档的划分与处置动作是教学示例，实际判定以导师与中期检查组的意见为准。</p></div></div>
+  <div class="slide-foot"><span>11 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">四、中期节点：数据可用性判定</div>
+                <div class="compact"><p>中期还要完成一件事：<strong>把「相似度阈值」写死。</strong> 指纹图谱评价常用相似度（相关系数或夹角余弦）与化学模式识别（聚类分析、主成分分析）两条路。相似度阈值如果在看到结果之后才定，等于没有阈值；正确做法是在中期之前，用对照指纹图谱与已确认合格的批次先算出基准，把阈值写进记录，之后再测的样品一律按这个阈值判。模式识别同理：聚类方法、变量标准化方式、主成分个数，都应在看到分组结果之前定下，否则「分出了两组」永远可以解释成「两组确实不同」。</p></div></div>
+  <div class="slide-foot"><span>12 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">五、失效模式与考核项</div>
+                <div class="compact dense"><p>本章对应的失效模式集中在取样与记录两处：</p>
+<ul><li><strong>样品不可得而不承认。</strong> 表现是先写「拟采集 20 批」，中期改成「实际 6 批」，却仍按 20 批的口径讨论道地性。处置是批次一变就同步改结论范围，改在正文里而不是只在答辩时口头说明。</li><li><strong>混批。</strong> 表现是不同产地样品共用一个编号，或同一编号下混入两个采收期。识别方法是登记表的产地／采收时间与图谱的组间差异对不上。处置是拆批重编，拆不了就整批剔除。</li><li><strong>留样缺失。</strong> 表现是中期发现异常批次时无样可复测。这一项没有补救办法，只能在取样阶段预防。</li><li><strong>只堆图谱。</strong> 表现是论文里放十几张指纹图谱，却不回答「这些图证明了哪一槽」。处置是按批次矩阵重排图序，每张图对应一个格子。</li><li><strong>把相似度当质量结论。</strong> 表现是由「相似度高」推出「质量好」。相似度只说明化学成分轮廓接近，不说明含量是否在限内、不说明安全性，这一步越界在答辩时最常被追问。</li></ul></div></div>
+  <div class="slide-foot"><span>13 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">五、失效模式与考核项</div>
+                <div class="compact"><p>考核项三条：①登记表十个字段能否全部填满，且任取一行都能指到实物；②中期数据可用性判定是否有书面结论；③相似度阈值与模式识别参数是否在看结果之前写定。三条都过，这一环的交付才算完成。</p></div></div>
+  <div class="slide-foot"><span>14 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="14">
+  <div class="slide-inner"><div class="kicker">六、代价与边界</div>
+                <div class="compact"><p>把取样做扎实的代价是「数据变少」。严格按批次矩阵取样，能用的批次往往比预想的少，图谱张数也随之减少，论文看起来没那么「丰富」。但这个交换是划算的：范围收窄而结论站得住，比范围很宽而处处可疑要好。反过来，靠堆图谱与堆批次数撑起来的论文，在预答辩时通常撑不过两个问题——「这些批是同一个产地的吗」「这批样品还留着吗」。</p></div></div>
+  <div class="slide-foot"><span>15 / 17</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="15">
+  <div class="slide-inner"><div class="kicker">六、代价与边界</div>
+                <div class="compact"><p>边界有四条。第一，本章不给取样数量、留样量、保存期限的具体数值，这些由品种特性、检测项目与实验室制度决定，写死反而误导。第二，本章的批次数下限是结构性说明，不是标准规定，也不构成任何合规结论。第三，指纹图谱的方法学考察（精密度、稳定性、重复性）属于方法验证范畴，本章只指出它必须在取样之后、评价之前完成，具体判据见方法学验证一章。第四，本章涉及的字数、单元数与占比均由 <code>standards/zhongyao-biye/units.json</code> 现算，可用于核对底本口径；底本为专业课单元的派生材料，凡与现行药典、现行取样规程不一致处，以现行规定为准。</p>
+<p><strong>免责声明：</strong> 本章为教学材料，用于毕业设计与实验训练，不构成药品检验结论、质量判定或合规意见；取样、留样与检验的具体要求以现行药典、现行药品抽样管理规定与所在实验室制度为准。</p></div></div>
+  <div class="slide-foot"><span>16 / 17</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="16">
   <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
-  <div class="slide-foot"><span>5 / 5</span><span>disclaimer</span></div>
+  <div class="slide-foot"><span>17 / 17</span><span>disclaimer</span></div>
 </section>
 </div>
 <div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>

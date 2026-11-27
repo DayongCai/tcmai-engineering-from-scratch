@@ -55,8 +55,8 @@ chapters:
   - slug: 05-jizhu-tuina
     title: 脊柱手法的技术含量，一半在决定不做哪一手
     video: rendered
-    estimate_minutes: 16.7      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 16.5      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 16.70      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 16.50      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 06-jingjian-yaotui
     title: 病名换了九个，处方的骨架只有一套
@@ -79,11 +79,11 @@ chapters:
   - slug: 09-liaoxiao-pingjia
     title: 手法不能设盲，疗效判据只能外置
     video: rendered
-    estimate_minutes: 9.3      # = lesson.json estimateTotalSeconds ÷ 60
+    estimate_minutes: 9.30      # = lesson.json estimateTotalSeconds ÷ 60
     measured_minutes: 9.05      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 10-chufang-jilu
     title: 一份可复现的处方只由可判定字段构成
     video: rendered
-    estimate_minutes: 10.6      # = lesson.json estimateTotalSeconds ÷ 60
+    estimate_minutes: 10.60      # = lesson.json estimateTotalSeconds ÷ 60
     measured_minutes: 10.52      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

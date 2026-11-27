@@ -31,59 +31,59 @@ chapters:
   - slug: 01-e81
     title: 口腔不是一条通道，是六扇各有主人的门
     video: rendered
-    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.88      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 10.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.66      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 02-e82
     title: 「火」是口齿科最省力的答案，也是最容易错的那一个
     video: rendered
-    estimate_minutes: 0.85      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.87      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 11.45      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.50      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 03-e83
     title: 口镜看得见红肿，看不见该不该清
     video: rendered
-    estimate_minutes: 0.85      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.87      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 11.17      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.97      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 04-e84
     title: 治法不是一张方剂清单，是五道闸门
     video: rendered
-    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.88      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 12.68      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.21      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 05-e85
     title: 痛可以用药压下去，洞不会自己长回来
     video: rendered
-    estimate_minutes: 0.83      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.81      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 14.35      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.99      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 06-e86
     title: 出血多不等于病重，不出血也不等于好了
     video: rendered
-    estimate_minutes: 0.85      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.86      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 12.72      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.36      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 07-e87
     title: 口疮是自限的病，两周不愈就不再是口疮
     video: rendered
-    estimate_minutes: 0.85      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.87      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 13.30      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.85      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 08-e88
     title: 口臭的第一嫌疑不在胃，口干的第一嫌疑不在阴虚
     video: rendered
-    estimate_minutes: 0.83      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.82      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 11.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.46      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 09-e89
     title: 急症章的一半功夫，是教人少做五件事
     video: rendered
-    estimate_minutes: 0.83      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.86      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 9.77      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.08      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 10-e810
     title: 「好好刷牙」说了几十年，牙龈还在出血
     video: rendered
-    estimate_minutes: 0.85      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.85      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 11.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.55      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

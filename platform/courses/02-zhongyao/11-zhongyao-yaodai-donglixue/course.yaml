@@ -31,47 +31,47 @@ chapters:
   - slug: 01-adme-gailun
     title: 药代动力学先问成分能不能被追到
     video: rendered
-    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 9.97      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.26      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 02-tinei-guocheng
     title: 生物利用度是剂型与工艺的最终判决
     video: rendered
-    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 11.28      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.76      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 03-canshu-moxing
     title: 参数不是数据，是可比较性的契约
     video: rendered
-    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 11.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 04-chengfen-zhuanyun
     title: 进了血的成分是被转运体挑过的
     video: rendered
-    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 10.58      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.65      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 05-daixie-daixiewu
     title: 代谢不是减活，是把外来物改成能排出去的形状
     video: rendered
-    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 13.15      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.63      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 06-xianghu-zuoyong
     title: 相互作用的证据差一级，结论就差一个量级
     video: rendered
-    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 12.58      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.85      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 07-fufang-tedian
     title: 复方的暴露是一条谱，不是一个点
     video: rendered
-    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 12.67      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.18      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 08-fangfaxue-guifan
     title: 方法学的门槛不在仪器，在于别人能不能重做一遍
     video: rendered
-    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 12.78      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.34      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

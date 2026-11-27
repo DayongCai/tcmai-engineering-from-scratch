@@ -1,7 +1,7 @@
 {
   "chapter": "12-peiwu-gongxian",
-  "slideCount": 6,
-  "segmentCount": 6,
+  "slideCount": 24,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
@@ -11,7 +11,7 @@
     {
       "n": 2,
       "segment": 2,
-      "chars": 72
+      "chars": 98
     },
     {
       "n": 3,
@@ -31,6 +31,96 @@
     {
       "n": 6,
       "segment": 6,
+      "chars": 367
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 339
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 316
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 408
+    },
+    {
+      "n": 10,
+      "segment": 6,
+      "chars": 242
+    },
+    {
+      "n": 11,
+      "segment": 7,
+      "chars": 367
+    },
+    {
+      "n": 12,
+      "segment": 7,
+      "chars": 318
+    },
+    {
+      "n": 13,
+      "segment": 7,
+      "chars": 305
+    },
+    {
+      "n": 14,
+      "segment": 7,
+      "chars": 202
+    },
+    {
+      "n": 15,
+      "segment": 7,
+      "chars": 308
+    },
+    {
+      "n": 16,
+      "segment": 7,
+      "chars": 378
+    },
+    {
+      "n": 17,
+      "segment": 7,
+      "chars": 334
+    },
+    {
+      "n": 18,
+      "segment": 8,
+      "chars": 417
+    },
+    {
+      "n": 19,
+      "segment": 8,
+      "chars": 352
+    },
+    {
+      "n": 20,
+      "segment": 8,
+      "chars": 274
+    },
+    {
+      "n": 21,
+      "segment": 9,
+      "chars": 327
+    },
+    {
+      "n": 22,
+      "segment": 9,
+      "chars": 331
+    },
+    {
+      "n": 23,
+      "segment": 9,
+      "chars": 291
+    },
+    {
+      "n": 24,
+      "segment": 10,
       "chars": 52
     }
   ]

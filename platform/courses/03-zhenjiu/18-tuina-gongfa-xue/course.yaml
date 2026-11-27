@@ -31,14 +31,14 @@ chapters:
   - slug: 01-gaishu-yanbian
     title: 功法的历史是把身体写成规矩的历史，写进去的只有规矩
     video: rendered
-    estimate_minutes: 15.0      # = lesson.json estimateTotalSeconds ÷ 60
+    estimate_minutes: 15.00      # = lesson.json estimateTotalSeconds ÷ 60
     measured_minutes: 11.19      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 02-lilun-jichu
     title: 理论给的是练功的说法，不是练功的做法
     video: rendered
     estimate_minutes: 14.77      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 13.0      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    measured_minutes: 13.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 03-jiben-neirong
     title: 三调是一个环，不是一道先后工序
@@ -86,7 +86,7 @@ chapters:
     title: 全书七成的带单位数值压在这一章，因为它练的是器物规格
     video: rendered
     estimate_minutes: 15.28      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 13.9      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    measured_minutes: 13.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 11-linchuang-yingyong
     title: 临床处方章的剂量最密，却一个阿拉伯数字也不用

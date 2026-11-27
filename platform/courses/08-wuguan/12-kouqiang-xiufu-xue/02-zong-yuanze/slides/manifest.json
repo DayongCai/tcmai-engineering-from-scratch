@@ -1,31 +1,66 @@
 {
   "chapter": "02-zong-yuanze",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 12,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 29
+      "chars": 27
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 117
+      "chars": 64
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 24
+      "chars": 126
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 122
+      "chars": 105
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 388
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 313
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 355
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 183
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 328
+    },
+    {
+      "n": 10,
+      "segment": 8,
+      "chars": 398
+    },
+    {
+      "n": 11,
+      "segment": 9,
+      "chars": 346
+    },
+    {
+      "n": 12,
+      "segment": 10,
       "chars": 52
     }
   ]

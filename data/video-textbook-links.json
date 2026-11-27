@@ -3,14 +3,20 @@
  "derivedFrom": "data/video-lessons.json（scripts/build_video_lessons.js）",
  "note": "讲 → 教学章 → 教材章 三线挂接。needs-segmentation 表示讲数多于教学章数，未强行分配（不许平摊冒充挂接）；no-textbook 表示该课没有教材稿。",
  "totals": {
-  "courses": 33,
-  "lectures": 688,
-  "linkedCourses": 17,
-  "linkedLectures": 525,
+  "courses": 55,
+  "lectures": 916,
+  "linkedCourses": 25,
+  "linkedLectures": 666,
   "needsSegmentation": [
    "07-shanghanlun"
   ],
   "noTextbook": [
+   "09-kangfu-yixue-jichu",
+   "11-wuli-zhiliao",
+   "12-erxue-zhenduan-xue",
+   "13-zhendao-yixue",
+   "14-zhenjiu-zhentong-mazui",
+   "15-zhongyi-kangfu-xue",
    "01-zhongyi-yundong-xue",
    "02-yao-shang-jiepou",
    "04-chuangshang-jijiu-xue",
@@ -4569,7 +4575,7 @@
    "rows": [
     {
      "lectureNo": 1,
-     "title": "第1章 《金匮要略》不是「杂病方书」，是一部 402 条的筛选器",
+     "title": "《金匮要略》不是「杂病方书」，是一部 402 条的筛选器",
      "durationSec": 419,
      "cues": 0,
      "source": "platform",
@@ -4590,7 +4596,7 @@
     },
     {
      "lectureNo": 2,
-     "title": "第2章 十七句话，把「治病」改成「预判」",
+     "title": "十七句话，把「治病」改成「预判」",
      "durationSec": 1178,
      "cues": 0,
      "source": "platform",
@@ -4611,7 +4617,7 @@
     },
     {
      "lectureNo": 3,
-     "title": "第3章 痉湿暍：外邪入体后的三条错路，和一份 9 条的误治清单",
+     "title": "痉湿暍：外邪入体后的三条错路，和一份 9 条的误治清单",
      "durationSec": 1247,
      "cues": 0,
      "source": "platform",
@@ -4632,7 +4638,7 @@
     },
     {
      "lectureNo": 4,
-     "title": "第4章 少见病不是罕见病，是必须先排除才敢下诊断的病",
+     "title": "少见病不是罕见病，是必须先排除才敢下诊断的病",
      "durationSec": 1213,
      "cues": 0,
      "source": "platform",
@@ -4653,7 +4659,7 @@
     },
     {
      "lectureNo": 5,
-     "title": "第5章 疟的节律与中风的痹阻：两篇「判据极短」的病",
+     "title": "疟的节律与中风的痹阻：两篇「判据极短」的病",
      "durationSec": 1297,
      "cues": 0,
      "source": "platform",
@@ -4674,7 +4680,7 @@
     },
     {
      "lectureNo": 6,
-     "title": "第6章 血痹虚劳：虚损不是一种病，是五个深度",
+     "title": "血痹虚劳：虚损不是一种病，是五个深度",
      "durationSec": 1109,
      "cues": 0,
      "source": "platform",
@@ -4695,7 +4701,7 @@
     },
     {
      "lectureNo": 7,
-     "title": "第7章 痰饮咳嗽：水液代谢的失效",
+     "title": "痰饮咳嗽：水液代谢的失效",
      "durationSec": 1309,
      "cues": 0,
      "source": "platform",
@@ -4716,7 +4722,7 @@
     },
     {
      "lectureNo": 8,
-     "title": "第8章 消渴与淋病：把「喝进去的」与「排出来的」对上账",
+     "title": "消渴与淋病：把「喝进去的」与「排出来的」对上账",
      "durationSec": 809,
      "cues": 0,
      "source": "platform",
@@ -4737,7 +4743,7 @@
     },
     {
      "lectureNo": 9,
-     "title": "第9章 妇人病三篇：不是「妇科专章」，是把经带胎产拆成三段",
+     "title": "妇人病三篇：不是「妇科专章」，是把经带胎产拆成三段",
      "durationSec": 1780,
      "cues": 0,
      "source": "platform",
@@ -4758,7 +4764,7 @@
     },
     {
      "lectureNo": 10,
-     "title": "第10章 174 个方里，只有 165 个能算配伍",
+     "title": "174 个方里，只有 165 个能算配伍",
      "durationSec": 1204,
      "cues": 0,
      "source": "platform",
@@ -4779,7 +4785,7 @@
     },
     {
      "lectureNo": 11,
-     "title": "第11章 肺痿与肺痈的分界不在症状堆叠，而在脉的一虚一实",
+     "title": "肺痿与肺痈的分界不在症状堆叠，而在脉的一虚一实",
      "durationSec": 744,
      "cues": 0,
      "source": "platform",
@@ -4800,7 +4806,7 @@
     },
     {
      "lectureNo": 12,
-     "title": "第12章 同一个「气从少腹上冲」，三首方靠来路分开而不是靠冲劲分开",
+     "title": "同一个「气从少腹上冲」，三首方靠来路分开而不是靠冲劲分开",
      "durationSec": 380,
      "cues": 0,
      "source": "platform",
@@ -4821,7 +4827,7 @@
     },
     {
      "lectureNo": 13,
-     "title": "第13章 胸痹的方条比是 1.00，但这个 1 是两个口径相互抵消出来的",
+     "title": "胸痹的方条比是 1.00，但这个 1 是两个口径相互抵消出来的",
      "durationSec": 505,
      "cues": 0,
      "source": "platform",
@@ -4842,7 +4848,7 @@
     },
     {
      "lectureNo": 14,
-     "title": "第14章 腹满篇前八条不出方，先用八条判据把「温、下、吐」三条路分开",
+     "title": "腹满篇前八条不出方，先用八条判据把「温、下、吐」三条路分开",
      "durationSec": 769,
      "cues": 0,
      "source": "platform",
@@ -4863,7 +4869,7 @@
     },
     {
      "lectureNo": 15,
-     "title": "第15章 二十条只出三方，这一篇交付的是五脏定位表而不是方剂",
+     "title": "二十条只出三方，这一篇交付的是五脏定位表而不是方剂",
      "durationSec": 555,
      "cues": 0,
      "source": "platform",
@@ -4884,7 +4890,7 @@
     },
     {
      "lectureNo": 16,
-     "title": "第16章 全书最长的一篇水气，用四套分类切同一批病而不互相替代",
+     "title": "全书最长的一篇水气，用四套分类切同一批病而不互相替代",
      "durationSec": 1010,
      "cues": 0,
      "source": "platform",
@@ -4905,7 +4911,7 @@
     },
     {
      "lectureNo": 17,
-     "title": "第17章 黄疸先分三个入口，再谈利小便——入口错了，利小便就是空话",
+     "title": "黄疸先分三个入口，再谈利小便——入口错了，利小便就是空话",
      "durationSec": 593,
      "cues": 0,
      "source": "platform",
@@ -4926,7 +4932,7 @@
     },
     {
      "lectureNo": 18,
-     "title": "第18章 十七条里十条在辨「这是不是血的问题」，方只留给后六条",
+     "title": "十七条里十条在辨「这是不是血的问题」，方只留给后六条",
      "durationSec": 467,
      "cues": 0,
      "source": "platform",
@@ -4947,7 +4953,7 @@
     },
     {
      "lectureNo": 19,
-     "title": "第19章 四十七条切成呕哕与下利两半，两半的节奏完全不同",
+     "title": "四十七条切成呕哕与下利两半，两半的节奏完全不同",
      "durationSec": 933,
      "cues": 0,
      "source": "platform",
@@ -4968,7 +4974,7 @@
     },
     {
      "lectureNo": 20,
-     "title": "第20章 八条里出现六个方名，而「方数」只算三个——三层差在哪里",
+     "title": "八条里出现六个方名，而「方数」只算三个——三层差在哪里",
      "durationSec": 423,
      "cues": 0,
      "source": "platform",
@@ -4989,7 +4995,7 @@
     },
     {
      "lectureNo": 21,
-     "title": "第21章 八个互不相关的小病串成一篇，每个病自带一条治法",
+     "title": "八个互不相关的小病串成一篇，每个病自带一条治法",
      "durationSec": 394,
      "cues": 0,
      "source": "platform",
@@ -5010,7 +5016,7 @@
     },
     {
      "lectureNo": 22,
-     "title": "第22章 底本只给一条，四十六段里藏着十七首方——附篇的单位是方不是条",
+     "title": "底本只给一条，四十六段里藏着十七首方——附篇的单位是方不是条",
      "durationSec": 691,
      "cues": 0,
      "source": "platform",
@@ -5031,7 +5037,7 @@
     },
     {
      "lectureNo": 23,
-     "title": "第23章 一百三十三段禁忌不是清单，是一张「禁什么—中了什么症—用什么解」的三栏表",
+     "title": "一百三十三段禁忌不是清单，是一张「禁什么—中了什么症—用什么解」的三栏表",
      "durationSec": 912,
      "cues": 0,
      "source": "platform",
@@ -5052,7 +5058,7 @@
     },
     {
      "lectureNo": 24,
-     "title": "第24章 本篇没有总论，总论在上一篇开头；它的框由别人给的两端撑着",
+     "title": "本篇没有总论，总论在上一篇开头；它的框由别人给的两端撑着",
      "durationSec": 716,
      "cues": 0,
      "source": "platform",
@@ -5400,7 +5406,7 @@
     {
      "lectureNo": 1,
      "title": "毒性不是标签，是三个剂量与一条曲线共同决定的区间",
-     "durationSec": 506,
+     "durationSec": 656,
      "cues": 0,
      "source": "platform",
      "teaching": {
@@ -5601,6 +5607,4664 @@
        "no": 10,
        "title": "致癌性与长期暴露",
        "file": "textbooks/02-zhongyao/21-zhongyao-du-li-xue/10-第10章-致癌性与长期暴露.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    }
+   ]
+  },
+  {
+   "dept": "03-zhenjiu",
+   "slug": "01-jingluo-xue",
+   "title": "经络学",
+   "semester": 2,
+   "videoStatus": "platform",
+   "lectures": 10,
+   "teachingChapters": 10,
+   "textbookChapters": 18,
+   "mappedBy": null,
+   "status": "partial",
+   "linkedLectures": 7,
+   "unlinkedLectures": 3,
+   "rows": [
+    {
+     "lectureNo": 1,
+     "title": "经络不是血管的别名，而是一套分层的通道系统",
+     "durationSec": 743,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 1,
+      "title": "经络不是血管的别名，而是一套分层的通道系统"
+     },
+     "textbook": [
+      {
+       "no": 1,
+       "title": "经络概述",
+       "file": "textbooks/03-zhenjiu/01-jingluo-xue/01-第1章-经络概述.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:经络不是血管的别名"
+    },
+    {
+     "lectureNo": 2,
+     "title": "十二经的走向不是路线图，而是十二处交接点上的传递规则",
+     "durationSec": 638,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 2,
+      "title": "十二经的走向不是路线图，而是十二处交接点上的传递规则"
+     },
+     "textbook": [
+      {
+       "no": 1,
+       "title": "经络概述",
+       "file": "textbooks/03-zhenjiu/01-jingluo-xue/01-第1章-经络概述.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:十二经的走向不是路线图"
+    },
+    {
+     "lectureNo": 3,
+     "title": "奇经八脉不是十二经的备用线，而是气血的蓄水池",
+     "durationSec": 878,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 3,
+      "title": "奇经八脉不是十二经的备用线，而是气血的蓄水池"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 4,
+     "title": "经别经筋皮部只是配件，四街四海才是经气的纵横坐标",
+     "durationSec": 907,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 4,
+      "title": "经别经筋皮部只是配件，四街四海才是经气的纵横坐标"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 5,
+     "title": "表里配属写在属络上，却只能从取穴路径上验出来",
+     "durationSec": 624,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 5,
+      "title": "表里配属写在属络上，却只能从取穴路径上验出来"
+     },
+     "textbook": [
+      {
+       "no": 1,
+       "title": "经络概述",
+       "file": "textbooks/03-zhenjiu/01-jingluo-xue/01-第1章-经络概述.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:表里配属写在属络上"
+    },
+    {
+     "lectureNo": 6,
+     "title": "病候是一张定位表，不是一份症状清单",
+     "durationSec": 844,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 6,
+      "title": "病候是一张定位表，不是一份症状清单"
+     },
+     "textbook": [
+      {
+       "no": 4,
+       "title": "手太阴肺经（经脉循行·主治概要）",
+       "file": "textbooks/03-zhenjiu/01-jingluo-xue/03-第4章-手太阴肺经（经脉循行·主治概要）.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:病候是一张定位表"
+    },
+    {
+     "lectureNo": 7,
+     "title": "经络图不是一张画，而是一套可折量的坐标系",
+     "durationSec": 839,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 7,
+      "title": "经络图不是一张画，而是一套可折量的坐标系"
+     },
+     "textbook": [
+      {
+       "no": 19,
+       "title": "经络腧穴现代研究（经络实质研究·艾灸红外与灸法效应·数字化与AI应用）",
+       "file": "textbooks/03-zhenjiu/01-jingluo-xue/17-第19章-经络腧穴现代研究（经络实质研究·艾灸红外与灸法效应·数字化与AI应用）.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:经络图不是一张画"
+    },
+    {
+     "lectureNo": 8,
+     "title": "流注是一个闭环，时辰表是后人往环上刻的刻度",
+     "durationSec": 773,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 8,
+      "title": "流注是一个闭环，时辰表是后人往环上刻的刻度"
+     },
+     "textbook": [
+      {
+       "no": 1,
+       "title": "经络概述",
+       "file": "textbooks/03-zhenjiu/01-jingluo-xue/01-第1章-经络概述.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:流注是一个闭环"
+    },
+    {
+     "lectureNo": 9,
+     "title": "「找不到对应结构」是一个研究状态，不是一句结论",
+     "durationSec": 836,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 9,
+      "title": "「找不到对应结构」是一个研究状态，不是一句结论"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 10,
+     "title": "建库的最小单元不是一条经脉，而是一个三元组",
+     "durationSec": 902,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 10,
+      "title": "建库的最小单元不是一条经脉，而是一个三元组"
+     },
+     "textbook": [
+      {
+       "no": 19,
+       "title": "经络腧穴现代研究（经络实质研究·艾灸红外与灸法效应·数字化与AI应用）",
+       "file": "textbooks/03-zhenjiu/01-jingluo-xue/17-第19章-经络腧穴现代研究（经络实质研究·艾灸红外与灸法效应·数字化与AI应用）.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:而是一个三元组"
+    }
+   ]
+  },
+  {
+   "dept": "03-zhenjiu",
+   "slug": "02-shuxue-xue",
+   "title": "腧穴学",
+   "semester": 3,
+   "videoStatus": "platform",
+   "lectures": 12,
+   "teachingChapters": 12,
+   "textbookChapters": 16,
+   "mappedBy": "noSupplement.mapping",
+   "status": "linked",
+   "linkedLectures": 12,
+   "unlinkedLectures": 0,
+   "rows": [
+    {
+     "lectureNo": 1,
+     "title": "穴名、归经与定位是三套索引，没有一套能单独指认一个穴",
+     "durationSec": 466,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 1,
+      "title": "穴名、归经与定位是三套索引，没有一套能单独指认一个穴"
+     },
+     "textbook": [
+      {
+       "no": 2,
+       "title": "腧穴概述",
+       "file": "textbooks/03-zhenjiu/02-shuxue-xue/01-第2章-腧穴概述.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 2,
+     "title": "骨度分寸量的是比例不是长度，换个人身上的「一寸」就该换",
+     "durationSec": 612,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 2,
+      "title": "骨度分寸量的是比例不是长度，换个人身上的「一寸」就该换"
+     },
+     "textbook": [
+      {
+       "no": 2,
+       "title": "腧穴概述",
+       "file": "textbooks/03-zhenjiu/02-shuxue-xue/01-第2章-腧穴概述.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 3,
+     "title": "手三阴二十九穴的进针深度由解剖层次决定，从胸到指相差十五倍",
+     "durationSec": 505,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 3,
+      "title": "手三阴二十九穴的进针深度由解剖层次决定，从胸到指相差十五倍"
+     },
+     "textbook": [
+      {
+       "no": 4,
+       "title": "手太阴肺经（常用腧穴）",
+       "file": "textbooks/03-zhenjiu/02-shuxue-xue/02-第4章-手太阴肺经（常用腧穴）.md"
+      },
+      {
+       "no": 8,
+       "title": "手少阴心经（常用腧穴）",
+       "file": "textbooks/03-zhenjiu/02-shuxue-xue/06-第8章-手少阴心经（常用腧穴）.md"
+      },
+      {
+       "no": 12,
+       "title": "手厥阴心包经（常用腧穴）",
+       "file": "textbooks/03-zhenjiu/02-shuxue-xue/10-第12章-手厥阴心包经（常用腧穴）.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 4,
+     "title": "手三阳六十二穴的深度在肩线封顶，再往上一律改用方向",
+     "durationSec": 586,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 4,
+      "title": "手三阳六十二穴的深度在肩线封顶，再往上一律改用方向"
+     },
+     "textbook": [
+      {
+       "no": 5,
+       "title": "手阳明大肠经（常用腧穴）",
+       "file": "textbooks/03-zhenjiu/02-shuxue-xue/03-第5章-手阳明大肠经（常用腧穴）.md"
+      },
+      {
+       "no": 9,
+       "title": "手太阳小肠经（常用腧穴）",
+       "file": "textbooks/03-zhenjiu/02-shuxue-xue/07-第9章-手太阳小肠经（常用腧穴）.md"
+      },
+      {
+       "no": 13,
+       "title": "手少阳三焦经（常用腧穴）",
+       "file": "textbooks/03-zhenjiu/02-shuxue-xue/11-第13章-手少阳三焦经（常用腧穴）.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 5,
+     "title": "足三阳九十一穴的深度按脊柱节段分档，不按肌肉厚薄",
+     "durationSec": 652,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 5,
+      "title": "足三阳九十一穴的深度按脊柱节段分档，不按肌肉厚薄"
+     },
+     "textbook": [
+      {
+       "no": 6,
+       "title": "足阳明胃经（常用腧穴）",
+       "file": "textbooks/03-zhenjiu/02-shuxue-xue/04-第6章-足阳明胃经（常用腧穴）.md"
+      },
+      {
+       "no": 10,
+       "title": "足太阳膀胱经（常用腧穴）",
+       "file": "textbooks/03-zhenjiu/02-shuxue-xue/08-第10章-足太阳膀胱经（常用腧穴）.md"
+      },
+      {
+       "no": 14,
+       "title": "足少阳胆经（常用腧穴）",
+       "file": "textbooks/03-zhenjiu/02-shuxue-xue/12-第14章-足少阳胆经（常用腧穴）.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 6,
+     "title": "足三阴四十五穴的最深处在小腿，越朝躯干反而越浅",
+     "durationSec": 638,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 6,
+      "title": "足三阴四十五穴的最深处在小腿，越朝躯干反而越浅"
+     },
+     "textbook": [
+      {
+       "no": 7,
+       "title": "足太阴脾经（常用腧穴）",
+       "file": "textbooks/03-zhenjiu/02-shuxue-xue/05-第7章-足太阴脾经（常用腧穴）.md"
+      },
+      {
+       "no": 11,
+       "title": "足少阴肾经（常用腧穴）",
+       "file": "textbooks/03-zhenjiu/02-shuxue-xue/09-第11章-足少阴肾经（常用腧穴）.md"
+      },
+      {
+       "no": 15,
+       "title": "足厥阴肝经（常用腧穴）",
+       "file": "textbooks/03-zhenjiu/02-shuxue-xue/13-第15章-足厥阴肝经（常用腧穴）.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 7,
+     "title": "任督二十五穴共用一条正中线，深度让位给针尖的朝向",
+     "durationSec": 626,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 7,
+      "title": "任督二十五穴共用一条正中线，深度让位给针尖的朝向"
+     },
+     "textbook": [
+      {
+       "no": 16,
+       "title": "奇经八脉（督脉及其腧穴·任脉及其腧穴）",
+       "file": "textbooks/03-zhenjiu/02-shuxue-xue/14-第16章-奇经八脉（督脉及其腧穴·任脉及其腧穴）.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 8,
+     "title": "经外奇穴十八条编号背后是五十多个进针点",
+     "durationSec": 558,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 8,
+      "title": "经外奇穴十八条编号背后是五十多个进针点"
+     },
+     "textbook": [
+      {
+       "no": 17,
+       "title": "常用经外奇穴",
+       "file": "textbooks/03-zhenjiu/02-shuxue-xue/15-第17章-常用经外奇穴.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 9,
+     "title": "特定穴是同一批穴上越挂越多的牌子，不是六类并列的穴",
+     "durationSec": 677,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 9,
+      "title": "特定穴是同一批穴上越挂越多的牌子，不是六类并列的穴"
+     },
+     "textbook": [
+      {
+       "no": 2,
+       "title": "腧穴概述",
+       "file": "textbooks/03-zhenjiu/02-shuxue-xue/01-第2章-腧穴概述.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 10,
+     "title": "主治规律是「穴在哪一段」与「病在哪一段」之间的一条接线规则",
+     "durationSec": 711,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 10,
+      "title": "主治规律是「穴在哪一段」与「病在哪一段」之间的一条接线规则"
+     },
+     "textbook": [
+      {
+       "no": 2,
+       "title": "腧穴概述",
+       "file": "textbooks/03-zhenjiu/02-shuxue-xue/01-第2章-腧穴概述.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 11,
+     "title": "「不可深刺」是三种不同的禁令，混成一个深度上限就会在最危险处失灵",
+     "durationSec": 191,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 11,
+      "title": "「不可深刺」是三种不同的禁令，混成一个深度上限就会在最危险处失灵"
+     },
+     "textbook": [
+      {
+       "no": 2,
+       "title": "腧穴概述",
+       "file": "textbooks/03-zhenjiu/02-shuxue-xue/01-第2章-腧穴概述.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 12,
+     "title": "三维模型缺的不止深度：尺度、体位、深度三个量里缺了两个半",
+     "durationSec": 728,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 12,
+      "title": "三维模型缺的不止深度：尺度、体位、深度三个量里缺了两个半"
+     },
+     "textbook": [
+      {
+       "no": 19,
+       "title": "经络腧穴现代研究（腧穴特异性与效应研究）",
+       "file": "textbooks/03-zhenjiu/02-shuxue-xue/16-第19章-经络腧穴现代研究（腧穴特异性与效应研究）.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    }
+   ]
+  },
+  {
+   "dept": "03-zhenjiu",
+   "slug": "03-zhenjiu-yiji-xuan",
+   "title": "针灸医籍选",
+   "semester": 3,
+   "videoStatus": "platform",
+   "lectures": 8,
+   "teachingChapters": 8,
+   "textbookChapters": 10,
+   "mappedBy": null,
+   "status": "partial",
+   "linkedLectures": 4,
+   "unlinkedLectures": 4,
+   "rows": [
+    {
+     "lectureNo": 1,
+     "title": "《灵枢》不是针法手册，而是针道的总纲",
+     "durationSec": 656,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 1,
+      "title": "《灵枢》不是针法手册，而是针道的总纲"
+     },
+     "textbook": [
+      {
+       "no": 1,
+       "title": "《灵枢》选读",
+       "file": "textbooks/03-zhenjiu/03-zhenjiu-yiji-xuan/01-第1章-《灵枢》选读.md"
+      }
+     ],
+     "linkedBy": "keyword",
+     "keyword": "《灵枢",
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 2,
+     "title": "《素问》立治则，《难经》把治则算成补泻公式",
+     "durationSec": 715,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 2,
+      "title": "《素问》立治则，《难经》把治则算成补泻公式"
+     },
+     "textbook": [
+      {
+       "no": 2,
+       "title": "《素问》选读",
+       "file": "textbooks/03-zhenjiu/03-zhenjiu-yiji-xuan/02-第2章-《素问》选读.md"
+      }
+     ],
+     "linkedBy": "keyword",
+     "keyword": "《素问",
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 3,
+     "title": "《甲乙经》把穴编成目录，隋唐把针灸写进方书与医德",
+     "durationSec": 894,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 3,
+      "title": "《甲乙经》把穴编成目录，隋唐把针灸写进方书与医德"
+     },
+     "textbook": [
+      {
+       "no": 4,
+       "title": "《针灸甲乙经》选读",
+       "file": "textbooks/03-zhenjiu/03-zhenjiu-yiji-xuan/04-第4章-《针灸甲乙经》选读.md"
+      }
+     ],
+     "linkedBy": "keyword",
+     "keyword": "《甲乙经》",
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 4,
+     "title": "宋金元把针灸变成国家标准、时间表和一家之言",
+     "durationSec": 899,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 4,
+      "title": "宋金元把针灸变成国家标准、时间表和一家之言"
+     },
+     "textbook": [
+      {
+       "no": 6,
+       "title": "宋金元医家医论选读",
+       "file": "textbooks/03-zhenjiu/03-zhenjiu-yiji-xuan/06-第6章-宋金元医家医论选读.md"
+      }
+     ],
+     "linkedBy": "keyword",
+     "keyword": "宋金元",
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 5,
+     "title": "明清针灸的份量不在新穴新法，而在把经验编成可教的体例",
+     "durationSec": 857,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 5,
+      "title": "明清针灸的份量不在新穴新法，而在把经验编成可教的体例"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 6,
+     "title": "歌赋用押韵换来了记得住，代价是把异文压成一个说法",
+     "durationSec": 817,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 6,
+      "title": "歌赋用押韵换来了记得住，代价是把异文压成一个说法"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 7,
+     "title": "医案留下的是一条决策链，不是一个成功率",
+     "durationSec": 830,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 7,
+      "title": "医案留下的是一条决策链，不是一个成功率"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 8,
+     "title": "检索能把找不到变成找得到太多，判断仍要回到原文",
+     "durationSec": 799,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 8,
+      "title": "检索能把找不到变成找得到太多，判断仍要回到原文"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    }
+   ]
+  },
+  {
+   "dept": "03-zhenjiu",
+   "slug": "04-qigong-xue",
+   "title": "中医气功学",
+   "semester": 3,
+   "videoStatus": "platform",
+   "lectures": 7,
+   "teachingChapters": 7,
+   "textbookChapters": 13,
+   "mappedBy": null,
+   "status": "partial",
+   "linkedLectures": 4,
+   "unlinkedLectures": 3,
+   "rows": [
+    {
+     "lectureNo": 1,
+     "title": "名是新的，实是旧的，气功在《内经》里已经排进治法",
+     "durationSec": 907,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 1,
+      "title": "名是新的，实是旧的，气功在《内经》里已经排进治法"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 2,
+     "title": "调息写得最多，不等于调息最要紧",
+     "durationSec": 846,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 2,
+      "title": "调息写得最多，不等于调息最要紧"
+     },
+     "textbook": [
+      {
+       "no": 10,
+       "title": "辨证施功与临床运用原则",
+       "file": "textbooks/03-zhenjiu/04-qigong-xue/10-第10章-辨证施功与临床运用原则.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:调息写得最多"
+    },
+    {
+     "lectureNo": 3,
+     "title": "反应与偏差的分界不在感觉强弱，在能不能自己缓过来",
+     "durationSec": 920,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 3,
+      "title": "反应与偏差的分界不在感觉强弱，在能不能自己缓过来"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 4,
+     "title": "静功与动功的分界不在动不动，在由谁主导",
+     "durationSec": 807,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 4,
+      "title": "静功与动功的分界不在动不动，在由谁主导"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 5,
+     "title": "太极拳是调身为主的动功：把动作放慢不叫练气功，把三调参数写出来才算",
+     "durationSec": 721,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 5,
+      "title": "太极拳是调身为主的动功：把动作放慢不叫练气功，把三调参数写出来才算"
+     },
+     "textbook": [
+      {
+       "no": 8,
+       "title": "太极拳与武术内功",
+       "file": "textbooks/03-zhenjiu/04-qigong-xue/08-第8章-太极拳与武术内功.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:太极拳是调身为主的动功"
+    },
+    {
+     "lectureNo": 6,
+     "title": "辨证施功的落点是参数：同一张「放松功」的方子，四个证候要四种练法",
+     "durationSec": 667,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 6,
+      "title": "辨证施功的落点是参数：同一张「放松功」的方子，四个证候要四种练法"
+     },
+     "textbook": [
+      {
+       "no": 3,
+       "title": "中医气功学的理论基础",
+       "file": "textbooks/03-zhenjiu/04-qigong-xue/03-第3章-中医气功学的理论基础.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:辨证施功的落点是参数"
+    },
+    {
+     "lectureNo": 7,
+     "title": "气功研究只敢说「可能」，治未病的建议却必须具体到今天练什么",
+     "durationSec": 784,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 7,
+      "title": "气功研究只敢说「可能」，治未病的建议却必须具体到今天练什么"
+     },
+     "textbook": [
+      {
+       "no": 3,
+       "title": "中医气功学的理论基础",
+       "file": "textbooks/03-zhenjiu/04-qigong-xue/03-第3章-中医气功学的理论基础.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:气功研究只敢说「可能」"
+    }
+   ]
+  },
+  {
+   "dept": "03-zhenjiu",
+   "slug": "05-tuina-xue",
+   "title": "推拿学",
+   "semester": 4,
+   "videoStatus": "platform",
+   "lectures": 10,
+   "teachingChapters": 10,
+   "textbookChapters": 12,
+   "mappedBy": null,
+   "status": "partial",
+   "linkedLectures": 7,
+   "unlinkedLectures": 3,
+   "rows": [
+    {
+     "lectureNo": 1,
+     "title": "推拿的疗效有通路，源流只是它的来路",
+     "durationSec": 739,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 1,
+      "title": "推拿的疗效有通路，源流只是它的来路"
+     },
+     "textbook": [
+      {
+       "no": 2,
+       "title": "推拿的作用原理",
+       "file": "textbooks/03-zhenjiu/05-tuina-xue/02-第2章-推拿的作用原理.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:推拿的疗效有通路"
+    },
+    {
+     "lectureNo": 2,
+     "title": "推拿能治什么，取决于它的作用落在哪一层",
+     "durationSec": 584,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 2,
+      "title": "推拿能治什么，取决于它的作用落在哪一层"
+     },
+     "textbook": [
+      {
+       "no": 2,
+       "title": "推拿的作用原理",
+       "file": "textbooks/03-zhenjiu/05-tuina-xue/02-第2章-推拿的作用原理.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:推拿能治什么"
+    },
+    {
+     "lectureNo": 3,
+     "title": "手法的名字记着力面，处方的效力记在顺序上",
+     "durationSec": 778,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 3,
+      "title": "手法的名字记着力面，处方的效力记在顺序上"
+     },
+     "textbook": [
+      {
+       "no": 1,
+       "title": "推拿学发展简史",
+       "file": "textbooks/03-zhenjiu/05-tuina-xue/01-第1章-推拿学发展简史.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:手法的名字记着力面"
+    },
+    {
+     "lectureNo": 4,
+     "title": "小儿推拿换掉的不是穴位尺寸，是补泻的计量单位",
+     "durationSec": 819,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 4,
+      "title": "小儿推拿换掉的不是穴位尺寸，是补泻的计量单位"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 5,
+     "title": "脊柱手法的技术含量，一半在决定不做哪一手",
+     "durationSec": 990,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 5,
+      "title": "脊柱手法的技术含量，一半在决定不做哪一手"
+     },
+     "textbook": [
+      {
+       "no": 10,
+       "title": "推拿安全与异常情况处理",
+       "file": "textbooks/03-zhenjiu/05-tuina-xue/10-第10章-推拿安全与异常情况处理.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:脊柱手法的技术含量"
+    },
+    {
+     "lectureNo": 6,
+     "title": "病名换了九个，处方的骨架只有一套",
+     "durationSec": 963,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 6,
+      "title": "病名换了九个，处方的骨架只有一套"
+     },
+     "textbook": [
+      {
+       "no": 5,
+       "title": "推拿功法",
+       "file": "textbooks/03-zhenjiu/05-tuina-xue/05-第5章-推拿功法.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:病名换了九个"
+    },
+    {
+     "lectureNo": 7,
+     "title": "内科妇科推拿的差别不在手法而在时程",
+     "durationSec": 701,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 7,
+      "title": "内科妇科推拿的差别不在手法而在时程"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 8,
+     "title": "手法剂量里频率可抄，力度只能自己校准",
+     "durationSec": 610,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 8,
+      "title": "手法剂量里频率可抄，力度只能自己校准"
+     },
+     "textbook": [
+      {
+       "no": 12,
+       "title": "推拿与数字化AI时代",
+       "file": "textbooks/03-zhenjiu/05-tuina-xue/12-第12章-推拿与数字化AI时代.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:手法剂量里频率可抄"
+    },
+    {
+     "lectureNo": 9,
+     "title": "手法不能设盲，疗效判据只能外置",
+     "durationSec": 543,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 9,
+      "title": "手法不能设盲，疗效判据只能外置"
+     },
+     "textbook": [
+      {
+       "no": 10,
+       "title": "推拿安全与异常情况处理",
+       "file": "textbooks/03-zhenjiu/05-tuina-xue/10-第10章-推拿安全与异常情况处理.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:手法不能设盲"
+    },
+    {
+     "lectureNo": 10,
+     "title": "一份可复现的处方只由可判定字段构成",
+     "durationSec": 631,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 10,
+      "title": "一份可复现的处方只由可判定字段构成"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    }
+   ]
+  },
+  {
+   "dept": "03-zhenjiu",
+   "slug": "06-tuina-shoufa-xue",
+   "title": "推拿手法学",
+   "semester": 4,
+   "videoStatus": "platform",
+   "lectures": 8,
+   "teachingChapters": 8,
+   "textbookChapters": 12,
+   "mappedBy": null,
+   "status": "partial",
+   "linkedLectures": 3,
+   "unlinkedLectures": 5,
+   "rows": [
+    {
+     "lectureNo": 1,
+     "title": "分类给的是坐标，手法给的是动作",
+     "durationSec": 661,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 1,
+      "title": "分类给的是坐标，手法给的是动作"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 2,
+     "title": "同属摆动类，一指禅与㨰法仍不能互替",
+     "durationSec": 657,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 2,
+      "title": "同属摆动类，一指禅与㨰法仍不能互替"
+     },
+     "textbook": [
+      {
+       "no": 5,
+       "title": "摆动类手法",
+       "file": "textbooks/03-zhenjiu/06-tuina-shoufa-xue/05-第5章-摆动类手法.md"
+      }
+     ],
+     "linkedBy": "keyword",
+     "keyword": "一指禅",
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 3,
+     "title": "同一个「推」字，在两类手法里是两个动作",
+     "durationSec": 56,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 3,
+      "title": "同一个「推」字，在两类手法里是两个动作"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 4,
+     "title": "振动求透，叩击求响，两套节律两套判据",
+     "durationSec": 768,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 4,
+      "title": "振动求透，叩击求响，两套节律两套判据"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 5,
+     "title": "关节的极限写在解剖里，不写在手感里",
+     "durationSec": 55,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 5,
+      "title": "关节的极限写在解剖里，不写在手感里"
+     },
+     "textbook": [
+      {
+       "no": 2,
+       "title": "推拿手法的分类与作用原理",
+       "file": "textbooks/03-zhenjiu/06-tuina-shoufa-xue/02-第2章-推拿手法的分类与作用原理.md"
+      }
+     ],
+     "linkedBy": "keyword",
+     "keyword": "关节的",
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 6,
+     "title": "手法可测的只有力、频、时，剩下的交给手感",
+     "durationSec": 56,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 6,
+      "title": "手法可测的只有力、频、时，剩下的交给手感"
+     },
+     "textbook": [
+      {
+       "no": 11,
+       "title": "推拿手法的临床应用与组合",
+       "file": "textbooks/03-zhenjiu/06-tuina-shoufa-xue/11-第11章-推拿手法的临床应用与组合.md"
+      }
+     ],
+     "linkedBy": "keyword",
+     "keyword": "手法可",
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 7,
+     "title": "合格线由训练史画出，不由当场表现画出",
+     "durationSec": 856,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 7,
+      "title": "合格线由训练史画出，不由当场表现画出"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 8,
+     "title": "规范能统一动作，统一不了「这一例该不该动手」",
+     "durationSec": 56,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 8,
+      "title": "规范能统一动作，统一不了「这一例该不该动手」"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    }
+   ]
+  },
+  {
+   "dept": "03-zhenjiu",
+   "slug": "07-cifa-jiufa-xue",
+   "title": "刺法灸法学",
+   "semester": 4,
+   "videoStatus": "platform",
+   "lectures": 10,
+   "teachingChapters": 10,
+   "textbookChapters": 12,
+   "mappedBy": null,
+   "status": "partial",
+   "linkedLectures": 4,
+   "unlinkedLectures": 6,
+   "rows": [
+    {
+     "lectureNo": 1,
+     "title": "针与灸不是两门手艺，而是同一套刺激量学的两种实现",
+     "durationSec": 566,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 1,
+      "title": "针与灸不是两门手艺，而是同一套刺激量学的两种实现"
+     },
+     "textbook": [
+      {
+       "no": 1,
+       "title": "针法灸法概论",
+       "file": "textbooks/03-zhenjiu/07-cifa-jiufa-xue/01-第1章-针法灸法概论.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:针与灸不是两门手艺"
+    },
+    {
+     "lectureNo": 2,
+     "title": "毫针的功夫不在「扎进去」，而在四个能被人复核的动作上",
+     "durationSec": 503,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 2,
+      "title": "毫针的功夫不在「扎进去」，而在四个能被人复核的动作上"
+     },
+     "textbook": [
+      {
+       "no": 2,
+       "title": "毫针刺法",
+       "file": "textbooks/03-zhenjiu/07-cifa-jiufa-xue/02-第2章-毫针刺法.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:毫针的功夫不在「扎进去」"
+    },
+    {
+     "lectureNo": 3,
+     "title": "读经典不是背条文，是把一句话还原成一组能做的动作",
+     "durationSec": 478,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 3,
+      "title": "读经典不是背条文，是把一句话还原成一组能做的动作"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 4,
+     "title": "复式手法不是玄学，是把四个基本动作按层次与次数叠起来",
+     "durationSec": 478,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 4,
+      "title": "复式手法不是玄学，是把四个基本动作按层次与次数叠起来"
+     },
+     "textbook": [
+      {
+       "no": 2,
+       "title": "毫针刺法",
+       "file": "textbooks/03-zhenjiu/07-cifa-jiufa-xue/02-第2章-毫针刺法.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:复式手法不是玄学"
+    },
+    {
+     "lectureNo": 5,
+     "title": "灸的功夫不在点火，而在把「量」变成别人能复核的壮与炷",
+     "durationSec": 537,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 5,
+      "title": "灸的功夫不在点火，而在把「量」变成别人能复核的壮与炷"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 6,
+     "title": "换一种针形，就换一整套适应证和一整套禁忌",
+     "durationSec": 781,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 6,
+      "title": "换一种针形，就换一整套适应证和一整套禁忌"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 7,
+     "title": "三套微针各把身体投影一次，投影规则不同，边界也不同",
+     "durationSec": 687,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 7,
+      "title": "三套微针各把身体投影一次，投影规则不同，边界也不同"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 8,
+     "title": "电与药接上针之后，失手的性质就从「疼一下」变成「不可逆」",
+     "durationSec": 642,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 8,
+      "title": "电与药接上针之后，失手的性质就从「疼一下」变成「不可逆」"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 9,
+     "title": "三种「让刺激留得久」的技术里，只有一种把东西留在了体内",
+     "durationSec": 769,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 9,
+      "title": "三种「让刺激留得久」的技术里，只有一种把东西留在了体内"
+     },
+     "textbook": [
+      {
+       "no": 1,
+       "title": "针法灸法概论",
+       "file": "textbooks/03-zhenjiu/07-cifa-jiufa-xue/01-第1章-针法灸法概论.md"
+      }
+     ],
+     "linkedBy": "keyword",
+     "keyword": "只有一",
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 10,
+     "title": "要害是解剖事实，不是风险清单上的最后一行",
+     "durationSec": 733,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 10,
+      "title": "要害是解剖事实，不是风险清单上的最后一行"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    }
+   ]
+  },
+  {
+   "dept": "03-zhenjiu",
+   "slug": "08-zhenjiu-zhiliao-xue",
+   "title": "针灸治疗学",
+   "semester": 5,
+   "videoStatus": "platform",
+   "lectures": 12,
+   "teachingChapters": 12,
+   "textbookChapters": 14,
+   "mappedBy": null,
+   "status": "partial",
+   "linkedLectures": 5,
+   "unlinkedLectures": 7,
+   "rows": [
+    {
+     "lectureNo": 1,
+     "title": "五条治疗原则不是五句口号，而是五次「能不能下针」的判定",
+     "durationSec": 994,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 1,
+      "title": "五条治疗原则不是五句口号，而是五次「能不能下针」的判定"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 2,
+     "title": "处方不是穴名清单，而是「辨经—选穴—刺灸法」三列必须自洽",
+     "durationSec": 694,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 2,
+      "title": "处方不是穴名清单，而是「辨经—选穴—刺灸法」三列必须自洽"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 3,
+     "title": "特定穴是按条件检索的索引，不是「更重要的穴位」",
+     "durationSec": 595,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 3,
+      "title": "特定穴是按条件检索的索引，不是「更重要的穴位」"
+     },
+     "textbook": [
+      {
+       "no": 3,
+       "title": "针灸临床诊治特点",
+       "file": "textbooks/03-zhenjiu/08-zhenjiu-zhiliao-xue/03-第3章-针灸临床诊治特点.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:特定穴是按条件检索的索引"
+    },
+    {
+     "lectureNo": 4,
+     "title": "痛证处方的骨架是「局部穴 ＋ 一条经的远端 ＋ 一个动作」",
+     "durationSec": 553,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 4,
+      "title": "痛证处方的骨架是「局部穴 ＋ 一条经的远端 ＋ 一个动作」"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 5,
+     "title": "内科前二十一个病证，先问「病在神还是病在形」",
+     "durationSec": 721,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 5,
+      "title": "内科前二十一个病证，先问「病在神还是病在形」"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 6,
+     "title": "内科后二十一个病证，处方的主干是「募穴＋下合穴」",
+     "durationSec": 635,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 6,
+      "title": "内科后二十一个病证，处方的主干是「募穴＋下合穴」"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 7,
+     "title": "妇儿科二十二证，一半在调周期，一半在调发育",
+     "durationSec": 588,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 7,
+      "title": "妇儿科二十二证，一半在调周期，一半在调发育"
+     },
+     "textbook": [
+      {
+       "no": 8,
+       "title": "妇儿科病证",
+       "file": "textbooks/03-zhenjiu/08-zhenjiu-zhiliao-xue/08-第8章-妇儿科病证.md"
+      }
+     ],
+     "linkedBy": "keyword",
+     "keyword": "妇儿科",
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 8,
+     "title": "皮外骨伤二十二证，先分清病在血分、在局部，还是在经筋",
+     "durationSec": 580,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 8,
+      "title": "皮外骨伤二十二证，先分清病在血分、在局部，还是在经筋"
+     },
+     "textbook": [
+      {
+       "no": 6,
+       "title": "头面躯体痛证",
+       "file": "textbooks/03-zhenjiu/08-zhenjiu-zhiliao-xue/06-第6章-头面躯体痛证.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:皮外骨伤二十二证"
+    },
+    {
+     "lectureNo": 9,
+     "title": "五官十六证，先取最近的那个穴，再用一条远端经把火引下去",
+     "durationSec": 587,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 9,
+      "title": "五官十六证，先取最近的那个穴，再用一条远端经把火引下去"
+     },
+     "textbook": [
+      {
+       "no": 7,
+       "title": "内科病证",
+       "file": "textbooks/03-zhenjiu/08-zhenjiu-zhiliao-xue/07-第7章-内科病证.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:五官十六证"
+    },
+    {
+     "lectureNo": 10,
+     "title": "急症先保命再取穴，其他病证先问这一针在治什么",
+     "durationSec": 628,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 10,
+      "title": "急症先保命再取穴，其他病证先问这一针在治什么"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 11,
+     "title": "时间针法算得出坐标，算不出疗效",
+     "durationSec": 634,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 11,
+      "title": "时间针法算得出坐标，算不出疗效"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 12,
+     "title": "研究进展给的是地图，不是证据表",
+     "durationSec": 569,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 12,
+      "title": "研究进展给的是地图，不是证据表"
+     },
+     "textbook": [
+      {
+       "no": 14,
+       "title": "针灸临床研究进展",
+       "file": "textbooks/03-zhenjiu/08-zhenjiu-zhiliao-xue/14-第14章-针灸临床研究进展.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:研究进展给的是地图"
+    }
+   ]
+  },
+  {
+   "dept": "03-zhenjiu",
+   "slug": "09-kangfu-yixue-jichu",
+   "title": "康复医学基础",
+   "semester": 5,
+   "videoStatus": "platform",
+   "lectures": 8,
+   "teachingChapters": 8,
+   "textbookChapters": 0,
+   "mappedBy": null,
+   "status": "no-textbook",
+   "linkedLectures": 0,
+   "unlinkedLectures": 8,
+   "rows": [
+    {
+     "lectureNo": 1,
+     "title": "康复的目标是功能而不是治愈，判据必须落在活动上",
+     "durationSec": 755,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 1,
+      "title": "康复的目标是功能而不是治愈，判据必须落在活动上"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 2,
+     "title": "评定不是打分，是把功能变化变成别人能复核的说法",
+     "durationSec": 559,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 2,
+      "title": "评定不是打分，是把功能变化变成别人能复核的说法"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 3,
+     "title": "训练不是加量，是在能承受的范围里换回可控的动作",
+     "durationSec": 705,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 3,
+      "title": "训练不是加量，是在能承受的范围里换回可控的动作"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 4,
+     "title": "自理能力是康复的终点，替他做得越多他恢复得越少",
+     "durationSec": 656,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 4,
+      "title": "自理能力是康复的终点，替他做得越多他恢复得越少"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 5,
+     "title": "言语、吞咽与认知康复：三块里只有一块按秒计时",
+     "durationSec": 667,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 5,
+      "title": "言语、吞咽与认知康复：三块里只有一块按秒计时"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 6,
+     "title": "康复护理与并发症预防：同一个翻身动作，既是五种并发症的解药，也是引信",
+     "durationSec": 595,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 6,
+      "title": "康复护理与并发症预防：同一个翻身动作，既是五种并发症的解药，也是引信"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 7,
+     "title": "社区与长期照护：断点不在家里，在从机构到家那一次交接",
+     "durationSec": 634,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 7,
+      "title": "社区与长期照护：断点不在家里，在从机构到家那一次交接"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 8,
+     "title": "康复团队与伦理：分工写在职责里，伦理写在两列里",
+     "durationSec": 634,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 8,
+      "title": "康复团队与伦理：分工写在职责里，伦理写在两列里"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    }
+   ]
+  },
+  {
+   "dept": "03-zhenjiu",
+   "slug": "10-shiyan-zhenjiu-xue",
+   "title": "实验针灸学",
+   "semester": 6,
+   "videoStatus": "platform",
+   "lectures": 11,
+   "teachingChapters": 11,
+   "textbookChapters": 13,
+   "mappedBy": null,
+   "status": "partial",
+   "linkedLectures": 5,
+   "unlinkedLectures": 6,
+   "rows": [
+    {
+     "lectureNo": 1,
+     "title": "实验针灸学的分水岭不是技术，而是敢不敢把结论降级",
+     "durationSec": 499,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 1,
+      "title": "实验针灸学的分水岭不是技术，而是敢不敢把结论降级"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 2,
+     "title": "穴位不是皮上的一个点，而是贯穿六层的立体接口",
+     "durationSec": 724,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 2,
+      "title": "穴位不是皮上的一个点，而是贯穿六层的立体接口"
+     },
+     "textbook": [
+      {
+       "no": 7,
+       "title": "针灸对内分泌与免疫系统的调节",
+       "file": "textbooks/03-zhenjiu/10-shiyan-zhenjiu-xue/07-第7章-针灸对内分泌与免疫系统的调节.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:穴位不是皮上的一个点"
+    },
+    {
+     "lectureNo": 3,
+     "title": "经络研究缺的不是现象，而是能把现象判死的对照",
+     "durationSec": 748,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 3,
+      "title": "经络研究缺的不是现象，而是能把现象判死的对照"
+     },
+     "textbook": [
+      {
+       "no": 3,
+       "title": "经络现象的现代研究",
+       "file": "textbooks/03-zhenjiu/10-shiyan-zhenjiu-xue/03-第3章-经络现象的现代研究.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:经络研究缺的不是现象"
+    },
+    {
+     "lectureNo": 4,
+     "title": "针灸的效应不是一条线，而是一族随状态漂移的曲线",
+     "durationSec": 773,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 4,
+      "title": "针灸的效应不是一条线，而是一族随状态漂移的曲线"
+     },
+     "textbook": [
+      {
+       "no": 13,
+       "title": "实验针灸学的前沿与展望",
+       "file": "textbooks/03-zhenjiu/10-shiyan-zhenjiu-xue/13-第13章-实验针灸学的前沿与展望.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:针灸的效应不是一条线"
+    },
+    {
+     "lectureNo": 5,
+     "title": "证据最厚的镇痛方向，恰恰最需要一套降级规则",
+     "durationSec": 791,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 5,
+      "title": "证据最厚的镇痛方向，恰恰最需要一套降级规则"
+     },
+     "textbook": [
+      {
+       "no": 5,
+       "title": "针灸镇痛作用与机制",
+       "file": "textbooks/03-zhenjiu/10-shiyan-zhenjiu-xue/05-第5章-针灸镇痛作用与机制.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:证据最厚的镇痛方向"
+    },
+    {
+     "lectureNo": 6,
+     "title": "神经系统研究最难的一步，是把「激活了」读成「起效了」",
+     "durationSec": 787,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 6,
+      "title": "神经系统研究最难的一步，是把「激活了」读成「起效了」"
+     },
+     "textbook": [
+      {
+       "no": 6,
+       "title": "针灸对神经系统的调节作用",
+       "file": "textbooks/03-zhenjiu/10-shiyan-zhenjiu-xue/06-第6章-针灸对神经系统的调节作用.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:神经系统研究最难的一步"
+    },
+    {
+     "lectureNo": 7,
+     "title": "四个单元写得一样长，四块证据的分量却差着量级",
+     "durationSec": 689,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 7,
+      "title": "四个单元写得一样长，四块证据的分量却差着量级"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 8,
+     "title": "三个系统共用一条判读纪律，比各自记住一串指标更有用",
+     "durationSec": 808,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 8,
+      "title": "三个系统共用一条判读纪律，比各自记住一串指标更有用"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 9,
+     "title": "四个系统篇幅几乎相等，证据厚薄却分成四档",
+     "durationSec": 767,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 9,
+      "title": "四个系统篇幅几乎相等，证据厚薄却分成四档"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 10,
+     "title": "技术章的价值不在会做，而在知道它会在哪里骗你",
+     "durationSec": 821,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 10,
+      "title": "技术章的价值不在会做，而在知道它会在哪里骗你"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 11,
+     "title": "收口的不是知识清单，而是说清每句话能撑多重的证据",
+     "durationSec": 600,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 11,
+      "title": "收口的不是知识清单，而是说清每句话能撑多重的证据"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    }
+   ]
+  },
+  {
+   "dept": "03-zhenjiu",
+   "slug": "11-wuli-zhiliao",
+   "title": "物理治疗与运动康复",
+   "semester": 6,
+   "videoStatus": "platform",
+   "lectures": 8,
+   "teachingChapters": 8,
+   "textbookChapters": 0,
+   "mappedBy": null,
+   "status": "no-textbook",
+   "linkedLectures": 0,
+   "unlinkedLectures": 8,
+   "rows": [
+    {
+     "lectureNo": 1,
+     "title": "物理治疗的门槛不在选哪一种因子，而在能不能给这个因子配出四个量",
+     "durationSec": 584,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 1,
+      "title": "物理治疗的门槛不在选哪一种因子，而在能不能给这个因子配出四个量"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 2,
+     "title": "电针的杀伤力主要不来自参数，而来自那一对电极接在哪",
+     "durationSec": 712,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 2,
+      "title": "电针的杀伤力主要不来自参数，而来自那一对电极接在哪"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 3,
+     "title": "热疗的剂量藏在壮数与灸时里，光疗在本章只剩一条安全红线",
+     "durationSec": 670,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 3,
+      "title": "热疗的剂量藏在壮数与灸时里，光疗在本章只剩一条安全红线"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 4,
+     "title": "冷与超声是章名上的两个空位，能执行的只有牵引的力与它的禁区",
+     "durationSec": 734,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 4,
+      "title": "冷与超声是章名上的两个空位，能执行的只有牵引的力与它的禁区"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 5,
+     "title": "运动疗法的基础不是动作清单，而是评、练、报的分工",
+     "durationSec": 622,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 5,
+      "title": "运动疗法的基础不是动作清单，而是评、练、报的分工"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 6,
+     "title": "松得开不等于有力，被动手替不了主动练",
+     "durationSec": 610,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 6,
+      "title": "松得开不等于有力，被动手替不了主动练"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 7,
+     "title": "平衡的判据不是站得稳，是晃了还能把身体拉回来",
+     "durationSec": 604,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 7,
+      "title": "平衡的判据不是站得稳，是晃了还能把身体拉回来"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 8,
+     "title": "方案的分量在告知，风险的分量在记录",
+     "durationSec": 645,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 8,
+      "title": "方案的分量在告知，风险的分量在记录"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    }
+   ]
+  },
+  {
+   "dept": "03-zhenjiu",
+   "slug": "12-erxue-zhenduan-xue",
+   "title": "耳穴诊治学",
+   "semester": 6,
+   "videoStatus": "platform",
+   "lectures": 8,
+   "teachingChapters": 8,
+   "textbookChapters": 0,
+   "mappedBy": null,
+   "status": "no-textbook",
+   "linkedLectures": 0,
+   "unlinkedLectures": 8,
+   "rows": [
+    {
+     "lectureNo": 1,
+     "title": "「宗脉所聚」把耳变成一张诊图，而不是一个器官",
+     "durationSec": 655,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 1,
+      "title": "「宗脉所聚」把耳变成一张诊图，而不是一个器官"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 2,
+     "title": "分区是在十三个结构上另划九张网，网眼比结构粗",
+     "durationSec": 496,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 2,
+      "title": "分区是在十三个结构上另划九张网，网眼比结构粗"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 3,
+     "title": "定位的分歧不在手稳，而在先认地形还是先记穴名",
+     "durationSec": 542,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 3,
+      "title": "定位的分歧不在手稳，而在先认地形还是先记穴名"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 4,
+     "title": "望、压、电测查的是同一件事的三个通道，没有一条能单独定病名",
+     "durationSec": 626,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 4,
+      "title": "望、压、电测查的是同一件事的三个通道，没有一条能单独定病名"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 5,
+     "title": "耳穴治疗的差别不在针，而在把刺激送到耳廓的哪一层",
+     "durationSec": 385,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 5,
+      "title": "耳穴治疗的差别不在针，而在把刺激送到耳廓的哪一层"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 6,
+     "title": "内科应用的可复现性在辨经那一步，不在穴位表上",
+     "durationSec": 640,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 6,
+      "title": "内科应用的可复现性在辨经那一步，不在穴位表上"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 7,
+     "title": "换人群先换禁忌，取穴反倒可以照搬",
+     "durationSec": 539,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 7,
+      "title": "换人群先换禁忌，取穴反倒可以照搬"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 8,
+     "title": "耳穴的安全规范不在底本里，只能从四门技术的条款里取交集",
+     "durationSec": 514,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 8,
+      "title": "耳穴的安全规范不在底本里，只能从四门技术的条款里取交集"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    }
+   ]
+  },
+  {
+   "dept": "03-zhenjiu",
+   "slug": "13-zhendao-yixue",
+   "title": "针刀医学",
+   "semester": 7,
+   "videoStatus": "platform",
+   "lectures": 8,
+   "teachingChapters": 8,
+   "textbookChapters": 0,
+   "mappedBy": null,
+   "status": "no-textbook",
+   "linkedLectures": 0,
+   "unlinkedLectures": 8,
+   "rows": [
+    {
+     "lectureNo": 1,
+     "title": "「针」与「刀」本是两件器械，合成一件就是把两种权限绑在一起",
+     "durationSec": 261,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 1,
+      "title": "「针」与「刀」本是两件器械，合成一件就是把两种权限绑在一起"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 2,
+     "title": "刀口方向是第一条纪律，因为深度错了能退，方向错了切的是另一个结构",
+     "durationSec": 259,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 2,
+      "title": "刀口方向是第一条纪律，因为深度错了能退，方向错了切的是另一个结构"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 3,
+     "title": "粘连、瘢痕、挛缩不是三种病，是同一条修复链上的三个时相",
+     "durationSec": 242,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 3,
+      "title": "粘连、瘢痕、挛缩不是三种病，是同一条修复链上的三个时相"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 4,
+     "title": "颈肩腰腿痛是针刀最主要的适应证群，因为这一群里痛的位置最常不是病灶的位置",
+     "durationSec": 241,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 4,
+      "title": "颈肩腰腿痛是针刀最主要的适应证群，因为这一群里痛的位置最常不是病灶的位置"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 5,
+     "title": "这一章叫关节与腱鞘，而腱鞘在正文里只以一个检查手法的名字出现",
+     "durationSec": 233,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 5,
+      "title": "这一章叫关节与腱鞘，而腱鞘在正文里只以一个检查手法的名字出现"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 6,
+     "title": "这一章叫神经卡压，而「卡压」二字在 11,230 字正文里一次都没出现",
+     "durationSec": 238,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 6,
+      "title": "这一章叫神经卡压，而「卡压」二字在 11,230 字正文里一次都没出现"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 7,
+     "title": "这一章讲的全是针灸的禁忌，针刀那几条底本一个字也没写",
+     "durationSec": 229,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 7,
+      "title": "这一章讲的全是针灸的禁忌，针刀那几条底本一个字也没写"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 8,
+     "title": "这一章讲的全是针灸的证据，针刀的证据一条也没有",
+     "durationSec": 224,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 8,
+      "title": "这一章讲的全是针灸的证据，针刀的证据一条也没有"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    }
+   ]
+  },
+  {
+   "dept": "03-zhenjiu",
+   "slug": "14-zhenjiu-zhentong-mazui",
+   "title": "针灸镇痛与麻醉",
+   "semester": 7,
+   "videoStatus": "platform",
+   "lectures": 8,
+   "teachingChapters": 8,
+   "textbookChapters": 0,
+   "mappedBy": null,
+   "status": "no-textbook",
+   "linkedLectures": 0,
+   "unlinkedLectures": 8,
+   "rows": [
+    {
+     "lectureNo": 1,
+     "title": "痛的层次决定评估指标，指标决定针能不能进场",
+     "durationSec": 584,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 1,
+      "title": "痛的层次决定评估指标，指标决定针能不能进场"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 2,
+     "title": "机制的用处不在解释痛，而在规定什么算证据",
+     "durationSec": 694,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 2,
+      "title": "机制的用处不在解释痛，而在规定什么算证据"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 3,
+     "title": "电针真正可调的只有两个把手，其余都是刻度换算",
+     "durationSec": 638,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 3,
+      "title": "电针真正可调的只有两个把手，其余都是刻度换算"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 4,
+     "title": "急性痛是唯一能在二十四小时内被证伪的场景",
+     "durationSec": 547,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 4,
+      "title": "急性痛是唯一能在二十四小时内被证伪的场景"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 5,
+     "title": "慢性痛的分水岭不在痛了多久，而在性质与失能是否已经改写",
+     "durationSec": 522,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 5,
+      "title": "慢性痛的分水岭不在痛了多久，而在性质与失能是否已经改写"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 6,
+     "title": "针麻能减的是药量，减不掉的是麻醉医师的判断",
+     "durationSec": 506,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 6,
+      "title": "针麻能减的是药量，减不掉的是麻醉医师的判断"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 7,
+     "title": "围手术期的针刺，价值在三个时间窗而不在一套手法",
+     "durationSec": 559,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 7,
+      "title": "围手术期的针刺，价值在三个时间窗而不在一套手法"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 8,
+     "title": "「有效」与「证据充分」是两列，并成一列就会说谎",
+     "durationSec": 513,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 8,
+      "title": "「有效」与「证据充分」是两列，并成一列就会说谎"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    }
+   ]
+  },
+  {
+   "dept": "03-zhenjiu",
+   "slug": "15-zhongyi-kangfu-xue",
+   "title": "中医康复学",
+   "semester": 7,
+   "videoStatus": "platform",
+   "lectures": 10,
+   "teachingChapters": 10,
+   "textbookChapters": 0,
+   "mappedBy": null,
+   "status": "no-textbook",
+   "linkedLectures": 0,
+   "unlinkedLectures": 10,
+   "rows": [
+    {
+     "lectureNo": 1,
+     "title": "中医康复借了养生的方法，没借它的对象",
+     "durationSec": 768,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 1,
+      "title": "中医康复借了养生的方法，没借它的对象"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 2,
+     "title": "证候与功能是两张纸，缺一张就交不了班",
+     "durationSec": 646,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 2,
+      "title": "证候与功能是两张纸，缺一张就交不了班"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 3,
+     "title": "中药康复只有一条路铺到底：内服",
+     "durationSec": 625,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 3,
+      "title": "中药康复只有一条路铺到底：内服"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 4,
+     "title": "名为针灸康复，底本里「灸」是「针」的十一倍",
+     "durationSec": 705,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 4,
+      "title": "名为针灸康复，底本里「灸」是「针」的十一倍"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 5,
+     "title": "推拿康复的处方是六件事的顺序，不是六个手法",
+     "durationSec": 726,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 5,
+      "title": "推拿康复的处方是六件事的顺序，不是六个手法"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 6,
+     "title": "气功康复教的是把呼吸调慢，不是把气送到某处",
+     "durationSec": 681,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 6,
+      "title": "气功康复教的是把呼吸调慢，不是把气送到某处"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 7,
+     "title": "饮食与情志康复的处方开在饭桌和床头，不在药罐里",
+     "durationSec": 729,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 7,
+      "title": "饮食与情志康复的处方开在饭桌和床头，不在药罐里"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 8,
+     "title": "中风康复的底本只有一根针，它把急救写在了康复前面",
+     "durationSec": 709,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 8,
+      "title": "中风康复的底本只有一根针，它把急救写在了康复前面"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 9,
+     "title": "骨伤与慢病康复的底本只收了颈、腰和落枕三个病",
+     "durationSec": 739,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 9,
+      "title": "骨伤与慢病康复的底本只收了颈、腰和落枕三个病"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 10,
+     "title": "社区与家庭康复这一章，底本里一个中医词都没有",
+     "durationSec": 676,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 10,
+      "title": "社区与家庭康复这一章，底本里一个中医词都没有"
+     },
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    }
+   ]
+  },
+  {
+   "dept": "03-zhenjiu",
+   "slug": "16-zhenjiu-xue",
+   "title": "针灸学",
+   "semester": 5,
+   "videoStatus": "platform",
+   "lectures": 30,
+   "teachingChapters": 30,
+   "textbookChapters": 30,
+   "mappedBy": "teaching=textbook 序号",
+   "status": "linked",
+   "linkedLectures": 30,
+   "unlinkedLectures": 0,
+   "rows": [
+    {
+     "lectureNo": 1,
+     "title": "绪论不是开场白：它划定针灸学的边界、来路与读法",
+     "durationSec": 648,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 1,
+      "title": "绪论不是开场白：它划定针灸学的边界、来路与读法"
+     },
+     "textbook": [
+      {
+       "no": 1,
+       "title": "绪论",
+       "file": "textbooks/03-zhenjiu/16-zhenjiu-xue/01-第1章-绪论.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 2,
+     "title": "经络不是线路图，是把脏腑与肢节接成闭环的规则",
+     "durationSec": 907,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 2,
+      "title": "经络不是线路图，是把脏腑与肢节接成闭环的规则"
+     },
+     "textbook": [
+      {
+       "no": 2,
+       "title": "经络总论",
+       "file": "textbooks/03-zhenjiu/16-zhenjiu-xue/02-第2章-经络总论.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 3,
+     "title": "腧穴的数目是历代校订出来的，不是一次定死的",
+     "durationSec": 785,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 3,
+      "title": "腧穴的数目是历代校订出来的，不是一次定死的"
+     },
+     "textbook": [
+      {
+       "no": 3,
+       "title": "腧穴总论",
+       "file": "textbooks/03-zhenjiu/16-zhenjiu-xue/03-第3章-腧穴总论.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 4,
+     "title": "肺经十一穴：一条从胸走到拇指的经，先定属络再定穴",
+     "durationSec": 705,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 4,
+      "title": "肺经十一穴：一条从胸走到拇指的经，先定属络再定穴"
+     },
+     "textbook": [
+      {
+       "no": 4,
+       "title": "手太阴肺经及其腧穴",
+       "file": "textbooks/03-zhenjiu/16-zhenjiu-xue/04-第4章-手太阴肺经及其腧穴.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 5,
+     "title": "大肠经二十穴：把面口与肠腑拴在同一条经上的长线",
+     "durationSec": 731,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 5,
+      "title": "大肠经二十穴：把面口与肠腑拴在同一条经上的长线"
+     },
+     "textbook": [
+      {
+       "no": 5,
+       "title": "手阳明大肠经及其腧穴",
+       "file": "textbooks/03-zhenjiu/16-zhenjiu-xue/05-第5章-手阳明大肠经及其腧穴.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 6,
+     "title": "胃经的重量不在四十五穴，而在十四组可操作条目",
+     "durationSec": 689,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 6,
+      "title": "胃经的重量不在四十五穴，而在十四组可操作条目"
+     },
+     "textbook": [
+      {
+       "no": 6,
+       "title": "足阳明胃经及其腧穴",
+       "file": "textbooks/03-zhenjiu/16-zhenjiu-xue/06-第6章-足阳明胃经及其腧穴.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 7,
+     "title": "脾经全部关键压在一个八寸的交叉点上",
+     "durationSec": 63,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 7,
+      "title": "脾经全部关键压在一个八寸的交叉点上"
+     },
+     "textbook": [
+      {
+       "no": 7,
+       "title": "足太阴脾经及其腧穴",
+       "file": "textbooks/03-zhenjiu/16-zhenjiu-xue/07-第7章-足太阴脾经及其腧穴.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 8,
+     "title": "心经九穴全在手臂上，病候却全在胸咽目",
+     "durationSec": 62,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 8,
+      "title": "心经九穴全在手臂上，病候却全在胸咽目"
+     },
+     "textbook": [
+      {
+       "no": 8,
+       "title": "手少阴心经及其腧穴",
+       "file": "textbooks/03-zhenjiu/16-zhenjiu-xue/08-第8章-手少阴心经及其腧穴.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 9,
+     "title": "小肠经十九穴有七穴挤在肩胛区，主治的头一条却是耳",
+     "durationSec": 63,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 9,
+      "title": "小肠经十九穴有七穴挤在肩胛区，主治的头一条却是耳"
+     },
+     "textbook": [
+      {
+       "no": 9,
+       "title": "手太阳小肠经及其腧穴",
+       "file": "textbooks/03-zhenjiu/16-zhenjiu-xue/09-第9章-手太阳小肠经及其腧穴.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 10,
+     "title": "六十七穴不是清单，是两条平行侧线加一张背俞索引",
+     "durationSec": 64,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 10,
+      "title": "六十七穴不是清单，是两条平行侧线加一张背俞索引"
+     },
+     "textbook": [
+      {
+       "no": 10,
+       "title": "足太阳膀胱经及其腧穴",
+       "file": "textbooks/03-zhenjiu/16-zhenjiu-xue/10-第10章-足太阳膀胱经及其腧穴.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 11,
+     "title": "二十七穴里只有十穴配得上独立条目",
+     "durationSec": 62,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 11,
+      "title": "二十七穴里只有十穴配得上独立条目"
+     },
+     "textbook": [
+      {
+       "no": 11,
+       "title": "足少阴肾经及其腧穴",
+       "file": "textbooks/03-zhenjiu/16-zhenjiu-xue/11-第11章-足少阴肾经及其腧穴.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 12,
+     "title": "九穴共用一条肌腱缝，红线却有八条",
+     "durationSec": 63,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 12,
+      "title": "九穴共用一条肌腱缝，红线却有八条"
+     },
+     "textbook": [
+      {
+       "no": 12,
+       "title": "手厥阴心包经及其腧穴",
+       "file": "textbooks/03-zhenjiu/16-zhenjiu-xue/12-第12章-手厥阴心包经及其腧穴.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 13,
+     "title": "二十三穴没有一条定位标记，只能顺着一条线读",
+     "durationSec": 64,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 13,
+      "title": "二十三穴没有一条定位标记，只能顺着一条线读"
+     },
+     "textbook": [
+      {
+       "no": 13,
+       "title": "手少阳三焦经及其腧穴",
+       "file": "textbooks/03-zhenjiu/16-zhenjiu-xue/13-第13章-手少阳三焦经及其腧穴.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 14,
+     "title": "四十四穴的取舍不在穴数，在五个身份",
+     "durationSec": 64,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 14,
+      "title": "四十四穴的取舍不在穴数，在五个身份"
+     },
+     "textbook": [
+      {
+       "no": 14,
+       "title": "足少阳胆经及其腧穴",
+       "file": "textbooks/03-zhenjiu/16-zhenjiu-xue/14-第14章-足少阳胆经及其腧穴.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 15,
+     "title": "十四穴七个有身份，另七个只占一行",
+     "durationSec": 62,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 15,
+      "title": "十四穴七个有身份，另七个只占一行"
+     },
+     "textbook": [
+      {
+       "no": 15,
+       "title": "足厥阴肝经及其腧穴",
+       "file": "textbooks/03-zhenjiu/16-zhenjiu-xue/15-第15章-足厥阴肝经及其腧穴.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 16,
+     "title": "督脉的效力与风险同出一处，都在棘突下那一道凹陷",
+     "durationSec": 61,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 16,
+      "title": "督脉的效力与风险同出一处，都在棘突下那一道凹陷"
+     },
+     "textbook": [
+      {
+       "no": 16,
+       "title": "督脉及其腧穴",
+       "file": "textbooks/03-zhenjiu/16-zhenjiu-xue/16-第16章-督脉及其腧穴.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 17,
+     "title": "任脉二十四穴全靠软组织兜底，没有一块骨头替你挡针",
+     "durationSec": 61,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 17,
+      "title": "任脉二十四穴全靠软组织兜底，没有一块骨头替你挡针"
+     },
+     "textbook": [
+      {
+       "no": 17,
+       "title": "任脉及其腧穴",
+       "file": "textbooks/03-zhenjiu/16-zhenjiu-xue/17-第17章-任脉及其腧穴.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 18,
+     "title": "经外奇穴的密度是全课最高，四十二个穴名只摊到五千字",
+     "durationSec": 59,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 18,
+      "title": "经外奇穴的密度是全课最高，四十二个穴名只摊到五千字"
+     },
+     "textbook": [
+      {
+       "no": 18,
+       "title": "经外奇穴",
+       "file": "textbooks/03-zhenjiu/16-zhenjiu-xue/18-第18章-经外奇穴.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 19,
+     "title": "刺灸法总论的产物不是穴位表，而是一张能不能扎的清单",
+     "durationSec": 60,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 19,
+      "title": "刺灸法总论的产物不是穴位表，而是一张能不能扎的清单"
+     },
+     "textbook": [
+      {
+       "no": 19,
+       "title": "刺灸法总论",
+       "file": "textbooks/03-zhenjiu/16-zhenjiu-xue/19-第19章-刺灸法总论.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 20,
+     "title": "毫针的风险不在扎错穴，在扎对了却扎过头",
+     "durationSec": 61,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 20,
+      "title": "毫针的风险不在扎错穴，在扎对了却扎过头"
+     },
+     "textbook": [
+      {
+       "no": 20,
+       "title": "毫针刺法",
+       "file": "textbooks/03-zhenjiu/16-zhenjiu-xue/20-第20章-毫针刺法.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 21,
+     "title": "灸法真正要记的不是几壮，而是以何为度",
+     "durationSec": 58,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 21,
+      "title": "灸法真正要记的不是几壮，而是以何为度"
+     },
+     "textbook": [
+      {
+       "no": 21,
+       "title": "灸法",
+       "file": "textbooks/03-zhenjiu/16-zhenjiu-xue/21-第21章-灸法.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 22,
+     "title": "这一章的主语不是穴位，而是器具的可调参数",
+     "durationSec": 65,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 22,
+      "title": "这一章的主语不是穴位，而是器具的可调参数"
+     },
+     "textbook": [
+      {
+       "no": 22,
+       "title": "拔罐法及其他刺法",
+       "file": "textbooks/03-zhenjiu/16-zhenjiu-xue/22-第22章-拔罐法及其他刺法.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 23,
+     "title": "这一章不给穴位，只给把穴位连成方子的规则",
+     "durationSec": 62,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 23,
+      "title": "这一章不给穴位，只给把穴位连成方子的规则"
+     },
+     "textbook": [
+      {
+       "no": 23,
+       "title": "针灸治疗总论",
+       "file": "textbooks/03-zhenjiu/16-zhenjiu-xue/23-第23章-针灸治疗总论.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 24,
+     "title": "八个痛证是同一张处方的八次填空",
+     "durationSec": 62,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 24,
+      "title": "八个痛证是同一张处方的八次填空"
+     },
+     "textbook": [
+      {
+       "no": 24,
+       "title": "头面躯体痛证",
+       "file": "textbooks/03-zhenjiu/16-zhenjiu-xue/24-第24章-头面躯体痛证.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 25,
+     "title": "九十个证型压在二万二千字里，平均二百四十九字一个",
+     "durationSec": 61,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 25,
+      "title": "九十个证型压在二万二千字里，平均二百四十九字一个"
+     },
+     "textbook": [
+      {
+       "no": 25,
+       "title": "内科病证",
+       "file": "textbooks/03-zhenjiu/16-zhenjiu-xue/25-第25章-内科病证.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 26,
+     "title": "妇儿科不按「科」分，按周期、胎位、发育三条轴分",
+     "durationSec": 59,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 26,
+      "title": "妇儿科不按「科」分，按周期、胎位、发育三条轴分"
+     },
+     "textbook": [
+      {
+       "no": 26,
+       "title": "妇儿科病证",
+       "file": "textbooks/03-zhenjiu/16-zhenjiu-xue/26-第26章-妇儿科病证.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 27,
+     "title": "皮肤外科九病：皮损看得见，局部取穴就压过了循经",
+     "durationSec": 60,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 27,
+      "title": "皮肤外科九病：皮损看得见，局部取穴就压过了循经"
+     },
+     "textbook": [
+      {
+       "no": 27,
+       "title": "皮肤外科病证",
+       "file": "textbooks/03-zhenjiu/16-zhenjiu-xue/27-第27章-皮肤外科病证.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 28,
+     "title": "五官五病共用一条路径：局部开窍、远端引火下行，代价是引文全部悬空",
+     "durationSec": 59,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 28,
+      "title": "五官五病共用一条路径：局部开窍、远端引火下行，代价是引文全部悬空"
+     },
+     "textbook": [
+      {
+       "no": 28,
+       "title": "五官科病证",
+       "file": "textbooks/03-zhenjiu/16-zhenjiu-xue/28-第28章-五官科病证.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 29,
+     "title": "急症八证写得最省：八张方共用内关，最薄的一节给了高热",
+     "durationSec": 61,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 29,
+      "title": "急症八证写得最省：八张方共用内关，最薄的一节给了高热"
+     },
+     "textbook": [
+      {
+       "no": 29,
+       "title": "急症及其他病证",
+       "file": "textbooks/03-zhenjiu/16-zhenjiu-xue/29-第29章-急症及其他病证.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 30,
+     "title": "现代研究章靠数字立论：75 个数字串，三条古籍只作背书",
+     "durationSec": 63,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 30,
+      "title": "现代研究章靠数字立论：75 个数字串，三条古籍只作背书"
+     },
+     "textbook": [
+      {
+       "no": 30,
+       "title": "针灸现代研究与数字化",
+       "file": "textbooks/03-zhenjiu/16-zhenjiu-xue/30-第30章-针灸现代研究与数字化.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    }
+   ]
+  },
+  {
+   "dept": "03-zhenjiu",
+   "slug": "17-gejia-zhenjiu-xueshuo",
+   "title": "各家针灸学说",
+   "semester": 6,
+   "videoStatus": "platform",
+   "lectures": 12,
+   "teachingChapters": 12,
+   "textbookChapters": 12,
+   "mappedBy": "teaching=textbook 序号",
+   "status": "linked",
+   "linkedLectures": 12,
+   "unlinkedLectures": 0,
+   "rows": [
+    {
+     "lectureNo": 1,
+     "title": "各家针灸学说考的是一套判据，不是一张人名表",
+     "durationSec": 572,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 1,
+      "title": "各家针灸学说考的是一套判据，不是一张人名表"
+     },
+     "textbook": [
+      {
+       "no": 1,
+       "title": "各家针灸学说概述",
+       "file": "textbooks/03-zhenjiu/17-gejia-zhenjiu-xueshuo/01-第1章-各家针灸学说概述.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 2,
+     "title": "流派的判据是三根柱子，不是一张分类表",
+     "durationSec": 739,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 2,
+      "title": "流派的判据是三根柱子，不是一张分类表"
+     },
+     "textbook": [
+      {
+       "no": 2,
+       "title": "针灸学术流派的形成与分类",
+       "file": "textbooks/03-zhenjiu/17-gejia-zhenjiu-xueshuo/02-第2章-针灸学术流派的形成与分类.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 3,
+     "title": "《内经》的针道是一条次序，不是一堆刺法",
+     "durationSec": 893,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 3,
+      "title": "《内经》的针道是一条次序，不是一堆刺法"
+     },
+     "textbook": [
+      {
+       "no": 3,
+       "title": "《内经》针灸学术思想",
+       "file": "textbooks/03-zhenjiu/17-gejia-zhenjiu-xueshuo/03-第3章-《内经》针灸学术思想.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 4,
+     "title": "《难经》给穴立规矩，《伤寒论》给用针立次序",
+     "durationSec": 826,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 4,
+      "title": "《难经》给穴立规矩，《伤寒论》给用针立次序"
+     },
+     "textbook": [
+      {
+       "no": 4,
+       "title": "《难经》与《伤寒杂病论》针灸学术思想",
+       "file": "textbooks/03-zhenjiu/17-gejia-zhenjiu-xueshuo/04-第4章-《难经》与《伤寒杂病论》针灸学术思想.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 5,
+     "title": "晋唐的功劳在编书：体例、尺度与存佚",
+     "durationSec": 834,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 5,
+      "title": "晋唐的功劳在编书：体例、尺度与存佚"
+     },
+     "textbook": [
+      {
+       "no": 5,
+       "title": "晋唐针灸医家学术思想",
+       "file": "textbooks/03-zhenjiu/17-gejia-zhenjiu-xueshuo/05-第5章-晋唐针灸医家学术思想.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 6,
+     "title": "宋金元把穴定成标准，把时间算成取穴依据",
+     "durationSec": 868,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 6,
+      "title": "宋金元把穴定成标准，把时间算成取穴依据"
+     },
+     "textbook": [
+      {
+       "no": 6,
+       "title": "宋金元针灸医家学术思想",
+       "file": "textbooks/03-zhenjiu/17-gejia-zhenjiu-xueshuo/06-第6章-宋金元针灸医家学术思想.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 7,
+     "title": "明代七家编的不是七种学说，是七种全书体例",
+     "durationSec": 335,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 7,
+      "title": "明代七家编的不是七种学说，是七种全书体例"
+     },
+     "textbook": [
+      {
+       "no": 7,
+       "title": "明代针灸医家学术思想",
+       "file": "textbooks/03-zhenjiu/17-gejia-zhenjiu-xueshuo/07-第7章-明代针灸医家学术思想.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 8,
+     "title": "清代把针灸写成可查的书，也把手法排在认穴之前",
+     "durationSec": 901,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 8,
+      "title": "清代把针灸写成可查的书，也把手法排在认穴之前"
+     },
+     "textbook": [
+      {
+       "no": 8,
+       "title": "清代针灸医家学术思想",
+       "file": "textbooks/03-zhenjiu/17-gejia-zhenjiu-xueshuo/08-第8章-清代针灸医家学术思想.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 9,
+     "title": "近代把针灸搬进学校，也把它译成西医的语言",
+     "durationSec": 866,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 9,
+      "title": "近代把针灸搬进学校，也把它译成西医的语言"
+     },
+     "textbook": [
+      {
+       "no": 9,
+       "title": "近代针灸医家学术思想",
+       "file": "textbooks/03-zhenjiu/17-gejia-zhenjiu-xueshuo/09-第9章-近代针灸医家学术思想.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 10,
+     "title": "当代六家各把手法的某一个参数做成了可教的东西",
+     "durationSec": 845,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 10,
+      "title": "当代六家各把手法的某一个参数做成了可教的东西"
+     },
+     "textbook": [
+      {
+       "no": 10,
+       "title": "当代针灸学术流派",
+       "file": "textbooks/03-zhenjiu/17-gejia-zhenjiu-xueshuo/10-第10章-当代针灸学术流派.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 11,
+     "title": "轴心从人换成法，手法一旦离人就丢了适应证",
+     "durationSec": 854,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 11,
+      "title": "轴心从人换成法，手法一旦离人就丢了适应证"
+     },
+     "textbook": [
+      {
+       "no": 11,
+       "title": "针灸各家学说的临床应用与传承",
+       "file": "textbooks/03-zhenjiu/17-gejia-zhenjiu-xueshuo/11-第11章-针灸各家学说的临床应用与传承.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 12,
+     "title": "谈数据的一章，引书最少，可计量的数值为零",
+     "durationSec": 852,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 12,
+      "title": "谈数据的一章，引书最少，可计量的数值为零"
+     },
+     "textbook": [
+      {
+       "no": 12,
+       "title": "各家针灸学说与数字化AI时代",
+       "file": "textbooks/03-zhenjiu/17-gejia-zhenjiu-xueshuo/12-第12章-各家针灸学说与数字化AI时代.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    }
+   ]
+  },
+  {
+   "dept": "03-zhenjiu",
+   "slug": "18-tuina-gongfa-xue",
+   "title": "推拿功法学",
+   "semester": 4,
+   "videoStatus": "platform",
+   "lectures": 12,
+   "teachingChapters": 12,
+   "textbookChapters": 12,
+   "mappedBy": "teaching=textbook 序号",
+   "status": "linked",
+   "linkedLectures": 12,
+   "unlinkedLectures": 0,
+   "rows": [
+    {
+     "lectureNo": 1,
+     "title": "功法的历史是把身体写成规矩的历史，写进去的只有规矩",
+     "durationSec": 671,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 1,
+      "title": "功法的历史是把身体写成规矩的历史，写进去的只有规矩"
+     },
+     "textbook": [
+      {
+       "no": 1,
+       "title": "推拿功法学概论与发展简史",
+       "file": "textbooks/03-zhenjiu/18-tuina-gongfa-xue/01-第1章-推拿功法学概论与发展简史.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 2,
+     "title": "理论给的是练功的说法，不是练功的做法",
+     "durationSec": 780,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 2,
+      "title": "理论给的是练功的说法，不是练功的做法"
+     },
+     "textbook": [
+      {
+       "no": 2,
+       "title": "推拿功法的理论基础",
+       "file": "textbooks/03-zhenjiu/18-tuina-gongfa-xue/02-第2章-推拿功法的理论基础.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 3,
+     "title": "三调是一个环，不是一道先后工序",
+     "durationSec": 824,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 3,
+      "title": "三调是一个环，不是一道先后工序"
+     },
+     "textbook": [
+      {
+       "no": 3,
+       "title": "推拿功法基本内容与练功要领",
+       "file": "textbooks/03-zhenjiu/18-tuina-gongfa-xue/03-第3章-推拿功法基本内容与练功要领.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 4,
+     "title": "功力不是力气大，是力能一直落在同一个点上",
+     "durationSec": 770,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 4,
+      "title": "功力不是力气大，是力能一直落在同一个点上"
+     },
+     "textbook": [
+      {
+       "no": 4,
+       "title": "推拿功法与手法功力",
+       "file": "textbooks/03-zhenjiu/18-tuina-gongfa-xue/04-第4章-推拿功法与手法功力.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 5,
+     "title": "十二势分的是筋的走向，不是动作的花样",
+     "durationSec": 853,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 5,
+      "title": "十二势分的是筋的走向，不是动作的花样"
+     },
+     "textbook": [
+      {
+       "no": 5,
+       "title": "易筋经",
+       "file": "textbooks/03-zhenjiu/18-tuina-gongfa-xue/05-第5章-易筋经.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 6,
+     "title": "少林内功把「力从足起」写成了一份可检查的姿势清单",
+     "durationSec": 797,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 6,
+      "title": "少林内功把「力从足起」写成了一份可检查的姿势清单"
+     },
+     "textbook": [
+      {
+       "no": 6,
+       "title": "少林内功",
+       "file": "textbooks/03-zhenjiu/18-tuina-gongfa-xue/06-第6章-少林内功.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 7,
+     "title": "五禽戏的剂量写在一个「汗」字上，不写在分钟数上",
+     "durationSec": 790,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 7,
+      "title": "五禽戏的剂量写在一个「汗」字上，不写在分钟数上"
+     },
+     "textbook": [
+      {
+       "no": 7,
+       "title": "五禽戏",
+       "file": "textbooks/03-zhenjiu/18-tuina-gongfa-xue/07-第7章-五禽戏.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 8,
+     "title": "八段锦的八句歌诀各给一个功效，没有一句给剂量",
+     "durationSec": 770,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 8,
+      "title": "八段锦的八句歌诀各给一个功效，没有一句给剂量"
+     },
+     "textbook": [
+      {
+       "no": 8,
+       "title": "八段锦",
+       "file": "textbooks/03-zhenjiu/18-tuina-gongfa-xue/08-第8章-八段锦.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 9,
+     "title": "六字诀把剂量数成三十六次呼吸，而不是多少分钟",
+     "durationSec": 827,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 9,
+      "title": "六字诀把剂量数成三十六次呼吸，而不是多少分钟"
+     },
+     "textbook": [
+      {
+       "no": 9,
+       "title": "六字诀与其他传统功法",
+       "file": "textbooks/03-zhenjiu/18-tuina-gongfa-xue/09-第9章-六字诀与其他传统功法.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 10,
+     "title": "全书七成的带单位数值压在这一章，因为它练的是器物规格",
+     "durationSec": 834,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 10,
+      "title": "全书七成的带单位数值压在这一章，因为它练的是器物规格"
+     },
+     "textbook": [
+      {
+       "no": 10,
+       "title": "专项功力训练",
+       "file": "textbooks/03-zhenjiu/18-tuina-gongfa-xue/10-第10章-专项功力训练.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 11,
+     "title": "临床处方章的剂量最密，却一个阿拉伯数字也不用",
+     "durationSec": 855,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 11,
+      "title": "临床处方章的剂量最密，却一个阿拉伯数字也不用"
+     },
+     "textbook": [
+      {
+       "no": 11,
+       "title": "推拿功法在临床的应用",
+       "file": "textbooks/03-zhenjiu/18-tuina-gongfa-xue/11-第11章-推拿功法在临床的应用.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 12,
+     "title": "数字化先量出角度与力，最后才轮到那个「意」",
+     "durationSec": 871,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 12,
+      "title": "数字化先量出角度与力，最后才轮到那个「意」"
+     },
+     "textbook": [
+      {
+       "no": 12,
+       "title": "推拿功法与现代科学·数字化AI时代",
+       "file": "textbooks/03-zhenjiu/18-tuina-gongfa-xue/12-第12章-推拿功法与现代科学·数字化AI时代.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    }
+   ]
+  },
+  {
+   "dept": "03-zhenjiu",
+   "slug": "19-tuina-zhiliao-xue",
+   "title": "推拿治疗学",
+   "semester": 7,
+   "videoStatus": "platform",
+   "lectures": 12,
+   "teachingChapters": 12,
+   "textbookChapters": 12,
+   "mappedBy": "teaching=textbook 序号",
+   "status": "linked",
+   "linkedLectures": 12,
+   "unlinkedLectures": 0,
+   "rows": [
+    {
+     "lectureNo": 1,
+     "title": "推拿治疗学不是手法目录，是从辨证到疗效评定的一条链",
+     "durationSec": 613,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 1,
+      "title": "推拿治疗学不是手法目录，是从辨证到疗效评定的一条链"
+     },
+     "textbook": [
+      {
+       "no": 1,
+       "title": "推拿治疗学概论",
+       "file": "textbooks/03-zhenjiu/19-tuina-zhiliao-xue/01-第1章-推拿治疗学概论.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 2,
+     "title": "处方里最虚的一格不是穴位，是刺激量",
+     "durationSec": 788,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 2,
+      "title": "处方里最虚的一格不是穴位，是刺激量"
+     },
+     "textbook": [
+      {
+       "no": 2,
+       "title": "推拿治疗基础",
+       "file": "textbooks/03-zhenjiu/19-tuina-zhiliao-xue/02-第2章-推拿治疗基础.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 3,
+     "title": "脊柱推拿的分水岭不在手法，在分型与禁忌",
+     "durationSec": 658,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 3,
+      "title": "脊柱推拿的分水岭不在手法，在分型与禁忌"
+     },
+     "textbook": [
+      {
+       "no": 3,
+       "title": "脊柱病证推拿治疗",
+       "file": "textbooks/03-zhenjiu/19-tuina-zhiliao-xue/03-第3章-脊柱病证推拿治疗.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 4,
+     "title": "关节与筋伤靠分期，不靠一次扳到位",
+     "durationSec": 574,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 4,
+      "title": "关节与筋伤靠分期，不靠一次扳到位"
+     },
+     "textbook": [
+      {
+       "no": 4,
+       "title": "骨关节与筋伤病证推拿治疗",
+       "file": "textbooks/03-zhenjiu/19-tuina-zhiliao-xue/04-第4章-骨关节与筋伤病证推拿治疗.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 5,
+     "title": "内科推拿卖的是症状缓解，不是治愈承诺",
+     "durationSec": 731,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 5,
+      "title": "内科推拿卖的是症状缓解，不是治愈承诺"
+     },
+     "textbook": [
+      {
+       "no": 5,
+       "title": "内科病证推拿治疗",
+       "file": "textbooks/03-zhenjiu/19-tuina-zhiliao-xue/05-第5章-内科病证推拿治疗.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 6,
+     "title": "妇科推拿的第一道工序不是通，是排除妊娠",
+     "durationSec": 714,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 6,
+      "title": "妇科推拿的第一道工序不是通，是排除妊娠"
+     },
+     "textbook": [
+      {
+       "no": 6,
+       "title": "妇科病证推拿治疗",
+       "file": "textbooks/03-zhenjiu/19-tuina-zhiliao-xue/06-第6章-妇科病证推拿治疗.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 7,
+     "title": "小儿的剂量按次数给，成人的时长表搬不过来",
+     "durationSec": 593,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 7,
+      "title": "小儿的剂量按次数给，成人的时长表搬不过来"
+     },
+     "textbook": [
+      {
+       "no": 7,
+       "title": "儿科病证推拿治疗",
+       "file": "textbooks/03-zhenjiu/19-tuina-zhiliao-xue/07-第7章-儿科病证推拿治疗.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 8,
+     "title": "五官三病，推拿只够得到功能那一层",
+     "durationSec": 572,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 8,
+      "title": "五官三病，推拿只够得到功能那一层"
+     },
+     "textbook": [
+      {
+       "no": 8,
+       "title": "五官与其他病证推拿治疗",
+       "file": "textbooks/03-zhenjiu/19-tuina-zhiliao-xue/08-第8章-五官与其他病证推拿治疗.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 9,
+     "title": "运动损伤的手法表只有一张，日期表有四张",
+     "durationSec": 595,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 9,
+      "title": "运动损伤的手法表只有一张，日期表有四张"
+     },
+     "textbook": [
+      {
+       "no": 9,
+       "title": "运动损伤与康复推拿",
+       "file": "textbooks/03-zhenjiu/19-tuina-zhiliao-xue/09-第9章-运动损伤与康复推拿.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 10,
+     "title": "推拿的安全事故几乎都不是手法问题，而是诊断问题",
+     "durationSec": 582,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 10,
+      "title": "推拿的安全事故几乎都不是手法问题，而是诊断问题"
+     },
+     "textbook": [
+      {
+       "no": 10,
+       "title": "推拿治疗安全与异常处理",
+       "file": "textbooks/03-zhenjiu/19-tuina-zhiliao-xue/10-第10章-推拿治疗安全与异常处理.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 11,
+     "title": "证据等级不决定推拿有没有效，只决定这句话能说多响",
+     "durationSec": 535,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 11,
+      "title": "证据等级不决定推拿有没有效，只决定这句话能说多响"
+     },
+     "textbook": [
+      {
+       "no": 11,
+       "title": "推拿治疗现代研究与循证",
+       "file": "textbooks/03-zhenjiu/19-tuina-zhiliao-xue/11-第11章-推拿治疗现代研究与循证.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 12,
+     "title": "设备能把手法变成数字，不能把数字变成判断",
+     "durationSec": 675,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 12,
+      "title": "设备能把手法变成数字，不能把数字变成判断"
+     },
+     "textbook": [
+      {
+       "no": 12,
+       "title": "推拿治疗数字化与AI时代",
+       "file": "textbooks/03-zhenjiu/19-tuina-zhiliao-xue/12-第12章-推拿治疗数字化与AI时代.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    }
+   ]
+  },
+  {
+   "dept": "03-zhenjiu",
+   "slug": "20-xiaoer-tuina-xue",
+   "title": "小儿推拿学",
+   "semester": 8,
+   "videoStatus": "platform",
+   "lectures": 12,
+   "teachingChapters": 12,
+   "textbookChapters": 12,
+   "mappedBy": "teaching=textbook 序号",
+   "status": "linked",
+   "linkedLectures": 12,
+   "unlinkedLectures": 0,
+   "rows": [
+    {
+     "lectureNo": 1,
+     "title": "小儿推拿的独立，不靠手法成熟，靠「儿科」先成为一门学问",
+     "durationSec": 700,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 1,
+      "title": "小儿推拿的独立，不靠手法成熟，靠「儿科」先成为一门学问"
+     },
+     "textbook": [
+      {
+       "no": 1,
+       "title": "小儿推拿学发展简史",
+       "file": "textbooks/03-zhenjiu/20-xiaoer-tuina-xue/01-第1章-小儿推拿学发展简史.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 2,
+     "title": "小儿的生理决定手法上限，病理决定干预窗口",
+     "durationSec": 801,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 2,
+      "title": "小儿的生理决定手法上限，病理决定干预窗口"
+     },
+     "textbook": [
+      {
+       "no": 2,
+       "title": "小儿推拿基础知识",
+       "file": "textbooks/03-zhenjiu/20-xiaoer-tuina-xue/02-第2章-小儿推拿基础知识.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 3,
+     "title": "「轻快柔和」不是形容词，是一组可以交给学生的参数",
+     "durationSec": 707,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 3,
+      "title": "「轻快柔和」不是形容词，是一组可以交给学生的参数"
+     },
+     "textbook": [
+      {
+       "no": 3,
+       "title": "小儿推拿治疗概要",
+       "file": "textbooks/03-zhenjiu/20-xiaoer-tuina-xue/03-第3章-小儿推拿治疗概要.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 4,
+     "title": "八法的分界不在动作，而在「吸定点是否带动皮下」",
+     "durationSec": 721,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 4,
+      "title": "八法的分界不在动作，而在「吸定点是否带动皮下」"
+     },
+     "textbook": [
+      {
+       "no": 4,
+       "title": "小儿推拿常用手法",
+       "file": "textbooks/03-zhenjiu/20-xiaoer-tuina-xue/04-第4章-小儿推拿常用手法.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 5,
+     "title": "特定穴的权威不来自引文，来自可复现的定位与次数",
+     "durationSec": 664,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 5,
+      "title": "特定穴的权威不来自引文，来自可复现的定位与次数"
+     },
+     "textbook": [
+      {
+       "no": 5,
+       "title": "小儿推拿特定穴",
+       "file": "textbooks/03-zhenjiu/20-xiaoer-tuina-xue/05-第5章-小儿推拿特定穴.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 6,
+     "title": "肺系四病共用一个处方骨架，差别在「什么时候停」",
+     "durationSec": 893,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 6,
+      "title": "肺系四病共用一个处方骨架，差别在「什么时候停」"
+     },
+     "textbook": [
+      {
+       "no": 6,
+       "title": "肺系病证",
+       "file": "textbooks/03-zhenjiu/20-xiaoer-tuina-xue/06-第6章-肺系病证.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 7,
+     "title": "脾系六病是同一副脾胃的六个出口，补泻只差一个方向",
+     "durationSec": 180,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 7,
+      "title": "脾系六病是同一副脾胃的六个出口，补泻只差一个方向"
+     },
+     "textbook": [
+      {
+       "no": 7,
+       "title": "脾系病证",
+       "file": "textbooks/03-zhenjiu/20-xiaoer-tuina-xue/07-第7章-脾系病证.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 8,
+     "title": "心肝系三病先排除再辨证，抽搐是唯一不能等的信号",
+     "durationSec": 181,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 8,
+      "title": "心肝系三病先排除再辨证，抽搐是唯一不能等的信号"
+     },
+     "textbook": [
+      {
+       "no": 8,
+       "title": "心肝系病证",
+       "file": "textbooks/03-zhenjiu/20-xiaoer-tuina-xue/08-第8章-心肝系病证.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 9,
+     "title": "肾系与五官六病都卡在时间上，判的是到点没到点",
+     "durationSec": 177,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 9,
+      "title": "肾系与五官六病都卡在时间上，判的是到点没到点"
+     },
+     "textbook": [
+      {
+       "no": 9,
+       "title": "肾系与五官病证",
+       "file": "textbooks/03-zhenjiu/20-xiaoer-tuina-xue/09-第9章-肾系与五官病证.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 10,
+     "title": "新生儿不是小一号的小儿，这一层先讲禁再讲法",
+     "durationSec": 191,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 10,
+      "title": "新生儿不是小一号的小儿，这一层先讲禁再讲法"
+     },
+     "textbook": [
+      {
+       "no": 10,
+       "title": "新生儿与杂病",
+       "file": "textbooks/03-zhenjiu/20-xiaoer-tuina-xue/10-第10章-新生儿与杂病.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 11,
+     "title": "保健推拿不辨证，它判的是今天能不能做",
+     "durationSec": 196,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 11,
+      "title": "保健推拿不辨证，它判的是今天能不能做"
+     },
+     "textbook": [
+      {
+       "no": 11,
+       "title": "小儿保健推拿",
+       "file": "textbooks/03-zhenjiu/20-xiaoer-tuina-xue/11-第11章-小儿保健推拿.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 12,
+     "title": "安全章一个次数都不给，它给的是红线与复核",
+     "durationSec": 181,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 12,
+      "title": "安全章一个次数都不给，它给的是红线与复核"
+     },
+     "textbook": [
+      {
+       "no": 12,
+       "title": "小儿推拿安全与数字化AI时代",
+       "file": "textbooks/03-zhenjiu/20-xiaoer-tuina-xue/12-第12章-小儿推拿安全与数字化AI时代.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    }
+   ]
+  },
+  {
+   "dept": "03-zhenjiu",
+   "slug": "21-zhenjiu-linchuang-lunzhuan",
+   "title": "针灸临床轮转",
+   "semester": 9,
+   "videoStatus": "platform",
+   "lectures": 6,
+   "teachingChapters": 6,
+   "textbookChapters": 6,
+   "mappedBy": "teaching=textbook 序号",
+   "status": "linked",
+   "linkedLectures": 6,
+   "unlinkedLectures": 0,
+   "rows": [
+    {
+     "lectureNo": 1,
+     "title": "门诊这一站，先学会停手，再学会配穴",
+     "durationSec": 586,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 1,
+      "title": "门诊这一站，先学会停手，再学会配穴"
+     },
+     "textbook": [
+      {
+       "no": 1,
+       "title": "针灸科门诊轮转：颈肩腰腿痛的接诊与配穴",
+       "file": "textbooks/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/01-第1章-针灸科门诊轮转：颈肩腰腿痛的接诊与配穴.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 2,
+     "title": "中风康复这一站，判据在功能，不在症状轻重",
+     "durationSec": 643,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 2,
+      "title": "中风康复这一站，判据在功能，不在症状轻重"
+     },
+     "textbook": [
+      {
+       "no": 2,
+       "title": "中风病康复轮转",
+       "file": "textbooks/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/02-第2章-中风病康复轮转.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 3,
+     "title": "面瘫这一站先问窗口，窗口判错，手法方向就是反的",
+     "durationSec": 550,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 3,
+      "title": "面瘫这一站先问窗口，窗口判错，手法方向就是反的"
+     },
+     "textbook": [
+      {
+       "no": 3,
+       "title": "面瘫与周围神经损伤轮转",
+       "file": "textbooks/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/03-第3章-面瘫与周围神经损伤轮转.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 4,
+     "title": "灸罐这一站先划边界，边界之内才轮到手感",
+     "durationSec": 509,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 4,
+      "title": "灸罐这一站先划边界，边界之内才轮到手感"
+     },
+     "textbook": [
+      {
+       "no": 4,
+       "title": "灸法与拔罐的适应证与意外处置",
+       "file": "textbooks/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/04-第4章-灸法与拔罐的适应证与意外处置.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 5,
+     "title": "推拿这一站考的不是会不会做，是第十次还一样不一样",
+     "durationSec": 529,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 5,
+      "title": "推拿这一站考的不是会不会做，是第十次还一样不一样"
+     },
+     "textbook": [
+      {
+       "no": 5,
+       "title": "推拿科轮转",
+       "file": "textbooks/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/05-第5章-推拿科轮转.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 6,
+     "title": "出科考核要能指到环节，指不到环节的复盘等于没复盘",
+     "durationSec": 536,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 6,
+      "title": "出科考核要能指到环节，指不到环节的复盘等于没复盘"
+     },
+     "textbook": [
+      {
+       "no": 6,
+       "title": "出科考核与病例复盘",
+       "file": "textbooks/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/06-第6章-出科考核与病例复盘.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    }
+   ]
+  },
+  {
+   "dept": "03-zhenjiu",
+   "slug": "22-zhenjiu-biye-sheji",
+   "title": "针灸毕业设计与知识移交",
+   "semester": 10,
+   "videoStatus": "platform",
+   "lectures": 6,
+   "teachingChapters": 6,
+   "textbookChapters": 6,
+   "mappedBy": "teaching=textbook 序号",
+   "status": "linked",
+   "linkedLectures": 6,
+   "unlinkedLectures": 0,
+   "rows": [
+    {
+     "lectureNo": 1,
+     "title": "选题不是挑一个病，而是把一句经验话逼成能被否证的句子",
+     "durationSec": 459,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 1,
+      "title": "选题不是挑一个病，而是把一句经验话逼成能被否证的句子"
+     },
+     "textbook": [
+      {
+       "no": 1,
+       "title": "选题：从配穴方案到可检验命题",
+       "file": "textbooks/03-zhenjiu/22-zhenjiu-biye-sheji/01-第1章-选题：从配穴方案到可检验命题.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 2,
+     "title": "一份病例表的价值不在字段多，而在换个人能照着扎回同一个位置",
+     "durationSec": 449,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 2,
+      "title": "一份病例表的价值不在字段多，而在换个人能照着扎回同一个位置"
+     },
+     "textbook": [
+      {
+       "no": 2,
+       "title": "数据准备：病例、经穴坐标、刺激参数",
+       "file": "textbooks/03-zhenjiu/22-zhenjiu-biye-sheji/02-第2章-数据准备：病例、经穴坐标、刺激参数.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 3,
+     "title": "采集工具只做四件事，多做的每一件都要从招募窗口里扣时间",
+     "durationSec": 427,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 3,
+      "title": "采集工具只做四件事，多做的每一件都要从招募窗口里扣时间"
+     },
+     "textbook": [
+      {
+       "no": 3,
+       "title": "方法与系统实现",
+       "file": "textbooks/03-zhenjiu/22-zhenjiu-biye-sheji/03-第3章-方法与系统实现.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 4,
+     "title": "针刺盲不了全部，把盲了几层写清比宣称双盲更值钱",
+     "durationSec": 390,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 4,
+      "title": "针刺盲不了全部，把盲了几层写清比宣称双盲更值钱"
+     },
+     "textbook": [
+      {
+       "no": 4,
+       "title": "疗效评价与盲法设计",
+       "file": "textbooks/03-zhenjiu/22-zhenjiu-biye-sheji/04-第4章-疗效评价与盲法设计.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 5,
+     "title": "论文的说服力来自十个能复算的数字，不来自十页漂亮的讨论",
+     "durationSec": 386,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 5,
+      "title": "论文的说服力来自十个能复算的数字，不来自十页漂亮的讨论"
+     },
+     "textbook": [
+      {
+       "no": 5,
+       "title": "论文写作与答辩",
+       "file": "textbooks/03-zhenjiu/22-zhenjiu-biye-sheji/05-第5章-论文写作与答辩.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 6,
+     "title": "手册写得再全也移不走手感，移交完成的标志是别人照它做出来",
+     "durationSec": 389,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 6,
+      "title": "手册写得再全也移不走手感，移交完成的标志是别人照它做出来"
+     },
+     "textbook": [
+      {
+       "no": 6,
+       "title": "知识移交：方案手册与交接",
+       "file": "textbooks/03-zhenjiu/22-zhenjiu-biye-sheji/06-第6章-知识移交：方案手册与交接.md"
       }
      ],
      "linkedBy": "order",

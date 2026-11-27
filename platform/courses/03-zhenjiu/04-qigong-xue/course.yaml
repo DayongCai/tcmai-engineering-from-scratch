@@ -38,18 +38,18 @@ chapters:
     title: 调息写得最多，不等于调息最要紧
     video: rendered
     estimate_minutes: 15.47      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 14.1      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    measured_minutes: 14.10      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 03-fanying-piancha
     title: 反应与偏差的分界不在感觉强弱，在能不能自己缓过来
     video: rendered
-    estimate_minutes: 15.3      # = lesson.json estimateTotalSeconds ÷ 60
+    estimate_minutes: 15.30      # = lesson.json estimateTotalSeconds ÷ 60
     measured_minutes: 15.34      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 04-jinggong-donggong
     title: 静功与动功的分界不在动不动，在由谁主导
     video: rendered
-    estimate_minutes: 14.5      # = lesson.json estimateTotalSeconds ÷ 60
+    estimate_minutes: 14.50      # = lesson.json estimateTotalSeconds ÷ 60
     measured_minutes: 13.45      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 05-taiji-jianshen

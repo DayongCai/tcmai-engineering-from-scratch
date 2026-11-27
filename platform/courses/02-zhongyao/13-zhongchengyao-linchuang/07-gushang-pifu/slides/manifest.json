@@ -1,31 +1,86 @@
 {
   "chapter": "07-gushang-pifu",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 16,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 12
+      "chars": 24
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 84
+      "chars": 86
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 9
+      "chars": 67
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 109
+      "chars": 93
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 309
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 407
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 351
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 268
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 329
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 322
+    },
+    {
+      "n": 11,
+      "segment": 7,
+      "chars": 140
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 328
+    },
+    {
+      "n": 13,
+      "segment": 8,
+      "chars": 165
+    },
+    {
+      "n": 14,
+      "segment": 9,
+      "chars": 319
+    },
+    {
+      "n": 15,
+      "segment": 9,
+      "chars": 165
+    },
+    {
+      "n": 16,
+      "segment": 10,
       "chars": 52
     }
   ]

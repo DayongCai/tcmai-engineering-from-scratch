@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"/>
-<title>第 13 章 · 药材之前：产地、采集、炮制、配伍、禁忌与剂量 · 幻灯片</title>
+<title>第 13 章 · 五道闸算出 3.341 分：四道是常数，只有炮制在动 · 幻灯片</title>
 <style>
 
 :root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
@@ -59,68 +59,101 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <body>
 <div id="deck">
 <section class="slide" data-i="0">
-  <div class="slide-inner"><h1 class="big">第 13 章 · 药材之前：产地、采集、炮制、配伍、禁忌与剂量</h1></div>
-  <div class="slide-foot"><span>1 / 8</span><span>title</span></div>
+  <div class="slide-inner"><h1 class="big">第 13 章 · 五道闸算出 3.341 分：四道是常数，只有炮制在动</h1></div>
+  <div class="slide-foot"><span>1 / 17</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「中药是指在中医药理论指导下，用于预防、治疗、诊断疾病并具有康复与保健作用的天然药物及其加工品。」——《中药学·第1章·1.1》</blockquote></div>
-  <div class="slide-foot"><span>2 / 8</span><span>motto</span></div>
+  <div class="slide-inner"><blockquote class="motto">「凡药制造，贵在适中，不及则功效难求，太过则气味反失。」——《本草蒙筌·制造资水火》</blockquote></div>
+  <div class="slide-foot"><span>2 / 17</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
-  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">你能背下「麻黄辛、微苦，温，归肺、膀胱经」，却答不出同一味麻黄在什么条件下才成立：是道地产区还是野生、是生麻黄还是蜜炙麻黄、配桂枝还是配石膏、孕妇能不能用、开 3 g 还是 9 g。这些条件一条都没写进「功效」，却每一条都能让功效失效，或者变成事故。</p></div>
-  <div class="slide-foot"><span>3 / 8</span><span>problem</span></div>
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">287 味药、5 道闸、平均 3.341 分。这个数读起来像「资料完整度 67%」，其实不是。287 味里 287 味全部未过「产地」这一闸，通过率 0.0%；「炮制」36.6%；「配伍」与「禁忌」各 99.3%；「剂量」99.0%。把逐味的闸通过情况排开：得 4 分的 103 味，缺的<strong>只有</strong>产地；得 3 分的 179 味，其中 177 味缺「产地＋炮制」；得 2 分的 5 味。<strong>287 味里有 280 味的得分恰好等于「3 加炮制闸」。</strong> 一个由四个常数和一根变量决定的分数，衡量的不是完成度，是炮制。</p></div>
+  <div class="slide-foot"><span>3 / 17</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
-  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫(同一味药换个产地、换个炮制规格，成分与性能就变了；药源与饮片规格年年在变，不把条件写进药名，去年有效的方今年复现不出来) + 知识积累(七情、十八反十九畏、古今剂量换算不是推导出来的，是两千年逐条试错攒下的清单，只能继承、不能重启)</p></div>
-  <div class="slide-foot"><span>4 / 8</span><span>roots</span></div>
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（一张方子从药房到病人手里，中间有五道必须过的检查：药材是不是道地、有没有按法炮制、有没有配到相反相畏的药、有没有撞上妊娠或证候禁忌、剂量对不对。这五道检查里任何一道失手，后果都不在「疗效差一点」的量级——炮制失当会改变药性，配伍失当会造出毒性）＋ 知识积累（教材第 3、4、6、7、8 章各自讲一道，五章分散在总论里，只有把 287 味药的正文逐条拿去比对这五章的关键词，「五道闸各能筛出多少」才第一次变成一个可以逐项核对的数）</p></div>
+  <div class="slide-foot"><span>4 / 17</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
-  <div class="slide-inner"><div class="kicker">学习目标</div>
-                <div class="compact"><ul><li>说出「一味药进入方剂」之前必须过的 5 道闸，以及每道闸的输出字段是什么</li><li>区分「功效」（药能干什么）与「条件」（在什么前提下才成立），并解释为什么编码时前者容易、后者难</li><li>用教材第 8 章正文里的克数区间，说明「剂量」不是一个数，而是随药性、质地、配伍、年龄、病情变动的一段区间</li><li>指出本章<strong>不能</strong>提供什么：单药数据、工艺参数、法定上限</li></ul></div></div>
-  <div class="slide-foot"><span>5 / 8</span><span>objectives</span></div>
+  <div class="slide-inner"><div class="kicker">一、五章 26 节 4,266 字：五道闸都写在「类」上，不写在「味」上</div>
+                <div class="compact dense"><div class="table-wrap"><table><thead><tr><th>教材章</th><th>节数</th><th>汉字</th><th>篇均</th><th>讲的是哪一道</th><th>核心节</th></tr></thead><tbody><tr><td>第3章 产地、采集与贮藏</td><td>6</td><td>962</td><td>160.3</td><td>药材从哪来</td><td>3.1.1 道地药材、3.2.1 采收时节与药效、3.3.1 贮藏与品质变化</td></tr><tr><td>第4章 炮制</td><td>7</td><td>1,071</td><td>153.0</td><td>药材怎么处理</td><td>4.1.1 炮制对药性的影响、4.2.2 火制、4.3.1 经典炮制品</td></tr><tr><td>第6章 配伍</td><td>4</td><td>736</td><td>184.0</td><td>药与药怎么配</td><td>6.1.1 单行与相须相使、6.1.2 相畏相杀与相恶相反</td></tr><tr><td>第7章 用药禁忌</td><td>5</td><td>858</td><td>171.6</td><td>什么情况不能用</td><td>7.1.1 十八反、7.1.2 十九畏、7.2.1 妊娠禁慎</td></tr><tr><td>第8章 剂量与用法</td><td>4</td><td>639</td><td>159.8</td><td>用多少、怎么用</td><td>8.1.1 剂量的确定、8.1.2 古今剂量换算、8.2.1 煎煮法</td></tr></tbody></table></div>
+<p>合计 26 节、4,266 字、篇均 164.1 字。</p></div></div>
+  <div class="slide-foot"><span>5 / 17</span><span>body</span></div>
 </section>
 <section class="slide" data-i="5">
-  <div class="slide-inner"><div class="kicker">核心概念</div>
-                <div class="compact denser"><h3 id="中医-药名是一个带条件的复合名">中医：药名是一个带条件的复合名</h3>
-<p>教材·第1章·1.1 给出的定义是「中药是指在中医药理论指导下，用于预防、治疗、诊断疾病并具有康复与保健作用的天然药物及其加工品。」
-定义里没有一个字提到产地、炮制或剂量——因为定义回答的是「是不是药」，不回答「这味药现在还能不能用」。
-后面的 7 章补的正是后者。教材·第1章·1.1.2 把这层关系说得更直白：「无药则方不成，无方则治不立」——
-药是方的最小单位，而这个「最小单位」本身就带着 5 个前提。</p>
-<p>所以在本章里，「麻黄」不是一个字符串，而是一个五元组：</p>
-<div class="codeblock"><div class="codeblock-lang">text</div><pre><code class="lang-text">药 = (基原与产地, 采收与贮藏, 炮制规格, 配伍关系, 剂量与用法)</code></pre></div>
-<p>任何一项缺省，这个药名就不完整。教材·第2章·2.1.2 说明这套记录方式从哪来：「载药365种，按上、中、下三品分类（上品无毒补虚、中品有毒无毒斟酌、下品多毒攻邪）」
-——《神农本草经》第一次把「有毒无毒」写进分类，也就是第一次承认「药名必须带安全条件」。</p>
-<h3 id="工程-5-道闸是一条-5-级变换流水线">工程：5 道闸是一条 5 级变换流水线</h3>
-<p>把这 7 章压成一条流水线，每道闸都是「输入状态 → 输出状态」的一步变换，且都<strong>不可逆</strong>：</p>
-<div class="table-wrap"><table><thead><tr><th>闸</th><th>依据</th><th>输入 → 输出</th><th>为什么不可逆</th></tr></thead><tbody><tr><td>① 产地</td><td>教材·第3章·3.1</td><td>物种 → 基原 + 产地</td><td>换产区，成分比例就变了，回不去</td></tr><tr><td>② 采集与贮藏</td><td>教材·第3章·3.2</td><td>产地货 → 采收期 + 干燥贮存</td><td>采错时节、受潮走油，含量已损失</td></tr><tr><td>③ 炮制</td><td>教材·第4章·4.2</td><td>原药材 → 饮片规格</td><td>炒炭、酒炙、蒸制改变了成分本身</td></tr><tr><td>④ 配伍</td><td>教材·第6章·6.1</td><td>单味 → 药对关系（七情）</td><td>相须相使放大疗效，相反放大毒性</td></tr><tr><td>⑤ 禁忌与剂量</td><td>教材·第7、8章</td><td>药对 → 可用人群 + 克数 + 煎法</td><td>一条禁忌否掉前面全部工作</td></tr></tbody></table></div>
-<p>这 5 道闸的顺序不是随手排的：它对应教材的章序（3 → 3 → 4 → 6 → 7/8），
-而第 5 章的性能夹在中间，恰恰是「唯一被前 12 章讲过、又被这 5 道闸全部改写」的一层——
-同一味麻黄，生用与炙用、配桂枝与配石膏，性能向量在第 12 章里完全一样，临床作用却相反。
-这就是本章存在的理由：<strong>第 12 章的向量缺的正是这 5 道闸</strong>。</p></div></div>
-  <div class="slide-foot"><span>6 / 8</span><span>concept</span></div>
+  <div class="slide-inner"><div class="kicker">一、五章 26 节 4,266 字：五道闸都写在「类」上，不写在「味」上</div>
+                <div class="compact"><p>五章的篇幅很接近（639–1,071 字），但这五章有一个共同的结构特征：<strong>它们全部是「总论」写法，讲的是类，不是味。</strong> 第 3 章讲「道地药材」这个概念，讲东北的人参、云南的三七、四川的黄连，但不逐一交代 287 味药各自的产地；第 4 章讲「火制」「水制」「水火共制」这几种方法，讲「酒制升提、姜制温散、醋制入肝」，但不逐一交代哪一味药该用哪种制法；第 8 章讲「剂量确定的依据」与「古今换算」，讲一两折今约 30g，但不逐一交代 287 味药的用量。</p>
+<p><strong>这不是教材偷懒，是总论与各论的分工。</strong> 总论给原则，各论给条目；原则写在类上，条目写在各药的「用法用量与使用注意」栏里。问题在于：当你想用总论的五章去逐条核对各论 287 味药时，会立刻发现两边写的不是同一层的东西——<strong>这就是本章那个 0% 的来历。</strong></p></div></div>
+  <div class="slide-foot"><span>6 / 17</span><span>body</span></div>
 </section>
 <section class="slide" data-i="6">
-  <div class="slide-inner"><div class="kicker">BUILD IT · 从零实现</div>
-                <div class="compact denser"><div class="codeblock"><div class="codeblock-lang">js</div><pre><code class="lang-js">// code/main.js 的取数方式：只读教材底本，不手抄统计
-const ZONGLUN = ['1', '2', '3', '4', '6', '7', '8'];           // 总论 7 章
-const GATES = [
-  { id: 'g1', name: '产地',       chapters: ['3'],    keys: ['道地', '产地'] },
-  { id: 'g2', name: '采集与贮藏', chapters: ['3'],    keys: ['采收', '贮藏', '走油', '霉变'] },
-  { id: 'g3', name: '炮制',       chapters: ['4'],    keys: ['炮制', '炙', '煅', '蒸'] },
-  { id: 'g4', name: '配伍',       chapters: ['6'],    keys: ['相须', '相使', '相畏', '相杀', '相恶', '相反', '单行'] },
-  { id: 'g5', name: '禁忌与剂量', chapters: ['7','8'], keys: ['禁用', '慎用', '十八反', '十九畏', '剂量'] },
-];
-// ① 规模：7 章字数/节/小节/段全部读 counts
-// ② 闸：在各自教材章正文里数关键字命中
-// ③ 剂量：只从第 8 章抽「数字-数字g」，不换算古制</code></pre></div>
-<p>第 ③ 步是本课最容易写错的地方。教材·第8章·8.1.2 虽然给了「古之一两，今用3g」这种折算参考，
-但同一段也写明汉代一两约今 15.6 g、明清一两约 37 g——<strong>三个数并存</strong>。
-所以本课只抽取教材已经写成克数的区间，不替古人做加减法：抽不到就留空，不推断。</p></div></div>
-  <div class="slide-foot"><span>7 / 8</span><span>build</span></div>
+  <div class="slide-inner"><div class="kicker">二、五道闸的通过率：0.0%、36.6%、99.3%、99.3%、99.0%</div>
+                <div class="compact dense"><p>五道闸的做法很朴素：为每一章列一组关键词，逐味药到它的三个字段（来源与性味归经、功效与主治、用法用量与使用注意）里做词面检索，命中即算通过。</p>
+<div class="table-wrap"><table><thead><tr><th>闸</th><th>对应章</th><th>关键词示例</th><th>通过</th><th>通过率</th></tr></thead><tbody><tr><td>G1 产地</td><td>第3章</td><td>道地、产地、主产、采收、采集、贮藏、贮存</td><td>0</td><td><strong>0.0%</strong></td></tr><tr><td>G2 炮制</td><td>第4章</td><td>炮制、生用、炙、炒、煅、蒸、煮、姜制、酒制、醋制、砂烫、制霜、煨、制用</td><td>105</td><td><strong>36.6%</strong></td></tr><tr><td>G3 配伍</td><td>第6章</td><td>相须、相使、相畏、相杀、相恶、相反、同用、合用、配</td><td>285</td><td>99.3%</td></tr><tr><td>G4 禁忌</td><td>第7章</td><td>禁忌、慎用、禁用、不宜、孕妇、有毒、小毒、大毒、忌</td><td>285</td><td>99.3%</td></tr><tr><td>G5 剂量</td><td>第8章</td><td>正则：数字＋g／克／钱／两／枚／片／ml</td><td>284</td><td>99.0%</td></tr></tbody></table></div></div></div>
+  <div class="slide-foot"><span>7 / 17</span><span>body</span></div>
 </section>
 <section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">二、五道闸的通过率：0.0%、36.6%、99.3%、99.3%、99.0%</div>
+                <div class="compact"><p><strong>G1 的 0.0% 是最干净的一条证据。</strong> 287 味药，一味都没有在「来源与性味归经」段里写产地。不是漏抽——麻黄那一条写的是「麻黄为麻黄科植物草麻黄的干燥草质茎。性温，味辛、微苦，归肺、膀胱经。生用发汗力强，炙用缓和。以茎粗、色淡黄绿、内心色红棕、手拉不脱节者为佳」——它写了科属、写了药材性状、写了「以……为佳」的优劣判据，唯独没有写「主产于河北、山西、内蒙古」。教材把产地统一收到了第 3 章的道地药材一节里。</p>
+<p>所以 G1 的 0% 不是「287 味药都缺产地信息」，而是<strong>「产地信息不在条目层，在类层」</strong>。一个把总论原则当成条目字段去检索的闸，注定恒为 0。这不是数据的问题，是闸的粒度问题。</p></div></div>
+  <div class="slide-foot"><span>8 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">二、五道闸的通过率：0.0%、36.6%、99.3%、99.3%、99.0%</div>
+                <div class="compact"><p><strong>G2 的 36.6% 是唯一有区分度的一闸。</strong> 105 味药的正文里出现「生用／炙／炒／煅」这类字样，182 味不出现。分布也合情理：炮制写得密的集中在有毒药、矿物药与根茎类（附子、半夏、大黄、麻黄、石膏一类），写得疏的集中在植物花叶与果实（菊花、金银花、枸杞子一类）。<strong>「这味药需不需要炮制」本身就是一条临床信息</strong>，36.6% 这个数把它测出来了。</p>
+<p><strong>G3、G4、G5 的 99% 是另一种情况：它们太容易通过，以至于测不出东西。</strong> G3 用单字「配」作线索——「配桂枝」「配白芍」「配茯苓」，几乎每一味药的功效段都有这种写法。285 味通过，含义只是「这味药写了配伍对象」，不是「这味药写清了相须相使还是相反相恶」。G4 把「有毒／小毒／大毒」也算作禁忌依据，于是凡毒药必然通过。G5 只要有「3-10g」这种区间就通过，283 味能解析出剂量区间。</p>
+<p><strong>三道 99% 的闸加一道 0% 的闸，平均下来是 3.341。这个数的含义必须拆开读，不能合并读。</strong></p></div></div>
+  <div class="slide-foot"><span>9 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">三、3.341 分不是「67% 完成度」：280 味的得分就是「3 加炮制闸」</div>
+                <div class="compact dense"><p>把逐味结果摊开，会看到一件比平均分更要紧的事：</p>
+<div class="table-wrap"><table><thead><tr><th>得分</th><th>味数</th><th>缺的闸</th><th>说明</th></tr></thead><tbody><tr><td>4</td><td>103</td><td>只有「产地」</td><td>103/103 全部如此，无一例外</td></tr><tr><td>3</td><td>179</td><td>177 味缺「产地＋炮制」，2 味缺「产地＋剂量」</td><td></td></tr><tr><td>2</td><td>5</td><td>蒲公英、雷公藤、血余炭、瓜蒂、土荆皮</td><td>另有一道非产地的闸失手</td></tr><tr><td>5</td><td>0</td><td>—</td><td>无一味全过</td></tr><tr><td>1 或 0</td><td>0</td><td>—</td><td>无一味全不过</td></tr></tbody></table></div>
+<p>分布只有三档：2、3、4。<strong>没有一味药拿到 5 分，也没有一味药掉到 1 分以下</strong>——因为 G1 恒定失手（所有人扣 1 分），G3／G4／G5 恒定通过（所有人得 3 分），剩下的只有 G2 在 0 与 1 之间跳。</p>
+<p>于是出现一个可以验证的恒等式：<strong>287 味里有 280 味的得分恰好等于「3 加炮制闸是否通过」。</strong> 7 个例外全部是 G3／G4／G5 里额外失手的：蒲公英、雷公藤、血余炭、瓜蒂、土荆皮（各 2 分），升药、炉甘石（各 3 分，剂量闸失手）。</p></div></div>
+  <div class="slide-foot"><span>10 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">三、3.341 分不是「67% 完成度」：280 味的得分就是「3 加炮制闸」</div>
+                <div class="compact"><p><strong>这条恒等式把「五道闸」的真实结构说透了：它不是五维评分，是一维评分加四个常数。</strong> 3.341 与 0.668 这两个数看起来在描述「五个方面的完整度」，实际描述的是「炮制这一栏的覆盖率，加了 3 分的底」。</p>
+<p>这带来两个必须说清的后果。</p>
+<p>其一，<strong>平均分不能跨数据源比较。</strong> 若把同一套闸换到另一本教材上，只要那本教材在各药条目里写了产地，平均分立刻跳到 4.3 以上——不是因为「资料更完整」，是因为 G1 这个常数变了。平均分只在同一套闸、同一套语料内可比。</p>
+<p>其二，<strong>99% 的闸几乎不携带信息。</strong> 一道通过率 99.3% 的闸，对区分「好记录」与「差记录」的贡献接近于零，却占了 5 分之 3 的分数权重。真正有分辨力的只有 G2 那一根。要把这套评分改成有意义的，第一步就该做权重：把恒定通过的闸降权或剔除，把有分布的闸提权。</p></div></div>
+  <div class="slide-foot"><span>11 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">四、剂量：26 个上界档、0.004g 到 120g，而 76.3% 落在 6–15g</div>
+                <div class="compact"><p>G5 的 99.0% 只说明「写了剂量」，不说明剂量是什么。把 287 味药的剂量区间抽出来，上界一共 26 个档：</p>
+<div class="codeblock"><div class="codeblock-lang">text</div><pre><code class="lang-text">0.004 0.03 0.06 0.1 0.2 0.3 0.35 0.5 0.6 1 1.5 2 3 4.5 5 6 9 10 12 15 20 24 25 30 60 120</code></pre></div>
+<p>最小 0.004g（砒石，0.002–0.004g，入丸散），最大 120g（黄芪大剂量 60–120g），两端相差 30,000 倍。</p>
+<p>但重尾不等于均匀。26 个档里，10g 一档独占 104 味、占可解析 283 味的 36.7%；6g、9g、10g、12g、15g 五档合计 216 味、占 76.3%。也就是说，<strong>四分之三的药，常用量的上界落在 6–15g 这个窄带里；真正远离这条带的是极少数——低端 9 味（≤0.6g，全是有毒或贵重药），高端 6 味（≥60g，全是甘淡平和的大宗药材）。</strong></p></div></div>
+  <div class="slide-foot"><span>12 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">四、剂量：26 个上界档、0.004g 到 120g，而 76.3% 落在 6–15g</div>
+                <div class="compact"><p>这条分布的形状与第 8 章「剂量的确定」一节讲的三条依据是吻合的：药材性质（质重、味厚者量小）、病情轻重（急重症量大）、用药目的（同一味药，发汗与平喘用量不同）。<strong>但分布也暴露了第 8 章没讲的一件事：剂量的两端几乎完全由「安全性」与「药材经济」决定，不是由「药效强度」决定的。</strong> 0.004g 的砒石与 120g 的黄芪，差的不只是 30,000 倍，是两种完全不同的用药逻辑——一个是「控制在致死量以下」，一个是「用足量以取效」。</p>
+<p>配伍禁忌这一侧的账更值得算。十八反与十九畏一共列出 40 对禁忌关系：</p>
+<ul><li>两味药都在教材 287 味选载内的，21 对；</li><li>因教材未收录其中一味而无法核对的，19 对（密陀僧、巴豆、水银、狼毒、白蔹、草乌、藜芦、赤石脂等 8 味不在选载内）；</li><li>这 21 对里，药的正文自己写出「不宜同用」的，<strong>只有 1 处</strong>——硫黄条写「不宜与朴硝（芒硝）同用（十九畏）」。</li></ul></div></div>
+  <div class="slide-foot"><span>13 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">四、剂量：26 个上界档、0.004g 到 120g，而 76.3% 落在 6–15g</div>
+                <div class="compact"><p>也就是说，<strong>G3 的 99.3% 与「禁忌有没有落到条目上」几乎无关：闸测的是「有没有写配伍对象」，而真正的配伍禁忌只有 1 处被写进了药味正文。</strong> 其余的 20 对，学生只能靠背第 7 章的歌诀去记。这不是教材的错——十八反十九畏本来就是在总论里以歌诀形式集中交代的——但它说明:<strong>任何试图用「条目覆盖率」衡量配伍完整度的做法，都会得到一个漂亮的假数字。</strong></p></div></div>
+  <div class="slide-foot"><span>14 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="14">
+  <div class="slide-inner"><div class="kicker">五、代价与边界</div>
+                <div class="compact dense"><ul><li><strong>G1 的 0% 是粒度错配，不是缺项。</strong> 产地信息在第 3 章以「类」的形式存在（道地药材），条目层没有写。把总论原则当条目字段检索，闸恒为 0。修的办法是改闸，不是补数据。</li><li><strong>3.341 分不是 67% 完成度。</strong> 287 味里 280 味的得分等于「3 加炮制闸」，五道闸实际是一维评分加四个常数。平均分只在同一套闸、同一套语料内可比。</li><li><strong>三道 99% 的闸几乎不携带信息。</strong> G3 用单字「配」、G4 把「有毒」算作禁忌、G5 只认「有数字」；三闸合计占 5 分之 3 的权重，却几乎不区分好坏记录。</li><li><strong>配伍的真实覆盖率远低于 99.3%。</strong> 40 对十八反十九畏里，两味都在选载内的 21 对中，只有 1 处（硫黄与芒硝）被写进药味正文。用条目覆盖率衡量配伍完整度，会得到假数字。</li><li><strong>剂量的 30,000 倍差不可跨药比较。</strong> 0.004g 与 120g 的差别来自安全性（砒石）与药材性质（黄芪），不是「效力差 3 万倍」；76.3% 的药落在 6–15g，才是这条分布的常识基线。</li></ul></div></div>
+  <div class="slide-foot"><span>15 / 17</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="15">
+  <div class="slide-inner"><div class="kicker">五、代价与边界</div>
+                <div class="compact"><ul><li><strong>本章不评价疗效，也不给炮制、配伍、剂量方案。</strong> 五道闸是「教材有没有写到」的词面检索，不是「写得对不对」的质量判定，更不是安全审查。砒石、升药、蟾酥一类大毒之品与十八反十九畏的实际处置，须以现行药典、教材与执业中医师的判断为准。</li></ul></div></div>
+  <div class="slide-foot"><span>16 / 17</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="16">
   <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
-  <div class="slide-foot"><span>8 / 8</span><span>disclaimer</span></div>
+  <div class="slide-foot"><span>17 / 17</span><span>disclaimer</span></div>
 </section>
 </div>
 <div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>

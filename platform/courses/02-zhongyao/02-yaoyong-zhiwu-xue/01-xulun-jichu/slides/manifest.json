@@ -1,31 +1,91 @@
 {
   "chapter": "01-xulun-jichu",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 17,
+  "segmentCount": 11,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 14
+      "chars": 30
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 73
+      "chars": 66
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 23
+      "chars": 151
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 117
+      "chars": 98
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 279
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 149
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 339
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 130
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 346
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 267
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 338
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 389
+    },
+    {
+      "n": 13,
+      "segment": 8,
+      "chars": 77
+    },
+    {
+      "n": 14,
+      "segment": 9,
+      "chars": 360
+    },
+    {
+      "n": 15,
+      "segment": 9,
+      "chars": 141
+    },
+    {
+      "n": 16,
+      "segment": 10,
+      "chars": 406
+    },
+    {
+      "n": 17,
+      "segment": 11,
       "chars": 52
     }
   ]

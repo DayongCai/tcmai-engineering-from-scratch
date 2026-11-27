@@ -56,12 +56,12 @@ chapters:
     title: 慢性痛的分水岭不在痛了多久，而在性质与失能是否已经改写
     video: rendered
     estimate_minutes: 10.38      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 8.7      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    measured_minutes: 8.70      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 06-zhenci-mazui
     title: 针麻能减的是药量，减不掉的是麻醉医师的判断
     video: rendered
-    estimate_minutes: 10.5      # = lesson.json estimateTotalSeconds ÷ 60
+    estimate_minutes: 10.50      # = lesson.json estimateTotalSeconds ÷ 60
     measured_minutes: 8.43      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 07-weishouqi
@@ -73,5 +73,5 @@ chapters:
   - slug: 08-anquan-zhengju
     title: 「有效」与「证据充分」是两列，并成一列就会说谎
     video: rendered
-    estimate_minutes: 11.2      # = lesson.json estimateTotalSeconds ÷ 60
+    estimate_minutes: 11.20      # = lesson.json estimateTotalSeconds ÷ 60
     measured_minutes: 8.55      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

@@ -18,7 +18,7 @@
       "spoken": "第 1 章 · 小儿推拿的独立，不靠手法成熟，靠「儿科」先成为一门学问",
       "estimateSeconds": 7,
       "audio": "001.mp3",
-      "audioSeconds": 3.456
+      "audioSeconds": 3.46
     },
     {
       "n": 2,
@@ -28,7 +28,7 @@
       "spoken": "「推拿揉掐，性与药同。用推即是用药，不明何可乱推」——《幼科铁镜·推拿代药赋》。这十六个字是小儿推拿的独立宣言：它承认自己不是「手艺」，而是需要辨证的处方行为，因此必须有穴、有法、有禁忌，不能凭手感施术。",
       "estimateSeconds": 22,
       "audio": "002.mp3",
-      "audioSeconds": 10.728
+      "audioSeconds": 10.73
     },
     {
       "n": 3,
@@ -38,7 +38,7 @@
       "spoken": "本章 4 个单元 8,422 汉字，引书 37 部、引用 58 次——12 章里最多（第 2 章 13 部 15 次，第 5 章 6 部 7 次）；可执行数值命中 0 处，68 个数字字符几乎全是年号与生卒年。于是这一章成了全书最矛盾的一章：它是引用密度最高的一章，也是唯一给不出一个可执行参数的一章。 一门以「手」为工具的技术，凭什么用一部文献史来开场？",
       "estimateSeconds": 33,
       "audio": "003.mp3",
-      "audioSeconds": 8.712
+      "audioSeconds": 8.71
     },
     {
       "n": 4,
@@ -48,7 +48,7 @@
       "spoken": "环境逼迫（成人推拿的穴位按骨度分寸与骨性标志取，小儿囟门未闭、骨度不足、又不能久坐配合，同一套定位方法在这个身体上失效；失效不是手法的问题，是「小儿是不是缩小的大人」这个问题没被回答）+ 知识积累（宋元儿科五脏辨证把「小儿自有其生理病理」立成命题，明清刻书业把散在方书里的零散经验在四年内收成三部专著，清代再把手法收成八法——三次积累各解决一层，缺一层就不成「学」）",
       "estimateSeconds": 40,
       "audio": "004.mp3",
-      "audioSeconds": 23.976
+      "audioSeconds": 23.98
     },
     {
       "n": 5,
@@ -59,7 +59,7 @@
       "spoken": "能说出小儿推拿为什么必须等到明清才成体系，而不是「古已有之、只是没写下来」\n能按刊行年排出三部明代专著，并各指出它解决了哪个缺口\n能复述「推拿代药」的四组对应，并说明它带来的风险\n能说出《厘正按摩要术》把手法收成哪八法，以及这次收束为什么等于「可教学」\n能区分「现存最早」与「首创」，并说明这个区别在引用时为什么必须交代",
       "estimateSeconds": 34,
       "audio": "005.mp3",
-      "audioSeconds": 11.304
+      "audioSeconds": 11.3
     },
     {
       "n": 6,
@@ -91,14 +91,10 @@
       "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11,
       "audio": "008.mp3",
-      "audioSeconds": 11.304
+      "audioSeconds": 11.3
     }
   ],
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioMeasuredSeconds": 699.6,
-  "estimateVsActual": {
-    "estimateMinutes": 13.63,
-    "measuredMinutes": 11.66,
-    "ratio": 0.855
-  }
+  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
 }

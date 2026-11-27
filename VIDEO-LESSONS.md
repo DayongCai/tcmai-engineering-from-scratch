@@ -5,11 +5,11 @@
 | 指标 | 值 |
 |---|---|
 | 学科 | 189 |
-| 有网络视频/音频语料 | **33** |
-| 无（缺口） | **156** |
-| 讲次合计 | 688 |
+| 有网络视频/音频语料 | **55** |
+| 无（缺口） | **134** |
+| 讲次合计 | 916 |
 | 逐句语句合计 | 177,254 |
-| 时长合计 | 205.8 小时 |
+| 时长合计 | 245.1 小时 |
 
 ## 一、有语料的学科
 
@@ -21,6 +21,28 @@
 | 金匮要略 | 01-zhongyi | 5 | platform | 24 | — | 5.7h | [教案](departments/01-zhongyi/08-jingui-yaolue/video/教案.md) |
 | 中医内科学 | 01-zhongyi | 5 | platform | 14 | — | 4.6h | [教案](departments/01-zhongyi/10-zhongyi-neike-xue/video/教案.md) |
 | 中药毒理学 | 02-zhongyao | 6 | platform | 10 | — | 1.3h | [教案](departments/02-zhongyao/21-zhongyao-du-li-xue/video/教案.md) |
+| 经络学 | 03-zhenjiu | 2 | platform | 10 | — | 2.2h | [教案](departments/03-zhenjiu/01-jingluo-xue/video/教案.md) |
+| 腧穴学 | 03-zhenjiu | 3 | platform | 12 | — | 1.9h | [教案](departments/03-zhenjiu/02-shuxue-xue/video/教案.md) |
+| 针灸医籍选 | 03-zhenjiu | 3 | platform | 8 | — | 1.8h | [教案](departments/03-zhenjiu/03-zhenjiu-yiji-xuan/video/教案.md) |
+| 中医气功学 | 03-zhenjiu | 3 | platform | 7 | — | 1.6h | [教案](departments/03-zhenjiu/04-qigong-xue/video/教案.md) |
+| 推拿学 | 03-zhenjiu | 4 | platform | 10 | — | 2.0h | [教案](departments/03-zhenjiu/05-tuina-xue/video/教案.md) |
+| 推拿手法学 | 03-zhenjiu | 4 | platform | 8 | — | 0.9h | [教案](departments/03-zhenjiu/06-tuina-shoufa-xue/video/教案.md) |
+| 刺法灸法学 | 03-zhenjiu | 4 | platform | 10 | — | 1.7h | [教案](departments/03-zhenjiu/07-cifa-jiufa-xue/video/教案.md) |
+| 针灸治疗学 | 03-zhenjiu | 5 | platform | 12 | — | 2.2h | [教案](departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/video/教案.md) |
+| 康复医学基础 | 03-zhenjiu | 5 | platform | 8 | — | 1.4h | [教案](departments/03-zhenjiu/09-kangfu-yixue-jichu/video/教案.md) |
+| 实验针灸学 | 03-zhenjiu | 6 | platform | 11 | — | 2.2h | [教案](departments/03-zhenjiu/10-shiyan-zhenjiu-xue/video/教案.md) |
+| 物理治疗与运动康复 | 03-zhenjiu | 6 | platform | 8 | — | 1.4h | [教案](departments/03-zhenjiu/11-wuli-zhiliao/video/教案.md) |
+| 耳穴诊治学 | 03-zhenjiu | 6 | platform | 8 | — | 1.2h | [教案](departments/03-zhenjiu/12-erxue-zhenduan-xue/video/教案.md) |
+| 针刀医学 | 03-zhenjiu | 7 | platform | 8 | — | 0.5h | [教案](departments/03-zhenjiu/13-zhendao-yixue/video/教案.md) |
+| 针灸镇痛与麻醉 | 03-zhenjiu | 7 | platform | 8 | — | 1.3h | [教案](departments/03-zhenjiu/14-zhenjiu-zhentong-mazui/video/教案.md) |
+| 中医康复学 | 03-zhenjiu | 7 | platform | 10 | — | 1.9h | [教案](departments/03-zhenjiu/15-zhongyi-kangfu-xue/video/教案.md) |
+| 针灸学 | 03-zhenjiu | 5 | platform | 30 | — | 1.7h | [教案](departments/03-zhenjiu/16-zhenjiu-xue/video/教案.md) |
+| 各家针灸学说 | 03-zhenjiu | 6 | platform | 12 | — | 2.6h | [教案](departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/video/教案.md) |
+| 推拿功法学 | 03-zhenjiu | 4 | platform | 12 | — | 2.7h | [教案](departments/03-zhenjiu/18-tuina-gongfa-xue/video/教案.md) |
+| 推拿治疗学 | 03-zhenjiu | 7 | platform | 12 | — | 2.1h | [教案](departments/03-zhenjiu/19-tuina-zhiliao-xue/video/教案.md) |
+| 小儿推拿学 | 03-zhenjiu | 8 | platform | 12 | — | 1.6h | [教案](departments/03-zhenjiu/20-xiaoer-tuina-xue/video/教案.md) |
+| 针灸临床轮转 | 03-zhenjiu | 9 | platform | 6 | — | 0.9h | [教案](departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/video/教案.md) |
+| 针灸毕业设计与知识移交 | 03-zhenjiu | 10 | platform | 6 | — | 0.7h | [教案](departments/03-zhenjiu/22-zhenjiu-biye-sheji/video/教案.md) |
 | 中医运动学 | 04-gushang | 4 | platform | 8 | — | 1.2h | [教案](departments/04-gushang/01-zhongyi-yundong-xue/video/教案.md) |
 | 骨伤解剖学 | 04-gushang | 4 | platform | 10 | — | 1.7h | [教案](departments/04-gushang/02-yao-shang-jiepou/video/教案.md) |
 | 中医骨伤科学基础 | 04-gushang | 5 | platform | 10 | — | 1.7h | [教案](departments/04-gushang/03-gushang-kexue-jichu/video/教案.md) |
@@ -46,8 +68,8 @@
 | 生理学 | 09-jichu | 2 | platform | 11 | — | 1.5h | [教案](departments/09-jichu/06-shengli-xue/video/教案.md) |
 | 局部解剖学 | 09-jichu | 3 | platform | 9 | — | 2.0h | [教案](departments/09-jichu/08-jubu-jiepou-xue/video/教案.md) |
 | 医学遗传学 | 09-jichu | 3 | platform | 12 | — | 1.8h | [教案](departments/09-jichu/09-yixue-yichuan-xue/video/教案.md) |
-| 病理生理学 | 09-jichu | 4 | platform | 53 | — | 22.6h | [教案](departments/09-jichu/11-bingli-shengli-xue/video/教案.md) |
-| 药理学 | 09-jichu | 4 | platform | 49 | — | 18.0h | [教案](departments/09-jichu/12-yaoli-xue/video/教案.md) |
+| 病理生理学 | 09-jichu | 4 | platform | 53 | — | 24.1h | [教案](departments/09-jichu/11-bingli-shengli-xue/video/教案.md) |
+| 药理学 | 09-jichu | 4 | platform | 49 | — | 19.1h | [教案](departments/09-jichu/12-yaoli-xue/video/教案.md) |
 
 ## 二、缺口（按院系）
 
@@ -55,7 +77,7 @@
 |---|--:|--:|--:|
 | 01-zhongyi | 23 | 5 | 18 |
 | 02-zhongyao | 21 | 1 | 20 |
-| 03-zhenjiu | 22 | 0 | 22 |
+| 03-zhenjiu | 22 | 22 | 0 |
 | 04-gushang | 17 | 16 | 1 |
 | 05-huli | 27 | 0 | 27 |
 | 06-guanli | 26 | 0 | 26 |

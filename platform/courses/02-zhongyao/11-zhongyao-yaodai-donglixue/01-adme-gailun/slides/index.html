@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"/>
-<title>第 1 章 · 中药药代动力学概论 · 幻灯片</title>
+<title>第 1 章 · 药代动力学先问成分能不能被追到 · 幻灯片</title>
 <style>
 
 :root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
@@ -59,24 +59,80 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <body>
 <div id="deck">
 <section class="slide" data-i="0">
-  <div class="slide-inner"><h1 class="big">第 1 章 · 中药药代动力学概论</h1></div>
-  <div class="slide-foot"><span>1 / 5</span><span>title</span></div>
+  <div class="slide-inner"><h1 class="big">第 1 章 · 药代动力学先问成分能不能被追到</h1></div>
+  <div class="slide-foot"><span>1 / 14</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「《中药药代动力学·中药药代动力学概论》」——派生课：篇名为本课程章名，出处见 units.json 的 source 字段。本章要回答的是：中药药代动力学概论的核心判据是什么。</blockquote></div>
-  <div class="slide-foot"><span>2 / 5</span><span>motto</span></div>
+  <div class="slide-inner"><blockquote class="motto">「观其脉证，知犯何逆，随证治之。」——《伤寒论·辨太阳病脉证并治》。同一味药落在不同的人身上、不同的证候里，反应可以相反——这是个体差异最早的说法。本章要问的是：这条差异落到血药浓度上，还看不看得见。</blockquote></div>
+  <div class="slide-foot"><span>2 / 14</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
-  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">先立 ADME 框架与中药的特殊性。</p></div>
-  <div class="slide-foot"><span>3 / 5</span><span>problem</span></div>
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">一个十味复方，一针质谱能扫出几百个峰，真正能被定量跟踪、算得出参数的常常只有一两个；而审评要看、说明书要写的，恰恰是这一两个的数。看得见的成分未必起效，起效的成分又常常落在定量下限以下——这不是仪器不够好，是这门学问的对象本来就选不干净。</p></div>
+  <div class="slide-foot"><span>3 / 14</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
-  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（派生课的判断力来自「把父课的片段重新排成一条决策链」）+ 知识积累（本章 5 单元 17,684 汉字；三辨主 <strong>成分与转运 97</strong>；四位面（观察视角）主 <strong>体内处置 86</strong>；引书 <strong>11 部 21 次</strong>；数值类命中 0）</p></div>
-  <div class="slide-foot"><span>4 / 5</span><span>roots</span></div>
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（中成药要报药代、剂型改革要说清「改了什么」，一句「传统工艺」挡不住审评的追问）+ 知识积累（LC-MS/MS 把定量下限从微克推到皮克级，肠菌—肝—转运体这条暗线才第一次看得见）</p></div>
+  <div class="slide-foot"><span>4 / 14</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
+  <div class="slide-inner"><div class="kicker">一、ADME 是四个判据，不是四个名词</div>
+                <div class="compact"><p>吸收、分布、代谢、排泄四个词几乎每本教材开篇都写，背下来不值钱。值钱的是它们各自<strong>在回答哪一个问题</strong>，以及回答不上来时链条断在哪一环。</p>
+<div class="table-wrap"><table><thead><tr><th>环节</th><th>要回答的问题</th><th>关键量</th><th>中药的常见麻烦</th></tr></thead><tbody><tr><td>吸收</td><td>有多少、多快进了体循环</td><td>生物利用度 F、吸收速率常数 ka</td><td>苷类常需肠菌水解成苷元才吸收；汤剂里成分已先行转化</td></tr><tr><td>分布</td><td>去了哪些组织、和什么结合</td><td>表观分布容积 Vd、游离分数 fu</td><td>成分多，血浆蛋白上互相挤位</td></tr><tr><td>代谢</td><td>变成了什么，产物还有没有活性</td><td>清除率 CL、代谢物暴露</td><td>产物可能更毒也可能更弱：双酯型生物碱脱酯后毒性下降，而部分苷类水解成苷元后活性反而增强</td></tr><tr><td>排泄</td><td>从哪条路出去、会不会被重吸收</td><td>肾清除率 CLr、胆汁排泄</td><td>肝肠循环造成双峰，二次吸收把曲线拖长</td></tr></tbody></table></div></div></div>
+  <div class="slide-foot"><span>5 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">一、ADME 是四个判据，不是四个名词</div>
+                <div class="compact"><p>四个环节串起来，才有一条血药浓度—时间曲线；曲线的形状是参数的原料。所以「学 ADME」不是记四个中文词，而是记住四个可判定的问题：<strong>进没进去、去了哪里、变成什么、怎么出来</strong>。任何一个答不上来，后面的参数就只能靠假设。</p>
+<p>这里必须提前说清一个容易被跳过的前提：<strong>参数不是自然常数，是实验条件下的量</strong>。同一味药，灌胃与静脉给，算出来的表观分布容积可以差一个量级；同一成分，用房室模型拟合与用非房室矩量法处理，末端相取三点还是五点，半衰期就能差出两三成。凡引用一个数，必须同时引用三件事——剂量口径、采样窗口、计算方法。少一件，这个数就不可比。</p></div></div>
+  <div class="slide-foot"><span>6 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">二、中药的三重特殊性，逼出了两条路线</div>
+                <div class="compact dense"><p>化学药做药代，默认三件事：活性成分已知、血中浓度与效应相关、成分能测到。中药把这三条同时打破：一个复方十几味药、几百个可检出成分，谁在起效说不清；不少效应（扶正、调节菌群、黏膜免疫）根本不以血中浓度为中介；而含量低的成分在生物样本里常常低于定量下限。</p>
+<p>被逼出来的第一条路是<strong>血药浓度法</strong>：直接测血浆（或组织、尿液）中的成分浓度，拟合曲线、算参数。它的成立条件有两条，缺一不可——成分可测，且血中浓度与效应之间确实存在可描述的关系。它的死穴也很明确：测到的成分未必是起效的成分，测不到的成分未必不起效。</p>
+<p>第二条路是<strong>生物效应法</strong>：不测浓度，测效应。经典做法是药物累积法（也称 Smolen 法）——以动物急性毒性的死亡率作为效应强度，按剂量—效应关系把效应折回「体存量」，再由体存量随时间的变化反推表观参数。此外还有效价法、菌量法（用于抗菌药）、以血压或瞳孔变化为指标的方法。</p>
+<p>两条路的适用判据可以写死：</p></div></div>
+  <div class="slide-foot"><span>7 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">二、中药的三重特殊性，逼出了两条路线</div>
+                <div class="compact"><ul><li>成分可测、浓度与效应有稳定关系 → 血药浓度法，结论能落到具体成分的参数上。</li><li>成分不可测，或效应本身就是复方整体（免疫调节、扶正固本）→ 生物效应法，但结论只能写成「效应时程」与「表观参数」，不能冒充某成分的半衰期。</li></ul>
+<p>最常见的错误是把两条路的结论混着用：拿生物效应法算出的「表观半衰期」，去和文献里某成分的血浆半衰期并列比较。两者量的不是同一件事，放在一张表里就是伪造可比性。</p></div></div>
+  <div class="slide-foot"><span>8 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">三、谁有资格当「代表」：药代标记物的五条门槛</div>
+                <div class="compact dense"><p>多成分体系不可能每个成分都算参数，于是要选代表——药代标记物（PK marker）。选错代表，整章结论跟着位移，所以门槛必须写出来：</p>
+<ol><li><strong>可测</strong>：有专属性足够的分析方法，定量下限低于该成分在生物样本中的稳态浓度。</li><li><strong>相关</strong>：本身有活性，或是活性成分的前体（如苷类经肠菌水解后的苷元）。</li><li><strong>成比例</strong>：在考察剂量范围内，暴露量与剂量近似成比例；不呈线性时，参数只能按实测剂量报告。</li><li><strong>够量</strong>：含量足以在血浆中稳定检出，且在体内不被迅速转化到测不出。</li><li><strong>来源清楚</strong>：不是辅料、不是煎煮器具溶出物、不是样品前处理带进来的干扰。</li></ol>
+<p>五条同时满足的成分，一个复方里往往只有一两个。这正是本章开头那个矛盾的来源，也解释了为什么大量中药药代研究集中在少数几个「明星成分」上——人参皂苷、黄芩苷、葛根素、甘草酸、丹参酮ⅡA。研究者选它们，一半因为活性明确，一半因为测得到。后一半理由不该被隐瞒：<strong>测量便利本身就是选择偏倚的来源</strong>。</p></div></div>
+  <div class="slide-foot"><span>9 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">三、谁有资格当「代表」：药代标记物的五条门槛</div>
+                <div class="compact"><p>现实中的折中办法是「主成分定量 + 次要活性成分定性」：对一两个主成分算全参数，对另外几个只报暴露比（成分间曲线下面积之比），用比值刻画配伍带来的位移。这个做法诚实，但结论的适用范围窄——它描述的是「这几条线之间的关系」，不是「全方的药代」。</p></div></div>
+  <div class="slide-foot"><span>10 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">四、三代工具箱，换掉的是问题本身</div>
+                <div class="compact dense"><p>这门学科在中国的发展，大致可以按工具分三代，每一代带来的不是「更准」，而是<strong>能问的问题变了</strong>。</p>
+<p>第一代，八十年代到九十年代：高效液相色谱配紫外或荧光检测，定量下限在微克每毫升级，一次测一个成分，血浆样本动辄一两毫升。能问的问题：这个成分的半衰期多长、曲线下面积多大、口服后多久达峰。答得出的成分，都是含量高的那几个。</p>
+<p>第二代，二〇〇〇年以后：液相色谱—串联质谱，多反应监测模式下定量下限降到皮克每毫升级，样本量降到几十微升，一次能同时测十几种成分。能问的问题从「有没有」变成「比例是多少」——配伍之后，A 成分与 B 成分的暴露比有没有变、变成多少。微透析与干血点采样也在这时进入中药研究，把「同一只动物连续取样」变成可能。</p>
+<p>第三代，二〇一〇年以后：转运体、肠道菌群、生理药动学模型与类器官/微生理系统。问题变成「配伍究竟改动了哪一环」——是抑制了外排转运体，还是改变了肠菌的酶活，还是影响了肝药酶的表达。</p></div></div>
+  <div class="slide-foot"><span>11 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">四、三代工具箱，换掉的是问题本身</div>
+                <div class="compact"><p>三代工具对应三种论文，也对应三种误用。用第二代的灵敏度去回答第一代的问题（只报一个成分的半衰期），浪费；用第一代的样本量去支撑第三代的结论（几只动物、一条曲线），不成立。判断一篇中药药代研究靠不靠谱，先看它的工具与结论是否匹配，再看它有没有交代那三件事：剂量口径、采样窗口、计算方法。</p></div></div>
+  <div class="slide-foot"><span>12 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><ul><li><strong>参数换了条件就换值。</strong> 本课出现的任何参数，都只在它被测定时的剂量、基质、采样方案下成立。跨研究直接比半衰期，是中药药代文献里最常见的错误，本章不提供任何可用于横向比较的数值表。</li><li><strong>血中浓度解释不了全部效应。</strong> 中药有相当一部分作用发生在肠腔、黏膜免疫与菌群层面（如某些止泻、调菌的方），这些效应不以血药浓度为中介，血药浓度法对它们天然失明。</li><li><strong>生物效应法给的是表观量。</strong> 死亡率折回的「体存量」不等于真实血浓度，它把吸收、分布、代谢、排泄全压进一个黑箱；结论只能写到「效应时程」这一层。</li><li><strong>明星成分不等于全方。</strong> 以甘草酸代表整个复方、以葛根素代表葛根汤，结论只在那一成分上成立。凡见到「某方半衰期为若干小时」的表述，先问它测的是哪个成分。</li><li><strong>本课是派生课。</strong> 正文母题取自父课单元，两课汉字不可相加——那是同一批字被读了第二遍；章节标题是本课按主题重排后的判断句，不是父课原章名。</li><li><strong>本章不给剂量与方案。</strong> 药代参数不是给药依据，个体化用药须由医师依据病情、肝肾功能与合并用药决定。</li></ul></div></div>
+  <div class="slide-foot"><span>13 / 14</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="13">
   <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
-  <div class="slide-foot"><span>5 / 5</span><span>disclaimer</span></div>
+  <div class="slide-foot"><span>14 / 14</span><span>disclaimer</span></div>
 </section>
 </div>
 <div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>

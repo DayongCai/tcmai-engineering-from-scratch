@@ -60,28 +60,103 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <div id="deck">
 <section class="slide" data-i="0">
   <div class="slide-inner"><h1 class="big">第 1 章 · 方剂与治法：方从法出</h1></div>
-  <div class="slide-foot"><span>1 / 6</span><span>title</span></div>
+  <div class="slide-foot"><span>1 / 16</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「方从法出，法随证立」——教材·第2章·2.1.1（《方剂学·第2章·2.1》）</blockquote></div>
-  <div class="slide-foot"><span>2 / 6</span><span>motto</span></div>
+  <div class="slide-inner"><blockquote class="motto">「论治病之方，则又以汗吐下和温清消补八法尽之」——《医学心悟·医门八法》。八法是治法的骨架，不是方剂的分类；本章要回答的，就是「以法统方」这条边为什么不能省。</blockquote></div>
+  <div class="slide-foot"><span>2 / 16</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
   <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">你能背出麻黄汤四味药，但被问「你的治法是什么」，答案往往只是一个方名。治法说不出来，就谈不上「随证加减」——因为加减的尺度由法决定，不由方决定。</p></div>
-  <div class="slide-foot"><span>3 / 6</span><span>problem</span></div>
+  <div class="slide-foot"><span>3 / 16</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
   <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（跟诊时老师问「你打算怎么治」，学生报方名、报不出法，再追问一句兼夹就断线）+ 知识积累（治法分层 × 八法的可数边界 = 一条能落到方剂上的法，而不是一个漂亮的词）</p></div>
-  <div class="slide-foot"><span>4 / 6</span><span>roots</span></div>
+  <div class="slide-foot"><span>4 / 16</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
   <div class="slide-inner"><div class="kicker">学习目标</div>
-                <div class="compact"><ul><li>能把「方从法出，法随证立」拆成两个方向，并各举一个反例说明违反它会怎样</li><li>能说清治法的四层结构（治则 → 治疗大法 → 具体治法 → 方药），并指出八法在这四层里的位置</li><li>能用 <code>formulas.json</code> 现算八法的分布，得到 52 首属八法、62 首不属八法，并解释这 62 首为什么不是「无法」</li><li>能说明「一法多方」在汗法内部的三节分野（辛温 4 / 辛凉 3 / 扶正 1），为第 3 章解表剂做准备</li><li>能指出按「章」判法与按「节名」判法的差别，以及后者会造成的虚增（清法 13 → 18）</li></ul></div></div>
-  <div class="slide-foot"><span>5 / 6</span><span>objectives</span></div>
+                <div class="compact"><ul><li>能把「方从法出，法随证立」拆成两个方向，并各举一个反例说明违反它会怎样</li><li>能说清治法的四层结构（治则 → 治疗大法 → 具体治法 → 方药），并指出八法在这四层里的位置</li><li>能从本章正文的八法表数出分布：52 首属八法、62 首不属八法，并解释这 62 首为什么不是「无法」</li><li>能说明「一法多方」在汗法内部的三节分野（辛温 4 / 辛凉 3 / 扶正 1），为第 3 章解表剂做准备</li><li>能指出按「章」判法与按「节名」判法的差别，以及后者会造成的虚增（清法 13 → 18）</li></ul></div></div>
+  <div class="slide-foot"><span>5 / 16</span><span>objectives</span></div>
 </section>
 <section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">正文</div>
+                <div class="compact dense"><h3 id="1-1-两个方向-不是一句话">1.1 两个方向，不是一句话</h3>
+<p>教材把方与法的关系压成八个字，读的时候容易当成一句顺口的口号。其实它是双向的：向右是「证 → 法」，向左是「法 → 方」。</p>
+<div class="codeblock"><div class="codeblock-lang">text</div><pre><code class="lang-text">证候 ──法随证立──▶ 治法 ──方从法出──▶ 方剂 ──▶ 药味与用量</code></pre></div>
+<p>「法随证立」约束的是立法：证变则法变，法不能凭成见先定。教材讲得很直白——</p>
+<blockquote><p>「方剂则是治法的外在形式与具体落实」——教材·第2章·2.1.1</p></blockquote>
+<p>所以方剂不是法的举例，而是法的载体。把这句话反过来读，就得到本章的判据：<strong>看一首方，先问它落实的是哪一条法</strong>。答不出来，说明这首方在你脑子里还是一个药味清单，不是一条治法。</p>
+<p>完整链条教材写作「辨证求因，审因论治，据证立法，依法选方，随方遣药」——教材·第2章·2.1.1。五个环节里，「法」处在正中：左边承接辨证结论，右边决定选方遣药。</p>
+<h3 id="1-2-治法的四层-与那句最容易背错的话">1.2 治法的四层，与那句最容易背错的话</h3>
+<p>治法不是一个平面上的词，它有四层：</p></div></div>
+  <div class="slide-foot"><span>6 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">正文</div>
+                <div class="compact dense"><div class="table-wrap"><table><thead><tr><th>层次</th><th>内容</th><th>适用范围</th></tr></thead><tbody><tr><td>治则</td><td>治病求本、调整阴阳、扶正祛邪、三因制宜</td><td>一切病证</td></tr><tr><td>治疗大法</td><td>汗、吐、下、和、温、清、消、补</td><td>一大类病机</td></tr><tr><td>具体治法</td><td>辛温解表、辛凉解表、清热泻火、温中祛寒</td><td>具体证候</td></tr><tr><td>方药</td><td>方剂、药味、用量、剂型</td><td>具体处方</td></tr></tbody></table></div>
+<p>八法在第二层。学生最容易错的地方，是把八法当成「八个方类」——它是八个<strong>治法大类</strong>，方类只是它在教材目录上的投影。教材给的定位是「汗、吐、下、和、温、清、消、补八法，即所谓医门八法」——教材·第2章·2.1.1。</p>
+<p>层次感带来的第一个好处是：你知道自己漏了哪一层。只会说「解表」，漏掉的是具体治法（辛温还是辛凉）；只会说「麻黄汤」，漏掉的是上面三层。</p>
+<h3 id="1-3-八法可数-52-首怎么分">1.3 八法可数：52 首怎么分</h3>
+<p>教材各论按治法分章，所以「一首方属于哪一法」这件事是可以直接数出来的，不需要逐首判读。把正文那张八法表逐行读出来，得到：</p></div></div>
+  <div class="slide-foot"><span>7 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">正文</div>
+                <div class="compact dense"><div class="table-wrap"><table><thead><tr><th>法</th><th>教材章</th><th>方数</th><th>代表方</th></tr></thead><tbody><tr><td>汗</td><td>第5章 解表剂</td><td>8</td><td>麻黄汤、桂枝汤、九味羌活汤</td></tr><tr><td>吐</td><td>第22章 22.2 涌吐剂</td><td>1</td><td>瓜蒂散</td></tr><tr><td>下</td><td>第6章 泻下剂</td><td>6</td><td>大承气汤、大黄牡丹汤、温脾汤</td></tr><tr><td>和</td><td>第7章 和解剂</td><td>5</td><td>小柴胡汤、蒿芩清胆汤、逍遥散</td></tr><tr><td>温</td><td>第10章 温里剂</td><td>5</td><td>理中丸、小建中汤、吴茱萸汤</td></tr><tr><td>清</td><td>第8章 清热剂</td><td>13</td><td>白虎汤、竹叶石膏汤、清营汤</td></tr><tr><td>消</td><td>第21章 消食剂</td><td>3</td><td>保和丸、枳实导滞丸、健脾丸</td></tr><tr><td>补</td><td>第12章 补益剂</td><td>11</td><td>四君子汤、参苓白术散、补中益气汤</td></tr><tr><td><strong>合计</strong></td><td>——</td><td><strong>52</strong></td><td>占 114 首的 45.6%</td></tr></tbody></table></div>
+<p>程序里有一行硬对账：八法各栏加起来必须等于 52，52 加上法外的 62 必须等于 114。数字对不上就报错，不给自己留「差不多」的余地。</p></div></div>
+  <div class="slide-foot"><span>8 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">正文</div>
+                <div class="compact"><p><strong>为什么按章判、不按节名判。</strong> 教材的章名就是治法名，这是最稳的锚；节名会骗人。「清热祛湿剂」「清热化痰剂」两个节名里都有「清热」二字，若按节名匹配，祛湿剂与祛痰剂里的方会被算进清法，清法会从 13 虚增到 18。治法归属一旦虚增，后面所有的比例、比较、类方分组都跟着错——而且错得没有痕迹。这是本课程最早踩到的坑，写在这里是提醒：<strong>判据要选最粗粒度的那个</strong>，粗粒度错了容易发现，细粒度错了很难发现。</p>
+<h3 id="1-4-另外-62-首-八法是纲-不是全集">1.4 另外 62 首：八法是纲，不是全集</h3>
+<p>114 首里有 62 首不属八法（54.4%）。它们散在教材的第 9、11、13、14、15、16、17、18、19、20、22、23 章：祛暑 3、表里双解 2、固涩 4、安神开窍 5、理气 7、理血 9、治风 6、治燥 5、祛湿 9、祛痰 7、驱虫 1、治痈疡 4。</p></div></div>
+  <div class="slide-foot"><span>9 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">正文</div>
+                <div class="compact"><p>这里必须说清一件事：<strong>「不属八法」不等于「无法」。</strong> 它是本章判定规则的产物——判定规则是「按教材章归属」，八法只对应八个章，其余章自然落到法外。教材并没有说这些方没有治法，恰恰相反，祛湿有化湿、燥湿、利湿之分，理血有止血、活血、化瘀之别，法比八法细得多。</p>
+<p>第 22 章是这条规则唯一的显影剂：一章两节，22.1 驱虫剂（法外 1 首）、22.2 涌吐剂（吐法 1 首）。同一章、同一张表，出了两种归属。这一首瓜蒂散是「吐」法在 114 首里的全部家当——八法之中最单薄的一法，也正好是安全性最差的一法，第 2 章教材对吐法的禁忌写得比适应证还长，这不是偶然。</p>
+<p>从数据上看，八法覆盖 8 个教材章、52 首方；法外覆盖 12 个教材章、62 首方。<strong>方剂学的目录重心其实在八法之外</strong>，只是八法提供了第一层抓手。学生若把八法当成全集，遇到祛湿、理血就无处安放，这是很常见的塌陷点。</p>
+<h3 id="1-5-一法多方-汗法-8-首的三节">1.5 一法多方：汗法 8 首的三节</h3></div></div>
+  <div class="slide-foot"><span>10 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">正文</div>
+                <div class="compact dense"><p>「法同而方异」在教材里的表述是「法同而方异，即一法之下可统多首方剂」——教材·第2章·2.1.1。汗法是最干净的样本：8 首，正好是第 5 章全部，分三节。</p>
+<div class="table-wrap"><table><thead><tr><th>节</th><th>方数</th><th>方</th></tr></thead><tbody><tr><td>5.1 辛温解表剂</td><td>4</td><td>麻黄汤、桂枝汤、九味羌活汤、小青龙汤</td></tr><tr><td>5.2 辛凉解表剂</td><td>3</td><td>银翘散、桑菊饮、麻杏石甘汤</td></tr><tr><td>5.3 扶正解表剂</td><td>1</td><td>败毒散</td></tr></tbody></table></div>
+<p>同一法之下为什么要分三节？因为「汗」只规定了方向（从表解），没规定寒温，也没规定患者虚实。教材对汗法的定义是「使在表之邪随汗而解的一类治法」——教材·第2章·2.2.1，这句话里没有「温」也没有「凉」，分野留在了下一层。</p>
+<p>这正是第 2 章与第 3 章的接缝：本章只到「汗法」为止，第 3 章进去看辛温与辛凉如何在同一味药（麻黄）上分道。麻黄出现在 3 首方里——麻黄汤、小青龙汤（辛温）与麻杏石甘汤（辛凉）——同一味药跨了寒温两侧。药性不能单独决定法，配伍环境才能。</p></div></div>
+  <div class="slide-foot"><span>11 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">正文</div>
+                <div class="compact dense"><p>顺带说清吐法的位置：教材论吐法引「其高者，因而越之」——教材·第2章·2.2.1。这句给的是方向（因势利导，向上越出），不是操作。方向与操作的分离，正是「法」与「方」的分离。</p>
+<h3 id="1-6-把-以法统方-写成一次分组">1.6 把「以法统方」写成一次分组</h3>
+<p>抽象地说「以法统方」，谁都会点头；写成代码，就必须回答「怎么分组、组内怎么排序、分不进去的怎么办」。本章的做法只有三步：</p>
+<ol><li>先按 <code>fa</code> 分组：有 <code>fa</code> 的进八法八组，<code>fa</code> 为空的单列一组；</li><li>每组数方数，与教材章名给出的方数对账；</li><li>对 <code>fa</code> 为空的，按教材章再分一次，得到 12 个章组。</li></ol>
+<p>第三步是关键。如果只做前两步，62 首会变成一个「其他」黑箱，黑箱里有什么没人知道；按章再分一次，它们立刻变成 12 个有名字的组，祛暑、理血、治燥各自归位。<strong>分组的意义不在于分类，而在于让「归不进去的东西」显形。</strong></p></div></div>
+  <div class="slide-foot"><span>12 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">正文</div>
+                <div class="compact"><p>「治法实为方剂学之纲，方剂则是治法之目，纲举而后目张」——教材·第2章·2.1.1。纲举目张这四个字，落到数据上就是两步：先按 fa 分组，再在组内看方。</p></div></div>
+  <div class="slide-foot"><span>13 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><ul><li><strong>八法归属是教材编排的产物，不是病机演绎。</strong> 一首方在临床上可能兼数法（和解兼泻下、解表兼清里），但数据层强制「一方只归一法」。所以本章的 52 与 62 描述的是<strong>教材的目录结构</strong>，不是这些方在临床上的全部功用。</li><li><strong>「法外」是判定规则的边界，不是教材的判断。</strong> 若换一条规则（例如按功用关键词判），62 这个数字会变。凡引用本章数字，须同时引用规则：按教材章名判，一方归一法。</li><li><strong>字数只说明规模，不说明难度。</strong> 第2章 14,569 字 + 第1章 8,759 字 = 23,328 字，这是教材正文的汉字数，与理解难度无关；第2章的概念密度远高于第1章的史料密度。</li><li><strong>本章不涉及剂量与煎服。</strong> 教材第4章（剂型与煎服法）与各方的用量，本章一律不展开；凡涉及具体用量的问题，一律回到教材与医师。</li><li><strong>方名与药名做了归并。</strong> 数据层的药名按《中药学》词表归一（炙甘草→甘草、银花→金银花等），归并有据但不是教材原文用字；引用方名时以教材为准。</li></ul></div></div>
+  <div class="slide-foot"><span>14 / 16</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="14">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><ul><li><strong>边界声明</strong>：本章只解释教材的编排口径与本层抽取规则，<strong>不构成诊断或处方依据</strong>；临床取舍以教材正文与医师判断为准。</li></ul></div></div>
+  <div class="slide-foot"><span>15 / 16</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="15">
   <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
-  <div class="slide-foot"><span>6 / 6</span><span>disclaimer</span></div>
+  <div class="slide-foot"><span>16 / 16</span><span>disclaimer</span></div>
 </section>
 </div>
 <div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>

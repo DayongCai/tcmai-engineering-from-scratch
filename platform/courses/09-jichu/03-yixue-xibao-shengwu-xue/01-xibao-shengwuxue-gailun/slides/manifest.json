@@ -1,6 +1,6 @@
 {
   "chapter": "01-xibao-shengwuxue-gailun",
-  "slideCount": 16,
+  "slideCount": 15,
   "segmentCount": 11,
   "slides": [
     {
@@ -75,11 +75,6 @@
     },
     {
       "n": 15,
-      "segment": 10,
-      "chars": 121
-    },
-    {
-      "n": 16,
       "segment": 11,
       "chars": 52
     }

@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"/>
-<title>第 3 章 · 方法与系统实现 · 幻灯片</title>
+<title>第 3 章 · 系统上线前要能回答一句：这条建议错了，谁负责 · 幻灯片</title>
 <style>
 
 :root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
@@ -59,24 +59,103 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <body>
 <div id="deck">
 <section class="slide" data-i="0">
-  <div class="slide-inner"><h1 class="big">第 3 章 · 方法与系统实现</h1></div>
-  <div class="slide-foot"><span>1 / 5</span><span>title</span></div>
+  <div class="slide-inner"><h1 class="big">第 3 章 · 系统上线前要能回答一句：这条建议错了，谁负责</h1></div>
+  <div class="slide-foot"><span>1 / 17</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「《F:/textbooks/中医眼科学·方法与系统实现》」——第3阶段。本章要回答的是：方法与系统实现：这一阶段要交付什么。</blockquote></div>
-  <div class="slide-foot"><span>2 / 5</span><span>motto</span></div>
+  <div class="slide-inner"><blockquote class="motto">「圣人不治已病治未病。」——《素问·四气调神大论》</blockquote></div>
+  <div class="slide-foot"><span>2 / 17</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
-  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">方法与系统实现：本课第 3 章。</p></div>
-  <div class="slide-foot"><span>3 / 5</span><span>problem</span></div>
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">教材第 11、12 两章十二节里，讲预防与调护的六节（未病先防、既病防变与瘥后防复、耳鸣耳聋康复、嗓音保健、鼻鼽调护、鼻渊调护），讲检查的两节（耳科检查、鼻咽喉检查），讲数字化与人工智能的四节（数字化辨证、AI 辅助诊疗、教学平台、AI 实训边界）。四节 AI 共 4,100 汉字（993 + 1,053 + 1,012 + 1,042 = 4,100），占十二节 12,995 汉字的 31.5%；其中专讲边界的只有 1,042 字，占 AI 部分的 25.4%（1,042 ÷ 4,100）。一个系统若把 AI 输出直接当结论，等于把这四分之一的篇幅全部作废——作废的不是文档，是责任链。</p></div>
+  <div class="slide-foot"><span>3 / 17</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
-  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（毕设的判据是「命题可验、数据可溯、结论可接」）+ 知识积累（本章 12 单元 12,995 汉字；三辨主 <strong>检查与影像 59</strong>；四位面（阶段结构）主 <strong>中段 12995</strong>；引书 <strong>4 部 6 次</strong>；数值类命中 0）</p></div>
-  <div class="slide-foot"><span>4 / 5</span><span>roots</span></div>
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（毕设的系统部分通常只有一个人、十几周，功能必须少而完整；一少，就倾向于把「判断」交给现成的模型，因为判断最难写，而模型是现成的）+ 知识积累（教材里可自动化的部分与不可自动化的部分，界线写在四节 AI 的边界条款里，也写在数字化辨证那一节的结构化要求里；不读这两处，系统会照着「看起来能自动」的地方自动化）</p></div>
+  <div class="slide-foot"><span>4 / 17</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
+  <div class="slide-inner"><div class="kicker">一、先写状态机，再写功能</div>
+                <div class="compact"><p>「治未病」在教材里是三段：未病先防、既病防变、瘥后防复。这三段不是三个口号，是三个状态，每个状态有自己的进入条件与动作。系统的第一个模块应该是这个状态机，而不是首页。</p>
+<div class="table-wrap"><table><thead><tr><th>状态</th><th>进入条件（可判读）</th><th>系统动作</th><th>退出条件</th></tr></thead><tbody><tr><td>未病</td><td>无相关诊断；有危险因素（如噪声暴露、职业用声、过敏史、糖尿病）</td><td>宣教推送、危险因素登记、筛查提醒</td><td>出现症状或诊断</td></tr><tr><td>既病</td><td>有明确诊断或典型症状</td><td>就诊路径、检查项清单、复诊提醒、红线提示</td><td>症状缓解或治愈</td></tr><tr><td>瘥后</td><td>症状缓解、疗程结束</td><td>随访计划、复发预警、调护指导</td><td>复发或随访结束</td></tr></tbody></table></div></div></div>
+  <div class="slide-foot"><span>5 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">一、先写状态机，再写功能</div>
+                <div class="compact"><p>三段的关键在「可判读的进入条件」。教材给的几条正好可以转成判读规则：鼻鼽的过敏原规避（尘螨、花粉、霉菌、动物皮屑、蟑螂及其排泄物）可以做成环境问卷；鼻渊的鼻腔冲洗（水温接近体温约 38～40℃，每日一至二次）可以做成频次打卡；耳鸣康复的认知与情绪管理可以做成量表随访。三条都是行为，不是判断，所以可以放心交给系统。</p>
+<p>反过来，教材在同一批节里也写了不能交给系统的东西：突发单侧听力下降伴耳鸣眩晕者，应当提示尽快就医——注意，是「提示就医」，不是「建议观察」。这一条在产品里必须做成硬提示，不能做成软建议，因为它的时限性（突发性耳聋的治疗存在时间窗）不允许用户自行判断。</p></div></div>
+  <div class="slide-foot"><span>6 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">二、模块清单：五个，不多不少</div>
+                <div class="compact"><p>按【教学设定】的一个人、十几周的约束，模块控制在五个，每个模块的交付物必须能被单独验收。</p>
+<div class="table-wrap"><table><thead><tr><th>模块</th><th>输入</th><th>输出</th><th>验收动作</th></tr></thead><tbody><tr><td>宣教</td><td>危险因素、诊断</td><td>分病种的调护要点（过敏原规避、用声卫生、鼻腔冲洗）</td><td>内容与教材条文逐条对照，允许删不可增</td></tr><tr><td>随访</td><td>随访计划、患者反馈</td><td>复诊提醒、症状变化记录、脱落标记</td><td>模拟 30 天，检查提醒是否按时、脱落是否可追</td></tr><tr><td>检查数据采集</td><td>耳内镜／鼻内镜／听力学报告</td><td>结构化字段（部位、征象、分级）</td><td>20 份报告双人录入，比对一致率</td></tr><tr><td>辨证辅助</td><td>四诊字段</td><td>证候要素、候选证型、提示需人工确认</td><td>与教材证型逐一对照，标注不确定项</td></tr><tr><td>考核／实训</td><td>病案、操作</td><td>评分、错误类型</td><td>与教师评分比对，AI 评分只作参考</td></tr></tbody></table></div></div></div>
+  <div class="slide-foot"><span>7 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">二、模块清单：五个，不多不少</div>
+                <div class="compact"><p>五个模块里，第三个最容易被做成「上传图片存起来」。存起来不算采集：采集的判据是同一份报告两次录入能对上，且字段能直接进入分析。教材对耳内镜与鼻内镜的描述给了字段清单——外耳道壁充血、肿胀、糜烂；鼓膜色泽、标志、活动度、穿孔位置大小形态；鼻腔各壁、鼻道、嗅裂、窦口鼻道复合体；声带形态与运动——这些就是字段。</p></div></div>
+  <div class="slide-foot"><span>8 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">三、辨证引擎：结构可自动，权衡不可</div>
+                <div class="compact dense"><p>数字化辨证那一节给了一条很具体的路径：先把证候要素结构化，病位要素（耳、鼻、咽喉、肺、脾、肝、胆、肾）与病性要素（风、寒、热、湿、痰、瘀、虚、实）两栏，证型由要素组合还原。例：鼻渊之胆腑郁热证 = 病位「胆腑」+ 病性「郁热」。</p>
+<p>这条路径可以写成三段流水线：</p>
+<ol><li><strong>要素抽取</strong>：从四诊字段抽出病位与病性，每条抽取值标注来源字段（哪一句主诉、哪一项舌脉）。</li><li><strong>组合还原</strong>：按教材的证型定义匹配要素组合，输出候选证型（可多个）与匹配度。</li><li><strong>人工确认</strong>：输出一条不可跳过的确认动作，确认人签字后结论才入表。</li></ol>
+<p>第三步是这一节的分水岭。教材写得很清楚：结构化是辅助手段，症状之间主次轻重的关系、舌脉与症状的相互印证，仍需中医思维统摄，机器归纳的结论仅可作为辨证的辅助参考，最终辨证结论须由医师结合临床实际作出，此点不可移易。</p>
+<p>「此点不可移易」四个字，在产品里对应的是一个按钮：确认。没有这个按钮的系统，无论算法多准，都不合格。</p></div></div>
+  <div class="slide-foot"><span>9 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">三、辨证引擎：结构可自动，权衡不可</div>
+                <div class="compact"><p>还有一个工程细节常被忽略：术语对齐。教材要求症状描述术语对齐国家标准《中医临床诊疗术语·证候部分》，使同一症状在不同病案中表述一致。不做对齐，同一个「耳鸣如蝉」会以五种写法进入数据库，要素抽取就会漏。对齐工作枯燥，但它是引擎的地基。</p></div></div>
+  <div class="slide-foot"><span>10 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">四、AI 的位置：三个接入点，四条禁令</div>
+                <div class="compact dense"><p>AI 在这一章里不是主角，是工具。教材把它放在三个位置，每个位置都有明确的产出形态。</p>
+<p><strong>接入点一：筛查与分流。</strong> 基于影像或量表做初筛，输出「可疑／不可疑」与「建议转诊」。典型如听力筛查（便携设备完成初步纯音测听、自动判读曲线）、耳鸣评估（人机对话采集响度、音调、持续时间与对睡眠情绪的影响，生成量表评分与分级）。产出是提示，不是诊断。</p>
+<p><strong>接入点二：结构化与抽取。</strong> 把自由文本与报告转成字段，如从听力学报告抽阈值、从内镜报告抽征象。这一处风险最低，因为它不产生结论，只搬运事实；验收方式是抽样回读原文。</p>
+<p><strong>接入点三：教学与实训。</strong> 病案实训（四诊采集—辨证分析—治法确立—处方用药的模拟接诊，系统依病证单元库给出反馈）、虚拟内镜（三维仿真、操作轨迹记录与量化评分）、AI 辅助批改（指出证型判断与教材规范的差异，成绩最终由教师评定）。</p>
+<p>四条禁令，对应教材的四条边界：</p></div></div>
+  <div class="slide-foot"><span>11 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">四、AI 的位置：三个接入点，四条禁令</div>
+                <div class="compact"><ol><li><strong>不替代医师</strong>：AI 不得直接出具诊断或处方；筛查异常者须转诊行标准检查确诊。</li><li><strong>可溯源</strong>：训练数据、算法版本、质控流程规范登记；每条输出能追到输入与模型版本。</li><li><strong>数据合规</strong>：患者信息依法依规存储使用，数据脱敏后方可用于模型训练。</li><li><strong>不夸大</strong>：对适应证与局限性有清醒认识，持续监测假阳性与假阴性，异常即校准。</li></ol>
+<p>四条里第二条最容易被当成文档工作而跳过。但它是唯一能让「出错之后查得清」的机制：没有版本号，同一个患者两个月后的输出变了，你无法解释是模型变了还是病情变了。</p></div></div>
+  <div class="slide-foot"><span>12 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">五、上线验收与回滚</div>
+                <div class="compact"><p>系统上线不是发布，是接管一段工作流。验收要有三样东西。</p>
+<p><strong>真值集。</strong> 抽 30 份已由医师确认结论的病案（【教学设定】），让系统跑一遍，比对输出。比对分三类：一致、不一致但可接受（表述差异）、不一致且有害（方向相反）。第三类只要出现一例，就要回到判据或模型，不允许带着上线。</p>
+<p><strong>灰度与留痕。</strong> 先在一个诊室或一个年级用两周，所有 AI 输出与人工结论并存记录，不并入正式病历。两周后统计不一致率与用户忽略率——忽略率高说明提示不可用，不一致率高说明判据不清。</p>
+<p><strong>回滚方案。</strong> 写清三件事：什么时候回滚（连续出现有害不一致、或数据合规事件）、回滚到什么版本、回滚后已产生的数据怎么处理。第三件事最容易被漏，而它决定回滚是不是真的能执行。</p></div></div>
+  <div class="slide-foot"><span>13 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">六、教学平台与实训：先仿真，后真人</div>
+                <div class="compact"><p>教材对教学平台与仿真训练的价值与限度都写得很实在。价值在：可反复练习、可量化评价、无患者风险，能弥补临床教学资源不足，还可与客观结构化临床考核结合。限度在：仿真设备的触觉反馈、组织质感与真实人体存在差异，内镜通过鼻道时的阻力感、针刺得气的手下感觉，均须在真实操作中体会；真实诊疗中的患者反应、无菌操作、医患沟通及突发情况应变，只能在临床带教与真人实训中习得。</p>
+<p>由此得出一条排课原则：先仿真、后真人，仿真操作考核合格后方可进入临床实训阶段，且仿真训练不能替代或压缩规定的临床见习实习课时。</p>
+<p>这条原则在系统里要落成两个字段：仿真考核成绩（合格／不合格）与真人实训准入（允许／不允许）。第二个字段由第一个字段驱动，不能人工绕过——绕过一次，原则就失效。</p></div></div>
+  <div class="slide-foot"><span>14 / 17</span><span>body</span></div>
+</section>
+<section class="slide" data-i="14">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><p>第一，<strong>模块化会诱导「功能幻觉」</strong>。五个模块跑通，看起来系统完整，实际每一块的深度都只有一层。判据不是功能多少，是每个模块能否通过它自己的验收动作（如 20 份报告双人录入的一致率）。</p>
+<p>第二，<strong>AI 的收益集中在筛查，不在判断</strong>。把资源投在判读上，投入产出比远低于投在筛查与结构化上。这个判断有教材依据：教材对 AI 的定位全部集中在筛查、评估、随访与教学，没有一处把诊断权交给它。</p>
+<p>第三，<strong>仿真训练会制造「熟练的错觉」</strong>。在虚拟内镜上操作五十次的人，第一次真人操作仍会手忙；差别在阻力感与患者反应。带教必须说明这一点，否则学生会把仿真成绩当成临床能力。</p></div></div>
+  <div class="slide-foot"><span>15 / 17</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="15">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><p>边界五条：本章的状态机、模块清单与验收流程为教学框架，用于训练研究系统的设计与验收，不构成医学、工程或合规意见；AI 的使用以产品适应证、伦理审查与所在机构制度为准；患者数据的使用遵循最小必要、去标识与信息安全制度；系统的临床使用须经执业医师确认，不得替代诊疗决策；教学平台的成绩评定以教师评判为准。</p></div></div>
+  <div class="slide-foot"><span>16 / 17</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="16">
   <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
-  <div class="slide-foot"><span>5 / 5</span><span>disclaimer</span></div>
+  <div class="slide-foot"><span>17 / 17</span><span>disclaimer</span></div>
 </section>
 </div>
 <div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>

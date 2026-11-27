@@ -1,7 +1,7 @@
 {
   "chapter": "01-fangfa-ducong",
-  "slideCount": 6,
-  "segmentCount": 6,
+  "slideCount": 16,
+  "segmentCount": 8,
   "slides": [
     {
       "n": 1,
@@ -11,7 +11,7 @@
     {
       "n": 2,
       "segment": 2,
-      "chars": 40
+      "chars": 79
     },
     {
       "n": 3,
@@ -26,11 +26,61 @@
     {
       "n": 5,
       "segment": 5,
-      "chars": 222
+      "chars": 210
     },
     {
       "n": 6,
       "segment": 6,
+      "chars": 393
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 386
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 338
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 339
+    },
+    {
+      "n": 10,
+      "segment": 6,
+      "chars": 390
+    },
+    {
+      "n": 11,
+      "segment": 6,
+      "chars": 393
+    },
+    {
+      "n": 12,
+      "segment": 6,
+      "chars": 357
+    },
+    {
+      "n": 13,
+      "segment": 6,
+      "chars": 75
+    },
+    {
+      "n": 14,
+      "segment": 7,
+      "chars": 414
+    },
+    {
+      "n": 15,
+      "segment": 7,
+      "chars": 62
+    },
+    {
+      "n": 16,
+      "segment": 8,
       "chars": 52
     }
   ]

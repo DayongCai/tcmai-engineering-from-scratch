@@ -31,59 +31,59 @@ chapters:
   - slug: 01-zangfu-jingluo
     title: 清窍不是四个洞：耳鼻咽喉的病位，先落在经络上
     video: rendered
-    estimate_minutes: 0.85      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.88      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 12.32      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.89      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 02-erbing-tiaoming
     title: 耳鸣不是耳朵在响：鸣为聋之渐，治的是通与养
     video: rendered
-    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 11.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.85      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 03-bibing-biyuan
     title: 鼻塞三个月：一个症状，三条完全不同的路
     video: rendered
-    estimate_minutes: 0.87      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 10.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.82      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 04-yanhou-bing
     title: 咽痛分两种：一种是火，一种是堵住的那口气
     video: rendered
-    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.99      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 10.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.06      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 05-sangyin-shengdai
     title: 声音是气过两道门：嘶哑要先问「哪一段坏了」
     video: rendered
-    estimate_minutes: 0.83      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.88      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 10.72      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.54      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 06-bianyingxing-biyan
     title: 鼻鼽不是「反复感冒」：本虚标实，战场在两次发作之间
     video: rendered
-    estimate_minutes: 0.85      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 11.33      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.37      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 07-zhongeryan-gumo
     title: 耳朵闷住的那口气：一条管子，一种鼓膜结局
     video: rendered
-    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 10.68      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 7.50      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 08-waizhi-xuewei
     title: 外治不是辅助：药到不了的地方，要靠路走进去
     video: rendered
-    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 11.50      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.89      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 09-neijing-shuhou
     title: 手术做完了，病还没完：术腔里长回来的那层黏膜
     video: rendered
-    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 10.63      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.64      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 10-liangbiao-pingjia
     title: 说不出「好了多少」，就等于没治：量表与疗效的刻度
     video: rendered
-    estimate_minutes: 0.87      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 12.03      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.51      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

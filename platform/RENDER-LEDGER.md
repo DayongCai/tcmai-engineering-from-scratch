@@ -10,8 +10,8 @@
 | 成片齐（rendered） | **2169** |
 | 部分（partial） | 0 |
 | 无（missing） | 0 |
-| 实测时长合计 | 188:53（188.9 小时） |
-| 成片字节合计 | 16.66 GB |
+| 实测时长合计 | 253:51（253.9 小时） |
+| 成片字节合计 | 22.77 GB |
 
 ## 逐课
 
@@ -40,27 +40,27 @@
 | 中医临床轮转 `01-zhongyi/21-zhongyi-linchuang-lunzhuan` | 01-zhongyi | 9 | 6 | 6 | 0 | 0 | 0:06 | 6 MB |
 | 中医毕业设计与知识移交 `01-zhongyi/22-zhongyi-biye-sheji` | 01-zhongyi | 10 | 28 | 28 | 0 | 0 | 0:27 | 28 MB |
 | 医学衷中参西录选读 `01-zhongyi/23-zhongcan-xilu-xuandu` | 01-zhongyi | 8 | 10 | 10 | 0 | 0 | 0:22 | 30 MB |
-| 中药学 `02-zhongyao/01-zhongyaoxue` | 02-zhongyao | 2 | 14 | 14 | 0 | 0 | 1:00 | 93 MB |
-| 药用植物学 `02-zhongyao/02-yaoyong-zhiwu-xue` | 02-zhongyao | 2 | 9 | 9 | 0 | 0 | 0:09 | 10 MB |
-| 方剂学 `02-zhongyao/03-fangjixue` | 02-zhongyao | 3 | 15 | 15 | 0 | 0 | 0:35 | 46 MB |
-| 中药资源学 `02-zhongyao/04-zhongyao-ziyuan-xue` | 02-zhongyao | 3 | 8 | 8 | 0 | 0 | 0:08 | 9 MB |
-| 中药鉴定学 `02-zhongyao/05-zhongyao-jianding-xue` | 02-zhongyao | 4 | 10 | 10 | 0 | 0 | 0:10 | 12 MB |
-| 中药化学 `02-zhongyao/06-zhongyao-huaxue` | 02-zhongyao | 4 | 12 | 12 | 0 | 0 | 0:11 | 12 MB |
-| 中药药理学 `02-zhongyao/07-zhongyao-yaoli-xue` | 02-zhongyao | 5 | 11 | 11 | 0 | 0 | 0:11 | 12 MB |
-| 中药炮制学 `02-zhongyao/08-zhongyao-paozhi-xue` | 02-zhongyao | 5 | 9 | 9 | 0 | 0 | 0:09 | 10 MB |
-| 中药药剂学 `02-zhongyao/09-zhongyao-yaoji-xue` | 02-zhongyao | 5 | 10 | 10 | 0 | 0 | 0:10 | 11 MB |
-| 中药分析学 `02-zhongyao/10-zhongyao-fenxi-xue` | 02-zhongyao | 6 | 12 | 12 | 0 | 0 | 0:12 | 13 MB |
-| 中药药代动力学 `02-zhongyao/11-zhongyao-yaodai-donglixue` | 02-zhongyao | 6 | 8 | 8 | 0 | 0 | 0:07 | 8 MB |
-| 道地药材与产地加工 `02-zhongyao/12-daodi-yaocai` | 02-zhongyao | 6 | 8 | 8 | 0 | 0 | 0:08 | 8 MB |
-| 中成药与临床用药 `02-zhongyao/13-zhongchengyao-linchuang` | 02-zhongyao | 7 | 10 | 10 | 0 | 0 | 0:09 | 10 MB |
-| 中药配伍与禁忌 `02-zhongyao/14-peiwu-yu-jinji` | 02-zhongyao | 7 | 8 | 8 | 0 | 0 | 0:07 | 8 MB |
-| 中药新药研发 `02-zhongyao/15-zhongyao-xinyao-yanfa` | 02-zhongyao | 8 | 8 | 8 | 0 | 0 | 0:08 | 9 MB |
-| 临床中药学 `02-zhongyao/16-linchuang-zhongyaoxue` | 02-zhongyao | 7 | 15 | 15 | 0 | 0 | 0:14 | 15 MB |
-| 中药商品学 `02-zhongyao/17-zhongyao-shangpin-xue` | 02-zhongyao | 8 | 18 | 18 | 0 | 0 | 0:19 | 21 MB |
-| 药事管理学 `02-zhongyao/18-yaoshi-guanli-xue` | 02-zhongyao | 7 | 28 | 28 | 0 | 0 | 0:31 | 36 MB |
-| 中药专业实践 `02-zhongyao/19-zhongyao-zhuanye-shijian` | 02-zhongyao | 9 | 6 | 6 | 0 | 0 | 0:06 | 7 MB |
-| 中药毕业设计与知识移交 `02-zhongyao/20-zhongyao-biye-sheji` | 02-zhongyao | 10 | 6 | 6 | 0 | 0 | 0:06 | 7 MB |
-| 中药毒理学 `02-zhongyao/21-zhongyao-du-li-xue` | 02-zhongyao | 6 | 10 | 10 | 0 | 0 | 1:17 | 116 MB |
+| 中药学 `02-zhongyao/01-zhongyaoxue` | 02-zhongyao | 2 | 14 | 14 | 0 | 0 | 2:02 | 180 MB |
+| 药用植物学 `02-zhongyao/02-yaoyong-zhiwu-xue` | 02-zhongyao | 2 | 9 | 9 | 0 | 0 | 1:24 | 128 MB |
+| 方剂学 `02-zhongyao/03-fangjixue` | 02-zhongyao | 3 | 15 | 15 | 0 | 0 | 2:45 | 247 MB |
+| 中药资源学 `02-zhongyao/04-zhongyao-ziyuan-xue` | 02-zhongyao | 3 | 8 | 8 | 0 | 0 | 1:16 | 118 MB |
+| 中药鉴定学 `02-zhongyao/05-zhongyao-jianding-xue` | 02-zhongyao | 4 | 10 | 10 | 0 | 0 | 1:29 | 137 MB |
+| 中药化学 `02-zhongyao/06-zhongyao-huaxue` | 02-zhongyao | 4 | 12 | 12 | 0 | 0 | 2:11 | 204 MB |
+| 中药药理学 `02-zhongyao/07-zhongyao-yaoli-xue` | 02-zhongyao | 5 | 11 | 11 | 0 | 0 | 1:59 | 191 MB |
+| 中药炮制学 `02-zhongyao/08-zhongyao-paozhi-xue` | 02-zhongyao | 5 | 9 | 9 | 0 | 0 | 1:43 | 167 MB |
+| 中药药剂学 `02-zhongyao/09-zhongyao-yaoji-xue` | 02-zhongyao | 5 | 10 | 10 | 0 | 0 | 1:54 | 181 MB |
+| 中药分析学 `02-zhongyao/10-zhongyao-fenxi-xue` | 02-zhongyao | 6 | 12 | 12 | 0 | 0 | 2:08 | 204 MB |
+| 中药药代动力学 `02-zhongyao/11-zhongyao-yaodai-donglixue` | 02-zhongyao | 6 | 8 | 8 | 0 | 0 | 1:16 | 116 MB |
+| 道地药材与产地加工 `02-zhongyao/12-daodi-yaocai` | 02-zhongyao | 6 | 8 | 8 | 0 | 0 | 1:21 | 124 MB |
+| 中成药与临床用药 `02-zhongyao/13-zhongchengyao-linchuang` | 02-zhongyao | 7 | 10 | 10 | 0 | 0 | 1:35 | 147 MB |
+| 中药配伍与禁忌 `02-zhongyao/14-peiwu-yu-jinji` | 02-zhongyao | 7 | 8 | 8 | 0 | 0 | 1:32 | 142 MB |
+| 中药新药研发 `02-zhongyao/15-zhongyao-xinyao-yanfa` | 02-zhongyao | 8 | 8 | 8 | 0 | 0 | 1:25 | 130 MB |
+| 临床中药学 `02-zhongyao/16-linchuang-zhongyaoxue` | 02-zhongyao | 7 | 15 | 15 | 0 | 0 | 2:47 | 268 MB |
+| 中药商品学 `02-zhongyao/17-zhongyao-shangpin-xue` | 02-zhongyao | 8 | 18 | 18 | 0 | 0 | 3:20 | 318 MB |
+| 药事管理学 `02-zhongyao/18-yaoshi-guanli-xue` | 02-zhongyao | 7 | 28 | 28 | 0 | 0 | 4:29 | 414 MB |
+| 中药专业实践 `02-zhongyao/19-zhongyao-zhuanye-shijian` | 02-zhongyao | 9 | 6 | 6 | 0 | 0 | 1:01 | 93 MB |
+| 中药毕业设计与知识移交 `02-zhongyao/20-zhongyao-biye-sheji` | 02-zhongyao | 10 | 6 | 6 | 0 | 0 | 0:48 | 71 MB |
+| 中药毒理学 `02-zhongyao/21-zhongyao-du-li-xue` | 02-zhongyao | 6 | 10 | 10 | 0 | 0 | 1:19 | 120 MB |
 | 经络学 `03-zhenjiu/01-jingluo-xue` | 03-zhenjiu | 2 | 10 | 10 | 0 | 0 | 2:13 | 209 MB |
 | 腧穴学 `03-zhenjiu/02-shuxue-xue` | 03-zhenjiu | 3 | 12 | 12 | 0 | 0 | 1:56 | 173 MB |
 | 针灸医籍选 `03-zhenjiu/03-zhenjiu-yiji-xuan` | 03-zhenjiu | 3 | 8 | 8 | 0 | 0 | 1:48 | 171 MB |
@@ -172,25 +172,25 @@
 | 中医信息学 `07-zhineng/17-zhongyi-xinxi-xue` | 07-zhineng | 6 | 6 | 6 | 0 | 0 | 0:08 | 9 MB |
 | 工程实践与系统交付 `07-zhineng/18-zhineng-gongcheng-shijian` | 07-zhineng | 9 | 6 | 6 | 0 | 0 | 0:06 | 6 MB |
 | 智能系毕业设计与知识移交 `07-zhineng/19-zhineng-biye-sheji` | 07-zhineng | 10 | 6 | 6 | 0 | 0 | 0:05 | 6 MB |
-| 耳鼻喉解剖生理学 `08-wuguan/01-erbihou-jiepou-shengli` | 08-wuguan | 4 | 8 | 8 | 0 | 0 | 0:07 | 8 MB |
-| 口腔解剖生理学 `08-wuguan/02-kouqiang-jiepou-shengli` | 08-wuguan | 4 | 8 | 8 | 0 | 0 | 0:07 | 8 MB |
-| 中医面部望诊学 `08-wuguan/03-zhongyi-mianbu-wangzhen` | 08-wuguan | 5 | 8 | 8 | 0 | 0 | 0:07 | 8 MB |
-| 眼科光学与验光 `08-wuguan/04-yanke-guangxue-yanguang` | 08-wuguan | 5 | 8 | 8 | 0 | 0 | 0:07 | 7 MB |
-| 中医五官科经典选读 `08-wuguan/05-zhongyi-wuguan-jingdian` | 08-wuguan | 5 | 6 | 6 | 0 | 0 | 0:05 | 6 MB |
-| 中医眼科学 `08-wuguan/06-zhongyi-yanke-xue` | 08-wuguan | 6 | 10 | 10 | 0 | 0 | 0:11 | 13 MB |
-| 中医耳鼻喉科学 `08-wuguan/07-zhongyi-erbihou-xue` | 08-wuguan | 6 | 10 | 10 | 0 | 0 | 0:09 | 10 MB |
-| 中医口腔科学 `08-wuguan/08-zhongyi-kouqiang-kexue` | 08-wuguan | 6 | 10 | 10 | 0 | 0 | 0:09 | 9 MB |
-| 口腔内科学 `08-wuguan/09-kouqiang-neike-xue` | 08-wuguan | 6 | 10 | 10 | 0 | 0 | 0:09 | 10 MB |
-| 眼科影像与检查技术 `08-wuguan/10-yanke-yingxiang-jiancha` | 08-wuguan | 6 | 8 | 8 | 0 | 0 | 0:08 | 9 MB |
-| 口腔颌面外科学 `08-wuguan/11-kouqiang-hemian-waike` | 08-wuguan | 7 | 10 | 10 | 0 | 0 | 0:10 | 11 MB |
-| 口腔修复学 `08-wuguan/12-kouqiang-xiufu-xue` | 08-wuguan | 7 | 10 | 10 | 0 | 0 | 0:12 | 14 MB |
-| 口腔正畸学 `08-wuguan/13-kouqiang-zhengji-xue` | 08-wuguan | 7 | 10 | 10 | 0 | 0 | 0:12 | 13 MB |
-| 中医嗓音医学 `08-wuguan/14-zhongyi-sangyin-yixue` | 08-wuguan | 7 | 8 | 8 | 0 | 0 | 0:07 | 8 MB |
-| 中医美容与皮肤治疗学 `08-wuguan/15-zhongyi-meirong-pifu` | 08-wuguan | 8 | 8 | 8 | 0 | 0 | 0:07 | 8 MB |
-| 五官口腔临床轮转 `08-wuguan/16-wuguan-linchuang-lunzhuan` | 08-wuguan | 9 | 6 | 6 | 0 | 0 | 0:05 | 6 MB |
-| 五官口腔毕业设计与知识移交 `08-wuguan/17-wuguan-biye-sheji` | 08-wuguan | 10 | 6 | 6 | 0 | 0 | 0:05 | 6 MB |
-| 人体解剖学 `09-jichu/01-renti-jiepou-xue` | 09-jichu | 1 | 10 | 10 | 0 | 0 | 2:15 | 218 MB |
-| 组织学与胚胎学 `09-jichu/02-zuzhi-peitai-xue` | 09-jichu | 1 | 20 | 20 | 0 | 0 | 4:01 | 397 MB |
+| 耳鼻喉解剖生理学 `08-wuguan/01-erbihou-jiepou-shengli` | 08-wuguan | 4 | 8 | 8 | 0 | 0 | 1:48 | 170 MB |
+| 口腔解剖生理学 `08-wuguan/02-kouqiang-jiepou-shengli` | 08-wuguan | 4 | 8 | 8 | 0 | 0 | 1:28 | 136 MB |
+| 中医面部望诊学 `08-wuguan/03-zhongyi-mianbu-wangzhen` | 08-wuguan | 5 | 8 | 8 | 0 | 0 | 1:13 | 110 MB |
+| 眼科光学与验光 `08-wuguan/04-yanke-guangxue-yanguang` | 08-wuguan | 5 | 8 | 8 | 0 | 0 | 1:10 | 112 MB |
+| 中医五官科经典选读 `08-wuguan/05-zhongyi-wuguan-jingdian` | 08-wuguan | 5 | 6 | 6 | 0 | 0 | 0:53 | 82 MB |
+| 中医眼科学 `08-wuguan/06-zhongyi-yanke-xue` | 08-wuguan | 6 | 10 | 10 | 0 | 0 | 1:19 | 121 MB |
+| 中医耳鼻喉科学 `08-wuguan/07-zhongyi-erbihou-xue` | 08-wuguan | 6 | 10 | 10 | 0 | 0 | 1:31 | 139 MB |
+| 中医口腔科学 `08-wuguan/08-zhongyi-kouqiang-kexue` | 08-wuguan | 6 | 10 | 10 | 0 | 0 | 1:45 | 162 MB |
+| 口腔内科学 `08-wuguan/09-kouqiang-neike-xue` | 08-wuguan | 6 | 10 | 10 | 0 | 0 | 1:47 | 162 MB |
+| 眼科影像与检查技术 `08-wuguan/10-yanke-yingxiang-jiancha` | 08-wuguan | 6 | 8 | 8 | 0 | 0 | 1:43 | 164 MB |
+| 口腔颌面外科学 `08-wuguan/11-kouqiang-hemian-waike` | 08-wuguan | 7 | 10 | 10 | 0 | 0 | 1:43 | 158 MB |
+| 口腔修复学 `08-wuguan/12-kouqiang-xiufu-xue` | 08-wuguan | 7 | 10 | 10 | 0 | 0 | 1:22 | 128 MB |
+| 口腔正畸学 `08-wuguan/13-kouqiang-zhengji-xue` | 08-wuguan | 7 | 10 | 10 | 0 | 0 | 1:39 | 155 MB |
+| 中医嗓音医学 `08-wuguan/14-zhongyi-sangyin-yixue` | 08-wuguan | 7 | 8 | 8 | 0 | 0 | 1:10 | 104 MB |
+| 中医美容与皮肤治疗学 `08-wuguan/15-zhongyi-meirong-pifu` | 08-wuguan | 8 | 8 | 8 | 0 | 0 | 1:27 | 135 MB |
+| 五官口腔临床轮转 `08-wuguan/16-wuguan-linchuang-lunzhuan` | 08-wuguan | 9 | 6 | 6 | 0 | 0 | 1:01 | 92 MB |
+| 五官口腔毕业设计与知识移交 `08-wuguan/17-wuguan-biye-sheji` | 08-wuguan | 10 | 6 | 6 | 0 | 0 | 0:49 | 73 MB |
+| 人体解剖学 `09-jichu/01-renti-jiepou-xue` | 09-jichu | 1 | 10 | 10 | 0 | 0 | 2:15 | 219 MB |
+| 组织学与胚胎学 `09-jichu/02-zuzhi-peitai-xue` | 09-jichu | 1 | 20 | 20 | 0 | 0 | 4:01 | 398 MB |
 | 医学细胞生物学 `09-jichu/03-yixue-xibao-shengwu-xue` | 09-jichu | 1 | 12 | 12 | 0 | 0 | 1:38 | 149 MB |
 | 医学生物学 `09-jichu/04-yixue-shengwu-xue` | 09-jichu | 2 | 16 | 16 | 0 | 0 | 2:16 | 206 MB |
 | 正常人体学 `09-jichu/05-zhengchang-renti-xue` | 09-jichu | 2 | 18 | 18 | 0 | 0 | 3:04 | 296 MB |
@@ -201,11 +201,11 @@
 | 病理学 `09-jichu/10-bingli-xue` | 09-jichu | 3 | 21 | 21 | 0 | 0 | 14:36 | 1381 MB |
 | 病理生理学 `09-jichu/11-bingli-shengli-xue` | 09-jichu | 4 | 53 | 53 | 0 | 0 | 24:04 | 2259 MB |
 | 药理学 `09-jichu/12-yaoli-xue` | 09-jichu | 4 | 49 | 49 | 0 | 0 | 19:07 | 1842 MB |
-| 免疫学基础与病原生物学 `09-jichu/13-mianyi-bingyuan-shengwu` | 09-jichu | 4 | 15 | 15 | 0 | 0 | 0:15 | 17 MB |
-| 疾病学基础 `09-jichu/14-jibing-xue-jichu` | 09-jichu | 4 | 18 | 18 | 0 | 0 | 0:18 | 21 MB |
-| 流行病学 `09-jichu/15-liuxingbing-xue` | 09-jichu | 5 | 18 | 18 | 0 | 0 | 0:19 | 22 MB |
-| 科研实训与实验设计 `09-jichu/16-jichu-keyan-shixun` | 09-jichu | 9 | 6 | 6 | 0 | 0 | 0:06 | 7 MB |
-| 基础医学毕业设计与知识移交 `09-jichu/17-jichu-biye-sheji` | 09-jichu | 10 | 6 | 6 | 0 | 0 | 0:16 | 23 MB |
+| 免疫学基础与病原生物学 `09-jichu/13-mianyi-bingyuan-shengwu` | 09-jichu | 4 | 15 | 15 | 0 | 0 | 2:56 | 292 MB |
+| 疾病学基础 `09-jichu/14-jibing-xue-jichu` | 09-jichu | 4 | 18 | 18 | 0 | 0 | 2:15 | 204 MB |
+| 流行病学 `09-jichu/15-liuxingbing-xue` | 09-jichu | 5 | 18 | 18 | 0 | 0 | 3:48 | 362 MB |
+| 科研实训与实验设计 `09-jichu/16-jichu-keyan-shixun` | 09-jichu | 9 | 6 | 6 | 0 | 0 | 1:13 | 117 MB |
+| 基础医学毕业设计与知识移交 `09-jichu/17-jichu-biye-sheji` | 09-jichu | 10 | 6 | 6 | 0 | 0 | 0:54 | 87 MB |
 
 ## 判定口径（recompute 得到，不许手填）
 

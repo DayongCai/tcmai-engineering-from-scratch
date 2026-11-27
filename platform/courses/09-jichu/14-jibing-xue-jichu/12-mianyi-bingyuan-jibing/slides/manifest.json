@@ -1,31 +1,86 @@
 {
   "chapter": "12-mianyi-bingyuan-jibing",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 16,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 14
+      "chars": 32
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 72
+      "chars": 24
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 20
+      "chars": 121
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 139
+      "chars": 91
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 320
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 332
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 418
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 145
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 335
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 312
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 270
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 399
+    },
+    {
+      "n": 13,
+      "segment": 8,
+      "chars": 189
+    },
+    {
+      "n": 14,
+      "segment": 9,
+      "chars": 279
+    },
+    {
+      "n": 15,
+      "segment": 9,
+      "chars": 153
+    },
+    {
+      "n": 16,
+      "segment": 10,
       "chars": 52
     }
   ]

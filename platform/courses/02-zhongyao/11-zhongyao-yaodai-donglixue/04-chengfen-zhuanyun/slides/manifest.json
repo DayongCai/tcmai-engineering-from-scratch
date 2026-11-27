@@ -1,31 +1,81 @@
 {
   "chapter": "04-chengfen-zhuanyun",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 15,
+  "segmentCount": 11,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 11
+      "chars": 18
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 81
+      "chars": 87
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 13
+      "chars": 111
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 107
+      "chars": 105
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 336
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 323
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 416
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 88
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 285
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 187
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 270
+    },
+    {
+      "n": 12,
+      "segment": 9,
+      "chars": 307
+    },
+    {
+      "n": 13,
+      "segment": 9,
+      "chars": 301
+    },
+    {
+      "n": 14,
+      "segment": 10,
+      "chars": 354
+    },
+    {
+      "n": 15,
+      "segment": 11,
       "chars": 52
     }
   ]

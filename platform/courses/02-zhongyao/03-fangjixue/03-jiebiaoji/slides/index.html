@@ -60,28 +60,104 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <div id="deck">
 <section class="slide" data-i="0">
   <div class="slide-inner"><h1 class="big">第 3 章 · 解表剂：辛温与辛凉的分野</h1></div>
-  <div class="slide-foot"><span>1 / 6</span><span>title</span></div>
+  <div class="slide-foot"><span>1 / 16</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「麻黄汤与桂枝汤同属辛温解表之剂」——教材·第5章·5.1.1（《方剂学·第5章·5.1》）</blockquote></div>
-  <div class="slide-foot"><span>2 / 6</span><span>motto</span></div>
+  <div class="slide-inner"><blockquote class="motto">「太阳病，头痛发热，身疼腰痛，骨节疼痛，恶风，无汗而喘者，麻黄汤主之」——《伤寒论·辨太阳病脉证并治》。有汗无汗是桂麻之别的第一道坎，而「同属辛温」这句话，只说到第二层。</blockquote></div>
+  <div class="slide-foot"><span>2 / 16</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
   <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">你能说出「辛温解表」「辛凉解表」两个词，但给你「发热，微恶风寒，咽喉肿痛，口渴欲饮」，你选麻黄汤还是银翘散？多数人靠「感觉像风寒还是风热」——而这套感觉一旦遇到「麻黄出现在辛凉方里」就崩了。</p></div>
-  <div class="slide-foot"><span>3 / 6</span><span>problem</span></div>
+  <div class="slide-foot"><span>3 / 16</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
   <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（门诊遇到外感初起，凭印象抓一首方，服后不效也说不清错在哪一步）+ 知识积累（汗法三节 × 五味共现 = 一条能用「有汗/无汗、咽痛/不渴」判出来的分野）</p></div>
-  <div class="slide-foot"><span>4 / 6</span><span>roots</span></div>
+  <div class="slide-foot"><span>4 / 16</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
   <div class="slide-inner"><div class="kicker">学习目标</div>
-                <div class="compact"><ul><li>能说出辛温四首方各自的兼夹（表实、表虚、夹湿兼里热、外寒内饮），并为每一首举出鉴别要点</li><li>能用「有汗/无汗、脉浮紧/浮缓」区分麻黄汤与桂枝汤，而不是靠方名顺序</li><li>能说清辛凉三首的「平剂／轻剂／重剂」不是凉的程度，而是病位深浅</li><li>能解释为什么麻黄同时出现在辛温与辛凉两节，以及「寒温由配伍决定」的判据</li><li>能指出败毒散单列一节的理由（虚实夹杂、扶正与解表并行）</li><li>能读懂 <code>code/main.js</code> 的药味共现输出，并知道 37 这个药名数里含 1 个非药名</li></ul></div></div>
-  <div class="slide-foot"><span>5 / 6</span><span>objectives</span></div>
+                <div class="compact"><ul><li>能说出辛温四首方各自的兼夹（表实、表虚、夹湿兼里热、外寒内饮），并为每一首举出鉴别要点</li><li>能用「有汗/无汗、脉浮紧/浮缓」区分麻黄汤与桂枝汤，而不是靠方名顺序</li><li>能说清辛凉三首的「平剂／轻剂／重剂」不是凉的程度，而是病位深浅</li><li>能解释为什么麻黄同时出现在辛温与辛凉两节，以及「寒温由配伍决定」的判据</li><li>能指出败毒散单列一节的理由（虚实夹杂、扶正与解表并行）</li><li>能读懂本章正文里的药味共现表，并知道 37 这个药名数里含 1 个非药名</li></ul></div></div>
+  <div class="slide-foot"><span>5 / 16</span><span>objectives</span></div>
 </section>
 <section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">正文</div>
+                <div class="compact"><h3 id="3-1-汗法之下为何还要分三节">3.1 汗法之下为何还要分三节</h3>
+<p>第 1 章已经算过：汗法 8 首，全部在教材第 5 章，分三节——辛温 4、辛凉 3、扶正 1。八法只到「汗」为止，剩下的事在这一章。</p>
+<p>分野的第一层不是寒温，而是<strong>虚实</strong>。辛温四首里，麻黄汤与桂枝汤同治外感风寒，教材把它们并置对比：「麻黄汤与桂枝汤同属辛温解表之剂」——教材·第5章·5.1.1，但麻黄汤「发汗解表，宣肺平喘」——教材·第5章·5.1.1，桂枝汤「解肌发表，调和营卫」——教材·第5章·5.1.2。一个主治表实无汗而喘，一个主治表虚汗出恶风。</p>
+<p>判据落在两处体征上：桂枝汤「汗出而脉缓弱」——教材·第5章·5.1.2，麻黄汤「无汗而脉浮紧」——教材·第5章·5.1.2。<strong>有汗与无汗、脉紧与脉缓，四个字决定两首方的取舍。</strong> 教材还留下「有汗不得用麻黄，无汗不得用桂枝」之诫，说的就是这条线。</p></div></div>
+  <div class="slide-foot"><span>6 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">正文</div>
+                <div class="compact dense"><p>分野的第二层是<strong>兼夹</strong>。九味羌活汤所治为风寒湿兼里热（肢体酸楚疼痛、口苦微渴），用药分经而寒温并投；小青龙汤所治为外寒内饮，教材主治作外寒里饮证，「解表散寒，温肺化饮」——教材·第5章·5.1.4。同属辛温，一个重在祛湿，一个重在化饮，一个兼清里热——<strong>辛温是方向，兼夹才是选方的理由</strong>。</p>
+<h3 id="3-2-辛凉三首-平剂-轻剂-重剂">3.2 辛凉三首：平剂、轻剂、重剂</h3>
+<p>教材给辛凉三首的定位非常整齐：</p>
+<div class="table-wrap"><table><thead><tr><th>方</th><th>定位</th><th>主症</th><th>病位</th></tr></thead><tbody><tr><td>银翘散</td><td>「银翘散为辛凉平剂」——教材·第5章·5.2.1</td><td>发热、微恶风寒、咽痛、口渴</td><td>卫分</td></tr><tr><td>桑菊饮</td><td>「桑菊饮为辛凉轻剂」——教材·第5章·5.2.1</td><td>「但咳，身不甚热，微渴」——教材·第5章·5.2.1</td><td>肺络（卫分之浅）</td></tr><tr><td>麻杏石甘汤</td><td>「本方为辛凉重剂」——教材·第5章·5.2.3</td><td>汗出而喘、身热不解、口渴、脉浮数</td><td>肺中（热已壅肺）</td></tr></tbody></table></div></div></div>
+  <div class="slide-foot"><span>7 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">正文</div>
+                <div class="compact dense"><p>三个词容易被误读成「凉的程度」：轻、平、重像是三档火力。其实它们标的是<strong>病位的深浅与热的轻重</strong>——邪在卫分用平剂透解，邪在肺络而咳为主用轻剂宣降，热已壅肺而喘急用重剂清泄。教材说得很清楚：银翘散「以发热、咽痛为主而透表清热俱重」，桑菊饮「以咳嗽为主而宣肺止咳见长」，热势轻者用桑菊饮，热势著者用银翘散。</p>
+<p>这也解释了为什么桑菊饮的功用写作「疏风清热，宣肺止咳」而不含「辛凉」二字——它仍归辛凉节。<strong>分类看节，不看措辞。</strong> 数据层里 5.2 三首方，功用措辞含「辛凉」的只有 2 首（银翘散、麻杏石甘汤），但三首都算辛凉。若按措辞判，桑菊饮会掉出去。</p>
+<h3 id="3-3-扶正解表-败毒散单列的理由">3.3 扶正解表：败毒散单列的理由</h3>
+<p>败毒散主治「气虚外感风寒湿证」——教材·第5章·5.3.1，症见憎寒壮热、肢体酸痛、无汗、脉浮而按之无力。它与辛温诸方最大的不同不在药，而在<strong>脉与舌</strong>：「本方则必见气虚之象，脉浮而无力」——教材·第5章·5.3.1。</p></div></div>
+  <div class="slide-foot"><span>8 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">正文</div>
+                <div class="compact dense"><p>单列一节的理由是逻辑上的：辛温与辛凉都在解决「邪在表」，败毒散同时在解决「正已虚」。虚人外感若一味发汗，邪未必去而正先伤，所以要「散寒祛湿，益气解表」并行。这也是为什么它不能塞进辛温节：塞进去，学生就会用「发散力强弱」去比较它，而它真正要比较的是「扶正与祛邪的比例」。</p>
+<h3 id="3-4-分野的三条硬判据">3.4 分野的三条硬判据</h3>
+<p>把上面的内容压成三条可执行的判断：</p>
+<ol><li><strong>表实还是表虚</strong>：无汗、脉浮紧 → 麻黄汤；汗出、脉浮缓弱 → 桂枝汤。这一条在辛温内部使用。</li><li><strong>寒邪还是温邪</strong>：恶寒重、口不渴、咽不痛 → 辛温；发热重、口渴、咽痛、舌尖红、脉浮数 → 辛凉。</li><li><strong>热在卫分还是已入肺</strong>：以发热咽痛为主 → 银翘散；以咳为主而热不甚 → 桑菊饮；喘急、汗出、身热不解 → 麻杏石甘汤。</li></ol>
+<p>三条之外还有一条<strong>准入判据</strong>：脉浮而无力、舌淡 → 先考虑扶正解表（败毒散），不要在辛温辛凉里硬选。</p></div></div>
+  <div class="slide-foot"><span>9 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">正文</div>
+                <div class="compact dense"><p>判据的价值在于它能否证伪。「我觉得是风寒」不能被证伪；「无汗、脉浮紧」可以——摸到汗出、脉浮缓，判断就错了，必须改。<strong>能证伪的判据才叫判据。</strong></p>
+<h3 id="3-5-药味共现-为什么-辛温药-定不了寒温">3.5 药味共现：为什么「辛温药」定不了寒温</h3>
+<p>把 8 首方的药味铺开：58 个药位、37 个药名（其中 1 个不是药名，见「代价与边界」）。跨节出现的药有 6 味：</p>
+<div class="table-wrap"><table><thead><tr><th>药</th><th>出现的节</th><th>方</th></tr></thead><tbody><tr><td>麻黄</td><td>5.1 / 5.2</td><td>麻黄汤、小青龙汤、麻杏石甘汤</td></tr><tr><td>杏仁</td><td>5.1 / 5.2</td><td>麻黄汤、桑菊饮、麻杏石甘汤</td></tr><tr><td>甘草</td><td>5.1 / 5.2 / 5.3</td><td>全 8 首</td></tr><tr><td>羌活</td><td>5.1 / 5.3</td><td>九味羌活汤、败毒散</td></tr><tr><td>川芎</td><td>5.1 / 5.3</td><td>九味羌活汤、败毒散</td></tr><tr><td>桔梗</td><td>5.2 / 5.3</td><td>银翘散、桑菊饮、败毒散</td></tr></tbody></table></div>
+<p>麻黄是最有说服力的一味：它出现在辛温的麻黄汤、小青龙汤，也出现在辛凉的麻杏石甘汤。若「麻黄辛温，所以含麻黄的方都是辛温」，麻杏石甘汤就被判错了。</p></div></div>
+  <div class="slide-foot"><span>10 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">正文</div>
+                <div class="compact"><p>教材对这个机制有一句要紧的话：「麻黄得石膏，则宣肺平喘而不助热」——教材·第5章·5.2.3。石膏制住了麻黄的辛温之性，只留下宣肺平喘之用，全方遂由辛温转为辛凉。<strong>同一味药，换个配伍环境，方向就变了</strong>——这正是第 2 章「配伍环境」在解表剂里的落地。</p>
+<p>甘草则是另一种角色：它在 8 首方里全部出现（8/8），但从来没有决定过寒温。它是解表剂的<strong>常数</strong>——调和、缓峻、护中气——常数不能用来分类。会看数据的人，第一件事是分清哪些是变量、哪些是常数。</p>
+<h3 id="3-6-一首方是一组取舍-不是一个标签">3.6 一首方是一组取舍，不是一个标签</h3>
+<p>辛温四首的差别，可以读成一串取舍：</p></div></div>
+  <div class="slide-foot"><span>11 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">正文</div>
+                <div class="compact"><ul><li>麻黄汤：留发汗之力，不留补益——所以四味，力专而峻，教材称其辛温发汗之重剂。</li><li>桂枝汤：留调和营卫，减发汗之力——所以桂芍等量，佐姜枣，被后世视为群方之冠。</li><li>九味羌活汤：留分经祛邪，容忍寒温并投——所以十味，黄芩清里热，生地与黄芩制辛温之燥。</li><li>小青龙汤：留化饮，加散收并用——所以干姜、细辛、半夏、五味子、芍药同用，散中有收。</li></ul>
+<p>「留什么、舍什么」写清了，方解就不用背。反过来说，一名学生若只能说「这首方治风寒」，说明他还没看到取舍，只看到了标签。</p>
+<h3 id="3-7-这一章的代码在验什么">3.7 这一章的代码在验什么</h3>
+<p>这一章的核算只做四件事：</p></div></div>
+  <div class="slide-foot"><span>12 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">正文</div>
+                <div class="compact"><ol><li><strong>按教材章取方</strong>（不手写方名清单）：第 5 章 8 首，按小节号排序。</li><li><strong>按节分组</strong>：4 / 3 / 1，并打印每节平均药味（6.8 / 7.0 / 10.0）。平均数本身不是结论，但它提示：扶正解表的方药味最多——因为要同时办两件事。</li><li><strong>算跨节药与全方共有药</strong>：6 味跨节、1 味（甘草）全方共有。这一步是全章的实证核心。</li><li><strong>做两个判据检验</strong>：含麻黄的 3 首跨 5.1 与 5.2（单味药定不了寒温）；5.2 三首中只有 2 首功用措辞含「辛凉」（分类看节不看措辞）。</li></ol>
+<p>判据里没有「辛温」「辛凉」的字符串匹配——分野不是靠关键词匹配出来的，是靠节号与药味集合算出来的。关键词匹配是最容易被措辞骗到的做法，本章刻意避开它。</p></div></div>
+  <div class="slide-foot"><span>13 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><ul><li><strong>8 是正方数，不是解表剂的全部方数。</strong> 教材第 5 章另有附方（麻黄加术汤、大青龙汤、桂枝加葛根汤、小青龙加石膏汤、射干麻黄汤等），本课程只收正方，附方只在鉴别段出现，未进数据层。引用「解表剂 8 首」时须说明是正方。</li><li><strong>37 个药名里含 1 个非药名。</strong> 九味羌活汤的组成抽取把「故以为名」当成了一味药；「香白芷」原先未归一，现已按词表归一为白芷。所以真实药味名是 36 个，58 个药位里有 1 位是误抽。本课程不偷偷修数据，而是把瑕疵写在这里。</li><li><strong>小青龙汤的君药只记麻黄。</strong> 教材方解作「麻黄、桂枝并为君药」——教材·第5章·5.1.4，数据层每角色只取第一条，故只留麻黄。引用君药时须注明「取首条」。</li><li><strong>桂枝汤的芍药被记了两次（臣、佐）。</strong> 这是两条抽取信号各命中一次的结果，不是教材给了两个官衔；方解应写「以益阴敛营为主，兼制桂枝辛散」。</li><li><strong>药名归并与《中药学》词表不重合。</strong> 炙甘草→甘草、银花→金银花、香白芷→白芷等按词表归一；</li></ul></div></div>
+  <div class="slide-foot"><span>14 / 16</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="14">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><p>而芍药、苇根等不在词表内，保留原样。数药味时按归并后的名字计。</p>
+<ul><li><strong>本章不展开剂量与煎服。</strong> 麻黄先煎去上沫、桂枝汤啜热稀粥、银翘散“香气大出即取服”等方后注，属煎服法范围，本章一律不展开；凡涉及用量，一律回到教材与医师。</li></ul>
+<ul><li><strong>边界声明</strong>：本章只解释教材的编排口径与本层抽取规则，<strong>不构成诊断或处方依据</strong>；临床取舍以教材正文与医师判断为准。</li></ul></div></div>
+  <div class="slide-foot"><span>15 / 16</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="15">
   <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
-  <div class="slide-foot"><span>6 / 6</span><span>disclaimer</span></div>
+  <div class="slide-foot"><span>16 / 16</span><span>disclaimer</span></div>
 </section>
 </div>
 <div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>

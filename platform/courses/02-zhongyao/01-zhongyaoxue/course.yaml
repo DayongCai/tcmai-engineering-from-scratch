@@ -31,83 +31,83 @@ chapters:
   - slug: 01-xingneng-siqi
     title: 性能五要素是总论的共用语法，不是任何一味药的取值
     video: rendered
-    estimate_minutes: 1.82      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.74      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 10.75      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 7.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 02-jiebiaoyao-fengh
     title: 解表药两节的分界是四气，不是「辛能散」
     video: rendered
-    estimate_minutes: 1.65      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.67      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 10.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.50      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 03-qingreyao-fenlei
     title: 清热药的分节依据在功效首词，四气在这里只剩一个值
     video: rendered
-    estimate_minutes: 1.85      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.83      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 11.80      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.78      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 04-xiexia-qushi
     title: 泻下与祛湿共用「出口」二字，剂量却差六百倍
     video: rendered
-    estimate_minutes: 5.98      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 5.86      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 10.27      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.60      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 05-wenli-liqi
     title: 温里往下走、理气横着走，十九条记录里有一条自相矛盾
     video: rendered
-    estimate_minutes: 6.35      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 6.16      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 10.43      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.97      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 06-xiaoshi-zhixue
     title: 消食、驱虫、止血共用一条判据：东西该不该留
     video: rendered
-    estimate_minutes: 6.52      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 6.35      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 11.32      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.34      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 07-huoxue-huayu
     title: 活血化瘀的位置编码在节内，肝经 23 味无一处例外
     video: rendered
-    estimate_minutes: 5.38      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 5.23      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 11.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.32      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 08-huatan-kesou
     title: 化痰与止咳是两套轴：温寒对半，平性只剩两味
     video: rendered
-    estimate_minutes: 5.55      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 5.43      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 11.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.89      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 09-anshen-pinggan
     title: 安神、平肝、开窍：26 味药只落在心与肝两条经上
     video: rendered
-    estimate_minutes: 6.12      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 6.17      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 12.57      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.52      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 10-buxuyao-fenlei
     title: 补虚药的分类：四节按功效切，寒温表反推不出节名
     video: rendered
-    estimate_minutes: 4.00      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 3.81      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 12.73      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.79      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 11-shouse-yongtu
     title: 收涩与涌吐编在一起：同一根气机轴，14 味里只有 8 味带涩
     video: rendered
-    estimate_minutes: 4.68      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 4.34      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 11.58      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.41      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 12-xingneng-bianma
     title: 性味归经编成 21 维：余弦排得出描述邻近，排不出可以替换
     video: rendered
-    estimate_minutes: 3.63      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 3.50      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 14.53      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 3.68      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 13-caiyao-zhijian
     title: 五道闸算出 3.341 分：四道是常数，只有炮制在动
     video: rendered
-    estimate_minutes: 4.47      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 4.30      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 12.78      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 6.30      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 14-gongdu-badu
     title: 12 味毒药的分界不在毒性等级，在给药途径
     video: rendered
-    estimate_minutes: 3.95      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 3.83      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 14.63      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.63      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

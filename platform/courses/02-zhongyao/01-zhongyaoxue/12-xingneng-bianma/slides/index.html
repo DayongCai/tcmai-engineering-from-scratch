@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"/>
-<title>第 12 章 · 中药性能的编码化：性味归经 → 向量 · 幻灯片</title>
+<title>第 12 章 · 性味归经编成 21 维：余弦排得出描述邻近，排不出可以替换 · 幻灯片</title>
 <style>
 
 :root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
@@ -59,65 +59,115 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <body>
 <div id="deck">
 <section class="slide" data-i="0">
-  <div class="slide-inner"><h1 class="big">第 12 章 · 中药性能的编码化：性味归经 → 向量</h1></div>
-  <div class="slide-foot"><span>1 / 9</span><span>title</span></div>
+  <div class="slide-inner"><h1 class="big">第 12 章 · 性味归经编成 21 维：余弦排得出描述邻近，排不出可以替换</h1></div>
+  <div class="slide-foot"><span>1 / 20</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
   <div class="slide-inner"><blockquote class="motto">「药有酸咸甘苦辛五味，又有寒热温凉四气。」——《神农本草经·序录》</blockquote></div>
-  <div class="slide-foot"><span>2 / 9</span><span>motto</span></div>
+  <div class="slide-foot"><span>2 / 20</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
-  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">你能背「麻黄辛、微苦，温，归肺、膀胱经」，但当有人问「哪几味药和麻黄性能最接近」，你只能凭印象点几味，说不出「接近」是按什么算的。</p></div>
-  <div class="slide-foot"><span>3 / 9</span><span>problem</span></div>
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">287 味药、21 维向量、692 个归经标。按这套编码算余弦，当归最近的邻居是肉桂（0.904），而当归与白芍——四物汤里与它配对的那一味——只有 0.297；砒石最近的邻居是白芥子（0.873），一种是含砷的矿物大毒药，一种是十字花科的种子。更极端的是龙骨：它的载体是「性平」，味栏与归经栏都是空的，算出来的向量全是 0，与任何一味药的余弦都是 0。<strong>「性能接近」与「能互相替代」是两个问题，余弦只回答第一个，而第一个问题在这套编码里就已经被维度比例写死了：21 维里 12 维是归经，占 57%，气只有 1 维，占 4.8%。</strong></p></div>
+  <div class="slide-foot"><span>3 / 20</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
-  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫(方剂替换、药源短缺时要现场找替代药) + 知识积累(四气五味归经 × 向量空间 = 一个能排序、能解释维度的相似度)</p></div>
-  <div class="slide-foot"><span>4 / 9</span><span>roots</span></div>
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（药源短缺、成方缺味、同名异物这几件事在药房里是现场问题：一张方子开了某味药，抓不到，必须当场找到「性能最接近」的替代品，而替代错了不是疗效差一点，是性味反了、归经偏了）＋ 知识积累（四气、五味、归经在教材里是分开讲的三节，只有把 287 味药的三栏同时抽出来、编成同一条向量，「接近」才第一次变成可计算、可复现、也可被证伪的东西）</p></div>
+  <div class="slide-foot"><span>4 / 20</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
-  <div class="slide-inner"><div class="kicker">学习目标</div>
-                <div class="compact"><ul><li>把「性味归经」这种表格文字，变成一个定长向量，并说明每个维度代表什么</li><li>用余弦相似度排序近似药材，并指出相似度<strong>不能</strong>代表什么</li><li>说清「四气」的有序性（寒→凉→平→温→热）为什么不能用 one-hot 编码</li><li>在同一份数据上，比较欧氏距离与余弦相似度给出的排序差异</li></ul></div></div>
-  <div class="slide-foot"><span>5 / 9</span><span>objectives</span></div>
+  <div class="slide-inner"><div class="kicker">一、21 维的构造：气 1 维、味 8 维、归经 12 维</div>
+                <div class="compact"><p>编码的每一步都由教材的一句话决定，不是随手定的：</p>
+<div class="table-wrap"><table><thead><tr><th>轴</th><th>维度数</th><th>取值方式</th><th>教材依据</th></tr></thead><tbody><tr><td>四气</td><td>1</td><td>有序轴：大寒 −2、寒 −1、微寒／凉 −0.5、平 0、微温 +0.5、温 +1、热 +1.5、大热 +2</td><td>5.1「四气（四性）指药物寒、热、温、凉四种药性，另有平性，实际仍偏于温凉」</td></tr><tr><td>五味</td><td>8</td><td>0/1 多位：辛、甘、苦、微苦、咸、酸、涩、淡</td><td>5.2「五味……辛能散能行，甘能补能缓能和，苦能泄能燥能坚，酸能收能涩，咸能软能下」</td></tr><tr><td>归经</td><td>12</td><td>0/1 多位：肺、心、肝、脾、胃、肾、大肠、小肠、膀胱、胆、三焦、心包</td><td>5.4「归经指药物作用部位的归属」</td></tr></tbody></table></div>
+<p>合计 1＋8＋12＝21 维。</p></div></div>
+  <div class="slide-foot"><span>5 / 20</span><span>body</span></div>
 </section>
 <section class="slide" data-i="5">
-  <div class="slide-inner"><div class="kicker">核心概念</div>
-                <div class="compact dense"><h3 id="中医-性能是一个多维描述">中医：性能是一个多维描述</h3>
-<p>四气描述<strong>作用趋向</strong>（寒凉清热、温热散寒），五味描述<strong>功能类别</strong>（辛散、甘补、酸收、苦泄、咸软），归经描述<strong>作用部位</strong>。《神农本草经·序录》把性味并举，后世才把归经补进体系。三者不是并列的标签，而是三个不同性质的轴：气是<strong>有序轴</strong>，味与归经是<strong>类别轴</strong>。</p>
-<p>这一点决定了编码方式：气可以用一个整数（寒=-2 … 热=+2），味与归经必须用 0/1 的多位向量。</p>
-<h3 id="ai-工程-混合编码与余弦相似度">AI/工程：混合编码与余弦相似度</h3>
-<span class="math-block"><b>v</b>(h)=[q, t<sub>1</sub>..t<sub>5</sub>, m<sub>1</sub>..m<sub>12</sub>]</span>
-<p>其中 <span class="math">q</span> 是气（一维整数），<span class="math">t<sub>1</sub>..t<sub>5</sub></span> 是辛甘酸苦咸五位，<span class="math">m<sub>1</sub>..m<sub>12</sub></span> 是十二归经位。</p>
-<p>相似度用余弦：<span class="math"><span class="math-op">cos</span>(<b>v</b><sub>a</sub>,<b>v</b><sub>b</sub>)=<span class="frac"><span class="frac-num"><b>v</b><sub>a</sub>·<b>v</b><sub>b</sub></span><span class="frac-den">‖<b>v</b><sub>a</sub>‖‖<b>v</b><sub>b</sub>‖</span></span></span>。</p>
-<p>必须记住的局限：余弦把 12 个归经维度<strong>等权</strong>处理，而临床上「同归肺经」与「同归膀胱经」的临床意义并不相同；它也不含剂量、炮制、配伍信息。所以它回答的是「性能描述接近」，不是「可以互换」。</p></div></div>
-  <div class="slide-foot"><span>6 / 9</span><span>concept</span></div>
+  <div class="slide-inner"><div class="kicker">一、21 维的构造：气 1 维、味 8 维、归经 12 维</div>
+                <div class="compact"><p><strong>为什么气必须是 1 维整数，而味与归经必须是 0/1 多位？</strong> 因为教材给这三者写的是三种不同的东西。四气之间有序：寒与凉是「程度差」，凉与平是「方向差」，所以它们能排到一根数轴上，用 −2 到 +2 表示，两味药的「气差」就是两个数的乘积——同寒则正、一寒一热则负。五味与归经之间没有序：辛与甘不存在「谁更辛」，肺与肝也不存在「谁更靠上」，它们只能是标签，标签进入向量只能取 0 或 1。</p>
+<p>这个选择不是数学偏好，是教材文本逼出来的。若把四气也做 one-hot（寒、热、温、凉、平各占一维），「微寒」与「大寒」会变成两个互不相干的标签，余弦会在它们之间给出 0——而教材的本意恰恰是「微寒」与「大寒」同向、只是程度不同。反过来，若把归经排到一根轴上（比如按三焦顺序），就等于宣称「归肺经」与「归肾经」的距离有临床意义，教材没有这句话。</p></div></div>
+  <div class="slide-foot"><span>6 / 20</span><span>body</span></div>
 </section>
 <section class="slide" data-i="6">
-  <div class="slide-inner"><div class="kicker">BUILD IT · 从零实现</div>
-                <div class="compact denser"><p>教材·第5章·5.1 的原话是「四气（四性）指药物寒、热、温、凉四种药性（另有平性，实际仍偏于温凉）」——
-这一句就定了编码：<strong>四气是有序轴，不是类别</strong>。所以第 0 维取轴值而不是 one-hot。</p>
-<div class="codeblock"><div class="codeblock-lang">js</div><pre><code class="lang-js">// code/main.js 的取数方式：不手抄药表，直接读底本拆出的药物层
-const data = JSON.parse(fs.readFileSync('standards/zhongyao/drugs.json', 'utf8')); // 287 味
-const QI_AXIS = { 大寒: -2, 寒: -1, 微寒: -0.5, 凉: -0.5, 平: 0, 微温: 0.5, 温: 1, 热: 1.5, 大热: 2 };
-function vec(d) { /* ① 气 1 维轴值 ② 五味 8 维 0/1 ③ 归经 12 维 0/1 = 21 维 */ }
-function cos(a, b) { /* 点积 / 模长积，零向量返回 0 */ }
-function neighbors(name, k = 5) { /* 排除自己，按余弦降序取 k */ }</code></pre></div>
-<p><strong>这一版与前几版的差别</strong>：本章第一版用 12 味手打示例，数据与教材对不上（石膏的四气在示例里写作「大寒 = −2」，
-但教材原段写的是「性大寒」——手抄时把一个<strong>词</strong>换成了一个<strong>数</strong>）。现在改成从 <code>standards/zhongyao/drugs.json</code> 现算，
-287 味药的性味归经全部来自教材「来源与性味归经」段，一个字不手抄。</p></div></div>
-  <div class="slide-foot"><span>7 / 9</span><span>build</span></div>
+  <div class="slide-inner"><div class="kicker">一、21 维的构造：气 1 维、味 8 维、归经 12 维</div>
+                <div class="compact"><p><strong>但 21 维的比例立刻带来一个副作用：12 维归经占了 57%，味占 38%，气只占 4.8%。</strong> 余弦相似度是把 21 个维度的乘积加起来再除以两个模长，维度多的那一类天然有更大的话语权。这不是程序缺陷，是编码的直接后果——<strong>这套向量衡量的是「性味归经描述有多像」，而不是「药理作用有多像」，而描述里最长的一栏是归经。</strong></p></div></div>
+  <div class="slide-foot"><span>7 / 20</span><span>body</span></div>
 </section>
 <section class="slide" data-i="7">
-  <div class="slide-inner"><div class="kicker">验证</div>
-                <div class="compact dense"><div class="codeblock"><div class="codeblock-lang">bash</div><pre><code class="lang-bash">node code/main.js
-node --test code/main.test.js</code></pre></div>
-<p>实际输出（287 味全库、21 维、余弦 top5）：</p>
-<div class="table-wrap"><table><thead><tr><th>查询</th><th>最近 5 味（余弦）</th><th>读法</th></tr></thead><tbody><tr><td>麻黄</td><td>款冬花 0.894 · 藁本 0.775 · 白芥子 0.775 · 桂枝 0.730 · 乌药 0.730</td><td>首名不是桂枝而是款冬花——同为温、辛/微苦、归肺，<strong>性能近而功效远</strong>（麻黄发汗，款冬花止咳）</td></tr><tr><td>石膏</td><td>芦根 0.884 · 桑白皮 0.816 · 牛蒡子 0.791 · 金银花 0.791 · 白茅根 0.791</td><td>全是寒凉清热一路，符合教材·第5章·5.1「寒凉药属阴，能清热泻火凉血解毒」</td></tr></tbody></table></div>
-<p>这组结果本身就是本章最重要的一课：<strong>排在第一位的未必是临床上的替代品</strong>。</p></div></div>
-  <div class="slide-foot"><span>8 / 9</span><span>verify</span></div>
+  <div class="slide-inner"><div class="kicker">二、287 味的真实分布：肝 139 居首，气分九档</div>
+                <div class="compact dense"><p>在算任何相似度之前，先看清分母长什么样。</p>
+<p>气这一栏 287 味全部有值，分九档：</p>
+<div class="table-wrap"><table><thead><tr><th>档</th><th>条数</th><th>占比</th></tr></thead><tbody><tr><td>温</td><td>77</td><td>26.8%</td></tr><tr><td>寒</td><td>72</td><td>25.1%</td></tr><tr><td>平</td><td>52</td><td>18.1%</td></tr><tr><td>微寒</td><td>41</td><td>14.3%</td></tr><tr><td>微温</td><td>20</td><td>7.0%</td></tr><tr><td>凉</td><td>12</td><td>4.2%</td></tr><tr><td>热</td><td>8</td><td>2.8%</td></tr><tr><td>大热</td><td>3</td><td>1.0%</td></tr><tr><td>大寒</td><td>2</td><td>0.7%</td></tr></tbody></table></div>
+<p>把九档并成三个方向：寒凉侧（大寒、寒、微寒、凉）127 条、占 44.3%；温热侧（温、微温、热、大热）108 条、占 37.6%；平 52 条、占 18.1%。<strong>全库偏寒凉，这是第一步就该知道的常识，也是任何「中药多温补」的印象最先被推翻的地方。</strong></p></div></div>
+  <div class="slide-foot"><span>8 / 20</span><span>body</span></div>
 </section>
 <section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">二、287 味的真实分布：肝 139 居首，气分九档</div>
+                <div class="compact dense"><p>「微寒」41 条与「微温」20 条合计 61 条，占 21.3%——每五味药里就有一味的性是带「微」字的。这个比例解释了为什么前几章反复遇到「空栏」：抽取器只认单字气，凡「性微寒」「性微温」形式都会被跳过。<strong>九档里有六档带前缀，编码把它们全部保留成独立档位，是对的做法；但抽取端必须先认得它们，否则向量里那一维就是 0，而 0 在轴上代表「平」——缺口会被读成一种性。</strong></p>
+<p>味这一栏共 445 次赋值（一味可兼数味）：</p>
+<div class="table-wrap"><table><thead><tr><th>味</th><th>次数</th><th>占比</th></tr></thead><tbody><tr><td>苦</td><td>126</td><td>28.3%</td></tr><tr><td>辛</td><td>116</td><td>26.1%</td></tr><tr><td>甘</td><td>115</td><td>25.8%</td></tr><tr><td>咸</td><td>31</td><td>7.0%</td></tr><tr><td>涩</td><td>19</td><td>4.3%</td></tr><tr><td>酸</td><td>19</td><td>4.3%</td></tr><tr><td>微苦</td><td>13</td><td>2.9%</td></tr><tr><td>淡</td><td>6</td><td>1.3%</td></tr></tbody></table></div></div></div>
+  <div class="slide-foot"><span>9 / 20</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">二、287 味的真实分布：肝 139 居首，气分九档</div>
+                <div class="compact dense"><p>这里藏着一个由编码决定、却很少有人注意的分叉：<strong>「苦」与「微苦」被拆成两个维度，于是苦的频次是 126；若把它们合并，苦是 139，对辛（116）的领先从 10 次扩大到 23 次。</strong> 教材写「味苦」与「味微苦」是在写程度，前者多用于清热燥湿，后者多用于补气药的「补中有泻」（人参、西洋参、黄芪一类）。拆开是对的，但拆开也意味着：<strong>任何以「苦味药有多少」为口径的统计，必须先声明有没有把「微苦」算进去。</strong></p>
+<p>归经共 692 个标，287 味平均每味 2.41 条：</p>
+<div class="table-wrap"><table><thead><tr><th>经</th><th>标数</th><th>占比</th><th></th><th>经</th><th>标数</th><th>占比</th></tr></thead><tbody><tr><td>肝</td><td>139</td><td>20.1%</td><td></td><td>大肠</td><td>46</td><td>6.6%</td></tr><tr><td>肺</td><td>110</td><td>15.9%</td><td></td><td>膀胱</td><td>28</td><td>4.0%</td></tr><tr><td>脾</td><td>90</td><td>13.0%</td><td></td><td>胆</td><td>19</td><td>2.7%</td></tr><tr><td>胃</td><td>90</td><td>13.0%</td><td></td><td>小肠</td><td>11</td><td>1.6%</td></tr><tr><td>肾</td><td>82</td><td>11.8%</td><td></td><td>心包</td><td>5</td><td>0.7%</td></tr><tr><td>心</td><td>69</td><td>10.0%</td><td></td><td>三焦</td><td>3</td><td>0.4%</td></tr></tbody></table></div></div></div>
+  <div class="slide-foot"><span>10 / 20</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">二、287 味的真实分布：肝 139 居首，气分九档</div>
+                <div class="compact"><p>肝 139 条居首，比第二位肺多 29 条。<strong>但比这个排名更值得注意的是末尾：三焦 3 条、心包 5 条，两经合计 8 条，占 692 个标的 1.2%，却占了 12 个归经维度里的 2 个——16.7% 的维度预算。</strong> 这是本章第一个可量化的编码代价：两个几乎为空的维度，在每个向量里都占着位置、都参与模长计算，把其余十个维度的相对权重压低了。</p></div></div>
+  <div class="slide-foot"><span>11 / 20</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">三、余弦的四个读法：人参像人参，当归不像白芍</div>
+                <div class="compact"><p>把 287 条向量两两算余弦，取每味药的前五名，会得到四类完全不同的结果。这四类就是本章要教的全部内容。</p>
+<p><strong>第一类：排对了。</strong> 人参 → 西洋参 0.829 · 茯苓 0.816 · 太子参 0.800 · 山药 0.800 · 黄精 0.800。前五名全是补气或健脾一路，这是一条正常结果：人参微温、甘微苦、归脾肺心肾；西洋参凉、甘微苦、归心肺肾——两者味全同、归经重叠三条，只差气（微温与凉）与脾经，所以 0.829 而不是 1。<strong>这类结果证明编码是有效的：性味归经接近的药，功效描述也确实接近。</strong></p></div></div>
+  <div class="slide-foot"><span>12 / 20</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">三、余弦的四个读法：人参像人参，当归不像白芍</div>
+                <div class="compact"><p><strong>第二类：排对了但方向反了。</strong> 石膏 → 芦根 0.884 · 桑白皮 0.816 · 牛蒡子 0.791 · 金银花 0.791 · 白茅根 0.791。石膏是大寒、甘辛、归肺胃的矿物；芦根是寒、甘、归肺胃的根茎。两者气同向、味重叠一条、归经全同，余弦高达 0.884。这条结果的意义不在「芦根能代替石膏」——石膏清热泻火、除烦止渴，芦根清热生津，力量差得很远——而在：<strong>同为大寒清热，矿物与根茎在这套编码里是不可区分的。</strong> 编码里没有「质地」「矿物／植物」这一维，第 5 章讲升降浮沉时说的「质重沉降」，一个字都没进来。</p></div></div>
+  <div class="slide-foot"><span>13 / 20</span><span>body</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">三、余弦的四个读法：人参像人参，当归不像白芍</div>
+                <div class="compact"><p><strong>第三类：排错了，而且是系统性排错。</strong> 当归 → 肉桂 0.904 · 乳香 0.833 · 红花 0.816 · 麝香 0.816 · 苏合香 0.816。当归性温、味甘辛、归肝心脾；肉桂性大热、味辛甘、归肾脾心肝。两者味全同、归经重叠三条（心、肝、脾），气差 1 档，于是 0.904。而当归与白芍——四物汤的君与臣，一个补血活血、一个养血敛阴——余弦只有 <strong>0.297</strong>：当归温、白芍微寒（气反向），当归甘辛、白芍苦酸（味无一重叠），只共享肝、脾两条归经。当归与熟地黄 0.566、与川芎 0.548，也都远低于 0.904。</p>
+<p><strong>这条对比是本章最该记住的一件事：余弦排的是「性味归经描述的重合度」，而临床配伍排的是「一升一降、一散一收的对冲关系」——两者常常相反。</strong> 当归辛温走散，白芍酸寒收敛，正因为性味相反才能配对；编码把「相反」算成低相似度，于是最该配的两味药排得最远。</p></div></div>
+  <div class="slide-foot"><span>14 / 20</span><span>body</span></div>
+</section>
+<section class="slide" data-i="14">
+  <div class="slide-inner"><div class="kicker">三、余弦的四个读法：人参像人参，当归不像白芍</div>
+                <div class="compact"><p><strong>第四类：零向量。</strong> 龙骨在底本里的性味句是「……的化石。性平」——句子断在这里，味与归经全无。向量是 21 个 0，与任何一味药的余弦都是 0。它在结果里不出现错误，只出现沉默：所有邻居都是 0.000。<strong>零向量不会给出坏答案，它给不出答案，而这比坏答案更容易被忽略——因为程序不报错。</strong></p>
+<p>底本里同类情况还有两处：雷公藤无味、无归经；丁香无归经。前者是原文没写全（只写了性），后者是抽取断了句。三味药在 287 味里只占 1.0%，但它们都会在排序里落到底部，而底部的沉默会被使用者读成「性能独特」。</p></div></div>
+  <div class="slide-foot"><span>15 / 20</span><span>body</span></div>
+</section>
+<section class="slide" data-i="15">
+  <div class="slide-inner"><div class="kicker">四、21 维里没有的三件事：剂量、炮制、配伍</div>
+                <div class="compact"><p>这套编码的边界，用三个反例就能划清，而且三个反例都在教材里明写着。</p>
+<p><strong>没有剂量。</strong> 附子与肉桂余弦 0.949，是全库最高的几对之一（同为辛甘大热、同归心肾脾）。但附子 3–15g、先煎 30–60 分钟（久煎减毒），肉桂 1–5g、后下或焗服（研末冲服 1–2g）——同一对「最相似」的药，用法与剂量纪律完全不同。<strong>相似度 0.949 说明的是性味归经几乎重合，不是用法可以互换。</strong></p>
+<p><strong>没有炮制。</strong> 麻黄生用发汗、炙用平喘，两句话在「来源与性味归经」段里连着；编码只取了「性温，味辛、微苦，归肺、膀胱经」，生与炙的差别在向量里不存在。第 4 章整整一章讲炮制，一个字没进这 21 维。</p></div></div>
+  <div class="slide-foot"><span>16 / 20</span><span>body</span></div>
+</section>
+<section class="slide" data-i="16">
+  <div class="slide-inner"><div class="kicker">四、21 维里没有的三件事：剂量、炮制、配伍</div>
+                <div class="compact"><p><strong>没有配伍。</strong> 砒石 → 白芥子 0.873 · 蜈蚣 0.873 · 荆芥 0.839 · 升药 0.825 · 丁香 0.802。砒石是大毒之品，白芥子是温肺豁痰的种子，余弦 0.873 只因为两者都是大热／温、辛味、归肺经。<strong>一条把矿物毒药与食疗级种子排成近邻的结果，说明这套向量绝不能用于安全性判断。</strong></p>
+<p>三件事加在一起，本章的结论就成立了：<strong>21 维编码回答的问题是「这两味药的性味归经描述有多像」，它的用途是给方剂替换提供候选池、给药性聚类提供初始标签、给教学提供可解释的维度——它的用途不包括「能不能换」「能不能一起用」「用多少」。</strong></p></div></div>
+  <div class="slide-foot"><span>17 / 20</span><span>body</span></div>
+</section>
+<section class="slide" data-i="17">
+  <div class="slide-inner"><div class="kicker">四、21 维里没有的三件事：剂量、炮制、配伍</div>
+                <div class="compact"><p>若要往前推进一步，加维度是最直接的路：剂量的数量级可以做成第 22 维（0.002g 与 120g 相差 6 万倍，取对数后落在 −2.7 到 2.1 之间），炮制的有无可以做成 0/1（生／炙／炒／煅／制霜），毒性的等级可以做成一维有序轴（无毒 0、小毒 1、有毒 2、大毒 3）。但每加一维都要付一次代价：维度越多，余弦越难解释，「为什么这两味像」这个问题会从一句话变成一段免责说明。</p></div></div>
+  <div class="slide-foot"><span>18 / 20</span><span>body</span></div>
+</section>
+<section class="slide" data-i="18">
+  <div class="slide-inner"><div class="kicker">五、代价与边界</div>
+                <div class="compact dense"><ul><li><strong>21 维里 12 维是归经，气只有 1 维。</strong> 余弦天然偏向「归经重合多」的药对，而临床上「同归一经」的临床意义远低于「气相同」。这是编码的偏置，不是数据的性质。</li><li><strong>三焦 3 条、心包 5 条占了两维。</strong> 1.2% 的标数占用 16.7% 的维度预算，实际效果是压低其余十维的相对权重。要改，只能把这两维并出去，但那会破坏「十二经」的完整性——取舍没有免费选项。</li><li><strong>当归与白芍 0.297，当归与肉桂 0.904。</strong> 相似度衡量的是描述重合，而配伍讲究的是性味对冲。用余弦当「替代药推荐」会系统性地推荐错方向。</li><li><strong>零向量是沉默的失败。</strong> 龙骨、雷公藤这类残缺记录算出的向量全为 0，程序不报错，用户看到的是「没有邻居」。任何用到相似度的流程都必须先筛掉模长为 0 的记录。</li><li><strong>「苦」与「微苦」拆不拆，会改变苦味药的排名。</strong> 126 对 139，是编码粒度问题，不是数据问题。凡引用味频次的结论，都要说明用了哪一套。</li><li><strong>本章不评价疗效，也不给替代方案。</strong> 向量相似度不是药理相似度，更不是安全性等价；砒石、升药一类大毒之品与任何药的「高相似」都不构成替代依据。具体的方剂替换、剂量与配伍，须以现行药典、教材与执业中医师的判断为准。</li></ul></div></div>
+  <div class="slide-foot"><span>19 / 20</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="19">
   <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
-  <div class="slide-foot"><span>9 / 9</span><span>disclaimer</span></div>
+  <div class="slide-foot"><span>20 / 20</span><span>disclaimer</span></div>
 </section>
 </div>
 <div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>

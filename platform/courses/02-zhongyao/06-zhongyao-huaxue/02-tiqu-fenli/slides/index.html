@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"/>
-<title>第 2 章 · 提取分离：溶剂、色谱与制备 · 幻灯片</title>
+<title>第 2 章 · 提取不是把成分取出来，是把杂质一层层扔掉 · 幻灯片</title>
 <style>
 
 :root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
@@ -59,24 +59,96 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <body>
 <div id="deck">
 <section class="slide" data-i="0">
-  <div class="slide-inner"><h1 class="big">第 2 章 · 提取分离：溶剂、色谱与制备</h1></div>
-  <div class="slide-foot"><span>1 / 5</span><span>title</span></div>
+  <div class="slide-inner"><h1 class="big">第 2 章 · 提取不是把成分取出来，是把杂质一层层扔掉</h1></div>
+  <div class="slide-foot"><span>1 / 16</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「《素问·汤液醪醴论》」——教材·第2章·2.1.1。本章要回答的是：同一味药，为什么换个溶剂就是另一批成分。</blockquote></div>
-  <div class="slide-foot"><span>2 / 5</span><span>motto</span></div>
+  <div class="slide-inner"><blockquote class="motto">「自古圣人之作汤液醪醴者，以为备耳」——《素问·汤液醪醴论》。汤液与醪醴是最早的两种提取物：水提与酒提。古人做它们的时候说是「以为备耳」，随手备着——可「用水还是用酒」这个选择，已经把今天溶剂提取的全部分野定下了。</blockquote></div>
+  <div class="slide-foot"><span>2 / 16</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
-  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">「相似相溶」四个字人人会说，但极性梯度怎么设计、什么时候该换柱，教材写在具体步骤里。</p></div>
-  <div class="slide-foot"><span>3 / 5</span><span>problem</span></div>
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">提取这一步几乎没有选择性：一次 70% 乙醇下去，苷类、生物碱盐、鞣质、多糖、色素一起进溶液。真正的分离全靠后面的分配系数，而两种成分的分配系数要差到 100 倍，一次萃取才够基本分开；差不到，就得反复几十次。提取与分离被教材分成两节讲，实际是同一道算术的两头。</p></div>
+  <div class="slide-foot"><span>3 / 16</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
-  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（中药是混合物，任何一个「成分」都要先分出来才能说清楚）+ 知识积累（本章 5 单元 14,071 汉字；三辨主 <strong>提分与检识 523</strong>；四位面（生源途径）主 <strong>甲戊二羟酸途径 40</strong>；引书 <strong>6 部 17 次</strong>；数值类命中 3）</p></div>
-  <div class="slide-foot"><span>4 / 5</span><span>roots</span></div>
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（药材是固相，成分被细胞壁和液泡隔开，不先溶出来，后面所有分离手段都无从施加）+ 知识积累（相似相溶给方向、分配系数给数量、色谱给分辨率——三样凑齐，才有一条可复算的工艺路线）</p></div>
+  <div class="slide-foot"><span>4 / 16</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
+  <div class="slide-inner"><div class="kicker">一、相似相溶：一句话背后是三个阶段</div>
+                <div class="compact dense"><p>「相似相溶」四个字，考试能默，工艺上却不够用。因为它只回答了「选什么溶剂」，没回答「要多久、要多细、要几次」。把提取过程拆开，是三个阶段：</p>
+<p><strong>浸润渗透</strong>——溶剂先润湿药材粉末，渗进细胞壁。这一步决定成败的常常不是溶剂，是粉碎度。粉太粗，溶剂进不去，成分出不来；粉太细，淀粉糊化堵住滤层，反而提不动，还多溶出一堆杂质。教材把「粉碎适度」写在影响因素第一条，不是客套话。</p>
+<p><strong>解吸溶解</strong>——成分从细胞内的吸附位上被溶剂「抢」下来。这一步靠的是浓度差：溶剂里目标成分越少，解吸越快。所以提取永远不是「泡着就行」，是要不断换新溶剂或不断搅动，维持浓度差。</p>
+<p><strong>扩散置换</strong>——已溶成分从细胞内部扩散到溶剂主体。扩散速率受温度和浓度梯度控制：升温加快扩散，但温度一高，热不稳定成分分解、杂质溶出量也成倍增加。<strong>升温是拿纯度换速度</strong>，这句话后面每一节都会再遇到。</p>
+<p>三个阶段合起来，溶剂的选择就有了一张可查的表：</p></div></div>
+  <div class="slide-foot"><span>5 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">一、相似相溶：一句话背后是三个阶段</div>
+                <div class="compact dense"><div class="table-wrap"><table><thead><tr><th>溶剂</th><th>极性</th><th>主要溶出</th><th>典型用途</th></tr></thead><tbody><tr><td>石油醚</td><td>最小</td><td>油脂、蜡、叶绿素、挥发油</td><td>脱脂、除色素</td></tr><tr><td>乙醚</td><td>小</td><td>游离苷元、香豆素、醌类</td><td>苷元提取</td></tr><tr><td>氯仿</td><td>小～中</td><td>游离生物碱、甾体、醌类</td><td>生物碱萃取首选</td></tr><tr><td>乙酸乙酯</td><td>中</td><td>中等极性苷元、黄酮苷元</td><td>通用中等极性</td></tr><tr><td>正丁醇</td><td>中～大</td><td>皂苷、强极性苷</td><td>皂苷萃取专用</td></tr><tr><td>乙醇</td><td>大</td><td>苷类、生物碱盐、鞣质</td><td>适用范围最广</td></tr><tr><td>水</td><td>最大</td><td>糖、氨基酸、无机盐、多糖</td><td>煎煮、水提</td></tr></tbody></table></div>
+<p>乙酸乙酯与正丁醇这两格值得单独记：<strong>正丁醇与水互溶度小，对皂苷这类「极性大又不溶于水」的成分分配系数高</strong>，所以皂苷的经典纯化就是水溶液用正丁醇反复萃取。这不是背出来的，是「既要有一定极性、又要能和水分层」这两个条件筛出来的唯一常用溶剂。</p></div></div>
+  <div class="slide-foot"><span>6 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">一、相似相溶：一句话背后是三个阶段</div>
+                <div class="compact"><p>乙醇之所以成为最常用的提取溶剂，是三条优点叠在一起：极性可调（不同浓度对应不同极性段）、沸点适中（约 78 ℃，回收成本低）、对多数成分溶解性好且毒性远低于氯仿与苯。<strong>工业上把氯仿、苯从生产性提取溶剂里淘汰，理由不是化学，是安全与环保</strong>——这一点教材只用一句话带过，实际是近二十年工艺改造的主线。</p></div></div>
+  <div class="slide-foot"><span>7 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">二、五种提取法：谁怕热、谁费溶剂</div>
+                <div class="compact"><p>教材列了五种经典方法，判据只有两条：<strong>要不要加热</strong>，<strong>溶剂是不是循环使用</strong>。两条一排，五种方法的位置就清楚了。</p>
+<div class="table-wrap"><table><thead><tr><th>方法</th><th>加热</th><th>溶剂循环</th><th>适用</th><th>主要代价</th></tr></thead><tbody><tr><td>浸渍法</td><td>否（可温浸）</td><td>否</td><td>热敏成分、含淀粉黏液质多的药材</td><td>效率低、耗时长、溶剂用量大</td></tr><tr><td>渗漉法</td><td>否</td><td>部分（连续加新溶剂）</td><td>热敏成分、含量低的药材</td><td>溶剂用量大、操作繁琐</td></tr><tr><td>煎煮法</td><td>是（煮沸）</td><td>否</td><td>耐热水溶性成分</td><td>挥发油损失、热敏成分破坏、杂质多</td></tr><tr><td>回流提取法</td><td>是</td><td>是（冷凝回流）</td><td>脂溶性成分、有机溶剂</td><td>受热时间长</td></tr><tr><td>连续回流法</td><td>是</td><td>是（索氏循环）</td><td>含量低、脂溶性成分</td><td>受热时间最长、装置复杂</td></tr></tbody></table></div></div></div>
+  <div class="slide-foot"><span>8 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">二、五种提取法：谁怕热、谁费溶剂</div>
+                <div class="compact"><p>判断顺序其实只有一问：<strong>目标成分怕不怕热？</strong> 怕热，只能走浸渍或渗漉，冷提，代价是慢和费溶剂；不怕热，走回流或连续回流，快而省，代价是长时间受热。煎煮熟在「水」上——它是唯一以水为溶剂的热提法，所以只适用于水溶性、耐热的成分，这也是为什么挥发油类药材不能煎煮：薄荷、荆芥煎久了，有效成分全随蒸汽跑了。</p>
+<p>沸点最低的那类成分给了另一条路：<strong>水蒸气蒸馏</strong>。它利用的不是溶解性，是挥发性——薄荷醇、樟脑、丁香酚这类小分子萜与挥发油，随水蒸气一起蒸出，冷凝后分层。反过来，能升华的成分（咖啡因）可以升华法提，这条路径连溶剂都不用。<strong>当一种成分的挥发性足够突出时，蒸馏比任何溶剂提取都干净</strong>，因为选择性来自蒸气压，而不是溶解度。</p></div></div>
+  <div class="slide-foot"><span>9 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">三、分离的算术：K、β 与「少量多次」</div>
+                <div class="compact"><p>提取之后是分离。分离的物理基础只有一句：不同成分在两个互不相溶的相里，分配不一样。写成式子就是分配系数 K＝溶质在有机相浓度／在水相浓度。两种成分的 K 之比叫分离因子 β＝K₁/K₂。<strong>β 大于等于 100，一次萃取基本能分开；β 小，就要反复萃取或上逆流分配。</strong></p>
+<p>「少量多次」是这套算术给的第一条操作原则，而且可以算出差别来。设分配系数 K＝10，水相 100 mL：</p>
+<ul><li>用 100 mL 有机溶剂<strong>一次</strong>萃取，残留在水相的比例＝100/(10×100＋100)≈9.1%；</li><li>用同样的 100 mL 分成 <strong>10 次</strong>、每次 10 mL，残留比例≈(100/(10×10＋100))¹⁰≈0.1%。</li></ul>
+<p>同一份溶剂，残留从 9.1% 降到 0.1%，差出约 90 倍。<strong>这不是经验，是幂函数的必然结果。</strong> 懂了这一条，就不会在实验室里「一次倒一大瓶溶剂」然后抱怨收率低。</p></div></div>
+  <div class="slide-foot"><span>10 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">三、分离的算术：K、β 与「少量多次」</div>
+                <div class="compact"><p>pH 梯度萃取是这套算术的第二个用法，也是本章最值得掌握的一招。把酸碱性当成一个可调的旋钮：<strong>调 pH，就是调成分的离子化程度，也就是调它的 K。</strong> 生物碱在酸性下成盐（进水里），碱化后游离（进氯仿）；有机酸反过来。于是可以用一串 pH 由高到低的缓冲液，把一锅总生物碱按碱性强弱切成几段；也可以用一串碱液，把蒽醌类按酚羟基数切成几段。</p>
+<p>蒽醌的例子最能说明精度：大黄酸带羧基，酸性最强，能被 5% 碳酸氢钠溶液（弱碱）就拉进水相；带两个酚羟基的蒽醌酸性次之，要 5% 碳酸钠；只带一个酚羟基的酸性最弱，得用 1% 氢氧化钠。<strong>同一类成分，靠取代基数目不同带来的酸性差异，就能用碱的强弱逐级抠出来</strong>，不需要上柱。教材把这一步写在「经典分离方法」里，实际是很多工艺路线的核心，因为它的成本只有溶剂和 pH 计。</p></div></div>
+  <div class="slide-foot"><span>11 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">四、色谱四条路子：吸附、氢键、分子筛、离子交换</div>
+                <div class="compact"><p>β 小于 100 的时候，萃取就走到头了，必须换分辨率更高的手段——色谱。色谱的分离原理有四种，每一种对应分子上的一个面：</p>
+<p><strong>吸附色谱</strong>，靠极性。硅胶表面是硅醇基，极性大的成分吸附牢、后流出；氧化铝偏碱性，对生物碱吸附强、分离好，但酸性成分上氧化铝会吸附过牢甚至异构化。<strong>吸附剂是极性的，洗脱剂就要极性递增</strong>（正相），这条匹配规则错了，柱子就白装。</p>
+<p><strong>氢键吸附</strong>，靠酚羟基。聚酰胺的酰胺基与酚羟基、羧基形成氢键，氢键多的吸附牢。这一条几乎是为黄酮和鞣质量身定做的——它们共同的特征就是酚羟基多。所以黄酮分离的经典方法不是硅胶，是聚酰胺，洗脱用递增浓度的乙醇水。</p>
+<p><strong>分子筛</strong>，靠大小。凝胶（如 Sephadex）在水中溶胀成三维网，大分子进不去网孔、先流出，小分子钻进去、后流出。<strong>它按尺寸分，不按极性分</strong>，所以特别适合「极性相近但分子量差一倍」的场合，比如皂苷与它的次级苷。</p></div></div>
+  <div class="slide-foot"><span>12 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">四、色谱四条路子：吸附、氢键、分子筛、离子交换</div>
+                <div class="compact"><p><strong>离子交换</strong>，靠电荷。阳离子交换树脂抓生物碱盐、氨基酸，阴离子交换树脂抓有机酸、酚性成分。它的选择性来自电荷数和水合半径，洗脱靠改变 pH 或盐浓度。<strong>离子交换是唯一「按电荷分离」的路子</strong>，对水溶性、不能上硅胶的成分几乎是唯一选择。</p>
+<p>四条路子各管一个面，所以真实的分离流程永远是串联：先萃取粗分，再硅胶分段，再聚酰胺或凝胶精制，最后制备液相拿单体。<strong>串联不是重复劳动，是每一级只解决一个数量级的差距</strong>。想一步到位拿单体，多半是柱子堵了、样品没了。</p>
+<p>薄层色谱在这里有个特殊作用：它不是分离手段，是<strong>预试手段</strong>。用少量样品在几个溶剂系统里展开，看斑点数和 Rf，选出分离度最好的系统，再按比例放大到柱上。<strong>这一步能把「盲试三天」压缩成「试半小时」</strong>，教材把它写在色谱节里，成本几乎为零，收益却最大。</p></div></div>
+  <div class="slide-foot"><span>13 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><ul><li><strong>收率与纯度是反向的。</strong> 每一步纯化都掉一部分目标成分：结晶会带走母液里的成分，过柱会不可逆吸附，活性炭脱色会吸掉带共轭的苷元。工艺上追求的是「够用的纯度」，不是「最高纯度」。</li><li><strong>β 是热力学量，不是工艺量。</strong> β 大于 100 只说明一次萃取「理论上」能分开，实际还受乳化、相分离不完全、溶剂残留影响。皂苷、蛋白质存在时乳化几乎不可避免，要靠加电解质、加热、静置或改换溶剂破乳。</li><li><strong>热提永远在做交易。</strong> 升温提高扩散速率，同时提高杂质溶出率与热敏成分的分解率。教材给的温度与时间都是范围，真实值必须由小试确定；本章不给任何具体工艺参数。</li><li><strong>色谱的「分辨率」有上限。</strong> 硅胶对极性极近的同分异构体无能为力；手性异构体必须用手性固定相或手性添加剂，普通反相柱分不开。这是「左旋麻黄碱与右旋伪麻黄碱」这类问题必须另设方法的原因。</li><li>**溶剂残留是质量属性。</li></ul></div></div>
+  <div class="slide-foot"><span>14 / 16</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="14">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><p>** 氯仿、苯、甲醇都是药典限量的残留溶剂，工艺上「换掉」不只是环保要求，是成品能不能合格的问题。凡涉及残留限度的判定，以现行药典附录为准，本章不给数值。</p>
+<ul><li><strong>数字口径：</strong> K＝10、一次 9.1%、十次 0.1% 取自教材通行示例，是按分配公式的现算值，不是实验测定值；β≥100 是教材给的经验阈值，不是普适常数。真实体系须实测分配系数后再设计萃取级数。</li><li><strong>边界声明：</strong> 本章只解释提取分离的原理与判据，<strong>不构成提取分离工艺规程，也不构成质量控制标准</strong>；温度、时间、溶剂比、柱径比等一切参数，须经小试与中试验证并符合 GMP 与安全规范。</li></ul></div></div>
+  <div class="slide-foot"><span>15 / 16</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="15">
   <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
-  <div class="slide-foot"><span>5 / 5</span><span>disclaimer</span></div>
+  <div class="slide-foot"><span>16 / 16</span><span>disclaimer</span></div>
 </section>
 </div>
 <div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>

@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"/>
-<title>第 5 章 · 镜片与矫正 · 幻灯片</title>
+<title>第 5 章 · 镜片与矫正：改的是入射光，不是眼 · 幻灯片</title>
 <style>
 
 :root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
@@ -59,24 +59,79 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <body>
 <div id="deck">
 <section class="slide" data-i="0">
-  <div class="slide-inner"><h1 class="big">第 5 章 · 镜片与矫正</h1></div>
-  <div class="slide-foot"><span>1 / 5</span><span>title</span></div>
+  <div class="slide-inner"><h1 class="big">第 5 章 · 镜片与矫正：改的是入射光，不是眼</h1></div>
+  <div class="slide-foot"><span>1 / 14</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「《F:/textbooks/机器学习·镜片与矫正》」——教材第5章。本章要回答的是：镜片与矫正：这一章要回答什么。</blockquote></div>
-  <div class="slide-foot"><span>2 / 5</span><span>motto</span></div>
+  <div class="slide-inner"><blockquote class="motto">「从外之内者，治其外。」——《素问·至真要大论》</blockquote></div>
+  <div class="slide-foot"><span>2 / 14</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
-  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">镜片与矫正：本课第 5 章。</p></div>
-  <div class="slide-foot"><span>3 / 5</span><span>problem</span></div>
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">一副 −4.00 D 的镜片，把 5 米外来的平行光预先发散，让眼的远点从眼前 25 厘米移到 5 米，于是同一只近视眼看见了远处的树。整个过程里，角膜还是那副角膜，眼轴还是那个眼轴，晶状体也没有变——变的只是进入眼睛之前那一段光的形状。承认这一点，会同时得到两个结论：镜片能立刻改善视力，却一天也不能阻止眼轴变长；而所有关于「戴眼镜会不会越戴越深」的争论，都源于把「改变入射光」误当成「治疗眼睛」。</p></div>
+  <div class="slide-foot"><span>3 / 14</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
-  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（验光的判据是「测得准、写得清、退得回」）+ 知识积累（本章 4 单元 10,967 汉字；三辨主 <strong>病性与证候 307</strong>；四位面（章群结构）主 <strong>矫正 10967</strong>；引书 <strong>19 部 22 次</strong>；数值类命中 0）</p></div>
-  <div class="slide-foot"><span>4 / 5</span><span>roots</span></div>
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（患者要的是「马上看清」，一副镜片当天就能交付，而控制进展要按年随访、还未必有效）+ 知识积累（镜片光学已经能精确算出每一度的落点，这套精度反过来制造了一个错觉：既然算得这么准，它一定在治眼，而不是在改光）</p></div>
+  <div class="slide-foot"><span>4 / 14</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
+  <div class="slide-inner"><div class="kicker">一、镜片只做一件事：改入射光的聚散度</div>
+                <div class="compact"><p>薄透镜的屈光力定义是 F = 1 / f，f 以米为单位。+5.00 D 的镜片焦距 0.2 米，把平行光会聚到镜后 20 厘米；−4.00 D 的镜片焦距 −0.25 米，把平行光发散，其反向延长线交于镜前 25 厘米。近视眼戴上 −4.00 D 的镜片，等于把「无穷远」搬到了眼前 25 厘米的远点上，视网膜上的像重新变清晰。</p>
+<p>这里的关键是<strong>共轭</strong>。镜片不改变眼的屈光力，它改变的是物点与视网膜之间的共轭关系：原来落在无穷远的物点，现在与视网膜共轭；原来落在 25 厘米的物点，被推到了更近。矫正的实质是「把物挪到眼的远点上」，不是「把眼的焦点挪到物上」。这个区别决定了一件事：摘下镜片，一切复原。镜片是一段被插入光路的光学元件，不是眼的一部分。</p></div></div>
+  <div class="slide-foot"><span>5 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">一、镜片只做一件事：改入射光的聚散度</div>
+                <div class="compact"><p>由此可以推出三条常被混淆的结论。第一，镜片不能改变眼轴，也不能改变角膜曲率，所以它对轴性近视的进展没有直接作用；能影响进展的是离焦信号、户外时间、药物与特殊设计镜片，机制不在「把光折回去」这一层。第二，镜片能改变视网膜像的大小，这一点在屈光参差与单眼无晶状体眼里有实际后果。第三，镜片能引入像差与棱镜效应，度数越高、镜片越靠边，问题越明显。</p></div></div>
+  <div class="slide-foot"><span>6 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">二、球柱镜：一个面，两条子午线</div>
+                <div class="compact"><p>球镜在所有方向上的屈光力相同，把点光源成一个点（忽略像差）。柱镜只在一个方向上折光，与该方向垂直的子午线屈光力为零，于是点光源被拉成一条线。球镜与柱镜叠加，得到的是两个焦点、两条焦线，散光眼要矫正的就是这两条线不重合。</p>
+<p>处方的写法因此不是随意的。球镜、柱镜、轴位三个数共同定义了一个透镜：轴位指的是柱镜屈光力为零的那条子午线，柱镜的屈光力作用在与它垂直的方向上。轴位写错 90 度，散光的方向就整个翻过去，患者会觉得「比不戴还难受」；轴位差 10 度以内，多数人能适应，但精细工作者可能仍有症状。这就是为什么轴位要反复核对，而球镜差 0.25 D 往往可以接受。</p></div></div>
+  <div class="slide-foot"><span>7 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">二、球柱镜：一个面，两条子午线</div>
+                <div class="compact"><p>柱镜还有正负两种写法。同一片镜片可以写成 +1.00 / −2.00×90，也可以写成 −1.00 / +2.00×180，两者光学等价，转换规则是「球柱相加、柱镜变号、轴位转 90 度」。转抄时把两种写法混在一张单子上，是散光处方出错最常见的原因之一。核对的办法很简单：把两种写法都换算成同一形式，看是否一致；不一致，就是抄错了。</p>
+<p>散光的矫正还有一个「矫多少」的问题。全矫能把两条焦线合到视网膜上，理论上像最清晰；但长期未矫正的散光眼，突然全矫可能不适应，尤其是高散光与斜向散光。部分矫正是一个折中，代价是残留模糊。这个取舍没有统一答案，取决于年龄、职业、双眼状态与适应史，本章只指出它是一个取舍，不给具体数值。</p></div></div>
+  <div class="slide-foot"><span>8 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">三、顶点距离、放大率与棱镜效应</div>
+                <div class="compact"><p>镜片戴在眼前，与角膜之间有一段距离，通常是 10 至 15 毫米。这段距离改变了镜片在角膜平面上的有效屈光力。换算公式是 F角膜 = F镜片 / (1 − d·F镜片)，d 以米计。取 d = 0.012 米、F = +5.00 D，得 5.00 / (1 − 0.06) ≈ 5.32 D；取 F = −5.00 D，得 −5.00 / (1 + 0.06) ≈ −4.72 D。</p>
+<p>这个换算解释了两件事。正镜离眼越远，有效屈光力越强，所以远视镜要尽量贴近；负镜离眼越远，有效屈光力越弱，所以近视镜稍远一点反而「度数变浅」。同一副眼镜，戴得松一点、紧一点，实际效果就不同；这也是为什么换镜架后患者常说「度数不对」，而验光单一个字没改。接触镜直接贴在角膜上，d 近似为零，所以它的度数与框架镜不同，换算的方向由上式决定。</p></div></div>
+  <div class="slide-foot"><span>9 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">三、顶点距离、放大率与棱镜效应</div>
+                <div class="compact"><p>放大率是第二个容易被忽略的量。镜片改变像的大小，公式可写成 M ≈ 1 / (1 − d·F)。+5.00 D 在 12 毫米处，M ≈ 1 / 0.94 ≈ 1.06，像放大约 6%；−5.00 D 则约 0.94，像缩小约 6%。单眼如此，双眼度数不等时，两眼的像大小不等，就是不等像。轻度不等像大脑可以融合，超过一定范围会出现视疲劳、复视、立体视下降；屈光参差者戴框架镜不舒服，常常不是度数错了，是像大小差得太多。这也是接触镜在屈光参差里更受青睐的原因——它贴在角膜上，放大率接近 1。</p>
+<p>棱镜效应是第三个。视线偏离镜片光学中心时，镜片在该点的棱镜效应约为 P = c × F，c 以厘米计、F 以屈光度计。取 c = 1 厘米、F = 4.00 D，得 4Δ。度数越高，同样的偏心产生的棱镜越大；所以高度近视者的镜片要尽量对准光学中心，镜框不能太大，否则边缘的稜镜效应会让患者头晕、地面变形。这一条在配镜时比「镜片薄不薄」重要得多。</p></div></div>
+  <div class="slide-foot"><span>10 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">四、接口：外治诸法，治的是「外」</div>
+                <div class="compact"><p>中医眼科把治法分为内治与外治。内治以辨证立方法，调脏腑气血；外治则包括点眼、熏洗、敷贴、劆洗、钩割等，直接作用于眼之局部。教材所述的外治诸法，共同点是「从外面动手，不进入脏腑」——点眼药直达病所，熏洗以药气蒸腾、清洁睑弦，敷贴借温热与药力行于胞睑。这些方法的定位很清楚：它们改变的是局部环境，不是整体病机。</p>
+<p>把镜片放进这个序列，位置就清楚了。镜片也是「治其外」：它不进入眼内，不改变脏腑，只在角膜前放一段被计算过的光。它与点眼、熏洗的相似之处在于「局部、可逆、需反复使用」；不同之处在于它作用的对象不是组织，是光。这个区别必须说清，否则「外治」会被误读成「外治都能治本」——点眼能清热退赤，是因为药作用于组织；镜片能看清，是因为光被重新安排，两者不在一个层面上。</p></div></div>
+  <div class="slide-foot"><span>11 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">四、接口：外治诸法，治的是「外」</div>
+                <div class="compact"><p>《素问·至真要大论》说「从外之内者，治其外」，讲的是病从外而来、留于外者，当从外解。镜片矫正的「病」——屈光不正——严格说不属于「从外之内」，它是眼的结构参数与光学需求不匹配，既非外邪，也非内伤。所以引用这句话时，只能取其「在外者治外」的方法论姿态，不能把它当成屈光不正的病因解释。这个界限不划清，就会推出「戴镜即治病」的错误结论。</p>
+<p>能与镜片真正并置的，是中医对「目受血而能视」的整体观。《素问·五脏生成》说「肝受血而能视」，提示视觉依赖全身状态；这与现代认识里「泪膜、调节、双眼视、神经适应都影响视觉质量」并不冲突。两者共同支持一个临床态度：镜片解决光学，剩下的部分要另外解决。一个戴着合适镜片仍诉眼干、眼胀、久读疲劳的人，问题不在度数，在眼表、调节或双眼视。</p></div></div>
+  <div class="slide-foot"><span>12 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><p>镜片矫正的代价，第一是「可逆」本身。可逆意味着它必须持续使用，摘下就复原；它对眼轴、对角膜形态、对近视进展没有治疗作用。把「戴镜」说成「治疗」，短期能让患者安心，长期会误导随访预期。</p>
+<p>第二是像质。球柱镜只能矫正低阶像差（离焦与散光），高阶像差（球差、彗差、三叶草）它碰不到。度数越高、镜片越靠边、镜框越大，高阶像差与棱镜效应越明显。这解释了「度数配准了，晚上还是花」的现象。</p>
+<p>第三是适应。新镜片改变像的大小、位置与畸变，大脑需要时间重校准；适应期的长短因人而异，与年龄、度数变化量、双眼差异有关。把适应期说成「正常现象」可以，但不能用它掩盖真正的处方错误——两者的区别是：适应期症状逐日减轻，处方错误的症状持续或加重。</p>
+<p>本章不给镜片参数，不给折射率、阿贝数、基弧的具体选择，也不给「多少度该用高折射率」的界限。这些属于产品与临床决策，须由执业人员依个体情况与现行规范决定。文中数值均为教学设定。</p></div></div>
+  <div class="slide-foot"><span>13 / 14</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="13">
   <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
-  <div class="slide-foot"><span>5 / 5</span><span>disclaimer</span></div>
+  <div class="slide-foot"><span>14 / 14</span><span>disclaimer</span></div>
 </section>
 </div>
 <div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>

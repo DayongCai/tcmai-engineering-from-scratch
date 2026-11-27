@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"/>
-<title>第 10 章 · 病历、知情同意与转诊 · 幻灯片</title>
+<title>第 10 章 · 病历、同意书、转诊单，写的是同一件事：把判断搬出脑袋 · 幻灯片</title>
 <style>
 
 :root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
@@ -59,24 +59,116 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <body>
 <div id="deck">
 <section class="slide" data-i="0">
-  <div class="slide-inner"><h1 class="big">第 10 章 · 病历、知情同意与转诊</h1></div>
-  <div class="slide-foot"><span>1 / 5</span><span>title</span></div>
+  <div class="slide-inner"><h1 class="big">第 10 章 · 病历、同意书、转诊单，写的是同一件事：把判断搬出脑袋</h1></div>
+  <div class="slide-foot"><span>1 / 20</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「《F:/textbooks/机器学习·病历、知情同意与转诊》」——教材第10章。本章要回答的是：病历、知情同意与转诊：这一章要回答什么。</blockquote></div>
-  <div class="slide-foot"><span>2 / 5</span><span>motto</span></div>
+  <div class="slide-inner"><blockquote class="motto">「病为本，工为标，标本不得，邪气不服。」——《素问·汤液醪醴论》</blockquote></div>
+  <div class="slide-foot"><span>2 / 20</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
-  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">病历、知情同意与转诊：本课第 10 章。</p></div>
-  <div class="slide-foot"><span>3 / 5</span><span>problem</span></div>
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">本章底本 5 个单元、7,000 汉字，取自《医学数据安全与隐私》第 4 章：研究与应用中的伦理要求、职业行为规范、人员安全意识、患者权益与信息透明、合规与发展的平衡。五条都在讲&quot;应当如何对待患者的信息与权利&quot;，没有一条讲病历该写什么、同意该说清几件、转诊该带什么。而这三件事在颌面外科有一个共同的软肋：<strong>判断的大部分内容是不可见的</strong>——肿的范围在手指下，张口度在患者嘴里，麻木只在患者的叙述里。不写下来、不说出来、不带过去，它就只存在于做检查那个人的记忆里；而记忆会随换班、时间和人事变动蒸发。</p></div>
+  <div class="slide-foot"><span>3 / 20</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
-  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（颌面外科的判据是「先保气道、再定层次、后谈处置」；顺序错了就是事故）+ 知识积累（本章 5 单元 7,000 汉字；三辨主 <strong>部位（面·颌·颈·间隙） 12</strong>；四位面（章群结构）主 <strong>调护与合规 7000</strong>；引书 <strong>0 部 0 次</strong>；数值类命中 0）</p></div>
-  <div class="slide-foot"><span>4 / 5</span><span>roots</span></div>
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（颌面外科的连续性天生是断的：门诊看一次、手术做一次、术后查一次、出院后再见一次，四次见面可能由四个人完成；每一次交接都是判断的重新组装，而组装材料只有上一份记录）+ 知识积累（底本给的是伦理原则与信息治理，讲&quot;应当尊重、应当透明、应当合规&quot;，但不给字段；病历的价值恰恰在字段——写&quot;左下颌肿胀&quot;与写&quot;以颧弓下缘为界、越过下颌骨下缘、可在骨面推动、无波动&quot;，是两份完全不同的病历）</p></div>
+  <div class="slide-foot"><span>4 / 20</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
+  <div class="slide-inner"><div class="kicker">一、一份病历有三个读者，三个读者要的东西不一样</div>
+                <div class="compact"><p>写病历的人常以为自己在写给检查者看，于是把字写满、把模板填全、把该打的勾打上。真正会翻开这份记录的，是另外三个人。</p>
+<p><strong>第一个是三个月后的自己。</strong>那时你已经记不清这个患者是左边还是右边、当初量的是三点五还是四。你需要的不是&quot;已处理&quot;，是能让你重新建立判断的原始观察：范围、参照物、测量方式。</p>
+<p><strong>第二个是接手的人。</strong>值班医师半夜被叫起来，他只有两分钟。他要的不是病程叙述，是&quot;现在最要紧的是什么、上一次是谁怎么判断的、如果他变了该找谁&quot;。<strong>能给接手者省下两分钟的记录，价值高于写满两页的记录。</strong></p>
+<p><strong>第三个是将来可能追问的人。</strong>质证、复盘、教学、科研，都在这条线上。他们要的不是结论，是结论的依据：当时看见了什么、据此考虑了什么、做了哪些、谁回应了。<strong>一份记录如果只有结论没有依据，它在被追问时等于不存在。</strong></p></div></div>
+  <div class="slide-foot"><span>5 / 20</span><span>body</span></div>
+</section>
+<section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">一、一份病历有三个读者，三个读者要的东西不一样</div>
+                <div class="compact"><p>三个读者的需求可以压成一条标准：<strong>这份记录，能不能让一个没在场的人，照着它把同一个检查重做一遍？</strong>能，就是合格；不能，字数再多也只是叙述。</p></div></div>
+  <div class="slide-foot"><span>6 / 20</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">二、颌面外科病历的六个必写项</div>
+                <div class="compact"><p>通用病历的框架（主诉、现病史、既往史、检查、诊断、处理）在颌面外科不够用，因为它缺的正是这个部位最要紧的六项。</p></div></div>
+  <div class="slide-foot"><span>7 / 20</span><span>body</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">二、颌面外科病历的六个必写项</div>
+                <div class="compact dense"><div class="table-wrap"><table><thead><tr><th>必写项</th><th>怎么写</th><th>为什么必须这样写</th></tr></thead><tbody><tr><td>肿</td><td>三个径线＋以骨性标志为参照的边界（如&quot;前界至下颌角前方、后界越过下颌支后缘&quot;）＋与骨的关系（可推动／固定）＋有无波动</td><td>&quot;左下颌肿胀&quot;无法比较；骨性标志不随体位与胖瘦变化，是唯一稳定的参照系</td></tr><tr><td>张口度</td><td>上下中切牙切缘间距，注明由谁、用什么方法量</td><td>换人换法量出的差值可能大于病情变化；不注明就无法纵向比较</td></tr><tr><td>牙位与咬合</td><td>牙位用编号，不用&quot;左上后牙&quot;；咬合写接触关系与有无早接触</td><td>编号是唯一不产生歧义的语言；咬合改变是颌骨病变与外伤的早期线索</td></tr><tr><td>感觉</td><td>分区记录（下唇、颏、舌前、颊），程度分级，并与术前对比</td><td>只有&quot;术前有没有&quot;才能判断&quot;术后是不是新的&quot;；新发麻木的病因谱里有必须排除的东西</td></tr><tr><td>气道</td><td>能否平卧、有无打鼾与憋醒、既往有无插管困难、有无颌间固定</td><td>气道评估写在门诊病历里，麻醉与病房才有依据；术后才发现困难，已经晚了一步</td></tr><tr><td>既往与用药</td><td>头颈部放疗史、抗凝与抗血小板、血糖控制、过敏史、既往颌面手术与植入物</td><td>这几项不改变诊断，改变的是出血、愈合与转诊的判断，必须写在第一屏</td></tr></tbody></table></div></div></div>
+  <div class="slide-foot"><span>8 / 20</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">二、颌面外科病历的六个必写项</div>
+                <div class="compact"><p>这六项有一个共同性质：<strong>它们都是&quot;可复测的观察&quot;，不是&quot;印象&quot;。</strong>病历里最该被消灭的句子是&quot;一般情况可&quot;&quot;创口愈合良好&quot;&quot;肿较前好转&quot;——这三句都没有主语、没有量、没有参照。改成&quot;能平卧，夜间无憋醒&quot;&quot;创口无渗液，缝线完整，周围黏膜无红肿&quot;&quot;范围较昨日缩小约一指宽，皮温正常&quot;，同一件事，前一种写法在任何一次追问下都会崩。</p>
+<p>还有一条格式上的要求：<strong>修改要留痕。</strong>加一句要注明补记时间，改一个字要留原始记录。这不是为应付检查，是因为一份病历的时间线一旦不可信，其中真实的那些部分也会被怀疑。</p></div></div>
+  <div class="slide-foot"><span>9 / 20</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">三、知情同意：签字之前，患者要能复述三件事</div>
+                <div class="compact"><p>知情同意在流程上是一个签字，在实质上是一次<strong>可复述的对话</strong>。判断有没有做到，有一个很简单的测试：签完字，请患者用自己的话说一遍，说得出三件事就算做到了。</p>
+<p><strong>第一件：现在还不能确定什么。</strong>颌面部的肿块在病理出来之前，性质是开放的；影像能说位置与范围，说不了性质。这一句必须在同意书之外口头说清，因为患者对&quot;不确定&quot;的耐受度，决定了他在等结果的那几天会怎么过。</p>
+<p><strong>第二件：有哪些选择，包括&quot;不做&quot;。</strong>患者常常以为摆在面前的只有&quot;做&quot;和&quot;不做&quot;，而实际上还有&quot;换一种方式&quot;&quot;分期做&quot;&quot;先观察再定&quot;。把选项摊开，哪怕摊开之后仍然推荐同一个方案，患者的同意性质也已经不同——从&quot;被告知&quot;变成&quot;被咨询&quot;。<strong>没有摊开选项的同意，签的是一份通知。</strong></p></div></div>
+  <div class="slide-foot"><span>10 / 20</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">三、知情同意：签字之前，患者要能复述三件事</div>
+                <div class="compact dense"><p><strong>第三件：最坏会怎样，真发生了怎么办。</strong>这一件要具体到处境，不要停在名词上。&quot;可能损伤神经&quot;要接一句&quot;如果发生，下唇会麻，多数会慢慢好转，一部分人长期存在&quot;；&quot;可能出血&quot;要接一句&quot;如果发生，我们会怎么发现、谁来看、要不要再进一次手术室&quot;。</p>
+<p>三件事之外，还有三个常被跳过的情形。</p>
+<p><strong>代理与共同决策。</strong>未成年人、意识障碍者、听力或语言沟通有困难者，同意的取得方式不同，但<strong>内容不能简化</strong>。沟通辅助手段（书写、图示、手语翻译、家属在场）是为把同样的话送达，不是为把话变少。老年患者的决定常由子女实际作出，这时要分清&quot;谁在法律上能签&quot;与&quot;谁在事实上决定&quot;，两者不一致时，把两个人请到一起说。</p>
+<p><strong>术中变更。</strong>范围要扩大、冰冻结果改变了原定术式——这类变更在术前就要打开通道：告诉患者与家属&quot;如果需要扩大，我们会停下来和外面的人说，不会自己决定&quot;。术前说过这一句，术中再谈就不是突袭；术前没说，术中再谈就容易被听成&quot;已经做完了才告诉我&quot;。</p></div></div>
+  <div class="slide-foot"><span>11 / 20</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">三、知情同意：签字之前，患者要能复述三件事</div>
+                <div class="compact"><p><strong>中医治疗的同意。</strong>外治、内治、针灸的风险谱与手术不同，但&quot;风险低&quot;不等于&quot;不必说&quot;。敷贴可能致皮肤反应，含漱可能致黏膜刺激，长期服药需要复诊调方——这些都属应当交代的内容。<strong>把&quot;这是调理，没有风险&quot;当开场白，是这一类同意最常见的失真。</strong></p></div></div>
+  <div class="slide-foot"><span>12 / 20</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">四、转诊：把判断一起送走</div>
+                <div class="compact"><p>转诊被当成&quot;把患者送走&quot;的时候，接收方拿到的是一个陌生人和一叠复印件；转诊被当成&quot;把判断送走&quot;的时候，接收方拿到的是一个已经想清楚的问题。</p>
+<p>书面转诊要写清三件事，缺一件就会在接收端重新来过：</p>
+<ol><li><strong>为什么转</strong>——不是&quot;条件有限&quot;，而是&quot;需要术中冰冻而本院无此条件&quot;&quot;需要气道干预能力&quot;&quot;影像提示范围超出本院处置能力&quot;；</li><li><strong>已经交代了什么</strong>——已告知的风险、患者与家属目前的理解程度、有没有签字；</li><li><strong>转给谁、怎么交接</strong>——接收机构与科室、联系人、交接方式（电话、书面、信息系统）、谁负责确认对方接住了。</li></ol>
+<p>随患者带走的材料，习惯上叫&quot;转诊包&quot;，六件：</p></div></div>
+  <div class="slide-foot"><span>13 / 20</span><span>body</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">四、转诊：把判断一起送走</div>
+                <div class="compact dense"><div class="table-wrap"><table><thead><tr><th>件</th><th>内容</th><th>常见缺失</th></tr></thead><tbody><tr><td>影像</td><td>原始数据或可读的完整序列，不只截图</td><td>只给一张手机翻拍，接收方无法判读</td></tr><tr><td>病理与检验</td><td>报告原件或复印件，含送检时间与编号</td><td>只有口头结果</td></tr><tr><td>用药与过敏</td><td>现用药物、抗凝与抗血小板、过敏史</td><td>漏写&quot;一直在吃&quot;的活血类中成药与保健品</td></tr><tr><td>既往治疗</td><td>手术记录、放疗剂量与范围、既往感染与引流史</td><td>只写&quot;曾在外院治疗&quot;</td></tr><tr><td>当前问题</td><td>一句话：现在最需要对方解决的是什么</td><td>写成病史摘要，重点被淹没</td></tr><tr><td>联系人</td><td>家属电话、转出方医师与可回拨的号码</td><td>只有科室总机</td></tr></tbody></table></div>
+<p>第六件常被当成小事，实际是最要紧的一件：<strong>接收方打不通电话，等于没有转诊。</strong>而&quot;送到了&quot;与&quot;接住了&quot;是两个状态，前者由转出方确认，后者只能由接收方确认。所以转诊的最后一个动作不是发车，是<strong>回执</strong>。</p></div></div>
+  <div class="slide-foot"><span>14 / 20</span><span>body</span></div>
+</section>
+<section class="slide" data-i="14">
+  <div class="slide-inner"><div class="kicker">四、转诊：把判断一起送走</div>
+                <div class="compact"><p>下转同样如此。患者回到社区或基层继续换药、拆线、复查，转出方要写明&quot;谁在跟、多久跟一次、出现什么要再上来&quot;。<strong>下转不是责任的终点，是责任的移交</strong>；没写清接给谁，就等于没有人接。</p></div></div>
+  <div class="slide-foot"><span>15 / 20</span><span>body</span></div>
+</section>
+<section class="slide" data-i="15">
+  <div class="slide-inner"><div class="kicker">五、病历也是数据：隐私、去标识与教学使用</div>
+                <div class="compact"><p>底本这一章讲的是信息治理，落到临床只有几件事，但每一件都很具体。</p>
+<p><strong>患者有权知道自己的信息被谁看、用于什么。</strong>这不是一句口号，它有可执行的形态：入院时说明病历的使用范围（诊疗、会诊、医保、质控），教学与科研使用时另行告知并取得授权，患者可以拒绝而不影响诊疗。</p>
+<p><strong>面部影像比姓名更敏感。</strong>姓名可以去掉，脸去不掉。颌面部的手术照片、影像重建、三维模型，即使去掉了姓名与住院号，仍可能被熟人认出。所以这类材料的使用要按&quot;可识别信息&quot;对待：单独授权、最小范围流转、不在公开平台原图发布、教学使用时优先用示意图或经处理的图像。</p>
+<p><strong>去标识不是删名字。</strong>日期、罕见的病名组合、机构与科室、特殊职业、面部特征，都可能成为重新识别的线索。<strong>判断标准是&quot;能不能被同院同事猜出是谁&quot;，而不是&quot;有没有写名字&quot;。</strong></p></div></div>
+  <div class="slide-foot"><span>16 / 20</span><span>body</span></div>
+</section>
+<section class="slide" data-i="16">
+  <div class="slide-inner"><div class="kicker">五、病历也是数据：隐私、去标识与教学使用</div>
+                <div class="compact"><p><strong>不要因为怕出错而不记录。</strong>这是本章最想留下的一句话。信息治理的压力容易催生两种反向行为：一种是把记录写得含糊，以便将来有解释空间；一种是写满模板，内容全是&quot;已告知、已交代、无特殊&quot;。前者让交接失效，后者让病历变成空壳。两种都比&quot;写清楚&quot;更危险——因为它们在平时看不出代价，只在出事的那一天一次性付清。</p>
+<p>合规与发展的平衡，说到底是一个取舍：<strong>记录的目的不是自保，是让下一个人能接住这个人。</strong>把这条放在前面，该写什么自然就清楚了；把它换成&quot;怎么写才不出错&quot;，写出来的东西谁都用不上，包括写的人自己。</p></div></div>
+  <div class="slide-foot"><span>17 / 20</span><span>body</span></div>
+</section>
+<section class="slide" data-i="17">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><ul><li>本章的伦理与信息治理框架借自底本《医学数据安全与隐私》第 4 章（伦理要求、职业行为规范、患者权益与信息透明、合规与发展），属方法移植；&quot;六个必写项&quot;&quot;三件事&quot;&quot;转诊包六件&quot;是按颌面外科的一般特点组织的教学归纳，不是任何机构的文书规范。</li><li>本章<strong>不给</strong>病历书写规范的具体条款、保存年限、签字权限、代理同意的法律要件；也<strong>不给</strong>转诊的时限与文书格式。这些依现行法规、行业规范与所在机构制度，本章不替代。</li><li>本章<strong>不给</strong>任何法律意见。文中&quot;记录即证据&quot;&quot;回执&quot;等说法是对临床工作习惯的建议，不构成对责任划分的判断。</li><li>本章<strong>不给</strong>诊断与治疗参数：不给影像判读标准、不给用药方案、不给手术指征。涉及具体处置的，以现行指南与具备资质者的判断为准。</li><li>文中&quot;三个读者&quot;&quot;三件事复述测试&quot;是教学用的检验方式，不是评价标准；不同机构对病历与同意的要求宽严不同，本章只提示应然的方向。</li></ul></div></div>
+  <div class="slide-foot"><span>18 / 20</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="18">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><p><strong>免责声明：</strong> 本章为教学材料，不构成医学意见、诊断、治疗建议或法律意见。病历书写、知情同意与转诊的具体要求，以现行法律法规、行业规范与所在机构制度为准；患者的临床处置须由具备相应资质的医师作出。</p></div></div>
+  <div class="slide-foot"><span>19 / 20</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="19">
   <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
-  <div class="slide-foot"><span>5 / 5</span><span>disclaimer</span></div>
+  <div class="slide-foot"><span>20 / 20</span><span>disclaimer</span></div>
 </section>
 </div>
 <div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>

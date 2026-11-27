@@ -31,7 +31,7 @@ chapters:
   - slug: 01-lingshu-xuandu
     title: 《灵枢》不是针法手册，而是针道的总纲
     video: rendered
-    estimate_minutes: 13.8      # = lesson.json estimateTotalSeconds ÷ 60
+    estimate_minutes: 13.80      # = lesson.json estimateTotalSeconds ÷ 60
     measured_minutes: 10.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 02-suwen-nanjing
@@ -44,7 +44,7 @@ chapters:
     title: 《甲乙经》把穴编成目录，隋唐把针灸写进方书与医德
     video: rendered
     estimate_minutes: 15.48      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 14.9      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    measured_minutes: 14.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 04-songjinyuan
     title: 宋金元把针灸变成国家标准、时间表和一家之言
@@ -61,7 +61,7 @@ chapters:
   - slug: 06-gefu
     title: 歌赋用押韵换来了记得住，代价是把异文压成一个说法
     video: rendered
-    estimate_minutes: 14.3      # = lesson.json estimateTotalSeconds ÷ 60
+    estimate_minutes: 14.30      # = lesson.json estimateTotalSeconds ÷ 60
     measured_minutes: 13.62      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 07-yian

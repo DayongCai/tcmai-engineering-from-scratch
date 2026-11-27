@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"/>
-<title>第 12 章 · 成分—靶点网络与活性预测 · 幻灯片</title>
+<title>第 12 章 · 网络图上的「核心靶点」是算出来的假说 · 幻灯片</title>
 <style>
 
 :root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
@@ -59,24 +59,97 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <body>
 <div id="deck">
 <section class="slide" data-i="0">
-  <div class="slide-inner"><h1 class="big">第 12 章 · 成分—靶点网络与活性预测</h1></div>
-  <div class="slide-foot"><span>1 / 5</span><span>title</span></div>
+  <div class="slide-inner"><h1 class="big">第 12 章 · 网络图上的「核心靶点」是算出来的假说</h1></div>
+  <div class="slide-foot"><span>1 / 16</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「《素问·至真要大论》」——本章为网络预测主题，教材无篇名级引文；此条为教学参照，<strong>非本章原文</strong>。本章要回答的是：成分—靶点网络能不能替代实验。</blockquote></div>
-  <div class="slide-foot"><span>2 / 5</span><span>motto</span></div>
+  <div class="slide-inner"><blockquote class="motto">「方以类聚，物以群分，吉凶生矣」——《周易·系辞上》。分类聚合是认识复杂系统的第一步：把上万个小分子按结构归类，把上千个蛋白按互作关系聚成模块，网络才画得出来。但「聚成一类」只是观察的起点，不是结论——同一张图，换个阈值就能换出一批核心节点。</blockquote></div>
+  <div class="slide-foot"><span>2 / 16</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
-  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">网络预测给的是假设，不是结论；教材在这一节写得比其它节克制。</p></div>
-  <div class="slide-foot"><span>3 / 5</span><span>problem</span></div>
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">这一章取材 3 个单元、4,962 汉字，全部来自教材第 12 章，平均 1,654 字/单元，是全课最薄的一章。薄，却要装三件大事：现代分离与鉴定（LC-MS、二维核磁）、计算机辅助药物设计（对接、虚拟筛选、药效团）、数字化与 AI（数据库、知识图谱、机器学习）。更说明问题的是引书的分布：全章引书 1 部、2 次，两次都是《肘后备急方》；可数的值 0 处。<strong>教材在这一章几乎不引古籍、不给数值，靠的是反复出现的「现代认识」「可辅助参考」这类限定语。</strong> 这些限定语不是客套，它们是这一章唯一的结构性防护——因为网络药理学的一条流水线，从成分收集到核心靶点，五步里每一步都在给结论加假设，而假设不会自己写在图上。</p></div>
+  <div class="slide-foot"><span>3 / 16</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
-  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（中药是混合物，任何一个「成分」都要先分出来才能说清楚）+ 知识积累（本章 3 单元 4,962 汉字；三辨主 <strong>提分与检识 52</strong>；四位面（生源途径）主 <strong>甲戊二羟酸途径 4</strong>；引书 <strong>1 部 2 次</strong>；数值类命中 0）</p></div>
-  <div class="slide-foot"><span>4 / 5</span><span>roots</span></div>
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（中药的作用是「多成分、多靶点、多通路」，而实验药理一次只能验证一个成分对一个靶点的一个效应。要在一篇论文的篇幅里描述整体，只能求助于网络：把已知关系连起来，用拓扑指标代替实验。网络是唯一能在纸面上承载整体性的工具，也是唯一能在纸面上造出整体性幻觉的工具）+ 知识积累（数据库与算法是这二十年才攒起来的：TCMSP 收录成分与靶点、STRING 收 PPI、KEGG 收通路、Cytoscape 做可视化。工具的成熟速度远快于验证规范的形成，于是「能画出来」先于「能证明」，这中间的空档就是本章要处理的地方）</p></div>
+  <div class="slide-foot"><span>4 / 16</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
+  <div class="slide-inner"><div class="kicker">一、五步流水线：每一步的输入与它的失效点</div>
+                <div class="compact dense"><p>网络药理学在教材里的流程是五步，写法很标准，标准到看不见风险。把每一步的输入与失效点并排放，风险就露出来了。</p>
+<div class="table-wrap"><table><thead><tr><th>步骤</th><th>输入</th><th>输出</th><th>失效点</th></tr></thead><tbody><tr><td>① 成分收集</td><td>数据库检索、文献</td><td>复方各药味的化学成分列表</td><td>数据库只收了「已被研究过」的成分；含量低于检测限的成分与主要成分同权</td></tr><tr><td>② 靶点预测</td><td>反向对接、相似性搜索、文献</td><td>每个成分的作用靶点集合</td><td>预测算法的假阳性率没有统一口径；一个成分常被预测出几十个靶点</td></tr><tr><td>③ 网络构建</td><td>靶点集合 + PPI 数据库</td><td>蛋白互作网络</td><td>PPI 数据库本身含大量未经实验验证的高通量互作</td></tr><tr><td>④ 富集分析</td><td>靶点列表</td><td>KEGG 通路、GO 功能</td><td>通路条目之间高度重叠，「显著」取决于背景集怎么选</td></tr><tr><td>⑤ 可视化与筛选</td><td>网络 + 拓扑指标</td><td>核心靶点、关键通路</td><td>度值最高的节点往往是研究最多的节点，不是最重要的节点</td></tr></tbody></table></div></div></div>
+  <div class="slide-foot"><span>5 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">一、五步流水线：每一步的输入与它的失效点</div>
+                <div class="compact"><p>第②步的问题最容易被忽略。一个成分被预测出几十个靶点，不是因为它在体内真的结合几十个蛋白，而是因为预测算法在「可能结合」与「确实结合」之间没有硬边界。<strong>当每个成分都连着几十个靶点时，网络必然长得又大又密，而「大而密」在网络分析里会被读成「多靶点协同」。</strong></p>
+<p>第⑤步的问题是循环论证的温床。度值（连接数）高的节点被称作核心靶点，可度值高往往只反映「这个蛋白被研究得多、互作数据多」。<strong>用研究热度筛出来的核心，再拿去论证「研究热度所指的方向是对的」，这个圈子闭合得很自然。</strong></p>
+<p>教材对这类风险的处理是给限定语，而不是给方法。这是诚实的做法，但读者要知道：<strong>限定语的位置，就是证据链断掉的位置。</strong></p></div></div>
+  <div class="slide-foot"><span>6 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">二、假阳性从哪里来：三个来源</div>
+                <div class="compact"><p>网络药理学的结论出问题，通常不是算错，而是三处输入本身有偏。</p>
+<p><strong>来源一：数据库的覆盖与注释。</strong> 中药成分数据库（TCMSP、TCMID、ETCM、HERB）与通用化学库（PubChem、ChEMBL）字段设计不同、收录范围不同、更新节奏不同。同一个成分在不同库里分子量能差一位小数，靶点列表能差一半。教材要求使用数据库时记录<strong>数据库名称、版本与检索日期</strong>，这条要求的分量就在这里：不记版本，结果不可复现。</p>
+<p><strong>来源二：成分是否真的进了血。</strong> 数据库里的成分列表是按「药材含有」整理的，不是按「口服后进入循环」整理的。一个含量很高、但口服生物利用度极低的成分，在网络里与一个真正吸收入血的成分权重相同。<strong>这是网络药理学最大的一处系统性偏差</strong>，也是为什么教材在讲数据库时特意提到口服生物利用度与类药性参数——它们存在的意义，就是给这一步打折扣。</p></div></div>
+  <div class="slide-foot"><span>7 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">二、假阳性从哪里来：三个来源</div>
+                <div class="compact"><p><strong>来源三：通路富集的背景选择。</strong> 同样的靶点列表，换一个背景基因集，显著通路可以完全不同。「某方通过 PI3K-Akt 通路发挥作用」这类结论，若不写清背景与阈值，几乎无法复核。</p>
+<p>三处偏差叠加，结果就是：<strong>一篇网络药理学论文可以给出几十个核心靶点与十几条关键通路，其中经过湿实验验证的常常只有个位数。</strong> 这不是造假，是方法与证据等级之间的落差。</p></div></div>
+  <div class="slide-foot"><span>8 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">三、CADD 的三件工具，与打分函数的硬边界</div>
+                <div class="compact"><p>教材 12.2.1 讲 CADD，讲了三个工具，讲得很克制，这份克制值得抄下来。</p>
+<p><strong>分子对接</strong>：理论基础是锁钥模型与诱导契合，配体在结合口袋内做构象搜索（遗传算法、蒙特卡洛），打分函数估算亲和力并排序。流程五步：靶点结构（X 射线、冷冻电镜或同源模建）→配体与受体准备（加氢、算电荷）→定结合位点→构象搜索与打分→结果分析。常用软件 AutoDock、DOCK、GOLD、Glide。</p>
+<p><strong>虚拟筛选</strong>：把对接或药效团搜索放大到化合物库，按依据分基于受体（对接为主）与基于配体（药效团、相似性）两类。它的价值是把实验筛选的范围从十万级压到百级，<strong>是「省钱的工具」，不是「得出结论的工具」</strong>。</p>
+<p><strong>药效团</strong>：把活性必需的结构特征（氢键供体与受体、疏水中心、芳香环、正负电荷中心）连同空间距离与方向一起建模，可由已知活性分子叠合归纳，也可由受体口袋反推。</p></div></div>
+  <div class="slide-foot"><span>9 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">三、CADD 的三件工具，与打分函数的硬边界</div>
+                <div class="compact"><p>硬边界在打分函数上。<strong>对接打分是一个近似值，它与真实结合自由能之间的相关性，从来不是一比一。</strong> 打分排在前十的分子里一个都没有活性的情况，是做这类研究的人都遇到过的常态。教材因此写了三句必须照做的话：计算结果须经体外活性测定、共晶结构解析等实验验证方可采信；计算过程须记录软件版本、参数与打分函数；结论不替代实验与临床决策。</p>
+<p>这三句话可以归纳成一句：<strong>CADD 生产的是「值得一试的候选」，不是「已经成立的结论」。</strong></p></div></div>
+  <div class="slide-foot"><span>10 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">四、要多少实验才算数</div>
+                <div class="compact dense"><p>网络与对接都给不出「结合」这件事本身。要给出，得换手段。</p>
+<p><strong>第一层，体外结合。</strong> 表面等离子共振、等温滴定量热这类方法能直接测结合亲和力与动力学常数，它们不依赖预测，只依赖物理。一个成分被预测与某靶点结合，第一步就该在这里被检验。</p>
+<p><strong>第二层，细胞水平的功能。</strong> 结合不等于有效：结合了但不抑制、抑制了但细胞不透、透进去了但浓度不够，都是常见结局。酶活抑制、细胞活性、通路磷酸化水平的变化，是这一层的基本读数。</p>
+<p><strong>第三层，体内暴露与效应。</strong> 血药浓度、组织分布、代谢稳定性决定了「体外有效」能不能变成「体内有效」。<strong>很多网络药理学的核心成分，卡在这一层：它们在体外活性很好，在体内测不到。</strong></p>
+<p>三层都过，才谈得上「药效物质基础」。教材把这条链压缩成一句「以实验验证为准」，读起来轻，做起来是数年。<strong>判断一篇网络药理学研究的可靠性，最快的办法不是看图有多漂亮，而是看它有没有往下走这三层中的任何一层。</strong></p></div></div>
+  <div class="slide-foot"><span>11 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">五、青蒿素这条真路：发现的路径不是网络的路径</div>
+                <div class="compact"><p>教材 12.2.2 用青蒿素讲「中药化学如何为新药提供先导」，这段叙事和网络药理学形成了尖锐的对照。</p>
+<p>线索来自《肘后备急方》：「青蒿一握，以水二升渍，绞取汁，尽服之。」<strong>「渍」与「绞取汁」是冷处理，不是煎煮。</strong> 屠呦呦从这条记载里读出了方法学的暗示：高温可能破坏有效成分，于是改用乙醚低温提取，1972 年分离得到抗疟有效单体，后经 X 射线衍射等方法确定结构。药理研究证实，分子中的过氧桥是抗疟活性所必需，破坏过氧桥则活性丧失。在此基础上又有双氢青蒿素、蒿甲醚、青蒿琥酯等衍生物，青蒿素类药物成为全球抗疟一线用药。</p>
+<p>这条路径里没有一步是网络算出来的。它的关键节点是：<strong>读对了一条古代记载里的操作细节 → 换了一个提取溶剂 → 拿到单体 → 定了结构 → 认出了过氧桥这个关键基团。</strong> 每一步都是实验，每一步都可复现，每一步都能被证伪。</p></div></div>
+  <div class="slide-foot"><span>12 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">五、青蒿素这条真路：发现的路径不是网络的路径</div>
+                <div class="compact"><p>把两条路并排放，得到的判断很朴素：<strong>网络药理学擅长在已有知识的图里找位置，不擅长发现图外的东西。</strong> 青蒿素的发现恰恰在图外——在一条被读了一千多年、却没人注意「渍」字的记载里。</p>
+<p>这不是否定网络方法。它的正当用途是缩小搜索范围、提出可检验的假说、给实验设计排序。<strong>把它当成发现工具，是误解；把它当成假说生成器，它很好用。</strong></p></div></div>
+  <div class="slide-foot"><span>13 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><ul><li><strong>网络图是知识的投影，不是机制的照片。</strong> 图上一条边代表「数据库里有这条关系」，不代表「体内发生这次结合」。边的密度取决于研究热度，不取决于生物学重要性。</li><li><strong>核心靶点的判定依赖阈值。</strong> 度值、介数、接近中心性，三种拓扑指标能给三套核心名单；阈值调一档，名单换一批。<strong>任何核心靶点清单都应附上指标与阈值</strong>，否则无法复核。</li><li><strong>计算与实验的证据等级不同，不能混算。</strong> 对接打分、虚拟筛选、网络预测属计算假说；体外结合、细胞功能、体内暴露属实验证据。<strong>两类证据放在同一张图里，图的权威感会被误读成证据强度。</strong></li><li><strong>AI 辅助须人工复核。</strong> 教材反复写明这一点：模型预测、谱图解析、文献抽取的结果都可能出错，操作 AI 时建议人工复核，数据与模型参数应记录在案以保证可溯源。</li><li>**数字口径。</li></ul></div></div>
+  <div class="slide-foot"><span>14 / 16</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="14">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><p>** 本章的 3 个单元、4,962 汉字（12.1.1 为 1,620 字、12.2.1 为 1,563 字、12.2.2 为 1,779 字）、引书 1 部 2 次，均由 <code>standards/zhongyao-huaxue/units.json</code> 现算；数据库名、软件名、算法名为教材通行表述，版本与参数以实际使用为准。文中的青蒿素史实（1972 年分离、过氧桥为活性必需、衍生物种类）取自教材 12.2.2。</p>
+<ul><li><strong>边界声明：</strong> 本章讨论的是「预测结果能用到哪一步」，<strong>不构成任何成分的靶点结论、功效结论或新药研发方案</strong>。网络分析与分子对接的参数设置须完整记录；涉及人体或动物的研究须经伦理审查。青蒿素类药物的使用须遵临床指南与药品说明书，不得据本章自行用药。</li></ul></div></div>
+  <div class="slide-foot"><span>15 / 16</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="15">
   <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
-  <div class="slide-foot"><span>5 / 5</span><span>disclaimer</span></div>
+  <div class="slide-foot"><span>16 / 16</span><span>disclaimer</span></div>
 </section>
 </div>
 <div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>

@@ -54,7 +54,7 @@ chapters:
     title: 表里配属写在属络上，却只能从取穴路径上验出来
     video: rendered
     estimate_minutes: 10.68      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 10.4      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    measured_minutes: 10.40      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 06-bingli-fanying
     title: 病候是一张定位表，不是一份症状清单
@@ -71,7 +71,7 @@ chapters:
   - slug: 08-liuzhu-shijian
     title: 流注是一个闭环，时辰表是后人往环上刻的刻度
     video: rendered
-    estimate_minutes: 13.1      # = lesson.json estimateTotalSeconds ÷ 60
+    estimate_minutes: 13.10      # = lesson.json estimateTotalSeconds ÷ 60
     measured_minutes: 12.89      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 09-jiepou-zhengyi
@@ -83,5 +83,5 @@ chapters:
   - slug: 10-tupu-jianku
     title: 建库的最小单元不是一条经脉，而是一个三元组
     video: rendered
-    estimate_minutes: 15.4      # = lesson.json estimateTotalSeconds ÷ 60
+    estimate_minutes: 15.40      # = lesson.json estimateTotalSeconds ÷ 60
     measured_minutes: 15.04      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

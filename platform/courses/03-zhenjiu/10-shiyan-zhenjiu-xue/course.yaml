@@ -92,4 +92,4 @@ chapters:
     title: 收口的不是知识清单，而是说清每句话能撑多重的证据
     video: rendered
     estimate_minutes: 11.52      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 10.0      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    measured_minutes: 10.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

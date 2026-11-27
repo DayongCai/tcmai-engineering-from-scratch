@@ -1,31 +1,96 @@
 {
   "chapter": "07-fuzhi-fa",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 18,
+  "segmentCount": 11,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 12
+      "chars": 25
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 75
+      "chars": 42
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 41
+      "chars": 210
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 108
+      "chars": 238
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 363
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 178
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 336
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 394
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 254
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 281
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 353
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 397
+    },
+    {
+      "n": 13,
+      "segment": 9,
+      "chars": 357
+    },
+    {
+      "n": 14,
+      "segment": 9,
+      "chars": 114
+    },
+    {
+      "n": 15,
+      "segment": 10,
+      "chars": 248
+    },
+    {
+      "n": 16,
+      "segment": 10,
+      "chars": 370
+    },
+    {
+      "n": 17,
+      "segment": 10,
+      "chars": 129
+    },
+    {
+      "n": 18,
+      "segment": 11,
       "chars": 52
     }
   ]

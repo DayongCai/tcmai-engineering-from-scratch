@@ -1,31 +1,91 @@
 {
   "chapter": "23-yaojing-tixi",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 17,
+  "segmentCount": 12,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 25
+      "chars": 24
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 109
+      "chars": 23
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 32
+      "chars": 148
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 116
+      "chars": 162
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 420
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 318
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 240
+    },
+    {
+      "n": 8,
+      "segment": 7,
+      "chars": 412
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 114
+    },
+    {
+      "n": 10,
+      "segment": 8,
+      "chars": 285
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 334
+    },
+    {
+      "n": 12,
+      "segment": 9,
+      "chars": 394
+    },
+    {
+      "n": 13,
+      "segment": 9,
+      "chars": 104
+    },
+    {
+      "n": 14,
+      "segment": 10,
+      "chars": 378
+    },
+    {
+      "n": 15,
+      "segment": 10,
+      "chars": 208
+    },
+    {
+      "n": 16,
+      "segment": 11,
+      "chars": 315
+    },
+    {
+      "n": 17,
+      "segment": 12,
       "chars": 52
     }
   ]

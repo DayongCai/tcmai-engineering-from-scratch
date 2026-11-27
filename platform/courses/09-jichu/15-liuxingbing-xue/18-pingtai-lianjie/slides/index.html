@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"/>
-<title>第 18 章 · 流行病学与 tcmP 平台 · 幻灯片</title>
+<title>第 18 章 · 视频课不是"把正文念一遍"，是让每一段旁白都能指回一个判据 · 幻灯片</title>
 <style>
 
 :root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
@@ -59,24 +59,97 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <body>
 <div id="deck">
 <section class="slide" data-i="0">
-  <div class="slide-inner"><h1 class="big">第 18 章 · 流行病学与 tcmP 平台</h1></div>
-  <div class="slide-foot"><span>1 / 5</span><span>title</span></div>
+  <div class="slide-inner"><h1 class="big">第 18 章 · 视频课不是&quot;把正文念一遍&quot;，是让每一段旁白都能指回一个判据</h1></div>
+  <div class="slide-foot"><span>1 / 15</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「《流行病学·流行病学与 tcmP 平台》」——教材第18章；章号一一对应。本章要回答的是：流行病学与 tcmP 平台：这一章的判据是什么，什么算「看懂了」。</blockquote></div>
-  <div class="slide-foot"><span>2 / 5</span><span>motto</span></div>
+  <div class="slide-inner"><blockquote class="motto">「学然后知不足，教然后知困。」——《礼记·学记》</blockquote></div>
+  <div class="slide-foot"><span>2 / 15</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
-  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">流行病学与 tcmP 平台：这一章的判据与边界。</p></div>
-  <div class="slide-foot"><span>3 / 5</span><span>problem</span></div>
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">本章为课程侧延展，教材无对应单元，以下内容与数字均取自本仓（tcmP 平台）的实测，属<strong>教学设定</strong>。把一门流行病学课搬到网络平台，最容易被忽略的一步是&quot;正文变成旁白&quot;。本仓实测：2,169 章成片全部生成过，其中 2,021 章（93.2%）的讲稿只有标题、MOTTO、PROBLEM、双根因与免责五段，<strong>正文一个字都没进旁白</strong>——成片平均 1 分多钟。原因是讲稿抽取器只认七段模板名，而课程正文用的是「一、二、三…」中文序号分节，这些节被静默丢弃。同一章补上分段映射后：11 段、9 分 05 秒。差别不是&quot;清晰度&quot;，是这门课到底有没有讲。</p></div>
+  <div class="slide-foot"><span>3 / 15</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
-  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（流行病学的判据是「设计—测量—推断」三件套：说得清怎么选的样本、算的什么率、能不能下因果结论，才算会读一篇研究）+ 知识积累（本章 12 单元 16,731 汉字；三辨主 <strong>设计与方法 145</strong>；四位面（教材篇结构）主 <strong>拓展篇·方法学扩展与智能化 16731</strong>；引书 <strong>2 部 2 次</strong>；数值类命中 0）</p></div>
-  <div class="slide-foot"><span>4 / 5</span><span>roots</span></div>
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（平台能播放、能校验、能打包，每一环都返回成功，于是&quot;成片已生成&quot;被当成&quot;课已生成&quot;） + 知识积累（把正文、讲稿、成片、交付四层分开验收，并给每层一条可复算的判据，才看得出来是哪一层空了）</p></div>
+  <div class="slide-foot"><span>4 / 15</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
+  <div class="slide-inner"><div class="kicker">一、一门课在平台里的四层形态</div>
+                <div class="compact"><p>平台把一门课拆成四层，每层有自己的验收方式：</p>
+<p><strong>正文层</strong>：<code>chapters/&amp;lt;slug&amp;gt;/docs/zh.md</code>。判据是七条硬指标（模板残留 0、每章 ≥2,500 汉字、H1 为观点式判断句、MOTTO 到《书名·篇名》、有「代价与边界」、有免责声明、二级小节 4–8 个）。</p>
+<p><strong>习题与代码层</strong>：<code>quiz.json</code> 与 <code>code/main.js</code>。判据是题量、三段分布、解释长度、答案位置，以及&quot;至少两道 check 题的正确选项能在正文里找到原词&quot;——这一条把习题钉在正文上，防止题目问的是正文没有的东西。</p>
+<p><strong>产出层</strong>：<code>outputs/*.md</code>。按正文与 quiz 现算生成，声明的节数、汉字数、题量必须与实测一致。</p>
+<p><strong>视频层</strong>：讲稿 → 幻灯片 → 配音 → 帧 → 成片 → HLS。判据是&quot;讲稿里有没有正文段&quot;和&quot;成片体积与时长是否落在码率区间&quot;。</p></div></div>
+  <div class="slide-foot"><span>5 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">一、一门课在平台里的四层形态</div>
+                <div class="compact"><p>四层的关系是单向的：正文是唯一真源，后三层都由它派生。所以后三层出问题，先回头看正文层是不是&quot;有字但没结构&quot;。</p></div></div>
+  <div class="slide-foot"><span>6 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">二、从正文到讲稿：有字不等于有旁白</div>
+                <div class="compact"><p>讲稿抽取器按 <code>##</code> 标题分节并给每节一个角色：学习目标、核心概念、正文、代价与边界、验证、免责。角色决定这段念不念、怎么念。</p>
+<p>本仓踩过的坑：课程正文用「## 一、这一章在讲什么」这样的中文序号分节，标题里没有&quot;正文&quot;二字，抽取器认不出角色，<code>section.id</code> 为空，于是这一节<strong>被静默丢弃</strong>——不报错、不警告，成片照常生成。</p>
+<p>判据因此必须落在数据上，而不是日志上：打开 <code>narration/lesson.json</code>，数 <code>role === 'body'</code> 的段数。等于 0 而正文有几千汉字，就是骨架稿。</p>
+<p>修复方式有两条：一是让正文按七段模板写（学习目标/正文/代价与边界/运行与验证）；二是给学科一份分段映射文件（<code>narration-map.json</code>），声明&quot;未命中的节按 body 朗读、运行与验证与复算入口跳过&quot;。本仓 189 门课里有 183 门走了第二条，因为它们的正文已经在用中文序号分节。</p></div></div>
+  <div class="slide-foot"><span>7 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">二、从正文到讲稿：有字不等于有旁白</div>
+                <div class="compact"><p>一个可复算的对照：同一章（教材 12 单元、正文 3,000 字量级），映射前 5 段 / 1 分 12 秒；映射后 11 段 / 13 分 48 秒；同课程另一章映射后 9 分 05 秒。旁白的长度才是课的容量。</p></div></div>
+  <div class="slide-foot"><span>8 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">三、从讲稿到成片：三段一步都不能跳</div>
+                <div class="compact dense"><p>平台把成片拆成三段，每段有自己的失败方式：</p>
+<p><strong>配音</strong>：按段调用 TTS，产出 <code>narration/audio/NNN.mp3</code>。失败方式是&quot;静音轨冒充已配音&quot;——因此校验要求：声明了配音就必须真有音频文件，且码率落在正常区间（实测 5.85–5.92 KB/s，取下限 4 KB/s 作判据）。</p>
+<p><strong>帧</strong>：把幻灯片逐屏截图，产出 <code>frames/NNN.png</code>。失败方式是&quot;帧数与讲稿段数不一致&quot;，成片就会出现&quot;念到第三段、画面停在第二张&quot;。</p>
+<p><strong>合成</strong>：按段时长拼接、混入旁白、嵌入字幕轨，产出 <code>video/lesson.mp4</code>，再用 ffprobe 校验时长。失败方式是&quot;截断片&quot;——文件在、时长不对；判据用码率而非体积，因为短章（如 55 秒）体积小但码率正常，一刀切体积会误杀真片。</p>
+<p>本机实测单章成本：配音 194 秒 + 帧 15 秒 + 合成 85 秒 ≈ 300 秒，对应 9 分钟成片。这个比例意味着整库 2,169 章的串行重渲染是按&quot;百小时&quot;计的工程，不是一次点击。</p></div></div>
+  <div class="slide-foot"><span>9 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">四、交付层：没有清单的成片等于不可发现</div>
+                <div class="compact"><p>HLS 把整段 MP4 切成 6 秒分片，做两档码率（1080p 视频直拷、音频降到 64k 单声道；540p 重编码），另出一档纯音频供通勤场景。播放器按带宽切档，首屏只需一个分片。</p>
+<p>清单（<code>index.json</code> 与每门课的 <code>publish.json</code>）是 APP 唯一的入口。平台的一条纪律是：<strong>只收&quot;整门打齐&quot;的课</strong>——一门课里缺一章未打包，就不写进根清单，只在日志里提示。理由是清单一旦列出缺章的课，播放器会在点击后 404，而 404 是最难被发现的交付缺陷。</p>
+<p>清单里的 URL 全部是相对路径，换域名或上 CDN 只改一处前缀。这一条与教材第 14 章的口径要求是同一件事：口径统一，数据才能在环境变化后仍然可用。</p></div></div>
+  <div class="slide-foot"><span>10 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">五、三道反造假门：怎么证明成片不是占位</div>
+                <div class="compact"><p>平台刻意让&quot;缺工具时明确失败&quot;，不生成占位文件。三道门：</p>
+<p><strong>第一道，体积 × 时长判据</strong>：成片要求 ≥200 KB 且码率 ≥6 KB/s；配音要求 ≥4 KB 且码率 ≥4 KB/s。两个方向都有正负例：55 秒真片（998,882 字节）必须判过，0 字节与&quot;touch 出来的空文件&quot;必须判不过。</p>
+<p><strong>第二道，讲稿与正文同源</strong>：习题的 check 题正确选项必须在正文里能找到 ≥4 字原词；产出卡片声明的节数、汉字数、题量必须与实测一致（±0）。</p>
+<p><strong>第三道，按门查整门</strong>：一门课的所有章都要有 <code>video/lesson.mp4</code>，且成片不旧于正文——正文改过而没重渲染的课，会被判为&quot;成片旧于正文&quot;。</p>
+<p>三道门共同的效果是：<strong>&quot;已生成&quot;必须对应一个可被 ffprobe 校验、可被清单引用、可与正文对上的文件</strong>。这比任何一句&quot;我们做完了&quot;都可靠，也是教材第 13 章&quot;可追溯性&quot;在工程上的对应物。</p></div></div>
+  <div class="slide-foot"><span>11 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">五、三道反造假门：怎么证明成片不是占位</div>
+                <div class="compact"><p>还有一处容易被混同：字幕与旁白是两件事。成片内嵌的 mov_text 字幕轨与 <code>subtitles.vtt</code> 由讲稿文本生成，它证明&quot;屏幕上出现过这句话&quot;，<strong>不证明&quot;这句话被念出来过&quot;</strong>。真正的旁白证据是 <code>narration/audio/</code> 里的音频文件与合成时的段时长；因此判据必须分别查：字幕看文本，旁白看音频，成片看时长。三者中任意一项单独成立，都不足以说明这门课讲完了。同理，<code>slides/index.html</code> 能打开也不构成证据——它可以由讲稿独立生成，与成片是否合成无关。</p></div></div>
+  <div class="slide-foot"><span>12 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">六、本章的位置：方法学怎么落到工程</div>
+                <div class="compact"><p>把前 17 章倒过来看，本章其实在做同一件事：<strong>先定口径，再采集，再核查，最后留痕</strong>。</p>
+<p>口径 = 四层各自的验收判据；采集 = 正文、讲稿、成片、清单；核查 = 三道门；留痕 = 清单、发布记录与 SHA256SUMS。</p>
+<p>教材讲调查表时说&quot;管理字段是留痕的起点&quot;，工程里对应的是&quot;章节编号、版本、哈希&quot;；教材讲异常值&quot;未查明原因不得修改&quot;，工程里对应的是&quot;讲稿缺正文段不得用时长凑数&quot;。</p>
+<p>所以本章不提供&quot;如何做一门网课&quot;的通用答案，只给出一条可检验的标准：<strong>任意挑一章，能在十分钟内走完&quot;正文—讲稿—成片—清单&quot;四步并把每一步的判据复算出来，这门课才算真的上了线</strong>。</p></div></div>
+  <div class="slide-foot"><span>13 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><p><strong>重渲染的机器时间不可压缩。</strong> 单章约 300 秒的处理量对应 9 分钟成片；整库重渲染按百小时计。任何&quot;全库视频已就绪&quot;的说法，都应当附上处理时长与批次记录。</p>
+<p><strong>讲稿的分段映射是学科级的约定，不是通用开关。</strong> 不同学科的正文用不同的分节习惯，映射写错会把「验收」节也念出来，或把「代价与边界」漏掉；因此映射文件按学科维护，并在改正文结构时同步。</p>
+<p><strong>清单只收整门齐的课，是刻意的保守。</strong> 代价是部分完成的课在 APP 里看不见；收益是不会出现&quot;点开就是 404&quot;。</p>
+<p><strong>本章的所有数字都来自本仓实测</strong>（2,169 章、2,021 章骨架、93.2%、9 分 05 秒、300 秒/章），不是教材结论，也不构成对其他平台的判断。</p></div></div>
+  <div class="slide-foot"><span>14 / 15</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="14">
   <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
-  <div class="slide-foot"><span>5 / 5</span><span>disclaimer</span></div>
+  <div class="slide-foot"><span>15 / 15</span><span>disclaimer</span></div>
 </section>
 </div>
 <div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>

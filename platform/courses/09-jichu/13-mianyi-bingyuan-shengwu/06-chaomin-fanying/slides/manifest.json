@@ -1,31 +1,96 @@
 {
   "chapter": "06-chaomin-fanying",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 18,
+  "segmentCount": 11,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 8
+      "chars": 20
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 67
+      "chars": 34
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 15
+      "chars": 152
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 146
+      "chars": 106
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 266
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 203
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 336
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 305
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 383
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 279
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 374
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 167
+    },
+    {
+      "n": 13,
+      "segment": 9,
+      "chars": 282
+    },
+    {
+      "n": 14,
+      "segment": 9,
+      "chars": 276
+    },
+    {
+      "n": 15,
+      "segment": 9,
+      "chars": 257
+    },
+    {
+      "n": 16,
+      "segment": 9,
+      "chars": 302
+    },
+    {
+      "n": 17,
+      "segment": 10,
+      "chars": 284
+    },
+    {
+      "n": 18,
+      "segment": 11,
       "chars": 52
     }
   ]

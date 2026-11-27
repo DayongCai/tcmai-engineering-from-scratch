@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"/>
-<title>第 2 章 · 药效学：量效关系与模型选择 · 幻灯片</title>
+<title>第 2 章 · 中药的量效曲线不是一条线，是一个开关带 · 幻灯片</title>
 <style>
 
 :root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
@@ -59,24 +59,93 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <body>
 <div id="deck">
 <section class="slide" data-i="0">
-  <div class="slide-inner"><h1 class="big">第 2 章 · 药效学：量效关系与模型选择</h1></div>
-  <div class="slide-foot"><span>1 / 5</span><span>title</span></div>
+  <div class="slide-inner"><h1 class="big">第 2 章 · 中药的量效曲线不是一条线，是一个开关带</h1></div>
+  <div class="slide-foot"><span>1 / 16</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「《素问·生气通天论》」——教材·第3章·3.1.1。本章要回答的是：同一味药，为什么不同实验做出的量效曲线不一样。</blockquote></div>
-  <div class="slide-foot"><span>2 / 5</span><span>motto</span></div>
+  <div class="slide-inner"><blockquote class="motto">「若一服汗出病差，停后服，不必尽剂」——《伤寒论·辨太阳病脉证并治上》</blockquote></div>
+  <div class="slide-foot"><span>2 / 16</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
-  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">模型、给药途径、观察指标、动物种属四个变量任一不同，量效关系就不可直接比；教材把「药物因素与机体因素」单列一节，就是提醒这一点。</p></div>
-  <div class="slide-foot"><span>3 / 5</span><span>problem</span></div>
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">大黄在教材里同时是 0.05～0.3 g 的健胃药和 1～2 g 的致泻药，剂量再往上，泻下作用反而减弱并出现腹痛——同一个药，三个剂量段，三种方向。任何一段单独抽出来都能写成一篇干净的文章，三段合起来才是一味药。</p></div>
+  <div class="slide-foot"><span>3 / 16</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
-  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（中药是混合物，任何一个「成分」都要先分出来才能说清楚）+ 知识积累（本章 4 单元 11,039 汉字；三辨主 <strong>药理作用 250</strong>；四位面（药物类别）主 <strong>消化与代谢 57</strong>；引书 <strong>11 部 24 次</strong>；数值类命中 0）</p></div>
-  <div class="slide-foot"><span>4 / 5</span><span>roots</span></div>
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（口服给药、多成分、经肠道菌群活化，血药浓度曲线本身就是多峰、拖尾的，单一成分的药动学参数代表不了整方）+ 知识积累（教材把量效、时效、双向调节、机体状态四条线分开讲，学生记住了四条结论，却没记住它们共用同一个自变量——剂量与机体状态的组合）</p></div>
+  <div class="slide-foot"><span>4 / 16</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
+  <div class="slide-inner"><div class="kicker">一、整体性与多效性：一副药同时改了几个变量</div>
+                <div class="compact"><p>教材讲整体调节时给了三个特征：作用范围广、环节多；作用随机体状态而调整；多药配合产生整体协同——教材·第3章·3.1.1。三条里最难被实验设计容纳的是第二条。</p>
+<p>第一条可以用多指标覆盖。人参是标准例子：人参皂苷 Rg1 偏于兴奋中枢、Rb1 偏于镇静，同时作用于心血管、免疫、内分泌与物质代谢，教材用「难以用单一靶点解释」来概括——教材·第3章·3.1.1。这类作用在实验上并非不可测，只是必须同时测多个系统，成本高，而且多指标之间的权重没有先验依据。</p>
+<p>第二条麻烦得多。「作用随机体状态而调整」意味着药效不是剂量的函数，而是剂量与机体状态的二元函数。教材引了前苏联学者的说法，称之为「适应原样作用」：对过高或过低的血压、血糖都有使之趋向正常的调整趋势。同一个剂量，给高血压动物是降压，给低血压动物是升压。这就把「药效」这个概念本身拆成了两半：一半是药物给的推力，一半是机体当时的偏态。测出来的效应是两者之和，而实验通常只记录后者。</p></div></div>
+  <div class="slide-foot"><span>5 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">一、整体性与多效性：一副药同时改了几个变量</div>
+                <div class="compact"><p>第三条把问题再叠一层。玉屏风散（黄芪、白术、防风）的益气固表之效，教材归因于增强免疫、抗过敏、抗炎的多环节协同，并明确说整体调节优于单味药单独使用——教材·第3章·3.1.1。这句「优于」在实验上必须用拆方对照才能成立，而拆方本身又会改变配伍环境，于是出现一个循环：要证明协同，必须拆；拆了，协同的前提就变了。</p></div></div>
+  <div class="slide-foot"><span>6 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">二、双向调节：事实清楚，机制是缺口</div>
+                <div class="compact"><p>教材把双向调节定义为：同一味药或同一复方，在不同剂量、不同机体状态或不同配伍条件下，对同一组织器官呈现方向相反的两种作用——教材·第3章·3.1.2。定义里三个变量并列，恰好说明它是「多因一果」而不是「一因一果」。</p>
+<p>例证在教材里排得很整齐。当归对子宫：挥发油（藁本内酯等）抑制子宫平滑肌收缩，水溶性非挥发性成分（阿魏酸、当归多糖等）兴奋子宫，净效应取决于子宫当时的机能状态与成分比例；对痉挛状态的子宫表现为抑制，对静止或收缩无力的子宫表现为兴奋——教材·第3章·3.1.2。人参对血压：小剂量或低浓度升压，大剂量或高浓度降压；对实验性高血压动物降压，对失血性低血压动物回升。此外还有枳实、白术对胃肠平滑肌的双向调节，黄芪小剂量升压、大剂量降压，三七既止血又活血，大黄小剂量健胃、大剂量泻下，甘草对胃酸分泌的双向影响——同一节。</p></div></div>
+  <div class="slide-foot"><span>7 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">二、双向调节：事实清楚，机制是缺口</div>
+                <div class="compact"><p>教材把机制归成四条：成分多样、剂量依赖、机体状态依赖（状态依赖性调节）、配伍影响——教材·第3章·3.1.2。四条并列，本身就说明尚未收敛到单一机制。教材对此的措辞也很谨慎：「相关分子机制研究尚在深入」「此类分子水平的研究结果可作为辅助参考，仍需更多实验重复验证」。</p>
+<p>这正是本章要立的第一个判断：<strong>双向调节是可以观察的事实，不是已经完成的解释。</strong> 说某药「双向调节」，等于说「它在不同条件下方向不同」，等于什么都没说，除非同时交代条件。临床上「双向调节所以安全」的推论，是把一个描述性事实当成了保护性机制。</p></div></div>
+  <div class="slide-foot"><span>8 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">三、量效曲线的四个断点</div>
+                <div class="compact"><p>化药的量效曲线是 S 形，可以读出半数有效量、半数致死量与治疗指数。教材承认中药有共性的一面，但列出四条非典型特点：曲线常不规则、剂量与作用方向可相反、量效与毒效并存、起效剂量受机体状态影响——教材·第3章·3.1.2。把这四条落到一条曲线上，就是四个断点。</p>
+<p><strong>第一个断点：起效阈值。</strong> 低于它，测不到效应。大黄小剂量 0.05～0.3 g 走的是健胃，不是泻下，说明同一味药在不同剂量段激活的是不同环节。</p>
+<p><strong>第二个断点：平台。</strong> 到了这里，加量不再增效，只增加不良反应。多数口服中药的实际治疗窗，比体外实验提示的窄得多，因为体外没有首过效应与肠道菌群活化这一层。</p>
+<p><strong>第三个断点：反向点。</strong> 越过它，方向翻转。大黄剂量过大时泻下作用反而减弱并伴腹痛；人参与黄芪在小剂量与大剂量之间升降相反。教材把这类现象与双向调节并列，理由是同一个：剂量本身就是方向变量。</p></div></div>
+  <div class="slide-foot"><span>9 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">三、量效曲线的四个断点</div>
+                <div class="compact"><p><strong>第四个断点：毒性拐点。</strong> 教材写得很直接：许多中药治疗量与中毒量接近，安全范围窄，如附子中的乌头碱、马钱子中的士的宁、细辛中的黄樟醚，剂量稍增即由治疗作用转为毒性反应，故有「细辛不过钱」之诫——教材·第3章·3.1.2。这句话后面紧跟着李时珍的原文：「细辛……若单用末，不可过一钱，多则气闷塞不通者死。」</p>
+<p>四个断点连起来，才是中药量效关系的真实形状：不是一条单调上升的曲线，是一段一段的开关带。教材用「中病即止」四个字概括操作，桂枝汤方后注的那句「若一服汗出病差，停后服，不必尽剂」就是它的原始表述——教材·第3章·3.1.2 引《伤寒论》。</p></div></div>
+  <div class="slide-foot"><span>10 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">四、模型：整体、离体、细胞、组学各自能回答什么</div>
+                <div class="compact dense"><p>药理学的证据质量，一半取决于模型选得对不对。中药药理常用的四类模型，能回答的问题完全不同。</p>
+<p><strong>整体动物实验</strong>保留了神经、内分泌、免疫的整体联系，能观察到行为、体温、血压、排便这类整合性指标，是「整体调节」唯一能落地的层面。代价是混杂因素最多：饲料、昼夜节律、饲养密度、造模应激都在方差里，而多数研究只报告给药组与对照组的差值。</p>
+<p><strong>离体器官实验</strong>切断了神经与体液的影响，能判断药物对某器官是否有直接作用。当归对离体子宫的双向作用、陈皮对离体肠管的解痉，都是在这一层看到的——教材·第3章·3.1.2、教材·第8章·8.2.2。代价是它把「配伍环境」全部剥掉了，看到的效应未必等于在体效应。</p>
+<p><strong>细胞与分子实验</strong>能钉死通路：麻黄碱兴奋支气管平滑肌 β2 受体、升高细胞内环磷酸腺苷而松弛平滑肌——教材·第5章·5.2.1。代价是它通常只用一个浓度、一个成分、一个时间点，与「多成分、多剂量段」的真实用药情境相距最远。</p></div></div>
+  <div class="slide-foot"><span>11 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">四、模型：整体、离体、细胞、组学各自能回答什么</div>
+                <div class="compact"><p><strong>网络药理学与组学</strong>从「成分—靶点—疾病」网络做预测。教材的评语很短：「此类预测性研究结果尚需实验验证，可辅助参考，临床决策以医者为准」——教材·第3章·3.1.1。</p>
+<p>四类模型不是替代关系，是层次关系。一个可靠的结论通常要求至少两个层次互相印证：离体看到直接作用，在体看到整合效应，分子层面找到可解释的环节。只有一层，就只能说「在该模型上观察到」。</p></div></div>
+  <div class="slide-foot"><span>12 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">五、把方差拆开：药物因素与机体因素</div>
+                <div class="compact"><p>教材把影响因素分成两组，这个分法本身就是一种方法论的宣示：药效不是一个数，是一个被两组变量共同决定的分布。</p>
+<p>药物一侧包括品种与基原、产地、采收、炮制、贮藏、剂型与剂量。教材举的例子都很具体：广藿香、薄荷挥发油含量及组成随产地而异；采收时节影响质量，《千金翼方》已有采药时节的记载；炮制「凡药制造，贵在适中，不及则功效难求，太过则气味反失」（《本草蒙筌》）；剂型则决定起效快慢，「汤者荡也，去大病用之；散者散也，去急病用之；丸者缓也，舒缓而治之也」（金·李杲《用药法象》）——以上均见教材·第3章·3.2.1。</p>
+<p>机体一侧包括体质、年龄、证候与时辰。教材引《伤寒论》「观其脉证，知犯何逆，随证治之」，把「随证」作为用药的前提；又引《素问·四气调神大论》说明四时气候与昼夜晨昏对生理功能与疾病进程的影响，并由此接到时辰药理学——教材·第3章·3.2.2。</p></div></div>
+  <div class="slide-foot"><span>13 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">五、把方差拆开：药物因素与机体因素</div>
+                <div class="compact"><p>两侧合起来的实践含义是：任何一次「中药无效」或「中药有效」的报告，都必须交代这两组变量各自被控制到什么程度。产地不明、炮制不清、证候不分、给药时辰不记，那么效应量里就混着未测量的方差，结论的强度必然打折。教材在同一处引了《素问·五常政大论》的「大毒治病，十去其六；常毒治病，十去其七；小毒治病，十去其八；无毒治病，十去其九」——这句话给的不是剂量，是<strong>停止的尺度</strong>：攻邪之品不必尽除，留有余地。它与桂枝汤方后注的「不必尽剂」是同一个意思的两处表述，也是本章四个断点在古典语言里的对应物。</p></div></div>
+  <div class="slide-foot"><span>14 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="14">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><ul><li><strong>剂量只作教材引用，不作推荐。</strong> 文中 0.05～0.3 g、1～2 g、「细辛不过钱」均为教材·第3章·3.1.2 的表述，用于说明量效段的存在，不是可执行的处方；任何实际用量须由执业中医师依《中国药典》与患者情况决定。</li><li><strong>双向调节不等于安全。</strong> 方向可变恰恰意味着剂量与状态判断错误时，效应会朝反方向走。教材在讲双向调节的临床意义时，落点是「必须重视剂量与机体状态」，不是「因此更安全」。</li><li><strong>模型结论只在模型内成立。</strong> 离体、细胞、整体、网络四类证据不可互相顶替；本章不引用任何具体的动物实验数值，凡涉及效应量的问题一律回到原始文献。</li><li><strong>不回避阴性证据。</strong> 教材对网络药理学、分子机制的措辞是「尚需验证」「可辅助参考」，本章沿用这一克制程度；把预测当结论，是这一类研究最常见的失真。</li><li><strong>边界声明：</strong> 本章讨论药效学的方法结构，不评价具体药物的临床疗效，不构成诊断或用药依据。</li></ul></div></div>
+  <div class="slide-foot"><span>15 / 16</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="15">
   <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
-  <div class="slide-foot"><span>5 / 5</span><span>disclaimer</span></div>
+  <div class="slide-foot"><span>16 / 16</span><span>disclaimer</span></div>
 </section>
 </div>
 <div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>

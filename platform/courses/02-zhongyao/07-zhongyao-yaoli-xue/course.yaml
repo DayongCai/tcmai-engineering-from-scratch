@@ -31,65 +31,65 @@ chapters:
   - slug: 01-yanjiu-fanshi
     title: 中药药理不是化药药理的中文译本
     video: rendered
-    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 9.60      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 7.58      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 02-yaoxiaoxue
     title: 中药的量效曲线不是一条线，是一个开关带
     video: rendered
-    estimate_minutes: 1.05      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.04      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 13.37      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.03      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 03-jiebiao-yaoli
     title: 解表与清热之间，隔着一个「表」字
     video: rendered
-    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 13.02      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.82      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 04-xiexia-qushi-wenli
     title: 攻邪之品见效最快，账单也最快到期
     video: rendered
-    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.01      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 15.83      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 12.45      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 05-huoxue-yaoli
     title: 活血化瘀的研究热度来自指标好测，不来自疗效更硬
     video: rendered
-    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.99      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 12.43      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.47      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 06-buxu-mianyi
     title: 补虚之品能提高免疫，也能把免疫按下去
     video: rendered
-    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.99      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 12.25      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 07-huatan-anshen
     title: 痰与神都没有化验单，这一章只能靠替代终点说话
     video: rendered
-    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.02      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 13.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.54      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 08-duxing-anquan
     title: 毒性分级写在书上，安全窗写在实验里，两套数不能互相换算
     video: rendered
-    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.98      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 15.07      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 13.09      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 09-yaodai-peiwu
     title: 配伍改的不是药效的强弱，是有效成分进到血里的量
     video: rendered
-    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.02      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 13.00      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.22      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 10-zhengxing-moxing
     title: 药效不是药的性质，是药与模型之间的一个差
     video: rendered
-    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 13.10      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.53      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 11-zhengju-fenji
     title: 一条药理证据的等级，先由药材能不能复现决定
     video: rendered
-    estimate_minutes: 1.05      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.07      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 13.62      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.66      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

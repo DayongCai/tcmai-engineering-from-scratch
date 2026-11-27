@@ -31,35 +31,35 @@ chapters:
   - slug: 01-xuan-ti
     title: 选题不是挑一个病名，是把一句主诉压到可测的指标上
     video: rendered
-    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 9.45      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.08      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 02-jiancha-shuju
     title: 数据准备的第一件事，是给「轮位」定一套不打架的编码
     video: rendered
-    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 10.57      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.70      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 03-fangfa-shixian
     title: 系统上线前要能回答一句：这条建议错了，谁负责
     video: rendered
-    estimate_minutes: 0.85      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.86      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 11.65      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.42      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 04-liaoxiao-anquan
     title: 疗效评价的诚实度，取决于安全指标有没有和疗效指标一起报
     video: rendered
-    estimate_minutes: 0.87      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 8.72      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 6.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 05-lunwen-dabian
     title: 综述里每一句「历代认为」，都要能落到一本具体的书
     video: rendered
-    estimate_minutes: 0.85      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.87      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 10.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.14      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 06-zhishi-yijiao
     title: 移交的不是结论，是「哪条解剖标志对应哪条经」的对照表
     video: rendered
-    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 8.43      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 6.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

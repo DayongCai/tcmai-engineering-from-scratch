@@ -1,7 +1,7 @@
 {
   "chapter": "15-fangzheng-ai",
-  "slideCount": 6,
-  "segmentCount": 6,
+  "slideCount": 33,
+  "segmentCount": 9,
   "slides": [
     {
       "n": 1,
@@ -11,7 +11,7 @@
     {
       "n": 2,
       "segment": 2,
-      "chars": 101
+      "chars": 90
     },
     {
       "n": 3,
@@ -31,6 +31,141 @@
     {
       "n": 6,
       "segment": 6,
+      "chars": 385
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 348
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 396
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 313
+    },
+    {
+      "n": 10,
+      "segment": 6,
+      "chars": 410
+    },
+    {
+      "n": 11,
+      "segment": 6,
+      "chars": 409
+    },
+    {
+      "n": 12,
+      "segment": 7,
+      "chars": 372
+    },
+    {
+      "n": 13,
+      "segment": 7,
+      "chars": 182
+    },
+    {
+      "n": 14,
+      "segment": 7,
+      "chars": 302
+    },
+    {
+      "n": 15,
+      "segment": 7,
+      "chars": 203
+    },
+    {
+      "n": 16,
+      "segment": 7,
+      "chars": 305
+    },
+    {
+      "n": 17,
+      "segment": 7,
+      "chars": 381
+    },
+    {
+      "n": 18,
+      "segment": 7,
+      "chars": 389
+    },
+    {
+      "n": 19,
+      "segment": 7,
+      "chars": 307
+    },
+    {
+      "n": 20,
+      "segment": 7,
+      "chars": 376
+    },
+    {
+      "n": 21,
+      "segment": 7,
+      "chars": 355
+    },
+    {
+      "n": 22,
+      "segment": 7,
+      "chars": 365
+    },
+    {
+      "n": 23,
+      "segment": 7,
+      "chars": 295
+    },
+    {
+      "n": 24,
+      "segment": 7,
+      "chars": 329
+    },
+    {
+      "n": 25,
+      "segment": 7,
+      "chars": 270
+    },
+    {
+      "n": 26,
+      "segment": 7,
+      "chars": 298
+    },
+    {
+      "n": 27,
+      "segment": 7,
+      "chars": 257
+    },
+    {
+      "n": 28,
+      "segment": 7,
+      "chars": 252
+    },
+    {
+      "n": 29,
+      "segment": 7,
+      "chars": 364
+    },
+    {
+      "n": 30,
+      "segment": 8,
+      "chars": 416
+    },
+    {
+      "n": 31,
+      "segment": 8,
+      "chars": 373
+    },
+    {
+      "n": 32,
+      "segment": 8,
+      "chars": 278
+    },
+    {
+      "n": 33,
+      "segment": 9,
       "chars": 52
     }
   ]

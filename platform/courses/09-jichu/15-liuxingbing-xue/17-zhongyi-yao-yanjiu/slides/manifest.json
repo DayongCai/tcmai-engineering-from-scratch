@@ -1,31 +1,76 @@
 {
   "chapter": "17-zhongyi-yao-yanjiu",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 14,
+  "segmentCount": 12,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 15
+      "chars": 34
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 73
+      "chars": 27
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 21
+      "chars": 255
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 150
+      "chars": 120
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 219
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 285
+    },
+    {
+      "n": 7,
+      "segment": 7,
+      "chars": 413
+    },
+    {
+      "n": 8,
+      "segment": 8,
+      "chars": 381
+    },
+    {
+      "n": 9,
+      "segment": 8,
+      "chars": 239
+    },
+    {
+      "n": 10,
+      "segment": 9,
+      "chars": 374
+    },
+    {
+      "n": 11,
+      "segment": 9,
+      "chars": 119
+    },
+    {
+      "n": 12,
+      "segment": 10,
+      "chars": 373
+    },
+    {
+      "n": 13,
+      "segment": 11,
+      "chars": 334
+    },
+    {
+      "n": 14,
+      "segment": 12,
       "chars": 52
     }
   ]

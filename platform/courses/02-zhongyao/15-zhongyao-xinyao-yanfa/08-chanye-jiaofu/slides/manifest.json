@@ -1,31 +1,86 @@
 {
   "chapter": "08-chanye-jiaofu",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 16,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 12
+      "chars": 29
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 71
+      "chars": 211
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 21
+      "chars": 150
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 123
+      "chars": 150
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 290
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 310
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 380
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 376
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 85
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 254
+    },
+    {
+      "n": 11,
+      "segment": 7,
+      "chars": 415
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 326
+    },
+    {
+      "n": 13,
+      "segment": 8,
+      "chars": 400
+    },
+    {
+      "n": 14,
+      "segment": 9,
+      "chars": 364
+    },
+    {
+      "n": 15,
+      "segment": 9,
+      "chars": 121
+    },
+    {
+      "n": 16,
+      "segment": 10,
       "chars": 52
     }
   ]

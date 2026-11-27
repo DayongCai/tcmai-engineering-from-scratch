@@ -31,35 +31,35 @@ chapters:
   - slug: 01-e51
     title: 五官科的「经典」不是一个书架，而是五条各有源流的谱系
     video: rendered
-    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.88      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 11.35      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.23      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 02-e52
     title: 五轮回答的是「病在哪一轮」，不是「病因为何」
     video: rendered
-    estimate_minutes: 0.87      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.87      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 11.22      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.76      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 03-e53
     title: 「肾开窍于耳」是起点，不是答案
     video: rendered
-    estimate_minutes: 0.83      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.82      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 9.98      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 7.97      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 04-e54
     title: 咽与喉在经典里是两个东西，合成一个词之后辨证就变粗了
     video: rendered
-    estimate_minutes: 0.85      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.84      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 10.28      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.44      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 05-e55
     title: 病名是「当时看得见的东西」的名字，改名时丢的是判据
     video: rendered
-    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 11.73      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.16      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 06-e56
     title: 对接不是「古方治今病」，是判据到判据的翻译
     video: rendered
-    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.89      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 11.40      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.76      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

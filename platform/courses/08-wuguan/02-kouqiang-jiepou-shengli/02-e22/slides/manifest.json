@@ -1,31 +1,101 @@
 {
   "chapter": "02-e22",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 19,
+  "segmentCount": 11,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 10
+      "chars": 21
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 60
+      "chars": 27
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 13
+      "chars": 162
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 108
+      "chars": 204
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 300
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 404
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 330
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 411
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 387
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 355
+    },
+    {
+      "n": 11,
+      "segment": 7,
+      "chars": 222
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 281
+    },
+    {
+      "n": 13,
+      "segment": 8,
+      "chars": 374
+    },
+    {
+      "n": 14,
+      "segment": 8,
+      "chars": 93
+    },
+    {
+      "n": 15,
+      "segment": 9,
+      "chars": 376
+    },
+    {
+      "n": 16,
+      "segment": 9,
+      "chars": 312
+    },
+    {
+      "n": 17,
+      "segment": 10,
+      "chars": 303
+    },
+    {
+      "n": 18,
+      "segment": 10,
+      "chars": 134
+    },
+    {
+      "n": 19,
+      "segment": 11,
       "chars": 52
     }
   ]

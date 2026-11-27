@@ -31,47 +31,47 @@ chapters:
   - slug: 01-qiqing-lilun
     title: 七情不是七条并列的规则，是五个方向的利害判断
     video: rendered
-    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 13.75      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.10      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 02-junchenzuoshi
     title: 君臣佐使分的是责任，不是药味的等级
     video: rendered
-    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.88      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 13.55      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.79      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 03-shihba-fan
     title: 十八反十九畏是两张不同性质的清单，不能合并背诵
     video: rendered
-    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.88      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 13.55      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.28      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 04-renshen-jinji
     title: 妊娠禁忌的判据不是药名，是「有故」与「无损」两条同时成立
     video: rendered
-    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 14.38      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 12.12      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 05-zhenghou-jinji
     title: 证候禁忌的错法只有一种：把药性当成了药理作用
     video: rendered
-    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.89      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 14.23      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.98      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 06-zhongxi-lianyong
     title: 中西药联用的风险多半不在成分，而在同一套代谢通道
     video: rendered
-    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 13.17      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.06      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 07-duyao-peiwu
     title: 毒性药的配伍先算一笔账：减毒抵不抵得过增毒
     video: rendered
-    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.88      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 14.15      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 12.09      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 08-fangfa-pingjia
     title: 配伍证据的强弱由设计决定，不由成分数量决定
     video: rendered
-    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 13.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

@@ -43,19 +43,19 @@ chapters:
   - slug: 03-fangfa-shixian
     title: 采集工具只做四件事，多做的每一件都要从招募窗口里扣时间
     video: rendered
-    estimate_minutes: 9.2      # = lesson.json estimateTotalSeconds ÷ 60
+    estimate_minutes: 9.20      # = lesson.json estimateTotalSeconds ÷ 60
     measured_minutes: 7.11      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 04-liaoxiao-pingjia
     title: 针刺盲不了全部，把盲了几层写清比宣称双盲更值钱
     video: rendered
-    estimate_minutes: 8.7      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 6.5      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 8.70      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 6.50      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 05-lunwen-dabian
     title: 论文的说服力来自十个能复算的数字，不来自十页漂亮的讨论
     video: rendered
-    estimate_minutes: 8.8      # = lesson.json estimateTotalSeconds ÷ 60
+    estimate_minutes: 8.80      # = lesson.json estimateTotalSeconds ÷ 60
     measured_minutes: 6.44      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 06-zhishi-yijiao

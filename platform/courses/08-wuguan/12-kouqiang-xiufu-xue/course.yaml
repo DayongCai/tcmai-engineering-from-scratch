@@ -31,59 +31,59 @@ chapters:
   - slug: 01-duixiang-sanlei
     title: 修复学的第一个动作是分类，不是选材料
     video: rendered
-    estimate_minutes: 1.13      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.12      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 9.35      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 6.19      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 02-zong-yuanze
     title: 六条原则不是口号，每一条都在削减一种具体的失败
     video: rendered
-    estimate_minutes: 1.18      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.20      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 9.33      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 6.76      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 03-pinggu-quanshen
     title: 修复的第一道门不在口内，在病史里
     video: rendered
-    estimate_minutes: 1.20      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.21      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 9.45      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.43      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 04-kouqiang-jiancha
     title: 老年的「正常」和年轻人不是同一套标准
     video: rendered
-    estimate_minutes: 1.22      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.19      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 8.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 6.51      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 05-shuqian-chuli
     title: 修复体的寿命上限，在前三段处理时就定死了
     video: rendered
-    estimate_minutes: 1.13      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.13      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 9.32      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 7.32      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 06-quankou-yinmo
     title: 全口义齿的固位，一半在印模室里就已经决定
     video: rendered
-    estimate_minutes: 1.20      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.19      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 11.25      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.21      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 07-yipang-cadcam
     title: 椅旁修复把加工厂搬进诊室，也把全部误差留在同一天
     video: rendered
-    estimate_minutes: 1.18      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.15      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 11.57      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.60      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 08-cailiao-tiaohe
     title: 粘接失败多半不在粘接剂，而在调和与表面处理那几分钟
     video: rendered
-    estimate_minutes: 1.20      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.22      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 11.80      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.59      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 09-citie-fucha
     title: 复查不是看一眼，三条线各自抓到不同的失败
     video: rendered
-    estimate_minutes: 1.18      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.19      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 10.08      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.05      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 10-piaobai
     title: 漂白是可控的化学损伤，知道它伤什么才敢给谁做
     video: rendered
-    estimate_minutes: 1.18      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.18      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 12.17      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.23      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

@@ -1,31 +1,86 @@
 {
   "chapter": "03-jianding",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 16,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 18
+      "chars": 24
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 93
+      "chars": 70
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 40
+      "chars": 139
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 105
+      "chars": 100
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 218
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 253
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 417
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 328
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 329
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 156
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 304
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 396
+    },
+    {
+      "n": 13,
+      "segment": 8,
+      "chars": 348
+    },
+    {
+      "n": 14,
+      "segment": 8,
+      "chars": 296
+    },
+    {
+      "n": 15,
+      "segment": 9,
+      "chars": 436
+    },
+    {
+      "n": 16,
+      "segment": 10,
       "chars": 52
     }
   ]

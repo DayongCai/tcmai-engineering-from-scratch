@@ -32,7 +32,7 @@ chapters:
     title: 毒性不是标签，是三个剂量与一条曲线共同决定的区间
     video: rendered
     estimate_minutes: 11.43      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 8.44      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    measured_minutes: 10.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 02-du-xing-wuzhi
     title: 决定毒性的是代谢产物与靶分子的反应，不是药材的名字

@@ -74,7 +74,7 @@ chapters:
     title: 电与药接上针之后，失手的性质就从「疼一下」变成「不可逆」
     video: rendered
     estimate_minutes: 13.55      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 10.7      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    measured_minutes: 10.70      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 09-mailiao-ciliao
     title: 三种「让刺激留得久」的技术里，只有一种把东西留在了体内

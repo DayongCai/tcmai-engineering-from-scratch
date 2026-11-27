@@ -1,31 +1,96 @@
 {
   "chapter": "05-e15",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 18,
+  "segmentCount": 11,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 9
+      "chars": 31
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 58
+      "chars": 26
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 12
+      "chars": 209
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 107
+      "chars": 155
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 315
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 362
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 287
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 302
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 392
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 279
+    },
+    {
+      "n": 11,
+      "segment": 7,
+      "chars": 231
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 325
+    },
+    {
+      "n": 13,
+      "segment": 8,
+      "chars": 287
+    },
+    {
+      "n": 14,
+      "segment": 8,
+      "chars": 321
+    },
+    {
+      "n": 15,
+      "segment": 9,
+      "chars": 360
+    },
+    {
+      "n": 16,
+      "segment": 9,
+      "chars": 369
+    },
+    {
+      "n": 17,
+      "segment": 10,
+      "chars": 335
+    },
+    {
+      "n": 18,
+      "segment": 11,
       "chars": 52
     }
   ]

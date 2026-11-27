@@ -1,31 +1,91 @@
 {
   "chapter": "04-renshen-jinji",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 17,
+  "segmentCount": 12,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 12
+      "chars": 32
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 83
+      "chars": 37
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 13
+      "chars": 219
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 109
+      "chars": 130
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 412
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 407
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 190
+    },
+    {
+      "n": 8,
+      "segment": 7,
+      "chars": 381
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 120
+    },
+    {
+      "n": 10,
+      "segment": 8,
+      "chars": 388
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 306
+    },
+    {
+      "n": 12,
+      "segment": 9,
+      "chars": 331
+    },
+    {
+      "n": 13,
+      "segment": 9,
+      "chars": 327
+    },
+    {
+      "n": 14,
+      "segment": 10,
+      "chars": 314
+    },
+    {
+      "n": 15,
+      "segment": 11,
+      "chars": 347
+    },
+    {
+      "n": 16,
+      "segment": 11,
+      "chars": 116
+    },
+    {
+      "n": 17,
+      "segment": 12,
       "chars": 52
     }
   ]

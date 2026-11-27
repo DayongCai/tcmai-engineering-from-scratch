@@ -56,7 +56,7 @@ chapters:
     title: 晋唐的功劳在编书：体例、尺度与存佚
     video: rendered
     estimate_minutes: 15.35      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 13.9      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    measured_minutes: 13.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 06-songjinyuan-yijia
     title: 宋金元把穴定成标准，把时间算成取穴依据
@@ -85,17 +85,17 @@ chapters:
   - slug: 10-dangdai-liupai
     title: 当代六家各把手法的某一个参数做成了可教的东西
     video: rendered
-    estimate_minutes: 15.8      # = lesson.json estimateTotalSeconds ÷ 60
+    estimate_minutes: 15.80      # = lesson.json estimateTotalSeconds ÷ 60
     measured_minutes: 14.08      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 11-linchuang-chuancheng
     title: 轴心从人换成法，手法一旦离人就丢了适应证
     video: rendered
-    estimate_minutes: 15.9      # = lesson.json estimateTotalSeconds ÷ 60
+    estimate_minutes: 15.90      # = lesson.json estimateTotalSeconds ÷ 60
     measured_minutes: 14.23      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 12-shuzihua-ai
     title: 谈数据的一章，引书最少，可计量的数值为零
     video: rendered
-    estimate_minutes: 15.7      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 14.2      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 15.70      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 14.20      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"/>
-<title>第 6 章 · 上市后：安全性监测与药物警戒 · 幻灯片</title>
+<title>第 6 章 · 监测的价值不在发现报告，在把信号闭成环 · 幻灯片</title>
 <style>
 
 :root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
@@ -59,24 +59,93 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <body>
 <div id="deck">
 <section class="slide" data-i="0">
-  <div class="slide-inner"><h1 class="big">第 6 章 · 上市后：安全性监测与药物警戒</h1></div>
-  <div class="slide-foot"><span>1 / 5</span><span>title</span></div>
+  <div class="slide-inner"><h1 class="big">第 6 章 · 监测的价值不在发现报告，在把信号闭成环</h1></div>
+  <div class="slide-foot"><span>1 / 14</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「《中药新药研发·第6章》」——外源课无教材篇名，引外源条文；<strong>非教材原文篇名</strong>。本章要回答的是：上市后：安全性监测与药物警戒这一段的核心判据是什么。</blockquote></div>
-  <div class="slide-foot"><span>2 / 5</span><span>motto</span></div>
+  <div class="slide-inner"><blockquote class="motto">「Pharmacovigilance is the science and activities relating to the detection, assessment, understanding and prevention of adverse effects or any other possible drug-related problems.」——《WHO 草药安全性监测与药物警戒体系指南·第1条》（S01，本库译：药物警戒是对不良反应进行发现、评估、理解与预防的科学与活动）。四个动词是并列的，缺&quot;预防&quot;这一环，前三个就只是档案工作。</blockquote></div>
+  <div class="slide-foot"><span>2 / 14</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
-  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">上市不是终点：前四段证明「能不能用」，这一段回答「用久了会怎样」。</p></div>
-  <div class="slide-foot"><span>3 / 5</span><span>problem</span></div>
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">上市两年收到若干份&quot;肝功能异常&quot;报告，全部标注&quot;可能无关&quot;，依据是&quot;患者有基础病&quot;。四样要素——用药起止时间、异常出现时间、停药后转归、合并用药清单——只填了一样。<strong>报告写得很确定，信息其实不够。</strong> 而&quot;信息不足&quot;本身就是个信号：它说明采集环节的设计有缺陷，不说明药没问题。</p></div>
+  <div class="slide-foot"><span>3 / 14</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
-  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（中药新药的失败大多不是「做不出来」，而是「证不明」：源头、批间、监测任一段缺口，整条链就断）+ 知识积累（本章 1 单元 1,012 汉字；三辨主 <strong>安全与监测 27</strong>；四位面（证据链段）主 <strong>临床与上市 26</strong>；引书 <strong>0 部 0 次</strong>；数值类命中 0）</p></div>
-  <div class="slide-foot"><span>4 / 5</span><span>roots</span></div>
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（临床试验的样本量与随访时长决定它必然漏掉低频、迟发与特殊人群的不良反应，这个缺口不是设计失误，是设计边界）+ 知识积累（可分析报告的四要素 × 因果评估的时间关系与去激发证据 × 发现—评估—处置—反馈的闭环）</p></div>
+  <div class="slide-foot"><span>4 / 14</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
+  <div class="slide-inner"><div class="kicker">学习目标</div>
+                <div class="compact"><ul><li>能说明上市后监测为何是证据链的第五段，而不是&quot;售后服务&quot;</li><li>能写出可分析报告的四类要素，并说明缺哪一类会导致归因失效</li><li>能用时间关系与去激发证据做初步因果评估，并解释&quot;信息不足&quot;应如何处置</li><li>能说出体系建设的三个动作，并说明&quot;监测不回流&quot;为何等于白做</li><li>能识别本章三类失效模式的最早信号</li></ul></div></div>
+  <div class="slide-foot"><span>5 / 14</span><span>objectives</span></div>
+</section>
+<section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">正文</div>
+                <div class="compact dense"><h3 id="6-1-为什么临床试验必然漏掉一部分风险">6.1 为什么临床试验必然漏掉一部分风险</h3>
+<p>临床试验的结论有一个内在的适用范围，它由三件事决定：样本量、随访时长、入选标准。</p>
+<p><strong>样本量决定了能看见多低的频率。</strong> 一个发生率很低的反应，在小样本里可能一次都不出现——这不是运气问题，是算术问题。样本量越小，能被可靠识别的频率下限越高。</p>
+<p><strong>随访时长决定了能看见多迟的反应。</strong> 迟发反应、累积毒性、停药后的远期影响，在有限的随访期内看不到。而中药产品的使用特点恰恰是疗程长、复购多、长期服用常见。</p>
+<p><strong>入选标准决定了看不见哪些人。</strong> 特殊人群（肝肾功能不全者、老年人、孕产妇、儿童）、多重用药者、以及同时使用其他中成药或保健品的人，通常被排除在试验之外——而上市后他们正是主要使用者。</p>
+<p>三件事叠加的结果是：<strong>试验阶段建立的证据，只覆盖&quot;典型患者短期使用&quot;这一狭窄区域。</strong> 上市后监测就是补这块区域，它不是售后，是证据链的第五段，与前四段同等地位。</p>
+<h3 id="6-2-可分析性-报告要能进入信号检测">6.2 可分析性：报告要能进入信号检测</h3></div></div>
+  <div class="slide-foot"><span>6 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">正文</div>
+                <div class="compact dense"><p>报告的价值不在数量，在可分析性。一份只有&quot;出现不适&quot;的报告，无法进入信号检测——它能被计数，但不能被解释。</p>
+<p>可分析的报告至少要有四类要素。</p>
+<div class="table-wrap"><table><thead><tr><th>要素</th><th>要写清什么</th><th>缺了会怎样</th></tr></thead><tbody><tr><td>时间关系</td><td>用药起止时间、异常出现时间、与用药的时间间隔</td><td>无法判断是否为用药后发生，因果评估失去起点</td></tr><tr><td>转归</td><td>停药后是否缓解／恢复、是否再用药后再现</td><td>缺少去激发与再激发证据，只能停在&quot;可能相关&quot;</td></tr><tr><td>合并用药与背景</td><td>同时使用的其他药品、保健品、饮片，基础疾病与肝肾功能</td><td>无法排除混杂，归因无依据</td></tr><tr><td>必要检验</td><td>关键指标的实测值与变化趋势</td><td>严重性分级无据，只能凭描述</td></tr></tbody></table></div>
+<p>中药的特殊性让第三行格外重要。中药产品的使用场景里联合用药极普遍：饮片、配方颗粒、中成药、保健食品可能同时在用，来源复杂且常未告知医生。<strong>不记录&quot;还用了什么&quot;，就无法判断归因</strong>——这既是科学问题，也是责任问题。</p>
+<h3 id="6-3-归因-四要素齐了才能谈因果">6.3 归因：四要素齐了才能谈因果</h3></div></div>
+  <div class="slide-foot"><span>7 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">正文</div>
+                <div class="compact dense"><p>因果评估不是&quot;觉得像&quot;，是有结构的推断。可用的最小结构是四问。</p>
+<p><strong>一问，时间关系是否成立。</strong> 反应出现在用药之后、且在合理的潜伏期内。时间对不上，后面三问不必做。</p>
+<p><strong>二问，去激发是否出现。</strong> 停药后反应缓解或指标回落。这是最强的一条单项证据，也是最容易采集的一条——只要随访到位。</p>
+<p><strong>三问，再激发是否重现。</strong> 再次用药后反应再现。这条证据强度最高，但涉及伦理风险，不能为了取证而主动再激发；只在临床自然发生（比如患者自行复用）时记录。</p>
+<p><strong>四问，有无更合理的替代解释。</strong> 基础疾病、合并用药、感染、饮酒、其他治疗。排除不掉替代解释时，结论只能是&quot;可能相关&quot;而不是&quot;相关&quot;。</p>
+<p>四问走完，结论才落到&quot;肯定／很可能／可能／可能无关／无法评价&quot;这一类的分级上。<strong>&quot;信息不足&quot;不是分级结果，是流程缺陷。</strong> 它意味着报告采集环节少问了几个问题，应该被登记为改进项，而不是当成&quot;没问题&quot;的默认答案。</p></div></div>
+  <div class="slide-foot"><span>8 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">正文</div>
+                <div class="compact"><p>一个实用判据：把一批报告摊开，如果&quot;可能无关&quot;占比极高且理由高度雷同（都是&quot;患者有基础病&quot;），那不是药安全，是归因工作没做。</p>
+<h3 id="6-4-体系建设三件事-纳入-能力-回流">6.4 体系建设三件事：纳入、能力、回流</h3>
+<p>WHO 的建议很明确：把草药纳入既有的国家药物警戒体系，而不是给草药另建一套（S02）。理由不是省事，而是<strong>信号检测需要分母</strong>：只有当草药报告与化学药报告进入同一个数据库，才能做同类比较、才能看出某类反应的相对富集。另建一套的体系，永远只能做单品种描述。</p>
+<p><strong>第二件事，检验能力。</strong> WHO 建议考虑建立专门分析草药产品的区域性实验室（S04）。原因是：草药相关的不良事件常常需要回答&quot;这批样品里到底有什么&quot;——是否掺伪、是否含未标示成分、重金属是否超标。没有这项能力，报告只能停在描述层面。</p></div></div>
+  <div class="slide-foot"><span>9 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">正文</div>
+                <div class="compact dense"><p><strong>第三件事，回流。</strong> 监测结论必须回到质量标准与工艺上。<strong>监测不回流，等于白做。</strong> 回流的具体形态有三种：修订某项限度或增加某项检查、调整工艺参数或贮藏条件、修订说明书中的用法与警示。判断一个体系是否真的在运转，不必看报告数量，看过去两年有几条监测结论变成了标准、工艺或说明书的变更——一条都没有，说明这个体系在收集而不在使用。</p>
+<h3 id="6-5-三类失效模式与最早信号">6.5 三类失效模式与最早信号</h3>
+<p><strong>其一，只报&quot;发生不良反应&quot;，不报用药背景。</strong> 最早信号：报告模板里没有&quot;合并用药&quot;与&quot;基础疾病&quot;栏，或这两栏的填写率显著低于其他栏。处置是改模板，并在随访脚本里把这两栏设为必答。</p>
+<p><strong>其二，把传统使用经验当安全性证据。</strong> 常见表述是&quot;本方使用历史悠久，安全性有保障&quot;。长期使用经验能提示风险方向、支持立项，但不能替代系统监测：剂量、工艺、人群、配伍都变了，历史经验不能直接外推。最早信号：安全性章节里只有文献综述，没有本产品的暴露数据与监测计划。</p></div></div>
+  <div class="slide-foot"><span>10 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">正文</div>
+                <div class="compact"><p><strong>其三，监测不回流。</strong> 发现了问题，结论停在报告里。最早信号：变更台账与监测台账之间没有任何交叉引用。</p>
+<p>三类失效的共同结构是：它们都不产生错误数据，只产生看起来完整的闭环。所以自检不能看有没有报告，要看四步是否都落了地。</p></div></div>
+  <div class="slide-foot"><span>11 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">考核与自检</div>
+                <div class="compact"><ol><li>给一份缺三要素的模拟个例报告，写出补充问题清单，并说明每条补充项对应哪一问因果评估。</li><li>对&quot;用药后两周出现肝功能异常、停药后恢复、患者同时服用另一种中成药&quot;的情形，写出因果评估过程与结论等级，标明依据与不确定处。</li><li>说明为什么把草药纳入既有药物警戒体系优于另建一套，用&quot;分母&quot;这个概念解释信号检测的前提。</li><li>为&quot;监测回流&quot;设计一份台账字段（结论、影响的文件、变更类型、生效日期、验证方式），并说明如何用它证明体系在运转。</li></ol>
+<p>配套工具是<strong>闭环四步卡</strong>：发现（信号来源与判定规则）、评估（四问结论与分级）、处置（措施与责任人）、反馈（改动到哪份文件、何时生效）。四步缺一步，这一段的证据链就是断的。</p></div></div>
+  <div class="slide-foot"><span>12 / 14</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><ul><li><strong>WHO 文件不是中国法规。</strong> 本章的流程与判据是通用框架；中国的个例报告时限、报告范围、定期汇总要求与持有人义务另有规定，据本章内容直接实施属于误用。</li><li><strong>不写发生率。</strong> 本章不给任何反应的频率、严重性分级阈值与信号判定规则的具体数值——它们必须由具体产品、暴露人群与现行指南确定。</li><li><strong>数字与情形是教学设定。</strong> 文中&quot;两周&quot;&quot;若干份报告&quot;等只用于说明判据方向，不是实测数据，也不指向任何真实产品。</li><li><strong>一处结构性局限。</strong> 底本只有 4 份 WHO 文件，信号检测的统计方法（比例失衡分析等）、风险管理计划、以及各国的持有人制度在底本里没有对应条文。本章在&quot;报告—归因—闭环&quot;三层展开，再往下到统计检测会变成无据推断。</li></ul>
+<p><strong>免责声明：</strong> 本章为教学材料，不构成医学意见、诊断或用药指导，也不构成药物警戒体系建设的合规依据。任何产品的监测计划、个例评价与风险处置，须由具备资质的专业人员依现行法规、指南与机构制度决定。</p></div></div>
+  <div class="slide-foot"><span>13 / 14</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="13">
   <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
-  <div class="slide-foot"><span>5 / 5</span><span>disclaimer</span></div>
+  <div class="slide-foot"><span>14 / 14</span><span>disclaimer</span></div>
 </section>
 </div>
 <div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>

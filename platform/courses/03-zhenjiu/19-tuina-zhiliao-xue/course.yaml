@@ -62,7 +62,7 @@ chapters:
     title: 妇科推拿的第一道工序不是通，是排除妊娠
     video: rendered
     estimate_minutes: 15.18      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 11.9      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    measured_minutes: 11.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 07-erke-bingzheng
     title: 小儿的剂量按次数给，成人的时长表搬不过来
@@ -85,8 +85,8 @@ chapters:
   - slug: 10-anquan-yichang
     title: 推拿的安全事故几乎都不是手法问题，而是诊断问题
     video: rendered
-    estimate_minutes: 13.5      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 9.7      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 13.50      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.70      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 11-xiandai-yanzheng
     title: 证据等级不决定推拿有没有效，只决定这句话能说多响

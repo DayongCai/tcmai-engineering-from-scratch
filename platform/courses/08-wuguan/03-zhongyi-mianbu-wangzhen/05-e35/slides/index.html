@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"/>
-<title>第 5 章 · 口唇与齿龈 · 幻灯片</title>
+<title>第 5 章 · 唇：最饱和的那块颜色，恰恰不该拿来测 · 幻灯片</title>
 <style>
 
 :root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
@@ -59,24 +59,100 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <body>
 <div id="deck">
 <section class="slide" data-i="0">
-  <div class="slide-inner"><h1 class="big">第 5 章 · 口唇与齿龈</h1></div>
-  <div class="slide-foot"><span>1 / 5</span><span>title</span></div>
+  <div class="slide-inner"><h1 class="big">第 5 章 · 唇：最饱和的那块颜色，恰恰不该拿来测</h1></div>
+  <div class="slide-foot"><span>1 / 15</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「《F:/textbooks/机器学习·口唇与齿龈》」——教材第5章。本章要回答的是：口唇与齿龈：这一章要回答什么。</blockquote></div>
-  <div class="slide-foot"><span>2 / 5</span><span>motto</span></div>
+  <div class="slide-inner"><blockquote class="motto">「四白者，口唇四际之白色也。」——《望诊遵经·四白望法提纲》</blockquote></div>
+  <div class="slide-foot"><span>2 / 15</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
-  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">口唇与齿龈：本课第 5 章。</p></div>
-  <div class="slide-foot"><span>3 / 5</span><span>problem</span></div>
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">唇是整张脸上色彩最饱和、对比最强、也最容易被算法「抓住」的区域。于是绝大多数口唇图像研究，第一件事就是把唇红（vermilion）分割出来算色值。但古人把测量点放在了旁边：《素问》讲「其华在唇四白」，汪宏专门写了一篇《四白望法提纲》，开宗明义——<strong>四白，是口唇四周的那一圈白</strong>。这不是同一块组织。唇红没有角质层，血色直接透出来，好看、好测，也最容易被口红改写；四白是普通皮肤，有角质层，色淡，但<strong>不涂口红</strong>。选错这一块，测到的可能是化妆品的配方，而不是人的气色。</p></div>
+  <div class="slide-foot"><span>3 / 15</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
-  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（望诊的判据是「部位说得准、征象有出处、结论可复核」）+ 知识积累（本章 20 单元 16,347 汉字；三辨主 <strong>病性与证候 500</strong>；四位面（章群结构）主 <strong>口唇咽喉 16347</strong>；引书 <strong>14 部 32 次</strong>；数值类命中 0）</p></div>
-  <div class="slide-foot"><span>4 / 5</span><span>roots</span></div>
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（唇是望诊里最容易「指给人看」的部位：不脱衣、不张口、不需要器械，指一下就行；于是它承担了大量本该由问诊与切诊所承担的判断，名目越积越多）+ 知识积累（本章 20 单元 16,347 汉字，覆盖口唇、齿龈与口腔病证治；外源《望诊遵经》口部五篇——诊口形容、诊唇望法、诊唇形容条目、诊唇气色条目、四白望法——其中「诊唇气色条目」一篇就列了数十条，几乎每条都带兼症，正好用来演示「色名不是判据」）</p></div>
+  <div class="slide-foot"><span>4 / 15</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
+  <div class="slide-inner"><div class="kicker">一、唇有两块，古人分得很清楚</div>
+                <div class="compact dense"><p>一块是唇红，一块是唇四白。</p>
+<div class="table-wrap"><table><thead><tr><th></th><th>唇红</th><th>唇四白</th></tr></thead><tbody><tr><td>解剖</td><td>无角质层的黏膜移行部</td><td>口周皮肤</td></tr><tr><td>厚度</td><td>极薄，血管网直接可见</td><td>正常皮肤</td></tr><tr><td>色饱和度</td><td>高（a\* 大）</td><td>低</td></tr><tr><td>主要干扰</td><td>口红、唇炎、皲裂、温度</td><td>胡须、毛孔、日晒</td></tr><tr><td>古籍地位</td><td>「唇赤者，常色也」</td><td>「其华在唇四白」</td></tr></tbody></table></div>
+<p>「其华在唇四白」出自《素问》，讲的是脾胃的荣华外现于口周。这句话在测量上有一个非常实际的推论：<strong>要测「脾胃之华」，测的是口周皮肤，不是唇红。</strong> 唇红的红，主要来自血管密度与黏膜厚度，个体差异极大，且与任何脏腑的对应关系都没有被论证过。</p>
+<p>而唇四白之所以被选中，恰恰因为它是「白」——底色浅，任何偏色都会被放大；没有口红，没有高饱和的干扰；位置固定，围着口一圈，左右可比。</p>
+<p>这是一次典型的取样点选择：<strong>放弃信号最强的地方，选择干扰最少的地方。</strong> 第 4 章讲鼻部时说过同样的逻辑（选它是因为稳定），这里更极端——信号弱一点没关系，干扰少才是关键。</p></div></div>
+  <div class="slide-foot"><span>5 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">二、唇红：最强的特征，也是最假的特征</div>
+                <div class="compact dense"><p>如果一定要测唇红，得先知道它的干扰清单有多长。</p>
+<p><strong>口红。</strong> 这是最大的一项。一支正红色口红的色度，与自然唇色在 a\* 上可以差二十个单位以上（演算设定，用于说明量级）。而「淡红—常—深赤」这三档，在多数教材的形容里，a\* 的跨度大约八到十个单位。也就是说，<strong>一次未记录的口红，足以把判断推过三档。</strong> 任何没有采集「是否涂口红、什么色号、是否卸妆」的方案，其唇色特征都不能用。</p>
+<p><strong>唇炎与皲裂。</strong> 干燥、脱屑、皲裂会同时改变漫反射与镜面反射：脱屑让表面散射增加，颜色变浅；皲裂让局部产生深色线，拉低平均亮度。</p>
+<p><strong>温度与循环。</strong> 寒冷时唇血管收缩，唇色转白或转紫；发热时充血转深红。这两种变化都是真实的生理反应，但与「脾之华」不是同一回事。</p>
+<p><strong>发绀与贫血。</strong> 这两个是现代体征，有明确的血氧与血红蛋白对应物。把它们与「唇青属寒」「唇白属虚」混在一个标签下，是第 3 章讲过的那种跨体系借标签。</p></div></div>
+  <div class="slide-foot"><span>6 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">二、唇红：最强的特征，也是最假的特征</div>
+                <div class="compact"><p>原文对这件事其实很清醒：「唇赤者，常色也。深赤者为太过，淡红者为不及。」它先确立了「赤」是常态，然后用「深」「淡」来分太过与不及——<strong>这是相对判断，不是绝对色值</strong>。基线是这个人自己的唇色，不是一张标准色卡。第 2 章讲的「相对基线的 ΔE」在这里是原文自带的要求，不是我们外加的。</p></div></div>
+  <div class="slide-foot"><span>7 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">三、形：十三条变化，位置本身就是信息</div>
+                <div class="compact"><p>「诊唇望法提纲」列了十三种形变：肿、痿、短缩、不收、烂、反、焦干、枯槁、疮、裂、内生疮、僻、撮。每一条都配了一句归属，比如「唇肿者，病气实；唇痿者，形气虚；唇反者，太阴之终；唇口僻者，风中阳明之筋」。</p>
+<p>这一段最有工程价值的是它的空间约定：</p>
+<blockquote><p>「左病者应在左，右病者应在右。上应乎上，下应乎下。」</p></blockquote>
+<p>唇被切成一个 2×2 的方位表：上唇／下唇、左／右。同一个「深赤」，在上唇与下唇所指不同；同一个「青」，在左角与右角所指不同。这意味着<strong>唇部的任何颜色特征都必须带位置标签</strong>，不能只报「唇色深赤」。</p>
+<p>形态上的可测量项也很直接：对称性（口角高度差）、闭合度（上下唇间隙）、唇高／唇宽比、唇红面积。这些都不需要颜色，只需要分割与关键点。而它们比颜色稳得多——一个人的唇形在一天之内几乎不变，唇色却可以因为一杯热水改半小时。</p></div></div>
+  <div class="slide-foot"><span>8 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">四、齿：古籍判的是「忽」，现代研究几乎都在判「是」</div>
+                <div class="compact dense"><p>《牙齿望法提纲》开头先讲常态，而且讲得很清楚：</p>
+<blockquote><p>「齿色黄者长也，色白者幼也。是皆长幼之常，非疾病之变也。」</p></blockquote>
+<p>然后才讲病变：</p>
+<blockquote><p>「齿忽黄，为肾虚；齿忽黑，为肾热。」</p></blockquote>
+<p>注意那个「忽」字。<strong>判据是「忽然变黄」，不是「黄」。</strong> 这两个句子的差别，就是纵向与横向的差别：前者需要一个人的基线，后者只需要一张照片。</p>
+<p>而几乎所有的齿色图像研究，做的都是后者：拿一张照片，判断齿色属于哪一档。这个做法在方法上是错的——因为按原文，齿色黄的第一解释是年龄（「齿色黄者长也」），第二解释是饮食（茶、咖啡、烟），第三才轮到病变。一张横向照片分不开这三者。</p>
+<p>这一条值得作为整门课的教训反复引用：<strong>古籍里大量的判据带时间维度，而现代的横断面数据集把它们压成了静态标签。</strong> 压缩的那一刻，判据的语义就变了，但标签名没变，于是没人注意。</p></div></div>
+  <div class="slide-foot"><span>9 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">四、齿：古籍判的是「忽」，现代研究几乎都在判「是」</div>
+                <div class="compact"><p>牙龈的部分，原文自己说了「可与诊唇之法，比例而推」：「肿起为实，陷下为虚，深赤为太过，淡红为不及」。这套判据与唇完全同构——说明望诊的很多判据是<strong>跨部位复用</strong>的模板，而不是每个部位一套。这在做标注体系时很有用：一套「肿／陷／深赤／淡红」的编码，可以用在唇、龈、咽、舌多个部位，只要记录部位字段。</p></div></div>
+  <div class="slide-foot"><span>10 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">五、采集：让人张嘴，本身就是成本</div>
+                <div class="compact"><p>口唇图像看起来最好拍，其实有三个隐藏成本。</p>
+<p><strong>配合。</strong> 需要主动张口、必要时牵唇露龈。儿童、认知障碍者、口周有疾患者配合度低。这不是技术问题，是可行性问题——一个只在志愿者身上验证过的方案，进不了门诊。</p>
+<p><strong>姿态改变几何。</strong> 闭口、微张、大张三种状态下，唇红面积可以差三成以上（演算设定）。若用面积类特征（唇厚、唇高宽比），姿态会成为最大的方差来源，大于个体差异。</p>
+<p><strong>唾液与反光。</strong> 张口后唾液蒸发，唇面反光迅速变化；舌与龈的湿润表面会形成镜面高光。这些都是第 2 章说的「表面反射污染」。</p>
+<p>实操上，最小可用的方案是：自然闭口正面一张（测形与四白）、微张正面一张（测唇红与齿）、必要时侧光一张（测唇的起伏）。三张的拍摄条件要一致，且必须记录「是否涂口红、拍摄前是否饮水进食」。</p></div></div>
+  <div class="slide-foot"><span>11 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">六、十三种形变，其实只有三个可测轴</div>
+                <div class="compact"><p>「诊唇望法提纲」那十三条，读起来是十三个并列的病名，落到测量上却只沿三个轴变化。</p>
+<div class="table-wrap"><table><thead><tr><th>轴</th><th>十三条中的对应</th><th>可测参数</th></tr></thead><tbody><tr><td>体积</td><td>肿、痿、短缩、反</td><td>唇高、唇宽、唇红面积、上下唇厚度比</td></tr><tr><td>连续性</td><td>烂、裂、疮、内生疮、焦干、枯槁</td><td>边缘完整度、裂纹密度、表面粗糙度</td></tr><tr><td>位置与张力</td><td>僻（歪斜）、撮（收紧）、不收（松弛）</td><td>口角高度差、闭合度、唇周纹理走向</td></tr></tbody></table></div>
+<p>三个轴彼此正交：一个唇可以既肿又裂（体积＋连续性），也可以既歪斜又枯槁（位置＋连续性）。用三个连续参数替代十二个类别名，好处很明显——标注者不必在十二个含混的名目里选一个，只需在三个轴上各给一个刻度；下游也不必把「肿」与「痿」当成互斥类，因为它们本来就可以同时出现。</p></div></div>
+  <div class="slide-foot"><span>12 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">六、十三种形变，其实只有三个可测轴</div>
+                <div class="compact"><p>这个转写还有一层意义：它示范了第 8 章要讲的三层分离怎么落到具体部位上。十二条是<strong>名目层</strong>，三个轴是<strong>特征层</strong>，而「唇高超过多少算肿」是<strong>判据层</strong>。三层各自可以独立修订——新出的教材多列一条形变，只动名目层；换了测量设备，只动特征层；换了应用场景，只动判据层。搅在一起，一处改动就要推翻全部。</p>
+<p>顺带说一句，「唇反者，太阴之终」这类条目，指向的是危重征象。它们在记录里应当被标成「升级项」，而不是并入形态评分。分类与分诊是两件事，前者求准，后者求不漏，混在一个输出里，两边都做不好。</p></div></div>
+  <div class="slide-foot"><span>13 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><ul><li>本章所引唇、四白、齿的判据依《望诊遵经》相关篇目及其所转引的《素问》《千金》，不同版本文字有异，本章照录不作校勘；临床术语以现行教材与规范为准。</li><li>口红、唇炎、皲裂、温度、发绀、贫血等对唇色的影响，本章只作干扰项列举，不提供鉴别诊断或阈值；a\* 的差值属演算设定。</li><li>「其华在唇四白」的测量学推论是本章的工程解释，不是原文的量化主张。</li><li>本章不给出任何唇色、齿色分类的准确率或一致性数据。</li><li>唇部持续不愈的溃疡、白斑、红斑、不明原因出血须及时就医，不得依赖图像判读。</li></ul>
+<p><strong>免责声明：</strong> 本章为口唇与齿龈望诊的教学与工程讨论，不构成医学意见、诊断或治疗建议。任何口唇、齿龈征象的临床解释与处置，须由具备资质的人员依规范作出。</p></div></div>
+  <div class="slide-foot"><span>14 / 15</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="14">
   <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
-  <div class="slide-foot"><span>5 / 5</span><span>disclaimer</span></div>
+  <div class="slide-foot"><span>15 / 15</span><span>disclaimer</span></div>
 </section>
 </div>
 <div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>

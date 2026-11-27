@@ -1,31 +1,91 @@
 {
   "chapter": "04-hemian-waike",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 17,
+  "segmentCount": 12,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 12
+      "chars": 27
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 65
+      "chars": 33
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 15
+      "chars": 230
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 102
+      "chars": 178
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 380
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 80
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 323
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 201
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 350
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 306
+    },
+    {
+      "n": 11,
+      "segment": 7,
+      "chars": 122
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 376
+    },
+    {
+      "n": 13,
+      "segment": 8,
+      "chars": 86
+    },
+    {
+      "n": 14,
+      "segment": 9,
+      "chars": 365
+    },
+    {
+      "n": 15,
+      "segment": 10,
+      "chars": 288
+    },
+    {
+      "n": 16,
+      "segment": 11,
+      "chars": 409
+    },
+    {
+      "n": 17,
+      "segment": 12,
       "chars": 52
     }
   ]

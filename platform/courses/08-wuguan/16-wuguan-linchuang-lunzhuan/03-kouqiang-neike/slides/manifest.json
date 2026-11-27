@@ -1,31 +1,91 @@
 {
   "chapter": "03-kouqiang-neike",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 17,
+  "segmentCount": 12,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 10
+      "chars": 29
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 61
+      "chars": 24
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 13
+      "chars": 212
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 102
+      "chars": 149
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 343
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 214
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 351
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 218
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 299
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 263
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 370
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 65
+    },
+    {
+      "n": 13,
+      "segment": 9,
+      "chars": 325
+    },
+    {
+      "n": 14,
+      "segment": 9,
+      "chars": 107
+    },
+    {
+      "n": 15,
+      "segment": 10,
+      "chars": 299
+    },
+    {
+      "n": 16,
+      "segment": 11,
+      "chars": 410
+    },
+    {
+      "n": 17,
+      "segment": 12,
       "chars": 52
     }
   ]

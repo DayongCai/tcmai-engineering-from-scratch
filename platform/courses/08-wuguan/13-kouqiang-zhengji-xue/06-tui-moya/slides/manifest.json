@@ -1,31 +1,81 @@
 {
   "chapter": "06-tui-moya",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 15,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 20
+      "chars": 25
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 118
+      "chars": 68
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 24
+      "chars": 80
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 126
+      "chars": 91
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 366
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 210
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 348
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 167
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 353
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 78
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 336
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 245
+    },
+    {
+      "n": 13,
+      "segment": 9,
+      "chars": 357
+    },
+    {
+      "n": 14,
+      "segment": 9,
+      "chars": 199
+    },
+    {
+      "n": 15,
+      "segment": 10,
       "chars": 52
     }
   ]

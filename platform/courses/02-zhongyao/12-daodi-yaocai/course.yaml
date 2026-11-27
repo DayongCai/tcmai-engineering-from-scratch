@@ -31,47 +31,47 @@ chapters:
   - slug: 01-daodi-gainian
     title: 道地不是产地标签，而是「产区—品种—工艺」三证合一
     video: rendered
-    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.98      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 10.08      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.10      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 02-quhua-fenbu
     title: 产区不是地图上的一个点，而是三条地带性叠加出来的一条带
     video: rendered
-    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 13.28      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.12      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 03-shengtai-pinzhi
     title: 品质差异一半写在地里，一半写在采收与加工那几天
     video: rendered
-    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 14.63      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.50      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 04-jiyuan-pinzhong
     title: 基原错了，后面所有鉴定都只是在给错的东西作证
     video: rendered
-    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 12.45      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.29      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 05-zaipei-caishou
     title: 栽培把「找到好药」换成了「每年都做出好药」
     video: rendered
-    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 12.48      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 06-chandi-jiagong
     title: 产地加工是把「植物」定成「药材」的那道工序
     video: rendered
-    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 12.42      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.09      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 07-guige-dengji
     title: 等级是商品的语言，不是药效的刻度
     video: rendered
-    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 12.90      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.07      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 08-pingjia-zhuisu
     title: 合格是最低线，评价是另一件事
     video: rendered
-    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 12.10      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.04      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

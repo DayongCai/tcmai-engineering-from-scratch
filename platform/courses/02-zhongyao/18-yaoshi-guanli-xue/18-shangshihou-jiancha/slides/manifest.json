@@ -1,31 +1,71 @@
 {
   "chapter": "18-shangshihou-jiancha",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 13,
+  "segmentCount": 12,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 17
+      "chars": 28
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 107
+      "chars": 33
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 27
+      "chars": 179
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 116
+      "chars": 151
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 289
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 316
+    },
+    {
+      "n": 7,
+      "segment": 7,
+      "chars": 349
+    },
+    {
+      "n": 8,
+      "segment": 8,
+      "chars": 345
+    },
+    {
+      "n": 9,
+      "segment": 9,
+      "chars": 405
+    },
+    {
+      "n": 10,
+      "segment": 10,
+      "chars": 372
+    },
+    {
+      "n": 11,
+      "segment": 10,
+      "chars": 83
+    },
+    {
+      "n": 12,
+      "segment": 11,
+      "chars": 274
+    },
+    {
+      "n": 13,
+      "segment": 12,
       "chars": 52
     }
   ]

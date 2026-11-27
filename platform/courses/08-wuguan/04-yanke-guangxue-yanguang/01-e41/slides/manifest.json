@@ -1,31 +1,81 @@
 {
   "chapter": "01-e41",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 15,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 10
+      "chars": 28
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 60
+      "chars": 30
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 13
+      "chars": 237
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 106
+      "chars": 124
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 329
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 395
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 387
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 122
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 341
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 373
+    },
+    {
+      "n": 11,
+      "segment": 7,
+      "chars": 394
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 198
+    },
+    {
+      "n": 13,
+      "segment": 8,
+      "chars": 410
+    },
+    {
+      "n": 14,
+      "segment": 9,
+      "chars": 362
+    },
+    {
+      "n": 15,
+      "segment": 10,
       "chars": 52
     }
   ]

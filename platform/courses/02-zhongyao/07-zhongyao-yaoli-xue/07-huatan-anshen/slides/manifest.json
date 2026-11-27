@@ -1,31 +1,86 @@
 {
   "chapter": "07-huatan-anshen",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 16,
+  "segmentCount": 11,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 16
+      "chars": 26
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 59
+      "chars": 27
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 57
+      "chars": 175
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 109
+      "chars": 127
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 407
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 185
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 297
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 290
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 292
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 291
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 407
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 359
+    },
+    {
+      "n": 13,
+      "segment": 9,
+      "chars": 368
+    },
+    {
+      "n": 14,
+      "segment": 9,
+      "chars": 116
+    },
+    {
+      "n": 15,
+      "segment": 10,
+      "chars": 464
+    },
+    {
+      "n": 16,
+      "segment": 11,
       "chars": 52
     }
   ]

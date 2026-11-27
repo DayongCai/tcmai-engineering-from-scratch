@@ -31,47 +31,47 @@ chapters:
   - slug: 01-e101
     title: 仪器不是四诊的升级版，它只补了人眼进不去的那一层
     video: rendered
-    estimate_minutes: 1.02      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.02      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 14.53      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.57      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 02-e102
     title: 解剖基线不是一张数值表，是一组对应关系
     video: rendered
-    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.98      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 16.20      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 12.74      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 03-e103
     title: 外障一望即知，影像在这里只做记录，不做诊断
     video: rendered
-    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.03      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 16.72      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 14.10      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 04-e104
     title: 浑浊时读断面，读到的不是「看不清」，是「看起来像缺了一层」
     video: rendered
-    estimate_minutes: 0.88      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 16.80      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 13.28      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 05-e105
     title: 杯盘比可以记，不能单独承担判读
     video: rendered
-    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 16.15      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 13.55      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 06-e106
     title: 出血的层次携带病程信息，面积不携带
     video: rendered
-    estimate_minutes: 0.98      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 16.22      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 13.35      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 07-e107
     title: 报告的好坏不在信息多少，在三段的分工
     video: rendered
-    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.98      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 15.43      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.43      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 08-e108
     title: 密码泄露了可以改，虹膜泄露了不能换
     video: rendered
-    estimate_minutes: 0.92      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.90      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 16.22      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 13.26      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

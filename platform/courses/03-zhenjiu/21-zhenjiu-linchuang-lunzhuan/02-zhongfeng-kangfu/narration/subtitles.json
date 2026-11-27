@@ -6,8 +6,8 @@
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
   "audioTotalSeconds": 643.06,
   "estimatedCues": 0,
-  "videoSeconds": 57.782667,
-  "videoMinusNarrationSeconds": -585.277,
+  "videoSeconds": 643.106667,
+  "videoMinusNarrationSeconds": 0.047,
   "textMatchesNarration": true,
   "mismatches": [],
   "cues": [

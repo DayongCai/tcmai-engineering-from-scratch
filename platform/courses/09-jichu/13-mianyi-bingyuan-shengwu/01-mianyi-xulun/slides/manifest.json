@@ -1,31 +1,96 @@
 {
   "chapter": "01-mianyi-xulun",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 18,
+  "segmentCount": 11,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 9
+      "chars": 20
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 69
+      "chars": 29
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 16
+      "chars": 113
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 141
+      "chars": 112
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 326
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 314
+    },
+    {
+      "n": 7,
+      "segment": 5,
+      "chars": 167
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 244
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 350
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 283
+    },
+    {
+      "n": 11,
+      "segment": 7,
+      "chars": 410
+    },
+    {
+      "n": 12,
+      "segment": 7,
+      "chars": 204
+    },
+    {
+      "n": 13,
+      "segment": 8,
+      "chars": 281
+    },
+    {
+      "n": 14,
+      "segment": 8,
+      "chars": 402
+    },
+    {
+      "n": 15,
+      "segment": 9,
+      "chars": 317
+    },
+    {
+      "n": 16,
+      "segment": 9,
+      "chars": 291
+    },
+    {
+      "n": 17,
+      "segment": 10,
+      "chars": 286
+    },
+    {
+      "n": 18,
+      "segment": 11,
       "chars": 52
     }
   ]

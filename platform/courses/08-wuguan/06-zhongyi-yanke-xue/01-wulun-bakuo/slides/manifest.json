@@ -1,51 +1,81 @@
 {
   "chapter": "01-wulun-bakuo",
-  "slideCount": 9,
-  "segmentCount": 9,
+  "slideCount": 15,
+  "segmentCount": 11,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 32
+      "chars": 21
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 30
+      "chars": 58
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 67
+      "chars": 148
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 59
+      "chars": 99
     },
     {
       "n": 5,
       "segment": 5,
-      "chars": 148
+      "chars": 414
     },
     {
       "n": 6,
-      "segment": 6,
-      "chars": 416
+      "segment": 5,
+      "chars": 398
     },
     {
       "n": 7,
-      "segment": 7,
-      "chars": 415
+      "segment": 6,
+      "chars": 328
     },
     {
       "n": 8,
-      "segment": 8,
-      "chars": 119
+      "segment": 6,
+      "chars": 103
     },
     {
       "n": 9,
+      "segment": 7,
+      "chars": 269
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 374
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 308
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 133
+    },
+    {
+      "n": 13,
       "segment": 9,
+      "chars": 326
+    },
+    {
+      "n": 14,
+      "segment": 10,
+      "chars": 314
+    },
+    {
+      "n": 15,
+      "segment": 11,
       "chars": 52
     }
   ]

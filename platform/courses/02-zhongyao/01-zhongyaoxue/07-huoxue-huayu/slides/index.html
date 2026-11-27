@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"/>
-<title>第 7 章 · 活血化瘀药：节分类、归经轴与禁忌的可计算化 · 幻灯片</title>
+<title>第 7 章 · 活血化瘀的位置编码在节内，肝经 23 味无一处例外 · 幻灯片</title>
 <style>
 
 :root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
@@ -59,66 +59,101 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <body>
 <div id="deck">
 <section class="slide" data-i="0">
-  <div class="slide-inner"><h1 class="big">第 7 章 · 活血化瘀药：节分类、归经轴与禁忌的可计算化</h1></div>
-  <div class="slide-foot"><span>1 / 8</span><span>title</span></div>
+  <div class="slide-inner"><h1 class="big">第 7 章 · 活血化瘀的位置编码在节内，肝经 23 味无一处例外</h1></div>
+  <div class="slide-foot"><span>1 / 16</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「川芎功效活血行气、祛风止痛。」——《中药学·第20章·20.1》</blockquote></div>
-  <div class="slide-foot"><span>2 / 8</span><span>motto</span></div>
+  <div class="slide-inner"><blockquote class="motto">「血气不和，百病乃变化而生。」——《素问·调经论》</blockquote></div>
+  <div class="slide-foot"><span>2 / 16</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
-  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">病人说「痛」，你能背出二十三味活血药的名字，却说不清为什么川芎在 20.1、丹参在 20.2、土鳖虫在 20.3——更说不清一个孕 12 周的患者，这二十三味里到底有几味要先划掉。要回答这两个问题，光靠记忆不够，得让教材的<strong>分类轴</strong>和<strong>禁忌表述</strong>都变成可以逐条核对的数据。</p></div>
-  <div class="slide-foot"><span>3 / 8</span><span>problem</span></div>
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">这一章有 23 味药、4 节，看似只是「活血药按用途分堆」。可底本的 locator 只给出 7 个不同编号，23 条记录里有 16 处重号——「教材·第20章·20.1」同时指向川芎、丹参、土鳖虫、莪术四味不同的药。也就是说，这一章的编号编的是<strong>节内序号</strong>，不是全章序号；照着编号回查，会四次落到不同的药上。同一章里剂量从斑蝥 0.03g 到益母草 30g，差 1,000 倍；4 味标毒的也全在后两节，前两节 14 味一味不毒。这三件事合起来说明：活血化瘀药的「强度」不是形容词，是可以按节、按剂量、按毒性读出来的三段台阶。</p></div>
+  <div class="slide-foot"><span>3 / 16</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
-  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫(痛经、跌打、中风、癥瘕四类场景在门诊同一天出现，选药要同时满足「哪一节 + 哪条经 + 孕妇能不能用」，凭印象必然漏项) + 知识积累(把四节标题、归经字段、毒性词、妊娠禁忌、教材「要药」定位语做成一张多轴索引，才能在被追问时给出处而不是给感觉)</p></div>
-  <div class="slide-foot"><span>4 / 8</span><span>roots</span></div>
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（血瘀证在门诊横跨心脑血管、妇科、伤科三科：胸痹、痛经闭经、跌打骨折，同一个人身上可能同时出现两处瘀，医生必须在「行血」与「破血」之间当场定档——定高了出血，定低了不通）＋ 知识积累（底本把 23 味的「气—味—归经—剂量—炮制—毒性」拆成字段后，四节的强度阶梯、肝经的零例外、剂量与毒性的对应关系才第一次可以逐条核对，而不是靠「活血药都差不多」一句带过）</p></div>
+  <div class="slide-foot"><span>4 / 16</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
-  <div class="slide-inner"><div class="kicker">学习目标</div>
-                <div class="compact"><ol><li>说清活血化瘀药的四节是按<strong>病位与力度</strong>切的，不是按归经切的——并用数据证明。</li><li>从教材正文里抽出四气、归经、毒性、妊娠禁忌四个维度，并说明每一维的抽取边界在哪里。</li><li>用容错正则修掉一次真实的抽取漏项，并解释为什么朴素子串会漏。</li><li>说出「教材定位语」这种文本信号能支撑什么结论、不能支撑什么结论。</li></ol></div></div>
-  <div class="slide-foot"><span>5 / 8</span><span>objectives</span></div>
+  <div class="slide-inner"><div class="kicker">一、23 味、4 节：编号编在节内，节序就是强度序</div>
+                <div class="compact dense"><p>底本这一章的结构是真的分了层，四节的字数与味数并不均：</p>
+<div class="table-wrap"><table><thead><tr><th>节</th><th>味数</th><th>汉字</th><th>篇均</th><th>代表药</th><th>强度</th></tr></thead><tbody><tr><td>20.1 活血止痛</td><td>7</td><td>930</td><td>132.9</td><td>川芎、延胡索、郁金、姜黄、乳香、没药、五灵脂</td><td>行而兼止</td></tr><tr><td>20.2 活血调经</td><td>7</td><td>1,023</td><td>146.1</td><td>丹参、红花、桃仁、益母草、泽兰、牛膝、鸡血藤</td><td>行而下行</td></tr><tr><td>20.3 活血疗伤</td><td>5</td><td>621</td><td>124.2</td><td>土鳖虫、马钱子、自然铜、骨碎补、血竭</td><td>破而兼续</td></tr><tr><td>20.4 破血消癥</td><td>4</td><td>547</td><td>136.8</td><td>莪术、三棱、水蛭、斑蝥</td><td>破</td></tr></tbody></table></div>
+<p>合计 23 味、3,121 汉字、篇均 135.7 字。四节不是四个适应证清单，而是一条从「行」到「破」的连续带：止痛节的药可以日常用（川芎 3–10g、延胡索 3–10g），破血节的药不能（斑蝥 0.03–0.06g，且须米炒减毒）。<strong>节序本身承载剂量信息</strong>，这是这一章与消食、止血两章最大的结构差别。</p></div></div>
+  <div class="slide-foot"><span>5 / 16</span><span>body</span></div>
 </section>
 <section class="slide" data-i="5">
-  <div class="slide-inner"><div class="kicker">核心概念</div>
-                <div class="compact denser"><h3 id="中医-四节的分法是一条-场景轴">中医：四节的分法是一条「场景轴」</h3>
-<p>教材·第20章把活血化瘀药分成四节：20.1 活血止痛药（7 味）、20.2 活血调经药（7 味）、20.3 活血疗伤药（5 味）、20.4 破血消癥药（4 味）。这四节的名字里没有一条经络，全是<strong>用在哪</strong>：止痛、调经、疗伤、消癥。所以分类轴是场景轴，归经轴是另一根轴。</p>
-<p>两根轴一交叉，第一个反直觉的结论就出来了：二十三味药<strong>全部</strong>归肝经。教材·第20章·20.2.6 牛膝讲「性善下行，引血引火下行」，说的是方向；20.4.2 三棱讲「破血之力峻于莪术」，说的是力度。方向、力度、场景都在变，归经不变——归经在这里是<strong>入门门槛</strong>，不是区分依据。</p>
-<p>第二个反直觉结论来自力度词。「破血」这个词在教材里出现于六味药，却横跨三节：20.1 的姜黄、20.3 的土鳖虫、20.4 的莪术三棱水蛭斑蝥。也就是说，节标题给的力度暗示（20.4 才叫破血消癥）与正文的力度词并不严格对齐。这不是教材写错，而是提示我们：<strong>标题是纲，正文是目，做检索要落到正文</strong>。</p>
-<h3 id="ai-工程-把-禁忌-抽成三档-而不是抽成一个布尔值">AI/工程：把「禁忌」抽成三档，而不是抽成一个布尔值</h3>
-<p>妊娠禁忌在教材里写成三种强度：禁用（绝对不用）、忌用（一般不用）、慎用（可用但慎）。三者混成一个 true/false，临床上就是把「慎用」当成「禁用」，或者把「禁用」悄悄放过去。</p>
-<p>真正的工程细节在抽取那一步。朴素写法是查子串「孕妇忌用」，在这一章只能捞到 12 味；因为教材把三味的禁忌写成了插入语式——教材·第20章·20.4.1 莪术写的是「孕妇及月经过多者忌用」。中间插了「及月经过多者」，子串就断了。换成 <code>/孕妇[^。；]*?(禁用|忌用|慎用)/</code> 能捞到 15 味，补回乳香、莪术、三棱。</p>
-<p>漏 3 味不会报错、不会抛异常、不会让任何一行变红。它只是让一份本该 15 行的清单变成 12 行，然后有人照着 12 行开方。这是本章最值得记住的一课：<strong>静默失真是抽取任务里最贵的 bug</strong>。</p>
-<h3 id="三张核对表">三张核对表</h3>
-<p><strong>表 1 · 四节规模（逐节字数相加必须等于 4184）</strong></p>
-<div class="table-wrap"><table><thead><tr><th>节</th><th>节名</th><th>味数</th><th>段数</th><th>字数</th></tr></thead><tbody><tr><td>20.1</td><td>活血止痛药</td><td>7</td><td>21</td><td>1248</td></tr><tr><td>20.2</td><td>活血调经药</td><td>7</td><td>21</td><td>1384</td></tr><tr><td>20.3</td><td>活血疗伤药</td><td>5</td><td>15</td><td>821</td></tr><tr><td>20.4</td><td>破血消癥药</td><td>4</td><td>12</td><td>731</td></tr><tr><td>合计</td><td>—</td><td>23</td><td>69</td><td>4184</td></tr></tbody></table></div>
-<p><strong>表 2 · 四气分布（<code>nature.qi</code> 原样取值，微寒微温不压平）</strong></p>
-<div class="table-wrap"><table><thead><tr><th>四气</th><th>温</th><th>平</th><th>寒</th><th>微寒</th><th>微温</th><th>热</th></tr></thead><tbody><tr><td>味数</td><td>10</td><td>7</td><td>2</td><td>2</td><td>1</td><td>1</td></tr></tbody></table></div>
-<p>温热类合计 12 味，寒凉类合计 4 味，平性 7 味。活血药整体偏温，这与「血得温则行」的通行说法方向一致，但这只是<strong>分布一致</strong>，不是因果证明。</p>
-<p><strong>表 3 · 归经覆盖（23 味，合计 54 条归经）</strong></p>
-<div class="table-wrap"><table><thead><tr><th>归经</th><th>肝</th><th>脾</th><th>心</th><th>肾</th><th>胆</th><th>心包</th><th>大肠</th><th>膀胱</th><th>胃</th></tr></thead><tbody><tr><td>味数</td><td>23</td><td>9</td><td>7</td><td>4</td><td>2</td><td>2</td><td>1</td><td>1</td><td>1</td></tr></tbody></table></div>
-<p><strong>表 4 · 毒性 × 妊娠禁忌（含朴素/容错两种抽法）</strong></p>
-<div class="table-wrap"><table><thead><tr><th>项</th><th>结果</th></tr></thead><tbody><tr><td>毒性</td><td>无毒 19 · 小毒 2（土鳖虫、水蛭）· 大毒 2（马钱子、斑蝥）</td></tr><tr><td>妊娠·忌用</td><td>15 味（容错正则）／ 12 味（朴素子串，漏乳香、莪术、三棱）</td></tr><tr><td>妊娠·慎用</td><td>7 味（川芎、延胡索、郁金、五灵脂、丹参、泽兰、鸡血藤）</td></tr><tr><td>妊娠·未标注</td><td>1 味（骨碎补）</td></tr><tr><td>教材定位语</td><td>9 条，如川芎=治头痛要药、乳香=伤科要药、自然铜=接骨要药</td></tr></tbody></table></div></div></div>
-  <div class="slide-foot"><span>6 / 8</span><span>concept</span></div>
+  <div class="slide-inner"><div class="kicker">一、23 味、4 节：编号编在节内，节序就是强度序</div>
+                <div class="compact dense"><p>编号问题是这一章最容易被忽略的缺陷。23 条记录的 locator 只有 7 个不同值：</p>
+<div class="codeblock"><div class="codeblock-lang">text</div><pre><code class="lang-text">止痛：20.1 20.2 20.3 20.4 20.5 20.6 20.7   （7 味）
+调经：20.1 20.2 20.3 20.4 20.5 20.6 20.7   （7 味，编号复位）
+疗伤：20.1 20.2 20.3 20.4 20.5             （5 味，编号复位）
+消癥：20.1 20.2 20.3 20.4                  （4 味，编号复位）</code></pre></div>
+<p>20.1 出现 4 次，20.2 出现 4 次，20.3 出现 4 次，20.4 出现 4 次。底本用「20.x」表示<strong>第 x 味</strong>而不是<strong>第 x 节</strong>，节的标识另放在 <code>sec</code> 字段（20.1 活血止痛药、20.2 活血调经药、20.3 活血疗伤药、20.4 破血消癥药）。两套编号共用同一串数字，是这一章引用时最容易出错的地方：写「教材·第20章·20.3」，读者可能去查破血消癥药（节），也可能去查郁金（药）。本章一律写成「教材·第20章·20.3（活血疗伤药）·土鳖虫」这种双标形式。</p></div></div>
+  <div class="slide-foot"><span>6 / 16</span><span>body</span></div>
 </section>
 <section class="slide" data-i="6">
-  <div class="slide-inner"><div class="kicker">BUILD IT · 从零实现</div>
-                <div class="compact dense"><div class="codeblock"><div class="codeblock-lang">js</div><pre><code class="lang-js">const CHAPTER = '20';
-const units = () =&gt; chapter().secs.flatMap((s) =&gt;
-  s.subs.map((u) =&gt; ({ sec: s.no, name: u.title, paras: u.paras })));
-
-// 禁忌：三档 + 容错正则（插入语「孕妇及月经过多者忌用」也要命中）
-const pregTolerant = (name) =&gt;
-  (bodyOf(name).match(/孕妇[^。；]*?(禁用|忌用|慎用)/) || [null, '未标注'])[1];
-
-// 力度词与节标题的交叉表
-const breakBlood = () =&gt; units().filter((u) =&gt; u.paras.join('').includes('破血'));</code></pre></div>
-<p>三个函数都不含任何写死的统计结果：四气、归经、禁忌全部从 <code>drugs.json</code> 与 <code>底本.json</code> 现算，改一个字，输出就跟着变。</p></div></div>
-  <div class="slide-foot"><span>7 / 8</span><span>build</span></div>
+  <div class="slide-inner"><div class="kicker">二、肝经 23 味无一处例外：全书最集中的一栏</div>
+                <div class="compact dense"><p>20 条有归经值的记录，肝出现了 20 次——100%。剩下 3 条空栏（土鳖虫、自然铜、水蛭）的正文都写着「归肝经」，只是没落进字段。也就是说，<strong>23 味活血化瘀药没有一味不归肝</strong>。</p>
+<div class="table-wrap"><table><thead><tr><th>经</th><th>条数</th><th>占比（20 条有值）</th></tr></thead><tbody><tr><td>肝</td><td>20</td><td>100%</td></tr><tr><td>脾</td><td>9</td><td>45%</td></tr><tr><td>心</td><td>7</td><td>35%</td></tr><tr><td>肾</td><td>4</td><td>20%</td></tr><tr><td>胆</td><td>2</td><td>10%</td></tr><tr><td>心包</td><td>2</td><td>10%</td></tr><tr><td>大肠、膀胱、胃</td><td>各 1</td><td>各 5%</td></tr></tbody></table></div>
+<p>这个 100% 在全库是罕见的。第17–19章 24 味里肝只占 15 条（62.5%），第21章 25 味里肺 13 条（52%），第22–24章 26 味里心 15 条（57.7%）。活血化瘀药是唯一一组「归经可以一句话说完」的药：肝主疏泄、藏血，瘀的本质是血行不畅，血行由肝管，所以 23 味全落在肝上。</p></div></div>
+  <div class="slide-foot"><span>7 / 16</span><span>body</span></div>
 </section>
 <section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">二、肝经 23 味无一处例外：全书最集中的一栏</div>
+                <div class="compact"><p>这条零例外有直接用处：它把「活血」与「补血」分开了。第20章里唯一带补血功效的是鸡血藤（活血补血、调经止痛、舒筋活络，归肝肾），它同时出现在调经节，说明「活血兼补」是节内的一个变体，不是另一类药。相反，第25章补虚药里的当归、熟地归经也涉肝，但它们的功效首词是「补」，归经相同而节不同——<strong>归经不是分类器，节才是</strong>。</p>
+<p>再看脾 9 与心 7。脾 9 横跨四节（止痛 5：延胡索、姜黄、乳香、没药、五灵脂；调经 1：泽兰；疗伤 1：马钱子；消癥 2：莪术、三棱），这条分布对应「气滞血瘀」的常见起点：脾主运化，运化不利则气滞，气滞则血行不畅——所以脾不是某一节的专属，而是四节共有的第二落点。心 7 则集中得多（止痛 3：郁金、乳香、没药；调经 3：丹参、红花、桃仁；疗伤 1：血竭），对应「胸痹」「瘀阻心脉」这一路。肾 4（牛膝、鸡血藤、骨碎补、斑蝥）则把「腰膝」「筋骨」这条线接上。</p></div></div>
+  <div class="slide-foot"><span>8 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">三、气与味：温 10、辛 11，寒只有 2 味</div>
+                <div class="compact dense"><p>20 条有气值：温 10、平 7、寒 2、热 1。温热侧合计 11 条（55%），寒只有 2 条（郁金、土鳖虫）。</p>
+<div class="table-wrap"><table><thead><tr><th>气</th><th>条数</th><th>药</th></tr></thead><tbody><tr><td>温</td><td>10</td><td>川芎、延胡索、姜黄、乳香、五灵脂、红花、鸡血藤、马钱子、骨碎补、莪术</td></tr><tr><td>平</td><td>7</td><td>没药、桃仁、牛膝、自然铜、血竭、三棱、水蛭</td></tr><tr><td>寒</td><td>2</td><td>郁金、土鳖虫</td></tr><tr><td>热</td><td>1</td><td>斑蝥</td></tr></tbody></table></div>
+<p>「血得温则行，得寒则凝」这句老话在数据上的投影就是这 11 比 2。但两味寒药各有各的理由，不能当例外硬记：</p>
+<p><strong>郁金</strong>（寒、辛／苦、归肝胆心）的功效首词是「活血止痛」，后面接「行气解郁、清心凉血、利胆退黄」。它治的是「气郁化火、血热夹瘀」——黄疸、胆石、热病神昏，都是热证。用寒药行血，是因为瘀的旁边站着火。</p>
+<p><strong>土鳖虫</strong>（寒、咸、有小毒、归肝）的功效是「破血逐瘀、续筋接骨」，用在跌打筋骨折伤。它的寒不是针对证，是针对「伤」：外伤局部红肿热痛，寒能清之；咸能软坚，入血分。同一味药，破血的力量与清热的属性是两件事。</p></div></div>
+  <div class="slide-foot"><span>9 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">三、气与味：温 10、辛 11，寒只有 2 味</div>
+                <div class="compact"><p>斑蝥是唯一的「热」，也是全章唯一的「大毒加破血」组合（辛、热、大毒、归肝胃肾），内服 0.03–0.06g，米炒减毒——这个剂量与它的热度一样极端，不能按「热药温通」去理解。</p>
+<p>味标一共 34 个：苦 14、辛 11、甘 5、咸 3、酸 1。苦与辛几乎承包了全部。辛能行能散，是「活血」这个动作的字面依据；苦能泄能燥，对应「瘀久化热、瘀阻不通则痛」。有味标却无辛的只有 9 味，其中 3 味是咸（土鳖虫、水蛭、血竭）——咸味集中在破血与疗伤两节，是「软坚散结、入血分」的编码，也是这一章最容易被漏读的一栏。</p></div></div>
+  <div class="slide-foot"><span>10 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">四、剂量与毒：0.03g 到 30g，四味标毒全在后两节</div>
+                <div class="compact dense"><p>23 味的剂量上界跨度 1,000 倍：</p>
+<div class="table-wrap"><table><thead><tr><th>药</th><th>剂量</th><th>说明</th></tr></thead><tbody><tr><td>斑蝥</td><td>内服 0.03–0.06g</td><td>大毒，米炒减毒，入丸散</td></tr><tr><td>马钱子</td><td>内服 0.3–0.6g</td><td>大毒，砂烫炮制后入丸散</td></tr><tr><td>水蛭</td><td>煎 1–3g；研末 0.3–0.5g</td><td>有小毒</td></tr><tr><td>血竭</td><td>研末 1–2g</td><td>入丸散</td></tr><tr><td>川芎、延胡索、郁金、姜黄、乳香、没药、五灵脂</td><td>3–10g</td><td>常规</td></tr><tr><td>益母草、鸡血藤</td><td>10–30g</td><td>上界最高</td></tr></tbody></table></div>
+<p>从 0.03g 到 30g，正好 1,000 倍。这不是印刷误差：斑蝥的毒性成分斑蝥素在 0.06g 以上就可能引起起泡、血尿，而益母草 30g 是煎剂的常规上限。两者都在「活血化瘀药」名下，但<strong>「同章同量级」这个假设在这一章完全不成立</strong>。</p>
+<p>四味标毒的药全部落在后两节：</p></div></div>
+  <div class="slide-foot"><span>11 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">四、剂量与毒：0.03g 到 30g，四味标毒全在后两节</div>
+                <div class="compact dense"><div class="table-wrap"><table><thead><tr><th>节</th><th>味数</th><th>标毒</th><th>占比</th></tr></thead><tbody><tr><td>20.1 活血止痛</td><td>7</td><td>0</td><td>0%</td></tr><tr><td>20.2 活血调经</td><td>7</td><td>0</td><td>0%</td></tr><tr><td>20.3 活血疗伤</td><td>5</td><td>2（土鳖虫、马钱子）</td><td>40%</td></tr><tr><td>20.4 破血消癥</td><td>4</td><td>2（水蛭、斑蝥）</td><td>50%</td></tr></tbody></table></div>
+<p>前两节 14 味零标毒，后两节 9 味里 4 味标毒（44.4%）。这条分布与节的强度序完全同向：越往后，破的力量越大，代价越显性。教材把它写进「使用注意」而不是「功效」，读的时候不能只看前半句。</p>
+<p>炮制词也在同样的位置上加密：前两节用「醋制」「酒炙」这类增效手段（延胡索醋制止痛力增、丹参酒炙活血力增、莪术醋制增强消癥、牛膝酒炙活血盐炙入肾），后两节用「砂烫」「米炒」「煅醋淬」这类减毒手段（马钱子砂烫、斑蝥米炒、自然铜煅醋淬）。<strong>前半章在加力，后半章在减毒</strong>——同一章的两套炮制逻辑，方向相反。</p></div></div>
+  <div class="slide-foot"><span>12 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">五、禁忌：四条十九畏／十八反，全在「相须」的背面</div>
+                <div class="compact"><p>这一章的配伍禁忌密度是全课最高的四章之一，四条都写在具体的药条里：</p>
+<div class="table-wrap"><table><thead><tr><th>药</th><th>禁忌</th><th>类型</th></tr></thead><tbody><tr><td>丹参</td><td>反藜芦</td><td>十八反</td></tr><tr><td>郁金</td><td>不宜与丁香同用</td><td>十九畏</td></tr><tr><td>五灵脂</td><td>不宜与人参同用</td><td>十九畏</td></tr><tr><td>三棱</td><td>不宜与芒硝、玄明粉同用</td><td>十九畏</td></tr></tbody></table></div>
+<p>四条禁忌的位置值得注意：它们不是均匀撒在 23 味上，而是集中在「有对药」的几味旁边。教材同时写着三组相须：乳香与没药「乳没相须」，三棱与莪术「三棱莪术相须」，蒲黄与五灵脂（失笑散）。相须与相畏在这一章几乎是成对出现的——<strong>能配成对药的药，也最容易被配错</strong>。三棱与莪术相须，三棱却畏芒硝；五灵脂与蒲黄相须，五灵脂却畏人参。这一层关系靠背单味药记不住，只能按「对药＋禁忌」成组记。</p></div></div>
+  <div class="slide-foot"><span>13 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">五、禁忌：四条十九畏／十八反，全在「相须」的背面</div>
+                <div class="compact"><p>还有一处临床含义更重的：丹参「不宜与抗凝药同用（出血风险）」。这是现代药理补充，不在十九畏之内，但它与「丹参反藜芦」写在同一条里，说明教材把传统配伍禁忌与现代药物相互作用放在同一个「使用注意」栏。两类禁忌的性质不同：前者是配伍理论，后者是药理证据。混在一栏里读，容易把「反藜芦」当成与「抗凝药」同等强度的证据——它们不在同一个证据层级上。</p></div></div>
+  <div class="slide-foot"><span>14 / 16</span><span>body</span></div>
+</section>
+<section class="slide" data-i="14">
+  <div class="slide-inner"><div class="kicker">六、代价与边界</div>
+                <div class="compact dense"><ul><li><strong>「活血化瘀」不是一类药，是四段强度。</strong> 止痛与调经两节 14 味零标毒，疗伤与消癥两节 9 味里 4 味标毒。把 23 味当成同一档 interchangeable 的药，是这一章最贵的误读。</li><li><strong>locator 不可裸引。</strong> 23 条只有 7 个不同编号，20.1 对应四味不同的药。回查必须带节名，否则四次里三次落错。</li><li><strong>肝经 100% 不等于功效相同。</strong> 归经只说明「作用在血分」，不说明「能不能破」。丹参归肝也归心，功效首词是活血祛瘀；斑蝥归肝也归胃肾，功效是破血逐瘀兼攻毒。同一条经上，剂量差 1,000 倍。</li><li><strong>剂量差的边界要说清。</strong> 1,000 倍是「斑蝥 0.03g」与「益母草 30g」两端之比，不代表任意两味之间都有这个差距；常规段（3–10g）覆盖了 23 味中的 14 味。</li><li><strong>禁忌分两个证据层级。</strong> 十八反、十九畏属传统配伍理论；「不宜与抗凝药同用」属现代药理观察。教材把两类写在同一栏，引用时不能混为一谈。</li><li><strong>本章不给活血方案。</strong> 本章只做字段与结构的统计，不评价疗效。马钱子、斑蝥属大毒之品，水蛭、土鳖虫有小毒，孕妇多禁用或忌用；任何活血化瘀的用药决定须由执业中医师依药典与辨证作出。</li></ul></div></div>
+  <div class="slide-foot"><span>15 / 16</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="15">
   <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
-  <div class="slide-foot"><span>8 / 8</span><span>disclaimer</span></div>
+  <div class="slide-foot"><span>16 / 16</span><span>disclaimer</span></div>
 </section>
 </div>
 <div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>

@@ -1,12 +1,12 @@
 {
   "chapter": "02-tangji-jianzhu",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 17,
+  "segmentCount": 10,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 14
+      "chars": 21
     },
     {
       "n": 2,
@@ -16,16 +16,76 @@
     {
       "n": 3,
       "segment": 3,
-      "chars": 52
+      "chars": 170
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 105
+      "chars": 106
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 267
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 365
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 398
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 130
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 72
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 377
+    },
+    {
+      "n": 11,
+      "segment": 7,
+      "chars": 269
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 303
+    },
+    {
+      "n": 13,
+      "segment": 8,
+      "chars": 193
+    },
+    {
+      "n": 14,
+      "segment": 8,
+      "chars": 254
+    },
+    {
+      "n": 15,
+      "segment": 9,
+      "chars": 310
+    },
+    {
+      "n": 16,
+      "segment": 9,
+      "chars": 119
+    },
+    {
+      "n": 17,
+      "segment": 10,
       "chars": 52
     }
   ]

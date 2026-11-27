@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"/>
-<title>第 2 章 · 药材源头：GACP 与可持续供应 · 幻灯片</title>
+<title>第 2 章 · 源头记录写不到地块，批间一致性就只是这三批的运气 · 幻灯片</title>
 <style>
 
 :root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
@@ -59,24 +59,98 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <body>
 <div id="deck">
 <section class="slide" data-i="0">
-  <div class="slide-inner"><h1 class="big">第 2 章 · 药材源头：GACP 与可持续供应</h1></div>
-  <div class="slide-foot"><span>1 / 5</span><span>title</span></div>
+  <div class="slide-inner"><h1 class="big">第 2 章 · 源头记录写不到地块，批间一致性就只是这三批的运气</h1></div>
+  <div class="slide-foot"><span>1 / 15</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「《中药新药研发·第2章》」——外源课无教材篇名，引外源条文；<strong>非教材原文篇名</strong>。本章要回答的是：药材源头：GACP 与可持续供应这一段的核心判据是什么。</blockquote></div>
-  <div class="slide-foot"><span>2 / 5</span><span>motto</span></div>
+  <div class="slide-inner"><blockquote class="motto">「Good agricultural and collection practices for medicinal plants is only the first step in quality assurance, on which the safety and efficacy of herbal medicinal products directly depend upon.」——《WHO 药用植物良好农业与采集规范指南·第2条》（W07，本库译：药用植物 GACP 只是质量保证的第一步，不是全部）。这句&quot;只是第一步&quot;是全章的分量所在：把第一步当成全部，后面每一步都在替它兜底。</blockquote></div>
+  <div class="slide-foot"><span>2 / 15</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
-  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">源头这一段决定上限：药材不稳定，后面所有工艺都是给波动做补偿。</p></div>
-  <div class="slide-foot"><span>3 / 5</span><span>problem</span></div>
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">同一品种、两个产区、同一套工艺参数，成品含量相差近三成：一批稳稳合格，一批贴着下限。团队的第一反应是&quot;加严工艺&quot;，改了三轮参数，差异照旧。三个月后才有人问：这两批药材是同一季采的吗？答案是不同季，干燥方式也不同。<strong>工艺一直在替源头解释它解释不了的事。</strong></p></div>
+  <div class="slide-foot"><span>3 / 15</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
-  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（中药新药的失败大多不是「做不出来」，而是「证不明」：源头、批间、监测任一段缺口，整条链就断）+ 知识积累（本章 1 单元 1,124 汉字；三辨主 <strong>工艺与产业化 7</strong>；四位面（证据链段）主 <strong>源头 21</strong>；引书 <strong>0 部 0 次</strong>；数值类命中 0）</p></div>
-  <div class="slide-foot"><span>4 / 5</span><span>roots</span></div>
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（药材是中药新药唯一&quot;天然带着变异&quot;的起始物料，变异发生在你的控制范围之外，只能被记录、被分层，不能被命令消失）+ 知识积累（源头四变量 × 分层归因：把成品差异按产区、采收期、初加工三维分组，先定位再谈调整；分组之前谈归因，都是猜）</p></div>
+  <div class="slide-foot"><span>4 / 15</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
+  <div class="slide-inner"><div class="kicker">学习目标</div>
+                <div class="compact"><ul><li>能把药材质量拆成基原、产地、农艺、初加工四个变量，并说出每个变量对应哪些必须记录的字段</li><li>能判断一份药材来源描述是否足以支撑批间结论，指出缺的是哪一栏</li><li>能用&quot;产区 × 采收期 × 初加工&quot;三维分组做源头分层归因，并说明分组内与分组间差异各自指向什么</li><li>能区分污染类风险与可持续类风险，各自列出两组控制字段</li><li>能识别源头环节三类失效模式的最早文本信号</li></ul></div></div>
+  <div class="slide-foot"><span>5 / 15</span><span>objectives</span></div>
+</section>
+<section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">正文</div>
+                <div class="compact dense"><h3 id="2-1-四个变量与它们的可记录性">2.1 四个变量与它们的可记录性</h3>
+<p>药材质量受四件事支配：基原（是不是这个物种）、产地（土壤与气候积累）、农艺（栽培与采收的投入与时机）、初加工（干燥与贮藏决定的成分转化）。判断一份源头记录够不够，不必看它写得多长，只问一句：这四件事，每一件能不能落在一个可复核的字段上。</p>
+<div class="table-wrap"><table><thead><tr><th>变量</th><th>它改变什么</th><th>必须记录的字段</th><th>事后能否补救</th></tr></thead><tbody><tr><td>基原</td><td>成分谱的种类与比例</td><td>物种学名、鉴定方法与依据（形态／显微／分子）、鉴定人</td><td>不能。采收之后无法改物种</td></tr><tr><td>产地</td><td>土壤本底、气候积累曲线</td><td>到县、乡、地块编号、海拔、前茬作物</td><td>不能</td></tr><tr><td>农艺</td><td>投入品残留、生长节律与采收期</td><td>肥料与农药清单、施用量、安全间隔期、采收期与方法</td><td>不能</td></tr><tr><td>初加工</td><td>干燥曲线决定的成分转化与微生物负荷</td><td>干燥方式与温度／时间、切制规格、包装材质、仓储温湿度</td><td>部分。复烘会改变成分谱，等于换了物料</td></tr></tbody></table></div></div></div>
+  <div class="slide-foot"><span>6 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">正文</div>
+                <div class="compact dense"><p>这张表的用法是排除法，而不是打分法。任何一项填不出字段，后面所有批间结论的适用范围就自动收窄到&quot;这几批&quot;。原因很硬：含量是这四个变量的函数，变量没被记录，函数就没有自变量，剩下的只有回忆。</p>
+<p>【教学设定】表中所列字段是教学用的最小集，具体品种的必填项以 GACP 实施规范与所在企业 SOP 为准，本章不给出任何品种的判定限值。</p>
+<h3 id="2-2-gacp-的实质-把不可控变成可记录">2.2 GACP 的实质：把不可控变成可记录</h3>
+<p>GACP 常被误解成一套&quot;规范&quot;，读起来像在讲应该怎么种。它的实质更朴素：<strong>它规定的是种的时候必须记下什么</strong>。规范条文可以因地调整，记录制度不能省——省掉的记录，出问题时无法补造，因为补造的那一份在时间戳上就露了。</p>
+<p>记录可以按四层组织，加一条贯通层。</p>
+<p><strong>第一层，地块与种源。</strong> 地块编号、土壤类型与前茬、种源来源与鉴定结论。这一层的作用是把&quot;某县某乡&quot;这种产区级说法，压到能重复取样的粒度。</p></div></div>
+  <div class="slide-foot"><span>7 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">正文</div>
+                <div class="compact"><p><strong>第二层，投入品。</strong> 肥料、农药、除草剂的名称、用量、施用日期与安全间隔期。这一层直接对应后面的农残与重金属问题：没有投入品清单，成品超标时无法回溯是哪一次施用造成的。</p>
+<p><strong>第三层，采收。</strong> 采收期（细到旬，必要时到日）、采收方法（机械或人工）、采收时的物候状态（花期、果期、叶龄）。同一地块早采十天与晚采十天，成分谱可以差出一档，这一层最容易被&quot;大概那几天&quot;糊过去。</p>
+<p><strong>第四层，初加工与贮藏。</strong> 干燥方式（晒干／烘干／阴干／蒸后干燥）与终点判定（含水率范围）、切制规格、包装材质、仓储温湿度与虫霉防治措施。这一层是成分谱变化最集中的地方，也是研发与生产最容易互相推诿的地方。</p>
+<p>贯通层是批号：<strong>药材批号连到投料批号，投料批号连到成品批号。</strong> 批号断在哪里，追溯就断在哪里。这一条几乎不花钱，却最常被跳过，因为它在一切顺利时不产生任何价值。</p></div></div>
+  <div class="slide-foot"><span>8 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">正文</div>
+                <div class="compact"><p>还有一层分工要说清：GACP 管&quot;种出来、采下来&quot;，GMP 管&quot;做出来&quot;，两者之间还有运输、仓储与初加工一段，常被两边都当成对方的事。WHO 的措辞把这层关系写死了——GACP 只是质量保证的第一步，安全性与有效性直接依赖它，但它不是全部。</p>
+<h3 id="2-3-两个被低估的风险-污染与可持续">2.3 两个被低估的风险：污染与可持续</h3>
+<p><strong>污染。</strong> 土壤本底、灌溉水、粪肥带来的重金属与微生物，是种植环节带进去的，生产环节洗不掉。WHO 在质量与污染物文件里给了两句关键判断：草药在生长过程中可能吸收重金属（Q05），而以人粪、厩肥与污水作肥料会带来化学与微生物污染（Q02）。两句合起来的意思很直接——源头记录里必须有两栏：土壤本底检测与投入品清单。缺了这两栏，成品检验就是在替源头兜底，而兜底的成本随工序往后走成倍上升。</p></div></div>
+  <div class="slide-foot"><span>9 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">正文</div>
+                <div class="compact dense"><p><strong>可持续。</strong> 野生资源一旦采绝，供应链就断，工艺再成熟也做不出药。W07 把&quot;可持续利用&quot;与&quot;质量保证&quot;写在同一句里，不是修辞上的并置：一个品种若不具备稳定供应，它的工艺验证结论在若干年后自动失效——不是因为工艺变了，而是因为受试物没了，没有物料可以复现。</p>
+<p>两类风险落到研发文档上，是两组字段。污染组：土壤本底（重金属与有害元素）、灌溉水源、粪肥使用与堆沤方式、安全间隔期、初加工环境的洁净度。供应组：年可采量、栽培品与野生品的比例、可替代产区、库存周转与储备策略、极端气候下的减产品案。</p>
+<p>两组字段的共同点是，它们都不在工艺参数里，却决定工艺参数的有效期。</p>
+<h3 id="2-4-分层归因-先分层-再归因">2.4 分层归因：先分层，再归因</h3>
+<p>成品出现批间差异时，团队的第一反应通常是&quot;加严工艺&quot;。正确顺序恰好相反：先在源头分层，看差异落在哪一层，再决定要不要动工艺。</p>
+<p>做法是把成品检测数据按&quot;产区 × 采收期 × 初加工方式&quot;三维分组，每组尽量不少于两批，然后按三条规则判读。</p></div></div>
+  <div class="slide-foot"><span>10 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">正文</div>
+                <div class="compact"><ul><li><strong>差异集中在某一维</strong>：源头问题。回到记录去找这一维上究竟变了什么（换了地块、错了一季、干燥方式从晒改烘）。</li><li><strong>差异分散在各组之内</strong>：工艺问题或检验问题。同一产区、同一季、同一初加工方式下仍然差，才轮到工艺参数。</li><li><strong>组内差异大于组间差异</strong>：先查检验方法的重现性（对照品批号、样品前处理、仪器状态），再查工艺。这两种原因的处置成本差一个量级，判错方向就要白改一轮。</li></ul>
+<p>这条判据可以压成一句话：<strong>批间一致性结论的强度，不超过原料覆盖的广度。</strong> 三批来自同一地块、同一季、同一干燥方式，证明的是&quot;工艺在这一套原料下稳定&quot;，不是&quot;产品稳定&quot;。要扩大结论，只有两条路：扩大原料覆盖，或把适用范围明确写窄。<strong>把范围写窄，比把数据说满更可信。</strong></p>
+<h3 id="2-5-三类失效模式与最早信号">2.5 三类失效模式与最早信号</h3></div></div>
+  <div class="slide-foot"><span>11 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">正文</div>
+                <div class="compact dense"><p><strong>其一，只写&quot;道地药材&quot;，不写坐标。</strong> 道地是产区级的历史说法，在研究与注册语境里无法复核。最早信号很具体：药材描述里出现&quot;道地&quot;或&quot;主产&quot;，却没有县、乡、地块与采收季。处置不是删掉这个词，而是在它后面补三个字段。</p>
+<p><strong>其二，把农残与重金属当生产问题。</strong> 表现在整改方案里清一色是&quot;加强成品检验&quot;。最早信号：纠正预防措施里没有一条落在投入品清单或安全间隔期上。检验只能拦截，不能减少，而拦截的成本按批次累积。</p>
+<p><strong>其三，初加工不入工艺。</strong> 干燥方式与温度直接改变成分谱，却只写在药材描述里，工艺规程的干燥工序只写&quot;干燥至规定水分&quot;。最早信号：工艺规程里出现&quot;至规定水分&quot;&quot;至干燥&quot;这类没有方式、温度与时间的表述。处置是把初加工参数搬进工艺规程，并规定复烘的边界——复烘不是&quot;再干一下&quot;，是物料变更。</p>
+<p>三类失效有一个共同点：它们都不产生假数据，只产生适用范围过宽的结论。所以识别它们靠的不是复核数字，而是复核句子里那个隐含的&quot;所有批次&quot;。</p></div></div>
+  <div class="slide-foot"><span>12 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">考核与自检</div>
+                <div class="compact"><ol><li>给一份模拟药材来源描述（故意缺地块、缺采收季、缺干燥方式），写出补字段清单，并说明每一项缺失会让哪个结论失效。</li><li>用&quot;产区 × 采收期 × 初加工&quot;三维矩阵，对六批成品数据做分组，判断差异指向源头、工艺还是检验，写出判读依据。</li><li>把&quot;三批数据证明批间一致&quot;改写成一个范围明确的结论句，并写出扩大范围需要补的两类数据。</li><li>为三类失效模式各写一条最早识别信号，要求是可观察的文本特征，不能写成&quot;重视不够&quot;。</li></ol>
+<p>配套记录工具是<strong>药材基线表</strong>，字段固定为：基原与鉴定依据、产地到地块、采收期与方法、初加工参数、贮藏条件、历史批次数据、供应商与审计结论、批号贯通链。它的验收标准只有一条：拿任意一批成品，能倒查到它用的地块与采收季。</p></div></div>
+  <div class="slide-foot"><span>13 / 15</span><span>body</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><ul><li><strong>WHO 文件不是中国法规。</strong> 本章的字段与判据是通用技术逻辑；中国的中药材生产质量管理规范、品种项下要求与注册路径另有规定，据本章内容直接申报属于误用。</li><li><strong>不给品种限值。</strong> 本章不写任何药材的重金属、农残、含水率限值——这些随品种与药典版本变化，写死在本章只会制造误用。</li><li><strong>数字是教学情境。</strong> 文中的&quot;相差近三成&quot;&quot;早采十天&quot;等只用于说明判据方向，不是实测数据，也不构成对任何品种的定量描述。</li><li><strong>一处结构性局限。</strong> 底本只有 4 份 WHO 文件，栽培技术的农艺细节、野生抚育与替代种植、以及各国的 GACP 实施细则在底本里没有对应条文。本章只在&quot;记录制度&quot;这一层展开，再往下的农艺参数会变成无据推断。</li></ul>
+<p><strong>免责声明：</strong> 本章为教学材料，不构成医学意见、诊断或用药指导，也不构成种植与采收的技术方案。任何在研品种的药材来源、初加工参数与质量控制方案，须由具备资质的专业人员依现行法规、药典与机构制度决定。</p></div></div>
+  <div class="slide-foot"><span>14 / 15</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="14">
   <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
-  <div class="slide-foot"><span>5 / 5</span><span>disclaimer</span></div>
+  <div class="slide-foot"><span>15 / 15</span><span>disclaimer</span></div>
 </section>
 </div>
 <div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>

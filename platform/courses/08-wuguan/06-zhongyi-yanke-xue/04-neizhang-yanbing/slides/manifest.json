@@ -1,31 +1,81 @@
 {
   "chapter": "04-neizhang-yanbing",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 15,
+  "segmentCount": 11,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 14
+      "chars": 21
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 54
+      "chars": 34
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 17
+      "chars": 120
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 105
+      "chars": 99
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 255
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 293
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 220
+    },
+    {
+      "n": 8,
+      "segment": 7,
+      "chars": 308
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 187
+    },
+    {
+      "n": 10,
+      "segment": 8,
+      "chars": 351
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 359
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 164
+    },
+    {
+      "n": 13,
+      "segment": 9,
+      "chars": 392
+    },
+    {
+      "n": 14,
+      "segment": 10,
+      "chars": 303
+    },
+    {
+      "n": 15,
+      "segment": 11,
       "chars": 52
     }
   ]

@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"/>
-<title>第 4 章 · 泻下药与祛湿药：湿邪的三条出口 · 幻灯片</title>
+<title>第 4 章 · 泻下与祛湿共用「出口」二字，剂量却差六百倍 · 幻灯片</title>
 <style>
 
 :root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
@@ -59,70 +59,103 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <body>
 <div id="deck">
 <section class="slide" data-i="0">
-  <div class="slide-inner"><h1 class="big">第 4 章 · 泻下药与祛湿药：湿邪的三条出口</h1></div>
-  <div class="slide-foot"><span>1 / 8</span><span>title</span></div>
+  <div class="slide-inner"><h1 class="big">第 4 章 · 泻下与祛湿共用「出口」二字，剂量却差六百倍</h1></div>
+  <div class="slide-foot"><span>1 / 18</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「大黄功效泻下攻积、清热泻火、凉血解毒、逐瘀通经、利湿退黄」——《中药学·第11章·11.1》</blockquote></div>
-  <div class="slide-foot"><span>2 / 8</span><span>motto</span></div>
+  <div class="slide-inner"><blockquote class="motto">「若用毒药疗病，先起如黍粟，病去即止。」——《神农本草经·序录》</blockquote></div>
+  <div class="slide-foot"><span>2 / 18</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
-  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">你能背「大黄苦寒，泻下攻积」，但一张方子里同时出现大黄、苍术、茯苓时，你说不清它们各自在解决什么——更说不清为什么巴豆霜的用量是 0.1–0.3g，而金钱草是 15–60g，两者相差两百倍却都叫「祛湿」。</p></div>
-  <div class="slide-foot"><span>3 / 8</span><span>problem</span></div>
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">泻下、祛风湿、化湿、利水四章常被合成一组讲，理由是它们都在「给邪找出路」。可这 45 味的剂量差得离谱：巴豆霜 0.1–0.3g，入丸散；金钱草 15–60g，煎服。<strong>上界之比 200 倍，下界之比 600 倍</strong>，两者却被同一个「祛湿」的印象收进一册。毒性也不跟着「湿」走，而是跟着「峻猛」走：45 味里 9 味标毒（20.0%），峻下逐水 6 味全部标毒（6/6），化湿 7 味与利水 14 味一味都不标。字段覆盖同样不齐：8 味性味整栏空白，其中利湿退黄一节 3 味（茵陈、金钱草、虎杖）<strong>全部空白</strong>——恰好是最常用的三味。</p></div>
+  <div class="slide-foot"><span>3 / 18</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
-  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫(水肿、腹水、湿阻、痹证在门诊是同一批病人反复出现，泻下、化湿、利水三组药常在同方并用，选错一组就伤正或无效) + 知识积累(把 45 味药的「四气—五味—归经—剂量上限—原文毒性」拉成一张可排序的表，「用哪一类」才从口诀变成判断)</p></div>
-  <div class="slide-foot"><span>4 / 8</span><span>roots</span></div>
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（水肿、腹水、湿阻、痹证在门诊是同一批病人反复出现，泻下、化湿、利水三组药常在同方并用，选错一组就伤正或无效，而患者自述只有一句「胀、重、排不出」）＋ 知识积累（把 45 味药的「四气—五味—归经—剂量—毒性」拉成一张可排序的表，「用哪一类」才从一句口诀变成一次判断；四章十节的编排本身也需要一条统一的读法）</p></div>
+  <div class="slide-foot"><span>4 / 18</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
-  <div class="slide-inner"><div class="kicker">学习目标</div>
-                <div class="compact"><ul><li>说清「攻、燥、渗、祛风湿」四类药的<strong>作用靶点不同</strong>，不是同义词的四种说法</li><li>从 <code>standards/zhongyao/底本.json</code> 与 <code>drugs.json</code> 现算本章规模：4 章 / 10 节 / 45 小节 / 135 段 / <strong>7726 字</strong> / 45 味药</li><li>用「剂量上限」做峻猛度的代理量，排出安全窗最窄的 6 味，并说明这个代理量漏掉了什么</li><li>用有序标度把四气折成分数，比较四章的「热性均分」，解释为什么利水渗湿药是最冷的一组</li><li>复述一个反例：为什么「苦味」不能用来区分这三条通道</li></ul></div></div>
-  <div class="slide-foot"><span>5 / 8</span><span>objectives</span></div>
+  <div class="slide-inner"><div class="kicker">一、四章十节的结构</div>
+                <div class="compact dense"><p>底本这四章共 45 味、5,774 汉字，篇均 128 字。</p>
+<div class="table-wrap"><table><thead><tr><th>章</th><th>节</th><th>味数</th><th>汉字</th><th>占 45 味字数</th><th>已填气</th><th>标毒</th></tr></thead><tbody><tr><td>11 泻下药</td><td>11.1 攻下</td><td>4</td><td>617</td><td>10.7%</td><td>4</td><td>0</td></tr><tr><td></td><td>11.2 润下</td><td>2</td><td>237</td><td>4.1%</td><td>2</td><td>0</td></tr><tr><td></td><td>11.3 峻下逐水</td><td>6</td><td>751</td><td>13.0%</td><td>6</td><td>6</td></tr><tr><td>12 祛风湿药</td><td>12.1 祛风寒湿</td><td>5</td><td>661</td><td>11.4%</td><td>4</td><td>2</td></tr><tr><td></td><td>12.2 祛风湿热</td><td>4</td><td>551</td><td>9.5%</td><td>4</td><td>1</td></tr><tr><td></td><td>12.3 祛风湿强筋骨</td><td>3</td><td>359</td><td>6.2%</td><td>3</td><td>0</td></tr><tr><td>13 化湿药</td><td>13.1 化湿</td><td>7</td><td>871</td><td>15.1%</td><td>6</td><td>0</td></tr><tr><td>14 利水渗湿药</td><td>14.1 利水消肿</td><td>4</td><td>526</td><td>9.1%</td><td>4</td><td>0</td></tr><tr><td></td><td>14.2 利尿通淋</td><td>7</td><td>832</td><td>14.4%</td><td>4</td><td>0</td></tr><tr><td></td><td>14.3 利湿退黄</td><td>3</td><td>369</td><td>6.4%</td><td>0</td><td>0</td></tr><tr><td>合计</td><td>10 节</td><td>45</td><td>5,774</td><td>100%</td><td>37</td><td>9</td></tr></tbody></table></div></div></div>
+  <div class="slide-foot"><span>5 / 18</span><span>body</span></div>
 </section>
 <section class="slide" data-i="5">
-  <div class="slide-inner"><div class="kicker">核心概念</div>
-                <div class="compact denser"><h3 id="中医-水湿的四种走法">中医：水湿的四种走法</h3>
-<p>教材把这一大块拆成四个各论章，顺序本身就是答案：</p>
-<div class="table-wrap"><table><thead><tr><th>教材章</th><th>通道</th><th>一句话机理</th><th>代表药</th></tr></thead><tbody><tr><td>第 11 章</td><td>泻下</td><td>从大肠走，把积与水分一起推出去</td><td>大黄、芒硝、巴豆霜</td></tr><tr><td>第 12 章</td><td>祛风湿</td><td>从经络走，把留着不去的风寒湿热赶出去</td><td>独活、威灵仙、秦艽</td></tr><tr><td>第 13 章</td><td>化湿</td><td>从脾胃走，把中焦的浊气「化」掉（不是排掉）</td><td>广藿香、苍术、厚朴</td></tr><tr><td>第 14 章</td><td>利水渗湿</td><td>从小便走，把水一点点渗出去</td><td>茯苓、泽泻、车前子</td></tr></tbody></table></div>
-<p>四条通道的关键差别不在「祛不祛湿」，而在<strong>从哪个出口走、走得多急</strong>。教材·第11章·11.1 的大黄一条药就横跨两个出口：「大黄功效泻下攻积、清热泻火、凉血解毒、逐瘀通经、利湿退黄」——前四字走大肠，末四字走小便。而教材·第14章·14.1 的茯苓恰恰相反：「利水而不伤正，为利水渗湿之要药」，它的价值在于<strong>慢而不伤</strong>。</p>
-<p>这就是本章的题眼：<strong>同目的，不同力</strong>。教材把它们编在一起，是因为它们回答同一个问题——水湿从哪走；不是因为它们可以互换。</p>
-<h3 id="ai-工程-把-力-变成一个可排序的数">AI/工程：把「力」变成一个可排序的数</h3>
-<p>四气本来是有序的（大寒 → … → 大热），所以能折成一个整数；五味与归经是类别，只能数频次。本章只做三件机器擅长的事：</p>
-<ol><li><strong>结构计数</strong>：节 / 小节 / 段 / 字，逐章与教材 <code>counts</code> 对账，任何一项对不上就报错。</li><li><strong>有序标度</strong>：<code>大寒 -4 … 平 0 … 大热 +4</code>，按教材章求均值，得到「这一组药整体偏寒还是偏热」。</li><li><strong>剂量代理量</strong>：从用法段正则抓 <code>(\d+)-(\d+)g</code> 的上限。上限越小，安全窗越窄，峻猛度越高。</li></ol>
-<div class="codeblock"><div class="codeblock-lang">js</div><pre><code class="lang-js">const QI_SCORE = { 大寒: -4, 寒: -3, 微寒: -2, 凉: -1, 平: 0, 微温: 1, 温: 2, 热: 3, 大热: 4 };
-const doseCap = (d) =&gt; {
-  const m = d.fields['用法用量与使用注意'].match(/(\d+(?:\.\d+)?)\s*[-~～]\s*(\d+(?:\.\d+)?)\s*g/);
-  return m ? parseFloat(m[2]) : null;   // 解析不到返回 null，不猜、不填 0
-};</code></pre></div>
-<p><code>null</code> 的处理是本章的工程要点：解析失败<strong>不参与排序</strong>，也不在表里显示成 0。把缺失当 0 是最常见的静默失真。</p></div></div>
-  <div class="slide-foot"><span>6 / 8</span><span>concept</span></div>
+  <div class="slide-inner"><div class="kicker">一、四章十节的结构</div>
+                <div class="compact"><p>四章的体量排下来：利水渗湿 1,727 字（29.9%）最大，泻下与祛风湿各约 1,600 字（27.8%、27.2%）居中，化湿 871 字（15.1%）最小。化湿最小却最集中——7 味全在一节，没有子节可拆，这也是它成为「一节一章」的原因。</p>
+<p>节的最小单位是 2 味（润下：火麻仁、郁李仁）。两味药撑一节，看起来薄，实际是必要的：攻下与峻下都是「通」，润下是「润」，方向不同；把火麻仁并进攻下节，学生第一遍就会把「润肠」与「泻下」当成同一件事。</p></div></div>
+  <div class="slide-foot"><span>6 / 18</span><span>body</span></div>
 </section>
 <section class="slide" data-i="6">
-  <div class="slide-inner"><div class="kicker">BUILD IT · 从零实现</div>
-                <div class="compact denser"><p>运行 <code>code/main.js</code>，四步全部现算，没有一处写死「45 味」「7726 字」：</p>
-<div class="codeblock"><div class="codeblock-lang">text</div><pre><code class="lang-text">读 底本.json → 按 [11,12,13,14] 过滤 → 逐章累计 secs/subs/paras/chars（并与 counts 对账）
-读 drugs.json → 按 chapter 字段过滤 → 45 味
-每味：四气 → 分数；用法段 → 剂量上限；全文 → 毒性词
-每章：药数 / 字数 / 热性均分 / 剂量均值 / 剂量最大 / 毒性味数 / 归经前三</code></pre></div>
-<p>实测输出（可复现）：</p>
-<div class="table-wrap"><table><thead><tr><th>教材章</th><th>通道</th><th>药数</th><th>字数</th><th>热性均分</th><th>剂量上限均值</th><th>剂量上限最大</th><th>毒性词</th></tr></thead><tbody><tr><td>11</td><td>攻下·润下·峻下</td><td>12</td><td>2141</td><td>−1.58</td><td>6.9g</td><td>15g</td><td>6</td></tr><tr><td>12</td><td>祛风湿</td><td>12</td><td>2089</td><td>+0.58</td><td>11.3g</td><td>25g</td><td>4</td></tr><tr><td>13</td><td>化湿</td><td>7</td><td>1171</td><td>+1.57</td><td>8.3g</td><td>10g</td><td>0</td></tr><tr><td>14</td><td>利水渗湿</td><td>14</td><td>2325</td><td>−2.00</td><td>17.5g</td><td>60g</td><td>0</td></tr></tbody></table></div>
-<p>四张表放在一起，一句话就出来了：<strong>越靠「攻」，剂量越窄、毒性越密；越靠「渗」，剂量越宽、越寒、越不伤人</strong>。化湿药是唯一的例外——它偏温（+1.57），因为它治的是「湿浊困脾」，靠的是温燥把浊气化开，而不是把水排掉。</p>
-<h3 id="四气分布-45-味">四气分布（45 味）</h3>
-<div class="table-wrap"><table><thead><tr><th>四气</th><th>味数</th><th>占比</th></tr></thead><tbody><tr><td>寒</td><td>15</td><td>33%</td></tr><tr><td>微寒</td><td>6</td><td>13%</td></tr><tr><td>凉</td><td>2</td><td>4%</td></tr><tr><td>平</td><td>7</td><td>16%</td></tr><tr><td>微温</td><td>2</td><td>4%</td></tr><tr><td>温</td><td>11</td><td>24%</td></tr><tr><td>热</td><td>2</td><td>4%</td></tr></tbody></table></div>
-<p>寒凉侧 23 味、温热侧 15 味、平 7 味。这不是巧合：水湿为阴邪，清热利湿与攻下逐水本身就要用寒药，只有「湿从寒化」那一支才用温燥。</p>
-<h3 id="归经覆盖-一味可归多经-合计-107-45">归经覆盖（一味可归多经，合计 107 &gt; 45）</h3>
-<div class="table-wrap"><table><thead><tr><th>归经</th><th>脾</th><th>胃</th><th>肺</th><th>肾</th><th>肝</th><th>大肠</th><th>膀胱</th><th>小肠</th><th>心</th><th>胆</th><th>心包</th></tr></thead><tbody><tr><td>味数</td><td>18</td><td>17</td><td>17</td><td>17</td><td>15</td><td>11</td><td>10</td><td>5</td><td>4</td><td>4</td><td>1</td></tr></tbody></table></div>
-<p>教材章内部的重心并不相同：第 11 章前三是大肠 10 / 脾 6 / 胃 5，第 12 章是肝 8 / 肾 6 / 膀胱 3，第 13 章是脾 7 / 胃 7 / 肺 4，第 14 章是肺 7 / 膀胱 7 / 肾 5。归经在这里比四气更能说明「药去哪」。</p>
-<h3 id="峻猛度前-6-剂量上限越小-安全窗越窄">峻猛度前 6（剂量上限越小＝安全窗越窄）</h3>
-<div class="table-wrap"><table><thead><tr><th>药名</th><th>教材章</th><th>剂量上限</th><th>原文标毒性</th></tr></thead><tbody><tr><td>巴豆霜</td><td>11</td><td>0.3g</td><td>是</td></tr><tr><td>甘遂</td><td>11</td><td>1.5g</td><td>是</td></tr><tr><td>芦荟</td><td>11</td><td>2g</td><td>否</td></tr><tr><td>京大戟</td><td>11</td><td>3g</td><td>是</td></tr><tr><td>芫花</td><td>11</td><td>3g</td><td>是</td></tr><tr><td>川乌</td><td>12</td><td>3g</td><td>是</td></tr></tbody></table></div>
-<p>前六名里五味来自第 11 章。甘遂「泻水逐饮之峻药」、巴豆霜「斩关夺门之将」——教材用词已经把危险写在脸上，数字只是把这句话量化。注意芦荟排第三却标「否」：<strong>毒性词与剂量窄不是同一件事</strong>，剂量还受有效浓度、炮制、给药途径影响。</p>
-<h3 id="一个反例-苦味不能用来分通道">一个反例：苦味不能用来分通道</h3>
-<p>含苦 25/45、含辛 18/45、含甘 16/45。苦能泄、能燥、能坚，所以泻下（泄）、燥湿（燥）、渗泄（泄）三条通道都能挂上「苦」。若用「苦味」当分类特征，45 味里 25 味会被划进同一堆——<strong>特征选错，分类必错</strong>。这也是所有「用性味做向量」的工程做法必须警惕的第一件事。</p></div></div>
-  <div class="slide-foot"><span>7 / 8</span><span>build</span></div>
+  <div class="slide-inner"><div class="kicker">二、三条出口：大肠、膀胱、脾</div>
+                <div class="compact dense"><p>45 味填了 43 味的归经，共 118 个标签：脾 18、胃 17、肺 17、肾 17、肝 14、大肠 11、膀胱 10、小肠 5、心 4、胆 4、心包 1。</p>
+<p>这组数字排出来，三条出口就清楚了：</p>
+<div class="table-wrap"><table><thead><tr><th>出口</th><th>代表经</th><th>标签数</th><th>对应节</th><th>作用方式</th></tr></thead><tbody><tr><td>后阴</td><td>大肠</td><td>11</td><td>11.1–11.3 泻下</td><td>通便、逐水从大便出</td></tr><tr><td>前阴</td><td>膀胱、小肠</td><td>10 + 5</td><td>14.1–14.2 利水</td><td>利尿通淋</td></tr><tr><td>中焦</td><td>脾、胃</td><td>18 + 17</td><td>13.1 化湿</td><td>燥湿、芳化，从中焦运走</td></tr></tbody></table></div>
+<p>泻下 12 味里大肠经 10 条（10/12 覆盖），这条几乎可以当定义用。利水 14 味里膀胱 7 条、小肠 4 条、肾 5 条、肺 7 条——出口在膀胱，动力却在肺（通调水道）与肾（气化），所以利水药多兼走肺肾，这与「利水先理气」「提壶揭盖」这类治法说法一致。化湿 7 味里脾 7、胃 7，两经全满，无一例外。</p></div></div>
+  <div class="slide-foot"><span>7 / 18</span><span>body</span></div>
 </section>
 <section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">二、三条出口：大肠、膀胱、脾</div>
+                <div class="compact"><p>值得注意的是脾经 18 条，是四章里最多的，而且分散在化湿（7）、泻下（6）、利水（3）、祛风湿（2）四组——湿邪的根在中焦，这条在两个方向上都被用到：化湿是就地处理，利水是往下引。</p>
+<p>祛风湿药是唯一不按出口组织的。12 味的主经是肝 7、肾 6、膀胱 3，落点在筋骨关节，不在排泄通道。把它和泻下、化湿、利水并在一册，靠的是「湿」这个病邪名，不是「出口」这个机制名。这一点必须分开记，否则会把「祛风湿」误解成「把湿从小便排掉」。</p></div></div>
+  <div class="slide-foot"><span>8 / 18</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">三、毒性跟着「峻猛」走，不跟着「湿」走</div>
+                <div class="compact"><p>45 味标毒 9 味：甘遂、京大戟、芫花、商陆、牵牛子、巴豆霜、川乌、蕲蛇、雷公藤。分布极不平均：</p>
+<ul><li>峻下逐水 6 味，<strong>6/6 全部标毒</strong>，是四章里唯一的满格。</li><li>祛风湿 12 味，3 味标毒（川乌、蕲蛇、雷公藤），占 25%。</li><li>攻下 4 味、润下 2 味、化湿 7 味、利水 14 味，合计 27 味，<strong>标毒 0 味</strong>。</li></ul>
+<p>把这条分布与剂量放在一起读，会看到一条稳定的对应：标毒的 9 味里，8 味的剂量上界 ≤ 9g（巴豆霜 0.3、甘遂 1.5、芫花 3、京大戟 3、牵牛子 6、商陆 9、川乌 3、蕲蛇 9）；不标毒的 27 味里，上界普遍在 10–60g。<strong>毒性栏与剂量上界是同一件事的两面</strong>，读一栏必须读另一栏。</p></div></div>
+  <div class="slide-foot"><span>9 / 18</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">三、毒性跟着「峻猛」走，不跟着「湿」走</div>
+                <div class="compact"><p>雷公藤是唯一的例外，也是四章里最需要单独记的一条：标毒（大毒），剂量却是 10–25g，上界 25g 在 45 味里排第三。这不矛盾——它的用法写明「带皮全根，文火久煎」，另注「心肝肾病变者禁用；孕妇禁用；须严格控制剂量与疗程并监测血象肝功能」。剂量大而毒性高，靠的是久煎减毒与严格的疗程管理，不是靠小剂量。凡遇到「高毒 + 大剂量」的组合，第一件事是去看用法与禁忌，而不是怀疑数据错了。</p>
+<p>「未标毒」不能读成「无毒」。化湿 7 味与利水 14 味标毒 0，这是教材没把它们列为毒药，不是它们可以无限量用。茯苓写「虚寒精滑者忌用」，猪苓、泽泻各有禁忌，茵陈写「蓄血发黄及血虚萎黄者慎用」——禁忌不写在毒性栏里，写在注意事项里。</p></div></div>
+  <div class="slide-foot"><span>10 / 18</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">四、剂量：0.1g 到 60g，六百倍</div>
+                <div class="compact"><p>45 味全部有剂量数字。按上界排，最低与最高的差距是 600 倍（下界 0.1 与 15）；按上界比是 200 倍（0.3 与 60）。分四组看：</p></div></div>
+  <div class="slide-foot"><span>11 / 18</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">四、剂量：0.1g 到 60g，六百倍</div>
+                <div class="compact dense"><div class="table-wrap"><table><thead><tr><th>组</th><th>剂量区间</th><th>药（节）</th></tr></thead><tbody><tr><td>微量</td><td>上界 ≤3g</td><td>巴豆霜 0.1–0.3、甘遂 0.5–1.5、芦荟 1–2、京大戟 1.5–3、芫花 1.5–3、川乌 1.5–3</td></tr><tr><td>小量</td><td>上界 5–15g</td><td>番泻叶 2–6、大黄 3–15、牵牛子 3–6、商陆 3–9、独活 3–10、秦艽 3–10、苍术 3–10、厚朴 3–10、砂仁 3–6、草果 3–6、木通 3–6、通草 3–5</td></tr><tr><td>中量</td><td>6–20g</td><td>芒硝 6–12、火麻仁 10–15、郁李仁 6–10、威灵仙 6–10、木瓜 6–9、防己 5–10、豨莶草 9–12、五加皮 5–10、桑寄生 9–15、狗脊 6–12、茯苓 10–15、猪苓 6–12、泽泻 6–10、车前子 9–15、滑石 10–20、瞿麦 9–15、海金沙 6–15、石韦 6–12、茵陈 6–15、虎杖 9–15</td></tr><tr><td>大量</td><td>15–60g</td><td>薏苡仁 9–30、金钱草 15–60</td></tr></tbody></table></div>
+<p>剂量档不完全对应毒性，但对应「作用部位离中焦有多远」。</p></div></div>
+  <div class="slide-foot"><span>12 / 18</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">四、剂量：0.1g 到 60g，六百倍</div>
+                <div class="compact"><p>最细的一档（0.1–3g）全是「入口即走、不容商量」的药：巴豆霜、甘遂、京大戟、芫花要入丸散，不入煎剂；川乌要「先煎久煎 1 小时以上」；番泻叶要「开水泡服或后下」。这些用法不是讲究，是给剂量上保险——药力太猛，只能靠剂型、煎法与严格上限同时约束。</p>
+<p>最粗的一档（15g 以上）全是「质重味淡」的药：薏苡仁 9–30g、金钱草 15–60g。淡渗之品要大量才见功，剂量小了等于没吃。</p>
+<p>三处煎法硬约束要单独记：芒硝「冲入药汁或开水溶化服」，不入煎；芦荟「入丸散，不入煎剂」；车前子、滑石、海金沙「包煎」。同一册里出现「不入煎」「包煎」「后下」「先煎久煎」四种相反要求，说明用法用量这一栏必须逐条读，任何一条通则都会在这里翻车。</p></div></div>
+  <div class="slide-foot"><span>13 / 18</span><span>body</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">五、节名的两种命名法：动作与结果</div>
+                <div class="compact"><p>把每节的名字与本节 45 味功效首词对照，会发现教材用了两套命名法：</p></div></div>
+  <div class="slide-foot"><span>14 / 18</span><span>body</span></div>
+</section>
+<section class="slide" data-i="14">
+  <div class="slide-inner"><div class="kicker">五、节名的两种命名法：动作与结果</div>
+                <div class="compact dense"><div class="table-wrap"><table><thead><tr><th>节</th><th>命名类型</th><th>功效首词命中情况</th></tr></thead><tbody><tr><td>11.1 攻下</td><td>动作</td><td>泻下攻积、泻下通便 ×2 命中 3/4；番泻叶「泻热行滞」例外</td></tr><tr><td>11.2 润下</td><td>动作</td><td>火麻仁、郁李仁均「润肠通便」，含「润」2/2；字面「润下」0/2</td></tr><tr><td>11.3 峻下逐水</td><td>动作</td><td>泻水逐饮 ×3、逐水消肿、泻水通便、峻下冷积，含「水」5/6</td></tr><tr><td>12.1 祛风寒湿</td><td>动作＋病邪</td><td>祛风除湿 ×2、祛风湿、祛风、舒筋活络，含「风」4/5；「寒」0/5</td></tr><tr><td>12.2 祛风湿热</td><td>动作＋病邪</td><td>全 4 味「祛风湿」；「热」0/4</td></tr><tr><td>12.3 祛风湿强筋骨</td><td>动作＋结果</td><td>祛风湿 ×2、祛风除湿；「强筋骨」0/3</td></tr><tr><td>13.1 化湿</td><td>动作</td><td>芳香化浊、芳香化湿、燥湿健脾、燥湿消痰、化湿开胃、化湿行气、燥湿温中；含「湿」7/7</td></tr><tr><td>14.1 利水消肿</td><td>动作＋结果</td><td>全 4 味「利水渗湿」，含「利水」4/4；「消肿」0/4</td></tr><tr><td>14.2 利尿通淋</td><td>动作</td><td>利尿通淋 ×5、石韦利尿通淋、海金沙清利湿热；命中 6/7</td></tr><tr><td>14.3 利湿退黄</td><td>动作＋结果</td><td>金钱草、虎杖「利湿退黄」命中 2/3；茵陈「清利湿热」例外</td></tr></tbody></table></div></div></div>
+  <div class="slide-foot"><span>15 / 18</span><span>body</span></div>
+</section>
+<section class="slide" data-i="15">
+  <div class="slide-inner"><div class="kicker">五、节名的两种命名法：动作与结果</div>
+                <div class="compact"><p>规律很清楚：<strong>节名以动作为主词时，功效首词命中率极高</strong>（化湿 7/7、利水 4/4、利尿通淋 6/7）；<strong>节名带结果词时，结果词在功效首词里 0 命中</strong>（消肿 0/4、强筋骨 0/3、风寒湿的「寒」0/5、风湿热的「热」0/4）。</p>
+<p>这不是教材写错，是两套语言并存：节名写给「治什么」，功效首词写给「怎么治」。消肿的结果出现在功效句的后半段（「利水渗湿、消肿」），不在首词；强筋骨同理。检索时若拿节名的结果词去比对功效首词，会得到一片 0，然后误判「教材不统一」。</p>
+<p>正确的读法是分层：先按动作词定位（泻下、润下、峻下、祛风、化湿、利水、通淋、退黄），再按结果词核对适应证（消肿、强筋骨、退黄）。只有虎杖这类两字全中的记录，才可以一次到位。</p></div></div>
+  <div class="slide-foot"><span>16 / 18</span><span>body</span></div>
+</section>
+<section class="slide" data-i="16">
+  <div class="slide-inner"><div class="kicker">六、代价与边界</div>
+                <div class="compact dense"><ul><li><strong>「祛湿」不是一组药，是四条通道。</strong> 泻下走大肠、利水走膀胱、化湿走中焦、祛风湿走筋骨。四条通道的剂量与毒性差两个数量级，合并记忆会在选药时第一次就出错。</li><li><strong>标毒 9/45 是大类的统计倾向。</strong> 峻下 6/6 全标、化湿与利水 0 标，用来做筛查可以，用来替代逐条读禁忌不行。</li><li><strong>剂量数字必须带剂型。</strong> 巴豆霜 0.1–0.3g 是「入丸散」的上限，甘遂 0.5–1.5g 也是「入丸散」；同一个数字若按煎服理解，结论全错。</li><li><strong>8 味性味空白不能补。</strong> 独活、广藿香、车前子、通草、石韦、茵陈、金钱草、虎杖——按常识补上「辛温」「苦寒」会让表齐整，但利湿退黄一节会从「0 条观测」变成「3 条猜测」，而这三味恰好是最常用的三味。</li><li><strong>本章不评价疗效，也不给用法结论。</strong> 所有剂量、煎法、禁忌均取自底本记录，用于说明字段结构；实际用药须经执业中医师辨证，并以现行药典为准。峻下逐水与祛风湿药中毒性品种尤须严格掌握。</li></ul></div></div>
+  <div class="slide-foot"><span>17 / 18</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="17">
   <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
-  <div class="slide-foot"><span>8 / 8</span><span>disclaimer</span></div>
+  <div class="slide-foot"><span>18 / 18</span><span>disclaimer</span></div>
 </section>
 </div>
 <div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>

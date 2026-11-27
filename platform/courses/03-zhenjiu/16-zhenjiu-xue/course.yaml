@@ -30,34 +30,34 @@ platform:
 chapters:
   - slug: 01-xulun
     title: 绪论不是开场白：它划定针灸学的边界、来路与读法
-    segments: 10
     video: rendered
-    estimate_minutes: 13.3
-    measured_minutes: 10.8
+    estimate_minutes: 13.30      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.80      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 02-jingluo-zonglun
     title: 经络不是线路图，是把脏腑与肢节接成闭环的规则
-    segments: 10
     video: rendered
-    estimate_minutes: 15.17
-    measured_minutes: 15.11
+    estimate_minutes: 15.17      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 15.11      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 03-shuxue-zonglun
     title: 腧穴的数目是历代校订出来的，不是一次定死的
-    segments: 10
     video: rendered
-    estimate_minutes: 13.32
-    measured_minutes: 13.09
+    estimate_minutes: 13.32      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 13.09      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 04-shoutaiyin-feijing
     title: 肺经十一穴：一条从胸走到拇指的经，先定属络再定穴
-    segments: 10
     video: rendered
-    estimate_minutes: 11.77
-    measured_minutes: 11.75
+    estimate_minutes: 11.77      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.75      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 05-shouyangming-dachangjing
     title: 大肠经二十穴：把面口与肠腑拴在同一条经上的长线
-    segments: 10
     video: rendered
-    estimate_minutes: 12.28
-    measured_minutes: 12.18
+    estimate_minutes: 12.28      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 12.18      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+
   - slug: 06-zuyangming-weijing
     title: 胃经的重量不在四十五穴，而在十四组可操作条目
     video: rendered

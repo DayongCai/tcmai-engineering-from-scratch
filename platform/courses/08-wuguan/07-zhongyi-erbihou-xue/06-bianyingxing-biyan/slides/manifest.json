@@ -1,31 +1,86 @@
 {
   "chapter": "06-bianyingxing-biyan",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 16,
+  "segmentCount": 11,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 14
+      "chars": 29
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 56
+      "chars": 23
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 17
+      "chars": 210
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 110
+      "chars": 206
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 365
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 365
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 168
+    },
+    {
+      "n": 8,
+      "segment": 7,
+      "chars": 373
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 108
+    },
+    {
+      "n": 10,
+      "segment": 8,
+      "chars": 419
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 78
+    },
+    {
+      "n": 12,
+      "segment": 9,
+      "chars": 374
+    },
+    {
+      "n": 13,
+      "segment": 9,
+      "chars": 188
+    },
+    {
+      "n": 14,
+      "segment": 10,
+      "chars": 321
+    },
+    {
+      "n": 15,
+      "segment": 10,
+      "chars": 106
+    },
+    {
+      "n": 16,
+      "segment": 11,
       "chars": 52
     }
   ]

@@ -31,59 +31,59 @@ chapters:
   - slug: 01-e111
     title: 一个科的边界不在器官上，在「谁能承担后果」上
     video: rendered
-    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.98      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 11.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 8.85      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 02-e112
     title: 层次是防线，间隙是走廊
     video: rendered
-    estimate_minutes: 1.03      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.04      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 12.37      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.93      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 03-e113
     title: 火毒是结论，不是原因
     video: rendered
-    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.95      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 12.28      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.85      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 04-e114
     title: 肿、痛、脓：三个词，九种组合，只有一种可以「等」
     video: rendered
-    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 11.58      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.68      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 05-e115
     title: 消托补管时间，刀管空间：两套手段不能互相代付
     video: rendered
-    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.94      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 16.07      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 06-e116
     title: 十个病名是一条深度轴：从疖到走黄，差的是「脓有没有出路」
     video: rendered
-    estimate_minutes: 0.97      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.98      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 13.58      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.33      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 07-e117
     title: 急不是病重，是窗口短：八个病证，三种钟
     video: rendered
-    estimate_minutes: 0.93      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.98      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 14.43      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 12.12      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 08-e118
     title: 术后调护的第一顺位不是「补」，是三条通道
     video: rendered
-    estimate_minutes: 0.90      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.91      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 13.12      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.53      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 09-e119
     title: 识别并发症靠的不是经验，是术前就写好的那张「如果」清单
     video: rendered
-    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.96      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 12.60      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.03      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 10-e1110
     title: 病历、同意书、转诊单，写的是同一件事：把判断搬出脑袋
     video: rendered
-    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.92      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 12.85      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.03      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

@@ -1,31 +1,86 @@
 {
   "chapter": "08-e38",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 16,
+  "segmentCount": 12,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 11
+      "chars": 24
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 62
+      "chars": 39
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 14
+      "chars": 259
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 109
+      "chars": 195
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 348
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 312
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 192
+    },
+    {
+      "n": 8,
+      "segment": 7,
+      "chars": 347
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 289
+    },
+    {
+      "n": 10,
+      "segment": 8,
+      "chars": 394
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 76
+    },
+    {
+      "n": 12,
+      "segment": 9,
+      "chars": 396
+    },
+    {
+      "n": 13,
+      "segment": 9,
+      "chars": 88
+    },
+    {
+      "n": 14,
+      "segment": 10,
+      "chars": 285
+    },
+    {
+      "n": 15,
+      "segment": 11,
+      "chars": 393
+    },
+    {
+      "n": 16,
+      "segment": 12,
       "chars": 52
     }
   ]

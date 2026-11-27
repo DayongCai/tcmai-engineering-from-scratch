@@ -50,7 +50,7 @@ chapters:
     title: 振动求透，叩击求响，两套节律两套判据
     video: rendered
     estimate_minutes: 13.12      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 12.8      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    measured_minutes: 12.80      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 05-yundong-guanjie
     title: 关节的极限写在解剖里，不写在手感里

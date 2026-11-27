@@ -37,7 +37,7 @@ chapters:
   - slug: 02-jichu-zhishi
     title: 小儿的生理决定手法上限，病理决定干预窗口
     video: rendered
-    estimate_minutes: 14.8      # = lesson.json estimateTotalSeconds ÷ 60
+    estimate_minutes: 14.80      # = lesson.json estimateTotalSeconds ÷ 60
     measured_minutes: 13.35      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 03-zhiliao-gaiyao
@@ -68,7 +68,7 @@ chapters:
     title: 脾系六病是同一副脾胃的六个出口，补泻只差一个方向
     video: rendered
     estimate_minutes: 14.08      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 3.0      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    measured_minutes: 3.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 08-xinganxi-bingzheng
     title: 心肝系三病先排除再辨证，抽搐是唯一不能等的信号

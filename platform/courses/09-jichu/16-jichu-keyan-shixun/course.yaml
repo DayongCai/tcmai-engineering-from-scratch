@@ -31,35 +31,35 @@ chapters:
   - slug: 01-shiyanshi-anquan
     title: 规范的作用不是禁止动作，而是把不可逆的后果提前变成可核查的条款
     video: rendered
-    estimate_minutes: 1.02      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.05      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 18.70      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 15.09      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 02-shiyan-sheji
     title: 对照不是一个组，是给「反事实」找的一个可观察的替身
     video: rendered
-    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 0.99      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 16.28      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.62      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 03-xingtai-fenzi
     title: 你看到的从来不是组织本身，是处理过的那一片
     video: rendered
-    estimate_minutes: 1.05      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.09      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 16.47      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.71      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 04-shuju-tongji
     title: 统计的错多半不在算法，在你选的那个分母上
     video: rendered
-    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 14.88      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 12.59      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 05-jieguo-jiedu
     title: 解读结果靠的是机制判断，不是看偏离明不明显
     video: rendered
-    estimate_minutes: 0.95      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.00      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 13.92      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 10.77      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 06-shixun-baogao
     title: 报告不是把过程讲一遍，是把证据链交出来让人查
     video: rendered
-    estimate_minutes: 1.00      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 1.04      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 13.95      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 11.76      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）

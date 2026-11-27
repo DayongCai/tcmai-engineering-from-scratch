@@ -38,7 +38,7 @@ chapters:
     title: 骨度分寸量的是比例不是长度，换个人身上的「一寸」就该换
     video: rendered
     estimate_minutes: 10.38      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 10.2      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    measured_minutes: 10.20      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 03-shou-san-yin
     title: 手三阴二十九穴的进针深度由解剖层次决定，从胸到指相差十五倍
@@ -49,7 +49,7 @@ chapters:
   - slug: 04-shou-san-yang
     title: 手三阳六十二穴的深度在肩线封顶，再往上一律改用方向
     video: rendered
-    estimate_minutes: 9.9      # = lesson.json estimateTotalSeconds ÷ 60
+    estimate_minutes: 9.90      # = lesson.json estimateTotalSeconds ÷ 60
     measured_minutes: 9.77      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 05-zu-san-yang
@@ -73,8 +73,8 @@ chapters:
   - slug: 08-jingwai-qixue
     title: 经外奇穴十八条编号背后是五十多个进针点
     video: rendered
-    estimate_minutes: 9.6      # = lesson.json estimateTotalSeconds ÷ 60
-    measured_minutes: 9.3      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
+    estimate_minutes: 9.60      # = lesson.json estimateTotalSeconds ÷ 60
+    measured_minutes: 9.30      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 09-teding-xue
     title: 特定穴是同一批穴上越挂越多的牌子，不是六类并列的穴

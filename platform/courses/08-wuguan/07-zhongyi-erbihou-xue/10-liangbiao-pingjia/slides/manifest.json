@@ -1,31 +1,81 @@
 {
   "chapter": "10-liangbiao-pingjia",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 15,
+  "segmentCount": 11,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 15
+      "chars": 29
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 57
+      "chars": 54
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 18
+      "chars": 240
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 114
+      "chars": 209
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 411
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 240
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 260
+    },
+    {
+      "n": 8,
+      "segment": 7,
+      "chars": 390
+    },
+    {
+      "n": 9,
+      "segment": 8,
+      "chars": 353
+    },
+    {
+      "n": 10,
+      "segment": 8,
+      "chars": 376
+    },
+    {
+      "n": 11,
+      "segment": 9,
+      "chars": 383
+    },
+    {
+      "n": 12,
+      "segment": 9,
+      "chars": 200
+    },
+    {
+      "n": 13,
+      "segment": 10,
+      "chars": 357
+    },
+    {
+      "n": 14,
+      "segment": 10,
+      "chars": 112
+    },
+    {
+      "n": 15,
+      "segment": 11,
       "chars": 52
     }
   ]

@@ -49,7 +49,7 @@ chapters:
   - slug: 04-zhenduan
     title: 望、压、电测查的是同一件事的三个通道，没有一条能单独定病名
     video: rendered
-    estimate_minutes: 13.8      # = lesson.json estimateTotalSeconds ÷ 60
+    estimate_minutes: 13.80      # = lesson.json estimateTotalSeconds ÷ 60
     measured_minutes: 10.44      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 05-zhiliao-fangfa
@@ -67,7 +67,7 @@ chapters:
   - slug: 07-fuer-wuguan
     title: 换人群先换禁忌，取穴反倒可以照搬
     video: rendered
-    estimate_minutes: 11.0      # = lesson.json estimateTotalSeconds ÷ 60
+    estimate_minutes: 11.00      # = lesson.json estimateTotalSeconds ÷ 60
     measured_minutes: 8.99      # = lesson.json audioMeasuredSeconds ÷ 60（实测配音）
 
   - slug: 08-anquan-guifan

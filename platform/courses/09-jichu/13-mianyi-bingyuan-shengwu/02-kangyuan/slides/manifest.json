@@ -1,31 +1,91 @@
 {
   "chapter": "02-kangyuan",
-  "slideCount": 5,
-  "segmentCount": 5,
+  "slideCount": 17,
+  "segmentCount": 11,
   "slides": [
     {
       "n": 1,
       "segment": 1,
-      "chars": 6
+      "chars": 26
     },
     {
       "n": 2,
       "segment": 2,
-      "chars": 63
+      "chars": 29
     },
     {
       "n": 3,
       "segment": 3,
-      "chars": 13
+      "chars": 125
     },
     {
       "n": 4,
       "segment": 4,
-      "chars": 141
+      "chars": 125
     },
     {
       "n": 5,
       "segment": 5,
+      "chars": 367
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 144
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 412
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 250
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 351
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 304
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 72
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 363
+    },
+    {
+      "n": 13,
+      "segment": 8,
+      "chars": 412
+    },
+    {
+      "n": 14,
+      "segment": 9,
+      "chars": 420
+    },
+    {
+      "n": 15,
+      "segment": 9,
+      "chars": 378
+    },
+    {
+      "n": 16,
+      "segment": 10,
+      "chars": 291
+    },
+    {
+      "n": 17,
+      "segment": 11,
       "chars": 52
     }
   ]

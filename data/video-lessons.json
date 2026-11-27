@@ -3,11 +3,11 @@
  "generated": "scripts/build_video_lessons.js",
  "totals": {
   "subjects": 189,
-  "withVideo": 33,
-  "none": 156,
-  "lectures": 688,
+  "withVideo": 55,
+  "none": 134,
+  "lectures": 916,
   "cues": 177254,
-  "durationSec": 740973.376
+  "durationSec": 882334.4280000001
  },
  "subjects": [
   {
@@ -2047,168 +2047,168 @@
      "path": "platform/courses/01-zhongyi/08-jingui-yaolue",
      "rows": [
       {
-       "title": "第1章 《金匮要略》不是「杂病方书」，是一部 402 条的筛选器",
+       "title": "《金匮要略》不是「杂病方书」，是一部 402 条的筛选器",
        "durationSec": 419,
        "status": "rendered",
        "no": 1,
        "cues": 0
       },
       {
-       "title": "第2章 十七句话，把「治病」改成「预判」",
+       "title": "十七句话，把「治病」改成「预判」",
        "durationSec": 1178,
        "status": "rendered",
        "no": 2,
        "cues": 0
       },
       {
-       "title": "第3章 痉湿暍：外邪入体后的三条错路，和一份 9 条的误治清单",
+       "title": "痉湿暍：外邪入体后的三条错路，和一份 9 条的误治清单",
        "durationSec": 1247,
        "status": "rendered",
        "no": 3,
        "cues": 0
       },
       {
-       "title": "第4章 少见病不是罕见病，是必须先排除才敢下诊断的病",
+       "title": "少见病不是罕见病，是必须先排除才敢下诊断的病",
        "durationSec": 1213,
        "status": "rendered",
        "no": 4,
        "cues": 0
       },
       {
-       "title": "第5章 疟的节律与中风的痹阻：两篇「判据极短」的病",
+       "title": "疟的节律与中风的痹阻：两篇「判据极短」的病",
        "durationSec": 1297,
        "status": "rendered",
        "no": 5,
        "cues": 0
       },
       {
-       "title": "第6章 血痹虚劳：虚损不是一种病，是五个深度",
+       "title": "血痹虚劳：虚损不是一种病，是五个深度",
        "durationSec": 1109,
        "status": "rendered",
        "no": 6,
        "cues": 0
       },
       {
-       "title": "第7章 痰饮咳嗽：水液代谢的失效",
+       "title": "痰饮咳嗽：水液代谢的失效",
        "durationSec": 1309,
        "status": "rendered",
        "no": 7,
        "cues": 0
       },
       {
-       "title": "第8章 消渴与淋病：把「喝进去的」与「排出来的」对上账",
+       "title": "消渴与淋病：把「喝进去的」与「排出来的」对上账",
        "durationSec": 809,
        "status": "rendered",
        "no": 8,
        "cues": 0
       },
       {
-       "title": "第9章 妇人病三篇：不是「妇科专章」，是把经带胎产拆成三段",
+       "title": "妇人病三篇：不是「妇科专章」，是把经带胎产拆成三段",
        "durationSec": 1780,
        "status": "rendered",
        "no": 9,
        "cues": 0
       },
       {
-       "title": "第10章 174 个方里，只有 165 个能算配伍",
+       "title": "174 个方里，只有 165 个能算配伍",
        "durationSec": 1204,
        "status": "rendered",
        "no": 10,
        "cues": 0
       },
       {
-       "title": "第11章 肺痿与肺痈的分界不在症状堆叠，而在脉的一虚一实",
+       "title": "肺痿与肺痈的分界不在症状堆叠，而在脉的一虚一实",
        "durationSec": 744,
        "status": "rendered",
        "no": 11,
        "cues": 0
       },
       {
-       "title": "第12章 同一个「气从少腹上冲」，三首方靠来路分开而不是靠冲劲分开",
+       "title": "同一个「气从少腹上冲」，三首方靠来路分开而不是靠冲劲分开",
        "durationSec": 380,
        "status": "rendered",
        "no": 12,
        "cues": 0
       },
       {
-       "title": "第13章 胸痹的方条比是 1.00，但这个 1 是两个口径相互抵消出来的",
+       "title": "胸痹的方条比是 1.00，但这个 1 是两个口径相互抵消出来的",
        "durationSec": 505,
        "status": "rendered",
        "no": 13,
        "cues": 0
       },
       {
-       "title": "第14章 腹满篇前八条不出方，先用八条判据把「温、下、吐」三条路分开",
+       "title": "腹满篇前八条不出方，先用八条判据把「温、下、吐」三条路分开",
        "durationSec": 769,
        "status": "rendered",
        "no": 14,
        "cues": 0
       },
       {
-       "title": "第15章 二十条只出三方，这一篇交付的是五脏定位表而不是方剂",
+       "title": "二十条只出三方，这一篇交付的是五脏定位表而不是方剂",
        "durationSec": 555,
        "status": "rendered",
        "no": 15,
        "cues": 0
       },
       {
-       "title": "第16章 全书最长的一篇水气，用四套分类切同一批病而不互相替代",
+       "title": "全书最长的一篇水气，用四套分类切同一批病而不互相替代",
        "durationSec": 1010,
        "status": "rendered",
        "no": 16,
        "cues": 0
       },
       {
-       "title": "第17章 黄疸先分三个入口，再谈利小便——入口错了，利小便就是空话",
+       "title": "黄疸先分三个入口，再谈利小便——入口错了，利小便就是空话",
        "durationSec": 593,
        "status": "rendered",
        "no": 17,
        "cues": 0
       },
       {
-       "title": "第18章 十七条里十条在辨「这是不是血的问题」，方只留给后六条",
+       "title": "十七条里十条在辨「这是不是血的问题」，方只留给后六条",
        "durationSec": 467,
        "status": "rendered",
        "no": 18,
        "cues": 0
       },
       {
-       "title": "第19章 四十七条切成呕哕与下利两半，两半的节奏完全不同",
+       "title": "四十七条切成呕哕与下利两半，两半的节奏完全不同",
        "durationSec": 933,
        "status": "rendered",
        "no": 19,
        "cues": 0
       },
       {
-       "title": "第20章 八条里出现六个方名，而「方数」只算三个——三层差在哪里",
+       "title": "八条里出现六个方名，而「方数」只算三个——三层差在哪里",
        "durationSec": 423,
        "status": "rendered",
        "no": 20,
        "cues": 0
       },
       {
-       "title": "第21章 八个互不相关的小病串成一篇，每个病自带一条治法",
+       "title": "八个互不相关的小病串成一篇，每个病自带一条治法",
        "durationSec": 394,
        "status": "rendered",
        "no": 21,
        "cues": 0
       },
       {
-       "title": "第22章 底本只给一条，四十六段里藏着十七首方——附篇的单位是方不是条",
+       "title": "底本只给一条，四十六段里藏着十七首方——附篇的单位是方不是条",
        "durationSec": 691,
        "status": "rendered",
        "no": 22,
        "cues": 0
       },
       {
-       "title": "第23章 一百三十三段禁忌不是清单，是一张「禁什么—中了什么症—用什么解」的三栏表",
+       "title": "一百三十三段禁忌不是清单，是一张「禁什么—中了什么症—用什么解」的三栏表",
        "durationSec": 912,
        "status": "rendered",
        "no": 23,
        "cues": 0
       },
       {
-       "title": "第24章 本篇没有总论，总论在上一篇开头；它的框由别人给的两端撑着",
+       "title": "本篇没有总论，总论在上一篇开头；它的框由别人给的两端撑着",
        "durationSec": 716,
        "status": "rendered",
        "no": 24,
@@ -2840,7 +2840,7 @@
      "rows": [
       {
        "title": "毒性不是标签，是三个剂量与一条曲线共同决定的区间",
-       "durationSec": 506,
+       "durationSec": 656,
        "status": "rendered",
        "no": 1,
        "cues": 0
@@ -2923,12 +2923,93 @@
    "deptTitle": "针灸系",
    "semester": 2,
    "chapters": 10,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 10,
+     "durationSec": 7985.215,
+     "path": "platform/courses/03-zhenjiu/01-jingluo-xue",
+     "rows": [
+      {
+       "title": "经络不是血管的别名，而是一套分层的通道系统",
+       "durationSec": 743,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "十二经的走向不是路线图，而是十二处交接点上的传递规则",
+       "durationSec": 638,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "奇经八脉不是十二经的备用线，而是气血的蓄水池",
+       "durationSec": 878,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "经别经筋皮部只是配件，四街四海才是经气的纵横坐标",
+       "durationSec": 907,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "表里配属写在属络上，却只能从取穴路径上验出来",
+       "durationSec": 624,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "病候是一张定位表，不是一份症状清单",
+       "durationSec": 844,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "经络图不是一张画，而是一套可折量的坐标系",
+       "durationSec": 839,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "流注是一个闭环，时辰表是后人往环上刻的刻度",
+       "durationSec": 773,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      },
+      {
+       "title": "「找不到对应结构」是一个研究状态，不是一句结论",
+       "durationSec": 836,
+       "status": "rendered",
+       "no": 9,
+       "cues": 0
+      },
+      {
+       "title": "建库的最小单元不是一条经脉，而是一个三元组",
+       "durationSec": 902,
+       "status": "rendered",
+       "no": 10,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 10,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 7985.215,
+   "plan": "departments/03-zhenjiu/01-jingluo-xue/video/教案.md"
   },
   {
    "slug": "02-shuxue-xue",
@@ -2937,12 +3018,107 @@
    "deptTitle": "针灸系",
    "semester": 3,
    "chapters": 12,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 12,
+     "durationSec": 6950.119,
+     "path": "platform/courses/03-zhenjiu/02-shuxue-xue",
+     "rows": [
+      {
+       "title": "穴名、归经与定位是三套索引，没有一套能单独指认一个穴",
+       "durationSec": 466,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "骨度分寸量的是比例不是长度，换个人身上的「一寸」就该换",
+       "durationSec": 612,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "手三阴二十九穴的进针深度由解剖层次决定，从胸到指相差十五倍",
+       "durationSec": 505,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "手三阳六十二穴的深度在肩线封顶，再往上一律改用方向",
+       "durationSec": 586,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "足三阳九十一穴的深度按脊柱节段分档，不按肌肉厚薄",
+       "durationSec": 652,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "足三阴四十五穴的最深处在小腿，越朝躯干反而越浅",
+       "durationSec": 638,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "任督二十五穴共用一条正中线，深度让位给针尖的朝向",
+       "durationSec": 626,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "经外奇穴十八条编号背后是五十多个进针点",
+       "durationSec": 558,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      },
+      {
+       "title": "特定穴是同一批穴上越挂越多的牌子，不是六类并列的穴",
+       "durationSec": 677,
+       "status": "rendered",
+       "no": 9,
+       "cues": 0
+      },
+      {
+       "title": "主治规律是「穴在哪一段」与「病在哪一段」之间的一条接线规则",
+       "durationSec": 711,
+       "status": "rendered",
+       "no": 10,
+       "cues": 0
+      },
+      {
+       "title": "「不可深刺」是三种不同的禁令，混成一个深度上限就会在最危险处失灵",
+       "durationSec": 191,
+       "status": "rendered",
+       "no": 11,
+       "cues": 0
+      },
+      {
+       "title": "三维模型缺的不止深度：尺度、体位、深度三个量里缺了两个半",
+       "durationSec": 728,
+       "status": "rendered",
+       "no": 12,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 12,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 6950.119,
+   "plan": "departments/03-zhenjiu/02-shuxue-xue/video/教案.md"
   },
   {
    "slug": "03-zhenjiu-yiji-xuan",
@@ -2951,12 +3127,79 @@
    "deptTitle": "针灸系",
    "semester": 3,
    "chapters": 8,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 8,
+     "durationSec": 6467.883,
+     "path": "platform/courses/03-zhenjiu/03-zhenjiu-yiji-xuan",
+     "rows": [
+      {
+       "title": "《灵枢》不是针法手册，而是针道的总纲",
+       "durationSec": 656,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "《素问》立治则，《难经》把治则算成补泻公式",
+       "durationSec": 715,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "《甲乙经》把穴编成目录，隋唐把针灸写进方书与医德",
+       "durationSec": 894,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "宋金元把针灸变成国家标准、时间表和一家之言",
+       "durationSec": 899,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "明清针灸的份量不在新穴新法，而在把经验编成可教的体例",
+       "durationSec": 857,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "歌赋用押韵换来了记得住，代价是把异文压成一个说法",
+       "durationSec": 817,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "医案留下的是一条决策链，不是一个成功率",
+       "durationSec": 830,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "检索能把找不到变成找得到太多，判断仍要回到原文",
+       "durationSec": 799,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 8,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 6467.883,
+   "plan": "departments/03-zhenjiu/03-zhenjiu-yiji-xuan/video/教案.md"
   },
   {
    "slug": "04-qigong-xue",
@@ -2965,12 +3208,72 @@
    "deptTitle": "针灸系",
    "semester": 3,
    "chapters": 7,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 7,
+     "durationSec": 5652.526,
+     "path": "platform/courses/03-zhenjiu/04-qigong-xue",
+     "rows": [
+      {
+       "title": "名是新的，实是旧的，气功在《内经》里已经排进治法",
+       "durationSec": 907,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "调息写得最多，不等于调息最要紧",
+       "durationSec": 846,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "反应与偏差的分界不在感觉强弱，在能不能自己缓过来",
+       "durationSec": 920,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "静功与动功的分界不在动不动，在由谁主导",
+       "durationSec": 807,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "太极拳是调身为主的动功：把动作放慢不叫练气功，把三调参数写出来才算",
+       "durationSec": 721,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "辨证施功的落点是参数：同一张「放松功」的方子，四个证候要四种练法",
+       "durationSec": 667,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "气功研究只敢说「可能」，治未病的建议却必须具体到今天练什么",
+       "durationSec": 784,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 7,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 5652.526,
+   "plan": "departments/03-zhenjiu/04-qigong-xue/video/教案.md"
   },
   {
    "slug": "05-tuina-xue",
@@ -2979,12 +3282,93 @@
    "deptTitle": "针灸系",
    "semester": 4,
    "chapters": 10,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 10,
+     "durationSec": 7357.277,
+     "path": "platform/courses/03-zhenjiu/05-tuina-xue",
+     "rows": [
+      {
+       "title": "推拿的疗效有通路，源流只是它的来路",
+       "durationSec": 739,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "推拿能治什么，取决于它的作用落在哪一层",
+       "durationSec": 584,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "手法的名字记着力面，处方的效力记在顺序上",
+       "durationSec": 778,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "小儿推拿换掉的不是穴位尺寸，是补泻的计量单位",
+       "durationSec": 819,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "脊柱手法的技术含量，一半在决定不做哪一手",
+       "durationSec": 990,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "病名换了九个，处方的骨架只有一套",
+       "durationSec": 963,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "内科妇科推拿的差别不在手法而在时程",
+       "durationSec": 701,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "手法剂量里频率可抄，力度只能自己校准",
+       "durationSec": 610,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      },
+      {
+       "title": "手法不能设盲，疗效判据只能外置",
+       "durationSec": 543,
+       "status": "rendered",
+       "no": 9,
+       "cues": 0
+      },
+      {
+       "title": "一份可复现的处方只由可判定字段构成",
+       "durationSec": 631,
+       "status": "rendered",
+       "no": 10,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 10,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 7357.277,
+   "plan": "departments/03-zhenjiu/05-tuina-xue/video/教案.md"
   },
   {
    "slug": "06-tuina-shoufa-xue",
@@ -2993,12 +3377,79 @@
    "deptTitle": "针灸系",
    "semester": 4,
    "chapters": 8,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 8,
+     "durationSec": 3165.885,
+     "path": "platform/courses/03-zhenjiu/06-tuina-shoufa-xue",
+     "rows": [
+      {
+       "title": "分类给的是坐标，手法给的是动作",
+       "durationSec": 661,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "同属摆动类，一指禅与㨰法仍不能互替",
+       "durationSec": 657,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "同一个「推」字，在两类手法里是两个动作",
+       "durationSec": 56,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "振动求透，叩击求响，两套节律两套判据",
+       "durationSec": 768,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "关节的极限写在解剖里，不写在手感里",
+       "durationSec": 55,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "手法可测的只有力、频、时，剩下的交给手感",
+       "durationSec": 56,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "合格线由训练史画出，不由当场表现画出",
+       "durationSec": 856,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "规范能统一动作，统一不了「这一例该不该动手」",
+       "durationSec": 56,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 8,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 3165.885,
+   "plan": "departments/03-zhenjiu/06-tuina-shoufa-xue/video/教案.md"
   },
   {
    "slug": "07-cifa-jiufa-xue",
@@ -3007,12 +3458,93 @@
    "deptTitle": "针灸系",
    "semester": 4,
    "chapters": 10,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 10,
+     "durationSec": 6171.79,
+     "path": "platform/courses/03-zhenjiu/07-cifa-jiufa-xue",
+     "rows": [
+      {
+       "title": "针与灸不是两门手艺，而是同一套刺激量学的两种实现",
+       "durationSec": 566,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "毫针的功夫不在「扎进去」，而在四个能被人复核的动作上",
+       "durationSec": 503,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "读经典不是背条文，是把一句话还原成一组能做的动作",
+       "durationSec": 478,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "复式手法不是玄学，是把四个基本动作按层次与次数叠起来",
+       "durationSec": 478,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "灸的功夫不在点火，而在把「量」变成别人能复核的壮与炷",
+       "durationSec": 537,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "换一种针形，就换一整套适应证和一整套禁忌",
+       "durationSec": 781,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "三套微针各把身体投影一次，投影规则不同，边界也不同",
+       "durationSec": 687,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "电与药接上针之后，失手的性质就从「疼一下」变成「不可逆」",
+       "durationSec": 642,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      },
+      {
+       "title": "三种「让刺激留得久」的技术里，只有一种把东西留在了体内",
+       "durationSec": 769,
+       "status": "rendered",
+       "no": 9,
+       "cues": 0
+      },
+      {
+       "title": "要害是解剖事实，不是风险清单上的最后一行",
+       "durationSec": 733,
+       "status": "rendered",
+       "no": 10,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 10,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 6171.79,
+   "plan": "departments/03-zhenjiu/07-cifa-jiufa-xue/video/教案.md"
   },
   {
    "slug": "08-zhenjiu-zhiliao-xue",
@@ -3021,12 +3553,107 @@
    "deptTitle": "针灸系",
    "semester": 5,
    "chapters": 12,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 12,
+     "durationSec": 7776.243,
+     "path": "platform/courses/03-zhenjiu/08-zhenjiu-zhiliao-xue",
+     "rows": [
+      {
+       "title": "五条治疗原则不是五句口号，而是五次「能不能下针」的判定",
+       "durationSec": 994,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "处方不是穴名清单，而是「辨经—选穴—刺灸法」三列必须自洽",
+       "durationSec": 694,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "特定穴是按条件检索的索引，不是「更重要的穴位」",
+       "durationSec": 595,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "痛证处方的骨架是「局部穴 ＋ 一条经的远端 ＋ 一个动作」",
+       "durationSec": 553,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "内科前二十一个病证，先问「病在神还是病在形」",
+       "durationSec": 721,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "内科后二十一个病证，处方的主干是「募穴＋下合穴」",
+       "durationSec": 635,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "妇儿科二十二证，一半在调周期，一半在调发育",
+       "durationSec": 588,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "皮外骨伤二十二证，先分清病在血分、在局部，还是在经筋",
+       "durationSec": 580,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      },
+      {
+       "title": "五官十六证，先取最近的那个穴，再用一条远端经把火引下去",
+       "durationSec": 587,
+       "status": "rendered",
+       "no": 9,
+       "cues": 0
+      },
+      {
+       "title": "急症先保命再取穴，其他病证先问这一针在治什么",
+       "durationSec": 628,
+       "status": "rendered",
+       "no": 10,
+       "cues": 0
+      },
+      {
+       "title": "时间针法算得出坐标，算不出疗效",
+       "durationSec": 634,
+       "status": "rendered",
+       "no": 11,
+       "cues": 0
+      },
+      {
+       "title": "研究进展给的是地图，不是证据表",
+       "durationSec": 569,
+       "status": "rendered",
+       "no": 12,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 12,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 7776.243,
+   "plan": "departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/video/教案.md"
   },
   {
    "slug": "09-kangfu-yixue-jichu",
@@ -3035,12 +3662,79 @@
    "deptTitle": "针灸系",
    "semester": 5,
    "chapters": 8,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 8,
+     "durationSec": 5205.491,
+     "path": "platform/courses/03-zhenjiu/09-kangfu-yixue-jichu",
+     "rows": [
+      {
+       "title": "康复的目标是功能而不是治愈，判据必须落在活动上",
+       "durationSec": 755,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "评定不是打分，是把功能变化变成别人能复核的说法",
+       "durationSec": 559,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "训练不是加量，是在能承受的范围里换回可控的动作",
+       "durationSec": 705,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "自理能力是康复的终点，替他做得越多他恢复得越少",
+       "durationSec": 656,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "言语、吞咽与认知康复：三块里只有一块按秒计时",
+       "durationSec": 667,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "康复护理与并发症预防：同一个翻身动作，既是五种并发症的解药，也是引信",
+       "durationSec": 595,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "社区与长期照护：断点不在家里，在从机构到家那一次交接",
+       "durationSec": 634,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "康复团队与伦理：分工写在职责里，伦理写在两列里",
+       "durationSec": 634,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 8,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 5205.491,
+   "plan": "departments/03-zhenjiu/09-kangfu-yixue-jichu/video/教案.md"
   },
   {
    "slug": "10-shiyan-zhenjiu-xue",
@@ -3049,12 +3743,100 @@
    "deptTitle": "针灸系",
    "semester": 6,
    "chapters": 11,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 11,
+     "durationSec": 8008.301,
+     "path": "platform/courses/03-zhenjiu/10-shiyan-zhenjiu-xue",
+     "rows": [
+      {
+       "title": "实验针灸学的分水岭不是技术，而是敢不敢把结论降级",
+       "durationSec": 499,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "穴位不是皮上的一个点，而是贯穿六层的立体接口",
+       "durationSec": 724,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "经络研究缺的不是现象，而是能把现象判死的对照",
+       "durationSec": 748,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "针灸的效应不是一条线，而是一族随状态漂移的曲线",
+       "durationSec": 773,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "证据最厚的镇痛方向，恰恰最需要一套降级规则",
+       "durationSec": 791,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "神经系统研究最难的一步，是把「激活了」读成「起效了」",
+       "durationSec": 787,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "四个单元写得一样长，四块证据的分量却差着量级",
+       "durationSec": 689,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "三个系统共用一条判读纪律，比各自记住一串指标更有用",
+       "durationSec": 808,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      },
+      {
+       "title": "四个系统篇幅几乎相等，证据厚薄却分成四档",
+       "durationSec": 767,
+       "status": "rendered",
+       "no": 9,
+       "cues": 0
+      },
+      {
+       "title": "技术章的价值不在会做，而在知道它会在哪里骗你",
+       "durationSec": 821,
+       "status": "rendered",
+       "no": 10,
+       "cues": 0
+      },
+      {
+       "title": "收口的不是知识清单，而是说清每句话能撑多重的证据",
+       "durationSec": 600,
+       "status": "rendered",
+       "no": 11,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 11,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 8008.301,
+   "plan": "departments/03-zhenjiu/10-shiyan-zhenjiu-xue/video/教案.md"
   },
   {
    "slug": "11-wuli-zhiliao",
@@ -3063,12 +3845,79 @@
    "deptTitle": "针灸系",
    "semester": 6,
    "chapters": 8,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 8,
+     "durationSec": 5181.192,
+     "path": "platform/courses/03-zhenjiu/11-wuli-zhiliao",
+     "rows": [
+      {
+       "title": "物理治疗的门槛不在选哪一种因子，而在能不能给这个因子配出四个量",
+       "durationSec": 584,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "电针的杀伤力主要不来自参数，而来自那一对电极接在哪",
+       "durationSec": 712,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "热疗的剂量藏在壮数与灸时里，光疗在本章只剩一条安全红线",
+       "durationSec": 670,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "冷与超声是章名上的两个空位，能执行的只有牵引的力与它的禁区",
+       "durationSec": 734,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "运动疗法的基础不是动作清单，而是评、练、报的分工",
+       "durationSec": 622,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "松得开不等于有力，被动手替不了主动练",
+       "durationSec": 610,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "平衡的判据不是站得稳，是晃了还能把身体拉回来",
+       "durationSec": 604,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "方案的分量在告知，风险的分量在记录",
+       "durationSec": 645,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 8,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 5181.192,
+   "plan": "departments/03-zhenjiu/11-wuli-zhiliao/video/教案.md"
   },
   {
    "slug": "12-erxue-zhenduan-xue",
@@ -3077,12 +3926,79 @@
    "deptTitle": "针灸系",
    "semester": 6,
    "chapters": 8,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 8,
+     "durationSec": 4396.927,
+     "path": "platform/courses/03-zhenjiu/12-erxue-zhenduan-xue",
+     "rows": [
+      {
+       "title": "「宗脉所聚」把耳变成一张诊图，而不是一个器官",
+       "durationSec": 655,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "分区是在十三个结构上另划九张网，网眼比结构粗",
+       "durationSec": 496,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "定位的分歧不在手稳，而在先认地形还是先记穴名",
+       "durationSec": 542,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "望、压、电测查的是同一件事的三个通道，没有一条能单独定病名",
+       "durationSec": 626,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "耳穴治疗的差别不在针，而在把刺激送到耳廓的哪一层",
+       "durationSec": 385,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "内科应用的可复现性在辨经那一步，不在穴位表上",
+       "durationSec": 640,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "换人群先换禁忌，取穴反倒可以照搬",
+       "durationSec": 539,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "耳穴的安全规范不在底本里，只能从四门技术的条款里取交集",
+       "durationSec": 514,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 8,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 4396.927,
+   "plan": "departments/03-zhenjiu/12-erxue-zhenduan-xue/video/教案.md"
   },
   {
    "slug": "13-zhendao-yixue",
@@ -3091,12 +4007,79 @@
    "deptTitle": "针灸系",
    "semester": 7,
    "chapters": 8,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 8,
+     "durationSec": 1927.832,
+     "path": "platform/courses/03-zhenjiu/13-zhendao-yixue",
+     "rows": [
+      {
+       "title": "「针」与「刀」本是两件器械，合成一件就是把两种权限绑在一起",
+       "durationSec": 261,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "刀口方向是第一条纪律，因为深度错了能退，方向错了切的是另一个结构",
+       "durationSec": 259,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "粘连、瘢痕、挛缩不是三种病，是同一条修复链上的三个时相",
+       "durationSec": 242,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "颈肩腰腿痛是针刀最主要的适应证群，因为这一群里痛的位置最常不是病灶的位置",
+       "durationSec": 241,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "这一章叫关节与腱鞘，而腱鞘在正文里只以一个检查手法的名字出现",
+       "durationSec": 233,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "这一章叫神经卡压，而「卡压」二字在 11,230 字正文里一次都没出现",
+       "durationSec": 238,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "这一章讲的全是针灸的禁忌，针刀那几条底本一个字也没写",
+       "durationSec": 229,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "这一章讲的全是针灸的证据，针刀的证据一条也没有",
+       "durationSec": 224,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 8,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 1927.832,
+   "plan": "departments/03-zhenjiu/13-zhendao-yixue/video/教案.md"
   },
   {
    "slug": "14-zhenjiu-zhentong-mazui",
@@ -3105,12 +4088,79 @@
    "deptTitle": "针灸系",
    "semester": 7,
    "chapters": 8,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 8,
+     "durationSec": 4563.42,
+     "path": "platform/courses/03-zhenjiu/14-zhenjiu-zhentong-mazui",
+     "rows": [
+      {
+       "title": "痛的层次决定评估指标，指标决定针能不能进场",
+       "durationSec": 584,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "机制的用处不在解释痛，而在规定什么算证据",
+       "durationSec": 694,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "电针真正可调的只有两个把手，其余都是刻度换算",
+       "durationSec": 638,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "急性痛是唯一能在二十四小时内被证伪的场景",
+       "durationSec": 547,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "慢性痛的分水岭不在痛了多久，而在性质与失能是否已经改写",
+       "durationSec": 522,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "针麻能减的是药量，减不掉的是麻醉医师的判断",
+       "durationSec": 506,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "围手术期的针刺，价值在三个时间窗而不在一套手法",
+       "durationSec": 559,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "「有效」与「证据充分」是两列，并成一列就会说谎",
+       "durationSec": 513,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 8,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 4563.42,
+   "plan": "departments/03-zhenjiu/14-zhenjiu-zhentong-mazui/video/教案.md"
   },
   {
    "slug": "15-zhongyi-kangfu-xue",
@@ -3119,12 +4169,93 @@
    "deptTitle": "针灸系",
    "semester": 7,
    "chapters": 10,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 10,
+     "durationSec": 7002.945,
+     "path": "platform/courses/03-zhenjiu/15-zhongyi-kangfu-xue",
+     "rows": [
+      {
+       "title": "中医康复借了养生的方法，没借它的对象",
+       "durationSec": 768,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "证候与功能是两张纸，缺一张就交不了班",
+       "durationSec": 646,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "中药康复只有一条路铺到底：内服",
+       "durationSec": 625,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "名为针灸康复，底本里「灸」是「针」的十一倍",
+       "durationSec": 705,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "推拿康复的处方是六件事的顺序，不是六个手法",
+       "durationSec": 726,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "气功康复教的是把呼吸调慢，不是把气送到某处",
+       "durationSec": 681,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "饮食与情志康复的处方开在饭桌和床头，不在药罐里",
+       "durationSec": 729,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "中风康复的底本只有一根针，它把急救写在了康复前面",
+       "durationSec": 709,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      },
+      {
+       "title": "骨伤与慢病康复的底本只收了颈、腰和落枕三个病",
+       "durationSec": 739,
+       "status": "rendered",
+       "no": 9,
+       "cues": 0
+      },
+      {
+       "title": "社区与家庭康复这一章，底本里一个中医词都没有",
+       "durationSec": 676,
+       "status": "rendered",
+       "no": 10,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 10,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 7002.945,
+   "plan": "departments/03-zhenjiu/15-zhongyi-kangfu-xue/video/教案.md"
   },
   {
    "slug": "16-zhenjiu-xue",
@@ -3133,12 +4264,233 @@
    "deptTitle": "针灸系",
    "semester": 5,
    "chapters": 30,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 30,
+     "durationSec": 5945.576,
+     "path": "platform/courses/03-zhenjiu/16-zhenjiu-xue",
+     "rows": [
+      {
+       "title": "绪论不是开场白：它划定针灸学的边界、来路与读法",
+       "durationSec": 648,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "经络不是线路图，是把脏腑与肢节接成闭环的规则",
+       "durationSec": 907,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "腧穴的数目是历代校订出来的，不是一次定死的",
+       "durationSec": 785,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "肺经十一穴：一条从胸走到拇指的经，先定属络再定穴",
+       "durationSec": 705,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "大肠经二十穴：把面口与肠腑拴在同一条经上的长线",
+       "durationSec": 731,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "胃经的重量不在四十五穴，而在十四组可操作条目",
+       "durationSec": 689,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "脾经全部关键压在一个八寸的交叉点上",
+       "durationSec": 63,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "心经九穴全在手臂上，病候却全在胸咽目",
+       "durationSec": 62,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      },
+      {
+       "title": "小肠经十九穴有七穴挤在肩胛区，主治的头一条却是耳",
+       "durationSec": 63,
+       "status": "rendered",
+       "no": 9,
+       "cues": 0
+      },
+      {
+       "title": "六十七穴不是清单，是两条平行侧线加一张背俞索引",
+       "durationSec": 64,
+       "status": "rendered",
+       "no": 10,
+       "cues": 0
+      },
+      {
+       "title": "二十七穴里只有十穴配得上独立条目",
+       "durationSec": 62,
+       "status": "rendered",
+       "no": 11,
+       "cues": 0
+      },
+      {
+       "title": "九穴共用一条肌腱缝，红线却有八条",
+       "durationSec": 63,
+       "status": "rendered",
+       "no": 12,
+       "cues": 0
+      },
+      {
+       "title": "二十三穴没有一条定位标记，只能顺着一条线读",
+       "durationSec": 64,
+       "status": "rendered",
+       "no": 13,
+       "cues": 0
+      },
+      {
+       "title": "四十四穴的取舍不在穴数，在五个身份",
+       "durationSec": 64,
+       "status": "rendered",
+       "no": 14,
+       "cues": 0
+      },
+      {
+       "title": "十四穴七个有身份，另七个只占一行",
+       "durationSec": 62,
+       "status": "rendered",
+       "no": 15,
+       "cues": 0
+      },
+      {
+       "title": "督脉的效力与风险同出一处，都在棘突下那一道凹陷",
+       "durationSec": 61,
+       "status": "rendered",
+       "no": 16,
+       "cues": 0
+      },
+      {
+       "title": "任脉二十四穴全靠软组织兜底，没有一块骨头替你挡针",
+       "durationSec": 61,
+       "status": "rendered",
+       "no": 17,
+       "cues": 0
+      },
+      {
+       "title": "经外奇穴的密度是全课最高，四十二个穴名只摊到五千字",
+       "durationSec": 59,
+       "status": "rendered",
+       "no": 18,
+       "cues": 0
+      },
+      {
+       "title": "刺灸法总论的产物不是穴位表，而是一张能不能扎的清单",
+       "durationSec": 60,
+       "status": "rendered",
+       "no": 19,
+       "cues": 0
+      },
+      {
+       "title": "毫针的风险不在扎错穴，在扎对了却扎过头",
+       "durationSec": 61,
+       "status": "rendered",
+       "no": 20,
+       "cues": 0
+      },
+      {
+       "title": "灸法真正要记的不是几壮，而是以何为度",
+       "durationSec": 58,
+       "status": "rendered",
+       "no": 21,
+       "cues": 0
+      },
+      {
+       "title": "这一章的主语不是穴位，而是器具的可调参数",
+       "durationSec": 65,
+       "status": "rendered",
+       "no": 22,
+       "cues": 0
+      },
+      {
+       "title": "这一章不给穴位，只给把穴位连成方子的规则",
+       "durationSec": 62,
+       "status": "rendered",
+       "no": 23,
+       "cues": 0
+      },
+      {
+       "title": "八个痛证是同一张处方的八次填空",
+       "durationSec": 62,
+       "status": "rendered",
+       "no": 24,
+       "cues": 0
+      },
+      {
+       "title": "九十个证型压在二万二千字里，平均二百四十九字一个",
+       "durationSec": 61,
+       "status": "rendered",
+       "no": 25,
+       "cues": 0
+      },
+      {
+       "title": "妇儿科不按「科」分，按周期、胎位、发育三条轴分",
+       "durationSec": 59,
+       "status": "rendered",
+       "no": 26,
+       "cues": 0
+      },
+      {
+       "title": "皮肤外科九病：皮损看得见，局部取穴就压过了循经",
+       "durationSec": 60,
+       "status": "rendered",
+       "no": 27,
+       "cues": 0
+      },
+      {
+       "title": "五官五病共用一条路径：局部开窍、远端引火下行，代价是引文全部悬空",
+       "durationSec": 59,
+       "status": "rendered",
+       "no": 28,
+       "cues": 0
+      },
+      {
+       "title": "急症八证写得最省：八张方共用内关，最薄的一节给了高热",
+       "durationSec": 61,
+       "status": "rendered",
+       "no": 29,
+       "cues": 0
+      },
+      {
+       "title": "现代研究章靠数字立论：75 个数字串，三条古籍只作背书",
+       "durationSec": 63,
+       "status": "rendered",
+       "no": 30,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 30,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 5945.576,
+   "plan": "departments/03-zhenjiu/16-zhenjiu-xue/video/教案.md"
   },
   {
    "slug": "17-gejia-zhenjiu-xueshuo",
@@ -3147,12 +4499,107 @@
    "deptTitle": "针灸系",
    "semester": 6,
    "chapters": 12,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 12,
+     "durationSec": 9386.539,
+     "path": "platform/courses/03-zhenjiu/17-gejia-zhenjiu-xueshuo",
+     "rows": [
+      {
+       "title": "各家针灸学说考的是一套判据，不是一张人名表",
+       "durationSec": 572,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "流派的判据是三根柱子，不是一张分类表",
+       "durationSec": 739,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "《内经》的针道是一条次序，不是一堆刺法",
+       "durationSec": 893,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "《难经》给穴立规矩，《伤寒论》给用针立次序",
+       "durationSec": 826,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "晋唐的功劳在编书：体例、尺度与存佚",
+       "durationSec": 834,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "宋金元把穴定成标准，把时间算成取穴依据",
+       "durationSec": 868,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "明代七家编的不是七种学说，是七种全书体例",
+       "durationSec": 335,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "清代把针灸写成可查的书，也把手法排在认穴之前",
+       "durationSec": 901,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      },
+      {
+       "title": "近代把针灸搬进学校，也把它译成西医的语言",
+       "durationSec": 866,
+       "status": "rendered",
+       "no": 9,
+       "cues": 0
+      },
+      {
+       "title": "当代六家各把手法的某一个参数做成了可教的东西",
+       "durationSec": 845,
+       "status": "rendered",
+       "no": 10,
+       "cues": 0
+      },
+      {
+       "title": "轴心从人换成法，手法一旦离人就丢了适应证",
+       "durationSec": 854,
+       "status": "rendered",
+       "no": 11,
+       "cues": 0
+      },
+      {
+       "title": "谈数据的一章，引书最少，可计量的数值为零",
+       "durationSec": 852,
+       "status": "rendered",
+       "no": 12,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 12,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 9386.539,
+   "plan": "departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/video/教案.md"
   },
   {
    "slug": "18-tuina-gongfa-xue",
@@ -3161,12 +4608,107 @@
    "deptTitle": "针灸系",
    "semester": 4,
    "chapters": 12,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 12,
+     "durationSec": 9643.024,
+     "path": "platform/courses/03-zhenjiu/18-tuina-gongfa-xue",
+     "rows": [
+      {
+       "title": "功法的历史是把身体写成规矩的历史，写进去的只有规矩",
+       "durationSec": 671,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "理论给的是练功的说法，不是练功的做法",
+       "durationSec": 780,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "三调是一个环，不是一道先后工序",
+       "durationSec": 824,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "功力不是力气大，是力能一直落在同一个点上",
+       "durationSec": 770,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "十二势分的是筋的走向，不是动作的花样",
+       "durationSec": 853,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "少林内功把「力从足起」写成了一份可检查的姿势清单",
+       "durationSec": 797,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "五禽戏的剂量写在一个「汗」字上，不写在分钟数上",
+       "durationSec": 790,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "八段锦的八句歌诀各给一个功效，没有一句给剂量",
+       "durationSec": 770,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      },
+      {
+       "title": "六字诀把剂量数成三十六次呼吸，而不是多少分钟",
+       "durationSec": 827,
+       "status": "rendered",
+       "no": 9,
+       "cues": 0
+      },
+      {
+       "title": "全书七成的带单位数值压在这一章，因为它练的是器物规格",
+       "durationSec": 834,
+       "status": "rendered",
+       "no": 10,
+       "cues": 0
+      },
+      {
+       "title": "临床处方章的剂量最密，却一个阿拉伯数字也不用",
+       "durationSec": 855,
+       "status": "rendered",
+       "no": 11,
+       "cues": 0
+      },
+      {
+       "title": "数字化先量出角度与力，最后才轮到那个「意」",
+       "durationSec": 871,
+       "status": "rendered",
+       "no": 12,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 12,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 9643.024,
+   "plan": "departments/03-zhenjiu/18-tuina-gongfa-xue/video/教案.md"
   },
   {
    "slug": "19-tuina-zhiliao-xue",
@@ -3175,12 +4717,107 @@
    "deptTitle": "针灸系",
    "semester": 7,
    "chapters": 12,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 12,
+     "durationSec": 7630.381,
+     "path": "platform/courses/03-zhenjiu/19-tuina-zhiliao-xue",
+     "rows": [
+      {
+       "title": "推拿治疗学不是手法目录，是从辨证到疗效评定的一条链",
+       "durationSec": 613,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "处方里最虚的一格不是穴位，是刺激量",
+       "durationSec": 788,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "脊柱推拿的分水岭不在手法，在分型与禁忌",
+       "durationSec": 658,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "关节与筋伤靠分期，不靠一次扳到位",
+       "durationSec": 574,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "内科推拿卖的是症状缓解，不是治愈承诺",
+       "durationSec": 731,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "妇科推拿的第一道工序不是通，是排除妊娠",
+       "durationSec": 714,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "小儿的剂量按次数给，成人的时长表搬不过来",
+       "durationSec": 593,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "五官三病，推拿只够得到功能那一层",
+       "durationSec": 572,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      },
+      {
+       "title": "运动损伤的手法表只有一张，日期表有四张",
+       "durationSec": 595,
+       "status": "rendered",
+       "no": 9,
+       "cues": 0
+      },
+      {
+       "title": "推拿的安全事故几乎都不是手法问题，而是诊断问题",
+       "durationSec": 582,
+       "status": "rendered",
+       "no": 10,
+       "cues": 0
+      },
+      {
+       "title": "证据等级不决定推拿有没有效，只决定这句话能说多响",
+       "durationSec": 535,
+       "status": "rendered",
+       "no": 11,
+       "cues": 0
+      },
+      {
+       "title": "设备能把手法变成数字，不能把数字变成判断",
+       "durationSec": 675,
+       "status": "rendered",
+       "no": 12,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 12,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 7630.381,
+   "plan": "departments/03-zhenjiu/19-tuina-zhiliao-xue/video/教案.md"
   },
   {
    "slug": "20-xiaoer-tuina-xue",
@@ -3189,12 +4826,107 @@
    "deptTitle": "针灸系",
    "semester": 8,
    "chapters": 12,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 12,
+     "durationSec": 5590.621,
+     "path": "platform/courses/03-zhenjiu/20-xiaoer-tuina-xue",
+     "rows": [
+      {
+       "title": "小儿推拿的独立，不靠手法成熟，靠「儿科」先成为一门学问",
+       "durationSec": 700,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "小儿的生理决定手法上限，病理决定干预窗口",
+       "durationSec": 801,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "「轻快柔和」不是形容词，是一组可以交给学生的参数",
+       "durationSec": 707,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "八法的分界不在动作，而在「吸定点是否带动皮下」",
+       "durationSec": 721,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "特定穴的权威不来自引文，来自可复现的定位与次数",
+       "durationSec": 664,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "肺系四病共用一个处方骨架，差别在「什么时候停」",
+       "durationSec": 893,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "脾系六病是同一副脾胃的六个出口，补泻只差一个方向",
+       "durationSec": 180,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "心肝系三病先排除再辨证，抽搐是唯一不能等的信号",
+       "durationSec": 181,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      },
+      {
+       "title": "肾系与五官六病都卡在时间上，判的是到点没到点",
+       "durationSec": 177,
+       "status": "rendered",
+       "no": 9,
+       "cues": 0
+      },
+      {
+       "title": "新生儿不是小一号的小儿，这一层先讲禁再讲法",
+       "durationSec": 191,
+       "status": "rendered",
+       "no": 10,
+       "cues": 0
+      },
+      {
+       "title": "保健推拿不辨证，它判的是今天能不能做",
+       "durationSec": 196,
+       "status": "rendered",
+       "no": 11,
+       "cues": 0
+      },
+      {
+       "title": "安全章一个次数都不给，它给的是红线与复核",
+       "durationSec": 181,
+       "status": "rendered",
+       "no": 12,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 12,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 5590.621,
+   "plan": "departments/03-zhenjiu/20-xiaoer-tuina-xue/video/教案.md"
   },
   {
    "slug": "21-zhenjiu-linchuang-lunzhuan",
@@ -3203,12 +4935,65 @@
    "deptTitle": "针灸系",
    "semester": 9,
    "chapters": 6,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 6,
+     "durationSec": 3352.512,
+     "path": "platform/courses/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan",
+     "rows": [
+      {
+       "title": "门诊这一站，先学会停手，再学会配穴",
+       "durationSec": 586,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "中风康复这一站，判据在功能，不在症状轻重",
+       "durationSec": 643,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "面瘫这一站先问窗口，窗口判错，手法方向就是反的",
+       "durationSec": 550,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "灸罐这一站先划边界，边界之内才轮到手感",
+       "durationSec": 509,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "推拿这一站考的不是会不会做，是第十次还一样不一样",
+       "durationSec": 529,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "出科考核要能指到环节，指不到环节的复盘等于没复盘",
+       "durationSec": 536,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 6,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 3352.512,
+   "plan": "departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/video/教案.md"
   },
   {
    "slug": "22-zhenjiu-biye-sheji",
@@ -3217,12 +5002,65 @@
    "deptTitle": "针灸系",
    "semester": 10,
    "chapters": 6,
-   "status": "none",
-   "sources": [],
-   "lectures": 0,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 6,
+     "durationSec": 2499.857,
+     "path": "platform/courses/03-zhenjiu/22-zhenjiu-biye-sheji",
+     "rows": [
+      {
+       "title": "选题不是挑一个病，而是把一句经验话逼成能被否证的句子",
+       "durationSec": 459,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "一份病例表的价值不在字段多，而在换个人能照着扎回同一个位置",
+       "durationSec": 449,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "采集工具只做四件事，多做的每一件都要从招募窗口里扣时间",
+       "durationSec": 427,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "针刺盲不了全部，把盲了几层写清比宣称双盲更值钱",
+       "durationSec": 390,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "论文的说服力来自十个能复算的数字，不来自十页漂亮的讨论",
+       "durationSec": 386,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "手册写得再全也移不走手感，移交完成的标志是别人照它做出来",
+       "durationSec": 389,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 6,
    "cues": 0,
-   "durationSec": 0,
-   "plan": null
+   "durationSec": 2499.857,
+   "plan": "departments/03-zhenjiu/22-zhenjiu-biye-sheji/video/教案.md"
   },
   {
    "slug": "01-zhongyi-yundong-xue",
@@ -7102,7 +8940,7 @@
      "label": "本仓自建视频课（HLS）",
      "kind": "platform",
      "lectures": 53,
-     "durationSec": 81283.011,
+     "durationSec": 86659.934,
      "path": "platform/courses/09-jichu/11-bingli-shengli-xue",
      "rows": [
       {
@@ -7481,7 +9319,7 @@
    ],
    "lectures": 53,
    "cues": 0,
-   "durationSec": 81283.011,
+   "durationSec": 86659.934,
    "plan": "departments/09-jichu/11-bingli-shengli-xue/video/教案.md"
   },
   {
@@ -7498,7 +9336,7 @@
      "label": "本仓自建视频课（HLS）",
      "kind": "platform",
      "lectures": 49,
-     "durationSec": 64694.356,
+     "durationSec": 68816.929,
      "path": "platform/courses/09-jichu/12-yaoli-xue",
      "rows": [
       {
@@ -7849,7 +9687,7 @@
    ],
    "lectures": 49,
    "cues": 0,
-   "durationSec": 64694.356,
+   "durationSec": 68816.929,
    "plan": "departments/09-jichu/12-yaoli-xue/video/教案.md"
   },
   {
