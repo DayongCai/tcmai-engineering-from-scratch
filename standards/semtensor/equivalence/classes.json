@@ -19,7 +19,7 @@
     },
     "descriptions": {
       "file": "standards/semtensor/descriptions/dsu-descriptions.json",
-      "sha256": "f27e54648cd212574dd017a68201ab6ed7fb8ba7eee097f0f25c8d62e5a37e89"
+      "sha256": "dda72fb99a8a0009f465d78c6876f405ef4afa9c602df0d8db2ffe6ba9d0d067"
     },
     "whoIstt": {
       "file": "standards/semtensor/descriptions/who-istt-terms.json",
