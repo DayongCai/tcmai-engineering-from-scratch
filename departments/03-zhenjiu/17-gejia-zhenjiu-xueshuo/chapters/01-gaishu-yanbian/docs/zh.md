@@ -108,3 +108,9 @@ node -e "const m=require('./code/main.js'),l=m.chapterUnits(m.load());console.lo
 ```
 
 第三条命令打印 `原文 13 处`，即本章正文可逐字复述的原文条数；它与 `node code/main.js` 里的「引书 46 部」并列，就是 PROBLEM 里那组落差的来源。`code/main.test.js` 把单元数、每单元汉字数与 locator 钉住，改版后不同步，单测先红。
+
+## 资料来源（主要参考）
+
+- 底本：各家针灸学说。
+- 体例与校验：章节映射见本课 `chapters.json`，正文可逐条核对到 `chapters/<slug>/docs/zh.md`。
+- 开源说明：本资料为人类共同知识财产的整理与再表述，不等于原著；引用只为溯源，不代表任何个人或机构审阅、认可或背书。全篇不署个人姓名与职务。

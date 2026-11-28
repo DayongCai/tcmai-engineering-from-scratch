@@ -84,3 +84,9 @@ node -e 'const u=require("./standards/zhongyao-paozhi/units.json");const k=["4.1
 ```
 
 输出与正文所引不符，即说明底本改版，正文需同步修订。
+
+## 资料来源（主要参考）
+
+- 底本：中药炮制学。
+- 体例与校验：章节映射见本课 `chapters.json`，正文可逐条核对到 `chapters/<slug>/docs/zh.md`。
+- 开源说明：本资料为人类共同知识财产的整理与再表述，不等于原著；引用只为溯源，不代表任何个人或机构审阅、认可或背书。全篇不署个人姓名与职务。

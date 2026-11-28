@@ -293,3 +293,9 @@ cd /e/tcmai-engineering-from-scatch && node scripts/check_yaoli_chapter.js 35-th
 ```
 
 节选里那一行「12 / 12」不是排版，是把教材每一节的 brief 逐条回查的结果：口径句不是文末贴的一句免责，而是每一小节自带的写作约束。
+
+## 资料来源（主要参考）
+
+- 底本：药理学（源工作簿 `qhzy-药理学.xlsx`，抽取为 `standards/yaoli/底本.json`）。
+- 体例与校验：章节映射见本课 `chapters.json`，正文可逐条核对到 `chapters/<slug>/docs/zh.md`。
+- 开源说明：本资料为人类共同知识财产的整理与再表述，不等于原著；引用只为溯源，不代表任何个人或机构审阅、认可或背书。全篇不署个人姓名与职务。

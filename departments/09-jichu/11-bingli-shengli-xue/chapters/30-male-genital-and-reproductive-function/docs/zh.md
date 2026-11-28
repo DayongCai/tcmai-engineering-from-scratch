@@ -243,3 +243,9 @@ cd /e/tcmai-engineering-from-scatch && node tests/test_binglishengli_chapters.js
 **免责声明：**本章为病理生理学教学材料。文中的结构分工与调控层次取自《hermes-病理生理学讲义》第 30 章（10 节）与本仓库的机器可读层 `standards/binglishengli/supplements/jiangyi.json`；数字为程序现算，规则已在文中写明。
 
 本章不提供任何诊断、治疗或用药建议，不给出正常值与参考范围，也不对任何个体的状态作出判断；三层调控、输出端与窗口均为概念层与机制层的说明，不能替代临床评估。若出现身体不适，请及时就医。
+
+## 资料来源（主要参考）
+
+- 底本：病理生理学。
+- 体例与校验：章节映射见本课 `chapters.json`，正文可逐条核对到 `chapters/<slug>/docs/zh.md`。
+- 开源说明：本资料为人类共同知识财产的整理与再表述，不等于原著；引用只为溯源，不代表任何个人或机构审阅、认可或背书。全篇不署个人姓名与职务。

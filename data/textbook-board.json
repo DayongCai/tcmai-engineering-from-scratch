@@ -16,7 +16,7 @@
     "gapSubjects": 46,
     "gapWithBody": 46,
     "gapWithBodyChapters": 404,
-    "gapWithBodyChars": 1628867,
+    "gapWithBodyChars": 1694023,
     "gapNoBody": 0
   },
   "totals": {
@@ -36,15 +36,15 @@
     "baseChapters": 1893,
     "extChapters": 138,
     "hbChapters": 130,
-    "baseNonWs": 36936110,
+    "baseNonWs": 36938309,
     "extNonWs": 214152,
     "hbNonWs": 236360,
     "coverageBaseHours": 62,
     "coverageBaseSubjects": 65.1,
     "textbookHours": 8865,
     "chapters": 2161,
-    "hanzi": 30984374,
-    "nonWs": 37386622,
+    "hanzi": 30985313,
+    "nonWs": 37388821,
     "metaWords": 33874545,
     "registryChapters": 1621,
     "registryChars": 28596788,
@@ -245,8 +245,8 @@
             "dir": "textbooks/01-zhongyi/02-yi-gu-wen",
             "exists": true,
             "chapters": 12,
-            "hanzi": 133991,
-            "nonWs": 176689,
+            "hanzi": 133953,
+            "nonWs": 176651,
             "metaChapters": 12,
             "metaWords": 172023,
             "status": "wip",
@@ -292,8 +292,8 @@
             "dir": "textbooks/01-zhongyi/03-zhongguo-yixue-shi",
             "exists": true,
             "chapters": 12,
-            "hanzi": 97471,
-            "nonWs": 118457,
+            "hanzi": 97468,
+            "nonWs": 118454,
             "metaChapters": 12,
             "metaWords": 113628,
             "status": "wip",
@@ -342,8 +342,8 @@
             "dir": "textbooks/01-zhongyi/04-zhongyi-tizhi-xue",
             "exists": true,
             "chapters": 8,
-            "hanzi": 30956,
-            "nonWs": 44857,
+            "hanzi": 31732,
+            "nonWs": 46137,
             "metaChapters": 8,
             "metaWords": 25293,
             "status": "wip",
@@ -386,8 +386,8 @@
             "dir": "textbooks/01-zhongyi/05-zhongyi-zhen-duan-xue",
             "exists": true,
             "chapters": 14,
-            "hanzi": 22462,
-            "nonWs": 33639,
+            "hanzi": 22461,
+            "nonWs": 33638,
             "metaChapters": 14,
             "metaWords": 27465,
             "status": "wip",
@@ -583,8 +583,8 @@
             "dir": "textbooks/01-zhongyi/09-wenbing-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 196952,
-            "nonWs": 236643,
+            "hanzi": 196908,
+            "nonWs": 236599,
             "metaChapters": 12,
             "metaWords": 231982,
             "status": "wip",
@@ -633,8 +633,8 @@
             "dir": "textbooks/01-zhongyi/10-zhongyi-neike-xue",
             "exists": true,
             "chapters": 14,
-            "hanzi": 339542,
-            "nonWs": 421791,
+            "hanzi": 339464,
+            "nonWs": 421713,
             "metaChapters": 12,
             "metaWords": 405580,
             "status": "wip",
@@ -688,8 +688,8 @@
             "dir": "textbooks/01-zhongyi/11-zhongyi-waike-xue",
             "exists": true,
             "chapters": 13,
-            "hanzi": 249728,
-            "nonWs": 306301,
+            "hanzi": 249720,
+            "nonWs": 306293,
             "metaChapters": 13,
             "metaWords": 298235,
             "status": "wip",
@@ -738,8 +738,8 @@
             "dir": "textbooks/01-zhongyi/12-zhongyi-fuke-xue",
             "exists": true,
             "chapters": 13,
-            "hanzi": 241106,
-            "nonWs": 296374,
+            "hanzi": 240955,
+            "nonWs": 296223,
             "metaChapters": 13,
             "metaWords": 288344,
             "status": "wip",
@@ -788,8 +788,8 @@
             "dir": "textbooks/01-zhongyi/13-zhongyi-erke-xue",
             "exists": true,
             "chapters": 14,
-            "hanzi": 230651,
-            "nonWs": 282806,
+            "hanzi": 230639,
+            "nonWs": 282794,
             "metaChapters": 14,
             "metaWords": 275093,
             "status": "wip",
@@ -885,8 +885,8 @@
             "dir": "textbooks/01-zhongyi/15-zhongyi-gejia-xueshuo",
             "exists": true,
             "chapters": 14,
-            "hanzi": 339020,
-            "nonWs": 403238,
+            "hanzi": 339016,
+            "nonWs": 403234,
             "metaChapters": 14,
             "metaWords": 397230,
             "status": "wip",
@@ -935,8 +935,8 @@
             "dir": "textbooks/01-zhongyi/16-zhongyi-zhexue-shi",
             "exists": true,
             "chapters": 8,
-            "hanzi": 22400,
-            "nonWs": 32736,
+            "hanzi": 22398,
+            "nonWs": 32734,
             "metaChapters": 8,
             "metaWords": 29208,
             "status": "wip",
@@ -987,8 +987,8 @@
             "dir": "textbooks/01-zhongyi/17-zhongyi-jizhen-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 154595,
-            "nonWs": 184518,
+            "hanzi": 154542,
+            "nonWs": 184465,
             "metaChapters": 12,
             "metaWords": 179742,
             "status": "wip",
@@ -1040,8 +1040,8 @@
             "dir": "textbooks/01-zhongyi/18-zhongyi-gubing-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 153088,
-            "nonWs": 184492,
+            "hanzi": 153078,
+            "nonWs": 184482,
             "metaChapters": 12,
             "metaWords": 179266,
             "status": "wip",
@@ -1093,8 +1093,8 @@
             "dir": "textbooks/01-zhongyi/19-zhongyi-laonianbing-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 191131,
-            "nonWs": 232315,
+            "hanzi": 191119,
+            "nonWs": 232303,
             "metaChapters": 12,
             "metaWords": 227188,
             "status": "wip",
@@ -1145,8 +1145,8 @@
             "dir": "textbooks/01-zhongyi/20-zhongyi-jingshenbing-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 157396,
-            "nonWs": 186503,
+            "hanzi": 157321,
+            "nonWs": 186428,
             "metaChapters": 12,
             "metaWords": 181695,
             "status": "wip",
@@ -1388,8 +1388,8 @@
             "dir": "textbooks/01-zhongyi/02-yi-gu-wen",
             "exists": true,
             "chapters": 12,
-            "hanzi": 133991,
-            "nonWs": 176689,
+            "hanzi": 133953,
+            "nonWs": 176651,
             "metaChapters": 12,
             "metaWords": 172023,
             "status": "wip",
@@ -1435,8 +1435,8 @@
             "dir": "textbooks/01-zhongyi/03-zhongguo-yixue-shi",
             "exists": true,
             "chapters": 12,
-            "hanzi": 97471,
-            "nonWs": 118457,
+            "hanzi": 97468,
+            "nonWs": 118454,
             "metaChapters": 12,
             "metaWords": 113628,
             "status": "wip",
@@ -1485,8 +1485,8 @@
             "dir": "textbooks/01-zhongyi/16-zhongyi-zhexue-shi",
             "exists": true,
             "chapters": 8,
-            "hanzi": 22400,
-            "nonWs": 32736,
+            "hanzi": 22398,
+            "nonWs": 32734,
             "metaChapters": 8,
             "metaWords": 29208,
             "status": "wip",
@@ -1537,8 +1537,8 @@
             "dir": "textbooks/01-zhongyi/05-zhongyi-zhen-duan-xue",
             "exists": true,
             "chapters": 14,
-            "hanzi": 22462,
-            "nonWs": 33639,
+            "hanzi": 22461,
+            "nonWs": 33638,
             "metaChapters": 14,
             "metaWords": 27465,
             "status": "wip",
@@ -1690,8 +1690,8 @@
             "dir": "textbooks/01-zhongyi/04-zhongyi-tizhi-xue",
             "exists": true,
             "chapters": 8,
-            "hanzi": 30956,
-            "nonWs": 44857,
+            "hanzi": 31732,
+            "nonWs": 46137,
             "metaChapters": 8,
             "metaWords": 25293,
             "status": "wip",
@@ -1778,8 +1778,8 @@
             "dir": "textbooks/01-zhongyi/09-wenbing-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 196952,
-            "nonWs": 236643,
+            "hanzi": 196908,
+            "nonWs": 236599,
             "metaChapters": 12,
             "metaWords": 231982,
             "status": "wip",
@@ -1828,8 +1828,8 @@
             "dir": "textbooks/01-zhongyi/10-zhongyi-neike-xue",
             "exists": true,
             "chapters": 14,
-            "hanzi": 339542,
-            "nonWs": 421791,
+            "hanzi": 339464,
+            "nonWs": 421713,
             "metaChapters": 12,
             "metaWords": 405580,
             "status": "wip",
@@ -1883,8 +1883,8 @@
             "dir": "textbooks/01-zhongyi/13-zhongyi-erke-xue",
             "exists": true,
             "chapters": 14,
-            "hanzi": 230651,
-            "nonWs": 282806,
+            "hanzi": 230639,
+            "nonWs": 282794,
             "metaChapters": 14,
             "metaWords": 275093,
             "status": "wip",
@@ -1933,8 +1933,8 @@
             "dir": "textbooks/01-zhongyi/11-zhongyi-waike-xue",
             "exists": true,
             "chapters": 13,
-            "hanzi": 249728,
-            "nonWs": 306301,
+            "hanzi": 249720,
+            "nonWs": 306293,
             "metaChapters": 13,
             "metaWords": 298235,
             "status": "wip",
@@ -1983,8 +1983,8 @@
             "dir": "textbooks/01-zhongyi/12-zhongyi-fuke-xue",
             "exists": true,
             "chapters": 13,
-            "hanzi": 241106,
-            "nonWs": 296374,
+            "hanzi": 240955,
+            "nonWs": 296223,
             "metaChapters": 13,
             "metaWords": 288344,
             "status": "wip",
@@ -2033,8 +2033,8 @@
             "dir": "textbooks/01-zhongyi/15-zhongyi-gejia-xueshuo",
             "exists": true,
             "chapters": 14,
-            "hanzi": 339020,
-            "nonWs": 403238,
+            "hanzi": 339016,
+            "nonWs": 403234,
             "metaChapters": 14,
             "metaWords": 397230,
             "status": "wip",
@@ -2083,8 +2083,8 @@
             "dir": "textbooks/01-zhongyi/19-zhongyi-laonianbing-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 191131,
-            "nonWs": 232315,
+            "hanzi": 191119,
+            "nonWs": 232303,
             "metaChapters": 12,
             "metaWords": 227188,
             "status": "wip",
@@ -2182,8 +2182,8 @@
             "dir": "textbooks/01-zhongyi/18-zhongyi-gubing-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 153088,
-            "nonWs": 184492,
+            "hanzi": 153078,
+            "nonWs": 184482,
             "metaChapters": 12,
             "metaWords": 179266,
             "status": "wip",
@@ -2235,8 +2235,8 @@
             "dir": "textbooks/01-zhongyi/20-zhongyi-jingshenbing-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 157396,
-            "nonWs": 186503,
+            "hanzi": 157321,
+            "nonWs": 186428,
             "metaChapters": 12,
             "metaWords": 181695,
             "status": "wip",
@@ -2337,8 +2337,8 @@
             "dir": "textbooks/01-zhongyi/17-zhongyi-jizhen-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 154595,
-            "nonWs": 184518,
+            "hanzi": 154542,
+            "nonWs": 184465,
             "metaChapters": 12,
             "metaWords": 179742,
             "status": "wip",
@@ -3012,14 +3012,14 @@
         "baseChapters": 274,
         "extChapters": 0,
         "hbChapters": 34,
-        "baseNonWs": 8017490,
+        "baseNonWs": 8018279,
         "extNonWs": 0,
         "hbNonWs": 53873,
         "coverageBaseHours": 85.2,
         "textbookHours": 1422,
         "chapters": 308,
-        "hanzi": 5959232,
-        "nonWs": 8071363,
+        "hanzi": 5959517,
+        "nonWs": 8072152,
         "coverageSubjects": 95.7,
         "coverageHours": 97.5,
         "semesterSpan": "1–10",
@@ -3199,8 +3199,8 @@
             "dir": "textbooks/02-zhongyao/04-zhongyao-ziyuan-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 161951,
-            "nonWs": 185162,
+            "hanzi": 161894,
+            "nonWs": 185105,
             "metaChapters": 12,
             "metaWords": 180284,
             "status": "wip",
@@ -3248,8 +3248,8 @@
             "dir": "textbooks/02-zhongyao/05-zhongyao-jianding-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 168990,
-            "nonWs": 203942,
+            "hanzi": 168905,
+            "nonWs": 203857,
             "metaChapters": 12,
             "metaWords": 186359,
             "status": "wip",
@@ -3298,8 +3298,8 @@
             "dir": "textbooks/02-zhongyao/06-zhongyao-huaxue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 206959,
-            "nonWs": 252828,
+            "hanzi": 206917,
+            "nonWs": 252786,
             "metaChapters": 12,
             "metaWords": 233962,
             "status": "wip",
@@ -3347,8 +3347,8 @@
             "dir": "textbooks/02-zhongyao/07-zhongyao-yaoli-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 211245,
-            "nonWs": 250487,
+            "hanzi": 211240,
+            "nonWs": 250482,
             "metaChapters": 12,
             "metaWords": 232861,
             "status": "wip",
@@ -3397,8 +3397,8 @@
             "dir": "textbooks/02-zhongyao/08-zhongyao-paozhi-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 162741,
-            "nonWs": 192488,
+            "hanzi": 162705,
+            "nonWs": 192452,
             "metaChapters": 12,
             "metaWords": 174240,
             "status": "wip",
@@ -3447,8 +3447,8 @@
             "dir": "textbooks/02-zhongyao/09-zhongyao-yaoji-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 206375,
-            "nonWs": 242131,
+            "hanzi": 206295,
+            "nonWs": 242051,
             "metaChapters": 12,
             "metaWords": 237388,
             "status": "wip",
@@ -3496,8 +3496,8 @@
             "dir": "textbooks/02-zhongyao/10-zhongyao-fenxi-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 162415,
-            "nonWs": 194531,
+            "hanzi": 162401,
+            "nonWs": 194517,
             "metaChapters": 12,
             "metaWords": 176143,
             "status": "wip",
@@ -3828,8 +3828,8 @@
             "dir": "textbooks/02-zhongyao/17-zhongyao-shangpin-xue",
             "exists": true,
             "chapters": 18,
-            "hanzi": 234282,
-            "nonWs": 280176,
+            "hanzi": 234278,
+            "nonWs": 280172,
             "metaChapters": 18,
             "metaWords": 229367,
             "status": "wip",
@@ -4170,8 +4170,8 @@
             "dir": "textbooks/02-zhongyao/04-zhongyao-ziyuan-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 161951,
-            "nonWs": 185162,
+            "hanzi": 161894,
+            "nonWs": 185105,
             "metaChapters": 12,
             "metaWords": 180284,
             "status": "wip",
@@ -4269,8 +4269,8 @@
             "dir": "textbooks/02-zhongyao/06-zhongyao-huaxue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 206959,
-            "nonWs": 252828,
+            "hanzi": 206917,
+            "nonWs": 252786,
             "metaChapters": 12,
             "metaWords": 233962,
             "status": "wip",
@@ -4318,8 +4318,8 @@
             "dir": "textbooks/02-zhongyao/05-zhongyao-jianding-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 168990,
-            "nonWs": 203942,
+            "hanzi": 168905,
+            "nonWs": 203857,
             "metaChapters": 12,
             "metaWords": 186359,
             "status": "wip",
@@ -4368,8 +4368,8 @@
             "dir": "textbooks/02-zhongyao/09-zhongyao-yaoji-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 206375,
-            "nonWs": 242131,
+            "hanzi": 206295,
+            "nonWs": 242051,
             "metaChapters": 12,
             "metaWords": 237388,
             "status": "wip",
@@ -4417,8 +4417,8 @@
             "dir": "textbooks/02-zhongyao/08-zhongyao-paozhi-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 162741,
-            "nonWs": 192488,
+            "hanzi": 162705,
+            "nonWs": 192452,
             "metaChapters": 12,
             "metaWords": 174240,
             "status": "wip",
@@ -4467,8 +4467,8 @@
             "dir": "textbooks/02-zhongyao/07-zhongyao-yaoli-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 211245,
-            "nonWs": 250487,
+            "hanzi": 211240,
+            "nonWs": 250482,
             "metaChapters": 12,
             "metaWords": 232861,
             "status": "wip",
@@ -4563,8 +4563,8 @@
             "dir": "textbooks/02-zhongyao/10-zhongyao-fenxi-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 162415,
-            "nonWs": 194531,
+            "hanzi": 162401,
+            "nonWs": 194517,
             "metaChapters": 12,
             "metaWords": 176143,
             "status": "wip",
@@ -4908,8 +4908,8 @@
             "dir": "textbooks/02-zhongyao/17-zhongyao-shangpin-xue",
             "exists": true,
             "chapters": 18,
-            "hanzi": 234282,
-            "nonWs": 280176,
+            "hanzi": 234278,
+            "nonWs": 280172,
             "metaChapters": 18,
             "metaWords": 229367,
             "status": "wip",
@@ -5568,14 +5568,14 @@
         "baseChapters": 221,
         "extChapters": 0,
         "hbChapters": 12,
-        "baseNonWs": 3506644,
+        "baseNonWs": 3506321,
         "extNonWs": 0,
         "hbNonWs": 21774,
         "coverageBaseHours": 69.7,
         "textbookHours": 1134,
         "chapters": 233,
-        "hanzi": 2931643,
-        "nonWs": 3528418,
+        "hanzi": 2931320,
+        "nonWs": 3528095,
         "coverageSubjects": 81,
         "coverageHours": 82.9,
         "semesterSpan": "2–10",
@@ -5609,8 +5609,8 @@
             "dir": "textbooks/03-zhenjiu/01-jingluo-xue",
             "exists": true,
             "chapters": 18,
-            "hanzi": 117330,
-            "nonWs": 145392,
+            "hanzi": 117329,
+            "nonWs": 145391,
             "metaChapters": 18,
             "metaWords": 137091,
             "status": "wip",
@@ -5708,8 +5708,8 @@
             "dir": "textbooks/03-zhenjiu/03-zhenjiu-yiji-xuan",
             "exists": true,
             "chapters": 10,
-            "hanzi": 185275,
-            "nonWs": 228816,
+            "hanzi": 185206,
+            "nonWs": 228747,
             "metaChapters": 10,
             "metaWords": 208975,
             "status": "wip",
@@ -5757,8 +5757,8 @@
             "dir": "textbooks/03-zhenjiu/04-qigong-xue",
             "exists": true,
             "chapters": 13,
-            "hanzi": 207666,
-            "nonWs": 240220,
+            "hanzi": 207664,
+            "nonWs": 240218,
             "metaChapters": 13,
             "metaWords": 234816,
             "status": "wip",
@@ -5809,8 +5809,8 @@
             "dir": "textbooks/03-zhenjiu/05-tuina-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 205112,
-            "nonWs": 241561,
+            "hanzi": 205101,
+            "nonWs": 241550,
             "metaChapters": 12,
             "metaWords": 236476,
             "status": "wip",
@@ -5859,8 +5859,8 @@
             "dir": "textbooks/03-zhenjiu/06-tuina-shoufa-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 258276,
-            "nonWs": 299616,
+            "hanzi": 258260,
+            "nonWs": 299600,
             "metaChapters": 12,
             "metaWords": 294823,
             "status": "wip",
@@ -5908,8 +5908,8 @@
             "dir": "textbooks/03-zhenjiu/07-cifa-jiufa-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 216348,
-            "nonWs": 258468,
+            "hanzi": 216315,
+            "nonWs": 258435,
             "metaChapters": 12,
             "metaWords": 234469,
             "status": "wip",
@@ -5957,8 +5957,8 @@
             "dir": "textbooks/03-zhenjiu/08-zhenjiu-zhiliao-xue",
             "exists": true,
             "chapters": 14,
-            "hanzi": 151811,
-            "nonWs": 193136,
+            "hanzi": 151809,
+            "nonWs": 193134,
             "metaChapters": 14,
             "metaWords": 187992,
             "status": "wip",
@@ -6383,8 +6383,8 @@
             "dir": "textbooks/03-zhenjiu/17-gejia-zhenjiu-xueshuo",
             "exists": true,
             "chapters": 12,
-            "hanzi": 144118,
-            "nonWs": 172769,
+            "hanzi": 144111,
+            "nonWs": 172762,
             "metaChapters": 12,
             "metaWords": 167166,
             "status": "wip",
@@ -6435,8 +6435,8 @@
             "dir": "textbooks/03-zhenjiu/18-tuina-gongfa-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 108366,
-            "nonWs": 130912,
+            "hanzi": 108360,
+            "nonWs": 130906,
             "metaChapters": 12,
             "metaWords": 111893,
             "status": "wip",
@@ -6484,8 +6484,8 @@
             "dir": "textbooks/03-zhenjiu/19-tuina-zhiliao-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 150794,
-            "nonWs": 180880,
+            "hanzi": 150782,
+            "nonWs": 180868,
             "metaChapters": 12,
             "metaWords": 176070,
             "status": "wip",
@@ -6534,8 +6534,8 @@
             "dir": "textbooks/03-zhenjiu/20-xiaoer-tuina-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 146328,
-            "nonWs": 178245,
+            "hanzi": 146310,
+            "nonWs": 178227,
             "metaChapters": 12,
             "metaWords": 173455,
             "status": "wip",
@@ -6677,8 +6677,8 @@
             "dir": "textbooks/03-zhenjiu/01-jingluo-xue",
             "exists": true,
             "chapters": 18,
-            "hanzi": 117330,
-            "nonWs": 145392,
+            "hanzi": 117329,
+            "nonWs": 145391,
             "metaChapters": 18,
             "metaWords": 137091,
             "status": "wip",
@@ -6726,8 +6726,8 @@
             "dir": "textbooks/03-zhenjiu/03-zhenjiu-yiji-xuan",
             "exists": true,
             "chapters": 10,
-            "hanzi": 185275,
-            "nonWs": 228816,
+            "hanzi": 185206,
+            "nonWs": 228747,
             "metaChapters": 10,
             "metaWords": 208975,
             "status": "wip",
@@ -6775,8 +6775,8 @@
             "dir": "textbooks/03-zhenjiu/04-qigong-xue",
             "exists": true,
             "chapters": 13,
-            "hanzi": 207666,
-            "nonWs": 240220,
+            "hanzi": 207664,
+            "nonWs": 240218,
             "metaChapters": 13,
             "metaWords": 234816,
             "status": "wip",
@@ -6877,8 +6877,8 @@
             "dir": "textbooks/03-zhenjiu/18-tuina-gongfa-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 108366,
-            "nonWs": 130912,
+            "hanzi": 108360,
+            "nonWs": 130906,
             "metaChapters": 12,
             "metaWords": 111893,
             "status": "wip",
@@ -6926,8 +6926,8 @@
             "dir": "textbooks/03-zhenjiu/06-tuina-shoufa-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 258276,
-            "nonWs": 299616,
+            "hanzi": 258260,
+            "nonWs": 299600,
             "metaChapters": 12,
             "metaWords": 294823,
             "status": "wip",
@@ -6975,8 +6975,8 @@
             "dir": "textbooks/03-zhenjiu/07-cifa-jiufa-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 216348,
-            "nonWs": 258468,
+            "hanzi": 216315,
+            "nonWs": 258435,
             "metaChapters": 12,
             "metaWords": 234469,
             "status": "wip",
@@ -7024,8 +7024,8 @@
             "dir": "textbooks/03-zhenjiu/05-tuina-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 205112,
-            "nonWs": 241561,
+            "hanzi": 205101,
+            "nonWs": 241550,
             "metaChapters": 12,
             "metaWords": 236476,
             "status": "wip",
@@ -7170,8 +7170,8 @@
             "dir": "textbooks/03-zhenjiu/08-zhenjiu-zhiliao-xue",
             "exists": true,
             "chapters": 14,
-            "hanzi": 151811,
-            "nonWs": 193136,
+            "hanzi": 151809,
+            "nonWs": 193134,
             "metaChapters": 14,
             "metaWords": 187992,
             "status": "wip",
@@ -7221,8 +7221,8 @@
             "dir": "textbooks/03-zhenjiu/17-gejia-zhenjiu-xueshuo",
             "exists": true,
             "chapters": 12,
-            "hanzi": 144118,
-            "nonWs": 172769,
+            "hanzi": 144111,
+            "nonWs": 172762,
             "metaChapters": 12,
             "metaWords": 167166,
             "status": "wip",
@@ -7414,8 +7414,8 @@
             "dir": "textbooks/03-zhenjiu/19-tuina-zhiliao-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 150794,
-            "nonWs": 180880,
+            "hanzi": 150782,
+            "nonWs": 180868,
             "metaChapters": 12,
             "metaWords": 176070,
             "status": "wip",
@@ -7602,8 +7602,8 @@
             "dir": "textbooks/03-zhenjiu/20-xiaoer-tuina-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 146328,
-            "nonWs": 178245,
+            "hanzi": 146310,
+            "nonWs": 178227,
             "metaChapters": 12,
             "metaWords": 173455,
             "status": "wip",
@@ -8235,14 +8235,14 @@
         "baseChapters": 198,
         "extChapters": 0,
         "hbChapters": 12,
-        "baseNonWs": 3064481,
+        "baseNonWs": 3064304,
         "extNonWs": 0,
         "hbNonWs": 23789,
         "coverageBaseHours": 62.3,
         "textbookHours": 1044,
         "chapters": 210,
-        "hanzi": 2558531,
-        "nonWs": 3088270,
+        "hanzi": 2558354,
+        "nonWs": 3088093,
         "coverageSubjects": 72.7,
         "coverageHours": 75.3,
         "semesterSpan": "2–10",
@@ -8367,8 +8367,8 @@
             "dir": "textbooks/04-gushang/03-gushang-kexue-jichu",
             "exists": true,
             "chapters": 11,
-            "hanzi": 327500,
-            "nonWs": 395106,
+            "hanzi": 327487,
+            "nonWs": 395093,
             "metaChapters": 11,
             "metaWords": 370455,
             "status": "wip",
@@ -9168,8 +9168,8 @@
             "dir": "textbooks/04-gushang/03-gushang-kexue-jichu",
             "exists": true,
             "chapters": 11,
-            "hanzi": 327500,
-            "nonWs": 395106,
+            "hanzi": 327487,
+            "nonWs": 395093,
             "metaChapters": 11,
             "metaWords": 370455,
             "status": "wip",
@@ -10250,14 +10250,14 @@
         "baseChapters": 59,
         "extChapters": 0,
         "hbChapters": 12,
-        "baseNonWs": 994466,
+        "baseNonWs": 994453,
         "extNonWs": 0,
         "hbNonWs": 23153,
         "coverageBaseHours": 32.8,
         "textbookHours": 558,
         "chapters": 71,
-        "hanzi": 847058,
-        "nonWs": 1017619,
+        "hanzi": 847045,
+        "nonWs": 1017606,
         "coverageSubjects": 41.2,
         "coverageHours": 48.4,
         "semesterSpan": "4–10",
@@ -10291,8 +10291,8 @@
             "dir": "textbooks/05-huli/01-zhongyi-huli-jichu",
             "exists": true,
             "chapters": 18,
-            "hanzi": 323896,
-            "nonWs": 365779,
+            "hanzi": 323898,
+            "nonWs": 365781,
             "metaChapters": 18,
             "metaWords": 358220,
             "status": "wip",
@@ -10476,8 +10476,8 @@
             "dir": "textbooks/05-huli/05-zhongyi-yangsheng-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 227737,
-            "nonWs": 271182,
+            "hanzi": 227710,
+            "nonWs": 271155,
             "metaChapters": 12,
             "metaWords": 265935,
             "status": "wip",
@@ -10525,8 +10525,8 @@
             "dir": "textbooks/05-huli/06-zhongyi-xinli-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 158812,
-            "nonWs": 185697,
+            "hanzi": 158741,
+            "nonWs": 185626,
             "metaChapters": 12,
             "metaWords": 180894,
             "status": "wip",
@@ -10575,8 +10575,8 @@
             "dir": "textbooks/05-huli/07-neike-huli-xue",
             "exists": true,
             "chapters": 18,
-            "hanzi": 322545,
-            "nonWs": 364593,
+            "hanzi": 322549,
+            "nonWs": 364597,
             "metaChapters": 18,
             "metaWords": 357136,
             "status": "wip",
@@ -10626,8 +10626,8 @@
             "dir": "textbooks/05-huli/08-waike-huli-xue",
             "exists": true,
             "chapters": 18,
-            "hanzi": 318423,
-            "nonWs": 359752,
+            "hanzi": 318427,
+            "nonWs": 359756,
             "metaChapters": 18,
             "metaWords": 352325,
             "status": "wip",
@@ -10774,8 +10774,8 @@
             "dir": "textbooks/05-huli/11-shequ-huli-xue",
             "exists": true,
             "chapters": 18,
-            "hanzi": 358682,
-            "nonWs": 401859,
+            "hanzi": 358690,
+            "nonWs": 401867,
             "metaChapters": 18,
             "metaWords": 394362,
             "status": "wip",
@@ -10869,8 +10869,8 @@
             "dir": "textbooks/05-huli/13-huli-guanli-xue",
             "exists": true,
             "chapters": 18,
-            "hanzi": 352073,
-            "nonWs": 398008,
+            "hanzi": 352077,
+            "nonWs": 398012,
             "metaChapters": 18,
             "metaWords": 390551,
             "status": "wip",
@@ -10921,8 +10921,8 @@
             "dir": "textbooks/05-huli/14-huli-lunli-fagui",
             "exists": true,
             "chapters": 18,
-            "hanzi": 379067,
-            "nonWs": 416856,
+            "hanzi": 379081,
+            "nonWs": 416870,
             "metaChapters": 18,
             "metaWords": 409469,
             "status": "wip",
@@ -11014,8 +11014,8 @@
             "dir": "textbooks/05-huli/16-huli-xue-daolun",
             "exists": true,
             "chapters": 18,
-            "hanzi": 359361,
-            "nonWs": 408143,
+            "hanzi": 359373,
+            "nonWs": 408155,
             "metaChapters": 18,
             "metaWords": 361064,
             "status": "wip",
@@ -11064,8 +11064,8 @@
             "dir": "textbooks/05-huli/17-huli-xinli-xue",
             "exists": true,
             "chapters": 18,
-            "hanzi": 379483,
-            "nonWs": 422313,
+            "hanzi": 379495,
+            "nonWs": 422325,
             "metaChapters": 18,
             "metaWords": 375879,
             "status": "wip",
@@ -11116,8 +11116,8 @@
             "dir": "textbooks/05-huli/18-huli-zonghe-jineng",
             "exists": true,
             "chapters": 18,
-            "hanzi": 401847,
-            "nonWs": 448748,
+            "hanzi": 401849,
+            "nonWs": 448750,
             "metaChapters": 18,
             "metaWords": 400474,
             "status": "wip",
@@ -11165,8 +11165,8 @@
             "dir": "textbooks/05-huli/19-huli-renwen-goutong",
             "exists": true,
             "chapters": 18,
-            "hanzi": 377839,
-            "nonWs": 416828,
+            "hanzi": 377863,
+            "nonWs": 416852,
             "metaChapters": 18,
             "metaWords": 409261,
             "status": "wip",
@@ -11217,8 +11217,8 @@
             "dir": "textbooks/05-huli/20-jijiu-huli-xue",
             "exists": true,
             "chapters": 18,
-            "hanzi": 356969,
-            "nonWs": 406076,
+            "hanzi": 356973,
+            "nonWs": 406080,
             "metaChapters": 18,
             "metaWords": 356613,
             "status": "wip",
@@ -11266,8 +11266,8 @@
             "dir": "textbooks/05-huli/21-laonian-huli-xue",
             "exists": true,
             "chapters": 18,
-            "hanzi": 353153,
-            "nonWs": 401797,
+            "hanzi": 353163,
+            "nonWs": 401807,
             "metaChapters": 18,
             "metaWords": 354724,
             "status": "wip",
@@ -11318,8 +11318,8 @@
             "dir": "textbooks/05-huli/22-kangfu-huli-xue",
             "exists": true,
             "chapters": 18,
-            "hanzi": 348735,
-            "nonWs": 399383,
+            "hanzi": 348739,
+            "nonWs": 399387,
             "metaChapters": 18,
             "metaWords": 349892,
             "status": "wip",
@@ -11370,8 +11370,8 @@
             "dir": "textbooks/05-huli/23-jingshenke-huli-xue",
             "exists": true,
             "chapters": 18,
-            "hanzi": 390903,
-            "nonWs": 438709,
+            "hanzi": 390915,
+            "nonWs": 438721,
             "metaChapters": 18,
             "metaWords": 392838,
             "status": "wip",
@@ -11422,8 +11422,8 @@
             "dir": "textbooks/05-huli/24-zhongyi-huli-xue",
             "exists": true,
             "chapters": 18,
-            "hanzi": 345927,
-            "nonWs": 398190,
+            "hanzi": 345931,
+            "nonWs": 398194,
             "metaChapters": 18,
             "metaWords": 354798,
             "status": "wip",
@@ -11613,8 +11613,8 @@
             "dir": "textbooks/05-huli/16-huli-xue-daolun",
             "exists": true,
             "chapters": 18,
-            "hanzi": 359361,
-            "nonWs": 408143,
+            "hanzi": 359373,
+            "nonWs": 408155,
             "metaChapters": 18,
             "metaWords": 361064,
             "status": "wip",
@@ -11706,8 +11706,8 @@
             "dir": "textbooks/05-huli/01-zhongyi-huli-jichu",
             "exists": true,
             "chapters": 18,
-            "hanzi": 323896,
-            "nonWs": 365779,
+            "hanzi": 323898,
+            "nonWs": 365781,
             "metaChapters": 18,
             "metaWords": 358220,
             "status": "wip",
@@ -11755,8 +11755,8 @@
             "dir": "textbooks/05-huli/17-huli-xinli-xue",
             "exists": true,
             "chapters": 18,
-            "hanzi": 379483,
-            "nonWs": 422313,
+            "hanzi": 379495,
+            "nonWs": 422325,
             "metaChapters": 18,
             "metaWords": 375879,
             "status": "wip",
@@ -11807,8 +11807,8 @@
             "dir": "textbooks/05-huli/05-zhongyi-yangsheng-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 227737,
-            "nonWs": 271182,
+            "hanzi": 227710,
+            "nonWs": 271155,
             "metaChapters": 12,
             "metaWords": 265935,
             "status": "wip",
@@ -11856,8 +11856,8 @@
             "dir": "textbooks/05-huli/19-huli-renwen-goutong",
             "exists": true,
             "chapters": 18,
-            "hanzi": 377839,
-            "nonWs": 416828,
+            "hanzi": 377863,
+            "nonWs": 416852,
             "metaChapters": 18,
             "metaWords": 409261,
             "status": "wip",
@@ -12001,8 +12001,8 @@
             "dir": "textbooks/05-huli/18-huli-zonghe-jineng",
             "exists": true,
             "chapters": 18,
-            "hanzi": 401847,
-            "nonWs": 448748,
+            "hanzi": 401849,
+            "nonWs": 448750,
             "metaChapters": 18,
             "metaWords": 400474,
             "status": "wip",
@@ -12050,8 +12050,8 @@
             "dir": "textbooks/05-huli/06-zhongyi-xinli-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 158812,
-            "nonWs": 185697,
+            "hanzi": 158741,
+            "nonWs": 185626,
             "metaChapters": 12,
             "metaWords": 180894,
             "status": "wip",
@@ -12100,8 +12100,8 @@
             "dir": "textbooks/05-huli/20-jijiu-huli-xue",
             "exists": true,
             "chapters": 18,
-            "hanzi": 356969,
-            "nonWs": 406076,
+            "hanzi": 356973,
+            "nonWs": 406080,
             "metaChapters": 18,
             "metaWords": 356613,
             "status": "wip",
@@ -12149,8 +12149,8 @@
             "dir": "textbooks/05-huli/24-zhongyi-huli-xue",
             "exists": true,
             "chapters": 18,
-            "hanzi": 345927,
-            "nonWs": 398190,
+            "hanzi": 345931,
+            "nonWs": 398194,
             "metaChapters": 18,
             "metaWords": 354798,
             "status": "wip",
@@ -12199,8 +12199,8 @@
             "dir": "textbooks/05-huli/08-waike-huli-xue",
             "exists": true,
             "chapters": 18,
-            "hanzi": 318423,
-            "nonWs": 359752,
+            "hanzi": 318427,
+            "nonWs": 359756,
             "metaChapters": 18,
             "metaWords": 352325,
             "status": "wip",
@@ -12249,8 +12249,8 @@
             "dir": "textbooks/05-huli/07-neike-huli-xue",
             "exists": true,
             "chapters": 18,
-            "hanzi": 322545,
-            "nonWs": 364593,
+            "hanzi": 322549,
+            "nonWs": 364597,
             "metaChapters": 18,
             "metaWords": 357136,
             "status": "wip",
@@ -12300,8 +12300,8 @@
             "dir": "textbooks/05-huli/11-shequ-huli-xue",
             "exists": true,
             "chapters": 18,
-            "hanzi": 358682,
-            "nonWs": 401859,
+            "hanzi": 358690,
+            "nonWs": 401867,
             "metaChapters": 18,
             "metaWords": 394362,
             "status": "wip",
@@ -12349,8 +12349,8 @@
             "dir": "textbooks/05-huli/21-laonian-huli-xue",
             "exists": true,
             "chapters": 18,
-            "hanzi": 353153,
-            "nonWs": 401797,
+            "hanzi": 353163,
+            "nonWs": 401807,
             "metaChapters": 18,
             "metaWords": 354724,
             "status": "wip",
@@ -12401,8 +12401,8 @@
             "dir": "textbooks/05-huli/22-kangfu-huli-xue",
             "exists": true,
             "chapters": 18,
-            "hanzi": 348735,
-            "nonWs": 399383,
+            "hanzi": 348739,
+            "nonWs": 399387,
             "metaChapters": 18,
             "metaWords": 349892,
             "status": "wip",
@@ -12551,8 +12551,8 @@
             "dir": "textbooks/05-huli/14-huli-lunli-fagui",
             "exists": true,
             "chapters": 18,
-            "hanzi": 379067,
-            "nonWs": 416856,
+            "hanzi": 379081,
+            "nonWs": 416870,
             "metaChapters": 18,
             "metaWords": 409469,
             "status": "wip",
@@ -12601,8 +12601,8 @@
             "dir": "textbooks/05-huli/23-jingshenke-huli-xue",
             "exists": true,
             "chapters": 18,
-            "hanzi": 390903,
-            "nonWs": 438709,
+            "hanzi": 390915,
+            "nonWs": 438721,
             "metaChapters": 18,
             "metaWords": 392838,
             "status": "wip",
@@ -12653,8 +12653,8 @@
             "dir": "textbooks/05-huli/13-huli-guanli-xue",
             "exists": true,
             "chapters": 18,
-            "hanzi": 352073,
-            "nonWs": 398008,
+            "hanzi": 352077,
+            "nonWs": 398012,
             "metaChapters": 18,
             "metaWords": 390551,
             "status": "wip",
@@ -13525,14 +13525,14 @@
         "baseChapters": 382,
         "extChapters": 0,
         "hbChapters": 12,
-        "baseNonWs": 8134651,
+        "baseNonWs": 8134673,
         "extNonWs": 0,
         "hbNonWs": 23059,
         "coverageBaseHours": 78.3,
         "textbookHours": 1350,
         "chapters": 394,
-        "hanzi": 7208893,
-        "nonWs": 8157710,
+        "hanzi": 7208915,
+        "nonWs": 8157732,
         "coverageSubjects": 92.6,
         "coverageHours": 90.4,
         "semesterSpan": "2–10",
@@ -13701,8 +13701,8 @@
             "dir": "textbooks/06-guanli/04-weisheng-shiye-guanli",
             "exists": true,
             "chapters": 18,
-            "hanzi": 236815,
-            "nonWs": 286841,
+            "hanzi": 236814,
+            "nonWs": 286840,
             "metaChapters": 18,
             "metaWords": 278578,
             "status": "wip",
@@ -13799,8 +13799,8 @@
             "dir": "textbooks/06-guanli/06-yiyuan-guanli-xue",
             "exists": true,
             "chapters": 20,
-            "hanzi": 440905,
-            "nonWs": 522882,
+            "hanzi": 440907,
+            "nonWs": 522884,
             "metaChapters": 20,
             "metaWords": 514109,
             "status": "wip",
@@ -13938,8 +13938,8 @@
             "dir": "textbooks/06-guanli/09-yiliao-baoxian-jingji",
             "exists": true,
             "chapters": 18,
-            "hanzi": 332001,
-            "nonWs": 391356,
+            "hanzi": 331997,
+            "nonWs": 391352,
             "metaChapters": 18,
             "metaWords": 383885,
             "status": "wip",
@@ -14266,8 +14266,8 @@
             "dir": "textbooks/06-guanli/16-gonggong-guanli-xue",
             "exists": true,
             "chapters": 18,
-            "hanzi": 305731,
-            "nonWs": 372142,
+            "hanzi": 305730,
+            "nonWs": 372141,
             "metaChapters": 18,
             "metaWords": 324189,
             "status": "wip",
@@ -14316,8 +14316,8 @@
             "dir": "textbooks/06-guanli/17-guanli-xue-jichu",
             "exists": true,
             "chapters": 18,
-            "hanzi": 312994,
-            "nonWs": 380035,
+            "hanzi": 312996,
+            "nonWs": 380037,
             "metaChapters": 18,
             "metaWords": 371850,
             "status": "wip",
@@ -14366,8 +14366,8 @@
             "dir": "textbooks/06-guanli/18-guanli-xinli-xue",
             "exists": true,
             "chapters": 18,
-            "hanzi": 232715,
-            "nonWs": 299899,
+            "hanzi": 232723,
+            "nonWs": 299907,
             "metaChapters": 18,
             "metaWords": 291606,
             "status": "wip",
@@ -14468,8 +14468,8 @@
             "dir": "textbooks/06-guanli/20-weisheng-fa-xue",
             "exists": true,
             "chapters": 18,
-            "hanzi": 315309,
-            "nonWs": 363269,
+            "hanzi": 315307,
+            "nonWs": 363267,
             "metaChapters": 18,
             "metaWords": 355790,
             "status": "wip",
@@ -14520,8 +14520,8 @@
             "dir": "textbooks/06-guanli/21-yixue-lunli-xue",
             "exists": true,
             "chapters": 18,
-            "hanzi": 319015,
-            "nonWs": 360941,
+            "hanzi": 319017,
+            "nonWs": 360943,
             "metaChapters": 18,
             "metaWords": 353510,
             "status": "wip",
@@ -14570,8 +14570,8 @@
             "dir": "textbooks/06-guanli/22-yiyao-renli-ziyuan",
             "exists": true,
             "chapters": 18,
-            "hanzi": 210418,
-            "nonWs": 249884,
+            "hanzi": 210415,
+            "nonWs": 249881,
             "metaChapters": 18,
             "metaWords": 242267,
             "status": "wip",
@@ -14622,8 +14622,8 @@
             "dir": "textbooks/06-guanli/23-yiyuan-kuaiji-caiwu",
             "exists": true,
             "chapters": 18,
-            "hanzi": 333805,
-            "nonWs": 376076,
+            "hanzi": 333803,
+            "nonWs": 376074,
             "metaChapters": 18,
             "metaWords": 368449,
             "status": "wip",
@@ -14674,8 +14674,8 @@
             "dir": "textbooks/06-guanli/24-zhongyi-jiankang-guanli",
             "exists": true,
             "chapters": 18,
-            "hanzi": 329423,
-            "nonWs": 369211,
+            "hanzi": 329425,
+            "nonWs": 369213,
             "metaChapters": 18,
             "metaWords": 361730,
             "status": "wip",
@@ -14952,8 +14952,8 @@
             "dir": "textbooks/06-guanli/04-weisheng-shiye-guanli",
             "exists": true,
             "chapters": 18,
-            "hanzi": 236815,
-            "nonWs": 286841,
+            "hanzi": 236814,
+            "nonWs": 286840,
             "metaChapters": 18,
             "metaWords": 278578,
             "status": "wip",
@@ -15050,8 +15050,8 @@
             "dir": "textbooks/06-guanli/16-gonggong-guanli-xue",
             "exists": true,
             "chapters": 18,
-            "hanzi": 305731,
-            "nonWs": 372142,
+            "hanzi": 305730,
+            "nonWs": 372141,
             "metaChapters": 18,
             "metaWords": 324189,
             "status": "wip",
@@ -15100,8 +15100,8 @@
             "dir": "textbooks/06-guanli/17-guanli-xue-jichu",
             "exists": true,
             "chapters": 18,
-            "hanzi": 312994,
-            "nonWs": 380035,
+            "hanzi": 312996,
+            "nonWs": 380037,
             "metaChapters": 18,
             "metaWords": 371850,
             "status": "wip",
@@ -15150,8 +15150,8 @@
             "dir": "textbooks/06-guanli/18-guanli-xinli-xue",
             "exists": true,
             "chapters": 18,
-            "hanzi": 232715,
-            "nonWs": 299899,
+            "hanzi": 232723,
+            "nonWs": 299907,
             "metaChapters": 18,
             "metaWords": 291606,
             "status": "wip",
@@ -15290,8 +15290,8 @@
             "dir": "textbooks/06-guanli/06-yiyuan-guanli-xue",
             "exists": true,
             "chapters": 20,
-            "hanzi": 440905,
-            "nonWs": 522882,
+            "hanzi": 440907,
+            "nonWs": 522884,
             "metaChapters": 20,
             "metaWords": 514109,
             "status": "wip",
@@ -15339,8 +15339,8 @@
             "dir": "textbooks/06-guanli/09-yiliao-baoxian-jingji",
             "exists": true,
             "chapters": 18,
-            "hanzi": 332001,
-            "nonWs": 391356,
+            "hanzi": 331997,
+            "nonWs": 391352,
             "metaChapters": 18,
             "metaWords": 383885,
             "status": "wip",
@@ -15389,8 +15389,8 @@
             "dir": "textbooks/06-guanli/21-yixue-lunli-xue",
             "exists": true,
             "chapters": 18,
-            "hanzi": 319015,
-            "nonWs": 360941,
+            "hanzi": 319017,
+            "nonWs": 360943,
             "metaChapters": 18,
             "metaWords": 353510,
             "status": "wip",
@@ -15621,8 +15621,8 @@
             "dir": "textbooks/06-guanli/20-weisheng-fa-xue",
             "exists": true,
             "chapters": 18,
-            "hanzi": 315309,
-            "nonWs": 363269,
+            "hanzi": 315307,
+            "nonWs": 363267,
             "metaChapters": 18,
             "metaWords": 355790,
             "status": "wip",
@@ -15673,8 +15673,8 @@
             "dir": "textbooks/06-guanli/22-yiyao-renli-ziyuan",
             "exists": true,
             "chapters": 18,
-            "hanzi": 210418,
-            "nonWs": 249884,
+            "hanzi": 210415,
+            "nonWs": 249881,
             "metaChapters": 18,
             "metaWords": 242267,
             "status": "wip",
@@ -15825,8 +15825,8 @@
             "dir": "textbooks/06-guanli/23-yiyuan-kuaiji-caiwu",
             "exists": true,
             "chapters": 18,
-            "hanzi": 333805,
-            "nonWs": 376076,
+            "hanzi": 333803,
+            "nonWs": 376074,
             "metaChapters": 18,
             "metaWords": 368449,
             "status": "wip",
@@ -15877,8 +15877,8 @@
             "dir": "textbooks/06-guanli/24-zhongyi-jiankang-guanli",
             "exists": true,
             "chapters": 18,
-            "hanzi": 329423,
-            "nonWs": 369211,
+            "hanzi": 329425,
+            "nonWs": 369213,
             "metaChapters": 18,
             "metaWords": 361730,
             "status": "wip",
@@ -16629,14 +16629,14 @@
         "baseChapters": 262,
         "extChapters": 0,
         "hbChapters": 12,
-        "baseNonWs": 5515799,
+        "baseNonWs": 5515802,
         "extNonWs": 0,
         "hbNonWs": 22516,
         "coverageBaseHours": 52.8,
         "textbookHours": 864,
         "chapters": 274,
-        "hanzi": 4707187,
-        "nonWs": 5538315,
+        "hanzi": 4707190,
+        "nonWs": 5538318,
         "coverageSubjects": 65.4,
         "coverageHours": 66.7,
         "semesterSpan": "4–10",
@@ -16670,8 +16670,8 @@
             "dir": "textbooks/07-zhineng/01-yixue-rengong-zhineng-daolun",
             "exists": true,
             "chapters": 8,
-            "hanzi": 92756,
-            "nonWs": 119450,
+            "hanzi": 92752,
+            "nonWs": 119446,
             "metaChapters": 0,
             "metaWords": 0,
             "status": "planned",
@@ -17371,8 +17371,8 @@
             "dir": "textbooks/07-zhineng/16-jiqi-xuexi",
             "exists": true,
             "chapters": 16,
-            "hanzi": 199427,
-            "nonWs": 306149,
+            "hanzi": 199423,
+            "nonWs": 306145,
             "metaChapters": 16,
             "metaWords": 216088,
             "status": "wip",
@@ -17562,8 +17562,8 @@
             "dir": "textbooks/07-zhineng/01-yixue-rengong-zhineng-daolun",
             "exists": true,
             "chapters": 8,
-            "hanzi": 92756,
-            "nonWs": 119450,
+            "hanzi": 92752,
+            "nonWs": 119446,
             "metaChapters": 0,
             "metaWords": 0,
             "status": "planned",
@@ -17612,8 +17612,8 @@
             "dir": "textbooks/07-zhineng/16-jiqi-xuexi",
             "exists": true,
             "chapters": 16,
-            "hanzi": 199427,
-            "nonWs": 306149,
+            "hanzi": 199423,
+            "nonWs": 306145,
             "metaChapters": 16,
             "metaWords": 216088,
             "status": "wip",
@@ -18875,14 +18875,14 @@
         "baseChapters": 94,
         "extChapters": 0,
         "hbChapters": 12,
-        "baseNonWs": 510721,
+        "baseNonWs": 510713,
         "extNonWs": 0,
         "hbNonWs": 22580,
         "coverageBaseHours": 22.9,
         "textbookHours": 468,
         "chapters": 106,
-        "hanzi": 351140,
-        "nonWs": 533301,
+        "hanzi": 351132,
+        "nonWs": 533293,
         "coverageSubjects": 36.8,
         "coverageHours": 37.1,
         "semesterSpan": "3–10",
@@ -19154,8 +19154,8 @@
             "dir": "textbooks/08-wuguan/06-zhongyi-yanke-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 145991,
-            "nonWs": 176679,
+            "hanzi": 145954,
+            "nonWs": 176642,
             "metaChapters": 12,
             "metaWords": 171982,
             "status": "wip",
@@ -19204,8 +19204,8 @@
             "dir": "textbooks/08-wuguan/07-zhongyi-erbihou-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 190911,
-            "nonWs": 230308,
+            "hanzi": 190909,
+            "nonWs": 230306,
             "metaChapters": 12,
             "metaWords": 225114,
             "status": "wip",
@@ -19953,8 +19953,8 @@
             "dir": "textbooks/08-wuguan/07-zhongyi-erbihou-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 190911,
-            "nonWs": 230308,
+            "hanzi": 190909,
+            "nonWs": 230306,
             "metaChapters": 12,
             "metaWords": 225114,
             "status": "wip",
@@ -20139,8 +20139,8 @@
             "dir": "textbooks/08-wuguan/06-zhongyi-yanke-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 145991,
-            "nonWs": 176679,
+            "hanzi": 145954,
+            "nonWs": 176642,
             "metaChapters": 12,
             "metaWords": 171982,
             "status": "wip",
@@ -20886,14 +20886,14 @@
         "baseChapters": 112,
         "extChapters": 138,
         "hbChapters": 12,
-        "baseNonWs": 946823,
+        "baseNonWs": 946784,
         "extNonWs": 214152,
         "hbNonWs": 22578,
         "coverageBaseHours": 68.9,
         "textbookHours": 1026,
         "chapters": 262,
-        "hanzi": 910920,
-        "nonWs": 1183553,
+        "hanzi": 910881,
+        "nonWs": 1183514,
         "coverageSubjects": 94.1,
         "coverageHours": 93.4,
         "semesterSpan": "4–10",
@@ -21021,8 +21021,8 @@
             "dir": "textbooks/09-jichu/03-yixue-xibao-shengwu-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 50458,
-            "nonWs": 74614,
+            "hanzi": 51646,
+            "nonWs": 76558,
             "metaChapters": 12,
             "metaWords": 205699,
             "status": "wip",
@@ -21460,8 +21460,8 @@
             "dir": "textbooks/09-jichu/12-yaoli-xue",
             "exists": true,
             "chapters": 49,
-            "hanzi": 1163736,
-            "nonWs": 1301708,
+            "hanzi": 1163737,
+            "nonWs": 1301709,
             "metaChapters": 49,
             "metaWords": 1169707,
             "status": "wip",
@@ -21800,8 +21800,8 @@
             "dir": "textbooks/09-jichu/03-yixue-xibao-shengwu-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 50458,
-            "nonWs": 74614,
+            "hanzi": 51646,
+            "nonWs": 76558,
             "metaChapters": 12,
             "metaWords": 205699,
             "status": "wip",
@@ -22336,8 +22336,8 @@
             "dir": "textbooks/09-jichu/12-yaoli-xue",
             "exists": true,
             "chapters": 49,
-            "hanzi": 1163736,
-            "nonWs": 1301708,
+            "hanzi": 1163737,
+            "nonWs": 1301709,
             "metaChapters": 49,
             "metaWords": 1169707,
             "status": "wip",
@@ -22963,14 +22963,14 @@
         "baseChapters": 291,
         "extChapters": 0,
         "hbChapters": 12,
-        "baseNonWs": 6245035,
+        "baseNonWs": 6246980,
         "extNonWs": 0,
         "hbNonWs": 23038,
         "coverageBaseHours": 79.1,
         "textbookHours": 999,
         "chapters": 303,
-        "hanzi": 5509770,
-        "nonWs": 6268073,
+        "hanzi": 5510959,
+        "nonWs": 6270018,
         "coverageSubjects": 94.1,
         "coverageHours": 96.5,
         "semesterSpan": "1–10",
@@ -22993,9 +22993,9 @@
           "hours": 36,
           "body": {
             "chapters": 10,
-            "chars": 46330
+            "chars": 47960
           },
-          "note": "教学章已有正文（10 章 / 4.6 万字），未接教材出版线"
+          "note": "教学章已有正文（10 章 / 4.8 万字），未接教材出版线"
         }
       ]
     },
@@ -23012,9 +23012,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 35136
+            "chars": 36424
           },
-          "note": "教学章已有正文（8 章 / 3.5 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 3.6 万字），未接教材出版线"
         },
         {
           "slug": "12-daodi-yaocai",
@@ -23024,9 +23024,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 35301
+            "chars": 36605
           },
-          "note": "教学章已有正文（8 章 / 3.5 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 3.7 万字），未接教材出版线"
         },
         {
           "slug": "13-zhongchengyao-linchuang",
@@ -23036,9 +23036,9 @@
           "hours": 72,
           "body": {
             "chapters": 10,
-            "chars": 39338
+            "chars": 40958
           },
-          "note": "教学章已有正文（10 章 / 3.9 万字），未接教材出版线"
+          "note": "教学章已有正文（10 章 / 4.1 万字），未接教材出版线"
         },
         {
           "slug": "14-peiwu-yu-jinji",
@@ -23048,9 +23048,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 34330
+            "chars": 35618
           },
-          "note": "教学章已有正文（8 章 / 3.4 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 3.6 万字），未接教材出版线"
         }
       ]
     },
@@ -23067,9 +23067,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 42566
+            "chars": 43846
           },
-          "note": "教学章已有正文（8 章 / 4.3 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 4.4 万字），未接教材出版线"
         },
         {
           "slug": "11-wuli-zhiliao",
@@ -23079,9 +23079,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 43089
+            "chars": 44393
           },
-          "note": "教学章已有正文（8 章 / 4.3 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 4.4 万字），未接教材出版线"
         },
         {
           "slug": "12-erxue-zhenduan-xue",
@@ -23091,9 +23091,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 37914
+            "chars": 39186
           },
-          "note": "教学章已有正文（8 章 / 3.8 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 3.9 万字），未接教材出版线"
         },
         {
           "slug": "13-zhendao-yixue",
@@ -23103,9 +23103,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 43731
+            "chars": 44995
           },
-          "note": "教学章已有正文（8 章 / 4.4 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 4.5 万字），未接教材出版线"
         },
         {
           "slug": "14-zhenjiu-zhentong-mazui",
@@ -23115,9 +23115,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 36886
+            "chars": 38174
           },
-          "note": "教学章已有正文（8 章 / 3.7 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 3.8 万字），未接教材出版线"
         },
         {
           "slug": "15-zhongyi-kangfu-xue",
@@ -23127,9 +23127,9 @@
           "hours": 72,
           "body": {
             "chapters": 10,
-            "chars": 55484
+            "chars": 57074
           },
-          "note": "教学章已有正文（10 章 / 5.5 万字），未接教材出版线"
+          "note": "教学章已有正文（10 章 / 5.7 万字），未接教材出版线"
         }
       ]
     },
@@ -23146,9 +23146,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 29108
+            "chars": 30380
           },
-          "note": "教学章已有正文（8 章 / 2.9 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 3.0 万字），未接教材出版线"
         },
         {
           "slug": "02-yao-shang-jiepou",
@@ -23158,9 +23158,9 @@
           "hours": 72,
           "body": {
             "chapters": 10,
-            "chars": 38945
+            "chars": 40535
           },
-          "note": "教学章已有正文（10 章 / 3.9 万字），未接教材出版线"
+          "note": "教学章已有正文（10 章 / 4.1 万字），未接教材出版线"
         },
         {
           "slug": "04-chuangshang-jijiu-xue",
@@ -23170,9 +23170,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 29927
+            "chars": 31199
           },
-          "note": "教学章已有正文（8 章 / 3.0 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 3.1 万字），未接教材出版线"
         },
         {
           "slug": "05-yundong-yixue",
@@ -23182,9 +23182,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 27141
+            "chars": 28445
           },
-          "note": "教学章已有正文（8 章 / 2.7 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 2.8 万字），未接教材出版线"
         },
         {
           "slug": "10-jizhu-bing-xue",
@@ -23194,9 +23194,9 @@
           "hours": 72,
           "body": {
             "chapters": 10,
-            "chars": 32957
+            "chars": 34537
           },
-          "note": "教学章已有正文（10 章 / 3.3 万字），未接教材出版线"
+          "note": "教学章已有正文（10 章 / 3.5 万字），未接教材出版线"
         },
         {
           "slug": "11-guanjie-bing-xue",
@@ -23206,9 +23206,9 @@
           "hours": 72,
           "body": {
             "chapters": 10,
-            "chars": 38857
+            "chars": 40437
           },
-          "note": "教学章已有正文（10 章 / 3.9 万字），未接教材出版线"
+          "note": "教学章已有正文（10 章 / 4.0 万字），未接教材出版线"
         },
         {
           "slug": "12-guzhishusong-tuibian",
@@ -23218,9 +23218,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 30210
+            "chars": 31522
           },
-          "note": "教学章已有正文（8 章 / 3.0 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 3.2 万字），未接教材出版线"
         },
         {
           "slug": "13-zhongyi-zhengji-xue",
@@ -23230,9 +23230,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 29261
+            "chars": 30533
           },
-          "note": "教学章已有正文（8 章 / 2.9 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 3.1 万字），未接教材出版线"
         },
         {
           "slug": "14-kangfu-gongcheng-zhiju",
@@ -23242,9 +23242,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 30309
+            "chars": 31605
           },
-          "note": "教学章已有正文（8 章 / 3.0 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 3.2 万字），未接教材出版线"
         },
         {
           "slug": "15-gushang-kangfu-pingding",
@@ -23254,9 +23254,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 26464
+            "chars": 27744
           },
-          "note": "教学章已有正文（8 章 / 2.6 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 2.8 万字），未接教材出版线"
         }
       ]
     },
@@ -23273,9 +23273,9 @@
           "hours": 72,
           "body": {
             "chapters": 14,
-            "chars": 54982
+            "chars": 57208
           },
-          "note": "教学章已有正文（14 章 / 5.5 万字），未接教材出版线"
+          "note": "教学章已有正文（14 章 / 5.7 万字），未接教材出版线"
         },
         {
           "slug": "12-jiwei-zhengzheng-huli",
@@ -23285,9 +23285,9 @@
           "hours": 72,
           "body": {
             "chapters": 10,
-            "chars": 39254
+            "chars": 40864
           },
-          "note": "教学章已有正文（10 章 / 3.9 万字），未接教材出版线"
+          "note": "教学章已有正文（10 章 / 4.1 万字），未接教材出版线"
         }
       ]
     },
@@ -23304,9 +23304,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 30694
+            "chars": 31990
           },
-          "note": "教学章已有正文（8 章 / 3.1 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 3.2 万字），未接教材出版线"
         },
         {
           "slug": "03-zhongyi-guanli-xue",
@@ -23316,9 +23316,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 26515
+            "chars": 27787
           },
-          "note": "教学章已有正文（8 章 / 2.7 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 2.8 万字），未接教材出版线"
         },
         {
           "slug": "05-zhongyi-wenhua-chuanbo",
@@ -23328,9 +23328,9 @@
           "hours": 36,
           "body": {
             "chapters": 6,
-            "chars": 21464
+            "chars": 22430
           },
-          "note": "教学章已有正文（6 章 / 2.1 万字），未接教材出版线"
+          "note": "教学章已有正文（6 章 / 2.2 万字），未接教材出版线"
         },
         {
           "slug": "07-zhongyi-jiaoyu-xue",
@@ -23340,9 +23340,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 29331
+            "chars": 30603
           },
-          "note": "教学章已有正文（8 章 / 2.9 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 3.1 万字），未接教材出版线"
         },
         {
           "slug": "08-jiankang-fuwu-guanli",
@@ -23352,9 +23352,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 26754
+            "chars": 28042
           },
-          "note": "教学章已有正文（8 章 / 2.7 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 2.8 万字），未接教材出版线"
         },
         {
           "slug": "11-yiyuan-xinxihua-bingan",
@@ -23364,9 +23364,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 29297
+            "chars": 30609
           },
-          "note": "教学章已有正文（8 章 / 2.9 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 3.1 万字），未接教材出版线"
         },
         {
           "slug": "12-zhongyiyao-biaozhunhua",
@@ -23376,9 +23376,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 27446
+            "chars": 28726
           },
-          "note": "教学章已有正文（8 章 / 2.7 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 2.9 万字），未接教材出版线"
         },
         {
           "slug": "14-zhishichanquan-zhuanhua",
@@ -23388,9 +23388,9 @@
           "hours": 36,
           "body": {
             "chapters": 6,
-            "chars": 23639
+            "chars": 24635
           },
-          "note": "教学章已有正文（6 章 / 2.4 万字），未接教材出版线"
+          "note": "教学章已有正文（6 章 / 2.5 万字），未接教材出版线"
         },
         {
           "slug": "15-zhongyi-guojijiaoyu",
@@ -23400,9 +23400,9 @@
           "hours": 36,
           "body": {
             "chapters": 6,
-            "chars": 22664
+            "chars": 23642
           },
-          "note": "教学章已有正文（6 章 / 2.3 万字），未接教材出版线"
+          "note": "教学章已有正文（6 章 / 2.4 万字），未接教材出版线"
         }
       ]
     },
@@ -23419,9 +23419,9 @@
           "hours": 72,
           "body": {
             "chapters": 10,
-            "chars": 36365
+            "chars": 37975
           },
-          "note": "教学章已有正文（10 章 / 3.6 万字），未接教材出版线"
+          "note": "教学章已有正文（10 章 / 3.8 万字），未接教材出版线"
         },
         {
           "slug": "04-zhongyi-ziran-yuyan-chuli",
@@ -23431,9 +23431,9 @@
           "hours": 72,
           "body": {
             "chapters": 10,
-            "chars": 38909
+            "chars": 40529
           },
-          "note": "教学章已有正文（10 章 / 3.9 万字），未接教材出版线"
+          "note": "教学章已有正文（10 章 / 4.1 万字），未接教材出版线"
         },
         {
           "slug": "06-zhongyi-zhineng-bianzheng",
@@ -23443,9 +23443,9 @@
           "hours": 72,
           "body": {
             "chapters": 10,
-            "chars": 37960
+            "chars": 39580
           },
-          "note": "教学章已有正文（10 章 / 3.8 万字），未接教材出版线"
+          "note": "教学章已有正文（10 章 / 4.0 万字），未接教材出版线"
         },
         {
           "slug": "07-yixue-tuxiang-shezhen",
@@ -23455,9 +23455,9 @@
           "hours": 72,
           "body": {
             "chapters": 10,
-            "chars": 41728
+            "chars": 43388
           },
-          "note": "教学章已有正文（10 章 / 4.2 万字），未接教材出版线"
+          "note": "教学章已有正文（10 章 / 4.3 万字），未接教材出版线"
         },
         {
           "slug": "08-maizhen-keguanhua",
@@ -23467,9 +23467,9 @@
           "hours": 72,
           "body": {
             "chapters": 10,
-            "chars": 43332
+            "chars": 44972
           },
-          "note": "教学章已有正文（10 章 / 4.3 万字），未接教材出版线"
+          "note": "教学章已有正文（10 章 / 4.5 万字），未接教材出版线"
         },
         {
           "slug": "09-zhongyi-dashuju-fenxi",
@@ -23479,9 +23479,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 35438
+            "chars": 36726
           },
-          "note": "教学章已有正文（8 章 / 3.5 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 3.7 万字），未接教材出版线"
         },
         {
           "slug": "10-llm-yu-zhongyi-zhinengti",
@@ -23491,9 +23491,9 @@
           "hours": 90,
           "body": {
             "chapters": 12,
-            "chars": 45987
+            "chars": 47967
           },
-          "note": "教学章已有正文（12 章 / 4.6 万字），未接教材出版线"
+          "note": "教学章已有正文（12 章 / 4.8 万字），未接教材出版线"
         },
         {
           "slug": "11-zhongyi-jiqiren-xue",
@@ -23503,9 +23503,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 31162
+            "chars": 32442
           },
-          "note": "教学章已有正文（8 章 / 3.1 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 3.2 万字），未接教材出版线"
         },
         {
           "slug": "12-shuzi-renti-xuni-fangzhen",
@@ -23515,9 +23515,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 31399
+            "chars": 32703
           },
-          "note": "教学章已有正文（8 章 / 3.1 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 3.3 万字），未接教材出版线"
         },
         {
           "slug": "13-zhongyi-duomotai-ronghe",
@@ -23527,9 +23527,9 @@
           "hours": 72,
           "body": {
             "chapters": 10,
-            "chars": 38615
+            "chars": 40245
           },
-          "note": "教学章已有正文（10 章 / 3.9 万字），未接教材出版线"
+          "note": "教学章已有正文（10 章 / 4.0 万字），未接教材出版线"
         },
         {
           "slug": "14-yixue-shuju-anquan-yinsi",
@@ -23539,9 +23539,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 35086
+            "chars": 36406
           },
-          "note": "教学章已有正文（8 章 / 3.5 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 3.6 万字），未接教材出版线"
         },
         {
           "slug": "15-zhongyi-ai-lunli-zhili",
@@ -23551,9 +23551,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 27806
+            "chars": 29110
           },
-          "note": "教学章已有正文（8 章 / 2.8 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 2.9 万字），未接教材出版线"
         }
       ]
     },
@@ -23570,9 +23570,9 @@
           "hours": 72,
           "body": {
             "chapters": 10,
-            "chars": 44290
+            "chars": 45900
           },
-          "note": "教学章已有正文（10 章 / 4.4 万字），未接教材出版线"
+          "note": "教学章已有正文（10 章 / 4.6 万字），未接教材出版线"
         }
       ]
     },
@@ -23589,9 +23589,9 @@
           "hours": 36,
           "body": {
             "chapters": 12,
-            "chars": 45466
+            "chars": 47374
           },
-          "note": "教学章已有正文（12 章 / 4.5 万字），未接教材出版线"
+          "note": "教学章已有正文（12 章 / 4.7 万字），未接教材出版线"
         }
       ]
     }
@@ -23662,7 +23662,7 @@
     "curriculumSubjects": 189,
     "curriculumHours": 11547,
     "diskChapters": 2161,
-    "diskHanzi": 30984374,
+    "diskHanzi": 30985313,
     "registryFiles": 100,
     "subjectsWithoutTextbook": 46,
     "unmatchedRegistrySubjects": []

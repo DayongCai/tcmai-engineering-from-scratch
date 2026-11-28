@@ -110,3 +110,9 @@ node scripts/audit_course_docs.js --dept=03-zhenjiu --subject=09-kangfu-yixue-ji
 ```
 
 该命令只核形式条件；内容对错须回到 `units.json` 逐单元比对，尤其是 3.2、3.3 两个单元与本章标题的对应关系。
+
+## 资料来源（主要参考）
+
+- 底本：康复医学基础。
+- 体例与校验：章节映射见本课 `chapters.json`，正文可逐条核对到 `chapters/<slug>/docs/zh.md`。
+- 开源说明：本资料为人类共同知识财产的整理与再表述，不等于原著；引用只为溯源，不代表任何个人或机构审阅、认可或背书。全篇不署个人姓名与职务。

@@ -17,8 +17,8 @@
   "chaptersPct": 100,
   "textbookSubjects": 143,
   "textbookChapters": 2161,
-  "hanzi": 30984374,
-  "nonWs": 37386622,
+  "hanzi": 30985313,
+  "nonWs": 37388821,
   "syndromes": 97,
   "syndromeUnits": 104,
   "shanghanTiao": 398,
@@ -200,7 +200,7 @@
    "chaptersTarget": 291,
    "chaptersBuilt": 291,
    "textbookSubjects": 22,
-   "hanzi": 5959232,
+   "hanzi": 5959517,
    "thin": 5,
    "noBook": 1,
    "videos": 24
@@ -213,7 +213,7 @@
    "chaptersTarget": 235,
    "chaptersBuilt": 235,
    "textbookSubjects": 17,
-   "hanzi": 2931643,
+   "hanzi": 2931320,
    "thin": 4,
    "noBook": 4,
    "videos": 0
@@ -226,7 +226,7 @@
    "chaptersTarget": 228,
    "chaptersBuilt": 228,
    "textbookSubjects": 16,
-   "hanzi": 2558531,
+   "hanzi": 2558354,
    "thin": 2,
    "noBook": 6,
    "videos": 0
@@ -239,7 +239,7 @@
    "chaptersTarget": 150,
    "chaptersBuilt": 150,
    "textbookSubjects": 7,
-   "hanzi": 847058,
+   "hanzi": 847045,
    "thin": 2,
    "noBook": 10,
    "videos": 0
@@ -252,7 +252,7 @@
    "chaptersTarget": 348,
    "chaptersBuilt": 348,
    "textbookSubjects": 25,
-   "hanzi": 7208893,
+   "hanzi": 7208915,
    "thin": 2,
    "noBook": 2,
    "videos": 0
@@ -265,7 +265,7 @@
    "chaptersTarget": 292,
    "chaptersBuilt": 292,
    "textbookSubjects": 17,
-   "hanzi": 4707187,
+   "hanzi": 4707190,
    "thin": 1,
    "noBook": 9,
    "videos": 0
@@ -278,7 +278,7 @@
    "chaptersTarget": 166,
    "chaptersBuilt": 166,
    "textbookSubjects": 7,
-   "hanzi": 351140,
+   "hanzi": 351132,
    "thin": 4,
    "noBook": 12,
    "videos": 0
@@ -291,7 +291,7 @@
    "chaptersTarget": 144,
    "chaptersBuilt": 144,
    "textbookSubjects": 16,
-   "hanzi": 910920,
+   "hanzi": 910881,
    "thin": 12,
    "noBook": 1,
    "videos": 0
@@ -304,7 +304,7 @@
    "chaptersTarget": 315,
    "chaptersBuilt": 315,
    "textbookSubjects": 16,
-   "hanzi": 5509770,
+   "hanzi": 5510959,
    "thin": 3,
    "noBook": 1,
    "videos": 0

@@ -1,5 +1,37 @@
 # 变更日志
 
+### 首次对外发版：HLS 媒体 189 门 / 书 5 卷，并统一「不署名 + 只注主要参考」的开源口径
+
+**一、发版产物**
+
+| 仓库 | tag | 内容 | 规模 |
+|---|---|---|---|
+| `DayongCai/tcm-course-media` | `media-v1` | 逐课离线包（1080p/540p HLS + 清单） | 189 门 · 2169 章 |
+| `DayongCai/tcm-course-books` | `books-v1` | 五卷 EPUB + PDF + `books-series.json` | 11 件 · 131.2 MB · 2161 章 |
+
+媒体覆盖面先补齐再发：此前只有 54 门进了 HLS，其余 134 门虽已有成片却未打包（`build_hls.js` 标定 8 章 87 s，3 并发跑完 135 门）。书侧 11 件全量下载 + sha256 比对通过；媒体 113 件逐件 `Range: 0-0` 探活 200/206。
+
+**二、发布链路的四个真问题（都已修）**
+
+| 问题 | 症状 | 定论 |
+|---|---|---|
+| token 权限 | 两枚 fine-grained PAT 能建仓，`PUT contents`/`POST releases` 全 403 | `GET /repos` 的 `permissions` 是用户角色，不能判断 token ；换 classic `repo` |
+| urllib 上传 | 文件对象退化成 chunked，GitHub 端点零字节挂死 12 分钟 | 改 `curl` 子进程并发，单连 2.6 / 4 连 5+ MB/s |
+| HTTP/2 大件 | 4 个 1.0–1.7 GB 分卷反复 `HTTP 100` / 连接重置 | `curl --http1.1 -H "Expect:"` 串行，实测 4.2–4.3 MB/s |
+| 假绿 | 9 件 `state=starter`（尺寸对、下载 404），数量对账仍报「缺失 0」 | 判重加 `state=='uploaded'`，另建 `audit_assets.py` 逐件探活 |
+
+**三、开源口径：不署个人姓名与职务，只注主要参考**
+
+- 成稿层清除「实名现实专家 + 职务职称」**1,110 处**（正文/习题/教材/讲稿），改通用称谓（有关学者 / 有关研究人员 / 有关临床医师）；
+- 133 份教材前言里的 `审稿人：` 长行（含单位、学历、出生年月）统一改为「多学科专家匿名评审」，并同步修生成器 `scripts/import_textbooks.js`；
+- **2,169 章**统一追加 `## 资料来源（主要参考）`：写到底本工作簿、`standards/<dir>/底本.json` 与 `chapters.json` 映射，并声明「本资料为人类共同知识财产的整理与再表述，不等于原著，引用只为溯源，不代表任何个人或机构审阅或背书」；
+- 该节与免责声明一并进 `narration-map.drop`，**不进讲稿、不改配音**（189 门 map 全部补齐），因此不触发重渲；
+- `standards/**` 的底本逐字原文不动（可溯源），只在生成端（如 `build_zhenghou_cidian.py` 的 `emit`）统一套用去名规则。
+
+**四、门与仓库状态**
+
+`npm run check` 全量回归中；脏树只含本轮产物（docs/quiz/textbooks/narration-map/data 派生），`scratch/` 全部脚本在 `.gitignore:54` 内，未污染版本库。
+
 ### 章内代码门的 462 条欠账摸清：test_chapter_code 1,549 → 475
 
 **一、三个下游不同步（本可避免）**

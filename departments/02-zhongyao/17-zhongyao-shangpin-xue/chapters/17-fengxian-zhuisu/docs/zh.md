@@ -115,3 +115,9 @@ node -e "const u=require('./standards/zhongyao-shangpin/units.json');const a=u.u
 `掺伪 6` 需特别交代：计数只能说明该词出现六次，不能说明五型是否齐全；要确认得回原句逐条读——**凡按关键词计数的结论都要回原文核一遍，这是本章验证里唯一的非机械步骤。**
 
 > 本章每个数都由上面这条命令从 `standards/zhongyao-shangpin/units.json` 现算，正文不保存独立于底本的数字。
+
+## 资料来源（主要参考）
+
+- 底本：中药商品学。
+- 体例与校验：章节映射见本课 `chapters.json`，正文可逐条核对到 `chapters/<slug>/docs/zh.md`。
+- 开源说明：本资料为人类共同知识财产的整理与再表述，不等于原著；引用只为溯源，不代表任何个人或机构审阅、认可或背书。全篇不署个人姓名与职务。
