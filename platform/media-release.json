@@ -1,6 +1,6 @@
 {
   "schema": "tcm-media-index/1",
-  "generatedAt": "2026-11-28T05:54:16.238Z",
+  "generatedAt": "2026-11-28T12:07:12.103Z",
   "note": "APP 只读这一份：每门课、每章的 HLS 地址 / 时长 / 封面 / 字幕。播放用 HLS，支持 EXT-X-MEDIA 字幕组。",
   "segmentSeconds": 6,
   "ladder": [
@@ -1534,8 +1534,8 @@
   "repoRecord": "platform/media-release.json",
   "regenerate": "npm run media:hls:index",
   "previous": {
-    "generatedAt": "2026-11-28T05:54:15.296Z",
-    "totalBytes": 35283398710,
-    "courses": 182
+    "generatedAt": "2026-11-28T05:54:16.238Z",
+    "totalBytes": 37248493026,
+    "courses": 189
   }
 }

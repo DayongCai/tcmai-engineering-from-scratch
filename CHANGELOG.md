@@ -6,10 +6,10 @@
 
 | 仓库 | tag | 内容 | 规模 |
 |---|---|---|---|
-| `DayongCai/tcm-course-media` | `media-v1` | 逐课离线包（1080p/540p HLS + 清单） | 189 门 · 2169 章 |
-| `DayongCai/tcm-course-books` | `books-v1` | 五卷 EPUB + PDF + `books-series.json` | 11 件 · 131.2 MB · 2161 章 |
+| `DayongCai/tcm-course-media` | `media-v1` | 逐课离线包（1080p/540p HLS + 清单） | **384 个附件 · 34.71 GB · 189 门 · 2169 章** |
+| `DayongCai/tcm-course-books` | `books-v1` | 五卷 EPUB + PDF + `books-series.json` | **11 件 · 131.2 MB · 2161 章** |
 
-媒体覆盖面先补齐再发：此前只有 54 门进了 HLS，其余 134 门虽已有成片却未打包（`build_hls.js` 标定 8 章 87 s，3 并发跑完 135 门）。书侧 11 件全量下载 + sha256 比对通过；媒体 113 件逐件 `Range: 0-0` 探活 200/206。
+媒体覆盖面先补齐再发：此前只有 54 门进了 HLS，其余 134 门虽已有成片却未打包（`build_hls.js` 标定 8 章 87 s，3 并发跑完 135 门）。重打包后 `stage 208 s → pack 2180 s → 上传 273 件 / 15.08 GB（5.4 MB/s）`，远端 384 件与本地清单逐件对账，多余件 0。书侧 11 件全量下载 + sha256 比对通过；媒体抽样分卷（1.6 GB 级）前 256 KB 段 sha256 一致。
 
 **二、发布链路的四个真问题（都已修）**
 
