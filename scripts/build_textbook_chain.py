@@ -37,6 +37,7 @@ def load(name):
 
 
 REGISTRY = (load('standards/textbook-sources.json') or {}).get('layers', {})
+ALIAS = (load('standards/subject-alias.json') or {}).get('subjects', {})
 VIDEO = load('data/video-lessons.json')
 LINKS = load('data/video-textbook-links.json')
 VIDEO_BY = {}
@@ -106,6 +107,11 @@ def layer_state(name):
 def resolve_std(dept, slug):
     for name in std_candidates(slug):
         if os.path.exists(os.path.join(ROOT, 'standards', name, 'units.json')):
+            return name
+    # 章代码不再引用 standards 的课，按 standards/subject-alias.json（书名/章题证据）解析
+    if slug in ALIAS:
+        name = ALIAS[slug].get('units')
+        if name and os.path.exists(os.path.join(ROOT, 'standards', name, 'units.json')):
             return name
     base = os.path.join(ROOT, 'departments', dept, slug, 'chapters')
     if os.path.isdir(base):

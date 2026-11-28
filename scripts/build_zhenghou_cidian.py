@@ -76,9 +76,27 @@ def jdump(obj, *parts):
 
 DRIFT = []
 
+# 开源口径：产物一律不出现「实名现实专家 + 职务职称」。底本原文里带主编/审稿姓名，
+# 生成时统一改为通用称谓，保证 --check 与产物一致（改了这里，--check 仍可比对）。
+_ANON = re.compile(r'([\u4e00-\u9fa5]{2,3})\s*(教授|院士|研究员|主任医师|副主任医师)')
+_ANON_BAD = ('大学', '学院', '医院', '研究', '医药', '中医', '药科', '位', '的', '被', '编',
+             '和', '与', '及', '是', '为', '在', '由', '请', '方式', '终身', '平行', '国家')
+_ANON_MAP = {'教授': '有关学者', '院士': '有关学者', '研究员': '有关研究人员',
+             '主任医师': '有关临床医师', '副主任医师': '有关临床医师'}
+
+
+def anonymize(text: str) -> str:
+    def sub(m):
+        name, title = m.group(1), m.group(2)
+        if any(b in name for b in _ANON_BAD):
+            return m.group(0)
+        return _ANON_MAP.get(title, '有关学者')
+    return _ANON.sub(sub, text)
+
 
 def emit(path: str, text: str):
     """写文件；--check 时只比对。返回是否一致。"""
+    text = anonymize(text)
     old = None
     if os.path.exists(path):
         with open(path, encoding="utf-8") as f:

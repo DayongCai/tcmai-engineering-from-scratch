@@ -636,7 +636,8 @@ function renderPreface(subj, file, sha, bytes, chapters, totalChars, meta, label
   }
   out.push('');
   if (meta.version) { out.push('## 源工作簿版本'); out.push(''); out.push(`- 版本：${meta.version}`); }
-  if (meta.reviewers) out.push(`- 审稿人：${meta.reviewers}`);
+  // 开源口径：不列个人姓名与职务（源工作簿里的审稿人名单不落盘）
+  out.push('- 审稿：由中医学、中药学、临床医学与信息技术等多学科专家匿名评审；评审意见按角色记录，不列个人姓名与职务。');
   if (meta.version || meta.reviewers) out.push('');
   out.push('## 出处与重建');
   out.push('');
@@ -814,13 +815,21 @@ function writeSubject(row, sha, bytes, parsed, registry) {
   for (let i = 0; i < entries.length; i += 1) {
     const e = entries[i];
     const name = chapterFileName(i, chapterViews[i]);
+    // 开源口径：底本原文里的「实名专家 + 职务职称」不落盘（成稿层一律不署名）。
+    // 与 scripts/build_zhenghou_cidian.py 的 emit() 同一规则；机构词（大学/医院/学院…）不算人名，保留。
+    const anonymize = (t) => String(t).replace(/([\u4e00-\u9fa5]{2,3})\s*(教授|院士|研究员|主任医师|副主任医师)/g,
+      (m, nm, tt) => {
+        if (['大学', '学院', '医院', '研究', '医药', '中医', '药科', '位', '的', '被', '编', '和', '与', '及', '是', '为', '在', '由', '请', '方式', '终身', '平行', '国家', '家', '州', '科', '教', '院']
+          .some((b) => nm.includes(b))) return m;
+        return tt === '研究员' ? '有关研究人员' : (tt === '主任医师' || tt === '副主任医师') ? '有关临床医师' : '有关学者';
+      });
     if (e.manual) {
-      fs.writeFileSync(path.join(dir, name), e.text, 'utf8');
+      fs.writeFileSync(path.join(dir, name), anonymize(e.text), 'utf8');
       // 迁移完成：删掉旧名的原稿，避免同一章留两份（02- 已取代 01-）
       const oldName = merges.find((m) => m.position === e.displayN)?.file;
       if (oldName && oldName !== name && fs.existsSync(path.join(dir, oldName))) fs.rmSync(path.join(dir, oldName));
     }
-    else fs.writeFileSync(path.join(dir, name), renderChapter(e.ch, i, row.file, sha, row.base), 'utf8');
+    else fs.writeFileSync(path.join(dir, name), anonymize(renderChapter(e.ch, i, row.file, sha, row.base)), 'utf8');
   }
   if (!keepPreface) {
     fs.writeFileSync(path.join(dir, '00-前言.md'),

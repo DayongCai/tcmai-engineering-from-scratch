@@ -34,8 +34,13 @@ test('学科数 = curriculum（缺的学科也要占一行，写 none）', () =>
   const want = CURR.departments.reduce((n, d) => n + d.subjects.length, 0);
   assert.strictEqual(DOC.subjects.length, want, `台账 ${DOC.subjects.length} ≠ curriculum ${want}`);
   const none = DOC.subjects.filter((s) => s.status === 'none');
-  assert.ok(none.length > 0, '不该出现「全部都有视频」——那多半是把缺口藏了');
   for (const s of none) assert.strictEqual(s.plan, null, `${s.slug} 没有语料却挂了教案`);
+  if (!none.length) {
+    // 全库讲稿补齐后「189 门全都有视频」已是事实，不再是藏缺口。
+    // 此时改守另一条：每个学科都得有实际讲次，不许空行充数。
+    const withLect = DOC.subjects.filter((s) => Number(s.lectures) > 0).length;
+    assert.strictEqual(withLect, want, `全部有视频时须逐学科有讲次：${withLect}/${want}`);
+  }
 });
 
 test('有语料的学科：源目录真实存在，教案文件真实存在', () => {

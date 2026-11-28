@@ -1,6 +1,6 @@
 {
   "schema": "tcm-media-index/1",
-  "generatedAt": "2026-11-27T06:32:43.137Z",
+  "generatedAt": "2026-11-28T05:54:16.238Z",
   "note": "APP 只读这一份：每门课、每章的 HLS 地址 / 时长 / 封面 / 字幕。播放用 HLS，支持 EXT-X-MEDIA 字幕组。",
   "segmentSeconds": 6,
   "ladder": [
@@ -15,8 +15,8 @@
       "height": 540
     }
   ],
-  "totalDurationSec": 515021.138,
-  "totalBytes": 21218993947,
+  "totalDurationSec": 914198.061,
+  "totalBytes": 37248493026,
   "courses": [
     {
       "id": "01-zhongyi/01-zhongyi-jichu-lilun",
@@ -27,6 +27,54 @@
       "publishJson": "01-zhongyi/01-zhongyi-jichu-lilun/publish.json"
     },
     {
+      "id": "01-zhongyi/02-yi-gu-wen",
+      "title": "医古文",
+      "chapterCount": 8,
+      "totalDurationSec": 966.306,
+      "totalBytes": 35171111,
+      "publishJson": "01-zhongyi/02-yi-gu-wen/publish.json"
+    },
+    {
+      "id": "01-zhongyi/03-zhongguo-yixue-shi",
+      "title": "中国医学史",
+      "chapterCount": 8,
+      "totalDurationSec": 483.046,
+      "totalBytes": 15020716,
+      "publishJson": "01-zhongyi/03-zhongguo-yixue-shi/publish.json"
+    },
+    {
+      "id": "01-zhongyi/04-zhongyi-tizhi-xue",
+      "title": "中医体质学",
+      "chapterCount": 8,
+      "totalDurationSec": 482.08,
+      "totalBytes": 14327755,
+      "publishJson": "01-zhongyi/04-zhongyi-tizhi-xue/publish.json"
+    },
+    {
+      "id": "01-zhongyi/05-zhongyi-zhen-duan-xue",
+      "title": "中医诊断学",
+      "chapterCount": 12,
+      "totalDurationSec": 1084.736,
+      "totalBytes": 35842202,
+      "publishJson": "01-zhongyi/05-zhongyi-zhen-duan-xue/publish.json"
+    },
+    {
+      "id": "01-zhongyi/06-neijing-xuandu",
+      "title": "内经选读",
+      "chapterCount": 10,
+      "totalDurationSec": 2356.26,
+      "totalBytes": 90189557,
+      "publishJson": "01-zhongyi/06-neijing-xuandu/publish.json"
+    },
+    {
+      "id": "01-zhongyi/07-shanghanlun",
+      "title": "伤寒论",
+      "chapterCount": 12,
+      "totalDurationSec": 2674.306,
+      "totalBytes": 99412976,
+      "publishJson": "01-zhongyi/07-shanghanlun/publish.json"
+    },
+    {
       "id": "01-zhongyi/08-jingui-yaolue",
       "title": "金匮要略",
       "chapterCount": 24,
@@ -35,12 +83,284 @@
       "publishJson": "01-zhongyi/08-jingui-yaolue/publish.json"
     },
     {
+      "id": "01-zhongyi/09-wenbing-xue",
+      "title": "温病学",
+      "chapterCount": 10,
+      "totalDurationSec": 3585.194,
+      "totalBytes": 147710718,
+      "publishJson": "01-zhongyi/09-wenbing-xue/publish.json"
+    },
+    {
       "id": "01-zhongyi/10-zhongyi-neike-xue",
       "title": "中医内科学",
       "chapterCount": 14,
       "totalDurationSec": 16685.557,
       "totalBytes": 698677999,
       "publishJson": "01-zhongyi/10-zhongyi-neike-xue/publish.json"
+    },
+    {
+      "id": "01-zhongyi/11-zhongyi-waike-xue",
+      "title": "中医外科学",
+      "chapterCount": 13,
+      "totalDurationSec": 1169.877,
+      "totalBytes": 38338890,
+      "publishJson": "01-zhongyi/11-zhongyi-waike-xue/publish.json"
+    },
+    {
+      "id": "01-zhongyi/12-zhongyi-fuke-xue",
+      "title": "中医妇科学",
+      "chapterCount": 13,
+      "totalDurationSec": 1088.847,
+      "totalBytes": 34661300,
+      "publishJson": "01-zhongyi/12-zhongyi-fuke-xue/publish.json"
+    },
+    {
+      "id": "01-zhongyi/13-zhongyi-erke-xue",
+      "title": "中医儿科学",
+      "chapterCount": 14,
+      "totalDurationSec": 1096.812,
+      "totalBytes": 34470204,
+      "publishJson": "01-zhongyi/13-zhongyi-erke-xue/publish.json"
+    },
+    {
+      "id": "01-zhongyi/14-zhongyi-zhenghou-xue",
+      "title": "01-zhongyi/14-zhongyi-zhenghou-xue",
+      "chapterCount": 27,
+      "totalDurationSec": 1386.083,
+      "totalBytes": 41536294,
+      "publishJson": "01-zhongyi/14-zhongyi-zhenghou-xue/publish.json"
+    },
+    {
+      "id": "01-zhongyi/15-zhongyi-gejia-xueshuo",
+      "title": "中医各家学说",
+      "chapterCount": 8,
+      "totalDurationSec": 480.434,
+      "totalBytes": 14233148,
+      "publishJson": "01-zhongyi/15-zhongyi-gejia-xueshuo/publish.json"
+    },
+    {
+      "id": "01-zhongyi/16-zhongyi-zhexue-shi",
+      "title": "中医哲学史",
+      "chapterCount": 8,
+      "totalDurationSec": 494.32,
+      "totalBytes": 14568585,
+      "publishJson": "01-zhongyi/16-zhongyi-zhexue-shi/publish.json"
+    },
+    {
+      "id": "01-zhongyi/17-zhongyi-jizhen-xue",
+      "title": "中医急诊学",
+      "chapterCount": 12,
+      "totalDurationSec": 758.596,
+      "totalBytes": 22565791,
+      "publishJson": "01-zhongyi/17-zhongyi-jizhen-xue/publish.json"
+    },
+    {
+      "id": "01-zhongyi/18-zhongyi-gubing-xue",
+      "title": "中医骨病学",
+      "chapterCount": 12,
+      "totalDurationSec": 812.688,
+      "totalBytes": 24527012,
+      "publishJson": "01-zhongyi/18-zhongyi-gubing-xue/publish.json"
+    },
+    {
+      "id": "01-zhongyi/19-zhongyi-laonianbing-xue",
+      "title": "中医老年病学",
+      "chapterCount": 12,
+      "totalDurationSec": 805.886,
+      "totalBytes": 24113943,
+      "publishJson": "01-zhongyi/19-zhongyi-laonianbing-xue/publish.json"
+    },
+    {
+      "id": "01-zhongyi/20-zhongyi-jingshenbing-xue",
+      "title": "中医精神病学",
+      "chapterCount": 12,
+      "totalDurationSec": 791.038,
+      "totalBytes": 23521075,
+      "publishJson": "01-zhongyi/20-zhongyi-jingshenbing-xue/publish.json"
+    },
+    {
+      "id": "01-zhongyi/21-zhongyi-linchuang-lunzhuan",
+      "title": "中医临床轮转",
+      "chapterCount": 6,
+      "totalDurationSec": 355.652,
+      "totalBytes": 10476312,
+      "publishJson": "01-zhongyi/21-zhongyi-linchuang-lunzhuan/publish.json"
+    },
+    {
+      "id": "01-zhongyi/22-zhongyi-biye-sheji",
+      "title": "中医毕业设计与知识移交",
+      "chapterCount": 28,
+      "totalDurationSec": 1618.856,
+      "totalBytes": 47421352,
+      "publishJson": "01-zhongyi/22-zhongyi-biye-sheji/publish.json"
+    },
+    {
+      "id": "01-zhongyi/23-zhongcan-xilu-xuandu",
+      "title": "医学衷中参西录选读",
+      "chapterCount": 10,
+      "totalDurationSec": 1317.394,
+      "totalBytes": 49017897,
+      "publishJson": "01-zhongyi/23-zhongcan-xilu-xuandu/publish.json"
+    },
+    {
+      "id": "02-zhongyao/01-zhongyaoxue",
+      "title": "中药学",
+      "chapterCount": 14,
+      "totalDurationSec": 7300.658,
+      "totalBytes": 295031586,
+      "publishJson": "02-zhongyao/01-zhongyaoxue/publish.json"
+    },
+    {
+      "id": "02-zhongyao/02-yaoyong-zhiwu-xue",
+      "title": "药用植物学",
+      "chapterCount": 9,
+      "totalDurationSec": 5064.858,
+      "totalBytes": 208174087,
+      "publishJson": "02-zhongyao/02-yaoyong-zhiwu-xue/publish.json"
+    },
+    {
+      "id": "02-zhongyao/03-fangjixue",
+      "title": "方剂学",
+      "chapterCount": 15,
+      "totalDurationSec": 9908.991,
+      "totalBytes": 402459319,
+      "publishJson": "02-zhongyao/03-fangjixue/publish.json"
+    },
+    {
+      "id": "02-zhongyao/04-zhongyao-ziyuan-xue",
+      "title": "中药资源学",
+      "chapterCount": 8,
+      "totalDurationSec": 4767.666,
+      "totalBytes": 196729751,
+      "publishJson": "02-zhongyao/04-zhongyao-ziyuan-xue/publish.json"
+    },
+    {
+      "id": "02-zhongyao/05-zhongyao-jianding-xue",
+      "title": "中药鉴定学",
+      "chapterCount": 10,
+      "totalDurationSec": 5341.225,
+      "totalBytes": 221966640,
+      "publishJson": "02-zhongyao/05-zhongyao-jianding-xue/publish.json"
+    },
+    {
+      "id": "02-zhongyao/06-zhongyao-huaxue",
+      "title": "中药化学",
+      "chapterCount": 12,
+      "totalDurationSec": 7831.36,
+      "totalBytes": 328939593,
+      "publishJson": "02-zhongyao/06-zhongyao-huaxue/publish.json"
+    },
+    {
+      "id": "02-zhongyao/07-zhongyao-yaoli-xue",
+      "title": "中药药理学",
+      "chapterCount": 11,
+      "totalDurationSec": 7160.456,
+      "totalBytes": 305728128,
+      "publishJson": "02-zhongyao/07-zhongyao-yaoli-xue/publish.json"
+    },
+    {
+      "id": "02-zhongyao/08-zhongyao-paozhi-xue",
+      "title": "中药炮制学",
+      "chapterCount": 9,
+      "totalDurationSec": 6174.15,
+      "totalBytes": 266453987,
+      "publishJson": "02-zhongyao/08-zhongyao-paozhi-xue/publish.json"
+    },
+    {
+      "id": "02-zhongyao/09-zhongyao-yaoji-xue",
+      "title": "中药药剂学",
+      "chapterCount": 10,
+      "totalDurationSec": 6837.286,
+      "totalBytes": 290610069,
+      "publishJson": "02-zhongyao/09-zhongyao-yaoji-xue/publish.json"
+    },
+    {
+      "id": "02-zhongyao/10-zhongyao-fenxi-xue",
+      "title": "中药分析学",
+      "chapterCount": 12,
+      "totalDurationSec": 7668.323,
+      "totalBytes": 327004516,
+      "publishJson": "02-zhongyao/10-zhongyao-fenxi-xue/publish.json"
+    },
+    {
+      "id": "02-zhongyao/11-zhongyao-yaodai-donglixue",
+      "title": "中药药代动力学",
+      "chapterCount": 8,
+      "totalDurationSec": 4534.179,
+      "totalBytes": 187938177,
+      "publishJson": "02-zhongyao/11-zhongyao-yaodai-donglixue/publish.json"
+    },
+    {
+      "id": "02-zhongyao/12-daodi-yaocai",
+      "title": "道地药材与产地加工",
+      "chapterCount": 8,
+      "totalDurationSec": 4873.426,
+      "totalBytes": 201128351,
+      "publishJson": "02-zhongyao/12-daodi-yaocai/publish.json"
+    },
+    {
+      "id": "02-zhongyao/13-zhongchengyao-linchuang",
+      "title": "中成药与临床用药",
+      "chapterCount": 10,
+      "totalDurationSec": 5703.389,
+      "totalBytes": 237255029,
+      "publishJson": "02-zhongyao/13-zhongchengyao-linchuang/publish.json"
+    },
+    {
+      "id": "02-zhongyao/14-peiwu-yu-jinji",
+      "title": "中药配伍与禁忌",
+      "chapterCount": 8,
+      "totalDurationSec": 5540.006,
+      "totalBytes": 230319676,
+      "publishJson": "02-zhongyao/14-peiwu-yu-jinji/publish.json"
+    },
+    {
+      "id": "02-zhongyao/15-zhongyao-xinyao-yanfa",
+      "title": "中药新药研发",
+      "chapterCount": 8,
+      "totalDurationSec": 5097.349,
+      "totalBytes": 210693756,
+      "publishJson": "02-zhongyao/15-zhongyao-xinyao-yanfa/publish.json"
+    },
+    {
+      "id": "02-zhongyao/16-linchuang-zhongyaoxue",
+      "title": "临床中药学",
+      "chapterCount": 15,
+      "totalDurationSec": 10012.792,
+      "totalBytes": 430238660,
+      "publishJson": "02-zhongyao/16-linchuang-zhongyaoxue/publish.json"
+    },
+    {
+      "id": "02-zhongyao/17-zhongyao-shangpin-xue",
+      "title": "中药商品学",
+      "chapterCount": 18,
+      "totalDurationSec": 12026.7,
+      "totalBytes": 510289076,
+      "publishJson": "02-zhongyao/17-zhongyao-shangpin-xue/publish.json"
+    },
+    {
+      "id": "02-zhongyao/18-yaoshi-guanli-xue",
+      "title": "药事管理学",
+      "chapterCount": 28,
+      "totalDurationSec": 16112.398,
+      "totalBytes": 667176293,
+      "publishJson": "02-zhongyao/18-yaoshi-guanli-xue/publish.json"
+    },
+    {
+      "id": "02-zhongyao/19-zhongyao-zhuanye-shijian",
+      "title": "中药专业实践",
+      "chapterCount": 6,
+      "totalDurationSec": 3647.501,
+      "totalBytes": 151412815,
+      "publishJson": "02-zhongyao/19-zhongyao-zhuanye-shijian/publish.json"
+    },
+    {
+      "id": "02-zhongyao/20-zhongyao-biye-sheji",
+      "title": "中药毕业设计与知识移交",
+      "chapterCount": 6,
+      "totalDurationSec": 2855.865,
+      "totalBytes": 115558708,
+      "publishJson": "02-zhongyao/20-zhongyao-biye-sheji/publish.json"
     },
     {
       "id": "02-zhongyao/21-zhongyao-du-li-xue",
@@ -363,6 +683,718 @@
       "publishJson": "04-gushang/17-gushang-biye-sheji/publish.json"
     },
     {
+      "id": "05-huli/01-zhongyi-huli-jichu",
+      "title": "中医护理学基础",
+      "chapterCount": 12,
+      "totalDurationSec": 700.224,
+      "totalBytes": 21597462,
+      "publishJson": "05-huli/01-zhongyi-huli-jichu/publish.json"
+    },
+    {
+      "id": "05-huli/02-jichu-huli-xue",
+      "title": "基础护理学",
+      "chapterCount": 14,
+      "totalDurationSec": 906.454,
+      "totalBytes": 28140221,
+      "publishJson": "05-huli/02-jichu-huli-xue/publish.json"
+    },
+    {
+      "id": "05-huli/03-jiankang-pinggu",
+      "title": "健康评估",
+      "chapterCount": 8,
+      "totalDurationSec": 501.624,
+      "totalBytes": 15497565,
+      "publishJson": "05-huli/03-jiankang-pinggu/publish.json"
+    },
+    {
+      "id": "05-huli/04-zhongyi-huli-jishu",
+      "title": "中医护理技术",
+      "chapterCount": 14,
+      "totalDurationSec": 823.946,
+      "totalBytes": 25715491,
+      "publishJson": "05-huli/04-zhongyi-huli-jishu/publish.json"
+    },
+    {
+      "id": "05-huli/05-zhongyi-yangsheng-xue",
+      "title": "中医养生学",
+      "chapterCount": 8,
+      "totalDurationSec": 481.372,
+      "totalBytes": 14897168,
+      "publishJson": "05-huli/05-zhongyi-yangsheng-xue/publish.json"
+    },
+    {
+      "id": "05-huli/06-zhongyi-xinli-xue",
+      "title": "中医心理学",
+      "chapterCount": 8,
+      "totalDurationSec": 482.978,
+      "totalBytes": 14983622,
+      "publishJson": "05-huli/06-zhongyi-xinli-xue/publish.json"
+    },
+    {
+      "id": "05-huli/07-neike-huli-xue",
+      "title": "内科护理学",
+      "chapterCount": 14,
+      "totalDurationSec": 907.752,
+      "totalBytes": 28323405,
+      "publishJson": "05-huli/07-neike-huli-xue/publish.json"
+    },
+    {
+      "id": "05-huli/08-waike-huli-xue",
+      "title": "外科护理学",
+      "chapterCount": 13,
+      "totalDurationSec": 785.899,
+      "totalBytes": 24553400,
+      "publishJson": "05-huli/08-waike-huli-xue/publish.json"
+    },
+    {
+      "id": "05-huli/09-fuchanke-huli-xue",
+      "title": "妇产科护理学",
+      "chapterCount": 16,
+      "totalDurationSec": 969.112,
+      "totalBytes": 30105357,
+      "publishJson": "05-huli/09-fuchanke-huli-xue/publish.json"
+    },
+    {
+      "id": "05-huli/10-erke-huli-xue",
+      "title": "儿科护理学",
+      "chapterCount": 15,
+      "totalDurationSec": 921.069,
+      "totalBytes": 28729245,
+      "publishJson": "05-huli/10-erke-huli-xue/publish.json"
+    },
+    {
+      "id": "05-huli/11-shequ-huli-xue",
+      "title": "社区护理学",
+      "chapterCount": 8,
+      "totalDurationSec": 467.328,
+      "totalBytes": 14477699,
+      "publishJson": "05-huli/11-shequ-huli-xue/publish.json"
+    },
+    {
+      "id": "05-huli/12-jiwei-zhengzheng-huli",
+      "title": "急危重症护理学",
+      "chapterCount": 10,
+      "totalDurationSec": 603.968,
+      "totalBytes": 18735509,
+      "publishJson": "05-huli/12-jiwei-zhengzheng-huli/publish.json"
+    },
+    {
+      "id": "05-huli/13-huli-guanli-xue",
+      "title": "护理管理学",
+      "chapterCount": 6,
+      "totalDurationSec": 350.258,
+      "totalBytes": 10884049,
+      "publishJson": "05-huli/13-huli-guanli-xue/publish.json"
+    },
+    {
+      "id": "05-huli/14-huli-lunli-fagui",
+      "title": "护理伦理与法规",
+      "chapterCount": 6,
+      "totalDurationSec": 356.298,
+      "totalBytes": 11053675,
+      "publishJson": "05-huli/14-huli-lunli-fagui/publish.json"
+    },
+    {
+      "id": "05-huli/15-huli-yanjiu-zhengxun",
+      "title": "护理研究与循证护理",
+      "chapterCount": 8,
+      "totalDurationSec": 455.36,
+      "totalBytes": 14152387,
+      "publishJson": "05-huli/15-huli-yanjiu-zhengxun/publish.json"
+    },
+    {
+      "id": "05-huli/16-huli-xue-daolun",
+      "title": "护理学导论",
+      "chapterCount": 18,
+      "totalDurationSec": 12784.83,
+      "totalBytes": 529485509,
+      "publishJson": "05-huli/16-huli-xue-daolun/publish.json"
+    },
+    {
+      "id": "05-huli/17-huli-xinli-xue",
+      "title": "护理心理学",
+      "chapterCount": 18,
+      "totalDurationSec": 1114.636,
+      "totalBytes": 34311897,
+      "publishJson": "05-huli/17-huli-xinli-xue/publish.json"
+    },
+    {
+      "id": "05-huli/18-huli-zonghe-jineng",
+      "title": "护理综合技能",
+      "chapterCount": 18,
+      "totalDurationSec": 1129.436,
+      "totalBytes": 35021030,
+      "publishJson": "05-huli/18-huli-zonghe-jineng/publish.json"
+    },
+    {
+      "id": "05-huli/19-huli-renwen-goutong",
+      "title": "护理人文修养与沟通",
+      "chapterCount": 14,
+      "totalDurationSec": 808.382,
+      "totalBytes": 25137806,
+      "publishJson": "05-huli/19-huli-renwen-goutong/publish.json"
+    },
+    {
+      "id": "05-huli/20-jijiu-huli-xue",
+      "title": "急救护理学",
+      "chapterCount": 18,
+      "totalDurationSec": 1107.122,
+      "totalBytes": 34671616,
+      "publishJson": "05-huli/20-jijiu-huli-xue/publish.json"
+    },
+    {
+      "id": "05-huli/21-laonian-huli-xue",
+      "title": "老年护理学",
+      "chapterCount": 18,
+      "totalDurationSec": 1127.37,
+      "totalBytes": 35436686,
+      "publishJson": "05-huli/21-laonian-huli-xue/publish.json"
+    },
+    {
+      "id": "05-huli/22-kangfu-huli-xue",
+      "title": "康复护理学",
+      "chapterCount": 18,
+      "totalDurationSec": 1066.618,
+      "totalBytes": 33408966,
+      "publishJson": "05-huli/22-kangfu-huli-xue/publish.json"
+    },
+    {
+      "id": "05-huli/23-jingshenke-huli-xue",
+      "title": "精神科护理学",
+      "chapterCount": 18,
+      "totalDurationSec": 1085.198,
+      "totalBytes": 33878803,
+      "publishJson": "05-huli/23-jingshenke-huli-xue/publish.json"
+    },
+    {
+      "id": "05-huli/24-zhongyi-huli-xue",
+      "title": "中医护理学",
+      "chapterCount": 18,
+      "totalDurationSec": 1148.774,
+      "totalBytes": 35668200,
+      "publishJson": "05-huli/24-zhongyi-huli-xue/publish.json"
+    },
+    {
+      "id": "05-huli/25-zhongyi-linchuang-huli",
+      "title": "中医临床护理学",
+      "chapterCount": 18,
+      "totalDurationSec": 1075.968,
+      "totalBytes": 33392590,
+      "publishJson": "05-huli/25-zhongyi-linchuang-huli/publish.json"
+    },
+    {
+      "id": "05-huli/26-huli-linchuang-lunzhuan",
+      "title": "护理临床轮转",
+      "chapterCount": 6,
+      "totalDurationSec": 348.52,
+      "totalBytes": 10710992,
+      "publishJson": "05-huli/26-huli-linchuang-lunzhuan/publish.json"
+    },
+    {
+      "id": "05-huli/27-huli-biye-sheji",
+      "title": "护理毕业设计与知识移交",
+      "chapterCount": 6,
+      "totalDurationSec": 355.536,
+      "totalBytes": 10978921,
+      "publishJson": "05-huli/27-huli-biye-sheji/publish.json"
+    },
+    {
+      "id": "06-guanli/01-yixue-tongjixue",
+      "title": "医学统计学",
+      "chapterCount": 10,
+      "totalDurationSec": 672.688,
+      "totalBytes": 21878585,
+      "publishJson": "06-guanli/01-yixue-tongjixue/publish.json"
+    },
+    {
+      "id": "06-guanli/02-zhongyiyao-zhengce-fagui",
+      "title": "中医药政策与法规",
+      "chapterCount": 8,
+      "totalDurationSec": 454.178,
+      "totalBytes": 13975488,
+      "publishJson": "06-guanli/02-zhongyiyao-zhengce-fagui/publish.json"
+    },
+    {
+      "id": "06-guanli/03-zhongyi-guanli-xue",
+      "title": "中医管理学",
+      "chapterCount": 8,
+      "totalDurationSec": 442.818,
+      "totalBytes": 13604969,
+      "publishJson": "06-guanli/03-zhongyi-guanli-xue/publish.json"
+    },
+    {
+      "id": "06-guanli/04-weisheng-shiye-guanli",
+      "title": "卫生事业管理",
+      "chapterCount": 8,
+      "totalDurationSec": 439.348,
+      "totalBytes": 13413578,
+      "publishJson": "06-guanli/04-weisheng-shiye-guanli/publish.json"
+    },
+    {
+      "id": "06-guanli/05-zhongyi-wenhua-chuanbo",
+      "title": "中医文化传播学",
+      "chapterCount": 6,
+      "totalDurationSec": 345.54,
+      "totalBytes": 10632470,
+      "publishJson": "06-guanli/05-zhongyi-wenhua-chuanbo/publish.json"
+    },
+    {
+      "id": "06-guanli/06-yiyuan-guanli-xue",
+      "title": "医院管理学",
+      "chapterCount": 10,
+      "totalDurationSec": 530.09,
+      "totalBytes": 16117389,
+      "publishJson": "06-guanli/06-yiyuan-guanli-xue/publish.json"
+    },
+    {
+      "id": "06-guanli/07-zhongyi-jiaoyu-xue",
+      "title": "中医教育学",
+      "chapterCount": 8,
+      "totalDurationSec": 432.796,
+      "totalBytes": 13221162,
+      "publishJson": "06-guanli/07-zhongyi-jiaoyu-xue/publish.json"
+    },
+    {
+      "id": "06-guanli/08-jiankang-fuwu-guanli",
+      "title": "健康服务与管理",
+      "chapterCount": 8,
+      "totalDurationSec": 438.276,
+      "totalBytes": 13424435,
+      "publishJson": "06-guanli/08-jiankang-fuwu-guanli/publish.json"
+    },
+    {
+      "id": "06-guanli/09-yiliao-baoxian-jingji",
+      "title": "医疗保险与卫生经济",
+      "chapterCount": 8,
+      "totalDurationSec": 424.572,
+      "totalBytes": 12923746,
+      "publishJson": "06-guanli/09-yiliao-baoxian-jingji/publish.json"
+    },
+    {
+      "id": "06-guanli/10-yixue-xinxi-guanli",
+      "title": "医学信息管理",
+      "chapterCount": 8,
+      "totalDurationSec": 427.426,
+      "totalBytes": 13074648,
+      "publishJson": "06-guanli/10-yixue-xinxi-guanli/publish.json"
+    },
+    {
+      "id": "06-guanli/11-yiyuan-xinxihua-bingan",
+      "title": "医院信息化与病案管理",
+      "chapterCount": 8,
+      "totalDurationSec": 437.57,
+      "totalBytes": 13413385,
+      "publishJson": "06-guanli/11-yiyuan-xinxihua-bingan/publish.json"
+    },
+    {
+      "id": "06-guanli/12-zhongyiyao-biaozhunhua",
+      "title": "中医药标准化",
+      "chapterCount": 8,
+      "totalDurationSec": 430.604,
+      "totalBytes": 13137245,
+      "publishJson": "06-guanli/12-zhongyiyao-biaozhunhua/publish.json"
+    },
+    {
+      "id": "06-guanli/13-linchuang-keyan-fangfa",
+      "title": "临床科研方法学",
+      "chapterCount": 8,
+      "totalDurationSec": 436.602,
+      "totalBytes": 13364373,
+      "publishJson": "06-guanli/13-linchuang-keyan-fangfa/publish.json"
+    },
+    {
+      "id": "06-guanli/14-zhishichanquan-zhuanhua",
+      "title": "中医药知识产权与成果转化",
+      "chapterCount": 6,
+      "totalDurationSec": 357.898,
+      "totalBytes": 11091184,
+      "publishJson": "06-guanli/14-zhishichanquan-zhuanhua/publish.json"
+    },
+    {
+      "id": "06-guanli/15-zhongyi-guojijiaoyu",
+      "title": "中医国际教育与传播",
+      "chapterCount": 6,
+      "totalDurationSec": 328.582,
+      "totalBytes": 10088284,
+      "publishJson": "06-guanli/15-zhongyi-guojijiaoyu/publish.json"
+    },
+    {
+      "id": "06-guanli/16-gonggong-guanli-xue",
+      "title": "公共管理学",
+      "chapterCount": 18,
+      "totalDurationSec": 996.98,
+      "totalBytes": 30668404,
+      "publishJson": "06-guanli/16-gonggong-guanli-xue/publish.json"
+    },
+    {
+      "id": "06-guanli/17-guanli-xue-jichu",
+      "title": "管理学基础",
+      "chapterCount": 18,
+      "totalDurationSec": 920.938,
+      "totalBytes": 27897719,
+      "publishJson": "06-guanli/17-guanli-xue-jichu/publish.json"
+    },
+    {
+      "id": "06-guanli/18-guanli-xinli-xue",
+      "title": "管理心理学",
+      "chapterCount": 18,
+      "totalDurationSec": 974.08,
+      "totalBytes": 29850716,
+      "publishJson": "06-guanli/18-guanli-xinli-xue/publish.json"
+    },
+    {
+      "id": "06-guanli/19-shehui-yixue",
+      "title": "社会医学",
+      "chapterCount": 18,
+      "totalDurationSec": 992.514,
+      "totalBytes": 30416998,
+      "publishJson": "06-guanli/19-shehui-yixue/publish.json"
+    },
+    {
+      "id": "06-guanli/20-weisheng-fa-xue",
+      "title": "卫生法学",
+      "chapterCount": 18,
+      "totalDurationSec": 1008.282,
+      "totalBytes": 30878472,
+      "publishJson": "06-guanli/20-weisheng-fa-xue/publish.json"
+    },
+    {
+      "id": "06-guanli/21-yixue-lunli-xue",
+      "title": "医学伦理学",
+      "chapterCount": 18,
+      "totalDurationSec": 938.074,
+      "totalBytes": 28493549,
+      "publishJson": "06-guanli/21-yixue-lunli-xue/publish.json"
+    },
+    {
+      "id": "06-guanli/22-yiyao-renli-ziyuan",
+      "title": "医药人力资源管理",
+      "chapterCount": 18,
+      "totalDurationSec": 1007.578,
+      "totalBytes": 31098113,
+      "publishJson": "06-guanli/22-yiyao-renli-ziyuan/publish.json"
+    },
+    {
+      "id": "06-guanli/23-yiyuan-kuaiji-caiwu",
+      "title": "医院会计与财务管理",
+      "chapterCount": 18,
+      "totalDurationSec": 996.226,
+      "totalBytes": 30759975,
+      "publishJson": "06-guanli/23-yiyuan-kuaiji-caiwu/publish.json"
+    },
+    {
+      "id": "06-guanli/24-zhongyi-jiankang-guanli",
+      "title": "中医健康管理",
+      "chapterCount": 18,
+      "totalDurationSec": 975.44,
+      "totalBytes": 29934126,
+      "publishJson": "06-guanli/24-zhongyi-jiankang-guanli/publish.json"
+    },
+    {
+      "id": "06-guanli/25-guanli-shixi-shijian",
+      "title": "管理实习与实践",
+      "chapterCount": 6,
+      "totalDurationSec": 330.044,
+      "totalBytes": 10131487,
+      "publishJson": "06-guanli/25-guanli-shixi-shijian/publish.json"
+    },
+    {
+      "id": "06-guanli/26-guanli-biye-sheji",
+      "title": "管理毕业设计与知识移交",
+      "chapterCount": 6,
+      "totalDurationSec": 328.04,
+      "totalBytes": 10046196,
+      "publishJson": "06-guanli/26-guanli-biye-sheji/publish.json"
+    },
+    {
+      "id": "07-zhineng/01-yixue-rengong-zhineng-daolun",
+      "title": "医学人工智能导论",
+      "chapterCount": 8,
+      "totalDurationSec": 446.034,
+      "totalBytes": 13746667,
+      "publishJson": "07-zhineng/01-yixue-rengong-zhineng-daolun/publish.json"
+    },
+    {
+      "id": "07-zhineng/02-zhongyi-ruanjian-jiagou-xue",
+      "title": "中医软件架构学",
+      "chapterCount": 10,
+      "totalDurationSec": 561.088,
+      "totalBytes": 17296242,
+      "publishJson": "07-zhineng/02-zhongyi-ruanjian-jiagou-xue/publish.json"
+    },
+    {
+      "id": "07-zhineng/03-zhongyi-zhineng-shebei",
+      "title": "中医智能设备与可穿戴设备",
+      "chapterCount": 6,
+      "totalDurationSec": 486.75,
+      "totalBytes": 15729007,
+      "publishJson": "07-zhineng/03-zhongyi-zhineng-shebei/publish.json"
+    },
+    {
+      "id": "07-zhineng/04-zhongyi-ziran-yuyan-chuli",
+      "title": "中医自然语言处理",
+      "chapterCount": 10,
+      "totalDurationSec": 572.358,
+      "totalBytes": 17704342,
+      "publishJson": "07-zhineng/04-zhongyi-ziran-yuyan-chuli/publish.json"
+    },
+    {
+      "id": "07-zhineng/05-zhongyi-zhishi-tupu",
+      "title": "中医知识树",
+      "chapterCount": 6,
+      "totalDurationSec": 291.23,
+      "totalBytes": 8806754,
+      "publishJson": "07-zhineng/05-zhongyi-zhishi-tupu/publish.json"
+    },
+    {
+      "id": "07-zhineng/06-zhongyi-zhineng-bianzheng",
+      "title": "中医智能辨证系统",
+      "chapterCount": 10,
+      "totalDurationSec": 656.256,
+      "totalBytes": 21020784,
+      "publishJson": "07-zhineng/06-zhongyi-zhineng-bianzheng/publish.json"
+    },
+    {
+      "id": "07-zhineng/07-yixue-tuxiang-shezhen",
+      "title": "医学图像处理与舌诊客观化",
+      "chapterCount": 10,
+      "totalDurationSec": 570.25,
+      "totalBytes": 17637697,
+      "publishJson": "07-zhineng/07-yixue-tuxiang-shezhen/publish.json"
+    },
+    {
+      "id": "07-zhineng/08-maizhen-keguanhua",
+      "title": "脉诊客观化与信号处理",
+      "chapterCount": 10,
+      "totalDurationSec": 583.876,
+      "totalBytes": 18110117,
+      "publishJson": "07-zhineng/08-maizhen-keguanhua/publish.json"
+    },
+    {
+      "id": "07-zhineng/09-zhongyi-dashuju-fenxi",
+      "title": "中医大数据分析",
+      "chapterCount": 8,
+      "totalDurationSec": 462.208,
+      "totalBytes": 14290324,
+      "publishJson": "07-zhineng/09-zhongyi-dashuju-fenxi/publish.json"
+    },
+    {
+      "id": "07-zhineng/10-llm-yu-zhongyi-zhinengti",
+      "title": "大语言模型与中医智能体",
+      "chapterCount": 12,
+      "totalDurationSec": 713.156,
+      "totalBytes": 22237192,
+      "publishJson": "07-zhineng/10-llm-yu-zhongyi-zhinengti/publish.json"
+    },
+    {
+      "id": "07-zhineng/11-zhongyi-jiqiren-xue",
+      "title": "中医机器人学",
+      "chapterCount": 8,
+      "totalDurationSec": 452.624,
+      "totalBytes": 13961537,
+      "publishJson": "07-zhineng/11-zhongyi-jiqiren-xue/publish.json"
+    },
+    {
+      "id": "07-zhineng/12-shuzi-renti-xuni-fangzhen",
+      "title": "数字人体与虚拟仿真",
+      "chapterCount": 8,
+      "totalDurationSec": 454.166,
+      "totalBytes": 14025576,
+      "publishJson": "07-zhineng/12-shuzi-renti-xuni-fangzhen/publish.json"
+    },
+    {
+      "id": "07-zhineng/13-zhongyi-duomotai-ronghe",
+      "title": "中医多模态数据融合",
+      "chapterCount": 10,
+      "totalDurationSec": 545.574,
+      "totalBytes": 16867639,
+      "publishJson": "07-zhineng/13-zhongyi-duomotai-ronghe/publish.json"
+    },
+    {
+      "id": "07-zhineng/14-yixue-shuju-anquan-yinsi",
+      "title": "医学数据安全与隐私保护",
+      "chapterCount": 8,
+      "totalDurationSec": 441.718,
+      "totalBytes": 13736918,
+      "publishJson": "07-zhineng/14-yixue-shuju-anquan-yinsi/publish.json"
+    },
+    {
+      "id": "07-zhineng/15-zhongyi-ai-lunli-zhili",
+      "title": "中医AI伦理与治理",
+      "chapterCount": 8,
+      "totalDurationSec": 393.166,
+      "totalBytes": 11673937,
+      "publishJson": "07-zhineng/15-zhongyi-ai-lunli-zhili/publish.json"
+    },
+    {
+      "id": "07-zhineng/16-jiqi-xuexi",
+      "title": "机器学习",
+      "chapterCount": 16,
+      "totalDurationSec": 889.936,
+      "totalBytes": 27720582,
+      "publishJson": "07-zhineng/16-jiqi-xuexi/publish.json"
+    },
+    {
+      "id": "07-zhineng/17-zhongyi-xinxi-xue",
+      "title": "中医信息学",
+      "chapterCount": 6,
+      "totalDurationSec": 479.518,
+      "totalBytes": 14701261,
+      "publishJson": "07-zhineng/17-zhongyi-xinxi-xue/publish.json"
+    },
+    {
+      "id": "07-zhineng/18-zhineng-gongcheng-shijian",
+      "title": "工程实践与系统交付",
+      "chapterCount": 6,
+      "totalDurationSec": 335.392,
+      "totalBytes": 10326795,
+      "publishJson": "07-zhineng/18-zhineng-gongcheng-shijian/publish.json"
+    },
+    {
+      "id": "07-zhineng/19-zhineng-biye-sheji",
+      "title": "智能系毕业设计与知识移交",
+      "chapterCount": 6,
+      "totalDurationSec": 329.328,
+      "totalBytes": 10187313,
+      "publishJson": "07-zhineng/19-zhineng-biye-sheji/publish.json"
+    },
+    {
+      "id": "08-wuguan/01-erbihou-jiepou-shengli",
+      "title": "耳鼻喉解剖生理学",
+      "chapterCount": 8,
+      "totalDurationSec": 6461.243,
+      "totalBytes": 273975185,
+      "publishJson": "08-wuguan/01-erbihou-jiepou-shengli/publish.json"
+    },
+    {
+      "id": "08-wuguan/02-kouqiang-jiepou-shengli",
+      "title": "口腔解剖生理学",
+      "chapterCount": 8,
+      "totalDurationSec": 5309.905,
+      "totalBytes": 220676007,
+      "publishJson": "08-wuguan/02-kouqiang-jiepou-shengli/publish.json"
+    },
+    {
+      "id": "08-wuguan/03-zhongyi-mianbu-wangzhen",
+      "title": "中医面部望诊学",
+      "chapterCount": 8,
+      "totalDurationSec": 4468.219,
+      "totalBytes": 184137184,
+      "publishJson": "08-wuguan/03-zhongyi-mianbu-wangzhen/publish.json"
+    },
+    {
+      "id": "08-wuguan/04-yanke-guangxue-yanguang",
+      "title": "眼科光学与验光",
+      "chapterCount": 8,
+      "totalDurationSec": 4201.288,
+      "totalBytes": 179423535,
+      "publishJson": "08-wuguan/04-yanke-guangxue-yanguang/publish.json"
+    },
+    {
+      "id": "08-wuguan/05-zhongyi-wuguan-jingdian",
+      "title": "中医五官科经典选读",
+      "chapterCount": 6,
+      "totalDurationSec": 3199.203,
+      "totalBytes": 133500769,
+      "publishJson": "08-wuguan/05-zhongyi-wuguan-jingdian/publish.json"
+    },
+    {
+      "id": "08-wuguan/06-zhongyi-yanke-xue",
+      "title": "中医眼科学",
+      "chapterCount": 10,
+      "totalDurationSec": 4762.626,
+      "totalBytes": 196612335,
+      "publishJson": "08-wuguan/06-zhongyi-yanke-xue/publish.json"
+    },
+    {
+      "id": "08-wuguan/07-zhongyi-erbihou-xue",
+      "title": "中医耳鼻喉科学",
+      "chapterCount": 10,
+      "totalDurationSec": 5464.424,
+      "totalBytes": 225564440,
+      "publishJson": "08-wuguan/07-zhongyi-erbihou-xue/publish.json"
+    },
+    {
+      "id": "08-wuguan/08-zhongyi-kouqiang-kexue",
+      "title": "中医口腔科学",
+      "chapterCount": 10,
+      "totalDurationSec": 6278.874,
+      "totalBytes": 263012807,
+      "publishJson": "08-wuguan/08-zhongyi-kouqiang-kexue/publish.json"
+    },
+    {
+      "id": "08-wuguan/09-kouqiang-neike-xue",
+      "title": "口腔内科学",
+      "chapterCount": 10,
+      "totalDurationSec": 6435.891,
+      "totalBytes": 263900882,
+      "publishJson": "08-wuguan/09-kouqiang-neike-xue/publish.json"
+    },
+    {
+      "id": "08-wuguan/10-yanke-yingxiang-jiancha",
+      "title": "眼科影像与检查技术",
+      "chapterCount": 8,
+      "totalDurationSec": 6196.359,
+      "totalBytes": 263096298,
+      "publishJson": "08-wuguan/10-yanke-yingxiang-jiancha/publish.json"
+    },
+    {
+      "id": "08-wuguan/11-kouqiang-hemian-waike",
+      "title": "口腔颌面外科学",
+      "chapterCount": 10,
+      "totalDurationSec": 6196.805,
+      "totalBytes": 255674054,
+      "publishJson": "08-wuguan/11-kouqiang-hemian-waike/publish.json"
+    },
+    {
+      "id": "08-wuguan/12-kouqiang-xiufu-xue",
+      "title": "口腔修复学",
+      "chapterCount": 10,
+      "totalDurationSec": 4913.342,
+      "totalBytes": 204986623,
+      "publishJson": "08-wuguan/12-kouqiang-xiufu-xue/publish.json"
+    },
+    {
+      "id": "08-wuguan/13-kouqiang-zhengji-xue",
+      "title": "口腔正畸学",
+      "chapterCount": 10,
+      "totalDurationSec": 5932.635,
+      "totalBytes": 247353860,
+      "publishJson": "08-wuguan/13-kouqiang-zhengji-xue/publish.json"
+    },
+    {
+      "id": "08-wuguan/14-zhongyi-sangyin-yixue",
+      "title": "中医嗓音医学",
+      "chapterCount": 8,
+      "totalDurationSec": 4173.272,
+      "totalBytes": 170705221,
+      "publishJson": "08-wuguan/14-zhongyi-sangyin-yixue/publish.json"
+    },
+    {
+      "id": "08-wuguan/15-zhongyi-meirong-pifu",
+      "title": "中医美容与皮肤治疗学",
+      "chapterCount": 8,
+      "totalDurationSec": 5247.068,
+      "totalBytes": 218675465,
+      "publishJson": "08-wuguan/15-zhongyi-meirong-pifu/publish.json"
+    },
+    {
+      "id": "08-wuguan/16-wuguan-linchuang-lunzhuan",
+      "title": "五官口腔临床轮转",
+      "chapterCount": 6,
+      "totalDurationSec": 3634.056,
+      "totalBytes": 149016696,
+      "publishJson": "08-wuguan/16-wuguan-linchuang-lunzhuan/publish.json"
+    },
+    {
+      "id": "08-wuguan/17-wuguan-biye-sheji",
+      "title": "五官口腔毕业设计与知识移交",
+      "chapterCount": 6,
+      "totalDurationSec": 2951.071,
+      "totalBytes": 119216664,
+      "publishJson": "08-wuguan/17-wuguan-biye-sheji/publish.json"
+    },
+    {
       "id": "09-jichu/01-renti-jiepou-xue",
       "title": "人体解剖学",
       "chapterCount": 10,
@@ -435,6 +1467,14 @@
       "publishJson": "09-jichu/09-yixue-yichuan-xue/publish.json"
     },
     {
+      "id": "09-jichu/10-bingli-xue",
+      "title": "病理学",
+      "chapterCount": 21,
+      "totalDurationSec": 52540.935,
+      "totalBytes": 2213608392,
+      "publishJson": "09-jichu/10-bingli-xue/publish.json"
+    },
+    {
       "id": "09-jichu/11-bingli-shengli-xue",
       "title": "病理生理学",
       "chapterCount": 53,
@@ -449,13 +1489,53 @@
       "totalDurationSec": 68816.929,
       "totalBytes": 2910295831,
       "publishJson": "09-jichu/12-yaoli-xue/publish.json"
+    },
+    {
+      "id": "09-jichu/13-mianyi-bingyuan-shengwu",
+      "title": "免疫学基础与病原生物学",
+      "chapterCount": 15,
+      "totalDurationSec": 10559.928,
+      "totalBytes": 462193512,
+      "publishJson": "09-jichu/13-mianyi-bingyuan-shengwu/publish.json"
+    },
+    {
+      "id": "09-jichu/14-jibing-xue-jichu",
+      "title": "疾病学基础",
+      "chapterCount": 18,
+      "totalDurationSec": 8099.542,
+      "totalBytes": 329595357,
+      "publishJson": "09-jichu/14-jibing-xue-jichu/publish.json"
+    },
+    {
+      "id": "09-jichu/15-liuxingbing-xue",
+      "title": "流行病学",
+      "chapterCount": 18,
+      "totalDurationSec": 13693.313,
+      "totalBytes": 579938098,
+      "publishJson": "09-jichu/15-liuxingbing-xue/publish.json"
+    },
+    {
+      "id": "09-jichu/16-jichu-keyan-shixun",
+      "title": "科研实训与实验设计",
+      "chapterCount": 6,
+      "totalDurationSec": 4352.041,
+      "totalBytes": 186798290,
+      "publishJson": "09-jichu/16-jichu-keyan-shixun/publish.json"
+    },
+    {
+      "id": "09-jichu/17-jichu-biye-sheji",
+      "title": "基础医学毕业设计与知识移交",
+      "chapterCount": 6,
+      "totalDurationSec": 3240.05,
+      "totalBytes": 138335699,
+      "publishJson": "09-jichu/17-jichu-biye-sheji/publish.json"
     }
   ],
   "repoRecord": "platform/media-release.json",
   "regenerate": "npm run media:hls:index",
   "previous": {
-    "generatedAt": "2026-11-27T06:32:42.889Z",
-    "totalBytes": 21218993947,
-    "courses": 54
+    "generatedAt": "2026-11-28T05:54:15.296Z",
+    "totalBytes": 35283398710,
+    "courses": 182
   }
 }
